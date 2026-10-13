@@ -1,0 +1,80 @@
+I’m the Energy Guru! I’ll go for it and\nsell you what you need!
+Buy
+Sell
+Quit
+Is there anything else I can help\nyou with?
+Please come again!
+Welcome!{be01}\nHow may I serve you?
+Oh?\nYour {0100:1}...
+Oh! Your {0100:1}, that Effort\nRibbon looks good on it!
+You have to go for it a little harder.{be01}\nIf you do, I’ll give your Pokémon\nsomething nice.
+Went for it stupendously!{be01}\nAs its reward, please give it this\nEffort Ribbon.
+{0100:0} received the Effort Ribbon.
+{0100:0} put the Effort Ribbon\non {0100:1}.
+Ooh, look at this!{be01}\nThe seaweed you can get around these\nparts is fresh and full of life.{be01}\nWhy, it looks like it can even rear up\nand attack!
+What’s going on here?{be01}\nDid the good Captain come back with\na big fish from the ocean floor?
+Where the water is clean, the fruits\nof bountiful harvest gather.{be01}\nAnd where people gather, a market\nsoon starts.{be01}\nThat is how a town is born and grows.
+I was hoping that it was a famous star\nso I could get an autograph.{be01}\nBut who’s that being interviewed?\nIsn’t that Capt. Stern?
+Shopping where you can breathe the\nscent of the ocean...{be01}\nSlateport is such a wonderful place!
+That lady interviewer is so cool\nand pretty.{be01}\nWhen I grow up, I’m going to be\nan international journalist!
+If you put Dolls or Cushions on\nthe floor, they’ll get dirty.{be01}\nI’m going to buy some Bricks so my\nDolls and Cushions won’t get dirty{be00}\nwhen I leave them out.
+Yeah! I’ve waited so long for this!\nPokémon Contests!{be00}\nI’m going to enter!{be01}\nBut before I do, I have to catch some\nPokémon!
+Capt. Stern says they discovered\nsomething at the bottom of the sea.{be01}\nI wonder what it is?\nWhat could it be?
+Whew... I’m just bushed...{be01}\nI hiked over from Mauville City.\nBut, boy, this city’s huge.{be01}\nIf I’d known this, I would’ve ridden\nmy Bike here.
+Hey! Are you watching?\nAm I on TV?
+Stern, the fellow who built the\nMuseum, also happens to be the leader{be00}\nof an undersea exploration team.{be01}\nSo, everyone calls him Capt. Stern.
+A TV interview! Here!\nThe Captain’s a celebrity!
+What is that over there?\nThat long line...
+When I was a child, I visited\nthe Museum often.{be01}\nI used to dream about the mysteries of\nthe sea after seeing the exhibits.
+Stern’s Shipyard{be01}\n“Wanted: A sailor capable of sailing\nin all currents.”
+Stern’s Shipyard{be01}\n“The ferry S.S. Tidal nears\ncompletion for serving the ports of{be00}\nSlateport and Lilycove.”
+Stern’s Shipyard{be01}\n“Boarding of the Slateport-Lilycove\nferry S.S. Tidal is handled at the{be00}\nHarbor.”
+Slateport Harbor{be01}\n“The ferry S.S. Tidal is under\nconstruction in the Shipyard.{be01}\n“Service is scheduled to begin\nshortly.”
+Slateport Harbor{be01}\n“Enjoy a delightful cruise on\nthe ferry S.S. Tidal.”
+If you want to change your Pokémon’s\nnickname, you’ll have to get the Name{be00}\nRater to help you.
+Do you know about the machine\nBerry Blender?
+People have to work together to get it\nto spin faster.{be01}\nThe faster you can make it spin, the\nbetter Pokéblocks you can get, I’ve heard.
+It’s used for making a kind of candy\ncalled a Pokéblock.{be01}\nIf you give a good Pokéblock to a Pokémon,\nits condition will improve by a lot.
+Hey, there! Quit pushing!\nThis is the line, can’t you see?
+Team Aqua has a policy of\nassembling and dispersing at{be00}\nthe operation site.
+Our Boss is brilliant.{be01}\nWhat would he want to do with\na Museum now?
+What’s the new scheme, I wonder?{be01}\nOur Boss is scary when he’s mad, so\nI’d better not screw things up...
+If there’s something we need in\nthe Museum, we should take it all!
+Hey, you there!\nDon’t butt in!
+A long line, huh?{be01}\nIt reminds me of the times I lined up to\nbuy smash-hit games...
+Why are we even lining up and paying?\nWe should just march in!
+Do you know the TM Flame Charge?{be01}\nOur group, we love the TM Flame\nCharge.{be01}\nOne of our members will give it to you.\nCome back and show me if you get it.{be01}\nWe’ll accept you as a member and sell\nyou good stuff in secrecy.
+Ty: Okay, Capt. Stern, a big smile\nfor the camera!
+Gabby: I see, I see. You’ve had a most\ninvaluable experience...
+Capt. Stern: Yes, indeed. We intend to\nmove ahead with our exploration.
+Gabby: That’s wonderful, Capt. Stern!\nThank you for taking the time from{be00}\nyour busy schedule to talk to us.{be01}\nWe hope we can interview you again\nwith news of more discoveries!
+Capt. Stern: Whew…{be01}\nThat was my first time to be filmed for\nTV. That was nerve-wracking.
+Oh! {0100:0}!\nYou’re looking great!{be01}\nWe made a huge discovery on our last\nseafloor exploration.{be01}\nWe found an underwater cavern on\nRoute 128.{be01}\nWe think it’s the habitat of a Pokémon\nthat’s said to have been long extinct.
+Fufufu...\nCapt. Stern, I presume.{be01}\nWe of Team Aqua will assume\ncontrol of your submarine!{be01}\nYour objections are meaningless!\nWe expect your total cooperation!{be01}\nFufufu...\nJust watch and learn what Team{be00}\nAqua has planned!
+Capt. Stern: What was that all about?{be01}\nIt sounded like someone using\na megaphone…{be01}\nWhere did it come from?
+It’s from the Harbor!{be01}\nThe submarine!\nThey’re trying to take it!
+{0100:0}!\nPlease, come with me!
+Scott: Huh?\nI’m sure I met you somewhere before.{be01}\nHave I introduced myself to you?\nIf not, my name’s Scott.{be01}\nI just saw Team Aqua run away from\nhere like they were stung.{be01}\nLet me guess--you drove them away?
+Scott: Hmm…\nMaybe, just maybe, this Trainer…
+Scott: All right! I think you’re going\nto become a good friend.{be01}\nSo, let’s register each other in our\nPokéNavs.{be01}\n… … … … … …
+Registered this Scott person\nin the PokéNav.
+Scott: What I’d like to do is tag along\nwith you, but I do want to keep an eye{be00}\non the talents of other people, too.{be01}\nSo, I’ll be off to roam other towns\na bit more.{be01}\nBe seeing you, {0100:0}!
+What?\nWhat do you want?
+You want to read this sign?\nI’ll read it for you!
+Let’s see…{be01}\nUm… I think it says something like\n“the life in the sea is endless.”{be01}\nYup, I’m pretty sure that’s what\nit says.
+Grumble…{be01}\nI should’ve brought my Game Boy\nAdvance so I wouldn’t get bored in line…{be01}\nGrumble…
+When this operation’s over, I’ll take\nyou to a hot spring spa!{be01}\nThat’s what our leader said.\nI can’t wait!
+Name Rater’s House\n“Pokémon nicknames rated.”
+“Rejuvenate your tired partners!”\nPokémon Center
+“Selected items for your convenience!”\nPokémon Mart
+Slateport Market\n“Unique items found nowhere else!”
+“The endless sea sustains\nall life.”{be01}\nOceanic Museum
+Slateport City{be01}\n“The port where people and Pokémon\ncross paths.”
+Pokémon Fan Club\n“Calling all fans of Pokémon!”
+Battle Tent Slateport Site\n“Find it! The ultimate Pokémon!”
+The sea is just so vast…{be01}\nCould the sea have been made by\nthe tears shed by Pokémon?
+Do you know what they do with old\nships that become too creaky to sail?{be01}\nThey sink them in the sea so they\nbecome habitats for Pokémon.
+Whenever I visit here, I get carried\naway and buy too much.
+Recently, a Battle Tent was built\nin Slateport.{be01}\nGyms are fun, but the Battle Tent’s\nawesome in its own way.{be01}\nYou should go find tough Pokémon\nfor the Battle Tent!
+Any Pokémon you get in a trade,\nyou can’t change its nickname.{be01}\nThe original Trainer’s love for that\nPokémon is in the nickname.
+The light of the lighthouse reaches\ndozens of miles away.{be01}\nI wonder if it doesn’t startle Pokémon\nin the sea.

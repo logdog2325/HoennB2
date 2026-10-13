@@ -1,0 +1,7 @@
+In all sorts of places, there are all\nsorts of Pokémon and people.{be01}\nI find that fascinating, so I go to all\nsorts of places.
+There’s a set of Pokémon picture books.
+Do you nickname your Pokémon?\nI gave a cool name to mine.{be01}\nBut when I call my Pokémon by that\nname, people laugh at me...{be01}\nIf it’s okay with you, want to trade\nyour {0100:1} for my {0100:2}?
+Eheheheh, ooh, this is so exciting!
+But that’s no {0100:1}.\nTch, that’s so disappointing...
+Aww, it’s a good Pokémon...
+Don’t you get curious about what other\npeople named their Pokémon?

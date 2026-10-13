@@ -1,0 +1,73 @@
+{
+ "_doc": "emerald_rooms (b2tools/emerald_rooms.py writes this file: edit the script and rerun). Emerald's overlay of 77.json: Sapphire's warps 0-3 and warp 4, Emerald's escalator up to the League's 2F (zone 344). EverGrandeCity_PokemonLeague (zone 77), built by the specials agent (recipe data/interior_layouts/EverGrandeCity_PokemonLeague.json): Pokémon Center look, Black 2 interior area 283. Warps in Sapphire's order (one per Sapphire warp tile). People/signs: Sapphire's one-message ones as generated; story people are left for the story phase.",
+ "zone": 77,
+ "room": "EverGrandeCity_PokemonLeague",
+ "area": 283,
+ "parent": 412,
+ "warps": [
+  {
+   "at": [
+    9,
+    11
+   ],
+   "tile_only": true,
+   "to": [
+    412,
+    7
+   ],
+   "what": "Sapphire warp 0 -> EverGrandeCity 0"
+  },
+  {
+   "at": [
+    10,
+    11
+   ],
+   "tile_only": true,
+   "to": [
+    412,
+    7
+   ],
+   "what": "Sapphire warp 1 -> EverGrandeCity 0"
+  },
+  {
+   "at": [
+    9,
+    1
+   ],
+   "tile_only": true,
+   "to": [
+    47,
+    0
+   ],
+   "what": "Sapphire warp 2 -> EverGrandeCity_Corridor5 0"
+  },
+  {
+   "at": [
+    10,
+    1
+   ],
+   "tile_only": true,
+   "to": [
+    47,
+    0
+   ],
+   "what": "Sapphire warp 3 -> EverGrandeCity_Corridor5 0"
+  },
+  {
+   "at": [
+    1,
+    7
+   ],
+   "tile_only": true,
+   "to": [
+    344,
+    0
+   ],
+   "type": 2,
+   "dir": 4,
+   "what": "Emerald warp 4 -> EverGrandeCity_PokemonLeague_2F 0 (escalator, entered walking west)"
+  }
+ ],
+ "npcs": [],
+ "signs": []
+}

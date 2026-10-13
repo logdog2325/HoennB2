@@ -1,0 +1,32 @@
+{
+ "kind": "overworld",
+ "code": 357,
+ "sheet": 335,
+ "frames": 13,
+ "size": [
+  32,
+  32
+ ],
+ "controller": 32,
+ "textures": [
+  "t4x4x13.0",
+  "t4x4x13.1",
+  "t4x4x13.2",
+  "t4x4x13.3",
+  "t4x4x13.4",
+  "t4x4x13.5",
+  "t4x4x13.6",
+  "t4x4x13.7",
+  "t4x4x13.8",
+  "t4x4x13.9",
+  "t4x4x13.10",
+  "t4x4x13.11",
+  "t4x4x13.12"
+ ],
+ "palette": "t4x4x13",
+ "name": "hoenn-mom-phone",
+ "note": "Hoenn Mom with a phone (code 357), drawn from Sapphire's Mom",
+ "sapphire": "mom 3",
+ "drawn": "src/sprites/drawn/mom-phone.txt",
+ "made_by": "b2tools/sprite_unique.py"
+}

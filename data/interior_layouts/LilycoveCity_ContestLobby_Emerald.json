@@ -1,0 +1,391 @@
+{
+ "_doc": "emerald_rooms (b2tools/emerald_rooms.py writes this file: edit the script and rerun). Emerald's Lilycove Contest Lobby (31x12) in the look of Sapphire's (LilycoveCity_ContestLobby.json, sp_theater): the reception part 8 tiles further east than Sapphire's (counter 11-18, doors (9,1) (21,1), PC (19,1), exit (14-15, 11)), six contest winners' portraits and the Berry Blender records board on the back wall, four Berry Blenders on the east side, the sofas along both side walls.",
+ "map": "pokeemerald/LilycoveCity_ContestLobby",
+ "style": "sp_theater",
+ "origin": [
+  1,
+  1
+ ],
+ "floor": [
+  [
+   0,
+   1,
+   30,
+   11
+  ]
+ ],
+ "floor_extra": [
+  [
+   -0.75,
+   6,
+   0,
+   11
+  ],
+  [
+   31,
+   6,
+   31.75,
+   11
+  ]
+ ],
+ "mats": [
+  {
+   "tex": "in24_mat",
+   "src": 305,
+   "rect": [
+    14,
+    11,
+    15,
+    11
+   ],
+   "border": 0.25,
+   "border_units": 4,
+   "y": 0,
+   "_what": "door mat"
+  }
+ ],
+ "decals": [
+  {
+   "tex": "in76_caten1",
+   "src": 378,
+   "at": [
+    12.0
+   ],
+   "y": 6,
+   "w": 40,
+   "h": 42,
+   "gap": 2,
+   "_what": "curtain"
+  },
+  {
+   "tex": "in76_caten1",
+   "src": 378,
+   "at": [
+    17.0
+   ],
+   "y": 6,
+   "w": 40,
+   "h": 42,
+   "gap": 2,
+   "_what": "curtain"
+  },
+  {
+   "tex": "in76_caten1",
+   "src": 378,
+   "at": [
+    1.0
+   ],
+   "y": 6,
+   "w": 40,
+   "h": 42,
+   "gap": 2,
+   "_what": "curtain"
+  },
+  {
+   "tex": "in76_caten1",
+   "src": 378,
+   "at": [
+    29.0
+   ],
+   "y": 6,
+   "w": 40,
+   "h": 42,
+   "gap": 2,
+   "_what": "curtain"
+  }
+ ],
+ "furniture": [
+  {
+   "m": "cabin_door_r",
+   "tile": [
+    9,
+    1
+   ],
+   "wall": "N",
+   "gap": 1,
+   "_what": "door to the hall (Sapphire warp 2)"
+  },
+  {
+   "m": "cabin_door_r",
+   "tile": [
+    21,
+    1
+   ],
+   "wall": "N",
+   "gap": 1,
+   "_what": "door to the hall (Sapphire warp 3)"
+  },
+  {
+   "m": "shelf03",
+   "tiles": [
+    11,
+    2,
+    11,
+    3
+   ],
+   "rot": 270,
+   "_what": "counter, west side"
+  },
+  {
+   "m": "table02",
+   "tiles": [
+    12,
+    3,
+    14,
+    3
+   ],
+   "_what": "counter, front"
+  },
+  {
+   "m": "table02",
+   "tiles": [
+    15,
+    3,
+    17,
+    3
+   ],
+   "_what": "counter, front"
+  },
+  {
+   "m": "shelf03",
+   "tiles": [
+    18,
+    2,
+    18,
+    3
+   ],
+   "rot": 90,
+   "_what": "counter, east side"
+  },
+  {
+   "m": "pc01",
+   "tile": [
+    19,
+    1
+   ],
+   "wall": "N",
+   "_what": "PC"
+  },
+  {
+   "m": "art01",
+   "tile": [
+    3,
+    1
+   ],
+   "wall": "N",
+   "gap": 2,
+   "y": 18,
+   "_what": "contest winner portrait"
+  },
+  {
+   "m": "art01",
+   "tile": [
+    5,
+    1
+   ],
+   "wall": "N",
+   "gap": 2,
+   "y": 18,
+   "_what": "contest winner portrait"
+  },
+  {
+   "m": "art01",
+   "tile": [
+    7,
+    1
+   ],
+   "wall": "N",
+   "gap": 2,
+   "y": 18,
+   "_what": "contest winner portrait"
+  },
+  {
+   "m": "art01",
+   "tile": [
+    23,
+    1
+   ],
+   "wall": "N",
+   "gap": 2,
+   "y": 18,
+   "_what": "contest winner portrait"
+  },
+  {
+   "m": "art01",
+   "tile": [
+    25,
+    1
+   ],
+   "wall": "N",
+   "gap": 2,
+   "y": 18,
+   "_what": "contest winner portrait"
+  },
+  {
+   "m": "art01",
+   "tile": [
+    27,
+    1
+   ],
+   "wall": "N",
+   "gap": 2,
+   "y": 18,
+   "_what": "contest winner portrait"
+  },
+  {
+   "m": "art01",
+   "tile": [
+    30,
+    1
+   ],
+   "wall": "N",
+   "gap": 2,
+   "y": 18,
+   "_what": "Berry Blender records"
+  },
+  {
+   "m": "desk02",
+   "tile": [
+    23,
+    5
+   ],
+   "_what": "Berry Blender (table)"
+  },
+  {
+   "m": "mball01",
+   "tile": [
+    23,
+    5
+   ],
+   "_what": "Berry Blender (top)"
+  },
+  {
+   "m": "desk02",
+   "tile": [
+    27,
+    5
+   ],
+   "_what": "Berry Blender (table)"
+  },
+  {
+   "m": "mball01",
+   "tile": [
+    27,
+    5
+   ],
+   "_what": "Berry Blender (top)"
+  },
+  {
+   "m": "desk02",
+   "tile": [
+    23,
+    9
+   ],
+   "_what": "Berry Blender (table)"
+  },
+  {
+   "m": "mball01",
+   "tile": [
+    23,
+    9
+   ],
+   "_what": "Berry Blender (top)"
+  },
+  {
+   "m": "desk02",
+   "tile": [
+    27,
+    9
+   ],
+   "_what": "Berry Blender (table)"
+  },
+  {
+   "m": "mball01",
+   "tile": [
+    27,
+    9
+   ],
+   "_what": "Berry Blender (top)"
+  },
+  {
+   "m": "chair03",
+   "rot": 90,
+   "tile": [
+    0,
+    6
+   ],
+   "wall": "W",
+   "_what": "sofa"
+  },
+  {
+   "m": "chair03",
+   "rot": 90,
+   "tile": [
+    0,
+    7
+   ],
+   "wall": "W",
+   "_what": "sofa"
+  },
+  {
+   "m": "chair03",
+   "rot": 90,
+   "tile": [
+    0,
+    9
+   ],
+   "wall": "W",
+   "_what": "sofa"
+  },
+  {
+   "m": "chair03",
+   "rot": 90,
+   "tile": [
+    0,
+    10
+   ],
+   "wall": "W",
+   "_what": "sofa"
+  },
+  {
+   "m": "chair03",
+   "rot": 270,
+   "tile": [
+    30,
+    6
+   ],
+   "wall": "E",
+   "_what": "sofa"
+  },
+  {
+   "m": "chair03",
+   "rot": 270,
+   "tile": [
+    30,
+    7
+   ],
+   "wall": "E",
+   "_what": "sofa"
+  },
+  {
+   "m": "chair03",
+   "rot": 270,
+   "tile": [
+    30,
+    9
+   ],
+   "wall": "E",
+   "_what": "sofa"
+  },
+  {
+   "m": "chair03",
+   "rot": 270,
+   "tile": [
+    30,
+    10
+   ],
+   "wall": "E",
+   "_what": "sofa"
+  }
+ ]
+}

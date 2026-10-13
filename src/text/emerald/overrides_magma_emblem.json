@@ -1,0 +1,15 @@
+{
+ "_doc": "Emerald's Magma Emblem (emerald_ch45_magma 2026-10-12): the key item the old woman on Mt. Pyre's summit gives (scenes/MtPyre_Summit_Em.inc). Black 2's Magma Stone (item 458, a Gen 4 key item no Black 2 script gives; src/include/hoenn_version.inc ITEM_MAGMA_EMBLEM) renamed in an Emerald build only, in the format of src/text/overrides_key_items.json; the description is pokeemerald's sMagmaEmblemDesc. Sapphire and Ruby keep Black 2's names.",
+ "system/0064_item_names.txt": {
+  "458": "Magma Emblem"
+ },
+ "system/0481_item_names_with_article.txt": {
+  "458": "{bd01}a {ff00:255}Magma Emblem"
+ },
+ "system/0482_item_names_plural.txt": {
+  "458": "Magma Emblems"
+ },
+ "system/0063_scrcmd_resort_shop_scrcmd_bsubway.txt": {
+  "458": "A medal-like item in\\nthe same shape as\\nTeam Magma’s mark."
+ }
+}

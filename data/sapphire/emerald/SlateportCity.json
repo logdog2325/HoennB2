@@ -1,0 +1,982 @@
+{
+ "map": "SlateportCity",
+ "id": "MAP_SLATEPORT_CITY",
+ "layout": "LAYOUT_SLATEPORT_CITY",
+ "music": "MUS_SLATEPORT",
+ "region_map_section": "MAPSEC_SLATEPORT_CITY",
+ "weather": "WEATHER_SUNNY",
+ "connections": [
+  {
+   "map": "MAP_ROUTE110",
+   "offset": 0,
+   "direction": "up"
+  },
+  {
+   "map": "MAP_ROUTE109",
+   "offset": 0,
+   "direction": "down"
+  },
+  {
+   "map": "MAP_ROUTE134",
+   "offset": 0,
+   "direction": "right"
+  }
+ ],
+ "npcs": [
+  {
+   "local_id": 1,
+   "x": 21,
+   "y": 11,
+   "gfx": "OBJ_EVENT_GFX_FAT_MAN",
+   "movement": "MOVEMENT_TYPE_WANDER_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "SlateportCity_EventScript_FatMan",
+   "texts": {
+    "SlateportCity_Text_BushedHikingFromMauville": "Whew… I'm just bushed…\\pI hiked over from MAUVILLE CITY.\\nBut, boy, this city's huge.\\pIf I'd known this, I would've ridden\\nmy BIKE here.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 2,
+   "x": 34,
+   "y": 29,
+   "gfx": "OBJ_EVENT_GFX_MAN_1",
+   "movement": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
+   "range": [
+    1,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "SlateportCity_EventScript_Man1",
+   "texts": {
+    "SlateportCity_Text_EveryoneCallsHimCaptStern": "STERN, the fellow who built the\\nMUSEUM, also happens to be the leader\\lof an undersea exploration team.\\pSo, everyone calls him CAPT. STERN.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 3,
+   "x": 5,
+   "y": 13,
+   "gfx": "OBJ_EVENT_GFX_RICH_BOY",
+   "movement": "MOVEMENT_TYPE_WANDER_AROUND",
+   "range": [
+    1,
+    2
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "SlateportCity_EventScript_RichBoy",
+   "texts": {
+    "SlateportCity_Text_GoingToCompeteInBattleTent": "Wroooar! I'm going to compete in\\nthe BATTLE TENT, too!\\pBut before that, I need to catch\\nsome POKéMON!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 4,
+   "x": 26,
+   "y": 29,
+   "gfx": "OBJ_EVENT_GFX_WOMAN_4",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "SlateportCity_EventScript_Woman1",
+   "texts": {
+    "SlateportCity_Text_WhatsLongLineOverThere": "What is that over there?\\nThat long line…$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 5,
+   "x": 31,
+   "y": 27,
+   "gfx": "OBJ_EVENT_GFX_AQUA_MEMBER_F",
+   "movement": "MOVEMENT_TYPE_FACE_UP",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_SLATEPORT_CITY_TEAM_AQUA",
+   "script": "SlateportCity_EventScript_AquaGrunt1",
+   "texts": {
+    "SlateportCity_Text_QuitPushing": "Hey, there! Quit pushing!\\nThis is the line, can't you see?$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 6,
+   "x": 5,
+   "y": 43,
+   "gfx": "OBJ_EVENT_GFX_COOK",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "SlateportCity_EventScript_Cook",
+   "texts": {
+    "SlateportCity_Text_SeaweedFullOfLife": "Ooh, look at this!\\pThe seaweed you can get around these\\nparts is fresh and full of life.\\pWhy, it looks like it can even rear up\\nand attack!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 7,
+   "x": 20,
+   "y": 37,
+   "gfx": "OBJ_EVENT_GFX_OLD_WOMAN",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "SlateportCity_EventScript_OldWoman",
+   "texts": {
+    "SlateportCity_Text_HowTownIsBornAndGrows": "Where the water is clean, the fruits\\nof bountiful harvest gather.\\pAnd where people gather, a market\\nsoon starts.\\pThat is how a town is born and grows.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 8,
+   "x": 8,
+   "y": 42,
+   "gfx": "OBJ_EVENT_GFX_GIRL_1",
+   "movement": "MOVEMENT_TYPE_WANDER_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "SlateportCity_EventScript_Girl",
+   "texts": {
+    "SlateportCity_Text_SlateportWonderfulPlace": "Shopping where you can breathe the\\nscent of the ocean…\\pSLATEPORT is such a wonderful place!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 9,
+   "x": 29,
+   "y": 13,
+   "gfx": "OBJ_EVENT_GFX_CAMERAMAN",
+   "movement": "MOVEMENT_TYPE_FACE_LEFT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_SLATEPORT_CITY_GABBY_AND_TY",
+   "script": "SlateportCity_EventScript_Ty",
+   "texts": {
+    "SlateportCity_Text_BigSmileForCamera": "TY: Okay, CAPT. STERN, a big smile\\nfor the camera!$"
+   }
+  },
+  {
+   "local_id": 10,
+   "x": 28,
+   "y": 14,
+   "gfx": "OBJ_EVENT_GFX_REPORTER_F",
+   "movement": "MOVEMENT_TYPE_FACE_UP",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_SLATEPORT_CITY_GABBY_AND_TY",
+   "script": "SlateportCity_EventScript_Gabby",
+   "texts": {
+    "SlateportCity_Text_MostInvaluableExperience": "GABBY: I see, I see. You've had a most\\ninvaluable experience…$"
+   }
+  },
+  {
+   "local_id": 11,
+   "x": 28,
+   "y": 13,
+   "gfx": "OBJ_EVENT_GFX_SCIENTIST_1",
+   "movement": "MOVEMENT_TYPE_FACE_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_SLATEPORT_CITY_CAPTAIN_STERN",
+   "script": "SlateportCity_EventScript_CaptStern",
+   "texts": {
+    "SlateportCity_Text_SternMoveAheadWithExploration": "CAPT. STERN: Yes, indeed. We intend to\\nmove ahead with our exploration.$",
+    "SlateportCity_Text_GabbyWonderfulThanksForInterview": "GABBY: That's wonderful, CAPT. STERN!\\nThank you for taking the time from\\lyour busy schedule to talk to us.\\pWe hope we can interview you again\\nwith news of more discoveries!$",
+    "SlateportCity_Text_SternWhewFirstInterview": "CAPT. STERN: Whew…\\pThat was my first time to be filmed for\\nTV. That was nerve-wracking.$",
+    "SlateportCity_Text_OhPlayerWeMadeDiscovery": "Oh! {PLAYER}{KUN}!\\nYou're looking great!\\pWe made a huge discovery on our last\\nseafloor exploration.\\pWe found an underwater cavern on\\nROUTE 128.\\pWe think it's the habitat of a POKéMON\\nthat's said to have been long extinct.$",
+    "SlateportCity_Text_AquaWillAssumeControlOfSubmarine": "Fufufu…\\nCAPT. STERN, I presume.\\pWe of TEAM AQUA will assume\\ncontrol of your submarine!\\pYour objections are meaningless!\\nWe expect your total cooperation!\\pFufufu…\\nJust watch and learn what TEAM\\lAQUA has planned!$",
+    "SlateportCity_Text_SternWhatWasAllThat": "CAPT. STERN: What was that all about?\\pIt sounded like someone using\\na megaphone…\\pWhere did it come from?$",
+    "SlateportCity_Text_FromHarborTryingToTakeSub": "It's from the HARBOR!\\pThe submarine!\\nThey're trying to take it!$",
+    "SlateportCity_Text_PleaseComeWithMe": "{PLAYER}{KUN}!\\nPlease, come with me!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 12,
+   "x": 37,
+   "y": 41,
+   "gfx": "OBJ_EVENT_GFX_SAILOR",
+   "movement": "MOVEMENT_TYPE_FACE_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "SlateportCity_EventScript_Sailor1",
+   "texts": {
+    "SlateportCity_Text_SeaIsSoWet": "The sea is just so vast…\\pCould the sea have been made by\\nthe tears shed by POKéMON?$"
+   }
+  },
+  {
+   "local_id": 13,
+   "x": 28,
+   "y": 46,
+   "gfx": "OBJ_EVENT_GFX_SAILOR",
+   "movement": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
+   "range": [
+    1,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "SlateportCity_EventScript_Sailor2",
+   "texts": {
+    "SlateportCity_Text_SinkOldBoats": "Do you know what they do with old\\nships that become too creaky to sail?\\pThey sink them in the sea so they\\nbecome habitats for POKéMON.$"
+   }
+  },
+  {
+   "local_id": 14,
+   "x": 9,
+   "y": 50,
+   "gfx": "OBJ_EVENT_GFX_POKEFAN_F",
+   "movement": "MOVEMENT_TYPE_WANDER_UP_AND_DOWN",
+   "range": [
+    0,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "SlateportCity_EventScript_PokefanF",
+   "texts": {
+    "SlateportCity_Text_BuyTooMuch": "Whenever I visit here, I get carried\\naway and buy too much.$"
+   }
+  },
+  {
+   "local_id": 15,
+   "x": 16,
+   "y": 46,
+   "gfx": "OBJ_EVENT_GFX_MAN_3",
+   "movement": "MOVEMENT_TYPE_WANDER_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "SlateportCity_EventScript_Man2",
+   "texts": {
+    "SlateportCity_Text_BattleTentBuiltRecently": "Recently, a BATTLE TENT was built\\nin SLATEPORT.\\pGYMS are fun, but the BATTLE TENT's\\nawesome in its own way.\\pYou should go find tough POKéMON\\nfor the BATTLE TENT!$"
+   }
+  },
+  {
+   "local_id": 16,
+   "x": 8,
+   "y": 24,
+   "gfx": "OBJ_EVENT_GFX_MANIAC",
+   "movement": "MOVEMENT_TYPE_WANDER_UP_AND_DOWN",
+   "range": [
+    0,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "SlateportCity_EventScript_Maniac",
+   "texts": {
+    "SlateportCity_Text_GetNameRaterToHelpYou": "If you want to change your POKéMON's\\nnickname, you'll have to get the NAME\\lRATER to help you.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 17,
+   "x": 15,
+   "y": 31,
+   "gfx": "OBJ_EVENT_GFX_WOMAN_5",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "SlateportCity_EventScript_Woman2",
+   "texts": {
+    "SlateportCity_Text_CantChangeTradeMonName": "Any POKéMON you get in a trade,\\nyou can't change its nickname.\\pThe original TRAINER's love for that\\nPOKéMON is in the nickname.$"
+   }
+  },
+  {
+   "local_id": 18,
+   "x": 30,
+   "y": 27,
+   "gfx": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
+   "movement": "MOVEMENT_TYPE_FACE_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_SLATEPORT_CITY_TEAM_AQUA",
+   "script": "SlateportCity_EventScript_AquaGrunt2",
+   "texts": {
+    "SlateportCity_Text_AquaHasPolicy": "TEAM AQUA has a policy of\\nassembling and dispersing at\\lthe operation site.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 19,
+   "x": 29,
+   "y": 27,
+   "gfx": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
+   "movement": "MOVEMENT_TYPE_FACE_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_SLATEPORT_CITY_TEAM_AQUA",
+   "script": "SlateportCity_EventScript_AquaGrunt3",
+   "texts": {
+    "SlateportCity_Text_BossIsBrilliant": "Our BOSS is brilliant.\\pWhat would he want to do with\\na MUSEUM now?$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 20,
+   "x": 6,
+   "y": 38,
+   "gfx": "OBJ_EVENT_GFX_MART_EMPLOYEE",
+   "movement": "MOVEMENT_TYPE_FACE_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "SlateportCity_EventScript_DecorClerk",
+   "texts": {
+    "gText_HowMayIServeYou": "Welcome!\\pHow may I serve you?$",
+    "gText_PleaseComeAgain": "Please come again!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 21,
+   "x": 5,
+   "y": 51,
+   "gfx": "OBJ_EVENT_GFX_MART_EMPLOYEE",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "SlateportCity_EventScript_DollClerk",
+   "texts": {
+    "gText_HowMayIServeYou": "Welcome!\\pHow may I serve you?$",
+    "gText_PleaseComeAgain": "Please come again!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 22,
+   "x": 34,
+   "y": 51,
+   "gfx": "OBJ_EVENT_GFX_MAN_5",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "SlateportCity_EventScript_Man3",
+   "texts": {
+    "SlateportCity_Text_WonderIfLighthouseStartlesPokemon": "The light of the lighthouse reaches\\ndozens of miles away.\\pI wonder if it doesn't startle POKéMON\\nin the sea.$"
+   }
+  },
+  {
+   "local_id": 23,
+   "x": 4,
+   "y": 47,
+   "gfx": "OBJ_EVENT_GFX_WOMAN_5",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "SlateportCity_EventScript_EffortRibbonWoman",
+   "texts": {
+    "SlateportCity_Text_OhYourPokemon": "Oh?\\nYour {STR_VAR_1}…$",
+    "SlateportCity_Text_PleaseGiveItThisEffortRibbon": "Went for it stupendously!\\pAs its reward, please give it this\\nEFFORT RIBBON.$",
+    "SlateportCity_Text_ReceivedEffortRibbon": "{PLAYER} received the EFFORT RIBBON.$",
+    "SlateportCity_Text_PutEffortRibbonOnMon": "{PLAYER} put the EFFORT RIBBON\\non {STR_VAR_1}.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 24,
+   "x": 11,
+   "y": 47,
+   "gfx": "OBJ_EVENT_GFX_MART_EMPLOYEE",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_SLATEPORT_CITY_TM_SALESMAN",
+   "script": "SlateportCity_EventScript_PowerTMClerk",
+   "texts": {
+    "gText_HowMayIServeYou": "Welcome!\\pHow may I serve you?$",
+    "gText_PleaseComeAgain": "Please come again!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 25,
+   "x": 5,
+   "y": 47,
+   "gfx": "OBJ_EVENT_GFX_POKEFAN_M",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "SlateportCity_EventScript_EnergyGuru",
+   "texts": {
+    "SlateportCity_Text_EnergyGuruSellWhatYouNeed": "I'm the ENERGY GURU! I'll go for it and\\nsell you what you need!$",
+    "gText_PleaseComeAgain": "Please come again!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 26,
+   "x": 22,
+   "y": 27,
+   "gfx": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
+   "movement": "MOVEMENT_TYPE_FACE_RIGHT",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_SLATEPORT_CITY_TEAM_AQUA",
+   "script": "SlateportCity_EventScript_AquaGrunt4",
+   "texts": {
+    "SlateportCity_Text_WhatsNewSchemeIWonder": "What's the new scheme, I wonder?\\pOur BOSS is scary when he's mad, so\\nI'd better not screw things up…$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 27,
+   "x": 23,
+   "y": 27,
+   "gfx": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
+   "movement": "MOVEMENT_TYPE_FACE_UP",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_SLATEPORT_CITY_TEAM_AQUA",
+   "script": "SlateportCity_EventScript_AquaGrunt5",
+   "texts": {
+    "SlateportCity_Text_ShouldTakeItAll": "If there's something we need in\\nthe MUSEUM, we should take it all!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 28,
+   "x": 24,
+   "y": 27,
+   "gfx": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
+   "movement": "MOVEMENT_TYPE_FACE_RIGHT",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_SLATEPORT_CITY_TEAM_AQUA",
+   "script": "SlateportCity_EventScript_AquaGrunt6",
+   "texts": {
+    "SlateportCity_Text_DontButtIn": "Hey, you there!\\nDon't butt in!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 29,
+   "x": 21,
+   "y": 26,
+   "gfx": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
+   "movement": "MOVEMENT_TYPE_FACE_RIGHT",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_SLATEPORT_CITY_TEAM_AQUA",
+   "script": "SlateportCity_EventScript_AquaGrunt7",
+   "texts": {
+    "SlateportCity_Text_RemindsMeOfLongLineForGames": "A long line, huh?\\pIt reminds me of the times I lined up to\\nbuy smash-hit games…$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 30,
+   "x": 20,
+   "y": 26,
+   "gfx": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
+   "movement": "MOVEMENT_TYPE_FACE_RIGHT",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_SLATEPORT_CITY_TEAM_AQUA",
+   "script": "SlateportCity_EventScript_AquaGrunt8",
+   "texts": {
+    "SlateportCity_Text_WhyAreWeLiningUp": "Why are we even lining up and paying?\\nWe should just march in!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 31,
+   "x": 26,
+   "y": 27,
+   "gfx": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
+   "movement": "MOVEMENT_TYPE_FACE_UP",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_SLATEPORT_CITY_TEAM_AQUA",
+   "script": "SlateportCity_EventScript_AquaGrunt9",
+   "texts": {
+    "SlateportCity_Text_WhatDoYouWant": "What?\\nWhat do you want?$",
+    "SlateportCity_Text_IllReadSignForYou": "You want to read this sign?\\nI'll read it for you!$",
+    "SlateportCity_Text_SaysSomethingLikeSeaIsEndless": "Let's see…\\pUm… I think it says something like\\n“the life in the sea is endless.”\\pYup, I'm pretty sure that's what\\nit says.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 32,
+   "x": 28,
+   "y": 27,
+   "gfx": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
+   "movement": "MOVEMENT_TYPE_FACE_UP",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_SLATEPORT_CITY_TEAM_AQUA",
+   "script": "SlateportCity_EventScript_AquaGrunt10",
+   "texts": {
+    "SlateportCity_Text_ShouldveBroughtMyGameBoy": "Grumble…\\pI should've brought my Game Boy\\nAdvance so I wouldn't get bored in line…\\pGrumble…$"
+   }
+  },
+  {
+   "local_id": 33,
+   "x": 25,
+   "y": 27,
+   "gfx": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
+   "movement": "MOVEMENT_TYPE_FACE_UP",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_SLATEPORT_CITY_TEAM_AQUA",
+   "script": "SlateportCity_EventScript_AquaGrunt11",
+   "texts": {
+    "SlateportCity_Text_HotSpringsAfterOperation": "When this operation's over, I'll take\\nyou to a hot spring spa!\\pThat's what our leader said.\\nI can't wait!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 34,
+   "x": 11,
+   "y": 37,
+   "gfx": "OBJ_EVENT_GFX_POKEFAN_F",
+   "movement": "MOVEMENT_TYPE_FACE_LEFT",
+   "range": [
+    1,
+    2
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "SlateportCity_EventScript_BerryPowderClerk",
+   "texts": {
+    "SlateportCity_Text_ExplainBerries": "If a wild POKéMON gets hurt, it heals\\nitself by chewing on BERRIES.\\pDid you know that?\\pSomebody saw that and got the idea\\nof making medicine from BERRIES.\\pDid you know that?\\pTo turn BERRIES into medicine,\\nthey must be crushed into powder.\\pDid you know that?\\pYou seem to have an interest\\nin BERRIES!\\pI've got something good for someone\\nlike you.$",
+    "SlateportCity_Text_ExplainBerryPowder": "I recently had machines installed at\\nPOKéMON CENTERS for crushing BERRIES.\\pThe BERRY CRUSH machines are at\\nthe DIRECT CORNER upstairs.\\pDid you know?\\pCould you make BERRY POWDER for\\nme using those machines?\\pI can make you all sorts of medicine\\nif you bring me lots of BERRY POWDER.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 35,
+   "x": 10,
+   "y": 12,
+   "gfx": "OBJ_EVENT_GFX_SCOTT",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    1,
+    2
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_SLATEPORT_CITY_SCOTT",
+   "script": "0x0",
+   "missing": true
+  }
+ ],
+ "signs": [
+  {
+   "x": 8,
+   "y": 19,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "SlateportCity_EventScript_NameRatersHouseSign",
+   "texts": {
+    "SlateportCity_Text_NameRatersHouseSign": "NAME RATER'S HOUSE\\n“POKéMON nicknames rated.”$"
+   }
+  },
+  {
+   "x": 20,
+   "y": 19,
+   "facing": "BG_EVENT_PLAYER_FACING_NORTH",
+   "script": "Common_EventScript_ShowPokemonCenterSign",
+   "texts": {
+    "gText_PokemonCenterSign": "“Rejuvenate your tired partners!”\\nPOKéMON CENTER$"
+   }
+  },
+  {
+   "x": 21,
+   "y": 19,
+   "facing": "BG_EVENT_PLAYER_FACING_NORTH",
+   "script": "Common_EventScript_ShowPokemonCenterSign",
+   "texts": {
+    "gText_PokemonCenterSign": "“Rejuvenate your tired partners!”\\nPOKéMON CENTER$"
+   }
+  },
+  {
+   "x": 14,
+   "y": 26,
+   "facing": "BG_EVENT_PLAYER_FACING_NORTH",
+   "script": "Common_EventScript_ShowPokemartSign",
+   "texts": {
+    "gText_PokemartSign": "“Selected items for your convenience!”\\nPOKéMON MART$"
+   }
+  },
+  {
+   "x": 24,
+   "y": 12,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "SlateportCity_EventScript_HarborSign",
+   "texts": {
+    "SlateportCity_Text_HarborFerryUnderConstruction": "SLATEPORT HARBOR\\p“The ferry S.S. TIDAL is under\\nconstruction in the SHIPYARD.\\p“Service is scheduled to begin\\nshortly.”$"
+   },
+   "complex": true
+  },
+  {
+   "x": 15,
+   "y": 26,
+   "facing": "BG_EVENT_PLAYER_FACING_NORTH",
+   "script": "Common_EventScript_ShowPokemartSign",
+   "texts": {
+    "gText_PokemartSign": "“Selected items for your convenience!”\\nPOKéMON MART$"
+   }
+  },
+  {
+   "x": 14,
+   "y": 51,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "SlateportCity_EventScript_MarketSign",
+   "texts": {
+    "SlateportCity_Text_MarketSign": "SLATEPORT MARKET\\n“Unique items found nowhere else!”$"
+   }
+  },
+  {
+   "x": 26,
+   "y": 26,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "SlateportCity_EventScript_OceanicMuseumSign",
+   "texts": {
+    "SlateportCity_Text_OceanicMuseumSign": "“The endless sea sustains\\nall life.”\\pOCEANIC MUSEUM$"
+   }
+  },
+  {
+   "x": 16,
+   "y": 22,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "SlateportCity_EventScript_CitySign",
+   "texts": {
+    "SlateportCity_Text_CitySign": "SLATEPORT CITY\\p“The port where people and POKéMON\\ncross paths.”$"
+   }
+  },
+  {
+   "x": 8,
+   "y": 26,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "SlateportCity_EventScript_PokemonFanClubSign",
+   "texts": {
+    "SlateportCity_Text_PokemonFanClubSign": "POKéMON FAN CLUB\\n“Calling all fans of POKéMON!”$"
+   }
+  },
+  {
+   "x": 7,
+   "y": 13,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "SlateportCity_EventScript_BattleTentSign",
+   "texts": {
+    "SlateportCity_Text_BattleTentSign": "BATTLE TENT SLATEPORT SITE\\n“Find it! The ultimate POKéMON!”$"
+   }
+  },
+  {
+   "x": 23,
+   "y": 38,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "SlateportCity_EventScript_SternsShipyardSign",
+   "texts": {
+    "SlateportCity_Text_SternsShipyardWantedSign": "STERN'S SHIPYARD\\p“Wanted: A sailor capable of sailing\\nin all currents.”$"
+   },
+   "complex": true
+  },
+  {
+   "x": 10,
+   "y": 36,
+   "facing": "BG_EVENT_PLAYER_FACING_NORTH",
+   "script": "SlateportCity_EventScript_BerryCrushRankingsSign",
+   "texts": {},
+   "complex": true
+  }
+ ],
+ "warps": [
+  {
+   "id": 0,
+   "x": 19,
+   "y": 19,
+   "dest_map": "MAP_SLATEPORT_CITY_POKEMON_CENTER_1F",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 1,
+   "x": 13,
+   "y": 26,
+   "dest_map": "MAP_SLATEPORT_CITY_MART",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 2,
+   "x": 26,
+   "y": 38,
+   "dest_map": "MAP_SLATEPORT_CITY_STERNS_SHIPYARD_1F",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 3,
+   "x": 10,
+   "y": 12,
+   "dest_map": "MAP_SLATEPORT_CITY_BATTLE_TENT_LOBBY",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 4,
+   "x": 4,
+   "y": 26,
+   "dest_map": "MAP_SLATEPORT_CITY_POKEMON_FAN_CLUB",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 5,
+   "x": 30,
+   "y": 26,
+   "dest_map": "MAP_SLATEPORT_CITY_OCEANIC_MUSEUM_1F",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 6,
+   "x": 5,
+   "y": 19,
+   "dest_map": "MAP_SLATEPORT_CITY_NAME_RATERS_HOUSE",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 7,
+   "x": 31,
+   "y": 26,
+   "dest_map": "MAP_SLATEPORT_CITY_OCEANIC_MUSEUM_1F",
+   "dest_warp_id": "1"
+  },
+  {
+   "id": 8,
+   "x": 28,
+   "y": 12,
+   "dest_map": "MAP_SLATEPORT_CITY_HARBOR",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 9,
+   "x": 40,
+   "y": 7,
+   "dest_map": "MAP_SLATEPORT_CITY_HARBOR",
+   "dest_warp_id": "2"
+  },
+  {
+   "id": 10,
+   "x": 21,
+   "y": 44,
+   "dest_map": "MAP_SLATEPORT_CITY_HOUSE",
+   "dest_warp_id": "0"
+  }
+ ],
+ "coord_events": [
+  {
+   "type": "trigger",
+   "x": 10,
+   "y": 13,
+   "elevation": 3,
+   "var": "VAR_SLATEPORT_OUTSIDE_MUSEUM_STATE",
+   "var_value": "2",
+   "script": "SlateportCity_EventScript_ScottBattleTentScene",
+   "texts": {
+    "SlateportCity_Text_TakingBattleTentChallenge": "SCOTT: Oh, hey!\\nIf it isn't {PLAYER}{KUN}!\\p{PLAYER}{KUN}, let me guess--you're going\\nto take the BATTLE TENT challenge?\\pYeah! That's a good idea!\\nThat's a really great idea!\\pAfter all, a tough TRAINER is\\nthe perfect fit for the BATTLE TENT!\\pGive it your best effort!$"
+   },
+   "complex": true
+  }
+ ],
+ "wild": {
+  "water_mons": {
+   "encounter_rate": 4,
+   "slot_rates": [
+    60,
+    30,
+    5,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 5,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 15,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_PELIPPER",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_PELIPPER",
+     "min": 25,
+     "max": 30
+    }
+   ]
+  },
+  "fishing_mons": {
+   "encounter_rate": 10,
+   "slot_rates": [
+    70,
+    30,
+    60,
+    20,
+    20,
+    40,
+    40,
+    15,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 20,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 35,
+     "max": 40
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 40,
+     "max": 45
+    }
+   ]
+  }
+ }
+}

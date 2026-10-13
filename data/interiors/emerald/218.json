@@ -1,0 +1,64 @@
+{
+ "zone": 218,
+ "room": "Underwater3",
+ "cave": true,
+ "cave_auto": true,
+ "area": 340,
+ "dark": false,
+ "header": {
+  "map_type": 16,
+  "npc_cache": 24,
+  "weather_word": 64,
+  "flags": 19715,
+  "icon_word": 32783,
+  "place_display": 1,
+  "bgm0": 1014,
+  "bgm1": 1014,
+  "bgm2": 1014,
+  "bgm3": 1014,
+  "place": 57,
+  "encounters": 8191,
+  "enc_slot": 6
+ },
+ "warps": [
+  {
+   "x": 29,
+   "z": 95,
+   "w": 8,
+   "h": 1,
+   "type": 4,
+   "dir": 1,
+   "to": [
+    219,
+    1
+   ],
+   "what": "Sapphire connection s (x 29-36) -> Underwater4 warp 1"
+  },
+  {
+   "at": [
+    57,
+    5
+   ],
+   "to": [
+    371,
+    0
+   ],
+   "what": "Emerald warp 0 (57,5) -> Underwater_MarineCave 0"
+  },
+  {
+   "at": [
+    67,
+    38
+   ],
+   "to": [
+    371,
+    0
+   ],
+   "what": "Emerald warp 1 (67,38) -> Underwater_MarineCave 0"
+  }
+ ],
+ "triggers": [],
+ "npcs": [],
+ "signs": [],
+ "what": "Underwater3: Emerald's cave (converter/gen_caves_emerald.py from emerald/Underwater3, b2tools/models_cave.py, room Underwater3_Emerald); story objects: see notes/EMERALD.md"
+}

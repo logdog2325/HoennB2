@@ -1,0 +1,31 @@
+{
+ "_doc": "Route119_House: zone written by converter/gen_interior_recipes_houses.py (warps and parent from converter/gen_interiors.py); story people left for the story phase: person WINGULL at (1,6) Route119_House_EventScript_163DE7 (story/complex script); person WINGULL at (0,4) Route119_House_EventScript_163DE7 (story/complex script); person WINGULL at (2,2) Route119_House_EventScript_163DE7 (story/complex script); person WINGULL at (8,5) Route119_House_EventScript_163DE7 (story/complex script); person WINGULL at (6,6) Route119_House_EventScript_163DE7 (story/complex script); person WINGULL at (5,3) Route119_House_EventScript_163DE7 (story/complex script)",
+ "zone": 562,
+ "room": "Route119_House",
+ "area": 313,
+ "parent": 463,
+ "warps": [
+  {
+   "at": [3, 8],
+   "tile_only": true,
+   "to": [463, 4],
+   "what": "Sapphire warp 0 -> Route119 1"
+  },
+  {
+   "at": [4, 8],
+   "tile_only": true,
+   "to": [463, 4],
+   "what": "Sapphire warp 1 -> Route119 1"
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 1,
+   "model": 22,
+   "script": 1,
+   "dir": 1,
+   "at": [7, 2]
+  }
+ ],
+ "signs": []
+}

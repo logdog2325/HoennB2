@@ -1,0 +1,17 @@
+{
+ "kind": "trainer",
+ "side": "front",
+ "sprite": 149,
+ "archive": 71,
+ "files": {
+  "static": 1192,
+  "parts": 1193,
+  "palette": 1199
+ },
+ "name": "aqua-grunt-m",
+ "note": "Team Aqua grunt (M)",
+ "source": "pokeruby graphics/trainers/aqua_grunt_m.png",
+ "layout": "parts and animations of Black 2 front sprite 73",
+ "made_by": "b2tools/sprite_upgrade.py",
+ "mcss_from": 73
+}

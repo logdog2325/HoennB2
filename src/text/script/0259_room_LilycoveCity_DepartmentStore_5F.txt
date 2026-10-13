@@ -1,0 +1,5 @@
+I’m not big enough to raise Pokémon,\nso I’m getting a cute Doll instead.
+This place is full of cute Dolls.{be01}\nI should buy some for me, instead of\njust for my children.
+They sell many cute Mats here.{be01}\nI wonder which one I should get?\nMaybe I’ll buy them all...
+Welcome!{be01}\nHow may I serve you?
+Please come again!

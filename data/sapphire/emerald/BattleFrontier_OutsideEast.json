@@ -1,0 +1,640 @@
+{
+ "map": "BattleFrontier_OutsideEast",
+ "id": "MAP_BATTLE_FRONTIER_OUTSIDE_EAST",
+ "layout": "LAYOUT_BATTLE_FRONTIER_OUTSIDE_EAST",
+ "music": "MUS_B_FRONTIER",
+ "region_map_section": "MAPSEC_BATTLE_FRONTIER",
+ "weather": "WEATHER_NONE",
+ "connections": [
+  {
+   "map": "MAP_BATTLE_FRONTIER_OUTSIDE_WEST",
+   "offset": 0,
+   "direction": "left"
+  }
+ ],
+ "npcs": [
+  {
+   "local_id": 1,
+   "x": 20,
+   "y": 17,
+   "gfx": "OBJ_EVENT_GFX_NINJA_BOY",
+   "movement": "MOVEMENT_TYPE_WALK_LEFT_AND_RIGHT",
+   "range": [
+    3,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BattleFrontier_OutsideEast_EventScript_NinjaBoy",
+   "texts": {
+    "BattleFrontier_OutsideEast_Text_BattleTowerFeelsSpecial": "Wow!\\nIt's huge!\\pThe BATTLE TOWER feels special.\\nIt's different from the others.$"
+   }
+  },
+  {
+   "local_id": 2,
+   "x": 42,
+   "y": 15,
+   "gfx": "OBJ_EVENT_GFX_MAN_3",
+   "movement": "MOVEMENT_TYPE_WANDER_AROUND",
+   "range": [
+    1,
+    3
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BattleFrontier_OutsideEast_EventScript_Man1",
+   "texts": {
+    "BattleFrontier_OutsideEast_Text_ConquerLeagueAndFrontier": "My grand ambition is to conquer both\\nthe BATTLE FRONTIER and the POKéMON\\lLEAGUE.\\pAnd if my dream comes true…\\pI… I'm going to ask MIMI next door\\nif she will be friends with me!$"
+   }
+  },
+  {
+   "local_id": 3,
+   "x": 53,
+   "y": 6,
+   "gfx": "OBJ_EVENT_GFX_HIKER",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    2,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BattleFrontier_OutsideEast_EventScript_Hiker",
+   "texts": {
+    "BattleFrontier_OutsideEast_Text_PyramidTooHarsh": "The BATTLE PYRAMID's too harsh!\\nI just can't make it to the top!\\pSince I'm out of options, maybe I can\\nclimb the outside…$"
+   }
+  },
+  {
+   "local_id": 4,
+   "x": 54,
+   "y": 16,
+   "gfx": "OBJ_EVENT_GFX_HEX_MANIAC",
+   "movement": "MOVEMENT_TYPE_WANDER_AROUND",
+   "range": [
+    2,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BattleFrontier_OutsideEast_EventScript_HexManiac",
+   "texts": {
+    "BattleFrontier_OutsideEast_Text_ThriveInDarkness": "I thrive in darkness…\\nYes… What is worthy of me?\\lNone other than the BATTLE PYRAMID…\\pWhat say you to wandering in darkness\\nand in utter and total desperation?$"
+   }
+  },
+  {
+   "local_id": 5,
+   "x": 37,
+   "y": 32,
+   "gfx": "OBJ_EVENT_GFX_BLACK_BELT",
+   "movement": "MOVEMENT_TYPE_FACE_UP",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BattleFrontier_OutsideEast_EventScript_BlackBelt1",
+   "texts": {
+    "BattleFrontier_OutsideEast_Text_PutTogetherUltimateTeam": "I didn't sleep for a week, but then\\nI put together the ultimate team!\\pI can't see myself losing, no joke.\\nWe're storming the BATTLE ARENA!$"
+   }
+  },
+  {
+   "local_id": 6,
+   "x": 41,
+   "y": 56,
+   "gfx": "OBJ_EVENT_GFX_COOK",
+   "movement": "MOVEMENT_TYPE_FACE_LEFT",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BattleFrontier_OutsideEast_EventScript_Cook",
+   "texts": {
+    "BattleFrontier_OutsideEast_Text_BelieveInYouBuddy": "ZIGG!\\nI believe in you, little buddy!\\pI'll make my little ZIGG any favorite\\ntasty treats you like if you win!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 7,
+   "x": 8,
+   "y": 46,
+   "gfx": "OBJ_EVENT_GFX_EXPERT_F",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BattleFrontier_OutsideEast_EventScript_ExpertF",
+   "texts": {
+    "BattleFrontier_OutsideEast_Text_OnceBeatGymLeader": "I may not look that impressive now,\\nbut I once beat a GYM LEADER.\\pWho knows, maybe I should give it\\nanother shot at glory.$"
+   }
+  },
+  {
+   "local_id": 8,
+   "x": 34,
+   "y": 41,
+   "gfx": "OBJ_EVENT_GFX_RUNNING_TRIATHLETE_M",
+   "movement": "MOVEMENT_TYPE_WALK_RIGHT_AND_LEFT",
+   "range": [
+    3,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BattleFrontier_OutsideEast_EventScript_TriathleteM",
+   "texts": {
+    "BattleFrontier_OutsideEast_Text_DidScottBringYouHere": "Did SCOTT bring you here, too?\\nWhat is it with that guy?\\pIt sounds like he really does know\\nhow to spot talented TRAINERS, but…\\pI've never seen him battling in person\\never.$"
+   }
+  },
+  {
+   "local_id": 9,
+   "x": 45,
+   "y": 47,
+   "gfx": "OBJ_EVENT_GFX_RICH_BOY",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BattleFrontier_OutsideEast_EventScript_RichBoy",
+   "texts": {
+    "BattleFrontier_OutsideEast_Text_PeopleCallMeBusybody": "People call me a busybody,\\nbut I can't help it.\\pYour hat's on crooked!\\nOh, no, trash on the ground!\\lOops, it's almost dinnertime!\\pI don't know if I can stand to just\\nwatch at the BATTLE PALACE…$"
+   }
+  },
+  {
+   "local_id": 10,
+   "x": 59,
+   "y": 35,
+   "gfx": "OBJ_EVENT_GFX_CYCLING_TRIATHLETE_F",
+   "movement": "MOVEMENT_TYPE_WALK_DOWN_AND_UP",
+   "range": [
+    1,
+    6
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BattleFrontier_OutsideEast_EventScript_TriathleteF",
+   "texts": {
+    "BattleFrontier_OutsideEast_Text_FastOnBikeAndBattles": "I'm fast on my BIKE, and that goes for\\nthe way I battle, too.\\pI win matches in the blink of\\nan eye!$"
+   }
+  },
+  {
+   "local_id": 11,
+   "x": 18,
+   "y": 40,
+   "gfx": "OBJ_EVENT_GFX_TWIN",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BattleFrontier_OutsideEast_EventScript_Twin",
+   "texts": {
+    "BattleFrontier_OutsideEast_Text_BetterThanDaddyAtPokemon": "I'm better than my daddy\\nat POKéMON.$"
+   }
+  },
+  {
+   "local_id": 12,
+   "x": 17,
+   "y": 40,
+   "gfx": "OBJ_EVENT_GFX_MAN_1",
+   "movement": "MOVEMENT_TYPE_FACE_RIGHT",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BattleFrontier_OutsideEast_EventScript_Man2",
+   "texts": {
+    "BattleFrontier_OutsideEast_Text_GoRackUpSomeWinsForDaddy": "Go on, my baby sweetie!\\nGo rack up some wins for Daddy!\\pYou're just like your mother,\\nso you'll be dominating!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 13,
+   "x": 40,
+   "y": 56,
+   "gfx": "OBJ_EVENT_GFX_ZIGZAGOON_2",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BattleFrontier_OutsideEast_EventScript_Zigzagoon",
+   "texts": {
+    "BattleFrontier_OutsideEast_Text_ZigzagoonLooksVacant": "ZIGZAGOON looks vacant…$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 14,
+   "x": 54,
+   "y": 62,
+   "gfx": "OBJ_EVENT_GFX_SUDOWOODO",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_BATTLE_FRONTIER_SUDOWOODO",
+   "script": "BattleFrontier_OutsideEast_EventScript_Sudowoodo",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 15,
+   "x": 42,
+   "y": 34,
+   "gfx": "OBJ_EVENT_GFX_MANIAC",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BattleFrontier_OutsideEast_EventScript_Maniac1",
+   "texts": {
+    "BattleFrontier_OutsideEast_Text_HeardPrettyGirlAtBattleArena": "It wasn't easy getting here,\\nbut I'd heard about this knockout\\lpretty girl at the BATTLE ARENA.\\pInstead of her, do you know what\\nI found?\\pA whole teeming mob of sweaty,\\nstinky, and primitive martial artists!$"
+   }
+  },
+  {
+   "local_id": 16,
+   "x": 51,
+   "y": 53,
+   "gfx": "OBJ_EVENT_GFX_GIRL_3",
+   "movement": "MOVEMENT_TYPE_WANDER_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BattleFrontier_OutsideEast_EventScript_Girl",
+   "texts": {
+    "BattleFrontier_OutsideEast_Text_SometimesImportantOldManInThere": "I sometimes see this really important-\\nlooking old man going in there.\\pHe has these really awesome POKéMON.\\nHe seems really nice, though.$"
+   }
+  },
+  {
+   "local_id": 17,
+   "x": 62,
+   "y": 18,
+   "gfx": "OBJ_EVENT_GFX_PSYCHIC_M",
+   "movement": "MOVEMENT_TYPE_WALK_SEQUENCE_DOWN_RIGHT_UP_LEFT",
+   "range": [
+    2,
+    6
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BattleFrontier_OutsideEast_EventScript_PsychicM",
+   "texts": {
+    "BattleFrontier_OutsideEast_Text_LegendOfBattlePyramid": "Do you know it?\\nThe legend of the BATTLE PYRAMID?\\pWhen there comes a confident TRAINER\\nreaching for the golden pinnacle,\\lthere shall appear a man among men.\\pDon't know that legend?\\nWell, of course not!\\lI just made it up!\\pWhat's it supposed to mean?\\nThat, my friend, I can't say!$"
+   }
+  },
+  {
+   "local_id": 18,
+   "x": 11,
+   "y": 21,
+   "gfx": "OBJ_EVENT_GFX_MAN_3",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BattleFrontier_OutsideEast_EventScript_Man3",
+   "texts": {
+    "BattleFrontier_OutsideEast_Text_GotWipedOut": "Man! Oh man!\\nI've never lost once before!\\pBut I got wiped out with no saving\\ngrace at all!\\pAnd then I'm told I don't have any\\ntalent?! Man!$"
+   }
+  },
+  {
+   "local_id": 19,
+   "x": 10,
+   "y": 21,
+   "gfx": "OBJ_EVENT_GFX_WOMAN_5",
+   "movement": "MOVEMENT_TYPE_FACE_RIGHT",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BattleFrontier_OutsideEast_EventScript_Woman1",
+   "texts": {
+    "BattleFrontier_OutsideEast_Text_ToughTrainerInBattleTower": "This guy ran into a horribly tough\\nTRAINER while he was on the BATTLE\\lTOWER challenge.\\pNow look at him…\\pYou need to be cautious if you ever\\ndecide to go to the BATTLE TOWER.$"
+   }
+  },
+  {
+   "local_id": 20,
+   "x": 16,
+   "y": 30,
+   "gfx": "OBJ_EVENT_GFX_WOMAN_5",
+   "movement": "MOVEMENT_TYPE_WANDER_AROUND",
+   "range": [
+    3,
+    2
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BattleFrontier_OutsideEast_EventScript_Woman2",
+   "texts": {
+    "BattleFrontier_OutsideEast_Text_EnoughBattlePointsForDoll": "Yes!\\nI've finally got enough Battle Points!\\pI guess I'll trade for another giant\\nplush DOLL!$"
+   }
+  },
+  {
+   "local_id": 21,
+   "x": 33,
+   "y": 14,
+   "gfx": "OBJ_EVENT_GFX_BLACK_BELT",
+   "movement": "MOVEMENT_TYPE_FACE_UP",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BattleFrontier_OutsideEast_EventScript_BlackBelt2",
+   "texts": {
+    "BattleFrontier_OutsideEast_Text_LikeToHaveNameRecordedHere": "Oh, yeah, okay!\\nSo this is the RANKING HALL!\\pI'd like to go down in history as\\na super champ and have my name\\lrecorded here for posterity.$"
+   }
+  },
+  {
+   "local_id": 22,
+   "x": 54,
+   "y": 31,
+   "gfx": "OBJ_EVENT_GFX_MANIAC",
+   "movement": "MOVEMENT_TYPE_FACE_LEFT",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BattleFrontier_OutsideEast_EventScript_Maniac2",
+   "texts": {
+    "BattleFrontier_OutsideEast_Text_CanDoAnythingWithYou": "With you by my side, I can do anything.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 23,
+   "x": 54,
+   "y": 32,
+   "gfx": "OBJ_EVENT_GFX_WOMAN_4",
+   "movement": "MOVEMENT_TYPE_FACE_UP",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BattleFrontier_OutsideEast_EventScript_Woman3",
+   "texts": {
+    "BattleFrontier_OutsideEast_Text_PowerOfOurLoveWillOvercome": "Ooh, darling, you are so wonderful!\\pOoh, I just can't wait anymore!\\pLet's go to a MULTI BATTLE ROOM\\nright this instant!\\pIf we get together in the BATTLE SALON,\\nthe power of our love will overcome\\leveryone we meet.\\pWhy, before us, darling, everything\\nwill topple like dominoes!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 24,
+   "x": 58,
+   "y": 55,
+   "gfx": "OBJ_EVENT_GFX_OLD_WOMAN",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN_AND_LEFT",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BattleFrontier_OutsideEast_EventScript_OldWoman",
+   "texts": {
+    "BattleFrontier_OutsideEast_Text_OddTreeHereSeemsToWiggle": "Excuse me, young one.\\nHave you good eyesight?\\pThere is an odd tree past here, and to\\nmy tired eyes it seems to wiggle.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 25,
+   "x": 48,
+   "y": 41,
+   "gfx": "OBJ_EVENT_GFX_GENTLEMAN",
+   "movement": "MOVEMENT_TYPE_FACE_UP",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BattleFrontier_OutsideEast_EventScript_Gentleman",
+   "texts": {
+    "BattleFrontier_OutsideEast_Text_FrontierNotExclusivelyForToughTrainers": "The BATTLE FRONTIER isn't exclusively\\nfor tough TRAINERS.\\pMany people with special abilities\\nhave been invited, it seems.\\pThat man SCOTT…\\pHe may have built this place to serve\\na bigger objective…$"
+   }
+  },
+  {
+   "local_id": 26,
+   "x": 29,
+   "y": 14,
+   "gfx": "OBJ_EVENT_GFX_CAMPER",
+   "movement": "MOVEMENT_TYPE_FACE_UP",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BattleFrontier_OutsideEast_EventScript_Camper",
+   "texts": {
+    "BattleFrontier_OutsideEast_Text_StickyMonWithLongTail": "I…\\nI saw it!\\pThere was a sticky sort of a POKéMON\\nwith a long tail up ahead!\\pIt was hiding under a boulder, and\\nit kept staring at me!$"
+   }
+  }
+ ],
+ "signs": [
+  {
+   "x": 13,
+   "y": 17,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "BattleFrontier_OutsideEast_EventScript_BattleTowerSign",
+   "texts": {
+    "BattleFrontier_OutsideEast_Text_BattleTowerSign": "This is the BATTLE TOWER!\\nKeep the win streak as the toughest\\lTRAINER!$"
+   }
+  },
+  {
+   "x": 43,
+   "y": 56,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "BattleFrontier_OutsideEast_EventScript_BattlePalaceSign",
+   "texts": {
+    "BattleFrontier_OutsideEast_Text_BattlePalaceSign": "This is the BATTLE PALACE!\\nKeep your eyes on POKéMON battles!$"
+   }
+  },
+  {
+   "x": 36,
+   "y": 34,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "BattleFrontier_OutsideEast_EventScript_BattleArenaSign",
+   "texts": {
+    "BattleFrontier_OutsideEast_Text_BattleArenaSign": "This is the BATTLE ARENA!\\nLet the toughest teams gather!$"
+   }
+  },
+  {
+   "x": 62,
+   "y": 15,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "BattleFrontier_OutsideEast_EventScript_BattlePyramidSign",
+   "texts": {
+    "BattleFrontier_OutsideEast_Text_BattlePyramidSign": "This is the BATTLE PYRAMID!\\nAdvance through the Battle Quest!$"
+   }
+  },
+  {
+   "x": 7,
+   "y": 29,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "BattleFrontier_OutsideEast_EventScript_ExchangeCornerSign",
+   "texts": {
+    "BattleFrontier_OutsideEast_Text_ExchangeCornerSign": "BATTLE POINT EXCHANGE SERVICE CORNER\\nExchange your Battle Points!$"
+   }
+  },
+  {
+   "x": 32,
+   "y": 13,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "BattleFrontier_OutsideEast_EventScript_RankingHallSign",
+   "texts": {
+    "BattleFrontier_OutsideEast_Text_RankingHallSign": "BATTLE FRONTIER RANKING HALL\\nSet your sights on new records!$"
+   }
+  },
+  {
+   "x": 4,
+   "y": 51,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "Common_EventScript_ShowPokemonCenterSign",
+   "texts": {
+    "gText_PokemonCenterSign": "“Rejuvenate your tired partners!”\\nPOKéMON CENTER$"
+   }
+  },
+  {
+   "x": 5,
+   "y": 51,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "Common_EventScript_ShowPokemonCenterSign",
+   "texts": {
+    "gText_PokemonCenterSign": "“Rejuvenate your tired partners!”\\nPOKéMON CENTER$"
+   }
+  }
+ ],
+ "warps": [
+  {
+   "id": 0,
+   "x": 16,
+   "y": 14,
+   "dest_map": "MAP_BATTLE_FRONTIER_BATTLE_TOWER_LOBBY",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 1,
+   "x": 39,
+   "y": 29,
+   "dest_map": "MAP_BATTLE_FRONTIER_BATTLE_ARENA_LOBBY",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 2,
+   "x": 45,
+   "y": 56,
+   "dest_map": "MAP_BATTLE_FRONTIER_BATTLE_PALACE_LOBBY",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 3,
+   "x": 58,
+   "y": 14,
+   "dest_map": "MAP_BATTLE_FRONTIER_BATTLE_PYRAMID_LOBBY",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 4,
+   "x": 35,
+   "y": 12,
+   "dest_map": "MAP_BATTLE_FRONTIER_RANKING_HALL",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 5,
+   "x": 4,
+   "y": 44,
+   "dest_map": "MAP_BATTLE_FRONTIER_LOUNGE1",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 6,
+   "x": 10,
+   "y": 28,
+   "dest_map": "MAP_BATTLE_FRONTIER_EXCHANGE_SERVICE_CORNER",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 7,
+   "x": 22,
+   "y": 51,
+   "dest_map": "MAP_BATTLE_FRONTIER_LOUNGE5",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 8,
+   "x": 5,
+   "y": 8,
+   "dest_map": "MAP_BATTLE_FRONTIER_LOUNGE6",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 9,
+   "x": 65,
+   "y": 31,
+   "dest_map": "MAP_BATTLE_FRONTIER_LOUNGE3",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 10,
+   "x": 14,
+   "y": 51,
+   "dest_map": "MAP_BATTLE_FRONTIER_LOUNGE8",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 11,
+   "x": 21,
+   "y": 45,
+   "dest_map": "MAP_BATTLE_FRONTIER_LOUNGE9",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 12,
+   "x": 3,
+   "y": 51,
+   "dest_map": "MAP_BATTLE_FRONTIER_POKEMON_CENTER_1F",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 13,
+   "x": 28,
+   "y": 7,
+   "dest_map": "MAP_ARTISAN_CAVE_1F",
+   "dest_warp_id": "0"
+  }
+ ],
+ "coord_events": [],
+ "wild": {}
+}

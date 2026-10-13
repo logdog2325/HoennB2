@@ -1,0 +1,48 @@
+{
+ "map": "FarawayIsland_Interior",
+ "id": "MAP_FARAWAY_ISLAND_INTERIOR",
+ "layout": "LAYOUT_FARAWAY_ISLAND_INTERIOR",
+ "music": "MUS_ABANDONED_SHIP",
+ "region_map_section": "MAPSEC_FARAWAY_ISLAND",
+ "weather": "WEATHER_SHADE",
+ "connections": null,
+ "npcs": [
+  {
+   "local_id": 1,
+   "x": 13,
+   "y": 17,
+   "gfx": "OBJ_EVENT_GFX_MEW",
+   "movement": "MOVEMENT_TYPE_COPY_PLAYER_OPPOSITE_IN_GRASS",
+   "range": [
+    15,
+    15
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_MEW",
+   "script": "FarawayIsland_Interior_EventScript_Mew",
+   "texts": {
+    "FarawayIsland_Interior_Text_Mew": "Myuu…$"
+   },
+   "complex": true
+  }
+ ],
+ "signs": [],
+ "warps": [
+  {
+   "id": 0,
+   "x": 12,
+   "y": 19,
+   "dest_map": "MAP_FARAWAY_ISLAND_ENTRANCE",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 1,
+   "x": 13,
+   "y": 19,
+   "dest_map": "MAP_FARAWAY_ISLAND_ENTRANCE",
+   "dest_warp_id": "1"
+  }
+ ],
+ "coord_events": [],
+ "wild": {}
+}

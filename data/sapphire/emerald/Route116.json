@@ -1,0 +1,787 @@
+{
+ "map": "Route116",
+ "id": "MAP_ROUTE116",
+ "layout": "LAYOUT_ROUTE116",
+ "music": "MUS_ROUTE104",
+ "region_map_section": "MAPSEC_ROUTE_116",
+ "weather": "WEATHER_SUNNY",
+ "connections": [
+  {
+   "map": "MAP_VERDANTURF_TOWN",
+   "offset": 80,
+   "direction": "down"
+  },
+  {
+   "map": "MAP_RUSTBORO_CITY",
+   "offset": 0,
+   "direction": "left"
+  }
+ ],
+ "npcs": [
+  {
+   "local_id": 1,
+   "x": 18,
+   "y": 2,
+   "gfx": "OBJ_EVENT_GFX_BERRY_TREE",
+   "movement": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BerryTreeScript",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 2,
+   "x": 19,
+   "y": 2,
+   "gfx": "OBJ_EVENT_GFX_BERRY_TREE",
+   "movement": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BerryTreeScript",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 3,
+   "x": 12,
+   "y": 7,
+   "gfx": "OBJ_EVENT_GFX_YOUNGSTER",
+   "movement": "MOVEMENT_TYPE_FACE_UP_AND_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route116_EventScript_Joey",
+   "texts": {
+    "Route116_Text_JoeyIntro": "My POKéMON rule!\\nCheck them out!$",
+    "Route116_Text_JoeyDefeat": "Ouch! A scrape!\\nI have to put on a bandage!$",
+    "Route116_Text_JoeyPostBattle": "Bandages are signs of toughness!\\nI've got another one!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 4,
+   "x": 21,
+   "y": 6,
+   "gfx": "OBJ_EVENT_GFX_CUTTABLE_TREE",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_TEMP_11",
+   "script": "EventScript_CutTree",
+   "texts": {
+    "Text_WantToCut": "This tree looks like it can be\\nCUT down!\\pWould you like to CUT it?$",
+    "Text_MonUsedFieldMove": "{STR_VAR_1} used {STR_VAR_2}!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 5,
+   "x": 32,
+   "y": 10,
+   "gfx": "OBJ_EVENT_GFX_CUTTABLE_TREE",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_TEMP_12",
+   "script": "EventScript_CutTree",
+   "texts": {
+    "Text_WantToCut": "This tree looks like it can be\\nCUT down!\\pWould you like to CUT it?$",
+    "Text_MonUsedFieldMove": "{STR_VAR_1} used {STR_VAR_2}!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 6,
+   "x": 13,
+   "y": 17,
+   "gfx": "OBJ_EVENT_GFX_BUG_CATCHER",
+   "movement": "MOVEMENT_TYPE_ROTATE_CLOCKWISE",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route116_EventScript_Jose",
+   "texts": {
+    "Route116_Text_JoseIntro": "My BUG POKéMON are tough!\\nLet's battle!$",
+    "Route116_Text_JoseDefeat": "I lost!\\nI thought I had you!$",
+    "Route116_Text_JosePostBattle": "BUG POKéMON evolve quickly.\\nSo they get strong quickly, too.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 7,
+   "x": 19,
+   "y": 6,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_ROUTE_116_ETHER",
+   "script": "Route116_EventScript_ItemEther",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 8,
+   "x": 10,
+   "y": 17,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_ROUTE_116_REPEL",
+   "script": "Route116_EventScript_ItemRepel",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 9,
+   "x": 20,
+   "y": 2,
+   "gfx": "OBJ_EVENT_GFX_BERRY_TREE",
+   "movement": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BerryTreeScript",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 10,
+   "x": 21,
+   "y": 2,
+   "gfx": "OBJ_EVENT_GFX_BERRY_TREE",
+   "movement": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BerryTreeScript",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 11,
+   "x": 46,
+   "y": 9,
+   "gfx": "OBJ_EVENT_GFX_EXPERT_M",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_ROUTE_116_MR_BRINEY",
+   "script": "Route116_EventScript_Briney",
+   "texts": {
+    "Route116_Text_ScoundrelMadeOffWithPeeko": "Ohhh, what am I to do?\\pWe were on our walk, PEEKO and I, when\\nwe were jumped by an odd thug…\\pThe scoundrel made off with my\\ndarling PEEKO!\\pWrrrooooooaaaar! PEEKO!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 12,
+   "x": 28,
+   "y": 11,
+   "gfx": "OBJ_EVENT_GFX_CUTTABLE_TREE",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_TEMP_13",
+   "script": "EventScript_CutTree",
+   "texts": {
+    "Text_WantToCut": "This tree looks like it can be\\nCUT down!\\pWould you like to CUT it?$",
+    "Text_MonUsedFieldMove": "{STR_VAR_1} used {STR_VAR_2}!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 13,
+   "x": 36,
+   "y": 17,
+   "gfx": "OBJ_EVENT_GFX_HIKER",
+   "movement": "MOVEMENT_TYPE_FACE_UP_AND_LEFT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route116_EventScript_Clark",
+   "texts": {
+    "Route116_Text_ClarkIntro": "If the tunnel doesn't go through, then\\nI'll just go over the top.$",
+    "Route116_Text_ClarkDefeat": "Gasp… Gasp…\\nLosing made me tired…$",
+    "Route116_Text_ClarkPostBattle": "It's no big deal if there's no tunnel.\\nTo a HIKER, mountains are roads!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 14,
+   "x": 24,
+   "y": 9,
+   "gfx": "OBJ_EVENT_GFX_CUTTABLE_TREE",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_TEMP_14",
+   "script": "EventScript_CutTree",
+   "texts": {
+    "Text_WantToCut": "This tree looks like it can be\\nCUT down!\\pWould you like to CUT it?$",
+    "Text_MonUsedFieldMove": "{STR_VAR_1} used {STR_VAR_2}!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 15,
+   "x": 80,
+   "y": 8,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_ROUTE_116_HP_UP",
+   "script": "Route116_EventScript_ItemHPUp",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 16,
+   "x": 26,
+   "y": 6,
+   "gfx": "OBJ_EVENT_GFX_LASS",
+   "movement": "MOVEMENT_TYPE_FACE_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route116_EventScript_Janice",
+   "texts": {
+    "Route116_Text_JaniceIntro": "Let me teach you how strong my\\nadorable POKéMON is!$",
+    "Route116_Text_JaniceDefeat": "You're a notch above me…$",
+    "Route116_Text_JanicePostBattle": "POKéMON that possess cuteness and\\npower, that's ideal, I think.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 17,
+   "x": 22,
+   "y": 16,
+   "gfx": "OBJ_EVENT_GFX_GIRL_3",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN_AND_UP",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route116_EventScript_Karen",
+   "texts": {
+    "Route116_Text_KarenIntro": "I study at school, and I study on\\nthe way home, too!$",
+    "Route116_Text_KarenDefeat": "I'm in shock--I lost?$",
+    "Route116_Text_KarenPostBattle": "Awww, I'll never become an elegant\\nTRAINER like ROXANNE this way!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 18,
+   "x": 28,
+   "y": 8,
+   "gfx": "OBJ_EVENT_GFX_SCHOOL_KID_M",
+   "movement": "MOVEMENT_TYPE_FACE_UP",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route116_EventScript_Jerry",
+   "texts": {
+    "Route116_Text_JerryIntro": "We learn all sorts of things at the\\nTRAINER'S SCHOOL.\\pI want to test things out for real!$",
+    "Route116_Text_JerryDefeat": "I slacked off in school…\\nThat's why I lost.$",
+    "Route116_Text_JerryPostBattle": "I'll have to redo some courses at\\nthe TRAINER'S SCHOOL.\\lIf I don't, ROXANNE will be steamed.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 19,
+   "x": 46,
+   "y": 11,
+   "gfx": "OBJ_EVENT_GFX_MAN_2",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_ROUTE_116_DEVON_EMPLOYEE",
+   "script": "Route116_EventScript_DevonEmployee",
+   "texts": {
+    "Route116_Text_ThankYouTokenOfAppreciation": "Oh! It's you!\\pYou're that person who not only helped\\nme in PETALBURG WOODS, but also got\\lback my stolen package and then even\\lgraciously delivered it to SLATEPORT!\\pCAPT. STERN informed us that the\\npackage arrived, too!\\pI thank you very, very much!\\pWhy, if I were a rain cloud, I would\\nshower you with gratitude and hail\\lyou as a hero!\\pFor you, the most wonderful TRAINER,\\nI bear good news!\\pRecently, our company developed\\na new kind of POKé BALL.\\pAs a token of our appreciation, this\\nis our gift to our wonderful TRAINER!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 20,
+   "x": 55,
+   "y": 12,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_ROUTE_116_X_SPECIAL",
+   "script": "Route116_EventScript_ItemXSpecial",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 21,
+   "x": 38,
+   "y": 9,
+   "gfx": "OBJ_EVENT_GFX_BLACK_BELT",
+   "movement": "MOVEMENT_TYPE_FACE_RIGHT",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_ROUTE_116_WANDAS_BOYFRIEND",
+   "script": "Route116_EventScript_WandasBoyfriend",
+   "texts": {
+    "Route116_Text_WantToDigTunnel": "Nnn… Roar!\\pI want to dig that tunnel!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 22,
+   "x": 74,
+   "y": 13,
+   "gfx": "OBJ_EVENT_GFX_MANIAC",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_ROUTE_116_DROPPED_GLASSES_MAN",
+   "script": "Route116_EventScript_GlassesMan",
+   "texts": {
+    "Route116_Text_CanYouHelpMeFindGlasses": "I dropped my glasses…\\nCan you help me find them?$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 23,
+   "x": 33,
+   "y": 8,
+   "gfx": "OBJ_EVENT_GFX_WOMAN_2",
+   "movement": "MOVEMENT_TYPE_FACE_UP",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route116_EventScript_Sarah",
+   "texts": {
+    "Route116_Text_SarahIntro": "Just so you know, I've never once been\\nbested by anyone at anything.$",
+    "Route116_Text_SarahDefeat": "Oh, my goodness.\\nThis is a new experience for me.$",
+    "Route116_Text_SarahPostBattle": "My life of luxury affords me all that\\nI could possibly desire.\\pHowever, when it comes to POKéMON,\\nmy wealth has no meaning.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 24,
+   "x": 33,
+   "y": 5,
+   "gfx": "OBJ_EVENT_GFX_BOY_2",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route116_EventScript_Dawson",
+   "texts": {
+    "Route116_Text_DawsonIntro": "When you lay your eyes on my POKéMON's\\ngorgeous fur, their beauty will render\\lyou helpless!$",
+    "Route116_Text_DawsonDefeat": "Oh, baby, say it isn't so!$",
+    "Route116_Text_DawsonPostBattle": "Oh, no, no, no!\\nYou've mussed up my POKéMON's fur!\\lYou've ruined my hairdo, too!\\lI'll have to call my stylist now!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 25,
+   "x": 34,
+   "y": 7,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_ROUTE_116_POTION",
+   "script": "Route116_EventScript_ItemPotion",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 26,
+   "x": 30,
+   "y": 5,
+   "gfx": "OBJ_EVENT_GFX_CUTTABLE_TREE",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_TEMP_15",
+   "script": "EventScript_CutTree",
+   "texts": {
+    "Text_WantToCut": "This tree looks like it can be\\nCUT down!\\pWould you like to CUT it?$",
+    "Text_MonUsedFieldMove": "{STR_VAR_1} used {STR_VAR_2}!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 27,
+   "x": 36,
+   "y": 13,
+   "gfx": "OBJ_EVENT_GFX_YOUNGSTER",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN_AND_RIGHT",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route116_EventScript_Johnson",
+   "texts": {
+    "Route116_Text_JohnsonIntro": "It's a dead end up here.\\nI'm bored, so can we battle?$",
+    "Route116_Text_JohnsonDefeat": "That was fun even though I lost.$",
+    "Route116_Text_JohnsonPostBattle": "Want to stay here and keep\\nme company?$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 28,
+   "x": 42,
+   "y": 13,
+   "gfx": "OBJ_EVENT_GFX_HIKER",
+   "movement": "MOVEMENT_TYPE_FACE_LEFT",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route116_EventScript_Devan",
+   "texts": {
+    "Route116_Text_DevanIntro": "We'll rock you hard!$",
+    "Route116_Text_DevanDefeat": "Aiyiyi!\\nNo contest at all!$",
+    "Route116_Text_DevanPostBattle": "I should try different POKéMON\\ntypes, that's what I ought to do.$"
+   },
+   "complex": true
+  }
+ ],
+ "signs": [
+  {
+   "x": 5,
+   "y": 10,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "Route116_EventScript_RouteSignRustboro",
+   "texts": {
+    "Route116_Text_RouteSignRustboro": "ROUTE 116\\n{LEFT_ARROW} RUSTBORO CITY$"
+   }
+  },
+  {
+   "x": 48,
+   "y": 9,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "Route116_EventScript_RusturfTunnelSign",
+   "texts": {
+    "Route116_Text_RusturfTunnelSign": "RUSTURF TUNNEL\\n“Linking RUSTBORO and VERDANTURF\\p“The tunnel project has been\\ncanceled.”$"
+   }
+  },
+  {
+   "x": 40,
+   "y": 9,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "Route116_EventScript_TunnelersRestHouseSign",
+   "texts": {
+    "Route116_Text_TunnelersRestHouse": "TUNNELER'S REST HOUSE$"
+   }
+  },
+  {
+   "x": 71,
+   "y": 4,
+   "type": "secret_base",
+   "raw": {
+    "type": "secret_base",
+    "x": 71,
+    "y": 4,
+    "elevation": 0,
+    "secret_base_id": "SECRET_BASE_BLUE_CAVE1_1"
+   }
+  },
+  {
+   "x": 79,
+   "y": 11,
+   "type": "secret_base",
+   "raw": {
+    "type": "secret_base",
+    "x": 79,
+    "y": 11,
+    "elevation": 0,
+    "secret_base_id": "SECRET_BASE_BLUE_CAVE2_1"
+   }
+  },
+  {
+   "x": 16,
+   "y": 12,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "Route116_EventScript_TrainerTipsBToStopEvolution",
+   "texts": {
+    "Route116_Text_TrainerTipsBToStopEvolution": "TRAINER TIPS\\pIf you want to stop a POKéMON from\\nevolving, press the B Button while it\\lis trying to evolve.\\lThe startled POKéMON will stop.\\pThis is called an evolution cancel.$"
+   }
+  },
+  {
+   "x": 29,
+   "y": 10,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "Route116_EventScript_TrainerTipsBagHasPockets",
+   "texts": {
+    "Route116_Text_TrainerTipsBagHasPockets": "TRAINER TIPS\\pYour BAG has several POCKETS.\\pItems you obtain are automatically\\nplaced in the appropriate POCKETS.\\pNo TRAINER can afford to be without\\na BAG of their own.$"
+   }
+  },
+  {
+   "x": 56,
+   "y": 6,
+   "type": "secret_base",
+   "raw": {
+    "type": "secret_base",
+    "x": 56,
+    "y": 6,
+    "elevation": 0,
+    "secret_base_id": "SECRET_BASE_BLUE_CAVE3_2"
+   }
+  },
+  {
+   "x": 55,
+   "y": 15,
+   "type": "secret_base",
+   "raw": {
+    "type": "secret_base",
+    "x": 55,
+    "y": 15,
+    "elevation": 0,
+    "secret_base_id": "SECRET_BASE_BLUE_CAVE4_2"
+   }
+  },
+  {
+   "x": 22,
+   "y": 9,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 22,
+    "y": 9,
+    "elevation": 3,
+    "item": "ITEM_SUPER_POTION",
+    "flag": "FLAG_HIDDEN_ITEM_ROUTE_116_SUPER_POTION"
+   }
+  },
+  {
+   "x": 70,
+   "y": 13,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 70,
+    "y": 13,
+    "elevation": 3,
+    "item": "ITEM_BLACK_GLASSES",
+    "flag": "FLAG_HIDDEN_ITEM_ROUTE_116_BLACK_GLASSES"
+   }
+  }
+ ],
+ "warps": [
+  {
+   "id": 0,
+   "x": 47,
+   "y": 8,
+   "dest_map": "MAP_RUSTURF_TUNNEL",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 1,
+   "x": 38,
+   "y": 8,
+   "dest_map": "MAP_ROUTE116_TUNNELERS_REST_HOUSE",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 2,
+   "x": 65,
+   "y": 10,
+   "dest_map": "MAP_RUSTURF_TUNNEL",
+   "dest_warp_id": "2"
+  },
+  {
+   "id": 3,
+   "x": 59,
+   "y": 13,
+   "dest_map": "MAP_TERRA_CAVE_ENTRANCE",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 4,
+   "x": 79,
+   "y": 6,
+   "dest_map": "MAP_TERRA_CAVE_ENTRANCE",
+   "dest_warp_id": "0"
+  }
+ ],
+ "coord_events": [
+  {
+   "type": "trigger",
+   "x": 47,
+   "y": 9,
+   "elevation": 3,
+   "var": "VAR_ROUTE116_STATE",
+   "var_value": "1",
+   "script": "Route116_EventScript_BrineyTrigger",
+   "texts": {
+    "Route116_Text_ScoundrelMadeOffWithPeeko": "Ohhh, what am I to do?\\pWe were on our walk, PEEKO and I, when\\nwe were jumped by an odd thug…\\pThe scoundrel made off with my\\ndarling PEEKO!\\pWrrrooooooaaaar! PEEKO!$"
+   },
+   "complex": true
+  }
+ ],
+ "wild": {
+  "land_mons": {
+   "encounter_rate": 20,
+   "slot_rates": [
+    20,
+    20,
+    10,
+    10,
+    10,
+    10,
+    5,
+    5,
+    4,
+    4,
+    1,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_POOCHYENA",
+     "min": 6,
+     "max": 6
+    },
+    {
+     "species": "SPECIES_WHISMUR",
+     "min": 6,
+     "max": 6
+    },
+    {
+     "species": "SPECIES_NINCADA",
+     "min": 6,
+     "max": 6
+    },
+    {
+     "species": "SPECIES_ABRA",
+     "min": 7,
+     "max": 7
+    },
+    {
+     "species": "SPECIES_NINCADA",
+     "min": 7,
+     "max": 7
+    },
+    {
+     "species": "SPECIES_TAILLOW",
+     "min": 6,
+     "max": 6
+    },
+    {
+     "species": "SPECIES_TAILLOW",
+     "min": 7,
+     "max": 7
+    },
+    {
+     "species": "SPECIES_TAILLOW",
+     "min": 8,
+     "max": 8
+    },
+    {
+     "species": "SPECIES_POOCHYENA",
+     "min": 7,
+     "max": 7
+    },
+    {
+     "species": "SPECIES_POOCHYENA",
+     "min": 8,
+     "max": 8
+    },
+    {
+     "species": "SPECIES_SKITTY",
+     "min": 7,
+     "max": 7
+    },
+    {
+     "species": "SPECIES_SKITTY",
+     "min": 8,
+     "max": 8
+    }
+   ]
+  }
+ }
+}

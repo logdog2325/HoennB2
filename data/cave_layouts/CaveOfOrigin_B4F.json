@@ -1,0 +1,5 @@
+{
+ "map": "CaveOfOrigin_B4F",
+ "_doc": "caves_east: Kyogre's pool (Sapphire's deep-water tiles, collision blocked) drawn as still water, solid at the water's height.",
+ "pools": [[7, 7, 11, 12]]
+}

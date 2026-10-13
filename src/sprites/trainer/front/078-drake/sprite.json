@@ -1,0 +1,18 @@
+{
+ "kind": "trainer",
+ "side": "front",
+ "sprite": 78,
+ "archive": 71,
+ "files": {
+  "static": 624,
+  "parts": 625,
+  "palette": 631
+ },
+ "name": "drake",
+ "note": "Drake (Elite Four)",
+ "source": "pokeruby graphics/trainers/drake.png",
+ "layout": "parts and animations of Black 2 front sprite 62",
+ "made_by": "b2tools/sprite_upgrade.py",
+ "mcss_from": 62,
+ "static_intro": true
+}

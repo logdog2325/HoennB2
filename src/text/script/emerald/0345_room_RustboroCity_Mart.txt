@@ -1,0 +1,3 @@
+My Pokémon evolved.\nIt has a lot of HP now.{be01}\nI should buy Super Potions for it\ninstead of ordinary Potions.
+I’m buying some Parlyz Heals and\nAntidotes.{be01}\nJust in case I run into Shroomish\nin Petalburg Woods.
+I’m getting an Escape Rope just in\ncase I get lost in a cave.{be01}\nI just need to use it to get back to\nthe entrance.

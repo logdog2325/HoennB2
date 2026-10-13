@@ -1,0 +1,46 @@
+{
+ "_doc": "Route113_GlassWorkshop: zone written by converter/gen_interior_recipes_houses.py (warps and parent from converter/gen_interiors.py); story people left for the story phase: person MAN_1 at (2,3) Route113_GlassWorkshop_EventScript_163565 (story/complex script)",
+ "zone": 556,
+ "room": "Route113_GlassWorkshop",
+ "area": 313,
+ "parent": 378,
+ "warps": [
+  {
+   "at": [3, 8],
+   "tile_only": true,
+   "to": [378, 4],
+   "what": "Sapphire warp 0 -> Route113 0"
+  },
+  {
+   "at": [4, 8],
+   "tile_only": true,
+   "to": [378, 4],
+   "what": "Sapphire warp 1 -> Route113 0"
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 2,
+   "model": 8,
+   "script": 1,
+   "dir": 1,
+   "at": [5, 4],
+   "move": 3,
+   "range": [1, 1]
+  }
+ ],
+ "signs": [
+  {
+   "script": 2,
+   "at": [3, 2],
+   "dir": 4,
+   "what": "Vase"
+  },
+  {
+   "script": 2,
+   "at": [4, 2],
+   "dir": 4,
+   "what": "Vase"
+  }
+ ]
+}

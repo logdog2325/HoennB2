@@ -1,0 +1,480 @@
+{
+ "map": "MossdeepCity",
+ "id": "MAP_MOSSDEEP_CITY",
+ "layout": "LAYOUT_MOSSDEEP_CITY",
+ "music": "MUS_RUSTBORO",
+ "region_map_section": "MAPSEC_MOSSDEEP_CITY",
+ "weather": "WEATHER_SUNNY",
+ "connections": [
+  {
+   "direction": "up",
+   "offset": 0,
+   "map": "MAP_ROUTE125"
+  },
+  {
+   "direction": "down",
+   "offset": 0,
+   "map": "MAP_ROUTE127"
+  },
+  {
+   "direction": "left",
+   "offset": -40,
+   "map": "MAP_ROUTE124"
+  }
+ ],
+ "npcs": [
+  {
+   "local_id": 1,
+   "x": 42,
+   "y": 24,
+   "gfx": "OBJ_EVENT_GFX_SAILOR",
+   "movement": "MOVEMENT_TYPE_WANDER_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "MossdeepCity_EventScript_Sailor",
+   "texts": {
+    "MossdeepCity_Text_WailmerDisappeared": "I'd heard from my mates in LILYCOVE\\nthat the herd of WAILMER has\\ldisappeared.\\pWhat went down over there, I wonder?$"
+   }
+  },
+  {
+   "local_id": 2,
+   "x": 50,
+   "y": 34,
+   "gfx": "OBJ_EVENT_GFX_OLD_MAN_1",
+   "movement": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
+   "range": [
+    1,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "MossdeepCity_EventScript_ExpertM",
+   "texts": {
+    "MossdeepCity_Text_LifeNeedsSeaToLive": "All life needs the sea to live, even\\nthough it makes its home on the land.\\pLife, having run its course, becomes\\nsoil and returns to the land.\\pAnd the sea is always connected to\\nthe land.\\pYes, like the very shoreline here.$"
+   }
+  },
+  {
+   "local_id": 3,
+   "x": 32,
+   "y": 12,
+   "gfx": "OBJ_EVENT_GFX_WOMAN_2",
+   "movement": "MOVEMENT_TYPE_WANDER_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "MossdeepCity_EventScript_PokefanF",
+   "texts": {
+    "MossdeepCity_Text_SpaceCenterLaunchingRockets": "The island's SPACE CENTER has been\\nlaunching huge rockets.$"
+   }
+  },
+  {
+   "local_id": 4,
+   "x": 26,
+   "y": 21,
+   "gfx": "OBJ_EVENT_GFX_LITTLE_BOY_1",
+   "movement": "MOVEMENT_TYPE_WANDER_UP_AND_DOWN",
+   "range": [
+    0,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "MossdeepCity_EventScript_NinjaBoy",
+   "texts": {
+    "MossdeepCity_Text_WailmerWatching": "Around MOSSDEEP, you can see wild\\nWAILMER.\\pIt's called, uh...\\nWhat was it now...\\pWAI, WAI, WAI...\\pWAILMER watching!$"
+   }
+  },
+  {
+   "local_id": 5,
+   "x": 45,
+   "y": 18,
+   "gfx": "OBJ_EVENT_GFX_GIRL_1",
+   "movement": "MOVEMENT_TYPE_FACE_LEFT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "MossdeepCity_EventScript_Girl",
+   "texts": {
+    "MossdeepCity_Text_NiceIfWorldCoveredByFlowers": "Wouldn't it be nice?\\pIf the whole world was covered in\\nplants and flowers like this island?$"
+   }
+  },
+  {
+   "local_id": 6,
+   "x": 62,
+   "y": 35,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_MOSSDEEP_1",
+   "script": "MossdeepCity_EventScript_1B1745",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 7,
+   "x": 53,
+   "y": 5,
+   "gfx": "OBJ_EVENT_GFX_MAN_1",
+   "movement": "MOVEMENT_TYPE_FACE_UP",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "MossdeepCity_EventScript_Man",
+   "texts": {
+    "MossdeepCity_Text_SurfExhilarating": "A voyage on a ship is fine.\\pBut crossing the sea with POKéMON\\nusing SURF...\\pNow that's an exhilarating trip!\\nWouldn't you agree, youngster?$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 8,
+   "x": 56,
+   "y": 21,
+   "gfx": "OBJ_EVENT_GFX_GIRL_1",
+   "movement": "MOVEMENT_TYPE_FACE_RIGHT",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "MossdeepCity_EventScript_Woman",
+   "texts": {
+    "MossdeepCity_Text_SpecialSpaceCenterRock": "This rock has a special meaning to\\nthe people at the SPACE CENTER.\\pThey put it here as their wish for\\ntheir rockets to fly safely.\\pWhen you make a wish, what do you use?\\nDo you wish upon a star?\\pI use a wish tag to make it happen.\\nThat's what I do.$"
+   }
+  },
+  {
+   "local_id": 9,
+   "x": 23,
+   "y": 13,
+   "gfx": "OBJ_EVENT_GFX_BOY_2",
+   "movement": "MOVEMENT_TYPE_WANDER_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "MossdeepCity_EventScript_KingsRockBoy",
+   "texts": {
+    "MossdeepCity_Text_WantKingsRockStevenGaveMe": "I got this from STEVEN, but I don't\\nknow what it's good for.\\pI think it's called KING'S ROCK.\\nDo you want it?$",
+    "MossdeepCity_Text_YouCanKeepIt": "Why would you want it?\\nYou're weird.\\pYou can keep it, but keep it a secret\\nfrom STEVEN.$"
+   },
+   "complex": true
+  }
+ ],
+ "signs": [
+  {
+   "x": 25,
+   "y": 16,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "MossdeepCity_EventScript_CitySign",
+   "texts": {
+    "MossdeepCity_Text_CitySign": "MOSSDEEP CITY\\n“Our slogan: Cherish POKéMON!”$"
+   }
+  },
+  {
+   "x": 34,
+   "y": 9,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "MossdeepCity_EventScript_GymSign",
+   "texts": {
+    "MossdeepCity_Text_GymSign": "MOSSDEEP CITY POKéMON GYM\\nLEADERS: LIZA & TATE\\p“The mystic combination!”$"
+   }
+  },
+  {
+   "x": 29,
+   "y": 16,
+   "facing": "BG_EVENT_PLAYER_FACING_NORTH",
+   "script": "Common_EventScript_PokemonCenterSign",
+   "texts": {
+    "Text_PokemonCenterSign": "“Rejuvenate your tired partners!”\\nPOKéMON CENTER$"
+   }
+  },
+  {
+   "x": 38,
+   "y": 18,
+   "facing": "BG_EVENT_PLAYER_FACING_NORTH",
+   "script": "Common_EventScript_PokemartSign",
+   "texts": {
+    "Text_PokemartSign": "“Selected items for your convenience!”\\nPOKéMON MART$"
+   }
+  },
+  {
+   "x": 66,
+   "y": 14,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "MossdeepCity_EventScript_SpaceCenterSign",
+   "texts": {
+    "MossdeepCity_Text_SpaceCenterSign": "MOSSDEEP SPACE CENTER\\n“The closest place to space.”$"
+   }
+  },
+  {
+   "x": 30,
+   "y": 16,
+   "facing": "BG_EVENT_PLAYER_FACING_NORTH",
+   "script": "Common_EventScript_PokemonCenterSign",
+   "texts": {
+    "Text_PokemonCenterSign": "“Rejuvenate your tired partners!”\\nPOKéMON CENTER$"
+   }
+  },
+  {
+   "x": 39,
+   "y": 18,
+   "facing": "BG_EVENT_PLAYER_FACING_NORTH",
+   "script": "Common_EventScript_PokemartSign",
+   "texts": {
+    "Text_PokemartSign": "“Selected items for your convenience!”\\nPOKéMON MART$"
+   }
+  },
+  {
+   "x": 57,
+   "y": 21,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "MossdeepCity_EventScript_WhiteRock",
+   "texts": {
+    "MossdeepCity_Text_ItsAWhiteRock": "It's a white rock.$"
+   }
+  }
+ ],
+ "warps": [
+  {
+   "id": 0,
+   "x": 28,
+   "y": 9,
+   "dest_map": "MAP_MOSSDEEP_CITY_HOUSE1",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 1,
+   "x": 38,
+   "y": 9,
+   "dest_map": "MAP_MOSSDEEP_CITY_GYM",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 2,
+   "x": 28,
+   "y": 16,
+   "dest_map": "MAP_MOSSDEEP_CITY_POKEMON_CENTER_1F",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 3,
+   "x": 67,
+   "y": 24,
+   "dest_map": "MAP_MOSSDEEP_CITY_HOUSE2",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 4,
+   "x": 37,
+   "y": 18,
+   "dest_map": "MAP_MOSSDEEP_CITY_MART",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 5,
+   "x": 49,
+   "y": 6,
+   "dest_map": "MAP_MOSSDEEP_CITY_HOUSE3",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 6,
+   "x": 19,
+   "y": 10,
+   "dest_map": "MAP_MOSSDEEP_CITY_STEVENS_HOUSE",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 7,
+   "x": 18,
+   "y": 16,
+   "dest_map": "MAP_MOSSDEEP_CITY_HOUSE4",
+   "dest_warp_id": "1"
+  },
+  {
+   "id": 8,
+   "x": 64,
+   "y": 13,
+   "dest_map": "MAP_MOSSDEEP_CITY_SPACE_CENTER_1F",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 9,
+   "x": 36,
+   "y": 24,
+   "dest_map": "MAP_MOSSDEEP_CITY_GAME_CORNER_1F",
+   "dest_warp_id": "0"
+  }
+ ],
+ "coord_events": [
+  {
+   "type": "trigger",
+   "x": 25,
+   "y": 25,
+   "elevation": 0,
+   "var": "VAR_TEMP_1",
+   "var_value": "0",
+   "script": "MossdeepCity_EventScript_VisitedMossdeep",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 26,
+   "y": 25,
+   "elevation": 0,
+   "var": "VAR_TEMP_1",
+   "var_value": "0",
+   "script": "MossdeepCity_EventScript_VisitedMossdeep",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 32,
+   "y": 27,
+   "elevation": 0,
+   "var": "VAR_TEMP_1",
+   "var_value": "0",
+   "script": "MossdeepCity_EventScript_VisitedMossdeep",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 33,
+   "y": 27,
+   "elevation": 0,
+   "var": "VAR_TEMP_1",
+   "var_value": "0",
+   "script": "MossdeepCity_EventScript_VisitedMossdeep",
+   "texts": {},
+   "complex": true
+  }
+ ],
+ "wild": {
+  "water_mons": {
+   "encounter_rate": 4,
+   "slot_rates": [
+    60,
+    30,
+    5,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 5,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 15,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_PELIPPER",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_PELIPPER",
+     "min": 25,
+     "max": 30
+    }
+   ]
+  },
+  "fishing_mons": {
+   "encounter_rate": 10,
+   "slot_rates": [
+    70,
+    30,
+    60,
+    20,
+    20,
+    40,
+    40,
+    15,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_SHARPEDO",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 35,
+     "max": 40
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 40,
+     "max": 45
+    }
+   ]
+  }
+ }
+}

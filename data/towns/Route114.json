@@ -1,0 +1,14 @@
+{
+ "_doc": "Route 114's houses (group towns5, notes/TOWNS_TOWNS5.md). buildings: Sapphire door destination -> pack-0 res and front (z of the model's front wall; world.py puts it 4 units into the door tile, footprint centre from data/plans); props: model origin in Sapphire map tile coordinates (footprint centre x, door row + (4 - 20)/16).",
+ "group": "towns5",
+ "buildings": {
+  "MAP_ROUTE114_FOSSIL_MANIACS_HOUSE": {
+   "res": 360,
+   "front": 20
+  },
+  "MAP_ROUTE114_LANETTES_HOUSE": {
+   "res": 321,
+   "front": 20
+  }
+ }
+}

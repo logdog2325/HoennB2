@@ -1,0 +1,69 @@
+{
+ "map": "SouthernIsland_Interior",
+ "id": "MAP_SOUTHERN_ISLAND_INTERIOR",
+ "layout": "LAYOUT_SOUTHERN_ISLAND_INTERIOR",
+ "music": "MUS_ABANDONED_SHIP",
+ "region_map_section": "MAPSEC_SOUTHERN_ISLAND",
+ "weather": "WEATHER_SHADE",
+ "connections": null,
+ "npcs": [
+  {
+   "local_id": 1,
+   "x": 13,
+   "y": 12,
+   "gfx": "OBJ_EVENT_GFX_VAR_0",
+   "movement": "MOVEMENT_TYPE_FACE_UP",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_LATIOS_OR_LATIAS_FLYING",
+   "script": "0x0",
+   "missing": true
+  },
+  {
+   "local_id": 2,
+   "x": 13,
+   "y": 2,
+   "gfx": "OBJ_EVENT_GFX_VAR_1",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_LATIOS_OR_LATIAS_STATIONARY",
+   "script": "0x0",
+   "missing": true
+  }
+ ],
+ "signs": [
+  {
+   "x": 13,
+   "y": 11,
+   "facing": "BG_EVENT_PLAYER_FACING_NORTH",
+   "script": "SouthernIsland_Interior_EventScript_160B9B",
+   "texts": {},
+   "complex": true
+  }
+ ],
+ "warps": [
+  {
+   "id": 0,
+   "x": 13,
+   "y": 18,
+   "dest_map": "MAP_SOUTHERN_ISLAND_EXTERIOR",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 1,
+   "x": 14,
+   "y": 18,
+   "dest_map": "MAP_SOUTHERN_ISLAND_EXTERIOR",
+   "dest_warp_id": "1"
+  }
+ ],
+ "coord_events": [],
+ "wild": {}
+}

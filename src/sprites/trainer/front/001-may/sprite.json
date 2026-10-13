@@ -1,0 +1,17 @@
+{
+ "kind": "trainer",
+ "side": "front",
+ "sprite": 1,
+ "archive": 71,
+ "files": {
+  "static": 8,
+  "parts": 9,
+  "palette": 15
+ },
+ "name": "may",
+ "note": "May (rival battles, Hall of Fame)",
+ "source": "pokeruby graphics/trainers/may.png",
+ "layout": "parts and animations of Black 2 front sprite 108",
+ "made_by": "b2tools/sprite_upgrade.py",
+ "mcss_from": 108
+}

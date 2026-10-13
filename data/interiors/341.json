@@ -1,0 +1,110 @@
+{
+ "_doc": "Mt. Pyre 1F (zone 341; scripts/text: the generated *_room_MtPyre_1F files). Area 323 = Black 2's Celestial Tower (interior pack 41). Warps in Sapphire's order, then the holes' extra directions (b2tools/facilities_pyre.py). Item balls as generated.",
+ "zone": 341,
+ "room": "MtPyre_1F",
+ "area": 323,
+ "parent": 551,
+ "warps": [
+  {
+   "at": [
+    17,
+    18
+   ],
+   "tile_only": true,
+   "to": [
+    551,
+    7
+   ],
+   "what": "Sapphire warp 0 -> Route122 0"
+  },
+  {
+   "at": [
+    3,
+    6
+   ],
+   "tile_only": true,
+   "to": [
+    20,
+    1
+   ],
+   "what": "Sapphire warp 1 -> MtPyre_Exterior 0"
+  },
+  {
+   "at": [
+    18,
+    18
+   ],
+   "tile_only": true,
+   "to": [
+    551,
+    7
+   ],
+   "what": "Sapphire warp 2 -> Route122 0"
+  },
+  {
+   "at": [
+    4,
+    6
+   ],
+   "tile_only": true,
+   "to": [
+    20,
+    1
+   ],
+   "what": "Sapphire warp 3 -> MtPyre_Exterior 0"
+  },
+  {
+   "at": [
+    11,
+    1
+   ],
+   "tile_only": true,
+   "to": [
+    342,
+    0
+   ],
+   "what": "Sapphire warp 4 -> MtPyre_2F 0"
+  },
+  {
+   "at": [
+    20,
+    9
+   ],
+   "tile_only": true,
+   "to": [
+    65535,
+    65535
+   ],
+   "what": "Sapphire warp 5: landing spot of the hole above (arrival only)",
+   "type": 1,
+   "dir": 1
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 2,
+   "model": 53,
+   "script": 1,
+   "dir": 0,
+   "at": [
+    17,
+    8
+   ]
+  },
+  {
+   "uid": 3,
+   "model": 42,
+   "script": 2,
+   "dir": 2,
+   "at": [
+    13,
+    10
+   ]
+  }
+ ],
+ "signs": [],
+ "header": {
+  "encounters": 95,
+  "enc_slot": 2
+ }
+}

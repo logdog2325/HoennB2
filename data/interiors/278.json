@@ -1,0 +1,17 @@
+{
+ "_doc": "MossdeepCity_GameCorner_B1F: zone written by converter/gen_interior_recipes_houses.py (warps and parent from converter/gen_interiors.py); story people left for the story phase: person VAR_0 at (6,5) 0x0 (no Black 2 sprite)",
+ "zone": 278,
+ "room": "MossdeepCity_GameCorner_B1F",
+ "area": 313,
+ "parent": 107,
+ "warps": [
+  {
+   "at": [3, 1],
+   "tile_only": true,
+   "to": [277, 2],
+   "what": "Sapphire warp 0 -> MossdeepCity_GameCorner_1F 2"
+  }
+ ],
+ "npcs": [],
+ "signs": []
+}

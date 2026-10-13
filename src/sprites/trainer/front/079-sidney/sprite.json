@@ -1,0 +1,17 @@
+{
+ "kind": "trainer",
+ "side": "front",
+ "sprite": 79,
+ "archive": 71,
+ "files": {
+  "static": 632,
+  "parts": 633,
+  "palette": 639
+ },
+ "name": "sidney",
+ "note": "Sidney (Elite Four)",
+ "source": "pokeruby graphics/trainers/sidney.png",
+ "layout": "parts and animations of Black 2 front sprite 51",
+ "made_by": "b2tools/sprite_upgrade.py",
+ "mcss_from": 51
+}

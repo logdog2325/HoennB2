@@ -1,0 +1,66 @@
+{
+ "map": "emerald/MirageTower_3F",
+ "void": [
+  [
+   8,
+   5,
+   12,
+   5
+  ],
+  [
+   7,
+   6,
+   13,
+   6
+  ],
+  [
+   7,
+   7,
+   13,
+   7
+  ],
+  [
+   7,
+   8,
+   13,
+   8
+  ],
+  [
+   7,
+   9,
+   13,
+   9
+  ],
+  [
+   8,
+   10,
+   12,
+   10
+  ],
+  [
+   1,
+   15,
+   1,
+   15
+  ],
+  [
+   19,
+   15,
+   19,
+   15
+  ],
+  [
+   1,
+   16,
+   1,
+   16
+  ],
+  [
+   19,
+   16,
+   19,
+   16
+  ]
+ ],
+ "_doc": "emerald_caves 2026-10-12: Emerald's MirageTower_3F (pokeemerald) read as Emerald's world reads it (models_cave 'emerald/<Map>'); void = walkable tiles no warp reaches, pools = its blocked water"
+}

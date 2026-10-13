@@ -1,0 +1,4 @@
+What an oddly shaped island, eh?\nDo you want to return to Lilycove?
+Aye, right, then!\nSail home we will!
+Aye, right, as you like, then.
+The {0100:1} flew away!

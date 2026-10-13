@@ -1,0 +1,261 @@
+{
+ "map": "SafariZone_Southwest",
+ "id": "MAP_SAFARI_ZONE_SOUTHWEST",
+ "layout": "LAYOUT_SAFARI_ZONE_SOUTHWEST",
+ "music": "MUS_SAFARI_ZONE",
+ "region_map_section": "MAPSEC_SAFARI_ZONE",
+ "weather": "WEATHER_NONE",
+ "connections": [
+  {
+   "direction": "up",
+   "offset": 0,
+   "map": "MAP_SAFARI_ZONE_NORTHWEST"
+  },
+  {
+   "direction": "right",
+   "offset": 0,
+   "map": "MAP_SAFARI_ZONE_SOUTHEAST"
+  }
+ ],
+ "npcs": [
+  {
+   "local_id": 1,
+   "x": 22,
+   "y": 9,
+   "gfx": "OBJ_EVENT_GFX_WOMAN_3",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "SafariZone_Southwest_EventScript_160024",
+   "texts": {
+    "SafariZone_Southwest_Text_1C3C39": "Sometimes, when I toss a {POKEBLOCK} at \\nPOKéMON, it gets ignored.\\pDo POKéMON have likes and dislikes\\nabout what they eat?$"
+   }
+  },
+  {
+   "local_id": 2,
+   "x": 0,
+   "y": 37,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_SAFARI_ZONE_SOUTHWEST",
+   "script": "SafariZone_Southwest_EventScript_1B1926",
+   "texts": {},
+   "complex": true
+  }
+ ],
+ "signs": [
+  {
+   "x": 32,
+   "y": 7,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "SafariZone_Southwest_EventScript_16002D",
+   "texts": {
+    "SafariZone_Southwest_Text_1C3EA3": "“Relieve your tired feet.”\\nREST HOUSE$"
+   }
+  }
+ ],
+ "warps": [
+  {
+   "id": 0,
+   "x": 29,
+   "y": 7,
+   "dest_map": "MAP_SAFARI_ZONE_REST_HOUSE",
+   "dest_warp_id": "0"
+  }
+ ],
+ "coord_events": [],
+ "wild": {
+  "land_mons": {
+   "encounter_rate": 25,
+   "slot_rates": [
+    20,
+    20,
+    10,
+    10,
+    10,
+    10,
+    5,
+    5,
+    4,
+    4,
+    1,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_ODDISH",
+     "min": 25,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_ODDISH",
+     "min": 27,
+     "max": 27
+    },
+    {
+     "species": "SPECIES_GIRAFARIG",
+     "min": 25,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_GIRAFARIG",
+     "min": 27,
+     "max": 27
+    },
+    {
+     "species": "SPECIES_NATU",
+     "min": 25,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_DODUO",
+     "min": 27,
+     "max": 27
+    },
+    {
+     "species": "SPECIES_GLOOM",
+     "min": 25,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_WOBBUFFET",
+     "min": 27,
+     "max": 27
+    },
+    {
+     "species": "SPECIES_PIKACHU",
+     "min": 25,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_WOBBUFFET",
+     "min": 27,
+     "max": 27
+    },
+    {
+     "species": "SPECIES_PIKACHU",
+     "min": 27,
+     "max": 27
+    },
+    {
+     "species": "SPECIES_WOBBUFFET",
+     "min": 29,
+     "max": 29
+    }
+   ]
+  },
+  "water_mons": {
+   "encounter_rate": 9,
+   "slot_rates": [
+    60,
+    30,
+    5,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_PSYDUCK",
+     "min": 20,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_PSYDUCK",
+     "min": 20,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_PSYDUCK",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_PSYDUCK",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_PSYDUCK",
+     "min": 30,
+     "max": 35
+    }
+   ]
+  },
+  "fishing_mons": {
+   "encounter_rate": 35,
+   "slot_rates": [
+    70,
+    30,
+    60,
+    20,
+    20,
+    40,
+    40,
+    15,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_GOLDEEN",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_GOLDEEN",
+     "min": 10,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_GOLDEEN",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_GOLDEEN",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_GOLDEEN",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_SEAKING",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_SEAKING",
+     "min": 35,
+     "max": 40
+    },
+    {
+     "species": "SPECIES_SEAKING",
+     "min": 25,
+     "max": 30
+    }
+   ]
+  }
+ }
+}

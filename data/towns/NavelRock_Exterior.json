@@ -1,0 +1,13 @@
+{
+ "_doc": "Navel Rock (warp-only map, group 'standalone': data/buildings/standalone.json res 481, b2tools/models_standalone.py harbour; buildings_audit 2026-10-08): Emerald's harbour at the end of the dock, x 7-13, rows 18-22 (as Birth Island's). Its door warp (10,18) stays parked. props: model origin in map tile coordinates.",
+ "group": "standalone",
+ "buildings": {},
+ "props": [
+  {
+   "res": 481,
+   "x": 10.5,
+   "z": 21.0,
+   "what": "harbour: body x 8-12 rows 19-22, cranes on columns 7 and 13"
+  }
+ ]
+}

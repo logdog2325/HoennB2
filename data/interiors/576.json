@@ -1,0 +1,35 @@
+{
+ "_doc": "Devon Corp 2F (zone 576; scripts src/field_scripts/1152_room_RustboroCity_DevonCorp_2F.s, text 0367). Area 289 = Black 2's Castelia office area (interior pack 7). Sapphire's five scientists (Pokémon talk, Poké Ball, PokéNav, Pokémon dreams, fossil regeneration) have multi-step or flag scripts: story, not placed yet.",
+ "zone": 576,
+ "room": "RustboroCity_DevonCorp_2F",
+ "area": 289,
+ "parent": 113,
+ "warps": [
+  {
+   "at": [
+    14,
+    1
+   ],
+   "tile_only": true,
+   "to": [
+    575,
+    2
+   ],
+   "what": "Sapphire warp 0 -> RustboroCity_DevonCorp_1F 2"
+  },
+  {
+   "at": [
+    2,
+    1
+   ],
+   "tile_only": true,
+   "to": [
+    577,
+    0
+   ],
+   "what": "Sapphire warp 1 -> RustboroCity_DevonCorp_3F 0"
+  }
+ ],
+ "npcs": [],
+ "signs": []
+}

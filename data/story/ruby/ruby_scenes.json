@@ -1,0 +1,70 @@
+{
+ "_doc": "ruby_scenes (WP2, 2026-10-08) story objects that exist only in a Ruby build (data/story/ruby/ is read by b2tools/version.py overlay: a file name not in data/story/ is added in Ruby, never read by a Sapphire build): the Magma Hideout B2F escape scene (pokeruby data/maps/MagmaHideout_B2F/map.json tiles; scripts in src/field_scripts/ruby/0468_room_MagmaHideout_B2F.s). The submarine shadow (object 3) has no Black 2 sprite and the item ball (object 5, (31,20)) is the room generator's.",
+ "objects": [
+  {
+   "kind": "npc",
+   "map": "MagmaHideout_B2F",
+   "at": [
+    8,
+    19
+   ],
+   "uid": 1,
+   "model": 88,
+   "script": 3,
+   "dir": 3,
+   "move": 17,
+   "flag": "FLAG_HIDE_GRUNTS_HIDEOUTS",
+   "what": "Tabitha (VAR_1) (pokeruby MagmaHideout_B2F object 1, VAR_1, FACE_RIGHT); sprite code 88 = Tabitha's own sheet in a Ruby build (src/sprites/overworld/ruby/088-tabitha)"
+  },
+  {
+   "kind": "npc",
+   "map": "MagmaHideout_B2F",
+   "at": [
+    31,
+    11
+   ],
+   "uid": 2,
+   "model": 293,
+   "script": 3010,
+   "dir": 2,
+   "move": 43,
+   "flag": "FLAG_HIDE_GRUNTS_HIDEOUTS",
+   "what": "TRAINER_HIDEOUT_B2F_GRUNT_2 (Black 2 id of TRAINER_GRUNT_4): eye-contact trainer (pokeruby object 2, VAR_1, WALK_SEQUENCE_LEFT_UP_RIGHT_DOWN) (walks: Black 2 code 43, Sapphire range 7x4; v165_fixes)",
+   "evtype": 1,
+   "p0": 3,
+   "areaw": 7,
+   "areah": 4
+  },
+  {
+   "kind": "npc",
+   "map": "MagmaHideout_B2F",
+   "at": [
+    13,
+    3
+   ],
+   "uid": 4,
+   "model": 294,
+   "script": 3043,
+   "dir": 2,
+   "move": 16,
+   "flag": "FLAG_HIDE_GRUNTS_HIDEOUTS",
+   "what": "TRAINER_HIDEOUT_B2F_GRUNT_3 (Black 2 id of TRAINER_GRUNT_27): eye-contact trainer (pokeruby object 4, VAR_2, FACE_LEFT)",
+   "evtype": 1,
+   "p0": 4
+  },
+  {
+   "kind": "trigger",
+   "map": "MagmaHideout_B2F",
+   "at": [
+    4,
+    16
+   ],
+   "w": 4,
+   "h": 1,
+   "script": 2,
+   "var": "0x4001",
+   "value": 0,
+   "what": "MagmaHideout_B2F_EventScript_15D8BD: pokeruby coord events (4..7,16), VAR_TEMP_1 0"
+  }
+ ]
+}

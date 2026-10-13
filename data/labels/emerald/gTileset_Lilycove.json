@@ -1,0 +1,10 @@
+{
+ "_doc": "Emerald's gTileset_Lilycove metatiles labelled by eye (emerald_world 2026-10-12; sheets: work/agents/emerald_world/tools/label_sheets.py): the ones converter/emerald_labels.py cannot carry over from Sapphire. Wins over carry_gTileset_Lilycove.json.",
+ "gTileset_Lilycove": {
+  "31a": "rock",
+  "32a": "path"
+ },
+ "_notes": {
+  "_safari": "0x31A rock; 0x32A the Safari expansion's pale floor: path"
+ }
+}

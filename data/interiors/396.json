@@ -1,0 +1,30 @@
+{
+ "_doc": "Prof. Birch's Lab (zone 396; scripts src/field_scripts/0792_birch_lab.s, text src/text/script/0625_birch_lab.txt). Sapphire tile + (1, 1) = zone tile. Actor uids as the lab scene scripts use them: 0 = Birch, 1 = Aide. Sapphire's rival (VAR_0 at (7,4), FLAG_HIDE_RIVAL_BIRCH_LAB) is story: not placed yet. Signs = Sapphire's bg events.",
+ "zone": 396,
+ "room": "LittlerootTown_ProfessorBirchsLab",
+ "npcs": [
+  {"uid": 0, "model": 104, "script": 7, "dir": 1, "at": [6, 4], "flag": 103, "what": "Prof. Birch (sprite 104 repainted as Birch); flag 103 = FLAG_HIDE_BIRCH_IN_LAB: hidden until Route 101's rescue (the zone init, 0792 Script_10, sets/clears it by VAR_BIRCH_LAB_STATE)"},
+  {"uid": 1, "model": 73, "script": 6, "dir": 1, "at": [9, 8], "move": 3, "range": [1, 1], "what": "Aide (Black 2 scientist), wanders like Sapphire's"}
+ ],
+ "signs": [
+  {"script": 8, "at": [10, 7], "dir": 0, "what": "machine (facing north)"},
+  {"script": 8, "at": [11, 7], "dir": 0, "what": "machine (facing north)"},
+  {"script": 2, "at": [7, 1], "dir": 4, "what": "book"},
+  {"script": 2, "at": [8, 1], "dir": 4, "what": "book"},
+  {"script": 3, "at": [1, 1], "dir": 4, "what": "bookshelf"},
+  {"script": 3, "at": [0, 7], "dir": 4, "what": "bookshelf"},
+  {"script": 3, "at": [1, 7], "dir": 4, "what": "bookshelf"},
+  {"script": 3, "at": [2, 7], "dir": 4, "what": "bookshelf"},
+  {"script": 3, "at": [3, 7], "dir": 4, "what": "bookshelf"},
+  {"script": 1, "at": [4, 1], "dir": 4, "what": "PC"},
+  {"script": 1, "at": [3, 1], "dir": 4, "what": "PC"},
+  {"script": 1, "at": [1, 10], "dir": 4, "what": "PC"},
+  {"script": 1, "at": [1, 9], "dir": 4, "what": "PC"},
+  {"script": 1, "at": [11, 10], "dir": 4, "what": "PC"},
+  {"script": 1, "at": [11, 9], "dir": 4, "what": "PC"}
+ ],
+ "warps": [
+  {"at": [6, 12], "to": [389, 3], "what": "exit -> Littleroot warp 3"}
+ ],
+ "triggers": []
+}

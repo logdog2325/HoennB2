@@ -1,0 +1,49 @@
+It’s a PC used for research.\nBetter not mess around with it.
+It’s crammed with books on Pokémon.
+It’s a book that’s too hard to read.
+Hunh? Prof. Birch?{be01}\nThe Prof’s away on fieldwork.\nErgo, he isn’t here.{be01}\nOh, let me explain what fieldwork is.{be01}\nIt is to study things in the natural\nenvironment, like fields and mountains,{be00}\ninstead of a laboratory.{be01}\nThe Prof isn’t one for doing desk work.\nHe’s the type of person who would{be00}\nrather go outside and experience{be00}\nthings than read about them here.
+The Prof isn’t one for doing desk work.\nHe’s the type of person who would{be00}\nrather go outside and experience{be00}\nthings than read about them here.
+Prof. Birch is studying the habitats\nand distribution of Pokémon.{be01}\nThe Prof enjoys May’s help, too.\nThere’s a lot of love there.
+Prof. Birch is studying the habitats\nand distribution of Pokémon.{be01}\nThe Prof enjoys Brendan’s help, too.\nThere’s a lot of love there.
+Prof. Birch: So, {0100:0}.{be01}\nI’ve heard so much about you from\nyour father.{be01}\nI’ve heard that you don’t have your\nown Pokémon yet.{be01}\nBut the way you battled earlier,\nyou pulled it off with aplomb!{be01}\nI guess you have your father’s blood\nin your veins after all!{be01}\nOh, yes. As thanks for rescuing me,\nI’d like you to have the Pokémon you{be00}\nused earlier.{be01}\n{0100:0} received the {0101:1}!
+Prof. Birch: While you’re at it, why not\ngive a nickname to that {0101:1}?
+Prof. Birch: If you work at Pokémon\nand gain experience, I think you’ll make{be00}\na darn good Trainer.{be01}\nMy kid, May, is out on Route 103\nstudying Pokémon.{be01}\nIt might not be a bad idea for you to\ngo see May. What do you think?
+Prof. Birch: If you work at Pokémon\nand gain experience, I think you’ll make{be00}\na darn good Trainer.{be01}\nMy kid, Brendan, is out on Route 103\nstudying Pokémon.{be01}\nIt might not be a bad idea for you to\ngo see Brendan. What do you think?
+Prof. Birch: Great!\nMay should be happy, too.{be01}\nGet May to teach you what it\nmeans to be a Trainer.
+Prof. Birch: Great!\nBrendan should be happy, too.{be01}\nGet Brendan to teach you what it\nmeans to be a Trainer.
+Prof. Birch: Oh, don’t be that way.\nYou should go meet my kid.
+Prof. Birch: May should be on\nRoute 103 somewhere.{be01}\nIf you or your Pokémon get tired,\nget some rest at home.
+Prof. Birch: Brendan should be on\nRoute 103 somewhere.{be01}\nIf you or your Pokémon get tired,\nget some rest at home.
+It’s a serious-looking machine.\nThe Prof must use this for research.
+Prof. Birch: Oh, hi, {0100:0}!{be01}\nI heard you beat May on\nyour first try. That’s excellent!{be01}\nMay’s been helping with my research\nfor a long time.{be01}\nMay has an extensive history as\na Trainer already.{be01}\nHere, {0100:0}, I ordered this for my\nresearch, but I think you should have{be00}\nthis Pokédex.
+Prof. Birch: Oh, hi, {0100:0}!{be01}\nI heard you beat Brendan on\nyour first try. That’s excellent!{be01}\nBrendan’s been helping with my research\nfor a long time.{be01}\nBrendan has an extensive history as\na Trainer already.{be01}\nHere, {0100:0}, I ordered this for my\nresearch, but I think you should have{be00}\nthis Pokédex.
+{0100:0} received the Pokédex!
+Prof. Birch: The Pokédex is a high-tech\ntool that automatically makes a record{be00}\nof any Pokémon you meet or catch.{be01}\nMy kid, May, goes everywhere\nwith it.{be01}\nWhenever my kid catches a rare Pokémon\nand records its data in the Pokédex,{be00}\nwhy, May looks for me while I’m out{be00}\ndoing fieldwork, and shows me.
+Prof. Birch: The Pokédex is a high-tech\ntool that automatically makes a record{be00}\nof any Pokémon you meet or catch.{be01}\nMy kid, Brendan, goes everywhere\nwith it.{be01}\nWhenever my kid catches a rare Pokémon\nand records its data in the Pokédex,{be00}\nwhy, Brendan looks for me while I’m out{be00}\ndoing fieldwork, and shows me.
+May: Oh, wow, {0100:0}!\nYou got a Pokédex, too!{be01}\nThat’s great! Just like me!\nI’ve got something for you, too!
+May: It’s fun if you can get a lot of\nPokémon!{be01}\nI’m going to look all over the place\nbecause I want different Pokémon.{be01}\nIf I find any cute Pokémon, I’ll catch\nthem with Poké Balls!
+Brendan: Huh...\nSo you got a Pokédex, too.{be01}\nWell then, here.\nI’ll give you this.
+Brendan: You know it’s more fun to\nhave a whole bunch of Pokémon.{be01}\nI’m going to explore all over the place\nto find different Pokémon.{be01}\nIf I find any cool Pokémon, you bet\nI’ll try to get them with Poké Balls.
+Oh? Your Bag’s full.
+Hey, your Bag’s full.
+Prof. Birch: Countless Pokémon await\nyou!{be01}\nArgh, I’m getting the itch to get out\nand do fieldwork again!
+May: I wonder where I should go look\nfor Pokémon next?
+Brendan: Where should I look for\nPokémon next...
+Prof. Birch: Now…{be01}\n{0100:0} and May, I’ve had the two\nof you help me study Pokémon.{be01}\nThanks to your help, new facts\nare coming to light.{be01}\nIt appears that in the Hoenn region,\nthere are also Pokémon from other{be00}\nregions.{be01}\nIt goes to show how rich and varied\nthe natural environments of Hoenn{be00}\nhappen to be.{be01}\nThat’s why I think it’s necessary for\nme to upgrade your Pokédex to{be00}\nthe National Mode.{be01}\nHere, let me see your Pokédex units.
+Prof. Birch: Now…{be01}\n{0100:0} and Brendan, I’ve had the two\nof you help me study Pokémon.{be01}\nThanks to your help, new facts\nare coming to light.{be01}\nIt appears that in the Hoenn region,\nthere are also Pokémon from other{be00}\nregions.{be01}\nIt goes to show how rich and varied\nthe natural environments of Hoenn{be00}\nhappen to be.{be01}\nThat’s why I think it’s necessary for\nme to upgrade your Pokédex to{be00}\nthe National Mode.{be01}\nHere, let me see your Pokédex units.
+May: Eheheh!{be01}\nIt’s so cool that even my Pokédex\nis getting updated!{be01}\nIt’s because you went out and caught\nso many Pokémon, {0100:0}!
+Brendan: I went out all over Hoenn\nand checked out Pokémon.{be01}\nYou can thank me for getting\nthe National Mode Pokédex.{be01}\nYep, you’re lucky, {0100:0}!
+Prof. Birch: Okay, all done!
+{0100:0}’s Pokédex was upgraded\nto the National Mode!
+Prof. Birch: But listen.\nYou’ve become the Champion,{be00}\nbut your Pokémon journey isn’t over.{be01}\nThere is no end to the road\nthat is Pokémon.{be01}\nSomewhere, there is a grassy patch\nthat’s waiting for you!
+Prof. Birch: Oh, {0100:0}!\nLet’s have a look at your Pokédex.{be01}\n… … … … … …\n… … … … … …{be01}\nYes, there’s no doubt about it.{be01}\nYou really have completed the Hoenn\nregion’s Pokédex.{be01}\nThat’s more than just impressive.{be01}\nI have a gift for you.{be01}\nConsider it my show of appreciation\nfor the fantastic work you’ve done.{be01}\nMy gift is a rare Pokémon only found\nin another region!{be01}\nYou can have any one of these\nthree Pokémon!
+Prof. Birch: The Fire Pokémon\nCyndaquil caught your eye!{be01}\nYou’re as sharp as ever!{be01}\nSo the Cyndaquil is your choice?
+Prof. Birch: The Water Pokémon\nTotodile is your choice!{be01}\nYou know how to pick a good one.{be01}\nSo, you’ll take the Totodile?
+Prof. Birch: The Grass Pokémon\nChikorita is your choice!{be01}\nYou sure know what you’re doing.{be01}\nSo, you’ll take the Chikorita?
+Prof. Birch: Take your time before\nyou decide.{be01}\nThey’re all invaluable Pokémon.
+You received the promised Pokémon.\nBetter leave the others alone.
+{0100:0} received the {0100:1}\nfrom Prof. Birch!
+Prof. Birch: Listen, {0100:0}.\nYou’ve completed the Hoenn Pokédex,{be00}\nbut your Pokémon journey isn’t over.{be01}\nThere is no end to the road\nthat is Pokémon.{be01}\nSomewhere, there is a grassy patch\nthat’s waiting for you!
+Prof. Birch: These are rare Pokémon\nonly found in another region!{be01}\nYou can have any one of these\nthree Pokémon!
+Want to give a nickname to the\n{0100:1} you received?
+There is no space for another Pokémon.

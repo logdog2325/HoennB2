@@ -1,0 +1,23 @@
+{
+ "kind": "overworld",
+ "code": 236,
+ "sheet": 214,
+ "frames": 5,
+ "size": [
+  32,
+  32
+ ],
+ "controller": 8,
+ "textures": [
+  "t4x4x5.0",
+  "t4x4x5.1",
+  "t4x4x5.2",
+  "t4x4x5.3",
+  "t4x4x5.4"
+ ],
+ "palette": "t4x4x5",
+ "name": "brendan-action5",
+ "note": "Brendan (player, Emerald outfit), action5",
+ "source": "pokeemerald graphics/object_events/pics/people/brendan/walking, running (Emerald dump: emerald_src.py verify)",
+ "made_by": "b2tools/sprite_emerald.py"
+}

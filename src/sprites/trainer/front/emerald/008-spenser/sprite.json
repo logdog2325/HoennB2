@@ -1,0 +1,18 @@
+{
+ "kind": "trainer",
+ "side": "front",
+ "sprite": 8,
+ "archive": 71,
+ "files": {
+  "static": 64,
+  "parts": 65,
+  "palette": 71
+ },
+ "name": "spenser",
+ "note": "Spenser (Palace Maven, Battle Palace): Black 2 spare class 8's own sprite (Emerald builds only)",
+ "source": "pokeemerald graphics/trainers/front_pics/palace_maven_spenser.png and its palette (graphics/trainers/front_pics/palace_maven_spenser.png at 0x8d6460c, png:graphics/trainers/front_pics/palace_maven_spenser.png palette at 0x8d649b0 in roms/emerald_original.gba)",
+ "layout": "parts and animations of Black 2 front sprite 62",
+ "made_by": "b2tools/sprite_emerald_frontier.py (sprite_upgrade.battle_sprite, as Sapphire's characters)",
+ "mcss_from": 62,
+ "static_intro": true
+}

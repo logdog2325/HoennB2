@@ -1,0 +1,57 @@
+{
+ "_doc": "RustboroCity_House3: zone written by converter/gen_interior_recipes_houses.py (warps and parent from converter/gen_interiors.py); story people left for the story phase: person PIKACHU at (4,4) RustboroCity_House3_EventScript_Pekachu (story/complex script)",
+ "zone": 588,
+ "room": "RustboroCity_House3",
+ "area": 313,
+ "parent": 113,
+ "warps": [
+  {
+   "at": [5, 8],
+   "tile_only": true,
+   "to": [113, 18],
+   "what": "Sapphire warp 0 -> RustboroCity 11"
+  },
+  {
+   "at": [6, 8],
+   "tile_only": true,
+   "to": [113, 18],
+   "what": "Sapphire warp 1 -> RustboroCity 11"
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 1,
+   "model": 187,
+   "script": 1,
+   "dir": 3,
+   "at": [4, 5]
+  },
+  {
+   "uid": 2,
+   "model": 45,
+   "script": 2,
+   "dir": 2,
+   "at": [7, 5]
+  }
+ ],
+ "signs": [
+  {
+   "script": 3,
+   "at": [0, 1],
+   "dir": 4,
+   "what": "Bookshelf"
+  },
+  {
+   "script": 3,
+   "at": [1, 1],
+   "dir": 4,
+   "what": "Bookshelf"
+  },
+  {
+   "script": 4,
+   "at": [2, 1],
+   "dir": 4,
+   "what": "PictureBookshelf"
+  }
+ ]
+}

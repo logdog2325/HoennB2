@@ -1,0 +1,16 @@
+Wanted item              Trade item\n Red Shard           ←→ Fire Stone{be01}\nWanted item              Trade item\n Yellow Shard     ←→ Thunderstone{be01}\nWanted item              Trade item\n Blue Shard         ←→ Water Stone{be01}\nWanted item              Trade item\n Green Shard       ←→ Leaf Stone
+I’m the Diving Treasure Hunter!{be01}\nI’m the awesome dude who makes\ndeep-sea dives to gather treasures{be00}\nresting at the bottom.
+Tell me, have you seen any Shards of\ntools made in ancient times?
+You haven’t got any treasures\nfor me...{be01}\nIf you see any Shards, like the Red\nShard, you’ve got to trade it with me!
+Oh, hey! That...\nThat’s a Shard! I’m looking for those!{be01}\nOh, man, you’ve got to trade that\nwith me! I’ll give you something good!
+What do you want to trade?
+You’ll trade your {0100:1} for\nmy {0100:2}, then?
+It’s a done deal!\nUse that wisely!
+Do you want to trade something else?
+Whoops, your Bag’s full.\nGet rid of some items, friend!
+No? That’s a downer.\nWell, if you change your mind, come back.
+Red Shard
+Yellow Shard
+Blue Shard
+Green Shard
+Cancel

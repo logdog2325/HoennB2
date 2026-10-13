@@ -1,0 +1,6 @@
+{
+ "_doc": "fairy_ui (b2tools/patches/fairy_ui.py): the Pokédex search's label for type 17 (data_ov300_021a40ae[17] -> message 77, a blank line of Black 2's)",
+ "system/0479.txt": {
+  "77": "Fairy"
+ }
+}

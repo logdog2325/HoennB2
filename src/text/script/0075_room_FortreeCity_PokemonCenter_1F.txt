@@ -1,0 +1,10 @@
+Hello, and welcome to the Pokémon\nCenter.{be01}\nWe restore your tired Pokémon to\nfull health.{be01}\nWould you like to rest your Pokémon?
+Okay, I’ll take your Pokémon for a\nfew seconds.
+Thank you for waiting.{be01}\nWe’ve restored your Pokémon to\nfull health.
+We hope to see you again!
+Your Pokémon may be infected with\nPokérus.{be01}\nLittle is known about the Pokérus\nexcept that they are microscopic life-{be00}\nforms that attach to Pokémon.{be01}\nWhile infected, Pokémon are said to\ngrow exceptionally well.
+Listen, kid, are you working\non a Pokédex?{be01}\nHmm... Go to the Safari Zone.\nThat’s my suggestion.
+Have you done anything at the\nRecord Corner?{be01}\nIt’s pretty neat. It mixes and matches\nthe records of Trainers.{be01}\nI don’t know quite how it works,\nbut it’s cool. It’s exciting, even!
+Hey, you’ve got a PokéNav!\nIt’s the same as mine.{be01}\nCheck out the Trainer’s Eyes on it.{be01}\nIt shows you Trainers who want a\nrematch with you.{be01}\nIsn’t it great?\nYou have to hand it to Devon!
+Pokémon magazines!\nPokémon Pal...{be01}\nPokémon Handbook...\nAdorable Pokémon...
+{0100:0} took a closer look at the\nHoenn region map.

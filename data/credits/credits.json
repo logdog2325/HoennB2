@@ -1,0 +1,69 @@
+{
+ "_doc": "The credits pictures (b2tools/patches/game_clear.py: a/2/1/5 photos 0-11 for Brendan (m) and May (f), the colour picture \"final\"): indexed 256x192 PNGs made by work/agents/halloffame/tools/credits_pics.py from emulator shots of our own Hoenn maps (scenes/halloffame_test.inc, HOENN_TEST_CHCREDITS=1). Order = the credits order.",
+ "photos": [
+  {
+   "place": "Route 101",
+   "m": "00_route101_m.png",
+   "f": "00_route101_f.png"
+  },
+  {
+   "place": "Oldale Town",
+   "m": "01_oldale_m.png",
+   "f": "01_oldale_f.png"
+  },
+  {
+   "place": "Petalburg City",
+   "m": "02_petalburg_m.png",
+   "f": "02_petalburg_f.png"
+  },
+  {
+   "place": "Rustboro City",
+   "m": "03_rustboro_m.png",
+   "f": "03_rustboro_f.png"
+  },
+  {
+   "place": "Dewford Town",
+   "m": "04_dewford_m.png",
+   "f": "04_dewford_f.png"
+  },
+  {
+   "place": "Slateport City",
+   "m": "05_slateport_m.png",
+   "f": "05_slateport_f.png"
+  },
+  {
+   "place": "Mauville City",
+   "m": "06_mauville_m.png",
+   "f": "06_mauville_f.png"
+  },
+  {
+   "place": "Lavaridge Town",
+   "m": "07_lavaridge_m.png",
+   "f": "07_lavaridge_f.png"
+  },
+  {
+   "place": "Fortree City",
+   "m": "08_fortree_m.png",
+   "f": "08_fortree_f.png"
+  },
+  {
+   "place": "Lilycove City",
+   "m": "09_lilycove_m.png",
+   "f": "09_lilycove_f.png"
+  },
+  {
+   "place": "Mossdeep City",
+   "m": "10_mossdeep_m.png",
+   "f": "10_mossdeep_f.png"
+  },
+  {
+   "place": "Littleroot Town",
+   "m": "11_littleroot_m.png",
+   "f": "11_littleroot_f.png"
+  }
+ ],
+ "final": {
+  "place": "Sootopolis City",
+  "file": "final_sootopolis.png"
+ }
+}

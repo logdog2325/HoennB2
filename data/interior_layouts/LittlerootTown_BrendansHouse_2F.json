@@ -1,0 +1,22 @@
+{
+ "_doc": "Brendan's house 2F (Sapphire 9x8; zone 391), the boy's room. Row 1 is Sapphire's furniture row along the back wall (all solid): desk with PC and notebook (0-1), the Hoenn map on the wall (2), GameCube (3) and TV (4), wall clock (5), stairs down (7). Bed at (1,4)-(1,5), rug (4-7, 3-6). Sapphire's bed head (1,4) is MB_IMPASSABLE_SOUTH_AND_NORTH: made solid. Stairs down = Black 2's stair_d01 in a floor opening, descending north. Black 2 has no wall clock or wall map model: the clock is the pendulum clock picture in69_clock01 (texture set 350) and the map is the framed picture art02 (interior pack 3).",
+ "map": "LittlerootTown_BrendansHouse_2F",
+ "style": "house",
+ "origin": [1, 1],
+ "floor": [[0, 1, 8, 7]],
+ "block": [[1, 4]],
+ "mats": [
+  {"tex": "m_b08_mat", "src": 349, "rect": [4, 3, 7, 6], "border": 0.25, "border_units": 8, "_what": "red rug"}
+ ],
+ "decals": [
+  {"tex": "in69_clock01", "src": 350, "at": [5.5], "y": 18, "w": 11, "h": 22, "_what": "wall clock"}
+ ],
+ "furniture": [
+  {"m": "pcdesk01", "rot": 90, "at": [1.0, 1.5], "wall": "N", "w_edge": -0.15, "_what": "desk with the PC (0,1) and notebook (1,1)"},
+  {"m": "art02", "at": [2.6, 1.5], "wall": "N", "gap": 2, "y": 10, "_what": "Hoenn map on the wall (2,1)"},
+  {"m": "wii01", "tile": [3, 1], "dx": -3, "_what": "GameCube (3 units west: clear of the TV's and the desk's shadows, also in May's mirrored room)"},
+  {"m": "monitor01", "tile": [4, 1], "wall": "N", "_what": "TV"},
+  {"m": "stair_d01", "stair": [7, 1], "dir": "N", "_what": "stairs down (warp tile 7,1, entered from the south)"},
+  {"m": "bed01_1w", "tiles": [1, 4, 1, 5], "_what": "bed (Black 2's bed01 at Sapphire's one-tile width: the full-size one reached into (0,4)-(2,5))"}
+ ]
+}

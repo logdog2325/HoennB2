@@ -1,0 +1,32 @@
+{
+ "_doc": "Route 110's buildings: the Cycling Road entrances have two doors; the record draws the west one, a door_normal03 (res 261) prop the east one (Black 2 places door models directly too: chunks 856, 860, 1025, 1048, 1054) (group towns5, notes/TOWNS_TOWNS5.md). buildings: Sapphire door destination -> pack-0 res and front (z of the model's front wall; world.py puts it 4 units into the door tile, footprint centre from data/plans); props: model origin in Sapphire map tile coordinates (footprint centre x, door row + (4 - 20)/16).",
+ "group": "towns5",
+ "buildings": {
+  "MAP_ROUTE110_SEASIDE_CYCLING_ROAD_NORTH_ENTRANCE": {
+   "res": 403,
+   "front": 20
+  },
+  "MAP_ROUTE110_TRICK_HOUSE_ENTRANCE": {
+   "res": 404,
+   "front": 20
+  },
+  "MAP_ROUTE110_SEASIDE_CYCLING_ROAD_SOUTH_ENTRANCE": {
+   "res": 403,
+   "front": 20
+  }
+ },
+ "props": [
+  {
+   "res": 261,
+   "x": 19.0,
+   "z": 16.3125,
+   "what": "north entrance, second door (18,16); 1 unit further out than 4 into its tile, as the record's door (dz 21): 1 unit off the base band it overlaps on the south entrance's lower half (door_fix 2026-10-11)"
+  },
+  {
+   "res": 261,
+   "x": 20.0,
+   "z": 88.3125,
+   "what": "south entrance, second door (19,88)"
+  }
+ ]
+}

@@ -1,0 +1,65 @@
+{
+ "_doc": "Chapter Ch13 (post-game) story objects (format: b2tools/patches/story.py). Draft in work/agents/ch13, copied to data/story/ch13.json after the ch13 build passed. Zone tiles = Sapphire tile + the map's origin.",
+ "objects": [
+  {
+   "kind": "npc",
+   "map": "BattleTower_Outside",
+   "at": [
+    19,
+    24
+   ],
+   "uid": 105,
+   "model": 17,
+   "script": 2,
+   "dir": 0,
+   "move": 14,
+   "what": "the ferry attendant (Sapphire object 5, BEAUTY, FACE_UP; scenes/BattleTower_Outside.inc script 2)"
+  },
+  {
+   "kind": "npc",
+   "map": "SouthernIsland_Exterior",
+   "at": [
+    13,
+    23
+   ],
+   "uid": 101,
+   "model": 359,
+   "script": 2,
+   "dir": 0,
+   "move": 14,
+   "what": "the ferry sailor (Sapphire object 1, SAILOR, FACE_UP; scenes/SouthernIsland_Exterior.inc script 2)"
+  },
+  {
+   "kind": "npc",
+   "map": "SouthernIsland_Interior",
+   "at": [
+    13,
+    2
+   ],
+   "uid": 102,
+   "model": 4510,
+   "model_ruby": 4509,
+   "script": 0,
+   "dir": 1,
+   "move": 15,
+   "flag": "FLAG_HIDE_LATIOS_OR_LATIAS_STATIONARY",
+   "what": "Latios (Sapphire object 2, VAR_OBJ_GFX_ID_1 = OBJ_EVENT_GFX_LATIOS in Sapphire, FACE_DOWN; hidden until the slab scene)"
+  },
+  {
+   "kind": "npc",
+   "map": "SkyPillar_Top",
+   "at": [
+    14,
+    6
+   ],
+   "uid": 101,
+   "model": 4513,
+   "script": 1,
+   "dir": 1,
+   "move": 15,
+   "flag": "FLAG_HIDE_RAYQUAZA",
+   "what": "Rayquaza (Sapphire object 1, FACE_DOWN)",
+   "skip_emerald": true
+  }
+ ]
+}

@@ -1,0 +1,42 @@
+{
+ "_doc": "Route104_MrBrineysHouse: zone written by converter/gen_interior_recipes_houses.py (warps and parent from converter/gen_interiors.py); story people left for the story phase: story person OLD_MAN_1 at (5,3) Route104_MrBrineysHouse_EventScript_15BCEB (hide flag FLAG_HIDE_MR_BRINEY_ROUTE104_HOUSE); story person WINGULL at (6,3) Route104_MrBrineysHouse_EventScript_15BDD1 (hide flag FLAG_HIDE_PEEKO_BRINEY_HOUSE)",
+ "zone": 503,
+ "room": "Route104_MrBrineysHouse",
+ "area": 313,
+ "parent": 329,
+ "warps": [
+  {
+   "at": [5, 8],
+   "tile_only": true,
+   "to": [329, 3],
+   "what": "Sapphire warp 0 -> Route104 0"
+  },
+  {
+   "at": [6, 8],
+   "tile_only": true,
+   "to": [329, 3],
+   "what": "Sapphire warp 1 -> Route104 0"
+  }
+ ],
+ "npcs": [],
+ "signs": [
+  {
+   "script": 1,
+   "at": [0, 3],
+   "dir": 4,
+   "what": "Vase"
+  },
+  {
+   "script": 1,
+   "at": [1, 3],
+   "dir": 4,
+   "what": "Vase"
+  },
+  {
+   "script": 1,
+   "at": [0, 4],
+   "dir": 4,
+   "what": "Vase"
+  }
+ ]
+}

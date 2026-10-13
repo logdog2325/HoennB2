@@ -1,0 +1,775 @@
+{
+ "_doc": "Give every Hoenn outdoor map a Black 2 zone and every Hoenn place a line of the place-name text (system 0109). See converter/allocate_zones.py.",
+ "places": {
+  "MAPSEC_LITTLEROOT_TOWN": {
+   "line": 4,
+   "name": "Littleroot Town"
+  },
+  "MAPSEC_OLDALE_TOWN": {
+   "line": 5,
+   "name": "Oldale Town"
+  },
+  "MAPSEC_DEWFORD_TOWN": {
+   "line": 6,
+   "name": "Dewford Town"
+  },
+  "MAPSEC_LAVARIDGE_TOWN": {
+   "line": 7,
+   "name": "Lavaridge Town"
+  },
+  "MAPSEC_FALLARBOR_TOWN": {
+   "line": 8,
+   "name": "Fallarbor Town"
+  },
+  "MAPSEC_VERDANTURF_TOWN": {
+   "line": 9,
+   "name": "Verdanturf Town"
+  },
+  "MAPSEC_PACIFIDLOG_TOWN": {
+   "line": 10,
+   "name": "Pacifidlog Town"
+  },
+  "MAPSEC_PETALBURG_CITY": {
+   "line": 11,
+   "name": "Petalburg City"
+  },
+  "MAPSEC_SLATEPORT_CITY": {
+   "line": 12,
+   "name": "Slateport City"
+  },
+  "MAPSEC_MAUVILLE_CITY": {
+   "line": 13,
+   "name": "Mauville City"
+  },
+  "MAPSEC_RUSTBORO_CITY": {
+   "line": 15,
+   "name": "Rustboro City"
+  },
+  "MAPSEC_FORTREE_CITY": {
+   "line": 16,
+   "name": "Fortree City"
+  },
+  "MAPSEC_LILYCOVE_CITY": {
+   "line": 17,
+   "name": "Lilycove City"
+  },
+  "MAPSEC_MOSSDEEP_CITY": {
+   "line": 18,
+   "name": "Mossdeep City"
+  },
+  "MAPSEC_SOOTOPOLIS_CITY": {
+   "line": 19,
+   "name": "Sootopolis City"
+  },
+  "MAPSEC_EVER_GRANDE_CITY": {
+   "line": 20,
+   "name": "Ever Grande City"
+  },
+  "MAPSEC_ROUTE_101": {
+   "line": 14,
+   "name": "Route 101"
+  },
+  "MAPSEC_ROUTE_102": {
+   "line": 21,
+   "name": "Route 102"
+  },
+  "MAPSEC_ROUTE_103": {
+   "line": 22,
+   "name": "Route 103"
+  },
+  "MAPSEC_ROUTE_104": {
+   "line": 23,
+   "name": "Route 104"
+  },
+  "MAPSEC_ROUTE_105": {
+   "line": 24,
+   "name": "Route 105"
+  },
+  "MAPSEC_ROUTE_106": {
+   "line": 25,
+   "name": "Route 106"
+  },
+  "MAPSEC_ROUTE_107": {
+   "line": 26,
+   "name": "Route 107"
+  },
+  "MAPSEC_ROUTE_108": {
+   "line": 27,
+   "name": "Route 108"
+  },
+  "MAPSEC_ROUTE_109": {
+   "line": 28,
+   "name": "Route 109"
+  },
+  "MAPSEC_ROUTE_110": {
+   "line": 29,
+   "name": "Route 110"
+  },
+  "MAPSEC_ROUTE_111": {
+   "line": 30,
+   "name": "Route 111"
+  },
+  "MAPSEC_ROUTE_112": {
+   "line": 31,
+   "name": "Route 112"
+  },
+  "MAPSEC_ROUTE_113": {
+   "line": 32,
+   "name": "Route 113"
+  },
+  "MAPSEC_ROUTE_114": {
+   "line": 33,
+   "name": "Route 114"
+  },
+  "MAPSEC_ROUTE_115": {
+   "line": 34,
+   "name": "Route 115"
+  },
+  "MAPSEC_ROUTE_116": {
+   "line": 35,
+   "name": "Route 116"
+  },
+  "MAPSEC_ROUTE_117": {
+   "line": 36,
+   "name": "Route 117"
+  },
+  "MAPSEC_ROUTE_118": {
+   "line": 37,
+   "name": "Route 118"
+  },
+  "MAPSEC_ROUTE_119": {
+   "line": 38,
+   "name": "Route 119"
+  },
+  "MAPSEC_ROUTE_120": {
+   "line": 39,
+   "name": "Route 120"
+  },
+  "MAPSEC_ROUTE_121": {
+   "line": 40,
+   "name": "Route 121"
+  },
+  "MAPSEC_ROUTE_122": {
+   "line": 41,
+   "name": "Route 122"
+  },
+  "MAPSEC_ROUTE_123": {
+   "line": 42,
+   "name": "Route 123"
+  },
+  "MAPSEC_ROUTE_124": {
+   "line": 43,
+   "name": "Route 124"
+  },
+  "MAPSEC_ROUTE_125": {
+   "line": 44,
+   "name": "Route 125"
+  },
+  "MAPSEC_ROUTE_126": {
+   "line": 45,
+   "name": "Route 126"
+  },
+  "MAPSEC_ROUTE_127": {
+   "line": 46,
+   "name": "Route 127"
+  },
+  "MAPSEC_ROUTE_128": {
+   "line": 47,
+   "name": "Route 128"
+  },
+  "MAPSEC_ROUTE_129": {
+   "line": 48,
+   "name": "Route 129"
+  },
+  "MAPSEC_ROUTE_130": {
+   "line": 49,
+   "name": "Route 130"
+  },
+  "MAPSEC_ROUTE_131": {
+   "line": 50,
+   "name": "Route 131"
+  },
+  "MAPSEC_ROUTE_132": {
+   "line": 51,
+   "name": "Route 132"
+  },
+  "MAPSEC_ROUTE_133": {
+   "line": 52,
+   "name": "Route 133"
+  },
+  "MAPSEC_ROUTE_134": {
+   "line": 53,
+   "name": "Route 134"
+  },
+  "MAPSEC_UNDERWATER_124": {
+   "line": 54,
+   "name": "Underwater"
+  },
+  "MAPSEC_UNDERWATER_125": {
+   "line": 55,
+   "name": "Underwater"
+  },
+  "MAPSEC_UNDERWATER_126": {
+   "line": 56,
+   "name": "Underwater"
+  },
+  "MAPSEC_UNDERWATER_127": {
+   "line": 57,
+   "name": "Underwater"
+  },
+  "MAPSEC_UNDERWATER_SOOTOPOLIS": {
+   "line": 58,
+   "name": "Underwater"
+  },
+  "MAPSEC_GRANITE_CAVE": {
+   "line": 59,
+   "name": "Granite Cave"
+  },
+  "MAPSEC_MT_CHIMNEY": {
+   "line": 60,
+   "name": "Mt. Chimney"
+  },
+  "MAPSEC_SAFARI_ZONE": {
+   "line": 61,
+   "name": "Safari Zone"
+  },
+  "MAPSEC_BATTLE_TOWER": {
+   "line": 62,
+   "name": "Battle Tower"
+  },
+  "MAPSEC_PETALBURG_WOODS": {
+   "line": 63,
+   "name": "Petalburg Woods"
+  },
+  "MAPSEC_RUSTURF_TUNNEL": {
+   "line": 64,
+   "name": "Rusturf Tunnel"
+  },
+  "MAPSEC_ABANDONED_SHIP": {
+   "line": 65,
+   "name": "Abandoned Ship"
+  },
+  "MAPSEC_NEW_MAUVILLE": {
+   "line": 66,
+   "name": "New Mauville"
+  },
+  "MAPSEC_METEOR_FALLS": {
+   "line": 67,
+   "name": "Meteor Falls"
+  },
+  "MAPSEC_MT_PYRE": {
+   "line": 68,
+   "name": "Mt. Pyre"
+  },
+  "MAPSEC_EVIL_TEAM_HIDEOUT": {
+   "line": 69,
+   "name": "Aqua Hideout"
+  },
+  "MAPSEC_SHOAL_CAVE": {
+   "line": 70,
+   "name": "Shoal Cave"
+  },
+  "MAPSEC_SEAFLOOR_CAVERN": {
+   "line": 71,
+   "name": "Seafloor Cavern"
+  },
+  "MAPSEC_UNDERWATER_128": {
+   "line": 72,
+   "name": "Underwater"
+  },
+  "MAPSEC_VICTORY_ROAD": {
+   "line": 73,
+   "name": "Victory Road"
+  },
+  "MAPSEC_CAVE_OF_ORIGIN": {
+   "line": 74,
+   "name": "Cave of Origin"
+  },
+  "MAPSEC_SOUTHERN_ISLAND": {
+   "line": 75,
+   "name": "Southern Island"
+  },
+  "MAPSEC_FIERY_PATH": {
+   "line": 76,
+   "name": "Fiery Path"
+  },
+  "MAPSEC_JAGGED_PASS": {
+   "line": 77,
+   "name": "Jagged Pass"
+  },
+  "MAPSEC_SEALED_CHAMBER": {
+   "line": 78,
+   "name": "Sealed Chamber"
+  },
+  "MAPSEC_UNDERWATER_SEALED_CHAMBER": {
+   "line": 79,
+   "name": "Underwater"
+  },
+  "MAPSEC_SCORCHED_SLAB": {
+   "line": 80,
+   "name": "Scorched Slab"
+  },
+  "MAPSEC_ISLAND_CAVE": {
+   "line": 81,
+   "name": "Island Cave"
+  },
+  "MAPSEC_DESERT_RUINS": {
+   "line": 82,
+   "name": "Desert Ruins"
+  },
+  "MAPSEC_ANCIENT_TOMB": {
+   "line": 83,
+   "name": "Ancient Tomb"
+  },
+  "MAPSEC_INSIDE_OF_TRUCK": {
+   "line": 84,
+   "name": "Inside of Truck"
+  },
+  "MAPSEC_SKY_PILLAR": {
+   "line": 85,
+   "name": "Sky Pillar"
+  },
+  "MAPSEC_SECRET_BASE": {
+   "line": 86,
+   "name": "Secret Base"
+  },
+  "MAPSEC_FARAWAY_ISLAND": {
+   "line": 87,
+   "name": "Faraway Island"
+  },
+  "MAPSEC_BIRTH_ISLAND": {
+   "line": 88,
+   "name": "Birth Island"
+  },
+  "MAPSEC_NAVEL_ROCK": {
+   "line": 89,
+   "name": "Navel Rock"
+  },
+  "MAPSEC_ALTERING_CAVE": {
+   "line": 109,
+   "name": "Altering Cave",
+   "_doc": "postgame_maps 2026-10-07: line 109 (Black 2's \"Castelia Gate\", 13 characters like \"Altering Cave\", named by no zone of the build): the place-name file keeps its size (system text sizes are fixed for the savestates)"
+  }
+ },
+ "maps": {
+  "Route114": {
+   "zone": 383,
+   "type": "MAP_TYPE_ROUTE",
+   "mapsec": "MAPSEC_ROUTE_114",
+   "place": 33
+  },
+  "FallarborTown": {
+   "zone": 6,
+   "type": "MAP_TYPE_TOWN",
+   "mapsec": "MAPSEC_FALLARBOR_TOWN",
+   "place": 8
+  },
+  "Route113": {
+   "zone": 378,
+   "type": "MAP_TYPE_ROUTE",
+   "mapsec": "MAPSEC_ROUTE_113",
+   "place": 32
+  },
+  "Route111": {
+   "zone": 370,
+   "type": "MAP_TYPE_ROUTE",
+   "mapsec": "MAPSEC_ROUTE_111",
+   "place": 30
+  },
+  "Route119": {
+   "zone": 463,
+   "type": "MAP_TYPE_ROUTE",
+   "mapsec": "MAPSEC_ROUTE_119",
+   "place": 38
+  },
+  "FortreeCity": {
+   "zone": 16,
+   "type": "MAP_TYPE_CITY",
+   "mapsec": "MAPSEC_FORTREE_CITY",
+   "place": 16
+  },
+  "Route120": {
+   "zone": 474,
+   "type": "MAP_TYPE_ROUTE",
+   "mapsec": "MAPSEC_ROUTE_120",
+   "place": 39
+  },
+  "Route112": {
+   "zone": 374,
+   "type": "MAP_TYPE_ROUTE",
+   "mapsec": "MAPSEC_ROUTE_112",
+   "place": 31
+  },
+  "Route115": {
+   "zone": 387,
+   "type": "MAP_TYPE_ROUTE",
+   "mapsec": "MAPSEC_ROUTE_115",
+   "place": 34
+  },
+  "LavaridgeTown": {
+   "zone": 62,
+   "type": "MAP_TYPE_TOWN",
+   "mapsec": "MAPSEC_LAVARIDGE_TOWN",
+   "place": 7
+  },
+  "Route124": {
+   "zone": 157,
+   "type": "MAP_TYPE_6",
+   "mapsec": "MAPSEC_ROUTE_124",
+   "place": 43
+  },
+  "Route125": {
+   "zone": 194,
+   "type": "MAP_TYPE_6",
+   "mapsec": "MAPSEC_ROUTE_125",
+   "place": 44
+  },
+  "LilycoveCity": {
+   "zone": 96,
+   "type": "MAP_TYPE_CITY",
+   "mapsec": "MAPSEC_LILYCOVE_CITY",
+   "place": 17
+  },
+  "Route121": {
+   "zone": 475,
+   "type": "MAP_TYPE_ROUTE",
+   "mapsec": "MAPSEC_ROUTE_121",
+   "place": 40
+  },
+  "Route122": {
+   "zone": 551,
+   "type": "MAP_TYPE_ROUTE",
+   "mapsec": "MAPSEC_ROUTE_122",
+   "place": 41
+  },
+  "MossdeepCity": {
+   "zone": 107,
+   "type": "MAP_TYPE_CITY",
+   "mapsec": "MAPSEC_MOSSDEEP_CITY",
+   "place": 18
+  },
+  "RustboroCity": {
+   "zone": 113,
+   "type": "MAP_TYPE_CITY",
+   "mapsec": "MAPSEC_RUSTBORO_CITY",
+   "place": 15
+  },
+  "Route116": {
+   "zone": 423,
+   "type": "MAP_TYPE_ROUTE",
+   "mapsec": "MAPSEC_ROUTE_116",
+   "place": 35
+  },
+  "VerdanturfTown": {
+   "zone": 120,
+   "type": "MAP_TYPE_TOWN",
+   "mapsec": "MAPSEC_VERDANTURF_TOWN",
+   "place": 9
+  },
+  "Route117": {
+   "zone": 437,
+   "type": "MAP_TYPE_ROUTE",
+   "mapsec": "MAPSEC_ROUTE_117",
+   "place": 36
+  },
+  "MauvilleCity": {
+   "zone": 406,
+   "type": "MAP_TYPE_CITY",
+   "mapsec": "MAPSEC_MAUVILLE_CITY",
+   "place": 13
+  },
+  "Route118": {
+   "zone": 446,
+   "type": "MAP_TYPE_ROUTE",
+   "mapsec": "MAPSEC_ROUTE_118",
+   "place": 37
+  },
+  "Route123": {
+   "zone": 154,
+   "type": "MAP_TYPE_ROUTE",
+   "mapsec": "MAPSEC_ROUTE_123",
+   "place": 42
+  },
+  "Route126": {
+   "zone": 198,
+   "type": "MAP_TYPE_6",
+   "mapsec": "MAPSEC_ROUTE_126",
+   "place": 45
+  },
+  "Route127": {
+   "zone": 205,
+   "type": "MAP_TYPE_6",
+   "mapsec": "MAPSEC_ROUTE_127",
+   "place": 46
+  },
+  "Route110": {
+   "zone": 368,
+   "type": "MAP_TYPE_ROUTE",
+   "mapsec": "MAPSEC_ROUTE_110",
+   "place": 29
+  },
+  "Route104": {
+   "zone": 329,
+   "type": "MAP_TYPE_ROUTE",
+   "mapsec": "MAPSEC_ROUTE_104",
+   "place": 23
+  },
+  "EverGrandeCity": {
+   "zone": 412,
+   "type": "MAP_TYPE_CITY",
+   "mapsec": "MAPSEC_EVER_GRANDE_CITY",
+   "place": 20
+  },
+  "Route103": {
+   "zone": 326,
+   "type": "MAP_TYPE_ROUTE",
+   "mapsec": "MAPSEC_ROUTE_103",
+   "place": 22
+  },
+  "Route128": {
+   "zone": 230,
+   "type": "MAP_TYPE_6",
+   "mapsec": "MAPSEC_ROUTE_128",
+   "place": 47
+  },
+  "PetalburgCity": {
+   "zone": 439,
+   "type": "MAP_TYPE_CITY",
+   "mapsec": "MAPSEC_PETALBURG_CITY",
+   "place": 11
+  },
+  "Route102": {
+   "zone": 321,
+   "type": "MAP_TYPE_ROUTE",
+   "mapsec": "MAPSEC_ROUTE_102",
+   "place": 21
+  },
+  "OldaleTown": {
+   "zone": 397,
+   "type": "MAP_TYPE_TOWN",
+   "mapsec": "MAPSEC_OLDALE_TOWN",
+   "place": 5
+  },
+  "Route105": {
+   "zone": 331,
+   "type": "MAP_TYPE_ROUTE",
+   "mapsec": "MAPSEC_ROUTE_105",
+   "place": 24
+  },
+  "Route101": {
+   "zone": 317,
+   "type": "MAP_TYPE_ROUTE",
+   "mapsec": "MAPSEC_ROUTE_101",
+   "place": 14
+  },
+  "SlateportCity": {
+   "zone": 448,
+   "type": "MAP_TYPE_CITY",
+   "mapsec": "MAPSEC_SLATEPORT_CITY",
+   "place": 12
+  },
+  "Route134": {
+   "zone": 7,
+   "type": "MAP_TYPE_6",
+   "mapsec": "MAPSEC_ROUTE_134",
+   "place": 53
+  },
+  "Route133": {
+   "zone": 461,
+   "type": "MAP_TYPE_6",
+   "mapsec": "MAPSEC_ROUTE_133",
+   "place": 52
+  },
+  "Route132": {
+   "zone": 456,
+   "type": "MAP_TYPE_6",
+   "mapsec": "MAPSEC_ROUTE_132",
+   "place": 51
+  },
+  "PacifidlogTown": {
+   "zone": 458,
+   "type": "MAP_TYPE_TOWN",
+   "mapsec": "MAPSEC_PACIFIDLOG_TOWN",
+   "place": 10
+  },
+  "Route131": {
+   "zone": 444,
+   "type": "MAP_TYPE_6",
+   "mapsec": "MAPSEC_ROUTE_131",
+   "place": 50
+  },
+  "Route130": {
+   "zone": 240,
+   "type": "MAP_TYPE_6",
+   "mapsec": "MAPSEC_ROUTE_130",
+   "place": 49
+  },
+  "Route129": {
+   "zone": 238,
+   "type": "MAP_TYPE_6",
+   "mapsec": "MAPSEC_ROUTE_129",
+   "place": 48
+  },
+  "LittlerootTown": {
+   "zone": 389,
+   "type": "MAP_TYPE_TOWN",
+   "mapsec": "MAPSEC_LITTLEROOT_TOWN",
+   "place": 4
+  },
+  "Route109": {
+   "zone": 365,
+   "type": "MAP_TYPE_ROUTE",
+   "mapsec": "MAPSEC_ROUTE_109",
+   "place": 28
+  },
+  "Route106": {
+   "zone": 337,
+   "type": "MAP_TYPE_ROUTE",
+   "mapsec": "MAPSEC_ROUTE_106",
+   "place": 25
+  },
+  "DewfordTown": {
+   "zone": 465,
+   "type": "MAP_TYPE_TOWN",
+   "mapsec": "MAPSEC_DEWFORD_TOWN",
+   "place": 6
+  },
+  "Route107": {
+   "zone": 345,
+   "type": "MAP_TYPE_ROUTE",
+   "mapsec": "MAPSEC_ROUTE_107",
+   "place": 26
+  },
+  "Route108": {
+   "zone": 348,
+   "type": "MAP_TYPE_ROUTE",
+   "mapsec": "MAPSEC_ROUTE_108",
+   "place": 27
+  },
+  "BattleTower_Outside": {
+   "zone": 17,
+   "type": "MAP_TYPE_ROUTE",
+   "mapsec": "MAPSEC_BATTLE_TOWER",
+   "place": 62
+  },
+  "JaggedPass": {
+   "zone": 18,
+   "type": "MAP_TYPE_ROUTE",
+   "mapsec": "MAPSEC_JAGGED_PASS",
+   "place": 77
+  },
+  "MtChimney": {
+   "zone": 19,
+   "type": "MAP_TYPE_ROUTE",
+   "mapsec": "MAPSEC_MT_CHIMNEY",
+   "place": 60
+  },
+  "MtPyre_Exterior": {
+   "zone": 20,
+   "type": "MAP_TYPE_ROUTE",
+   "mapsec": "MAPSEC_MT_PYRE",
+   "place": 68
+  },
+  "MtPyre_Summit": {
+   "zone": 29,
+   "type": "MAP_TYPE_ROUTE",
+   "mapsec": "MAPSEC_MT_PYRE",
+   "place": 68
+  },
+  "PetalburgWoods": {
+   "zone": 37,
+   "type": "MAP_TYPE_ROUTE",
+   "mapsec": "MAPSEC_PETALBURG_WOODS",
+   "place": 63
+  },
+  "SafariZone_Northeast": {
+   "zone": 38,
+   "type": "MAP_TYPE_ROUTE",
+   "mapsec": "MAPSEC_SAFARI_ZONE",
+   "place": 61
+  },
+  "SafariZone_Northwest": {
+   "zone": 39,
+   "type": "MAP_TYPE_ROUTE",
+   "mapsec": "MAPSEC_SAFARI_ZONE",
+   "place": 61
+  },
+  "SafariZone_Southeast": {
+   "zone": 40,
+   "type": "MAP_TYPE_ROUTE",
+   "mapsec": "MAPSEC_SAFARI_ZONE",
+   "place": 61
+  },
+  "SafariZone_Southwest": {
+   "zone": 64,
+   "type": "MAP_TYPE_ROUTE",
+   "mapsec": "MAPSEC_SAFARI_ZONE",
+   "place": 61
+  },
+  "SkyPillar_Outside": {
+   "zone": 98,
+   "type": "MAP_TYPE_ROUTE",
+   "mapsec": "MAPSEC_SKY_PILLAR",
+   "place": 85
+  },
+  "SkyPillar_Top": {
+   "zone": 108,
+   "type": "MAP_TYPE_ROUTE",
+   "mapsec": "MAPSEC_SKY_PILLAR",
+   "place": 85
+  },
+  "SootopolisCity": {
+   "zone": 319,
+   "type": "MAP_TYPE_CITY",
+   "mapsec": "MAPSEC_SOOTOPOLIS_CITY",
+   "place": 19
+  },
+  "SouthernIsland_Exterior": {
+   "zone": 111,
+   "type": "MAP_TYPE_ROUTE",
+   "mapsec": "MAPSEC_SOUTHERN_ISLAND",
+   "place": 75
+  },
+  "SouthernIsland_Interior": {
+   "zone": 112,
+   "type": "MAP_TYPE_ROUTE",
+   "mapsec": "MAPSEC_SOUTHERN_ISLAND",
+   "place": 75
+  },
+  "FarawayIsland_Entrance": {
+   "zone": 158,
+   "type": "MAP_TYPE_ROUTE",
+   "mapsec": "MAPSEC_FARAWAY_ISLAND",
+   "place": 87,
+   "decomp": "pokeemerald"
+  },
+  "FarawayIsland_Interior": {
+   "zone": 159,
+   "type": "MAP_TYPE_ROUTE",
+   "mapsec": "MAPSEC_FARAWAY_ISLAND",
+   "place": 87,
+   "decomp": "pokeemerald"
+  },
+  "BirthIsland_Exterior": {
+   "zone": 195,
+   "type": "MAP_TYPE_ROUTE",
+   "mapsec": "MAPSEC_BIRTH_ISLAND",
+   "place": 88,
+   "decomp": "pokeemerald"
+  },
+  "NavelRock_Exterior": {
+   "zone": 232,
+   "type": "MAP_TYPE_ROUTE",
+   "mapsec": "MAPSEC_NAVEL_ROCK",
+   "place": 89,
+   "decomp": "pokeemerald"
+  },
+  "NavelRock_Top": {
+   "zone": 233,
+   "type": "MAP_TYPE_ROUTE",
+   "mapsec": "MAPSEC_NAVEL_ROCK",
+   "place": 89,
+   "decomp": "pokeemerald"
+  }
+ }
+}

@@ -1,0 +1,56 @@
+{
+ "_doc": "Per Sapphire tileset: metatile ids (secondary ids + 0x200) b2tools/models_cave.py can't tell from collision and behaviour alone. boulder: a blocked tile drawn as a loose rock on the floor (-> Black 2's drock02/drock01 models when it touches walkable floor); ladder_up / ladder_down: ladder art (a ladder up a rock face / down a hole). Filled from screenshots/sapphire renders and work/agents/cave_builder/sheets (metatile sheets with ids). gTileset_RusturfTunnel 0x203 (round rock) / 0x204 (rock cluster) on floor-coloured ground; gTileset_Lavaridge 0x30d (Fiery Path's small rocks). gTileset_MeteorFalls 0x20e (two pointed rocks) / 0x20f (round rock cluster) / 0x21f (rock cluster) on floor-coloured ground (sweep_outdoor 2026-10-11: drawn as flat rock tops level with the floor before, walk_diff OPEN). Granite's 0x203 is rubble on the rock colour (wall), not a boulder. bridge (caves_east): Victory Road's plank bridge metatiles (top row 0x2bb-0x2bd, bottom row 0x2c3-0x2c5; the middle 0x2bc/0x2c4 also on the elevation-15 crossings): walkable tiles drawn as Black 2's bridge deck over a chasm (b2tools/models_cave_levels.py, recipe \"bridges\"). caves_misc: gTileset_Cave 0x37a / 0x37e (ice rock clusters) / 0x37d (ice rock): Shoal Cave's ice room (no other layout uses them).",
+ "gTileset_Cave": {
+  "boulder": [
+   "0x202",
+   "0x218",
+   "0x21f",
+   "0x227",
+   "0x250",
+   "0x253",
+   "0x262",
+   "0x37a",
+   "0x37d",
+   "0x37e"
+  ],
+  "ladder_up": [
+   "0x23d",
+   "0x23e"
+  ],
+  "ladder_down": [
+   "0x23f"
+  ],
+  "bridge": [
+   "0x2bb",
+   "0x2bc",
+   "0x2bd",
+   "0x2c3",
+   "0x2c4",
+   "0x2c5"
+  ]
+ },
+ "gTileset_Lavaridge": {
+  "boulder": [
+   "0x30d"
+  ]
+ },
+ "gTileset_MeteorFalls": {
+  "boulder": [
+   "0x20e",
+   "0x20f",
+   "0x21f"
+  ]
+ },
+ "gTileset_RusturfTunnel": {
+  "boulder": [
+   "0x203",
+   "0x204"
+  ]
+ },
+ "emerald:gTileset_NavelRock": {"ladder_up": ["0x217", "0x366", "0x38b"], "ladder_down": ["0x23f"], "_doc": "Emerald's Navel Rock (events agent): ladder art up (0x217 caves, 0x366 the second ladder room, 0x38b the bottom) and down (0x23f)"},
+ "emerald:gTileset_Cave": {"boulder": ["0x250", "0x266"], "_doc": "Emerald's gTileset_Cave in Altering Cave (postgame_maps 2026-10-07): its loose rock piles are 0x250 and 0x266 (blocked, drawn as rocks on the floor; Ruby's boulder 0x218 is a cliff corner in Emerald's art)"},
+ "emerald_view:gTileset_Cave": {"boulder": ["0x202", "0x203", "0x21f", "0x227", "0x250", "0x266", "0x330"], "ladder_up": ["0x23d", "0x23e"], "ladder_down": ["0x23f"], "bridge": ["0x2bb", "0x2bc", "0x2bd", "0x2c3", "0x2c4", "0x2c5"], "_doc": "Emerald's gTileset_Cave as the Emerald-world caves read it (models_cave.py 'emerald/<Map>' recipes; emerald_caves 2026-10-12, metatile sheets work/agents/emerald_caves/sheets): loose rock piles 0x202/0x203/0x21f/0x227 (+ Altering Cave's 0x250/0x266, the Cave of Origin's round rock 0x330); Ruby's 0x218/0x253/0x262 are cliff pieces in Emerald's. Ladder and plank-bridge art at Ruby's ids (drawn alike)."},
+ "emerald_view:gTileset_MeteorFalls": {"boulder": ["0x20e", "0x20f", "0x21f", "0x28c"], "_doc": "Emerald's gTileset_MeteorFalls (emerald_caves): Ruby's rock piles 0x20e/0x20f/0x21f at the same ids, + 0x28c"},
+ "emerald_view:gTileset_MirageTower": {"boulder": ["0x202", "0x203", "0x268", "0x269"], "_doc": "Emerald's gTileset_MirageTower (emerald_caves): sand-coloured rock piles"},
+ "emerald_view:gTileset_Lavaridge": {"_doc": "Emerald's gTileset_Lavaridge (the Magma Hideout; emerald_caves): no loose rocks (Ruby's 0x30d is lava in Emerald's)"}
+}

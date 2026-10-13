@@ -1,0 +1,21 @@
+{
+ "_doc": "Emerald's gTileset_General metatiles labelled by eye (emerald_world 2026-10-12; sheets: work/agents/emerald_world/tools/label_sheets.py): the ones converter/emerald_labels.py cannot carry over from Sapphire. Wins over carry_gTileset_General.json.",
+ "gTileset_General": {
+  "005": "prop",
+  "006": "prop",
+  "066": "wall",
+  "076": "ledge_cap",
+  "077": "ledge_cap",
+  "08f": "ledge_s",
+  "095": "ledge_w",
+  "096": "ledge_e",
+  "107": "ledge_e",
+  "1de": "tree_bot",
+  "1df": "tree_bot",
+  "1f6": "water",
+  "1f7": "water"
+ },
+ "_notes": {
+  "_notes": "0x005/0x006 Battle Frontier planters (prop), 0x066 its low white wall, 0x076/0x077 the Safari expansion's rock ledge corners (ledge_cap) and 0x08F/0x095/0x096 its ledges, 0x1DE/0x1DF its forest trunks, 0x1F6/0x1F7 sea with a grass corner (water)"
+ }
+}

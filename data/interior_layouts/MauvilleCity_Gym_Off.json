@@ -1,0 +1,238 @@
+{
+ "_doc": "gyms_league: Mauville Gym: Sapphire's cross-shaped room, electric poles (the four along the back wall and the barrier posts), the barrier tiles as Black 2 electric floor (Chargestone Cave's), grey wall blocks; two Gym statues. Layout \"off\" (story_fixups): Sapphire's MauvilleGymSpecial3 (every beam off: Wattson beaten), loaded instead of the room by map replace event 4.",
+ "map": "MauvilleCity_Gym",
+ "style": "gl_mauville",
+ "floor": [
+  [
+   3,
+   2,
+   6,
+   7
+  ],
+  [
+   0,
+   8,
+   9,
+   17
+  ],
+  [
+   2,
+   18,
+   7,
+   20
+  ]
+ ],
+ "blocks": [
+  {
+   "use": "gl_mauville_pole",
+   "units": [
+    3.25,
+    2.3,
+    3.75,
+    2.8
+   ]
+  },
+  {
+   "use": "gl_mauville_pole",
+   "units": [
+    4.25,
+    2.3,
+    4.75,
+    2.8
+   ]
+  },
+  {
+   "use": "gl_mauville_pole",
+   "units": [
+    5.25,
+    2.3,
+    5.75,
+    2.8
+   ]
+  },
+  {
+   "use": "gl_mauville_pole",
+   "units": [
+    6.25,
+    2.3,
+    6.75,
+    2.8
+   ]
+  },
+  {
+   "use": "gl_mauville_pole",
+   "units": [
+    3.25,
+    8.3,
+    3.75,
+    8.8
+   ]
+  },
+  {
+   "use": "gl_mauville_pole",
+   "units": [
+    6.25,
+    8.3,
+    6.75,
+    8.8
+   ]
+  },
+  {
+   "use": "gl_mauville_pole",
+   "units": [
+    3.25,
+    11.3,
+    3.75,
+    11.8
+   ]
+  },
+  {
+   "use": "gl_mauville_pole",
+   "units": [
+    6.25,
+    11.3,
+    6.75,
+    11.8
+   ]
+  },
+  {
+   "use": "gl_mauville_pole",
+   "units": [
+    0.25,
+    11.3,
+    0.75,
+    11.8
+   ]
+  },
+  {
+   "use": "gl_mauville_pole",
+   "units": [
+    3.25,
+    14.3,
+    3.75,
+    14.8
+   ]
+  },
+  {
+   "use": "gl_mauville_pole",
+   "units": [
+    6.25,
+    14.3,
+    6.75,
+    14.8
+   ]
+  },
+  {
+   "use": "gl_mauville_wall",
+   "tiles": [
+    [
+     9,
+     10
+    ],
+    [
+     9,
+     11
+    ],
+    [
+     0,
+     13
+    ],
+    [
+     7,
+     13
+    ],
+    [
+     8,
+     13
+    ],
+    [
+     9,
+     13
+    ],
+    [
+     0,
+     14
+    ],
+    [
+     7,
+     14
+    ],
+    [
+     8,
+     14
+    ],
+    [
+     9,
+     14
+    ]
+   ]
+  }
+ ],
+ "furniture": [
+  {
+   "m": "object02_1",
+   "tile": [
+    3,
+    18
+   ]
+  },
+  {
+   "m": "object02_1",
+   "tile": [
+    6,
+    18
+   ]
+  }
+ ],
+ "alt_of": "MauvilleCity_Gym",
+ "unblock": [
+  [
+   4,
+   8
+  ],
+  [
+   5,
+   8
+  ],
+  [
+   3,
+   9
+  ],
+  [
+   3,
+   10
+  ],
+  [
+   6,
+   12
+  ],
+  [
+   6,
+   13
+  ],
+  [
+   4,
+   14
+  ],
+  [
+   5,
+   14
+  ]
+ ],
+ "mats": [
+  {
+   "tex": "in70_mat1",
+   "src": 351,
+   "border": 0.25,
+   "border_units": 3,
+   "y": 0,
+   "rect": [
+    4,
+    20,
+    5,
+    20
+   ],
+   "_what": "exit mat (Sapphire's Gym entrance mat)"
+  }
+ ]
+}

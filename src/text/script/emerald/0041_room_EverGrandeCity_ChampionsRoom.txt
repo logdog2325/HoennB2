@@ -1,0 +1,38 @@
+…
+Wallace: Welcome, {0100:0}.{be01}\nThat incident in Sootopolis City…\nThat was superb work, putting an end{be00}\nto that crisis all by yourself.{be01}\nOops!{be01}\nIt wouldn’t be fair to say that you\nalone ended the crisis.{be01}\nYou overcame that difficult situation\nby working as one with your Pokémon.{be01}\nWe Trainers raise Pokémon by giving\nthem items and by teaching them new{be00}\ntechniques for battle.{be01}\nBut we ourselves also learn many\nthings from Pokémon.{be01}\nAnd this is where your achievements\nare put to the test against what{be00}\nothers like you have achieved.{be01}\nNow!{be01}\nWho can most elegantly dance with\ntheir Pokémon in Hoenn?{be01}\nShow me right here and now!
+Wallace: The Pokémon you sent into\nbattle…{be01}\nAt times they danced like a spring\nbreeze, and at times they struck{be00}\nlike lightning.{be01}\nIt was with light, yet surefooted,\nelegance that you led your Pokémon.{be01}\nEven I felt bedazzled by your\nmasterful performance!{be01}\nYou now stand at the glorious peak\nof the Pokémon League.{be01}\nI now proclaim you to be the new\nHoenn region…
+May: {0100:0}!{be01}\nHere’s some advice before you challenge\nthe Champion…
+May: Huh?\nWhat, what, what?{be01}\n{0100:0}…\nCould it be that…{be00}\nIt’s already over?
+Brendan: {0100:0}!{be01}\nHow would you like some advice before\nyou challenge the Champion?…
+Brendan: {0100:0}…{be01}\nAre you trying to tell me…\nYou’ve beaten the Champion?
+Prof. Birch: See?\nWhat did I tell you, May?{be01}\nDidn’t I tell you that you don’t need\nto worry about {0100:0}?{be01}\n… … … … … … … …\n{0100:0}, you’ve finally done it.{be01}\nWhen I heard that you defeated your\nown father at the Petalburg Gym,{be00}\nI thought perhaps you had a chance…{be01}\nBut to think you’ve actually become\nthe Champion!{be01}\nAh, yes!{be01}\nWhat became of your Pokédex?\nHere, let me see.
+Prof. Birch: Anyways,\ncongratulations!{be01}\nNow, go proudly into the final room!
+Wallace: {0100:0}…{be01}\nNo, let me rephrase that properly.{be01}\nThe new Champion!{be01}\nCome with me.
+Wallace: I’m sorry, but…{be01}\nFrom here on, only those Trainers who\nhave become Champions may enter.{be01}\nYou’ll have to wait outside with\nProf. Birch.
+May: Groan…{be01}\n… … … … … … … …\n… … … … … … … …{be01}\nI’m just joking! That’s okay!\nThat’s the rule!{be01}\n{0100:0}!\nHonestly, congratulations!
+Brendan: Whaaaat?! … … … … …\n… … … … … … … …{be01}\nIt can’t be helped if that’s the rule.{be01}\n{0100:0}, way to go!\nCongratulations!
+Wallace: This room…{be01}\nThis is where we keep records of\nPokémon that prevailed through{be00}\nharsh battles.{be01}\nIt is here that the League Champions\nare honored.
+Wallace: Come on, let’s record your\nname as a Trainer who triumphed over{be00}\nthe Pokémon League, and the names of{be00}\nthe partners who battled with you.
+Hmhm…{be01}\nSo, you’ve seen {0100:1} Pokémon,\nand you’ve caught {0100:2} Pokémon…
+Go into grassy areas more and look\nfor Pokémon more carefully.
+I guess you’re getting the hang\nof it. But, it gets harder from here.
+Some Pokémon only appear in\ncertain areas.{be00}\nYou must be persistent.
+Well, it could use more quantity,\nbut this is looking more like{be00}\na Pokédex now.
+This is coming along pretty good.\nKeep up the effort.
+Are you using any Rods?\nThere are many Pokémon in the sea.
+Instead of just catching Pokémon,\nhow about making them evolve, too?
+This is going to be a fantastic\nPokédex.{be00}\nThat’s the feeling I’m getting.
+You’ve collected this many…\nYour talent is remarkable!
+Have you visited the Safari Zone?{be01}\nI hear there are some Pokémon that\ncan only be caught there.
+You’ve finally reached\nthe 100-kind mark.{be01}\nThis is an impressive Pokédex!
+There might be Pokémon that can be\nfound using Rock Smash.
+You should get some more Pokémon\nby trading with others.
+I’ve heard of Pokémon that evolve\nwhen they come to fully love their{be00}\nTrainers.
+I had no idea that there were so\nmany Pokémon species in the Hoenn{be00}\nregion.
+On occasion, some Pokémon appear\nin large numbers like outbreaks.{be01}\nDon’t miss opportunities like\nthose.
+One can get a very good idea about\nthe Pokémon of the Hoenn region{be00}\nby looking through your Pokédex.
+I would say you already qualify as\na Pokémon Professor, and a good{be00}\none, too!
+With a Pokédex this complete,\nyou’re a real professional at this!
+You’re very close to completing\nthis Pokédex.{be00}\nI can feel it in my bones!
+Congratulations!\nYour Pokédex is complete!
+Prof. Birch: See?\nWhat did I tell you, Brendan?{be01}\nDidn’t I tell you that you don’t need\nto worry about {0100:0}?{be01}\n… … … … … … … …\n{0100:0}, you’ve finally done it.{be01}\nWhen I heard that you defeated your\nown father at the Petalburg Gym,{be00}\nI thought perhaps you had a chance…{be01}\nBut to think you’ve actually become\nthe Champion!{be01}\nAh, yes!{be01}\nWhat became of your Pokédex?\nHere, let me see.

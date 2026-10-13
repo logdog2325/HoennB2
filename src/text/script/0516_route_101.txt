@@ -1,0 +1,7 @@
+Route 101\n↑ Oldale Town
+If Pokémon get tired, take them to\na Pokémon Center.{be01}\nThere’s a Pokémon Center in Oldale\nTown right close by.
+Wild Pokémon will jump out at you in\ntall grass.{be01}\nIf you want to catch Pokémon, you have\nto go into the tall grass and search.
+H-help me!
+Hello! You over there!\nPlease! Help!{be01}\nIn my Bag!\nThere’s a Poké Ball!
+Wh-Where are you going?!\nDon’t leave me like this!
+Prof. Birch: Whew...{be01}\nI was in the tall grass studying wild\nPokémon when I was jumped.{be01}\nYou saved me.\nThanks a lot!{be01}\nOh?{be01}\nHi, you’re {0100:0}!{be01}\nThis is not the place to chat, so come\nby my Pokémon Lab later, okay?

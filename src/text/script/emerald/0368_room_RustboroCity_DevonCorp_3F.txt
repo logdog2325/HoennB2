@@ -1,0 +1,17 @@
+It’s a collection of rare rocks and\nstones assembled by the President.
+It’s a collection of rare rocks and\nstones assembled by the President.
+This is the Devon Corporation’s\nthird floor.{be01}\nOur President’s Office is on\nthis floor.{be01}\nAnyway, I can’t tell you how much I’m\ngrateful for what you’ve done.{be01}\nUm… By the way, that parcel\nyou got back for us…{be01}\nCould I get you to deliver that to\nthe Shipyard in Slateport?{be01}\nIt would be awful if those robbers\ntried to take it again.{be01}\nUh… Hehehe, so, uh, could I count\non you to do that for me?{be01}\nOh, that’s right.\nCould you wait here a second?
+Our President would like to have\na word with you.{be01}\nPlease come with me.
+Please, go ahead.
+I’m Mr. Stone, the President of\nthe Devon Corporation.{be01}\nI’d just got word about you!{be01}\nYou saved our staff not just once,\nbut twice!{be01}\nI have a favor to ask of an amazing\nperson like you.{be01}\nI understand that you’re delivering\na package to Slateport’s Shipyard.{be01}\nWell, on the way, could you stop off in\nDewford Town?{be01}\nI was hoping that you’d deliver a\nLetter to Steven in Dewford.
+Mr. Stone: Now, you should know that\nI am a great President.{be01}\nSo, I’d never be so cheap as to ask\na favor for nothing in return.{be01}\nThat’s why I want you to have this!
+{0100:0} received a PokéNav.
+Mr. Stone: That device…{be01}\nIt’s a Pokémon Navigator, or PokéNav\nfor short.{be01}\nIt’s an indispensable tool for any\nTrainer on an adventure.{be01}\nIt has a map of the Hoenn region.{be01}\nYou can check the locations of\nDewford and Slateport easily!{be01}\nBy the way, I’ve heard that sinister\ncriminals--Magma and Aqua, I believe--{be00}\nhave been making trouble far and wide.{be01}\nI think it would be best if you rested\nup before you go on your way.
+Mr. Stone: I’m counting on you!
+Mr. Stone: You delivered my Letter?\nThank you kindly!{be01}\nThis is my way of thanking you.\nIt should help you, a Trainer.
+Mr. Stone: A Pokémon holding that\nExp. Share will be given some of the{be00}\nExp. Points from battle.{be01}\nIt will get Exp. Points even if it didn’t\nactually battle.{be01}\nI would say Exp. Share is quite useful\nfor raising weak Pokémon.
+Mr. Stone: Since my youth, I’ve immersed\nmyself in work.{be01}\nConsequently, I’m not familiar with\ntrends and that sort of thing.{be01}\nBut do young people all want to be\nTrainers in the Pokémon League?
+If you visit the Shipyard in Slateport,\nyou should go see Capt. Stern.
+Devon’s new products, the Repeat Ball\nand Timer Ball, have become hugely{be00}\npopular among Trainers.
+Too bad!\nThe Bag is full...
+Mr. Stone: Well, then, {0100:0},\ngo with caution and care!

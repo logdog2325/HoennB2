@@ -1,0 +1,507 @@
+{
+ "_doc": "Pokémon Emerald NDS, Chapter 10 (emerald_ch10, 2026-10-12; b2tools/patches/story.py, Emerald builds only): Sootopolis City's people, legends and door signs (scenes/emerald/SootopolisCity.inc), Wallace in the Cave of Origin, Wallace and the door at Sky Pillar, Rayquaza on its top, two Seafloor Cavern grunts Sapphire's rooms lack. Tiles: pokeemerald's (the Emerald world and room variants are pokeemerald's maps). Written by work/agents/emerald_ch10/tools/mk_story.py.",
+ "objects": [
+  {
+   "kind": "npc",
+   "map": "SootopolisCity",
+   "at": [
+    31,
+    18
+   ],
+   "uid": 101,
+   "model": 28,
+   "script": 2,
+   "dir": 1,
+   "move": 15,
+   "flag": 0,
+   "what": "the Cave of Origin expert (object 1, EXPERT_M = OLD_MAN_1, FACE_DOWN)"
+  },
+  {
+   "kind": "npc",
+   "map": "SootopolisCity",
+   "at": [
+    47,
+    33
+   ],
+   "uid": 102,
+   "model": 26,
+   "script": 4,
+   "dir": 2,
+   "move": 16,
+   "flag": "FLAG_HIDE_SOOTOPOLIS_CITY_RESIDENTS",
+   "what": "woman (object 2, WOMAN_4, FACE_LEFT): a spectator"
+  },
+  {
+   "kind": "npc",
+   "map": "SootopolisCity",
+   "at": [
+    9,
+    43
+   ],
+   "uid": 103,
+   "model": 17,
+   "script": 3,
+   "dir": 1,
+   "move": 5,
+   "flag": 0,
+   "what": "Kiri (object 3, GIRL_2, WANDER_LEFT_AND_RIGHT)",
+   "areaw": 1,
+   "areah": 0
+  },
+  {
+   "kind": "npc",
+   "map": "SootopolisCity",
+   "at": [
+    51,
+    14
+   ],
+   "uid": 104,
+   "model": 8,
+   "script": 5,
+   "dir": 1,
+   "move": 15,
+   "flag": 0,
+   "what": "ninja boy (object 4, NINJA_BOY = LITTLE_BOY_1, FACE_DOWN)"
+  },
+  {
+   "kind": "npc",
+   "map": "SootopolisCity",
+   "at": [
+    43,
+    26
+   ],
+   "uid": 105,
+   "model": 10,
+   "script": 6,
+   "dir": 1,
+   "move": 2,
+   "flag": 0,
+   "what": "boy (object 5, BOY_1, LOOK_AROUND)"
+  },
+  {
+   "kind": "npc",
+   "map": "SootopolisCity",
+   "at": [
+    26,
+    4
+   ],
+   "uid": 106,
+   "model": 61,
+   "script": 7,
+   "dir": 2,
+   "move": 5,
+   "flag": "FLAG_HIDE_SOOTOPOLIS_CITY_MAN_1",
+   "what": "man (object 6, MAN_1, WANDER_LEFT_AND_RIGHT)",
+   "areaw": 1,
+   "areah": 0
+  },
+  {
+   "kind": "npc",
+   "map": "SootopolisCity",
+   "at": [
+    20,
+    36
+   ],
+   "uid": 107,
+   "model": 287,
+   "script": 8,
+   "dir": 1,
+   "move": 15,
+   "flag": "FLAG_HIDE_STEVEN_SOOTOPOLIS",
+   "what": "Steven (object 7, FACE_DOWN)"
+  },
+  {
+   "kind": "npc",
+   "map": "SootopolisCity",
+   "at": [
+    49,
+    34
+   ],
+   "uid": 108,
+   "model": 22,
+   "script": 9,
+   "dir": 1,
+   "move": 4,
+   "flag": 0,
+   "what": "woman (object 8, WOMAN_5, WANDER_UP_AND_DOWN)",
+   "areaw": 1,
+   "areah": 1
+  },
+  {
+   "kind": "npc",
+   "map": "SootopolisCity",
+   "at": [
+    28,
+    44
+   ],
+   "uid": 109,
+   "model": 4512,
+   "script": 0,
+   "dir": 3,
+   "move": 17,
+   "flag": "FLAG_HIDE_SOOTOPOLIS_CITY_GROUDON",
+   "what": "Groudon (object 9, GROUDON_SIDE: Black 2 field model 4512, facing Kyogre)"
+  },
+  {
+   "kind": "npc",
+   "map": "SootopolisCity",
+   "at": [
+    34,
+    44
+   ],
+   "uid": 110,
+   "model": 4511,
+   "script": 0,
+   "dir": 2,
+   "move": 16,
+   "flag": "FLAG_HIDE_SOOTOPOLIS_CITY_KYOGRE",
+   "what": "Kyogre (object 10, KYOGRE_SIDE: field model 4511, facing Groudon)"
+  },
+  {
+   "kind": "npc",
+   "map": "SootopolisCity",
+   "at": [
+    31,
+    41
+   ],
+   "uid": 111,
+   "model": 4513,
+   "script": 0,
+   "dir": 3,
+   "move": 17,
+   "flag": "FLAG_HIDE_SOOTOPOLIS_CITY_RAYQUAZA",
+   "what": "Rayquaza (object 11: field model 4513, FACE_RIGHT)"
+  },
+  {
+   "kind": "npc",
+   "map": "SootopolisCity",
+   "at": [
+    17,
+    44
+   ],
+   "uid": 112,
+   "model": 24,
+   "script": 10,
+   "dir": 3,
+   "move": 17,
+   "flag": "FLAG_HIDE_SOOTOPOLIS_CITY_RESIDENTS",
+   "what": "maniac (object 12, MANIAC, FACE_RIGHT): a spectator"
+  },
+  {
+   "kind": "npc",
+   "map": "SootopolisCity",
+   "at": [
+    14,
+    42
+   ],
+   "uid": 113,
+   "model": 15,
+   "script": 11,
+   "dir": 3,
+   "move": 17,
+   "flag": "FLAG_HIDE_SOOTOPOLIS_CITY_RESIDENTS",
+   "what": "girl (object 13, GIRL_3, FACE_RIGHT): a spectator"
+  },
+  {
+   "kind": "npc",
+   "map": "SootopolisCity",
+   "at": [
+    17,
+    40
+   ],
+   "uid": 114,
+   "model": 46,
+   "script": 12,
+   "dir": 3,
+   "move": 17,
+   "flag": "FLAG_HIDE_SOOTOPOLIS_CITY_RESIDENTS",
+   "what": "black belt (object 14, FACE_RIGHT): a spectator"
+  },
+  {
+   "kind": "npc",
+   "map": "SootopolisCity",
+   "at": [
+    19,
+    37
+   ],
+   "uid": 115,
+   "model": 21,
+   "script": 13,
+   "dir": 1,
+   "move": 15,
+   "flag": "FLAG_HIDE_SOOTOPOLIS_CITY_RESIDENTS",
+   "what": "boy (object 15, BOY_2, FACE_DOWN): a spectator"
+  },
+  {
+   "kind": "npc",
+   "map": "SootopolisCity",
+   "at": [
+    29,
+    33
+   ],
+   "uid": 116,
+   "model": 303,
+   "script": 14,
+   "dir": 1,
+   "move": 15,
+   "flag": "FLAG_HIDE_SOOTOPOLIS_CITY_MAXIE",
+   "what": "Maxie (object 16, FACE_DOWN)"
+  },
+  {
+   "kind": "npc",
+   "map": "SootopolisCity",
+   "at": [
+    31,
+    33
+   ],
+   "uid": 117,
+   "model": 353,
+   "script": 15,
+   "dir": 1,
+   "move": 15,
+   "flag": "FLAG_HIDE_SOOTOPOLIS_CITY_ARCHIE",
+   "what": "Archie (object 17, FACE_DOWN)"
+  },
+  {
+   "kind": "npc",
+   "map": "SootopolisCity",
+   "at": [
+    31,
+    18
+   ],
+   "uid": 118,
+   "model": 288,
+   "script": 16,
+   "dir": 1,
+   "move": 15,
+   "flag": "FLAG_HIDE_WALLACE_SOOTOPOLIS",
+   "what": "Wallace (object 18, FACE_DOWN; FLAG_HIDE_SOOTOPOLIS_CITY_WALLACE)"
+  },
+  {
+   "kind": "sign",
+   "map": "SootopolisCity",
+   "at": [
+    9,
+    6
+   ],
+   "script": 17,
+   "dir": 0,
+   "y": 160,
+   "what": "House 1 door (closed while the legends are here)"
+  },
+  {
+   "kind": "sign",
+   "map": "SootopolisCity",
+   "at": [
+    45,
+    6
+   ],
+   "script": 17,
+   "dir": 0,
+   "y": 128,
+   "what": "House 2 door"
+  },
+  {
+   "kind": "sign",
+   "map": "SootopolisCity",
+   "at": [
+    9,
+    17
+   ],
+   "script": 17,
+   "dir": 0,
+   "y": 96,
+   "what": "House 3 door"
+  },
+  {
+   "kind": "sign",
+   "map": "SootopolisCity",
+   "at": [
+    44,
+    17
+   ],
+   "script": 17,
+   "dir": 0,
+   "y": 64,
+   "what": "House 4 door"
+  },
+  {
+   "kind": "sign",
+   "map": "SootopolisCity",
+   "at": [
+    9,
+    26
+   ],
+   "script": 17,
+   "dir": 0,
+   "y": 64,
+   "what": "House 5 door"
+  },
+  {
+   "kind": "sign",
+   "map": "SootopolisCity",
+   "at": [
+    53,
+    28
+   ],
+   "script": 17,
+   "dir": 0,
+   "y": 48,
+   "what": "House 6 door"
+  },
+  {
+   "kind": "sign",
+   "map": "SootopolisCity",
+   "at": [
+    8,
+    35
+   ],
+   "script": 17,
+   "dir": 0,
+   "y": 32,
+   "what": "House 7 door"
+  },
+  {
+   "kind": "sign",
+   "map": "SootopolisCity",
+   "at": [
+    48,
+    25
+   ],
+   "script": 17,
+   "dir": 0,
+   "y": 48,
+   "what": "the Lotad and Seedot house door (Sapphire House 8)"
+  },
+  {
+   "kind": "sign",
+   "map": "SootopolisCity",
+   "at": [
+    31,
+    32
+   ],
+   "script": 18,
+   "dir": 0,
+   "y": 0,
+   "what": "Gym door (closed until Archie and Maxie leave)"
+  },
+  {
+   "kind": "npc",
+   "map": "CaveOfOrigin_B4F",
+   "at": [
+    9,
+    13
+   ],
+   "uid": 1,
+   "model": 288,
+   "script": 5,
+   "dir": 0,
+   "move": 14,
+   "flag": "FLAG_HIDE_CAVE_OF_ORIGIN_B1F_WALLACE",
+   "what": "Wallace (CaveOfOrigin_B1F object 1, FACE_UP): src/field_scripts/emerald/0206_room_CaveOfOrigin_B4F.s COB_Wallace"
+  },
+  {
+   "kind": "npc",
+   "map": "SkyPillar_Outside",
+   "at": [
+    13,
+    7
+   ],
+   "uid": 101,
+   "model": 288,
+   "script": 0,
+   "dir": 1,
+   "move": 15,
+   "flag": "FLAG_HIDE_SKY_PILLAR_WALLACE",
+   "what": "Wallace (object 1, FACE_DOWN)"
+  },
+  {
+   "kind": "sign",
+   "map": "SkyPillar_Outside",
+   "at": [
+    14,
+    5
+   ],
+   "script": 3,
+   "dir": 0,
+   "y": 0,
+   "what": "the Sky Pillar door (closed until Wallace opens it)"
+  },
+  {
+   "kind": "npc",
+   "map": "SkyPillar_Top",
+   "at": [
+    14,
+    7
+   ],
+   "uid": 101,
+   "model": 4513,
+   "script": 0,
+   "dir": 1,
+   "move": 15,
+   "flag": "FLAG_HIDE_SKY_PILLAR_TOP_RAYQUAZA",
+   "what": "Rayquaza asleep (object 1, FACE_DOWN)"
+  },
+  {
+   "kind": "npc",
+   "map": "SkyPillar_Top",
+   "at": [
+    14,
+    6
+   ],
+   "uid": 102,
+   "model": 4513,
+   "script": 2,
+   "dir": 1,
+   "move": 15,
+   "flag": "FLAG_HIDE_SKY_PILLAR_TOP_RAYQUAZA_STILL",
+   "what": "Rayquaza after Sootopolis (object 2, RAYQUAZA_STILL): the battle"
+  },
+  {
+   "kind": "trigger",
+   "map": "SkyPillar_Top",
+   "at": [
+    14,
+    9
+   ],
+   "script": 3,
+   "var": "VAR_SKY_PILLAR_RAYQUAZA_CRY_DONE",
+   "value": 0,
+   "what": "Rayquaza wakes (coord event (14,9))"
+  },
+  {
+   "kind": "npc",
+   "map": "SeafloorCavern_Room3",
+   "at": [
+    5,
+    5
+   ],
+   "uid": 9,
+   "model": 293,
+   "script": 3311,
+   "dir": 3,
+   "move": 17,
+   "flag": "FLAG_HIDE_EVIL_TEAM_GRUNTS_SEAFLOOR_CAVERN",
+   "what": "TRAINER_GRUNT_SEAFLOOR_CAVERN_5 311: eye-contact trainer (object 9, AQUA_MEMBER_M, FACE_RIGHT)",
+   "evtype": 1,
+   "p0": 4
+  },
+  {
+   "kind": "npc",
+   "map": "SeafloorCavern_Room4",
+   "at": [
+    5,
+    12
+   ],
+   "uid": 2,
+   "model": 294,
+   "script": 3031,
+   "dir": 0,
+   "move": 14,
+   "flag": "FLAG_HIDE_EVIL_TEAM_GRUNTS_SEAFLOOR_CAVERN",
+   "what": "TRAINER_GRUNT_SEAFLOOR_CAVERN_4 31: eye-contact trainer (object 2, AQUA_MEMBER_F, FACE_UP)",
+   "evtype": 1,
+   "p0": 3
+  }
+ ]
+}

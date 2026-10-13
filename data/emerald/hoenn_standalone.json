@@ -1,0 +1,8 @@
+{
+ "_doc_emerald": "Emerald's overlay of data/hoenn_standalone.json (emerald_world 2026-10-12): deep-merged over it by version.load_json in HOENN_VERSION=emerald world builds (b2tools/world.py standalone_cfg); Sapphire and Ruby never read it. The Emerald-only outdoor maps join the groups of the maps they connect to (pokeemerald connections): the Safari Zone's expansion east of its north and south areas (Emerald's SafariZone_Northeast/Southeast, HoennB2 names <folder>_Emerald: data/versions.json name_clash), the Battle Frontier's east half beside the island's west half (Sapphire's BattleTower_Outside, Emerald's BattleFrontier_OutsideWest). 'order' (new key, world.py compose_group): the order the group's maps put their doors into the zone (default: 'maps' order); the Frontier's east half first, so its warp 0 (the Battle Tower) stays door 0 of zone 17, the door the Battle Tower lobby's exit names (data/interiors).",
+ "groups": {
+  "SafariZone": {"maps": {"SafariZone_Northeast_Emerald": [80, 0], "SafariZone_Southeast_Emerald": [80, 40]}},
+  "BattleTower_Outside": {"maps": {"BattleFrontier_OutsideEast": [56, 0]},
+                          "order": ["BattleFrontier_OutsideEast", "BattleTower_Outside"]}
+ }
+}

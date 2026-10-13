@@ -1,0 +1,10 @@
+{
+ "_doc": "Emerald builds (emerald_mech, 2026-10-12): the lines of Emerald's mechanics. script/0615.txt = the text of global script file 1236 (src/field_scripts/emerald/1236_global_2280.s), lines 56-60 appended after Black 2's 56.",
+ "script/0615.txt": {
+  "56": "{0102:0} and {0107:1}\\nare not compatible.{be01}\\n{0107:1} can’t be\\nlearned.",
+  "57": "{0102:0} already knows\\n{0107:1}.",
+  "58": "That Pokémon can’t participate.",
+  "59": "This building is still under\\nconstruction.{be01}\\nPlease come back when the work\\nis completed.",
+  "60": "Cancel the battle?"
+ }
+}

@@ -1,0 +1,20 @@
+Welcome to Lilycove Department Store.
+Whenever I come to the Department\nStore, I always end up buying all sorts{be00}\nof things because it’s so fun.
+Today, my mom is going to buy me some\nnice furniture.
+I’m buying something for my Azumarill\nas a reward for winning a Contest.
+1F: Service Counter\n    Lottery Corner{be01}\n2F: Trainer’s Zone{be01}\n3F: Battle Collection{be01}\n4F: TM Corner{be01}\n5F: Poké Doll Floor{be01}\nRooftop: Rooftop Plaza
+This is the Pokémon Lottery Corner.{be01}\nAll shoppers visiting our Department\nStore get to draw a Pokémon Loto{be00}\nTicket.{be01}\nIf the Loto Ticket’s number matches\nthe Id number of any of your Pokémon,{be00}\nyou will receive a fabulous gift.{be01}\nWould you like to draw a Pokémon\nLoto Ticket?
+Please pick a Loto Ticket.\n... ... ...
+The Loto Ticket number is {0100:1}.{be01}\nI need to run a check on this number\nto see if it matches any of your{be00}\nPokémon’s Id numbers. Please wait.
+Congratulations!{be01}\nThe Id number of your team’s\n{0100:1} matches your Loto Ticket’s{be00}\nnumber!
+Please come back tomorrow.
+Please do visit us again.
+I’m sorry.\nNone of the numbers matched.
+Please do visit again.
+Two digits matched, so you win the\nthird prize!{be00}\nYou’ve won the {0100:1}!
+Three digits matched, so you win the\nsecond prize!{be00}\nYou’ve won the {0100:1}!
+Four digits matched, so you win the\nfirst prize!{be00}\nYou’ve won the {0100:1}!
+Oh, my goodness, all five digits matched!{be01}\nYou’ve won the jackpot prize!\nYou’ve won the {0100:1}!
+Oh?\nYou seem to have no room for this.{be01}\nPlease make room in your Bag and\nlet me know.
+{0100:0}?\nYes, I’ve been expecting you.{be01}\nThis is the prize we’ve been holding\nfor you.
+Azumarill: Maririroo!

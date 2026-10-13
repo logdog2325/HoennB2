@@ -1,0 +1,23 @@
+{
+ "_doc": "SootopolisCity_House6: zone written by converter/gen_interior_recipes_houses.py (warps and parent from converter/gen_interiors.py); story people left for the story phase: person WOMAN_3 at (4,3) SootopolisCity_House6_EventScript_Woman (story/complex script)",
+ "zone": 49,
+ "room": "SootopolisCity_House6",
+ "area": 313,
+ "parent": 389,
+ "warps": [
+  {
+   "at": [3, 6],
+   "tile_only": true,
+   "to": [319, 10],
+   "what": "Sapphire warp 0 -> SootopolisCity 9"
+  },
+  {
+   "at": [4, 6],
+   "tile_only": true,
+   "to": [319, 10],
+   "what": "Sapphire warp 1 -> SootopolisCity 9"
+  }
+ ],
+ "npcs": [],
+ "signs": []
+}

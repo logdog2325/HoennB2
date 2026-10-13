@@ -1,0 +1,35 @@
+{
+ "_doc": "Mt. Chimney cable car station (zone 340; scripts src/field_scripts/0680_room_MtChimney_CableCarStation.s, text 0552). Area 330 = Black 2's Gear Station (interior pack 48). Mt. Chimney's outside is not built yet: the exit warps point at the room itself. Story, not placed yet: the attendant (6,6) and the cable car (6,3).",
+ "zone": 340,
+ "room": "MtChimney_CableCarStation",
+ "area": 330,
+ "parent": 389,
+ "warps": [
+  {
+   "at": [
+    6,
+    11
+   ],
+   "tile_only": true,
+   "to": [
+    19,
+    1
+   ],
+   "what": "Sapphire warp 0 -> MtChimney 0"
+  },
+  {
+   "at": [
+    7,
+    11
+   ],
+   "tile_only": true,
+   "to": [
+    19,
+    2
+   ],
+   "what": "Sapphire warp 1 -> MtChimney 1"
+  }
+ ],
+ "npcs": [],
+ "signs": []
+}

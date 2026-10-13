@@ -1,0 +1,536 @@
+{
+ "map": "Route113",
+ "id": "MAP_ROUTE113",
+ "layout": "LAYOUT_ROUTE113",
+ "music": "MUS_ROUTE113",
+ "region_map_section": "MAPSEC_ROUTE_113",
+ "weather": "WEATHER_SUNNY",
+ "connections": [
+  {
+   "direction": "down",
+   "offset": 60,
+   "map": "MAP_ROUTE112"
+  },
+  {
+   "direction": "left",
+   "offset": 0,
+   "map": "MAP_FALLARBOR_TOWN"
+  },
+  {
+   "direction": "right",
+   "offset": 0,
+   "map": "MAP_ROUTE111"
+  }
+ ],
+ "npcs": [
+  {
+   "local_id": 1,
+   "x": 66,
+   "y": 12,
+   "gfx": "OBJ_EVENT_GFX_LITTLE_BOY_1",
+   "movement": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
+   "range": [
+    1,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "Route113_EventScript_15060E",
+   "texts": {
+    "Route113_Text_16FFEE": "It's fun walking through the volcano's\\nashes on the ground and grass.\\pYou can see where you walked - it's\\nreally neat!$"
+   }
+  },
+  {
+   "local_id": 2,
+   "x": 36,
+   "y": 10,
+   "gfx": "OBJ_EVENT_GFX_GENTLEMAN",
+   "movement": "MOVEMENT_TYPE_WANDER_UP_AND_DOWN",
+   "range": [
+    0,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "Route113_EventScript_150605",
+   "texts": {
+    "Route113_Text_16FF7F": "Wahahaha! Today's technology is a\\nwondrous thing!\\pTake this volcanic ash here.\\nIt can be fashioned into glass.$"
+   }
+  },
+  {
+   "local_id": 3,
+   "x": 62,
+   "y": 8,
+   "gfx": "OBJ_EVENT_GFX_YOUNGSTER",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route113_EventScript_15063B",
+   "texts": {
+    "Route113_Text_1BB9BA": "Can you guess why it's so cool\\naround here?$",
+    "Route113_Text_1BB9E6": "Peeuuw!\\nThat stinks!$",
+    "Route113_Text_1BB9FB": "The volcanic ash blocks the sun, so it\\ndoesn't get very warm.\\pThat's good for me - I can't stand heat!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 4,
+   "x": 21,
+   "y": 11,
+   "gfx": "OBJ_EVENT_GFX_YOUNGSTER",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN_AND_LEFT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route113_EventScript_150652",
+   "texts": {
+    "Route113_Text_1BBA62": "The volcano's eruption is proof that\\nthe earth is alive.$",
+    "Route113_Text_1BBA9B": "You're some kind of strong!$",
+    "Route113_Text_1BBAB7": "Ouch! Owww! I can't see!\\nI got ashes in my eyelashes!\\pGet it? Ashes and eyelashes?\\pOkay, that was bad, sorry...$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 5,
+   "x": 51,
+   "y": 11,
+   "gfx": "OBJ_EVENT_GFX_WOMAN_7",
+   "movement": "MOVEMENT_TYPE_ROTATE_COUNTERCLOCKWISE",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route113_EventScript_150669",
+   "texts": {
+    "Route113_Text_1BBB27": "I use this parasol to ward off this\\nfilthy, yucky volcanic ash from my\\ldear NUMEL.$",
+    "Route113_Text_1BBB7A": "Huff, huff...\\nI am exhausted...$",
+    "Route113_Text_1BBB9A": "You're very good at this.\\nI must say I'm impressed!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 6,
+   "x": 53,
+   "y": 7,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_ROUTE113_1",
+   "script": "Route113_EventScript_1B14FC",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 7,
+   "x": 78,
+   "y": 5,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_ROUTE113_2",
+   "script": "Route113_EventScript_1B1509",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 8,
+   "x": 66,
+   "y": 3,
+   "gfx": "OBJ_EVENT_GFX_LITTLE_BOY_1",
+   "movement": "MOVEMENT_TYPE_HIDDEN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_BURIED",
+   "hide_flag": "0",
+   "script": "Route113_EventScript_1506A7",
+   "texts": {
+    "Route113_Text_1BBC59": "From out of the ashes I leap! Hiyah!\\nI challenge thee!$",
+    "Route113_Text_1BBC90": "With honor I admit defeat!$",
+    "Route113_Text_1BBCAB": "I must refine the art of concealment.\\nI bid thee farewell.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 9,
+   "x": 29,
+   "y": 6,
+   "gfx": "OBJ_EVENT_GFX_LITTLE_BOY_1",
+   "movement": "MOVEMENT_TYPE_HIDDEN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_BURIED",
+   "hide_flag": "0",
+   "script": "Route113_EventScript_1506E5",
+   "texts": {
+    "Route113_Text_1BBD92": "Thanks for finding me!\\nBut we still have to battle!$",
+    "Route113_Text_1BBDC6": "I'll use my ninjutsu on you...\\n“VOLCANIC ASH SWIRL CLOAK”!\\p...What? It's already over?$",
+    "Route113_Text_1BBE1D": "You know what's crummy about hiding?\\nIt's lonely if no one comes along.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 10,
+   "x": 45,
+   "y": 6,
+   "gfx": "OBJ_EVENT_GFX_LITTLE_GIRL_1",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route113_EventScript_1506FC",
+   "texts": {
+    "Route113_Text_1BBE65": "TORI: Both of us, we collect ashes.\\nWe battle POKéMON, too.$",
+    "Route113_Text_1BBEA1": "TORI: We lost... It's boring, so I'm going\\nto get some more ashes.$",
+    "Route113_Text_1BBF25": "TORI: We want to battle 2-on-2.\\nIf we didn't, we would lose!$",
+    "Route113_Text_1BBEE4": "TORI: How much ash do we have?\\nEnough for a WHITE FLUTE, I hope.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 11,
+   "x": 46,
+   "y": 6,
+   "gfx": "OBJ_EVENT_GFX_LITTLE_GIRL_1",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route113_EventScript_150717",
+   "texts": {
+    "Route113_Text_1BBF62": "TIA: Both of us, we collect ashes.\\nWe battle POKéMON, too.$",
+    "Route113_Text_1BBF9D": "TIA: We couldn't win... It's boring,\\nso I'm getting some more ashes.$",
+    "Route113_Text_1BC021": "TIA: We want to battle 2-on-2.\\nIf we don't, we won't win!$",
+    "Route113_Text_1BBFE2": "TIA: We have a lot of ashes!\\nI think enough for a WHITE FLUTE!$"
+   },
+   "complex": true
+  }
+ ],
+ "signs": [
+  {
+   "x": 85,
+   "y": 6,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "Route113_EventScript_150617",
+   "texts": {
+    "Route113_Text_170065": "ROUTE 113\\n{0x7C} ROUTE 111$"
+   }
+  },
+  {
+   "x": 11,
+   "y": 9,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "Route113_EventScript_150620",
+   "texts": {
+    "Route113_Text_17007B": "ROUTE 113\\n{0x7B} FALLARBOR TOWN$"
+   }
+  },
+  {
+   "x": 58,
+   "y": 4,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "Route113_EventScript_150632",
+   "texts": {
+    "Route113_Text_170096": "TRAINER TIPS\\pYou may register one of the KEY ITEMS\\nin your BAG as SELECT.\\pSimply press SELECT to use the\\nregistered item conveniently.$"
+   }
+  },
+  {
+   "x": 31,
+   "y": 5,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "Route113_EventScript_150629",
+   "texts": {
+    "Route113_Text_17011D": "GLASS WORKSHOP\\n“Turning Volcanic Ash into Glass Items”$"
+   }
+  },
+  {
+   "x": 49,
+   "y": 8,
+   "type": "secret_base",
+   "raw": {
+    "type": "secret_base",
+    "x": 49,
+    "y": 8,
+    "elevation": 0,
+    "secret_base_id": "SECRET_BASE_RED_CAVE1_3"
+   }
+  },
+  {
+   "x": 72,
+   "y": 4,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 72,
+    "y": 4,
+    "elevation": 3,
+    "item": "ITEM_ETHER",
+    "flag": "FLAG_HIDDEN_ITEM_3"
+   }
+  },
+  {
+   "x": 22,
+   "y": 5,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 22,
+    "y": 5,
+    "elevation": 3,
+    "item": "ITEM_TM32_DOUBLE_TEAM",
+    "flag": "FLAG_HIDDEN_ITEM_1E"
+   }
+  }
+ ],
+ "warps": [
+  {
+   "id": 0,
+   "x": 33,
+   "y": 5,
+   "dest_map": "MAP_ROUTE113_GLASS_WORKSHOP",
+   "dest_warp_id": "0"
+  }
+ ],
+ "coord_events": [
+  {
+   "type": "weather",
+   "x": 19,
+   "y": 11,
+   "elevation": 3,
+   "weather": "COORD_EVENT_WEATHER_ASH"
+  },
+  {
+   "type": "weather",
+   "x": 19,
+   "y": 10,
+   "elevation": 3,
+   "weather": "COORD_EVENT_WEATHER_ASH"
+  },
+  {
+   "type": "weather",
+   "x": 19,
+   "y": 12,
+   "elevation": 3,
+   "weather": "COORD_EVENT_WEATHER_ASH"
+  },
+  {
+   "type": "weather",
+   "x": 19,
+   "y": 13,
+   "elevation": 3,
+   "weather": "COORD_EVENT_WEATHER_ASH"
+  },
+  {
+   "type": "weather",
+   "x": 87,
+   "y": 9,
+   "elevation": 3,
+   "weather": "COORD_EVENT_WEATHER_ASH"
+  },
+  {
+   "type": "weather",
+   "x": 86,
+   "y": 10,
+   "elevation": 3,
+   "weather": "COORD_EVENT_WEATHER_ASH"
+  },
+  {
+   "type": "weather",
+   "x": 86,
+   "y": 11,
+   "elevation": 3,
+   "weather": "COORD_EVENT_WEATHER_ASH"
+  },
+  {
+   "type": "weather",
+   "x": 14,
+   "y": 10,
+   "elevation": 3,
+   "weather": "COORD_EVENT_WEATHER_SUNNY"
+  },
+  {
+   "type": "weather",
+   "x": 14,
+   "y": 11,
+   "elevation": 3,
+   "weather": "COORD_EVENT_WEATHER_SUNNY"
+  },
+  {
+   "type": "weather",
+   "x": 14,
+   "y": 12,
+   "elevation": 3,
+   "weather": "COORD_EVENT_WEATHER_SUNNY"
+  },
+  {
+   "type": "weather",
+   "x": 14,
+   "y": 13,
+   "elevation": 3,
+   "weather": "COORD_EVENT_WEATHER_SUNNY"
+  },
+  {
+   "type": "weather",
+   "x": 94,
+   "y": 8,
+   "elevation": 3,
+   "weather": "COORD_EVENT_WEATHER_SUNNY"
+  },
+  {
+   "type": "weather",
+   "x": 94,
+   "y": 9,
+   "elevation": 3,
+   "weather": "COORD_EVENT_WEATHER_SUNNY"
+  },
+  {
+   "type": "weather",
+   "x": 94,
+   "y": 10,
+   "elevation": 3,
+   "weather": "COORD_EVENT_WEATHER_SUNNY"
+  },
+  {
+   "type": "weather",
+   "x": 94,
+   "y": 11,
+   "elevation": 0,
+   "weather": "COORD_EVENT_WEATHER_SUNNY"
+  },
+  {
+   "type": "weather",
+   "x": 19,
+   "y": 14,
+   "elevation": 3,
+   "weather": "COORD_EVENT_WEATHER_ASH"
+  },
+  {
+   "type": "weather",
+   "x": 88,
+   "y": 8,
+   "elevation": 3,
+   "weather": "COORD_EVENT_WEATHER_ASH"
+  },
+  {
+   "type": "weather",
+   "x": 88,
+   "y": 6,
+   "elevation": 3,
+   "weather": "COORD_EVENT_WEATHER_ASH"
+  },
+  {
+   "type": "weather",
+   "x": 88,
+   "y": 7,
+   "elevation": 3,
+   "weather": "COORD_EVENT_WEATHER_ASH"
+  }
+ ],
+ "wild": {
+  "land_mons": {
+   "encounter_rate": 20,
+   "slot_rates": [
+    20,
+    20,
+    10,
+    10,
+    10,
+    10,
+    5,
+    5,
+    4,
+    4,
+    1,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_SPINDA",
+     "min": 15,
+     "max": 15
+    },
+    {
+     "species": "SPECIES_SPINDA",
+     "min": 15,
+     "max": 15
+    },
+    {
+     "species": "SPECIES_SANDSHREW",
+     "min": 15,
+     "max": 15
+    },
+    {
+     "species": "SPECIES_SPINDA",
+     "min": 14,
+     "max": 14
+    },
+    {
+     "species": "SPECIES_SPINDA",
+     "min": 14,
+     "max": 14
+    },
+    {
+     "species": "SPECIES_SANDSHREW",
+     "min": 14,
+     "max": 14
+    },
+    {
+     "species": "SPECIES_SPINDA",
+     "min": 16,
+     "max": 16
+    },
+    {
+     "species": "SPECIES_SANDSHREW",
+     "min": 16,
+     "max": 16
+    },
+    {
+     "species": "SPECIES_SPINDA",
+     "min": 16,
+     "max": 16
+    },
+    {
+     "species": "SPECIES_SKARMORY",
+     "min": 16,
+     "max": 16
+    },
+    {
+     "species": "SPECIES_SPINDA",
+     "min": 16,
+     "max": 16
+    },
+    {
+     "species": "SPECIES_SKARMORY",
+     "min": 16,
+     "max": 16
+    }
+   ]
+  }
+ }
+}

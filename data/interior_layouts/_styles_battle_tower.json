@@ -1,0 +1,10 @@
+{
+ "_doc": "battle_tower agent's styles (rooms helper, 2026-10-08). bt_lift = the Battle Tower elevator car: Black 2 has no lift-car interior (its elevators are the elevator01 door model in a hall, the ride a fade: global script 1264 ElevatorChangeMap; the Pokemon Center's glass capsules pcev01 are 98 units tall, seen from outside), so the car is a room in Nimbasa's Battle Test family (texture set 306): the dark teal tile in25yuka_02 as the floor, the teal panel wall with cyan light seams in25kabe_02, the Battle Test's own teal entrance gradient chip_ent.",
+ "bt_lift": {
+  "_doc": "Battle Tower elevator car (zone 343): dark teal floor in25yuka_02 (8 px, one panel a tile), teal light-seam panels in25kabe_02 (32 units a repeat, 1.5 repeats up the 50-unit wall).",
+  "floor": {"tex": "in25yuka_02", "src": 306, "size": 16},
+  "wall": {"tex": "in25kabe_02", "src": 306, "u_size": 32, "v": [0, 1.5]},
+  "genkan": {"tex": "chip_ent", "src": 306, "stretch": true},
+  "black": {"tex": "black", "src": 285}
+ }
+}

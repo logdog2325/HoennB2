@@ -1,0 +1,6 @@
+{
+ "map": "emerald/SeafloorCavern_Room3",
+ "alt_of": "SeafloorCavern_Room3",
+ "emerald_zone": true,
+ "_doc": "emerald_caves 2026-10-12 (work/agents/emerald_caves/tools/variants.py): Emerald's SeafloorCavern_Room3 (pokeemerald) as Emerald's world reads it, installed for SeafloorCavern_Room3 in an Emerald build (data/versions.json room_variants.emerald). Emerald's Room 3: 121 blocks redrawn, other boulders, its Room 7 door one tile west: own zone json. Sapphire recipe: SeafloorCavern_Room3.json."
+}

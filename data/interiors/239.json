@@ -1,0 +1,47 @@
+{
+ "zone": 239,
+ "room": "MauvilleCity_Gym",
+ "area": 304,
+ "bgm": 1062,
+ "what": "gyms_league: MauvilleCity_Gym (b2tools/gyms_league_rooms.py); story phase: Wattson (4,3, FLAG_HIDE_WATTSON_MAUVILLE_GYM), trainers Shawn, Vivian, Ben, Kirk, Gym guide (7,20), plaques | the barrier switches: stepping on a switch swaps the barriers (Sapphire setmetatile + collision)",
+ "parent": 406,
+ "warps": [
+  {
+   "at": [
+    4,
+    20
+   ],
+   "tile_only": true,
+   "to": [
+    406,
+    5
+   ],
+   "what": "Sapphire warp 0 -> MauvilleCity 0"
+  },
+  {
+   "at": [
+    5,
+    20
+   ],
+   "tile_only": true,
+   "to": [
+    406,
+    5
+   ],
+   "what": "Sapphire warp 1 -> MauvilleCity 0"
+  }
+ ],
+ "npcs": [],
+ "signs": [],
+ "triggers": [],
+ "alt_rooms": [
+  {
+   "room": "MauvilleCity_Gym_Alt",
+   "event": 3
+  },
+  {
+   "room": "MauvilleCity_Gym_Off",
+   "event": 4
+  }
+ ]
+}

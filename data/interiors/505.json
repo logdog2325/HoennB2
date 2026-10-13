@@ -1,0 +1,35 @@
+{
+ "_doc": "Route104_PrettyPetalFlowerShop (zone 505), built by the specials agent (recipe data/interior_layouts/Route104_PrettyPetalFlowerShop.json): Black 2 house / Route 3 Day Care look, Black 2 interior area 282. Warps in Sapphire's order (one per Sapphire warp tile). People/signs: Sapphire's one-message ones as generated; story people are left for the story phase.",
+ "zone": 505,
+ "room": "Route104_PrettyPetalFlowerShop",
+ "area": 282,
+ "parent": 329,
+ "warps": [
+  {
+   "at": [
+    2,
+    8
+   ],
+   "tile_only": true,
+   "to": [
+    329,
+    4
+   ],
+   "what": "Sapphire warp 0 -> Route104 1"
+  },
+  {
+   "at": [
+    3,
+    8
+   ],
+   "tile_only": true,
+   "to": [
+    329,
+    4
+   ],
+   "what": "Sapphire warp 1 -> Route104 1"
+  }
+ ],
+ "npcs": [],
+ "signs": []
+}

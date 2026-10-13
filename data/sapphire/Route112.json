@@ -1,0 +1,393 @@
+{
+ "map": "Route112",
+ "id": "MAP_ROUTE112",
+ "layout": "LAYOUT_ROUTE112",
+ "music": "MUS_ROUTE110",
+ "region_map_section": "MAPSEC_ROUTE_112",
+ "weather": "WEATHER_SUNNY",
+ "connections": [
+  {
+   "direction": "up",
+   "offset": -60,
+   "map": "MAP_ROUTE113"
+  },
+  {
+   "direction": "left",
+   "offset": 40,
+   "map": "MAP_LAVARIDGE_TOWN"
+  },
+  {
+   "direction": "right",
+   "offset": -20,
+   "map": "MAP_ROUTE111"
+  }
+ ],
+ "npcs": [
+  {
+   "local_id": 1,
+   "x": 26,
+   "y": 30,
+   "gfx": "OBJ_EVENT_GFX_VAR_1",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_GRUNTS_BLOCKING_CABLE_CAR",
+   "script": "Route112_EventScript_150513",
+   "texts": {
+    "Route112_Text_16FDF0": "Grumble...\\pWhat happened to the others who went\\nto FALLARBOR? They're late...$"
+   }
+  },
+  {
+   "local_id": 2,
+   "x": 24,
+   "y": 34,
+   "gfx": "OBJ_EVENT_GFX_HIKER",
+   "movement": "MOVEMENT_TYPE_FACE_LEFT_AND_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route112_EventScript_150549",
+   "texts": {
+    "Route112_Text_1BB619": "Hahahaha!\\nHow about we have a battle?\\lYou and me!\\lHahahaha!$",
+    "Route112_Text_1BB655": "I lost!\\nHahahaha!$",
+    "Route112_Text_1BB667": "Hahahahaha! Something flew up my nose!\\nHahahaha-hatchoo!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 3,
+   "x": 29,
+   "y": 49,
+   "gfx": "OBJ_EVENT_GFX_CAMPER",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route112_EventScript_15059E",
+   "texts": {
+    "Route112_Text_1BB893": "I'm strong.\\nI won't cry if I lose.$",
+    "Route112_Text_1BB8B6": "Waaaah!$",
+    "Route112_Text_1BB8BE": "I'm not crying because I miss my mommy!\\nSnivel...$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 4,
+   "x": 22,
+   "y": 46,
+   "gfx": "OBJ_EVENT_GFX_PICNICKER",
+   "movement": "MOVEMENT_TYPE_ROTATE_COUNTERCLOCKWISE",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route112_EventScript_1505B5",
+   "texts": {
+    "Route112_Text_1BB8F0": "When you're out on a picnic, why, you\\nsimply have to sing!\\lCome on, sing with me!$",
+    "Route112_Text_1BB942": "Oh, you're so strong!$",
+    "Route112_Text_1BB958": "It doesn't matter if you're good or bad\\nat singing or POKéMON.\\pIf you have the most fun, you win!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 5,
+   "x": 17,
+   "y": 40,
+   "gfx": "OBJ_EVENT_GFX_HIKER",
+   "movement": "MOVEMENT_TYPE_FACE_UP_AND_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route112_EventScript_150560",
+   "texts": {
+    "Route112_Text_1BB6A0": "My legs are solid from pounding up\\nand down the mountains.\\pThey're not going to buckle easily,\\nfriend!$",
+    "Route112_Text_1BB707": "Ouch! My legs cramped up!$",
+    "Route112_Text_1BB721": "Try hiking, and I mean really\\npounding, on these mountain trails\\lwith a heavy pack weighing dozens of\\lpounds.\\pThat, my friend, will get your body\\ninto serious shape.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 6,
+   "x": 27,
+   "y": 30,
+   "gfx": "OBJ_EVENT_GFX_VAR_1",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_GRUNTS_BLOCKING_CABLE_CAR",
+   "script": "Route112_EventScript_15051C",
+   "texts": {
+    "Route112_Text_16FE3E": "Grumble...\\pI'd like to ride the CABLE CAR to the\\ntop, too..$"
+   }
+  },
+  {
+   "local_id": 7,
+   "x": 27,
+   "y": 6,
+   "gfx": "OBJ_EVENT_GFX_BERRY_TREE",
+   "movement": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "S_BerryTree",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 8,
+   "x": 28,
+   "y": 6,
+   "gfx": "OBJ_EVENT_GFX_BERRY_TREE",
+   "movement": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "S_BerryTree",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 9,
+   "x": 29,
+   "y": 6,
+   "gfx": "OBJ_EVENT_GFX_BERRY_TREE",
+   "movement": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "S_BerryTree",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 10,
+   "x": 30,
+   "y": 6,
+   "gfx": "OBJ_EVENT_GFX_BERRY_TREE",
+   "movement": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "S_BerryTree",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 11,
+   "x": 8,
+   "y": 50,
+   "gfx": "OBJ_EVENT_GFX_HIKER",
+   "movement": "MOVEMENT_TYPE_WALK_DOWN_AND_UP",
+   "range": [
+    0,
+    3
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "Route112_EventScript_150540",
+   "texts": {
+    "Route112_Text_16FE7A": "Eh, I'd like to get to MAUVILLE, but if\\nI went down these ledges, it'd be no\\leasy matter to get back to LAVARIDGE.$"
+   }
+  },
+  {
+   "local_id": 12,
+   "x": 14,
+   "y": 43,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_ROUTE112_1",
+   "script": "Route112_EventScript_1B14EF",
+   "texts": {},
+   "complex": true
+  }
+ ],
+ "signs": [
+  {
+   "x": 19,
+   "y": 44,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "Route112_EventScript_15052E",
+   "texts": {
+    "Route112_Text_16FF19": "MT. CHIMNEY\\p“For LAVARIDGE TOWN or the summit,\\nplease take the CABLE CAR.”$"
+   }
+  },
+  {
+   "x": 22,
+   "y": 37,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "Route112_EventScript_150525",
+   "texts": {
+    "Route112_Text_16FEED": "MT. CHIMNEY CABLE CAR\\n“A short walk {0x79} way!”$"
+   }
+  },
+  {
+   "x": 4,
+   "y": 49,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "Route112_EventScript_150537",
+   "texts": {
+    "Route112_Text_16FF64": "ROUTE 112\\n{0x7B} LAVARIDGE TOWN$"
+   }
+  }
+ ],
+ "warps": [
+  {
+   "id": 0,
+   "x": 28,
+   "y": 27,
+   "dest_map": "MAP_ROUTE112_CABLE_CAR_STATION",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 1,
+   "x": 29,
+   "y": 27,
+   "dest_map": "MAP_ROUTE112_CABLE_CAR_STATION",
+   "dest_warp_id": "1"
+  },
+  {
+   "id": 2,
+   "x": 6,
+   "y": 46,
+   "dest_map": "MAP_JAGGED_PASS",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 3,
+   "x": 7,
+   "y": 46,
+   "dest_map": "MAP_JAGGED_PASS",
+   "dest_warp_id": "1"
+  },
+  {
+   "id": 4,
+   "x": 11,
+   "y": 36,
+   "dest_map": "MAP_FIERY_PATH",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 5,
+   "x": 22,
+   "y": 10,
+   "dest_map": "MAP_FIERY_PATH",
+   "dest_warp_id": "1"
+  }
+ ],
+ "coord_events": [],
+ "wild": {
+  "land_mons": {
+   "encounter_rate": 20,
+   "slot_rates": [
+    20,
+    20,
+    10,
+    10,
+    10,
+    10,
+    5,
+    5,
+    4,
+    4,
+    1,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_NUMEL",
+     "min": 15,
+     "max": 15
+    },
+    {
+     "species": "SPECIES_NUMEL",
+     "min": 15,
+     "max": 15
+    },
+    {
+     "species": "SPECIES_MACHOP",
+     "min": 15,
+     "max": 15
+    },
+    {
+     "species": "SPECIES_NUMEL",
+     "min": 14,
+     "max": 14
+    },
+    {
+     "species": "SPECIES_NUMEL",
+     "min": 14,
+     "max": 14
+    },
+    {
+     "species": "SPECIES_MACHOP",
+     "min": 14,
+     "max": 14
+    },
+    {
+     "species": "SPECIES_NUMEL",
+     "min": 16,
+     "max": 16
+    },
+    {
+     "species": "SPECIES_MACHOP",
+     "min": 16,
+     "max": 16
+    },
+    {
+     "species": "SPECIES_NUMEL",
+     "min": 16,
+     "max": 16
+    },
+    {
+     "species": "SPECIES_NUMEL",
+     "min": 16,
+     "max": 16
+    },
+    {
+     "species": "SPECIES_NUMEL",
+     "min": 16,
+     "max": 16
+    },
+    {
+     "species": "SPECIES_NUMEL",
+     "min": 16,
+     "max": 16
+    }
+   ]
+  }
+ }
+}

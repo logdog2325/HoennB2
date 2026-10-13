@@ -1,0 +1,164 @@
+USE
+TRASH
+REGISTER
+GIVE
+     \x{ffff}
+CONFIRM
+WALK
+    \x{ffff}
+CANCEL
+    \x{ffff}
+    \x{ffff}
+     \x{ffff}
+    \x{ffff}
+    \x{ffff}
+    \x{ffff}
+    \x{ffff}
+CHECK
+    \x{ffff}
+DESELECT
+    \x{ffff}
+     \x{ffff}
+    \x{ffff}
+         \x{ffff}
+--
+    \x{ffff}
+    \x{ffff}
+    \x{ffff}
+    \x{ffff}
+    \x{ffff}
+    \x{ffff}
+    \x{ffff}
+    \x{ffff}
+    \x{ffff}
+    \x{ffff}
+    \x{ffff}
+          \x{ffff}
+         \x{ffff}
+    \x{ffff}
+    \x{ffff}
+    \x{ffff}
+    \x{ffff}
+      \x{ffff}
+    \x{ffff}
+{0109:0} is selected.
+                     \x{ffff}
+            \x{ffff}
+             \x{ffff}
+The {0109:0} can't be held.
+                         \x{ffff}
+                 \x{ffff}
+                  \x{ffff}
+                \x{ffff}
+                             \x{ffff}
+Throw away how many\n{0109:0}?
+Threw away {0202:1} {0109:0}.
+Is it OK to throw away\n{0202:1} {0109:0}?
+Juniper's words echoed...\n{0100:0}! There's a time and{be00}\nplace for everything! But not now.
+You can't dismount your Bike here.
+Juniper's words echoed...\n{0100:0}! There's a time and{be00}\nplace for everything! But not now.
+               \x{ffff}
+Booted up a TM.
+Booted up an HM.
+It contained\n{0107:0}.{be01}\nTeach {0107:0}\nto a Pokémon?
+{0100:0} used the\n{0109:1}.
+Since a Repel's effects still linger,\nyou can't use this now.
+                                        \x{ffff}
+                                        \x{ffff}
+              \x{ffff}
+            \x{ffff}
+{bd02}No. {0201:0} {0107:1}
+          \x{ffff}
+{bd02}Hidden {0201:0} {0107:1}
+      \x{ffff}
+                              \x{ffff}
+             \x{ffff}
+                       \x{ffff}
+    \x{ffff}
+{0109:0}? Oh, no.\nI can't buy that.
+{0109:0}?\nHow many will you sell?
+I can pay ${0206:0}.\nWould that be OK?
+Turned over the {0109:0}\nand received ${0206:1}.
+Money
+${0206:0}
+     \x{ffff}
++${0206:0}
+    \x{ffff}
+    \x{ffff}
+    \x{ffff}
+     \x{ffff}
+    \x{ffff}
+PP
+POWER
+ACCURACY
+CATEGORY
+{0201:0}
+{0202:0}
+          \x{ffff}
+                           \x{ffff}
+         \x{ffff}
+    \x{ffff}
+    \x{ffff}
+                   \x{ffff}
+TYPE
+                                 \x{ffff}
+                              \x{ffff}
+                   \x{ffff}
+                   \x{ffff}
+            \x{ffff}
+                  \x{ffff}
+             \x{ffff}
+                  \x{ffff}
+          \x{ffff}
+               \x{ffff}
+                     \x{ffff}
+                                       \x{ffff}
+               \x{ffff}
+       \x{ffff}
+        \x{ffff}
+                               \x{ffff}
+The {0109:1} can't be used\nwhen you have someone with you!
+               \x{ffff}
+                                  \x{ffff}
+                                         \x{ffff}
+                                   \x{ffff}
+                                  \x{ffff}
+                              \x{ffff}
+                               \x{ffff}
+                                    \x{ffff}
+                                     \x{ffff}
+    \x{ffff}
+{0109:0}
+x{0202:0}
+YES
+NO
+{bd02}{0109:0}
+It's empty.
+                              \x{ffff}
+                              \x{ffff}
+Items have been sorted!
+{0112:0}
+Sorted items by type!
+Sorted items by name!
+Sorted items from\nmost to fewest held!
+Sorted items from\nfewest to most held!
+All
+TO FREE SPACE
+RETURN TO CASE
+Select the type of item\nyou want to search for.
+Number of item types found that\ncan be put in the {0112:0}: {0202:1}!
+Moved the {0109:1} to\nthe {0112:0}!
+Returned the {0109:1}\nto the {0112:0}!
+How do you want to sort items?
+By Type
+By Name
+From Most
+From Fewest
+By Number
+Number of item types found: {0202:1}!
+Sorted items by number!
+Cannot find.
+Put Away
+The {0109:1} was turned on.
+The {0109:1} was turned off.
+\pad{54}

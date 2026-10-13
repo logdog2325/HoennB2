@@ -1,0 +1,15 @@
+Mom: See, {0100:0}?\nIsn’t it nice in here, too?
+Pokémon fully restored!\nItems ready, and... Huh?
+{0100:0} booted up the PC.
+There’s an e-mail from Pokémon Trainer\nSchool.{be01}\n... ... ... ... ... ...{be01}\nA Pokémon may learn up to four moves.{be01}\nA Trainer’s expertise is tested on the\nmove sets chosen for Pokémon.{be01}\n... ... ... ... ... ...
+{0100:0} flipped open the notebook.{be01}\nAdventure Rule No. 1\nOpen the menu with START.{be01}\nAdventure Rule No. 2\nRecord your progress with Save.{be01}\nThe remaining pages are blank...
+It’s a Nintendo GameCube.{be01}\nA Game Boy Advance is connected to\nserve as the Controller.
+The clock is stopped...{be01}\nBetter set it and start it!
+{0100:0} took a closer look at the\nHoenn region map.
+Mom might like this program.\n... ... ... ... ... ... ... ...{be00}\n... ... ... ... ... ... ... ...{be01}\nBetter get going!
+The clock is stopped...{be01}\nBetter set it and start it!
+Mom: {0100:0}, how do you like your\nnew room?{be01}\nGood! Everything’s put away neatly!{be01}\nThey finished moving everything in\ndownstairs, too.{be01}\nPokémon movers are so convenient!{be01}\nOh, you should make sure that\neverything’s all there on your desk.
+Pokémon fully restored!\nItems ready, and... Huh?
+Huh?\nWho... Who are you?{be01}\n... ... ... ... ... ... ... ...\n... ... ... ... ... ... ... ...{be01}\nOh, you’re {0100:0}.\nSo your move was today.{be01}\nUm... I’m May.\nGlad to meet you!{be01}\nI...\nI have this dream of becoming friends{be00}\nwith Pokémon all over the world.{be01}\nI... I heard about you, {0100:0}, from\nmy dad, Prof. Birch.{be01}\nI was hoping that you would be nice,\n{0100:0}, and that we could be friends.{be01}\nOh, this is silly, isn’t it?\nI... I’ve just met you, {0100:0}.{be01}\nEheheh...{be01}\nOh, no! I forgot!{be01}\nI was supposed to go help Dad catch\nsome wild Pokémon!{be01}\n{0100:0}, I’ll catch you later!
+May: {0100:0}!{be01}\nI was just checking my Pokédex.{be01}\nThere’s still a lot of Pokémon that\nI’ve seen but haven’t caught.{be01}\nAnd there are many others that\nI think will evolve.{be01}\nI wonder where I should go catch\nsome Pokémon next?
+May: I wonder where I should go catch\nsome Pokémon next?{be01}\nWouldn’t it be funny if we ran into each\nother, {0100:0}?

@@ -1,0 +1,24 @@
+It is a delight to see you here!\nYou have reached the summit of{be00}\nthe Battle Pyramid!{be01}\nAbove here is the Pyramid’s\nlookout point.{be01}\nIt is a place open only to those\nwho have conquered the Pyramid.{be01}\nNow, please!\nUp you go!
+The Pyramid’s new conqueror!\nLet the name {0100:0} be known!
+It is a delight to see you here!{be01}\nUnfortunately, you were second by\na mere fraction of time!{be01}\nOur chief has already conquered\nthe Pyramid ahead of you.{be01}\nHowever, my young explorer…\nYou are a Trainer!{be01}\nAssert your power and take the glory\nof the pinnacle from our chief!{be01}\nNow, please! When you are ready,\ntake one more step of courage!
+Young adventurer…{be01}\nWouldn’t you agree that explorations\nare the grandest of adventures?{be01}\nYour own wits!{be01}\nYour own strength!{be01}\nYour own Pokémon!{be01}\nAnd, above all, only your own courage\nto lead you through unknown worlds…
+Aah, yes, indeed this life is grand!\nGrand, it is! Eh?{be01}\nI’m Brandon!{be01}\nI’m the Pyramid King, which means\nI’m in charge here.{be01}\nMost people call me the chief!{be01}\nYou coming here means you have\nthat much confidence in yourself,{be00}\nam I right?{be01}\nHahahah!\nThis should be exciting!
+Now, then!\nBring your courage to our battle!
+Brandon: Hahahah! Grand it was!\nGrand, yes, indeed!{be01}\nWell done! You’ve earned recognition!\nYour Frontier Pass, please!
+The Brave Symbol was embossed on\nthe Frontier Pass!
+Young explorer!\nI look forward to our next meeting!
+Brandon: …You’ve finally returned,\nyoung explorer…{be01}\nYour love of adventure seems to come\ndeep from within your heart…{be01}\nYes… You are exactly as I was in\nmy own youth…{be01}\n… … …Ah…{be01}\nThe passionate!{be01}\nThe dangerous!{be01}\nThe desperate!{be01}\nThose days of death-defying,\nlife-affirming adventures are back…
+Now, then!{be01}\nI sense my own courage is off\nthe meter!
+Everything you have!\nI’m braced for it all!
+Brandon: Hahahah!\nRemarkable!{be00}\nYes, it’s grand, indeed!{be01}\nYoung explorer!{be01}\nYou’ve bested me through and through!\nHere! I want you to have this!
+The Brave Symbol took on\na golden shine!
+Ah, yes! It just goes to show that\nI have much to learn still!{be01}\nMay our paths cross again!\nFarewell for now, young explorer!
+Now, when you are ready, take courage\nand step forward.
+Your Battle Pyramid quest will be\nsaved so that you may quit for now.{be00}\nIs that okay?
+Are you sure you want to quit your\nPyramid quest?
+Rest
+Retire
+Cancel
+Saving…\nDon’t turn off the power.
+That’s it! You’ve done great!\nYou’ve worked hard for this!
+That’s it! You’ve done it!\nYou kept working for this!

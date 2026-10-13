@@ -1,0 +1,108 @@
+{
+ "zone": 274,
+ "room": "MauvilleCity_PokemonCenter_2F",
+ "area": 283,
+ "what": "MauvilleCity_PokemonCenter_2F: centers agent (b2tools/centers_rooms.py); recipe data/interior_layouts/MauvilleCity_PokemonCenter_2F.json",
+ "header": {
+  "parent": 406,
+  "place": 13,
+  "bgm0": 1060,
+  "bgm1": 1060,
+  "bgm2": 1060,
+  "bgm3": 1060
+ },
+ "warps": [
+  {
+   "at": [
+    1,
+    6
+   ],
+   "tile_only": true,
+   "to": [
+    115,
+    2
+   ],
+   "what": "Sapphire warp 0 -> MauvilleCity_PokemonCenter_1F 2 (escalator, entered walking west)",
+   "type": 2,
+   "dir": 4
+  },
+  {
+   "at": [
+    5,
+    1
+   ],
+   "tile_only": true,
+   "to": [
+    593,
+    0
+   ],
+   "what": "Sapphire warp 1 -> SingleBattleColosseum 0 (Cable Club door: a solid tile, reached only by script in Sapphire)"
+  },
+  {
+   "at": [
+    9,
+    1
+   ],
+   "tile_only": true,
+   "to": [
+    58,
+    0
+   ],
+   "what": "Sapphire warp 2 -> TradeCenter 0 (Cable Club door: a solid tile, reached only by script in Sapphire)"
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 1,
+   "model": 79,
+   "script": 1,
+   "dir": 1,
+   "at": [
+    2,
+    2
+   ],
+   "_what": "teala (4,2), Sapphire MauvilleCity_PokemonCenter_2F_EventScript_1573A2 (Emerald: at (2, 2), Sapphire (4, 2))"
+  },
+  {
+   "uid": 2,
+   "model": 79,
+   "script": 2,
+   "dir": 1,
+   "at": [
+    6,
+    2
+   ],
+   "_what": "teala (7,2), Sapphire MauvilleCity_PokemonCenter_2F_EventScript_1573A8 (Emerald: at (6, 2), Sapphire (7, 2))"
+  },
+  {
+   "uid": 3,
+   "model": 79,
+   "script": 3,
+   "dir": 1,
+   "at": [
+    10,
+    2
+   ],
+   "_what": "teala (10,2), Sapphire MauvilleCity_PokemonCenter_2F_EventScript_1573AE"
+  },
+  {
+   "uid": 4,
+   "model": 11,
+   "script": 4,
+   "dir": 1,
+   "at": [
+    8,
+    8
+   ],
+   "move": 5,
+   "range": [
+    1,
+    0
+   ],
+   "_what": "youngster (6,7), Sapphire MauvilleCity_PokemonCenter_2F_EventScript_1573B4 (Emerald: at (8, 8), Sapphire (6, 7))"
+  }
+ ],
+ "signs": [],
+ "parent": 406,
+ "_doc": "emerald_rooms (b2tools/emerald_rooms.py writes this file: edit the script and rerun). Emerald's overlay of 274.json: the people and warps on Emerald's Center 2F (tiles of pokeemerald's map, room MauvilleCity_PokemonCenter_2F_Emerald): the three attendants at (2,2) (6,2) (10,2), the escalator at (1,6), the link-room doors (5,1) (9,1). Their scripts are Sapphire's (the apologies of the Colosseum / Trade Center / Record Corner attendants; Emerald's are the Wireless Club / Union Room / Direct Corner)."
+}

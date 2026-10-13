@@ -1,0 +1,1133 @@
+{
+ "_doc": "Chapter 4 (ch4 agent, 2026-10-07) story objects (b2tools/patches/story.py): Routes 111-115 and Fallarbor people, fossils, Rock Smash rocks and the cut tree (no one placed them outdoors), the Go-Goggles and ash triggers; the rooms' story people (scripts in the rooms' own files after \"// ---- story\"); Meteor Falls' scene and trainers. Sapphire tiles (\"at\") of the named map; uid = 100 + Sapphire local id outdoors, the local id in rooms. Written by work/agents/ch4/gen_objects.py.",
+ "objects": [
+  {
+   "kind": "npc",
+   "map": "Route111",
+   "at": [
+    13,
+    114
+   ],
+   "uid": 101,
+   "model": 61,
+   "script": 2,
+   "dir": 1,
+   "what": "Victor Winstrate (object 1, MAN_1)",
+   "flag": "FLAG_HIDE_VICTOR_WINSTRATE"
+  },
+  {
+   "kind": "npc",
+   "map": "Route111",
+   "at": [
+    13,
+    113
+   ],
+   "uid": 102,
+   "model": 53,
+   "script": 0,
+   "dir": 1,
+   "what": "Victoria Winstrate (object 2, WOMAN_2; in the doorway until her turn)",
+   "flag": "FLAG_HIDE_VICTORIA_WINSTRATE"
+  },
+  {
+   "kind": "npc",
+   "map": "Route111",
+   "at": [
+    13,
+    113
+   ],
+   "uid": 103,
+   "model": 15,
+   "script": 0,
+   "dir": 1,
+   "what": "Vivi Winstrate (object 3, LASS)",
+   "flag": "FLAG_HIDE_VIVI_WINSTRATE"
+  },
+  {
+   "kind": "npc",
+   "map": "Route111",
+   "at": [
+    13,
+    113
+   ],
+   "uid": 104,
+   "model": 29,
+   "script": 0,
+   "dir": 1,
+   "what": "Vicky Winstrate (object 4, OLD_WOMAN_1)",
+   "flag": "FLAG_HIDE_VICKI_WINSTRATE"
+  },
+  {
+   "kind": "npc",
+   "map": "Route111",
+   "at": [
+    14,
+    86
+   ],
+   "uid": 113,
+   "model": 340,
+   "script": 10,
+   "dir": 1,
+   "what": "Ty (object 13)",
+   "flag": "FLAG_HIDE_GABBY_AND_TY_ROUTE111_1"
+  },
+  {
+   "kind": "npc",
+   "map": "Route111",
+   "at": [
+    13,
+    86
+   ],
+   "uid": 114,
+   "model": 331,
+   "script": 9,
+   "dir": 1,
+   "what": "Gabby (object 14)",
+   "flag": "FLAG_HIDE_GABBY_AND_TY_ROUTE111_1"
+  },
+  {
+   "kind": "npc",
+   "map": "Route111",
+   "at": [
+    13,
+    86
+   ],
+   "uid": 121,
+   "model": 331,
+   "script": 11,
+   "dir": 1,
+   "what": "Gabby (object 21)",
+   "flag": "FLAG_HIDE_GABBY_AND_TY_ROUTE111_2"
+  },
+  {
+   "kind": "npc",
+   "map": "Route111",
+   "at": [
+    14,
+    86
+   ],
+   "uid": 122,
+   "model": 340,
+   "script": 12,
+   "dir": 1,
+   "what": "Ty (object 22)",
+   "flag": "FLAG_HIDE_GABBY_AND_TY_ROUTE111_2"
+  },
+  {
+   "kind": "npc",
+   "map": "Route111",
+   "at": [
+    13,
+    86
+   ],
+   "uid": 123,
+   "model": 331,
+   "script": 13,
+   "dir": 1,
+   "what": "Gabby (object 23)",
+   "flag": "FLAG_HIDE_GABBY_AND_TY_ROUTE111_3"
+  },
+  {
+   "kind": "npc",
+   "map": "Route111",
+   "at": [
+    14,
+    86
+   ],
+   "uid": 124,
+   "model": 340,
+   "script": 14,
+   "dir": 1,
+   "what": "Ty (object 24)",
+   "flag": "FLAG_HIDE_GABBY_AND_TY_ROUTE111_3"
+  },
+  {
+   "kind": "npc",
+   "map": "Route111",
+   "at": [
+    18,
+    101
+   ],
+   "uid": 115,
+   "model": 206,
+   "script": 10016,
+   "dir": 1,
+   "what": "breakable rock (object 15; Sapphire FLAG_TEMP_11: back on reload)"
+  },
+  {
+   "kind": "npc",
+   "map": "Route111",
+   "at": [
+    19,
+    100
+   ],
+   "uid": 116,
+   "model": 206,
+   "script": 10016,
+   "dir": 1,
+   "what": "breakable rock (object 16)"
+  },
+  {
+   "kind": "npc",
+   "map": "Route111",
+   "at": [
+    23,
+    8
+   ],
+   "uid": 117,
+   "model": 16,
+   "script": 5,
+   "dir": 1,
+   "what": "berry girl, daily Razz Berry (object 17, GIRL_1, wanders left/right) (move 5 area 1x0: v165_fixes)",
+   "move": 5,
+   "areaw": 1,
+   "areah": 0
+  },
+  {
+   "kind": "npc",
+   "map": "Route111",
+   "at": [
+    22,
+    21
+   ],
+   "uid": 127,
+   "model": 108,
+   "script": 10004,
+   "dir": 1,
+   "what": "cut tree (object 27; Sapphire FLAG_TEMP_13: back on reload)"
+  },
+  {
+   "kind": "npc",
+   "map": "Route111",
+   "at": [
+    13,
+    20
+   ],
+   "uid": 133,
+   "model": 10,
+   "script": 8,
+   "dir": 0,
+   "what": "Secret Power man (object 33, BOY_1, FACE_UP)",
+   "flag": "FLAG_HIDE_SECRET_POWER_MAN"
+  },
+  {
+   "kind": "npc",
+   "map": "Route111",
+   "at": [
+    32,
+    38
+   ],
+   "uid": 134,
+   "skip_emerald": true,
+   "model": 292,
+   "script": 3,
+   "dir": 1,
+   "what": "Root Fossil (object 34; code 292 = Sapphire's fossil pixels, b2tools/models_objects.py)",
+   "flag": "FLAG_HIDE_ROOT_FOSSIL"
+  },
+  {
+   "kind": "npc",
+   "map": "Route111",
+   "at": [
+    33,
+    38
+   ],
+   "uid": 135,
+   "skip_emerald": true,
+   "model": 292,
+   "script": 4,
+   "dir": 1,
+   "what": "Claw Fossil (object 35)",
+   "flag": "FLAG_HIDE_CLAW_FOSSIL"
+  },
+  {
+   "kind": "npc",
+   "map": "Route111",
+   "at": [
+    29,
+    87
+   ],
+   "uid": 140,
+   "model": 206,
+   "script": 0,
+   "dir": 1,
+   "what": "Desert Ruins entrance sealed until FLAG_REGI_DOORS_OPENED (Sapphire ON_LOAD setmetatile rock wall; same as ch7's Ancient Tomb door)",
+   "flag": "FLAG_REGI_DOORS_OPENED"
+  },
+  {
+   "kind": "trigger",
+   "map": "Route111",
+   "at": [
+    11,
+    61
+   ],
+   "script": 6,
+   "var": 16387,
+   "value": 0,
+   "what": "the sandstorm without the Go-Goggles: back down (coord events 2-4, 10)",
+   "w": 4
+  },
+  {
+   "kind": "trigger",
+   "map": "Route111",
+   "at": [
+    12,
+    44
+   ],
+   "script": 7,
+   "var": 16387,
+   "value": 0,
+   "what": "the sandstorm without the Go-Goggles: back left (coord events 6-9, 15, 16)"
+  },
+  {
+   "kind": "trigger",
+   "map": "Route111",
+   "at": [
+    13,
+    43
+   ],
+   "script": 7,
+   "var": 16387,
+   "value": 0,
+   "what": "the sandstorm without the Go-Goggles: back left (coord events 6-9, 15, 16)"
+  },
+  {
+   "kind": "trigger",
+   "map": "Route111",
+   "at": [
+    14,
+    42
+   ],
+   "script": 7,
+   "var": 16387,
+   "value": 0,
+   "what": "the sandstorm without the Go-Goggles: back left (coord events 6-9, 15, 16)"
+  },
+  {
+   "kind": "trigger",
+   "map": "Route111",
+   "at": [
+    16,
+    40
+   ],
+   "script": 7,
+   "var": 16387,
+   "value": 0,
+   "what": "the sandstorm without the Go-Goggles: back left (coord events 6-9, 15, 16)"
+  },
+  {
+   "kind": "trigger",
+   "map": "Route111",
+   "at": [
+    17,
+    39
+   ],
+   "script": 7,
+   "var": 16387,
+   "value": 0,
+   "what": "the sandstorm without the Go-Goggles: back left (coord events 6-9, 15, 16)"
+  },
+  {
+   "kind": "trigger",
+   "map": "Route111",
+   "at": [
+    18,
+    38
+   ],
+   "script": 7,
+   "var": 16387,
+   "value": 0,
+   "what": "the sandstorm without the Go-Goggles: back left (coord events 6-9, 15, 16)"
+  },
+  {
+   "kind": "npc",
+   "map": "Route112",
+   "at": [
+    26,
+    30
+   ],
+   "uid": 101,
+   "model": 293,
+   "model_emerald": 302,
+   "script": 2,
+   "dir": 1,
+   "what": "Aqua grunt blocking the Cable Car (object 1, VAR_1 = AQUA_MEMBER_M)",
+   "flag": "FLAG_HIDE_GRUNTS_BLOCKING_CABLE_CAR"
+  },
+  {
+   "kind": "npc",
+   "map": "Route112",
+   "at": [
+    27,
+    30
+   ],
+   "uid": 106,
+   "model": 293,
+   "model_emerald": 302,
+   "script": 3,
+   "dir": 1,
+   "what": "Aqua grunt blocking the Cable Car (object 6)",
+   "flag": "FLAG_HIDE_GRUNTS_BLOCKING_CABLE_CAR"
+  },
+  {
+   "kind": "npc",
+   "map": "Route113",
+   "at": [
+    66,
+    3
+   ],
+   "uid": 108,
+   "model": 8,
+   "script": 3561,
+   "dir": 1,
+   "what": "TRAINER_LAO_1 (object 8, buried in ash in Sapphire: placed as a normal trainer, sight 1) (move 53: v165_fixes)",
+   "evtype": 2,
+   "p0": 1,
+   "move": 53
+  },
+  {
+   "kind": "npc",
+   "map": "Route113",
+   "at": [
+    29,
+    6
+   ],
+   "uid": 109,
+   "model": 8,
+   "script": 3562,
+   "dir": 1,
+   "what": "TRAINER_LUNG (object 9, buried in ash in Sapphire: placed as a normal trainer, sight 1) (move 53: v165_fixes)",
+   "evtype": 2,
+   "p0": 1,
+   "move": 53
+  },
+  {
+   "kind": "trigger",
+   "map": "Route113",
+   "at": [
+    20,
+    2
+   ],
+   "script": 1,
+   "var": 0,
+   "value": 0,
+   "what": "ash for the Soot Sack (+5 per step on this column)",
+   "h": 13,
+   "y": 32
+  },
+  {
+   "kind": "trigger",
+   "map": "Route113",
+   "at": [
+    25,
+    2
+   ],
+   "script": 1,
+   "var": 0,
+   "value": 0,
+   "what": "ash for the Soot Sack (+5 per step on this column)",
+   "h": 13,
+   "y": 32
+  },
+  {
+   "kind": "trigger",
+   "map": "Route113",
+   "at": [
+    30,
+    2
+   ],
+   "script": 1,
+   "var": 0,
+   "value": 0,
+   "what": "ash for the Soot Sack (+5 per step on this column)",
+   "h": 13,
+   "y": 32
+  },
+  {
+   "kind": "trigger",
+   "map": "Route113",
+   "at": [
+    35,
+    2
+   ],
+   "script": 1,
+   "var": 0,
+   "value": 0,
+   "what": "ash for the Soot Sack (+5 per step on this column)",
+   "h": 13,
+   "y": 32
+  },
+  {
+   "kind": "trigger",
+   "map": "Route113",
+   "at": [
+    40,
+    2
+   ],
+   "script": 1,
+   "var": 0,
+   "value": 0,
+   "what": "ash for the Soot Sack (+5 per step on this column)",
+   "h": 13,
+   "y": 32
+  },
+  {
+   "kind": "trigger",
+   "map": "Route113",
+   "at": [
+    45,
+    2
+   ],
+   "script": 1,
+   "var": 0,
+   "value": 0,
+   "what": "ash for the Soot Sack (+5 per step on this column)",
+   "h": 13,
+   "y": 32
+  },
+  {
+   "kind": "trigger",
+   "map": "Route113",
+   "at": [
+    50,
+    2
+   ],
+   "script": 1,
+   "var": 0,
+   "value": 0,
+   "what": "ash for the Soot Sack (+5 per step on this column)",
+   "h": 13,
+   "y": 32
+  },
+  {
+   "kind": "trigger",
+   "map": "Route113",
+   "at": [
+    55,
+    2
+   ],
+   "script": 1,
+   "var": 0,
+   "value": 0,
+   "what": "ash for the Soot Sack (+5 per step on this column)",
+   "h": 13,
+   "y": 32
+  },
+  {
+   "kind": "trigger",
+   "map": "Route113",
+   "at": [
+    60,
+    2
+   ],
+   "script": 1,
+   "var": 0,
+   "value": 0,
+   "what": "ash for the Soot Sack (+5 per step on this column)",
+   "h": 13,
+   "y": 32
+  },
+  {
+   "kind": "trigger",
+   "map": "Route113",
+   "at": [
+    65,
+    2
+   ],
+   "script": 1,
+   "var": 0,
+   "value": 0,
+   "what": "ash for the Soot Sack (+5 per step on this column)",
+   "h": 13,
+   "y": 32
+  },
+  {
+   "kind": "trigger",
+   "map": "Route113",
+   "at": [
+    70,
+    2
+   ],
+   "script": 1,
+   "var": 0,
+   "value": 0,
+   "what": "ash for the Soot Sack (+5 per step on this column)",
+   "h": 13,
+   "y": 32
+  },
+  {
+   "kind": "trigger",
+   "map": "Route113",
+   "at": [
+    75,
+    2
+   ],
+   "script": 1,
+   "var": 0,
+   "value": 0,
+   "what": "ash for the Soot Sack (+5 per step on this column)",
+   "h": 13,
+   "y": 32
+  },
+  {
+   "kind": "trigger",
+   "map": "Route113",
+   "at": [
+    80,
+    2
+   ],
+   "script": 1,
+   "var": 0,
+   "value": 0,
+   "what": "ash for the Soot Sack (+5 per step on this column)",
+   "h": 13,
+   "y": 32
+  },
+  {
+   "kind": "trigger",
+   "map": "Route113",
+   "at": [
+    85,
+    2
+   ],
+   "script": 1,
+   "var": 0,
+   "value": 0,
+   "what": "ash for the Soot Sack (+5 per step on this column)",
+   "h": 13,
+   "y": 32
+  },
+  {
+   "kind": "npc",
+   "map": "Route114",
+   "at": [
+    19,
+    11
+   ],
+   "uid": 112,
+   "model": 44,
+   "script": 2,
+   "dir": 3,
+   "what": "TM05 Roar gentleman (object 12, GENTLEMAN, FACE_RIGHT)"
+  },
+  {
+   "kind": "npc",
+   "map": "Route114",
+   "at": [
+    19,
+    12
+   ],
+   "uid": 113,
+   "model": 4390,
+   "script": 3,
+   "dir": 3,
+   "what": "his Poochyena (object 13)"
+  },
+  {
+   "kind": "npc",
+   "map": "Route114",
+   "at": [
+    27,
+    42
+   ],
+   "uid": 114,
+   "model": 42,
+   "script": 1,
+   "dir": 1,
+   "what": "berry man, daily random berry (object 14, MAN_5, wanders up/down) (move 4 area 0x1: v165_fixes)",
+   "move": 4,
+   "areah": 1,
+   "areaw": 0
+  },
+  {
+   "kind": "npc",
+   "map": "Route114",
+   "at": [
+    12,
+    43
+   ],
+   "uid": 111,
+   "model": 206,
+   "script": 10016,
+   "dir": 1,
+   "what": "breakable rock (object 11)"
+  },
+  {
+   "kind": "npc",
+   "map": "Route114",
+   "at": [
+    29,
+    53
+   ],
+   "uid": 118,
+   "model": 206,
+   "script": 10016,
+   "dir": 1,
+   "what": "breakable rock (object 18)"
+  },
+  {
+   "kind": "npc",
+   "map": "Route114",
+   "at": [
+    30,
+    54
+   ],
+   "uid": 119,
+   "model": 206,
+   "script": 10016,
+   "dir": 1,
+   "what": "breakable rock (object 19)"
+  },
+  {
+   "kind": "npc",
+   "map": "Route114",
+   "at": [
+    22,
+    69
+   ],
+   "uid": 120,
+   "model": 206,
+   "script": 10016,
+   "dir": 1,
+   "what": "breakable rock (object 20)"
+  },
+  {
+   "kind": "npc",
+   "map": "Route114",
+   "at": [
+    11,
+    64
+   ],
+   "uid": 121,
+   "model": 206,
+   "script": 10016,
+   "dir": 1,
+   "what": "breakable rock (object 21)"
+  },
+  {
+   "kind": "npc",
+   "map": "Route115",
+   "at": [
+    29,
+    50
+   ],
+   "uid": 115,
+   "model": 206,
+   "script": 10016,
+   "dir": 1,
+   "what": "breakable rock (object 15)"
+  },
+  {
+   "kind": "npc",
+   "map": "FallarborTown",
+   "at": [
+    11,
+    9
+   ],
+   "uid": 102,
+   "model": 28,
+   "script": 2,
+   "dir": 1,
+   "what": "Expert M (object 2, OLD_MAN_1, wanders left/right) (move 5 area 1x0: v165_fixes)",
+   "move": 5,
+   "areaw": 1,
+   "areah": 0
+  },
+  {
+   "kind": "npc",
+   "map": "FallarborTown",
+   "at": [
+    8,
+    12
+   ],
+   "uid": 104,
+   "model": 4427,
+   "script": 3,
+   "dir": 1,
+   "what": "Azurill (object 4) (move 2: v165_fixes)",
+   "flag": "FLAG_HIDE_AZURILL_FALLARBOR",
+   "move": 2
+  },
+  {
+   "kind": "npc",
+   "map": "FallarborTown_House1",
+   "at": [
+    6,
+    4
+   ],
+   "uid": 1,
+   "model": 73,
+   "script": 2,
+   "dir": 1,
+   "what": "Prof. Cozmo (SCIENTIST_1) (move 3 area 1x1: v165_fixes)",
+   "flag": "FLAG_HIDE_PROF_COSMO_FALLARBOR",
+   "move": 3,
+   "areaw": 1,
+   "areah": 1
+  },
+  {
+   "kind": "npc",
+   "map": "FallarborTown_House1",
+   "at": [
+    5,
+    6
+   ],
+   "uid": 2,
+   "model": 27,
+   "script": 3,
+   "dir": 1,
+   "what": "Cozmo's wife (WOMAN_3) (move 5 area 1x0: v165_fixes)",
+   "move": 5,
+   "areaw": 1,
+   "areah": 0
+  },
+  {
+   "kind": "npc",
+   "map": "FallarborTown_House2",
+   "at": [
+    4,
+    4
+   ],
+   "uid": 1,
+   "model": 25,
+   "script": 2,
+   "dir": 1,
+   "what": "the Move Tutor (FAT_MAN)"
+  },
+  {
+   "kind": "npc",
+   "map": "FallarborTown_Mart",
+   "at": [
+    2,
+    5
+   ],
+   "uid": 4,
+   "model": 4429,
+   "script": 4,
+   "dir": 1,
+   "what": "Skitty (move 2: v165_fixes)",
+   "move": 2
+  },
+  {
+   "kind": "npc",
+   "map": "FallarborTown_ContestLobby",
+   "at": [
+    5,
+    2
+   ],
+   "uid": 1,
+   "model": 79,
+   "script": 2,
+   "dir": 1,
+   "what": "contest receptionist (TEALA; stand-in: registers nobody)"
+  },
+  {
+   "kind": "npc",
+   "map": "FallarborTown_ContestLobby",
+   "at": [
+    0,
+    4
+   ],
+   "uid": 3,
+   "model": 15,
+   "script": 3,
+   "dir": 1,
+   "what": "lass (LASS)"
+  },
+  {
+   "kind": "npc",
+   "map": "FallarborTown_ContestLobby",
+   "at": [
+    12,
+    2
+   ],
+   "uid": 6,
+   "model": 28,
+   "script": 4,
+   "dir": 1,
+   "what": "sketch artist (ARTIST)"
+  },
+  {
+   "kind": "npc",
+   "map": "Route111_OldLadysRestStop",
+   "at": [
+    6,
+    3
+   ],
+   "uid": 1,
+   "model": 29,
+   "script": 3,
+   "dir": 2,
+   "what": "the old lady who heals (OLD_WOMAN_1, FACE_LEFT)"
+  },
+  {
+   "kind": "npc",
+   "map": "Route111_WinstrateFamilysHouse",
+   "at": [
+    7,
+    5
+   ],
+   "uid": 1,
+   "model": 15,
+   "script": 4,
+   "dir": 2,
+   "what": "Vivi (LASS, FACE_LEFT)"
+  },
+  {
+   "kind": "npc",
+   "map": "Route111_WinstrateFamilysHouse",
+   "at": [
+    4,
+    5
+   ],
+   "uid": 2,
+   "model": 61,
+   "script": 2,
+   "dir": 3,
+   "what": "Victor (MAN_1, FACE_RIGHT)"
+  },
+  {
+   "kind": "npc",
+   "map": "Route111_WinstrateFamilysHouse",
+   "at": [
+    7,
+    4
+   ],
+   "uid": 3,
+   "model": 53,
+   "script": 3,
+   "dir": 2,
+   "what": "Victoria, Macho Brace (WOMAN_2, FACE_LEFT)"
+  },
+  {
+   "kind": "npc",
+   "map": "Route111_WinstrateFamilysHouse",
+   "at": [
+    4,
+    4
+   ],
+   "uid": 4,
+   "model": 29,
+   "script": 5,
+   "dir": 3,
+   "what": "Vicky (OLD_WOMAN_1, FACE_RIGHT)"
+  },
+  {
+   "kind": "npc",
+   "map": "Route113_GlassWorkshop",
+   "at": [
+    2,
+    3
+   ],
+   "uid": 1,
+   "model": 61,
+   "script": 3,
+   "dir": 1,
+   "what": "the glass man: Soot Sack, flutes (MAN_1)"
+  },
+  {
+   "kind": "npc",
+   "map": "Route114_FossilManiacsHouse",
+   "at": [
+    3,
+    2
+   ],
+   "uid": 1,
+   "model": 8,
+   "script": 5,
+   "dir": 1,
+   "what": "the Fossil Maniac's brother, TM28 (LITTLE_BOY_1)"
+  },
+  {
+   "kind": "npc",
+   "map": "Route114_FossilManiacsTunnel",
+   "at": [
+    5,
+    3
+   ],
+   "uid": 1,
+   "model": 24,
+   "script": 2,
+   "dir": 0,
+   "what": "the Fossil Maniac (MANIAC, FACE_UP)"
+  },
+  {
+   "kind": "npc",
+   "map": "Route114_LanettesHouse",
+   "at": [
+    5,
+    4
+   ],
+   "uid": 1,
+   "model": 27,
+   "script": 3,
+   "dir": 1,
+   "what": "Lanette (WOMAN_3), home after the Fallarbor Center (move 2: v165_fixes)",
+   "flag": "FLAG_HIDE_LANETTE",
+   "move": 2
+  },
+  {
+   "kind": "sign",
+   "map": "Route114_LanettesHouse",
+   "at": [
+    5,
+    1
+   ],
+   "script": 4,
+   "dir": 4,
+   "what": "Lanette's research notes"
+  },
+  {
+   "kind": "npc",
+   "map": "MeteorFalls_1F_1R",
+   "at": [
+    12,
+    20
+   ],
+   "uid": 5,
+   "model": 293,
+   "model_emerald": 302,
+   "script": 0,
+   "dir": 1,
+   "what": "Aqua grunt with the Meteorite (object 5, VAR_1)",
+   "flag": "FLAG_HIDE_GRUNTS_METEOR_FALLS_1F"
+  },
+  {
+   "kind": "npc",
+   "map": "MeteorFalls_1F_1R",
+   "at": [
+    14,
+    21
+   ],
+   "uid": 6,
+   "model": 293,
+   "model_emerald": 302,
+   "script": 0,
+   "dir": 2,
+   "what": "Aqua grunt (object 6, VAR_1, FACE_LEFT)",
+   "flag": "FLAG_HIDE_GRUNTS_METEOR_FALLS_1F"
+  },
+  {
+   "kind": "npc",
+   "map": "MeteorFalls_1F_1R",
+   "at": [
+    6,
+    20
+   ],
+   "uid": 7,
+   "model": 303,
+   "model_emerald": 353,
+   "script": 0,
+   "dir": 3,
+   "what": "Maxie (object 7, VAR_7)",
+   "flag": "FLAG_HIDE_OTHER_TEAM_METEOR_FALLS_1F"
+  },
+  {
+   "kind": "npc",
+   "map": "MeteorFalls_1F_1R",
+   "at": [
+    6,
+    20
+   ],
+   "uid": 8,
+   "model": 302,
+   "model_emerald": 293,
+   "script": 0,
+   "dir": 3,
+   "what": "Magma grunt (object 8, VAR_4)",
+   "flag": "FLAG_HIDE_OTHER_TEAM_METEOR_FALLS_1F"
+  },
+  {
+   "kind": "npc",
+   "map": "MeteorFalls_1F_1R",
+   "at": [
+    6,
+    21
+   ],
+   "uid": 9,
+   "model": 302,
+   "model_emerald": 293,
+   "script": 0,
+   "dir": 3,
+   "what": "Magma grunt (object 9, VAR_4) (move 2: v165_fixes)",
+   "flag": "FLAG_HIDE_OTHER_TEAM_METEOR_FALLS_1F",
+   "move": 2
+  },
+  {
+   "kind": "npc",
+   "map": "MeteorFalls_1F_1R",
+   "at": [
+    13,
+    23
+   ],
+   "uid": 10,
+   "model": 73,
+   "script": 4,
+   "dir": 0,
+   "what": "Prof. Cozmo (object 10, SCIENTIST_1) (move 12: v165_fixes)",
+   "flag": "FLAG_HIDE_PROF_COSMO_METEOR_FALLS",
+   "move": 12
+  },
+  {
+   "kind": "trigger",
+   "map": "MeteorFalls_1F_1R",
+   "at": [
+    14,
+    18
+   ],
+   "script": 3,
+   "var": "VAR_METEOR_FALLS_STATE",
+   "value": 0,
+   "what": "Team Aqua takes the Meteorite (coord event 1)",
+   "y": 48
+  },
+  {
+   "kind": "npc",
+   "map": "MeteorFalls_1F_2R",
+   "at": [
+    13,
+    2
+   ],
+   "uid": 1,
+   "model": 19,
+   "script": 3510,
+   "dir": 1,
+   "what": "TRAINER_NICOLAS_1 (MAN_4, sight 1)",
+   "evtype": 1,
+   "p0": 1,
+   "move": 15
+  },
+  {
+   "kind": "npc",
+   "map": "MeteorFalls_1F_2R",
+   "at": [
+    6,
+    12
+   ],
+   "uid": 2,
+   "model": 28,
+   "script": 3767,
+   "dir": 1,
+   "what": "TRAINER_JOHN_AND_JAY_1: John (OLD_MAN_1, sight 0)",
+   "evtype": 1,
+   "p0": 0,
+   "move": 15
+  },
+  {
+   "kind": "npc",
+   "map": "MeteorFalls_1F_2R",
+   "at": [
+    7,
+    12
+   ],
+   "uid": 3,
+   "model": 29,
+   "script": 5767,
+   "dir": 1,
+   "what": "TRAINER_JOHN_AND_JAY_1: Jay (OLD_WOMAN_1, sight 0)",
+   "evtype": 1,
+   "p0": 0,
+   "move": 15
+  }
+ ]
+}

@@ -1,0 +1,18 @@
+{
+ "kind": "trainer",
+ "side": "front",
+ "sprite": 7,
+ "archive": 71,
+ "files": {
+  "static": 56,
+  "parts": 57,
+  "palette": 63
+ },
+ "name": "tucker",
+ "note": "Tucker (Dome Ace, Battle Dome): Black 2 spare class 7's own sprite (Emerald builds only)",
+ "source": "pokeemerald graphics/trainers/front_pics/dome_ace_tucker.png and its palette (graphics/trainers/front_pics/dome_ace_tucker.png at 0x8d641e0, png:graphics/trainers/front_pics/dome_ace_tucker.png palette at 0x8d645e4 in roms/emerald_original.gba)",
+ "layout": "parts and animations of Black 2 front sprite 62",
+ "made_by": "b2tools/sprite_emerald_frontier.py (sprite_upgrade.battle_sprite, as Sapphire's characters)",
+ "mcss_from": 62,
+ "static_intro": true
+}

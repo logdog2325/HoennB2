@@ -1,0 +1,4 @@
+A blueprint of some sort?\nIt’s too complicated!
+I’m investigating this ship on behalf\nof Capt. Stern.{be01}\nHe also asked me to find a Scanner,\nbut I haven’t had any success...
+Oh! That’s a Scanner!{be01}\nListen, can I get you to deliver that\nto Capt. Stern?{be01}\nI want to investigate this ship a\nlittle more.
+This ship is called S.S. Cactus.\nIt seems to be from an earlier era.

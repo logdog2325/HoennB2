@@ -1,0 +1,138 @@
+{
+ "map": "Route122",
+ "id": "MAP_ROUTE122",
+ "layout": "LAYOUT_ROUTE122",
+ "music": "MUS_ROUTE122",
+ "region_map_section": "MAPSEC_ROUTE_122",
+ "weather": "WEATHER_SUNNY",
+ "connections": [
+  {
+   "map": "MAP_ROUTE121",
+   "offset": -20,
+   "direction": "up"
+  },
+  {
+   "map": "MAP_ROUTE123",
+   "offset": -100,
+   "direction": "down"
+  }
+ ],
+ "npcs": [],
+ "signs": [],
+ "warps": [
+  {
+   "id": 0,
+   "x": 22,
+   "y": 29,
+   "dest_map": "MAP_MT_PYRE_1F",
+   "dest_warp_id": "0"
+  }
+ ],
+ "coord_events": [],
+ "wild": {
+  "water_mons": {
+   "encounter_rate": 4,
+   "slot_rates": [
+    60,
+    30,
+    5,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 5,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 15,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_PELIPPER",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_PELIPPER",
+     "min": 25,
+     "max": 30
+    }
+   ]
+  },
+  "fishing_mons": {
+   "encounter_rate": 30,
+   "slot_rates": [
+    70,
+    30,
+    60,
+    20,
+    20,
+    40,
+    40,
+    15,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_SHARPEDO",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 35,
+     "max": 40
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 40,
+     "max": 45
+    }
+   ]
+  }
+ }
+}

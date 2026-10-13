@@ -1,0 +1,193 @@
+{
+ "_doc": "Battle Tower lobby (Sapphire 14x9, zone 21), a plain Sapphire room for now (the PWT link waits for the island and the story, notes/DECISIONS.md): Nimbasa's Battle Test look (texture set 306). Row 1 = the row along the back wall: the door to the battle room (6,1) = Black 2's blue double door door_h5_in (Sapphire warp 2, entered from the south), the PC (11,1) = pc01. The U-shaped reception counter (3 and 9, rows 2-5; 4-5 and 7-8, row 5; the receptionist in the gap at 6,5) = white counters shelf03; the sofa along the east wall (13, 4-6) = red armchairs; plants (0-1, 12-13 at row 8). Exits (6-7, 8) lead to the island (BattleTower_Outside, not built yet). Doors (pwt_tower, 2026-10-11): \"doorway\": true cuts each door_h5_in's width out of the back wall with a black recess behind it (models_interior.py doorway_spans), so the halves swing open into a dark doorway as in Black 2's League (chunk 899) instead of into the wall; the doors stand 1 unit inside the doorway (gap -1) and 1 lower (y -1, top under the wall's black cap), so no edge of a swung half shows over the wall top.",
+ "map": "BattleTower_Lobby",
+ "style": "sp_battle",
+ "floor": [
+  [
+   0,
+   1,
+   13,
+   8
+  ]
+ ],
+ "stairs": [
+  [
+   6,
+   1
+  ]
+ ],
+ "mats": [
+  {
+   "tex": "chip_mat",
+   "src": 306,
+   "rect": [
+    6,
+    8,
+    7,
+    8
+   ],
+   "border": 0.25,
+   "border_units": 4,
+   "y": 0,
+   "_what": "door mat"
+  }
+ ],
+ "furniture": [
+  {
+   "m": "door_h5_in",
+   "tile": [
+    6,
+    1
+   ],
+   "wall": "N",
+   "gap": -1,
+   "doorway": true,
+   "y": -1,
+   "_what": "door to the battle room (Sapphire warp 2)"
+  },
+  {
+   "m": "pc01",
+   "tile": [
+    11,
+    1
+   ],
+   "wall": "N",
+   "_what": "PC"
+  },
+  {
+   "m": "shelf03",
+   "rot": 90,
+   "tiles": [
+    3,
+    2,
+    3,
+    3
+   ],
+   "_what": "counter, west arm"
+  },
+  {
+   "m": "shelf03",
+   "rot": 90,
+   "tiles": [
+    3,
+    4,
+    3,
+    5
+   ],
+   "_what": "counter, west arm"
+  },
+  {
+   "m": "shelf03",
+   "tiles": [
+    4,
+    5,
+    5,
+    5
+   ],
+   "_what": "counter, front"
+  },
+  {
+   "m": "shelf03",
+   "tiles": [
+    7,
+    5,
+    8,
+    5
+   ],
+   "_what": "counter, front"
+  },
+  {
+   "m": "shelf03",
+   "rot": 270,
+   "tiles": [
+    9,
+    2,
+    9,
+    3
+   ],
+   "_what": "counter, east arm"
+  },
+  {
+   "m": "shelf03",
+   "rot": 270,
+   "tiles": [
+    9,
+    4,
+    9,
+    5
+   ],
+   "_what": "counter, east arm"
+  },
+  {
+   "m": "monitor01",
+   "tile": [
+    3,
+    5
+   ],
+   "y": 14,
+   "_what": "terminal on the counter (Sapphire sign 3,5); (sweep_rooms 2026-10-11) 14 back along the counter's west arm: its front 12 units north of the tile where the player reads it (it stood 2 units into that tile and its 44-unit top cut the player's head: rooms_view m 42-63 px)",
+   "dz": -14
+  },
+  {
+   "m": "chair03",
+   "rot": 270,
+   "tile": [
+    13,
+    4
+   ],
+   "wall": "E",
+   "_what": "sofa seat (walkable in Sapphire: sunk to a cushion, its top 3 above the floor)",
+   "y": -12
+  },
+  {
+   "m": "chair03",
+   "rot": 270,
+   "tile": [
+    13,
+    5
+   ],
+   "wall": "E",
+   "_what": "sofa seat (walkable in Sapphire: sunk to a cushion, its top 3 above the floor)",
+   "y": -12
+  },
+  {
+   "m": "chair03",
+   "rot": 270,
+   "tile": [
+    13,
+    6
+   ],
+   "wall": "E",
+   "_what": "sofa seat (walkable in Sapphire: sunk to a cushion, its top 3 above the floor)",
+   "y": -12
+  },
+  {
+   "m": "plant01",
+   "tile": [
+    0,
+    8
+   ]
+  },
+  {
+   "m": "plant01",
+   "tile": [
+    1,
+    8
+   ]
+  },
+  {
+   "m": "plant01",
+   "tile": [
+    12,
+    8
+   ]
+  },
+  {
+   "m": "plant01",
+   "tile": [
+    13,
+    8
+   ]
+  }
+ ]
+}

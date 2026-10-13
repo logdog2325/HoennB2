@@ -1,0 +1,3 @@
+Listen up, and I’ll tell you something\ngood.{be01}\nThere’s supposed to be an ancient\nruin in the sea around here.{be01}\nThere could be treasures just waiting\nto be discovered down there.
+Ancient treasures...{be01}\nIt would be nice if they existed, but\neven if they didn’t, it would be so{be00}\nbeautiful to take an underwater{be00}\nstroll with my Pokémon.
+Azumarill: Marurii.

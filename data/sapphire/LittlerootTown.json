@@ -1,0 +1,278 @@
+{
+ "map": "LittlerootTown",
+ "id": "MAP_LITTLEROOT_TOWN",
+ "layout": "LAYOUT_LITTLEROOT_TOWN",
+ "music": "MUS_LITTLEROOT",
+ "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
+ "weather": "WEATHER_SUNNY",
+ "connections": [
+  {
+   "direction": "up",
+   "offset": 0,
+   "map": "MAP_ROUTE101"
+  }
+ ],
+ "npcs": [
+  {
+   "local_id": 1,
+   "x": 16,
+   "y": 10,
+   "gfx": "OBJ_EVENT_GFX_LITTLE_BOY_3",
+   "movement": "MOVEMENT_TYPE_WANDER_AROUND",
+   "range": [
+    1,
+    2
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "LittlerootTown_EventScript_Twin",
+   "texts": {
+    "LittlerootTown_Text_IfYouGoInGrassPokemonWillJumpOut": "If you go in the tall grass at the sides\\nof this road, wild POKéMON will appear.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 2,
+   "x": 12,
+   "y": 13,
+   "gfx": "OBJ_EVENT_GFX_FAT_MAN",
+   "movement": "MOVEMENT_TYPE_WANDER_AROUND",
+   "range": [
+    2,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_FAT_MAN_LITTLEROOT",
+   "script": "LittlerootTown_EventScript_FatMan",
+   "texts": {
+    "LittlerootTown_Text_CanUsePCToStoreItems": "If you use a PC, you can store items\\nand POKéMON.\\pThe power of science is staggering!$"
+   }
+  },
+  {
+   "local_id": 3,
+   "x": 14,
+   "y": 17,
+   "gfx": "OBJ_EVENT_GFX_BOY_2",
+   "movement": "MOVEMENT_TYPE_WANDER_AROUND",
+   "range": [
+    2,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "LittlerootTown_EventScript_Boy",
+   "texts": {
+    "LittlerootTown_Text_BirchSpendsDaysInLab": "PROF. BIRCH spends days in his LAB\\nstudying, then he'll suddenly go out in\\lthe wild to do more research...\\pWhen does PROF. BIRCH spend time\\nat home?$"
+   }
+  },
+  {
+   "local_id": 4,
+   "x": 5,
+   "y": 8,
+   "gfx": "OBJ_EVENT_GFX_MOM",
+   "movement": "MOVEMENT_TYPE_FACE_UP",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_MOM_LITTLEROOT",
+   "script": "LittlerootTown_EventScript_Mom",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 5,
+   "x": 2,
+   "y": 10,
+   "gfx": "OBJ_EVENT_GFX_TRUCK",
+   "movement": "MOVEMENT_TYPE_FACE_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_MOVING_TRUCK_BRENDAN",
+   "script": "0x0",
+   "missing": true
+  },
+  {
+   "local_id": 6,
+   "x": 11,
+   "y": 10,
+   "gfx": "OBJ_EVENT_GFX_TRUCK",
+   "movement": "MOVEMENT_TYPE_FACE_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_MOVING_TRUCK_MAY",
+   "script": "0x0",
+   "missing": true
+  }
+ ],
+ "signs": [
+  {
+   "x": 15,
+   "y": 13,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "LittlerootTown_EventScript_TownSign",
+   "texts": {
+    "LittlerootTown_Text_TownSign": "LITTLEROOT TOWN\\n“A town that can't be shaded any hue.”$"
+   }
+  },
+  {
+   "x": 6,
+   "y": 17,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "LittlerootTown_EventScript_BirchsLabSign",
+   "texts": {
+    "LittlerootTown_Text_ProfBirchsLab": "PROF. BIRCH'S POKéMON LAB$"
+   }
+  },
+  {
+   "x": 7,
+   "y": 8,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "LittlerootTown_EventScript_BrendansHouseSign",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "x": 12,
+   "y": 8,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "LittlerootTown_EventScript_MaysHouseSign",
+   "texts": {},
+   "complex": true
+  }
+ ],
+ "warps": [
+  {
+   "id": 0,
+   "x": 14,
+   "y": 8,
+   "dest_map": "MAP_LITTLEROOT_TOWN_MAYS_HOUSE_1F",
+   "dest_warp_id": "1"
+  },
+  {
+   "id": 1,
+   "x": 5,
+   "y": 8,
+   "dest_map": "MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F",
+   "dest_warp_id": "1"
+  },
+  {
+   "id": 2,
+   "x": 7,
+   "y": 16,
+   "dest_map": "MAP_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB",
+   "dest_warp_id": "0"
+  }
+ ],
+ "coord_events": [
+  {
+   "type": "trigger",
+   "x": 10,
+   "y": 1,
+   "elevation": 3,
+   "var": "VAR_LITTLEROOT_STATE",
+   "var_value": "0",
+   "script": "LittlerootTown_EventScript_NeedPokemonTriggerLeft",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 11,
+   "y": 1,
+   "elevation": 3,
+   "var": "VAR_LITTLEROOT_STATE",
+   "var_value": "0",
+   "script": "LittlerootTown_EventScript_NeedPokemonTriggerRight",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 11,
+   "y": 1,
+   "elevation": 3,
+   "var": "VAR_LITTLEROOT_STATE",
+   "var_value": "1",
+   "script": "LittlerootTown_EventScript_GoSaveBirchTrigger",
+   "texts": {
+    "LittlerootTown_Text_CanYouGoSeeWhatsHappening": "I can hear someone shouting down the\\nroad here.\\pWhat should I do? What should we do?\\nSomebody has to go help...$"
+   },
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 8,
+   "y": 9,
+   "elevation": 3,
+   "var": "VAR_LITTLEROOT_STATE",
+   "var_value": "3",
+   "script": "LittlerootTown_EventScript_GiveRunningShoesTrigger4",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 9,
+   "y": 9,
+   "elevation": 3,
+   "var": "VAR_LITTLEROOT_STATE",
+   "var_value": "3",
+   "script": "LittlerootTown_EventScript_GiveRunningShoesTrigger5",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 10,
+   "y": 9,
+   "elevation": 3,
+   "var": "VAR_LITTLEROOT_STATE",
+   "var_value": "3",
+   "script": "LittlerootTown_EventScript_GiveRunningShoesTrigger2",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 11,
+   "y": 9,
+   "elevation": 3,
+   "var": "VAR_LITTLEROOT_STATE",
+   "var_value": "3",
+   "script": "LittlerootTown_EventScript_GiveRunningShoesTrigger3",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 10,
+   "y": 2,
+   "elevation": 3,
+   "var": "VAR_LITTLEROOT_STATE",
+   "var_value": "3",
+   "script": "LittlerootTown_EventScript_GiveRunningShoesTrigger0",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 11,
+   "y": 2,
+   "elevation": 3,
+   "var": "VAR_LITTLEROOT_STATE",
+   "var_value": "3",
+   "script": "LittlerootTown_EventScript_GiveRunningShoesTrigger1",
+   "texts": {},
+   "complex": true
+  }
+ ],
+ "wild": {}
+}

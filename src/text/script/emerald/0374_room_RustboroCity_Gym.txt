@@ -1,0 +1,8 @@
+{0100:0} received the Stone Badge\nfrom Roxanne.
+The Stone Badge heightens the Attack\npower of your Pokémon.{be01}\nIt also enables them to use the HM move\nCut outside of battle.{be01}\nPlease take this with you, too.
+That Technical Machine, TM39,\ncontains Rock Tomb.{be01}\nIt not only inflicts damage by dropping\nrocks, it also lowers Speed.{be01}\nIf you use a TM, it instantly teaches\nthe move to a Pokémon.{be01}\nRemember, a TM can be used only once,\nso think before you use it.
+Since you are so strong, you should\nchallenge other Gym Leaders.{be01}\nBy battling many Trainers, you should\nlearn many things.
+Yo, how’s it going?{be01}\nListen, my friend!\nWould you like to become the Champion?{be01}\nI’m no Trainer, not me, but I can\nsure give you winning advice.{be01}\nThat’s settled, then! We’ll aim for the\nPokémon Championship together!{be01}\nIt’s your job as a Trainer to collect\nGym Badges, am I right?{be01}\nBut Gym Leaders aren’t pushovers!{be01}\nAnd that’s where I come in!\nI’m here to provide expert advice!{be01}\nRoxanne, the Gym Leader, is a user\nof Rock-type Pokémon.{be01}\nThe Rock type is very durable, but\nit can’t stand Water-type and{be00}\nGrass-type moves.{be01}\nCome see me afterwards, if you beat\nthe Gym Leader.{be01}\nWell, go for it!
+Whoa! What a breathtaking victory!\nMy cheering must’ve worked!{be01}\nGreat!\nCheck your Trainer Card.{be01}\nThe Stone Badge you got should be\nproperly recorded on it.{be01}\nIn other words...{be01}\nYou’ve climbed the first step on\nthe stairs to the Championship!{be01}\nThat’s got to feel awesome!
+Rustboro City Pokémon Gym
+Rustboro City Pokémon Gym{be01}\nRoxanne’s Certified Trainers:\n{0100:0}

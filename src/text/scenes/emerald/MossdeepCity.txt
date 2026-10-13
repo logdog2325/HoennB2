@@ -1,0 +1,11 @@
+A voyage on a ship is fine.{be01}\nBut crossing the sea with Pokémon\nusing Surf…{be01}\nNow that’s an exhilarating trip!\nWouldn’t you agree, youngster?
+I got this from Steven, but I don’t\nknow what it’s good for.{be01}\nI think it’s called King’s Rock.\nDo you want it?
+Why would you want it?\nYou’re weird.{be01}\nYou can keep it, but keep it a secret\nfrom Steven.
+Steven’s house is right over there!
+Yeah, you think so, too! What are you\nsupposed to do with some weird rock?
+Too bad!\nThe Bag is full...
+The island’s Space Center has been\nlaunching huge rockets.{be01}\nThere’s been some kind of an uproar\nover a letter they received recently.
+The island’s Space Center has been\nlaunching huge rockets.
+I heard from a Sailor buddy that\nTeam Aqua set up shop in Lilycove.{be01}\nI also heard that someone came along\nand wiped the floor with them!{be01}\nBut Mossdeep here’s been targeted\nby that Team Magma.{be01}\nIf you want to know what they’re up to,\ngo visit the Space Center.
+I’m a Sailor, so the sea’s obviously\nmore important to me.{be01}\nBut you know? When I get back on land\nafter a long voyage, I do feel relief!
+Scott: {0100:0}, feeling good?\nI’m doing great!{be01}\nI’d heard Mossdeep’s Gym Leader is\npretty strong, so I decided to come{be00}\ntake a look-see for myself.{be01}\nBut there’s something wrong about\nthis town.{be01}\nPeople are going on about a warning\nletter and the Space Center…{be01}\nI don’t think it concerns me in any\nway, though.

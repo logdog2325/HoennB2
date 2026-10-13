@@ -1,0 +1,7 @@
+Trading Pokémon with others...{be01}\nIt’s as if you’re trading your own\nmemories with other people.
+Hi, there’s this Pokémon that I’m\nlooking for.{be01}\nI want a {0100:1}.\nDo you have one?{be01}\nWould you trade it for my {0100:2}?
+Thank you!{be01}\nI’ll be good to your {0100:1},\nso please be nice to my {0100:2}!
+Wait!\nThat Pokémon isn’t a {0100:1}.{be01}\nI guess you don’t want to trade\nwith me.
+Oh, okay. If you change your mind,\nplease come see me.{be01}\nI’ll be waiting!
+Thank you for trading with me!{be01}\nI really wanted this Pokémon, so\nI promise to take good care of it!
+Zigzagoon: Gumomoh?

@@ -1,0 +1,48 @@
+{
+ "map": "ShoalCave_LowTideInnerRoom",
+ "_doc": "caves_misc: the low-tide layout. Heights per region (models_cave_levels 'heights'), read from Sapphire's art and from what the high tide floods: 0 = the floor under the top bridge and the corridor under the lower bridge (deep water at high tide), 8 = the shore floor (shallow at high tide), 24 = the raised walkways (dry at high tide), 48 = the plateaus and both bridges (24 above the walkways, so the narrow walkway between them and the shore needs walls on one side only), 64 = the ladder nook north-east (one step up from its plateau). Bridges: Black 2's two-layer walk-under bridges (Seaside Cave chunk 631). The high tide (ShoalCave_HighTideInnerRoom) replaces this zone's matrix while map replace event 9 is set (set in the entrance room); warps 0, 1, 4, 5 are under water then. Origin (9,13): Sapphire (23,19) on the corner of the 2x2 chunks, so each chunk's file stays under Black 2's 110,600-byte chunk buffer (map type 16; at origin (0,0) chunk 0 was 117 KB and the game hung entering the room).",
+ "heights": {
+  "37,2": 48,
+  "2,4": 48,
+  "40,4": 64,
+  "10,7": 0,
+  "6,9": 8,
+  "14,10": 8,
+  "36,10": 24,
+  "15,12": 24,
+  "18,13": 48,
+  "26,13": 24,
+  "9,19": 0,
+  "36,19": 24,
+  "9,23": 0,
+  "3,25": 24,
+  "10,25": 8
+ },
+ "bridges": true,
+ "shoals": true,
+ "ladders": {
+  "42,4": "down",
+  "38,15": "down",
+  "19,14": "down"
+ },
+ "tide": {
+  "event": 9,
+  "inside_event": 8,
+  "flooded": [
+   0,
+   1,
+   4,
+   5
+  ]
+ },
+ "alt_rooms": [
+  {
+   "room": "ShoalCave_HighTideInnerRoom",
+   "event": 9
+  }
+ ],
+ "origin": [
+  9,
+  13
+ ]
+}

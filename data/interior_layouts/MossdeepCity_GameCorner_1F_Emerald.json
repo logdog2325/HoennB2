@@ -1,0 +1,251 @@
+{
+ "_doc": "emerald_rooms (b2tools/emerald_rooms.py writes this file: edit the script and rerun). Emerald's Mossdeep Game Corner 1F (pokeemerald MossdeepCity_GameCorner_1F, 12x10: the wireless minigame lounge) in Black 2's house look (Sapphire's room: houses_wood): the counter (2-8, 3) with the doorway (5,1) behind it, the record boards (0,1) (1,1), the PC (10,1), two glass tables with seats, the exit (5-6, 9).",
+ "map": "pokeemerald/MossdeepCity_GameCorner_1F",
+ "style": "houses_wood",
+ "origin": [
+  1,
+  1
+ ],
+ "floor": [
+  [
+   0,
+   1,
+   11,
+   9
+  ]
+ ],
+ "block": [
+  [
+   5,
+   0
+  ],
+  [
+   5,
+   1
+  ],
+  [
+   5,
+   2
+  ],
+  [
+   10,
+   0
+  ]
+ ],
+ "classes": {
+  "0xd6": [
+   [
+    10,
+    1
+   ]
+  ]
+ },
+ "mats": [
+  {
+   "tex": "in70_mat1",
+   "src": 351,
+   "rect": [
+    5,
+    9,
+    6,
+    9
+   ],
+   "border": 0.25,
+   "border_units": 3,
+   "y": 0,
+   "_what": "exit mat"
+  }
+ ],
+ "furniture": [
+  {
+   "m": "desk02",
+   "tile": [
+    2,
+    3
+   ],
+   "_what": "counter end"
+  },
+  {
+   "m": "shelf03",
+   "tiles": [
+    3,
+    3,
+    4,
+    3
+   ],
+   "_what": "counter"
+  },
+  {
+   "m": "desk02",
+   "tile": [
+    5,
+    3
+   ],
+   "_what": "counter gate"
+  },
+  {
+   "m": "shelf03",
+   "tiles": [
+    6,
+    3,
+    7,
+    3
+   ],
+   "_what": "counter"
+  },
+  {
+   "m": "desk02",
+   "tile": [
+    8,
+    3
+   ],
+   "_what": "counter end"
+  },
+  {
+   "m": "pcshelf01_2",
+   "tiles": [
+    2,
+    1,
+    3,
+    1
+   ],
+   "wall": "N",
+   "_what": "shelves behind the counter"
+  },
+  {
+   "m": "door_pwood01",
+   "tile": [
+    5,
+    1
+   ],
+   "wall": "N",
+   "_what": "doorway behind the counter (no warp)"
+  },
+  {
+   "m": "pcshelf01_2",
+   "tiles": [
+    7,
+    1,
+    8,
+    1
+   ],
+   "wall": "N",
+   "_what": "shelves behind the counter"
+  },
+  {
+   "m": "art01",
+   "tile": [
+    0,
+    1
+   ],
+   "wall": "N",
+   "gap": 2,
+   "y": 18,
+   "_what": "Dodrio Berry Picking record board"
+  },
+  {
+   "m": "art01",
+   "tile": [
+    1,
+    1
+   ],
+   "wall": "N",
+   "gap": 2,
+   "y": 18,
+   "_what": "Pokemon Jump record board"
+  },
+  {
+   "m": "pc01",
+   "tile": [
+    10,
+    1
+   ],
+   "wall": "N",
+   "_what": "PC (Emerald MB_PC, tile class 0xd6)"
+  },
+  {
+   "m": "table01_2x2",
+   "tiles": [
+    2,
+    6,
+    3,
+    7
+   ],
+   "_what": "glass table"
+  },
+  {
+   "m": "table01_2x2",
+   "tiles": [
+    7,
+    6,
+    8,
+    7
+   ],
+   "_what": "glass table"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    2,
+    5
+   ],
+   "_what": "seat (walkable)"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    3,
+    5
+   ],
+   "_what": "seat (walkable)"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    1,
+    6
+   ],
+   "_what": "seat (walkable)"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    1,
+    7
+   ],
+   "_what": "seat (walkable)"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    7,
+    5
+   ],
+   "_what": "seat (walkable)"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    8,
+    5
+   ],
+   "_what": "seat (walkable)"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    9,
+    6
+   ],
+   "_what": "seat (walkable)"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    9,
+    7
+   ],
+   "_what": "seat (walkable)"
+  }
+ ]
+}

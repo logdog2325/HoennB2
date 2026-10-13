@@ -1,0 +1,483 @@
+{
+ "map": "SootopolisCity",
+ "id": "MAP_SOOTOPOLIS_CITY",
+ "layout": "LAYOUT_SOOTOPOLIS_CITY",
+ "music": "MUS_SOOTOPOLIS",
+ "region_map_section": "MAPSEC_SOOTOPOLIS_CITY",
+ "weather": "WEATHER_SUNNY",
+ "connections": [],
+ "npcs": [
+  {
+   "local_id": 1,
+   "x": 29,
+   "y": 20,
+   "gfx": "OBJ_EVENT_GFX_BEAUTY",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_CAVE_OF_ORIGIN_ENTRANCE_WOMAN_1",
+   "script": "SootopolisCity_EventScript_CaveEntranceWoman1",
+   "texts": {
+    "SootopolisCity_Text_TheLegendWasTrue": "The legend told by the old man on\\nMT. PYRE... It wasn't a made-up story.$"
+   }
+  },
+  {
+   "local_id": 2,
+   "x": 33,
+   "y": 20,
+   "gfx": "OBJ_EVENT_GFX_BEAUTY",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_CAVE_OF_ORIGIN_ENTRANCE_WOMAN_2",
+   "script": "SootopolisCity_EventScript_CaveEntranceWoman2",
+   "texts": {
+    "SootopolisCity_Text_NaturalBalanceIsShifting": "The natural balance of HOENN is going\\nthrough a wrenching shift...$"
+   }
+  },
+  {
+   "local_id": 3,
+   "x": 36,
+   "y": 21,
+   "gfx": "OBJ_EVENT_GFX_OLD_MAN_1",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_SOOTOPOLIS_RESIDENTS",
+   "script": "SootopolisCity_EventScript_CaveOfOriginExpert",
+   "texts": {
+    "SootopolisCity_Text_CaveOfOriginPleaseLeave": "Who might you be?\\pThis is the CAVE OF ORIGIN.\\pThe spirits of POKéMON, becalmed at\\nMT. PYRE, are said to be revived here.\\pPlease leave.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 4,
+   "x": 47,
+   "y": 42,
+   "gfx": "OBJ_EVENT_GFX_WOMAN_5",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_SOOTOPOLIS_RESIDENTS",
+   "script": "SootopolisCity_EventScript_Woman2",
+   "texts": {
+    "SootopolisCity_Text_YoureGoingToChallengeWallace": "Let me guess, you're going to challenge\\nWALLACE?\\pOh, you are really?\\nYou're awfully brave!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 5,
+   "x": 32,
+   "y": 21,
+   "gfx": "OBJ_EVENT_GFX_WALLACE",
+   "movement": "MOVEMENT_TYPE_FACE_LEFT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_WALLACE_SOOTOPOLIS",
+   "script": "SootopolisCity_EventScript_YouMustGoWithOrb",
+   "texts": {
+    "SootopolisCity_Text_YouMustGoWithBlueOrb": "WALLACE: You must go together with\\nyour BLUE ORB.\\pYou must go regardless of what awaits\\nyou inside the CAVE...$",
+    "SootopolisCity_Text_YouMustGoWithRedOrb": "WALLACE: You must go together with\\nyour RED ORB.\\pYou must go regardless of what awaits\\nyou inside the CAVE...$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 6,
+   "x": 9,
+   "y": 43,
+   "gfx": "OBJ_EVENT_GFX_GIRL_2",
+   "movement": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
+   "range": [
+    1,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_SOOTOPOLIS_RESIDENTS",
+   "script": "SootopolisCity_EventScript_KiriGiveBerry",
+   "texts": {
+    "SootopolisCity_Text_NameIsKiriHaveOneOfThese": "Hi, what's your name?\\p... ... ...  ... ... ...  ... ... ...\\nOkay. That's nice!\\pMy name is KIRI.\\pMy mommy and daddy named me that so\\nI would grow healthy and warmhearted.\\lThat's what they wished.\\pYou can have one of these.$",
+    "SootopolisCity_Text_GiveYouThisBerryToo": "KIRI will give you this BERRY, too!\\nI really like it lots!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 7,
+   "x": 51,
+   "y": 14,
+   "gfx": "OBJ_EVENT_GFX_LITTLE_BOY_1",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_SOOTOPOLIS_RESIDENTS",
+   "script": "SootopolisCity_EventScript_Boy1",
+   "texts": {
+    "SootopolisCity_Text_WonderWhatWorldIsLike": "I... I've never been out of this city.\\pI wonder what the world is like on the\\nother side of this round sky?$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 8,
+   "x": 43,
+   "y": 26,
+   "gfx": "OBJ_EVENT_GFX_BOY_1",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_SOOTOPOLIS_RESIDENTS",
+   "script": "SootopolisCity_EventScript_Boy1Normal",
+   "texts": {
+    "SootopolisCity_Text_PhysicallyFitLivingHere": "Diving in the sea. Climbing up and\\ndown stairs all the time...\\pIf you live in this town, you end up\\ngetting physically fit.$"
+   }
+  },
+  {
+   "local_id": 9,
+   "x": 26,
+   "y": 4,
+   "gfx": "OBJ_EVENT_GFX_MAN_1",
+   "movement": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
+   "range": [
+    1,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_SOOTOPOLIS_RESIDENTS",
+   "script": "SootopolisCity_EventScript_Man1",
+   "texts": {
+    "SootopolisCity_Text_NoOrdinaryTourist1": "Hm!\\nYou've come all the way to SOOTOPOLIS?\\lYou're no ordinary tourist.\\pBut I suppose that doesn't make you an\\nextraordinary tourist, either.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 10,
+   "x": 30,
+   "y": 21,
+   "gfx": "OBJ_EVENT_GFX_STEVEN",
+   "movement": "MOVEMENT_TYPE_FACE_RIGHT",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_STEVEN_SOOTOPOLIS",
+   "script": "SootopolisCity_EventScript_YoullBeOkay",
+   "texts": {
+    "SootopolisCity_Text_YoullBeOkaySapphire": "STEVEN: You'll be okay. With your\\nPOKéMON, you'll get things done\\lwhatever happens.\\pI'm convinced of it!$",
+    "SootopolisCity_Text_YoullBeOkayRuby": "STEVEN: You'll be okay. With your\\nPOKéMON, you'll get things done\\lwhatever happens.\\pI'm convinced of it!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 11,
+   "x": 49,
+   "y": 34,
+   "gfx": "OBJ_EVENT_GFX_WOMAN_7",
+   "movement": "MOVEMENT_TYPE_WANDER_UP_AND_DOWN",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_SOOTOPOLIS_RESIDENTS",
+   "script": "SootopolisCity_EventScript_Woman1",
+   "texts": {
+    "SootopolisCity_Text_SootopolisSkyBeautiful": "SOOTOPOLIS sprang up as a town in the\\ncrater of a volcano.\\pIf you look up at the sky, the lip of\\nthe crater is also visible.\\lSo, all you see is the sky in a circle.\\pBut that's what makes the sky above\\nSOOTOPOLIS the most beautiful.$"
+   },
+   "complex": true
+  }
+ ],
+ "signs": [
+  {
+   "x": 32,
+   "y": 34,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "SootopolisCity_EventScript_GymSign",
+   "texts": {
+    "SootopolisCity_Text_GymSign": "SOOTOPOLIS CITY POKéMON GYM\\nLEADER: WALLACE\\p“Artist, and lover of WATER.”$"
+   }
+  },
+  {
+   "x": 19,
+   "y": 29,
+   "facing": "BG_EVENT_PLAYER_FACING_NORTH",
+   "script": "Common_EventScript_PokemartSign",
+   "texts": {
+    "Text_PokemartSign": "“Selected items for your convenience!”\\nPOKéMON MART$"
+   }
+  },
+  {
+   "x": 44,
+   "y": 31,
+   "facing": "BG_EVENT_PLAYER_FACING_NORTH",
+   "script": "Common_EventScript_PokemonCenterSign",
+   "texts": {
+    "Text_PokemonCenterSign": "“Rejuvenate your tired partners!”\\nPOKéMON CENTER$"
+   }
+  },
+  {
+   "x": 45,
+   "y": 31,
+   "facing": "BG_EVENT_PLAYER_FACING_NORTH",
+   "script": "Common_EventScript_PokemonCenterSign",
+   "texts": {
+    "Text_PokemonCenterSign": "“Rejuvenate your tired partners!”\\nPOKéMON CENTER$"
+   }
+  },
+  {
+   "x": 18,
+   "y": 29,
+   "facing": "BG_EVENT_PLAYER_FACING_NORTH",
+   "script": "Common_EventScript_PokemartSign",
+   "texts": {
+    "Text_PokemartSign": "“Selected items for your convenience!”\\nPOKéMON MART$"
+   }
+  },
+  {
+   "x": 41,
+   "y": 37,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "SootopolisCity_EventScript_CitySign",
+   "texts": {
+    "SootopolisCity_Text_CitySign": "SOOTOPOLIS CITY\\p“The mystical city where history\\nslumbers.”$"
+   }
+  }
+ ],
+ "warps": [
+  {
+   "id": 0,
+   "x": 43,
+   "y": 31,
+   "dest_map": "MAP_SOOTOPOLIS_CITY_POKEMON_CENTER_1F",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 1,
+   "x": 17,
+   "y": 29,
+   "dest_map": "MAP_SOOTOPOLIS_CITY_MART",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 2,
+   "x": 31,
+   "y": 32,
+   "dest_map": "MAP_SOOTOPOLIS_CITY_GYM_1F",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 3,
+   "x": 31,
+   "y": 16,
+   "dest_map": "MAP_CAVE_OF_ORIGIN_ENTRANCE",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 4,
+   "x": 9,
+   "y": 6,
+   "dest_map": "MAP_SOOTOPOLIS_CITY_HOUSE1",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 5,
+   "x": 45,
+   "y": 6,
+   "dest_map": "MAP_SOOTOPOLIS_CITY_HOUSE2",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 6,
+   "x": 9,
+   "y": 17,
+   "dest_map": "MAP_SOOTOPOLIS_CITY_HOUSE3",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 7,
+   "x": 44,
+   "y": 17,
+   "dest_map": "MAP_SOOTOPOLIS_CITY_HOUSE4",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 8,
+   "x": 9,
+   "y": 26,
+   "dest_map": "MAP_SOOTOPOLIS_CITY_HOUSE5",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 9,
+   "x": 53,
+   "y": 28,
+   "dest_map": "MAP_SOOTOPOLIS_CITY_HOUSE6",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 10,
+   "x": 8,
+   "y": 35,
+   "dest_map": "MAP_SOOTOPOLIS_CITY_HOUSE7",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 11,
+   "x": 48,
+   "y": 25,
+   "dest_map": "MAP_SOOTOPOLIS_CITY_HOUSE8",
+   "dest_warp_id": "0"
+  }
+ ],
+ "coord_events": [
+  {
+   "type": "trigger",
+   "x": 25,
+   "y": 6,
+   "elevation": 3,
+   "var": "VAR_SOOTOPOLIS_STATE",
+   "var_value": "1",
+   "script": "SootopolisCity_EventScript_LeadPlayerCaveOfOrigin",
+   "texts": {
+    "SootopolisCity_Text_YouCameInRainstorm": "STEVEN: {PLAYER}{KUN}, you came, too?\\nIn this terrible rainstorm, yet...\\pOh, yes, can you hear out what my\\nfriend has to say?$",
+    "SootopolisCity_Text_YouCameInScorchingSun": "STEVEN: {PLAYER}{KUN}, you came, too?\\nUnder this scorching sun, yet...\\pOh, yes, can you hear out what my\\nfriend has to say?$",
+    "SootopolisCity_Text_MyNameIsWallaceDownpour": "My name is WALLACE.\\nI'm this town's GYM LEADER.\\pI've also been entrusted with the\\nprotection of the CAVE OF ORIGIN.\\pThis downpour is caused by a power\\nemanating from the CAVE OF ORIGIN.$",
+    "SootopolisCity_Text_MyNameIsWallaceSunshine": "My name is WALLACE.\\nI'm this town's GYM LEADER.\\pI've also been entrusted with the\\nprotection of the CAVE OF ORIGIN.\\pThis sunshine is caused by a power\\nemanating from the CAVE OF ORIGIN.$",
+    "SootopolisCity_Text_ThatIsTheBlueOrb": "That... That is the BLUE ORB.\\pI see.\\nFollow me.$",
+    "SootopolisCity_Text_ThatIsTheRedOrb": "That... That is the RED ORB.\\pI see.\\nFollow me.$",
+    "SootopolisCity_Text_PeopleNeedRainToLive": "STEVEN: This rain...\\pPeople and POKéMON need water to live...\\pBut why does this rain fill us with\\nso much dread?\\pThe rain clouds over SOOTOPOLIS will\\nkeep building and soon extend all\\lover HOENN...\\pIf that were to happen...$",
+    "SootopolisCity_Text_PeopleNeedSunlightToLive": "STEVEN: This sunlight...\\pPeople and POKéMON need sunlight\\nto live...\\pBut why does this sunlight fill us\\nwith so much dread?\\pThe blazing sun over SOOTOPOLIS is\\nintensifying... Soon, all of HOENN\\lwill be under its withering glare...\\pIf that were to happen...$",
+    "SootopolisCity_Text_CaveOfOriginWithBlueOrb": "WALLACE: The CAVE OF ORIGIN is ahead.\\pNo one from SOOTOPOLIS is permitted\\nto enter the CAVE OF ORIGIN.\\pBut you must go.\\nTogether with your BLUE ORB.\\pYou must go regardless of what awaits\\nyou inside the CAVE...$",
+    "SootopolisCity_Text_CaveOfOriginWithRedOrb": "WALLACE: The CAVE OF ORIGIN is ahead.\\pNo one from SOOTOPOLIS is permitted\\nto enter the CAVE OF ORIGIN.\\pBut you must go. \\nTogether with your RED ORB.\\pYou must go regardless of what awaits\\nyou inside the CAVE...$",
+    "SootopolisCity_Text_NeverExpectedHoldingBlueOrb": "STEVEN: {PLAYER}{KUN}, I never expected you\\nto be holding the BLUE ORB.\\pYou'll be okay. With your POKéMON,\\nyou'll get things done no matter what.\\pI'm convinced of it!$",
+    "SootopolisCity_Text_NeverExpectedHoldingRedOrb": "STEVEN: {PLAYER}{KUN}, I never expected you\\nto be holding the RED ORB.\\pYou'll be okay. With your POKéMON,\\nyou'll get things done no matter what.\\pI'm convinced of it!$"
+   },
+   "complex": true
+  }
+ ],
+ "wild": {
+  "water_mons": {
+   "encounter_rate": 1,
+   "slot_rates": [
+    60,
+    30,
+    5,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 5,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 15,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 25,
+     "max": 30
+    }
+   ]
+  },
+  "fishing_mons": {
+   "encounter_rate": 10,
+   "slot_rates": [
+    70,
+    30,
+    60,
+    20,
+    20,
+    40,
+    40,
+    15,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_GYARADOS",
+     "min": 35,
+     "max": 40
+    },
+    {
+     "species": "SPECIES_GYARADOS",
+     "min": 35,
+     "max": 45
+    },
+    {
+     "species": "SPECIES_GYARADOS",
+     "min": 5,
+     "max": 45
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,4 @@
+Maxie: Groudon…{be01}\nNothing could awaken you from your\nsleep bathed in magma…{be01}\nThis Blue Orb is what you sought.\nWasn’t it?{be01}\nI have brought you the Blue Orb.\nLet its shine awaken you!{be01}\nAnd show me…\nShow me the full extent of your power!
+Maxie: Groudon!\nWhat’s wrong?{be01}\nWasn’t the Blue Orb the key?{be01}\nGroudon!\nWhere have you gone…
+Maxie: Oh, so it was you?{be01}\nI’ve seen you poking around uninvited\nhere and there…{be01}\nI get it now!\nYou must have pulled a cheap stunt!
+Maxie: There has to be some reason\nwhy Groudon fled…{be01}\nThat’s what you’re trying to say,\naren’t you?{be01}\n… … … … … …\n… … … … … …{be01}\nHumph…\nYou think I didn’t know that?{be01}\nWith Groudon gone, there is no longer\nany need for this blasted volcano.{be01}\nI am going after Groudon, so this\nis where we part!

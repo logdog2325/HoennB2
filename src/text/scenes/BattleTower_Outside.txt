@@ -1,0 +1,11 @@
+Hello, are you here for the ferry?\nMay I see your Ticket?
+{0100:0} doesn’t have the Ticket...{be01}\nI’m terribly sorry.{be01}\nYou must have a Ticket to board\nthe ferry.
+{0100:0} flashed the Ticket.{be01}\nPerfect! That’s all you need!{be01}\nAnd where would you like to go?
+Slateport City it is, then!
+Lilycove City it is, then!
+Please sail with us another time!
+Please board the ferry and wait for\ndeparture.
+Then, where would you like to go?
+Slateport
+Lilycove
+Cancel

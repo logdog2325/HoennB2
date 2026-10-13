@@ -1,0 +1,24 @@
+{
+ "map": "ShoalCave_LowTideEntranceRoom",
+ "_doc": "caves_misc: the low-tide layout (Sapphire's own); elevation 4 (the walkway along the west and south) one tier above the floor. The high tide (ShoalCave_HighTideEntranceRoom recipe) replaces this zone's matrix while map replace event 9 is set; the zone-init script sets it by the clock as Sapphire's UpdateShoalTideFlag (converter/gen_caves.py tide_script).",
+ "levels": {
+  "3": 0,
+  "4": 16
+ },
+ "shoals": true,
+ "tide": {
+  "event": 9,
+  "flag": "FLAG_SYS_SHOAL_TIDE",
+  "update": true,
+  "inside_event": 8,
+  "flooded": [
+   1
+  ]
+ },
+ "alt_rooms": [
+  {
+   "room": "ShoalCave_HighTideEntranceRoom",
+   "event": 9
+  }
+ ]
+}

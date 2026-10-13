@@ -1,0 +1,13 @@
+{
+ "_doc": "Navel Rock's summit (warp-only map, group 'standalone': data/buildings/standalone.json, b2tools/models_standalone.py navel_top; buildings_audit 2026-10-08): the summit floated in the light-blue clear colour; res 487 is the rock going down from its edge and Black 2's sea of clouds 200 under it. props: model origin in map tile coordinates (the floor tile (12, 16), y 0).",
+ "group": "standalone",
+ "buildings": {},
+ "props": [
+  {
+   "res": 487,
+   "x": 12.5,
+   "z": 16.5,
+   "what": "the rock under the summit and the clouds"
+  }
+ ]
+}

@@ -1,0 +1,839 @@
+{
+ "_doc": "emerald_caves (b2tools/emerald_caves_rooms.py writes this file: edit the script and rerun). Emerald's MtPyre_6F (pokeemerald: gravestones moved), b2tools/facilities_pyre.py's recipe on Emerald's map; installed for MtPyre_6F in an Emerald build. Zone json, holes, warps: Sapphire's.",
+ "map": "pokeemerald/MtPyre_6F",
+ "style": "fac_pyre",
+ "floor": [
+  [
+   0,
+   2,
+   12,
+   2
+  ],
+  [
+   0,
+   3,
+   12,
+   3
+  ],
+  [
+   0,
+   4,
+   12,
+   4
+  ],
+  [
+   0,
+   5,
+   12,
+   5
+  ],
+  [
+   0,
+   6,
+   12,
+   6
+  ],
+  [
+   0,
+   7,
+   12,
+   7
+  ],
+  [
+   0,
+   8,
+   12,
+   8
+  ],
+  [
+   0,
+   9,
+   12,
+   9
+  ],
+  [
+   0,
+   10,
+   12,
+   10
+  ],
+  [
+   0,
+   11,
+   12,
+   11
+  ],
+  [
+   0,
+   12,
+   12,
+   12
+  ]
+ ],
+ "floor_tex": [
+  {
+   "rect": [
+    0,
+    0,
+    12,
+    12
+   ],
+   "tex": "in42_fl01",
+   "src": 323,
+   "size": 64,
+   "size_v": 32,
+   "_what": "cobblestones, 1 texel per unit"
+  },
+  {
+   "rect": [
+    10,
+    6,
+    10,
+    6
+   ],
+   "tex": "d17_slope_a",
+   "src": 323,
+   "size": 16,
+   "_what": "steps"
+  },
+  {
+   "rect": [
+    10,
+    7,
+    10,
+    7
+   ],
+   "tex": "d17_slope_a",
+   "src": 323,
+   "size": 16,
+   "_what": "steps"
+  }
+ ],
+ "holes": [
+  [
+   1,
+   10,
+   2,
+   11
+  ]
+ ],
+ "block": [
+  [
+   1,
+   10
+  ]
+ ],
+ "decals": [
+  {
+   "tex": "in42_win01",
+   "src": 323,
+   "at": [
+    2.5
+   ],
+   "z": 2,
+   "y": -2,
+   "w": 22,
+   "h": 34,
+   "gap": 1,
+   "_what": "doorway frame (2,1)"
+  },
+  {
+   "tex": "h_kage",
+   "src": 323,
+   "at": [
+    2.5
+   ],
+   "z": 2,
+   "y": -2,
+   "w": 14,
+   "h": 28,
+   "gap": 3,
+   "_what": "doorway"
+  }
+ ],
+ "blocks": [
+  {
+   "use": "fac_grave_base",
+   "units": [
+    0.0625,
+    2.375,
+    0.9375,
+    2.875
+   ],
+   "_what": "gravestone base (0,2)"
+  },
+  {
+   "use": "fac_grave",
+   "units": [
+    0.1875,
+    2.375,
+    0.8125,
+    2.6875
+   ],
+   "_what": "gravestone (0,2)"
+  },
+  {
+   "use": "fac_grave_base",
+   "units": [
+    4.0625,
+    2.375,
+    4.9375,
+    2.875
+   ],
+   "_what": "gravestone base (4,2)"
+  },
+  {
+   "use": "fac_grave",
+   "units": [
+    4.1875,
+    2.375,
+    4.8125,
+    2.6875
+   ],
+   "_what": "gravestone (4,2)"
+  },
+  {
+   "use": "fac_grave_base",
+   "units": [
+    5.0625,
+    2.375,
+    5.9375,
+    2.875
+   ],
+   "_what": "gravestone base (5,2)"
+  },
+  {
+   "use": "fac_grave",
+   "units": [
+    5.1875,
+    2.375,
+    5.8125,
+    2.6875
+   ],
+   "_what": "gravestone (5,2)"
+  },
+  {
+   "use": "fac_grave_base",
+   "units": [
+    12.0625,
+    2.375,
+    12.9375,
+    2.875
+   ],
+   "_what": "gravestone base (12,2)"
+  },
+  {
+   "use": "fac_grave",
+   "units": [
+    12.1875,
+    2.375,
+    12.8125,
+    2.6875
+   ],
+   "_what": "gravestone (12,2)"
+  },
+  {
+   "use": "fac_grave_base",
+   "units": [
+    4.0625,
+    3.375,
+    4.9375,
+    3.875
+   ],
+   "_what": "gravestone base (4,3)"
+  },
+  {
+   "use": "fac_grave",
+   "units": [
+    4.1875,
+    3.375,
+    4.8125,
+    3.6875
+   ],
+   "_what": "gravestone (4,3)"
+  },
+  {
+   "use": "fac_grave_base",
+   "units": [
+    3.0625,
+    4.375,
+    3.9375,
+    4.875
+   ],
+   "_what": "gravestone base (3,4)"
+  },
+  {
+   "use": "fac_grave",
+   "units": [
+    3.1875,
+    4.375,
+    3.8125,
+    4.6875
+   ],
+   "_what": "gravestone (3,4)"
+  },
+  {
+   "use": "fac_grave_base",
+   "units": [
+    4.0625,
+    4.375,
+    4.9375,
+    4.875
+   ],
+   "_what": "gravestone base (4,4)"
+  },
+  {
+   "use": "fac_grave",
+   "units": [
+    4.1875,
+    4.375,
+    4.8125,
+    4.6875
+   ],
+   "_what": "gravestone (4,4)"
+  },
+  {
+   "use": "fac_grave_base",
+   "units": [
+    8.0625,
+    4.375,
+    8.9375,
+    4.875
+   ],
+   "_what": "gravestone base (8,4)"
+  },
+  {
+   "use": "fac_grave",
+   "units": [
+    8.1875,
+    4.375,
+    8.8125,
+    4.6875
+   ],
+   "_what": "gravestone (8,4)"
+  },
+  {
+   "use": "fac_grave_base",
+   "units": [
+    0.0625,
+    5.375,
+    0.9375,
+    5.875
+   ],
+   "_what": "gravestone base (0,5)"
+  },
+  {
+   "use": "fac_grave",
+   "units": [
+    0.1875,
+    5.375,
+    0.8125,
+    5.6875
+   ],
+   "_what": "gravestone (0,5)"
+  },
+  {
+   "use": "fac_grave_base",
+   "units": [
+    7.0625,
+    5.375,
+    7.9375,
+    5.875
+   ],
+   "_what": "gravestone base (7,5)"
+  },
+  {
+   "use": "fac_grave",
+   "units": [
+    7.1875,
+    5.375,
+    7.8125,
+    5.6875
+   ],
+   "_what": "gravestone (7,5)"
+  },
+  {
+   "use": "fac_grave_base",
+   "units": [
+    8.0625,
+    5.375,
+    8.9375,
+    5.875
+   ],
+   "_what": "gravestone base (8,5)"
+  },
+  {
+   "use": "fac_grave",
+   "units": [
+    8.1875,
+    5.375,
+    8.8125,
+    5.6875
+   ],
+   "_what": "gravestone (8,5)"
+  },
+  {
+   "use": "fac_grave_base",
+   "units": [
+    12.0625,
+    5.375,
+    12.9375,
+    5.875
+   ],
+   "_what": "gravestone base (12,5)"
+  },
+  {
+   "use": "fac_grave",
+   "units": [
+    12.1875,
+    5.375,
+    12.8125,
+    5.6875
+   ],
+   "_what": "gravestone (12,5)"
+  },
+  {
+   "use": "fac_grave_base",
+   "units": [
+    0.0625,
+    8.375,
+    0.9375,
+    8.875
+   ],
+   "_what": "gravestone base (0,8)"
+  },
+  {
+   "use": "fac_grave",
+   "units": [
+    0.1875,
+    8.375,
+    0.8125,
+    8.6875
+   ],
+   "_what": "gravestone (0,8)"
+  },
+  {
+   "use": "fac_grave_base",
+   "units": [
+    3.0625,
+    8.375,
+    3.9375,
+    8.875
+   ],
+   "_what": "gravestone base (3,8)"
+  },
+  {
+   "use": "fac_grave",
+   "units": [
+    3.1875,
+    8.375,
+    3.8125,
+    8.6875
+   ],
+   "_what": "gravestone (3,8)"
+  },
+  {
+   "use": "fac_grave_base",
+   "units": [
+    4.0625,
+    8.375,
+    4.9375,
+    8.875
+   ],
+   "_what": "gravestone base (4,8)"
+  },
+  {
+   "use": "fac_grave",
+   "units": [
+    4.1875,
+    8.375,
+    4.8125,
+    8.6875
+   ],
+   "_what": "gravestone (4,8)"
+  },
+  {
+   "use": "fac_grave_base",
+   "units": [
+    6.0625,
+    8.375,
+    6.9375,
+    8.875
+   ],
+   "_what": "gravestone base (6,8)"
+  },
+  {
+   "use": "fac_grave",
+   "units": [
+    6.1875,
+    8.375,
+    6.8125,
+    8.6875
+   ],
+   "_what": "gravestone (6,8)"
+  },
+  {
+   "use": "fac_grave_base",
+   "units": [
+    8.0625,
+    8.375,
+    8.9375,
+    8.875
+   ],
+   "_what": "gravestone base (8,8)"
+  },
+  {
+   "use": "fac_grave",
+   "units": [
+    8.1875,
+    8.375,
+    8.8125,
+    8.6875
+   ],
+   "_what": "gravestone (8,8)"
+  },
+  {
+   "use": "fac_grave_base",
+   "units": [
+    9.0625,
+    8.375,
+    9.9375,
+    8.875
+   ],
+   "_what": "gravestone base (9,8)"
+  },
+  {
+   "use": "fac_grave",
+   "units": [
+    9.1875,
+    8.375,
+    9.8125,
+    8.6875
+   ],
+   "_what": "gravestone (9,8)"
+  },
+  {
+   "use": "fac_grave_base",
+   "units": [
+    12.0625,
+    8.375,
+    12.9375,
+    8.875
+   ],
+   "_what": "gravestone base (12,8)"
+  },
+  {
+   "use": "fac_grave",
+   "units": [
+    12.1875,
+    8.375,
+    12.8125,
+    8.6875
+   ],
+   "_what": "gravestone (12,8)"
+  },
+  {
+   "use": "fac_grave_base",
+   "units": [
+    3.0625,
+    9.375,
+    3.9375,
+    9.875
+   ],
+   "_what": "gravestone base (3,9)"
+  },
+  {
+   "use": "fac_grave",
+   "units": [
+    3.1875,
+    9.375,
+    3.8125,
+    9.6875
+   ],
+   "_what": "gravestone (3,9)"
+  },
+  {
+   "use": "fac_grave_base",
+   "units": [
+    9.0625,
+    9.375,
+    9.9375,
+    9.875
+   ],
+   "_what": "gravestone base (9,9)"
+  },
+  {
+   "use": "fac_grave",
+   "units": [
+    9.1875,
+    9.375,
+    9.8125,
+    9.6875
+   ],
+   "_what": "gravestone (9,9)"
+  },
+  {
+   "use": "fac_grave_base",
+   "units": [
+    3.0625,
+    11.375,
+    3.9375,
+    11.875
+   ],
+   "_what": "gravestone base (3,11)"
+  },
+  {
+   "use": "fac_grave",
+   "units": [
+    3.1875,
+    11.375,
+    3.8125,
+    11.6875
+   ],
+   "_what": "gravestone (3,11)"
+  },
+  {
+   "use": "fac_grave_base",
+   "units": [
+    9.0625,
+    11.375,
+    9.9375,
+    11.875
+   ],
+   "_what": "gravestone base (9,11)"
+  },
+  {
+   "use": "fac_grave",
+   "units": [
+    9.1875,
+    11.375,
+    9.8125,
+    11.6875
+   ],
+   "_what": "gravestone (9,11)"
+  },
+  {
+   "use": "fac_grave_base",
+   "units": [
+    0.0625,
+    12.375,
+    0.9375,
+    12.875
+   ],
+   "_what": "gravestone base (0,12)"
+  },
+  {
+   "use": "fac_grave",
+   "units": [
+    0.1875,
+    12.375,
+    0.8125,
+    12.6875
+   ],
+   "_what": "gravestone (0,12)"
+  },
+  {
+   "use": "fac_grave_base",
+   "units": [
+    3.0625,
+    12.375,
+    3.9375,
+    12.875
+   ],
+   "_what": "gravestone base (3,12)"
+  },
+  {
+   "use": "fac_grave",
+   "units": [
+    3.1875,
+    12.375,
+    3.8125,
+    12.6875
+   ],
+   "_what": "gravestone (3,12)"
+  },
+  {
+   "use": "fac_grave_base",
+   "units": [
+    4.0625,
+    12.375,
+    4.9375,
+    12.875
+   ],
+   "_what": "gravestone base (4,12)"
+  },
+  {
+   "use": "fac_grave",
+   "units": [
+    4.1875,
+    12.375,
+    4.8125,
+    12.6875
+   ],
+   "_what": "gravestone (4,12)"
+  },
+  {
+   "use": "fac_grave_base",
+   "units": [
+    8.0625,
+    12.375,
+    8.9375,
+    12.875
+   ],
+   "_what": "gravestone base (8,12)"
+  },
+  {
+   "use": "fac_grave",
+   "units": [
+    8.1875,
+    12.375,
+    8.8125,
+    12.6875
+   ],
+   "_what": "gravestone (8,12)"
+  },
+  {
+   "use": "fac_grave_base",
+   "units": [
+    9.0625,
+    12.375,
+    9.9375,
+    12.875
+   ],
+   "_what": "gravestone base (9,12)"
+  },
+  {
+   "use": "fac_grave",
+   "units": [
+    9.1875,
+    12.375,
+    9.8125,
+    12.6875
+   ],
+   "_what": "gravestone (9,12)"
+  },
+  {
+   "use": "fac_grave_base",
+   "units": [
+    12.0625,
+    12.375,
+    12.9375,
+    12.875
+   ],
+   "_what": "gravestone base (12,12)"
+  },
+  {
+   "use": "fac_grave",
+   "units": [
+    12.1875,
+    12.375,
+    12.8125,
+    12.6875
+   ],
+   "_what": "gravestone (12,12)"
+  },
+  {
+   "use": "fac_rail",
+   "tiles": [
+    [
+     0,
+     6
+    ],
+    [
+     0,
+     7
+    ],
+    [
+     1,
+     6
+    ],
+    [
+     1,
+     7
+    ],
+    [
+     2,
+     6
+    ],
+    [
+     2,
+     7
+    ],
+    [
+     3,
+     6
+    ],
+    [
+     3,
+     7
+    ],
+    [
+     4,
+     6
+    ],
+    [
+     4,
+     7
+    ],
+    [
+     5,
+     6
+    ],
+    [
+     5,
+     7
+    ],
+    [
+     6,
+     6
+    ],
+    [
+     6,
+     7
+    ],
+    [
+     7,
+     6
+    ],
+    [
+     7,
+     7
+    ],
+    [
+     8,
+     6
+    ],
+    [
+     8,
+     7
+    ],
+    [
+     9,
+     6
+    ],
+    [
+     9,
+     7
+    ],
+    [
+     11,
+     6
+    ],
+    [
+     11,
+     7
+    ],
+    [
+     12,
+     6
+    ],
+    [
+     12,
+     7
+    ]
+   ],
+   "_what": "step between two levels (Sapphire wall rows)"
+  }
+ ],
+ "encounters": true
+}

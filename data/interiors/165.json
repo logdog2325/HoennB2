@@ -1,0 +1,394 @@
+{
+ "zone": 165,
+ "room": "SkyPillar_2F",
+ "cave": true,
+ "cave_auto": true,
+ "area": 295,
+ "dark": false,
+ "header": {
+  "map_type": 16,
+  "npc_cache": 24,
+  "weather_word": 0,
+  "flags": 2337,
+  "icon_word": 40975,
+  "place_display": 0,
+  "bgm0": 1079,
+  "bgm1": 1079,
+  "bgm2": 1079,
+  "bgm3": 1079,
+  "place": 85,
+  "encounters": 8191,
+  "enc_slot": 6
+ },
+ "warps": [
+  {
+   "at": [
+    10,
+    1
+   ],
+   "to": [
+    164,
+    2
+   ],
+   "what": "Sapphire warp 0 (10,1) -> SkyPillar_1F 2"
+  },
+  {
+   "at": [
+    3,
+    1
+   ],
+   "to": [
+    166,
+    0
+   ],
+   "what": "Sapphire warp 1 (3,1) -> SkyPillar_3F 0"
+  }
+ ],
+ "triggers": [
+  {
+   "script": 1,
+   "var": 0,
+   "value": 0,
+   "at": [
+    10,
+    5
+   ]
+  },
+  {
+   "script": 2,
+   "var": 0,
+   "value": 0,
+   "at": [
+    11,
+    5
+   ]
+  },
+  {
+   "script": 3,
+   "var": 0,
+   "value": 0,
+   "at": [
+    12,
+    5
+   ]
+  },
+  {
+   "script": 4,
+   "var": 0,
+   "value": 0,
+   "at": [
+    13,
+    5
+   ]
+  },
+  {
+   "script": 5,
+   "var": 0,
+   "value": 0,
+   "at": [
+    10,
+    6
+   ]
+  },
+  {
+   "script": 6,
+   "var": 0,
+   "value": 0,
+   "at": [
+    11,
+    6
+   ]
+  },
+  {
+   "script": 7,
+   "var": 0,
+   "value": 0,
+   "at": [
+    12,
+    6
+   ]
+  },
+  {
+   "script": 8,
+   "var": 0,
+   "value": 0,
+   "at": [
+    13,
+    6
+   ]
+  },
+  {
+   "script": 9,
+   "var": 0,
+   "value": 0,
+   "at": [
+    2,
+    7
+   ]
+  },
+  {
+   "script": 10,
+   "var": 0,
+   "value": 0,
+   "at": [
+    3,
+    7
+   ]
+  },
+  {
+   "script": 11,
+   "var": 0,
+   "value": 0,
+   "at": [
+    0,
+    8
+   ]
+  },
+  {
+   "script": 12,
+   "var": 0,
+   "value": 0,
+   "at": [
+    1,
+    8
+   ]
+  },
+  {
+   "script": 13,
+   "var": 0,
+   "value": 0,
+   "at": [
+    2,
+    8
+   ]
+  },
+  {
+   "script": 14,
+   "var": 0,
+   "value": 0,
+   "at": [
+    3,
+    8
+   ]
+  },
+  {
+   "script": 15,
+   "var": 0,
+   "value": 0,
+   "at": [
+    0,
+    9
+   ]
+  },
+  {
+   "script": 16,
+   "var": 0,
+   "value": 0,
+   "at": [
+    1,
+    9
+   ]
+  },
+  {
+   "script": 17,
+   "var": 0,
+   "value": 0,
+   "at": [
+    2,
+    9
+   ]
+  },
+  {
+   "script": 18,
+   "var": 0,
+   "value": 0,
+   "at": [
+    3,
+    9
+   ]
+  },
+  {
+   "script": 19,
+   "var": 0,
+   "value": 0,
+   "at": [
+    0,
+    10
+   ]
+  },
+  {
+   "script": 20,
+   "var": 0,
+   "value": 0,
+   "at": [
+    1,
+    10
+   ]
+  },
+  {
+   "script": 21,
+   "var": 0,
+   "value": 0,
+   "at": [
+    10,
+    10
+   ]
+  },
+  {
+   "script": 22,
+   "var": 0,
+   "value": 0,
+   "at": [
+    11,
+    10
+   ]
+  },
+  {
+   "script": 23,
+   "var": 0,
+   "value": 0,
+   "at": [
+    0,
+    11
+   ]
+  },
+  {
+   "script": 24,
+   "var": 0,
+   "value": 0,
+   "at": [
+    4,
+    11
+   ]
+  },
+  {
+   "script": 25,
+   "var": 0,
+   "value": 0,
+   "at": [
+    5,
+    11
+   ]
+  },
+  {
+   "script": 26,
+   "var": 0,
+   "value": 0,
+   "at": [
+    10,
+    11
+   ]
+  },
+  {
+   "script": 27,
+   "var": 0,
+   "value": 0,
+   "at": [
+    11,
+    11
+   ]
+  },
+  {
+   "script": 28,
+   "var": 0,
+   "value": 0,
+   "at": [
+    12,
+    11
+   ]
+  },
+  {
+   "script": 29,
+   "var": 0,
+   "value": 0,
+   "at": [
+    13,
+    11
+   ]
+  },
+  {
+   "script": 30,
+   "var": 0,
+   "value": 0,
+   "at": [
+    4,
+    12
+   ]
+  },
+  {
+   "script": 31,
+   "var": 0,
+   "value": 0,
+   "at": [
+    5,
+    12
+   ]
+  },
+  {
+   "script": 32,
+   "var": 0,
+   "value": 0,
+   "at": [
+    10,
+    12
+   ]
+  },
+  {
+   "script": 33,
+   "var": 0,
+   "value": 0,
+   "at": [
+    11,
+    12
+   ]
+  },
+  {
+   "script": 34,
+   "var": 0,
+   "value": 0,
+   "at": [
+    12,
+    12
+   ]
+  },
+  {
+   "script": 35,
+   "var": 0,
+   "value": 0,
+   "at": [
+    13,
+    12
+   ]
+  },
+  {
+   "script": 36,
+   "var": 0,
+   "value": 0,
+   "at": [
+    3,
+    13
+   ]
+  },
+  {
+   "script": 37,
+   "var": 0,
+   "value": 0,
+   "at": [
+    4,
+    13
+   ]
+  },
+  {
+   "script": 38,
+   "var": 0,
+   "value": 0,
+   "at": [
+    5,
+    13
+   ]
+  }
+ ],
+ "npcs": [],
+ "signs": [],
+ "what": "SkyPillar_2F: cave (converter/gen_caves.py, b2tools/models_cave.py); story objects: see notes/CAVES.md"
+}

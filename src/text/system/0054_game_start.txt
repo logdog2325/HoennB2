@@ -1,0 +1,41 @@
+                                                  \x{ffff}
+    \x{ffff}
+    \x{ffff}
+                                   \x{ffff}
+                      \x{ffff}
+Creating save data.\nPlease wait...
+Hi! Sorry to keep you waiting!{be01}\nWelcome to the world of Pokémon!{be01}
+My name is Birch.{be01}\nBut everyone calls me the Pokémon\nProfessor.{be01}
+This is what we call a “Pokémon.”{be01}\nThis world is widely inhabited by\ncreatures known as Pokémon.{be01}
+We humans live alongside Pokémon,\nat times as friendly playmates, and{be00}\nat times as cooperative workmates.{be01}\nAnd sometimes, we band together\nand battle others like us.{be01}\nBut despite our closeness, we don’t\nknow everything about Pokémon.{be01}\nIn fact, there are many, many\nsecrets surrounding Pokémon.{be01}\nTo unravel Pokémon mysteries,\nI’ve been undertaking research.{be00}\nThat’s what I do.{be01}
+And you are?{be01}
+Are you a boy?\nOr are you a girl?{be01}
+You're a boy, right?{be01}
+You're a girl, right?{be01}
+     \x{ffff}
+     \x{ffff}
+All right.\nWhat’s your name?{be01}
+So it’s {0100:0}?{be01}
+So it’s {0100:0}?{be01}
+YES
+NO
+Ah, okay!{be01}\nYou’re {0100:0} who’s moving to my\nhometown of Littleroot.{be00}\nI get it now!{be01}
+All right, are you ready?{be01}\nYour very own adventure is about\nto unfold.{be01}
+Take courage, and leap into the\nworld of Pokémon where dreams,{be00}\nadventure, and friendships await!{be01}
+Well, I’ll be expecting you later.\nCome see me in my Pokémon Lab.{be01}
+Hugh
+    \x{ffff}
+    \x{ffff}
+       \x{ffff}
+{0100:1}?\nDid I get that right?{be01}
+                                                    \x{ffff}
+                                                \x{ffff}
+{0100:0}!{be01}\nI'm going to entrust you with a Pokémon.\nI'm sure you will be great partners!{be01}
+The moment you choose the\nPokémon that will accompany{be00}\nyou on your journey,{be00}\nyour story will truly begin.{be01}\nDuring your journey, you will meet many\nPokémon and people with different{be00}\npersonalities and points of view.{be01}\nI really hope you learn what is important\nto you as a result of your travels...{be01}\nThat's right! Befriend new people and\nPokémon and grow as a person!{be01}\nThat's the most important goal\nof your journey!{be01}\nLet's go visit the world of Pokémon!{be01}
+                               \x{ffff}
+                  \x{ffff}
+                                                                                  \x{ffff}
+          \x{ffff}
+         \x{ffff}
+       \x{ffff}
+\pad{28}

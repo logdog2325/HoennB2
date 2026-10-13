@@ -1,0 +1,375 @@
+{
+ "_doc": "Battle Palace battle room (Emerald 15x10; the player is always under script). Floor rows 2-9, the wall foot row 2 kept (wall_rows keep) with red lacquer posts on Emerald's column bases (2,2), (5,2), (8,2), (11,2) and the door the opponent comes through (Emerald (13,1): door_pwood01, its rug (13,2)). Stone walkways (x 0-1, x 13-14) = the style's grey paving; the water round the stage (Emerald x 2-3, 11-12 rows 3-9 and rows 8-9) = in82_sea1, blocked; the battle stage (Emerald's red field x 4-10, rows 3-7, solid) = Pokestar's red carpet in76_carpet01.",
+ "map": "BattleFrontier_BattlePalaceBattleRoom",
+ "decomp": "pokeemerald",
+ "style": "pa_palace_battle",
+ "origin": [
+  1,
+  0
+ ],
+ "wall_rows": "keep",
+ "floor": [
+  [
+   0,
+   2,
+   14,
+   9
+  ]
+ ],
+ "exits": [],
+ "block": [
+  [
+   2,
+   3
+  ],
+  [
+   3,
+   3
+  ],
+  [
+   11,
+   3
+  ],
+  [
+   12,
+   3
+  ],
+  [
+   2,
+   4
+  ],
+  [
+   3,
+   4
+  ],
+  [
+   11,
+   4
+  ],
+  [
+   12,
+   4
+  ],
+  [
+   2,
+   5
+  ],
+  [
+   3,
+   5
+  ],
+  [
+   11,
+   5
+  ],
+  [
+   12,
+   5
+  ],
+  [
+   2,
+   6
+  ],
+  [
+   3,
+   6
+  ],
+  [
+   11,
+   6
+  ],
+  [
+   12,
+   6
+  ],
+  [
+   2,
+   7
+  ],
+  [
+   3,
+   7
+  ],
+  [
+   11,
+   7
+  ],
+  [
+   12,
+   7
+  ],
+  [
+   2,
+   8
+  ],
+  [
+   3,
+   8
+  ],
+  [
+   11,
+   8
+  ],
+  [
+   12,
+   8
+  ],
+  [
+   2,
+   9
+  ],
+  [
+   3,
+   9
+  ],
+  [
+   11,
+   9
+  ],
+  [
+   12,
+   9
+  ],
+  [
+   4,
+   8
+  ],
+  [
+   5,
+   8
+  ],
+  [
+   6,
+   8
+  ],
+  [
+   7,
+   8
+  ],
+  [
+   8,
+   8
+  ],
+  [
+   9,
+   8
+  ],
+  [
+   10,
+   8
+  ],
+  [
+   4,
+   9
+  ],
+  [
+   5,
+   9
+  ],
+  [
+   6,
+   9
+  ],
+  [
+   7,
+   9
+  ],
+  [
+   8,
+   9
+  ],
+  [
+   9,
+   9
+  ],
+  [
+   10,
+   9
+  ],
+  [
+   0,
+   0
+  ],
+  [
+   1,
+   0
+  ],
+  [
+   3,
+   0
+  ],
+  [
+   4,
+   0
+  ],
+  [
+   6,
+   0
+  ],
+  [
+   7,
+   0
+  ],
+  [
+   9,
+   0
+  ],
+  [
+   10,
+   0
+  ],
+  [
+   13,
+   0
+  ],
+  [
+   0,
+   1
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   3,
+   1
+  ],
+  [
+   4,
+   1
+  ],
+  [
+   6,
+   1
+  ],
+  [
+   7,
+   1
+  ],
+  [
+   9,
+   1
+  ],
+  [
+   10,
+   1
+  ]
+ ],
+ "furniture": [
+  {
+   "m": "door_pwood01",
+   "tile": [
+    13,
+    2
+   ],
+   "wall": "N",
+   "gap": -1,
+   "doorway": true,
+   "y": -1,
+   "_what": "the opponent's door (Emerald (13,1))"
+  }
+ ],
+ "blocks": [
+  {
+   "units": [
+    2.25,
+    1.25,
+    2.75,
+    2.25
+   ],
+   "use": "pa_post",
+   "_what": "post (2,2)"
+  },
+  {
+   "units": [
+    5.25,
+    1.25,
+    5.75,
+    2.25
+   ],
+   "use": "pa_post",
+   "_what": "post (5,2)"
+  },
+  {
+   "units": [
+    8.25,
+    1.25,
+    8.75,
+    2.25
+   ],
+   "use": "pa_post",
+   "_what": "post (8,2)"
+  },
+  {
+   "units": [
+    11.25,
+    1.25,
+    11.75,
+    2.25
+   ],
+   "use": "pa_post",
+   "_what": "post (11,2)"
+  }
+ ],
+ "floor_tex": [
+  {
+   "rect": [
+    2,
+    3,
+    3,
+    9
+   ],
+   "tex": "in82_sea1",
+   "src": 389,
+   "size": 32
+  },
+  {
+   "rect": [
+    11,
+    3,
+    12,
+    9
+   ],
+   "tex": "in82_sea1",
+   "src": 389,
+   "size": 32
+  },
+  {
+   "rect": [
+    4,
+    8,
+    10,
+    9
+   ],
+   "tex": "in82_sea1",
+   "src": 389,
+   "size": 32
+  },
+  {
+   "rect": [
+    4,
+    3,
+    10,
+    7
+   ],
+   "tex": "in76_carpet01",
+   "src": 378,
+   "size": 32
+  }
+ ],
+ "mats": [
+  {
+   "tex": "in70_mat1",
+   "src": 351,
+   "rect": [
+    13,
+    2,
+    13,
+    2
+   ],
+   "border": 0,
+   "border_units": 4,
+   "_what": "the opponent's door rug"
+  }
+ ]
+}

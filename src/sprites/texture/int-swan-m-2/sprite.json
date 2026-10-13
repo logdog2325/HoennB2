@@ -1,0 +1,10 @@
+{
+ "kind": "texture",
+ "archive": 168,
+ "file": 22,
+ "texture": "int_swan_m.2",
+ "palette": "int_swan_m.2_pl",
+ "note": "Brendan at the intro's gender choice",
+ "donor": "src/reference/brendan_official.png (the user's official art) resampled; slot: Nate's picture",
+ "made_by": "b2tools/sprite_players.py"
+}

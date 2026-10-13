@@ -1,0 +1,4 @@
+Yay!\nIt’s a ship!
+{0100:0} inserted and turned the\nStorage Key.{be01}\nThe inserted Key stuck fast,\nbut the door opened.
+The door is locked.{be01}\n“Storage” is painted on the door.
+The door is open.

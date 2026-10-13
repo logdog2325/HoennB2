@@ -1,0 +1,12 @@
+What, are you coming?\nCome and get some, then!
+Peeko: Pii pihyoh!
+Grah, keelhaul it all!{be01}\nThat hostage Pokémon turned out to\nbe worthless!{be01}\nAnd to think I made a getaway...\nIn this tunnel to nowhere!{be01}\nHey! You!\nSo you want to battle me?
+This is plain not right...{be01}\nThe Boss told me this would be a\nslick-and-easy job to pull.{be01}\nAll I had to do was steal some package\nfrom Devon.{be01}\nTch!\nYou want it back that badly, take it!
+Peeko!\nAm I glad to see you’re safe!
+Peeko owes her life to you!{be01}\nThey call me Mr. Briney.\nAnd, you are?{be01}\n... ... ... ... ... ... ... ...\n... ... ... ... ... ... ... ...{be01}\nAh, so you are {0100:0}!\nI sincerely thank you!{be01}\nNow, if there’s anything that troubles\nyou, don’t hesitate to tell me!{be01}\nYou can usually find me in my cottage\nby the sea near Petalburg Woods.{be01}\nCome, Peeko, we should make our way\nhome.{be01}\nPeeko: Pihyoh!
+... ...{be01}\nWhy can’t they keep digging?\nIs the bedrock too hard?{be01}\nMy beloved awaits me in Verdanturf\nTown just beyond here...{be01}\nIf Rustboro and Verdanturf were\njoined by this tunnel, I could visit{be00}\nher every day...{be01}\nBut this...\nWhat am I to do?
+To get from Rustboro to Verdanturf,\nyou need to go to Dewford, then pass{be00}\nthrough Slateport and Mauville...
+On the other side of this rock...\nMy boyfriend is there.{be01}\nHe... He’s not just digging the tunnel\nto come see me.{be01}\nHe works his hands raw and rough\nfor the benefit of everyone.
+Wow! You shattered that boulder\nblocking the way.{be01}\nTo show you how much I appreciate it,\nI’d like you to have this HM.
+That HM contains Strength.{be01}\nIf a muscular Pokémon were to learn\nthat, it would be able to move even{be00}\nlarge boulders.
+Wanda!\nNow I can see you anytime!{be01}\nWanda: That’s...wonderful.{be01}\nPlease, take some rest at my home.

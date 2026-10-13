@@ -1,0 +1,43 @@
+This tree looks like it can be\ncut down! Would you like to cut it?
+{0102:0} used Cut!{be01}
+This tree looks like it can be\ncut down!
+                                \x{ffff}
+                                \x{ffff}
+                     \x{ffff}
+It's a big boulder, but a Pokémon\nmay be able to push it aside.{be01}\nWould you like to use Strength?
+                                                       \x{ffff}
+It's a big boulder, but a Pokémon\nmay be able to push it aside.
+Strength made it possible to move\nboulders around.
+{0102:0} used Strength!{be01}
+{0102:0}'s Strength made it\npossible to move boulders around!
+                         \x{ffff}
+The water is a deep blue...\nWould you like to surf on it?
+{0102:0} used Surf!{be01}
+Surf can't be used if you have\nsomeone with you.
+                                \x{ffff}
+                     \x{ffff}
+                                   \x{ffff}
+                                 \x{ffff}
+                       \x{ffff}
+                                   \x{ffff}
+                             \x{ffff}
+It's a large waterfall.\nWould you like to use Waterfall?
+{0102:0} used Waterfall!{be01}
+A wall of water is crashing down with\na mighty roar.
+                        \x{ffff}
+{0102:0} used Flash!{be01}
+{0102:0} used Teleport!{be01}
+{0102:0} used Dig!{be01}
+It's a deep part of the sea, but a\nPokémon may be able to dive down.
+It's a deep part of the sea.\nWould you like to use Dive?
+{0102:0} used Dive!{be01}
+{0107:0} can't be used if you have\nsomeone with you.
+This rock appears to be breakable.\nWould you like to use Rock Smash?
+{0102:0} used Rock Smash!{be01}
+It's a rugged rock, but a Pokémon\nmay be able to smash it.
+The sea is deep here. A Pokémon may be\nable to go underwater here.
+The sea is deep here.\nWould you like to use Dive?
+{0102:0} used Dive.{be01}
+Light is filtering down from above.\nA Pokémon may be able to surface here.
+Light is filtering down from above.\nWould you like to use Dive?
+\pad{50}

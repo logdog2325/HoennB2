@@ -1,0 +1,30 @@
+{
+ "kind": "overworld",
+ "code": 290,
+ "sheet": 268,
+ "frames": 12,
+ "size": [
+  32,
+  32
+ ],
+ "controller": 3,
+ "textures": [
+  "t4x4x12.0",
+  "t4x4x12.1",
+  "t4x4x12.2",
+  "t4x4x12.3",
+  "t4x4x12.4",
+  "t4x4x12.5",
+  "t4x4x12.6",
+  "t4x4x12.7",
+  "t4x4x12.8",
+  "t4x4x12.9",
+  "t4x4x12.10",
+  "t4x4x12.11"
+ ],
+ "palette": "t4x4x12",
+ "name": "tabitha",
+ "note": "Tabitha (Team Magma admin; Emerald: Mt. Chimney, Magma Hideout, Mossdeep Space Center), Ruby NDS's sheet so both versions match (user decision 2026-10-12)",
+ "source": "src/sprites/overworld/ruby/088-tabitha (Ruby NDS; the magma-grunt-m sheet, changed to the tabitha design (Ruby has no tabitha overworld sprite))",
+ "made_by": "b2tools/sprite_emerald_story.py (copy of Ruby NDS's sheet)"
+}

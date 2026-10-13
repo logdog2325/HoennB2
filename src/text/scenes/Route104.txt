@@ -1,0 +1,8 @@
+This Flower Shop started selling\nsaplings recently.{be01}\nIt made me so happy, I went overboard\nshopping. I don’t need this White Herb{be00}\nanymore. Would you take it, please?
+This Flower Shop started selling\nsaplings recently.{be01}\nIt made me so happy, I went overboard\nshopping. Where should I put them?
+I like filling my mouth with liquid,\nthen spitting it out fast!{be01}\nYou can have this, so you try it out!{be01}\nUse it on a Pokémon, and it will learn\na move for spraying poisonous liquid.
+A word of advice!{be01}\nA TM, Technical Machine, can be used\nas many times as you like.{be01}\nIt never gets used up.\nTeach it to as many Pokémon as you can!
+Gina: Big guy is strong!\nWe have to train lots more!
+Gina: Big girl is strong!\nWe have to train lots more!
+If you see Berries growing in loamy\nsoil, feel free to take them.{be01}\nBut make sure you plant a Berry in the\nsame spot. That’s common courtesy.{be01}\nHere, I’ll share this with you.
+The way you look, you must be a\nTrainer, no?{be01}\nTrainers often make Pokémon hold\nBerries.{be01}\nIt’s up to you whether to grow Berries\nor use them.

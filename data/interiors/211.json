@@ -1,0 +1,40 @@
+{
+ "_doc": "LilycoveCity_LilycoveMuseum_2F (zone 211), built by the specials agent (recipe data/interior_layouts/LilycoveCity_LilycoveMuseum_2F.json): Nacrene Museum look, Black 2 interior area 287. Warps in Sapphire's order (one per Sapphire warp tile). People/signs: Sapphire's one-message ones as generated; story people are left for the story phase.",
+ "zone": 211,
+ "room": "LilycoveCity_LilycoveMuseum_2F",
+ "area": 287,
+ "parent": 96,
+ "warps": [
+  {
+   "at": [
+    13,
+    1
+   ],
+   "tile_only": true,
+   "to": [
+    210,
+    2
+   ],
+   "what": "Sapphire warp 0 -> LilycoveCity_LilycoveMuseum_1F 2"
+  }
+ ],
+ "npcs": [],
+ "signs": [
+  {
+   "script": 1,
+   "at": [
+    11,
+    2
+   ],
+   "dir": 4
+  },
+  {
+   "script": 2,
+   "at": [
+    15,
+    2
+   ],
+   "dir": 4
+  }
+ ]
+}

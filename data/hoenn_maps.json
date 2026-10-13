@@ -1,0 +1,10280 @@
+[
+ {
+  "name": "AbandonedShip_CaptainsOffice",
+  "type": "MAP_TYPE_UNDERGROUND",
+  "w": 9,
+  "h": 7,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Facility",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 26,
+  "known_metatiles": 0,
+  "npcs": 2,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 24,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "AbandonedShip_Corridors_1F",
+  "type": "MAP_TYPE_UNDERGROUND",
+  "w": 18,
+  "h": 12,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Ship",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 12
+  },
+  "metatiles": 42,
+  "known_metatiles": 0,
+  "npcs": 2,
+  "trainers": 1,
+  "warps": 12,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 11,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "AbandonedShip_Corridors_B1F",
+  "type": "MAP_TYPE_UNDERGROUND",
+  "w": 13,
+  "h": 10,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Ship",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 8
+  },
+  "metatiles": 33,
+  "known_metatiles": 0,
+  "npcs": 2,
+  "trainers": 1,
+  "warps": 8,
+  "signs": 1,
+  "triggers": 0,
+  "script_lines": 55,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "AbandonedShip_Deck",
+  "type": "MAP_TYPE_UNDERGROUND",
+  "w": 23,
+  "h": 21,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Facility",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "water": 115,
+   "warp_tile": 5
+  },
+  "metatiles": 43,
+  "known_metatiles": 0,
+  "npcs": 0,
+  "trainers": 0,
+  "warps": 5,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 7,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "AbandonedShip_HiddenFloorCorridors",
+  "type": "MAP_TYPE_UNDERGROUND",
+  "w": 13,
+  "h": 11,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Ship",
+  "elevations": [
+   0,
+   1,
+   3
+  ],
+  "features": {
+   "water": 8,
+   "warp_tile": 2
+  },
+  "metatiles": 41,
+  "known_metatiles": 0,
+  "npcs": 0,
+  "trainers": 0,
+  "warps": 6,
+  "signs": 4,
+  "triggers": 0,
+  "script_lines": 136,
+  "connections": [],
+  "wild": true
+ },
+ {
+  "name": "AbandonedShip_HiddenFloorRooms",
+  "type": "MAP_TYPE_UNDERGROUND",
+  "w": 44,
+  "h": 15,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Ship",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 9
+  },
+  "metatiles": 44,
+  "known_metatiles": 0,
+  "npcs": 4,
+  "trainers": 0,
+  "warps": 9,
+  "signs": 10,
+  "triggers": 0,
+  "script_lines": 143,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "AbandonedShip_Room_B1F",
+  "type": "MAP_TYPE_UNDERGROUND",
+  "w": 9,
+  "h": 8,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Ship",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 15,
+  "known_metatiles": 0,
+  "npcs": 1,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 2,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "AbandonedShip_Rooms2_1F",
+  "type": "MAP_TYPE_UNDERGROUND",
+  "w": 9,
+  "h": 17,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Ship",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 3
+  },
+  "metatiles": 35,
+  "known_metatiles": 0,
+  "npcs": 3,
+  "trainers": 2,
+  "warps": 3,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 28,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "AbandonedShip_Rooms2_B1F",
+  "type": "MAP_TYPE_UNDERGROUND",
+  "w": 18,
+  "h": 8,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Ship",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 4
+  },
+  "metatiles": 46,
+  "known_metatiles": 0,
+  "npcs": 2,
+  "trainers": 0,
+  "warps": 4,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 6,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "AbandonedShip_Rooms_1F",
+  "type": "MAP_TYPE_UNDERGROUND",
+  "w": 18,
+  "h": 17,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Ship",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 6
+  },
+  "metatiles": 55,
+  "known_metatiles": 0,
+  "npcs": 2,
+  "trainers": 0,
+  "warps": 6,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 6,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "AbandonedShip_Rooms_B1F",
+  "type": "MAP_TYPE_UNDERGROUND",
+  "w": 27,
+  "h": 8,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Ship",
+  "elevations": [
+   0,
+   1,
+   3
+  ],
+  "features": {
+   "water": 15,
+   "warp_tile": 3
+  },
+  "metatiles": 53,
+  "known_metatiles": 0,
+  "npcs": 2,
+  "trainers": 0,
+  "warps": 3,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 11,
+  "connections": [],
+  "wild": true
+ },
+ {
+  "name": "AbandonedShip_Underwater1",
+  "type": "MAP_TYPE_UNDERWATER",
+  "w": 8,
+  "h": 8,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Ship",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "water": 46,
+   "warp_tile": 2
+  },
+  "metatiles": 20,
+  "known_metatiles": 0,
+  "npcs": 0,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 7,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "AbandonedShip_Underwater2",
+  "type": "MAP_TYPE_UNDERWATER",
+  "w": 21,
+  "h": 7,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Ship",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "water": 105,
+   "warp_tile": 1
+  },
+  "metatiles": 22,
+  "known_metatiles": 0,
+  "npcs": 0,
+  "trainers": 0,
+  "warps": 1,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 7,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "AncientTomb",
+  "type": "MAP_TYPE_UNDERGROUND",
+  "w": 17,
+  "h": 33,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Cave",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 3
+  },
+  "metatiles": 47,
+  "known_metatiles": 0,
+  "npcs": 1,
+  "trainers": 0,
+  "warps": 3,
+  "signs": 3,
+  "triggers": 0,
+  "script_lines": 68,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "AquaHideout_1F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 28,
+  "h": 30,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Facility",
+  "elevations": [
+   0,
+   1,
+   3,
+   4
+  ],
+  "features": {
+   "warp_tile": 2,
+   "water": 173
+  },
+  "metatiles": 103,
+  "known_metatiles": 0,
+  "npcs": 3,
+  "trainers": 1,
+  "warps": 3,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 46,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "AquaHideout_B1F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 51,
+  "h": 24,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Facility",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "water": 47,
+   "warp_tile": 25
+  },
+  "metatiles": 132,
+  "known_metatiles": 0,
+  "npcs": 8,
+  "trainers": 3,
+  "warps": 25,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 44,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "AquaHideout_B2F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 34,
+  "h": 24,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Facility",
+  "elevations": [
+   0,
+   1,
+   3
+  ],
+  "features": {
+   "warp_tile": 10,
+   "water": 145
+  },
+  "metatiles": 100,
+  "known_metatiles": 0,
+  "npcs": 5,
+  "trainers": 2,
+  "warps": 10,
+  "signs": 0,
+  "triggers": 2,
+  "script_lines": 101,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "BattleTower_BattleRoom",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 10,
+  "h": 9,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_BattleTower",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 4
+  },
+  "metatiles": 44,
+  "known_metatiles": 0,
+  "npcs": 2,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 165,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "BattleTower_Corridor",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 17,
+  "h": 5,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_BattleTower",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 1
+  },
+  "metatiles": 24,
+  "known_metatiles": 0,
+  "npcs": 1,
+  "trainers": 0,
+  "warps": 0,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 58,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "BattleTower_Elevator",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 4,
+  "h": 7,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_BattleTower",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 16,
+  "known_metatiles": 0,
+  "npcs": 1,
+  "trainers": 0,
+  "warps": 0,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 57,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "BattleTower_Lobby",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 14,
+  "h": 9,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_BattleTower",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 3
+  },
+  "metatiles": 41,
+  "known_metatiles": 0,
+  "npcs": 6,
+  "trainers": 0,
+  "warps": 3,
+  "signs": 1,
+  "triggers": 0,
+  "script_lines": 424,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "BattleTower_Outside",
+  "type": "MAP_TYPE_ROUTE",
+  "w": 29,
+  "h": 30,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Dewford",
+  "elevations": [
+   0,
+   1,
+   3
+  ],
+  "features": {
+   "warp_tile": 1,
+   "water": 306
+  },
+  "metatiles": 108,
+  "known_metatiles": 2,
+  "npcs": 5,
+  "trainers": 0,
+  "warps": 1,
+  "signs": 1,
+  "triggers": 0,
+  "script_lines": 94,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "CaveOfOrigin_1F",
+  "type": "MAP_TYPE_UNDERGROUND",
+  "w": 23,
+  "h": 23,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Cave",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 20,
+  "known_metatiles": 0,
+  "npcs": 0,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 3,
+  "script_lines": 7,
+  "connections": [],
+  "wild": true
+ },
+ {
+  "name": "CaveOfOrigin_B1F",
+  "type": "MAP_TYPE_UNDERGROUND",
+  "w": 23,
+  "h": 23,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Cave",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 17,
+  "known_metatiles": 0,
+  "npcs": 0,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 3,
+  "script_lines": 7,
+  "connections": [],
+  "wild": true
+ },
+ {
+  "name": "CaveOfOrigin_B2F",
+  "type": "MAP_TYPE_UNDERGROUND",
+  "w": 21,
+  "h": 21,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Cave",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 99
+  },
+  "metatiles": 17,
+  "known_metatiles": 0,
+  "npcs": 0,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 3,
+  "script_lines": 7,
+  "connections": [],
+  "wild": true
+ },
+ {
+  "name": "CaveOfOrigin_B3F",
+  "type": "MAP_TYPE_UNDERGROUND",
+  "w": 19,
+  "h": 21,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Cave",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 17,
+  "known_metatiles": 0,
+  "npcs": 1,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 3,
+  "script_lines": 7,
+  "connections": [],
+  "wild": true
+ },
+ {
+  "name": "CaveOfOrigin_B4F",
+  "type": "MAP_TYPE_UNDERGROUND",
+  "w": 19,
+  "h": 19,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Cave",
+  "elevations": [
+   0,
+   1,
+   3
+  ],
+  "features": {
+   "warp_tile": 1,
+   "water": 18
+  },
+  "metatiles": 31,
+  "known_metatiles": 0,
+  "npcs": 1,
+  "trainers": 0,
+  "warps": 1,
+  "signs": 0,
+  "triggers": 3,
+  "script_lines": 97,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "CaveOfOrigin_Entrance",
+  "type": "MAP_TYPE_UNDERGROUND",
+  "w": 19,
+  "h": 26,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Cave",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 24,
+  "known_metatiles": 0,
+  "npcs": 0,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 2,
+  "connections": [],
+  "wild": true
+ },
+ {
+  "name": "DesertRuins",
+  "type": "MAP_TYPE_UNDERGROUND",
+  "w": 17,
+  "h": 33,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Cave",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 3
+  },
+  "metatiles": 47,
+  "known_metatiles": 0,
+  "npcs": 1,
+  "trainers": 0,
+  "warps": 3,
+  "signs": 3,
+  "triggers": 0,
+  "script_lines": 68,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "DewfordTown",
+  "type": "MAP_TYPE_TOWN",
+  "w": 20,
+  "h": 20,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Dewford",
+  "elevations": [
+   0,
+   1,
+   3
+  ],
+  "features": {
+   "sand_or_ash": 197,
+   "warp_tile": 5,
+   "water": 38
+  },
+  "metatiles": 81,
+  "known_metatiles": 1,
+  "npcs": 5,
+  "trainers": 0,
+  "warps": 5,
+  "signs": 5,
+  "triggers": 0,
+  "script_lines": 642,
+  "connections": [
+   "MAP_ROUTE106",
+   "MAP_ROUTE107"
+  ],
+  "wild": true
+ },
+ {
+  "name": "DewfordTown_Gym",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 18,
+  "h": 28,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_DewfordGym",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2,
+   "ledge": 4
+  },
+  "metatiles": 51,
+  "known_metatiles": 0,
+  "npcs": 5,
+  "trainers": 3,
+  "warps": 2,
+  "signs": 4,
+  "triggers": 0,
+  "script_lines": 192,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "DewfordTown_Hall",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 17,
+  "h": 9,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 52,
+  "known_metatiles": 0,
+  "npcs": 9,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 2,
+  "triggers": 0,
+  "script_lines": 267,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "DewfordTown_House1",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 10,
+  "h": 8,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 40,
+  "known_metatiles": 0,
+  "npcs": 3,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 20,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "DewfordTown_House2",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 10,
+  "h": 9,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 32,
+  "known_metatiles": 0,
+  "npcs": 2,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 28,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "DewfordTown_PokemonCenter_1F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 14,
+  "h": 9,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_PokemonCenter",
+  "elevations": [
+   0,
+   3,
+   4
+  ],
+  "features": {
+   "warp_tile": 3
+  },
+  "metatiles": 82,
+  "known_metatiles": 0,
+  "npcs": 3,
+  "trainers": 0,
+  "warps": 3,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 24,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "DewfordTown_PokemonCenter_2F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 14,
+  "h": 9,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_PokemonCenter",
+  "elevations": [
+   0,
+   3,
+   4
+  ],
+  "features": {
+   "warp_tile": 8,
+   "sand_or_ash": 3
+  },
+  "metatiles": 50,
+  "known_metatiles": 0,
+  "npcs": 3,
+  "trainers": 0,
+  "warps": 5,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 17,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "DoubleBattleColosseum",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 14,
+  "h": 9,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_CableClub",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 4
+  },
+  "metatiles": 59,
+  "known_metatiles": 0,
+  "npcs": 0,
+  "trainers": 0,
+  "warps": 4,
+  "signs": 0,
+  "triggers": 4,
+  "script_lines": 2,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "EverGrandeCity",
+  "type": "MAP_TYPE_CITY",
+  "w": 40,
+  "h": 80,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_EverGrande",
+  "elevations": [
+   0,
+   1,
+   3,
+   5,
+   7
+  ],
+  "features": {
+   "warp_tile": 4,
+   "sand_or_ash": 46,
+   "water": 481
+  },
+  "metatiles": 213,
+  "known_metatiles": 2,
+  "npcs": 0,
+  "trainers": 0,
+  "warps": 4,
+  "signs": 5,
+  "triggers": 11,
+  "script_lines": 24,
+  "connections": [
+   "MAP_ROUTE128"
+  ],
+  "wild": true
+ },
+ {
+  "name": "EverGrandeCity_ChampionsRoom",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 13,
+  "h": 13,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_EliteFour",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {},
+  "metatiles": 84,
+  "known_metatiles": 0,
+  "npcs": 3,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 226,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "EverGrandeCity_Corridor1",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 11,
+  "h": 13,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_EliteFour",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 1
+  },
+  "metatiles": 24,
+  "known_metatiles": 0,
+  "npcs": 0,
+  "trainers": 0,
+  "warps": 4,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 11,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "EverGrandeCity_Corridor2",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 11,
+  "h": 13,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_EliteFour",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 1
+  },
+  "metatiles": 24,
+  "known_metatiles": 0,
+  "npcs": 0,
+  "trainers": 0,
+  "warps": 4,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 11,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "EverGrandeCity_Corridor3",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 11,
+  "h": 13,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_EliteFour",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 1
+  },
+  "metatiles": 24,
+  "known_metatiles": 0,
+  "npcs": 0,
+  "trainers": 0,
+  "warps": 4,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 11,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "EverGrandeCity_Corridor4",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 11,
+  "h": 34,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_EliteFour",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 1
+  },
+  "metatiles": 25,
+  "known_metatiles": 0,
+  "npcs": 0,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 11,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "EverGrandeCity_Corridor5",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 11,
+  "h": 13,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_EliteFour",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 1
+  },
+  "metatiles": 24,
+  "known_metatiles": 0,
+  "npcs": 0,
+  "trainers": 0,
+  "warps": 4,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 11,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "EverGrandeCity_DrakesRoom",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 13,
+  "h": 14,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_EliteFour",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {},
+  "metatiles": 67,
+  "known_metatiles": 0,
+  "npcs": 1,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 62,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "EverGrandeCity_GlaciasRoom",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 13,
+  "h": 14,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_EliteFour",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {},
+  "metatiles": 67,
+  "known_metatiles": 0,
+  "npcs": 1,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 60,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "EverGrandeCity_HallOfFame",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 15,
+  "h": 17,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_CableClub",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {},
+  "metatiles": 53,
+  "known_metatiles": 0,
+  "npcs": 1,
+  "trainers": 0,
+  "warps": 1,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 84,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "EverGrandeCity_PhoebesRoom",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 13,
+  "h": 14,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_EliteFour",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {},
+  "metatiles": 72,
+  "known_metatiles": 0,
+  "npcs": 1,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 60,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "EverGrandeCity_PokemonCenter_1F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 14,
+  "h": 9,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_PokemonCenter",
+  "elevations": [
+   0,
+   3,
+   4
+  ],
+  "features": {
+   "warp_tile": 3
+  },
+  "metatiles": 82,
+  "known_metatiles": 0,
+  "npcs": 3,
+  "trainers": 0,
+  "warps": 3,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 23,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "EverGrandeCity_PokemonCenter_2F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 14,
+  "h": 9,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_PokemonCenter",
+  "elevations": [
+   0,
+   3,
+   4
+  ],
+  "features": {
+   "warp_tile": 8,
+   "sand_or_ash": 3
+  },
+  "metatiles": 50,
+  "known_metatiles": 0,
+  "npcs": 3,
+  "trainers": 0,
+  "warps": 5,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 17,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "EverGrandeCity_PokemonLeague",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 19,
+  "h": 12,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_PokemonCenter",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 4
+  },
+  "metatiles": 88,
+  "known_metatiles": 0,
+  "npcs": 4,
+  "trainers": 0,
+  "warps": 4,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 121,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "EverGrandeCity_SidneysRoom",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 13,
+  "h": 14,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_EliteFour",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {},
+  "metatiles": 68,
+  "known_metatiles": 0,
+  "npcs": 1,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 60,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "FallarborTown",
+  "type": "MAP_TYPE_TOWN",
+  "w": 20,
+  "h": 20,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Fallarbor",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 5
+  },
+  "metatiles": 110,
+  "known_metatiles": 1,
+  "npcs": 4,
+  "trainers": 0,
+  "warps": 5,
+  "signs": 8,
+  "triggers": 0,
+  "script_lines": 53,
+  "connections": [
+   "MAP_ROUTE114",
+   "MAP_ROUTE113"
+  ],
+  "wild": false
+ },
+ {
+  "name": "FallarborTown_ContestHall",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 21,
+  "h": 18,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_Contest",
+  "elevations": [
+   0,
+   3,
+   4
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 52,
+  "known_metatiles": 0,
+  "npcs": 3,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 2,
+  "triggers": 0,
+  "script_lines": 18,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "FallarborTown_ContestLobby",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 15,
+  "h": 7,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_Contest",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 3
+  },
+  "metatiles": 41,
+  "known_metatiles": 0,
+  "npcs": 6,
+  "trainers": 0,
+  "warps": 3,
+  "signs": 4,
+  "triggers": 0,
+  "script_lines": 120,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "FallarborTown_House1",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 10,
+  "h": 9,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 39,
+  "known_metatiles": 0,
+  "npcs": 2,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 72,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "FallarborTown_House2",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 11,
+  "h": 8,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 37,
+  "known_metatiles": 0,
+  "npcs": 1,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 62,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "FallarborTown_Mart",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 11,
+  "h": 8,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_Shop",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 45,
+  "known_metatiles": 0,
+  "npcs": 4,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 48,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "FallarborTown_PokemonCenter_1F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 14,
+  "h": 9,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_PokemonCenter",
+  "elevations": [
+   0,
+   3,
+   4
+  ],
+  "features": {
+   "warp_tile": 3
+  },
+  "metatiles": 82,
+  "known_metatiles": 0,
+  "npcs": 4,
+  "trainers": 0,
+  "warps": 3,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 81,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "FallarborTown_PokemonCenter_2F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 14,
+  "h": 9,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_PokemonCenter",
+  "elevations": [
+   0,
+   3,
+   4
+  ],
+  "features": {
+   "warp_tile": 8,
+   "sand_or_ash": 3
+  },
+  "metatiles": 50,
+  "known_metatiles": 0,
+  "npcs": 3,
+  "trainers": 0,
+  "warps": 5,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 17,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "FieryPath",
+  "type": "MAP_TYPE_UNDERGROUND",
+  "w": 35,
+  "h": 38,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Lavaridge",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 30,
+  "known_metatiles": 0,
+  "npcs": 8,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 7,
+  "connections": [],
+  "wild": true
+ },
+ {
+  "name": "FortreeCity",
+  "type": "MAP_TYPE_CITY",
+  "w": 40,
+  "h": 20,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Fortree",
+  "elevations": [
+   0,
+   3,
+   4,
+   15
+  ],
+  "features": {
+   "warp_tile": 9
+  },
+  "metatiles": 109,
+  "known_metatiles": 4,
+  "npcs": 7,
+  "trainers": 0,
+  "warps": 9,
+  "signs": 6,
+  "triggers": 0,
+  "script_lines": 90,
+  "connections": [
+   "MAP_ROUTE119",
+   "MAP_ROUTE120"
+  ],
+  "wild": false
+ },
+ {
+  "name": "FortreeCity_DecorationShop",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 8,
+  "h": 6,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 25,
+  "known_metatiles": 0,
+  "npcs": 4,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 58,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "FortreeCity_Gym",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 20,
+  "h": 25,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_FortreeGym",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "ledge": 12,
+   "warp_tile": 2
+  },
+  "metatiles": 47,
+  "known_metatiles": 0,
+  "npcs": 6,
+  "trainers": 4,
+  "warps": 2,
+  "signs": 2,
+  "triggers": 0,
+  "script_lines": 99,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "FortreeCity_House1",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 8,
+  "h": 6,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 21,
+  "known_metatiles": 0,
+  "npcs": 3,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 64,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "FortreeCity_House2",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 8,
+  "h": 6,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 26,
+  "known_metatiles": 0,
+  "npcs": 1,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 43,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "FortreeCity_House3",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 8,
+  "h": 6,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 21,
+  "known_metatiles": 0,
+  "npcs": 2,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 10,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "FortreeCity_House4",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 8,
+  "h": 6,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 26,
+  "known_metatiles": 0,
+  "npcs": 3,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 64,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "FortreeCity_House5",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 8,
+  "h": 6,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 21,
+  "known_metatiles": 0,
+  "npcs": 3,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 20,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "FortreeCity_Mart",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 11,
+  "h": 8,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_Shop",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 45,
+  "known_metatiles": 0,
+  "npcs": 4,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 40,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "FortreeCity_PokemonCenter_1F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 14,
+  "h": 9,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_PokemonCenter",
+  "elevations": [
+   0,
+   3,
+   4
+  ],
+  "features": {
+   "warp_tile": 3
+  },
+  "metatiles": 82,
+  "known_metatiles": 0,
+  "npcs": 4,
+  "trainers": 0,
+  "warps": 3,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 27,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "FortreeCity_PokemonCenter_2F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 14,
+  "h": 9,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_PokemonCenter",
+  "elevations": [
+   0,
+   3,
+   4
+  ],
+  "features": {
+   "warp_tile": 8,
+   "sand_or_ash": 3
+  },
+  "metatiles": 50,
+  "known_metatiles": 0,
+  "npcs": 3,
+  "trainers": 0,
+  "warps": 5,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 17,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "GraniteCave_1F",
+  "type": "MAP_TYPE_UNDERGROUND",
+  "w": 42,
+  "h": 15,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Cave",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 4,
+   "ledge": 8
+  },
+  "metatiles": 30,
+  "known_metatiles": 0,
+  "npcs": 2,
+  "trainers": 0,
+  "warps": 4,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 18,
+  "connections": [],
+  "wild": true
+ },
+ {
+  "name": "GraniteCave_B1F",
+  "type": "MAP_TYPE_UNDERGROUND",
+  "w": 32,
+  "h": 26,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Cave",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 7
+  },
+  "metatiles": 27,
+  "known_metatiles": 0,
+  "npcs": 1,
+  "trainers": 0,
+  "warps": 7,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 10,
+  "connections": [],
+  "wild": true
+ },
+ {
+  "name": "GraniteCave_B2F",
+  "type": "MAP_TYPE_UNDERGROUND",
+  "w": 32,
+  "h": 26,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Cave",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "ledge": 4,
+   "warp_tile": 5
+  },
+  "metatiles": 29,
+  "known_metatiles": 0,
+  "npcs": 9,
+  "trainers": 0,
+  "warps": 5,
+  "signs": 2,
+  "triggers": 0,
+  "script_lines": 2,
+  "connections": [],
+  "wild": true
+ },
+ {
+  "name": "GraniteCave_StevensRoom",
+  "type": "MAP_TYPE_UNDERGROUND",
+  "w": 15,
+  "h": 14,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Cave",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 1
+  },
+  "metatiles": 20,
+  "known_metatiles": 0,
+  "npcs": 1,
+  "trainers": 0,
+  "warps": 1,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 62,
+  "connections": [],
+  "wild": true
+ },
+ {
+  "name": "InsideOfTruck",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 5,
+  "h": 5,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_InsideOfTruck",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 3
+  },
+  "metatiles": 25,
+  "known_metatiles": 0,
+  "npcs": 3,
+  "trainers": 0,
+  "warps": 3,
+  "signs": 5,
+  "triggers": 3,
+  "script_lines": 52,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "IslandCave",
+  "type": "MAP_TYPE_UNDERGROUND",
+  "w": 17,
+  "h": 33,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Cave",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 3
+  },
+  "metatiles": 46,
+  "known_metatiles": 0,
+  "npcs": 1,
+  "trainers": 0,
+  "warps": 3,
+  "signs": 3,
+  "triggers": 0,
+  "script_lines": 87,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "JaggedPass",
+  "type": "MAP_TYPE_ROUTE",
+  "w": 30,
+  "h": 46,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Lavaridge",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "tall_grass": 18,
+   "sand_or_ash": 16,
+   "warp_tile": 4,
+   "ledge": 117
+  },
+  "metatiles": 82,
+  "known_metatiles": 9,
+  "npcs": 4,
+  "trainers": 3,
+  "warps": 4,
+  "signs": 2,
+  "triggers": 5,
+  "script_lines": 49,
+  "connections": [],
+  "wild": true
+ },
+ {
+  "name": "LavaridgeTown",
+  "type": "MAP_TYPE_TOWN",
+  "w": 20,
+  "h": 20,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Lavaridge",
+  "elevations": [
+   0,
+   3,
+   4
+  ],
+  "features": {
+   "warp_tile": 6,
+   "sand_or_ash": 9
+  },
+  "metatiles": 130,
+  "known_metatiles": 7,
+  "npcs": 9,
+  "trainers": 0,
+  "warps": 6,
+  "signs": 8,
+  "triggers": 1,
+  "script_lines": 320,
+  "connections": [
+   "MAP_ROUTE112"
+  ],
+  "wild": false
+ },
+ {
+  "name": "LavaridgeTown_Gym_1F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 11,
+  "h": 24,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_LavaridgeGym",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 22
+  },
+  "metatiles": 23,
+  "known_metatiles": 0,
+  "npcs": 7,
+  "trainers": 5,
+  "warps": 22,
+  "signs": 2,
+  "triggers": 0,
+  "script_lines": 157,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "LavaridgeTown_Gym_B1F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 11,
+  "h": 24,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_LavaridgeGym",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "ledge": 10
+  },
+  "metatiles": 15,
+  "known_metatiles": 0,
+  "npcs": 0,
+  "trainers": 0,
+  "warps": 20,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 2,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "LavaridgeTown_HerbShop",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 11,
+  "h": 8,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_Shop",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 30,
+  "known_metatiles": 0,
+  "npcs": 3,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 43,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "LavaridgeTown_House",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 10,
+  "h": 8,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 40,
+  "known_metatiles": 0,
+  "npcs": 2,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 16,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "LavaridgeTown_Mart",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 11,
+  "h": 8,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_Shop",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 45,
+  "known_metatiles": 0,
+  "npcs": 3,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 35,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "LavaridgeTown_PokemonCenter_1F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 14,
+  "h": 9,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_PokemonCenter",
+  "elevations": [
+   0,
+   3,
+   4
+  ],
+  "features": {
+   "warp_tile": 4
+  },
+  "metatiles": 82,
+  "known_metatiles": 0,
+  "npcs": 4,
+  "trainers": 0,
+  "warps": 4,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 28,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "LavaridgeTown_PokemonCenter_2F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 14,
+  "h": 9,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_PokemonCenter",
+  "elevations": [
+   0,
+   3,
+   4
+  ],
+  "features": {
+   "warp_tile": 8,
+   "sand_or_ash": 3
+  },
+  "metatiles": 50,
+  "known_metatiles": 0,
+  "npcs": 3,
+  "trainers": 0,
+  "warps": 5,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 17,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "LilycoveCity",
+  "type": "MAP_TYPE_CITY",
+  "w": 80,
+  "h": 40,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Lilycove",
+  "elevations": [
+   0,
+   1,
+   3,
+   5
+  ],
+  "features": {
+   "warp_tile": 14,
+   "ledge": 34,
+   "sand_or_ash": 117,
+   "water": 1035
+  },
+  "metatiles": 331,
+  "known_metatiles": 17,
+  "npcs": 17,
+  "trainers": 0,
+  "warps": 15,
+  "signs": 13,
+  "triggers": 0,
+  "script_lines": 408,
+  "connections": [
+   "MAP_ROUTE121",
+   "MAP_ROUTE124"
+  ],
+  "wild": true
+ },
+ {
+  "name": "LilycoveCity_ContestHall",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 51,
+  "h": 33,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_Contest",
+  "elevations": [
+   0,
+   3,
+   4
+  ],
+  "features": {
+   "warp_tile": 4
+  },
+  "metatiles": 103,
+  "known_metatiles": 0,
+  "npcs": 32,
+  "trainers": 0,
+  "warps": 4,
+  "signs": 6,
+  "triggers": 0,
+  "script_lines": 255,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "LilycoveCity_ContestLobby",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 23,
+  "h": 12,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_Contest",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 4
+  },
+  "metatiles": 47,
+  "known_metatiles": 0,
+  "npcs": 14,
+  "trainers": 0,
+  "warps": 4,
+  "signs": 6,
+  "triggers": 0,
+  "script_lines": 766,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "LilycoveCity_CoveLilyMotel_1F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 12,
+  "h": 9,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 3
+  },
+  "metatiles": 41,
+  "known_metatiles": 0,
+  "npcs": 1,
+  "trainers": 0,
+  "warps": 3,
+  "signs": 0,
+  "triggers": 1,
+  "script_lines": 74,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "LilycoveCity_CoveLilyMotel_2F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 12,
+  "h": 9,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 1
+  },
+  "metatiles": 33,
+  "known_metatiles": 0,
+  "npcs": 6,
+  "trainers": 0,
+  "warps": 1,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 53,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "LilycoveCity_DepartmentStoreElevator",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 4,
+  "h": 6,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_BattleTower",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 16,
+  "known_metatiles": 0,
+  "npcs": 1,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 83,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "LilycoveCity_DepartmentStoreRooftop",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 18,
+  "h": 12,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_Shop",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 1
+  },
+  "metatiles": 49,
+  "known_metatiles": 0,
+  "npcs": 3,
+  "trainers": 0,
+  "warps": 1,
+  "signs": 2,
+  "triggers": 0,
+  "script_lines": 202,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "LilycoveCity_DepartmentStore_1F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 18,
+  "h": 8,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_Shop",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 4
+  },
+  "metatiles": 43,
+  "known_metatiles": 0,
+  "npcs": 6,
+  "trainers": 0,
+  "warps": 4,
+  "signs": 1,
+  "triggers": 0,
+  "script_lines": 144,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "LilycoveCity_DepartmentStore_2F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 18,
+  "h": 8,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_Shop",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 3
+  },
+  "metatiles": 42,
+  "known_metatiles": 0,
+  "npcs": 5,
+  "trainers": 0,
+  "warps": 3,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 67,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "LilycoveCity_DepartmentStore_3F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 18,
+  "h": 8,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_Shop",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 3
+  },
+  "metatiles": 44,
+  "known_metatiles": 0,
+  "npcs": 5,
+  "trainers": 0,
+  "warps": 3,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 60,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "LilycoveCity_DepartmentStore_4F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 18,
+  "h": 8,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_Shop",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 3
+  },
+  "metatiles": 38,
+  "known_metatiles": 0,
+  "npcs": 5,
+  "trainers": 0,
+  "warps": 3,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 54,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "LilycoveCity_DepartmentStore_5F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 18,
+  "h": 8,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_Shop",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 3
+  },
+  "metatiles": 53,
+  "known_metatiles": 0,
+  "npcs": 7,
+  "trainers": 0,
+  "warps": 3,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 118,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "LilycoveCity_EmptyMap",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 1,
+  "h": 1,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Facility",
+  "elevations": [
+   3
+  ],
+  "features": {},
+  "metatiles": 1,
+  "known_metatiles": 0,
+  "npcs": 0,
+  "trainers": 0,
+  "warps": 1,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 2,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "LilycoveCity_Harbor",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 24,
+  "h": 15,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Facility",
+  "elevations": [
+   0,
+   1,
+   3
+  ],
+  "features": {
+   "warp_tile": 2,
+   "water": 100
+  },
+  "metatiles": 34,
+  "known_metatiles": 0,
+  "npcs": 4,
+  "trainers": 0,
+  "warps": 4,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 166,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "LilycoveCity_House1",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 10,
+  "h": 9,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 39,
+  "known_metatiles": 0,
+  "npcs": 2,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 16,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "LilycoveCity_House2",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 8,
+  "h": 8,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 34,
+  "known_metatiles": 0,
+  "npcs": 1,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 20,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "LilycoveCity_House3",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 11,
+  "h": 8,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 37,
+  "known_metatiles": 0,
+  "npcs": 6,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 99,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "LilycoveCity_House4",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 10,
+  "h": 9,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 39,
+  "known_metatiles": 0,
+  "npcs": 2,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 10,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "LilycoveCity_LilycoveMuseum_1F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 21,
+  "h": 14,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_LilycoveMuseum",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 3
+  },
+  "metatiles": 74,
+  "known_metatiles": 0,
+  "npcs": 10,
+  "trainers": 0,
+  "warps": 3,
+  "signs": 16,
+  "triggers": 0,
+  "script_lines": 161,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "LilycoveCity_LilycoveMuseum_2F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 22,
+  "h": 13,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_LilycoveMuseum",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 1
+  },
+  "metatiles": 40,
+  "known_metatiles": 0,
+  "npcs": 4,
+  "trainers": 0,
+  "warps": 1,
+  "signs": 12,
+  "triggers": 0,
+  "script_lines": 220,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "LilycoveCity_MoveDeletersHouse",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 11,
+  "h": 8,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 37,
+  "known_metatiles": 0,
+  "npcs": 1,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 63,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "LilycoveCity_PokemonCenter_1F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 14,
+  "h": 9,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_PokemonCenter",
+  "elevations": [
+   0,
+   3,
+   4
+  ],
+  "features": {
+   "warp_tile": 3
+  },
+  "metatiles": 82,
+  "known_metatiles": 0,
+  "npcs": 3,
+  "trainers": 0,
+  "warps": 3,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 32,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "LilycoveCity_PokemonCenter_2F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 14,
+  "h": 9,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_PokemonCenter",
+  "elevations": [
+   0,
+   3,
+   4
+  ],
+  "features": {
+   "warp_tile": 8,
+   "sand_or_ash": 3
+  },
+  "metatiles": 50,
+  "known_metatiles": 0,
+  "npcs": 3,
+  "trainers": 0,
+  "warps": 5,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 17,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "LilycoveCity_PokemonTrainerFanClub",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 12,
+  "h": 14,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 55,
+  "known_metatiles": 0,
+  "npcs": 8,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 436,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "LilycoveCity_UnusedMart",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 11,
+  "h": 8,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_Shop",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 45,
+  "known_metatiles": 0,
+  "npcs": 0,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 2,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "LinkContestRoom1",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 15,
+  "h": 11,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Contest",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {},
+  "metatiles": 33,
+  "known_metatiles": 0,
+  "npcs": 15,
+  "trainers": 0,
+  "warps": 0,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 426,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "LinkContestRoom2",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 15,
+  "h": 11,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Contest",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {},
+  "metatiles": 33,
+  "known_metatiles": 0,
+  "npcs": 0,
+  "trainers": 0,
+  "warps": 0,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 1,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "LinkContestRoom3",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 15,
+  "h": 11,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Contest",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {},
+  "metatiles": 33,
+  "known_metatiles": 0,
+  "npcs": 0,
+  "trainers": 0,
+  "warps": 0,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 1,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "LinkContestRoom4",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 15,
+  "h": 11,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Contest",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {},
+  "metatiles": 33,
+  "known_metatiles": 0,
+  "npcs": 0,
+  "trainers": 0,
+  "warps": 0,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 1,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "LinkContestRoom5",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 15,
+  "h": 11,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Contest",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {},
+  "metatiles": 33,
+  "known_metatiles": 0,
+  "npcs": 0,
+  "trainers": 0,
+  "warps": 0,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 1,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "LinkContestRoom6",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 15,
+  "h": 11,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Contest",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {},
+  "metatiles": 33,
+  "known_metatiles": 0,
+  "npcs": 0,
+  "trainers": 0,
+  "warps": 0,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 1,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "LittlerootTown",
+  "type": "MAP_TYPE_TOWN",
+  "w": 20,
+  "h": 20,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Petalburg",
+  "elevations": [
+   0,
+   3,
+   15
+  ],
+  "features": {
+   "warp_tile": 3
+  },
+  "metatiles": 63,
+  "known_metatiles": 16,
+  "npcs": 6,
+  "trainers": 0,
+  "warps": 3,
+  "signs": 4,
+  "triggers": 9,
+  "script_lines": 877,
+  "connections": [
+   "MAP_ROUTE101"
+  ],
+  "wild": false
+ },
+ {
+  "name": "LittlerootTown_BrendansHouse_1F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 11,
+  "h": 9,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_BrendansMaysHouse",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 3
+  },
+  "metatiles": 58,
+  "known_metatiles": 0,
+  "npcs": 5,
+  "trainers": 0,
+  "warps": 3,
+  "signs": 0,
+  "triggers": 1,
+  "script_lines": 123,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "LittlerootTown_BrendansHouse_2F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 9,
+  "h": 8,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_BrendansMaysHouse",
+  "elevations": [
+   0,
+   3,
+   4
+  ],
+  "features": {
+   "warp_tile": 1
+  },
+  "metatiles": 45,
+  "known_metatiles": 0,
+  "npcs": 14,
+  "trainers": 0,
+  "warps": 1,
+  "signs": 4,
+  "triggers": 0,
+  "script_lines": 87,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "LittlerootTown_MaysHouse_1F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 11,
+  "h": 9,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_BrendansMaysHouse",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 3
+  },
+  "metatiles": 59,
+  "known_metatiles": 0,
+  "npcs": 5,
+  "trainers": 0,
+  "warps": 3,
+  "signs": 0,
+  "triggers": 1,
+  "script_lines": 167,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "LittlerootTown_MaysHouse_2F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 9,
+  "h": 8,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_BrendansMaysHouse",
+  "elevations": [
+   0,
+   3,
+   4
+  ],
+  "features": {
+   "warp_tile": 1
+  },
+  "metatiles": 44,
+  "known_metatiles": 0,
+  "npcs": 15,
+  "trainers": 0,
+  "warps": 1,
+  "signs": 4,
+  "triggers": 0,
+  "script_lines": 219,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "LittlerootTown_ProfessorBirchsLab",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 13,
+  "h": 13,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_Lab",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 69,
+  "known_metatiles": 0,
+  "npcs": 3,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 15,
+  "triggers": 0,
+  "script_lines": 214,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "MagmaHideout_1F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 28,
+  "h": 30,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Facility",
+  "elevations": [
+   0,
+   1,
+   3
+  ],
+  "features": {
+   "warp_tile": 2,
+   "water": 5
+  },
+  "metatiles": 97,
+  "known_metatiles": 0,
+  "npcs": 3,
+  "trainers": 1,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 2,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "MagmaHideout_B1F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 62,
+  "h": 24,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Facility",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 29
+  },
+  "metatiles": 124,
+  "known_metatiles": 0,
+  "npcs": 8,
+  "trainers": 3,
+  "warps": 29,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 11,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "MagmaHideout_B2F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 34,
+  "h": 24,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Facility",
+  "elevations": [
+   0,
+   1,
+   3
+  ],
+  "features": {
+   "warp_tile": 8,
+   "water": 146
+  },
+  "metatiles": 101,
+  "known_metatiles": 0,
+  "npcs": 5,
+  "trainers": 2,
+  "warps": 8,
+  "signs": 0,
+  "triggers": 4,
+  "script_lines": 2,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "MauvilleCity",
+  "type": "MAP_TYPE_CITY",
+  "w": 40,
+  "h": 20,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Mauville",
+  "elevations": [
+   0,
+   1,
+   3
+  ],
+  "features": {
+   "warp_tile": 7,
+   "water": 8
+  },
+  "metatiles": 150,
+  "known_metatiles": 5,
+  "npcs": 9,
+  "trainers": 0,
+  "warps": 7,
+  "signs": 8,
+  "triggers": 0,
+  "script_lines": 312,
+  "connections": [
+   "MAP_ROUTE111",
+   "MAP_ROUTE110",
+   "MAP_ROUTE117",
+   "MAP_ROUTE118"
+  ],
+  "wild": false
+ },
+ {
+  "name": "MauvilleCity_BikeShop",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 12,
+  "h": 9,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_BikeShop",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 73,
+  "known_metatiles": 0,
+  "npcs": 2,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 2,
+  "triggers": 0,
+  "script_lines": 182,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "MauvilleCity_GameCorner",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 22,
+  "h": 11,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_MauvilleGameCorner",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 64,
+  "known_metatiles": 0,
+  "npcs": 12,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 24,
+  "triggers": 0,
+  "script_lines": 655,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "MauvilleCity_Gym",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 10,
+  "h": 21,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_MauvilleGym",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 44,
+  "known_metatiles": 0,
+  "npcs": 6,
+  "trainers": 4,
+  "warps": 2,
+  "signs": 2,
+  "triggers": 3,
+  "script_lines": 216,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "MauvilleCity_House1",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 11,
+  "h": 8,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 37,
+  "known_metatiles": 0,
+  "npcs": 1,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 18,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "MauvilleCity_House2",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 10,
+  "h": 9,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 39,
+  "known_metatiles": 0,
+  "npcs": 1,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 44,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "MauvilleCity_Mart",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 11,
+  "h": 8,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_Shop",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 45,
+  "known_metatiles": 0,
+  "npcs": 3,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 38,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "MauvilleCity_PokemonCenter_1F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 14,
+  "h": 9,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_PokemonCenter",
+  "elevations": [
+   0,
+   3,
+   4
+  ],
+  "features": {
+   "warp_tile": 3
+  },
+  "metatiles": 82,
+  "known_metatiles": 0,
+  "npcs": 5,
+  "trainers": 0,
+  "warps": 3,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 33,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "MauvilleCity_PokemonCenter_2F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 14,
+  "h": 9,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_PokemonCenter",
+  "elevations": [
+   0,
+   3,
+   4
+  ],
+  "features": {
+   "warp_tile": 8,
+   "sand_or_ash": 3
+  },
+  "metatiles": 50,
+  "known_metatiles": 0,
+  "npcs": 4,
+  "trainers": 0,
+  "warps": 5,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 21,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "MeteorFalls_1F_1R",
+  "type": "MAP_TYPE_UNDERGROUND",
+  "w": 30,
+  "h": 42,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_MeteorFalls",
+  "elevations": [
+   0,
+   1,
+   3,
+   4,
+   15
+  ],
+  "features": {
+   "warp_tile": 5,
+   "water": 267,
+   "ledge": 34
+  },
+  "metatiles": 119,
+  "known_metatiles": 0,
+  "npcs": 10,
+  "trainers": 0,
+  "warps": 5,
+  "signs": 2,
+  "triggers": 1,
+  "script_lines": 227,
+  "connections": [],
+  "wild": true
+ },
+ {
+  "name": "MeteorFalls_1F_2R",
+  "type": "MAP_TYPE_UNDERGROUND",
+  "w": 30,
+  "h": 32,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_MeteorFalls",
+  "elevations": [
+   0,
+   1,
+   3
+  ],
+  "features": {
+   "water": 119,
+   "warp_tile": 4,
+   "ledge": 54
+  },
+  "metatiles": 61,
+  "known_metatiles": 0,
+  "npcs": 3,
+  "trainers": 3,
+  "warps": 4,
+  "signs": 2,
+  "triggers": 0,
+  "script_lines": 41,
+  "connections": [],
+  "wild": true
+ },
+ {
+  "name": "MeteorFalls_B1F_1R",
+  "type": "MAP_TYPE_UNDERGROUND",
+  "w": 29,
+  "h": 38,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_MeteorFalls",
+  "elevations": [
+   0,
+   1,
+   3,
+   4,
+   5
+  ],
+  "features": {
+   "water": 217,
+   "warp_tile": 6
+  },
+  "metatiles": 63,
+  "known_metatiles": 0,
+  "npcs": 0,
+  "trainers": 0,
+  "warps": 6,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 2,
+  "connections": [],
+  "wild": true
+ },
+ {
+  "name": "MeteorFalls_B1F_2R",
+  "type": "MAP_TYPE_UNDERGROUND",
+  "w": 11,
+  "h": 18,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_MeteorFalls",
+  "elevations": [
+   0,
+   1,
+   3
+  ],
+  "features": {
+   "water": 45,
+   "warp_tile": 1
+  },
+  "metatiles": 21,
+  "known_metatiles": 0,
+  "npcs": 1,
+  "trainers": 0,
+  "warps": 1,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 2,
+  "connections": [],
+  "wild": true
+ },
+ {
+  "name": "MossdeepCity",
+  "type": "MAP_TYPE_CITY",
+  "w": 80,
+  "h": 40,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Mossdeep",
+  "elevations": [
+   0,
+   1,
+   3,
+   4,
+   5,
+   7,
+   9
+  ],
+  "features": {
+   "warp_tile": 10,
+   "water": 1260,
+   "sand_or_ash": 44
+  },
+  "metatiles": 252,
+  "known_metatiles": 5,
+  "npcs": 9,
+  "trainers": 0,
+  "warps": 10,
+  "signs": 8,
+  "triggers": 4,
+  "script_lines": 90,
+  "connections": [
+   "MAP_ROUTE125",
+   "MAP_ROUTE127",
+   "MAP_ROUTE124"
+  ],
+  "wild": true
+ },
+ {
+  "name": "MossdeepCity_GameCorner_1F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 11,
+  "h": 8,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 3
+  },
+  "metatiles": 40,
+  "known_metatiles": 0,
+  "npcs": 1,
+  "trainers": 0,
+  "warps": 3,
+  "signs": 1,
+  "triggers": 0,
+  "script_lines": 186,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "MossdeepCity_GameCorner_B1F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 12,
+  "h": 9,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 1
+  },
+  "metatiles": 26,
+  "known_metatiles": 0,
+  "npcs": 1,
+  "trainers": 0,
+  "warps": 1,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 77,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "MossdeepCity_Gym",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 20,
+  "h": 30,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_MossdeepGym",
+  "elevations": [
+   0,
+   3,
+   4,
+   15
+  ],
+  "features": {
+   "slide_or_ice": 184,
+   "warp_tile": 3
+  },
+  "metatiles": 64,
+  "known_metatiles": 0,
+  "npcs": 9,
+  "trainers": 6,
+  "warps": 2,
+  "signs": 6,
+  "triggers": 1,
+  "script_lines": 239,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "MossdeepCity_House1",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 11,
+  "h": 8,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 37,
+  "known_metatiles": 0,
+  "npcs": 2,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 23,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "MossdeepCity_House2",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 10,
+  "h": 9,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 39,
+  "known_metatiles": 0,
+  "npcs": 3,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 54,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "MossdeepCity_House3",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 11,
+  "h": 8,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 37,
+  "known_metatiles": 0,
+  "npcs": 1,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 26,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "MossdeepCity_House4",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 10,
+  "h": 8,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 29,
+  "known_metatiles": 0,
+  "npcs": 3,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 41,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "MossdeepCity_Mart",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 11,
+  "h": 8,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_Shop",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 45,
+  "known_metatiles": 0,
+  "npcs": 4,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 39,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "MossdeepCity_PokemonCenter_1F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 14,
+  "h": 9,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_PokemonCenter",
+  "elevations": [
+   0,
+   3,
+   4
+  ],
+  "features": {
+   "warp_tile": 3
+  },
+  "metatiles": 82,
+  "known_metatiles": 0,
+  "npcs": 3,
+  "trainers": 0,
+  "warps": 3,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 23,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "MossdeepCity_PokemonCenter_2F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 14,
+  "h": 9,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_PokemonCenter",
+  "elevations": [
+   0,
+   3,
+   4
+  ],
+  "features": {
+   "warp_tile": 8,
+   "sand_or_ash": 3
+  },
+  "metatiles": 50,
+  "known_metatiles": 0,
+  "npcs": 4,
+  "trainers": 0,
+  "warps": 5,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 21,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "MossdeepCity_SpaceCenter_1F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 16,
+  "h": 10,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Facility",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 3
+  },
+  "metatiles": 32,
+  "known_metatiles": 0,
+  "npcs": 5,
+  "trainers": 0,
+  "warps": 3,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 62,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "MossdeepCity_SpaceCenter_2F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 16,
+  "h": 10,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Facility",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 1
+  },
+  "metatiles": 33,
+  "known_metatiles": 0,
+  "npcs": 3,
+  "trainers": 0,
+  "warps": 1,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 14,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "MossdeepCity_StevensHouse",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 11,
+  "h": 8,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 29,
+  "known_metatiles": 0,
+  "npcs": 4,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 4,
+  "triggers": 0,
+  "script_lines": 128,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "MtChimney",
+  "type": "MAP_TYPE_ROUTE",
+  "w": 40,
+  "h": 47,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Lavaridge",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 4
+  },
+  "metatiles": 78,
+  "known_metatiles": 1,
+  "npcs": 28,
+  "trainers": 6,
+  "warps": 4,
+  "signs": 2,
+  "triggers": 0,
+  "script_lines": 465,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "MtChimney_CableCarStation",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 13,
+  "h": 12,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Facility",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 35,
+  "known_metatiles": 0,
+  "npcs": 2,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 87,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "MtPyre_1F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 22,
+  "h": 19,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Facility",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 5
+  },
+  "metatiles": 21,
+  "known_metatiles": 0,
+  "npcs": 3,
+  "trainers": 0,
+  "warps": 6,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 27,
+  "connections": [],
+  "wild": true
+ },
+ {
+  "name": "MtPyre_2F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 13,
+  "h": 13,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Facility",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 23,
+  "known_metatiles": 0,
+  "npcs": 6,
+  "trainers": 3,
+  "warps": 5,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 33,
+  "connections": [],
+  "wild": true
+ },
+ {
+  "name": "MtPyre_3F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 13,
+  "h": 13,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Facility",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 23,
+  "known_metatiles": 0,
+  "npcs": 3,
+  "trainers": 2,
+  "warps": 6,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 12,
+  "connections": [],
+  "wild": true
+ },
+ {
+  "name": "MtPyre_4F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 13,
+  "h": 13,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Facility",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 31,
+  "known_metatiles": 0,
+  "npcs": 2,
+  "trainers": 1,
+  "warps": 6,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 7,
+  "connections": [],
+  "wild": true
+ },
+ {
+  "name": "MtPyre_5F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 13,
+  "h": 13,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Facility",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 30,
+  "known_metatiles": 0,
+  "npcs": 2,
+  "trainers": 1,
+  "warps": 5,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 7,
+  "connections": [],
+  "wild": true
+ },
+ {
+  "name": "MtPyre_6F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 13,
+  "h": 13,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Facility",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 1
+  },
+  "metatiles": 21,
+  "known_metatiles": 0,
+  "npcs": 2,
+  "trainers": 1,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 15,
+  "connections": [],
+  "wild": true
+ },
+ {
+  "name": "MtPyre_Exterior",
+  "type": "MAP_TYPE_ROUTE",
+  "w": 38,
+  "h": 51,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Facility",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "tall_grass": 50,
+   "warp_tile": 3
+  },
+  "metatiles": 51,
+  "known_metatiles": 9,
+  "npcs": 2,
+  "trainers": 0,
+  "warps": 3,
+  "signs": 2,
+  "triggers": 5,
+  "script_lines": 27,
+  "connections": [],
+  "wild": true
+ },
+ {
+  "name": "MtPyre_Summit",
+  "type": "MAP_TYPE_ROUTE",
+  "w": 50,
+  "h": 37,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Facility",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "tall_grass": 38,
+   "water": 168,
+   "warp_tile": 3
+  },
+  "metatiles": 55,
+  "known_metatiles": 11,
+  "npcs": 6,
+  "trainers": 3,
+  "warps": 3,
+  "signs": 2,
+  "triggers": 6,
+  "script_lines": 365,
+  "connections": [],
+  "wild": true
+ },
+ {
+  "name": "NewMauville_Entrance",
+  "type": "MAP_TYPE_UNDERGROUND",
+  "w": 9,
+  "h": 9,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Facility",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 24,
+  "known_metatiles": 0,
+  "npcs": 0,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 1,
+  "script_lines": 50,
+  "connections": [],
+  "wild": true
+ },
+ {
+  "name": "NewMauville_Inside",
+  "type": "MAP_TYPE_UNDERGROUND",
+  "w": 41,
+  "h": 41,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_BikeShop",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 1
+  },
+  "metatiles": 121,
+  "known_metatiles": 0,
+  "npcs": 8,
+  "trainers": 0,
+  "warps": 1,
+  "signs": 8,
+  "triggers": 10,
+  "script_lines": 206,
+  "connections": [],
+  "wild": true
+ },
+ {
+  "name": "OldaleTown",
+  "type": "MAP_TYPE_TOWN",
+  "w": 20,
+  "h": 20,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Petalburg",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 4
+  },
+  "metatiles": 71,
+  "known_metatiles": 29,
+  "npcs": 4,
+  "trainers": 0,
+  "warps": 4,
+  "signs": 5,
+  "triggers": 4,
+  "script_lines": 318,
+  "connections": [
+   "MAP_ROUTE103",
+   "MAP_ROUTE101",
+   "MAP_ROUTE102"
+  ],
+  "wild": false
+ },
+ {
+  "name": "OldaleTown_House1",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 10,
+  "h": 9,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 39,
+  "known_metatiles": 0,
+  "npcs": 1,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 6,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "OldaleTown_House2",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 11,
+  "h": 8,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 37,
+  "known_metatiles": 0,
+  "npcs": 2,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 10,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "OldaleTown_Mart",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 11,
+  "h": 8,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_Shop",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 45,
+  "known_metatiles": 0,
+  "npcs": 3,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 57,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "OldaleTown_PokemonCenter_1F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 14,
+  "h": 9,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_PokemonCenter",
+  "elevations": [
+   0,
+   3,
+   4
+  ],
+  "features": {
+   "warp_tile": 3
+  },
+  "metatiles": 82,
+  "known_metatiles": 0,
+  "npcs": 4,
+  "trainers": 0,
+  "warps": 3,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 37,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "OldaleTown_PokemonCenter_2F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 14,
+  "h": 9,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_PokemonCenter",
+  "elevations": [
+   0,
+   3,
+   4
+  ],
+  "features": {
+   "warp_tile": 8,
+   "sand_or_ash": 3
+  },
+  "metatiles": 50,
+  "known_metatiles": 0,
+  "npcs": 3,
+  "trainers": 0,
+  "warps": 5,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 17,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "PacifidlogTown",
+  "type": "MAP_TYPE_TOWN",
+  "w": 20,
+  "h": 40,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Pacifidlog",
+  "elevations": [
+   0,
+   1,
+   3
+  ],
+  "features": {
+   "water": 294,
+   "warp_tile": 6
+  },
+  "metatiles": 72,
+  "known_metatiles": 1,
+  "npcs": 3,
+  "trainers": 0,
+  "warps": 6,
+  "signs": 3,
+  "triggers": 0,
+  "script_lines": 28,
+  "connections": [
+   "MAP_ROUTE132",
+   "MAP_ROUTE131"
+  ],
+  "wild": true
+ },
+ {
+  "name": "PacifidlogTown_House1",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 10,
+  "h": 9,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 45,
+  "known_metatiles": 0,
+  "npcs": 2,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 10,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "PacifidlogTown_House2",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 10,
+  "h": 9,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 47,
+  "known_metatiles": 0,
+  "npcs": 3,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 96,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "PacifidlogTown_House3",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 10,
+  "h": 9,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 45,
+  "known_metatiles": 0,
+  "npcs": 2,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 54,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "PacifidlogTown_House4",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 10,
+  "h": 9,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 47,
+  "known_metatiles": 0,
+  "npcs": 3,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 30,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "PacifidlogTown_House5",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 10,
+  "h": 9,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 45,
+  "known_metatiles": 0,
+  "npcs": 2,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 21,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "PacifidlogTown_PokemonCenter_1F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 14,
+  "h": 9,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_PokemonCenter",
+  "elevations": [
+   0,
+   3,
+   4
+  ],
+  "features": {
+   "warp_tile": 3
+  },
+  "metatiles": 82,
+  "known_metatiles": 0,
+  "npcs": 4,
+  "trainers": 0,
+  "warps": 3,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 27,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "PacifidlogTown_PokemonCenter_2F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 14,
+  "h": 9,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_PokemonCenter",
+  "elevations": [
+   0,
+   3,
+   4
+  ],
+  "features": {
+   "warp_tile": 8,
+   "sand_or_ash": 3
+  },
+  "metatiles": 50,
+  "known_metatiles": 0,
+  "npcs": 3,
+  "trainers": 0,
+  "warps": 5,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 17,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "PetalburgCity",
+  "type": "MAP_TYPE_CITY",
+  "w": 30,
+  "h": 30,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Petalburg",
+  "elevations": [
+   0,
+   1,
+   3
+  ],
+  "features": {
+   "warp_tile": 6,
+   "water": 141
+  },
+  "metatiles": 129,
+  "known_metatiles": 16,
+  "npcs": 9,
+  "trainers": 0,
+  "warps": 6,
+  "signs": 8,
+  "triggers": 4,
+  "script_lines": 429,
+  "connections": [
+   "MAP_ROUTE104",
+   "MAP_ROUTE102"
+  ],
+  "wild": true
+ },
+ {
+  "name": "PetalburgCity_Gym",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 9,
+  "h": 112,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_PetalburgGym",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 72,
+  "known_metatiles": 0,
+  "npcs": 10,
+  "trainers": 7,
+  "warps": 38,
+  "signs": 14,
+  "triggers": 0,
+  "script_lines": 1027,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "PetalburgCity_House1",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 10,
+  "h": 9,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 39,
+  "known_metatiles": 0,
+  "npcs": 2,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 10,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "PetalburgCity_House2",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 10,
+  "h": 8,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 29,
+  "known_metatiles": 0,
+  "npcs": 2,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 10,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "PetalburgCity_Mart",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 11,
+  "h": 8,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_Shop",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 45,
+  "known_metatiles": 0,
+  "npcs": 4,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 67,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "PetalburgCity_PokemonCenter_1F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 14,
+  "h": 9,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_PokemonCenter",
+  "elevations": [
+   0,
+   3,
+   4
+  ],
+  "features": {
+   "warp_tile": 3
+  },
+  "metatiles": 82,
+  "known_metatiles": 0,
+  "npcs": 5,
+  "trainers": 0,
+  "warps": 3,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 56,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "PetalburgCity_PokemonCenter_2F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 14,
+  "h": 9,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_PokemonCenter",
+  "elevations": [
+   0,
+   3,
+   4
+  ],
+  "features": {
+   "warp_tile": 8,
+   "sand_or_ash": 3
+  },
+  "metatiles": 50,
+  "known_metatiles": 0,
+  "npcs": 3,
+  "trainers": 0,
+  "warps": 5,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 17,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "PetalburgCity_WallysHouse",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 11,
+  "h": 8,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 37,
+  "known_metatiles": 0,
+  "npcs": 2,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 61,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "PetalburgWoods",
+  "type": "MAP_TYPE_ROUTE",
+  "w": 48,
+  "h": 44,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Rustboro",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 6,
+   "ledge": 28,
+   "tall_grass": 325
+  },
+  "metatiles": 26,
+  "known_metatiles": 19,
+  "npcs": 13,
+  "trainers": 2,
+  "warps": 6,
+  "signs": 6,
+  "triggers": 2,
+  "script_lines": 282,
+  "connections": [],
+  "wild": true
+ },
+ {
+  "name": "RecordCorner",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 20,
+  "h": 10,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_CableClub",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 4
+  },
+  "metatiles": 60,
+  "known_metatiles": 0,
+  "npcs": 1,
+  "trainers": 0,
+  "warps": 4,
+  "signs": 0,
+  "triggers": 4,
+  "script_lines": 2,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "Route101",
+  "type": "MAP_TYPE_ROUTE",
+  "w": 20,
+  "h": 20,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Petalburg",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "ledge": 13,
+   "tall_grass": 91
+  },
+  "metatiles": 31,
+  "known_metatiles": 31,
+  "npcs": 6,
+  "trainers": 0,
+  "warps": 0,
+  "signs": 1,
+  "triggers": 9,
+  "script_lines": 246,
+  "connections": [
+   "MAP_OLDALE_TOWN",
+   "MAP_LITTLEROOT_TOWN"
+  ],
+  "wild": true
+ },
+ {
+  "name": "Route102",
+  "type": "MAP_TYPE_ROUTE",
+  "w": 50,
+  "h": 20,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Petalburg",
+  "elevations": [
+   0,
+   1,
+   3
+  ],
+  "features": {
+   "ledge": 17,
+   "tall_grass": 143,
+   "water": 26
+  },
+  "metatiles": 50,
+  "known_metatiles": 30,
+  "npcs": 9,
+  "trainers": 4,
+  "warps": 0,
+  "signs": 2,
+  "triggers": 0,
+  "script_lines": 46,
+  "connections": [
+   "MAP_PETALBURG_CITY",
+   "MAP_OLDALE_TOWN"
+  ],
+  "wild": true
+ },
+ {
+  "name": "Route103",
+  "type": "MAP_TYPE_ROUTE",
+  "w": 80,
+  "h": 20,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Petalburg",
+  "elevations": [
+   0,
+   1,
+   3
+  ],
+  "features": {
+   "tall_grass": 91,
+   "ledge": 24,
+   "water": 328
+  },
+  "metatiles": 90,
+  "known_metatiles": 27,
+  "npcs": 15,
+  "trainers": 5,
+  "warps": 0,
+  "signs": 1,
+  "triggers": 0,
+  "script_lines": 216,
+  "connections": [
+   "MAP_OLDALE_TOWN",
+   "MAP_ROUTE110"
+  ],
+  "wild": true
+ },
+ {
+  "name": "Route104",
+  "type": "MAP_TYPE_ROUTE",
+  "w": 40,
+  "h": 80,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Rustboro",
+  "elevations": [
+   0,
+   1,
+   3,
+   4
+  ],
+  "features": {
+   "water": 797,
+   "tall_grass": 126,
+   "warp_tile": 8,
+   "ledge": 13,
+   "sand_or_ash": 185
+  },
+  "metatiles": 185,
+  "known_metatiles": 20,
+  "npcs": 32,
+  "trainers": 7,
+  "warps": 8,
+  "signs": 10,
+  "triggers": 0,
+  "script_lines": 454,
+  "connections": [
+   "MAP_RUSTBORO_CITY",
+   "MAP_ROUTE105",
+   "MAP_PETALBURG_CITY"
+  ],
+  "wild": true
+ },
+ {
+  "name": "Route104_MrBrineysHouse",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 12,
+  "h": 9,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 39,
+  "known_metatiles": 0,
+  "npcs": 2,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 95,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "Route104_PrettyPetalFlowerShop",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 15,
+  "h": 9,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_PrettyPetalFlowerShop",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 53,
+  "known_metatiles": 0,
+  "npcs": 3,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 103,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "Route104_Prototype",
+  "type": "MAP_TYPE_ROUTE",
+  "w": 1,
+  "h": 1,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Rustboro",
+  "elevations": [
+   0
+  ],
+  "features": {},
+  "metatiles": 1,
+  "known_metatiles": 0,
+  "npcs": 12,
+  "trainers": 8,
+  "warps": 1,
+  "signs": 2,
+  "triggers": 0,
+  "script_lines": 98,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "Route104_PrototypePrettyPetalFlowerShop",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 15,
+  "h": 9,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_PrettyPetalFlowerShop",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 53,
+  "known_metatiles": 0,
+  "npcs": 1,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 6,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "Route105",
+  "type": "MAP_TYPE_ROUTE",
+  "w": 40,
+  "h": 80,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Dewford",
+  "elevations": [
+   0,
+   1,
+   3
+  ],
+  "features": {
+   "water": 2315,
+   "sand_or_ash": 92,
+   "warp_tile": 1
+  },
+  "metatiles": 62,
+  "known_metatiles": 7,
+  "npcs": 6,
+  "trainers": 5,
+  "warps": 1,
+  "signs": 1,
+  "triggers": 0,
+  "script_lines": 37,
+  "connections": [
+   "MAP_ROUTE104",
+   "MAP_ROUTE106"
+  ],
+  "wild": true
+ },
+ {
+  "name": "Route106",
+  "type": "MAP_TYPE_ROUTE",
+  "w": 80,
+  "h": 20,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Dewford",
+  "elevations": [
+   0,
+   1,
+   3
+  ],
+  "features": {
+   "sand_or_ash": 163,
+   "water": 1043,
+   "warp_tile": 1
+  },
+  "metatiles": 57,
+  "known_metatiles": 0,
+  "npcs": 5,
+  "trainers": 4,
+  "warps": 1,
+  "signs": 4,
+  "triggers": 0,
+  "script_lines": 34,
+  "connections": [
+   "MAP_ROUTE105",
+   "MAP_DEWFORD_TOWN"
+  ],
+  "wild": true
+ },
+ {
+  "name": "Route107",
+  "type": "MAP_TYPE_ROUTE",
+  "w": 60,
+  "h": 20,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Dewford",
+  "elevations": [
+   0,
+   1,
+   3
+  ],
+  "features": {
+   "sand_or_ash": 47,
+   "water": 817
+  },
+  "metatiles": 32,
+  "known_metatiles": 0,
+  "npcs": 6,
+  "trainers": 6,
+  "warps": 0,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 40,
+  "connections": [
+   "MAP_DEWFORD_TOWN",
+   "MAP_ROUTE108"
+  ],
+  "wild": true
+ },
+ {
+  "name": "Route108",
+  "type": "MAP_TYPE_ROUTE",
+  "w": 60,
+  "h": 20,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Slateport",
+  "elevations": [
+   0,
+   1,
+   3
+  ],
+  "features": {
+   "water": 942
+  },
+  "metatiles": 50,
+  "known_metatiles": 0,
+  "npcs": 4,
+  "trainers": 4,
+  "warps": 1,
+  "signs": 1,
+  "triggers": 0,
+  "script_lines": 22,
+  "connections": [
+   "MAP_ROUTE107",
+   "MAP_ROUTE109"
+  ],
+  "wild": true
+ },
+ {
+  "name": "Route109",
+  "type": "MAP_TYPE_ROUTE",
+  "w": 40,
+  "h": 60,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Slateport",
+  "elevations": [
+   0,
+   1,
+   3,
+   4
+  ],
+  "features": {
+   "sand_or_ash": 556,
+   "water": 1487,
+   "warp_tile": 1
+  },
+  "metatiles": 73,
+  "known_metatiles": 1,
+  "npcs": 20,
+  "trainers": 11,
+  "warps": 1,
+  "signs": 8,
+  "triggers": 0,
+  "script_lines": 444,
+  "connections": [
+   "MAP_SLATEPORT_CITY",
+   "MAP_ROUTE108"
+  ],
+  "wild": true
+ },
+ {
+  "name": "Route109_SeashoreHouse",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 15,
+  "h": 10,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_SeashoreHouse",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 44,
+  "known_metatiles": 0,
+  "npcs": 4,
+  "trainers": 3,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 103,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "Route110",
+  "type": "MAP_TYPE_ROUTE",
+  "w": 40,
+  "h": 100,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Mauville",
+  "elevations": [
+   0,
+   1,
+   3,
+   4,
+   15
+  ],
+  "features": {
+   "sand_or_ash": 2,
+   "tall_grass": 208,
+   "water": 1242,
+   "warp_tile": 6
+  },
+  "metatiles": 274,
+  "known_metatiles": 4,
+  "npcs": 31,
+  "trainers": 11,
+  "warps": 6,
+  "signs": 17,
+  "triggers": 5,
+  "script_lines": 539,
+  "connections": [
+   "MAP_MAUVILLE_CITY",
+   "MAP_SLATEPORT_CITY",
+   "MAP_ROUTE103"
+  ],
+  "wild": true
+ },
+ {
+  "name": "Route110_SeasideCyclingRoadNorthEntrance",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 15,
+  "h": 6,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_Shop",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 4
+  },
+  "metatiles": 30,
+  "known_metatiles": 0,
+  "npcs": 1,
+  "trainers": 0,
+  "warps": 4,
+  "signs": 0,
+  "triggers": 2,
+  "script_lines": 61,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "Route110_SeasideCyclingRoadSouthEntrance",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 15,
+  "h": 6,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_Shop",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 4
+  },
+  "metatiles": 30,
+  "known_metatiles": 0,
+  "npcs": 1,
+  "trainers": 0,
+  "warps": 4,
+  "signs": 0,
+  "triggers": 2,
+  "script_lines": 38,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "Route110_TrickHouseCorridor",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 15,
+  "h": 24,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 13,
+  "known_metatiles": 0,
+  "npcs": 0,
+  "trainers": 0,
+  "warps": 4,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 7,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "Route110_TrickHouseEnd",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 12,
+  "h": 8,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 32,
+  "known_metatiles": 0,
+  "npcs": 1,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 1,
+  "triggers": 1,
+  "script_lines": 251,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "Route110_TrickHouseEntrance",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 12,
+  "h": 8,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 35,
+  "known_metatiles": 0,
+  "npcs": 1,
+  "trainers": 0,
+  "warps": 3,
+  "signs": 1,
+  "triggers": 4,
+  "script_lines": 759,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "Route110_TrickHousePuzzle1",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 15,
+  "h": 22,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_TrickHousePuzzle",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 32,
+  "known_metatiles": 0,
+  "npcs": 19,
+  "trainers": 3,
+  "warps": 3,
+  "signs": 1,
+  "triggers": 0,
+  "script_lines": 39,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "Route110_TrickHousePuzzle2",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 15,
+  "h": 22,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_TrickHousePuzzle",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 34,
+  "known_metatiles": 0,
+  "npcs": 5,
+  "trainers": 3,
+  "warps": 3,
+  "signs": 1,
+  "triggers": 4,
+  "script_lines": 105,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "Route110_TrickHousePuzzle3",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 15,
+  "h": 22,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_TrickHousePuzzle",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 43,
+  "known_metatiles": 0,
+  "npcs": 11,
+  "trainers": 3,
+  "warps": 3,
+  "signs": 1,
+  "triggers": 7,
+  "script_lines": 396,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "Route110_TrickHousePuzzle4",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 15,
+  "h": 22,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_TrickHousePuzzle",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "ledge": 10,
+   "warp_tile": 2
+  },
+  "metatiles": 28,
+  "known_metatiles": 0,
+  "npcs": 15,
+  "trainers": 3,
+  "warps": 3,
+  "signs": 1,
+  "triggers": 0,
+  "script_lines": 29,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "Route110_TrickHousePuzzle5",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 15,
+  "h": 22,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_TrickHousePuzzle",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 14,
+  "known_metatiles": 0,
+  "npcs": 5,
+  "trainers": 0,
+  "warps": 3,
+  "signs": 1,
+  "triggers": 14,
+  "script_lines": 725,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "Route110_TrickHousePuzzle6",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 15,
+  "h": 22,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_TrickHousePuzzle",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 25,
+  "known_metatiles": 0,
+  "npcs": 4,
+  "trainers": 3,
+  "warps": 3,
+  "signs": 1,
+  "triggers": 0,
+  "script_lines": 43,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "Route110_TrickHousePuzzle7",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 15,
+  "h": 22,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_TrickHousePuzzle",
+  "elevations": [
+   0,
+   3,
+   4,
+   15
+  ],
+  "features": {
+   "warp_tile": 3,
+   "slide_or_ice": 157
+  },
+  "metatiles": 48,
+  "known_metatiles": 0,
+  "npcs": 4,
+  "trainers": 3,
+  "warps": 3,
+  "signs": 6,
+  "triggers": 1,
+  "script_lines": 234,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "Route110_TrickHousePuzzle8",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 15,
+  "h": 22,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_TrickHousePuzzle",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "slide_or_ice": 192,
+   "warp_tile": 2
+  },
+  "metatiles": 17,
+  "known_metatiles": 0,
+  "npcs": 4,
+  "trainers": 3,
+  "warps": 3,
+  "signs": 1,
+  "triggers": 0,
+  "script_lines": 29,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "Route111",
+  "type": "MAP_TYPE_ROUTE",
+  "w": 40,
+  "h": 140,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Mauville",
+  "elevations": [
+   0,
+   1,
+   3
+  ],
+  "features": {
+   "sand_or_ash": 698,
+   "warp_tile": 3,
+   "ledge": 31,
+   "water": 94
+  },
+  "metatiles": 192,
+  "known_metatiles": 16,
+  "npcs": 36,
+  "trainers": 10,
+  "warps": 3,
+  "signs": 17,
+  "triggers": 34,
+  "script_lines": 442,
+  "connections": [
+   "MAP_MAUVILLE_CITY",
+   "MAP_ROUTE113",
+   "MAP_ROUTE112"
+  ],
+  "wild": true
+ },
+ {
+  "name": "Route111_OldLadysRestStop",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 10,
+  "h": 8,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 40,
+  "known_metatiles": 0,
+  "npcs": 1,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 33,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "Route111_WinstrateFamilysHouse",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 11,
+  "h": 8,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 37,
+  "known_metatiles": 0,
+  "npcs": 4,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 58,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "Route112",
+  "type": "MAP_TYPE_ROUTE",
+  "w": 40,
+  "h": 60,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Lavaridge",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 6,
+   "tall_grass": 59,
+   "ledge": 41
+  },
+  "metatiles": 116,
+  "known_metatiles": 3,
+  "npcs": 12,
+  "trainers": 4,
+  "warps": 6,
+  "signs": 3,
+  "triggers": 0,
+  "script_lines": 60,
+  "connections": [
+   "MAP_ROUTE113",
+   "MAP_LAVARIDGE_TOWN",
+   "MAP_ROUTE111"
+  ],
+  "wild": true
+ },
+ {
+  "name": "Route112_CableCarStation",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 13,
+  "h": 12,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Facility",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 35,
+  "known_metatiles": 0,
+  "npcs": 2,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 88,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "Route113",
+  "type": "MAP_TYPE_ROUTE",
+  "w": 100,
+  "h": 20,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Fallarbor",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "sand_or_ash": 287,
+   "ledge": 74,
+   "warp_tile": 1
+  },
+  "metatiles": 112,
+  "known_metatiles": 2,
+  "npcs": 11,
+  "trainers": 7,
+  "warps": 1,
+  "signs": 7,
+  "triggers": 19,
+  "script_lines": 100,
+  "connections": [
+   "MAP_ROUTE112",
+   "MAP_FALLARBOR_TOWN",
+   "MAP_ROUTE111"
+  ],
+  "wild": true
+ },
+ {
+  "name": "Route113_GlassWorkshop",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 10,
+  "h": 9,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 32,
+  "known_metatiles": 0,
+  "npcs": 2,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 308,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "Route114",
+  "type": "MAP_TYPE_ROUTE",
+  "w": 40,
+  "h": 80,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Fallarbor",
+  "elevations": [
+   0,
+   1,
+   3,
+   4,
+   5,
+   6,
+   7
+  ],
+  "features": {
+   "tall_grass": 88,
+   "warp_tile": 3,
+   "water": 383,
+   "ledge": 51
+  },
+  "metatiles": 181,
+  "known_metatiles": 7,
+  "npcs": 23,
+  "trainers": 10,
+  "warps": 3,
+  "signs": 12,
+  "triggers": 0,
+  "script_lines": 130,
+  "connections": [
+   "MAP_ROUTE115",
+   "MAP_FALLARBOR_TOWN"
+  ],
+  "wild": true
+ },
+ {
+  "name": "Route114_FossilManiacsHouse",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 10,
+  "h": 8,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 3
+  },
+  "metatiles": 44,
+  "known_metatiles": 0,
+  "npcs": 1,
+  "trainers": 0,
+  "warps": 3,
+  "signs": 4,
+  "triggers": 0,
+  "script_lines": 32,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "Route114_FossilManiacsTunnel",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 13,
+  "h": 26,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Fallarbor",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 29,
+  "known_metatiles": 0,
+  "npcs": 1,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 26,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "Route114_LanettesHouse",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 11,
+  "h": 8,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_Lab",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 41,
+  "known_metatiles": 0,
+  "npcs": 1,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 3,
+  "triggers": 0,
+  "script_lines": 53,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "Route115",
+  "type": "MAP_TYPE_ROUTE",
+  "w": 40,
+  "h": 80,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Fallarbor",
+  "elevations": [
+   0,
+   1,
+   3,
+   4,
+   5
+  ],
+  "features": {
+   "tall_grass": 20,
+   "warp_tile": 1,
+   "ledge": 64,
+   "water": 506,
+   "sand_or_ash": 118
+  },
+  "metatiles": 129,
+  "known_metatiles": 17,
+  "npcs": 16,
+  "trainers": 5,
+  "warps": 1,
+  "signs": 14,
+  "triggers": 0,
+  "script_lines": 68,
+  "connections": [
+   "MAP_RUSTBORO_CITY",
+   "MAP_ROUTE114"
+  ],
+  "wild": true
+ },
+ {
+  "name": "Route116",
+  "type": "MAP_TYPE_ROUTE",
+  "w": 100,
+  "h": 20,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Rustboro",
+  "elevations": [
+   0,
+   3,
+   4,
+   5
+  ],
+  "features": {
+   "tall_grass": 138,
+   "warp_tile": 3,
+   "ledge": 29
+  },
+  "metatiles": 87,
+  "known_metatiles": 19,
+  "npcs": 22,
+  "trainers": 6,
+  "warps": 3,
+  "signs": 11,
+  "triggers": 1,
+  "script_lines": 271,
+  "connections": [
+   "MAP_VERDANTURF_TOWN",
+   "MAP_RUSTBORO_CITY"
+  ],
+  "wild": true
+ },
+ {
+  "name": "Route116_TunnelersRestHouse",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 10,
+  "h": 9,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 36,
+  "known_metatiles": 0,
+  "npcs": 3,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 28,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "Route117",
+  "type": "MAP_TYPE_ROUTE",
+  "w": 60,
+  "h": 20,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Mauville",
+  "elevations": [
+   0,
+   1,
+   3
+  ],
+  "features": {
+   "sand_or_ash": 15,
+   "tall_grass": 65,
+   "warp_tile": 1,
+   "water": 115
+  },
+  "metatiles": 116,
+  "known_metatiles": 15,
+  "npcs": 21,
+  "trainers": 7,
+  "warps": 1,
+  "signs": 4,
+  "triggers": 0,
+  "script_lines": 121,
+  "connections": [
+   "MAP_VERDANTURF_TOWN",
+   "MAP_MAUVILLE_CITY"
+  ],
+  "wild": true
+ },
+ {
+  "name": "Route117_PokemonDayCare",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 12,
+  "h": 9,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_PokemonDayCare",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 54,
+  "known_metatiles": 0,
+  "npcs": 1,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 7,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "Route118",
+  "type": "MAP_TYPE_ROUTE",
+  "w": 80,
+  "h": 20,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Mauville",
+  "elevations": [
+   0,
+   1,
+   3
+  ],
+  "features": {
+   "ledge": 108,
+   "sand_or_ash": 123,
+   "tall_grass": 110,
+   "water": 282
+  },
+  "metatiles": 108,
+  "known_metatiles": 8,
+  "npcs": 20,
+  "trainers": 6,
+  "warps": 0,
+  "signs": 9,
+  "triggers": 3,
+  "script_lines": 205,
+  "connections": [
+   "MAP_ROUTE119",
+   "MAP_MAUVILLE_CITY",
+   "MAP_ROUTE123"
+  ],
+  "wild": true
+ },
+ {
+  "name": "Route119",
+  "type": "MAP_TYPE_ROUTE",
+  "w": 40,
+  "h": 140,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Fortree",
+  "elevations": [
+   0,
+   1,
+   3,
+   4,
+   15
+  ],
+  "features": {
+   "tall_grass": 746,
+   "warp_tile": 2,
+   "water": 497,
+   "ledge": 4,
+   "sand_or_ash": 6
+  },
+  "metatiles": 254,
+  "known_metatiles": 5,
+  "npcs": 37,
+  "trainers": 14,
+  "warps": 2,
+  "signs": 20,
+  "triggers": 25,
+  "script_lines": 382,
+  "connections": [
+   "MAP_ROUTE118",
+   "MAP_FORTREE_CITY"
+  ],
+  "wild": true
+ },
+ {
+  "name": "Route119_House",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 10,
+  "h": 9,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 39,
+  "known_metatiles": 0,
+  "npcs": 7,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 16,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "Route119_WeatherInstitute_1F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 20,
+  "h": 13,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_Lab",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 3
+  },
+  "metatiles": 56,
+  "known_metatiles": 0,
+  "npcs": 5,
+  "trainers": 2,
+  "warps": 3,
+  "signs": 4,
+  "triggers": 0,
+  "script_lines": 55,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "Route119_WeatherInstitute_2F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 20,
+  "h": 11,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_Lab",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 1
+  },
+  "metatiles": 43,
+  "known_metatiles": 0,
+  "npcs": 6,
+  "trainers": 3,
+  "warps": 1,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 92,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "Route120",
+  "type": "MAP_TYPE_ROUTE",
+  "w": 40,
+  "h": 100,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Fortree",
+  "elevations": [
+   0,
+   1,
+   3,
+   4,
+   5,
+   15
+  ],
+  "features": {
+   "ledge": 12,
+   "tall_grass": 422,
+   "water": 667,
+   "warp_tile": 2
+  },
+  "metatiles": 154,
+  "known_metatiles": 3,
+  "npcs": 41,
+  "trainers": 11,
+  "warps": 2,
+  "signs": 14,
+  "triggers": 19,
+  "script_lines": 351,
+  "connections": [
+   "MAP_FORTREE_CITY",
+   "MAP_ROUTE121"
+  ],
+  "wild": true
+ },
+ {
+  "name": "Route121",
+  "type": "MAP_TYPE_ROUTE",
+  "w": 80,
+  "h": 20,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Lilycove",
+  "elevations": [
+   0,
+   1,
+   3,
+   5
+  ],
+  "features": {
+   "tall_grass": 136,
+   "warp_tile": 1,
+   "water": 249
+  },
+  "metatiles": 103,
+  "known_metatiles": 18,
+  "npcs": 22,
+  "trainers": 6,
+  "warps": 1,
+  "signs": 9,
+  "triggers": 4,
+  "script_lines": 113,
+  "connections": [
+   "MAP_ROUTE122",
+   "MAP_ROUTE120",
+   "MAP_LILYCOVE_CITY"
+  ],
+  "wild": true
+ },
+ {
+  "name": "Route121_SafariZoneEntrance",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 18,
+  "h": 14,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_Shop",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 4
+  },
+  "metatiles": 42,
+  "known_metatiles": 0,
+  "npcs": 3,
+  "trainers": 0,
+  "warps": 4,
+  "signs": 1,
+  "triggers": 1,
+  "script_lines": 138,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "Route122",
+  "type": "MAP_TYPE_ROUTE",
+  "w": 40,
+  "h": 40,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Lilycove",
+  "elevations": [
+   0,
+   1,
+   3
+  ],
+  "features": {
+   "water": 803,
+   "warp_tile": 1
+  },
+  "metatiles": 49,
+  "known_metatiles": 1,
+  "npcs": 0,
+  "trainers": 0,
+  "warps": 1,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 2,
+  "connections": [
+   "MAP_ROUTE121",
+   "MAP_ROUTE123"
+  ],
+  "wild": true
+ },
+ {
+  "name": "Route123",
+  "type": "MAP_TYPE_ROUTE",
+  "w": 140,
+  "h": 20,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Lilycove",
+  "elevations": [
+   0,
+   1,
+   3
+  ],
+  "features": {
+   "tall_grass": 164,
+   "warp_tile": 1,
+   "ledge": 81,
+   "water": 366
+  },
+  "metatiles": 97,
+  "known_metatiles": 16,
+  "npcs": 34,
+  "trainers": 8,
+  "warps": 1,
+  "signs": 9,
+  "triggers": 22,
+  "script_lines": 101,
+  "connections": [
+   "MAP_ROUTE122",
+   "MAP_ROUTE118"
+  ],
+  "wild": true
+ },
+ {
+  "name": "Route123_BerryMastersHouse",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 11,
+  "h": 8,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 37,
+  "known_metatiles": 0,
+  "npcs": 2,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 145,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "Route124",
+  "type": "MAP_TYPE_6",
+  "w": 80,
+  "h": 80,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Mossdeep",
+  "elevations": [
+   0,
+   1,
+   3
+  ],
+  "features": {
+   "water": 4788,
+   "warp_tile": 1,
+   "sand_or_ash": 29
+  },
+  "metatiles": 93,
+  "known_metatiles": 1,
+  "npcs": 10,
+  "trainers": 7,
+  "warps": 1,
+  "signs": 1,
+  "triggers": 0,
+  "script_lines": 70,
+  "connections": [
+   "MAP_ROUTE126",
+   "MAP_LILYCOVE_CITY",
+   "MAP_ROUTE125",
+   "MAP_MOSSDEEP_CITY",
+   "MAP_UNDERWATER1"
+  ],
+  "wild": true
+ },
+ {
+  "name": "Route124_DivingTreasureHuntersHouse",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 10,
+  "h": 9,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 42,
+  "known_metatiles": 0,
+  "npcs": 1,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 1,
+  "triggers": 0,
+  "script_lines": 294,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "Route125",
+  "type": "MAP_TYPE_6",
+  "w": 80,
+  "h": 40,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Mossdeep",
+  "elevations": [
+   0,
+   1,
+   3
+  ],
+  "features": {
+   "water": 2415,
+   "warp_tile": 1,
+   "sand_or_ash": 3
+  },
+  "metatiles": 88,
+  "known_metatiles": 0,
+  "npcs": 7,
+  "trainers": 7,
+  "warps": 1,
+  "signs": 4,
+  "triggers": 0,
+  "script_lines": 50,
+  "connections": [
+   "MAP_MOSSDEEP_CITY",
+   "MAP_ROUTE124"
+  ],
+  "wild": true
+ },
+ {
+  "name": "Route126",
+  "type": "MAP_TYPE_6",
+  "w": 80,
+  "h": 80,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Mossdeep",
+  "elevations": [
+   0,
+   1,
+   3
+  ],
+  "features": {
+   "water": 4381
+  },
+  "metatiles": 135,
+  "known_metatiles": 0,
+  "npcs": 5,
+  "trainers": 4,
+  "warps": 0,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 27,
+  "connections": [
+   "MAP_ROUTE124",
+   "MAP_ROUTE127",
+   "MAP_UNDERWATER2"
+  ],
+  "wild": true
+ },
+ {
+  "name": "Route127",
+  "type": "MAP_TYPE_6",
+  "w": 80,
+  "h": 80,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Mossdeep",
+  "elevations": [
+   0,
+   1,
+   3
+  ],
+  "features": {
+   "water": 4639,
+   "sand_or_ash": 31
+  },
+  "metatiles": 150,
+  "known_metatiles": 0,
+  "npcs": 9,
+  "trainers": 7,
+  "warps": 0,
+  "signs": 5,
+  "triggers": 0,
+  "script_lines": 42,
+  "connections": [
+   "MAP_MOSSDEEP_CITY",
+   "MAP_ROUTE128",
+   "MAP_ROUTE126",
+   "MAP_UNDERWATER3"
+  ],
+  "wild": true
+ },
+ {
+  "name": "Route128",
+  "type": "MAP_TYPE_6",
+  "w": 120,
+  "h": 40,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Mossdeep",
+  "elevations": [
+   0,
+   1,
+   3
+  ],
+  "features": {
+   "water": 4078
+  },
+  "metatiles": 97,
+  "known_metatiles": 0,
+  "npcs": 8,
+  "trainers": 5,
+  "warps": 0,
+  "signs": 3,
+  "triggers": 0,
+  "script_lines": 221,
+  "connections": [
+   "MAP_ROUTE127",
+   "MAP_ROUTE129",
+   "MAP_EVER_GRANDE_CITY",
+   "MAP_UNDERWATER4"
+  ],
+  "wild": true
+ },
+ {
+  "name": "Route129",
+  "type": "MAP_TYPE_6",
+  "w": 80,
+  "h": 40,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Mossdeep",
+  "elevations": [
+   0,
+   1
+  ],
+  "features": {
+   "water": 2668
+  },
+  "metatiles": 36,
+  "known_metatiles": 0,
+  "npcs": 4,
+  "trainers": 4,
+  "warps": 0,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 22,
+  "connections": [
+   "MAP_ROUTE128",
+   "MAP_ROUTE130"
+  ],
+  "wild": true
+ },
+ {
+  "name": "Route130",
+  "type": "MAP_TYPE_6",
+  "w": 80,
+  "h": 40,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Cave",
+  "elevations": [
+   0,
+   1
+  ],
+  "features": {
+   "water": 2485
+  },
+  "metatiles": 30,
+  "known_metatiles": 0,
+  "npcs": 3,
+  "trainers": 2,
+  "warps": 0,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 40,
+  "connections": [
+   "MAP_ROUTE131",
+   "MAP_ROUTE129"
+  ],
+  "wild": true
+ },
+ {
+  "name": "Route131",
+  "type": "MAP_TYPE_6",
+  "w": 60,
+  "h": 40,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Pacifidlog",
+  "elevations": [
+   0,
+   1
+  ],
+  "features": {
+   "water": 1702
+  },
+  "metatiles": 35,
+  "known_metatiles": 0,
+  "npcs": 6,
+  "trainers": 6,
+  "warps": 1,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 41,
+  "connections": [
+   "MAP_PACIFIDLOG_TOWN",
+   "MAP_ROUTE130"
+  ],
+  "wild": true
+ },
+ {
+  "name": "Route132",
+  "type": "MAP_TYPE_6",
+  "w": 80,
+  "h": 40,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Pacifidlog",
+  "elevations": [
+   0,
+   1,
+   3
+  ],
+  "features": {
+   "water": 1139,
+   "sand_or_ash": 13
+  },
+  "metatiles": 90,
+  "known_metatiles": 0,
+  "npcs": 5,
+  "trainers": 4,
+  "warps": 0,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 22,
+  "connections": [
+   "MAP_ROUTE133",
+   "MAP_PACIFIDLOG_TOWN"
+  ],
+  "wild": true
+ },
+ {
+  "name": "Route133",
+  "type": "MAP_TYPE_6",
+  "w": 80,
+  "h": 40,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Pacifidlog",
+  "elevations": [
+   0,
+   1,
+   3
+  ],
+  "features": {
+   "water": 923,
+   "sand_or_ash": 16
+  },
+  "metatiles": 66,
+  "known_metatiles": 0,
+  "npcs": 7,
+  "trainers": 5,
+  "warps": 0,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 27,
+  "connections": [
+   "MAP_ROUTE134",
+   "MAP_ROUTE132"
+  ],
+  "wild": true
+ },
+ {
+  "name": "Route134",
+  "type": "MAP_TYPE_6",
+  "w": 80,
+  "h": 40,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Pacifidlog",
+  "elevations": [
+   0,
+   1,
+   3
+  ],
+  "features": {
+   "water": 1357,
+   "sand_or_ash": 15
+  },
+  "metatiles": 64,
+  "known_metatiles": 0,
+  "npcs": 5,
+  "trainers": 5,
+  "warps": 0,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 32,
+  "connections": [
+   "MAP_SLATEPORT_CITY",
+   "MAP_ROUTE133"
+  ],
+  "wild": true
+ },
+ {
+  "name": "RustboroCity",
+  "type": "MAP_TYPE_CITY",
+  "w": 40,
+  "h": 60,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Rustboro",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 12,
+   "water": 142
+  },
+  "metatiles": 231,
+  "known_metatiles": 15,
+  "npcs": 14,
+  "trainers": 0,
+  "warps": 12,
+  "signs": 10,
+  "triggers": 13,
+  "script_lines": 584,
+  "connections": [
+   "MAP_ROUTE115",
+   "MAP_ROUTE104",
+   "MAP_ROUTE116"
+  ],
+  "wild": false
+ },
+ {
+  "name": "RustboroCity_CuttersHouse",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 11,
+  "h": 9,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 46,
+  "known_metatiles": 0,
+  "npcs": 2,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 22,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "RustboroCity_DevonCorp_1F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 19,
+  "h": 9,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Facility",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 3
+  },
+  "metatiles": 30,
+  "known_metatiles": 0,
+  "npcs": 3,
+  "trainers": 0,
+  "warps": 3,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 71,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "RustboroCity_DevonCorp_2F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 19,
+  "h": 9,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Facility",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 29,
+  "known_metatiles": 0,
+  "npcs": 5,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 175,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "RustboroCity_DevonCorp_3F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 19,
+  "h": 9,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Facility",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 1
+  },
+  "metatiles": 41,
+  "known_metatiles": 0,
+  "npcs": 3,
+  "trainers": 0,
+  "warps": 1,
+  "signs": 2,
+  "triggers": 0,
+  "script_lines": 194,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "RustboroCity_Flat1_1F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 14,
+  "h": 8,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 3
+  },
+  "metatiles": 48,
+  "known_metatiles": 0,
+  "npcs": 2,
+  "trainers": 0,
+  "warps": 3,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 10,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "RustboroCity_Flat1_2F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 14,
+  "h": 8,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 1
+  },
+  "metatiles": 39,
+  "known_metatiles": 0,
+  "npcs": 1,
+  "trainers": 0,
+  "warps": 1,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 6,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "RustboroCity_Flat2_1F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 14,
+  "h": 9,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 3
+  },
+  "metatiles": 35,
+  "known_metatiles": 0,
+  "npcs": 2,
+  "trainers": 0,
+  "warps": 3,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 16,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "RustboroCity_Flat2_2F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 14,
+  "h": 9,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 36,
+  "known_metatiles": 0,
+  "npcs": 2,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 23,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "RustboroCity_Flat2_3F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 14,
+  "h": 9,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 1
+  },
+  "metatiles": 40,
+  "known_metatiles": 0,
+  "npcs": 2,
+  "trainers": 0,
+  "warps": 1,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 10,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "RustboroCity_Gym",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 11,
+  "h": 19,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_RustboroGym",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 51,
+  "known_metatiles": 0,
+  "npcs": 4,
+  "trainers": 2,
+  "warps": 2,
+  "signs": 2,
+  "triggers": 0,
+  "script_lines": 79,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "RustboroCity_House1",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 13,
+  "h": 8,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 43,
+  "known_metatiles": 0,
+  "npcs": 2,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 53,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "RustboroCity_House2",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 12,
+  "h": 9,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 47,
+  "known_metatiles": 0,
+  "npcs": 2,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 10,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "RustboroCity_House3",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 12,
+  "h": 9,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 47,
+  "known_metatiles": 0,
+  "npcs": 3,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 20,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "RustboroCity_Mart",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 11,
+  "h": 8,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_Shop",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 45,
+  "known_metatiles": 0,
+  "npcs": 4,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 69,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "RustboroCity_PokemonCenter_1F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 14,
+  "h": 9,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_PokemonCenter",
+  "elevations": [
+   0,
+   3,
+   4
+  ],
+  "features": {
+   "warp_tile": 3
+  },
+  "metatiles": 82,
+  "known_metatiles": 0,
+  "npcs": 4,
+  "trainers": 0,
+  "warps": 3,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 28,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "RustboroCity_PokemonCenter_2F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 14,
+  "h": 9,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_PokemonCenter",
+  "elevations": [
+   0,
+   3,
+   4
+  ],
+  "features": {
+   "warp_tile": 8,
+   "sand_or_ash": 3
+  },
+  "metatiles": 50,
+  "known_metatiles": 0,
+  "npcs": 3,
+  "trainers": 0,
+  "warps": 5,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 17,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "RustboroCity_PokemonSchool",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 12,
+  "h": 11,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_PokemonSchool",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 35,
+  "known_metatiles": 0,
+  "npcs": 6,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 5,
+  "triggers": 0,
+  "script_lines": 164,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "RusturfTunnel",
+  "type": "MAP_TYPE_UNDERGROUND",
+  "w": 36,
+  "h": 24,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_RusturfTunnel",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 3,
+   "ledge": 35
+  },
+  "metatiles": 30,
+  "known_metatiles": 0,
+  "npcs": 10,
+  "trainers": 1,
+  "warps": 3,
+  "signs": 0,
+  "triggers": 5,
+  "script_lines": 420,
+  "connections": [],
+  "wild": true
+ },
+ {
+  "name": "SSTidalCorridor",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 18,
+  "h": 13,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Ship",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 10
+  },
+  "metatiles": 35,
+  "known_metatiles": 0,
+  "npcs": 4,
+  "trainers": 0,
+  "warps": 9,
+  "signs": 12,
+  "triggers": 0,
+  "script_lines": 189,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "SSTidalLowerDeck",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 17,
+  "h": 13,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Ship",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 1
+  },
+  "metatiles": 30,
+  "known_metatiles": 0,
+  "npcs": 2,
+  "trainers": 2,
+  "warps": 1,
+  "signs": 1,
+  "triggers": 0,
+  "script_lines": 12,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "SSTidalRooms",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 36,
+  "h": 18,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Ship",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 12
+  },
+  "metatiles": 66,
+  "known_metatiles": 0,
+  "npcs": 8,
+  "trainers": 7,
+  "warps": 12,
+  "signs": 2,
+  "triggers": 0,
+  "script_lines": 64,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "SafariZone_Northeast",
+  "type": "MAP_TYPE_ROUTE",
+  "w": 40,
+  "h": 40,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Lilycove",
+  "elevations": [
+   0,
+   3,
+   5
+  ],
+  "features": {
+   "ledge": 6,
+   "tall_grass": 170,
+   "sand_or_ash": 172
+  },
+  "metatiles": 73,
+  "known_metatiles": 18,
+  "npcs": 9,
+  "trainers": 0,
+  "warps": 0,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 10,
+  "connections": [
+   "MAP_SAFARI_ZONE_NORTHWEST",
+   "MAP_SAFARI_ZONE_SOUTHEAST"
+  ],
+  "wild": true
+ },
+ {
+  "name": "SafariZone_Northwest",
+  "type": "MAP_TYPE_ROUTE",
+  "w": 40,
+  "h": 40,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Lilycove",
+  "elevations": [
+   0,
+   1,
+   3,
+   5,
+   7
+  ],
+  "features": {
+   "tall_grass": 217,
+   "water": 84
+  },
+  "metatiles": 64,
+  "known_metatiles": 16,
+  "npcs": 2,
+  "trainers": 0,
+  "warps": 0,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 6,
+  "connections": [
+   "MAP_SAFARI_ZONE_NORTHEAST",
+   "MAP_SAFARI_ZONE_SOUTHWEST"
+  ],
+  "wild": true
+ },
+ {
+  "name": "SafariZone_RestHouse",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 10,
+  "h": 9,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 16,
+  "known_metatiles": 0,
+  "npcs": 3,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 14,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "SafariZone_Southeast",
+  "type": "MAP_TYPE_ROUTE",
+  "w": 40,
+  "h": 40,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Lilycove",
+  "elevations": [
+   0,
+   3,
+   5
+  ],
+  "features": {
+   "ledge": 14,
+   "tall_grass": 149,
+   "warp_tile": 1
+  },
+  "metatiles": 76,
+  "known_metatiles": 27,
+  "npcs": 4,
+  "trainers": 0,
+  "warps": 1,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 118,
+  "connections": [
+   "MAP_SAFARI_ZONE_NORTHEAST",
+   "MAP_SAFARI_ZONE_SOUTHWEST"
+  ],
+  "wild": true
+ },
+ {
+  "name": "SafariZone_Southwest",
+  "type": "MAP_TYPE_ROUTE",
+  "w": 40,
+  "h": 40,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Lilycove",
+  "elevations": [
+   0,
+   1,
+   3,
+   5,
+   7
+  ],
+  "features": {
+   "tall_grass": 97,
+   "warp_tile": 1,
+   "ledge": 18,
+   "water": 144
+  },
+  "metatiles": 92,
+  "known_metatiles": 27,
+  "npcs": 2,
+  "trainers": 0,
+  "warps": 1,
+  "signs": 1,
+  "triggers": 0,
+  "script_lines": 10,
+  "connections": [
+   "MAP_SAFARI_ZONE_NORTHWEST",
+   "MAP_SAFARI_ZONE_SOUTHEAST"
+  ],
+  "wild": true
+ },
+ {
+  "name": "ScorchedSlab",
+  "type": "MAP_TYPE_UNDERGROUND",
+  "w": 15,
+  "h": 20,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Cave",
+  "elevations": [
+   0,
+   1,
+   3
+  ],
+  "features": {
+   "water": 77,
+   "warp_tile": 1
+  },
+  "metatiles": 25,
+  "known_metatiles": 0,
+  "npcs": 1,
+  "trainers": 0,
+  "warps": 1,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 7,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "SeafloorCavern_Entrance",
+  "type": "MAP_TYPE_UNDERGROUND",
+  "w": 20,
+  "h": 20,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Cave",
+  "elevations": [
+   0,
+   1,
+   3
+  ],
+  "features": {
+   "warp_tile": 1,
+   "water": 124,
+   "sand_or_ash": 85
+  },
+  "metatiles": 46,
+  "known_metatiles": 0,
+  "npcs": 0,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 8,
+  "connections": [],
+  "wild": true
+ },
+ {
+  "name": "SeafloorCavern_Room1",
+  "type": "MAP_TYPE_UNDERGROUND",
+  "w": 20,
+  "h": 21,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Cave",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 3
+  },
+  "metatiles": 31,
+  "known_metatiles": 0,
+  "npcs": 5,
+  "trainers": 2,
+  "warps": 3,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 17,
+  "connections": [],
+  "wild": true
+ },
+ {
+  "name": "SeafloorCavern_Room2",
+  "type": "MAP_TYPE_UNDERGROUND",
+  "w": 18,
+  "h": 21,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Cave",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 4
+  },
+  "metatiles": 23,
+  "known_metatiles": 0,
+  "npcs": 9,
+  "trainers": 0,
+  "warps": 4,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 2,
+  "connections": [],
+  "wild": true
+ },
+ {
+  "name": "SeafloorCavern_Room3",
+  "type": "MAP_TYPE_UNDERGROUND",
+  "w": 16,
+  "h": 17,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Cave",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 3,
+   "ledge": 4
+  },
+  "metatiles": 25,
+  "known_metatiles": 0,
+  "npcs": 10,
+  "trainers": 1,
+  "warps": 3,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 12,
+  "connections": [],
+  "wild": true
+ },
+ {
+  "name": "SeafloorCavern_Room4",
+  "type": "MAP_TYPE_UNDERGROUND",
+  "w": 18,
+  "h": 19,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Cave",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 4,
+   "ledge": 13
+  },
+  "metatiles": 29,
+  "known_metatiles": 0,
+  "npcs": 1,
+  "trainers": 1,
+  "warps": 4,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 12,
+  "connections": [],
+  "wild": true
+ },
+ {
+  "name": "SeafloorCavern_Room5",
+  "type": "MAP_TYPE_UNDERGROUND",
+  "w": 20,
+  "h": 20,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Cave",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "water": 52,
+   "warp_tile": 3
+  },
+  "metatiles": 33,
+  "known_metatiles": 0,
+  "npcs": 6,
+  "trainers": 0,
+  "warps": 3,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 2,
+  "connections": [],
+  "wild": true
+ },
+ {
+  "name": "SeafloorCavern_Room6",
+  "type": "MAP_TYPE_UNDERGROUND",
+  "w": 24,
+  "h": 23,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Pacifidlog",
+  "elevations": [
+   0,
+   1,
+   3
+  ],
+  "features": {
+   "water": 214,
+   "warp_tile": 3
+  },
+  "metatiles": 45,
+  "known_metatiles": 0,
+  "npcs": 0,
+  "trainers": 0,
+  "warps": 3,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 2,
+  "connections": [],
+  "wild": true
+ },
+ {
+  "name": "SeafloorCavern_Room7",
+  "type": "MAP_TYPE_UNDERGROUND",
+  "w": 23,
+  "h": 25,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Pacifidlog",
+  "elevations": [
+   0,
+   1,
+   3
+  ],
+  "features": {
+   "water": 243,
+   "warp_tile": 2
+  },
+  "metatiles": 38,
+  "known_metatiles": 0,
+  "npcs": 0,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 2,
+  "connections": [],
+  "wild": true
+ },
+ {
+  "name": "SeafloorCavern_Room8",
+  "type": "MAP_TYPE_UNDERGROUND",
+  "w": 11,
+  "h": 14,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Cave",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2,
+   "ledge": 3
+  },
+  "metatiles": 25,
+  "known_metatiles": 0,
+  "npcs": 12,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 2,
+  "connections": [],
+  "wild": true
+ },
+ {
+  "name": "SeafloorCavern_Room9",
+  "type": "MAP_TYPE_UNDERGROUND",
+  "w": 27,
+  "h": 46,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Cave",
+  "elevations": [
+   0,
+   1,
+   3
+  ],
+  "features": {
+   "water": 76,
+   "warp_tile": 1
+  },
+  "metatiles": 47,
+  "known_metatiles": 0,
+  "npcs": 7,
+  "trainers": 0,
+  "warps": 1,
+  "signs": 0,
+  "triggers": 1,
+  "script_lines": 291,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "SealedChamber_InnerRoom",
+  "type": "MAP_TYPE_UNDERGROUND",
+  "w": 21,
+  "h": 23,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Cave",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 1
+  },
+  "metatiles": 21,
+  "known_metatiles": 0,
+  "npcs": 0,
+  "trainers": 0,
+  "warps": 1,
+  "signs": 9,
+  "triggers": 0,
+  "script_lines": 87,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "SealedChamber_OuterRoom",
+  "type": "MAP_TYPE_UNDERGROUND",
+  "w": 21,
+  "h": 23,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Cave",
+  "elevations": [
+   0,
+   1,
+   3
+  ],
+  "features": {
+   "water": 15,
+   "warp_tile": 1
+  },
+  "metatiles": 32,
+  "known_metatiles": 0,
+  "npcs": 0,
+  "trainers": 0,
+  "warps": 1,
+  "signs": 29,
+  "triggers": 0,
+  "script_lines": 129,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "SecretBase_BlueCave1",
+  "type": "MAP_TYPE_SECRET_BASE",
+  "w": 11,
+  "h": 9,
+  "primary": "gTileset_SecretBase",
+  "secondary": "gTileset_SecretBaseBlueCave",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {},
+  "metatiles": 18,
+  "known_metatiles": 0,
+  "npcs": 15,
+  "trainers": 0,
+  "warps": 1,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 0,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "SecretBase_BlueCave2",
+  "type": "MAP_TYPE_SECRET_BASE",
+  "w": 15,
+  "h": 7,
+  "primary": "gTileset_SecretBase",
+  "secondary": "gTileset_SecretBaseBlueCave",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {},
+  "metatiles": 17,
+  "known_metatiles": 0,
+  "npcs": 15,
+  "trainers": 0,
+  "warps": 1,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 0,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "SecretBase_BlueCave3",
+  "type": "MAP_TYPE_SECRET_BASE",
+  "w": 10,
+  "h": 17,
+  "primary": "gTileset_SecretBase",
+  "secondary": "gTileset_SecretBaseBlueCave",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {},
+  "metatiles": 19,
+  "known_metatiles": 0,
+  "npcs": 15,
+  "trainers": 0,
+  "warps": 1,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 0,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "SecretBase_BlueCave4",
+  "type": "MAP_TYPE_SECRET_BASE",
+  "w": 9,
+  "h": 17,
+  "primary": "gTileset_SecretBase",
+  "secondary": "gTileset_SecretBaseBlueCave",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {},
+  "metatiles": 21,
+  "known_metatiles": 0,
+  "npcs": 15,
+  "trainers": 0,
+  "warps": 1,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 0,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "SecretBase_BrownCave1",
+  "type": "MAP_TYPE_SECRET_BASE",
+  "w": 11,
+  "h": 9,
+  "primary": "gTileset_SecretBase",
+  "secondary": "gTileset_SecretBaseBrownCave",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {},
+  "metatiles": 17,
+  "known_metatiles": 0,
+  "npcs": 15,
+  "trainers": 0,
+  "warps": 1,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 0,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "SecretBase_BrownCave2",
+  "type": "MAP_TYPE_SECRET_BASE",
+  "w": 14,
+  "h": 9,
+  "primary": "gTileset_SecretBase",
+  "secondary": "gTileset_SecretBaseBrownCave",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {},
+  "metatiles": 17,
+  "known_metatiles": 0,
+  "npcs": 15,
+  "trainers": 0,
+  "warps": 1,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 0,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "SecretBase_BrownCave3",
+  "type": "MAP_TYPE_SECRET_BASE",
+  "w": 15,
+  "h": 11,
+  "primary": "gTileset_SecretBase",
+  "secondary": "gTileset_SecretBaseBrownCave",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {},
+  "metatiles": 18,
+  "known_metatiles": 0,
+  "npcs": 15,
+  "trainers": 0,
+  "warps": 1,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 0,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "SecretBase_BrownCave4",
+  "type": "MAP_TYPE_SECRET_BASE",
+  "w": 14,
+  "h": 12,
+  "primary": "gTileset_SecretBase",
+  "secondary": "gTileset_SecretBaseBrownCave",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {},
+  "metatiles": 20,
+  "known_metatiles": 0,
+  "npcs": 15,
+  "trainers": 0,
+  "warps": 1,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 0,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "SecretBase_RedCave1",
+  "type": "MAP_TYPE_SECRET_BASE",
+  "w": 11,
+  "h": 9,
+  "primary": "gTileset_SecretBase",
+  "secondary": "gTileset_SecretBaseRedCave",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {},
+  "metatiles": 18,
+  "known_metatiles": 0,
+  "npcs": 15,
+  "trainers": 0,
+  "warps": 1,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 0,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "SecretBase_RedCave2",
+  "type": "MAP_TYPE_SECRET_BASE",
+  "w": 7,
+  "h": 16,
+  "primary": "gTileset_SecretBase",
+  "secondary": "gTileset_SecretBaseRedCave",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {},
+  "metatiles": 18,
+  "known_metatiles": 0,
+  "npcs": 15,
+  "trainers": 0,
+  "warps": 1,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 0,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "SecretBase_RedCave3",
+  "type": "MAP_TYPE_SECRET_BASE",
+  "w": 15,
+  "h": 8,
+  "primary": "gTileset_SecretBase",
+  "secondary": "gTileset_SecretBaseRedCave",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {},
+  "metatiles": 19,
+  "known_metatiles": 0,
+  "npcs": 15,
+  "trainers": 0,
+  "warps": 1,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 0,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "SecretBase_RedCave4",
+  "type": "MAP_TYPE_SECRET_BASE",
+  "w": 9,
+  "h": 15,
+  "primary": "gTileset_SecretBase",
+  "secondary": "gTileset_SecretBaseRedCave",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {},
+  "metatiles": 21,
+  "known_metatiles": 0,
+  "npcs": 15,
+  "trainers": 0,
+  "warps": 1,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 0,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "SecretBase_Shrub1",
+  "type": "MAP_TYPE_SECRET_BASE",
+  "w": 11,
+  "h": 9,
+  "primary": "gTileset_SecretBase",
+  "secondary": "gTileset_SecretBaseShrub",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {},
+  "metatiles": 18,
+  "known_metatiles": 0,
+  "npcs": 15,
+  "trainers": 0,
+  "warps": 1,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 0,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "SecretBase_Shrub2",
+  "type": "MAP_TYPE_SECRET_BASE",
+  "w": 15,
+  "h": 7,
+  "primary": "gTileset_SecretBase",
+  "secondary": "gTileset_SecretBaseShrub",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {},
+  "metatiles": 17,
+  "known_metatiles": 0,
+  "npcs": 15,
+  "trainers": 0,
+  "warps": 1,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 0,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "SecretBase_Shrub3",
+  "type": "MAP_TYPE_SECRET_BASE",
+  "w": 13,
+  "h": 11,
+  "primary": "gTileset_SecretBase",
+  "secondary": "gTileset_SecretBaseShrub",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {},
+  "metatiles": 18,
+  "known_metatiles": 0,
+  "npcs": 15,
+  "trainers": 0,
+  "warps": 1,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 0,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "SecretBase_Shrub4",
+  "type": "MAP_TYPE_SECRET_BASE",
+  "w": 14,
+  "h": 11,
+  "primary": "gTileset_SecretBase",
+  "secondary": "gTileset_SecretBaseShrub",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {},
+  "metatiles": 21,
+  "known_metatiles": 0,
+  "npcs": 15,
+  "trainers": 0,
+  "warps": 1,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 0,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "SecretBase_Tree1",
+  "type": "MAP_TYPE_SECRET_BASE",
+  "w": 11,
+  "h": 9,
+  "primary": "gTileset_SecretBase",
+  "secondary": "gTileset_SecretBaseTree",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {},
+  "metatiles": 17,
+  "known_metatiles": 0,
+  "npcs": 15,
+  "trainers": 0,
+  "warps": 1,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 0,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "SecretBase_Tree2",
+  "type": "MAP_TYPE_SECRET_BASE",
+  "w": 7,
+  "h": 16,
+  "primary": "gTileset_SecretBase",
+  "secondary": "gTileset_SecretBaseTree",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {},
+  "metatiles": 16,
+  "known_metatiles": 0,
+  "npcs": 15,
+  "trainers": 0,
+  "warps": 1,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 0,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "SecretBase_Tree3",
+  "type": "MAP_TYPE_SECRET_BASE",
+  "w": 17,
+  "h": 8,
+  "primary": "gTileset_SecretBase",
+  "secondary": "gTileset_SecretBaseTree",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {},
+  "metatiles": 17,
+  "known_metatiles": 0,
+  "npcs": 15,
+  "trainers": 0,
+  "warps": 1,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 0,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "SecretBase_Tree4",
+  "type": "MAP_TYPE_SECRET_BASE",
+  "w": 14,
+  "h": 14,
+  "primary": "gTileset_SecretBase",
+  "secondary": "gTileset_SecretBaseTree",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {},
+  "metatiles": 21,
+  "known_metatiles": 0,
+  "npcs": 15,
+  "trainers": 0,
+  "warps": 1,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 0,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "SecretBase_YellowCave1",
+  "type": "MAP_TYPE_SECRET_BASE",
+  "w": 11,
+  "h": 9,
+  "primary": "gTileset_SecretBase",
+  "secondary": "gTileset_SecretBaseYellowCave",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {},
+  "metatiles": 17,
+  "known_metatiles": 0,
+  "npcs": 15,
+  "trainers": 0,
+  "warps": 1,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 0,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "SecretBase_YellowCave2",
+  "type": "MAP_TYPE_SECRET_BASE",
+  "w": 14,
+  "h": 9,
+  "primary": "gTileset_SecretBase",
+  "secondary": "gTileset_SecretBaseYellowCave",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {},
+  "metatiles": 17,
+  "known_metatiles": 0,
+  "npcs": 15,
+  "trainers": 0,
+  "warps": 1,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 0,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "SecretBase_YellowCave3",
+  "type": "MAP_TYPE_SECRET_BASE",
+  "w": 12,
+  "h": 11,
+  "primary": "gTileset_SecretBase",
+  "secondary": "gTileset_SecretBaseYellowCave",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {},
+  "metatiles": 18,
+  "known_metatiles": 0,
+  "npcs": 15,
+  "trainers": 0,
+  "warps": 1,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 0,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "SecretBase_YellowCave4",
+  "type": "MAP_TYPE_SECRET_BASE",
+  "w": 13,
+  "h": 14,
+  "primary": "gTileset_SecretBase",
+  "secondary": "gTileset_SecretBaseYellowCave",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {},
+  "metatiles": 19,
+  "known_metatiles": 0,
+  "npcs": 15,
+  "trainers": 0,
+  "warps": 1,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 0,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "ShoalCave_HighTideEntranceRoom",
+  "type": "MAP_TYPE_UNDERGROUND",
+  "w": 35,
+  "h": 35,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Cave",
+  "elevations": [
+   0,
+   1,
+   3,
+   4
+  ],
+  "features": {
+   "warp_tile": 2,
+   "water": 467,
+   "ledge": 8
+  },
+  "metatiles": 62,
+  "known_metatiles": 0,
+  "npcs": 0,
+  "trainers": 0,
+  "warps": 0,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 2,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "ShoalCave_HighTideInnerRoom",
+  "type": "MAP_TYPE_UNDERGROUND",
+  "w": 46,
+  "h": 38,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Cave",
+  "elevations": [
+   0,
+   1,
+   3,
+   4,
+   5,
+   15
+  ],
+  "features": {
+   "warp_tile": 4,
+   "water": 589
+  },
+  "metatiles": 52,
+  "known_metatiles": 0,
+  "npcs": 0,
+  "trainers": 0,
+  "warps": 0,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 2,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "ShoalCave_LowTideEntranceRoom",
+  "type": "MAP_TYPE_UNDERGROUND",
+  "w": 35,
+  "h": 35,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Cave",
+  "elevations": [
+   0,
+   3,
+   4
+  ],
+  "features": {
+   "water": 31,
+   "warp_tile": 3,
+   "ledge": 8
+  },
+  "metatiles": 54,
+  "known_metatiles": 0,
+  "npcs": 2,
+  "trainers": 0,
+  "warps": 4,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 100,
+  "connections": [],
+  "wild": true
+ },
+ {
+  "name": "ShoalCave_LowTideIceRoom",
+  "type": "MAP_TYPE_UNDERGROUND",
+  "w": 20,
+  "h": 30,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Cave",
+  "elevations": [
+   0,
+   3,
+   4
+  ],
+  "features": {
+   "ledge": 4,
+   "warp_tile": 1
+  },
+  "metatiles": 27,
+  "known_metatiles": 0,
+  "npcs": 2,
+  "trainers": 0,
+  "warps": 1,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 2,
+  "connections": [],
+  "wild": true
+ },
+ {
+  "name": "ShoalCave_LowTideInnerRoom",
+  "type": "MAP_TYPE_UNDERGROUND",
+  "w": 46,
+  "h": 38,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Cave",
+  "elevations": [
+   0,
+   3,
+   4,
+   5,
+   15
+  ],
+  "features": {
+   "warp_tile": 8
+  },
+  "metatiles": 37,
+  "known_metatiles": 0,
+  "npcs": 1,
+  "trainers": 0,
+  "warps": 8,
+  "signs": 6,
+  "triggers": 0,
+  "script_lines": 142,
+  "connections": [],
+  "wild": true
+ },
+ {
+  "name": "ShoalCave_LowTideLowerRoom",
+  "type": "MAP_TYPE_UNDERGROUND",
+  "w": 31,
+  "h": 14,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Cave",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 4,
+   "ledge": 7
+  },
+  "metatiles": 25,
+  "known_metatiles": 0,
+  "npcs": 2,
+  "trainers": 0,
+  "warps": 4,
+  "signs": 1,
+  "triggers": 0,
+  "script_lines": 49,
+  "connections": [],
+  "wild": true
+ },
+ {
+  "name": "ShoalCave_LowTideStairsRoom",
+  "type": "MAP_TYPE_UNDERGROUND",
+  "w": 21,
+  "h": 15,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Cave",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 19,
+  "known_metatiles": 0,
+  "npcs": 1,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 1,
+  "triggers": 0,
+  "script_lines": 32,
+  "connections": [],
+  "wild": true
+ },
+ {
+  "name": "SingleBattleColosseum",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 14,
+  "h": 9,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_CableClub",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 59,
+  "known_metatiles": 0,
+  "npcs": 1,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 2,
+  "script_lines": 2,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "SkyPillar_1F",
+  "type": "MAP_TYPE_UNDERGROUND",
+  "w": 14,
+  "h": 14,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Pacifidlog",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 3
+  },
+  "metatiles": 24,
+  "known_metatiles": 0,
+  "npcs": 0,
+  "trainers": 0,
+  "warps": 3,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 2,
+  "connections": [],
+  "wild": true
+ },
+ {
+  "name": "SkyPillar_2F",
+  "type": "MAP_TYPE_UNDERGROUND",
+  "w": 14,
+  "h": 14,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Pacifidlog",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 24,
+  "known_metatiles": 0,
+  "npcs": 0,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 10,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "SkyPillar_3F",
+  "type": "MAP_TYPE_UNDERGROUND",
+  "w": 14,
+  "h": 14,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Pacifidlog",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 3
+  },
+  "metatiles": 23,
+  "known_metatiles": 0,
+  "npcs": 0,
+  "trainers": 0,
+  "warps": 3,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 2,
+  "connections": [],
+  "wild": true
+ },
+ {
+  "name": "SkyPillar_4F",
+  "type": "MAP_TYPE_UNDERGROUND",
+  "w": 14,
+  "h": 14,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Pacifidlog",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 3
+  },
+  "metatiles": 25,
+  "known_metatiles": 0,
+  "npcs": 0,
+  "trainers": 0,
+  "warps": 3,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 10,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "SkyPillar_5F",
+  "type": "MAP_TYPE_UNDERGROUND",
+  "w": 14,
+  "h": 14,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Pacifidlog",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 24,
+  "known_metatiles": 0,
+  "npcs": 0,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 2,
+  "connections": [],
+  "wild": true
+ },
+ {
+  "name": "SkyPillar_Entrance",
+  "type": "MAP_TYPE_UNDERGROUND",
+  "w": 18,
+  "h": 18,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Cave",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 18,
+  "known_metatiles": 0,
+  "npcs": 0,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 7,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "SkyPillar_Outside",
+  "type": "MAP_TYPE_ROUTE",
+  "w": 28,
+  "h": 23,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Pacifidlog",
+  "elevations": [
+   0,
+   1,
+   3
+  ],
+  "features": {
+   "water": 207,
+   "sand_or_ash": 112,
+   "warp_tile": 3
+  },
+  "metatiles": 68,
+  "known_metatiles": 0,
+  "npcs": 0,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 2,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "SkyPillar_Top",
+  "type": "MAP_TYPE_ROUTE",
+  "w": 27,
+  "h": 24,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Pacifidlog",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 7,
+   "water": 81
+  },
+  "metatiles": 27,
+  "known_metatiles": 0,
+  "npcs": 1,
+  "trainers": 0,
+  "warps": 1,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 27,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "SlateportCity",
+  "type": "MAP_TYPE_CITY",
+  "w": 40,
+  "h": 60,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Slateport",
+  "elevations": [
+   0,
+   1,
+   3
+  ],
+  "features": {
+   "warp_tile": 10,
+   "water": 381,
+   "sand_or_ash": 76
+  },
+  "metatiles": 332,
+  "known_metatiles": 5,
+  "npcs": 31,
+  "trainers": 0,
+  "warps": 11,
+  "signs": 12,
+  "triggers": 0,
+  "script_lines": 641,
+  "connections": [
+   "MAP_ROUTE110",
+   "MAP_ROUTE109",
+   "MAP_ROUTE134"
+  ],
+  "wild": true
+ },
+ {
+  "name": "SlateportCity_ContestHall",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 21,
+  "h": 18,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_Contest",
+  "elevations": [
+   0,
+   3,
+   4
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 52,
+  "known_metatiles": 0,
+  "npcs": 13,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 2,
+  "triggers": 0,
+  "script_lines": 112,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "SlateportCity_ContestLobby",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 15,
+  "h": 7,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_Contest",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 3
+  },
+  "metatiles": 41,
+  "known_metatiles": 0,
+  "npcs": 8,
+  "trainers": 0,
+  "warps": 3,
+  "signs": 4,
+  "triggers": 0,
+  "script_lines": 134,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "SlateportCity_Harbor",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 24,
+  "h": 15,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Facility",
+  "elevations": [
+   0,
+   1,
+   3
+  ],
+  "features": {
+   "warp_tile": 2,
+   "water": 100
+  },
+  "metatiles": 34,
+  "known_metatiles": 0,
+  "npcs": 8,
+  "trainers": 0,
+  "warps": 4,
+  "signs": 0,
+  "triggers": 4,
+  "script_lines": 369,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "SlateportCity_House1",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 10,
+  "h": 8,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 29,
+  "known_metatiles": 0,
+  "npcs": 1,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 72,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "SlateportCity_House2",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 11,
+  "h": 8,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 37,
+  "known_metatiles": 0,
+  "npcs": 2,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 21,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "SlateportCity_Mart",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 11,
+  "h": 8,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_Shop",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 45,
+  "known_metatiles": 0,
+  "npcs": 3,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 35,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "SlateportCity_OceanicMuseum_1F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 20,
+  "h": 9,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_OceanicMuseum",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 3
+  },
+  "metatiles": 46,
+  "known_metatiles": 0,
+  "npcs": 14,
+  "trainers": 0,
+  "warps": 3,
+  "signs": 13,
+  "triggers": 2,
+  "script_lines": 217,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "SlateportCity_OceanicMuseum_2F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 20,
+  "h": 9,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_OceanicMuseum",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 1
+  },
+  "metatiles": 52,
+  "known_metatiles": 0,
+  "npcs": 7,
+  "trainers": 0,
+  "warps": 1,
+  "signs": 21,
+  "triggers": 0,
+  "script_lines": 272,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "SlateportCity_PokemonCenter_1F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 14,
+  "h": 9,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_PokemonCenter",
+  "elevations": [
+   0,
+   3,
+   4
+  ],
+  "features": {
+   "warp_tile": 3
+  },
+  "metatiles": 82,
+  "known_metatiles": 0,
+  "npcs": 3,
+  "trainers": 0,
+  "warps": 3,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 24,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "SlateportCity_PokemonCenter_2F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 14,
+  "h": 9,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_PokemonCenter",
+  "elevations": [
+   0,
+   3,
+   4
+  ],
+  "features": {
+   "warp_tile": 8,
+   "sand_or_ash": 3
+  },
+  "metatiles": 50,
+  "known_metatiles": 0,
+  "npcs": 3,
+  "trainers": 0,
+  "warps": 5,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 17,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "SlateportCity_PokemonFanClub",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 14,
+  "h": 11,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_PokemonFanClub",
+  "elevations": [
+   0,
+   3,
+   4
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 72,
+  "known_metatiles": 0,
+  "npcs": 8,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 252,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "SlateportCity_SternsShipyard_1F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 21,
+  "h": 15,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Facility",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 3
+  },
+  "metatiles": 94,
+  "known_metatiles": 0,
+  "npcs": 4,
+  "trainers": 0,
+  "warps": 3,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 63,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "SlateportCity_SternsShipyard_2F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 17,
+  "h": 15,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Facility",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 1
+  },
+  "metatiles": 64,
+  "known_metatiles": 0,
+  "npcs": 3,
+  "trainers": 0,
+  "warps": 1,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 10,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "SootopolisCity",
+  "type": "MAP_TYPE_CITY",
+  "w": 60,
+  "h": 60,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Sootopolis",
+  "elevations": [
+   0,
+   1,
+   3
+  ],
+  "features": {
+   "warp_tile": 12,
+   "water": 640
+  },
+  "metatiles": 220,
+  "known_metatiles": 14,
+  "npcs": 11,
+  "trainers": 0,
+  "warps": 12,
+  "signs": 6,
+  "triggers": 1,
+  "script_lines": 458,
+  "connections": [],
+  "wild": true
+ },
+ {
+  "name": "SootopolisCity_Gym_1F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 17,
+  "h": 26,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_SootopolisGym",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 3,
+   "slide_or_ice": 6
+  },
+  "metatiles": 61,
+  "known_metatiles": 0,
+  "npcs": 2,
+  "trainers": 0,
+  "warps": 3,
+  "signs": 2,
+  "triggers": 0,
+  "script_lines": 155,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "SootopolisCity_Gym_B1F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 17,
+  "h": 26,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_SootopolisGym",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "slide_or_ice": 6,
+   "warp_tile": 1
+  },
+  "metatiles": 17,
+  "known_metatiles": 0,
+  "npcs": 8,
+  "trainers": 8,
+  "warps": 1,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 42,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "SootopolisCity_House1",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 8,
+  "h": 7,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 19,
+  "known_metatiles": 0,
+  "npcs": 2,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 28,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "SootopolisCity_House2",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 8,
+  "h": 7,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 24,
+  "known_metatiles": 0,
+  "npcs": 1,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 21,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "SootopolisCity_House3",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 8,
+  "h": 7,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 23,
+  "known_metatiles": 0,
+  "npcs": 2,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 21,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "SootopolisCity_House4",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 8,
+  "h": 7,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 19,
+  "known_metatiles": 0,
+  "npcs": 3,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 20,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "SootopolisCity_House5",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 8,
+  "h": 7,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 24,
+  "known_metatiles": 0,
+  "npcs": 2,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 10,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "SootopolisCity_House6",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 8,
+  "h": 7,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 23,
+  "known_metatiles": 0,
+  "npcs": 1,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 34,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "SootopolisCity_House7",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 8,
+  "h": 7,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 19,
+  "known_metatiles": 0,
+  "npcs": 2,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 10,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "SootopolisCity_House8",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 8,
+  "h": 7,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 22,
+  "known_metatiles": 0,
+  "npcs": 2,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 2,
+  "triggers": 0,
+  "script_lines": 114,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "SootopolisCity_Mart",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 11,
+  "h": 8,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_Shop",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 45,
+  "known_metatiles": 0,
+  "npcs": 3,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 55,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "SootopolisCity_PokemonCenter_1F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 14,
+  "h": 9,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_PokemonCenter",
+  "elevations": [
+   0,
+   3,
+   4
+  ],
+  "features": {
+   "warp_tile": 3
+  },
+  "metatiles": 82,
+  "known_metatiles": 0,
+  "npcs": 3,
+  "trainers": 0,
+  "warps": 3,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 43,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "SootopolisCity_PokemonCenter_2F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 14,
+  "h": 9,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_PokemonCenter",
+  "elevations": [
+   0,
+   3,
+   4
+  ],
+  "features": {
+   "warp_tile": 8,
+   "sand_or_ash": 3
+  },
+  "metatiles": 50,
+  "known_metatiles": 0,
+  "npcs": 3,
+  "trainers": 0,
+  "warps": 5,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 17,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "SouthernIsland_Exterior",
+  "type": "MAP_TYPE_ROUTE",
+  "w": 33,
+  "h": 30,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Rustboro",
+  "elevations": [
+   0,
+   1,
+   3
+  ],
+  "features": {
+   "water": 359,
+   "warp_tile": 2
+  },
+  "metatiles": 50,
+  "known_metatiles": 2,
+  "npcs": 2,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 1,
+  "triggers": 0,
+  "script_lines": 54,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "SouthernIsland_Interior",
+  "type": "MAP_TYPE_ROUTE",
+  "w": 27,
+  "h": 24,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Rustboro",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2,
+   "water": 39
+  },
+  "metatiles": 31,
+  "known_metatiles": 18,
+  "npcs": 2,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 1,
+  "triggers": 0,
+  "script_lines": 110,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "TradeCenter",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 12,
+  "h": 9,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_CableClub",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 75,
+  "known_metatiles": 0,
+  "npcs": 1,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 2,
+  "script_lines": 2,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "Underwater1",
+  "type": "MAP_TYPE_UNDERWATER",
+  "w": 80,
+  "h": 80,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Underwater",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "water": 308
+  },
+  "metatiles": 31,
+  "known_metatiles": 0,
+  "npcs": 0,
+  "trainers": 0,
+  "warps": 0,
+  "signs": 7,
+  "triggers": 0,
+  "script_lines": 2,
+  "connections": [
+   "MAP_UNDERWATER2",
+   "MAP_ROUTE124"
+  ],
+  "wild": true
+ },
+ {
+  "name": "Underwater2",
+  "type": "MAP_TYPE_UNDERWATER",
+  "w": 80,
+  "h": 80,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Underwater",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "water": 70,
+   "warp_tile": 1
+  },
+  "metatiles": 51,
+  "known_metatiles": 0,
+  "npcs": 0,
+  "trainers": 0,
+  "warps": 1,
+  "signs": 8,
+  "triggers": 0,
+  "script_lines": 2,
+  "connections": [
+   "MAP_UNDERWATER1",
+   "MAP_UNDERWATER3",
+   "MAP_ROUTE126"
+  ],
+  "wild": true
+ },
+ {
+  "name": "Underwater3",
+  "type": "MAP_TYPE_UNDERWATER",
+  "w": 80,
+  "h": 80,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Underwater",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "water": 58
+  },
+  "metatiles": 87,
+  "known_metatiles": 0,
+  "npcs": 0,
+  "trainers": 0,
+  "warps": 0,
+  "signs": 4,
+  "triggers": 0,
+  "script_lines": 2,
+  "connections": [
+   "MAP_ROUTE127",
+   "MAP_UNDERWATER2",
+   "MAP_UNDERWATER4"
+  ],
+  "wild": false
+ },
+ {
+  "name": "Underwater4",
+  "type": "MAP_TYPE_UNDERWATER",
+  "w": 120,
+  "h": 40,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Underwater",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 1
+  },
+  "metatiles": 66,
+  "known_metatiles": 0,
+  "npcs": 0,
+  "trainers": 0,
+  "warps": 1,
+  "signs": 2,
+  "triggers": 0,
+  "script_lines": 2,
+  "connections": [
+   "MAP_UNDERWATER3",
+   "MAP_ROUTE128"
+  ],
+  "wild": false
+ },
+ {
+  "name": "Underwater_Route134",
+  "type": "MAP_TYPE_UNDERWATER",
+  "w": 18,
+  "h": 10,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Underwater",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 1,
+   "water": 21
+  },
+  "metatiles": 20,
+  "known_metatiles": 0,
+  "npcs": 0,
+  "trainers": 0,
+  "warps": 1,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 7,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "Underwater_SeafloorCavern",
+  "type": "MAP_TYPE_UNDERWATER",
+  "w": 14,
+  "h": 9,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Underwater",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 1,
+   "water": 22
+  },
+  "metatiles": 32,
+  "known_metatiles": 0,
+  "npcs": 4,
+  "trainers": 0,
+  "warps": 1,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 43,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "Underwater_SealedChamber",
+  "type": "MAP_TYPE_UNDERWATER",
+  "w": 22,
+  "h": 48,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Underwater",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 1
+  },
+  "metatiles": 54,
+  "known_metatiles": 0,
+  "npcs": 0,
+  "trainers": 0,
+  "warps": 1,
+  "signs": 1,
+  "triggers": 0,
+  "script_lines": 27,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "Underwater_SootopolisCity",
+  "type": "MAP_TYPE_UNDERWATER",
+  "w": 20,
+  "h": 10,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Underwater",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 1,
+   "water": 32
+  },
+  "metatiles": 20,
+  "known_metatiles": 0,
+  "npcs": 0,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 7,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "UnknownMap_25_29",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 1,
+  "h": 1,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_Contest",
+  "elevations": [
+   0
+  ],
+  "features": {},
+  "metatiles": 1,
+  "known_metatiles": 0,
+  "npcs": 0,
+  "trainers": 0,
+  "warps": 0,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 1,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "UnknownMap_25_30",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 1,
+  "h": 1,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_Contest",
+  "elevations": [
+   0
+  ],
+  "features": {},
+  "metatiles": 1,
+  "known_metatiles": 0,
+  "npcs": 0,
+  "trainers": 0,
+  "warps": 0,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 1,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "UnknownMap_25_31",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 1,
+  "h": 1,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_Contest",
+  "elevations": [
+   0
+  ],
+  "features": {},
+  "metatiles": 1,
+  "known_metatiles": 0,
+  "npcs": 0,
+  "trainers": 0,
+  "warps": 0,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 1,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "UnknownMap_25_32",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 1,
+  "h": 1,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_Contest",
+  "elevations": [
+   0
+  ],
+  "features": {},
+  "metatiles": 1,
+  "known_metatiles": 0,
+  "npcs": 0,
+  "trainers": 0,
+  "warps": 0,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 1,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "UnknownMap_25_33",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 1,
+  "h": 1,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_Contest",
+  "elevations": [
+   0
+  ],
+  "features": {},
+  "metatiles": 1,
+  "known_metatiles": 0,
+  "npcs": 0,
+  "trainers": 0,
+  "warps": 0,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 1,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "UnknownMap_25_34",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 1,
+  "h": 1,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_Contest",
+  "elevations": [
+   0
+  ],
+  "features": {},
+  "metatiles": 1,
+  "known_metatiles": 0,
+  "npcs": 0,
+  "trainers": 0,
+  "warps": 0,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 1,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "VerdanturfTown",
+  "type": "MAP_TYPE_TOWN",
+  "w": 20,
+  "h": 20,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Mauville",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "sand_or_ash": 126,
+   "warp_tile": 7
+  },
+  "metatiles": 95,
+  "known_metatiles": 2,
+  "npcs": 4,
+  "trainers": 0,
+  "warps": 7,
+  "signs": 8,
+  "triggers": 0,
+  "script_lines": 63,
+  "connections": [
+   "MAP_ROUTE116",
+   "MAP_ROUTE117"
+  ],
+  "wild": false
+ },
+ {
+  "name": "VerdanturfTown_ContestHall",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 21,
+  "h": 18,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_Contest",
+  "elevations": [
+   0,
+   3,
+   4
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 52,
+  "known_metatiles": 0,
+  "npcs": 3,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 2,
+  "triggers": 0,
+  "script_lines": 20,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "VerdanturfTown_ContestLobby",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 15,
+  "h": 7,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_Contest",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 3
+  },
+  "metatiles": 41,
+  "known_metatiles": 0,
+  "npcs": 6,
+  "trainers": 0,
+  "warps": 3,
+  "signs": 4,
+  "triggers": 0,
+  "script_lines": 128,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "VerdanturfTown_FriendshipRatersHouse",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 11,
+  "h": 8,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 37,
+  "known_metatiles": 0,
+  "npcs": 2,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 63,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "VerdanturfTown_House",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 10,
+  "h": 9,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 39,
+  "known_metatiles": 0,
+  "npcs": 2,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 10,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "VerdanturfTown_Mart",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 11,
+  "h": 8,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_Shop",
+  "elevations": [
+   0,
+   3
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 45,
+  "known_metatiles": 0,
+  "npcs": 4,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 41,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "VerdanturfTown_PokemonCenter_1F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 14,
+  "h": 9,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_PokemonCenter",
+  "elevations": [
+   0,
+   3,
+   4
+  ],
+  "features": {
+   "warp_tile": 3
+  },
+  "metatiles": 82,
+  "known_metatiles": 0,
+  "npcs": 3,
+  "trainers": 0,
+  "warps": 3,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 24,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "VerdanturfTown_PokemonCenter_2F",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 14,
+  "h": 9,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_PokemonCenter",
+  "elevations": [
+   0,
+   3,
+   4
+  ],
+  "features": {
+   "warp_tile": 8,
+   "sand_or_ash": 3
+  },
+  "metatiles": 50,
+  "known_metatiles": 0,
+  "npcs": 3,
+  "trainers": 0,
+  "warps": 5,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 19,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "VerdanturfTown_WandasHouse",
+  "type": "MAP_TYPE_INDOOR",
+  "w": 17,
+  "h": 8,
+  "primary": "gTileset_Building",
+  "secondary": "gTileset_GenericBuilding",
+  "elevations": [
+   0,
+   3,
+   4
+  ],
+  "features": {
+   "warp_tile": 2
+  },
+  "metatiles": 64,
+  "known_metatiles": 0,
+  "npcs": 5,
+  "trainers": 0,
+  "warps": 2,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 83,
+  "connections": [],
+  "wild": false
+ },
+ {
+  "name": "VictoryRoad_1F",
+  "type": "MAP_TYPE_UNDERGROUND",
+  "w": 46,
+  "h": 45,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Cave",
+  "elevations": [
+   0,
+   3,
+   4,
+   15
+  ],
+  "features": {
+   "warp_tile": 5,
+   "ledge": 15
+  },
+  "metatiles": 38,
+  "known_metatiles": 0,
+  "npcs": 7,
+  "trainers": 3,
+  "warps": 5,
+  "signs": 1,
+  "triggers": 3,
+  "script_lines": 119,
+  "connections": [],
+  "wild": true
+ },
+ {
+  "name": "VictoryRoad_B1F",
+  "type": "MAP_TYPE_UNDERGROUND",
+  "w": 46,
+  "h": 31,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Cave",
+  "elevations": [
+   0,
+   3,
+   4,
+   15
+  ],
+  "features": {
+   "warp_tile": 7,
+   "ledge": 13
+  },
+  "metatiles": 30,
+  "known_metatiles": 0,
+  "npcs": 19,
+  "trainers": 3,
+  "warps": 7,
+  "signs": 0,
+  "triggers": 0,
+  "script_lines": 17,
+  "connections": [],
+  "wild": true
+ },
+ {
+  "name": "VictoryRoad_B2F",
+  "type": "MAP_TYPE_UNDERGROUND",
+  "w": 46,
+  "h": 31,
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Cave",
+  "elevations": [
+   0,
+   1,
+   3,
+   4,
+   15
+  ],
+  "features": {
+   "water": 256,
+   "warp_tile": 4,
+   "ledge": 8
+  },
+  "metatiles": 58,
+  "known_metatiles": 0,
+  "npcs": 5,
+  "trainers": 4,
+  "warps": 4,
+  "signs": 2,
+  "triggers": 0,
+  "script_lines": 22,
+  "connections": [],
+  "wild": true
+ }
+]

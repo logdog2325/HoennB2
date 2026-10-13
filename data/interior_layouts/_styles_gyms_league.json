@@ -1,0 +1,648 @@
+{
+ "_doc": "gyms_league agent (b2tools/gyms_league_rooms.py writes this file): texture styles of the Gyms and the Pokemon League rooms (Black 2 map texture sets), and block styles (raised walls, rails, pillars) used by recipes' \"blocks\" via \"use\".",
+ "gl_league": {
+  "_doc": "Ever Grande corridors (Elite Four set 334, Marshal's tower): grey frame floor, riveted metal wall",
+  "floor": {
+   "tex": "gra_yuka01",
+   "src": 334,
+   "size": 16
+  },
+  "wall": {
+   "tex": "gra_ami04",
+   "src": 334,
+   "u_size": 32
+  },
+  "genkan": {
+   "tex": "gra_iriguti",
+   "src": 334,
+   "stretch": true
+  },
+  "black": {
+   "tex": "black",
+   "src": 285
+  }
+ },
+ "gl_sidney": {
+  "_doc": "Sidney (dark): Grimsley's room (set 333): red-brown boards, red curtain wall",
+  "floor": {
+   "tex": "c09_04_16",
+   "src": 333,
+   "size": 32
+  },
+  "wall": {
+   "tex": "c09_04_3",
+   "src": 333,
+   "u_size": 32
+  },
+  "genkan": {
+   "tex": "aku_iriguti",
+   "src": 333,
+   "stretch": true
+  },
+  "black": {
+   "tex": "black",
+   "src": 285
+  }
+ },
+ "gl_phoebe": {
+  "_doc": "Phoebe (ghost): Shauntal's library (set 315): purple diamond floor, bookshelf wall",
+  "floor": {
+   "tex": "gos_yuka01",
+   "src": 315,
+   "size": 16
+  },
+  "wall": {
+   "tex": "gos_book01",
+   "src": 315,
+   "u_size": 64
+  },
+  "genkan": {
+   "tex": "gos_iriguti",
+   "src": 315,
+   "stretch": true
+  },
+  "black": {
+   "tex": "black",
+   "src": 285
+  }
+ },
+ "gl_glacia": {
+  "_doc": "Glacia (ice): Cold Storage ice (set 292): ice floor, ice wall",
+  "floor": {
+   "tex": "d5ice_yuka",
+   "src": 292,
+   "size": 32
+  },
+  "wall": {
+   "tex": "d5_kabe",
+   "src": 292,
+   "u_size": 64
+  },
+  "genkan": {
+   "tex": "d5_dyuka01",
+   "src": 292,
+   "stretch": true
+  },
+  "black": {
+   "tex": "black",
+   "src": 285
+  }
+ },
+ "gl_drake": {
+  "_doc": "Drake (dragon): Drayden's Opelucid Gym stone (set 312): grey flagstones, dark blue stone wall",
+  "floor": {
+   "tex": "sw_gym08_01",
+   "src": 312,
+   "size": 64
+  },
+  "wall": {
+   "tex": "sw_gym08_03",
+   "src": 312,
+   "u_size": 64
+  },
+  "genkan": {
+   "tex": "sw_gym08_02",
+   "src": 312,
+   "stretch": true
+  },
+  "black": {
+   "tex": "black",
+   "src": 285
+  }
+ },
+ "gl_champion": {
+  "_doc": "Champion: Iris's room (set 319): beige marble floor, gold frieze wall",
+  "floor": {
+   "tex": "in38_tile03",
+   "src": 319,
+   "size": 64
+  },
+  "wall": {
+   "tex": "in38_sode01",
+   "src": 319,
+   "u_size": 32
+  },
+  "genkan": {
+   "tex": "in38_tile05",
+   "src": 319,
+   "stretch": true
+  },
+  "black": {
+   "tex": "black",
+   "src": 285
+  }
+ },
+ "gl_rustboro": {
+  "_doc": "Rustboro (rock): tan cobblestones (exterior set 258), grey rock wall (Driftveil Gym 308)",
+  "floor": {
+   "tex": "gake_futa",
+   "src": 258,
+   "size": 64
+  },
+  "wall": {
+   "tex": "in27gake2",
+   "src": 308,
+   "u_size": 64
+  },
+  "genkan": {
+   "tex": "michi01b",
+   "src": 258,
+   "stretch": true
+  },
+  "black": {
+   "tex": "black",
+   "src": 285
+  }
+ },
+ "gl_dewford": {
+  "_doc": "Dewford (fighting, dark): Marshal's grey frame floor (set 334)",
+  "floor": {
+   "tex": "gra_yuka01",
+   "src": 334,
+   "size": 16
+  },
+  "wall": {
+   "tex": "gra_ami04",
+   "src": 334,
+   "u_size": 32
+  },
+  "genkan": {
+   "tex": "gra_iriguti",
+   "src": 334,
+   "stretch": true
+  },
+  "black": {
+   "tex": "black",
+   "src": 285
+  }
+ },
+ "gl_mauville": {
+  "_doc": "Mauville (electric): Elesa's Nimbasa Gym (set 304): white stage floor, striped wall",
+  "floor": {
+   "tex": "c4g_stage1",
+   "src": 304,
+   "size": 16
+  },
+  "wall": {
+   "tex": "c4g_kabe02",
+   "src": 304,
+   "u_size": 16
+  },
+  "genkan": {
+   "tex": "c4g_mat",
+   "src": 304,
+   "stretch": true
+  },
+  "black": {
+   "tex": "black",
+   "src": 285
+  }
+ },
+ "gl_lavaridge": {
+  "_doc": "Lavaridge (fire): sand floor (258), Reversal Mountain lava rock (set 388)",
+  "floor": {
+   "tex": "out65_zimen1",
+   "src": 258,
+   "size": 64
+  },
+  "wall": {
+   "tex": "in81_gake_g",
+   "src": 388,
+   "u_size": 32
+  },
+  "genkan": {
+   "tex": "michi01b",
+   "src": 258,
+   "stretch": true
+  },
+  "black": {
+   "tex": "black",
+   "src": 285
+  }
+ },
+ "gl_lavaridge_b1": {
+  "_doc": "Lavaridge B1F: darker sand cave",
+  "floor": {
+   "tex": "in81_yuka01",
+   "src": 388,
+   "size": 64
+  },
+  "wall": {
+   "tex": "in81_gake_g",
+   "src": 388,
+   "u_size": 32
+  },
+  "genkan": {
+   "tex": "michi01b",
+   "src": 258,
+   "stretch": true
+  },
+  "black": {
+   "tex": "black",
+   "src": 285
+  }
+ },
+ "gl_petalburg": {
+  "_doc": "Petalburg (normal): Aspertia Gym's school (set 286): light wood floor, cream panels",
+  "floor": {
+   "tex": "in05_yuka2",
+   "src": 286,
+   "size": 16
+  },
+  "wall": {
+   "tex": "in05_sch_ka3",
+   "src": 286,
+   "u_size": 16
+  },
+  "genkan": {
+   "tex": "in05_genkan",
+   "src": 286,
+   "stretch": true
+  },
+  "black": {
+   "tex": "black",
+   "src": 285
+  }
+ },
+ "gl_fortree": {
+  "_doc": "Fortree (flying): Skyla's turf (Mistralton Gym 309)",
+  "floor": {
+   "tex": "gym06_asiba2",
+   "src": 309,
+   "size": 16
+  },
+  "wall": {
+   "tex": "gym06_kabe2",
+   "src": 309,
+   "u_size": 32
+  },
+  "genkan": {
+   "tex": "gym06_iriguti",
+   "src": 309,
+   "stretch": true
+  },
+  "black": {
+   "tex": "black",
+   "src": 285
+  }
+ },
+ "gl_mossdeep": {
+  "_doc": "Mossdeep (psychic): Caitlin's starry floor and white stone (set 335)",
+  "floor": {
+   "tex": "esp_hoshi01",
+   "src": 335,
+   "size": 128
+  },
+  "wall": {
+   "tex": "esp_kabe01",
+   "src": 335,
+   "u_size": 32
+  },
+  "genkan": {
+   "tex": "esp_colum1",
+   "src": 335,
+   "stretch": true
+  },
+  "black": {
+   "tex": "black",
+   "src": 285
+  }
+ },
+ "gl_sootopolis": {
+  "_doc": "Sootopolis 1F: beige entrance tiles (Humilau Gym 389, as Sapphire's), Cold Storage ice wall (292)",
+  "floor": {
+   "tex": "in82_zimen5",
+   "src": 389,
+   "size": 16
+  },
+  "wall": {
+   "tex": "d5_kabe",
+   "src": 292,
+   "u_size": 64
+  },
+  "genkan": {
+   "tex": "d5_yukamat",
+   "src": 292,
+   "stretch": true
+  },
+  "black": {
+   "tex": "black",
+   "src": 285
+  }
+ },
+ "gl_sootopolis_b1": {
+  "_doc": "Sootopolis B1F: Icirrus ice cave (set 311): snow floor, ice cliff wall",
+  "floor": {
+   "tex": "in30_yuka02",
+   "src": 311,
+   "size": 64
+  },
+  "wall": {
+   "tex": "ice_gake01",
+   "src": 311,
+   "u_size": 32
+  },
+  "genkan": {
+   "tex": "in30_yuka03",
+   "src": 311,
+   "stretch": true
+  },
+  "black": {
+   "tex": "black",
+   "src": 285
+  }
+ },
+ "gl_rail": {
+  "_doc": "League stair rail (Sapphire's orange rails): Marshal's blue/orange handrail",
+  "h": 10,
+  "top": {
+   "tex": "gra_tesuri01",
+   "src": 334,
+   "size": 8
+  },
+  "side": {
+   "tex": "gra_tesuri01",
+   "src": 334,
+   "u_size": 8,
+   "v_size": 8
+  }
+ },
+ "gl_rock": {
+  "_doc": "Rustboro rock walls: brown cliff faces, dirt top (16 high: at 18 the top edge still cut the hat of a trainer standing south of one, seen with the player a few rows north of them, map_gfx 2026-10-11; taller ones crossed the head, indoor_check)",
+  "h": 16,
+  "top": {
+   "tex": "in27yuka001",
+   "src": 308,
+   "size": 64
+  },
+  "side": {
+   "tex": "d0gake_001",
+   "src": 308,
+   "u_size": 16,
+   "v_size": 16
+  }
+ },
+ "gl_rock_low": {
+  "_doc": "Roxanne's dais edge",
+  "h": 8,
+  "top": {
+   "tex": "michi01b",
+   "src": 258,
+   "size": 16
+  },
+  "side": {
+   "tex": "gake1_1",
+   "src": 258,
+   "u_size": 16,
+   "v": [
+    0,
+    1
+   ]
+  }
+ },
+ "gl_dewford_wall": {
+  "_doc": "Dewford maze walls: light frame tops, purple-grey faces",
+  "h": 16,
+  "top": {
+   "tex": "gra_stage04",
+   "src": 334,
+   "size": 16
+  },
+  "side": {
+   "tex": "gra_chu02",
+   "src": 334,
+   "u_size": 32,
+   "v_size": 32
+  }
+ },
+ "gl_mauville_wall": {
+  "_doc": "Mauville wall blocks (18 high, indoor_check)",
+  "h": 18,
+  "top": {
+   "tex": "c4g_yuka02",
+   "src": 304,
+   "size": 16
+  },
+  "side": {
+   "tex": "c4g_kabe02",
+   "src": 304,
+   "u_size": 16
+  }
+ },
+ "gl_mauville_pole": {
+  "_doc": "Mauville electric poles (Sapphire's white coil posts; 20 high, indoor_check)",
+  "h": 20,
+  "top": {
+   "tex": "c4g_stage1",
+   "src": 304,
+   "size": 16
+  },
+  "side": {
+   "tex": "c4g_stage1b",
+   "src": 304,
+   "u_size": 16,
+   "v_size": 16
+  }
+ },
+ "gl_lava_band": {
+  "_doc": "Lavaridge band walls (Sapphire's red zigzag walls)",
+  "h": 20,
+  "top": {
+   "tex": "in81_yuka02",
+   "src": 388,
+   "size": 16
+  },
+  "side": {
+   "tex": "in81_gake_g",
+   "src": 388,
+   "u_size": 32
+  }
+ },
+ "gl_lava_pillar": {
+  "_doc": "Lavaridge yellow pillars",
+  "h": 24,
+  "top": {
+   "tex": "in81_magu02",
+   "src": 388,
+   "size": 16
+  },
+  "side": {
+   "tex": "in81_magu03",
+   "src": 388,
+   "u_size": 16
+  }
+ },
+ "gl_lava_ledge": {
+  "_doc": "Lavaridge B1F ledges",
+  "h": 6,
+  "top": {
+   "tex": "in81_yuka02",
+   "src": 388,
+   "size": 16
+  },
+  "side": {
+   "tex": "in81_gake_g",
+   "src": 388,
+   "u_size": 32,
+   "v": [
+    0,
+    0.3
+   ]
+  }
+ },
+ "gl_petalburg_wall": {
+  "_doc": "Petalburg room back wall",
+  "h": 40,
+  "top": {
+   "tex": "black",
+   "src": 285
+  },
+  "side": {
+   "tex": "in05_sch_ka3",
+   "src": 286,
+   "u_size": 16
+  }
+ },
+ "gl_fortree_post": {
+  "_doc": "Fortree wooden posts (Sapphire's yellow log pillars): Humilau Gym planks (389); 16 high (18 cut the heads of Kylee and Terrell south of them, map_gfx 2026-10-11)",
+  "h": 16,
+  "top": {
+   "tex": "in82_zimen2",
+   "src": 389,
+   "size": 32
+  },
+  "side": {
+   "tex": "in82_zimen2",
+   "src": 389,
+   "u_size": 32,
+   "v_size": 32
+  }
+ },
+ "gl_fortree_ledge": {
+  "_doc": "Fortree ledges",
+  "h": 6,
+  "top": {
+   "tex": "gym06_asiba2",
+   "src": 309,
+   "size": 16
+  },
+  "side": {
+   "tex": "gake1_1",
+   "src": 258,
+   "u_size": 16,
+   "v": [
+    0,
+    1
+   ]
+  }
+ },
+ "gl_mossdeep_wall": {
+  "_doc": "Mossdeep thin white walls",
+  "h": 14,
+  "top": {
+   "tex": "esp_colum1",
+   "src": 335,
+   "size": 64
+  },
+  "side": {
+   "tex": "esp_kabe01",
+   "src": 335,
+   "u_size": 32,
+   "v_size": 64
+  }
+ },
+ "gl_e4_pillar_sidney": {
+  "h": 44,
+  "top": {
+   "tex": "black",
+   "src": 285
+  },
+  "side": {
+   "tex": "aku_kabe01",
+   "src": 333,
+   "u_size": 32
+  }
+ },
+ "gl_e4_pillar_phoebe": {
+  "h": 44,
+  "top": {
+   "tex": "black",
+   "src": 285
+  },
+  "side": {
+   "tex": "gos_tana01",
+   "src": 315,
+   "u_size": 32
+  }
+ },
+ "gl_e4_pillar_glacia": {
+  "h": 44,
+  "top": {
+   "tex": "black",
+   "src": 285
+  },
+  "side": {
+   "tex": "d5ice_yuka2",
+   "src": 292,
+   "u_size": 32
+  }
+ },
+ "gl_e4_pillar_drake": {
+  "h": 44,
+  "top": {
+   "tex": "black",
+   "src": 285
+  },
+  "side": {
+   "tex": "sw_gym08_04",
+   "src": 312,
+   "u_size": 16
+  }
+ },
+ "gl_fountain": {
+  "_doc": "Sootopolis fountain basins: Humilau Gym water",
+  "h": 8,
+  "top": {
+   "tex": "in82_mizu1",
+   "src": 389,
+   "size": 32
+  },
+  "side": {
+   "tex": "d5_kabe",
+   "src": 292,
+   "u_size": 64,
+   "v": [
+    0,
+    0.2
+   ]
+  }
+ },
+ "gl_ice_cliff": {
+  "_doc": "Sootopolis B1F rock: Icirrus ice cliffs (16 high: 18 cut Andrea's and Connie's hats, map_gfx 2026-10-11)",
+  "h": 16,
+  "top": {
+   "tex": "in30_yuka03",
+   "src": 311,
+   "size": 16
+  },
+  "side": {
+   "tex": "ice_gake01",
+   "src": 311,
+   "u_size": 32
+  }
+ },
+ "gl_ice_wall": {
+  "_doc": "Sootopolis inner walls (16 high: 18 cut the player's hat south of them, map_gfx 2026-10-11)",
+  "h": 16,
+  "top": {
+   "tex": "d5_dyuka01",
+   "src": 292,
+   "size": 32
+  },
+  "side": {
+   "tex": "d5_kabe",
+   "src": 292,
+   "u_size": 64
+  }
+ }
+}

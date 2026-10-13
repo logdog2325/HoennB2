@@ -1,0 +1,6 @@
+{
+ "map": "emerald/CaveOfOrigin_B4F",
+ "_doc": "emerald_caves 2026-10-12 (work/agents/emerald_caves/tools/variants.py): Emerald's CaveOfOrigin_B1F (pokeemerald) as Emerald's world reads it, installed for CaveOfOrigin_B4F in an Emerald build (data/versions.json room_variants.emerald). Emerald's B1F = R/S B4F redrawn (154 blocks: no Kyogre pool, Wallace's room); its ladder leads up to 1F: own zone json. Sapphire recipe: CaveOfOrigin_B4F.json.",
+ "alt_of": "CaveOfOrigin_B4F",
+ "emerald_zone": true
+}

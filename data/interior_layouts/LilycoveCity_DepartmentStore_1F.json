@@ -1,0 +1,29 @@
+{
+ "_doc": "Lilycove Department Store floors (18x8): back wall rows 0-1 with the elevator (2,1) and the stairs (13,1) / (16,1) as Sapphire's warps say (up = stair_u01 in a wall recess, down = stair_d01 in a floor opening); counters, goods shelf blocks, coolers, windows, planters and plants at Sapphire's tiles (per floor below). Orange floor (Black 2 Center tiles, as the Herb Shop). Service counter (6,2), (7-10,3), (11,2) with two registers; planters (0-1, 5) and (0-1, 7); plants (14,7), (16,7), (17,7); red stools on walkable (16,3) and (16,5) = floor cushions (Black 2 convention); exit mat (8-9, 7). Sapphire's floor-guide sign is at (0,8), outside the map: kept there.",
+ "map": "LilycoveCity_DepartmentStore_1F",
+ "style": "shop_herb",
+ "floor": [[0, 1, 17, 7]],
+ "floor_extra": [[15.5, -0.5, 17.5, 1]],
+ "mats": [
+  {"tex": "in45_mat01", "src": 326, "rect": [8, 7, 9, 7], "border": 0.25, "border_units": 4, "y": 0, "_what": "red entrance mat (Shopping Mall Nine)"}
+ ],
+ "furniture": [
+  {"m": "elevator01", "at": [2.875, 0.6875], "_what": "elevator door (2,1) (Black 2 places its origin one tile north of the first walkable row, as chunks 836/1011)"},
+  {"m": "stair_u01", "stair": [16, 1], "dir": "N", "_what": "stairs up (16,1)"},
+  {"m": "shelf03", "at": [6.75, 2.4475], "rot": 90, "dx": 3.0, "dz": -3.0, "_what": "counter end (6,2)"},
+  {"m": "shelf03", "at": [11.25, 2.4475], "rot": 90, "dx": 3.0, "dz": -3.0, "_what": "counter end (11,2)"},
+  {"m": "cashier01", "at": [6.5, 2.35], "rot": 90, "dx": -0.174, "y": 18.0, "_what": "register (6,2), keys toward the clerks"},
+  {"m": "cashier01", "at": [11.5, 2.35], "rot": 270, "dx": 0.174, "y": 18.0, "_what": "register (11,2), keys toward the clerks"},
+  {"m": "shelf03", "at": [8.25, 3.5], "dx": 3.0, "dz": 3.0, "_what": "counter run (7-10, 3) 1/2"},
+  {"m": "shelf03", "at": [9.75, 3.5], "dx": 3.0, "dz": 3.0, "_what": "counter run (7-10, 3) 2/2"},
+  {"m": "plant01", "at": [0.5, 5.45], "dz": 0.945, "_what": "planter (0,5)"},
+  {"m": "plant01", "at": [0.5, 7.45], "dz": 0.945, "_what": "planter (0,7)"},
+  {"m": "plant01", "at": [1.5, 5.45], "dz": 0.945, "_what": "planter (1,5)"},
+  {"m": "plant01", "at": [1.5, 7.45], "dz": 0.945, "_what": "planter (1,7)"},
+  {"m": "plant01", "at": [14.5, 7.45], "dz": 0.945, "_what": "potted plant (14,7)"},
+  {"m": "plant01", "at": [16.5, 7.45], "dz": 0.945, "_what": "potted plant (16,7)"},
+  {"m": "plant01", "at": [17.5, 7.45], "dz": 0.945, "_what": "potted plant (17,7)"},
+  {"m": "chushion01", "at": [16.5, 3.5], "_what": "red stool (3 walkable: a Black 2 floor cushion)"},
+  {"m": "chushion01", "at": [16.5, 5.5], "_what": "red stool (5 walkable: a Black 2 floor cushion)"}
+ ]
+}

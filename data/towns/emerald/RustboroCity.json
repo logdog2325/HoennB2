@@ -1,0 +1,7 @@
+{
+ "_doc": "Emerald's overlay of data/towns/RustboroCity.json (emerald_world 2026-10-12; b2tools/world.py load, deep-merged, then 'prop_moves'): Emerald moved the two lamps in front of Devon Corp one row south (its lamp tiles 0x212/0x213 at (8,17)-(8,18) and (15,17)-(15,18); Sapphire's at rows 16-17). converter/emerald_settings_check.py found them.",
+ "prop_moves": [
+  {"res": 333, "at": [8.5, 17.5], "by": [0, 1]},
+  {"res": 333, "at": [15.5, 17.5], "by": [0, 1]}
+ ]
+}

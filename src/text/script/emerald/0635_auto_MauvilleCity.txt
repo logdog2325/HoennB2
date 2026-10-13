@@ -1,0 +1,31 @@
+Hi, do you check out TV at all?{be01}\nThey’ve added a bunch of cool new\nshows recently.{be01}\nTV is so cool. I’ve seen my friends on\nTV just out of the blue.{be01}\nAnd, sometimes, they even put you on TV\nwithout telling you.{be01}\nI wish I would be on TV sometime.{be01}\nThat’s why I think you should check\nout TVs whenever you can.
+Hi, have you been checking out TVs?
+Uncle: It’s because of Pokémon that\nthis boy’s got more pep, I suppose...{be00}\nBut he’s become a bit too peppy...
+Uncle: {0100:0}, was it?\nOn Wally’s behalf, can I ask you to{be00}\nbattle with him just this once?{be01}\nI don’t think he’s going to listen to\nany reason the way he is now.
+Wally: Aww, Uncle, please?{be01}\nI want to challenge this Gym and see\nhow much better I’ve become.{be01}\nPlease? May I, please?
+Uncle: Now hold on, Wally.{be01}\nSince you started living with Pokémon,\nyou have grown quite a lot stronger.{be01}\nBut don’t you think you’re pushing it\nto suddenly challenge a Gym?
+Wally: I’m not pushing it.{be01}\nIf I combine forces with Ralts,\nwe can beat anyone!
+Wally: Oh! Hi, {0100:0}!{be01}\nI’ve gotten a lot stronger since\nwe met.{be01}\n{0100:0}, I want you and my Uncle to\nunderstand that.{be01}\n{0100:0}, please, will you have\na battle with me?
+Wally: {0100:0}, please!\nBattle with me, please.
+Wally: Oh... If you won’t battle me,\n{0100:0}, my Uncle won’t know that I’ve{be00}\nbecome really strong.
+Wally: {0100:0}, thank you.{be01}\nOkay... Here I come!
+Wally: Uncle...\nI’ll go back to Verdanturf...
+{0100:0}, thank you.\nBeing a Trainer is tough, isn’t it?{be01}\nIt’s not enough just to have Pokémon\nand make them battle. That isn’t what{be00}\nbeing a real Trainer is about.
+Uncle: Wally, there’s no need to be so\ndown on yourself.{be01}\nWhy, what’s keeping you from becoming\nstronger and stronger?{be01}\nCome on, let’s go home.\nEveryone’s waiting for you.
+Uncle: {0100:0}, it just dawned on me\nthat you must be the Trainer who kept{be00}\nan eye out for Wally when he caught{be00}\nhis Pokémon.{be01}\nWhy don’t you visit us in Verdanturf\nsometime?{be00}\nI’m sure Wally would enjoy it.
+Wattson: Oh, {0100:0}!\nYou look like you have a lot of zip!{be00}\nThat’s a good thing, wahahahaha!{be01}\nFine! I’ve decided!\nI need a favor, {0100:0}!{be01}\nMauville City has an underground\nsector called New Mauville.{be01}\n{0100:0}, I’d like you to go there and\nswitch off the Generator.{be01}\nThe Generator has been running a bit\nhaywire. It’s getting unsafe.{be01}\nHere, this is the Key to get into\nNew Mauville.
+Wattson: Don’t you worry about it.\nIt won’t be a challenge to you.{be01}\nThe entrance to New Mauville is just\na short Surf away from Route 110.{be01}\nThat’s it, then, you have my trust!\nWahahahaha!
+Wattson: Wahahahaha!{be01}\nI knew it, {0100:0}! I knew I’d made\nthe right choice asking you!{be01}\nThis is my thanks--a TM containing\nThunderbolt!{be01}\nGo on, you’ve earned it!
+Wattson: Wahahahaha!{be01}\nIt pleases me to no end to see\nthe young step up and take charge!
+Too bad!\nThe Bag is full...
+Scott: Hehe…\nI was watching that match!{be01}\nYou’re friends with that boy Wally,\naren’t you?{be01}\nBut you didn’t hold anything back\nand beat him impressively.{be01}\nYeah! That’s what a real Pokémon\nbattle is all about!{be01}\nI idolize Trainers like that!{be01}\n… … … … … …\nI’ll be cheering for you!
+“Rejuvenate your tired partners!”\nPokémon Center
+Mauville City Pokémon Gym\nLeader: Wattson{be00}\n“The cheerfully electrifying man!”
+“Selected items for your convenience!”\nPokémon Mart
+Mauville City\n“The bright and shiny city of fun!”
+“Ride in gravel and shake up your\nsoul!”{be00}\nRydel’s Cycles
+“The play spot for all!”\nMauville Game Corner
+You know, it’s cool to have Pokémon\nbattles and stuff…{be01}\nBut if your Pokémon gets hurt,\nyou have to nurse it back to health.
+Even if you’re riding a Bike,\nwild Pokémon could jump you.
+The roads of this town stretch north\nand south, and east and west.{be01}\nBecause of that, we get all sorts of\npeople coming through.
+Have you been to Rydel’s Cycles yet?{be01}\nRydel, the owner, is a very generous\nman.

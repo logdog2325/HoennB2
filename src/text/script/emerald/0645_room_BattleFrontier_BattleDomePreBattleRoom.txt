@@ -1,0 +1,28 @@
+Your 1st-round match is next.\nAre you ready?
+Your 2nd-round match is next.\nAre you ready?
+Your semifinal match is next.\nAre you ready?
+Your final match is next.\nAre you ready?
+Please choose the two Pokémon\nthat are to appear in battle.
+Right this way, please.
+Thank you for competing!{be01}\nI’ll restore your Pokémon to\nfull health.
+All 1st-round matches have been\ncompleted.{be01}\nThese are the teams that advanced!
+All 2nd-round matches have been\ncompleted.{be01}\nThese are the teams that advanced!
+All semifinal matches have been\ncompleted.{be01}\nThese are the teams that advanced!
+{0100:0}’s next opponent\nis this Trainer.
+The tournament is in the 1st round.
+The tournament is in the 2nd round.
+The tournament is in the semifinals.
+The tournament is up to the final.
+Would you like to save and\nquit the game?
+Would you like to retire from your\nBattle Tournament challenge?
+I am saving your data.\nPlease wait.
+Congratulations for advancing\nto the final match.{be01}\nFor the final match, you will challenge\nthe Dome Ace Tucker.{be01}\nAre you ready?
+Congratulations for advancing\nto the final match.{be01}\nFor the final match, you will challenge\nthe Dome Ace Tucker.{be01}\nAre you ready?
+Your final battle against Tucker is\nnext. Are you ready?
+Your final battle against Tucker is\nnext. Are you ready?
+Opponent
+Tourney Tree
+Ready To Start
+Rest
+Retire
+{0100:1}’s Pokémon:\n{0100:2}, {0100:3} and {0100:4}.

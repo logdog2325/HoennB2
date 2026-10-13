@@ -1,0 +1,10 @@
+{
+ "kind": "texture",
+ "archive": 168,
+ "file": 22,
+ "texture": "int_swan_f.2",
+ "palette": "int_swan_f.2_pl",
+ "note": "May at the intro's gender choice",
+ "donor": "src/reference/may_official.png (the user's official art) resampled; slot: Rosa's picture",
+ "made_by": "b2tools/sprite_players.py"
+}

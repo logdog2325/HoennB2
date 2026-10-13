@@ -1,0 +1,66 @@
+{
+ "_doc": "Lilycove City's buildings (group towns4, notes/TOWNS_TOWNS4.md). buildings: Sapphire door destination -> pack-0 res and front (z of the model's front wall; world.py puts it 4 units into the door tile, footprint centre from data/plans/LilycoveCity.json). props (map tile coords of the model origin): the Museum (doorway walkable in Sapphire, so plan_map.py finds no footprint; origin at its footprint centre x 12.0 and the south edge of row 6, nudged to 6.98 so the height lookup uses row 6) and the Harbor (same look as Slateport's: towns2's res 345, x = door column centre, z = door row + (4 - 20)/16, as towns2 places it), and the little harbour light on the cape (on its solid lower tile, like towns1's lamps).",
+ "group": "towns4",
+ "buildings": {
+  "MAP_LILYCOVE_CITY_DEPARTMENT_STORE_1F": {
+   "res": 382,
+   "front": 20
+  },
+  "MAP_LILYCOVE_CITY_MOVE_DELETERS_HOUSE": {
+   "res": 380,
+   "front": 20
+  },
+  "MAP_LILYCOVE_CITY_HOUSE1": {
+   "res": 380,
+   "front": 20
+  },
+  "MAP_LILYCOVE_CITY_HOUSE4": {
+   "res": 380,
+   "front": 20
+  },
+  "MAP_LILYCOVE_CITY_POKEMON_CENTER_1F": {
+   "res": 0,
+   "front": 20
+  },
+  "MAP_LILYCOVE_CITY_POKEMON_TRAINER_FAN_CLUB": {
+   "res": 381,
+   "front": 20
+  },
+  "MAP_LILYCOVE_CITY_HOUSE2": {
+   "res": 380,
+   "front": 20
+  },
+  "MAP_LILYCOVE_CITY_HOUSE3": {
+   "res": 380,
+   "front": 20
+  },
+  "MAP_LILYCOVE_CITY_CONTEST_LOBBY": {
+   "res": 383,
+   "front": 20
+  },
+  "MAP_LILYCOVE_CITY_COVE_LILY_MOTEL_1F": {
+   "res": 385,
+   "front": 20
+  }
+ },
+ "props": [
+  {
+   "res": 384,
+   "x": 12.0,
+   "z": 6.98,
+   "what": "Lilycove Museum (x 7-16, rows 0-6, doors 11-12,5)"
+  },
+  {
+   "res": 345,
+   "x": 12.5,
+   "z": 31.0,
+   "what": "Harbor (x 9-15, rows 27-32, door 12,32): towns2's Slateport Harbor model"
+  },
+  {
+   "res": 390,
+   "x": 61.5,
+   "z": 34.5,
+   "what": "harbour light (Sapphire prop tiles 61,33-34; solid lower tile 61,34)"
+  }
+ ]
+}

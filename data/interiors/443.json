@@ -1,0 +1,56 @@
+{
+ "zone": 443,
+ "room": "SootopolisCity_PokemonCenter_1F",
+ "area": 283,
+ "what": "SootopolisCity_PokemonCenter_1F: centers agent (b2tools/centers_rooms.py); recipe data/interior_layouts/SootopolisCity_PokemonCenter_1F.json",
+ "header": {"parent": 319, "place": 19},
+ "warps": [
+  {"at": [7, 8], "tile_only": true, "to": [319, 1], "what": "Sapphire warp 0 -> SootopolisCity 0"},
+  {"at": [6, 8], "tile_only": true, "to": [319, 1], "what": "Sapphire warp 1 -> SootopolisCity 0"},
+  {
+   "at": [1, 6],
+   "tile_only": true,
+   "to": [56, 0],
+   "what": "Sapphire warp 2 -> SootopolisCity_PokemonCenter_2F 0 (escalator, entered walking west)",
+   "type": 2,
+   "dir": 4
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 1,
+   "model": 78,
+   "script": 1,
+   "dir": 1,
+   "at": [7, 2],
+   "move": 15,
+   "_what": "nurse (7,2), Sapphire EverGrandeCity_PokemonCenter_1F_EventScript_Nurse"
+  },
+  {
+   "uid": 2,
+   "model": 44,
+   "script": 2,
+   "dir": 1,
+   "at": [12, 4],
+   "move": 3,
+   "range": [1, 1],
+   "_what": "gentleman (12,4), Sapphire SootopolisCity_PokemonCenter_1F_EventScript_Gentleman"
+  },
+  {
+   "uid": 3,
+   "model": 43,
+   "script": 3,
+   "dir": 1,
+   "at": [4, 7],
+   "move": 5,
+   "range": [1, 0],
+   "_what": "woman_7 (4,7), Sapphire SootopolisCity_PokemonCenter_1F_EventScript_Woman"
+  }
+ ],
+ "signs": [
+  {"script": 4, "at": [2, 1], "dir": 0},
+  {"script": 4, "at": [3, 1], "dir": 0},
+  {"script": 5, "at": [11, 1], "dir": 0},
+  {"script": 5, "at": [12, 1], "dir": 0}
+ ]
+}

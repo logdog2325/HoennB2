@@ -1,0 +1,17 @@
+{
+ "kind": "trainer",
+ "side": "front",
+ "sprite": 127,
+ "archive": 71,
+ "files": {
+  "static": 1016,
+  "parts": 1017,
+  "palette": 1023
+ },
+ "name": "wally",
+ "note": "Wally",
+ "source": "pokeruby graphics/trainers/wally.png",
+ "layout": "parts and animations of Black 2 front sprite 108",
+ "made_by": "b2tools/sprite_upgrade.py",
+ "mcss_from": 108
+}

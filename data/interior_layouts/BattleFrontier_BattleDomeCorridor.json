@@ -1,0 +1,101 @@
+{
+ "_doc": "Battle Dome corridor (Emerald 48x7, built from x 12 to 38: the player only walks from (23,6) to the Lv. 50 door (13,3) or the Open Level door (37,3)). Doors door_h5_in on the wall at x 13, 21, 29, 37 (Emerald's doors at row 3).",
+ "map": "BattleFrontier_BattleDomeCorridor",
+ "decomp": "pokeemerald",
+ "style": "fd_dome",
+ "origin": [
+  -11,
+  -2
+ ],
+ "floor": [
+  [
+   12,
+   4,
+   38,
+   6
+  ]
+ ],
+ "exits": [],
+ "furniture": [
+  {
+   "m": "door_h5_in",
+   "tile": [
+    13,
+    4
+   ],
+   "wall": "N",
+   "gap": -1,
+   "doorway": true,
+   "y": -1
+  },
+  {
+   "m": "door_h5_in",
+   "tile": [
+    21,
+    4
+   ],
+   "wall": "N",
+   "gap": -1,
+   "doorway": true,
+   "y": -1
+  },
+  {
+   "m": "door_h5_in",
+   "tile": [
+    29,
+    4
+   ],
+   "wall": "N",
+   "gap": -1,
+   "doorway": true,
+   "y": -1
+  },
+  {
+   "m": "door_h5_in",
+   "tile": [
+    37,
+    4
+   ],
+   "wall": "N",
+   "gap": -1,
+   "doorway": true,
+   "y": -1
+  },
+  {
+   "m": "plant01",
+   "tile": [
+    17,
+    4
+   ]
+  },
+  {
+   "m": "plant01",
+   "tile": [
+    25,
+    4
+   ]
+  },
+  {
+   "m": "plant01",
+   "tile": [
+    33,
+    4
+   ]
+  }
+ ],
+ "mats": [
+  {
+   "tex": "chip_mat",
+   "src": 352,
+   "rect": [
+    23,
+    6,
+    24,
+    6
+   ],
+   "border": 0.25,
+   "border_units": 4,
+   "_what": "arrival mat"
+  }
+ ]
+}

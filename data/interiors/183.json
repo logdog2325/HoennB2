@@ -1,0 +1,182 @@
+{
+ "zone": 183,
+ "room": "SeafloorCavern_Room2",
+ "cave": true,
+ "cave_auto": true,
+ "area": 332,
+ "dark": false,
+ "header": {
+  "map_type": 16,
+  "npc_cache": 24,
+  "weather_word": 64,
+  "flags": 23683,
+  "icon_word": 40975,
+  "place_display": 1,
+  "bgm0": 1076,
+  "bgm1": 1076,
+  "bgm2": 1076,
+  "bgm3": 1076,
+  "place": 71,
+  "encounters": 51,
+  "enc_slot": 2
+ },
+ "warps": [
+  {
+   "at": [
+    12,
+    19
+   ],
+   "to": [
+    179,
+    2
+   ],
+   "what": "Sapphire warp 0 (12,19) -> SeafloorCavern_Room1 2"
+  },
+  {
+   "at": [
+    5,
+    19
+   ],
+   "to": [
+    185,
+    0
+   ],
+   "what": "Sapphire warp 1 (5,19) -> SeafloorCavern_Room4 0"
+  },
+  {
+   "at": [
+    5,
+    2
+   ],
+   "to": [
+    187,
+    0
+   ],
+   "what": "Sapphire warp 2 (5,2) -> SeafloorCavern_Room6 0"
+  },
+  {
+   "at": [
+    12,
+    2
+   ],
+   "to": [
+    188,
+    0
+   ],
+   "what": "Sapphire warp 3 (12,2) -> SeafloorCavern_Room7 0"
+  }
+ ],
+ "triggers": [],
+ "npcs": [
+  {
+   "uid": 1,
+   "model": 8196,
+   "script": 10000,
+   "flag": 0,
+   "dir": 1,
+   "at": [
+    6,
+    14
+   ],
+   "what": "Strength boulder"
+  },
+  {
+   "uid": 2,
+   "model": 8196,
+   "script": 10000,
+   "flag": 0,
+   "dir": 1,
+   "at": [
+    6,
+    10
+   ],
+   "what": "Strength boulder"
+  },
+  {
+   "uid": 3,
+   "model": 8196,
+   "script": 10000,
+   "flag": 0,
+   "dir": 1,
+   "at": [
+    6,
+    6
+   ],
+   "what": "Strength boulder"
+  },
+  {
+   "uid": 4,
+   "model": 8196,
+   "script": 10000,
+   "flag": 0,
+   "dir": 1,
+   "at": [
+    11,
+    6
+   ],
+   "what": "Strength boulder"
+  },
+  {
+   "uid": 5,
+   "model": 8196,
+   "script": 10000,
+   "flag": 0,
+   "dir": 1,
+   "at": [
+    11,
+    10
+   ],
+   "what": "Strength boulder"
+  },
+  {
+   "uid": 6,
+   "model": 8196,
+   "script": 10000,
+   "flag": 0,
+   "dir": 1,
+   "at": [
+    11,
+    14
+   ],
+   "what": "Strength boulder"
+  },
+  {
+   "uid": 7,
+   "model": 206,
+   "script": 10016,
+   "flag": 0,
+   "dir": 1,
+   "at": [
+    11,
+    9
+   ],
+   "what": "breakable rock"
+  },
+  {
+   "uid": 8,
+   "model": 206,
+   "script": 10016,
+   "flag": 0,
+   "dir": 1,
+   "at": [
+    7,
+    6
+   ],
+   "what": "breakable rock"
+  },
+  {
+   "uid": 9,
+   "model": 8196,
+   "script": 10000,
+   "flag": 0,
+   "dir": 1,
+   "at": [
+    15,
+    11
+   ],
+   "what": "Strength boulder"
+  }
+ ],
+ "signs": [],
+ "what": "SeafloorCavern_Room2: cave (converter/gen_caves.py, b2tools/models_cave.py); story objects: see notes/CAVES.md"
+}

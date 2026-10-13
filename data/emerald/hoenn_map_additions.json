@@ -1,0 +1,1128 @@
+{
+ "_doc": "Emerald's own additions to its maps (emerald_world 2026-10-12; converter/gba.py world_repo, the Emerald view: read in place of data/hoenn_map_additions.json, whose layouts and events are made on pokeruby's maps). Same keys as there ('layouts': a layout = a base layout + setmetatile-style edits; 'events': event lists appended to a map's own), plus 'crop': {layout: [width, height]} (only the first rows/columns of a layout are read) and 'warps': {map: {warp index: {key: value}}} (a warp's fields replaced). Map names are HoennB2's (Sapphire's names; see version.decomp_map).",
+ "crop": {
+  "_doc": "The Route 103 seam (notes/EMERALD_PLAN.md 1.1, notes/EMERALD.md \"Emerald's world\"): Emerald's Route 103 is 80x22, two rows longer than Sapphire's at its south edge with the same connection offsets, so HoennB2's one world grid (Sapphire's connections) would put Oldale and everything south of it 2 rows off (conflicts at Verdanturf-Route 116, Fallarbor-Route 114, Dewford-Route 107). Its rows 18-19 are Sapphire's own rows 18-19 and rows 20-21 only repeat them (the path down to Oldale, x 8-11, between forest, sea and forest; the east forest's two rows of the same blocked tree tile): the world reads rows 0-19, the seam with Oldale is Sapphire's, nothing walkable but those 2 path rows is left out, no event stands there.",
+  "LAYOUT_ROUTE103": [
+   80,
+   20
+  ]
+ },
+ "layouts": {
+  "LAYOUT_ROUTE103_ALTERING_CAVE": {
+   "_doc": "Route 103 after the game, with the Altering Cave mouth (data/hoenn_world.json alt_layouts Route103, map replace event 7): Emerald's own Route103_OnLoad (pokeemerald data/maps/Route103/scripts.inc: call_if_set FLAG_SYS_GAME_CLEAR -> setmetatile 45, 5, METATILE_General_CaveEntrance_Top (0x09F), TRUE; setmetatile 45, 6, METATILE_General_CaveEntrance_Bottom (0x0A7), FALSE). Emerald's map already has the land strip in front of it (row 7).",
+   "base": "LAYOUT_ROUTE103",
+   "edits": [
+    {
+     "at": [
+      45,
+      5
+     ],
+     "metatile": "0x09F",
+     "collision": 1
+    },
+    {
+     "at": [
+      45,
+      6
+     ],
+     "metatile": "0x0A7",
+     "collision": 0
+    }
+   ]
+  },
+  "LAYOUT_JAGGED_PASS": {
+   "_doc": "Jagged Pass with the Magma Hideout's cave mouth sealed (emerald_integrate 2026-10-12; notes/EMERALD_STORY.md 6.4). pokeemerald's layout has the mouth open (16,17) METATILE_Lavaridge_CaveEntrance_Top 0x256 / (16,18) _Bottom 0x25E and its JaggedPass_OnLoad covers both with METATILE_Lavaridge_RockWall (0x274, impassable: setmetatile ..., TRUE) while VAR_JAGGED_PASS_STATE is 0 or 1; Black 2 cannot change a map's tiles by script, so the sealed look is this map's own layout (an in-place edit: plan_map.py, world.py, the terrain modules and the checkers all read it) and the open one is LAYOUT_JAGGED_PASS_HIDEOUT_OPEN, swapped in by map replace event 1 (data/emerald/hoenn_world.json alt_layouts JaggedPass; scenes/JaggedPass.inc sets it at state 2).",
+   "base": "LAYOUT_JAGGED_PASS",
+   "edits": [
+    {
+     "at": [
+      16,
+      17
+     ],
+     "metatile": "0x274",
+     "collision": 1,
+     "elevation": 0
+    },
+    {
+     "at": [
+      16,
+      18
+     ],
+     "metatile": "0x274",
+     "collision": 1,
+     "elevation": 0
+    }
+   ]
+  },
+  "LAYOUT_JAGGED_PASS_HIDEOUT_OPEN": {
+   "_doc": "Jagged Pass once the Magma Emblem has opened the boulder (VAR_JAGGED_PASS_STATE 2): pokeemerald's own layout, the cave mouth as JaggedPass_EventScript_OpenMagmaHideout draws it (setmetatile 16, 17, METATILE_Lavaridge_CaveEntrance_Top, TRUE; 16, 18, METATILE_Lavaridge_CaveEntrance_Bottom, FALSE). The edits restore the mouth over the sealed in-place layout above (the same blocks as pokeemerald's map.bin).",
+   "base": "LAYOUT_JAGGED_PASS",
+   "edits": [
+    {
+     "at": [
+      16,
+      17
+     ],
+     "metatile": "0x256",
+     "collision": 0,
+     "elevation": 0
+    },
+    {
+     "at": [
+      16,
+      18
+     ],
+     "metatile": "0x25E",
+     "collision": 0,
+     "elevation": 0
+    }
+   ]
+  },
+  "LAYOUT_METEOR_FALLS_1F_1R_STEVENS_CAVE": {
+   "_doc": "Meteor Falls 1F with Steven's Cave open (emerald_caves 2026-10-12): pokeemerald's MeteorFalls_1F_1R_OnLoad, after the game (FLAG_SYS_GAME_CLEAR), draws the cave mouth with setmetatile 4, 1, METATILE_MeteorFalls_CaveEntrance_Top (0x246), TRUE; 3, 2, _Left (0x24D), TRUE; 4, 2, _Bottom (0x24E), FALSE; 5, 2, _Right (0x24F), TRUE. Only the cave builder reads it (data/cave_layouts/MeteorFalls_1F_1R_Emerald.json \"layout\"): the Emerald variant is drawn open and closed by a rock object until the game is clear.",
+   "base": "LAYOUT_METEOR_FALLS_1F_1R",
+   "edits": [
+    {
+     "at": [
+      4,
+      1
+     ],
+     "metatile": "0x246",
+     "collision": 1
+    },
+    {
+     "at": [
+      3,
+      2
+     ],
+     "metatile": "0x24D",
+     "collision": 1
+    },
+    {
+     "at": [
+      4,
+      2
+     ],
+     "metatile": "0x24E",
+     "collision": 0
+    },
+    {
+     "at": [
+      5,
+      2
+     ],
+     "metatile": "0x24F",
+     "collision": 1
+    }
+   ]
+  },
+  "LAYOUT_ROUTE114_AW_1": {
+   "_doc": "Route114 with Emerald's abnormal weather at spot 1 (Route114North; emerald_ch12_13 2026-10-12): pokeemerald data/scripts/abnormal_weather.inc AbnormalWeather_EventScript_PlaceTilesRoute114North's setmetatile lines (the Terra Cave mouth in the rock); swapped in by data/emerald/hoenn_world.json alt_layouts Route114_AW1 while VAR_ABNORMAL_WEATHER_LOCATION is 1.",
+   "base": "LAYOUT_ROUTE114",
+   "edits": [
+    {
+     "at": [
+      7,
+      3
+     ],
+     "metatile": "0x347",
+     "collision": 1
+    },
+    {
+     "at": [
+      7,
+      4
+     ],
+     "metatile": "0x34F",
+     "collision": 0
+    }
+   ]
+  },
+  "LAYOUT_ROUTE114_AW_2": {
+   "_doc": "Route114 with Emerald's abnormal weather at spot 2 (Route114South; emerald_ch12_13 2026-10-12): pokeemerald data/scripts/abnormal_weather.inc AbnormalWeather_EventScript_PlaceTilesRoute114South's setmetatile lines (the Terra Cave mouth in the rock); swapped in by data/emerald/hoenn_world.json alt_layouts Route114_AW2 while VAR_ABNORMAL_WEATHER_LOCATION is 2.",
+   "base": "LAYOUT_ROUTE114",
+   "edits": [
+    {
+     "at": [
+      6,
+      45
+     ],
+     "metatile": "0x259",
+     "collision": 1
+    },
+    {
+     "at": [
+      6,
+      46
+     ],
+     "metatile": "0x261",
+     "collision": 0
+    }
+   ]
+  },
+  "LAYOUT_ROUTE115_AW_3": {
+   "_doc": "Route115 with Emerald's abnormal weather at spot 3 (Route115West; emerald_ch12_13 2026-10-12): pokeemerald data/scripts/abnormal_weather.inc AbnormalWeather_EventScript_PlaceTilesRoute115West's setmetatile lines (the Terra Cave mouth in the rock); swapped in by data/emerald/hoenn_world.json alt_layouts Route115_AW3 while VAR_ABNORMAL_WEATHER_LOCATION is 3.",
+   "base": "LAYOUT_ROUTE115",
+   "edits": [
+    {
+     "at": [
+      21,
+      5
+     ],
+     "metatile": "0x259",
+     "collision": 1
+    },
+    {
+     "at": [
+      21,
+      6
+     ],
+     "metatile": "0x261",
+     "collision": 0
+    }
+   ]
+  },
+  "LAYOUT_ROUTE115_AW_4": {
+   "_doc": "Route115 with Emerald's abnormal weather at spot 4 (Route115East; emerald_ch12_13 2026-10-12): pokeemerald data/scripts/abnormal_weather.inc AbnormalWeather_EventScript_PlaceTilesRoute115East's setmetatile lines (the Terra Cave mouth in the rock); swapped in by data/emerald/hoenn_world.json alt_layouts Route115_AW4 while VAR_ABNORMAL_WEATHER_LOCATION is 4.",
+   "base": "LAYOUT_ROUTE115",
+   "edits": [
+    {
+     "at": [
+      36,
+      9
+     ],
+     "metatile": "0x259",
+     "collision": 1
+    },
+    {
+     "at": [
+      36,
+      10
+     ],
+     "metatile": "0x261",
+     "collision": 0
+    }
+   ]
+  },
+  "LAYOUT_ROUTE116_AW_5": {
+   "_doc": "Route116 with Emerald's abnormal weather at spot 5 (Route116North; emerald_ch12_13 2026-10-12): pokeemerald data/scripts/abnormal_weather.inc AbnormalWeather_EventScript_PlaceTilesRoute116North's setmetatile lines (the Terra Cave mouth in the rock); swapped in by data/emerald/hoenn_world.json alt_layouts Route116_AW5 while VAR_ABNORMAL_WEATHER_LOCATION is 5.",
+   "base": "LAYOUT_ROUTE116",
+   "edits": [
+    {
+     "at": [
+      59,
+      12
+     ],
+     "metatile": "0x09F",
+     "collision": 1
+    },
+    {
+     "at": [
+      59,
+      13
+     ],
+     "metatile": "0x0A7",
+     "collision": 0
+    }
+   ]
+  },
+  "LAYOUT_ROUTE116_AW_6": {
+   "_doc": "Route116 with Emerald's abnormal weather at spot 6 (Route116South; emerald_ch12_13 2026-10-12): pokeemerald data/scripts/abnormal_weather.inc AbnormalWeather_EventScript_PlaceTilesRoute116South's setmetatile lines (the Terra Cave mouth in the rock); swapped in by data/emerald/hoenn_world.json alt_layouts Route116_AW6 while VAR_ABNORMAL_WEATHER_LOCATION is 6.",
+   "base": "LAYOUT_ROUTE116",
+   "edits": [
+    {
+     "at": [
+      79,
+      5
+     ],
+     "metatile": "0x09F",
+     "collision": 1
+    },
+    {
+     "at": [
+      79,
+      6
+     ],
+     "metatile": "0x0A7",
+     "collision": 0
+    }
+   ]
+  },
+  "LAYOUT_ROUTE118_AW_7": {
+   "_doc": "Route118 with Emerald's abnormal weather at spot 7 (Route118East; emerald_ch12_13 2026-10-12): pokeemerald data/scripts/abnormal_weather.inc AbnormalWeather_EventScript_PlaceTilesRoute118East's setmetatile lines (the Terra Cave mouth in the rock); swapped in by data/emerald/hoenn_world.json alt_layouts Route118_AW7 while VAR_ABNORMAL_WEATHER_LOCATION is 7.",
+   "base": "LAYOUT_ROUTE118",
+   "edits": [
+    {
+     "at": [
+      42,
+      5
+     ],
+     "metatile": "0x09F",
+     "collision": 1
+    },
+    {
+     "at": [
+      42,
+      6
+     ],
+     "metatile": "0x0A7",
+     "collision": 0
+    }
+   ]
+  },
+  "LAYOUT_ROUTE118_AW_8": {
+   "_doc": "Route118 with Emerald's abnormal weather at spot 8 (Route118West; emerald_ch12_13 2026-10-12): pokeemerald data/scripts/abnormal_weather.inc AbnormalWeather_EventScript_PlaceTilesRoute118West's setmetatile lines (the Terra Cave mouth in the rock); swapped in by data/emerald/hoenn_world.json alt_layouts Route118_AW8 while VAR_ABNORMAL_WEATHER_LOCATION is 8.",
+   "base": "LAYOUT_ROUTE118",
+   "edits": [
+    {
+     "at": [
+      9,
+      5
+     ],
+     "metatile": "0x09F",
+     "collision": 1
+    },
+    {
+     "at": [
+      9,
+      6
+     ],
+     "metatile": "0x0A7",
+     "collision": 0
+    }
+   ]
+  },
+  "LAYOUT_ROUTE105_AW_9": {
+   "_doc": "Route105 with Emerald's abnormal weather at spot 9 (Route105North; emerald_ch12_13 2026-10-12): pokeemerald data/scripts/abnormal_weather.inc AbnormalWeather_EventScript_PlaceTilesRoute105North's setmetatile lines (rough water: the Marine Cave's dive spot); swapped in by data/emerald/hoenn_world.json alt_layouts Route105_AW9 while VAR_ABNORMAL_WEATHER_LOCATION is 9.",
+   "base": "LAYOUT_ROUTE105",
+   "edits": [
+    {
+     "at": [
+      10,
+      28
+     ],
+     "metatile": "0x14E",
+     "collision": 0
+    },
+    {
+     "at": [
+      11,
+      28
+     ],
+     "metatile": "0x14E",
+     "collision": 0
+    },
+    {
+     "at": [
+      9,
+      29
+     ],
+     "metatile": "0x14E",
+     "collision": 0
+    },
+    {
+     "at": [
+      10,
+      29
+     ],
+     "metatile": "0x14F",
+     "collision": 0
+    },
+    {
+     "at": [
+      11,
+      29
+     ],
+     "metatile": "0x14F",
+     "collision": 0
+    },
+    {
+     "at": [
+      12,
+      29
+     ],
+     "metatile": "0x14E",
+     "collision": 0
+    },
+    {
+     "at": [
+      9,
+      30
+     ],
+     "metatile": "0x14E",
+     "collision": 0
+    },
+    {
+     "at": [
+      10,
+      30
+     ],
+     "metatile": "0x14F",
+     "collision": 0
+    },
+    {
+     "at": [
+      11,
+      30
+     ],
+     "metatile": "0x14F",
+     "collision": 0
+    },
+    {
+     "at": [
+      12,
+      30
+     ],
+     "metatile": "0x14E",
+     "collision": 0
+    },
+    {
+     "at": [
+      10,
+      31
+     ],
+     "metatile": "0x14E",
+     "collision": 0
+    },
+    {
+     "at": [
+      11,
+      31
+     ],
+     "metatile": "0x14E",
+     "collision": 0
+    }
+   ]
+  },
+  "LAYOUT_ROUTE105_AW_10": {
+   "_doc": "Route105 with Emerald's abnormal weather at spot 10 (Route105South; emerald_ch12_13 2026-10-12): pokeemerald data/scripts/abnormal_weather.inc AbnormalWeather_EventScript_PlaceTilesRoute105South's setmetatile lines (rough water: the Marine Cave's dive spot); swapped in by data/emerald/hoenn_world.json alt_layouts Route105_AW10 while VAR_ABNORMAL_WEATHER_LOCATION is 10.",
+   "base": "LAYOUT_ROUTE105",
+   "edits": [
+    {
+     "at": [
+      20,
+      53
+     ],
+     "metatile": "0x14E",
+     "collision": 0
+    },
+    {
+     "at": [
+      21,
+      53
+     ],
+     "metatile": "0x14E",
+     "collision": 0
+    },
+    {
+     "at": [
+      19,
+      54
+     ],
+     "metatile": "0x14E",
+     "collision": 0
+    },
+    {
+     "at": [
+      20,
+      54
+     ],
+     "metatile": "0x14F",
+     "collision": 0
+    },
+    {
+     "at": [
+      21,
+      54
+     ],
+     "metatile": "0x14F",
+     "collision": 0
+    },
+    {
+     "at": [
+      22,
+      54
+     ],
+     "metatile": "0x14E",
+     "collision": 0
+    },
+    {
+     "at": [
+      19,
+      55
+     ],
+     "metatile": "0x14E",
+     "collision": 0
+    },
+    {
+     "at": [
+      20,
+      55
+     ],
+     "metatile": "0x14F",
+     "collision": 0
+    },
+    {
+     "at": [
+      21,
+      55
+     ],
+     "metatile": "0x14F",
+     "collision": 0
+    },
+    {
+     "at": [
+      22,
+      55
+     ],
+     "metatile": "0x14E",
+     "collision": 0
+    },
+    {
+     "at": [
+      20,
+      56
+     ],
+     "metatile": "0x14E",
+     "collision": 0
+    },
+    {
+     "at": [
+      21,
+      56
+     ],
+     "metatile": "0x14E",
+     "collision": 0
+    }
+   ]
+  },
+  "LAYOUT_ROUTE125_AW_11": {
+   "_doc": "Route125 with Emerald's abnormal weather at spot 11 (Route125West; emerald_ch12_13 2026-10-12): pokeemerald data/scripts/abnormal_weather.inc AbnormalWeather_EventScript_PlaceTilesRoute125West's setmetatile lines (rough water: the Marine Cave's dive spot); swapped in by data/emerald/hoenn_world.json alt_layouts Route125_AW11 while VAR_ABNORMAL_WEATHER_LOCATION is 11.",
+   "base": "LAYOUT_ROUTE125",
+   "edits": [
+    {
+     "at": [
+      8,
+      16
+     ],
+     "metatile": "0x14E",
+     "collision": 0
+    },
+    {
+     "at": [
+      9,
+      16
+     ],
+     "metatile": "0x14E",
+     "collision": 0
+    },
+    {
+     "at": [
+      7,
+      17
+     ],
+     "metatile": "0x14E",
+     "collision": 0
+    },
+    {
+     "at": [
+      8,
+      17
+     ],
+     "metatile": "0x14F",
+     "collision": 0
+    },
+    {
+     "at": [
+      9,
+      17
+     ],
+     "metatile": "0x14F",
+     "collision": 0
+    },
+    {
+     "at": [
+      10,
+      17
+     ],
+     "metatile": "0x14E",
+     "collision": 0
+    },
+    {
+     "at": [
+      7,
+      18
+     ],
+     "metatile": "0x14E",
+     "collision": 0
+    },
+    {
+     "at": [
+      8,
+      18
+     ],
+     "metatile": "0x14F",
+     "collision": 0
+    },
+    {
+     "at": [
+      9,
+      18
+     ],
+     "metatile": "0x14F",
+     "collision": 0
+    },
+    {
+     "at": [
+      10,
+      18
+     ],
+     "metatile": "0x14E",
+     "collision": 0
+    },
+    {
+     "at": [
+      8,
+      19
+     ],
+     "metatile": "0x14E",
+     "collision": 0
+    },
+    {
+     "at": [
+      9,
+      19
+     ],
+     "metatile": "0x14E",
+     "collision": 0
+    }
+   ]
+  },
+  "LAYOUT_ROUTE125_AW_12": {
+   "_doc": "Route125 with Emerald's abnormal weather at spot 12 (Route125East; emerald_ch12_13 2026-10-12): pokeemerald data/scripts/abnormal_weather.inc AbnormalWeather_EventScript_PlaceTilesRoute125East's setmetatile lines (rough water: the Marine Cave's dive spot); swapped in by data/emerald/hoenn_world.json alt_layouts Route125_AW12 while VAR_ABNORMAL_WEATHER_LOCATION is 12.",
+   "base": "LAYOUT_ROUTE125",
+   "edits": [
+    {
+     "at": [
+      53,
+      18
+     ],
+     "metatile": "0x14E",
+     "collision": 0
+    },
+    {
+     "at": [
+      54,
+      18
+     ],
+     "metatile": "0x14E",
+     "collision": 0
+    },
+    {
+     "at": [
+      52,
+      19
+     ],
+     "metatile": "0x14E",
+     "collision": 0
+    },
+    {
+     "at": [
+      53,
+      19
+     ],
+     "metatile": "0x14F",
+     "collision": 0
+    },
+    {
+     "at": [
+      54,
+      19
+     ],
+     "metatile": "0x14F",
+     "collision": 0
+    },
+    {
+     "at": [
+      55,
+      19
+     ],
+     "metatile": "0x14E",
+     "collision": 0
+    },
+    {
+     "at": [
+      52,
+      20
+     ],
+     "metatile": "0x14E",
+     "collision": 0
+    },
+    {
+     "at": [
+      53,
+      20
+     ],
+     "metatile": "0x14F",
+     "collision": 0
+    },
+    {
+     "at": [
+      54,
+      20
+     ],
+     "metatile": "0x14F",
+     "collision": 0
+    },
+    {
+     "at": [
+      55,
+      20
+     ],
+     "metatile": "0x14E",
+     "collision": 0
+    },
+    {
+     "at": [
+      53,
+      21
+     ],
+     "metatile": "0x14E",
+     "collision": 0
+    },
+    {
+     "at": [
+      54,
+      21
+     ],
+     "metatile": "0x14E",
+     "collision": 0
+    }
+   ]
+  },
+  "LAYOUT_ROUTE127_AW_13": {
+   "_doc": "Route127 with Emerald's abnormal weather at spot 13 (Route127North; emerald_ch12_13 2026-10-12): pokeemerald data/scripts/abnormal_weather.inc AbnormalWeather_EventScript_PlaceTilesRoute127North's setmetatile lines (rough water: the Marine Cave's dive spot); swapped in by data/emerald/hoenn_world.json alt_layouts Route127_AW13 while VAR_ABNORMAL_WEATHER_LOCATION is 13.",
+   "base": "LAYOUT_ROUTE127",
+   "edits": [
+    {
+     "at": [
+      57,
+      9
+     ],
+     "metatile": "0x14E",
+     "collision": 0
+    },
+    {
+     "at": [
+      58,
+      9
+     ],
+     "metatile": "0x14E",
+     "collision": 0
+    },
+    {
+     "at": [
+      56,
+      10
+     ],
+     "metatile": "0x14E",
+     "collision": 0
+    },
+    {
+     "at": [
+      57,
+      10
+     ],
+     "metatile": "0x14F",
+     "collision": 0
+    },
+    {
+     "at": [
+      58,
+      10
+     ],
+     "metatile": "0x14F",
+     "collision": 0
+    },
+    {
+     "at": [
+      59,
+      10
+     ],
+     "metatile": "0x14E",
+     "collision": 0
+    },
+    {
+     "at": [
+      56,
+      11
+     ],
+     "metatile": "0x14E",
+     "collision": 0
+    },
+    {
+     "at": [
+      57,
+      11
+     ],
+     "metatile": "0x14F",
+     "collision": 0
+    },
+    {
+     "at": [
+      58,
+      11
+     ],
+     "metatile": "0x14F",
+     "collision": 0
+    },
+    {
+     "at": [
+      59,
+      11
+     ],
+     "metatile": "0x14E",
+     "collision": 0
+    },
+    {
+     "at": [
+      57,
+      12
+     ],
+     "metatile": "0x14E",
+     "collision": 0
+    },
+    {
+     "at": [
+      58,
+      12
+     ],
+     "metatile": "0x14E",
+     "collision": 0
+    }
+   ]
+  },
+  "LAYOUT_ROUTE127_AW_14": {
+   "_doc": "Route127 with Emerald's abnormal weather at spot 14 (Route127South; emerald_ch12_13 2026-10-12): pokeemerald data/scripts/abnormal_weather.inc AbnormalWeather_EventScript_PlaceTilesRoute127South's setmetatile lines (rough water: the Marine Cave's dive spot); swapped in by data/emerald/hoenn_world.json alt_layouts Route127_AW14 while VAR_ABNORMAL_WEATHER_LOCATION is 14.",
+   "base": "LAYOUT_ROUTE127",
+   "edits": [
+    {
+     "at": [
+      61,
+      30
+     ],
+     "metatile": "0x14E",
+     "collision": 0
+    },
+    {
+     "at": [
+      62,
+      30
+     ],
+     "metatile": "0x14E",
+     "collision": 0
+    },
+    {
+     "at": [
+      60,
+      31
+     ],
+     "metatile": "0x14E",
+     "collision": 0
+    },
+    {
+     "at": [
+      61,
+      31
+     ],
+     "metatile": "0x14F",
+     "collision": 0
+    },
+    {
+     "at": [
+      62,
+      31
+     ],
+     "metatile": "0x14F",
+     "collision": 0
+    },
+    {
+     "at": [
+      63,
+      31
+     ],
+     "metatile": "0x14E",
+     "collision": 0
+    },
+    {
+     "at": [
+      60,
+      32
+     ],
+     "metatile": "0x14E",
+     "collision": 0
+    },
+    {
+     "at": [
+      61,
+      32
+     ],
+     "metatile": "0x14F",
+     "collision": 0
+    },
+    {
+     "at": [
+      62,
+      32
+     ],
+     "metatile": "0x14F",
+     "collision": 0
+    },
+    {
+     "at": [
+      63,
+      32
+     ],
+     "metatile": "0x14E",
+     "collision": 0
+    },
+    {
+     "at": [
+      61,
+      33
+     ],
+     "metatile": "0x14E",
+     "collision": 0
+    },
+    {
+     "at": [
+      62,
+      33
+     ],
+     "metatile": "0x14E",
+     "collision": 0
+    }
+   ]
+  },
+  "LAYOUT_ROUTE129_AW_15": {
+   "_doc": "Route129 with Emerald's abnormal weather at spot 15 (Route129West; emerald_ch12_13 2026-10-12): pokeemerald data/scripts/abnormal_weather.inc AbnormalWeather_EventScript_PlaceTilesRoute129West's setmetatile lines (rough water: the Marine Cave's dive spot); swapped in by data/emerald/hoenn_world.json alt_layouts Route129_AW15 while VAR_ABNORMAL_WEATHER_LOCATION is 15.",
+   "base": "LAYOUT_ROUTE129",
+   "edits": [
+    {
+     "at": [
+      16,
+      14
+     ],
+     "metatile": "0x14E",
+     "collision": 0
+    },
+    {
+     "at": [
+      17,
+      14
+     ],
+     "metatile": "0x14E",
+     "collision": 0
+    },
+    {
+     "at": [
+      15,
+      15
+     ],
+     "metatile": "0x14E",
+     "collision": 0
+    },
+    {
+     "at": [
+      16,
+      15
+     ],
+     "metatile": "0x14F",
+     "collision": 0
+    },
+    {
+     "at": [
+      17,
+      15
+     ],
+     "metatile": "0x14F",
+     "collision": 0
+    },
+    {
+     "at": [
+      18,
+      15
+     ],
+     "metatile": "0x14E",
+     "collision": 0
+    },
+    {
+     "at": [
+      15,
+      16
+     ],
+     "metatile": "0x14E",
+     "collision": 0
+    },
+    {
+     "at": [
+      16,
+      16
+     ],
+     "metatile": "0x14F",
+     "collision": 0
+    },
+    {
+     "at": [
+      17,
+      16
+     ],
+     "metatile": "0x14F",
+     "collision": 0
+    },
+    {
+     "at": [
+      18,
+      16
+     ],
+     "metatile": "0x14E",
+     "collision": 0
+    },
+    {
+     "at": [
+      16,
+      17
+     ],
+     "metatile": "0x14E",
+     "collision": 0
+    },
+    {
+     "at": [
+      17,
+      17
+     ],
+     "metatile": "0x14E",
+     "collision": 0
+    }
+   ]
+  },
+  "LAYOUT_ROUTE129_AW_16": {
+   "_doc": "Route129 with Emerald's abnormal weather at spot 16 (Route129East; emerald_ch12_13 2026-10-12): pokeemerald data/scripts/abnormal_weather.inc AbnormalWeather_EventScript_PlaceTilesRoute129East's setmetatile lines (rough water: the Marine Cave's dive spot); swapped in by data/emerald/hoenn_world.json alt_layouts Route129_AW16 while VAR_ABNORMAL_WEATHER_LOCATION is 16.",
+   "base": "LAYOUT_ROUTE129",
+   "edits": [
+    {
+     "at": [
+      42,
+      19
+     ],
+     "metatile": "0x14E",
+     "collision": 0
+    },
+    {
+     "at": [
+      43,
+      19
+     ],
+     "metatile": "0x14E",
+     "collision": 0
+    },
+    {
+     "at": [
+      41,
+      20
+     ],
+     "metatile": "0x14E",
+     "collision": 0
+    },
+    {
+     "at": [
+      42,
+      20
+     ],
+     "metatile": "0x14F",
+     "collision": 0
+    },
+    {
+     "at": [
+      43,
+      20
+     ],
+     "metatile": "0x14F",
+     "collision": 0
+    },
+    {
+     "at": [
+      44,
+      20
+     ],
+     "metatile": "0x14E",
+     "collision": 0
+    },
+    {
+     "at": [
+      41,
+      21
+     ],
+     "metatile": "0x14E",
+     "collision": 0
+    },
+    {
+     "at": [
+      42,
+      21
+     ],
+     "metatile": "0x14F",
+     "collision": 0
+    },
+    {
+     "at": [
+      43,
+      21
+     ],
+     "metatile": "0x14F",
+     "collision": 0
+    },
+    {
+     "at": [
+      44,
+      21
+     ],
+     "metatile": "0x14E",
+     "collision": 0
+    },
+    {
+     "at": [
+      42,
+      22
+     ],
+     "metatile": "0x14E",
+     "collision": 0
+    },
+    {
+     "at": [
+      43,
+      22
+     ],
+     "metatile": "0x14E",
+     "collision": 0
+    }
+   ]
+  }
+ },
+ "warps": {
+  "Route103": {
+   "0": {
+    "_doc": "Emerald's warp to Altering Cave (45,6): Black 2's dynamic warp (dest id 256), as Sapphire's added one (data/hoenn_map_additions.json events Route103): Route 103's zone init sets the Altering Cave zone of the day.",
+    "dest_warp_id": "256"
+   }
+  },
+  "BattleFrontier_OutsideEast": {
+   "4": {
+    "_doc": "The Ranking Hall's door (35,12), next to the Battle Tower, leads into Black 2's PWT lobby (zone 192, its entrance mat warp 0): decision 1A (notes/EMERALD_PLAN.md 4) keeps our Battle Tower and the PWT working and the six other facility buildings (Dome, Palace, Arena, Factory, Pike, Pyramid) closed, so the PWT gets a building of the island that is no facility (Sapphire's island had an added PWT building; Emerald's island has room for none). Easy to move: this entry. b2tools/patches/pwt.py points the lobby's exit back at this door (the island door whose destination is zone 192).",
+    "dest_map": "B2_ZONE_192",
+    "dest_warp_id": "0"
+   }
+  }
+ },
+ "events": {}
+}

@@ -1,0 +1,103 @@
+{
+ "_doc": "Battle Pyramid lobby (Emerald 15x18). The hall (rows 13-17) with the exit mat (7,17); the attendant's corridor up the middle (7, 8-12; Emerald's staircase) to the upper hall (rows 5-7) and the floor panel (7,4) that takes the player into the Pyramid (Emerald's blue panel: the floor's exit model is the same blue). Emerald's statues and torches on the upper hall's wall tiles stand as blocks; the results PC (5,12) and the rules board (1,12) on the hall's back wall.",
+ "map": "BattleFrontier_BattlePyramidLobby",
+ "decomp": "pokeemerald",
+ "style": "pyr_room",
+ "origin": [
+  0,
+  -2
+ ],
+ "floor": [
+  [
+   0,
+   13,
+   14,
+   17
+  ],
+  [
+   7,
+   8,
+   7,
+   12
+  ],
+  [
+   0,
+   5,
+   14,
+   7
+  ],
+  [
+   7,
+   4,
+   7,
+   4
+  ]
+ ],
+ "block": [
+  [
+   2,
+   5
+  ],
+  [
+   4,
+   5
+  ],
+  [
+   10,
+   5
+  ],
+  [
+   12,
+   5
+  ]
+ ],
+ "furniture": [
+  {
+   "m": "pc01",
+   "tile": [
+    5,
+    12
+   ],
+   "wall": "N",
+   "_what": "results (Emerald sign (5,12))"
+  },
+  {
+   "m": "poster01",
+   "tile": [
+    1,
+    12
+   ],
+   "wall": "N",
+   "gap": 2,
+   "_what": "rules board (Emerald sign (1,12))"
+  },
+  {
+   "m": "plant01",
+   "tile": [
+    0,
+    13
+   ]
+  },
+  {
+   "m": "plant01",
+   "tile": [
+    14,
+    13
+   ]
+  }
+ ],
+ "floor_tex": [
+  {
+   "rect": [
+    7,
+    4,
+    7,
+    4
+   ],
+   "tex": "d0_miz",
+   "src": 291,
+   "stretch": true
+  }
+ ],
+ "mats": []
+}

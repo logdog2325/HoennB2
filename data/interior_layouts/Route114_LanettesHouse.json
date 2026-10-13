@@ -1,0 +1,280 @@
+{
+ "_doc": "Lanette's house (Sapphire 11x8, zone 559), Juniper's lab look (texture set 285, interior pack 3) as Sapphire's lab tileset. Row 2 is the row along the back wall (bookcases (0,2)/(2,2)/(9,2) = shelf05); the work desk (5-8, 1) stands in a recess of the back wall (pcdesk01 + pc01, Sapphire's signs (5,1)/(7,1)/(8,1)). Sapphire's clutter tile by tile: yellow boxes = cardboard boxes box02, blue chairs (solid) = chair01, white PC desks = pc01 on small tables, white shelves (1-2, 5-6)/(9-10, 6-7) = pcshelf01.",
+ "map": "Route114_LanettesHouse",
+ "style": "lab",
+ "floor": [
+  [
+   0,
+   2,
+   10,
+   7
+  ],
+  [
+   5,
+   1,
+   8,
+   1
+  ]
+ ],
+ "mats": [
+  {
+   "tex": "chip_mat",
+   "src": 285,
+   "rect": [
+    5,
+    7,
+    6,
+    7
+   ],
+   "border": 0.25,
+   "border_units": 4,
+   "y": 0,
+   "_what": "door mat"
+  }
+ ],
+ "furniture": [
+  {
+   "m": "shelf05",
+   "tile": [
+    0,
+    2
+   ],
+   "wall": "N",
+   "_what": "bookcase"
+  },
+  {
+   "m": "shelf05",
+   "tile": [
+    2,
+    2
+   ],
+   "wall": "N",
+   "_what": "bookcase"
+  },
+  {
+   "m": "shelf05",
+   "tile": [
+    9,
+    2
+   ],
+   "wall": "N",
+   "_what": "bookcase"
+  },
+  {
+   "m": "pcdesk01",
+   "rot": 90,
+   "tiles": [
+    5,
+    1,
+    7,
+    1
+   ],
+   "wall": "N",
+   "_what": "work desk"
+  },
+  {
+   "m": "pc01",
+   "tile": [
+    8,
+    1
+   ],
+   "wall": "N",
+   "_what": "PC"
+  },
+  {
+   "m": "box02_1",
+   "tile": [
+    0,
+    3
+   ]
+  },
+  {
+   "m": "box02_1",
+   "tile": [
+    2,
+    3
+   ]
+  },
+  {
+   "m": "box02_1",
+   "tile": [
+    9,
+    3
+   ]
+  },
+  {
+   "m": "box02_1",
+   "tile": [
+    10,
+    4
+   ]
+  },
+  {
+   "m": "box02_1",
+   "tile": [
+    7,
+    5
+   ]
+  },
+  {
+   "m": "box02_1",
+   "tile": [
+    1,
+    7
+   ]
+  },
+  {
+   "m": "box02_1",
+   "tile": [
+    8,
+    7
+   ]
+  },
+  {
+   "m": "chair01",
+   "tile": [
+    1,
+    3
+   ],
+   "rot": 0,
+   "_what": "chair"
+  },
+  {
+   "m": "chair01",
+   "tile": [
+    9,
+    4
+   ],
+   "rot": 90,
+   "_what": "chair"
+  },
+  {
+   "m": "chair01",
+   "tile": [
+    6,
+    5
+   ],
+   "rot": 0,
+   "_what": "chair"
+  },
+  {
+   "m": "chair01",
+   "tile": [
+    2,
+    7
+   ],
+   "rot": 90,
+   "_what": "chair"
+  },
+  {
+   "m": "chair01",
+   "tile": [
+    7,
+    7
+   ],
+   "rot": 0,
+   "_what": "chair"
+  },
+  {
+   "m": "pc01",
+   "tile": [
+    4,
+    3
+   ],
+   "_what": "PC desk"
+  },
+  {
+   "m": "desk02",
+   "tile": [
+    4,
+    4
+   ]
+  },
+  {
+   "m": "desk02",
+   "tile": [
+    4,
+    5
+   ]
+  },
+  {
+   "m": "pc01_1",
+   "tile": [
+    6,
+    3
+   ],
+   "_what": "PC desk (pc01 at one tile: two side by side overlapped)"
+  },
+  {
+   "m": "pc01_1",
+   "tile": [
+    7,
+    3
+   ],
+   "_what": "PC desk (pc01 at one tile: two side by side overlapped)"
+  },
+  {
+   "m": "desk02",
+   "tile": [
+    6,
+    4
+   ]
+  },
+  {
+   "m": "desk02",
+   "tile": [
+    7,
+    4
+   ]
+  },
+  {
+   "m": "pc01",
+   "tile": [
+    0,
+    4
+   ],
+   "_what": "PC desk"
+  },
+  {
+   "m": "desk02",
+   "tile": [
+    0,
+    5
+   ]
+  },
+  {
+   "m": "pcshelf01",
+   "tiles": [
+    1,
+    5,
+    2,
+    6
+   ],
+   "_what": "shelf"
+  },
+  {
+   "m": "desk02",
+   "tile": [
+    0,
+    6
+   ]
+  },
+  {
+   "m": "desk02",
+   "tile": [
+    0,
+    7
+   ]
+  },
+  {
+   "m": "pcshelf01",
+   "tiles": [
+    9,
+    6,
+    10,
+    7
+   ],
+   "_what": "shelf"
+  }
+ ]
+}

@@ -1,0 +1,37 @@
+{
+ "zone": 25,
+ "room": "DewfordTown_Gym",
+ "area": 334,
+ "bgm": 1062,
+ "what": "gyms_league: DewfordTown_Gym (b2tools/gyms_league_rooms.py); story phase: Brawly (14,4), trainers Hideki (2,17), Tessa (1,10), Laura (12,24), Gym guide (5,24), statue plaques | the darkness that lifts as trainers are beaten (Sapphire: flash radius per defeated trainer)",
+ "parent": 465,
+ "warps": [
+  {
+   "at": [
+    5,
+    27
+   ],
+   "tile_only": true,
+   "to": [
+    465,
+    10
+   ],
+   "what": "Sapphire warp 0 -> DewfordTown 2"
+  },
+  {
+   "at": [
+    6,
+    27
+   ],
+   "tile_only": true,
+   "to": [
+    465,
+    10
+   ],
+   "what": "Sapphire warp 1 -> DewfordTown 2"
+  }
+ ],
+ "npcs": [],
+ "signs": [],
+ "triggers": []
+}

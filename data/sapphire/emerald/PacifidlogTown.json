@@ -1,0 +1,253 @@
+{
+ "map": "PacifidlogTown",
+ "id": "MAP_PACIFIDLOG_TOWN",
+ "layout": "LAYOUT_PACIFIDLOG_TOWN",
+ "music": "MUS_LILYCOVE",
+ "region_map_section": "MAPSEC_PACIFIDLOG_TOWN",
+ "weather": "WEATHER_SUNNY",
+ "connections": [
+  {
+   "map": "MAP_ROUTE132",
+   "offset": 0,
+   "direction": "left"
+  },
+  {
+   "map": "MAP_ROUTE131",
+   "offset": 0,
+   "direction": "right"
+  }
+ ],
+ "npcs": [
+  {
+   "local_id": 1,
+   "x": 10,
+   "y": 23,
+   "gfx": "OBJ_EVENT_GFX_GIRL_1",
+   "movement": "MOVEMENT_TYPE_FACE_LEFT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "PacifidlogTown_EventScript_Girl",
+   "texts": {
+    "PacifidlogTown_Text_FastRunningCurrent": "The sea between PACIFIDLOG and\\nSLATEPORT has a fast-running tide.\\pIf you decide to SURF, you could end\\nup swept away somewhere else.$"
+   }
+  },
+  {
+   "local_id": 2,
+   "x": 11,
+   "y": 14,
+   "gfx": "OBJ_EVENT_GFX_FISHERMAN",
+   "movement": "MOVEMENT_TYPE_FACE_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "PacifidlogTown_EventScript_Fisherman",
+   "texts": {
+    "PacifidlogTown_Text_SkyPillarTooScary": "The SKY PILLAR?\\p…Oh, you must mean that tall, tall\\ntower a little further out.\\pIf you asked me, I wouldn't climb it.\\nIt's too scary to get up that high.\\pLife at sea level in PACIFIDLOG,\\nthat suits me fine.$"
+   }
+  },
+  {
+   "local_id": 3,
+   "x": 9,
+   "y": 16,
+   "gfx": "OBJ_EVENT_GFX_NINJA_BOY",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "PacifidlogTown_EventScript_NinjaBoy",
+   "texts": {
+    "PacifidlogTown_Text_NeatHousesOnWater": "See, isn't it neat?\\nThese houses are on water!\\pI was born here!$"
+   }
+  }
+ ],
+ "signs": [
+  {
+   "x": 9,
+   "y": 15,
+   "facing": "BG_EVENT_PLAYER_FACING_NORTH",
+   "script": "Common_EventScript_ShowPokemonCenterSign",
+   "texts": {
+    "gText_PokemonCenterSign": "“Rejuvenate your tired partners!”\\nPOKéMON CENTER$"
+   }
+  },
+  {
+   "x": 7,
+   "y": 16,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "PacifidlogTown_EventScript_TownSign",
+   "texts": {
+    "PacifidlogTown_Text_TownSign": "PACIFIDLOG TOWN\\p“Where the morning sun smiles upon\\nthe waters.”$"
+   }
+  },
+  {
+   "x": 10,
+   "y": 15,
+   "facing": "BG_EVENT_PLAYER_FACING_NORTH",
+   "script": "Common_EventScript_ShowPokemonCenterSign",
+   "texts": {
+    "gText_PokemonCenterSign": "“Rejuvenate your tired partners!”\\nPOKéMON CENTER$"
+   }
+  }
+ ],
+ "warps": [
+  {
+   "id": 0,
+   "x": 8,
+   "y": 15,
+   "dest_map": "MAP_PACIFIDLOG_TOWN_POKEMON_CENTER_1F",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 1,
+   "x": 16,
+   "y": 13,
+   "dest_map": "MAP_PACIFIDLOG_TOWN_HOUSE1",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 2,
+   "x": 3,
+   "y": 22,
+   "dest_map": "MAP_PACIFIDLOG_TOWN_HOUSE2",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 3,
+   "x": 12,
+   "y": 24,
+   "dest_map": "MAP_PACIFIDLOG_TOWN_HOUSE3",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 4,
+   "x": 2,
+   "y": 12,
+   "dest_map": "MAP_PACIFIDLOG_TOWN_HOUSE4",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 5,
+   "x": 17,
+   "y": 21,
+   "dest_map": "MAP_PACIFIDLOG_TOWN_HOUSE5",
+   "dest_warp_id": "0"
+  }
+ ],
+ "coord_events": [],
+ "wild": {
+  "water_mons": {
+   "encounter_rate": 4,
+   "slot_rates": [
+    60,
+    30,
+    5,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 5,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 15,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_PELIPPER",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_PELIPPER",
+     "min": 25,
+     "max": 30
+    }
+   ]
+  },
+  "fishing_mons": {
+   "encounter_rate": 10,
+   "slot_rates": [
+    70,
+    30,
+    60,
+    20,
+    20,
+    40,
+    40,
+    15,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_SHARPEDO",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 35,
+     "max": 40
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 40,
+     "max": 45
+    }
+   ]
+  }
+ }
+}

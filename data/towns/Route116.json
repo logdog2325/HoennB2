@@ -1,0 +1,10 @@
+{
+ "_doc": "Route 116's Tunneler's rest house (group towns5, notes/TOWNS_TOWNS5.md). buildings: Sapphire door destination -> pack-0 res and front (z of the model's front wall; world.py puts it 4 units into the door tile, footprint centre from data/plans); props: model origin in Sapphire map tile coordinates (footprint centre x, door row + (4 - 20)/16).",
+ "group": "towns5",
+ "buildings": {
+  "MAP_ROUTE116_TUNNELERS_REST_HOUSE": {
+   "res": 321,
+   "front": 20
+  }
+ }
+}

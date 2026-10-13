@@ -1,0 +1,9 @@
+{
+ "_doc": "Emerald builds (emerald_ch12_13, 2026-10-12): the abnormal weather's end (pokeemerald data/text/abnormal_weather.inc gText_AbnormalWeatherEnded_Rain / _Sun), lines 61-62 of script/0615.txt (and 63-64: the Safari Zone expansion's workers and attendant, SafariZone_South_Text_AreaOffLimits1 / SafariZone_Southeast_Text_ExpansionIsFinished) = the text of global script file 1236 (src/field_scripts/emerald/1236_global_2280.s scripts 2293-2297; emerald_mech's lines are 56-60).",
+ "script/0615.txt": {
+  "61": "The massive downpour appears to\\nhave stopped…",
+  "62": "The intense sunshine appears to\\nhave subsided…",
+  "63": "This area is still under construction.\\nIt’s off-limits, sorry!",
+  "64": "The Safari Zone’s expansion project\\nis finished now.{be01}\\nWe hope you will enjoy the new area."
+ }
+}

@@ -1,0 +1,134 @@
+{
+ "_doc": "May's house 1F (zone 392; scripts 0784_mays_house_1f.s, text 0621_mays_house_1f.txt). Sapphire tile + (1, 0) = zone tile. NPCs = Sapphire's object events (uid = Sapphire local id).",
+ "zone": 392,
+ "room": "LittlerootTown_MaysHouse_1F",
+ "npcs": [
+  {
+   "uid": 1,
+   "model": 251,
+   "script": 26,
+   "dir": 2,
+   "at": [
+    8,
+    6
+   ],
+   "flag": 2050,
+   "what": "Mom (FLAG_HIDE_MAY_MOM_DOWNSTAIRS)"
+  },
+  {
+   "uid": 2,
+   "model": 54,
+   "script": 27,
+   "dir": 0,
+   "at": [
+    6,
+    5
+   ],
+   "flag": 2061,
+   "what": "Machoke facing the TV: Black 2 worker (code 54) (FLAG_HIDE_MACHOKE_MOVER_1)"
+  },
+  {
+   "uid": 3,
+   "model": 54,
+   "script": 28,
+   "dir": 2,
+   "at": [
+    9,
+    3
+   ],
+   "move": 20,
+   "range": [
+    3,
+    0
+   ],
+   "flag": 2062,
+   "what": "Machoke carrying a box: Black 2 worker (code 54) (FLAG_HIDE_MACHOKE_MOVER_2) (walks back and forth as Sapphire's WALK_LEFT_AND_RIGHT: Black 2 code 20; v165_fixes)"
+  },
+  {
+   "uid": 4,
+   "model": 22,
+   "script": 29,
+   "dir": 2,
+   "at": [
+    8,
+    7
+   ],
+   "flag": 2056,
+   "what": "the rival's mom (WOMAN_5 -> 22) (FLAG_HIDE_MAY_MOM)"
+  },
+  {
+   "uid": 5,
+   "model": 272,
+   "script": 5,
+   "dir": 3,
+   "at": [
+    5,
+    6
+   ],
+   "flag": 2064,
+   "what": "Norman (FLAG_HIDE_NORMAN_LITTLEROOT); no script in Sapphire"
+  }
+ ],
+ "signs": [
+  {
+   "script": 6,
+   "at": [
+    6,
+    4
+   ],
+   "dir": 0,
+   "what": "TV (facing north)"
+  }
+ ],
+ "warps": [
+  {
+   "x": 3,
+   "z": 8,
+   "w": 1,
+   "h": 1,
+   "type": 1,
+   "dir": 1,
+   "to": [
+    389,
+    1
+   ],
+   "what": "exit, right mat tile -> Littleroot warp 1; arriving from Littleroot lands here, Sapphire (2,8) (its warp 1)"
+  },
+  {
+   "at": [
+    2,
+    2
+   ],
+   "to": [
+    393,
+    0
+   ],
+   "what": "stairs up -> 2F warp 0"
+  },
+  {
+   "x": 2,
+   "z": 8,
+   "w": 1,
+   "h": 1,
+   "type": 1,
+   "dir": 1,
+   "to": [
+    389,
+    1
+   ],
+   "what": "exit, left mat tile (Sapphire (1,8))"
+  }
+ ],
+ "triggers": [
+  {
+   "script": 25,
+   "var": 16462,
+   "value": 4,
+   "at": [
+    2,
+    8
+   ],
+   "what": "Sapphire's GoSeeRoom coord event (lead's script 25 when VAR_LITTLEROOT_INTRO_STATE == 4)"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "_doc": "Building groups whose models go into pack 0 in normal builds (agents test with HOENN_TOWN_GROUPS=<group>). towns5 (the route buildings: Mr. Briney's cottage, the flower shop, Seashore House, Cycling Road gates, Trick House, Winstrate house, Old Lady's Rest Stop, cable car, Weather Institute, Safari Zone entrance, Ever Grande's Pokemon League and Center, the route houses) enabled by the outdoor sweep 2026-10-07: pack 0 370,824 B; the field heap (HEAPID_FIELDMAP 0x15, 1,210,312 B) then has 40,788 B free after a map load in Lilycove, Slateport, Mauville, Mossdeep, Rustboro and Ever Grande (31,328 B in Littleroot after the opening), read in DeSmuME (work/agents/sweep_outdoor/tools/heap.py); every one of them loads. buildings_audit 2026-10-08: + res 411 (towns5, Route 118's door-less house), 354 (towns2, Slateport's monument), 412/413 (towns5, Route 112's cable car pylons): pack 0 382,856 B; with the save fix's bigger field heap (patches/area2_buildings.py FIELD_HEAP_EXTRA) a pack-0 zone keeps 100,320 B free after a map load, 17,316 B over the save's 83,004 B (DeSmuME: saves in Littleroot after a cold boot + Continue, Slateport, Route 118).",
+ "groups": [
+  "slice",
+  "towns1",
+  "towns2",
+  "towns3",
+  "towns4",
+  "towns5"
+ ]
+}

@@ -1,0 +1,7 @@
+{
+ "_doc": "rods_fix (2026-10-12): the Y menu's names of the Old Rod's and the Good Rod's shortcuts (ids 7 and 8, Black 2's DNA Splicers' lines; b2tools/patches/rods.py), merged by b2tools/patches/text.py over the decomp text.",
+ "system/0365_ability_handlers.txt": {
+  "7": "{ff00:2}Old Rod{ff00:0}",
+  "8": "{ff00:2}Good Rod{ff00:0}"
+ }
+}

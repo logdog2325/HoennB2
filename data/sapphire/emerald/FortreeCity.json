@@ -1,0 +1,266 @@
+{
+ "map": "FortreeCity",
+ "id": "MAP_FORTREE_CITY",
+ "layout": "LAYOUT_FORTREE_CITY",
+ "music": "MUS_FORTREE",
+ "region_map_section": "MAPSEC_FORTREE_CITY",
+ "weather": "WEATHER_SUNNY",
+ "connections": [
+  {
+   "map": "MAP_ROUTE119",
+   "offset": 0,
+   "direction": "left"
+  },
+  {
+   "map": "MAP_ROUTE120",
+   "offset": 0,
+   "direction": "right"
+  }
+ ],
+ "npcs": [
+  {
+   "local_id": 1,
+   "x": 31,
+   "y": 3,
+   "gfx": "OBJ_EVENT_GFX_MAN_2",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "FortreeCity_EventScript_Man",
+   "texts": {
+    "FortreeCity_Text_SawGiganticPokemonInSky": "No one believes me, but I saw this\\ngigantic POKéMON in the sky.\\pIt seemed to squirm as it flew toward\\nROUTE 131.\\pBy the way… Sniff…\\nUm… You, uh…smell singed.\\pWere you at a volcano or something?$"
+   }
+  },
+  {
+   "local_id": 2,
+   "x": 32,
+   "y": 16,
+   "gfx": "OBJ_EVENT_GFX_GIRL_1",
+   "movement": "MOVEMENT_TYPE_WANDER_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "FortreeCity_EventScript_Girl",
+   "texts": {
+    "FortreeCity_Text_TreesGrowByDrinkingRainwater": "The ground absorbs rainwater, and\\ntrees grow by drinking that water…\\pOur FORTREE CITY exists because\\nthere's both water and soil.$"
+   }
+  },
+  {
+   "local_id": 3,
+   "x": 32,
+   "y": 10,
+   "gfx": "OBJ_EVENT_GFX_WOMAN_5",
+   "movement": "MOVEMENT_TYPE_WANDER_UP_AND_DOWN",
+   "range": [
+    0,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "FortreeCity_EventScript_Woman",
+   "texts": {
+    "FortreeCity_Text_SomethingBlockingGym": "I want to go to the POKéMON GYM,\\nbut something's blocking the way.\\pAfter all the bother I went through\\ntraining on ROUTE 120…$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 4,
+   "x": 11,
+   "y": 14,
+   "gfx": "OBJ_EVENT_GFX_BOY_1",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "FortreeCity_EventScript_Boy",
+   "texts": {
+    "FortreeCity_Text_BugPokemonComeThroughWindow": "Living on top of trees is okay.\\pBut sometimes BUG POKéMON come in\\nthrough windows.\\lIt can be really startling.$"
+   }
+  },
+  {
+   "local_id": 5,
+   "x": 8,
+   "y": 10,
+   "gfx": "OBJ_EVENT_GFX_OLD_MAN",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "FortreeCity_EventScript_OldMan",
+   "texts": {
+    "FortreeCity_Text_EveryoneHealthyAndLively": "The CITY consists of homes built on\\ntrees.\\pPerhaps because of that lifestyle,\\neveryone is healthy and lively.\\pWhy, even myself--I feel as if I've\\ngrown thirty years younger.$"
+   }
+  },
+  {
+   "local_id": 6,
+   "x": 9,
+   "y": 16,
+   "gfx": "OBJ_EVENT_GFX_GAMEBOY_KID",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "FortreeCity_EventScript_GameboyKid",
+   "texts": {
+    "FortreeCity_Text_PokemonThatEvolveWhenTraded": "There are POKéMON that evolve when\\nyou trade them! That's what I heard.$"
+   }
+  },
+  {
+   "local_id": 7,
+   "x": 25,
+   "y": 8,
+   "gfx": "OBJ_EVENT_GFX_KECLEON",
+   "movement": "MOVEMENT_TYPE_INVISIBLE",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_FORTREE_CITY_KECLEON",
+   "script": "FortreeCity_EventScript_Kecleon",
+   "texts": {
+    "FortreeCity_Text_SomethingUnseeable": "Something unseeable is in the way.$"
+   },
+   "complex": true
+  }
+ ],
+ "signs": [
+  {
+   "x": 6,
+   "y": 9,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "FortreeCity_EventScript_CitySign",
+   "texts": {
+    "FortreeCity_Text_CitySign": "FORTREE CITY\\n“The treetop city that frolics with\\lnature.”$"
+   }
+  },
+  {
+   "x": 7,
+   "y": 6,
+   "facing": "BG_EVENT_PLAYER_FACING_NORTH",
+   "script": "Common_EventScript_ShowPokemonCenterSign",
+   "texts": {
+    "gText_PokemonCenterSign": "“Rejuvenate your tired partners!”\\nPOKéMON CENTER$"
+   }
+  },
+  {
+   "x": 5,
+   "y": 14,
+   "facing": "BG_EVENT_PLAYER_FACING_NORTH",
+   "script": "Common_EventScript_ShowPokemartSign",
+   "texts": {
+    "gText_PokemartSign": "“Selected items for your convenience!”\\nPOKéMON MART$"
+   }
+  },
+  {
+   "x": 26,
+   "y": 10,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "FortreeCity_EventScript_GymSign",
+   "texts": {
+    "FortreeCity_Text_GymSign": "FORTREE CITY POKéMON GYM\\nLEADER: WINONA\\p“The bird user taking flight into\\nthe world.”$"
+   }
+  },
+  {
+   "x": 6,
+   "y": 6,
+   "facing": "BG_EVENT_PLAYER_FACING_NORTH",
+   "script": "Common_EventScript_ShowPokemonCenterSign",
+   "texts": {
+    "gText_PokemonCenterSign": "“Rejuvenate your tired partners!”\\nPOKéMON CENTER$"
+   }
+  },
+  {
+   "x": 6,
+   "y": 14,
+   "facing": "BG_EVENT_PLAYER_FACING_NORTH",
+   "script": "Common_EventScript_ShowPokemartSign",
+   "texts": {
+    "gText_PokemartSign": "“Selected items for your convenience!”\\nPOKéMON MART$"
+   }
+  }
+ ],
+ "warps": [
+  {
+   "id": 0,
+   "x": 5,
+   "y": 6,
+   "dest_map": "MAP_FORTREE_CITY_POKEMON_CENTER_1F",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 1,
+   "x": 10,
+   "y": 3,
+   "dest_map": "MAP_FORTREE_CITY_HOUSE1",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 2,
+   "x": 22,
+   "y": 11,
+   "dest_map": "MAP_FORTREE_CITY_GYM",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 3,
+   "x": 4,
+   "y": 14,
+   "dest_map": "MAP_FORTREE_CITY_MART",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 4,
+   "x": 17,
+   "y": 3,
+   "dest_map": "MAP_FORTREE_CITY_HOUSE2",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 5,
+   "x": 25,
+   "y": 3,
+   "dest_map": "MAP_FORTREE_CITY_HOUSE3",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 6,
+   "x": 32,
+   "y": 2,
+   "dest_map": "MAP_FORTREE_CITY_HOUSE4",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 7,
+   "x": 12,
+   "y": 13,
+   "dest_map": "MAP_FORTREE_CITY_HOUSE5",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 8,
+   "x": 37,
+   "y": 13,
+   "dest_map": "MAP_FORTREE_CITY_DECORATION_SHOP",
+   "dest_warp_id": "0"
+  }
+ ],
+ "coord_events": [],
+ "wild": {}
+}

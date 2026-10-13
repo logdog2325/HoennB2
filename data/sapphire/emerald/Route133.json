@@ -1,0 +1,319 @@
+{
+ "map": "Route133",
+ "id": "MAP_ROUTE133",
+ "layout": "LAYOUT_ROUTE133",
+ "music": "MUS_ROUTE119",
+ "region_map_section": "MAPSEC_ROUTE_133",
+ "weather": "WEATHER_SUNNY",
+ "connections": [
+  {
+   "map": "MAP_ROUTE134",
+   "offset": 0,
+   "direction": "left"
+  },
+  {
+   "map": "MAP_ROUTE132",
+   "offset": 0,
+   "direction": "right"
+  }
+ ],
+ "npcs": [
+  {
+   "local_id": 1,
+   "x": 68,
+   "y": 27,
+   "gfx": "OBJ_EVENT_GFX_SWIMMER_M",
+   "movement": "MOVEMENT_TYPE_WALK_UP_AND_DOWN",
+   "range": [
+    0,
+    2
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route133_EventScript_Franklin",
+   "texts": {
+    "Route133_Text_FranklinIntro": "Did the currents carry you here, too?\\nThis must have been fated.\\lLet's battle!$",
+    "Route133_Text_FranklinDefeat": "Strong!\\nToo much so!$",
+    "Route133_Text_FranklinPostBattle": "It's just my luck that a tough TRAINER\\nlike you would drift here…\\lI must be cursed…$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 2,
+   "x": 13,
+   "y": 3,
+   "gfx": "OBJ_EVENT_GFX_SWIMMER_F",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route133_EventScript_Linda",
+   "texts": {
+    "Route133_Text_LindaIntro": "Welcome!\\nI've been expecting you!$",
+    "Route133_Text_LindaDefeat": "No! Please!$",
+    "Route133_Text_LindaPostBattle": "A strong child TRAINER…\\nThat's so annoying!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 3,
+   "x": 68,
+   "y": 28,
+   "gfx": "OBJ_EVENT_GFX_SWIMMER_F",
+   "movement": "MOVEMENT_TYPE_WALK_DOWN_AND_UP",
+   "range": [
+    0,
+    2
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route133_EventScript_Debra",
+   "texts": {
+    "Route133_Text_DebraIntro": "I've led a life of woe and misery…\\nI've been cast away, and this is where\\lI've drifted…$",
+    "Route133_Text_DebraDefeat": "Another loss…$",
+    "Route133_Text_DebraPostBattle": "A life adrift…\\nI don't want it anymore!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 4,
+   "x": 53,
+   "y": 12,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_ROUTE_133_BIG_PEARL",
+   "script": "Route133_EventScript_ItemBigPearl",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 5,
+   "x": 8,
+   "y": 10,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_ROUTE_133_STAR_PIECE",
+   "script": "Route133_EventScript_ItemStarPiece",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 6,
+   "x": 7,
+   "y": 14,
+   "gfx": "OBJ_EVENT_GFX_MAN_5",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN_AND_RIGHT",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route133_EventScript_Beck",
+   "texts": {
+    "Route133_Text_BeckIntro": "I came all the way out here with my\\nBIRD POKéMON.$",
+    "Route133_Text_BeckDefeat": "You…\\nYou're stunningly cool!$",
+    "Route133_Text_BeckPostBattle": "I'd like to go back to FORTREE,\\nbut I've grown to like this place, too.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 7,
+   "x": 37,
+   "y": 15,
+   "gfx": "OBJ_EVENT_GFX_MAN_3",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN_AND_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route133_EventScript_Warren",
+   "texts": {
+    "Route133_Text_WarrenIntro": "I want to win like everyone else, but I\\nwon't raise POKéMON like everyone else.$",
+    "Route133_Text_WarrenDefeat": "Darn it!\\nMy way is still too slack!$",
+    "Route133_Text_WarrenPostBattle": "It's way more fun to do things the way\\nI want than to be like everybody else.\\lI mean, that's obvious!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 8,
+   "x": 56,
+   "y": 11,
+   "gfx": "OBJ_EVENT_GFX_EXPERT_F",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route133_EventScript_Mollie",
+   "texts": {
+    "Route133_Text_MollieIntro": "I must have battled thousands\\nof times. I've lost count.$",
+    "Route133_Text_MollieDefeat": "I may have lost thousands of times,\\nbut a loss still stings.$",
+    "Route133_Text_MolliePostBattle": "Keep at this, youngster. So you can\\nbecome like my husband and me.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 9,
+   "x": 56,
+   "y": 15,
+   "gfx": "OBJ_EVENT_GFX_EXPERT_M",
+   "movement": "MOVEMENT_TYPE_FACE_UP_AND_RIGHT",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route133_EventScript_Conor",
+   "texts": {
+    "Route133_Text_ConorIntro": "Young people are too happy to go with\\nthe flow. They're without direction.$",
+    "Route133_Text_ConorDefeat": "You have a firm sense of purpose.$",
+    "Route133_Text_ConorPostBattle": "Don't let others lead you astray.\\nDon't lose direction as you grow older.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 10,
+   "x": 48,
+   "y": 28,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_ROUTE_133_MAX_REVIVE",
+   "script": "Route133_EventScript_ItemMaxRevive",
+   "texts": {},
+   "complex": true
+  }
+ ],
+ "signs": [],
+ "warps": [],
+ "coord_events": [],
+ "wild": {
+  "water_mons": {
+   "encounter_rate": 4,
+   "slot_rates": [
+    60,
+    30,
+    5,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 5,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 15,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_PELIPPER",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_PELIPPER",
+     "min": 25,
+     "max": 30
+    }
+   ]
+  },
+  "fishing_mons": {
+   "encounter_rate": 30,
+   "slot_rates": [
+    70,
+    30,
+    60,
+    20,
+    20,
+    40,
+    40,
+    15,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_SHARPEDO",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_HORSEA",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 35,
+     "max": 40
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 40,
+     "max": 45
+    }
+   ]
+  }
+ }
+}

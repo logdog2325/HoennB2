@@ -1,0 +1,375 @@
+{
+ "_doc": "Styles of the specials agent's rooms (Sapphire's unique rooms). Each copies the Black 2 room closest to Sapphire's look (texture roles measured on that room's chunk with b2tools/specials.py chunk_materials/wall_uv); src = that room's texture set, which is also its area: the room's zone uses that area (data/interiors/<zone>.json \"area\"), so most of the textures are already in the area's set. black = wall caps (Black 2 draws them black).",
+ "sp_theater": {
+  "_doc": "Nimbasa's Musical Theater lobby (zone 77, area 305): pink patterned floor in24_yuka, pink wall in24_kabe, the pink-to-black entrance gradient in24_in. Contest lobbies.",
+  "floor": {
+   "tex": "in24_yuka",
+   "src": 305,
+   "size": 32
+  },
+  "wall": {
+   "tex": "in24_kabe",
+   "src": 305,
+   "u_size": 32,
+   "v": [
+    0,
+    1.5
+   ]
+  },
+  "genkan": {
+   "tex": "in24_in",
+   "src": 305,
+   "stretch": true
+  },
+  "black": {
+   "tex": "black",
+   "src": 285
+  }
+ },
+ "sp_stage": {
+  "_doc": "Contest halls: the Musical Theater's floor with its purple stage curtain in24_carten as the wall (Sapphire's halls have a curtain wall).",
+  "floor": {
+   "tex": "in24_yuka",
+   "src": 305,
+   "size": 32
+  },
+  "wall": {
+   "tex": "in24_carten",
+   "src": 305,
+   "u_size": 32,
+   "v": [
+    0,
+    0.8
+   ]
+  },
+  "genkan": {
+   "tex": "in24_in",
+   "src": 305,
+   "stretch": true
+  },
+  "black": {
+   "tex": "black",
+   "src": 285
+  }
+ },
+ "sp_gamecorner": {
+  "_doc": "Mauville Game Corner: the Musical Theater's red carpet in24_carpet as the floor, Nimbasa's Battle Test teal wall in25kabe_01 (set 306) for Sapphire's sky-blue wall.",
+  "floor": {
+   "tex": "in24_carpet",
+   "src": 305,
+   "size": 32
+  },
+  "wall": {
+   "tex": "in25kabe_01",
+   "src": 306,
+   "u_size": 16
+  },
+  "genkan": {
+   "tex": "in24_in",
+   "src": 305,
+   "stretch": true
+  },
+  "black": {
+   "tex": "black",
+   "src": 285
+  }
+ },
+ "sp_museum": {
+  "_doc": "Nacrene Museum (zone 17, area 287): blue diamond floor in6yuka_02, white museum wall in6kabe_01 (Black 2 maps it 32 units across, 48 high). Oceanic Museum.",
+  "floor": {
+   "tex": "in6yuka_02",
+   "src": 287,
+   "size": 32
+  },
+  "wall": {
+   "tex": "in6kabe_01",
+   "src": 287,
+   "u_size": 32
+  },
+  "genkan": {
+   "tex": "chip_ent",
+   "src": 287,
+   "stretch": true
+  },
+  "black": {
+   "tex": "black",
+   "src": 285
+  }
+ },
+ "sp_artmuseum": {
+  "_doc": "Lilycove Museum 1F: Nacrene Museum's wood parquet in6yuka_01_2 (16 units a repeat, as Black 2) and white wall.",
+  "floor": {
+   "tex": "in6yuka_01_2",
+   "src": 287,
+   "size": 16
+  },
+  "wall": {
+   "tex": "in6kabe_01",
+   "src": 287,
+   "u_size": 32
+  },
+  "genkan": {
+   "tex": "chip_ent",
+   "src": 287,
+   "stretch": true
+  },
+  "black": {
+   "tex": "black",
+   "src": 285
+  }
+ },
+ "sp_gallery": {
+  "_doc": "Lilycove Museum 2F (gray stone tiles in Sapphire): Nacrene Museum's white tiles in6yuka_01 and white wall.",
+  "floor": {
+   "tex": "in6yuka_01",
+   "src": 287,
+   "size": 32
+  },
+  "wall": {
+   "tex": "in6kabe_01",
+   "src": 287,
+   "u_size": 32
+  },
+  "genkan": {
+   "tex": "chip_ent",
+   "src": 287,
+   "stretch": true
+  },
+  "black": {
+   "tex": "black",
+   "src": 285
+  }
+ },
+ "sp_school": {
+  "_doc": "Aspertia Trainers' School (zone 436, area 286): classroom floor in05_yuka3 (40 units a repeat, as Black 2), white wall with a gray baseboard in05_sch_ka3, the school's stone entrance in05_genkan.",
+  "floor": {
+   "tex": "in05_yuka3",
+   "src": 286,
+   "size": 40
+  },
+  "wall": {
+   "tex": "in05_sch_ka3",
+   "src": 286,
+   "u_size": 32
+  },
+  "genkan": {
+   "tex": "in05_genkan",
+   "src": 286,
+   "stretch": true
+  },
+  "black": {
+   "tex": "black",
+   "src": 285
+  }
+ },
+ "sp_fanclub": {
+  "_doc": "Icirrus Pokémon Fan Club (zone 119, area 307): wood floor in26_yuka_01 (16 units), green wallpaper in26_kabe_02.",
+  "floor": {
+   "tex": "in26_yuka_01",
+   "src": 307,
+   "size": 16
+  },
+  "wall": {
+   "tex": "in26_kabe_02",
+   "src": 307,
+   "u_size": 64
+  },
+  "genkan": {
+   "tex": "chip_ent",
+   "src": 307,
+   "stretch": true
+  },
+  "black": {
+   "tex": "black",
+   "src": 285
+  }
+ },
+ "sp_center": {
+  "_doc": "Black 2's Pokémon Center (zone 8, area 283): orange tile floor in02_yuka6, white Center wall in02_pckabe. Pokémon League lobby (a Center in Sapphire).",
+  "floor": {
+   "tex": "in02_yuka6",
+   "src": 283,
+   "size": 16
+  },
+  "wall": {
+   "tex": "in02_pckabe",
+   "src": 283,
+   "u_size": 8
+  },
+  "genkan": {
+   "tex": "chip_ent",
+   "src": 283,
+   "stretch": true
+  },
+  "black": {
+   "tex": "black",
+   "src": 285
+  }
+ },
+ "sp_cave": {
+  "_doc": "Fossil Maniac's tunnel: Clay Tunnel's brown cave (texture set 332, area 332): dirt floor d29_yuka1, brown rock d29cliff as the walls (3 repeats up the wall), the Center's dark entrance gradient chip_ent (set 283) at the exit.",
+  "floor": {
+   "tex": "d29_yuka1",
+   "src": 332,
+   "size": 64
+  },
+  "wall": {
+   "tex": "d29cliff",
+   "src": 332,
+   "u_size": 16,
+   "v": [
+    0,
+    3
+   ]
+  },
+  "genkan": {
+   "tex": "chip_ent",
+   "src": 283,
+   "stretch": true
+  },
+  "black": {
+   "tex": "black",
+   "src": 285
+  }
+ },
+ "sp_wood": {
+  "_doc": "Route 3 Day Care (zone 323, area 282): wood plank wall in01_wall2, light wood floor b01_yuka2. Day Care, Seashore House, Flower Shop, Bike Shop.",
+  "floor": {
+   "tex": "b01_yuka2",
+   "src": 282,
+   "size": 16
+  },
+  "wall": {
+   "tex": "in01_wall2",
+   "src": 282,
+   "u_size": 16
+  },
+  "genkan": {
+   "tex": "in01_genkan",
+   "src": 282,
+   "stretch": true
+  },
+  "black": {
+   "tex": "black",
+   "src": 285
+  }
+ },
+ "sp_tiles": {
+  "_doc": "Bike Shop / Flower Shop (gray-white tiles in Sapphire): Pokémon Center gray tiles in02_yuka7 (set 283) with the wood wall in01_wall2 (set 282).",
+  "floor": {
+   "tex": "in02_yuka7",
+   "src": 283,
+   "size": 16
+  },
+  "wall": {
+   "tex": "in01_wall2",
+   "src": 282,
+   "u_size": 16
+  },
+  "genkan": {
+   "tex": "in01_genkan",
+   "src": 282,
+   "stretch": true
+  },
+  "black": {
+   "tex": "black",
+   "src": 285
+  }
+ },
+ "sp_elevator": {
+  "_doc": "Department Store elevator: Castelia office tiles b06_yuka3 and wall b06_kabe8 (set 341, Castelia building with Black 2's elevator door).",
+  "floor": {
+   "tex": "b06_yuka3",
+   "src": 341,
+   "size": 32
+  },
+  "wall": {
+   "tex": "b06_kabe8",
+   "src": 341,
+   "u_size": 32
+  },
+  "genkan": {
+   "tex": "chip_ent",
+   "src": 341,
+   "stretch": true
+  },
+  "black": {
+   "tex": "black",
+   "src": 285
+  }
+ },
+ "sp_trick": {
+  "_doc": "Trick House puzzle room: Sapphire's green floor = the green check mat b01_mat1 of Black 2's houses (set 282), wood wall in01_wall2.",
+  "floor": {
+   "tex": "b01_mat1",
+   "src": 282,
+   "size": 16
+  },
+  "wall": {
+   "tex": "in01_wall2",
+   "src": 282,
+   "u_size": 16
+  },
+  "genkan": {
+   "tex": "in01_genkan",
+   "src": 282,
+   "stretch": true
+  },
+  "black": {
+   "tex": "black",
+   "src": 285
+  }
+ },
+ "sp_battle": {
+  "_doc": "Battle Tower: Nimbasa's Battle Test room (zone 93, area 306): teal diamond floor in25yuka_01 (16 units a repeat, as Black 2), blue-white wall in25kabe_01.",
+  "floor": {
+   "tex": "in25yuka_01",
+   "src": 306,
+   "size": 16
+  },
+  "wall": {
+   "tex": "in25kabe_01",
+   "src": 306,
+   "u_size": 16,
+   "v": [
+    0,
+    1.35
+   ]
+  },
+  "genkan": {
+   "tex": "chip_ent",
+   "src": 306,
+   "stretch": true
+  },
+  "black": {
+   "tex": "black",
+   "src": 285
+  }
+ },
+ "sp_battleroom": {
+  "_doc": "Battle Tower battle room (yellow floor in Sapphire): the Battle Subway's yellow floor gs_yuka_c (set 330) and the Battle Test wall.",
+  "floor": {
+   "tex": "gs_yuka_c",
+   "src": 330,
+   "size": 64
+  },
+  "wall": {
+   "tex": "in25kabe_01",
+   "src": 306,
+   "u_size": 16,
+   "v": [
+    0,
+    1.35
+   ]
+  },
+  "genkan": {
+   "tex": "chip_ent",
+   "src": 306,
+   "stretch": true
+  },
+  "black": {
+   "tex": "black",
+   "src": 285
+  }
+ }
+}

@@ -1,0 +1,22 @@
+{
+ "map": "emerald/VictoryRoad_B1F",
+ "origin": [
+  8,
+  0
+ ],
+ "levels": {
+  "3": 0,
+  "4": 16
+ },
+ "bridges": true,
+ "void": [
+  [
+   45,
+   0,
+   45,
+   5
+  ]
+ ],
+ "alt_of": "VictoryRoad_B1F",
+ "_doc": "emerald_caves 2026-10-12 (work/agents/emerald_caves/tools/variants.py): Emerald's VictoryRoad_B1F (pokeemerald) as Emerald's world reads it, installed for VictoryRoad_B1F in an Emerald build (data/versions.json room_variants.emerald). Emerald opens a passage at (13,16)-(13,18) (3 blocks) and adds a double-battle pair there (story); warps and objects as Sapphire's. Sapphire recipe: VictoryRoad_B1F.json."
+}

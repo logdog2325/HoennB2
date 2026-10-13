@@ -1,0 +1,38 @@
+{
+ "map": "CaveOfOrigin_B4F",
+ "layout": "LAYOUT_UNKNOWN_MAP_082FF894",
+ "alt_of": "CaveOfOrigin_B4F",
+ "_doc": "ruby_maps: Ruby's Cave of Origin B4F (pokeruby CaveOfOrigin_B4F OnTransition: setmaplayoutindex 313 = LAYOUT_UNKNOWN_MAP_082FF894 in Ruby, 163 in Sapphire). 43 blocks differ, no collision or elevation: Kyogre's water pool (0x14e/0x14f) is Groudon's lava pool (0x35f/0x364, behaviours 0x00/0x08) and the blue crystals are red (wall art the cave builder doesn't draw). Same pool as the Sapphire recipe, drawn with Black 2's Reversal Mountain lava (set 388, chunks 723/726: in81_magu00 molten base, in81_magu01 crust 64 units per repeat, in81_mizuga1 bank). Installed in Ruby for CaveOfOrigin_B4F (data/versions.json room_variants).",
+ "pools": [
+  [
+   7,
+   7,
+   11,
+   12,
+   {
+    "metatiles": [
+     "0x35f",
+     "0x364",
+     "0x365",
+     "0x366",
+     "0x367",
+     "0x370",
+     "0x371",
+     "0x372",
+     "0x373"
+    ]
+   }
+  ]
+ ],
+ "look_over": {
+  "water": "in81_magu00",
+  "water_top": "in81_magu01",
+  "water_top_size": 64,
+  "water_bank": "in81_mizuga1",
+  "tex_sets": {
+   "in81_magu00": 388,
+   "in81_magu01": 388,
+   "in81_mizuga1": 388
+  }
+ }
+}

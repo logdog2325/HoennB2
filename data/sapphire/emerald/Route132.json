@@ -1,0 +1,323 @@
+{
+ "map": "Route132",
+ "id": "MAP_ROUTE132",
+ "layout": "LAYOUT_ROUTE132",
+ "music": "MUS_ROUTE119",
+ "region_map_section": "MAPSEC_ROUTE_132",
+ "weather": "WEATHER_SUNNY",
+ "connections": [
+  {
+   "map": "MAP_ROUTE133",
+   "offset": 0,
+   "direction": "left"
+  },
+  {
+   "map": "MAP_PACIFIDLOG_TOWN",
+   "offset": 0,
+   "direction": "right"
+  }
+ ],
+ "npcs": [
+  {
+   "local_id": 1,
+   "x": 40,
+   "y": 13,
+   "gfx": "OBJ_EVENT_GFX_SWIMMER_M",
+   "movement": "MOVEMENT_TYPE_WALK_SEQUENCE_DOWN_RIGHT_UP_LEFT",
+   "range": [
+    3,
+    3
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route132_EventScript_Gilbert",
+   "texts": {
+    "Route132_Text_GilbertIntro": "I used to catch colds all the time as\\na kid, but I became totally fit after\\lI started swimming.$",
+    "Route132_Text_GilbertDefeat": "I crave more power…$",
+    "Route132_Text_GilbertPostBattle": "TRAINERS travel the fields and\\nmountains, so they must be fit, too.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 2,
+   "x": 10,
+   "y": 6,
+   "gfx": "OBJ_EVENT_GFX_SWIMMER_F",
+   "movement": "MOVEMENT_TYPE_WALK_SEQUENCE_UP_LEFT_DOWN_RIGHT",
+   "range": [
+    3,
+    3
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route132_EventScript_Dana",
+   "texts": {
+    "Route132_Text_DanaIntro": "I try not to swim where the currents\\nare too strong.$",
+    "Route132_Text_DanaDefeat": "Oh, please, no!$",
+    "Route132_Text_DanaPostBattle": "If I get swept away, I'll lose all my\\nsense of place…$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 3,
+   "x": 10,
+   "y": 11,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_ROUTE_132_RARE_CANDY",
+   "script": "Route132_EventScript_ItemRareCandy",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 4,
+   "x": 9,
+   "y": 15,
+   "gfx": "OBJ_EVENT_GFX_BLACK_BELT",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route132_EventScript_Kiyo",
+   "texts": {
+    "Route132_Text_KiyoIntro": "I contemplate POKéMON 24 hours a day.\\nHow could you possibly beat me?$",
+    "Route132_Text_KiyoDefeat": "I lose.\\nI will concede defeat.$",
+    "Route132_Text_KiyoPostBattle": "Urggh…\\nYou're a POKéMON fanatic, aren't you?\\pYou must contemplate POKéMON 24 hours\\na day, don't you?$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 5,
+   "x": 49,
+   "y": 28,
+   "gfx": "OBJ_EVENT_GFX_FISHERMAN",
+   "movement": "MOVEMENT_TYPE_FACE_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route132_EventScript_Ronald",
+   "texts": {
+    "Route132_Text_RonaldIntro": "Win or lose, you'll never know until\\nyou try!$",
+    "Route132_Text_RonaldDefeat": "Waah!\\nI sank in defeat!$",
+    "Route132_Text_RonaldPostBattle": "I never battle when I know I'll win.\\nI like to battle at the razor's edge of\\lvictory and defeat!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 6,
+   "x": 33,
+   "y": 26,
+   "gfx": "OBJ_EVENT_GFX_EXPERT_M",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route132_EventScript_Paxton",
+   "texts": {
+    "Route132_Text_PaxtonIntro": "Now where could my wife have gone?\\nI'm always with her.\\lI wonder if I can win on my own.$",
+    "Route132_Text_PaxtonDefeat": "Ah, I see that I couldn't manage\\nto win on my own after all.$",
+    "Route132_Text_PaxtonPostBattle": "My wife must be looking for me.\\nI'd best go find her right away.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 7,
+   "x": 33,
+   "y": 31,
+   "gfx": "OBJ_EVENT_GFX_WOMAN_5",
+   "movement": "MOVEMENT_TYPE_WALK_UP_AND_DOWN",
+   "range": [
+    1,
+    4
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route132_EventScript_Darcy",
+   "texts": {
+    "Route132_Text_DarcyIntro": "I liked training here by myself.\\nIt's awful that all these people came!$",
+    "Route132_Text_DarcyDefeat": "Okay! I won't complain about other\\npeople being here.$",
+    "Route132_Text_DarcyPostBattle": "I suppose I can partner up with that\\nold man and challenge that other team.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 8,
+   "x": 21,
+   "y": 30,
+   "gfx": "OBJ_EVENT_GFX_EXPERT_F",
+   "movement": "MOVEMENT_TYPE_FACE_UP",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route132_EventScript_Makayla",
+   "texts": {
+    "Route132_Text_MakaylaIntro": "I'm always with my husband,\\nbut I can win even without him.$",
+    "Route132_Text_MakaylaDefeat": "Oh, I guess I wasn't good enough.$",
+    "Route132_Text_MakaylaPostBattle": "That young man over there looks just\\nlike my husband when he was young.\\pHe's making me blush!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 9,
+   "x": 21,
+   "y": 25,
+   "gfx": "OBJ_EVENT_GFX_MAN_3",
+   "movement": "MOVEMENT_TYPE_WALK_DOWN_AND_UP",
+   "range": [
+    1,
+    4
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route132_EventScript_Jonathan",
+   "texts": {
+    "Route132_Text_JonathanIntro": "Someone's been watching me intently.\\nWas it you?$",
+    "Route132_Text_JonathanDefeat": "Wow!\\nThat's pretty strong, all right!$",
+    "Route132_Text_JonathanPostBattle": "I can't shake this feeling that\\nsomeone's watching me.\\pI can't concentrate!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 10,
+   "x": 20,
+   "y": 27,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_ROUTE_132_PROTEIN",
+   "script": "Route132_EventScript_ItemProtein",
+   "texts": {},
+   "complex": true
+  }
+ ],
+ "signs": [],
+ "warps": [],
+ "coord_events": [],
+ "wild": {
+  "water_mons": {
+   "encounter_rate": 4,
+   "slot_rates": [
+    60,
+    30,
+    5,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 5,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 15,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_PELIPPER",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_PELIPPER",
+     "min": 25,
+     "max": 30
+    }
+   ]
+  },
+  "fishing_mons": {
+   "encounter_rate": 30,
+   "slot_rates": [
+    70,
+    30,
+    60,
+    20,
+    20,
+    40,
+    40,
+    15,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_SHARPEDO",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_HORSEA",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 35,
+     "max": 40
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 40,
+     "max": 45
+    }
+   ]
+  }
+ }
+}

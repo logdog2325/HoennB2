@@ -1,0 +1,18 @@
+{
+ "kind": "trainer",
+ "side": "front",
+ "sprite": 169,
+ "archive": 71,
+ "files": {
+  "static": 1352,
+  "parts": 1353,
+  "palette": 1359
+ },
+ "name": "tabitha",
+ "note": "Tabitha (Team Magma admin), Emerald: Ruby's Tabitha (src/sprites/trainer/front/ruby/152-tabitha, made from pokeruby magma_admin_m.png, pixel-identical to pokeemerald's magma_admin.png) on Black 2's sprite 152 parts, installed in slot 169 (Black 2's Brycen Jet, Pokestar Studios: Unova only), since Emerald battles Matt (152) and Tabitha both (gen_trainers EMERALD_SPRITE, emerald_data 2026-10-12)",
+ "source": "pokeruby graphics/trainers/magma_admin_m.png",
+ "layout": "parts and animations of Black 2 front sprite 152",
+ "made_by": "b2tools/sprite_upgrade.py",
+ "static_intro": true,
+ "mcss_from": 152
+}

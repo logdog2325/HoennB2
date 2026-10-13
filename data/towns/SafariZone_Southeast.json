@@ -1,0 +1,10 @@
+{
+ "_doc": "Safari Zone (southeast)'s buildings and props (warp-only map: group 'standalone', its own exterior pack, data/buildings/standalone.json, b2tools/models_standalone.py). buildings: Sapphire door destination -> res and front (z of the model's front wall; world.py puts it 4 units into the door tile, footprint centre from data/plans); props: model origin in Sapphire map tile coordinates (footprint centre x, door row + (4 - 20)/16 for a building), 'covers': map tile rects the model stands on (no ground-module plinths there).",
+ "group": "standalone",
+ "buildings": {
+  "MAP_ROUTE121_SAFARI_ZONE_ENTRANCE": {
+   "res": 474,
+   "front": 20
+  }
+ }
+}

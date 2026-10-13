@@ -1,0 +1,23 @@
+Hmhm...{be01}\nSo, you’ve seen {0202:0} Pokémon,\nand you’ve caught {0202:1} Pokémon...
+You should go into grassy areas more\nand look for Pokémon more carefully.
+I guess you’re getting the hang of it.\nBut, it gets harder from here.
+Some Pokémon only appear in certain\nareas. You’ll need to be persistent.
+Well, it could use more quantity, but\nthis is looking more like a Pokédex now.
+This is coming along pretty good.\nKeep up the effort.
+Are you using any Rods?\nThere are many Pokémon in the sea.
+Instead of just catching Pokémon,\nhow about making them evolve, too?
+This is going to be a fantastic Pokédex.\nThat’s the feeling I’m getting.
+You’ve collected this many...\nYour talent is remarkable!
+Have you visited the Safari Zone?{be01}\nI hear there are some Pokémon that\ncan only be caught there.
+You’ve finally reached the 100-kind\nmark. This is an impressive Pokédex!
+There might be Pokémon that can be\nfound using Rock Smash.
+You should get some more Pokémon by\ntrading with others.
+I’ve heard of Pokémon that evolve when\nthey come to fully love their Trainers.
+I had no idea that there were so many\nPokémon species in the Hoenn region.
+On occasion, some Pokémon appear in\nlarge numbers like wild outbreaks.{be00}\nDon’t miss opportunities like those.
+One can get a very good idea about the\nPokémon of the Hoenn region by looking{be00}\nthrough your Pokédex.
+I’d say you already qualify as a Pokémon\nProfessor, and a good one, too!
+With a Pokédex this complete, you’re\na real professional at this!
+You’re very close to completing this\nPokédex. I can feel it in my bones!
+Congratulations!\nYour Pokédex is complete!
+Hmhm...\nOn a nationwide basis...{be01}\nYou’ve seen {0202:0} Pokémon,\nand you’ve caught {0202:1} Pokémon...

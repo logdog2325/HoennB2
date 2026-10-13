@@ -1,0 +1,14 @@
+{
+ "map": "ShoalCave_LowTideEntranceRoom",
+ "layout": "LAYOUT_SHOAL_CAVE_HIGH_TIDE_ENTRANCE_ROOM",
+ "alt_of": "ShoalCave_LowTideEntranceRoom",
+ "_doc": "caves_misc: Shoal Cave's entrance at high tide (Sapphire's layout 169, set by the map script while FLAG_SYS_SHOAL_TIDE): built like the low tide, installed as the zone's other matrix (data/interiors zone json alt_rooms).",
+ "levels": {
+  "3": 0,
+  "4": 16
+ },
+ "shoals": true,
+ "tiles": {
+  "34,34": "rock"
+ }
+}

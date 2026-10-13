@@ -1,0 +1,9 @@
+Hello, and welcome to the Pokémon\nCenter.{be01}\nWe restore your tired Pokémon to\nfull health.{be01}\nWould you like to rest your Pokémon?
+Okay, I’ll take your Pokémon for a\nfew seconds.
+Thank you for waiting.{be01}\nWe’ve restored your Pokémon to\nfull health.
+We hope to see you again!
+Your Pokémon may be infected with\nPokérus.{be01}\nLittle is known about the Pokérus\nexcept that they are microscopic life-{be00}\nforms that attach to Pokémon.{be01}\nWhile infected, Pokémon are said to\ngrow exceptionally well.
+The Gym Leaders in this town are a\nformidable duo.{be01}\nTheir combination attacks are, like,\nexcellent and wow!
+Depending on the special abilities of\nPokémon, some moves might change{be00}\nor not work at all.
+Pokémon magazines!\nPokémon Pal...{be01}\nPokémon Handbook...\nAdorable Pokémon...
+{0100:0} took a closer look at the\nHoenn region map.

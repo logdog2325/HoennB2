@@ -1,0 +1,184 @@
+{
+ "map": "SafariZone_Southeast",
+ "id": "MAP_SAFARI_ZONE_SOUTHEAST",
+ "layout": "LAYOUT_SAFARI_ZONE_SOUTHEAST",
+ "music": "MUS_SAFARI_ZONE",
+ "region_map_section": "MAPSEC_SAFARI_ZONE",
+ "weather": "WEATHER_NONE",
+ "connections": [
+  {
+   "direction": "up",
+   "offset": 0,
+   "map": "MAP_SAFARI_ZONE_NORTHEAST"
+  },
+  {
+   "direction": "left",
+   "offset": 0,
+   "map": "MAP_SAFARI_ZONE_SOUTHWEST"
+  }
+ ],
+ "npcs": [
+  {
+   "local_id": 1,
+   "x": 32,
+   "y": 34,
+   "gfx": "OBJ_EVENT_GFX_CAMPER",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "SafariZone_Southeast_EventScript_1600A7",
+   "texts": {
+    "SafariZone_Southeast_Text_1C3A56": "You still have time left. Would you like\\nto exit the SAFARI ZONE now?$",
+    "SafariZone_Southeast_Text_1C3A9C": "Please enjoy the rest of your wild\\nadventure!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 2,
+   "x": 26,
+   "y": 28,
+   "gfx": "OBJ_EVENT_GFX_BOY_1",
+   "movement": "MOVEMENT_TYPE_WANDER_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "SafariZone_Southeast_EventScript_16008C",
+   "texts": {
+    "SafariZone_Southeast_Text_1C3B71": "Did you know?\\pIf you put a {POKEBLOCK} in that square box,\\nPOKéMON gather around.$"
+   }
+  },
+  {
+   "local_id": 3,
+   "x": 16,
+   "y": 6,
+   "gfx": "OBJ_EVENT_GFX_MAN_5",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "SafariZone_Southeast_EventScript_160095",
+   "texts": {
+    "SafariZone_Southeast_Text_1C3BBD": "I want to keep going deeper, but I\\nforgot to bring a BIKE.\\pSomething tells me that rare POKéMON\\nlive in the outlying areas.$"
+   }
+  },
+  {
+   "local_id": 4,
+   "x": 15,
+   "y": 31,
+   "gfx": "OBJ_EVENT_GFX_YOUNGSTER",
+   "movement": "MOVEMENT_TYPE_WANDER_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "SafariZone_Southeast_EventScript_16009E",
+   "texts": {
+    "SafariZone_Southeast_Text_1C3DCE": "I put a {POKEBLOCK} on the {POKEBLOCK} FEEDER.\\nBut it seems to have disappeared.\\pI guess POKéMON must have eaten it\\nwithout me noticing.$"
+   }
+  }
+ ],
+ "signs": [],
+ "warps": [
+  {
+   "id": 0,
+   "x": 32,
+   "y": 33,
+   "dest_map": "MAP_ROUTE121_SAFARI_ZONE_ENTRANCE",
+   "dest_warp_id": "0"
+  }
+ ],
+ "coord_events": [],
+ "wild": {
+  "land_mons": {
+   "encounter_rate": 25,
+   "slot_rates": [
+    20,
+    20,
+    10,
+    10,
+    10,
+    10,
+    5,
+    5,
+    4,
+    4,
+    1,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_ODDISH",
+     "min": 25,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_ODDISH",
+     "min": 27,
+     "max": 27
+    },
+    {
+     "species": "SPECIES_GIRAFARIG",
+     "min": 25,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_GIRAFARIG",
+     "min": 27,
+     "max": 27
+    },
+    {
+     "species": "SPECIES_NATU",
+     "min": 25,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_DODUO",
+     "min": 25,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_GLOOM",
+     "min": 25,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_WOBBUFFET",
+     "min": 27,
+     "max": 27
+    },
+    {
+     "species": "SPECIES_PIKACHU",
+     "min": 25,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_WOBBUFFET",
+     "min": 27,
+     "max": 27
+    },
+    {
+     "species": "SPECIES_PIKACHU",
+     "min": 27,
+     "max": 27
+    },
+    {
+     "species": "SPECIES_WOBBUFFET",
+     "min": 29,
+     "max": 29
+    }
+   ]
+  }
+ }
+}

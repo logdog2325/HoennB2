@@ -1,0 +1,23 @@
+{
+ "_doc": "FallarborTown_House1: zone written by converter/gen_interior_recipes_houses.py (warps and parent from converter/gen_interiors.py); story people left for the story phase: story person SCIENTIST_1 at (6,4) FallarborTown_CozmosHouse_EventScript_ProfCozmo (hide flag FLAG_HIDE_PROF_COSMO_FALLARBOR); person WOMAN_3 at (5,6) FallarborTown_CozmosHouse_EventScript_CozmosWife (story/complex script)",
+ "zone": 97,
+ "room": "FallarborTown_House1",
+ "area": 313,
+ "parent": 6,
+ "warps": [
+  {
+   "at": [3, 8],
+   "tile_only": true,
+   "to": [6, 10],
+   "what": "Sapphire warp 0 -> FallarborTown 3"
+  },
+  {
+   "at": [4, 8],
+   "tile_only": true,
+   "to": [6, 10],
+   "what": "Sapphire warp 1 -> FallarborTown 3"
+  }
+ ],
+ "npcs": [],
+ "signs": []
+}

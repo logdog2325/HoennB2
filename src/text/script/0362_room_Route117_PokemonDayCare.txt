@@ -1,0 +1,23 @@
+…
+I’m the Day-Care Lady.{be01}\nWe can raise Pokémon for you.{be01}\nWould you like us to raise one?
+Oh, fine, then.\nCome again.
+Which Pokémon should we raise for you?
+Fine, we’ll raise your {0100:1} for\na while.{be01}\nCome back for it later.
+Fine.\nCome again.
+We can raise two of your Pokémon.\nWould you like us to raise one more?
+Oh? But you have just one Pokémon.{be01}\nCome back another time.
+If you leave me that Pokémon,\nwhat will you battle with?{be01}\nCome back another time.
+My husband was looking for you.
+By level, your {0100:1} has grown\nby {0100:2}.
+Ah, it’s you! Good to see you.\nYour Pokémon can only be doing good!
+Will you take your Pokémon back?
+If you want your {0100:1} back,\nit will cost ${0100:2}.
+You don’t have enough money...
+Perfect!\nHere’s your Pokémon.
+{0100:0} took back {0100:1} from\nthe Day-Care Lady.
+Will you take back the other one, too?
+Your Pokémon team is full.\nMake room, then come see me.
+{0101:0}⑭ Lv. {0202:1}
+{0101:0}⑮ Lv. {0202:1}
+{0101:0} Lv. {0202:1}
+Cancel

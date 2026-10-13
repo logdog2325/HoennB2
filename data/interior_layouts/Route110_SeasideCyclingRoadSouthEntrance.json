@@ -1,0 +1,26 @@
+{
+ "_doc": "LAYOUT_ROUTE110_SEASIDE_CYCLING_ROAD_ENTRACE (15x6, both gates): back wall rows 0-1 with the clock (6,0) and a notice (8,0); counter (5,2), (6-9,3), (10,2) with the clerk at (7,2); planters (6-9, 5); potted plants (0,5) and (14,5); exit mats (1-2, 5) and (12-13, 5). Orange floor as the Herb Shop (style \"shop_herb\"); counter shelf03, plants plant01, notice poster01, clock in69_clock01 (texture set 350).",
+ "map": "Route110_SeasideCyclingRoadSouthEntrance",
+ "style": "shop_herb",
+ "floor": [[0, 1, 14, 5]],
+ "mats": [
+  {"tex": "in45_mat01", "src": 326, "rect": [1, 5, 2, 5], "border": 0.25, "border_units": 4, "y": 0, "_what": "entrance mat"},
+  {"tex": "in45_mat01", "src": 326, "rect": [12, 5, 13, 5], "border": 0.25, "border_units": 4, "y": 0, "_what": "entrance mat"}
+ ],
+ "decals": [
+  {"tex": "in69_clock01", "src": 350, "at": [6.5], "y": 18, "w": 11, "h": 22, "gap": 2, "_what": "wall clock (6,0)"}
+ ],
+ "furniture": [
+  {"m": "shelf03", "at": [5.75, 2.4475], "rot": 90, "dx": 3.0, "dz": -3.0, "_what": "counter end (5,2)"},
+  {"m": "shelf03", "at": [10.25, 2.4475], "rot": 90, "dx": 3.0, "dz": -3.0, "_what": "counter end (10,2)"},
+  {"m": "shelf03", "at": [7.25, 3.5], "dx": 3.0, "dz": 3.0, "_what": "counter run (6-9, 3) 1/2"},
+  {"m": "shelf03", "at": [8.75, 3.5], "dx": 3.0, "dz": 3.0, "_what": "counter run (6-9, 3) 2/2"},
+  {"m": "plant01", "at": [6.5, 5.45], "dz": 0.945, "_what": "planter (6,5)"},
+  {"m": "plant01", "at": [7.5, 5.45], "dz": 0.945, "_what": "planter (7,5)"},
+  {"m": "plant01", "at": [8.5, 5.45], "dz": 0.945, "_what": "planter (8,5)"},
+  {"m": "plant01", "at": [9.5, 5.45], "dz": 0.945, "_what": "planter (9,5)"},
+  {"m": "plant01", "at": [0.5, 5.45], "dz": 0.945, "_what": "potted plant (0,5)"},
+  {"m": "plant01", "at": [14.5, 5.45], "dz": 0.945, "_what": "potted plant (14,5)"},
+  {"m": "poster01", "at": [8.5, 1.25], "_what": "notice on the wall (8,0)"}
+ ]
+}

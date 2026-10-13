@@ -1,0 +1,4 @@
+Dedicated fans come over from even\nKanto and Johto.{be01}\nIt was really wild when I went to the\nTrainer Fan Club in Lilycove.
+You’re a Pokémon Trainer, aren’t you?{be01}\nSootopolis’s Gym Leader Wallace has\nmany fans.{be00}\nDo you have any?
+Oh, dear...\nThat’s a little lonesome.{be01}\nTry working a little harder to get a\nfan following.
+Oh, then you must be pretty strong.

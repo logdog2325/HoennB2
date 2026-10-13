@@ -1,0 +1,128 @@
+{
+ "_doc": "Emerald-only story objects of the post-game (emerald_ch12_13, 2026-10-12; format: b2tools/patches/story.py; rooms' tiles = pokeemerald's, every room's origin (0,0); Emerald-only rooms by \"zone\" (data/emerald/hoenn_interiors.json), triggers with their floor's \"y\" (story.cave_y on the built cave)). Steven in Meteor Falls' Steven's Cave (pokeemerald MeteorFalls_StevensCave object 1; src/field_scripts/emerald/0754_room_MeteorFalls_StevensCave.s script 2), Groudon at the end of Terra Cave and Kyogre at the end of Marine Cave (pokeemerald TerraCave_End / MarineCave_End object 1, Black 2's legendary models; shown by their zone inits while not caught or beaten) and their step triggers (pokeemerald's coord events, VAR_TEMP_1 = the zone-local work 0x4001; script 2 of 0732 / 0738). The Fossil Maniac's warning in Route 114's tunnel after the game (pokeemerald's two coord events; script 3 of src/field_scripts/emerald/1116_room_Route114_FossilManiacsTunnel.s). The Safari Zone expansion's construction workers (closing the way into the new areas until the Hall of Fame) and its attendant (after it): global scripts 2296 / 2297 (src/field_scripts/emerald/1236_global_2280.s).",
+ "objects": [
+  {
+   "kind": "npc",
+   "zone": 377,
+   "main": false,
+   "x": 19,
+   "z": 3,
+   "uid": 1,
+   "model": 287,
+   "script": 2,
+   "dir": 0,
+   "move": 14,
+   "what": "MeteorFalls_StevensCave: Steven (pokeemerald OBJ_EVENT_GFX_STEVEN, FACE_UP; Emerald's post-game boss, TRAINER_STEVEN_EMERALD)"
+  },
+  {
+   "kind": "npc",
+   "zone": 366,
+   "main": false,
+   "x": 17,
+   "z": 22,
+   "uid": 1,
+   "model": 4512,
+   "script": 0,
+   "dir": 1,
+   "move": 15,
+   "flag": "FLAG_HIDE_TERRA_CAVE_GROUDON",
+   "what": "TerraCave_End: Groudon (pokeemerald OBJ_EVENT_GFX_GROUDON_FRONT, FACE_DOWN; MODEL_GROUDON)"
+  },
+  {
+   "kind": "trigger",
+   "zone": 366,
+   "main": false,
+   "x": 17,
+   "z": 26,
+   "y": 0,
+   "script": 2,
+   "var": "0x4001",
+   "value": 1,
+   "what": "TerraCave_End: Groudon comes down to you (pokeemerald TerraCave_End coord event, VAR_TEMP_1 1)"
+  },
+  {
+   "kind": "npc",
+   "zone": 369,
+   "main": false,
+   "x": 9,
+   "z": 22,
+   "uid": 1,
+   "model": 4511,
+   "script": 0,
+   "dir": 1,
+   "move": 15,
+   "flag": "FLAG_HIDE_MARINE_CAVE_KYOGRE",
+   "what": "MarineCave_End: Kyogre (pokeemerald OBJ_EVENT_GFX_KYOGRE_FRONT, FACE_DOWN; MODEL_KYOGRE)"
+  },
+  {
+   "kind": "trigger",
+   "zone": 369,
+   "main": false,
+   "x": 9,
+   "z": 26,
+   "y": 0,
+   "script": 2,
+   "var": "0x4001",
+   "value": 1,
+   "what": "MarineCave_End: Kyogre comes down to you (pokeemerald MarineCave_End coord event, VAR_TEMP_1 1)"
+  },
+  {
+   "kind": "trigger",
+   "map": "Route114_FossilManiacsTunnel",
+   "at": [
+    5,
+    4
+   ],
+   "w": 2,
+   "script": 3,
+   "var": "VAR_FOSSIL_MANIAC_STATE",
+   "value": 1,
+   "what": "the Fossil Maniac's warning about the Desert Underpass (pokeemerald coord events (5,4) (6,4), VAR_FOSSIL_MANIAC_STATE 1)"
+  },
+  {
+   "kind": "npc",
+   "map": "SafariZone_Southeast",
+   "at": [
+    36,
+    16
+   ],
+   "uid": 105,
+   "model": 21,
+   "script": 2296,
+   "dir": 2,
+   "move": 16,
+   "flag": "FLAG_HIDE_SAFARI_ZONE_SOUTH_CONSTRUCTION_WORKERS",
+   "what": "construction worker 1 (pokeemerald SafariZone_South object 5, CAMPER, FACE_LEFT): the way east closed until the game is clear"
+  },
+  {
+   "kind": "npc",
+   "map": "SafariZone_Southeast",
+   "at": [
+    36,
+    17
+   ],
+   "uid": 106,
+   "model": 21,
+   "script": 2296,
+   "dir": 2,
+   "move": 16,
+   "flag": "FLAG_HIDE_SAFARI_ZONE_SOUTH_CONSTRUCTION_WORKERS",
+   "what": "construction worker 2 (pokeemerald SafariZone_South object 6, CAMPER, FACE_LEFT)"
+  },
+  {
+   "kind": "npc",
+   "map": "SafariZone_Southeast_Emerald",
+   "at": [
+    12,
+    16
+   ],
+   "uid": 125,
+   "model": 21,
+   "script": 2297,
+   "dir": 1,
+   "move": 15,
+   "flag": "FLAG_HIDE_SAFARI_ZONE_SOUTH_EAST_EXPANSION",
+   "what": "the expansion's attendant (pokeemerald SafariZone_Southeast object 5, CAMPER, FACE_DOWN): there after the game"
+  }
+ ]
+}

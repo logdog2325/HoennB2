@@ -1,0 +1,68 @@
+The number of matches you win in a row\nis recorded.{be01}\nThe record is posted beside the\nregistration counter.{be01}\nIt’s also on the back of your\nTrainer’s Card.
+Once you’ve entered the Battle Tower,\nyou can’t leave until you either lose{be00}\nor you beat seven Trainers in a row.{be01}\nYou’d best be certain that you’re up\nto the challenge.
+Welcome to the Battle Tower!{be01}\nPlease register with me to enter\na Battle Room.
+Would you like to make a Battle Room\nchallenge?
+We’ll be looking forward to your\nnext challenge.
+Before entering a Battle Room, your\nprogress must be saved. Is that okay?
+There are two Battle Rooms,\nLevel 50 and Level 100.{be00}\nWhich would you like to challenge?
+Please select the Pokémon you wish\nto enter.
+I’ll direct you to your Battle Room now.
+The Battle Tower is a facility made\nespecially for Pokémon battles.{be01}\nWithin the Tower are many Battle Rooms.{be01}\nIn each Battle Room, seven Trainers\nawait your challenge.{be01}\nBeat all seven, and you will be rewarded\nwith a fabulous prize.{be01}\nYou may also take a break from your\nchallenge by saving your progress.{be01}\nMake sure you save properly or you\nwon’t be able to resume your challenge.
+Excuse me!{be01}\nYou don’t have three eligible Pokémon.{be01}\nYou must have three different Pokémon\nof Level 50 or less to enter.{be01}\nThey also must be holding different\nkinds of items.{be01}\nEggs{0100:1} ineligible.{be01}\nPlease come see me when you are ready.
+Excuse me!{be01}\nYou don’t have three eligible Pokémon.{be01}\nYou must have three different Pokémon\nto enter.{be01}\nThey also must be holding different\nkinds of items.{be01}\nEggs{0100:1} ineligible.{be01}\nPlease come see me when you are ready.
+Excuse me!{be01}\nYou didn’t save before you quit your\nchallenge last time.{be01}\nBecause of that, your challenge so far\nhas been disqualified. Sorry!
+Congratulations!\nYou’ve beaten all seven Trainers!{be01}\n
+For beating seven Trainers in a row,\nyou have earned this fabulous prize!{be01}\n
+{0100:0} received the prize\n{0100:1}.
+Oh, your Bag appears to be full.{be01}\nPlease make room in your Bag, then come\nsee me.
+Thank you for playing!{be01}\n
+Your record will be saved.\nPlease wait.
+We’ve been waiting for you!{be01}\n
+Before entering a Battle Room, your\nprogress will be saved. Please wait.
+You’re finally about to face the\n50th Trainer.{be01}\nFrom here on, every time you beat seven\nTrainers in a row, your Pokémon will{be00}\nreceive a commemorative Ribbon.{be01}\nGood luck!
+Here are some Ribbons for beating\nseven tough Trainers in a row.{be01}\n{0100:0} received some Ribbons!
+{0100:0} put the Ribbons on the\nchallenger Pokémon.
+Hello, hello!\nYou’re going to battle here, right?{be01}\nCan you tell me what’s going through\nyour mind as you prepare for battle?
+Oh, wow, you’ll tell me?\nGreat! Then, what’s your answer?
+Oh, so you don’t think much about it?\nYou’re one cool customer.
+Hunh? You changed your mind?\nI guess you’re fickle.
+Okay, so that’s how you feel?\nThat’s quite original.{be01}\nThanks!
+Hahahaha! Pure magnificence!\nPure magnificence indeed!{be01}\nDo you realize what you’ve achieved?\nYou’ve beaten 50 Trainers in a row!{be01}\nYes, purely magnificent!{be01}\nAs the Owner of the Battle Tower,\nlet me give you a memento!
+Wahahaha! Pure magnificence!\nAbsolutely pure magnificence indeed!{be01}\nDo you realize what you’ve achieved?\nYou’ve beaten 100 Trainers in a row!{be01}\nYes, absolutely magnificent!{be01}\nAs the Owner of the Battle Tower,\nlet me give you a memento!
+I suggest you keep it displayed.\nIt will surely attract attention.
+Oh?\nYour PC has no room for this...{be01}\nBut it would be a shame to waste this...\nPlease come back for this!
+I’m overwhelmed with satisfaction after\nseeing your magnificent performance.{be01}\nIt makes the building of the Battle\nTower all worthwhile!
+Make a challenge.
+Obtain information.
+Cancel
+Lv. 50
+Lv. 100
+Saving...\nDon’t turn off the power.
+{0100:0} saved the game.
+{0100:0}’s Battle Tower Results
+Lv 50   Current {0100:1}W streak\n           Record {0100:2}W streak
+Lv 50   Prev. {0100:1}W streak\n           Record {0100:2}W streak
+Lv 100  Current {0100:1}W streak\n           Record {0100:2}W streak
+Lv 100  Prev. {0100:1}W streak\n           Record {0100:2}W streak
+Excuse me!{be01}\nYou don’t have three eligible Pokémon.{be01}\nYou must have three different Pokémon\nof Level 50 or less to enter.{be01}\nThey also must be holding different\nkinds of items.{be01}\nEggs are ineligible.{be01}\nPlease come see me when you are ready.
+Excuse me!{be01}\nYou don’t have three eligible Pokémon.{be01}\nYou must have three different Pokémon\nof Level 50 or less to enter.{be01}\nThey also must be holding different\nkinds of items.{be01}\nEggs and {0100:2}{be00}\nare ineligible.{be01}\nPlease come see me when you are ready.
+Excuse me!{be01}\nYou don’t have three eligible Pokémon.{be01}\nYou must have three different Pokémon\nof Level 50 or less to enter.{be01}\nThey also must be holding different\nkinds of items.{be01}\nEggs, {0100:2} and \n{0100:3} are ineligible.{be01}\nPlease come see me when you are ready.
+Excuse me!{be01}\nYou don’t have three eligible Pokémon.{be01}\nYou must have three different Pokémon\nof Level 50 or less to enter.{be01}\nThey also must be holding different\nkinds of items.{be01}\nEggs, {0100:2}, \n{0100:3} and {0100:4}{be00}\nare ineligible.{be01}\nPlease come see me when you are ready.
+Excuse me!{be01}\nYou don’t have three eligible Pokémon.{be01}\nYou must have three different Pokémon\nof Level 50 or less to enter.{be01}\nThey also must be holding different\nkinds of items.{be01}\nEggs, {0100:2}, \n{0100:3}, {0100:4} and {be00}\n{0100:5} are ineligible.{be01}\nPlease come see me when you are ready.
+Excuse me!{be01}\nYou don’t have three eligible Pokémon.{be01}\nYou must have three different Pokémon\nof Level 50 or less to enter.{be01}\nThey also must be holding different\nkinds of items.{be01}\nEggs, {0100:2}, \n{0100:3}, {0100:4}, {be00}\n{0100:5} and {0100:6}{be00}\nare ineligible.{be01}\nPlease come see me when you are ready.
+Excuse me!{be01}\nYou don’t have three eligible Pokémon.{be01}\nYou must have three different Pokémon\nof Level 50 or less to enter.{be01}\nThey also must be holding different\nkinds of items.{be01}\nEggs, {0100:2}, \n{0100:3}, {0100:4}, {be00}\n{0100:5}, {0100:6} and {be00}\n{0100:7} are ineligible.{be01}\nPlease come see me when you are ready.
+Excuse me!{be01}\nYou don’t have three eligible Pokémon.{be01}\nYou must have three different Pokémon\nof Level 50 or less to enter.{be01}\nThey also must be holding different\nkinds of items.{be01}\nEggs, {0100:2}, \n{0100:3}, {0100:4}, {be00}\n{0100:5}, {0100:6}, {be00}\n{0100:7} and {0100:8}{be00}\nare ineligible.{be01}\nPlease come see me when you are ready.
+Excuse me!{be01}\nYou don’t have three eligible Pokémon.{be01}\nYou must have three different Pokémon\nof Level 50 or less to enter.{be01}\nThey also must be holding different\nkinds of items.{be01}\nEggs, {0100:2}, \n{0100:3}, {0100:4}, {be00}\n{0100:5}, {0100:6}, {be00}\n{0100:7}, {0100:8} and {be00}\n{0100:9} are ineligible.{be01}\nPlease come see me when you are ready.
+Excuse me!{be01}\nYou don’t have three eligible Pokémon.{be01}\nYou must have three different Pokémon\nof Level 50 or less to enter.{be01}\nThey also must be holding different\nkinds of items.{be01}\nEggs, {0100:2}, \n{0100:3}, {0100:4}, {be00}\n{0100:5}, {0100:6}, {be00}\n{0100:7}, {0100:8}, {be00}\n{0100:9} and {0100:10}{be00}\nare ineligible.{be01}\nPlease come see me when you are ready.
+Excuse me!{be01}\nYou don’t have three eligible Pokémon.{be01}\nYou must have three different Pokémon\nof Level 50 or less to enter.{be01}\nThey also must be holding different\nkinds of items.{be01}\nEggs, {0100:2}, \n{0100:3}, {0100:4}, {be00}\n{0100:5}, {0100:6}, {be00}\n{0100:7}, {0100:8}, {be00}\n{0100:9}, {0100:10} and {be00}\n{0100:11} are ineligible.{be01}\nPlease come see me when you are ready.
+Excuse me!{be01}\nYou don’t have three eligible Pokémon.{be01}\nYou must have three different Pokémon\nto enter.{be01}\nThey also must be holding different\nkinds of items.{be01}\nEggs are ineligible.{be01}\nPlease come see me when you are ready.
+Excuse me!{be01}\nYou don’t have three eligible Pokémon.{be01}\nYou must have three different Pokémon\nto enter.{be01}\nThey also must be holding different\nkinds of items.{be01}\nEggs and {0100:2}{be00}\nare ineligible.{be01}\nPlease come see me when you are ready.
+Excuse me!{be01}\nYou don’t have three eligible Pokémon.{be01}\nYou must have three different Pokémon\nto enter.{be01}\nThey also must be holding different\nkinds of items.{be01}\nEggs, {0100:2} and \n{0100:3} are ineligible.{be01}\nPlease come see me when you are ready.
+Excuse me!{be01}\nYou don’t have three eligible Pokémon.{be01}\nYou must have three different Pokémon\nto enter.{be01}\nThey also must be holding different\nkinds of items.{be01}\nEggs, {0100:2}, \n{0100:3} and {0100:4}{be00}\nare ineligible.{be01}\nPlease come see me when you are ready.
+Excuse me!{be01}\nYou don’t have three eligible Pokémon.{be01}\nYou must have three different Pokémon\nto enter.{be01}\nThey also must be holding different\nkinds of items.{be01}\nEggs, {0100:2}, \n{0100:3}, {0100:4} and {be00}\n{0100:5} are ineligible.{be01}\nPlease come see me when you are ready.
+Excuse me!{be01}\nYou don’t have three eligible Pokémon.{be01}\nYou must have three different Pokémon\nto enter.{be01}\nThey also must be holding different\nkinds of items.{be01}\nEggs, {0100:2}, \n{0100:3}, {0100:4}, {be00}\n{0100:5} and {0100:6}{be00}\nare ineligible.{be01}\nPlease come see me when you are ready.
+Excuse me!{be01}\nYou don’t have three eligible Pokémon.{be01}\nYou must have three different Pokémon\nto enter.{be01}\nThey also must be holding different\nkinds of items.{be01}\nEggs, {0100:2}, \n{0100:3}, {0100:4}, {be00}\n{0100:5}, {0100:6} and {be00}\n{0100:7} are ineligible.{be01}\nPlease come see me when you are ready.
+Excuse me!{be01}\nYou don’t have three eligible Pokémon.{be01}\nYou must have three different Pokémon\nto enter.{be01}\nThey also must be holding different\nkinds of items.{be01}\nEggs, {0100:2}, \n{0100:3}, {0100:4}, {be00}\n{0100:5}, {0100:6}, {be00}\n{0100:7} and {0100:8}{be00}\nare ineligible.{be01}\nPlease come see me when you are ready.
+Excuse me!{be01}\nYou don’t have three eligible Pokémon.{be01}\nYou must have three different Pokémon\nto enter.{be01}\nThey also must be holding different\nkinds of items.{be01}\nEggs, {0100:2}, \n{0100:3}, {0100:4}, {be00}\n{0100:5}, {0100:6}, {be00}\n{0100:7}, {0100:8} and {be00}\n{0100:9} are ineligible.{be01}\nPlease come see me when you are ready.
+Excuse me!{be01}\nYou don’t have three eligible Pokémon.{be01}\nYou must have three different Pokémon\nto enter.{be01}\nThey also must be holding different\nkinds of items.{be01}\nEggs, {0100:2}, \n{0100:3}, {0100:4}, {be00}\n{0100:5}, {0100:6}, {be00}\n{0100:7}, {0100:8}, {be00}\n{0100:9} and {0100:10}{be00}\nare ineligible.{be01}\nPlease come see me when you are ready.
+Excuse me!{be01}\nYou don’t have three eligible Pokémon.{be01}\nYou must have three different Pokémon\nto enter.{be01}\nThey also must be holding different\nkinds of items.{be01}\nEggs, {0100:2}, \n{0100:3}, {0100:4}, {be00}\n{0100:5}, {0100:6}, {be00}\n{0100:7}, {0100:8}, {be00}\n{0100:9}, {0100:10} and {be00}\n{0100:11} are ineligible.{be01}\nPlease come see me when you are ready.

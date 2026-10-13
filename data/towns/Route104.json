@@ -1,0 +1,19 @@
+{
+ "_doc": "Route 104's buildings: Mr. Briney's cottage and the Pretty Petal flower shop are props (their door tiles are walkable in Sapphire, so converter/plan_map.py finds no footprint) (group towns5, notes/TOWNS_TOWNS5.md). buildings: Sapphire door destination -> pack-0 res and front (z of the model's front wall; world.py puts it 4 units into the door tile, footprint centre from data/plans); props: model origin in Sapphire map tile coordinates (footprint centre x, door row + (4 - 20)/16).",
+ "group": "towns5",
+ "buildings": {},
+ "props": [
+  {
+   "res": 400,
+   "x": 17.5,
+   "z": 49.0,
+   "what": "Mr. Briney's cottage, x 15-19, door (17,50)"
+  },
+  {
+   "res": 401,
+   "x": 6.0,
+   "z": 17.0,
+   "what": "Pretty Petal flower shop, x 3-8, door (5,18)"
+  }
+ ]
+}

@@ -1,0 +1,118 @@
+{
+ "map": "BattleTower_Outside",
+ "id": "MAP_BATTLE_TOWER_OUTSIDE",
+ "layout": "LAYOUT_BATTLE_TOWER_OUTSIDE",
+ "music": "MUS_B_TOWER",
+ "region_map_section": "MAPSEC_BATTLE_TOWER",
+ "weather": "WEATHER_NONE",
+ "connections": null,
+ "npcs": [
+  {
+   "local_id": 1,
+   "x": 18,
+   "y": 11,
+   "gfx": "OBJ_EVENT_GFX_BUG_CATCHER",
+   "movement": "MOVEMENT_TYPE_WANDER_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BattleTower_Outside_EventScript_160263",
+   "texts": {
+    "BattleTower_Outside_Text_199CA4": "This is the BATTLE TOWER.\\pTRAINERS bring their best-raised\\nPOKéMON for elimination-style matches.$"
+   }
+  },
+  {
+   "local_id": 2,
+   "x": 11,
+   "y": 14,
+   "gfx": "OBJ_EVENT_GFX_WOMAN_5",
+   "movement": "MOVEMENT_TYPE_WANDER_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BattleTower_Outside_EventScript_16026C",
+   "texts": {
+    "BattleTower_Outside_Text_199E9C": "I'm not leaving until I've beaten 35\\nTRAINERS in a row!$"
+   }
+  },
+  {
+   "local_id": 3,
+   "x": 10,
+   "y": 11,
+   "gfx": "OBJ_EVENT_GFX_BOY_2",
+   "movement": "MOVEMENT_TYPE_WANDER_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BattleTower_Outside_EventScript_160275",
+   "texts": {
+    "BattleTower_Outside_Text_199ED4": "Gee, there're a lot of tough-looking\\nTRAINERS here.\\lI'm not good enough to enter yet...$"
+   }
+  },
+  {
+   "local_id": 4,
+   "x": 19,
+   "y": 26,
+   "gfx": "OBJ_EVENT_GFX_SS_TIDAL",
+   "movement": "MOVEMENT_TYPE_FACE_RIGHT",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "0x0",
+   "missing": true
+  },
+  {
+   "local_id": 5,
+   "x": 19,
+   "y": 24,
+   "gfx": "OBJ_EVENT_GFX_BEAUTY",
+   "movement": "MOVEMENT_TYPE_FACE_UP",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BattleTower_Outside_EventScript_160168",
+   "texts": {
+    "BattleTower_Outside_Text_199D06": "Hello, are you here for the ferry?\\nMay I see your TICKET?$",
+    "BattleTower_Outside_Text_199D9D": "{PLAYER} flashed the TICKET.\\pPerfect! That's all you need!\\pAnd where would you like to go?$"
+   },
+   "complex": true
+  }
+ ],
+ "signs": [
+  {
+   "x": 16,
+   "y": 13,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "BattleTower_Outside_EventScript_16025A",
+   "texts": {
+    "BattleTower_Outside_Text_199C6F": "BATTLE TOWER\\n“Win it all and be the best, TRAINERS!”$"
+   }
+  }
+ ],
+ "warps": [
+  {
+   "id": 0,
+   "x": 14,
+   "y": 8,
+   "dest_map": "MAP_BATTLE_TOWER_LOBBY",
+   "dest_warp_id": "0"
+  }
+ ],
+ "coord_events": [],
+ "wild": {}
+}

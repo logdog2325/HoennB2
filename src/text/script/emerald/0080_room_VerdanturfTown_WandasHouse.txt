@@ -1,0 +1,14 @@
+It’s filled with all sorts of books.
+There’s a set of Pokémon picture books.
+Wally: I lost to you, {0100:0}, but I’m\nnot feeling down anymore.{be01}\nBecause I have a new purpose in life.\nTogether with my Ralts, I’m going{be00}\nto challenge Pokémon Gyms and become{be00}\na great Trainer.{be01}\nPlease watch me, {0100:0}.\nI’m going to be stronger than you.{be01}\nWhen I do, I’m going to challenge you\nto another battle.
+Wally: Please watch me, {0100:0}.\nI’m going to get stronger than you.{be01}\nWhen I do, I’m going to challenge you\nto another battle.
+Uncle: Oh! {0100:0}!\nWally’s next door.{be01}\nBut, boy, there’s something I have to\ntell you.{be01}\nThis natural environment is doing\nwonders for Wally’s health.{be01}\nMaybe it’s not just the environment.\nIt could be Pokémon that are giving{be00}\nthe boy hope.
+Wally’s gone away...\nHe slipped off on his own...
+Uncle: Is that right?\nWally’s gone away that far all by{be00}\nhimself…{be01}\nWell, I have to give him credit--he is\nmy little brother’s son.
+Wanda: You are?\nOh, right, I get it!{be01}\nYou’re the {0100:0} who Wally was\ntelling me about.{be01}\nI’m Wally’s cousin.\nGlad to meet you!{be01}\nI think Wally’s become a lot more lively\nand healthy since he came here.
+Wanda: Don’t worry about Wally.\nHe’ll be just fine.{be01}\nI know my little cousin, and he has\nPokémon with him, too.
+Thanks to you, I can see my girlfriend\nevery day.{be00}\nHappy? You bet I am!
+My daughter’s boyfriend is a very\ndriven and passionate sort of person.{be01}\nHe’s been digging a tunnel nonstop\njust so he can see my daughter.{be01}\nMy daughter’s a little concerned,\nso she goes out to the tunnel a lot.
+It’s amazing. My daughter’s boyfriend\nwas digging the tunnel by hand!{be01}\nIt’s so incredible!
+If anything were to happen to Wally,\nI would never be able to look his{be00}\nparents in Petalburg in the eye...
+Wally was in Ever Grande?{be01}\nHis parents in Petalburg would be\nastonished to hear that!

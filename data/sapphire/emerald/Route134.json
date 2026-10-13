@@ -1,0 +1,343 @@
+{
+ "map": "Route134",
+ "id": "MAP_ROUTE134",
+ "layout": "LAYOUT_ROUTE134",
+ "music": "MUS_ROUTE119",
+ "region_map_section": "MAPSEC_ROUTE_134",
+ "weather": "WEATHER_SUNNY",
+ "connections": [
+  {
+   "map": "MAP_SLATEPORT_CITY",
+   "offset": 0,
+   "direction": "left"
+  },
+  {
+   "map": "MAP_ROUTE133",
+   "offset": 0,
+   "direction": "right"
+  }
+ ],
+ "npcs": [
+  {
+   "local_id": 1,
+   "x": 49,
+   "y": 9,
+   "gfx": "OBJ_EVENT_GFX_SWIMMER_M",
+   "movement": "MOVEMENT_TYPE_WALK_SEQUENCE_UP_RIGHT_DOWN_LEFT",
+   "range": [
+    3,
+    5
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route134_EventScript_Jack",
+   "texts": {
+    "Route134_Text_JackIntro": "Even those POKéMON that can swim are\\ncarried along by the rapid currents.$",
+    "Route134_Text_JackDefeat": "Aiyeeeeh!$",
+    "Route134_Text_JackPostBattle": "I think POKéMON enjoy the fast-running\\ncurrents around these parts.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 2,
+   "x": 58,
+   "y": 7,
+   "gfx": "OBJ_EVENT_GFX_SWIMMER_F",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route134_EventScript_Laurel",
+   "texts": {
+    "Route134_Text_LaurelIntro": "My LUVDISC are looking for a fun\\nmatch. Will you join us?$",
+    "Route134_Text_LaurelDefeat": "Oopsie!$",
+    "Route134_Text_LaurelPostBattle": "There's a collector who's after\\nthe SCALES of LUVDISC.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 3,
+   "x": 41,
+   "y": 23,
+   "gfx": "OBJ_EVENT_GFX_MAN_3",
+   "movement": "MOVEMENT_TYPE_FACE_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route134_EventScript_Aaron",
+   "texts": {
+    "Route134_Text_AaronIntro": "The savage tide in this area serves to\\nmake us stronger than ever.$",
+    "Route134_Text_AaronDefeat": "I willingly concede defeat.$",
+    "Route134_Text_AaronPostBattle": "We will return for more training at\\nMETEOR FALLS.\\pIf you'd like, you should go, too.\\nIt will definitely toughen you up!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 4,
+   "x": 24,
+   "y": 23,
+   "gfx": "OBJ_EVENT_GFX_MAN_5",
+   "movement": "MOVEMENT_TYPE_WALK_DOWN_AND_UP",
+   "range": [
+    0,
+    3
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route134_EventScript_Alex",
+   "texts": {
+    "Route134_Text_AlexIntro": "Okeydokey! That's enough rest, gang!\\nIt's time for a match!$",
+    "Route134_Text_AlexDefeat": "Tuckered out again…$",
+    "Route134_Text_AlexPostBattle": "My BIRD POKéMON get tired quickly after\\na long flight…$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 5,
+   "x": 49,
+   "y": 16,
+   "gfx": "OBJ_EVENT_GFX_BLACK_BELT",
+   "movement": "MOVEMENT_TYPE_WALK_LEFT_AND_RIGHT",
+   "range": [
+    6,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route134_EventScript_Hitoshi",
+   "texts": {
+    "Route134_Text_HitoshiIntro": "You're a POKéMON TRAINER.\\nNo need for words. We battle now.$",
+    "Route134_Text_HitoshiDefeat": "… … … … … …\\n… … … … … …$",
+    "Route134_Text_HitoshiPostBattle": "It was I who challenged you, and yet\\nI lost. I am deeply shamed…$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 6,
+   "x": 43,
+   "y": 23,
+   "gfx": "OBJ_EVENT_GFX_WOMAN_5",
+   "movement": "MOVEMENT_TYPE_FACE_LEFT",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route134_EventScript_Marley",
+   "texts": {
+    "Route134_Text_MarleyIntro": "Can your POKéMON dodge our\\nlightning-quick attacks?$",
+    "Route134_Text_MarleyDefeat": "I never knew such a technique existed!\\nYou've defeated us thoroughly.$",
+    "Route134_Text_MarleyPostBattle": "I haven't lost my passion for speed.\\nI will try harder.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 7,
+   "x": 24,
+   "y": 30,
+   "gfx": "OBJ_EVENT_GFX_SAILOR",
+   "movement": "MOVEMENT_TYPE_WALK_UP_AND_DOWN",
+   "range": [
+    0,
+    3
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route134_EventScript_Kelvin",
+   "texts": {
+    "Route134_Text_KelvinIntro": "O-our boat!\\nThe tide carried it away!$",
+    "Route134_Text_KelvinDefeat": "Awawawawah!\\nPlease, stop! Please!$",
+    "Route134_Text_KelvinPostBattle": "If we can't SURF, how are we supposed\\nto get home?\\pActually, I know a fainted POKéMON\\ncan still SURF, but it feels wrong.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 8,
+   "x": 50,
+   "y": 16,
+   "gfx": "OBJ_EVENT_GFX_GIRL_3",
+   "movement": "MOVEMENT_TYPE_WALK_RIGHT_AND_LEFT",
+   "range": [
+    6,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route134_EventScript_Reyna",
+   "texts": {
+    "Route134_Text_ReynaIntro": "My POKéMON can't be taken down\\neasily!$",
+    "Route134_Text_ReynaDefeat": "You're kidding!\\nExplain how I lost!$",
+    "Route134_Text_ReynaPostBattle": "Haha!\\nYou won, all right!\\pI'll work my way back up by taking on\\nTRAINERS I happen to meet!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 9,
+   "x": 63,
+   "y": 14,
+   "gfx": "OBJ_EVENT_GFX_SAILOR",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN_AND_RIGHT",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route134_EventScript_Hudson",
+   "texts": {
+    "Route134_Text_HudsonIntro": "Listen, have you seen another SAILOR\\naround here?$",
+    "Route134_Text_HudsonDefeat": "Now, that's something!$",
+    "Route134_Text_HudsonPostBattle": "Our boat drifted out to sea.\\pMy buddy's a timid fellow, so I'm\\nworried about him.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 10,
+   "x": 50,
+   "y": 17,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_ROUTE_134_CARBOS",
+   "script": "Route134_EventScript_ItemCarbos",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 11,
+   "x": 22,
+   "y": 27,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_ROUTE_134_STAR_PIECE",
+   "script": "Route134_EventScript_ItemStarPiece",
+   "texts": {},
+   "complex": true
+  }
+ ],
+ "signs": [],
+ "warps": [],
+ "coord_events": [],
+ "wild": {
+  "water_mons": {
+   "encounter_rate": 4,
+   "slot_rates": [
+    60,
+    30,
+    5,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 5,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 15,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_PELIPPER",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_PELIPPER",
+     "min": 25,
+     "max": 30
+    }
+   ]
+  },
+  "fishing_mons": {
+   "encounter_rate": 30,
+   "slot_rates": [
+    70,
+    30,
+    60,
+    20,
+    20,
+    40,
+    40,
+    15,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_SHARPEDO",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_HORSEA",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 35,
+     "max": 40
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 40,
+     "max": 45
+    }
+   ]
+  }
+ }
+}

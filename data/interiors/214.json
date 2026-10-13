@@ -1,0 +1,48 @@
+{
+ "_doc": "LilycoveCity_PokemonTrainerFanClub: zone written by converter/gen_interior_recipes_houses.py (warps and parent from converter/gen_interiors.py); story people left for the story phase: person LASS at (3,11) LilycoveCity_PokemonTrainerFanClub_EventScript_Lass (story/complex script); person MAN_5 at (8,10) LilycoveCity_PokemonTrainerFanClub_EventScript_Man (story/complex script); person MAN_3 at (6,11) LilycoveCity_PokemonTrainerFanClub_EventScript_PokefanM (story/complex script); person LITTLE_GIRL_2 at (5,8) LilycoveCity_PokemonTrainerFanClub_EventScript_LittleGirl (story/complex script); story person LITTLE_BOY_1 at (7,11) LilycoveCity_PokemonTrainerFanClub_EventScript_NinjaBoy (hide flag FLAG_HIDE_FANCLUB_LITTLE_BOY); story person BOY_2 at (1,9) LilycoveCity_PokemonTrainerFanClub_EventScript_Boy (hide flag FLAG_HIDE_FANCLUB_BOY); story person WOMAN_4 at (3,10) LilycoveCity_PokemonTrainerFanClub_EventScript_Woman (hide flag FLAG_HIDE_FANCLUB_LADY); story person OLD_WOMAN_1 at (10,10) LilycoveCity_PokemonTrainerFanClub_EventScript_ExpertF (hide flag FLAG_HIDE_FANCLUB_OLD_LADY)",
+ "zone": 214,
+ "room": "LilycoveCity_PokemonTrainerFanClub",
+ "area": 313,
+ "parent": 96,
+ "warps": [
+  {
+   "at": [6, 13],
+   "tile_only": true,
+   "to": [96, 19],
+   "what": "Sapphire warp 0 -> LilycoveCity 5"
+  },
+  {
+   "at": [5, 13],
+   "tile_only": true,
+   "to": [96, 19],
+   "what": "Sapphire warp 1 -> LilycoveCity 5"
+  }
+ ],
+ "npcs": [],
+ "signs": [
+  {
+   "script": 1,
+   "at": [0, 1],
+   "dir": 4,
+   "what": "Bookshelf"
+  },
+  {
+   "script": 1,
+   "at": [1, 1],
+   "dir": 4,
+   "what": "Bookshelf"
+  },
+  {
+   "script": 2,
+   "at": [2, 1],
+   "dir": 4,
+   "what": "PictureBookshelf"
+  },
+  {
+   "script": 2,
+   "at": [11, 8],
+   "dir": 4,
+   "what": "PictureBookshelf"
+  }
+ ]
+}

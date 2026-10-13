@@ -1,0 +1,20 @@
+{
+ "map": "MeteorFalls_B1F_1R",
+ "_doc": "caves_east: Sapphire elevations 3/4/5 = 0/16/32 (stairs (7,14) and (8,24) become Black 2 slopes); the river is one level (water -8), so surfing starts only from the elevation-3 banks, as in Sapphire (Black 2 allows it under 20 units: the elevation-4 banks are 24 above the water).",
+ "levels": {
+  "3": 0,
+  "4": 16,
+  "5": 32
+ },
+ "heights": {
+  "12,8": 0
+ },
+ "void": [
+  [
+   0,
+   27,
+   0,
+   37
+  ]
+ ]
+}

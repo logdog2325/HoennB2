@@ -1,0 +1,130 @@
+{
+ "_doc": "emerald_rooms (b2tools/emerald_rooms.py writes this file: edit the script and rerun). Emerald's overlay of 161.json (positions in the tiles of LilycoveCity_ContestLobby's Emerald variant): the exits (14,11) (15,11), the doors to the hall (9,1) (21,1); the people at Emerald's places of the same people (pokeemerald's local ids): black belt (18,8), artist (3,4), boy (23,8), fisherman (5,6), fat man (0,8). LilycoveCity_ContestLobby (zone 161), built by the specials agent (recipe data/interior_layouts/LilycoveCity_ContestLobby.json): Musical Theater look, Black 2 interior area 305. Warps in Sapphire's order (one per Sapphire warp tile). People/signs: Sapphire's one-message ones as generated; story people are left for the story phase.",
+ "zone": 161,
+ "room": "LilycoveCity_ContestLobby",
+ "area": 305,
+ "parent": 96,
+ "warps": [
+  {
+   "at": [
+    14,
+    11
+   ],
+   "tile_only": true,
+   "to": [
+    96,
+    18
+   ],
+   "what": "Sapphire warp 0 -> LilycoveCity 4"
+  },
+  {
+   "at": [
+    15,
+    11
+   ],
+   "tile_only": true,
+   "to": [
+    96,
+    18
+   ],
+   "what": "Sapphire warp 1 -> LilycoveCity 4"
+  },
+  {
+   "at": [
+    9,
+    1
+   ],
+   "tile_only": true,
+   "to": [
+    160,
+    0
+   ],
+   "what": "Sapphire warp 2 -> LilycoveCity_ContestHall 0"
+  },
+  {
+   "at": [
+    21,
+    1
+   ],
+   "tile_only": true,
+   "to": [
+    160,
+    1
+   ],
+   "what": "Sapphire warp 3 -> LilycoveCity_ContestHall 1"
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 5,
+   "model": 46,
+   "script": 1,
+   "dir": 1,
+   "at": [
+    18,
+    8
+   ],
+   "move": 3,
+   "range": [
+    1,
+    1
+   ],
+   "_what": " (Emerald: (18, 8), Sapphire (14, 6))"
+  },
+  {
+   "uid": 7,
+   "model": 28,
+   "script": 2,
+   "dir": 1,
+   "at": [
+    3,
+    4
+   ],
+   "move": 3,
+   "range": [
+    1,
+    1
+   ],
+   "_what": " (Emerald: (3, 4), Sapphire (20, 2))"
+  },
+  {
+   "uid": 9,
+   "model": 10,
+   "script": 3,
+   "dir": 1,
+   "at": [
+    23,
+    8
+   ],
+   "_what": " (Emerald: (23, 8), Sapphire (18, 8))"
+  },
+  {
+   "uid": 12,
+   "model": 63,
+   "script": 4,
+   "dir": 1,
+   "at": [
+    5,
+    6
+   ],
+   "move": 3,
+   "range": [
+    1,
+    1
+   ],
+   "_what": " (Emerald: (5, 6), Sapphire (13, 10))"
+  },
+  {
+   "uid": 13,
+   "model": 25,
+   "script": 5,
+   "dir": 3,
+   "at": [
+    0,
+    8
+   ],
+   "_what": " (Emerald: (0, 8), Sapphire (1, 6))"
+  }
+ ],
+ "signs": []
+}

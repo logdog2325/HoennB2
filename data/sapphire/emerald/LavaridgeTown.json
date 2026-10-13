@@ -1,0 +1,305 @@
+{
+ "map": "LavaridgeTown",
+ "id": "MAP_LAVARIDGE_TOWN",
+ "layout": "LAYOUT_LAVARIDGE_TOWN",
+ "music": "MUS_OLDALE",
+ "region_map_section": "MAPSEC_LAVARIDGE_TOWN",
+ "weather": "WEATHER_SUNNY",
+ "connections": [
+  {
+   "map": "MAP_ROUTE112",
+   "offset": -40,
+   "direction": "right"
+  }
+ ],
+ "npcs": [
+  {
+   "local_id": 1,
+   "x": 8,
+   "y": 7,
+   "gfx": "OBJ_EVENT_GFX_EXPERT_F",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "LavaridgeTown_EventScript_ExpertF",
+   "texts": {
+    "LavaridgeTown_Text_OhYouLikeHotSprings": "Oh, you like hot springs, do you?\\pThat's surprising for one as young\\nas you.$"
+   }
+  },
+  {
+   "local_id": 2,
+   "x": 5,
+   "y": 1,
+   "gfx": "OBJ_EVENT_GFX_EXPERT_M",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "LavaridgeTown_EventScript_ExpertM",
+   "texts": {
+    "LavaridgeTown_Text_HotSpringsNeverRunDry": "We draw as much hot water as we need,\\nand yet the hot springs never run dry.\\pIsn't it magical?\\pThese hot springs appear near active\\nvolcanoes. Veins of water under the\\lground are heated by magma to well up\\las hot springs.$"
+   }
+  },
+  {
+   "local_id": 3,
+   "x": 5,
+   "y": 8,
+   "gfx": "OBJ_EVENT_GFX_OLD_MAN",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "LavaridgeTown_EventScript_OldMan",
+   "texts": {
+    "LavaridgeTown_Text_PokemonNippedBackside": "Being buried in this hot sand is…\\nSigh…\\pSo warm and heavenly…\\pEh? Gyaah! Ouch!\\pA POKéMON nipped my backside!$"
+   }
+  },
+  {
+   "local_id": 4,
+   "x": 10,
+   "y": 13,
+   "gfx": "OBJ_EVENT_GFX_TWIN",
+   "movement": "MOVEMENT_TYPE_WANDER_UP_AND_DOWN",
+   "range": [
+    0,
+    2
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "LavaridgeTown_EventScript_Twin",
+   "texts": {
+    "LavaridgeTown_Text_BatheInHotSpringsEveryDay": "I bathe in the hot springs every day.\\pI want to become a beautiful and strong\\nGYM LEADER like FLANNERY.$"
+   }
+  },
+  {
+   "local_id": 5,
+   "x": 4,
+   "y": 4,
+   "gfx": "OBJ_EVENT_GFX_HOT_SPRINGS_OLD_WOMAN",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN_AND_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "LavaridgeTown_EventScript_HotSpringsOldWoman1",
+   "texts": {
+    "LavaridgeTown_Text_IfPokemonInHotSprings": "If people put POKéMON in hot springs,\\nit might be seriously strange.\\pWhy, it might be an electric bath, or\\na bubble bath, or even a lava bath…$"
+   }
+  },
+  {
+   "local_id": 6,
+   "x": 5,
+   "y": 4,
+   "gfx": "OBJ_EVENT_GFX_HOT_SPRINGS_OLD_WOMAN",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN_AND_LEFT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "LavaridgeTown_EventScript_HotSpringsOldWoman2",
+   "texts": {
+    "LavaridgeTown_Text_HotSpringsClaims": "They're claiming that these hot springs\\nare good for calming nervous tension,\\lrelieving aching muscles, solving\\lromantic problems, and attracting\\lmoney…$"
+   }
+  },
+  {
+   "local_id": 7,
+   "x": 6,
+   "y": 16,
+   "gfx": "OBJ_EVENT_GFX_VAR_3",
+   "movement": "MOVEMENT_TYPE_FACE_LEFT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_LAVARIDGE_TOWN_RIVAL_ON_BIKE",
+   "script": "0x0",
+   "missing": true
+  },
+  {
+   "local_id": 8,
+   "x": 12,
+   "y": 15,
+   "gfx": "OBJ_EVENT_GFX_VAR_0",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_LAVARIDGE_TOWN_RIVAL",
+   "script": "0x0",
+   "missing": true
+  },
+  {
+   "local_id": 9,
+   "x": 4,
+   "y": 7,
+   "gfx": "OBJ_EVENT_GFX_EXPERT_F",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "LavaridgeTown_EventScript_EggWoman",
+   "texts": {
+    "LavaridgeTown_Text_HaveEggWillYouTakeIt": "I have here an EGG.\\pI'd hoped to hatch it by covering it in\\nhot sand by the hot springs.\\lBut that doesn't seem to be enough…\\pI've heard it would be best if it were\\nkept together with POKéMON and\\lcarried about.\\pYou are a TRAINER, yes?\\nAnd your POKéMON radiate vitality.\\pSo, what say you?\\nWill you take this EGG to hatch?$",
+    "LavaridgeTown_Text_HopeYoullWalkPlentyWithEgg": "Good! I hope you'll walk plenty with\\nthis here EGG!$",
+    "LavaridgeTown_Text_ReceivedTheEgg": "{PLAYER} received the EGG.$"
+   },
+   "complex": true
+  }
+ ],
+ "signs": [
+  {
+   "x": 14,
+   "y": 16,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "LavaridgeTown_EventScript_HerbShopSign",
+   "texts": {
+    "LavaridgeTown_Text_HerbShopSign": "POKéMON HERB SHOP\\n“Bitter taste--better cure!”$"
+   }
+  },
+  {
+   "x": 7,
+   "y": 15,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "LavaridgeTown_EventScript_GymSign",
+   "texts": {
+    "LavaridgeTown_Text_GymSign": "LAVARIDGE TOWN POKéMON GYM\\nLEADER: FLANNERY\\l“One with a fiery passion that burns!”$"
+   }
+  },
+  {
+   "x": 17,
+   "y": 5,
+   "facing": "BG_EVENT_PLAYER_FACING_NORTH",
+   "script": "Common_EventScript_ShowPokemartSign",
+   "texts": {
+    "gText_PokemartSign": "“Selected items for your convenience!”\\nPOKéMON MART$"
+   }
+  },
+  {
+   "x": 13,
+   "y": 8,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "LavaridgeTown_EventScript_TownSign",
+   "texts": {
+    "LavaridgeTown_Text_TownSign": "LAVARIDGE TOWN\\p“POKéMON CENTER HOT SPRINGS\\nAn excellent place for relaxing!”$"
+   }
+  },
+  {
+   "x": 10,
+   "y": 6,
+   "facing": "BG_EVENT_PLAYER_FACING_NORTH",
+   "script": "Common_EventScript_ShowPokemonCenterSign",
+   "texts": {
+    "gText_PokemonCenterSign": "“Rejuvenate your tired partners!”\\nPOKéMON CENTER$"
+   }
+  },
+  {
+   "x": 16,
+   "y": 5,
+   "facing": "BG_EVENT_PLAYER_FACING_NORTH",
+   "script": "Common_EventScript_ShowPokemartSign",
+   "texts": {
+    "gText_PokemartSign": "“Selected items for your convenience!”\\nPOKéMON MART$"
+   }
+  },
+  {
+   "x": 11,
+   "y": 6,
+   "facing": "BG_EVENT_PLAYER_FACING_NORTH",
+   "script": "Common_EventScript_ShowPokemonCenterSign",
+   "texts": {
+    "gText_PokemonCenterSign": "“Rejuvenate your tired partners!”\\nPOKéMON CENTER$"
+   }
+  },
+  {
+   "x": 4,
+   "y": 5,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 4,
+    "y": 5,
+    "elevation": 3,
+    "item": "ITEM_ICE_HEAL",
+    "flag": "FLAG_HIDDEN_ITEM_LAVARIDGE_TOWN_ICE_HEAL"
+   }
+  }
+ ],
+ "warps": [
+  {
+   "id": 0,
+   "x": 12,
+   "y": 15,
+   "dest_map": "MAP_LAVARIDGE_TOWN_HERB_SHOP",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 1,
+   "x": 5,
+   "y": 15,
+   "dest_map": "MAP_LAVARIDGE_TOWN_GYM_1F",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 2,
+   "x": 15,
+   "y": 5,
+   "dest_map": "MAP_LAVARIDGE_TOWN_MART",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 3,
+   "x": 9,
+   "y": 6,
+   "dest_map": "MAP_LAVARIDGE_TOWN_POKEMON_CENTER_1F",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 4,
+   "x": 16,
+   "y": 15,
+   "dest_map": "MAP_LAVARIDGE_TOWN_HOUSE",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 5,
+   "x": 9,
+   "y": 2,
+   "dest_map": "MAP_LAVARIDGE_TOWN_POKEMON_CENTER_1F",
+   "dest_warp_id": "3"
+  }
+ ],
+ "coord_events": [
+  {
+   "type": "trigger",
+   "x": 6,
+   "y": 3,
+   "elevation": 3,
+   "var": "TRIGGER_RUN_IMMEDIATELY",
+   "var_value": "0",
+   "script": "LavaridgeTown_EventScript_HotSpringsTrigger",
+   "texts": {},
+   "complex": true
+  }
+ ],
+ "wild": {}
+}

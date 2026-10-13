@@ -1,0 +1,197 @@
+{
+ "_doc": "Mt. Pyre 4F (zone 350; scripts/text: the generated *_room_MtPyre_4F files). Area 323 = Black 2's Celestial Tower (interior pack 41). Warps in Sapphire's order, then the holes' extra directions (b2tools/facilities_pyre.py). Item balls as generated.",
+ "zone": 350,
+ "room": "MtPyre_4F",
+ "area": 323,
+ "parent": 551,
+ "warps": [
+  {
+   "at": [
+    10,
+    1
+   ],
+   "tile_only": true,
+   "to": [
+    351,
+    1
+   ],
+   "what": "Sapphire warp 0 -> MtPyre_5F 1"
+  },
+  {
+   "at": [
+    2,
+    5
+   ],
+   "tile_only": true,
+   "to": [
+    346,
+    1
+   ],
+   "what": "Sapphire warp 1 -> MtPyre_3F 1"
+  },
+  {
+   "at": [
+    12,
+    10
+   ],
+   "tile_only": true,
+   "to": [
+    65535,
+    65535
+   ],
+   "what": "Sapphire warp 2: landing spot of the hole above (arrival only)",
+   "type": 1,
+   "dir": 1
+  },
+  {
+   "at": [
+    12,
+    12
+   ],
+   "tile_only": true,
+   "to": [
+    65535,
+    65535
+   ],
+   "what": "Sapphire warp 3: landing spot of the hole above (arrival only)",
+   "type": 1,
+   "dir": 1
+  },
+  {
+   "at": [
+    9,
+    10
+   ],
+   "tile_only": true,
+   "to": [
+    346,
+    2
+   ],
+   "what": "Sapphire warp 4 -> MtPyre_3F 2",
+   "type": 2,
+   "dir": 2
+  },
+  {
+   "at": [
+    2,
+    12
+   ],
+   "tile_only": true,
+   "to": [
+    346,
+    3
+   ],
+   "what": "Sapphire warp 5 -> MtPyre_3F 3",
+   "type": 2,
+   "dir": 2
+  },
+  {
+   "at": [
+    9,
+    10
+   ],
+   "tile_only": true,
+   "type": 2,
+   "dir": 1,
+   "to": [
+    346,
+    2
+   ],
+   "_extra": true,
+   "what": "hole of Sapphire warp 4, entered walking S"
+  },
+  {
+   "at": [
+    9,
+    10
+   ],
+   "tile_only": true,
+   "type": 2,
+   "dir": 3,
+   "to": [
+    346,
+    2
+   ],
+   "_extra": true,
+   "what": "hole of Sapphire warp 4, entered walking E"
+  },
+  {
+   "at": [
+    9,
+    10
+   ],
+   "tile_only": true,
+   "type": 2,
+   "dir": 4,
+   "to": [
+    346,
+    2
+   ],
+   "_extra": true,
+   "what": "hole of Sapphire warp 4, entered walking W"
+  },
+  {
+   "at": [
+    2,
+    12
+   ],
+   "tile_only": true,
+   "type": 2,
+   "dir": 1,
+   "to": [
+    346,
+    3
+   ],
+   "_extra": true,
+   "what": "hole of Sapphire warp 5, entered walking S"
+  },
+  {
+   "at": [
+    2,
+    12
+   ],
+   "tile_only": true,
+   "type": 2,
+   "dir": 3,
+   "to": [
+    346,
+    3
+   ],
+   "_extra": true,
+   "what": "hole of Sapphire warp 5, entered walking E"
+  },
+  {
+   "at": [
+    2,
+    12
+   ],
+   "tile_only": true,
+   "type": 2,
+   "dir": 4,
+   "to": [
+    346,
+    3
+   ],
+   "_extra": true,
+   "what": "hole of Sapphire warp 5, entered walking W"
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 2,
+   "model": 110,
+   "script": 7099,
+   "flag": 1199,
+   "dir": 1,
+   "at": [
+    3,
+    11
+   ]
+  }
+ ],
+ "signs": [],
+ "header": {
+  "encounters": 96,
+  "enc_slot": 2
+ }
+}

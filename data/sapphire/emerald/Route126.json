@@ -1,0 +1,312 @@
+{
+ "map": "Route126",
+ "id": "MAP_ROUTE126",
+ "layout": "LAYOUT_ROUTE126",
+ "music": "MUS_ROUTE120",
+ "region_map_section": "MAPSEC_ROUTE_126",
+ "weather": "WEATHER_SUNNY",
+ "connections": [
+  {
+   "map": "MAP_ROUTE124",
+   "offset": 0,
+   "direction": "up"
+  },
+  {
+   "map": "MAP_ROUTE127",
+   "offset": 0,
+   "direction": "right"
+  },
+  {
+   "map": "MAP_UNDERWATER_ROUTE126",
+   "offset": 0,
+   "direction": "dive"
+  }
+ ],
+ "npcs": [
+  {
+   "local_id": 1,
+   "x": 51,
+   "y": 65,
+   "gfx": "OBJ_EVENT_GFX_SWIMMER_M",
+   "movement": "MOVEMENT_TYPE_WALK_SEQUENCE_LEFT_UP_RIGHT_DOWN",
+   "range": [
+    10,
+    3
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route126_EventScript_Barry",
+   "texts": {
+    "Route126_Text_BarryIntro": "Swimming is a full-body workout!\\nYou will get fit!$",
+    "Route126_Text_BarryDefeat": "I admit it!\\nYou win!$",
+    "Route126_Text_BarryPostBattle": "Thanks to my daily swimming routine…\\nLook! Feast your eyes on this physique!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 2,
+   "x": 56,
+   "y": 22,
+   "gfx": "OBJ_EVENT_GFX_SWIMMER_M",
+   "movement": "MOVEMENT_TYPE_WALK_RIGHT_AND_LEFT",
+   "range": [
+    9,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route126_EventScript_Dean",
+   "texts": {
+    "Route126_Text_DeanIntro": "This towering white mountain of rock\\nis SOOTOPOLIS CITY.$",
+    "Route126_Text_DeanDefeat": "I was done in?$",
+    "Route126_Text_DeanPostBattle": "I can't find the entrance to\\nSOOTOPOLIS. Where could it be?$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 3,
+   "x": 63,
+   "y": 43,
+   "gfx": "OBJ_EVENT_GFX_SWIMMER_F",
+   "movement": "MOVEMENT_TYPE_ROTATE_CLOCKWISE",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route126_EventScript_Nikki",
+   "texts": {
+    "Route126_Text_NikkiIntro": "Ufufufufu!\\nI'm a mermaid!$",
+    "Route126_Text_NikkiDefeat": "My fantasy burst as if it were a bubble!\\nBlub, blub, blub…$",
+    "Route126_Text_NikkiPostBattle": "You thrashed me… I want to\\ndisappear in a wave of despair…$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 4,
+   "x": 9,
+   "y": 48,
+   "gfx": "OBJ_EVENT_GFX_SWIMMER_F",
+   "movement": "MOVEMENT_TYPE_FACE_UP",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route126_EventScript_Brenda",
+   "texts": {
+    "Route126_Text_BrendaIntro": "Hello, kiddo!\\nWant a battle with me?$",
+    "Route126_Text_BrendaDefeat": "Oh, noooooh!$",
+    "Route126_Text_BrendaPostBattle": "I love frolicking with POKéMON in\\nthe sea like this!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 5,
+   "x": 14,
+   "y": 1,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_ROUTE_126_GREEN_SHARD",
+   "script": "Route126_EventScript_ItemGreenShard",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 6,
+   "x": 15,
+   "y": 66,
+   "gfx": "OBJ_EVENT_GFX_SWIMMER_F",
+   "movement": "MOVEMENT_TYPE_WALK_IN_PLACE_LEFT",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route126_EventScript_Sienna",
+   "texts": {
+    "Route126_Text_SiennaIntro": "I'm throwing my whole heart\\ninto this!$",
+    "Route126_Text_SiennaDefeat": "You had more heart!$",
+    "Route126_Text_SiennaPostBattle": "I need to cool down now…\\nI think I'll go for a dive.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 7,
+   "x": 7,
+   "y": 66,
+   "gfx": "OBJ_EVENT_GFX_SWIMMER_M",
+   "movement": "MOVEMENT_TYPE_WALK_IN_PLACE_RIGHT",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route126_EventScript_Pablo",
+   "texts": {
+    "Route126_Text_PabloIntro": "Check out this sculpted body!\\nI'm more cut than a BLACK BELT!$",
+    "Route126_Text_PabloDefeat": "Whoops! Too strong!\\nNot bad! Not bad at all!$",
+    "Route126_Text_PabloPostBattle": "Losing to you stimulated my senses!\\nI'll train myself and POKéMON harder!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 8,
+   "x": 64,
+   "y": 5,
+   "gfx": "OBJ_EVENT_GFX_SWIMMER_F",
+   "movement": "MOVEMENT_TYPE_WALK_IN_PLACE_LEFT",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route126_EventScript_Isobel",
+   "texts": {
+    "Route126_Text_IsobelIntro": "If seawater gets up your nose,\\ndoesn't it feel terrible?$",
+    "Route126_Text_IsobelDefeat": "Ack! Why, you…\\nGlub!$",
+    "Route126_Text_IsobelPostBattle": "Ooh, I choked on some water!\\nIt's bitter! It's salty!!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 9,
+   "x": 56,
+   "y": 5,
+   "gfx": "OBJ_EVENT_GFX_SWIMMER_M",
+   "movement": "MOVEMENT_TYPE_WALK_IN_PLACE_RIGHT",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route126_EventScript_Leonardo",
+   "texts": {
+    "Route126_Text_LeonardoIntro": "I couldn't even swim last year,\\nbut now I'm a decent SWIMMER.\\pI think I'm capable of anything now.$",
+    "Route126_Text_LeonardoDefeat": "Sheesh, getting greedy didn't do\\na thing for me.$",
+    "Route126_Text_LeonardoPostBattle": "If you practice at something,\\nyou will get better at it.\\pYou're young--don't be afraid to\\ntry all sorts of things!$"
+   },
+   "complex": true
+  }
+ ],
+ "signs": [],
+ "warps": [],
+ "coord_events": [],
+ "wild": {
+  "water_mons": {
+   "encounter_rate": 4,
+   "slot_rates": [
+    60,
+    30,
+    5,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 5,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 15,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_PELIPPER",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_PELIPPER",
+     "min": 25,
+     "max": 30
+    }
+   ]
+  },
+  "fishing_mons": {
+   "encounter_rate": 30,
+   "slot_rates": [
+    70,
+    30,
+    60,
+    20,
+    20,
+    40,
+    40,
+    15,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_SHARPEDO",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 35,
+     "max": 40
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 40,
+     "max": 45
+    }
+   ]
+  }
+ }
+}

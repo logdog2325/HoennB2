@@ -1,0 +1,6 @@
+{0100:0} inserted and turned the\nKey.{be01}\nThe inserted Key stuck fast, but the\ndoor opened.
+The door is locked.{be01}\n“Rm. 1” is painted on the door.
+The door is locked.{be01}\n“Rm. 2” is painted on the door.
+The door is locked.{be01}\n“Rm. 4” is painted on the door.
+The door is locked.{be01}\n“Rm. 6” is painted on the door.
+The door is open.

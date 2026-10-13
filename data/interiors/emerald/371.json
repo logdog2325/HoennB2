@@ -1,0 +1,40 @@
+{
+ "zone": 371,
+ "room": "Underwater_MarineCave",
+ "cave": true,
+ "cave_auto": true,
+ "area": 340,
+ "dark": false,
+ "header": {
+  "map_type": 16,
+  "npc_cache": 24,
+  "weather_word": 64,
+  "flags": 19715,
+  "icon_word": 32783,
+  "place_display": 1,
+  "bgm0": 1014,
+  "bgm1": 1014,
+  "bgm2": 1014,
+  "bgm3": 1014,
+  "place": 55,
+  "encounters": 8191,
+  "enc_slot": 6
+ },
+ "warps": [
+  {
+   "at": [
+    9,
+    8
+   ],
+   "to": [
+    371,
+    256
+   ],
+   "what": "Emerald warp 0 (9,8) -> MAP_DYNAMIC 0"
+  }
+ ],
+ "triggers": [],
+ "npcs": [],
+ "signs": [],
+ "what": "Underwater_MarineCave: Emerald's cave (converter/gen_caves_emerald.py from emerald/Underwater_MarineCave, b2tools/models_cave.py); story objects: see notes/EMERALD.md"
+}

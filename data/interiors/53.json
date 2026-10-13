@@ -1,0 +1,42 @@
+{
+ "zone": 53,
+ "room": "EverGrandeCity_GlaciasRoom",
+ "area": 292,
+ "bgm": 1072,
+ "what": "gyms_league: EverGrandeCity_GlaciasRoom (b2tools/gyms_league_rooms.py); story phase: Glacia (6,5): Elite Four battle, door (6,2)",
+ "parent": 412,
+ "battle_bg": 14,
+ "warps": [
+  {
+   "at": [
+    6,
+    13
+   ],
+   "tile_only": true,
+   "to": [
+    36,
+    1
+   ],
+   "what": "Sapphire warp 0 -> EverGrandeCity_Corridor2 1",
+   "type": 2,
+   "dir": 0
+  },
+  {
+   "at": [
+    6,
+    2
+   ],
+   "tile_only": true,
+   "to": [
+    42,
+    0
+   ],
+   "what": "Sapphire warp 1 -> EverGrandeCity_Corridor3 0",
+   "type": 2,
+   "dir": 2
+  }
+ ],
+ "npcs": [],
+ "signs": [],
+ "triggers": []
+}

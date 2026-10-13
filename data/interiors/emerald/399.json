@@ -1,0 +1,116 @@
+{
+ "_doc": "frontier_pike (2026-10-12): Emerald's Battle Pike, Emerald only (data/versions.json rooms: \"emerald\"; claimed in data/emerald/hoenn_interiors.json). Room data/interior_layouts/BattleFrontier_BattlePikeLobby.json (pike_rooms; Emerald tile + origin (1, -1) = zone tile). Scripts: src/field_scripts/emerald/<Black 2 script number>_room_*.s (+ _init), text src/text/script/emerald/<Black 2 text number>_room_*.txt, named after the zone's Black 2 numbers and written at the room's own numbers (data/emerald/hoenn_interiors.json own_*; patches/scripts.py, text.py, interiors.py). Music and place: the Battle Frontier island's (parent 17). notes/FRONTIER_PIKE.md.",
+ "zone": 399,
+ "room": "BattleFrontier_BattlePikeLobby",
+ "parent": 17,
+ "warps": [
+  {
+   "at": [
+    5,
+    12
+   ],
+   "tile_only": true,
+   "to": [
+    17,
+    16
+   ],
+   "what": "Emerald warp 0 (5,12) -> BattleFrontier_OutsideWest warp 0 (zone 17 warp 16: Black 2 slots 0-1, then world.json door 14)"
+  },
+  {
+   "at": [
+    4,
+    12
+   ],
+   "tile_only": true,
+   "to": [
+    17,
+    16
+   ],
+   "what": "Emerald warp 1 (4,12) -> BattleFrontier_OutsideWest warp 0 (zone 17 warp 16: Black 2 slots 0-1, then world.json door 14)"
+  },
+  {
+   "at": [
+    6,
+    12
+   ],
+   "tile_only": true,
+   "to": [
+    17,
+    16
+   ],
+   "what": "Emerald warp 2 (6,12) -> BattleFrontier_OutsideWest warp 0 (zone 17 warp 16: Black 2 slots 0-1, then world.json door 14)"
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 1,
+   "model": 65,
+   "script": 1,
+   "dir": 1,
+   "at": [
+    5,
+    5
+   ],
+   "what": "LINK_RECEPTIONIST (FACE_DOWN): _Attendant; model 65 (pokeruby WOMAN_6, data/sprite_map.json)"
+  },
+  {
+   "uid": 2,
+   "model": 64,
+   "script": 2,
+   "dir": 0,
+   "at": [
+    10,
+    9
+   ],
+   "what": "HIKER (FACE_UP): _Hiker"
+  },
+  {
+   "uid": 3,
+   "model": 9,
+   "script": 3,
+   "dir": 2,
+   "at": [
+    0,
+    5
+   ],
+   "what": "TWIN (FACE_LEFT): _Twin; model 9 (pokeruby LITTLE_GIRL_1)"
+  },
+  {
+   "uid": 4,
+   "model": 17,
+   "script": 4,
+   "dir": 1,
+   "at": [
+    8,
+    9
+   ],
+   "move": 3,
+   "range": [
+    1,
+    1
+   ],
+   "what": "BEAUTY (WANDER_AROUND 1x1): _Beauty; model 17"
+  }
+ ],
+ "signs": [
+  {
+   "script": 5,
+   "at": [
+    8,
+    3
+   ],
+   "dir": 4,
+   "what": "bg (8,3): _ShowResults (the results board)"
+  },
+  {
+   "script": 6,
+   "at": [
+    1,
+    3
+   ],
+   "dir": 4,
+   "what": "bg (1,3): _RulesBoard"
+  }
+ ],
+ "triggers": []
+}

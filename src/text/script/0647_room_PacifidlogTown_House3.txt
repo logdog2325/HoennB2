@@ -1,0 +1,7 @@
+Is that a Pokédex?{be01}\nDid you get to meet a lot of different\nPokémon?{be01}\nI wish I was like you.
+This vase looks expensive...\nPeered inside...{be01}\nBut, it was empty.
+Hello, Trainer. Would you do me a favor\nand trade Pokémon with me?{be01}\nLiving in Pacifidlog, I can only catch\ncertain kinds of Pokémon.{be01}\n{0100:1}? Do you have one?\nI’ll trade you my {0100:2} for it.
+I’m a little disappointed...
+That’s no {0100:1}.
+Wow!\nThis {0100:1} is so fluffy!
+Since we traded, you and me,\nwe’re friends, aren’t we?

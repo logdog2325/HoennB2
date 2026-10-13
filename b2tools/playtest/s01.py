@@ -1,0 +1,11 @@
+import sys; sys.path.insert(0, sys.path[0])
+from pt import *
+g = G('intro3.dst', name='s01')
+g.walk_dir((1, 0), 1)
+print('after step', g.zone(), g.tile(), hex(g.event()))
+g.adv()
+print('idle at', g.zone(), g.tile())
+g.S()
+for a in g.actors(): print(a['uid'], a['x'], a['z'], a['scr'])
+g.save('s01_house.dst')
+g.sheet(os.path.join(PT, 'scratch.png'))

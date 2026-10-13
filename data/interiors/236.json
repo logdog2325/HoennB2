@@ -1,0 +1,51 @@
+{
+ "_doc": "MauvilleCity_BikeShop (zone 236), built by the specials agent (recipe data/interior_layouts/MauvilleCity_BikeShop.json): Black 2 house / Route 3 Day Care look, Black 2 interior area 282. Warps in Sapphire's order (one per Sapphire warp tile). People/signs: Sapphire's one-message ones as generated; story people are left for the story phase.",
+ "zone": 236,
+ "room": "MauvilleCity_BikeShop",
+ "area": 282,
+ "parent": 406,
+ "warps": [
+  {
+   "at": [
+    3,
+    8
+   ],
+   "tile_only": true,
+   "to": [
+    406,
+    7
+   ],
+   "what": "Sapphire warp 0 -> MauvilleCity 2"
+  },
+  {
+   "at": [
+    4,
+    8
+   ],
+   "tile_only": true,
+   "to": [
+    406,
+    7
+   ],
+   "what": "Sapphire warp 1 -> MauvilleCity 2"
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 2,
+   "model": 358,
+   "script": 1,
+   "dir": 1,
+   "at": [
+    7,
+    6
+   ],
+   "move": 3,
+   "range": [
+    1,
+    1
+   ]
+  }
+ ],
+ "signs": []
+}

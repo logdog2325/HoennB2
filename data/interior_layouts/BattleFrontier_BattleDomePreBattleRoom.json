@@ -1,0 +1,85 @@
+{
+ "_doc": "Battle Dome pre-battle room (Emerald 9x8): floor x 2-8, rows 2-7; the door to the battle room on the wall at (5,2) (Emerald's door (5,1)); a table with chairs on the right, plants by the wall.",
+ "map": "BattleFrontier_BattleDomePreBattleRoom",
+ "decomp": "pokeemerald",
+ "style": "fd_dome",
+ "origin": [
+  1,
+  0
+ ],
+ "floor": [
+  [
+   2,
+   2,
+   8,
+   7
+  ]
+ ],
+ "exits": [],
+ "furniture": [
+  {
+   "m": "door_h5_in",
+   "tile": [
+    5,
+    2
+   ],
+   "wall": "N",
+   "gap": -1,
+   "doorway": true,
+   "y": -1
+  },
+  {
+   "m": "plant01",
+   "tile": [
+    7,
+    2
+   ]
+  },
+  {
+   "m": "plant01",
+   "tile": [
+    8,
+    2
+   ]
+  },
+  {
+   "m": "table01",
+   "tile": [
+    7,
+    4
+   ]
+  },
+  {
+   "m": "chair01",
+   "tile": [
+    8,
+    4
+   ],
+   "rot": 270
+  },
+  {
+   "m": "shelf02",
+   "tile": [
+    2,
+    3
+   ],
+   "rot": 90,
+   "wall": "W"
+  }
+ ],
+ "mats": [
+  {
+   "tex": "chip_mat",
+   "src": 352,
+   "rect": [
+    4,
+    7,
+    6,
+    7
+   ],
+   "border": 0.25,
+   "border_units": 4,
+   "_what": "arrival mat"
+  }
+ ]
+}

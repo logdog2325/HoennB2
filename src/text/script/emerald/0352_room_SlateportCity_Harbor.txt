@@ -1,0 +1,37 @@
+…
+I beg your pardon?\nYou’re looking for a ship?{be01}\nI’m sorry, the ferry service isn’t\navailable at present...
+A journey to the bottom of the sea...\nI wonder what it’d be like?{be01}\nI’d love to go deep underwater like\nthat some day.
+I wanted to go with Capt. Stern on\nthe ocean floor exploration.{be01}\nBut the sub’s too small for me.{be01}\nIf I squeezed in, there wouldn’t be\nany room for the Captain...
+Capt. Stern: Oh?\n{0100:0}, that item you have…{be01}\nThat’s a Scanner! That would sure\nhelp us on our explorations.{be01}\n{0100:0}, would you trade your\nScanner for something?{be01}\nLike, say, a Deepseatooth or\na Deepseascale that I have?
+Capt. Stern: So you’ll trade it for\nmy Deepseatooth?
+Capt. Stern: So you’ll trade it for\nmy Deepseascale?
+{0100:0} handed the Scanner to\nCapt. Stern.
+Capt. Stern: Are you certain?\nIt’s useless to you, {0100:0}...{be01}\nWell, okay, then. If you want to trade\nyour Scanner, let me know.
+Capt. Stern: Which one do you want?
+Capt. Stern: Thanks, {0100:0}!\nThis will help our research a lot!
+Capt. Stern: Oh, yes.\nMr. Briney came to our Shipyard.{be01}\nIt won’t be long now before we finish\nmaking the ferry!
+Capt. Stern: {0100:0}!{be01}\nWe finally finished making the ferry\nS.S. Tidal!{be01}\nWe couldn’t have done it without\nyour friend Mr. Briney.{be01}\nPlease go for a short cruise on it!
+Deepseatooth
+Deepseascale
+Cancel
+Too bad!\nThe Bag is full...
+Archie: Fwahahaha...\nI commiserate with you!{be01}\nAll that effort you spent following\nme here all the way from Mt. Pyre.{be01}\nBut now...\nNo one can stop us! No one!{be01}\nOr, will you follow us back to our\nHideout in Lilycove City?{be01}\nFwahahahaha...
+Capt. Stern: Why...{be01}\nWhy would Team Aqua steal my\nSubmarine Explorer 1?{be01}\nThey can’t be after the slumbering\nPokémon at the bottom of the sea...{be01}\nBut even if I were to chase them,\nI don’t stand a chance against them...
+Capt. Stern: Oh, {0100:0}...{be01}\nOkay... So Team Aqua left before you\ncould stop them...{be01}\nOh, no, don’t blame yourself.\nYou’re not responsible for this.{be01}\nTrying to catch a submarine...\nIt’s impossible for most people.{be01}\nYou would need a Pokémon that knows\nhow to Dive...{be01}\nPerhaps if you went out to\nMossdeep City...{be01}\nA lot of divers live out there, so\nsomeone might teach you...
+Capt. Stern: Trying to catch a\nsubmarine...  It’s impossible.{be01}\nYou would need a Pokémon that knows\nhow to Dive...{be01}\nPerhaps if you went out to\nMossdeep City...{be01}\nA lot of divers live out there, so\nsomeone might teach you...
+Capt. Stern: Those thugs...{be01}\nThey’re the same lot who tried to rob\nthe Devon Goods at the Museum.
+Hello, are you here for the ferry?\nMay I see your Ticket?
+{0100:0} doesn’t have the Ticket...{be01}\nI’m terribly sorry.{be01}\nYou must have a Ticket to board\nthe ferry.
+{0100:0} flashed the Ticket.{be01}\nPerfect! That’s all you need!{be01}\nAnd where would you like to go?
+Lilycove City it is, then!
+Battle Tower it is, then!
+Then, where would you like to go?
+Please board the ferry and wait for\ndeparture.
+Please sail with us another time!
+Lilycove
+Battle Tower
+Cancel
+This ferry is built to plow through\nfast-running currents.{be01}\nWe hope you enjoy your voyage with us.\nFeel free to explore the ship.
+We have made land in Slateport City.\nThank you for sailing with us.
+Capt. Stern: Oh, {0100:0}! I heard you\nbecame the Champion. Congratulations!{be01}\nOur crew found this on the seafloor,\ninside the hull of an old wreck.{be01}\nIt’s a sea map, faded by the years.\nIt shows an island that’s on no chart{be00}\nI know of.{be01}\nA Trainer like you should be the one\nto find it. Please, take it!
+Capt. Stern: The folks at the ferry in\nLilycove may know the way. Good luck!

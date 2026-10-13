@@ -1,0 +1,17 @@
+{
+ "_notes": {
+  "_doc": "Ruby's gTileset_Cave as the secondary tileset of an OUTDOOR map: only Route 130 (both of its layouts) uses it so. These five are the secondary metatiles of Mirage Island (LAYOUT_UNREFERENCED_MAP, Route 130's layout while the island is there; postgame_maps 2026-10-07). Caves never go through these labels (their builder reads data/cave_tiles.json).",
+  "204": "the island's stairs up its south cliff (x 41-42, y 18-21): beh 0x00, col 0, elev 3, wooden steps",
+  "27d": "west corner where the island's cliff meets its shallow-water ring (25,10): beh 0x17, col 1, elev 0: rock",
+  "27e": "east corner of the same (58,10): beh 0x17, col 1, elev 0: rock",
+  "285": "the island top's NW diagonal edge (sea / rock / grass), beh 0x17, col 1: the cliff's rim",
+  "286": "the island top's NE diagonal edge, as 285"
+ },
+ "gTileset_Cave": {
+  "204": "stairs",
+  "27d": "cliff",
+  "27e": "cliff",
+  "285": "cliff",
+  "286": "cliff"
+ }
+}

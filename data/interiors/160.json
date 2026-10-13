@@ -1,0 +1,424 @@
+{
+ "_doc": "LilycoveCity_ContestHall (zone 160), built by the specials agent (recipe data/interior_layouts/LilycoveCity_ContestHall.json): the big hall over a 2x2 chunk matrix, Musical Theater look, Black 2 interior area 305. Warps in Sapphire's order (lobby warps 2/3). People/signs: Sapphire's one-message ones (made as gen_interiors.py does).",
+ "zone": 160,
+ "room": "LilycoveCity_ContestHall",
+ "area": 305,
+ "parent": 96,
+ "warps": [
+  {
+   "at": [
+    19,
+    32
+   ],
+   "tile_only": true,
+   "to": [
+    161,
+    2
+   ],
+   "what": "Sapphire warp 0 -> LilycoveCity_ContestLobby 2"
+  },
+  {
+   "at": [
+    30,
+    32
+   ],
+   "tile_only": true,
+   "to": [
+    161,
+    3
+   ],
+   "what": "Sapphire warp 1 -> LilycoveCity_ContestLobby 3"
+  },
+  {
+   "at": [
+    20,
+    32
+   ],
+   "tile_only": true,
+   "to": [
+    161,
+    2
+   ],
+   "what": "Sapphire warp 2 -> LilycoveCity_ContestLobby 2"
+  },
+  {
+   "at": [
+    31,
+    32
+   ],
+   "tile_only": true,
+   "to": [
+    161,
+    3
+   ],
+   "what": "Sapphire warp 3 -> LilycoveCity_ContestLobby 3"
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 1,
+   "model": 10,
+   "script": 1,
+   "dir": 1,
+   "at": [
+    30,
+    30
+   ],
+   "move": 3,
+   "range": [
+    4,
+    4
+   ]
+  },
+  {
+   "uid": 2,
+   "model": 14,
+   "script": 2,
+   "dir": 1,
+   "at": [
+    11,
+    7
+   ],
+   "move": 3,
+   "range": [
+    3,
+    3
+   ]
+  },
+  {
+   "uid": 4,
+   "model": 26,
+   "script": 3,
+   "dir": 1,
+   "at": [
+    12,
+    22
+   ]
+  },
+  {
+   "uid": 5,
+   "model": 44,
+   "script": 4,
+   "dir": 1,
+   "at": [
+    15,
+    22
+   ]
+  },
+  {
+   "uid": 6,
+   "model": 46,
+   "script": 5,
+   "dir": 0,
+   "at": [
+    10,
+    25
+   ]
+  },
+  {
+   "uid": 7,
+   "model": 28,
+   "script": 6,
+   "dir": 0,
+   "at": [
+    12,
+    25
+   ]
+  },
+  {
+   "uid": 8,
+   "model": 24,
+   "script": 7,
+   "dir": 0,
+   "at": [
+    14,
+    25
+   ]
+  },
+  {
+   "uid": 9,
+   "model": 65,
+   "script": 8,
+   "dir": 0,
+   "at": [
+    16,
+    25
+   ]
+  },
+  {
+   "uid": 10,
+   "model": 29,
+   "script": 9,
+   "dir": 3,
+   "at": [
+    8,
+    24
+   ]
+  },
+  {
+   "uid": 11,
+   "model": 43,
+   "script": 10,
+   "dir": 2,
+   "at": [
+    18,
+    24
+   ]
+  },
+  {
+   "uid": 12,
+   "model": 10,
+   "script": 11,
+   "dir": 3,
+   "at": [
+    8,
+    22
+   ]
+  },
+  {
+   "uid": 13,
+   "model": 26,
+   "script": 12,
+   "dir": 1,
+   "at": [
+    24,
+    10
+   ]
+  },
+  {
+   "uid": 14,
+   "model": 44,
+   "script": 13,
+   "dir": 1,
+   "at": [
+    27,
+    10
+   ]
+  },
+  {
+   "uid": 15,
+   "model": 22,
+   "script": 14,
+   "dir": 0,
+   "at": [
+    22,
+    13
+   ]
+  },
+  {
+   "uid": 16,
+   "model": 9,
+   "script": 15,
+   "dir": 0,
+   "at": [
+    24,
+    13
+   ]
+  },
+  {
+   "uid": 17,
+   "model": 183,
+   "script": 16,
+   "dir": 0,
+   "at": [
+    26,
+    13
+   ]
+  },
+  {
+   "uid": 18,
+   "model": 53,
+   "script": 17,
+   "dir": 0,
+   "at": [
+    28,
+    13
+   ]
+  },
+  {
+   "uid": 19,
+   "model": 27,
+   "script": 18,
+   "dir": 3,
+   "at": [
+    20,
+    10
+   ]
+  },
+  {
+   "uid": 20,
+   "model": 23,
+   "script": 19,
+   "dir": 2,
+   "at": [
+    30,
+    11
+   ]
+  },
+  {
+   "uid": 21,
+   "model": 61,
+   "script": 20,
+   "dir": 1,
+   "at": [
+    26,
+    8
+   ]
+  },
+  {
+   "uid": 22,
+   "model": 21,
+   "script": 21,
+   "dir": 1,
+   "at": [
+    13,
+    20
+   ]
+  },
+  {
+   "uid": 23,
+   "model": 26,
+   "script": 22,
+   "dir": 1,
+   "at": [
+    36,
+    22
+   ]
+  },
+  {
+   "uid": 24,
+   "model": 44,
+   "script": 23,
+   "dir": 1,
+   "at": [
+    39,
+    22
+   ]
+  },
+  {
+   "uid": 25,
+   "model": 21,
+   "script": 24,
+   "dir": 0,
+   "at": [
+    34,
+    25
+   ]
+  },
+  {
+   "uid": 26,
+   "model": 17,
+   "script": 25,
+   "dir": 0,
+   "at": [
+    36,
+    25
+   ]
+  },
+  {
+   "uid": 27,
+   "model": 14,
+   "script": 26,
+   "dir": 0,
+   "at": [
+    38,
+    25
+   ]
+  },
+  {
+   "uid": 28,
+   "model": 29,
+   "script": 27,
+   "dir": 0,
+   "at": [
+    40,
+    25
+   ]
+  },
+  {
+   "uid": 30,
+   "model": 61,
+   "script": 28,
+   "dir": 1,
+   "at": [
+    37,
+    20
+   ]
+  },
+  {
+   "uid": 31,
+   "model": 154,
+   "script": 29,
+   "dir": 2,
+   "at": [
+    42,
+    24
+   ]
+  },
+  {
+   "uid": 32,
+   "model": 359,
+   "script": 30,
+   "dir": 1,
+   "at": [
+    23,
+    26
+   ],
+   "move": 3,
+   "range": [
+    1,
+    1
+   ]
+  }
+ ],
+ "signs": [
+  {
+   "script": 31,
+   "at": [
+    27,
+    16
+   ],
+   "dir": 4
+  },
+  {
+   "script": 32,
+   "at": [
+    39,
+    28
+   ],
+   "dir": 4
+  },
+  {
+   "script": 33,
+   "at": [
+    11,
+    28
+   ],
+   "dir": 4
+  },
+  {
+   "script": 34,
+   "at": [
+    15,
+    28
+   ],
+   "dir": 4
+  },
+  {
+   "script": 35,
+   "at": [
+    23,
+    16
+   ],
+   "dir": 4
+  },
+  {
+   "script": 36,
+   "at": [
+    35,
+    28
+   ],
+   "dir": 4
+  }
+ ]
+}

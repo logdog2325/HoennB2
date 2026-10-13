@@ -1,0 +1,9 @@
+…
+Hmm!\nYour {0100:1}...
+It doesn’t appear to like or dislike\nany Pokéblocks.
+It likes Red Pokéblocks,\ndoesn’t it?{be01}\nNo, I’m positive of it! It definitely\nlikes Red Pokéblocks!
+It likes Yellow Pokéblocks,\ndoesn’t it?{be01}\nNo, I’m positive of it! It definitely\nlikes Yellow Pokéblocks!
+It likes Pink Pokéblocks,\ndoesn’t it?{be01}\nNo, I’m positive of it! It definitely\nlikes Pink Pokéblocks!
+It likes Blue Pokéblocks,\ndoesn’t it?{be01}\nNo, I’m positive of it! It definitely\nlikes Blue Pokéblocks!
+It likes Green Pokéblocks,\ndoesn’t it?{be01}\nNo, I’m positive of it! It definitely\nlikes Green Pokéblocks!
+My husband can tell what kind of\nPokéblocks a Pokémon likes at a glance.

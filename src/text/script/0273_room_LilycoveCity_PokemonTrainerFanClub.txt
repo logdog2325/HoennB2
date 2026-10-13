@@ -1,0 +1,40 @@
+It’s filled with all sorts of books.
+There’s a set of Pokémon picture books.
+Oh, wow!\nIt’s {0100:0}!
+I’ve heard the news!\nYou’re really strong, aren’t you?{be01}\nWe always argue about who is the\nstrongest of all Trainers here.{be01}\nSo when I heard about you, I decided\nto be your fan!{be01}\nI hope you’ll keep on battling other\ntough Trainers.{be01}\nThat way, we’ll be able to see more\nof your hot, hot battles.{be01}\nThat will make the others here see\nexactly how great you are.{be01}\nRemember, I’m cheering for you,\n{0100:0}!
+I hate to say this, but the Trainer\neverybody’s talking about is{be00}\nPhoebe, no question about it!{be01}\nThat Trainer’s power...\nIt’s out of the ordinary.
+Yo, {0100:0}!\nYou’re the one we want to win!
+The others, they don’t know that\nyou’re the best of the best!{be01}\nIsn’t that right, {0100:0}?\nShow them you’ve got guts!
+Darn it... I’ve been telling people\nthat Phoebe is the best now...{be01}\nBut no one wants to listen...
+I’ve been hearing things about a\ntough new Trainer.{be01}\nThis Trainer’s supposed to be beating\nGym Leaders, even.{be01}\nDo you know anything about this\nnew Trainer?
+I can’t help it, I can only get to\nlike Brawly...
+Oh!\n{0100:0}!{be01}\nGo for it!\nI’m pulling for you!
+Sigh...\nBrawly...{be01}\nOh, no! Wait!\nThat’s not right! No, no, no!{be01}\nI’m your fan through and through!{be01}\nSo make me proud!\nGo for it!
+Nobody understands the charm of\nBrawly...{be01}\nI don’t care!{be01}\nEven if I’m the only one, I’m going\nto keep cheering for Brawly!
+Whatever anyone says, my favorite\nTrainer is Dewford’s Gym Leader{be00}\nBrawly!
+Norman battled with more power,\ncharisma, and showmanship than you.{be01}\nEven though people may say that\nyou’re strong...{be01}\nYou’ve still got a long way to go\ncompared to your father.
+You’ve surpassed your own father in\nevery regard!{be01}\nI’m telling you, so there’s no question\nabout it at all!
+Even when things turned bleak, your\nfather never gave up.{be01}\nThis I know to be true.{be01}\nYou never give up even if you lose!\nSo keep on battling!
+You’re beginning to get the same\nair of awe Norman exudes.{be01}\nBut there’s something conclusively\ndifferent between you and Norman.{be01}\nI can’t tell you what that is.\nYou’ll have to find it yourself.
+Everyone here, we’re all huge fans\nof Pokémon battles.{be01}\nWe discuss who we consider to be\nthe strongest of all Trainers.{be01}\nIf you were to become famous, we\nmight even become your fans!
+Winona is really cool...{be01}\nEveryone thinks so, right, right?
+Oh, woweee! It’s {0100:0}!\nFor real, too!{be01}\nPlease, shake my hand, shake my hand!
+I’ll always cheer for you, {0100:0}!\nAlways, always!{be01}\nI don’t want to see you lose ever,\n{0100:0}.{be01}\nBecause I know you’re really, really\nstrong, {0100:0}!
+Winona really is cool, don’t\nyou think so?{be01}\nEven if it’s just me, I’m going to keep\ncheering my favorite Trainer.
+My favorite Trainer is...{be01}\nCool...{be01}\nStrong...{be01}\nAnd really nice...{be01}\nI wish there was a Trainer like that...
+Steven is so wickedly cool...\nI want to shake hands with my hero.
+Whoa! It’s {0100:0}!\nWicked!{be01}\nWhen I grow up, I want to be strong\nlike you, {0100:0}!
+Even if I’m the only one...{be01}\nYou’ll always be the only one I\ncheer for, {0100:0}!{be01}\nBecause I believe in you, {0100:0}!
+Even if I’m the only one...{be01}\nI’m never going to stop being\nSteven’s fan!{be01}\nBecause I’ve heard, Steven\nnever loses!
+You’re a pretty decent Trainer,\nI think.{be01}\nBut I also think that Wallace\nis number one right now.{be01}\nThat’s just my opinion.\nDon’t worry about it too much.
+{0100:0}!\nYou are amazing after all!{be01}\nEver since I set eyes on you, I knew\nthat you were great.{be01}\nIt looks like my eyes didn’t deceive me.
+Who cares about the others.\nI’m in your corner!{be01}\nYou don’t need to worry. Just get\nout there and battle like always.
+Wow, you really are strong.\nMaybe even stronger than Wallace.{be01}\nBut Wallace needs me.{be01}\nIf I don’t cheer for Wallace,\nwho will?
+Among the recently hot Trainers,\nGlacia is the standout.{be01}\nThat toughness, it’s simply not normal.{be01}\nYou’re doing okay, but you’re not in\nthe same class as Glacia.
+You’ve changed my mind!\nYou are strong, aren’t you?{be01}\nI’d like you to tell me how you managed\nto get so strong!
+The tougher the situation, the more\nattractively you battle.{be01}\nI can’t wait for your next battle!
+You are really popular...{be01}\nYou’re strong, and you’re caring to\nPokémon. No one can knock you.{be01}\nBut, you know, I believe in Glacia.{be01}\nGlacia is definitely stronger!\nI’m positive!
+Yes, I see strength in your eyes.{be01}\nBut!{be01}\nYou still haven’t realized your\npotential.
+You...{be01}\nImpressive!
+Your true worth, it is fine if only\nI recognized it.{be01}\nThe others I doubt will understand\nthe hidden power that beats within.
+It is true that you are tremendously\npowerful.{be01}\nBut!\nI can tell...{be01}\nThat strength cannot be considered\ntrue strength yet!{be01}\nTrue strength is...!\n... ...{be01}\nActually, I have no idea, either.

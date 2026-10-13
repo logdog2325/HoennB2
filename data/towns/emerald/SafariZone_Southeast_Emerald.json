@@ -1,0 +1,19 @@
+{
+ "_doc": "The Safari Zone's new south-east area (Emerald-only map SafariZone_Southeast, HoennB2 name SafariZone_Southeast_Emerald; emerald_world 2026-10-12, b2tools/world.py load: group standalone). Its west edge (x 0-5, rows 29-39) continues the entrance building's flat roof from the south area (Sapphire's SafariZone_Southeast, whose building model, res 474, stands on its own footprint): drawn as stone wall blocks (world.py retile_map) until the building's model covers its Emerald wing.",
+ "group": "standalone",
+ "retile": [
+  {
+   "box": [
+    0,
+    29,
+    5,
+    39
+   ],
+   "from": [
+    "building",
+    "building_roof"
+   ],
+   "to": "wall"
+  }
+ ]
+}

@@ -1,0 +1,28 @@
+{
+ "_doc": "Lilycove Department Store floors (18x8): back wall rows 0-1 with the elevator (2,1) and the stairs (13,1) / (16,1) as Sapphire's warps say (up = stair_u01 in a wall recess, down = stair_d01 in a floor opening); counters, goods shelf blocks, coolers, windows, planters and plants at Sapphire's tiles (per floor below). Battle Collection. Clock (7,0); coolers (8-10, 1); counter (6,2), (7-10,3), (11,2); shelf blocks (2-3, 4-6), (14-15, 4-6).",
+ "map": "LilycoveCity_DepartmentStore_3F",
+ "style": "shop",
+ "floor": [[0, 1, 17, 7]],
+ "floor_extra": [[15.5, -0.5, 17.5, 1]],
+ "decals": [
+  {"tex": "in69_clock01", "src": 350, "at": [7.5], "y": 18, "w": 11, "h": 22, "gap": 2, "_what": "wall clock (7,0)"}
+ ],
+ "furniture": [
+  {"m": "elevator01", "at": [2.875, 0.6875], "_what": "elevator door (2,1) (Black 2 places its origin one tile north of the first walkable row, as chunks 836/1011)"},
+  {"m": "stair_d01", "stair": [13, 1], "dir": "N", "_what": "stairs down (13,1)"},
+  {"m": "stair_u01", "stair": [16, 1], "dir": "N", "_what": "stairs up (16,1)"},
+  {"m": "shelf03", "at": [6.75, 2.4475], "rot": 90, "dx": 3.0, "dz": -3.0, "_what": "counter end (6,2)"},
+  {"m": "shelf03", "at": [11.25, 2.4475], "rot": 90, "dx": 3.0, "dz": -3.0, "_what": "counter end (11,2)"},
+  {"m": "cashier01", "at": [6.5, 2.35], "rot": 90, "dx": -0.174, "y": 18.0, "_what": "register (6,2), keys toward the clerks"},
+  {"m": "cashier01", "at": [11.5, 2.35], "rot": 270, "dx": 0.174, "y": 18.0, "_what": "register (11,2), keys toward the clerks"},
+  {"m": "shelf03", "at": [8.25, 3.5], "dx": 3.0, "dz": 3.0, "_what": "counter run (7-10, 3) 1/2"},
+  {"m": "shelf03", "at": [9.75, 3.5], "dx": 3.0, "dz": 3.0, "_what": "counter run (7-10, 3) 2/2"},
+  {"m": "in_vender01", "at": [8.5, 0.4375], "dx": 1.0, "dz": 1.5, "_what": "glass-front cooler (8,1)"},
+  {"m": "in_vender01", "at": [9.5, 0.4375], "dx": 1.0, "dz": 1.5, "_what": "glass-front cooler (9,1)"},
+  {"m": "in_vender01", "at": [10.5, 0.4375], "dx": 1.0, "dz": 1.5, "_what": "glass-front cooler (10,1)"},
+  {"m": "pcshelf01", "at": [3, 5.0], "rot": 180, "dx": 4.0, "dz": -4.0, "_what": "goods shelf block (2-3, 4-6), north side"},
+  {"m": "pcshelf01", "at": [3, 6.0], "dx": -4.0, "dz": 4.0, "_what": "goods shelf block (2-3, 4-6), south side"},
+  {"m": "pcshelf01", "at": [15, 5.0], "rot": 180, "dx": 4.0, "dz": -4.0, "_what": "goods shelf block (14-15, 4-6), north side"},
+  {"m": "pcshelf01", "at": [15, 6.0], "dx": -4.0, "dz": 4.0, "_what": "goods shelf block (14-15, 4-6), south side"}
+ ]
+}

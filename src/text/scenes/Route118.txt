@@ -1,0 +1,20 @@
+Steven: Hi!{be01}\nYou’re that Trainer I met in Dewford!{be01}\n... ... ... ... ... ... ... ...\n... ... ... ... ... ... ... ...{be01}\nOh, okay, you’re {0100:0}.\nI’ll remember it.{be01}\n{0100:0}.{be01}\nIn this vast world, there are many\nkinds of Pokémon.{be00}\nThey come in many types.{be01}\nDo you raise different types?\nOr do you raise only Pokémon of a{be00}\ncertain type?{be01}\nWhat do you think as a Trainer?{be01}\nSorry, it’s not my place to ask, is it?{be01}\nWell, anyway, I hope to see you\nagain.
+Hmm!\nA Good Rod is really good!{be01}\nWouldn’t you agree?
+Hmm!\nWe’re of identical minds!{be01}\nHmm!\nTake this Good Rod!
+Wherever there’s water, try your luck\nat fishing.
+Don’t you like to fish?
+Try catching all sorts of Pokémon\nwith your Good Rod.
+Gabby: We’ll be keeping an eye out\nfor you!
+Ty: You’re a natural!\nGot me some prime footage right here!
+Gabby: Oh! We’ve just spotted a tough-\nlooking Trainer here of all places!{be01}\nOkay, roll camera!\nLet’s get this interview.
+Ty: Hey, lookie here! A tough-looking\nTrainer here, of all places!{be00}\nCamera’s rolling!
+Gabby: Is there a strong Trainer\nanywhere with a lot of Pokémon?
+Ty: Do you only have the one Pokémon\nand that’s it?{be01}\nIf you had more Pokémon, it’d make for\nbetter footage, but...
+Gabby: Oh! You’re {0100:0}! Hi!\nDo you remember us from last time?{be01}\nCan you show us how much stronger\nyou’ve become? Okay, cue interview!
+Ty: Hey, lookie here!\nI remember you!{be01}\nI’ll get this battle all on this\nhere camera!
+Gabby: Awesome! Awesome!\nWho are you?!{be01}\nI knew we were onto something wild\nwhen we spotted you!{be01}\nOh, please let me explain. We travel\naround everywhere interviewing all{be00}\nsorts of Trainers.{be01}\nSo, would you give us a bit of your time\nfor an interview?
+Gabby: Wow, you are something!{be01}\nYou’ve gotten a lot stronger - a lot -\nsince we last battled.{be01}\nWe were right about you when we\nspotted you as a hot Trainer.{be01}\nSo, anyway, what do you think?\nAre you willing to give us an interview{be00}\nthis time?
+Anyway, what do you think?\nDo you want to be interviewed again?
+You will?\nThank you!{be01}\nOkay, I need you to describe your\nfeelings about our battle, but it{be00}\nhas to be short and sweet. Go!
+Gabby: Mmm, yeah!\nThat’s the perfect clincher!{be01}\nI get the feeling that this will make\na great TV show.{be01}\nThere’s a chance that they’ll air this\non TV, so make sure to look for us!{be01}\nOkay!\nWe’ll be seeing you!
+Gabby: Oh...{be01}\nOkay, but don’t give up!\nWe’ll be keeping an eye out for you!

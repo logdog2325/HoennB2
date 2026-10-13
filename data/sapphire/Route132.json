@@ -1,0 +1,227 @@
+{
+ "map": "Route132",
+ "id": "MAP_ROUTE132",
+ "layout": "LAYOUT_ROUTE132",
+ "music": "MUS_ROUTE119",
+ "region_map_section": "MAPSEC_ROUTE_132",
+ "weather": "WEATHER_SUNNY",
+ "connections": [
+  {
+   "direction": "left",
+   "offset": 0,
+   "map": "MAP_ROUTE133"
+  },
+  {
+   "direction": "right",
+   "offset": 0,
+   "map": "MAP_PACIFIDLOG_TOWN"
+  }
+ ],
+ "npcs": [
+  {
+   "local_id": 1,
+   "x": 7,
+   "y": 3,
+   "gfx": "OBJ_EVENT_GFX_SWIMMER_M",
+   "movement": "MOVEMENT_TYPE_WALK_SEQUENCE_DOWN_RIGHT_UP_LEFT",
+   "range": [
+    3,
+    3
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route132_EventScript_1524E5",
+   "texts": {
+    "Route132_Text_1C2AFB": "I used to catch colds all the time as\\na kid, but I became totally fit after\\lI started swimming.$",
+    "Route132_Text_1C2B5B": "I crave more power...$",
+    "Route132_Text_1C2B71": "TRAINERS travel the fields and\\nmountains, so they must be fit, too.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 2,
+   "x": 41,
+   "y": 16,
+   "gfx": "OBJ_EVENT_GFX_SWIMMER_F",
+   "movement": "MOVEMENT_TYPE_WALK_SEQUENCE_UP_RIGHT_DOWN_LEFT",
+   "range": [
+    4,
+    4
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route132_EventScript_1524FC",
+   "texts": {
+    "Route132_Text_1C2BB5": "I try not to swim where the currents\\nare too strong.$",
+    "Route132_Text_1C2BEA": "Oh, please, no!$",
+    "Route132_Text_1C2BFA": "If I get swept away, I'll lose all my\\nsense of place...$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 3,
+   "x": 10,
+   "y": 11,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_ROUTE132_1",
+   "script": "Route132_EventScript_1B16DD",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 4,
+   "x": 46,
+   "y": 28,
+   "gfx": "OBJ_EVENT_GFX_BLACK_BELT",
+   "movement": "MOVEMENT_TYPE_FACE_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route132_EventScript_15252A",
+   "texts": {
+    "Route132_Text_1C2CD9": "I contemplate POKéMON 24 hours a day.\\nHow could you possibly beat me?$",
+    "Route132_Text_1C2D1F": "I lose.\\nI will concede defeat.$",
+    "Route132_Text_1C2D3E": "Urggh...\\nYou're a POKéMON fanatic, aren't you?\\pYou must contemplate POKéMON 24 hours\\na day, don't you?$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 5,
+   "x": 9,
+   "y": 16,
+   "gfx": "OBJ_EVENT_GFX_FISHERMAN",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route132_EventScript_152513",
+   "texts": {
+    "Route132_Text_1C2C32": "Win or lose, you'll never know until\\nyou try!$",
+    "Route132_Text_1C2C60": "Waah!\\nI sank in defeat!$",
+    "Route132_Text_1C2C78": "I never battle when I know I'll win.\\nI like to battle at the razor's edge of\\lvictory and defeat!$"
+   },
+   "complex": true
+  }
+ ],
+ "signs": [],
+ "warps": [],
+ "coord_events": [],
+ "wild": {
+  "water_mons": {
+   "encounter_rate": 4,
+   "slot_rates": [
+    60,
+    30,
+    5,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 5,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 15,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_PELIPPER",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_PELIPPER",
+     "min": 25,
+     "max": 30
+    }
+   ]
+  },
+  "fishing_mons": {
+   "encounter_rate": 30,
+   "slot_rates": [
+    70,
+    30,
+    60,
+    20,
+    20,
+    40,
+    40,
+    15,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_SHARPEDO",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_HORSEA",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 35,
+     "max": 40
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 40,
+     "max": 45
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,18 @@
+Ohhh, what am I to do?{be01}\nWe were on our walk, Peeko and I, when\nwe were jumped by an odd thug...{be01}\nThe scoundrel made off with my\ndarling Peeko!{be01}\nWrrrooooooaaaar! Peeko!
+Nnn... Roar!{be01}\nI want to dig that tunnel!
+Nnn... Roar!\nWhat’s going on?{be01}\nI was digging the tunnel without any\ntools when some goon ordered me out!{be01}\nThat tunnel’s filled with Pokémon\nthat react badly to loud noises.{be00}\nThey could cause an uproar.{be01}\nThat’s why we stopped using heavy\nequipment for tunneling...{be01}\nI’m worried that the goon will do\nsomething stupid and startle the{be00}\nPokémon into an uproar.
+Nnn... Roar!{be01}\nThat goofy goon hightailed it out of\nthe tunnel! I can go back to digging!
+Oh! It’s you!{be01}\nYou’re that person who not only helped\nme in Petalburg Woods, but also got{be00}\nback my stolen package and then even{be00}\ngraciously delivered it to Slateport!{be01}\nCapt. Stern informed us that the\npackage arrived, too!{be01}\nI thank you very, very much!{be01}\nWhy, if I were a rain cloud, I would\nshower you with gratitude and hail{be00}\nyou as a hero!{be01}\nFor you, the most wonderful Trainer,\nI bear good news!{be01}\nRecently, our company developed a new\nkind of Poké Ball.{be01}\nAs a token of our appreciation, this\nis our gift to our wonderful Trainer!
+Our new Poké Ball will be available\nat the Pokémon Mart in Rustboro.{be01}\nPlease do try it out!\nThank you and bye-bye!
+Your Bag is jam-packed.\nI can’t give you this Repeat Ball.
+As a token of our appreciation for\nyour delivering our package, I have a{be00}\ngift of a new kind of Poké Ball for our{be00}\nmost wonderful Trainer!
+I dropped my glasses...\nCan you help me find them?
+Those glasses!\nMay I see them for a second?
+Hmm...\nThese are Blackglasses.{be00}\nThey’re not what I’m looking for...{be01}\nMaybe my glasses aren’t around\nhere...
+Hmm...\nI can’t find my glasses anywhere...{be00}\nMaybe they’re not around here...
+Hmm...\nThese are Blackglasses.{be00}\nThey’re not what I’m looking for...
+Route 116\n← Rustboro City
+Rusturf Tunnel\n“Linking Rustboro and Verdanturf{be01}\n“The tunnel project has been\ncanceled.”
+Tunneler’s Rest House
+Trainer Tips{be01}\nIf you want to stop a Pokémon from\nevolving, press the B Button while it{be00}\nis trying to evolve.{be00}\nThe startled Pokémon will stop.{be01}\nThis is called an evolution cancel.
+Trainer Tips{be01}\nYour Bag has several Pockets.{be01}\nItems you obtain are automatically\nplaced in the appropriate Pockets.{be01}\nNo Trainer can afford to be without\na Bag of their own.

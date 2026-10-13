@@ -1,0 +1,20 @@
+{
+ "map": "VictoryRoad_B2F",
+ "_doc": "caves_east: elevation 3 = 0, 4 = 16; the upper lake's shores (left column, peninsula, (28,5)) 32, so its two waterfalls drop to the lower lake (water 24 -> -8) as Black 2 waterfalls; plank bridges and walk-under crossings as VictoryRoad_1F. Origin (8,0) splits it over two chunks at Sapphire x 24 (a chunk file must stay under 110,600 bytes).",
+ "origin": [
+  8,
+  0
+ ],
+ "levels": {
+  "3": 0,
+  "4": 16
+ },
+ "heights": {
+  "4,8": 32,
+  "15,7": 32,
+  "28,5": 32,
+  "10,3": 32
+ },
+ "bridges": true,
+ "waterfalls": true
+}

@@ -1,0 +1,105 @@
+{
+ "zone": 118,
+ "room": "GraniteCave_1F",
+ "cave": true,
+ "cave_auto": true,
+ "area": 332,
+ "dark": false,
+ "header": {
+  "map_type": 16,
+  "npc_cache": 24,
+  "weather_word": 64,
+  "flags": 23683,
+  "icon_word": 40975,
+  "place_display": 1,
+  "bgm0": 1076,
+  "bgm1": 1076,
+  "bgm2": 1076,
+  "bgm3": 1076,
+  "place": 59,
+  "encounters": 34,
+  "enc_slot": 2
+ },
+ "warps": [
+  {
+   "at": [
+    37,
+    12
+   ],
+   "to": [
+    337,
+    3
+   ],
+   "what": "Sapphire warp 0 (37,12) -> Route106 0"
+  },
+  {
+   "at": [
+    35,
+    3
+   ],
+   "to": [
+    124,
+    0
+   ],
+   "what": "Sapphire warp 1 (35,3) -> GraniteCave_B1F 0"
+  },
+  {
+   "at": [
+    17,
+    11
+   ],
+   "to": [
+    124,
+    1
+   ],
+   "what": "Sapphire warp 2 (17,11) -> GraniteCave_B1F 1"
+  },
+  {
+   "at": [
+    5,
+    10
+   ],
+   "to": [
+    126,
+    0
+   ],
+   "what": "Sapphire warp 3 (5,10) -> GraniteCave_StevensRoom 0"
+  }
+ ],
+ "triggers": [
+  {
+   "script": 1,
+   "var": 0,
+   "value": 0,
+   "at": [
+    35,
+    3
+   ]
+  },
+  {
+   "script": 2,
+   "var": 0,
+   "value": 0,
+   "at": [
+    17,
+    11
+   ]
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 2,
+   "model": 110,
+   "script": 7067,
+   "flag": 1167,
+   "dir": 1,
+   "at": [
+    17,
+    7
+   ],
+   "what": "item ball ITEM_ESCAPE_ROPE"
+  }
+ ],
+ "signs": [],
+ "what": "GraniteCave_1F: cave (converter/gen_caves.py, b2tools/models_cave.py); story objects: see notes/CAVES.md"
+}

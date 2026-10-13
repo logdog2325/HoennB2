@@ -1,0 +1,19 @@
+# Game files never go in git (too big, and they're your dumps)
+roms/
+*.nds
+*.gba
+*.sav
+# Third-party repos and downloaded tools keep their own history
+external/
+tools/
+backups/
+# Generated
+__pycache__/
+.DS_Store
+# Files pulled out of the ROM (derived game data)
+work/
+.venv/
+# ROMs built for testing (derived from the dump)
+builds/
+# Release ROMs and patches (notes/RELEASE.md)
+release/

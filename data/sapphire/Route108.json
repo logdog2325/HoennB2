@@ -1,0 +1,233 @@
+{
+ "map": "Route108",
+ "id": "MAP_ROUTE108",
+ "layout": "LAYOUT_ROUTE108",
+ "music": "MUS_ROUTE104",
+ "region_map_section": "MAPSEC_ROUTE_108",
+ "weather": "WEATHER_SUNNY",
+ "connections": [
+  {
+   "direction": "left",
+   "offset": 0,
+   "map": "MAP_ROUTE107"
+  },
+  {
+   "direction": "right",
+   "offset": -40,
+   "map": "MAP_ROUTE109"
+  }
+ ],
+ "npcs": [
+  {
+   "local_id": 1,
+   "x": 17,
+   "y": 13,
+   "gfx": "OBJ_EVENT_GFX_SWIMMER_M",
+   "movement": "MOVEMENT_TYPE_WALK_SEQUENCE_UP_LEFT_DOWN_RIGHT",
+   "range": [
+    3,
+    3
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route108_EventScript_14F476",
+   "texts": {
+    "Route108_Text_1B97C3": "My dream is to swim the world's seven\\nseas!$",
+    "Route108_Text_1B97EF": "I won't be able to swim the seven seas\\nlike this...$",
+    "Route108_Text_1B9823": "Playing with marine POKéMON is one of\\nthe pleasures of swimming!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 2,
+   "x": 8,
+   "y": 6,
+   "gfx": "OBJ_EVENT_GFX_SWIMMER_F",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN_AND_UP",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route108_EventScript_14F4A4",
+   "texts": {
+    "Route108_Text_1B98EC": "My liar of a boyfriend told me that\\nI look great in a bikini...$",
+    "Route108_Text_1B992C": "Oh, boo!$",
+    "Route108_Text_1B9935": "Even if it's a lie, I love being told\\nI look great...\\lWe girls are so complex...$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 3,
+   "x": 50,
+   "y": 10,
+   "gfx": "OBJ_EVENT_GFX_SWIMMER_M",
+   "movement": "MOVEMENT_TYPE_ROTATE_CLOCKWISE",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route108_EventScript_14F48D",
+   "texts": {
+    "Route108_Text_1B9864": "Ahoy, there! Are you going out to the\\nABANDONED SHIP, too?$",
+    "Route108_Text_1B989F": "I'm sinking!\\nGlub... Glub...$",
+    "Route108_Text_1B98BC": "Some people even go inside that\\nABANDONED SHIP.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 4,
+   "x": 36,
+   "y": 12,
+   "gfx": "OBJ_EVENT_GFX_SWIMMER_F",
+   "movement": "MOVEMENT_TYPE_WALK_SEQUENCE_LEFT_UP_RIGHT_DOWN",
+   "range": [
+    6,
+    3
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route108_EventScript_14F4BB",
+   "texts": {
+    "Route108_Text_1B9986": "I love the sea!\\nI forget all my worries when I swim!$",
+    "Route108_Text_1B99BB": "When I lose a battle, I get all\\nstressed out!$",
+    "Route108_Text_1B99E9": "Work off your stress by swimming!\\nIt's so healthy!$"
+   },
+   "complex": true
+  }
+ ],
+ "signs": [
+  {
+   "x": 38,
+   "y": 14,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 38,
+    "y": 14,
+    "elevation": 3,
+    "item": "ITEM_RARE_CANDY",
+    "flag": "FLAG_HIDDEN_ITEM_56"
+   }
+  }
+ ],
+ "warps": [
+  {
+   "id": 0,
+   "x": 29,
+   "y": 6,
+   "dest_map": "MAP_ABANDONED_SHIP_DECK",
+   "dest_warp_id": "0"
+  }
+ ],
+ "coord_events": [],
+ "wild": {
+  "water_mons": {
+   "encounter_rate": 4,
+   "slot_rates": [
+    60,
+    30,
+    5,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 5,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 15,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_PELIPPER",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_PELIPPER",
+     "min": 25,
+     "max": 30
+    }
+   ]
+  },
+  "fishing_mons": {
+   "encounter_rate": 30,
+   "slot_rates": [
+    70,
+    30,
+    60,
+    20,
+    20,
+    40,
+    40,
+    15,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 20,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 35,
+     "max": 40
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 40,
+     "max": 45
+    }
+   ]
+  }
+ }
+}

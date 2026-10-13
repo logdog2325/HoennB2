@@ -1,0 +1,5 @@
+Welcome to the Herb Shop, home of\neffective and inexpensive medicine!
+Herbal medicine works impressively well.\nBut your Pokémon will dislike you for it.{be00}\nIt must be horribly bitter!
+You’ve come to look at herbal medicine\nin Lavaridge?{be01}\nThat’s rather commendable.{be01}\nI like you! Take this!
+That Charcoal I gave you, it’s used\nfor making herbal medicine.{be01}\nIt also does wonders when held by\na Pokémon.{be01}\nIt intensifies the power of Fire-type\nmoves.
+Too bad!\nThe Bag is full...

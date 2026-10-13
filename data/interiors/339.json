@@ -1,0 +1,56 @@
+{
+ "_doc": "MossdeepCity_StevensHouse: zone written by converter/gen_interior_recipes_houses.py (warps and parent from converter/gen_interiors.py); story people left for the story phase: story person STEVEN at (9,6) MossdeepCity_StevensHouse_EventScript_Steven (hide flag FLAG_HIDE_STEVEN_STEVENS_HOUSE); item ball MossdeepCity_StevensHouse_EventScript_BeldumPokeball (no Black 2 item); item ball MossdeepCity_StevensHouse_EventScript_DiveItemBall (no Black 2 item); story person LITTLE_BOY_1 at (6,4) MossdeepCity_StevensHouse_EventScript_Letter (hide flag FLAG_HIDE_STEVENS_LETTER)",
+ "zone": 339,
+ "room": "MossdeepCity_StevensHouse",
+ "area": 313,
+ "parent": 107,
+ "warps": [
+  {
+   "at": [3, 7],
+   "tile_only": true,
+   "to": [107, 11],
+   "what": "Sapphire warp 0 -> MossdeepCity 6"
+  },
+  {
+   "at": [4, 7],
+   "tile_only": true,
+   "to": [107, 11],
+   "what": "Sapphire warp 1 -> MossdeepCity 6"
+  }
+ ],
+ "npcs": [],
+ "signs": [
+  {
+   "script": 1,
+   "at": [0, 1],
+   "dir": 4
+  },
+  {
+   "script": 2,
+   "at": [1, 1],
+   "dir": 4
+  },
+  {
+   "script": 3,
+   "at": [10, 4],
+   "dir": 4
+  },
+  {
+   "script": 4,
+   "at": [10, 6],
+   "dir": 4
+  },
+  {
+   "script": 5,
+   "at": [9, 1],
+   "dir": 4,
+   "what": "PictureBookshelf"
+  },
+  {
+   "script": 5,
+   "at": [10, 1],
+   "dir": 4,
+   "what": "PictureBookshelf"
+  }
+ ]
+}

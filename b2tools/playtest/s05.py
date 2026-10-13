@@ -1,0 +1,11 @@
+import sys; sys.path.insert(0, sys.path[0])
+from pt import *
+g = G('s04_aftermay.dst', name='s05')
+print('down', g.warp(0), g.zone(), g.tile()); g.adv()
+print('exit', g.warp(0), g.zone(), g.tile()); g.adv()
+print('north', g.go(179, 354), g.tile())
+g.go(179, 351); g.adv(); g.S()
+print('at', g.zone(), g.tile())
+for a in g.actors(): print(' actor', a['uid'], a['x'], a['z'], a['scr'])
+g.save('s05_route101.dst')
+g.sheet(os.path.join(PT, 'scratch.png'), cols=5)

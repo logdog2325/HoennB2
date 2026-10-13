@@ -1,0 +1,253 @@
+{
+ "map": "Route107",
+ "id": "MAP_ROUTE107",
+ "layout": "LAYOUT_ROUTE107",
+ "music": "MUS_ROUTE104",
+ "region_map_section": "MAPSEC_ROUTE_107",
+ "weather": "WEATHER_SUNNY",
+ "connections": [
+  {
+   "direction": "left",
+   "offset": 0,
+   "map": "MAP_DEWFORD_TOWN"
+  },
+  {
+   "direction": "right",
+   "offset": 0,
+   "map": "MAP_ROUTE108"
+  }
+ ],
+ "npcs": [
+  {
+   "local_id": 1,
+   "x": 27,
+   "y": 10,
+   "gfx": "OBJ_EVENT_GFX_SWIMMER_M",
+   "movement": "MOVEMENT_TYPE_ROTATE_CLOCKWISE",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route107_EventScript_14F3BC",
+   "texts": {
+    "Route107_Text_1B926B": "Yawn...\\pI must have drifted off to sleep while\\nI was drifting in the waves.$",
+    "Route107_Text_1B92B7": "Ahaha, I lost...\\nI'll take a snooze, I think...$",
+    "Route107_Text_1B92E7": "Floating and being rocked by the\\nwaves - it's like sleeping in a plush,\\lcomfy bed.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 2,
+   "x": 38,
+   "y": 11,
+   "gfx": "OBJ_EVENT_GFX_SWIMMER_M",
+   "movement": "MOVEMENT_TYPE_WALK_SEQUENCE_RIGHT_DOWN_LEFT_UP",
+   "range": [
+    6,
+    2
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route107_EventScript_14F3D3",
+   "texts": {
+    "Route107_Text_1B933A": "The sea is like my backyard.\\nLet's battle!$",
+    "Route107_Text_1B9365": "I lost on my home field...\\nI'm in shock!$",
+    "Route107_Text_1B938E": "I swim the seas with a heart full of\\ndreams...\\pIt's a song!\\nAnyways, I'm swimming some more.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 3,
+   "x": 50,
+   "y": 6,
+   "gfx": "OBJ_EVENT_GFX_SWIMMER_F",
+   "movement": "MOVEMENT_TYPE_FACE_LEFT_AND_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route107_EventScript_14F411",
+   "texts": {
+    "Route107_Text_1B94C8": "Do you know a little town called\\nDEWFORD?$",
+    "Route107_Text_1B94F2": "I hate this!$",
+    "Route107_Text_1B94FF": "A weird saying is getting really\\ntrendy at DEWFORD HALL.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 4,
+   "x": 16,
+   "y": 11,
+   "gfx": "OBJ_EVENT_GFX_SWIMMER_F",
+   "movement": "MOVEMENT_TYPE_FACE_UP",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route107_EventScript_14F428",
+   "texts": {
+    "Route107_Text_1B9538": "Did you want to battle me?\\nSure, I'll go with you!$",
+    "Route107_Text_1B956B": "I wasn't good enough for you.$",
+    "Route107_Text_1B9589": "I think you're going to keep getting\\nbetter. I'll go for it, too!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 5,
+   "x": 33,
+   "y": 4,
+   "gfx": "OBJ_EVENT_GFX_SWIMMER_F",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route107_EventScript_14F43F",
+   "texts": {
+    "Route107_Text_1B95CB": "LISA: We challenge you as a sister\\nand brother!$",
+    "Route107_Text_1B95FB": "LISA: Awesome.\\nYou're in a different class of tough.$",
+    "Route107_Text_1B9672": "LISA: If you want to battle with us,\\nbring more POKéMON.$",
+    "Route107_Text_1B9630": "LISA: Do you have any friends who\\nwould go to the beach with you?$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 6,
+   "x": 32,
+   "y": 4,
+   "gfx": "OBJ_EVENT_GFX_TUBER_M_SWIMMING",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route107_EventScript_14F45A",
+   "texts": {
+    "Route107_Text_1B96AB": "RAY: We always battle POKéMON, me\\nand my sister.\\pI always lose, but we can beat you\\n2-on-2!$",
+    "Route107_Text_1B9707": "RAY: Wowee, you're at a higher level\\nthan us!$",
+    "Route107_Text_1B9788": "RAY: If you want to battle us, go\\nbring some more POKéMON!$",
+    "Route107_Text_1B9735": "RAY: My sister gave me my POKéMON.\\nI raised it, and now it's my important\\lpartner!$"
+   },
+   "complex": true
+  }
+ ],
+ "signs": [],
+ "warps": [],
+ "coord_events": [],
+ "wild": {
+  "water_mons": {
+   "encounter_rate": 4,
+   "slot_rates": [
+    60,
+    30,
+    5,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 5,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 15,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_PELIPPER",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_PELIPPER",
+     "min": 25,
+     "max": 30
+    }
+   ]
+  },
+  "fishing_mons": {
+   "encounter_rate": 30,
+   "slot_rates": [
+    70,
+    30,
+    60,
+    20,
+    20,
+    40,
+    40,
+    15,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 20,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 35,
+     "max": 40
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 40,
+     "max": 45
+    }
+   ]
+  }
+ }
+}

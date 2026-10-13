@@ -1,0 +1,323 @@
+{
+ "_doc": "emerald_rooms (b2tools/emerald_rooms.py writes this file: edit the script and rerun). Emerald's Mauville Gym (Emerald's beams, same room): the poles and walls of pokeemerald's map, the beam tiles as Black 2 electric floor, the statues. Layout \"alt\": every switch's toggle (MauvilleGymSetDefaultBarriers), loaded instead of the room by map replace event 3.",
+ "map": "pokeemerald/MauvilleCity_Gym",
+ "style": "gl_mauville",
+ "floor": [
+  [
+   3,
+   2,
+   6,
+   7
+  ],
+  [
+   0,
+   8,
+   9,
+   17
+  ],
+  [
+   2,
+   18,
+   7,
+   20
+  ]
+ ],
+ "blocks": [
+  {
+   "use": "gl_mauville_pole",
+   "units": [
+    3.25,
+    8.3,
+    3.75,
+    8.8
+   ]
+  },
+  {
+   "use": "gl_mauville_pole",
+   "units": [
+    6.25,
+    8.3,
+    6.75,
+    8.8
+   ]
+  },
+  {
+   "use": "gl_mauville_pole",
+   "units": [
+    0.25,
+    11.3,
+    0.75,
+    11.8
+   ]
+  },
+  {
+   "use": "gl_mauville_pole",
+   "units": [
+    3.25,
+    11.3,
+    3.75,
+    11.8
+   ]
+  },
+  {
+   "use": "gl_mauville_pole",
+   "units": [
+    6.25,
+    11.3,
+    6.75,
+    11.8
+   ]
+  },
+  {
+   "use": "gl_mauville_pole",
+   "units": [
+    9.25,
+    11.3,
+    9.75,
+    11.8
+   ]
+  },
+  {
+   "use": "gl_mauville_pole",
+   "units": [
+    3.25,
+    14.3,
+    3.75,
+    14.8
+   ]
+  },
+  {
+   "use": "gl_mauville_pole",
+   "units": [
+    6.25,
+    14.3,
+    6.75,
+    14.8
+   ]
+  },
+  {
+   "use": "gl_mauville_wall",
+   "tiles": [
+    [
+     3,
+     2
+    ],
+    [
+     6,
+     2
+    ],
+    [
+     3,
+     3
+    ],
+    [
+     6,
+     3
+    ],
+    [
+     3,
+     6
+    ],
+    [
+     6,
+     6
+    ],
+    [
+     3,
+     7
+    ],
+    [
+     6,
+     7
+    ],
+    [
+     0,
+     8
+    ],
+    [
+     1,
+     8
+    ],
+    [
+     2,
+     8
+    ],
+    [
+     7,
+     13
+    ],
+    [
+     8,
+     13
+    ],
+    [
+     9,
+     13
+    ],
+    [
+     7,
+     14
+    ],
+    [
+     8,
+     14
+    ],
+    [
+     9,
+     14
+    ],
+    [
+     0,
+     17
+    ],
+    [
+     1,
+     17
+    ],
+    [
+     8,
+     17
+    ],
+    [
+     9,
+     17
+    ]
+   ]
+  }
+ ],
+ "furniture": [
+  {
+   "m": "d6_yuka_biri02_1",
+   "tile": [
+    4,
+    11
+   ]
+  },
+  {
+   "m": "d6_yuka_biri02_1",
+   "tile": [
+    5,
+    11
+   ]
+  },
+  {
+   "m": "d6_yuka_biri02_1",
+   "tile": [
+    7,
+    11
+   ]
+  },
+  {
+   "m": "d6_yuka_biri02_1",
+   "tile": [
+    8,
+    11
+   ]
+  },
+  {
+   "m": "d6_yuka_biri02_1",
+   "tile": [
+    3,
+    12
+   ]
+  },
+  {
+   "m": "d6_yuka_biri02_1",
+   "tile": [
+    3,
+    13
+   ]
+  },
+  {
+   "m": "object02_1",
+   "tile": [
+    3,
+    18
+   ]
+  },
+  {
+   "m": "object02_1",
+   "tile": [
+    6,
+    18
+   ]
+  }
+ ],
+ "alt_of": "MauvilleCity_Gym",
+ "block": [
+  [
+   4,
+   11
+  ],
+  [
+   5,
+   11
+  ],
+  [
+   7,
+   11
+  ],
+  [
+   8,
+   11
+  ],
+  [
+   3,
+   12
+  ],
+  [
+   3,
+   13
+  ]
+ ],
+ "unblock": [
+  [
+   4,
+   7
+  ],
+  [
+   5,
+   7
+  ],
+  [
+   6,
+   9
+  ],
+  [
+   6,
+   10
+  ],
+  [
+   1,
+   11
+  ],
+  [
+   2,
+   11
+  ],
+  [
+   4,
+   14
+  ],
+  [
+   5,
+   14
+  ]
+ ],
+ "mats": [
+  {
+   "tex": "in70_mat1",
+   "src": 351,
+   "border": 0.25,
+   "border_units": 3,
+   "y": 0,
+   "rect": [
+    4,
+    20,
+    5,
+    20
+   ],
+   "_what": "exit mat (Sapphire's Gym entrance mat)"
+  }
+ ]
+}

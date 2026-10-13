@@ -1,0 +1,22 @@
+{
+ "_doc": "BattleTower_Corridor (zone 336), built by the battle_tower agent's rooms helper (recipe data/interior_layouts/BattleTower_Corridor.json: Nimbasa's Battle Test look, area 306 as the Lobby). Script-only room, as Sapphire's (no warp events): the elevator ride changes the map to Sapphire (8,1) = zone tile (9,2) (origin (1,1)), in front of the elevator door; the walk ends with a map change to the Battle Room (4,8). So no warps (an empty list: Black 2's own warps of zone 336 are dropped). The doors are Black 2 door props (door_h5_in, type 13) at Sapphire x 1, 4, 12 (Lv. 50), 15 (Lv. 100): BMCreateHandleByGPos h, 1, 13, 2 / 16, 2 finds the Lv. 50 / Lv. 100 door. The attendant (Sapphire's TEALA, object 1 at (9,2) facing left) stands at (9,1) here, beside the arrival tile (walk_sweep 2026-10-12: Sapphire's door exit steps the player from the elevator door (8,1) to (8,2), beside her; this room's floor row in front of the doors is row 1, where the player arrives, so she stands on row 1 too and walks into the door as Sapphire's does, instead of vanishing on the floor in front of it); she is Teala, code 79 (data/sprite_map.json OBJ_EVENT_GFX_TEALA: Sapphire's own Teala redrawn, as in the Pokémon Centers). No bgm (as 21.json).",
+ "zone": 336,
+ "room": "BattleTower_Corridor",
+ "area": 306,
+ "parent": 17,
+ "warps": [],
+ "npcs": [
+  {
+   "uid": 1,
+   "model": 79,
+   "script": 1,
+   "dir": 2,
+   "at": [
+    9,
+    1
+   ],
+   "what": "attendant (Sapphire TEALA, FACE_LEFT): Teala, code 79 (data/sprite_map.json: Sapphire's own Teala redrawn)"
+  }
+ ],
+ "signs": []
+}

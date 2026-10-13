@@ -1,0 +1,14 @@
+Welcome to the Safari Zone!{be01}\nHere, you may witness many kinds of\nPokémon rarely seen in Hoenn.{be01}\nAnd, you’ll see them in their wild,\nuntamed state in natural habitats.{be01}\nWhat’s more, we’ve thrown open the\ngates to Pokémon Trainers.{be01}\nYou’re encouraged to catch Pokémon\nfor keeps!{be01}\nCome in and enjoy the Safari Zone!
+Safari Zone Trainer Tip!{be01}\nThrow Pokéblocks at wild Pokémon to make\nthem less likely to flee.
+Welcome to the Safari Zone!\nIs it your first time here?
+Come in and enjoy the Safari Zone!
+When you enter the Safari Zone, you\nstart with 30 Safari Balls for{be00}\ncatching Pokémon.{be01}\nThe Safari Game is over when you run\nout of Safari Balls, or when you’ve{be00}\nwalked 500 steps.{be01}\nCome in and enjoy the Safari Zone!
+Welcome to the Safari Zone!{be01}\nAll you can catch for just $500!\nWould you like to play a Safari Game?
+Okay.\nPlease play another time!
+You don’t have enough money.\nSorry.
+That will be $500, please.
+Here are your Safari Balls.
+{0100:0} received 30 Safari Balls.
+We’ll let you know when your game\nis over.{be01}\nSo, until then, enjoy yourself, please!\nOff you go on your wild excursion!
+Excuse me!\nYour PC Box is full.
+Excuse me!\nYou seem to be without a Pokéblock Case.{be01}\nYour Safari Game will be much more\nfruitful if you use Pokéblocks.{be01}\nPlease come back with a Pokéblock Case.

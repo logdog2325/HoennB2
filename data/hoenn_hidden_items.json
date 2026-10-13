@@ -1,0 +1,1182 @@
+{
+ "_doc": "Sapphire's hidden items as Black 2 hidden items (S_common: obtain_item.inc EventScript_HiddenItem).",
+ "items": {
+  "FLAG_HIDDEN_ITEM_FALLARBOR_TOWN_NUGGET": {
+   "n": 1,
+   "map": "FallarborTown",
+   "at": [
+    2,
+    15
+   ],
+   "sapphire": "ITEM_NUGGET",
+   "item": "ITEM_NUGGET",
+   "script": 8000,
+   "flag": 2820
+  },
+  "FLAG_HIDDEN_ITEM_30": {
+   "n": 2,
+   "map": "GraniteCave_B2F",
+   "at": [
+    28,
+    6
+   ],
+   "sapphire": "ITEM_EVERSTONE",
+   "item": "ITEM_EVERSTONE",
+   "script": 8001,
+   "flag": 2821
+  },
+  "FLAG_HIDDEN_ITEM_31": {
+   "n": 3,
+   "map": "GraniteCave_B2F",
+   "at": [
+    15,
+    11
+   ],
+   "sapphire": "ITEM_EVERSTONE",
+   "item": "ITEM_EVERSTONE",
+   "script": 8002,
+   "flag": 2822
+  },
+  "FLAG_HIDDEN_ITEM_4D": {
+   "n": 4,
+   "map": "JaggedPass",
+   "at": [
+    8,
+    10
+   ],
+   "sapphire": "ITEM_FULL_HEAL",
+   "item": "ITEM_FULL_HEAL",
+   "script": 8003,
+   "flag": 2823
+  },
+  "FLAG_HIDDEN_ITEM_4C": {
+   "n": 5,
+   "map": "JaggedPass",
+   "at": [
+    7,
+    29
+   ],
+   "sapphire": "ITEM_GREAT_BALL",
+   "item": "ITEM_GREAT_BALL",
+   "script": 8004,
+   "flag": 2824
+  },
+  "FLAG_HIDDEN_ITEM_LAVARIDGE_TOWN_ICE_HEAL": {
+   "n": 6,
+   "map": "LavaridgeTown",
+   "at": [
+    4,
+    5
+   ],
+   "sapphire": "ITEM_ICE_HEAL",
+   "item": "ITEM_ICE_HEAL",
+   "script": 8005,
+   "flag": 2825
+  },
+  "FLAG_HIDDEN_ITEM_1B": {
+   "n": 7,
+   "map": "LilycoveCity",
+   "at": [
+    36,
+    31
+   ],
+   "sapphire": "ITEM_HEART_SCALE",
+   "item": "ITEM_HEART_SCALE",
+   "script": 8006,
+   "flag": 2826
+  },
+  "FLAG_HIDDEN_ITEM_LILYCOVE_CITY_PP_UP": {
+   "n": 8,
+   "map": "LilycoveCity",
+   "at": [
+    61,
+    7
+   ],
+   "sapphire": "ITEM_PP_UP",
+   "item": "ITEM_PP_UP",
+   "script": 8007,
+   "flag": 2827
+  },
+  "FLAG_HIDDEN_ITEM_LILYCOVE_CITY_POKE_BALL": {
+   "n": 9,
+   "map": "LilycoveCity",
+   "at": [
+    64,
+    31
+   ],
+   "sapphire": "ITEM_POKE_BALL",
+   "item": "ITEM_POKE_BALL",
+   "script": 8008,
+   "flag": 2828
+  },
+  "FLAG_HIDDEN_ITEM_1D": {
+   "n": 10,
+   "map": "MtPyre_Exterior",
+   "at": [
+    9,
+    8
+   ],
+   "sapphire": "ITEM_ULTRA_BALL",
+   "item": "ITEM_ULTRA_BALL",
+   "script": 8009,
+   "flag": 2829
+  },
+  "FLAG_HIDDEN_ITEM_4E": {
+   "n": 11,
+   "map": "MtPyre_Exterior",
+   "at": [
+    16,
+    22
+   ],
+   "sapphire": "ITEM_MAX_ETHER",
+   "item": "ITEM_MAX_ETHER",
+   "script": 8010,
+   "flag": 2830
+  },
+  "FLAG_HIDDEN_ITEM_4F": {
+   "n": 12,
+   "map": "MtPyre_Summit",
+   "at": [
+    9,
+    25
+   ],
+   "sapphire": "ITEM_ZINC",
+   "item": "ITEM_ZINC",
+   "script": 8011,
+   "flag": 2831
+  },
+  "FLAG_HIDDEN_ITEM_50": {
+   "n": 13,
+   "map": "MtPyre_Summit",
+   "at": [
+    37,
+    7
+   ],
+   "sapphire": "ITEM_RARE_CANDY",
+   "item": "ITEM_RARE_CANDY",
+   "script": 8012,
+   "flag": 2832
+  },
+  "FLAG_HIDDEN_ITEM_5F": {
+   "n": 14,
+   "map": "PetalburgCity",
+   "at": [
+    11,
+    29
+   ],
+   "sapphire": "ITEM_RARE_CANDY",
+   "item": "ITEM_RARE_CANDY",
+   "script": 8013,
+   "flag": 2833
+  },
+  "FLAG_HIDDEN_ITEM_3A": {
+   "n": 15,
+   "map": "PetalburgWoods",
+   "at": [
+    39,
+    35
+   ],
+   "sapphire": "ITEM_POTION",
+   "item": "ITEM_POTION",
+   "script": 8014,
+   "flag": 2834
+  },
+  "FLAG_HIDDEN_ITEM_3B": {
+   "n": 16,
+   "map": "PetalburgWoods",
+   "at": [
+    26,
+    6
+   ],
+   "sapphire": "ITEM_TINY_MUSHROOM",
+   "item": "ITEM_TINY_MUSHROOM",
+   "script": 8015,
+   "flag": 2835
+  },
+  "FLAG_HIDDEN_ITEM_3C": {
+   "n": 17,
+   "map": "PetalburgWoods",
+   "at": [
+    40,
+    29
+   ],
+   "sapphire": "ITEM_TINY_MUSHROOM",
+   "item": "ITEM_TINY_MUSHROOM",
+   "script": 8016,
+   "flag": 2836
+  },
+  "FLAG_HIDDEN_ITEM_3D": {
+   "n": 18,
+   "map": "PetalburgWoods",
+   "at": [
+    4,
+    19
+   ],
+   "sapphire": "ITEM_POKE_BALL",
+   "item": "ITEM_POKE_BALL",
+   "script": 8017,
+   "flag": 2837
+  },
+  "FLAG_HIDDEN_ITEM_2C": {
+   "n": 19,
+   "map": "Route104",
+   "at": [
+    7,
+    6
+   ],
+   "sapphire": "ITEM_SUPER_POTION",
+   "item": "ITEM_SUPER_POTION",
+   "script": 8018,
+   "flag": 2838
+  },
+  "FLAG_HIDDEN_ITEM_3E": {
+   "n": 20,
+   "map": "Route104",
+   "at": [
+    3,
+    9
+   ],
+   "sapphire": "ITEM_POKE_BALL",
+   "item": "ITEM_POKE_BALL",
+   "script": 8019,
+   "flag": 2839
+  },
+  "FLAG_HIDDEN_ITEM_25": {
+   "n": 21,
+   "map": "Route104",
+   "at": [
+    14,
+    55
+   ],
+   "sapphire": "ITEM_POTION",
+   "item": "ITEM_POTION",
+   "script": 8020,
+   "flag": 2840
+  },
+  "FLAG_HIDDEN_ITEM_55": {
+   "n": 22,
+   "map": "Route104",
+   "at": [
+    16,
+    72
+   ],
+   "sapphire": "ITEM_ANTIDOTE",
+   "item": "ITEM_ANTIDOTE",
+   "script": 8021,
+   "flag": 2841
+  },
+  "FLAG_HIDDEN_ITEM_58": {
+   "n": 23,
+   "map": "Route104",
+   "at": [
+    16,
+    64
+   ],
+   "sapphire": "ITEM_HEART_SCALE",
+   "item": "ITEM_HEART_SCALE",
+   "script": 8022,
+   "flag": 2842
+  },
+  "FLAG_HIDDEN_ITEM_59": {
+   "n": 24,
+   "map": "Route105",
+   "at": [
+    15,
+    68
+   ],
+   "sapphire": "ITEM_HEART_SCALE",
+   "item": "ITEM_HEART_SCALE",
+   "script": 8023,
+   "flag": 2843
+  },
+  "FLAG_HIDDEN_ITEM_3F": {
+   "n": 25,
+   "map": "Route106",
+   "at": [
+    41,
+    11
+   ],
+   "sapphire": "ITEM_POKE_BALL",
+   "item": "ITEM_POKE_BALL",
+   "script": 8024,
+   "flag": 2844
+  },
+  "FLAG_HIDDEN_ITEM_2E": {
+   "n": 26,
+   "map": "Route106",
+   "at": [
+    53,
+    12
+   ],
+   "sapphire": "ITEM_STARDUST",
+   "item": "ITEM_STARDUST",
+   "script": 8025,
+   "flag": 2845
+  },
+  "FLAG_HIDDEN_ITEM_2F": {
+   "n": 27,
+   "map": "Route106",
+   "at": [
+    68,
+    15
+   ],
+   "sapphire": "ITEM_HEART_SCALE",
+   "item": "ITEM_HEART_SCALE",
+   "script": 8026,
+   "flag": 2846
+  },
+  "FLAG_HIDDEN_ITEM_56": {
+   "n": 28,
+   "map": "Route108",
+   "at": [
+    38,
+    14
+   ],
+   "sapphire": "ITEM_RARE_CANDY",
+   "item": "ITEM_RARE_CANDY",
+   "script": 8027,
+   "flag": 2847
+  },
+  "FLAG_HIDDEN_ITEM_32": {
+   "n": 29,
+   "map": "Route109",
+   "at": [
+    16,
+    23
+   ],
+   "sapphire": "ITEM_REVIVE",
+   "item": "ITEM_REVIVE",
+   "script": 8028,
+   "flag": 2848
+  },
+  "FLAG_HIDDEN_ITEM_34": {
+   "n": 30,
+   "map": "Route109",
+   "at": [
+    33,
+    5
+   ],
+   "sapphire": "ITEM_HEART_SCALE",
+   "item": "ITEM_HEART_SCALE",
+   "script": 8029,
+   "flag": 2849
+  },
+  "FLAG_HIDDEN_ITEM_33": {
+   "n": 31,
+   "map": "Route109",
+   "at": [
+    9,
+    10
+   ],
+   "sapphire": "ITEM_GREAT_BALL",
+   "item": "ITEM_GREAT_BALL",
+   "script": 8030,
+   "flag": 2850
+  },
+  "FLAG_HIDDEN_ITEM_40": {
+   "n": 32,
+   "map": "Route109",
+   "at": [
+    28,
+    20
+   ],
+   "sapphire": "ITEM_ETHER",
+   "item": "ITEM_ETHER",
+   "script": 8031,
+   "flag": 2851
+  },
+  "FLAG_HIDDEN_ITEM_5A": {
+   "n": 33,
+   "map": "Route109",
+   "at": [
+    13,
+    16
+   ],
+   "sapphire": "ITEM_HEART_SCALE",
+   "item": "ITEM_HEART_SCALE",
+   "script": 8032,
+   "flag": 2852
+  },
+  "FLAG_HIDDEN_ITEM_5B": {
+   "n": 34,
+   "map": "Route109",
+   "at": [
+    8,
+    42
+   ],
+   "sapphire": "ITEM_HEART_SCALE",
+   "item": "ITEM_HEART_SCALE",
+   "script": 8033,
+   "flag": 2853
+  },
+  "FLAG_HIDDEN_ITEM_36": {
+   "n": 35,
+   "map": "Route110",
+   "at": [
+    26,
+    40
+   ],
+   "sapphire": "ITEM_REVIVE",
+   "item": "ITEM_REVIVE",
+   "script": 8034,
+   "flag": 2854
+  },
+  "FLAG_HIDDEN_ITEM_35": {
+   "n": 36,
+   "map": "Route110",
+   "at": [
+    34,
+    42
+   ],
+   "sapphire": "ITEM_GREAT_BALL",
+   "item": "ITEM_GREAT_BALL",
+   "script": 8035,
+   "flag": 2855
+  },
+  "FLAG_HIDDEN_ITEM_41": {
+   "n": 37,
+   "map": "Route110",
+   "at": [
+    4,
+    35
+   ],
+   "sapphire": "ITEM_POKE_BALL",
+   "item": "ITEM_POKE_BALL",
+   "script": 8036,
+   "flag": 2856
+  },
+  "FLAG_HIDDEN_ITEM_37": {
+   "n": 38,
+   "map": "Route110",
+   "at": [
+    37,
+    67
+   ],
+   "sapphire": "ITEM_FULL_HEAL",
+   "item": "ITEM_FULL_HEAL",
+   "script": 8037,
+   "flag": 2857
+  },
+  "FLAG_HIDDEN_ITEM_1": {
+   "n": 39,
+   "map": "Route110_TrickHouseEnd",
+   "at": [
+    4,
+    5
+   ],
+   "sapphire": "ITEM_NUGGET",
+   "item": "ITEM_NUGGET",
+   "script": 8038,
+   "flag": 2858
+  },
+  "FLAG_HIDDEN_ITEM_2": {
+   "n": 40,
+   "map": "Route111",
+   "at": [
+    26,
+    70
+   ],
+   "sapphire": "ITEM_STARDUST",
+   "item": "ITEM_STARDUST",
+   "script": 8039,
+   "flag": 2859
+  },
+  "FLAG_HIDDEN_ITEM_38": {
+   "n": 41,
+   "map": "Route111",
+   "at": [
+    19,
+    55
+   ],
+   "sapphire": "ITEM_PROTEIN",
+   "item": "ITEM_PROTEIN",
+   "script": 8040,
+   "flag": 2860
+  },
+  "FLAG_HIDDEN_ITEM_39": {
+   "n": 42,
+   "map": "Route111",
+   "at": [
+    35,
+    66
+   ],
+   "sapphire": "ITEM_RARE_CANDY",
+   "item": "ITEM_RARE_CANDY",
+   "script": 8041,
+   "flag": 2861
+  },
+  "FLAG_HIDDEN_ITEM_3": {
+   "n": 43,
+   "map": "Route113",
+   "at": [
+    72,
+    4
+   ],
+   "sapphire": "ITEM_ETHER",
+   "item": "ITEM_ETHER",
+   "script": 8042,
+   "flag": 2862
+  },
+  "FLAG_HIDDEN_ITEM_1E": {
+   "n": 44,
+   "map": "Route113",
+   "at": [
+    22,
+    5
+   ],
+   "sapphire": "ITEM_TM32_DOUBLE_TEAM",
+   "item": "ITEM_TM32",
+   "script": 8043,
+   "flag": 2863
+  },
+  "FLAG_HIDDEN_ITEM_4": {
+   "n": 45,
+   "map": "Route114",
+   "at": [
+    20,
+    57
+   ],
+   "sapphire": "ITEM_CARBOS",
+   "item": "ITEM_CARBOS",
+   "script": 8044,
+   "flag": 2864
+  },
+  "FLAG_HIDDEN_ITEM_2A": {
+   "n": 46,
+   "map": "Route114",
+   "at": [
+    7,
+    30
+   ],
+   "sapphire": "ITEM_REVIVE",
+   "item": "ITEM_REVIVE",
+   "script": 8045,
+   "flag": 2865
+  },
+  "FLAG_HIDDEN_ITEM_61": {
+   "n": 47,
+   "map": "Route115",
+   "at": [
+    15,
+    49
+   ],
+   "sapphire": "ITEM_HEART_SCALE",
+   "item": "ITEM_HEART_SCALE",
+   "script": 8046,
+   "flag": 2866
+  },
+  "FLAG_HIDDEN_ITEM_2D": {
+   "n": 48,
+   "map": "Route116",
+   "at": [
+    22,
+    9
+   ],
+   "sapphire": "ITEM_SUPER_POTION",
+   "item": "ITEM_SUPER_POTION",
+   "script": 8047,
+   "flag": 2867
+  },
+  "FLAG_HIDDEN_ITEM_BLACK_GLASSES": {
+   "n": 49,
+   "map": "Route116",
+   "at": [
+    70,
+    13
+   ],
+   "sapphire": "ITEM_BLACK_GLASSES",
+   "item": "ITEM_BLACK_GLASSES",
+   "script": 8048,
+   "flag": 2868
+  },
+  "FLAG_HIDDEN_ITEM_48": {
+   "n": 50,
+   "map": "Route117",
+   "at": [
+    3,
+    18
+   ],
+   "sapphire": "ITEM_REPEL",
+   "item": "ITEM_REPEL",
+   "script": 8049,
+   "flag": 2869
+  },
+  "FLAG_HIDDEN_ITEM_43": {
+   "n": 51,
+   "map": "Route118",
+   "at": [
+    31,
+    13
+   ],
+   "sapphire": "ITEM_IRON",
+   "item": "ITEM_IRON",
+   "script": 8050,
+   "flag": 2870
+  },
+  "FLAG_HIDDEN_ITEM_42": {
+   "n": 52,
+   "map": "Route118",
+   "at": [
+    12,
+    14
+   ],
+   "sapphire": "ITEM_HEART_SCALE",
+   "item": "ITEM_HEART_SCALE",
+   "script": 8051,
+   "flag": 2871
+  },
+  "FLAG_HIDDEN_ITEM_5": {
+   "n": 53,
+   "map": "Route119",
+   "at": [
+    17,
+    82
+   ],
+   "sapphire": "ITEM_CALCIUM",
+   "item": "ITEM_CALCIUM",
+   "script": 8052,
+   "flag": 2872
+  },
+  "FLAG_HIDDEN_ITEM_6": {
+   "n": 54,
+   "map": "Route119",
+   "at": [
+    38,
+    63
+   ],
+   "sapphire": "ITEM_ULTRA_BALL",
+   "item": "ITEM_ULTRA_BALL",
+   "script": 8053,
+   "flag": 2873
+  },
+  "FLAG_HIDDEN_ITEM_44": {
+   "n": 55,
+   "map": "Route119",
+   "at": [
+    26,
+    120
+   ],
+   "sapphire": "ITEM_FULL_HEAL",
+   "item": "ITEM_FULL_HEAL",
+   "script": 8054,
+   "flag": 2874
+  },
+  "FLAG_HIDDEN_ITEM_57": {
+   "n": 56,
+   "map": "Route119",
+   "at": [
+    20,
+    29
+   ],
+   "sapphire": "ITEM_MAX_ETHER",
+   "item": "ITEM_MAX_ETHER",
+   "script": 8055,
+   "flag": 2875
+  },
+  "FLAG_HIDDEN_ITEM_47": {
+   "n": 57,
+   "map": "Route120",
+   "at": [
+    9,
+    1
+   ],
+   "sapphire": "ITEM_RARE_CANDY",
+   "item": "ITEM_RARE_CANDY",
+   "script": 8056,
+   "flag": 2876
+  },
+  "FLAG_HIDDEN_ITEM_54": {
+   "n": 58,
+   "map": "Route120",
+   "at": [
+    31,
+    11
+   ],
+   "sapphire": "ITEM_REVIVE",
+   "item": "ITEM_REVIVE",
+   "script": 8057,
+   "flag": 2877
+  },
+  "FLAG_HIDDEN_ITEM_45": {
+   "n": 59,
+   "map": "Route120",
+   "at": [
+    0,
+    86
+   ],
+   "sapphire": "ITEM_RARE_CANDY",
+   "item": "ITEM_RARE_CANDY",
+   "script": 8058,
+   "flag": 2878
+  },
+  "FLAG_HIDDEN_ITEM_46": {
+   "n": 60,
+   "map": "Route120",
+   "at": [
+    24,
+    42
+   ],
+   "sapphire": "ITEM_ZINC",
+   "item": "ITEM_ZINC",
+   "script": 8059,
+   "flag": 2879
+  },
+  "FLAG_HIDDEN_ITEM_27": {
+   "n": 61,
+   "map": "Route121",
+   "at": [
+    23,
+    10
+   ],
+   "sapphire": "ITEM_HP_UP",
+   "item": "ITEM_HP_UP",
+   "script": 8060,
+   "flag": 2880
+  },
+  "FLAG_HIDDEN_ITEM_28": {
+   "n": 62,
+   "map": "Route121",
+   "at": [
+    58,
+    3
+   ],
+   "sapphire": "ITEM_NUGGET",
+   "item": "ITEM_NUGGET",
+   "script": 8061,
+   "flag": 2881
+  },
+  "FLAG_HIDDEN_ITEM_49": {
+   "n": 63,
+   "map": "Route121",
+   "at": [
+    72,
+    5
+   ],
+   "sapphire": "ITEM_FULL_HEAL",
+   "item": "ITEM_FULL_HEAL",
+   "script": 8062,
+   "flag": 2882
+  },
+  "FLAG_HIDDEN_ITEM_7": {
+   "n": 64,
+   "map": "Route123",
+   "at": [
+    75,
+    1
+   ],
+   "sapphire": "ITEM_SUPER_REPEL",
+   "item": "ITEM_SUPER_REPEL",
+   "script": 8063,
+   "flag": 2883
+  },
+  "FLAG_HIDDEN_ITEM_29": {
+   "n": 65,
+   "map": "Route123",
+   "at": [
+    12,
+    1
+   ],
+   "sapphire": "ITEM_REVIVE",
+   "item": "ITEM_REVIVE",
+   "script": 8064,
+   "flag": 2884
+  },
+  "FLAG_HIDDEN_ITEM_4A": {
+   "n": 66,
+   "map": "Route123",
+   "at": [
+    91,
+    15
+   ],
+   "sapphire": "ITEM_HYPER_POTION",
+   "item": "ITEM_HYPER_POTION",
+   "script": 8065,
+   "flag": 2885
+  },
+  "FLAG_HIDDEN_ITEM_5C": {
+   "n": 67,
+   "map": "Route128",
+   "at": [
+    49,
+    9
+   ],
+   "sapphire": "ITEM_HEART_SCALE",
+   "item": "ITEM_HEART_SCALE",
+   "script": 8066,
+   "flag": 2886
+  },
+  "FLAG_HIDDEN_ITEM_5D": {
+   "n": 68,
+   "map": "Route128",
+   "at": [
+    57,
+    21
+   ],
+   "sapphire": "ITEM_HEART_SCALE",
+   "item": "ITEM_HEART_SCALE",
+   "script": 8067,
+   "flag": 2887
+  },
+  "FLAG_HIDDEN_ITEM_5E": {
+   "n": 69,
+   "map": "Route128",
+   "at": [
+    31,
+    33
+   ],
+   "sapphire": "ITEM_HEART_SCALE",
+   "item": "ITEM_HEART_SCALE",
+   "script": 8068,
+   "flag": 2888
+  },
+  "FLAG_HIDDEN_ITEM_23": {
+   "n": 70,
+   "map": "SSTidalLowerDeck",
+   "at": [
+    0,
+    2
+   ],
+   "sapphire": "ITEM_LEFTOVERS",
+   "item": "ITEM_LEFTOVERS",
+   "script": 8069,
+   "flag": 2889
+  },
+  "FLAG_HIDDEN_ITEM_8": {
+   "n": 71,
+   "map": "Underwater1",
+   "at": [
+    42,
+    51
+   ],
+   "sapphire": "ITEM_CARBOS",
+   "item": "ITEM_CARBOS",
+   "script": 8070,
+   "flag": 2890
+  },
+  "FLAG_HIDDEN_ITEM_9": {
+   "n": 72,
+   "map": "Underwater1",
+   "at": [
+    14,
+    40
+   ],
+   "sapphire": "ITEM_GREEN_SHARD",
+   "item": "ITEM_GREEN_SHARD",
+   "script": 8071,
+   "flag": 2891
+  },
+  "FLAG_HIDDEN_ITEM_A": {
+   "n": 73,
+   "map": "Underwater1",
+   "at": [
+    66,
+    34
+   ],
+   "sapphire": "ITEM_PEARL",
+   "item": "ITEM_PEARL",
+   "script": 8072,
+   "flag": 2892
+  },
+  "FLAG_HIDDEN_ITEM_B": {
+   "n": 74,
+   "map": "Underwater1",
+   "at": [
+    64,
+    54
+   ],
+   "sapphire": "ITEM_BIG_PEARL",
+   "item": "ITEM_BIG_PEARL",
+   "script": 8073,
+   "flag": 2893
+  },
+  "FLAG_HIDDEN_ITEM_D": {
+   "n": 75,
+   "map": "Underwater1",
+   "at": [
+    70,
+    64
+   ],
+   "sapphire": "ITEM_HEART_SCALE",
+   "item": "ITEM_HEART_SCALE",
+   "script": 8074,
+   "flag": 2894
+  },
+  "FLAG_HIDDEN_ITEM_24": {
+   "n": 76,
+   "map": "Underwater1",
+   "at": [
+    42,
+    5
+   ],
+   "sapphire": "ITEM_CALCIUM",
+   "item": "ITEM_CALCIUM",
+   "script": 8075,
+   "flag": 2895
+  },
+  "FLAG_HIDDEN_ITEM_26": {
+   "n": 77,
+   "map": "Underwater1",
+   "at": [
+    45,
+    36
+   ],
+   "sapphire": "ITEM_HEART_SCALE",
+   "item": "ITEM_HEART_SCALE",
+   "script": 8076,
+   "flag": 2896
+  },
+  "FLAG_HIDDEN_ITEM_E": {
+   "n": 78,
+   "map": "Underwater2",
+   "at": [
+    30,
+    17
+   ],
+   "sapphire": "ITEM_HEART_SCALE",
+   "item": "ITEM_HEART_SCALE",
+   "script": 8077,
+   "flag": 2897
+  },
+  "FLAG_HIDDEN_ITEM_F": {
+   "n": 79,
+   "map": "Underwater2",
+   "at": [
+    41,
+    19
+   ],
+   "sapphire": "ITEM_ULTRA_BALL",
+   "item": "ITEM_ULTRA_BALL",
+   "script": 8078,
+   "flag": 2898
+  },
+  "FLAG_HIDDEN_ITEM_10": {
+   "n": 80,
+   "map": "Underwater2",
+   "at": [
+    63,
+    19
+   ],
+   "sapphire": "ITEM_STARDUST",
+   "item": "ITEM_STARDUST",
+   "script": 8079,
+   "flag": 2899
+  },
+  "FLAG_HIDDEN_ITEM_11": {
+   "n": 81,
+   "map": "Underwater2",
+   "at": [
+    10,
+    36
+   ],
+   "sapphire": "ITEM_PEARL",
+   "item": "ITEM_PEARL",
+   "script": 8080,
+   "flag": 2900
+  },
+  "FLAG_HIDDEN_ITEM_13": {
+   "n": 82,
+   "map": "Underwater2",
+   "at": [
+    11,
+    39
+   ],
+   "sapphire": "ITEM_IRON",
+   "item": "ITEM_IRON",
+   "script": 8081,
+   "flag": 2901
+  },
+  "FLAG_HIDDEN_ITEM_12": {
+   "n": 83,
+   "map": "Underwater2",
+   "at": [
+    12,
+    35
+   ],
+   "sapphire": "ITEM_YELLOW_SHARD",
+   "item": "ITEM_YELLOW_SHARD",
+   "script": 8082,
+   "flag": 2902
+  },
+  "FLAG_HIDDEN_ITEM_14": {
+   "n": 84,
+   "map": "Underwater2",
+   "at": [
+    65,
+    60
+   ],
+   "sapphire": "ITEM_BIG_PEARL",
+   "item": "ITEM_BIG_PEARL",
+   "script": 8083,
+   "flag": 2903
+  },
+  "FLAG_HIDDEN_ITEM_C": {
+   "n": 85,
+   "map": "Underwater2",
+   "at": [
+    9,
+    77
+   ],
+   "sapphire": "ITEM_BLUE_SHARD",
+   "item": "ITEM_BLUE_SHARD",
+   "script": 8084,
+   "flag": 2904
+  },
+  "FLAG_HIDDEN_ITEM_15": {
+   "n": 86,
+   "map": "Underwater3",
+   "at": [
+    12,
+    42
+   ],
+   "sapphire": "ITEM_STAR_PIECE",
+   "item": "ITEM_STAR_PIECE",
+   "script": 8085,
+   "flag": 2905
+  },
+  "FLAG_HIDDEN_ITEM_16": {
+   "n": 87,
+   "map": "Underwater3",
+   "at": [
+    50,
+    36
+   ],
+   "sapphire": "ITEM_HP_UP",
+   "item": "ITEM_HP_UP",
+   "script": 8086,
+   "flag": 2906
+  },
+  "FLAG_HIDDEN_ITEM_17": {
+   "n": 88,
+   "map": "Underwater3",
+   "at": [
+    34,
+    72
+   ],
+   "sapphire": "ITEM_HEART_SCALE",
+   "item": "ITEM_HEART_SCALE",
+   "script": 8087,
+   "flag": 2907
+  },
+  "FLAG_HIDDEN_ITEM_18": {
+   "n": 89,
+   "map": "Underwater3",
+   "at": [
+    72,
+    20
+   ],
+   "sapphire": "ITEM_RED_SHARD",
+   "item": "ITEM_RED_SHARD",
+   "script": 8088,
+   "flag": 2908
+  },
+  "FLAG_HIDDEN_ITEM_19": {
+   "n": 90,
+   "map": "Underwater4",
+   "at": [
+    38,
+    19
+   ],
+   "sapphire": "ITEM_PROTEIN",
+   "item": "ITEM_PROTEIN",
+   "script": 8089,
+   "flag": 2909
+  },
+  "FLAG_HIDDEN_ITEM_1A": {
+   "n": 91,
+   "map": "Underwater4",
+   "at": [
+    69,
+    18
+   ],
+   "sapphire": "ITEM_PEARL",
+   "item": "ITEM_PEARL",
+   "script": 8090,
+   "flag": 2910
+  },
+  "FLAG_HIDDEN_ITEM_51": {
+   "n": 92,
+   "map": "VictoryRoad_1F",
+   "at": [
+    30,
+    39
+   ],
+   "sapphire": "ITEM_ULTRA_BALL",
+   "item": "ITEM_ULTRA_BALL",
+   "script": 8091,
+   "flag": 2911
+  },
+  "FLAG_HIDDEN_ITEM_52": {
+   "n": 93,
+   "map": "VictoryRoad_B2F",
+   "at": [
+    28,
+    5
+   ],
+   "sapphire": "ITEM_ELIXIR",
+   "item": "ITEM_ELIXIR",
+   "script": 8092,
+   "flag": 2912
+  },
+  "FLAG_HIDDEN_ITEM_53": {
+   "n": 94,
+   "map": "VictoryRoad_B2F",
+   "at": [
+    37,
+    1
+   ],
+   "sapphire": "ITEM_MAX_REPEL",
+   "item": "ITEM_MAX_REPEL",
+   "script": 8093,
+   "flag": 2913
+  },
+  "FLAG_HIDDEN_ITEM_ABANDONED_SHIP_RM_1_KEY": {
+   "n": 95,
+   "map": "AbandonedShip_HiddenFloorRooms",
+   "at": [
+    42,
+    10
+   ],
+   "sapphire": "ITEM_ROOM_1_KEY",
+   "item": "ITEM_SUITE_KEY",
+   "script": 8094,
+   "flag": 2914
+  },
+  "FLAG_HIDDEN_ITEM_ABANDONED_SHIP_RM_2_KEY": {
+   "n": 96,
+   "map": "AbandonedShip_HiddenFloorRooms",
+   "at": [
+    20,
+    5
+   ],
+   "sapphire": "ITEM_ROOM_2_KEY",
+   "item": "ITEM_WORKS_KEY",
+   "script": 8095,
+   "flag": 2915
+  },
+  "FLAG_HIDDEN_ITEM_ABANDONED_SHIP_RM_4_KEY": {
+   "n": 97,
+   "map": "AbandonedShip_HiddenFloorRooms",
+   "at": [
+    1,
+    12
+   ],
+   "sapphire": "ITEM_ROOM_4_KEY",
+   "item": "ITEM_SECRET_KEY",
+   "script": 8096,
+   "flag": 2916
+  },
+  "FLAG_HIDDEN_ITEM_ABANDONED_SHIP_RM_6_KEY": {
+   "n": 98,
+   "map": "AbandonedShip_HiddenFloorRooms",
+   "at": [
+    1,
+    2
+   ],
+   "sapphire": "ITEM_ROOM_6_KEY",
+   "item": "ITEM_CARD_KEY",
+   "script": 8097,
+   "flag": 2917
+  }
+ },
+ "notes": []
+}

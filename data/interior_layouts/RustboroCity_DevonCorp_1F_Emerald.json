@@ -1,0 +1,138 @@
+{
+ "_doc": "emerald_rooms (b2tools/emerald_rooms.py writes this file: edit the script and rerun). Emerald's Devon 1F: two display cases at (3,2) and (8,2) (Devon's products, rocks and metal) in the reception alcove. Sapphire recipe: RustboroCity_DevonCorp_1F.json. Devon Corp 1F (Sapphire 19x9; zone 575, area 289 = Black 2's Castelia office area, interior pack 7). Lobby rows 5-8 across the whole width; reception alcove (3-8, 2-4) with the counter along row 4 (3-7) and two windows on its back wall; stairs alcove (13-15, 2-4) whose doorway up (14,1) is Black 2's office elevator elevator01 (set into the back wall as Black 2's offices do: its front 5 units out of the wall, door centred on the warp tile); windows on the lobby's back wall at (1,3) and (17,3). Exit mat (5-6, 8). Black 2 has no 5-tile reception counter: a white counter shelf03 (3-4) and a PC desk pcdesk02 (5-7).",
+ "map": "pokeemerald/RustboroCity_DevonCorp_1F",
+ "style": "fac_devon",
+ "floor": [
+  [
+   0,
+   5,
+   18,
+   8
+  ],
+  [
+   3,
+   2,
+   8,
+   4
+  ],
+  [
+   13,
+   2,
+   15,
+   4
+  ]
+ ],
+ "mats": [
+  {
+   "tex": "chip_mat",
+   "src": 285,
+   "rect": [
+    5,
+    8,
+    6,
+    8
+   ],
+   "border": 0.25,
+   "border_units": 4,
+   "y": 0,
+   "_what": "door mat"
+  }
+ ],
+ "furniture": [
+  {
+   "m": "win01",
+   "at": [
+    4.45,
+    2.5
+   ],
+   "wall": "N",
+   "gap": 4,
+   "y": 8,
+   "_what": "window (4,0)"
+  },
+  {
+   "m": "win01",
+   "at": [
+    7.45,
+    2.5
+   ],
+   "wall": "N",
+   "gap": 4,
+   "y": 8,
+   "_what": "window (7,0)"
+  },
+  {
+   "m": "win01",
+   "at": [
+    1.45,
+    5.5
+   ],
+   "wall": "N",
+   "gap": 4,
+   "y": 8,
+   "_what": "window (1,3)"
+  },
+  {
+   "m": "win01",
+   "at": [
+    17.45,
+    5.5
+   ],
+   "wall": "N",
+   "gap": 4,
+   "y": 8,
+   "_what": "window (17,3)"
+  },
+  {
+   "m": "shelf03",
+   "tiles": [
+    3,
+    4,
+    4,
+    4
+   ],
+   "s_edge": 5,
+   "_what": "reception counter (3-4, 4)"
+  },
+  {
+   "m": "pcdesk02",
+   "rot": 270,
+   "tiles": [
+    5,
+    4,
+    7,
+    4
+   ],
+   "s_edge": 5,
+   "dx": 0.5,
+   "_what": "reception counter (5-7, 4)"
+  },
+  {
+   "m": "elevator01",
+   "at": [
+    14.5,
+    2.5
+   ],
+   "wall": "N",
+   "gap": -23,
+   "dx": 6,
+   "_what": "doorway to 2F (warp tile 14,1, entered walking north)"
+  },
+  {
+   "m": "machine02",
+   "tile": [
+    3,
+    2
+   ],
+   "_what": "Emerald's products display (3,1)-(3,2)"
+  },
+  {
+   "m": "machine02",
+   "tile": [
+    8,
+    2
+   ],
+   "_what": "Emerald's rocks and metal display (8,1)-(8,2)"
+  }
+ ]
+}

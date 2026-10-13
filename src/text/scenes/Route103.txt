@@ -1,0 +1,6 @@
+May: Let’s see... The Pokémon found\non Route 103 include...
+Oh, hi, {0100:0}!{be01}\n...Oh, I see, my dad gave you a\nPokémon as a gift.{be01}\nSince we’re here, let’s have a quick\nbattle!{be01}\nI’ll give you a taste of what being a\nTrainer is like.
+May: I think I know why my dad has an\neye out for you now.{be01}\nI mean, you just got that Pokémon but\nit already likes you.{be01}\nYou might be able to befriend any\nkind of Pokémon easily.{be01}\nWell, it’s time to head back to the\nLab.
+Brendan: Okay, so it’s this one and\nthat one that live on Route 103...
+Hey, it’s {0100:0}!{be01}\n...Oh, yeah, Dad gave you a Pokémon.{be01}\nSince we’re here, how about a little\nbattle?{be01}\nI’ll teach you what being a Trainer’s\nabout!
+Brendan: I think I get it.\nI think I know why my dad has his eye{be00}\nout for you now.{be01}\nLook, your Pokémon already likes you,\neven though you just got it.{be01}\n{0100:0}, I get the feeling that you\ncould befriend any Pokémon with ease.{be01}\nWe should head back to the Lab.

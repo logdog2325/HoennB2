@@ -1,0 +1,37 @@
+{
+ "zone": 119,
+ "room": "FortreeCity_Gym",
+ "area": 309,
+ "bgm": 1062,
+ "what": "gyms_league: FortreeCity_Gym (b2tools/gyms_league_rooms.py); story phase: Winona (4,1), trainers Jared, Terrell, Kylee, Will, Gym guide (2,19), statue plaques | the rotating gates (Sapphire: rotating_gate objects turned by walking into their arms): not built",
+ "parent": 16,
+ "warps": [
+  {
+   "at": [
+    2,
+    24
+   ],
+   "tile_only": true,
+   "to": [
+    16,
+    14
+   ],
+   "what": "Sapphire warp 0 -> FortreeCity 2"
+  },
+  {
+   "at": [
+    3,
+    24
+   ],
+   "tile_only": true,
+   "to": [
+    16,
+    14
+   ],
+   "what": "Sapphire warp 1 -> FortreeCity 2"
+  }
+ ],
+ "npcs": [],
+ "signs": [],
+ "triggers": []
+}

@@ -1,0 +1,3 @@
+The Cable Car is ready to go down.\nWould you like to be on it?
+Please step this way.
+Please ride with us another time.

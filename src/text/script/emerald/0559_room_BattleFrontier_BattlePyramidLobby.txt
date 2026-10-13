@@ -1,0 +1,78 @@
+Where the courage of Trainers\nis put to the test!{be01}\nWelcome to the Battle Pyramid!{be01}\nI am your guide to\nthe Battle Quest.
+Have you the courage to embark on\nthe Battle Quest challenge?
+The Battle Quest is a battling\nevent in which you must explore{be00}\nthe Pyramid and try to reach the top.{be01}\nIn the Pyramid are seven floors of\nmazes, all of them filled with not only{be00}\nskilled Trainers but also wild Pokémon.{be01}\nYou must enter with three Pokémon,\nnone of them holding an item.{be01}\nOn your ascent, you will be provided\nwith a Battle Bag for items.{be01}\nIf you fail in your challenge, any item\nplaced in the Battle Bag disappears.{be01}\nIf you want to interrupt your\nchallenge, you must select “Rest”{be00}\nand save the game.{be01}\nIf you don’t save before interrupting,\nyou will be disqualified.
+The Pyramid offers two courses,\nLevel 50 and Open Level.{be00}\nWhich will you enter?
+A slight problem, adventurer!{be01}\nYou seem to not have the three\nPokémon qualified for the challenge.{be01}\nThe three Pokémon must be different\nand each no higher than Level 50.{be01}\nPlease also remember to take all\nitems from your Pokémon.{be01}\nEggs{0100:1} ineligible.{be01}\nWhen you are ready, please have\na word with me.
+A slight problem, adventurer!{be01}\nYou seem to not have the three\nPokémon qualified for the challenge.{be01}\nPlease also remember to take all\nitems from your Pokémon.{be01}\nEggs{0100:1} ineligible.{be01}\nWhen you are ready, please have\na word with me.
+Very good. Now, please select the three\nPokémon you wish to accompany you.
+Before you enter the Battle Pyramid,\nthe game must be saved. Is that okay?
+Very good. I will now show you into\nthe Battle Pyramid.
+We await your challenge in the future!
+A major problem, explorer!{be01}\nYou did not save before ending\nyour challenge the last time.{be01}\nConsequently, your challenge has\nbeen disqualified, I’m sorry to say.{be01}\nHere is the Bag we’ve been holding\nfor you.{be01}\n{0100:0} got the Bag back.
+Excellent to see you back!{be01}\nYou’ve conquered the Pyramid!\nHow splendid!
+Welcome back!\nYou’ve done the unthinkable!{be01}\nYou’ve defeated the Pyramid King\nand conquered the Battle Pyramid!
+Young explorer!\nIn commendation of your courage,{be00}\nwe give you these Battle Point(s)!
+I must record your results.\nPlease wait.
+How disappointing for you…{be01}\nHere is the Bag we’ve been holding\nfor you.{be01}\n{0100:0} got the Bag back.
+Very good. I will now show you into\nthe Battle Pyramid.
+Challenge
+Info
+Exit
+Lv. 50
+Open Level
+{0100:0} obtained {0100:1} Battle Point(s).
+We will hold your Bag for safekeeping,\n{0100:0}, while you are exploring.
+In exchange, please take this Battle\nBag, the one you used previously.
+In exchange, please take this\nBattle Bag.
+{0100:0} exchanged the Bag for\nthe Battle Bag.
+When you step on this floor panel,\nyou will be transported to a higher{be00}\nfloor in the Pyramid.{be01}\nI hope for your sake that your\nquest goes safely!
+Ah, a slight problem.{be01}\nAt least one Pokémon is holding\nan item.{be01}\nI’m sorry to say, items obtained in\nthe Pyramid cannot be taken away.
+All items held by your Pokémon will be\nmoved to your Battle Bag, {0100:0}.
+The Battle Bag cannot hold all your\nitems, I’m sorry to say.{be01}\nPlease pick the items you’ll keep in the\nBattle Bag, and with your Pokémon.
+At least one Pokémon is still\nholding an item.
+Please pick the items you’ll keep in the\nBattle Bag, and with your Pokémon.
+{0100:0} returned everything that\nthe Pokémon held.
+The Battle Bag you used will be kept\nin readiness for your next challenge.{be01}\n{0100:0} turned the Battle Bag over\nfor the Bag’s return.
+We look forward to your\nnext challenge!
+Welcome…{be01}\nI shall be pleased to tell you what\nmisfortunes await in the Pyramid…
+… … … … … …\n… … … … … …{be01}\n… … … … … …\nAah!
+I see a shower of sparks…{be01}\n…And in it, I see your Pokémon\nstruggling with paralysis…
+I see poison…{be01}\n…And, I see your Pokémon suffering\nfrom the effects of poison…
+I see bright red flames…{be01}\n…And, I see your Pokémon suffering\nfrom burns…
+I sense the tremendous pressure of\nunrequited anger…{be01}\nIt is a curse…{be01}\n…And, I see your Pokémon drained of\nPower Points and having no recourse{be00}\nbut to use Struggle…
+I see Pokémon loftily airborne…{be01}\n…And, I see your Pokémon frustrated\nby powerless Ground-type moves…
+I sense terrific energy rising from\nthe ground below…{be01}\n…And, I see your Pokémon unable to\nescape the power’s clutches…
+I see Ice-type Pokémon…{be01}\n…And, I see your Pokémon fighting\nthe freezing effects of ice…
+I see a flurry of moves that imperil\nthe user…{be01}\n…And, I see your Pokémon falling\nto them…
+I see Psychic-type Pokémon…{be01}\n…And, I see your Pokémon in torment\nfrom Psychic moves…
+I see Rock-type Pokémon…{be01}\n…And, I see your Pokémon suffering\nfrom Rock moves…
+I see Fighting-type Pokémon…{be01}\n…And, I see your Pokémon pummeled\nby Fighting moves…
+Rain Dance… Sunny Day…\nSandstorm… Hail…{be01}\nI see Pokémon that become stronger\nwith the weather…{be01}\n…And, I see your Pokémon confounded\nby different types of moves…
+I see Bug-type Pokémon…{be01}\n…And, I see your Pokémon suffering\nfrom different kinds of attacks…
+I see Dark-type Pokémon…{be01}\n…And, I see your Pokémon suffering\nfrom Dark-type moves…
+I see Water-type Pokémon…{be01}\n…And, I see your Pokémon suffering\nfrom Water-type moves…
+I see Ghost-type Pokémon…{be01}\n…And, I see your Pokémon suffering\nfrom Ghost-type moves…
+I see Steel-type Pokémon…{be01}\n…And, I see your Pokémon suffering\nfrom enormously powerful moves…
+I see flying Pokémon…{be01}\n…And, I see your Pokémon suffering\nfrom enormously powerful moves…
+I see those that have evolved from\nthe power of stones…{be01}\nI also sense fire, water,\nand electricity…{be01}\n…And, I see your Pokémon suffering\nfrom those three powers…
+I see Normal-type Pokémon…{be01}\n…And, I see your Pokémon suffering\nfrom enormously powerful moves…
+Whether you believe my fortunes\nor not, the choice is yours…{be01}\nThe future can be changed anytime…\nI wish you safe passage…
+Did you know?{be01}\nIf you run fast, Trainers may notice\nand come after you for a battle.{be01}\nSo, if you want to avoid Trainers,\ndon’t catch their eyes, but sneak{be00}\ncautiously and quietly past them.
+Awaaaaaaarrrrgh!{be01}\nI had a whole lot of items, but I lost\nthem all when I lost!{be01}\nAwaaaaaaarrrrgh!
+The Battle Quest rules are listed.
+Which heading do you want to read?
+When the Pyramid is conquered,\nthe wild Pokémon that appear in it{be00}\nare replaced by different kinds.{be01}\nExplore, observe, and learn what kinds\nof wild Pokémon you may encounter.
+Trainers are lying in wait for you\ninside the Pyramid.{be01}\nOn each floor, there are up to\neight Trainers.{be01}\nWhen you defeat a Trainer, you will\nget a helpful hint for your adventure.
+The mazes in the Pyramid rearrange\nthemselves every time you enter it.{be01}\nThe mazes are poorly lit.\nYou must advance with caution.{be01}\nThe light grows brighter whenever you\ndefeat a wild Pokémon or a Trainer.
+The Battle Bag serves as your Bag\nwhile in the Pyramid.{be01}\nThere are two separate Battle Bags--\none each for the Level 50 and{be00}\nOpen Level adventures.{be01}\nThey each can hold up to 99 pieces\nof ten kinds of items.{be01}\nThe contents of the Battle Bag are\nlost if you fail in your quest.
+Pokémon
+Trainers
+Maze
+Battle Bag
+Exit
+That Pokémon can’t participate.
+{0100:0}’s Battle Quest Results
+Lv. 50  Current: Floors cleared: {0100:1}\nRecord: Floors cleared: {0100:2}
+Lv. 50  Prev.: Floors cleared: {0100:1}\nRecord: Floors cleared: {0100:2}
+Open Lv.  Current: Floors cleared: {0100:1}\nRecord: Floors cleared: {0100:2}
+Open Lv.  Prev.: Floors cleared: {0100:1}\nRecord: Floors cleared: {0100:2}

@@ -1,0 +1,123 @@
+{
+ "zone": 172,
+ "room": "VictoryRoad_B2F",
+ "cave": true,
+ "cave_auto": true,
+ "area": 332,
+ "dark": true,
+ "header": {
+  "map_type": 16,
+  "npc_cache": 24,
+  "weather_word": 64,
+  "flags": 23715,
+  "icon_word": 40975,
+  "place_display": 0,
+  "bgm0": 1076,
+  "bgm1": 1076,
+  "bgm2": 1076,
+  "bgm3": 1076,
+  "place": 73,
+  "encounters": 90,
+  "enc_slot": 2
+ },
+ "warps": [
+  {
+   "at": [
+    30,
+    25
+   ],
+   "to": [
+    171,
+    0
+   ],
+   "what": "Sapphire warp 0 (30,25) -> VictoryRoad_B1F 0"
+  },
+  {
+   "at": [
+    43,
+    2
+   ],
+   "to": [
+    171,
+    3
+   ],
+   "what": "Sapphire warp 1 (43,2) -> VictoryRoad_B1F 3"
+  },
+  {
+   "at": [
+    19,
+    12
+   ],
+   "to": [
+    171,
+    1
+   ],
+   "what": "Sapphire warp 2 (19,12) -> VictoryRoad_B1F 1"
+  },
+  {
+   "at": [
+    5,
+    26
+   ],
+   "to": [
+    171,
+    6
+   ],
+   "what": "Sapphire warp 3 (5,26) -> VictoryRoad_B1F 6"
+  }
+ ],
+ "triggers": [
+  {
+   "script": 1,
+   "var": 0,
+   "value": 0,
+   "at": [
+    30,
+    25
+   ]
+  },
+  {
+   "script": 2,
+   "var": 0,
+   "value": 0,
+   "at": [
+    43,
+    2
+   ]
+  },
+  {
+   "script": 3,
+   "var": 0,
+   "value": 0,
+   "at": [
+    19,
+    12
+   ]
+  },
+  {
+   "script": 4,
+   "var": 0,
+   "value": 0,
+   "at": [
+    5,
+    26
+   ]
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 5,
+   "model": 110,
+   "script": 7132,
+   "flag": 1232,
+   "dir": 1,
+   "at": [
+    13,
+    8
+   ],
+   "what": "item ball ITEM_FULL_HEAL"
+  }
+ ],
+ "signs": [],
+ "what": "VictoryRoad_B2F: cave (converter/gen_caves.py, b2tools/models_cave.py); story objects: see notes/CAVES.md"
+}

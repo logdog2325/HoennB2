@@ -1,0 +1,22 @@
+{
+ "_doc": "BattleTower_Elevator (zone 343), built by the battle_tower agent's rooms helper (recipe data/interior_layouts/BattleTower_Elevator.json: the lift car in Nimbasa's Battle Test family, style bt_lift, area 306 as the Lobby). Script-only room, as Sapphire's (no warp events): the Lobby's walk to the Battle Room changes the map to Sapphire (1,6) = zone tile (2,7) (origin (1,1)); the ride ends with a map change to the Corridor. So no warps (an empty list: Black 2's own warps of zone 343 are dropped). The attendant (Sapphire's TEALA, object 1 at (1,5) facing up) is Teala, code 79 (data/sprite_map.json OBJ_EVENT_GFX_TEALA: Sapphire's own Teala redrawn, as in the Pokémon Centers). Parent 17 (the Battle Tower island, battle_tower agent): the island's place name (Battle Tower) and music (the PWT lobby theme, Sapphire MUS_B_TOWER), as the other tower rooms.",
+ "zone": 343,
+ "room": "BattleTower_Elevator",
+ "area": 306,
+ "parent": 17,
+ "warps": [],
+ "npcs": [
+  {
+   "uid": 1,
+   "model": 79,
+   "script": 1,
+   "dir": 0,
+   "at": [
+    1,
+    5
+   ],
+   "what": "attendant (Sapphire TEALA, FACE_UP): Teala, code 79 (data/sprite_map.json: Sapphire's own Teala redrawn)"
+  }
+ ],
+ "signs": []
+}

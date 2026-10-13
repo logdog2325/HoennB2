@@ -1,0 +1,479 @@
+{
+ "_doc": "Emerald-only story objects of chapter 12 (emerald_ch12_13, 2026-10-12; format: b2tools/patches/story.py): the Island Cave's lap (Emerald's Regice puzzle, src/field_scripts/emerald/0254_room_IslandCave.s): a step trigger on each of the 36 tiles along the wall (pokeemerald src/braille_puzzles.c sRegicePathCoords, in order: scripts 7-42) and three over the floor inside the lap (script 6), all firing only while the zone-local work 0x4001 (IC_STATE) is 1, i.e. after the braille was read. Room tiles = pokeemerald's (the room's origin is (0,0)). The side braille signs (ch12.json, script 4) mark lap tile 3 or 5 by where the player stands. The Desert Ruins' Rock Smash spot is ch12.json's Strength trigger moved (at_emerald).",
+ "objects": [
+  {
+   "kind": "trigger",
+   "map": "IslandCave",
+   "at": [
+    4,
+    21
+   ],
+   "script": 7,
+   "var": "0x4001",
+   "value": 1,
+   "what": "the Regice lap: tile 0 of pokeemerald's sRegicePathCoords (marks it)"
+  },
+  {
+   "kind": "trigger",
+   "map": "IslandCave",
+   "at": [
+    5,
+    21
+   ],
+   "script": 8,
+   "var": "0x4001",
+   "value": 1,
+   "what": "the Regice lap: tile 1 of pokeemerald's sRegicePathCoords (marks it)"
+  },
+  {
+   "kind": "trigger",
+   "map": "IslandCave",
+   "at": [
+    6,
+    21
+   ],
+   "script": 9,
+   "var": "0x4001",
+   "value": 1,
+   "what": "the Regice lap: tile 2 of pokeemerald's sRegicePathCoords (marks it)"
+  },
+  {
+   "kind": "trigger",
+   "map": "IslandCave",
+   "at": [
+    7,
+    21
+   ],
+   "script": 10,
+   "var": "0x4001",
+   "value": 1,
+   "what": "the Regice lap: tile 3 of pokeemerald's sRegicePathCoords (marks it)"
+  },
+  {
+   "kind": "trigger",
+   "map": "IslandCave",
+   "at": [
+    8,
+    21
+   ],
+   "script": 11,
+   "var": "0x4001",
+   "value": 1,
+   "what": "the Regice lap: tile 4 of pokeemerald's sRegicePathCoords (marks it)"
+  },
+  {
+   "kind": "trigger",
+   "map": "IslandCave",
+   "at": [
+    9,
+    21
+   ],
+   "script": 12,
+   "var": "0x4001",
+   "value": 1,
+   "what": "the Regice lap: tile 5 of pokeemerald's sRegicePathCoords (marks it)"
+  },
+  {
+   "kind": "trigger",
+   "map": "IslandCave",
+   "at": [
+    10,
+    21
+   ],
+   "script": 13,
+   "var": "0x4001",
+   "value": 1,
+   "what": "the Regice lap: tile 6 of pokeemerald's sRegicePathCoords (marks it)"
+  },
+  {
+   "kind": "trigger",
+   "map": "IslandCave",
+   "at": [
+    11,
+    21
+   ],
+   "script": 14,
+   "var": "0x4001",
+   "value": 1,
+   "what": "the Regice lap: tile 7 of pokeemerald's sRegicePathCoords (marks it)"
+  },
+  {
+   "kind": "trigger",
+   "map": "IslandCave",
+   "at": [
+    12,
+    21
+   ],
+   "script": 15,
+   "var": "0x4001",
+   "value": 1,
+   "what": "the Regice lap: tile 8 of pokeemerald's sRegicePathCoords (marks it)"
+  },
+  {
+   "kind": "trigger",
+   "map": "IslandCave",
+   "at": [
+    12,
+    22
+   ],
+   "script": 16,
+   "var": "0x4001",
+   "value": 1,
+   "what": "the Regice lap: tile 9 of pokeemerald's sRegicePathCoords (marks it)"
+  },
+  {
+   "kind": "trigger",
+   "map": "IslandCave",
+   "at": [
+    12,
+    23
+   ],
+   "script": 17,
+   "var": "0x4001",
+   "value": 1,
+   "what": "the Regice lap: tile 10 of pokeemerald's sRegicePathCoords (marks it)"
+  },
+  {
+   "kind": "trigger",
+   "map": "IslandCave",
+   "at": [
+    13,
+    23
+   ],
+   "script": 18,
+   "var": "0x4001",
+   "value": 1,
+   "what": "the Regice lap: tile 11 of pokeemerald's sRegicePathCoords (marks it)"
+  },
+  {
+   "kind": "trigger",
+   "map": "IslandCave",
+   "at": [
+    13,
+    24
+   ],
+   "script": 19,
+   "var": "0x4001",
+   "value": 1,
+   "what": "the Regice lap: tile 12 of pokeemerald's sRegicePathCoords (marks it)"
+  },
+  {
+   "kind": "trigger",
+   "map": "IslandCave",
+   "at": [
+    13,
+    25
+   ],
+   "script": 20,
+   "var": "0x4001",
+   "value": 1,
+   "what": "the Regice lap: tile 13 of pokeemerald's sRegicePathCoords (marks it)"
+  },
+  {
+   "kind": "trigger",
+   "map": "IslandCave",
+   "at": [
+    13,
+    26
+   ],
+   "script": 21,
+   "var": "0x4001",
+   "value": 1,
+   "what": "the Regice lap: tile 14 of pokeemerald's sRegicePathCoords (marks it)"
+  },
+  {
+   "kind": "trigger",
+   "map": "IslandCave",
+   "at": [
+    13,
+    27
+   ],
+   "script": 22,
+   "var": "0x4001",
+   "value": 1,
+   "what": "the Regice lap: tile 15 of pokeemerald's sRegicePathCoords (marks it)"
+  },
+  {
+   "kind": "trigger",
+   "map": "IslandCave",
+   "at": [
+    12,
+    27
+   ],
+   "script": 23,
+   "var": "0x4001",
+   "value": 1,
+   "what": "the Regice lap: tile 16 of pokeemerald's sRegicePathCoords (marks it)"
+  },
+  {
+   "kind": "trigger",
+   "map": "IslandCave",
+   "at": [
+    12,
+    28
+   ],
+   "script": 24,
+   "var": "0x4001",
+   "value": 1,
+   "what": "the Regice lap: tile 17 of pokeemerald's sRegicePathCoords (marks it)"
+  },
+  {
+   "kind": "trigger",
+   "map": "IslandCave",
+   "at": [
+    4,
+    29
+   ],
+   "script": 25,
+   "var": "0x4001",
+   "value": 1,
+   "what": "the Regice lap: tile 18 of pokeemerald's sRegicePathCoords (marks it)"
+  },
+  {
+   "kind": "trigger",
+   "map": "IslandCave",
+   "at": [
+    5,
+    29
+   ],
+   "script": 26,
+   "var": "0x4001",
+   "value": 1,
+   "what": "the Regice lap: tile 19 of pokeemerald's sRegicePathCoords (marks it)"
+  },
+  {
+   "kind": "trigger",
+   "map": "IslandCave",
+   "at": [
+    6,
+    29
+   ],
+   "script": 27,
+   "var": "0x4001",
+   "value": 1,
+   "what": "the Regice lap: tile 20 of pokeemerald's sRegicePathCoords (marks it)"
+  },
+  {
+   "kind": "trigger",
+   "map": "IslandCave",
+   "at": [
+    7,
+    29
+   ],
+   "script": 28,
+   "var": "0x4001",
+   "value": 1,
+   "what": "the Regice lap: tile 21 of pokeemerald's sRegicePathCoords (marks it)"
+  },
+  {
+   "kind": "trigger",
+   "map": "IslandCave",
+   "at": [
+    8,
+    29
+   ],
+   "script": 29,
+   "var": "0x4001",
+   "value": 1,
+   "what": "the Regice lap: tile 22 of pokeemerald's sRegicePathCoords (marks it)"
+  },
+  {
+   "kind": "trigger",
+   "map": "IslandCave",
+   "at": [
+    9,
+    29
+   ],
+   "script": 30,
+   "var": "0x4001",
+   "value": 1,
+   "what": "the Regice lap: tile 23 of pokeemerald's sRegicePathCoords (marks it)"
+  },
+  {
+   "kind": "trigger",
+   "map": "IslandCave",
+   "at": [
+    10,
+    29
+   ],
+   "script": 31,
+   "var": "0x4001",
+   "value": 1,
+   "what": "the Regice lap: tile 24 of pokeemerald's sRegicePathCoords (marks it)"
+  },
+  {
+   "kind": "trigger",
+   "map": "IslandCave",
+   "at": [
+    11,
+    29
+   ],
+   "script": 32,
+   "var": "0x4001",
+   "value": 1,
+   "what": "the Regice lap: tile 25 of pokeemerald's sRegicePathCoords (marks it)"
+  },
+  {
+   "kind": "trigger",
+   "map": "IslandCave",
+   "at": [
+    12,
+    29
+   ],
+   "script": 33,
+   "var": "0x4001",
+   "value": 1,
+   "what": "the Regice lap: tile 26 of pokeemerald's sRegicePathCoords (marks it)"
+  },
+  {
+   "kind": "trigger",
+   "map": "IslandCave",
+   "at": [
+    4,
+    28
+   ],
+   "script": 34,
+   "var": "0x4001",
+   "value": 1,
+   "what": "the Regice lap: tile 27 of pokeemerald's sRegicePathCoords (marks it)"
+  },
+  {
+   "kind": "trigger",
+   "map": "IslandCave",
+   "at": [
+    4,
+    27
+   ],
+   "script": 35,
+   "var": "0x4001",
+   "value": 1,
+   "what": "the Regice lap: tile 28 of pokeemerald's sRegicePathCoords (marks it)"
+  },
+  {
+   "kind": "trigger",
+   "map": "IslandCave",
+   "at": [
+    3,
+    27
+   ],
+   "script": 36,
+   "var": "0x4001",
+   "value": 1,
+   "what": "the Regice lap: tile 29 of pokeemerald's sRegicePathCoords (marks it)"
+  },
+  {
+   "kind": "trigger",
+   "map": "IslandCave",
+   "at": [
+    3,
+    26
+   ],
+   "script": 37,
+   "var": "0x4001",
+   "value": 1,
+   "what": "the Regice lap: tile 30 of pokeemerald's sRegicePathCoords (marks it)"
+  },
+  {
+   "kind": "trigger",
+   "map": "IslandCave",
+   "at": [
+    3,
+    25
+   ],
+   "script": 38,
+   "var": "0x4001",
+   "value": 1,
+   "what": "the Regice lap: tile 31 of pokeemerald's sRegicePathCoords (marks it)"
+  },
+  {
+   "kind": "trigger",
+   "map": "IslandCave",
+   "at": [
+    3,
+    24
+   ],
+   "script": 39,
+   "var": "0x4001",
+   "value": 1,
+   "what": "the Regice lap: tile 32 of pokeemerald's sRegicePathCoords (marks it)"
+  },
+  {
+   "kind": "trigger",
+   "map": "IslandCave",
+   "at": [
+    3,
+    23
+   ],
+   "script": 40,
+   "var": "0x4001",
+   "value": 1,
+   "what": "the Regice lap: tile 33 of pokeemerald's sRegicePathCoords (marks it)"
+  },
+  {
+   "kind": "trigger",
+   "map": "IslandCave",
+   "at": [
+    4,
+    23
+   ],
+   "script": 41,
+   "var": "0x4001",
+   "value": 1,
+   "what": "the Regice lap: tile 34 of pokeemerald's sRegicePathCoords (marks it)"
+  },
+  {
+   "kind": "trigger",
+   "map": "IslandCave",
+   "at": [
+    4,
+    22
+   ],
+   "script": 42,
+   "var": "0x4001",
+   "value": 1,
+   "what": "the Regice lap: tile 35 of pokeemerald's sRegicePathCoords (marks it)"
+  },
+  {
+   "kind": "trigger",
+   "map": "IslandCave",
+   "at": [
+    5,
+    22
+   ],
+   "w": 7,
+   "h": 7,
+   "script": 6,
+   "var": "0x4001",
+   "value": 1,
+   "what": "the Regice lap: the floor inside it (a step here fails the puzzle)"
+  },
+  {
+   "kind": "trigger",
+   "map": "IslandCave",
+   "at": [
+    4,
+    24
+   ],
+   "w": 1,
+   "h": 3,
+   "script": 6,
+   "var": "0x4001",
+   "value": 1,
+   "what": "the Regice lap: the floor inside it (a step here fails the puzzle)"
+  },
+  {
+   "kind": "trigger",
+   "map": "IslandCave",
+   "at": [
+    12,
+    24
+   ],
+   "w": 1,
+   "h": 3,
+   "script": 6,
+   "var": "0x4001",
+   "value": 1,
+   "what": "the Regice lap: the floor inside it (a step here fails the puzzle)"
+  }
+ ]
+}

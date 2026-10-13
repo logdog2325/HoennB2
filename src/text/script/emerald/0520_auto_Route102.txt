@@ -1,0 +1,4 @@
+Route 102\n← Petalburg City
+Route 102\n→ Oldale Town
+I’m…not very tall, so I sink right\ninto tall grass.{be01}\nThe grass goes up my nose and…\nFwafwafwafwafwa…{be01}\nFwatchoo!
+I’m going to catch a whole bunch of\nPokémon!

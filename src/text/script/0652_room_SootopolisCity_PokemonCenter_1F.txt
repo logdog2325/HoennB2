@@ -1,0 +1,11 @@
+Hello, and welcome to the Pokémon\nCenter.{be01}\nWe restore your tired Pokémon to\nfull health.{be01}\nWould you like to rest your Pokémon?
+Okay, I’ll take your Pokémon for a\nfew seconds.
+Thank you for waiting.{be01}\nWe’ve restored your Pokémon to\nfull health.
+We hope to see you again!
+Your Pokémon may be infected with\nPokérus.{be01}\nLittle is known about the Pokérus\nexcept that they are microscopic life-{be00}\nforms that attach to Pokémon.{be01}\nWhile infected, Pokémon are said to\ngrow exceptionally well.
+Everyone in town has taken refuge\nand won’t come out of their homes.{be01}\nThis weather..\nCould it be the prelude to something?
+Wallace, this town’s Gym Leader, is a\npowerful Trainer.{be01}\nHe’s rumored to be the best in the\nwhole Hoenn region.{be01}\nBut the Elite Four...{be01}\nThey’re said to be even stronger than\nWallace. How strong could they be?
+I don’t know why...\nBut... I’m really scared...
+Whenever, wherever, and whatever\nhappens, I will always be friends with{be00}\nPokémon.{be01}\nBecause it’s fun to be with Pokémon!
+Pokémon magazines!\nPokémon Pal...{be01}\nPokémon Handbook...\nAdorable Pokémon...
+{0100:0} took a closer look at the\nHoenn region map.

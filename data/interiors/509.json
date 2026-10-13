@@ -1,0 +1,35 @@
+{
+ "_doc": "Route109_SeashoreHouse (zone 509), built by the specials agent (recipe data/interior_layouts/Route109_SeashoreHouse.json): Black 2 house / Route 3 Day Care look, Black 2 interior area 282. Warps in Sapphire's order (one per Sapphire warp tile). People/signs: Sapphire's one-message ones as generated; story people are left for the story phase.",
+ "zone": 509,
+ "room": "Route109_SeashoreHouse",
+ "area": 282,
+ "parent": 365,
+ "warps": [
+  {
+   "at": [
+    6,
+    9
+   ],
+   "tile_only": true,
+   "to": [
+    365,
+    3
+   ],
+   "what": "Sapphire warp 0 -> Route109 0"
+  },
+  {
+   "at": [
+    7,
+    9
+   ],
+   "tile_only": true,
+   "to": [
+    365,
+    3
+   ],
+   "what": "Sapphire warp 1 -> Route109 0"
+  }
+ ],
+ "npcs": [],
+ "signs": []
+}

@@ -1,0 +1,56 @@
+{
+ "_doc": "Route 112's cable car station: a prop (door tiles walkable in Sapphire, no plan footprint); the model includes the cable car pylon on Sapphire's prop tiles x 24, rows 24-26; the second door (east door tile) is a door_normal03 (res 261) prop, as on Route 110's gates (group towns5, notes/TOWNS_TOWNS5.md). buildings: Sapphire door destination -> pack-0 res and front (z of the model's front wall; world.py puts it 4 units into the door tile, footprint centre from data/plans); props: model origin in Sapphire map tile coordinates (footprint centre x, door row + (4 - 20)/16).",
+ "group": "towns5",
+ "buildings": {},
+ "props": [
+  {
+   "res": 406,
+   "x": 29.0,
+   "z": 26.0,
+   "what": "cable car station, x 27-30 + east wing x 31-32, doors (28,27) (29,27)",
+   "covers": [
+    [
+     24,
+     24,
+     24,
+     26
+    ]
+   ]
+  },
+  {
+   "res": 261,
+   "x": 30.0,
+   "z": 27.3125,
+   "what": "cable car station, second door (29,27); 1 unit in front of the record's door, whose 18-unit model overlaps it by 2 (they depth-fought: outdoor sweep 2026-10-07)"
+  },
+  {
+   "res": 412,
+   "x": 12.5,
+   "z": 21.375,
+   "what": "cable car pylon on the prop tiles x 12, rows 19-21 (buildings_audit)",
+   "covers": [
+    [
+     12,
+     19,
+     12,
+     21
+    ]
+   ]
+  },
+  {
+   "res": 413,
+   "x": 4.5,
+   "z": 17.375,
+   "what": "cable car pylon on the prop tiles x 4, rows 15-17 (buildings_audit)",
+   "covers": [
+    [
+     4,
+     15,
+     4,
+     17
+    ]
+   ]
+  }
+ ],
+ "_covers_doc": "props 'covers': map tile rects [x0, z0, x1, z1] the model stands on; world.py drops the ground module's plinths there (the cable-car pylon stood on them; exterior sweep 2026-10-06)."
+}

@@ -1,0 +1,220 @@
+{
+ "_doc": "Route 117 Pokémon Day Care (Sapphire 12x9, zone 561) in the look of Black 2's Day Care on Route 3 (texture set 282: wood walls, light wood floor). Row 2 along the back wall: the back door (2,1) = door model cabin_door, a window (6-7) = win01, the PC (10,1) = pc01. Counter (0-4, 2-3) = white counters shelf03; the two crates (5-6, 2) = box01. The indoor yard (7-11, 4-8) = Black 2's grass picture 54kadan01 (set 214) with the wooden table (10-11, 5-6) = d1shelf01; Sapphire's stools (2,4), (9,6), (11,4) = floor cushions; plants (0,6)/(0,8). The yard fence (6, 7-8), (7-11, 8) stays solid, drawn as Black 2's fence picture in01_saku2 on the floor.",
+ "map": "Route117_PokemonDayCare",
+ "style": "sp_wood",
+ "floor": [
+  [
+   0,
+   2,
+   11,
+   8
+  ]
+ ],
+ "mats": [
+  {
+   "tex": "54kadan01",
+   "src": 214,
+   "rect": [
+    7,
+    4,
+    11,
+    7
+   ],
+   "border": 0.0,
+   "border_units": 0,
+   "y": 0,
+   "_what": "indoor yard (grass)"
+  },
+  {
+   "tex": "in01_saku2",
+   "src": 282,
+   "rect": [
+    6,
+    8,
+    11,
+    8
+   ],
+   "border": 0.0,
+   "border_units": 0,
+   "y": 2,
+   "_what": "fence"
+  },
+  {
+   "tex": "in01_saku2",
+   "src": 282,
+   "rect": [
+    6,
+    7,
+    6,
+    7
+   ],
+   "border": 0.0,
+   "border_units": 0,
+   "y": 2,
+   "_what": "fence post"
+  },
+  {
+   "tex": "b01_mat",
+   "src": 282,
+   "rect": [
+    2,
+    8,
+    3,
+    8
+   ],
+   "border": 0.25,
+   "border_units": 4,
+   "y": 0,
+   "_what": "door mat"
+  }
+ ],
+ "furniture": [
+  {
+   "m": "cabin_door",
+   "tile": [
+    2,
+    2
+   ],
+   "wall": "N",
+   "gap": 1,
+   "_what": "back door"
+  },
+  {
+   "m": "win01",
+   "at": [
+    6.5,
+    2.5
+   ],
+   "wall": "N",
+   "gap": 4,
+   "y": 10,
+   "_what": "window"
+  },
+  {
+   "m": "pc01",
+   "tile": [
+    10,
+    2
+   ],
+   "wall": "N",
+   "_what": "PC"
+  },
+  {
+   "m": "shelf03",
+   "tiles": [
+    0,
+    3,
+    1,
+    3
+   ],
+   "_what": "counter"
+  },
+  {
+   "m": "shelf03",
+   "tiles": [
+    2,
+    3,
+    3,
+    3
+   ],
+   "_what": "counter"
+  },
+  {
+   "m": "shelf03",
+   "rot": 90,
+   "tiles": [
+    4,
+    2,
+    4,
+    3
+   ],
+   "_what": "counter"
+  },
+  {
+   "m": "box01",
+   "tile": [
+    5,
+    2
+   ],
+   "_what": "crate"
+  },
+  {
+   "m": "box01",
+   "tile": [
+    6,
+    2
+   ],
+   "_what": "crate"
+  },
+  {
+   "m": "desk02",
+   "tile": [
+    10,
+    5
+   ],
+   "_what": "table"
+  },
+  {
+   "m": "desk02",
+   "tile": [
+    11,
+    5
+   ],
+   "_what": "table"
+  },
+  {
+   "m": "desk02",
+   "tile": [
+    10,
+    6
+   ],
+   "_what": "table"
+  },
+  {
+   "m": "desk02",
+   "tile": [
+    11,
+    6
+   ],
+   "_what": "table"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    2,
+    4
+   ],
+   "_what": "stool (walkable)"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    9,
+    6
+   ],
+   "_what": "stool (walkable)"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    11,
+    4
+   ],
+   "_what": "stool (walkable)"
+  },
+  {
+   "m": "plant01",
+   "tile": [
+    0,
+    6
+   ]
+  },
+  {
+   "m": "plant01",
+   "tile": [
+    0,
+    8
+   ]
+  }
+ ]
+}

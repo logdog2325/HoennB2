@@ -1,0 +1,52 @@
+{
+ "zone": 8,
+ "room": "EverGrandeCity_PokemonCenter_1F",
+ "area": 283,
+ "what": "EverGrandeCity_PokemonCenter_1F: centers agent (b2tools/centers_rooms.py); recipe data/interior_layouts/EverGrandeCity_PokemonCenter_1F.json",
+ "header": {"parent": 412, "place": 20},
+ "warps": [
+  {"at": [7, 8], "tile_only": true, "to": [412, 8], "what": "Sapphire warp 0 -> EverGrandeCity 1"},
+  {"at": [6, 8], "tile_only": true, "to": [412, 8], "what": "Sapphire warp 1 -> EverGrandeCity 1"},
+  {
+   "at": [1, 6],
+   "tile_only": true,
+   "to": [66, 0],
+   "what": "Sapphire warp 2 -> EverGrandeCity_PokemonCenter_2F 0 (escalator, entered walking west)",
+   "type": 2,
+   "dir": 4
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 1,
+   "model": 78,
+   "script": 1,
+   "dir": 1,
+   "at": [7, 2],
+   "move": 15,
+   "_what": "nurse (7,2), Sapphire EverGrandeCity_PokemonCenter_1F_EventScript_Nurse"
+  },
+  {
+   "uid": 2,
+   "model": 43,
+   "script": 2,
+   "dir": 1,
+   "at": [5, 5],
+   "_what": "woman_7 (5,5), Sapphire EverGrandeCity_PokemonCenter_1F_EventScript_Woman"
+  },
+  {
+   "uid": 3,
+   "model": 28,
+   "script": 3,
+   "dir": 3,
+   "at": [10, 7],
+   "_what": "old_man_1 (10,7), Sapphire EverGrandeCity_PokemonCenter_1F_EventScript_ExpertM"
+  }
+ ],
+ "signs": [
+  {"script": 4, "at": [2, 1], "dir": 0},
+  {"script": 4, "at": [3, 1], "dir": 0},
+  {"script": 5, "at": [11, 1], "dir": 0},
+  {"script": 5, "at": [12, 1], "dir": 0}
+ ]
+}

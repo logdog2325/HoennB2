@@ -1,0 +1,1391 @@
+{
+ "map": "Route119",
+ "id": "MAP_ROUTE119",
+ "layout": "LAYOUT_ROUTE119",
+ "music": "MUS_ROUTE119",
+ "region_map_section": "MAPSEC_ROUTE_119",
+ "weather": "WEATHER_SUNNY",
+ "connections": [
+  {
+   "map": "MAP_ROUTE118",
+   "offset": -40,
+   "direction": "down"
+  },
+  {
+   "map": "MAP_FORTREE_CITY",
+   "offset": 0,
+   "direction": "right"
+  }
+ ],
+ "npcs": [
+  {
+   "local_id": 1,
+   "x": 24,
+   "y": 5,
+   "gfx": "OBJ_EVENT_GFX_BERRY_TREE",
+   "movement": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BerryTreeScript",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 2,
+   "x": 25,
+   "y": 5,
+   "gfx": "OBJ_EVENT_GFX_BERRY_TREE",
+   "movement": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BerryTreeScript",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 3,
+   "x": 26,
+   "y": 5,
+   "gfx": "OBJ_EVENT_GFX_BERRY_TREE",
+   "movement": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BerryTreeScript",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 4,
+   "x": 12,
+   "y": 123,
+   "gfx": "OBJ_EVENT_GFX_BUG_CATCHER",
+   "movement": "MOVEMENT_TYPE_COPY_PLAYER_IN_GRASS",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route119_EventScript_Greg",
+   "texts": {
+    "Route119_Text_GregIntro": "You don't know who I am, do you?\\pBut, I also don't know you.\\nSo, we'll battle!$",
+    "Route119_Text_GregDefeat": "You're pretty strong!$",
+    "Route119_Text_GregPostBattle": "Until you go away somewhere, we'll\\nkeep on mimicking your every move.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 5,
+   "x": 26,
+   "y": 123,
+   "gfx": "OBJ_EVENT_GFX_MANIAC",
+   "movement": "MOVEMENT_TYPE_COPY_PLAYER_OPPOSITE_IN_GRASS",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route119_EventScript_Taylor",
+   "texts": {
+    "Route119_Text_TaylorIntro": "If you step forward, we step forward.\\pIf you turn right, we turn, too…$",
+    "Route119_Text_TaylorDefeat": "But if you win, I lose…$",
+    "Route119_Text_TaylorPostBattle": "I can't MIMIC you winning the match.\\nThat's just impossible…\\lIt's burning me up…$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 6,
+   "x": 5,
+   "y": 125,
+   "gfx": "OBJ_EVENT_GFX_MANIAC",
+   "movement": "MOVEMENT_TYPE_COPY_PLAYER_CLOCKWISE_IN_GRASS",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route119_EventScript_Donald",
+   "texts": {
+    "Route119_Text_DonaldIntro": "So, we finally meet!\\nMy BUG POKéMON will keep you company!$",
+    "Route119_Text_DonaldDefeat": "I wish we'd never met…$",
+    "Route119_Text_DonaldPostBattle": "I want to MIMIC you some more.\\nCan you hurry up and move?$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 7,
+   "x": 7,
+   "y": 74,
+   "gfx": "OBJ_EVENT_GFX_CAMPER",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN_AND_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route119_EventScript_Jackson",
+   "texts": {
+    "Route119_Text_JacksonIntro": "Who has the knowledge and\\nthe technique for survival?\\pPOKéMON RANGERS, that's who!$",
+    "Route119_Text_JacksonDefeat": "I didn't have enough POKéMON\\nknow-how…$",
+    "Route119_Text_JacksonPostBattle": "To break away from civilization and\\nawaken the wild spirit within!\\pThat's our vision.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 8,
+   "x": 28,
+   "y": 116,
+   "gfx": "OBJ_EVENT_GFX_MANIAC",
+   "movement": "MOVEMENT_TYPE_COPY_PLAYER_OPPOSITE_IN_GRASS",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route119_EventScript_Brent",
+   "texts": {
+    "Route119_Text_BrentIntro": "We're the MIMIC CIRCLE!\\nWe MIMIC what you do!$",
+    "Route119_Text_BrentDefeat": "Whoopsie!\\nI lost!$",
+    "Route119_Text_BrentPostBattle": "What's so good about mimicry?\\pFufufu…\\nYou'll never understand…$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 9,
+   "x": 35,
+   "y": 83,
+   "gfx": "OBJ_EVENT_GFX_PICNICKER",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route119_EventScript_Catherine",
+   "texts": {
+    "Route119_Text_CatherineIntro": "Oh? Look at you.\\pFor someone on an adventure,\\nyou're traveling awfully light.$",
+    "Route119_Text_CatherineDefeat": "Accidents happen when you're not\\nprepared!$",
+    "Route119_Text_CatherinePostBattle": "You're traveling light but you have\\neverything you need.\\pYou're on top of things mentally and\\nphysically, too.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 10,
+   "x": 34,
+   "y": 122,
+   "gfx": "OBJ_EVENT_GFX_BUG_CATCHER",
+   "movement": "MOVEMENT_TYPE_COPY_PLAYER_COUNTERCLOCKWISE_IN_GRASS",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route119_EventScript_Doug",
+   "texts": {
+    "Route119_Text_DougIntro": "Yep, you've finally caught me!\\nOr were you trying to avoid me?$",
+    "Route119_Text_DougDefeat": "Whoop, that was a great match!$",
+    "Route119_Text_DougPostBattle": "We're the MIMIC CIRCLE!\\nI hope you enjoyed our performance.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 11,
+   "x": 17,
+   "y": 128,
+   "gfx": "OBJ_EVENT_GFX_BUG_CATCHER",
+   "movement": "MOVEMENT_TYPE_COPY_PLAYER_COUNTERCLOCKWISE_IN_GRASS",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route119_EventScript_Kent",
+   "texts": {
+    "Route119_Text_KentIntro": "The MIMIC CIRCLE was formed by people\\nwho like to MIMIC.\\pA battle starts the instant we meet!$",
+    "Route119_Text_KentDefeat": "I give up!$",
+    "Route119_Text_KentPostBattle": "Won't you join our MIMIC CIRCLE?$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 12,
+   "x": 28,
+   "y": 14,
+   "gfx": "OBJ_EVENT_GFX_NINJA_BOY",
+   "movement": "MOVEMENT_TYPE_TREE_DISGUISE",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route119_EventScript_Yasu",
+   "texts": {
+    "Route119_Text_YasuIntro": "To lurk in shadows, and live in\\ndarkness… That is my destiny.\\pI emerge to challenge you!$",
+    "Route119_Text_YasuDefeat": "I admit defeat!$",
+    "Route119_Text_YasuPostBattle": "Those defeated in battle withdraw\\nquietly back into the shadows.\\lThat, too, is destiny…$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 13,
+   "x": 19,
+   "y": 49,
+   "gfx": "OBJ_EVENT_GFX_NINJA_BOY",
+   "movement": "MOVEMENT_TYPE_MOUNTAIN_DISGUISE",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route119_EventScript_Takashi",
+   "texts": {
+    "Route119_Text_TakashiIntro": "If you're not on your guard,\\nyou're in for some pain!$",
+    "Route119_Text_TakashiDefeat": "You're surprisingly good!$",
+    "Route119_Text_TakashiPostBattle": "My surprise attack ended in\\nfailure…$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 14,
+   "x": 10,
+   "y": 50,
+   "gfx": "OBJ_EVENT_GFX_MAN_5",
+   "movement": "MOVEMENT_TYPE_FACE_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route119_EventScript_Hugh",
+   "texts": {
+    "Route119_Text_HughIntro": "The vast sky holds untold promise!\\pNothing can compare to the sheer\\nexhilaration of flight!$",
+    "Route119_Text_HughDefeat": "Down and out!$",
+    "Route119_Text_HughPostBattle": "My BIRD POKéMON made my dreams of\\nflying come true!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 15,
+   "x": 8,
+   "y": 63,
+   "gfx": "OBJ_EVENT_GFX_MAN_5",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route119_EventScript_Phil",
+   "texts": {
+    "Route119_Text_PhilIntro": "I'll show you the true potential of me\\nand my BIRD POKéMON!$",
+    "Route119_Text_PhilDefeat": "We lacked potential…$",
+    "Route119_Text_PhilPostBattle": "Ever since I was a little kid, I always\\nadmired BIRD POKéMON…$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 16,
+   "x": 25,
+   "y": 32,
+   "gfx": "OBJ_EVENT_GFX_VAR_0",
+   "movement": "MOVEMENT_TYPE_FACE_UP",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_ROUTE_119_RIVAL",
+   "script": "0x0",
+   "missing": true
+  },
+  {
+   "local_id": 17,
+   "x": 12,
+   "y": 121,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_ROUTE_119_SUPER_REPEL",
+   "script": "Route119_EventScript_ItemSuperRepel",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 18,
+   "x": 4,
+   "y": 96,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_ROUTE_119_ZINC",
+   "script": "Route119_EventScript_ItemZinc",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 19,
+   "x": 29,
+   "y": 53,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_ROUTE_119_ELIXIR_1",
+   "script": "Route119_EventScript_ItemElixir",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 20,
+   "x": 25,
+   "y": 76,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_ROUTE_119_LEAF_STONE",
+   "script": "Route119_EventScript_ItemLeafStone",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 21,
+   "x": 8,
+   "y": 18,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_ROUTE_119_RARE_CANDY",
+   "script": "Route119_EventScript_ItemRareCandy",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 22,
+   "x": 33,
+   "y": 117,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_ROUTE_119_HYPER_POTION_1",
+   "script": "Route119_EventScript_ItemHyperPotion",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 23,
+   "x": 13,
+   "y": 33,
+   "gfx": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
+   "movement": "MOVEMENT_TYPE_FACE_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_ROUTE_119_TEAM_AQUA",
+   "script": "Route119_EventScript_BridgeAquaGrunt1",
+   "texts": {
+    "Route119_Text_StayAwayFromWeatherInstitute": "We're standing lookout here.\\pHey, you! Stay away from the WEATHER\\nINSTITUTE. It's not safe.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 24,
+   "x": 13,
+   "y": 34,
+   "gfx": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
+   "movement": "MOVEMENT_TYPE_FACE_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_ROUTE_119_TEAM_AQUA",
+   "script": "Route119_EventScript_BridgeAquaGrunt2",
+   "texts": {
+    "Route119_Text_DontGoNearWeatherInstitute": "Lookout duty is surprisingly boring.\\pHey, you! Please don't go near the\\nWEATHER INSTITUTE.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 25,
+   "x": 17,
+   "y": 33,
+   "gfx": "OBJ_EVENT_GFX_VAR_3",
+   "movement": "MOVEMENT_TYPE_FACE_UP",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_ROUTE_119_RIVAL_ON_BIKE",
+   "script": "0x0",
+   "missing": true
+  },
+  {
+   "local_id": 26,
+   "x": 31,
+   "y": 109,
+   "gfx": "OBJ_EVENT_GFX_BOY_3",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "Route119_EventScript_Boy1",
+   "texts": {
+    "Route119_Text_ThoughtFlyByCatchingBirdMons": "I thought you FLY by catching a whole\\nflock of BIRD POKéMON, and then\\lhanging on to them somehow.\\pBut it turns out there's an HM move\\ncalled FLY!\\pI wish I'd known about that a long\\ntime ago…$"
+   }
+  },
+  {
+   "local_id": 27,
+   "x": 8,
+   "y": 23,
+   "gfx": "OBJ_EVENT_GFX_BERRY_TREE",
+   "movement": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BerryTreeScript",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 28,
+   "x": 9,
+   "y": 23,
+   "gfx": "OBJ_EVENT_GFX_BERRY_TREE",
+   "movement": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BerryTreeScript",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 29,
+   "x": 29,
+   "y": 90,
+   "gfx": "OBJ_EVENT_GFX_BERRY_TREE",
+   "movement": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BerryTreeScript",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 30,
+   "x": 30,
+   "y": 90,
+   "gfx": "OBJ_EVENT_GFX_BERRY_TREE",
+   "movement": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BerryTreeScript",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 31,
+   "x": 19,
+   "y": 133,
+   "gfx": "OBJ_EVENT_GFX_CYCLING_TRIATHLETE_M",
+   "movement": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
+   "range": [
+    2,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "Route119_EventScript_CyclingTriathleteM",
+   "texts": {
+    "Route119_Text_TallGrassSnaresBikeTires": "Tch…\\nIt's a no-go…\\pThe tall grass snares BIKE tires.\\nThere's no way you can cycle here.$"
+   }
+  },
+  {
+   "local_id": 32,
+   "x": 3,
+   "y": 56,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_ROUTE_119_HYPER_POTION_2",
+   "script": "Route119_EventScript_ItemHyperPotion2",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 33,
+   "x": 35,
+   "y": 93,
+   "gfx": "OBJ_EVENT_GFX_BOY_2",
+   "movement": "MOVEMENT_TYPE_WANDER_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "Route119_EventScript_Boy2",
+   "texts": {
+    "Route119_Text_CanYourMonMakeSecretBase": "Can your POKéMON use its SECRET POWER\\non a big pile of grass and make a\\lSECRET BASE?$"
+   }
+  },
+  {
+   "local_id": 34,
+   "x": 29,
+   "y": 6,
+   "gfx": "OBJ_EVENT_GFX_NINJA_BOY",
+   "movement": "MOVEMENT_TYPE_TREE_DISGUISE",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route119_EventScript_Hideo",
+   "texts": {
+    "Route119_Text_HideoIntro": "To hide a tree, use a forest!$",
+    "Route119_Text_HideoDefeat": "I bow to your superiority.$",
+    "Route119_Text_HideoPostBattle": "To hide a tree, use a forest!\\nTo hide a POKéMON, use a POKéMON!\\pThere is no deep, hidden meaning\\nto that.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 35,
+   "x": 31,
+   "y": 6,
+   "gfx": "OBJ_EVENT_GFX_KECLEON",
+   "movement": "MOVEMENT_TYPE_INVISIBLE",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_ROUTE_119_KECLEON_1",
+   "script": "Route119_EventScript_Kecleon1",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 36,
+   "x": 25,
+   "y": 15,
+   "gfx": "OBJ_EVENT_GFX_KECLEON",
+   "movement": "MOVEMENT_TYPE_INVISIBLE",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_ROUTE_119_KECLEON_2",
+   "script": "Route119_EventScript_Kecleon2",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 37,
+   "x": 13,
+   "y": 104,
+   "gfx": "OBJ_EVENT_GFX_FISHERMAN",
+   "movement": "MOVEMENT_TYPE_FACE_RIGHT",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route119_EventScript_Chris",
+   "texts": {
+    "Route119_Text_ChrisIntro": "You spoke to me…\\nSo you want to challenge me!\\pSure! I'll try out the POKéMON I caught\\nwhile SURFING!$",
+    "Route119_Text_ChrisDefeat": "I don't have a clue about what it\\ntakes to win.$",
+    "Route119_Text_ChrisPostBattle": "Go for a SURF on my POKéMON…\\pThen fish off its back…\\pIt's an indescribably luxuriant moment!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 38,
+   "x": 8,
+   "y": 68,
+   "gfx": "OBJ_EVENT_GFX_WOMAN_2",
+   "movement": "MOVEMENT_TYPE_FACE_UP",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route119_EventScript_Rachel",
+   "texts": {
+    "Route119_Text_RachelIntro": "Wherever and whenever I may be,\\nI always have my parasol in hand.$",
+    "Route119_Text_RachelDefeat": "Oh, but…\\nThat's not fair.$",
+    "Route119_Text_RachelPostBattle": "You're asking if my parasol is heavy?\\nYour BAG is filled with more junk than\\lI ever carry around.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 39,
+   "x": 16,
+   "y": 52,
+   "gfx": "OBJ_EVENT_GFX_MAN_5",
+   "movement": "MOVEMENT_TYPE_FACE_RIGHT",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route119_EventScript_Dayton",
+   "texts": {
+    "Route119_Text_DaytonIntro": "Hohoho!\\nI like kid TRAINERS!\\lLet's have a good one!$",
+    "Route119_Text_DaytonDefeat": "You're pretty amazing!\\nHohoho!$",
+    "Route119_Text_DaytonPostBattle": "Hohoho!\\nI'll try emulating the pep of kid\\lTRAINERS like you!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 40,
+   "x": 32,
+   "y": 15,
+   "gfx": "OBJ_EVENT_GFX_MAN_5",
+   "movement": "MOVEMENT_TYPE_FACE_LEFT",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route119_EventScript_Fabian",
+   "texts": {
+    "Route119_Text_FabianIntro": "Hit me with a power chord!\\nVictory is mine!\\lIt's our time to shine, whoa, yeah!$",
+    "Route119_Text_FabianDefeat": "You showed me who's the boss!\\nWe'll have to take the loss, oh, no!$",
+    "Route119_Text_FabianPostBattle": "Hit me with another power chord!\\nLeave me alone!\\lYour win you have to atone!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 41,
+   "x": 19,
+   "y": 5,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_ROUTE_119_NUGGET",
+   "script": "Route119_EventScript_ItemNugget",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 42,
+   "x": 24,
+   "y": 42,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_ROUTE_119_ELIXIR_2",
+   "script": "Route119_EventScript_ItemElixir2",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 43,
+   "x": 28,
+   "y": 25,
+   "gfx": "OBJ_EVENT_GFX_SCOTT",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_ROUTE_119_SCOTT",
+   "script": "0x0",
+   "missing": true
+  }
+ ],
+ "signs": [
+  {
+   "x": 9,
+   "y": 33,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "Route119_EventScript_WeatherInstituteSign",
+   "texts": {
+    "Route119_Text_WeatherInstitute": "WEATHER INSTITUTE$"
+   }
+  },
+  {
+   "x": 27,
+   "y": 19,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "Route119_EventScript_RouteSignFortree",
+   "texts": {
+    "Route119_Text_RouteSignFortree": "ROUTE 119\\n{RIGHT_ARROW} FORTREE CITY$"
+   }
+  },
+  {
+   "x": 5,
+   "y": 2,
+   "type": "secret_base",
+   "raw": {
+    "type": "secret_base",
+    "x": 5,
+    "y": 2,
+    "elevation": 0,
+    "secret_base_id": "SECRET_BASE_SHRUB1_1"
+   }
+  },
+  {
+   "x": 4,
+   "y": 89,
+   "type": "secret_base",
+   "raw": {
+    "type": "secret_base",
+    "x": 4,
+    "y": 89,
+    "elevation": 0,
+    "secret_base_id": "SECRET_BASE_SHRUB1_2"
+   }
+  },
+  {
+   "x": 5,
+   "y": 15,
+   "type": "secret_base",
+   "raw": {
+    "type": "secret_base",
+    "x": 5,
+    "y": 15,
+    "elevation": 0,
+    "secret_base_id": "SECRET_BASE_SHRUB2_1"
+   }
+  },
+  {
+   "x": 7,
+   "y": 101,
+   "type": "secret_base",
+   "raw": {
+    "type": "secret_base",
+    "x": 7,
+    "y": 101,
+    "elevation": 3,
+    "secret_base_id": "SECRET_BASE_SHRUB2_2"
+   }
+  },
+  {
+   "x": 34,
+   "y": 24,
+   "type": "secret_base",
+   "raw": {
+    "type": "secret_base",
+    "x": 34,
+    "y": 24,
+    "elevation": 3,
+    "secret_base_id": "SECRET_BASE_SHRUB3_1"
+   }
+  },
+  {
+   "x": 31,
+   "y": 73,
+   "type": "secret_base",
+   "raw": {
+    "type": "secret_base",
+    "x": 31,
+    "y": 73,
+    "elevation": 3,
+    "secret_base_id": "SECRET_BASE_SHRUB4_1"
+   }
+  },
+  {
+   "x": 16,
+   "y": 81,
+   "type": "secret_base",
+   "raw": {
+    "type": "secret_base",
+    "x": 16,
+    "y": 81,
+    "elevation": 0,
+    "secret_base_id": "SECRET_BASE_BLUE_CAVE3_3"
+   }
+  },
+  {
+   "x": 16,
+   "y": 28,
+   "type": "secret_base",
+   "raw": {
+    "type": "secret_base",
+    "x": 16,
+    "y": 28,
+    "elevation": 0,
+    "secret_base_id": "SECRET_BASE_BLUE_CAVE4_3"
+   }
+  },
+  {
+   "x": 17,
+   "y": 82,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 17,
+    "y": 82,
+    "elevation": 3,
+    "item": "ITEM_CALCIUM",
+    "flag": "FLAG_HIDDEN_ITEM_ROUTE_119_CALCIUM"
+   }
+  },
+  {
+   "x": 38,
+   "y": 63,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 38,
+    "y": 63,
+    "elevation": 3,
+    "item": "ITEM_ULTRA_BALL",
+    "flag": "FLAG_HIDDEN_ITEM_ROUTE_119_ULTRA_BALL"
+   }
+  },
+  {
+   "x": 26,
+   "y": 81,
+   "type": "secret_base",
+   "raw": {
+    "type": "secret_base",
+    "x": 26,
+    "y": 81,
+    "elevation": 0,
+    "secret_base_id": "SECRET_BASE_RED_CAVE3_3"
+   }
+  },
+  {
+   "x": 19,
+   "y": 76,
+   "type": "secret_base",
+   "raw": {
+    "type": "secret_base",
+    "x": 19,
+    "y": 76,
+    "elevation": 0,
+    "secret_base_id": "SECRET_BASE_TREE2_3"
+   }
+  },
+  {
+   "x": 18,
+   "y": 76,
+   "type": "secret_base",
+   "raw": {
+    "type": "secret_base",
+    "x": 18,
+    "y": 76,
+    "elevation": 0,
+    "secret_base_id": "SECRET_BASE_TREE4_3"
+   }
+  },
+  {
+   "x": 4,
+   "y": 15,
+   "type": "secret_base",
+   "raw": {
+    "type": "secret_base",
+    "x": 4,
+    "y": 15,
+    "elevation": 0,
+    "secret_base_id": "SECRET_BASE_SHRUB3_3"
+   }
+  },
+  {
+   "x": 6,
+   "y": 2,
+   "type": "secret_base",
+   "raw": {
+    "type": "secret_base",
+    "x": 6,
+    "y": 2,
+    "elevation": 0,
+    "secret_base_id": "SECRET_BASE_SHRUB4_3"
+   }
+  },
+  {
+   "x": 26,
+   "y": 120,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 26,
+    "y": 120,
+    "elevation": 3,
+    "item": "ITEM_FULL_HEAL",
+    "flag": "FLAG_HIDDEN_ITEM_ROUTE_119_FULL_HEAL"
+   }
+  },
+  {
+   "x": 20,
+   "y": 29,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 20,
+    "y": 29,
+    "elevation": 3,
+    "item": "ITEM_MAX_ETHER",
+    "flag": "FLAG_HIDDEN_ITEM_ROUTE_119_MAX_ETHER"
+   }
+  },
+  {
+   "x": 28,
+   "y": 9,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "Route119_EventScript_TrainerTipsDecoration",
+   "texts": {
+    "Route119_Text_TrainerTipsDecoration": "TRAINER TIPS\\pUp to sixteen decorations and\\nfurniture items can be placed in\\la SECRET BASE.\\pPick your favorite items and create\\nyour very own SECRET BASE exactly the\\lway you want.$"
+   }
+  }
+ ],
+ "warps": [
+  {
+   "id": 0,
+   "x": 6,
+   "y": 32,
+   "dest_map": "MAP_ROUTE119_WEATHER_INSTITUTE_1F",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 1,
+   "x": 33,
+   "y": 109,
+   "dest_map": "MAP_ROUTE119_HOUSE",
+   "dest_warp_id": "0"
+  }
+ ],
+ "coord_events": [
+  {
+   "type": "trigger",
+   "x": 25,
+   "y": 31,
+   "elevation": 0,
+   "var": "VAR_ROUTE119_STATE",
+   "var_value": "0",
+   "script": "Route119_EventScript_RivalTrigger1",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 26,
+   "y": 31,
+   "elevation": 0,
+   "var": "VAR_ROUTE119_STATE",
+   "var_value": "0",
+   "script": "Route119_EventScript_RivalTrigger2",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "weather",
+   "x": 29,
+   "y": 13,
+   "elevation": 3,
+   "weather": "COORD_EVENT_WEATHER_ROUTE119_CYCLE"
+  },
+  {
+   "type": "weather",
+   "x": 30,
+   "y": 13,
+   "elevation": 3,
+   "weather": "COORD_EVENT_WEATHER_ROUTE119_CYCLE"
+  },
+  {
+   "type": "weather",
+   "x": 31,
+   "y": 13,
+   "elevation": 3,
+   "weather": "COORD_EVENT_WEATHER_ROUTE119_CYCLE"
+  },
+  {
+   "type": "weather",
+   "x": 32,
+   "y": 13,
+   "elevation": 3,
+   "weather": "COORD_EVENT_WEATHER_ROUTE119_CYCLE"
+  },
+  {
+   "type": "weather",
+   "x": 15,
+   "y": 133,
+   "elevation": 3,
+   "weather": "COORD_EVENT_WEATHER_ROUTE119_CYCLE"
+  },
+  {
+   "type": "weather",
+   "x": 16,
+   "y": 132,
+   "elevation": 3,
+   "weather": "COORD_EVENT_WEATHER_ROUTE119_CYCLE"
+  },
+  {
+   "type": "weather",
+   "x": 17,
+   "y": 131,
+   "elevation": 3,
+   "weather": "COORD_EVENT_WEATHER_ROUTE119_CYCLE"
+  },
+  {
+   "type": "weather",
+   "x": 18,
+   "y": 130,
+   "elevation": 3,
+   "weather": "COORD_EVENT_WEATHER_ROUTE119_CYCLE"
+  },
+  {
+   "type": "weather",
+   "x": 19,
+   "y": 131,
+   "elevation": 3,
+   "weather": "COORD_EVENT_WEATHER_ROUTE119_CYCLE"
+  },
+  {
+   "type": "weather",
+   "x": 20,
+   "y": 132,
+   "elevation": 3,
+   "weather": "COORD_EVENT_WEATHER_ROUTE119_CYCLE"
+  },
+  {
+   "type": "weather",
+   "x": 21,
+   "y": 133,
+   "elevation": 3,
+   "weather": "COORD_EVENT_WEATHER_ROUTE119_CYCLE"
+  },
+  {
+   "type": "weather",
+   "x": 36,
+   "y": 6,
+   "elevation": 3,
+   "weather": "COORD_EVENT_WEATHER_SUNNY"
+  },
+  {
+   "type": "weather",
+   "x": 36,
+   "y": 7,
+   "elevation": 3,
+   "weather": "COORD_EVENT_WEATHER_SUNNY"
+  },
+  {
+   "type": "weather",
+   "x": 35,
+   "y": 8,
+   "elevation": 3,
+   "weather": "COORD_EVENT_WEATHER_SUNNY"
+  },
+  {
+   "type": "weather",
+   "x": 35,
+   "y": 9,
+   "elevation": 3,
+   "weather": "COORD_EVENT_WEATHER_SUNNY"
+  },
+  {
+   "type": "weather",
+   "x": 16,
+   "y": 137,
+   "elevation": 3,
+   "weather": "COORD_EVENT_WEATHER_SUNNY"
+  },
+  {
+   "type": "weather",
+   "x": 17,
+   "y": 137,
+   "elevation": 3,
+   "weather": "COORD_EVENT_WEATHER_SUNNY"
+  },
+  {
+   "type": "weather",
+   "x": 18,
+   "y": 137,
+   "elevation": 3,
+   "weather": "COORD_EVENT_WEATHER_SUNNY"
+  },
+  {
+   "type": "weather",
+   "x": 19,
+   "y": 137,
+   "elevation": 3,
+   "weather": "COORD_EVENT_WEATHER_SUNNY"
+  },
+  {
+   "type": "weather",
+   "x": 20,
+   "y": 137,
+   "elevation": 3,
+   "weather": "COORD_EVENT_WEATHER_SUNNY"
+  },
+  {
+   "type": "weather",
+   "x": 34,
+   "y": 13,
+   "elevation": 3,
+   "weather": "COORD_EVENT_WEATHER_ROUTE119_CYCLE"
+  }
+ ],
+ "wild": {
+  "land_mons": {
+   "encounter_rate": 15,
+   "slot_rates": [
+    20,
+    20,
+    10,
+    10,
+    10,
+    10,
+    5,
+    5,
+    4,
+    4,
+    1,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_ZIGZAGOON",
+     "min": 25,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_LINOONE",
+     "min": 25,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_ZIGZAGOON",
+     "min": 27,
+     "max": 27
+    },
+    {
+     "species": "SPECIES_ODDISH",
+     "min": 25,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_LINOONE",
+     "min": 27,
+     "max": 27
+    },
+    {
+     "species": "SPECIES_ODDISH",
+     "min": 26,
+     "max": 26
+    },
+    {
+     "species": "SPECIES_ODDISH",
+     "min": 27,
+     "max": 27
+    },
+    {
+     "species": "SPECIES_ODDISH",
+     "min": 24,
+     "max": 24
+    },
+    {
+     "species": "SPECIES_TROPIUS",
+     "min": 25,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_TROPIUS",
+     "min": 26,
+     "max": 26
+    },
+    {
+     "species": "SPECIES_TROPIUS",
+     "min": 27,
+     "max": 27
+    },
+    {
+     "species": "SPECIES_KECLEON",
+     "min": 25,
+     "max": 25
+    }
+   ]
+  },
+  "water_mons": {
+   "encounter_rate": 4,
+   "slot_rates": [
+    60,
+    30,
+    5,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 5,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 15,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_PELIPPER",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_PELIPPER",
+     "min": 25,
+     "max": 30
+    }
+   ]
+  },
+  "fishing_mons": {
+   "encounter_rate": 30,
+   "slot_rates": [
+    70,
+    30,
+    60,
+    20,
+    20,
+    40,
+    40,
+    15,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_CARVANHA",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_CARVANHA",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_CARVANHA",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_CARVANHA",
+     "min": 20,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_CARVANHA",
+     "min": 35,
+     "max": 40
+    },
+    {
+     "species": "SPECIES_CARVANHA",
+     "min": 40,
+     "max": 45
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,64 @@
+{
+ "zone": 359,
+ "room": "MagmaHideout_4F",
+ "cave": true,
+ "cave_auto": true,
+ "area": 388,
+ "dark": false,
+ "header": {
+  "map_type": 16,
+  "npc_cache": 24,
+  "weather_word": 0,
+  "flags": 23683,
+  "icon_word": 32783,
+  "place_display": 0,
+  "bgm0": 1191,
+  "bgm1": 1191,
+  "bgm2": 1191,
+  "bgm3": 1191,
+  "place": 91,
+  "encounters": 137,
+  "enc_slot": 2
+ },
+ "warps": [
+  {
+   "at": [
+    46,
+    7
+   ],
+   "to": [
+    356,
+    0
+   ],
+   "what": "Emerald warp 0 (46,7) -> MagmaHideout_3F_1R 0"
+  },
+  {
+   "at": [
+    20,
+    21
+   ],
+   "to": [
+    358,
+    1
+   ],
+   "what": "Emerald warp 1 (20,21) -> MagmaHideout_3F_3R 1"
+  }
+ ],
+ "triggers": [],
+ "npcs": [
+  {
+   "uid": 8,
+   "model": 110,
+   "script": 7182,
+   "flag": 1282,
+   "dir": 1,
+   "at": [
+    3,
+    7
+   ],
+   "what": "item ball ITEM_MAX_REVIVE"
+  }
+ ],
+ "signs": [],
+ "what": "MagmaHideout_4F: Emerald's cave (converter/gen_caves_emerald.py from emerald/MagmaHideout_4F, b2tools/models_cave.py); story objects: see notes/EMERALD.md"
+}

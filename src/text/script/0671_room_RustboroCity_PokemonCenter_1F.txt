@@ -1,0 +1,10 @@
+Hello, and welcome to the Pokémon\nCenter.{be01}\nWe restore your tired Pokémon to\nfull health.{be01}\nWould you like to rest your Pokémon?
+Okay, I’ll take your Pokémon for a\nfew seconds.
+Thank you for waiting.{be01}\nWe’ve restored your Pokémon to\nfull health.
+We hope to see you again!
+Your Pokémon may be infected with\nPokérus.{be01}\nLittle is known about the Pokérus\nexcept that they are microscopic life-{be00}\nforms that attach to Pokémon.{be01}\nWhile infected, Pokémon are said to\ngrow exceptionally well.
+My Pokémon has a Naive nature, and my\nfriend’s has a Jolly nature.{be01}\nIt’s fascinating how Pokémon have\npersonalities!
+Just like people, there are male and\nfemale Pokémon.{be01}\nBut no one seems to have any idea how\nthey’re different.
+The man next door gave me an HM!{be01}\nI used it to teach my Pokémon how to\nCut down skinny trees.
+Pokémon magazines!\nPokémon Pal...{be01}\nPokémon Handbook...\nAdorable Pokémon...
+{0100:0} took a closer look at the\nHoenn region map.

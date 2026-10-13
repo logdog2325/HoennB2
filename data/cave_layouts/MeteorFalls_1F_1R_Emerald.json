@@ -1,0 +1,76 @@
+{
+ "map": "emerald/MeteorFalls_1F_1R",
+ "origin": [
+  0,
+  11
+ ],
+ "levels": {
+  "3": 0,
+  "4": 48
+ },
+ "heights": {
+  "8,21": 32,
+  "8,17": 32,
+  "2,17": 48,
+  "2,14": 64,
+  "25,14": 64,
+  "2,5": 96,
+  "10,4": 96,
+  "21,5": 96,
+  "27,6": 96,
+  "12,7": 96,
+  "20,16": 32,
+  "20,15": 32,
+  "19,23": 32,
+  "20,21": 32
+ },
+ "ramps": [
+  [
+   27,
+   10,
+   27,
+   12,
+   "n"
+  ],
+  [
+   2,
+   16,
+   2,
+   16,
+   "n"
+  ],
+  [
+   2,
+   18,
+   2,
+   18,
+   "n"
+  ],
+  [
+   6,
+   23,
+   6,
+   24,
+   "n"
+  ]
+ ],
+ "bridges": true,
+ "waterfalls": true,
+ "alt_of": "MeteorFalls_1F_1R",
+ "emerald_zone": true,
+ "layout": "LAYOUT_METEOR_FALLS_1F_1R_STEVENS_CAVE",
+ "extra_npcs": [
+  {
+   "at": [
+    4,
+    3
+   ],
+   "model": 206,
+   "script": 0,
+   "flag": "FLAG_SYS_GAME_CLEAR",
+   "uid": 100,
+   "what": "Steven's Cave closed until the game is clear (Emerald: rock wall tiles; Black 2: Clay Tunnel's rock 206, hidden by the game-clear flag)"
+  }
+ ],
+ "_doc": "emerald_caves 2026-10-12 (work/agents/emerald_caves/tools/variants.py): Emerald's MeteorFalls_1F_1R (pokeemerald) as Emerald's world reads it, installed for MeteorFalls_1F_1R in an Emerald build (data/versions.json room_variants.emerald). Emerald adds Steven's Cave (warp 5, (4,2)), opened at game clear by setmetatile (MeteorFalls_1F_1R_OnLoad): drawn open (layout LAYOUT_METEOR_FALLS_1F_1R_STEVENS_CAVE, data/emerald/hoenn_map_additions.json) and closed by Clay Tunnel's rock (code 206) on the tile in front of it until FLAG_SYS_GAME_CLEAR; own zone json. Sapphire recipe: MeteorFalls_1F_1R.json."
+}

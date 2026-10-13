@@ -1,0 +1,18 @@
+{
+ "kind": "trainer",
+ "side": "front",
+ "sprite": 156,
+ "archive": 71,
+ "files": {
+  "static": 1248,
+  "parts": 1249,
+  "palette": 1255
+ },
+ "name": "magma-grunt-f",
+ "note": "Team Magma grunt (F)",
+ "source": "pokeruby graphics/trainers/magma_grunt_f.png",
+ "layout": "parts and animations of Black 2 front sprite 73",
+ "made_by": "b2tools/sprite_upgrade.py",
+ "mcss_from": 73,
+ "static_intro": true
+}

@@ -1,0 +1,3 @@
+Revive is fantastic!{be01}\nGive it to a fainted Pokémon, and the\nPokémon will arise.{be01}\nBut be careful, Revive doesn’t restore\nthe used-up PP of moves.
+Max Repel keeps all weak Pokémon away.{be01}\nOut of all the Repel sprays, it lasts\nthe longest.
+The Net and Dive Balls are rare Poké\nBalls that are only made in Mossdeep.{be01}\nA Net Ball is effective against\nBug-type and Water-type Pokémon.{be01}\nA Dive Ball works best on Pokémon at\nthe bottom of the sea.

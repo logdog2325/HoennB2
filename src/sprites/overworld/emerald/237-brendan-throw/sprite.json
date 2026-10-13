@@ -1,0 +1,22 @@
+{
+ "kind": "overworld",
+ "code": 237,
+ "sheet": 215,
+ "frames": 4,
+ "size": [
+  32,
+  32
+ ],
+ "controller": 11,
+ "textures": [
+  "t4x4x4.0",
+  "t4x4x4.1",
+  "t4x4x4.2",
+  "t4x4x4.3"
+ ],
+ "palette": "t4x4x4",
+ "name": "brendan-throw",
+ "note": "Brendan (player, Emerald outfit), throw",
+ "source": "pokeemerald graphics/object_events/pics/people/brendan/field_move (Emerald dump: emerald_src.py verify)",
+ "made_by": "b2tools/sprite_emerald.py"
+}

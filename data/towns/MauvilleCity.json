@@ -1,0 +1,42 @@
+{
+ "_doc": "Mauville City buildings (group towns2, notes/TOWNS_TOWNS2.md). The Game Corner's door tile is walkable in Sapphire (no plan footprint) and house 2 / the Mart share one plan footprint, so those three are props (map tile coords of the model origin).",
+ "group": "towns2",
+ "buildings": {
+  "MAP_MAUVILLE_CITY_GYM": {
+   "res": 320,
+   "front": 24
+  },
+  "MAP_MAUVILLE_CITY_POKEMON_CENTER_1F": {
+   "res": 0,
+   "front": 20
+  },
+  "MAP_MAUVILLE_CITY_BIKE_SHOP": {
+   "res": 348,
+   "front": 20
+  },
+  "MAP_MAUVILLE_CITY_HOUSE1": {
+   "res": 350,
+   "front": 20
+  }
+ },
+ "props": [
+  {
+   "res": 349,
+   "x": 8.5,
+   "z": 12.0,
+   "what": "Game Corner (door 8,13)"
+  },
+  {
+   "res": 351,
+   "x": 20.0,
+   "z": 13.0,
+   "what": "house 2 (door 19,14)"
+  },
+  {
+   "res": 3,
+   "x": 24.0,
+   "z": 13.0,
+   "what": "Mart (door 23,14)"
+  }
+ ]
+}

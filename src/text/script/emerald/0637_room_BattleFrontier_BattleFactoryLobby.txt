@@ -1,0 +1,65 @@
+Where the intelligence of Trainers\nis put to the test!{be01}\nWelcome to the Battle Factory!{be01}\nI am your guide to the Battle Swap\nSingle Tournament.
+Would you like to take the Battle\nSwap Single challenge?
+The Battle Swap Single Tournament\nis a Single Battle competition using{be00}\nonly rental Pokémon.{be01}\nFirst, you will be loaned three\nPokémon specifically for this event.{be01}\nUsing the supplied rental Pokémon,\nyou must conduct a Single Battle.{be01}\nIf you win, you are permitted to trade\none of your rental Pokémon.{be01}\nRepeat this cycle of battling and\ntrading--if you win seven times in{be00}\na row, you will earn Battle Points.{be01}\nIf you want to interrupt your\nchallenge, please save the game.{be01}\nIf you don’t save, you will be\ndisqualified from your challenge.
+Which level do you wish to challenge?\nLevel 50 or Open Level?
+…
+…
+…
+Before you begin your challenge,\nI need to save the game. Is that okay?
+Please step this way.
+We look forward to your next visit.
+I’m sorry to say this, but you didn’t\nsave before you quit playing last time.{be01}\nAs a result, you have been disqualified\nfrom your challenge.
+Congratulations! You’ve won seven\nstraight Battle Swap matches!
+Congratulations for defeating\nthe Factory Head and winning{be00}\nseven matches in a row!
+In recognition of your wealth of\nknowledge and keen intelligence,{be00}\nwe award you these Battle Point(s).
+Let me exchange your Pokémon\nfor our rental Pokémon.{be01}\nI need to save the battle data,\nso please wait.
+Thank you for participating!{be01}\nI will return your Pokémon in exchange\nfor our rental Pokémon.{be01}\nI must also save the event results.\nPlease wait.
+We’ve been waiting for you!{be01}\nBefore we resume your challenge,\nI must save the game.
+Challenge
+Info
+Exit
+Lv. 50
+Open Level
+{0100:0} obtained {0100:1} Battle Point(s).
+Hi!\nYou, there!{be01}\nAre you thinking that the events here\nare easy since you don’t need to have{be00}\na raised team of Pokémon?{be01}\nI wouldn’t be too sure about winning\nthat easily.{be01}\nIf you don’t have thorough knowledge\nabout Pokémon and their moves,{be00}\nit will be tough to keep winning.
+I swapped for a weak Pokémon…\nI thought it was a good kind to have…{be01}\nThey wiped the floor with us…
+Things haven’t been going my way\nat all.{be01}\nYou need to check your opponent’s\nPokémon during battle to see if{be00}\nthey’re any good.
+You know how the staff here give you\na few hints about your next opponent?{be01}\nWell, I’m a full-grown man, but I have\ntrouble figuring out their hints.
+The Battle Swap rules are listed.
+Which heading do you want to read?
+In a Battle Swap event, you may use\nonly three Pokémon.{be01}\nWhether you are renting or swapping,\nyour team may not have two or more{be00}\nof the same Pokémon.
+You may swap Pokémon only with\nthe Trainer you have just defeated.{be01}\nYou may swap for only those Pokémon\nused by the beaten Trainer.
+After every battle you win, you may\nswap for one of your defeated{be00}\nopponent’s Pokémon.{be01}\nYou will not be able to swap Pokémon\nwith the seventh Trainer in the event.
+There are two key points to be aware\nof when swapping Pokémon.{be01}\nFirst, when swapping, you can’t check\nthe stats of the Pokémon you are{be00}\nabout to receive.{be01}\nSecond, the Pokémon on your team\nare lined up in sequence, depending on{be00}\nthe order in which you rented them.{be01}\nThis sequence remains unchanged\neven when swaps are made.
+In the Open Level, the rental Pokémon\nand the opposing Trainers’ Pokémon{be00}\nare all Level 100.
+Basic Rules
+Swap: Partner
+Swap: Number
+Swap: Notes
+Open Level
+Exit
+{0100:0}’s Battle Factory results{be01}\nLv. 50: current streak {0100:1}, record {0100:2}\nOpen Level: current streak {0100:3}, record {0100:4}
+{0100:0}’s Battle Swap Double results{be01}\nLv. 50: current streak {0100:1}, record {0100:2}\nOpen Level: current streak {0100:3}, record {0100:4}
+Where the intelligence of Trainers\nis put to the test!{be01}\nWelcome to the Battle Factory!{be01}\nI am your guide to the Battle Swap\nDouble Tournament.
+Would you like to take the Battle\nSwap Double challenge?
+The Battle Swap Double Tournament\nis a Double Battle competition using{be00}\nonly rental Pokémon.{be01}\nFirst, you will be loaned three\nPokémon specifically for this event.{be01}\nUsing the supplied rental Pokémon,\nyou must conduct a Double Battle.{be01}\nIf you win, you are permitted to trade\none of your rental Pokémon.{be01}\nRepeat this cycle of battling and\ntrading--if you win seven times in{be00}\na row, you will earn Battle Points.{be01}\nIf you want to interrupt your\nchallenge, please save the game.{be01}\nIf you don’t save before interrupting,\nyou will be disqualified.
+Which level do you wish to challenge?\nLevel 50 or Open Level?
+…
+…
+…
+Before you begin your challenge,\nI need to save the game. Is that okay?
+Please step this way.
+We look forward to your next visit.
+I’m sorry to say this, but you didn’t\nsave before you quit playing last time.{be01}\nAs a result, you have been disqualified\nfrom your challenge.
+Congratulations! You’ve won seven\nstraight Battle Swap matches!
+Congratulations for defeating\nthe Factory Head and winning{be00}\nseven matches in a row!
+In recognition of your wealth of\nknowledge and keen intelligence,{be00}\nwe award you these Battle Point(s).
+Let me exchange your Pokémon\nfor our rental Pokémon.{be01}\nI need to save the battle data,\nso please wait.
+Thank you for participating!{be01}\nI will return your Pokémon in exchange\nfor our rental Pokémon.{be01}\nI must also save the event results.\nPlease wait.
+We’ve been waiting for you!{be01}\nBefore we resume your challenge,\nI must save the game.
+Challenge
+Info
+Exit
+Lv. 50
+Open Level
+{0100:0} obtained {0100:1} Battle Point(s).

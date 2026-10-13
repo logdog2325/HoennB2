@@ -1,0 +1,58 @@
+{
+ "zone": 168,
+ "room": "SkyPillar_5F",
+ "cave": true,
+ "cave_auto": true,
+ "area": 295,
+ "dark": false,
+ "header": {
+  "map_type": 16,
+  "npc_cache": 24,
+  "weather_word": 0,
+  "flags": 2337,
+  "icon_word": 40975,
+  "place_display": 0,
+  "bgm0": 1079,
+  "bgm1": 1079,
+  "bgm2": 1079,
+  "bgm3": 1079,
+  "place": 85,
+  "encounters": 87,
+  "enc_slot": 2
+ },
+ "warps": [
+  {
+   "at": [
+    3,
+    1
+   ],
+   "to": [
+    167,
+    2
+   ],
+   "what": "Sapphire warp 0 (3,1) -> SkyPillar_4F 2"
+  },
+  {
+   "at": [
+    10,
+    1
+   ],
+   "to": [
+    108,
+    1
+   ],
+   "what": "Sapphire warp 1 (10,1) -> SkyPillar_Top 0"
+  }
+ ],
+ "triggers": [],
+ "npcs": [],
+ "signs": [],
+ "what": "SkyPillar_5F: cave (converter/gen_caves.py, b2tools/models_cave.py); story objects: see notes/CAVES.md",
+ "_doc": "emerald_caves (b2tools/emerald_caves_rooms.py writes this file: edit the script and rerun). Emerald's Sky Pillar 5F: the clean floor (the room variant) until Rayquaza, then Sapphire's cracked room as its other layout (alt_rooms, map replace event 3 set by the floor's zone init, emerald_ch10).",
+ "alt_rooms": [
+  {
+   "room": "SkyPillar_5F",
+   "event": 3
+  }
+ ]
+}

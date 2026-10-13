@@ -1,0 +1,15 @@
+Hello, and welcome to the Pokémon\nCenter.{be01}\nWe restore your tired Pokémon to\nfull health.{be01}\nWould you like to rest your Pokémon?
+Okay, I’ll take your Pokémon for a\nfew seconds.
+Thank you for waiting.{be01}\nWe’ve restored your Pokémon to\nfull health.
+We hope to see you again!
+Your Pokémon may be infected with\nPokérus.{be01}\nLittle is known about the Pokérus\nexcept that they are microscopic life-{be00}\nforms that attach to Pokémon.{be01}\nWhile infected, Pokémon are said to\ngrow exceptionally well.
+Hello there, Trainer!\nYou’ve got a wonderful smile.
+Hello there, Trainer!\nYou’ve got a wonderful smile, there.{be01}\nI have a hobby - collecting the profiles\nof Pokémon Trainers.
+That PC-based Pokémon storage\nsystem...{be01}\nWhoever made it must be some kind\nof a scientific wizard!
+When my Pokémon ate an\nOran Berry, it regained HP!
+There are many types of Pokémon.{be01}\nAll types have their strengths and\nweaknesses against other types.{be01}\nDepending on the types of Pokémon,\na battle could be easy or hard.
+For example, your Treecko is a\nGrass type.{be01}\nIt’s strong against the Water and\nGround types.{be01}\nBut, it’s weak against Fire-type\nPokémon.
+For example, your Torchic is a\nFire type.{be01}\nIt’s strong against the Grass and\nBug types.{be01}\nBut, it’s weak against Water-type\nPokémon.
+For example, your Mudkip is a\nWater type.{be01}\nIt’s strong against the Fire type.{be01}\nBut, it’s weak against Grass-type\nand Electric-type Pokémon.
+Pokémon magazines!\nPokémon Pal...{be01}\nPokémon Handbook...\nAdorable Pokémon...
+{0100:0} took a closer look at the\nHoenn region map.

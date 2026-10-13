@@ -1,0 +1,279 @@
+{
+ "_doc": "gyms_league: Petalburg Gym: Sapphire's nine rooms stacked in one tall map (1x4 chunks): each room six rows of wood floor with a training mat, the doors to the next rooms on its back wall (Sapphire's door tiles), Norman's room on top, two statues in the entrance room.",
+ "map": "PetalburgCity_Gym",
+ "style": "gl_petalburg",
+ "floor": [
+  [
+   0,
+   2,
+   8,
+   7
+  ],
+  [
+   0,
+   15,
+   8,
+   20
+  ],
+  [
+   0,
+   28,
+   8,
+   33
+  ],
+  [
+   0,
+   41,
+   8,
+   46
+  ],
+  [
+   0,
+   54,
+   8,
+   59
+  ],
+  [
+   0,
+   67,
+   8,
+   72
+  ],
+  [
+   0,
+   80,
+   8,
+   85
+  ],
+  [
+   0,
+   93,
+   8,
+   98
+  ],
+  [
+   0,
+   106,
+   8,
+   111
+  ]
+ ],
+ "floor_tex": [
+  {
+   "tex": "in05_mat2",
+   "src": 286,
+   "rect": [
+    1,
+    16,
+    7,
+    19
+   ],
+   "size": 16
+  },
+  {
+   "tex": "in05_mat2",
+   "src": 286,
+   "rect": [
+    1,
+    29,
+    7,
+    32
+   ],
+   "size": 16
+  },
+  {
+   "tex": "in05_mat2",
+   "src": 286,
+   "rect": [
+    1,
+    42,
+    7,
+    45
+   ],
+   "size": 16
+  },
+  {
+   "tex": "in05_mat2",
+   "src": 286,
+   "rect": [
+    1,
+    55,
+    7,
+    58
+   ],
+   "size": 16
+  },
+  {
+   "tex": "in05_mat2",
+   "src": 286,
+   "rect": [
+    1,
+    68,
+    7,
+    71
+   ],
+   "size": 16
+  },
+  {
+   "tex": "in05_mat2",
+   "src": 286,
+   "rect": [
+    1,
+    81,
+    7,
+    84
+   ],
+   "size": 16
+  },
+  {
+   "tex": "in05_mat2",
+   "src": 286,
+   "rect": [
+    1,
+    94,
+    7,
+    97
+   ],
+   "size": 16
+  },
+  {
+   "tex": "in05_mat1",
+   "src": 286,
+   "rect": [
+    3,
+    4,
+    5,
+    6
+   ],
+   "stretch": true
+  }
+ ],
+ "furniture": [
+  {
+   "m": "door_pwood01",
+   "tile": [
+    1,
+    106
+   ],
+   "wall": "N"
+  },
+  {
+   "m": "door_pwood01",
+   "tile": [
+    7,
+    106
+   ],
+   "wall": "N"
+  },
+  {
+   "m": "door_pwood01",
+   "tile": [
+    1,
+    80
+   ],
+   "wall": "N"
+  },
+  {
+   "m": "door_pwood01",
+   "tile": [
+    7,
+    80
+   ],
+   "wall": "N"
+  },
+  {
+   "m": "door_pwood01",
+   "tile": [
+    1,
+    93
+   ],
+   "wall": "N"
+  },
+  {
+   "m": "door_pwood01",
+   "tile": [
+    7,
+    93
+   ],
+   "wall": "N"
+  },
+  {
+   "m": "door_pwood01",
+   "tile": [
+    7,
+    41
+   ],
+   "wall": "N"
+  },
+  {
+   "m": "door_pwood01",
+   "tile": [
+    1,
+    54
+   ],
+   "wall": "N"
+  },
+  {
+   "m": "door_pwood01",
+   "tile": [
+    7,
+    54
+   ],
+   "wall": "N"
+  },
+  {
+   "m": "door_pwood01",
+   "tile": [
+    1,
+    67
+   ],
+   "wall": "N"
+  },
+  {
+   "m": "door_pwood01",
+   "tile": [
+    7,
+    15
+   ],
+   "wall": "N"
+  },
+  {
+   "m": "door_pwood01",
+   "tile": [
+    1,
+    28
+   ],
+   "wall": "N"
+  },
+  {
+   "m": "object02_1",
+   "tile": [
+    1,
+    110
+   ]
+  },
+  {
+   "m": "object02_1",
+   "tile": [
+    7,
+    110
+   ]
+  }
+ ],
+ "mats": [
+  {
+   "tex": "in70_mat1",
+   "src": 351,
+   "border": 0.25,
+   "border_units": 3,
+   "y": 0,
+   "rect": [
+    4,
+    111,
+    5,
+    111
+   ],
+   "_what": "exit mat (Sapphire's Gym entrance mat)"
+  }
+ ]
+}

@@ -1,0 +1,800 @@
+{0100:0} has entered the Battle Dome!
+{0100:1}\nmatch!{be01}\n{0100:0} versus {0100:2}!{be01}\nLet the battle begin!
+{0100:0} is the winner!\nCongratulations!
+{0100:2} is the winner!\nCongratulations!
+{0100:0} is the Level 50\nBattle Tournament Champion!{be01}\nCongratulations!
+{0100:0} is the Open Level\nBattle Tournament Champion!{be01}\nCongratulations!
+The bright new hope!
+The rising star!
+Will this Trainer race to\nthe championship?
+Can the feat of a championship\non the first try be achieved?
+Can the loss of the last match\nbe avenged?
+The Trainer is on fire for\nthe first championship try!
+A win here means this Trainer\nadvances to the final!
+Will the long-held dream of\na championship finally come true?
+The invincible champion!
+Can anyone hope to beat this\nTrainer?
+Do battles exist solely for\nthis Trainer?
+The current champion aiming to\nretain the title!
+The former champion has returned!
+The former toughness has returned!
+Will this Trainer do as expected\nand advance to the finals?
+Will the former champ regain\nlost glory?
+Feel the glow of a true master!
+And now… The Trainer standing in\n{0100:0}’s record-setting path…{be01}\nYes! The one and only!\nThe Battle Dome Commissioner!{be00}\nOur very own Dome Ace!{be00}\nMake way for Tucker!
+Spectators: Tucker! Tucker!\nTucker! Tucker! Tucker!
+Tucker: Ahahah!{be01}\nDo you hear it? This crowd!\nThey’re all itching to see our match!{be01}\nAhahah!{be01}\nI bet you’re twitching all over from\nthe tension of getting to battle me!{be01}\nBut don’t you worry about a thing!{be01}\nI’m the no. 1 star of the Battle Dome!\nI, Tucker the Dome Ace, will bathe you{be00}\nin my brilliant glow!
+Your strategy!\nLet’s see it!
+Unbelievable! It’s incredible!\nThe victor is {0100:0}!
+The winner is Tucker!\nThe Dome Ace has prevailed!{be01}\nCongratulations, Tucker!
+Tucker: Rules are rules!\nLet me see your Frontier Pass.
+The Tactics Symbol was embossed on\nthe Frontier Pass!
+… … … … … …{be01}\nI sorely underestimated you. I won’t\nmake the same mistake next time…
+Can the win streak be stretched?\nThe confidence is there!
+Ladies and gentlemen!\nBoys, girls, and Pokémon!{be01}\nFinally!\nFinally, the legend has returned!{be01}\nYes, the name of that legend!\nOur very own Dome Ace!{be00}\nIt’s none other than Tucker!
+Tucker: Ah…\nThe pummeling roar of the crowd…{be00}\nTheir furnace-like heat of excitement…{be00}\nThis is a wonderful place…{be01}\nTo the crowd, I am the Dome Ace…\nI represent their hopes and dreams…{be00}\nI must never fade from their sight…{be01}\nI must burn!\nBrighter and more brilliant!{be00}\nI must light all that gather here!
+I will unleash all the power that\nI possess! Right here and now!
+Tucker: You’re genuinely fantastic!{be01}\nNever before! I haven’t ever lost in the\ntimes I’ve had to unleash my power.{be01}\nYes, quite fantastic!\nYour Frontier Pass, please?
+The Tactics Symbol took on\na golden shine!
+You’re strong, but above all,\nyou have a unique charm!{be01}\nIn you, I see a definite potential for\na superstar like me.{be01}\nI will very much look forward to\nour next encounter!
+The final match!{be01}\n{0100:0} versus the Dome Ace, Tucker!{be01}\nLet the battle begin!
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+Battle Dome
+Your block
+The other block
+Round 1
+Round 2
+Semifinal
+Final
+…
+…
+…
+Brady
+Conner
+Bradley
+Cybil
+Rodette
+Peggy
+Keith
+Grayson
+Glenn
+Liliana
+Elise
+Zoey
+Manuel
+Russ
+Dustin
+Tina
+Gillian
+Zoe
+Chen
+Al
+Mitch
+Anne
+Alize
+Lauren
+Kipp
+Jason
+John
+Ann
+Eileen
+Carlie
+Gordon
+Ayden
+Marco
+Cierra
+Marcy
+Kathy
+Peyton
+Julian
+Quinn
+Haylee
+Amanda
+Stacy
+Rafael
+Oliver
+Payton
+Pamela
+Eliza
+Marisa
+Lewis
+Yoshi
+Destin
+Keon
+Stuart
+Nestor
+Derrick
+Bryson
+Clayton
+Trenton
+Jenson
+Wesley
+Anton
+Lawson
+Sammy
+Arnie
+Adrian
+Tristan
+Juliana
+Rylee
+Chelsea
+Danela
+Lizbeth
+Amelia
+Jillian
+Abbie
+Briana
+Antonio
+Jaden
+Dakota
+Brayden
+Corson
+Trevin
+Patrick
+Kaden
+Maxwell
+Daryl
+Kenneth
+Rich
+Caden
+Marlon
+Nash
+Robby
+Reece
+Kathryn
+Ellen
+Ramon
+Arthur
+Alondra
+Adriana
+Malik
+Jill
+Erik
+Yazmin
+Jamal
+Leslie
+Dave
+Carlo
+Emilia
+Dalia
+Hitomi
+Ricardo
+Shizuka
+Joana
+Kelly
+Rayna
+Evan
+Jordan
+Joel
+Kristen
+Selphy
+Chloe
+Norton
+Lukas
+Zach
+Kaitlyn
+Breanna
+Kendra
+Molly
+Jazmin
+Kelsey
+Jalen
+Griffen
+Xander
+Marvin
+Brennan
+Baley
+Zackary
+Gabriel
+Emily
+Jordyn
+Sofia
+Braden
+Kayden
+Cooper
+Julia
+Amara
+Lynn
+Jovan
+Dominic
+Nikolas
+Valeria
+Delaney
+Meghan
+Roberto
+Damian
+Brody
+Graham
+Tylor
+Jaren
+Cordell
+Jazlyn
+Zachery
+Johan
+Shea
+Kaila
+Isiah
+Garrett
+Haylie
+Megan
+Issac
+Quinton
+Salma
+Ansley
+Holden
+Luca
+Jamison
+Gunnar
+Craig
+Pierce
+Regina
+Alison
+Hank
+Earl
+Ramiro
+Hunter
+Aiden
+Xavier
+Clinton
+Jesse
+Eduardo
+Hal
+Gage
+Arnold
+Jarrett
+Garett
+Emanuel
+Gustavo
+Kameron
+Alfredo
+Ruben
+Lamar
+Jaxon
+Logan
+Emilee
+Josie
+Armando
+Skyler
+Ruth
+Melody
+Pedro
+Erick
+Elaine
+Joyce
+Todd
+Gavin
+Malory
+Esther
+Oscar
+Wilson
+Clare
+Tess
+Leon
+Alonzo
+Vince
+Bryon
+Ava
+Miriam
+Carrie
+Gillian
+Tyler
+Chaz
+Nelson
+Shania
+Stella
+Dorine
+Maddox
+Davin
+Trevon
+Mateo
+Bret
+Raul
+Kay
+Elena
+Alana
+Alexas
+Weston
+Jasper
+Nadia
+Miranda
+Emma
+Rolando
+Stanly
+Dario
+Karlee
+Jaylin
+Ingrid
+Delilah
+Carly
+Lexie
+Miller
+Marv
+Layton
+Brooks
+Gregory
+Reese
+Mason
+Toby
+Dorothy
+Piper
+Finn
+Samir
+Fiona
+Gloria
+Nico
+Jeremy
+Caitlin
+Reena
+Avery
+Liam
+Theo
+Bailey
+Hugo
+Bryce
+Gideon
+Triston
+Charles
+Raymond
+Dirk
+Harold
+Omar
+Peter
+Dev
+Corey
+Andre
+Ferris
+Alivia
+Paige
+Anya
+Dawn
+Abby
+Gretel
+Noland
+Tucker
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+I am never going\nto lose!
+Losing doesn’t Bug\nme
+Hey, there! You’re\nmy opponent today
+You’re really not very\nscary at all
+Oh this is\nso exciting!
+Get ready to\nbe destroyed!
+I don’t just\nstudy you know
+A Pokémon battle\nisn’t child’s play!
+I would be\ncool if I win
+I won’t give up\nuntil I win
+My strategy is\nfrom my father
+Please battle like\nyou mean it
+Me lose?\nThat’s preposterous!
+They all want\nmy fabulous Pokémon
+I really like\ncool Pokémon
+If I win you can\nhave a Sweet Kiss
+The gourmet thing\nis so yesterday
+I haven’t a\nworry at all
+I am totally ready\nto Rock today
+Your look says\nyou’re really tough
+Mother nature is\nmy ally!
+I can’t wait\nlet’s battle now
+Cute and awfully\nstrong that’s me
+I am old but\nI am also good
+If I win I am going\nto go Surf
+Teach me a\ngood strategy
+I am a pretty\nnew trainer
+It’s so exciting\nit really is
+Let’s pretend I am\nan adult ok?
+My summer vacation\nis for Pokémon
+Victory will come\nto me!
+Come on I need\na hot battle
+I Surf in\nthe winter too
+I like to\nSynchronize my Swift Swim
+I am a knockout\nyou can’t win!
+I’ve won every\nmatch today!
+I am never disappointed\nwith my Pokémon
+You adore your\nPokémon right?
+My Pokémon are\nbut a dream
+I don’t know\nhow I am feeling
+I come from\na trainer family
+All Pokémon have\ntheir own Cute Charm
+Come on! Let’s\nsee some spirit
+A genius that’s\nwhat I am!
+I train from\nthe egg up
+All Pokémon adore\na kind trainer
+I adore Pokémon\nlike my children
+I promise to\nbattle seriously
+A little Bug is\nscary? Hahaha
+Bug Pokémon make\nme feeling lovey-dovey
+It’s way too\nhot here
+Forgive me but\nhere I come!
+I promise you\na hot battle
+Show me a\nreally smooth move
+Let’s see you\nMeditate like me
+PoisonPowder is in\nour Cotton Spore move
+Huh?\nwhere is it?
+Come over for some\ntasty Water
+My Pokémon will\nmake you downcast
+Is how I\ncry
+Get ready for\nme to Thrash
+I am young at\nheart!
+My party is\nready to Rock
+I am no. 1 I\nhave no rival
+Yahoo!\nYahoo!!
+Confused?\nI am a genius
+I think I am\nshopping too much
+Show me that\nyou have Guts
+I seriously mean\nto win!
+You must be my\nopponent now!
+If I lose you can\nhave a Present
+I believe in\ncute fashion appeal
+What is that\nI smell?
+You try my\nsecret Aromatherapy ok?
+My boy friend\nworks too much
+I know how\nto go go
+Hello I think\nI adore you
+You have to\ndance with power
+Color Change version toys\nare useless!
+I get to\nBeat Up on you
+There is\nbetter than me
+I am perfect!\nGive up now
+What are you\nup to?
+Hey, there who is your\nrival?
+I only know\nhow to Charge
+You better not\nSlack Off with me
+Your Facade doesn’t\nTrick me
+I can’t be\ndefeated!
+A pokédex is\na little radio?
+I am on Fire\nbaby!
+Hahaha! Happy\nto meet you!
+My Quick Attack can\nbeat a Teleport
+I don’t train\ngood enough?
+Crush you like\nan egg!
+Okay!\nThis is perfection
+Here I come feeling ready\nfor it all
+Every day is\na great day
+Come see an\nincredible Swift Swim!
+Oh not another\nbattle please…
+I am the Quick Attack\ntrainer!
+I am the Speed Boost\nhero!
+I would rather\nrun than bike
+I am going to\nbe a father
+I am going to\nbe a mother
+What should I\ndo today?
+Hah!!\nYeah!!
+Me worry?\nI have
+My bike is\nvery expensive
+Yeah!!\nHah!!
+Come on! Play\ntime is over
+Show me that\nyou’re serious!
+You’re going to\nlose right away
+My night school\nis really scary
+I am no. 1 when\nit’s about power
+Every battle has\na smell
+Good!\nCome on!!
+Fufufu…\n
+Hahaha…\na kid…
+Huh? what is it?\n
+Come we will\ndo battle now
+I know only\nyou
+My joking is\npretty terrible…
+I am an excellent\nMimic of Pokémon
+I crush things\nwith Psychic power
+My Pokémon will\ncrush you!
+If you’re smart\nstop right now
+Will my Cute Charm\nAttract you?
+I Forecast terrible\nthings for you
+I haven’t slept\nin days…
+I don’t allow\nPokémon to Thrash
+I Swallow Sludge\nto Transform myself
+I got my\nPokémon on rental
+You’re up to\nthe challenge?
+I Wish to\nsee the news
+Screech is like\nmusic to me!
+Can you Dig\nit yo?
+Pound the Thick Fat\non my Belly Drum
+How about a tiny bit\nof Hypnosis?
+You don’t know\nmy secret…
+Loudred probably has\na Sweet Scent
+I choose you!\nThis is it!
+They overdo that\ngourmet thing…
+This should absolutely\nbe a pushover
+Spirit alone won’t\nmake you win
+Wroooaar!!! I am\nso ready!!
+Your secret can’t\nbe hidden forever
+Your battle sense\nis sadly lacking
+I have this\nexcellent camera
+I Mimic Pokémon\nafter every battle
+I Wish you\nwould not Glare
+School is over\ntime to play
+School is out\ntime to play
+Dragon Pokémon are\ninvincible!
+My Pure Power is\nmachine like!
+My fashion sense\nseems Oddish?
+Yeah!\nYeah, yeah!!
+Are you feeling\nmy Heat Wave?
+Fighting spirit?\nMe?
+A battle is\ndecided on spirit
+Is your pokédex\nreally awesome?
+I have my\nown place yeehaw!
+Winter will soon\nbe here
+Do you battle\nwith beauty?
+I am feeling thirsty\nright now…
+I pretend to\nstudy a lot
+I enjoy comics\nand this game
+I worry too\nmuch to sleep
+I believe in\nan Aromatherapy bath
+My hobby?\n
+I am sad cause\nI am too weak
+You’ve got your\nHustle on!
+I am bored…\ndance for me
+Let’s commemorate my\ncoolness in battle
+We will have\na cool battle
+My Secret Power is\noverwhelming to Pokémon
+I Cut down\nevery opponent
+I can’t wait\nfor my train
+There was a\nHeat Wave last week
+I like to\nplay in Water
+This kindergarten magazine\nis too much
+There is a\nBug event soon
+The invincible Bug\ntrainer is here
+I went to\na fishing school
+Show me a\ntotally cool Cross Chop
+My work is\nmaking me healthy
+Hey, there!\nLook look!!
+Want to see\nmy Hypnosis?
+This battle is\nfor my mother
+Our music will\nplay all night
+I am trendy aren’t\nI?
+Here it is a Flying\ntype hidden move
+I am feeling weird\nfrom a dream
+Come on let’s dance\nlike it’s yesterday
+My girl gives\nme a little Sweet Kiss
+Smartness alone won’t\nmake you win
+Charge!\nCharge!!
+Take that! It’s\nmy fiery Trick
+A fiery gourmet\nam I!
+I can’t wait\nto get going
+A Present for\nme?
+A Shell Armor is\nwhat I want
+If I lose I will\nstudy for school
+Is this kind\nof battle ok?
+A Pokémon fashion\ncontest is pretty
+I need more\nGrass type Pokémon
+Ingrain is my\nchoice battle move
+I want to\nenjoy this battle
+I Wish Sunday\nis a Sunny Day
+A Swift Swim will\ndo you good
+I will Tackle\nyou down!
+My heroine adventure\nisn’t going well
+You make me\ngo ahaha!
+You’re a Lightningrod\nfor my power
+I will Bide\nmy time
+Promise to show\nme cute Pokémon
+I want a\nnice Present…
+Let’s see your\npower in full
+Work is making\nme an Early Bird
+Yay! A\ntough trainer!
+Want some Gulpin\ndesign sweets?
+I am better than\nany other trainer
+I’ve not lost\nonce yet!
+The top trainer\nthat’s me!
+My Barrage will\nSlam you!
+I am a treasure\nof this world
+Oh a trainer\nwith a Scary Face
+I will show\nyou gutsy!
+I seek a\ntruly great battle
+Yo!\nLet’s go!!
+My Pokémon have\ntoo much power
+Well, then will this\nPokémon work?
+All my Pokémon\nabsolutely adore me
+I want to\nsee your Pokémon
+I am young and\nstrong!
+Dragon Pokémon are\nmy no. 1 choice
+Let’s hear you\nRoar!
+I am living only\nwith Dragon Pokémon
+This should be\nover soon enough
+I like rock-solid\nPokémon the best
+I reject every\nweak trainer
+And yet another\nbattle?
+A battle girl\nthat’s me!
+Eat my invincible\nattack you!
+Good to meet you\nyoung trainer!
+I don’t play\ndown all right?
+I am not old\nI am skilled!
+You can’t beat\nme down!
+Well well\nlet’s start
+I’ve been hearing\nabout you
+I am a super\nPokémon hero!
+This should be\nan easy match
+My Foresight says\nI will win
+Something good will\ncome of this
+Every trainer has\nbeen too weak…
+I am not a\nvery mean trainer
+Don’t Grudge me\nif I win ok?
+I will scatter\nsome PoisonPowder about
+Want to see\nscary Pokémon?
+Hello?\nHello?!
+You can lose\nyour Swagger now
+I know I am\ntotally cool!
+This is a\nhigh level battle
+I am not that\nold yet
+I’ve a couple\nthings
+Please don’t make\nthis scary
+Listen up\nI always win
+The sports world\nshould accept Pokémon
+Come on you need\na Speed Boost?
+Not another trainer\nbattle…
+I Dive below\nthe Surf!
+Did you Limber\nup before?
+I like to\nattack with Suction Cups
+Like a SonicBoom\nI’ve arrived
+A Pokémon master\nthat’s my dream
+Don’t you think\nI am cute?
+I am always happy\nhappy happy!
+I’ve got a lot\nof Bug Pokémon
+We really dislike\nFire and Flying
+Fishing is my\nchoice in life
+I am an adult\nI battle easy
+I try the\nbest I can
+I was on vacation\nuntil only yesterday
+What’s up? you think\nI am scary?
+I would rather\nlook at Pokémon
+It’s hopeless to\nStruggle with me
+Want to hear\nmy song?
+Flying Pokémon are\nabove the Rest
+My Pokémon appeal\nto you?
+Let me win in Return\nfor a Present
+I brag about\nmy happiness ok?
+Come on let’s get\na move on
+Let’s teach you\nhow tough I am
+Now this is\na perfect Flame Body
+I am no. 1 in\nthe old class
+I am feeling giddy\nso should you
+Let’s enjoy our\nbattle together
+I dislike oh\nso pretty fashion
+I go all\nout!
+I like a\ntrainer that’s refreshing
+I cause Outrage\nas a trainer

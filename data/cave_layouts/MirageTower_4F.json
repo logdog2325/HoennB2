@@ -1,0 +1,22 @@
+{
+ "map": "emerald/MirageTower_4F",
+ "levels": {
+  "3": 0,
+  "4": 16
+ },
+ "void": [
+  [
+   1,
+   9,
+   1,
+   9
+  ],
+  [
+   11,
+   9,
+   11,
+   9
+  ]
+ ],
+ "_doc": "emerald_caves 2026-10-12: Emerald's MirageTower_4F (pokeemerald) read as Emerald's world reads it (models_cave 'emerald/<Map>'); void = walkable tiles no warp reaches, pools = its blocked water"
+}

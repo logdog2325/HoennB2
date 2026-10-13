@@ -1,0 +1,17 @@
+{
+ "kind": "trainer",
+ "side": "front",
+ "sprite": 152,
+ "archive": 71,
+ "files": {
+  "static": 1216,
+  "parts": 1217,
+  "palette": 1223
+ },
+ "name": "tabitha",
+ "note": "Tabitha (Team Magma admin)",
+ "source": "pokeruby graphics/trainers/magma_admin_m.png",
+ "layout": "parts and animations of Black 2 front sprite 152",
+ "made_by": "b2tools/sprite_upgrade.py",
+ "static_intro": true
+}

@@ -1,0 +1,23 @@
+{
+ "_doc": "LilycoveCity_House3: zone written by converter/gen_interior_recipes_houses.py (warps and parent from converter/gen_interiors.py); story people left for the story phase: person BOY_5 at (3,4) LilycoveCity_House3_EventScript_GameBoyKid4 (story/complex script); person WOMAN_2 at (7,4) LilycoveCity_House3_EventScript_PokefanF (story/complex script); person BOY_5 at (1,4) LilycoveCity_House3_EventScript_GameBoyKid2 (story/complex script); person BOY_5 at (2,5) LilycoveCity_House3_EventScript_GameBoyKid3 (story/complex script); person BOY_5 at (2,3) LilycoveCity_House3_EventScript_GameBoyKid1 (story/complex script); person MAN_1 at (7,5) LilycoveCity_House3_EventScript_Man (story/complex script)",
+ "zone": 208,
+ "room": "LilycoveCity_House3",
+ "area": 313,
+ "parent": 96,
+ "warps": [
+  {
+   "at": [3, 7],
+   "tile_only": true,
+   "to": [96, 23],
+   "what": "Sapphire warp 0 -> LilycoveCity 10"
+  },
+  {
+   "at": [4, 7],
+   "tile_only": true,
+   "to": [96, 23],
+   "what": "Sapphire warp 1 -> LilycoveCity 10"
+  }
+ ],
+ "npcs": [],
+ "signs": []
+}

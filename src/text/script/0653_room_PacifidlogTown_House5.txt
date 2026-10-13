@@ -1,0 +1,4 @@
+Mirage Island...{be01}\nIt must become visible and invisible\ndepending on the weather conditions{be00}\nthat make mirages appear.{be01}\nOr is it really appearing and\ndisappearing?
+This vase looks expensive...\nPeered inside...{be01}\nBut, it was empty.
+I can’t see Mirage Island today...
+Oh! Oh my!\nI can see Mirage Island today!

@@ -1,0 +1,194 @@
+{
+ "_doc": "Pokémon Emerald NDS overlay of data/sprite_map.json (deep-merged by b2tools/version.py load_json in an Emerald build; emerald_s0 2026-10-12, notes/EMERALD_STORY.md S0-5). Rows for pokeemerald graphics ids Sapphire's file has no row for (Scott, Juan) and the two teams as Emerald draws them. Emerald has both villain teams at once, so there is NO art swap (Ruby's RUBY_SWAPS in b2tools/sprite_upgrade.py): the shared codes keep their Sapphire art, Aqua 293 / 294 / Archie 353 and Magma 302 / 192 / Maxie 303, and pokeemerald places these graphics ids directly in its maps (count = objects in pokeemerald's maps), not through VAR_OBJ_GFX_ID_x as Sapphire does. Wallace 288 and Steven 287 as Sapphire's rows. Not here yet (S0-1, gen_map_content's Emerald mode): pokeemerald's renamed townsperson ids (OBJ_EVENT_GFX_EXPERT_M, POKEFAN_F, NINJA_BOY ...) and its other new ids (Kecleon, Vigoroth movers, dolls, legendaries).",
+ "OBJ_EVENT_GFX_AQUA_MEMBER_M": {
+  "code": 293,
+  "b2": "Neo Team Plasma grunt (M) slot, now Team Aqua grunt (M)",
+  "note": "Emerald: the shared art src/sprites/overworld/293-aqua-grunt-m as in Sapphire; no swap (both teams appear in Emerald, unlike Ruby's RUBY_SWAPS); pokeemerald places this graphics id directly in its maps (count)",
+  "stand_in": false,
+  "count": 62
+ },
+ "OBJ_EVENT_GFX_AQUA_MEMBER_F": {
+  "code": 294,
+  "b2": "Neo Team Plasma grunt (F) slot, now Team Aqua grunt (F)",
+  "note": "Emerald: the shared art src/sprites/overworld/294-aqua-grunt-f as in Sapphire; no swap (both teams appear in Emerald, unlike Ruby's RUBY_SWAPS); pokeemerald places this graphics id directly in its maps (count)",
+  "stand_in": false,
+  "count": 11
+ },
+ "OBJ_EVENT_GFX_MAGMA_MEMBER_M": {
+  "code": 302,
+  "b2": "Zinzolin slot (Unova-only), now Team Magma grunt (M)",
+  "note": "Emerald: the shared art src/sprites/overworld/302-magma-grunt-m as in Sapphire; no swap (both teams appear in Emerald, unlike Ruby's RUBY_SWAPS); pokeemerald places this graphics id directly in its maps (count)",
+  "stand_in": false,
+  "count": 39
+ },
+ "OBJ_EVENT_GFX_MAGMA_MEMBER_F": {
+  "code": 192,
+  "b2": "robed elder slot (Undella only), now Team Magma grunt (F)",
+  "note": "Emerald: the shared art src/sprites/overworld/192-magma-grunt-f as in Sapphire; no swap (both teams appear in Emerald, unlike Ruby's RUBY_SWAPS); pokeemerald places this graphics id directly in its maps (count)",
+  "stand_in": false,
+  "count": 6
+ },
+ "OBJ_EVENT_GFX_ARCHIE": {
+  "code": 353,
+  "b2": "Ghetsis slot (Giant Chasm only), now Archie",
+  "note": "Emerald: the shared art src/sprites/overworld/353-archie as in Sapphire; no swap (both teams appear in Emerald, unlike Ruby's RUBY_SWAPS); pokeemerald places this graphics id directly in its maps (count)",
+  "stand_in": false,
+  "count": 8
+ },
+ "OBJ_EVENT_GFX_MAXIE": {
+  "code": 303,
+  "b2": "Pokestar Studios actor slot (Nimbasa/Pokestar only), now Maxie",
+  "note": "Emerald: the shared art src/sprites/overworld/303-maxie as in Sapphire; no swap (both teams appear in Emerald, unlike Ruby's RUBY_SWAPS); pokeemerald places this graphics id directly in its maps (count)",
+  "stand_in": false,
+  "count": 8
+ },
+ "OBJ_EVENT_GFX_WALLACE": {
+  "code": 288,
+  "b2": "Wallace (PWT)",
+  "note": "Emerald: the shared art src/sprites/overworld/288-wallace as in Sapphire; pokeemerald places this graphics id directly in its maps (count)",
+  "stand_in": true,
+  "count": 5
+ },
+ "OBJ_EVENT_GFX_STEVEN": {
+  "code": 287,
+  "b2": "Steven (PWT)",
+  "note": "Emerald: the shared art src/sprites/overworld/287-steven as in Sapphire; pokeemerald places this graphics id directly in its maps (count)",
+  "stand_in": true,
+  "count": 9
+ },
+ "OBJ_EVENT_GFX_SCOTT": {
+  "code": 289,
+  "b2": "Black 2 sheet 289 (a Unova character set only by script file 128, a Unova zone script HoennB2 replaces; no zone, PWT, trainer-class or other script use), now Scott",
+  "note": "Emerald's own sprite (pokeemerald graphics/object_events/pics/people/scott.png, palette npc_1, found byte for byte in roms/emerald_original.gba) resized as Sapphire's characters (b2tools/sprite_emerald_story.py: sprite_upgrade.ow_frames), src/sprites/overworld/emerald/289-scott (Emerald builds only; Sapphire and Ruby keep Black 2's unused sheet); review: screenshots/emerald_s0/story_sprites_review.png",
+  "stand_in": false,
+  "count": 13
+ },
+ "OBJ_EVENT_GFX_JUAN": {
+  "code": 276,
+  "b2": "Juan (PWT)",
+  "note": "Black 2's own PWT sheet of the same character with its placeholder X frames (back view, walking) filled from his own front and side frames by b2tools/sprite_pwt.py, as Steven's and Wallace's (user decision 2026-10-12): src/sprites/overworld/emerald/276-juan, Emerald builds only (Sapphire and Ruby keep Black 2's sheet, which only their PWT shows, standing); review: screenshots/emerald_integrate/story_sprites_review.png",
+  "stand_in": false,
+  "count": 1
+ },
+ "OBJ_EVENT_GFX_ANABEL": {
+  "code": 56,
+  "b2": "Black 2 sheet 56 (a Unova townsperson set only in Black 2 zone entity files 22, 68 and 498 (preload list 4), Unova zones/scripts HoennB2 replaced: no zone NPC, script, PWT record, class sprite or HoennB2 use in any version), now Anabel",
+  "note": "Frontier Brain Anabel (Salon Maiden, Battle Tower): Emerald's own sprite (pokeemerald graphics/object_events/pics/people/frontier_brains/anabel.png, palette npc_4, found byte for byte in roms/emerald_original.gba) resized as Scott's (b2tools/sprite_emerald_frontier.py), src/sprites/overworld/emerald/056-anabel (Emerald builds only; Sapphire and Ruby keep Black 2's sheet). Emerald shows the Brains in their battle rooms through VAR_OBJ_GFX_ID (frontier_util.c sFrontierBrainObjEventGfx); review: work/agents/frontier_core/sprites/brains_review.png",
+  "stand_in": false,
+  "count": 0
+ },
+ "OBJ_EVENT_GFX_TUCKER": {
+  "code": 99,
+  "b2": "Black 2 sheet 99 (a Unova townsperson set only in Black 2 zone entity file 117, Unova zones/scripts HoennB2 replaced: no zone NPC, script, PWT record, class sprite or HoennB2 use in any version), now Tucker",
+  "note": "Frontier Brain Tucker (Dome Ace, Battle Dome): Emerald's own sprite (pokeemerald graphics/object_events/pics/people/frontier_brains/tucker.png, palette npc_1, found byte for byte in roms/emerald_original.gba) resized as Scott's (b2tools/sprite_emerald_frontier.py), src/sprites/overworld/emerald/099-tucker (Emerald builds only; Sapphire and Ruby keep Black 2's sheet). Emerald shows the Brains in their battle rooms through VAR_OBJ_GFX_ID (frontier_util.c sFrontierBrainObjEventGfx); review: work/agents/frontier_core/sprites/brains_review.png",
+  "stand_in": false,
+  "count": 0
+ },
+ "OBJ_EVENT_GFX_SPENSER": {
+  "code": 107,
+  "b2": "Black 2 sheet 107 (a Unova townsperson set only in Black 2 zone entity file 66 (preload list 6), Unova zones/scripts HoennB2 replaced: no zone NPC, script, PWT record, class sprite or HoennB2 use in any version), now Spenser",
+  "note": "Frontier Brain Spenser (Palace Maven, Battle Palace): Emerald's own sprite (pokeemerald graphics/object_events/pics/people/frontier_brains/spenser.png, palette npc_1, found byte for byte in roms/emerald_original.gba) resized as Scott's (b2tools/sprite_emerald_frontier.py), src/sprites/overworld/emerald/107-spenser (Emerald builds only; Sapphire and Ruby keep Black 2's sheet). Emerald shows the Brains in their battle rooms through VAR_OBJ_GFX_ID (frontier_util.c sFrontierBrainObjEventGfx); review: work/agents/frontier_core/sprites/brains_review.png",
+  "stand_in": false,
+  "count": 0
+ },
+ "OBJ_EVENT_GFX_GRETA": {
+  "code": 207,
+  "b2": "Black 2 sheet 207 (a Unova townsperson set only in Black 2 zone entity file 66 (preload list 6), Unova zones/scripts HoennB2 replaced: no zone NPC, script, PWT record, class sprite or HoennB2 use in any version), now Greta",
+  "note": "Frontier Brain Greta (Arena Tycoon, Battle Arena): Emerald's own sprite (pokeemerald graphics/object_events/pics/people/frontier_brains/greta.png, palette npc_1, found byte for byte in roms/emerald_original.gba) resized as Scott's (b2tools/sprite_emerald_frontier.py), src/sprites/overworld/emerald/207-greta (Emerald builds only; Sapphire and Ruby keep Black 2's sheet). Emerald shows the Brains in their battle rooms through VAR_OBJ_GFX_ID (frontier_util.c sFrontierBrainObjEventGfx); review: work/agents/frontier_core/sprites/brains_review.png",
+  "stand_in": false,
+  "count": 0
+ },
+ "OBJ_EVENT_GFX_NOLAND": {
+  "code": 298,
+  "b2": "Black 2 sheet 298 (a Unova character set only by Black 2 script file 290 (ActorNew), Unova zones/scripts HoennB2 replaced: no zone NPC, script, PWT record, class sprite or HoennB2 use in any version), now Noland",
+  "note": "Frontier Brain Noland (Factory Head, Battle Factory): Emerald's own sprite (pokeemerald graphics/object_events/pics/people/frontier_brains/noland.png, palette npc_3, found byte for byte in roms/emerald_original.gba) resized as Scott's (b2tools/sprite_emerald_frontier.py), src/sprites/overworld/emerald/298-noland (Emerald builds only; Sapphire and Ruby keep Black 2's sheet). Emerald shows the Brains in their battle rooms through VAR_OBJ_GFX_ID (frontier_util.c sFrontierBrainObjEventGfx); review: work/agents/frontier_core/sprites/brains_review.png",
+  "stand_in": false,
+  "count": 0
+ },
+ "OBJ_EVENT_GFX_LUCY": {
+  "code": 299,
+  "b2": "Black 2 sheet 299 (a Unova townsperson set only in Black 2 zone entity file 117, Unova zones/scripts HoennB2 replaced: no zone NPC, script, PWT record, class sprite or HoennB2 use in any version), now Lucy",
+  "note": "Frontier Brain Lucy (Pike Queen, Battle Pike): Emerald's own sprite (pokeemerald graphics/object_events/pics/people/frontier_brains/lucy.png, palette npc_4, found byte for byte in roms/emerald_original.gba) resized as Scott's (b2tools/sprite_emerald_frontier.py), src/sprites/overworld/emerald/299-lucy (Emerald builds only; Sapphire and Ruby keep Black 2's sheet). Emerald shows the Brains in their battle rooms through VAR_OBJ_GFX_ID (frontier_util.c sFrontierBrainObjEventGfx); review: work/agents/frontier_core/sprites/brains_review.png",
+  "stand_in": false,
+  "count": 0
+ },
+ "OBJ_EVENT_GFX_BRANDON": {
+  "code": 300,
+  "b2": "Black 2 sheet 300 (a Unova townsperson set only in Black 2 zone entity file 117, Unova zones/scripts HoennB2 replaced: no zone NPC, script, PWT record, class sprite or HoennB2 use in any version), now Brandon",
+  "note": "Frontier Brain Brandon (Pyramid King, Battle Pyramid): Emerald's own sprite (pokeemerald graphics/object_events/pics/people/frontier_brains/brandon.png, palette npc_3, found byte for byte in roms/emerald_original.gba) resized as Scott's (b2tools/sprite_emerald_frontier.py), src/sprites/overworld/emerald/300-brandon (Emerald builds only; Sapphire and Ruby keep Black 2's sheet). Emerald shows the Brains in their battle rooms through VAR_OBJ_GFX_ID (frontier_util.c sFrontierBrainObjEventGfx); review: work/agents/frontier_core/sprites/brains_review.png",
+  "stand_in": false,
+  "count": 1
+ },
+ "_overworld_extra_doc": "Hoenn characters Sapphire draws with another graphics id, given their own Black 2 sheet (b2tools/sprite_upgrade.py): name -> Black 2 object code. Use the code directly (ActorNew / zone NPC model) or through a WKOBJCODE var, as for the Team Aqua/Magma ids.",
+ "_overworld_extra": {
+  "TABITHA": {
+   "code": 290,
+   "b2": "Black 2 sheet 290 (the female twin of Scott's 289: set only by script file 128, a Unova zone script HoennB2 replaces; no zone entity, PWT record, HoennB2 data or other script uses it), now Tabitha",
+   "note": "Ruby NDS's own Tabitha sheet (src/sprites/overworld/ruby/088-tabitha: the Magma grunt (M) sheet changed to his battle design) copied as it is to src/sprites/overworld/emerald/290-tabitha (b2tools/sprite_emerald_story.py build tabitha), so Tabitha looks the same in both versions (user decision 2026-10-12). Emerald itself draws him with OBJ_EVENT_GFX_MAGMA_MEMBER_M; 88 stays Matt in Emerald. Used by data/story/ch5.json (Mt. Chimney, model_emerald); the Magma Hideout 4F and Mossdeep Space Center scenes (not built yet) take this code too. Battle picture: src/sprites/trainer/front/emerald/169-tabitha (emerald_data)."
+  }
+ },
+ "_gfx_alias_doc": "pokeemerald graphics id -> the pokeruby graphics id of the same person (pokeemerald renamed them; same id number and the same drawing, checked side by side: screenshots/emerald_s0/gfx_alias_candidates.png), so Sapphire's row (its Black 2 code) applies. Read by converter/gen_map_content.py and gen_trainer_npcs.py in Emerald mode. Not aliases (other pictures, need their own rows): VIGOROTH_CARRYING_BOX / _FACING_AWAY (Sapphire's movers are Machoke), ZIGZAGOON_1 (Route 101: Sapphire's Poochyena), the legendaries' story objects (models 4511-4513), the dolls, MYSTERY_GIFT_MAN, TRICK_HOUSE_STATUE, SCIENTIST_2.",
+ "_gfx_alias": {
+  "OBJ_EVENT_GFX_EXPERT_M": "OBJ_EVENT_GFX_OLD_MAN_1",
+  "OBJ_EVENT_GFX_NINJA_BOY": "OBJ_EVENT_GFX_LITTLE_BOY_1",
+  "OBJ_EVENT_GFX_POKEFAN_F": "OBJ_EVENT_GFX_WOMAN_2",
+  "OBJ_EVENT_GFX_POKEFAN_M": "OBJ_EVENT_GFX_MAN_3",
+  "OBJ_EVENT_GFX_EXPERT_F": "OBJ_EVENT_GFX_OLD_WOMAN_1",
+  "OBJ_EVENT_GFX_TWIN": "OBJ_EVENT_GFX_LITTLE_GIRL_1",
+  "OBJ_EVENT_GFX_OLD_MAN": "OBJ_EVENT_GFX_OLD_MAN_2",
+  "OBJ_EVENT_GFX_KECLEON": "OBJ_EVENT_GFX_KECLEON_1",
+  "OBJ_EVENT_GFX_KECLEON_BRIDGE_SHADOW": "OBJ_EVENT_GFX_KECLEON_2",
+  "OBJ_EVENT_GFX_LITTLE_GIRL": "OBJ_EVENT_GFX_LITTLE_GIRL_2",
+  "OBJ_EVENT_GFX_RICH_BOY": "OBJ_EVENT_GFX_BOY_4",
+  "OBJ_EVENT_GFX_OLD_WOMAN": "OBJ_EVENT_GFX_OLD_WOMAN_2",
+  "OBJ_EVENT_GFX_GAMEBOY_KID": "OBJ_EVENT_GFX_BOY_5",
+  "OBJ_EVENT_GFX_ZIGZAGOON_2": "OBJ_EVENT_GFX_ZIGZAGOON",
+  "OBJ_EVENT_GFX_LITTLE_BOY": "OBJ_EVENT_GFX_LITTLE_BOY_2",
+  "OBJ_EVENT_GFX_DEVON_EMPLOYEE": "OBJ_EVENT_GFX_MAN_7"
+ },
+ "_trainer_front_emerald_doc": "Emerald-only rows of data/sprite_map.json \"_trainer_front\" (deep-merged): the Frontier Brains' battle pictures (frontier_core_sprites 2026-10-12, b2tools/sprite_emerald_frontier.py).",
+ "_trainer_front": {
+  "TRAINER_PIC_SALON_MAIDEN_ANABEL": {
+   "sprite": 9,
+   "b2_class": "WAITRESS (9), a spare class (converter/gen_trainers.py SPARE_CLASSES) no build uses; class 9 shows sprite 9, so the Brain's class needs only a name/sex/music edit",
+   "art": "emerald/009-anabel",
+   "note": "Frontier Brain Anabel (Salon Maiden, Battle Tower): Emerald's own picture on front 108's parts (its intro gesture), Emerald builds only"
+  },
+  "TRAINER_PIC_DOME_ACE_TUCKER": {
+   "sprite": 7,
+   "b2_class": "LINEBACKER (7), a spare class (converter/gen_trainers.py SPARE_CLASSES) no build uses; class 7 shows sprite 7, so the Brain's class needs only a name/sex/music edit",
+   "art": "emerald/007-tucker",
+   "note": "Frontier Brain Tucker (Dome Ace, Battle Dome): Emerald's own picture on front 62's parts (still intro), Emerald builds only"
+  },
+  "TRAINER_PIC_PALACE_MAVEN_SPENSER": {
+   "sprite": 8,
+   "b2_class": "WAITER (8), a spare class (converter/gen_trainers.py SPARE_CLASSES) no build uses; class 8 shows sprite 8, so the Brain's class needs only a name/sex/music edit",
+   "art": "emerald/008-spenser",
+   "note": "Frontier Brain Spenser (Palace Maven, Battle Palace): Emerald's own picture on front 62's parts (still intro), Emerald builds only"
+  },
+  "TRAINER_PIC_ARENA_TYCOON_GRETA": {
+   "sprite": 34,
+   "b2_class": "BAKER (34), a spare class (converter/gen_trainers.py SPARE_CLASSES) no build uses; class 34 shows sprite 34, so the Brain's class needs only a name/sex/music edit",
+   "art": "emerald/034-greta",
+   "note": "Frontier Brain Greta (Arena Tycoon, Battle Arena): Emerald's own picture on front 26's parts (its intro gesture), Emerald builds only"
+  },
+  "TRAINER_PIC_FACTORY_HEAD_NOLAND": {
+   "sprite": 33,
+   "b2_class": "ARTIST (33), a spare class (converter/gen_trainers.py SPARE_CLASSES) no build uses; class 33 shows sprite 33, so the Brain's class needs only a name/sex/music edit",
+   "art": "emerald/033-noland",
+   "note": "Frontier Brain Noland (Factory Head, Battle Factory): Emerald's own picture on front 51's parts (its intro gesture), Emerald builds only"
+  },
+  "TRAINER_PIC_PIKE_QUEEN_LUCY": {
+   "sprite": 31,
+   "b2_class": "DANCER (31), a spare class (converter/gen_trainers.py SPARE_CLASSES) no build uses; class 31 shows sprite 31, so the Brain's class needs only a name/sex/music edit",
+   "art": "emerald/031-lucy",
+   "note": "Frontier Brain Lucy (Pike Queen, Battle Pike): Emerald's own picture on front 73's parts (its intro gesture), Emerald builds only"
+  },
+  "TRAINER_PIC_PYRAMID_KING_BRANDON": {
+   "sprite": 30,
+   "b2_class": "MUSICIAN (30), a spare class (converter/gen_trainers.py SPARE_CLASSES) no build uses; class 30 shows sprite 30, so the Brain's class needs only a name/sex/music edit",
+   "art": "emerald/030-brandon",
+   "note": "Frontier Brain Brandon (Pyramid King, Battle Pyramid): Emerald's own picture on front 108's parts (its intro gesture), Emerald builds only"
+  }
+ }
+}

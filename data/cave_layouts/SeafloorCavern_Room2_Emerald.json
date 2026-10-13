@@ -1,0 +1,6 @@
+{
+ "map": "emerald/SeafloorCavern_Room2",
+ "alt_of": "SeafloorCavern_Room2",
+ "emerald_zone": true,
+ "_doc": "emerald_caves 2026-10-12 (work/agents/emerald_caves/tools/variants.py): Emerald's SeafloorCavern_Room2 (pokeemerald) as Emerald's world reads it, installed for SeafloorCavern_Room2 in an Emerald build (data/versions.json room_variants.emerald). Emerald's Room 2 is a new 18x12 room (other boulders, rocks and warp tiles): own zone json. Sapphire recipe: SeafloorCavern_Room2.json."
+}

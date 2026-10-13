@@ -1,0 +1,92 @@
+{
+ "_doc": "Battle Tower battle room (Sapphire 10x9, zone 15): Battle Subway yellow floor (set 330) with the battle field (2-7, 3-7) = the Subway's round gray floor texture b03_yuka_c stretched once over it (a gray square with a ring, as Sapphire's field); the doorway the opponent comes from (4-5, 1) is a recess of the back wall; the four lamp pillars in the corners (0,2), (9,2), (0,8), (9,8) = white machines machine02. Sapphire's two exit warps are (5,8) and (6,8) but only (5,8) has the arrow behaviour: both are the exit mat here. Opponent and attendant: story phase.",
+ "map": "BattleTower_BattleRoom",
+ "style": "sp_battleroom",
+ "floor": [
+  [
+   0,
+   2,
+   9,
+   8
+  ],
+  [
+   4,
+   1,
+   5,
+   1
+  ]
+ ],
+ "exits": [
+  [
+   5,
+   8
+  ],
+  [
+   6,
+   8
+  ]
+ ],
+ "mats": [
+  {
+   "tex": "chip_mat",
+   "src": 306,
+   "rect": [
+    5,
+    8,
+    6,
+    8
+   ],
+   "border": 0.25,
+   "border_units": 4,
+   "y": 0,
+   "_what": "door mat"
+  }
+ ],
+ "furniture": [
+  {
+   "m": "machine02",
+   "tile": [
+    0,
+    2
+   ],
+   "_what": "lamp pillar"
+  },
+  {
+   "m": "machine02",
+   "tile": [
+    9,
+    2
+   ],
+   "_what": "lamp pillar"
+  },
+  {
+   "m": "machine02",
+   "tile": [
+    0,
+    8
+   ],
+   "_what": "lamp pillar"
+  },
+  {
+   "m": "machine02",
+   "tile": [
+    9,
+    8
+   ],
+   "_what": "lamp pillar"
+  }
+ ],
+ "floor_tex": [
+  {
+   "rect": [
+    2,
+    3,
+    7,
+    7
+   ],
+   "tex": "b03_yuka_c",
+   "src": 330,
+   "stretch": true
+  }
+ ]
+}

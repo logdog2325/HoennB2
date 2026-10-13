@@ -1,0 +1,13 @@
+{
+ "_doc": "Lavaridge Town's buildings (group towns3, notes/TOWNS_TOWNS3.md). The Herb Shop and the house beside it are one 8x4 building block in Sapphire's plan (one footprint, two doors), so they are placed as two props of the 4x4 house (res 363): x = house footprint centre, z = door row + (4 - front)/16 with front 20, in Sapphire map tile coordinates. The Gym is the shared Gen 3 gym (res 320, group towns1).",
+ "group": "towns3",
+ "buildings": {
+  "MAP_LAVARIDGE_TOWN_POKEMON_CENTER_1F": {"res": 0, "front": 20},
+  "MAP_LAVARIDGE_TOWN_MART": {"res": 3, "front": 20},
+  "MAP_LAVARIDGE_TOWN_GYM_1F": {"res": 320, "front": 24}
+ },
+ "props": [
+  {"res": 363, "x": 13.0, "z": 14.0, "what": "Herb Shop (door 12,15)"},
+  {"res": 363, "x": 17.0, "z": 14.0, "what": "house (door 16,15)"}
+ ]
+}

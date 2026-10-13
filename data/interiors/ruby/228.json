@@ -1,0 +1,54 @@
+{
+ "zone": 228,
+ "room": "MagmaHideout_1F",
+ "area": 379,
+ "header": {
+  "map_type": 16,
+  "npc_cache": 24,
+  "weather_word": 0,
+  "flags": 22817,
+  "icon_word": 32783,
+  "bgm0": 1194,
+  "bgm1": 1194,
+  "bgm2": 1194,
+  "bgm3": 1194,
+  "place": 69,
+  "place_display": 1,
+  "parent": 228,
+  "encounters": 8191,
+  "enc_slot": 6
+ },
+ "warps": [
+  {
+   "at": [
+    13,
+    27
+   ],
+   "tile_only": true,
+   "to": [
+    96,
+    27
+   ],
+   "what": "Sapphire warp 0 (13,27) -> LilycoveCity 14",
+   "y": -8,
+   "type": 1,
+   "dir": 1
+  },
+  {
+   "at": [
+    13,
+    1
+   ],
+   "tile_only": true,
+   "to": [
+    231,
+    0
+   ],
+   "what": "Sapphire warp 1 (13,1) -> MagmaHideout_B1F 0"
+  }
+ ],
+ "npcs": [],
+ "signs": [],
+ "triggers": [],
+ "what": "ship_hideouts: MagmaHideout_1F (b2tools/ship_hideouts_rooms.py); story: story object OBJ_EVENT_GFX_VAR_1 (13,19) MagmaHideout_1F_EventScript_15D7CE hide flag FLAG_HIDE_GRUNT_1_BLOCKING_HIDEOUT | story object OBJ_EVENT_GFX_VAR_1 (14,19) MagmaHideout_1F_EventScript_15D7ED hide flag FLAG_HIDE_GRUNT_2_BLOCKING_HIDEOUT | trainer OBJ_EVENT_GFX_VAR_1 (20,3) MagmaHideout_1F_EventScript_15D80C"
+}

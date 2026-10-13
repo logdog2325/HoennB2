@@ -1,0 +1,199 @@
+{
+ "_doc": "Battle Factory lobby (Emerald 19x12). Row 4 is the floor strip along the back wall with the two doors the attendants lead the player through (Emerald (4,4) singles, (14,4) doubles: door_h5_in in a dark doorway, as the Battle Tower's). Counters (shelf03) on Emerald's counter tiles of rows 5-7, its results terminals on them; the rules board (9,4) = poster01; machines at the corners. Exit mat (9..10,11).",
+ "map": "BattleFrontier_BattleFactoryLobby",
+ "decomp": "pokeemerald",
+ "style": "fd_factory",
+ "origin": [
+  1,
+  -2
+ ],
+ "floor": [
+  [
+   0,
+   4,
+   18,
+   11
+  ]
+ ],
+ "furniture": [
+  {
+   "m": "door_h5_in",
+   "tile": [
+    4,
+    4
+   ],
+   "wall": "N",
+   "gap": -1,
+   "doorway": true,
+   "y": -1,
+   "_what": "singles door"
+  },
+  {
+   "m": "door_h5_in",
+   "tile": [
+    14,
+    4
+   ],
+   "wall": "N",
+   "gap": -1,
+   "doorway": true,
+   "y": -1,
+   "_what": "doubles door (stays closed)"
+  },
+  {
+   "m": "poster01",
+   "tile": [
+    9,
+    4
+   ],
+   "wall": "N",
+   "gap": 2,
+   "_what": "rules board (Emerald sign (9,4))"
+  },
+  {
+   "m": "shelf03",
+   "tiles": [
+    2,
+    6,
+    3,
+    6
+   ]
+  },
+  {
+   "m": "shelf03",
+   "tiles": [
+    2,
+    7,
+    3,
+    7
+   ]
+  },
+  {
+   "m": "shelf03",
+   "tiles": [
+    6,
+    6,
+    7,
+    6
+   ]
+  },
+  {
+   "m": "shelf03",
+   "tiles": [
+    5,
+    7,
+    8,
+    7
+   ]
+  },
+  {
+   "m": "shelf03",
+   "tiles": [
+    11,
+    6,
+    12,
+    6
+   ]
+  },
+  {
+   "m": "shelf03",
+   "tiles": [
+    10,
+    7,
+    13,
+    7
+   ]
+  },
+  {
+   "m": "shelf03",
+   "tiles": [
+    15,
+    7,
+    16,
+    7
+   ]
+  },
+  {
+   "m": "shelf03",
+   "tile": [
+    16,
+    6
+   ]
+  },
+  {
+   "m": "shelf03",
+   "tile": [
+    7,
+    5
+   ]
+  },
+  {
+   "m": "shelf03",
+   "tile": [
+    11,
+    5
+   ]
+  },
+  {
+   "m": "monitor01",
+   "tile": [
+    2,
+    7
+   ],
+   "y": 14,
+   "_what": "results terminal (Emerald sign (2,7))"
+  },
+  {
+   "m": "monitor01",
+   "tile": [
+    11,
+    7
+   ],
+   "y": 14,
+   "_what": "results terminal (Emerald sign (11,7))"
+  },
+  {
+   "m": "machine02",
+   "tile": [
+    0,
+    5
+   ]
+  },
+  {
+   "m": "machine02",
+   "tile": [
+    18,
+    5
+   ]
+  },
+  {
+   "m": "plant01",
+   "tile": [
+    1,
+    5
+   ]
+  },
+  {
+   "m": "plant01",
+   "tile": [
+    17,
+    5
+   ]
+  }
+ ],
+ "mats": [
+  {
+   "tex": "chip_mat",
+   "src": 345,
+   "rect": [
+    3,
+    8,
+    5,
+    8
+   ],
+   "border": 0.25,
+   "border_units": 4,
+   "_what": "attendant's mat"
+  }
+ ]
+}

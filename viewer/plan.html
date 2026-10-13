@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hoenn Asset Plan</title>
+<style>
+  :root { --bg: #1d1f21; --card: #2a2d30; --fg: #e8e8e8; --muted: #9aa0a6; --accent: #7fc4ff; --warn: #ffcf6e; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 14px/1.45 -apple-system, system-ui, sans-serif; }
+  main { max-width: 1100px; margin: 0 auto; padding: 16px; }
+  h1 { font-size: 20px; margin: 4px 0 2px; }
+  .sub { color: var(--muted); margin-bottom: 16px; }
+  .row { display: grid; grid-template-columns: 220px 1fr; gap: 12px; background: var(--card); border-radius: 8px; padding: 12px; margin-bottom: 10px; }
+  .row h2 { font-size: 15px; margin: 0 0 6px; }
+  .sap img { width: 100%; image-rendering: pixelated; border-radius: 4px; }
+  .b2 { display: flex; gap: 8px; flex-wrap: wrap; }
+  .b2 figure { margin: 0; width: 170px; }
+  .b2 img { width: 170px; height: 128px; object-fit: contain; background: #8fb3c9; border-radius: 4px; display: block; }
+  .b2 figcaption { font: 11px ui-monospace, monospace; color: var(--muted); margin-top: 2px; }
+  .note { margin-top: 6px; color: var(--fg); }
+  .note b { color: var(--accent); }
+  .decide { color: var(--warn); }
+  @media (max-width: 640px) { .row { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<main>
+  <h1>Hoenn features in Black 2 art</h1>
+  <div class="sub">Left: Sapphire, drawn from pokeruby's map data. Right: Black 2 models from your dump (style references and texture sources), rendered here. Buildings will be new models in the Gen 3 shape built from Black 2 textures. Slice uses Black 2 area 2 (Nuvema / Route 1 / Accumula art set).</div>
+  <div id="rows"></div>
+</main>
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+} }
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+
+const plan = await (await fetch('plan.json')).json();
+const W = 400, H = 300;
+const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
+renderer.setSize(W, H); renderer.outputColorSpace = THREE.SRGBColorSpace;
+const loader = new GLTFLoader();
+
+async function shot(path, view) {
+  const g = await loader.loadAsync(path);
+  g.scene.traverse(o => { if (o.material) { o.material.side = THREE.DoubleSide; if (o.material.map) o.material.map.magFilter = THREE.NearestFilter; } });
+  const scene = new THREE.Scene(); scene.background = new THREE.Color(0x8fb3c9); scene.add(g.scene);
+  const box = new THREE.Box3().setFromObject(g.scene);
+  const c = box.getCenter(new THREE.Vector3()), s = box.getSize(new THREE.Vector3());
+  const r = Math.max(s.x, s.y, s.z) * 0.6 || 1;
+  const cam = new THREE.OrthographicCamera(-r * W / H, r * W / H, r, -r, -r * 20, r * 20);
+  const dir = view === 'top' ? new THREE.Vector3(0, 1, 0.0001) : new THREE.Vector3(0.5, 0.9, 1.2);
+  cam.position.copy(c).add(dir.normalize().multiplyScalar(r * 5)); cam.lookAt(c);
+  renderer.render(scene, cam);
+  return renderer.domElement.toDataURL('image/png');
+}
+
+const rows = document.getElementById('rows');
+for (const row of plan.rows) {
+  const el = document.createElement('section'); el.className = 'row';
+  el.innerHTML = `<div class="sap"><h2>${row.feature}</h2>${row.sapphire ? `<img src="${row.sapphire}" alt="">` : ''}</div>
+    <div><div class="b2"></div><div class="note">${row.note}</div></div>`;
+  rows.append(el);
+  const b2 = el.querySelector('.b2');
+  for (const m of row.models || []) {
+    const fig = document.createElement('figure');
+    fig.innerHTML = `<img alt=""><figcaption>${m.label}</figcaption>`;
+    b2.append(fig);
+    try { fig.querySelector('img').src = await shot(m.path, m.view); }
+    catch (e) { fig.querySelector('figcaption').textContent += ' (failed)'; }
+  }
+}
+document.body.dataset.done = '1';
+</script>
+</body>
+</html>

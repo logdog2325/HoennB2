@@ -1,0 +1,37 @@
+{
+ "zone": 24,
+ "room": "SootopolisCity_Gym_B1F",
+ "area": 292,
+ "bgm": 1062,
+ "what": "gyms_league: SootopolisCity_Gym_B1F (b2tools/gyms_league_rooms.py); story phase: trainers Andrea, Connie, Brianna, Bridget, Tiffany, Marissa, Crissy, Olivia",
+ "parent": 319,
+ "warps": [
+  {
+   "at": [
+    11,
+    22
+   ],
+   "tile_only": true,
+   "to": [
+    23,
+    2
+   ],
+   "what": "Sapphire warp 0 -> SootopolisCity_Gym_1F 2",
+   "type": 2,
+   "dir": 0
+  }
+ ],
+ "npcs": [],
+ "signs": [],
+ "triggers": [
+  {
+   "script": 1,
+   "var": 0,
+   "value": 0,
+   "at": [
+    11,
+    22
+   ]
+  }
+ ]
+}

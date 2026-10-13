@@ -1,0 +1,25 @@
+Lava Cookies are Mt. Chimney’s local\nspecialty.{be01}\nTry one. It’s just $200.
+Thank you, dear!
+Oh, fine then.
+Oh, dear. You can’t buy a thing if\nyou’ve not got the money.
+Too bad!\nThe Bag is full...
+Darn... Team Aqua outnumbers us!\nWe can’t keep up with them!
+If they expand the sea, there’ll be less\nhabitats for Pokémon and people!
+Team Aqua wants to expand the sea...\nHow’s that for insane?
+That annoying Team Magma...\nThey always mess with our plans!
+Go! Stomp Team Magma!\nAnd expand the sea!
+Stay out of our way, okay?{be01}\nWe’re trying to enlarge the sea for\nthe good of everybody!
+Yeah!\nHose them down!
+Bushaa!
+Bufoh!
+A Meteorite is fitted on a mysterious\nmachine...{be01}\nDo you want to remove the Meteorite?
+{0100:0} removed the Meteorite from\nthe mysterious machine.
+{0100:0} left the Meteorite where\nit was.
+This mysterious machine...\nIt makes no response whatsoever.
+A Meteorite is fitted on a mysterious\nmachine...{be01}\nThe machine seems to be storing\nenergy in the Meteorite.
+Maxie: Oh, {0100:0}!{be01}\nPlease, you must stop Team Aqua\nfor me!{be01}\nThey’re trying to make this volcano\ninactive by using the stolen{be00}\nMeteorite’s power!
+Maxie: {0100:0}!{be01}\nPlease, you’ve got to stop Team Aqua\nfor me!{be01}\nDealing with these three thugs is\na lot, even for me!
+The power contained in the\nMeteorite...{be01}\nBy amplifying its power with this\nmachine, Mt. Chimney’s volcanic activity{be00}\nwill stop.{be01}\nFufufu... Eventually, the cooled-down\ncrater will fill with rainwater, giving{be00}\nWater Pokémon a place to live.
+Archie: You again...{be01}\nNow listen.\nAll life depends on the sea.{be01}\nThe sea is everything!\nIts importance is paramount!{be01}\nThat is why we of Team Aqua are\ncommitted to expanding the sea.{be01}\nDoing so will result in the emergence\nof new Pokémon species.{be01}\nWe will return the world back to\nnature for the good of Pokémon.{be01}\nThat is Team Aqua’s vision!{be01}\nI can’t allow an ignorant child like\nyou to get in our way.{be01}\nI, Archie, will show you the\nconsequences of meddling!
+Archie: Ah, whatever.\nI will give up our plans for Mt.{be00}\nChimney for the time being...{be01}\nBut no one can ever stop us!\nTeam Aqua will prevail!{be01}\nDon’t you ever forget that!
+Maxie: {0100:0}! Thank you!{be01}\nWith your help, we thwarted Team\nAqua’s destructive plan!{be01}\nBut... This victory doesn’t mean the\nend of their evil plans.{be01}\nWe will remain vigilant and keep up\nour pursuit of Team Aqua.{be01}\n{0100:0}, we shall meet again!

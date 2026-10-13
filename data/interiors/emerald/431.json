@@ -1,0 +1,23 @@
+{
+ "_doc": "frontier_palace_arena (pa_rooms, 2026-10-12): BattleFrontier_BattleArenaCorridor (Emerald's Battle Palace / Battle Arena, notes/FRONTIER.md), Emerald only (data/versions.json rooms: \"emerald\"; claimed in data/emerald/hoenn_interiors.json). People = Emerald's objects (uid = Emerald local id; script = the zone script's entry number), their sprites from data/sprite_map.json. Positions are Emerald tiles; room origin [1, -1] (zone tile = Emerald tile + origin). Map scripts: frontier_palace_arena's.",
+ "zone": 431,
+ "room": "BattleFrontier_BattleArenaCorridor",
+ "area": 349,
+ "parent": 17,
+ "warps": [],
+ "npcs": [
+  {
+   "uid": 1,
+   "model": 46,
+   "script": 2,
+   "dir": 1,
+   "at": [
+    9,
+    12
+   ],
+   "what": "Emerald object 1 BLACK_BELT (FACE_DOWN): attendant; model 46"
+  }
+ ],
+ "signs": [],
+ "triggers": []
+}

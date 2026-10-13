@@ -1,0 +1,35 @@
+{
+ "_doc": "Route 112 cable car station (zone 555; scripts src/field_scripts/1110_room_Route112_CableCarStation.s, text 0356). Area 330 = Black 2's Gear Station (interior pack 48). Story, not placed yet: the attendant (6,6) (the ride's yes/no script) and the cable car itself (Sapphire object at (6,3), no Black 2 sprite).",
+ "zone": 555,
+ "room": "Route112_CableCarStation",
+ "area": 330,
+ "parent": 374,
+ "warps": [
+  {
+   "at": [
+    6,
+    11
+   ],
+   "tile_only": true,
+   "to": [
+    374,
+    2
+   ],
+   "what": "Sapphire warp 0 -> Route112 0"
+  },
+  {
+   "at": [
+    7,
+    11
+   ],
+   "tile_only": true,
+   "to": [
+    374,
+    3
+   ],
+   "what": "Sapphire warp 1 -> Route112 1"
+  }
+ ],
+ "npcs": [],
+ "signs": []
+}

@@ -1,0 +1,374 @@
+{
+ "map": "Route127",
+ "id": "MAP_ROUTE127",
+ "layout": "LAYOUT_ROUTE127",
+ "music": "MUS_ROUTE120",
+ "region_map_section": "MAPSEC_ROUTE_127",
+ "weather": "WEATHER_SUNNY",
+ "connections": [
+  {
+   "direction": "up",
+   "offset": 0,
+   "map": "MAP_MOSSDEEP_CITY"
+  },
+  {
+   "direction": "down",
+   "offset": 0,
+   "map": "MAP_ROUTE128"
+  },
+  {
+   "direction": "left",
+   "offset": 0,
+   "map": "MAP_ROUTE126"
+  },
+  {
+   "direction": "dive",
+   "offset": 0,
+   "map": "MAP_UNDERWATER3"
+  }
+ ],
+ "npcs": [
+  {
+   "local_id": 1,
+   "x": 18,
+   "y": 68,
+   "gfx": "OBJ_EVENT_GFX_SWIMMER_M",
+   "movement": "MOVEMENT_TYPE_FACE_LEFT_AND_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route127_EventScript_15207A",
+   "texts": {
+    "Route127_Text_1C17A8": "I can see it in your face. You want\\nto challenge me.$",
+    "Route127_Text_1C17DD": "Awawawawawa...$",
+    "Route127_Text_1C17EC": "A well-played match leaves me feeling\\nrefreshed and serene.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 2,
+   "x": 45,
+   "y": 44,
+   "gfx": "OBJ_EVENT_GFX_SWIMMER_F",
+   "movement": "MOVEMENT_TYPE_FACE_UP_LEFT_AND_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route127_EventScript_152091",
+   "texts": {
+    "Route127_Text_1C1828": "Do you have a rival whom you just\\nhate to lose against?$",
+    "Route127_Text_1C1860": "Arrrgh! I hate losing!$",
+    "Route127_Text_1C1877": "If you have a rival, don't you get the\\nfeeling that you have to keep getting\\lbetter?$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 3,
+   "x": 10,
+   "y": 7,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_ROUTE127_1",
+   "script": "Route127_EventScript_1B16C3",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 4,
+   "x": 64,
+   "y": 39,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_ROUTE127_2",
+   "script": "Route127_EventScript_1B16D0",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 5,
+   "x": 53,
+   "y": 13,
+   "gfx": "OBJ_EVENT_GFX_FISHERMAN",
+   "movement": "MOVEMENT_TYPE_FACE_UP",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route127_EventScript_1520A8",
+   "texts": {
+    "Route127_Text_1C18CC": "Through fishing, I have attained a\\nstate of becalmed serenity...\\lPlease, allow me to demonstrate...$",
+    "Route127_Text_1C1930": "Though I have lost, my heart remains\\ncalm...$",
+    "Route127_Text_1C195D": "It matters not that I catch nothing.\\nThe line remains in the water...$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 6,
+   "x": 52,
+   "y": 25,
+   "gfx": "OBJ_EVENT_GFX_FISHERMAN",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route127_EventScript_1520D6",
+   "texts": {
+    "Route127_Text_1C1A2E": "Well, hey! This is a match between a\\nPOKéMON fan and a fishing buff!$",
+    "Route127_Text_1C1A73": "No! My line's all tangled!\\nThe party's over!$",
+    "Route127_Text_1C1AA0": "My fishing line's doing a dance!\\nThe tangle tango! Hahaha, snarl!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 7,
+   "x": 64,
+   "y": 19,
+   "gfx": "OBJ_EVENT_GFX_FISHERMAN",
+   "movement": "MOVEMENT_TYPE_FACE_RIGHT",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route127_EventScript_1520BF",
+   "texts": {
+    "Route127_Text_1C19A3": "Whoops! Don't tell me I snagged\\na SURFING POKéMON?$",
+    "Route127_Text_1C19D6": "I can't keep up!$",
+    "Route127_Text_1C19E7": "Your POKéMON look pretty strong.\\nThey'd be a handful if I hooked them!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 8,
+   "x": 12,
+   "y": 18,
+   "gfx": "OBJ_EVENT_GFX_MAN_6",
+   "movement": "MOVEMENT_TYPE_ROTATE_CLOCKWISE",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route127_EventScript_152104",
+   "texts": {
+    "Route127_Text_1C1B92": "BIRD POKéMON have excellent vision.\\nThey spot prey from great heights.$",
+    "Route127_Text_1C1BD9": "Whew... I give up.$",
+    "Route127_Text_1C1BEC": "There're lots of diving spots in the\\nsea around here.\\pYou can spot them easily from the sky\\nbecause of their darker color.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 9,
+   "x": 63,
+   "y": 63,
+   "gfx": "OBJ_EVENT_GFX_BLACK_BELT",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route127_EventScript_1520ED",
+   "texts": {
+    "Route127_Text_1C1AE2": "What I learned at DEWFORD's POKéMON\\nGYM, I will put into practice here.$",
+    "Route127_Text_1C1B2A": "I was swamped!$",
+    "Route127_Text_1C1B39": "BRAWLY, DEWFORD's GYM LEADER, used\\nto train with a guy named BRUNO in\\lKANTO, I've heard.$"
+   },
+   "complex": true
+  }
+ ],
+ "signs": [
+  {
+   "x": 59,
+   "y": 67,
+   "type": "secret_base",
+   "raw": {
+    "type": "secret_base",
+    "x": 59,
+    "y": 67,
+    "elevation": 0,
+    "secret_base_id": "SECRET_BASE_RED_CAVE4_1"
+   }
+  },
+  {
+   "x": 59,
+   "y": 72,
+   "type": "secret_base",
+   "raw": {
+    "type": "secret_base",
+    "x": 59,
+    "y": 72,
+    "elevation": 0,
+    "secret_base_id": "SECRET_BASE_YELLOW_CAVE3_2"
+   }
+  },
+  {
+   "x": 67,
+   "y": 63,
+   "type": "secret_base",
+   "raw": {
+    "type": "secret_base",
+    "x": 67,
+    "y": 63,
+    "elevation": 0,
+    "secret_base_id": "SECRET_BASE_YELLOW_CAVE4_1"
+   }
+  },
+  {
+   "x": 61,
+   "y": 21,
+   "type": "secret_base",
+   "raw": {
+    "type": "secret_base",
+    "x": 61,
+    "y": 21,
+    "elevation": 0,
+    "secret_base_id": "SECRET_BASE_YELLOW_CAVE3_3"
+   }
+  },
+  {
+   "x": 45,
+   "y": 24,
+   "type": "secret_base",
+   "raw": {
+    "type": "secret_base",
+    "x": 45,
+    "y": 24,
+    "elevation": 0,
+    "secret_base_id": "SECRET_BASE_YELLOW_CAVE1_3"
+   }
+  }
+ ],
+ "warps": [],
+ "coord_events": [],
+ "wild": {
+  "water_mons": {
+   "encounter_rate": 4,
+   "slot_rates": [
+    60,
+    30,
+    5,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 5,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 15,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_PELIPPER",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_PELIPPER",
+     "min": 25,
+     "max": 30
+    }
+   ]
+  },
+  "fishing_mons": {
+   "encounter_rate": 30,
+   "slot_rates": [
+    70,
+    30,
+    60,
+    20,
+    20,
+    40,
+    40,
+    15,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_SHARPEDO",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 35,
+     "max": 40
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 40,
+     "max": 45
+    }
+   ]
+  }
+ }
+}

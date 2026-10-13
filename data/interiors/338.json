@@ -1,0 +1,59 @@
+{
+ "_doc": "Mossdeep Space Center 2F (zone 338; scripts src/field_scripts/0676_room_MossdeepCity_SpaceCenter_2F.s, text 0550). Area 338 = Black 2's Medal Office area (interior pack 56).",
+ "zone": 338,
+ "room": "MossdeepCity_SpaceCenter_2F",
+ "area": 338,
+ "parent": 107,
+ "warps": [
+  {
+   "at": [
+    13,
+    1
+   ],
+   "tile_only": true,
+   "to": [
+    335,
+    2
+   ],
+   "what": "Sapphire warp 0 -> MossdeepCity_SpaceCenter_1F 2"
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 1,
+   "model": 18,
+   "script": 1,
+   "dir": 0,
+   "at": [
+    6,
+    2
+   ]
+  },
+  {
+   "uid": 2,
+   "model": 44,
+   "script": 2,
+   "dir": 0,
+   "at": [
+    11,
+    8
+   ]
+  },
+  {
+   "uid": 3,
+   "model": 73,
+   "script": 3,
+   "dir": 1,
+   "at": [
+    5,
+    6
+   ],
+   "move": 3,
+   "range": [
+    1,
+    1
+   ]
+  }
+ ],
+ "signs": []
+}

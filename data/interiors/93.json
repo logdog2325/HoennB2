@@ -1,0 +1,63 @@
+{
+ "_doc": "FallarborTown_ContestLobby (zone 93), built by the specials agent (recipe data/interior_layouts/FallarborTown_ContestLobby.json): Musical Theater look, Black 2 interior area 305. Warps in Sapphire's order (one per Sapphire warp tile). People/signs: Sapphire's one-message ones as generated; story people are left for the story phase.",
+ "zone": 93,
+ "room": "FallarborTown_ContestLobby",
+ "area": 305,
+ "parent": 6,
+ "warps": [
+  {
+   "at": [
+    5,
+    6
+   ],
+   "tile_only": true,
+   "to": [
+    6,
+    8
+   ],
+   "what": "Sapphire warp 0 -> FallarborTown 1"
+  },
+  {
+   "at": [
+    6,
+    6
+   ],
+   "tile_only": true,
+   "to": [
+    6,
+    8
+   ],
+   "what": "Sapphire warp 1 -> FallarborTown 1"
+  },
+  {
+   "at": [
+    1,
+    1
+   ],
+   "tile_only": true,
+   "to": [
+    80,
+    0
+   ],
+   "what": "Sapphire warp 2 -> FallarborTown_ContestHall 0"
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 2,
+   "model": 8,
+   "script": 1,
+   "dir": 1,
+   "at": [
+    2,
+    6
+   ],
+   "move": 5,
+   "range": [
+    1,
+    0
+   ]
+  }
+ ],
+ "signs": []
+}

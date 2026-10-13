@@ -1,0 +1,6 @@
+It’s filled with all sorts of books.
+There’s a set of Pokémon picture books.
+Oh, dear, dear.\nAren’t your Pokémon exhausted?{be01}\nIf you’d like, rest up here.\nThat’s a fine idea! You should do that.
+That’s right.\nTake your time and rest up!
+Oh, dear, dear.\nAre your Pokémon still tired?{be01}\nYou should take another rest here.\nThat’s a fine idea. You should do that.
+Is that so?\nYou don’t need to be shy about it.

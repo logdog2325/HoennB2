@@ -1,0 +1,36 @@
+{
+ "kind": "overworld",
+ "code": 232,
+ "sheet": 210,
+ "frames": 16,
+ "size": [
+  32,
+  32
+ ],
+ "controller": 6,
+ "textures": [
+  "t4x4x16.0",
+  "t4x4x16.1",
+  "t4x4x16.2",
+  "t4x4x16.3",
+  "t4x4x16.4",
+  "t4x4x16.5",
+  "t4x4x16.6",
+  "t4x4x16.7",
+  "t4x4x16.8",
+  "t4x4x16.9",
+  "t4x4x16.10",
+  "t4x4x16.11",
+  "t4x4x16.12",
+  "t4x4x16.13",
+  "t4x4x16.14",
+  "t4x4x16.15"
+ ],
+ "palette": "t4x4x16",
+ "name": "brendan-bike",
+ "note": "Brendan (player, Emerald outfit), bike: bike up; bike down; bike left; bike right; bike still up: the middle frame; bike still down: the middle frame; bike still left: the middle frame; bike still right: the middle frame",
+ "source": "community: src/sprites/community/incoming/emerald/brendan_emerald_hyo-oppa.png by hyo-oppa (cut, placed, palette-indexed; no colour merged)",
+ "colours": 14,
+ "merged_colours": [],
+ "made_by": "b2tools/sprite_community_emerald.py"
+}

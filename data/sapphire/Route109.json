@@ -1,0 +1,610 @@
+{
+ "map": "Route109",
+ "id": "MAP_ROUTE109",
+ "layout": "LAYOUT_ROUTE109",
+ "music": "MUS_ROUTE104",
+ "region_map_section": "MAPSEC_ROUTE_109",
+ "weather": "WEATHER_SUNNY",
+ "connections": [
+  {
+   "direction": "up",
+   "offset": 0,
+   "map": "MAP_SLATEPORT_CITY"
+  },
+  {
+   "direction": "left",
+   "offset": 40,
+   "map": "MAP_ROUTE108"
+  }
+ ],
+ "npcs": [
+  {
+   "local_id": 1,
+   "x": 21,
+   "y": 26,
+   "gfx": "OBJ_EVENT_GFX_MR_BRINEYS_BOAT",
+   "movement": "MOVEMENT_TYPE_FACE_UP",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_MR_BRINEY_BOAT_ROUTE109",
+   "script": "0x0",
+   "missing": true
+  },
+  {
+   "local_id": 2,
+   "x": 21,
+   "y": 24,
+   "gfx": "OBJ_EVENT_GFX_OLD_MAN_1",
+   "movement": "MOVEMENT_TYPE_FACE_UP",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_MR_BRINEY_ROUTE109",
+   "script": "Route109_EventScript_14F680",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 3,
+   "x": 12,
+   "y": 36,
+   "gfx": "OBJ_EVENT_GFX_SWIMMER_M",
+   "movement": "MOVEMENT_TYPE_FACE_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route109_EventScript_14F7AD",
+   "texts": {
+    "Route109_Text_1B9A1C": "Hiyah! Look at my chiseled abs!\\nThis is what you call “cut”!$",
+    "Route109_Text_1B9A59": "Aiyah!\\nFlubbed out!$",
+    "Route109_Text_1B9A6D": "Hiyah!\\pMy sculpted abs have nothing to do\\nwith POKéMON battles!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 4,
+   "x": 25,
+   "y": 42,
+   "gfx": "OBJ_EVENT_GFX_SWIMMER_F",
+   "movement": "MOVEMENT_TYPE_FACE_UP_AND_LEFT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route109_EventScript_14F7C4",
+   "texts": {
+    "Route109_Text_1B9AAD": "Are you properly protected against\\nthe sun?$",
+    "Route109_Text_1B9AD9": "Ouch, ouch, ouch!$",
+    "Route109_Text_1B9AEB": "Cheeks are the most prone to burning!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 5,
+   "x": 19,
+   "y": 19,
+   "gfx": "OBJ_EVENT_GFX_SAILOR",
+   "movement": "MOVEMENT_TYPE_FACE_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route109_EventScript_14F7DB",
+   "texts": {
+    "Route109_Text_1B9B11": "I've laid anchor in ports around the\\nworld, but SLATEPORT's the best.$",
+    "Route109_Text_1B9B57": "You're the best!$",
+    "Route109_Text_1B9B68": "In the best port was the best\\nTRAINER...$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 6,
+   "x": 14,
+   "y": 11,
+   "gfx": "OBJ_EVENT_GFX_SAILOR",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route109_EventScript_14F7F2",
+   "texts": {
+    "Route109_Text_1B9B91": "Urrrrppp...\\nBattle? With me?$",
+    "Route109_Text_1B9BAE": "Urp... Ooooooohhhhhh...\\nUrrrrpppp...$",
+    "Route109_Text_1B9BD3": "I'm usually stronger than this!\\nI'm just seasick as a dog!\\pI'm a SAILOR, but...$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 7,
+   "x": 21,
+   "y": 11,
+   "gfx": "OBJ_EVENT_GFX_TUBER_M",
+   "movement": "MOVEMENT_TYPE_ROTATE_COUNTERCLOCKWISE",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route109_EventScript_14F809",
+   "texts": {
+    "Route109_Text_1B9C23": "I'm thirsty... I could go for a SODA POP\\nat the SEASHORE HOUSE...$",
+    "Route109_Text_1B9C65": "Groan...$",
+    "Route109_Text_1B9C6E": "I'm getting famished... My inner tube\\nlooks like a giant doughnut...$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 8,
+   "x": 28,
+   "y": 8,
+   "gfx": "OBJ_EVENT_GFX_TUBER_F",
+   "movement": "MOVEMENT_TYPE_FACE_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route109_EventScript_14F847",
+   "texts": {
+    "Route109_Text_1B9D54": "Doesn't a beach umbrella look like\\na giant flower?$",
+    "Route109_Text_1B9D87": "Mommy!$",
+    "Route109_Text_1B9D8E": "If you look at the beach from the sky,\\nit looks like a big flower garden!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 9,
+   "x": 11,
+   "y": 6,
+   "gfx": "OBJ_EVENT_GFX_LITTLE_GIRL_2",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "Route109_EventScript_14F705",
+   "texts": {
+    "Route109_Text_16E307": "Yo, TRAINERS!\\nWhether you're hot to trot,\\lor cool cat not,\\lchill at my papa's spot!$"
+   }
+  },
+  {
+   "local_id": 10,
+   "x": 27,
+   "y": 48,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_ROUTE109_1",
+   "script": "Route109_EventScript_1B14A1",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 11,
+   "x": 29,
+   "y": 32,
+   "gfx": "OBJ_EVENT_GFX_TUBER_F",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN_AND_UP",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route109_EventScript_14F89C",
+   "texts": {
+    "Route109_Text_1B9F07": "Hi, big TRAINER.\\nWill you battle with me?$",
+    "Route109_Text_1B9F31": "Oh, you're strong.$",
+    "Route109_Text_1B9F44": "How did you get to be so strong?$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 12,
+   "x": 28,
+   "y": 31,
+   "gfx": "OBJ_EVENT_GFX_TUBER_F",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN_AND_LEFT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route109_EventScript_14F885",
+   "texts": {
+    "Route109_Text_1B9E60": "I can't swim without my inner tube,\\nbut I won't lose at POKéMON!$",
+    "Route109_Text_1B9EA1": "Did I lose because I have an inner\\ntube?$",
+    "Route109_Text_1B9ECA": "My inner tube is a fashion item.\\nI can't be seen without it.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 13,
+   "x": 15,
+   "y": 52,
+   "gfx": "OBJ_EVENT_GFX_FISHERMAN",
+   "movement": "MOVEMENT_TYPE_FACE_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route109_EventScript_14F8B3",
+   "texts": {
+    "Route109_Text_1B9F65": "Wahahah! This dude's going to catch\\nhimself a big one!$",
+    "Route109_Text_1B9F9C": "This dude just lost one...$",
+    "Route109_Text_1B9FB7": "This dude thinks you're a big one.\\nNo, you're a big-one-to-be!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 14,
+   "x": 24,
+   "y": 17,
+   "gfx": "OBJ_EVENT_GFX_TUBER_M",
+   "movement": "MOVEMENT_TYPE_FACE_RIGHT",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "Route109_EventScript_14F70E",
+   "texts": {
+    "Route109_Text_16E405": "Our sand castle's taking a long time\\nto make.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 15,
+   "x": 25,
+   "y": 17,
+   "gfx": "OBJ_EVENT_GFX_TUBER_F",
+   "movement": "MOVEMENT_TYPE_FACE_LEFT",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "Route109_EventScript_14F725",
+   "texts": {
+    "Route109_Text_16E433": "You can have this!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 16,
+   "x": 30,
+   "y": 32,
+   "gfx": "OBJ_EVENT_GFX_WOMAN_2",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "Route109_EventScript_14F776",
+   "texts": {
+    "Route109_Text_16E35B": "Little kids can dart around so quickly...\\pYou don't dare take your eyes off them\\nfor an instant. It's very taxing.\\pMine's with my POKéMON, so they should\\nbe okay, but...$"
+   }
+  },
+  {
+   "local_id": 17,
+   "x": 8,
+   "y": 41,
+   "gfx": "OBJ_EVENT_GFX_WOMAN_5",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route109_EventScript_14F8E5",
+   "texts": {
+    "Route109_Text_1BA114": "MEL: We're, like, totally in love.\\nOur romance is heating up all of HOENN!$",
+    "Route109_Text_1BA15F": "MEL: We lost, and it's my fault!\\nPAUL will hate me!$",
+    "Route109_Text_1BA1D0": "MEL: We're, like, deeply and truly in love.\\nThat's why we make our POKéMON\\lbattle together.$",
+    "Route109_Text_1BA193": "MEL: Um, PAUL, are you angry with me?\\nPlease don't be angry.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 18,
+   "x": 9,
+   "y": 41,
+   "gfx": "OBJ_EVENT_GFX_MAN_5",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route109_EventScript_14F8CA",
+   "texts": {
+    "Route109_Text_1B9FF6": "PAUL: Well, this is a mood-breaker.\\pI wish you wouldn't disturb our\\nprecious time together.$",
+    "Route109_Text_1BA052": "PAUL: Well, I give up.$",
+    "Route109_Text_1BA0BF": "PAUL: We're totally, deeply in love.\\nThat's why we make our POKéMON battle\\ltogether.$",
+    "Route109_Text_1BA069": "PAUL: Well, don't tell anyone that\\nwe're here.\\lThis is just our private world of two!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 19,
+   "x": 33,
+   "y": 6,
+   "gfx": "OBJ_EVENT_GFX_OLD_MAN_2",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "Route109_EventScript_14F77F",
+   "texts": {
+    "Route109_Text_16E4D5": "The water around these parts is clean.\\pBut, I get my ZIGZAGOON to pick up\\nlitter from the shoreline at times.\\pDirty water becomes rain and joins our\\nrivers, which we drink from...\\pIf we pollute the sea, it all comes\\nback to haunt us eventually.$"
+   }
+  },
+  {
+   "local_id": 20,
+   "x": 32,
+   "y": 6,
+   "gfx": "OBJ_EVENT_GFX_ZIGZAGOON",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "Route109_EventScript_14F788",
+   "texts": {
+    "Route109_Text_16E5CA": "ZIGZAGOON: Guguu?$"
+   },
+   "complex": true
+  }
+ ],
+ "signs": [
+  {
+   "x": 15,
+   "y": 5,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "Route109_EventScript_14F79B",
+   "texts": {
+    "Route109_Text_16E5DC": "SEASHORE HOUSE\\p“May hot battles rage on hot sands!\\nThe place for hot TRAINERS!”$"
+   }
+  },
+  {
+   "x": 29,
+   "y": 10,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "Route109_EventScript_14F7A4",
+   "texts": {
+    "Route109_Text_16E62C": "TRAINER TIPS\\pPOKéMON at the same level may not\\nalways have identical stats.\\pPOKéMON raised by TRAINERS are said\\nto grow stronger than wild POKéMON.$"
+   }
+  },
+  {
+   "x": 16,
+   "y": 23,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 16,
+    "y": 23,
+    "elevation": 3,
+    "item": "ITEM_REVIVE",
+    "flag": "FLAG_HIDDEN_ITEM_32"
+   }
+  },
+  {
+   "x": 33,
+   "y": 5,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 33,
+    "y": 5,
+    "elevation": 3,
+    "item": "ITEM_HEART_SCALE",
+    "flag": "FLAG_HIDDEN_ITEM_34"
+   }
+  },
+  {
+   "x": 9,
+   "y": 10,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 9,
+    "y": 10,
+    "elevation": 3,
+    "item": "ITEM_GREAT_BALL",
+    "flag": "FLAG_HIDDEN_ITEM_33"
+   }
+  },
+  {
+   "x": 28,
+   "y": 20,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 28,
+    "y": 20,
+    "elevation": 3,
+    "item": "ITEM_ETHER",
+    "flag": "FLAG_HIDDEN_ITEM_40"
+   }
+  },
+  {
+   "x": 13,
+   "y": 16,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 13,
+    "y": 16,
+    "elevation": 3,
+    "item": "ITEM_HEART_SCALE",
+    "flag": "FLAG_HIDDEN_ITEM_5A"
+   }
+  },
+  {
+   "x": 8,
+   "y": 42,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 8,
+    "y": 42,
+    "elevation": 3,
+    "item": "ITEM_HEART_SCALE",
+    "flag": "FLAG_HIDDEN_ITEM_5B"
+   }
+  }
+ ],
+ "warps": [
+  {
+   "id": 0,
+   "x": 12,
+   "y": 5,
+   "dest_map": "MAP_ROUTE109_SEASHORE_HOUSE",
+   "dest_warp_id": "0"
+  }
+ ],
+ "coord_events": [],
+ "wild": {
+  "water_mons": {
+   "encounter_rate": 4,
+   "slot_rates": [
+    60,
+    30,
+    5,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 5,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 15,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_PELIPPER",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_PELIPPER",
+     "min": 25,
+     "max": 30
+    }
+   ]
+  },
+  "fishing_mons": {
+   "encounter_rate": 30,
+   "slot_rates": [
+    70,
+    30,
+    60,
+    20,
+    20,
+    40,
+    40,
+    15,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 20,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 35,
+     "max": 40
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 40,
+     "max": 45
+    }
+   ]
+  }
+ }
+}

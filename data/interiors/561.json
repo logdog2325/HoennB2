@@ -1,0 +1,35 @@
+{
+ "_doc": "Route117_PokemonDayCare (zone 561), built by the specials agent (recipe data/interior_layouts/Route117_PokemonDayCare.json): Black 2 house / Route 3 Day Care look, Black 2 interior area 282. Warps in Sapphire's order (one per Sapphire warp tile). People/signs: Sapphire's one-message ones as generated; story people are left for the story phase.",
+ "zone": 561,
+ "room": "Route117_PokemonDayCare",
+ "area": 282,
+ "parent": 437,
+ "warps": [
+  {
+   "at": [
+    2,
+    8
+   ],
+   "tile_only": true,
+   "to": [
+    437,
+    1
+   ],
+   "what": "Sapphire warp 0 -> Route117 0"
+  },
+  {
+   "at": [
+    3,
+    8
+   ],
+   "tile_only": true,
+   "to": [
+    437,
+    1
+   ],
+   "what": "Sapphire warp 1 -> Route117 0"
+  }
+ ],
+ "npcs": [],
+ "signs": []
+}

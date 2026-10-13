@@ -1,0 +1,22 @@
+It’s fun to blow a glass flute while my\nboss is talking.{be01}\nHuff-huff! Puff-puff!
+This vase looks expensive...\nPeered inside...{be01}\nBut, it was empty.
+This area is covered in volcanic ash,\nhuff-puff!{be01}\nI’m specially gifted, huff-puff.{be01}\nI make glass out of volcanic ash\nand make items, huff-puff.{be01}\nGo collect ashes with this, huff-puff.
+Just take that Soot Sack and walk\nthrough piles of ash, huff-puff.{be01}\nAnd it will fill up with the volcanic ash,\nhuff-puff.{be01}\nOnce you think you’ve collected a good\namount, come see me, huff-puff.
+Have you collected ashes, huff-puff?\nLet me see, huff-puff.
+Oh!\nYou’ve got a lot of ashes, huff-puff!{be01}\nI’ll make you a glass item, huff-puff!\nWhich one would you like, huff-puff?
+Hah? You haven’t got your Soot Sack\nwith you, huff-puff.{be01}\nYou have to keep it with you to collect\nvolcanic ash, huff-puff.
+A {0100:1}, huff-puff?\nIs that the one for you, huff-puff?
+You’ve collected all that ash, but you\ndon’t want anything, huff-puff?
+Hmmm...\nThere’s not enough ash here, huff-puff.{be00}\nI can’t make glass with this, huff-puff.{be01}\nLet’s see... {0100:1} is the number of steps\nyou’ll need to walk for me to make you{be00}\na Blue Flute, huff-puff.
+A {0100:1}, huff-puff?{be01}\nThere’s not enough ash here to make\nthat, though, huff-puff.{be01}\nLet’s see... {0100:2} is the number of steps\nyou’ll need to walk through volcanic ash{be00}\nfor me to make that item, huff-puff.{be01}\nWhich item would you rather have me\nmake instead, huff-puff?
+Which one would you like, huff-puff?
+A {0100:1} it is, then, huff-puff!{be01}\nOkay! I’ll make it for you, huff-puff.\nJust wait a little while, huff-puff.
+Ah, I’ve finished your {0100:1}.\nTake it, huff-puff.
+Oh?\nYou’ve no room in your Bag, huff-puff.{be01}\nI’ll hold on to it, so come back later,\nhuff-puff.
+Too bad!\nThe Bag is full...
+Blue Flute
+Yellow Flute
+Red Flute
+White Flute
+Black Flute
+Cancel

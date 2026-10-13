@@ -1,0 +1,183 @@
+diff --git a/b2tools/terrain/cave_mouth.py b/b2tools/terrain/cave_mouth.py
+index f779707..7295bb8 100644
+--- a/b2tools/terrain/cave_mouth.py
++++ b/b2tools/terrain/cave_mouth.py
+@@ -80,6 +80,7 @@ if OPENING == 2:                     # (Black 2's two patches)
+ PEBBLE_Y = 3
+ FRONT = 2.5    # the frame stands this much further out than Black 2's (whose outer jamb edges touch the face: Hoenn
+                # keeps layered surfaces 2+ units apart, exterior_check.py layers)
++FLAT_BESIDE = {'rock', 'sign', 'prop'}       # (Drawn.noface)
+ SHADOWED = {'sign', 'building', 'door', 'tree_bot', 'tree_top_l', 'tree_top_r', 'tree_tip', 'prop', 'rock'}
+ 
+ def _heights():
+@@ -97,10 +98,20 @@ def find(world):
+ class Drawn:
+     """The height field heights.py draws cliffs from: its Field with the rock around each mouth raised (drawing only;
+     collision, lifts and ground keep the Field's own heights)."""
+-    def __init__(self, F, over, mouths):
++    def __init__(self, F, over, mouths, world=None):
+         self._F, self.over, self.mouths = F, over, mouths
+         self.walk, self.slope, self.kind, self.rocktop = F.walk, F.slope, F.kind, F.rocktop
+         self.rock = F.rock | set(over)               # raised rock gets rock lips (gake1_0), as Black 2's mouths
++        # (dewford_fix 2026-10-12) a boulder or sign beside the raised rock, with nothing higher round it before, stays
++        # flat at its height and the rock's skirt stands at its edge (heights.py 9d's rule for its own raised rock):
++        # as the low tile it held the mound's face, the boulder buried in it (Route 106's by the Granite Cave fisherman)
++        self.noface = set(F.noface)
++        for k in over:
++            for n in ((k[0] + a, k[1] + b) for a in (-1, 0, 1) for b in (-1, 0, 1)):
++                e = (world or {}).get(n)
++                if (e is None or e[1] not in FLAT_BESIDE or e[2] or n in over or n in F.walk or n in F.slope or
++                        any(F.y(n[0] + a, n[1] + b) > F.y(*n) for a in (-1, 0, 1) for b in (-1, 0, 1))): continue
++                self.noface.add(n)
+         self.cut = {}                                # tile -> 'all' (door tile) or 'south' (the face over the opening)
+         for m in mouths:
+             for dx in range(1 - OPENING, OPENING):       # (Black 2 cuts 3 tiles for its 2-tile opening)
+@@ -125,7 +136,7 @@ def drawn(F, world):
+     over = {}
+     for m in ms:
+         for k, v in m['raise'].items(): over[k] = max(v, over.get(k, v))
+-    D = Drawn(F, over, ms) if ms else F
++    D = Drawn(F, over, ms, world) if ms else F
+     _DRAWN.clear(); _DRAWN[id(F)] = (F, D)
+     return D
+ 
+diff --git a/b2tools/terrain/ground.py b/b2tools/terrain/ground.py
+index f33b47d..3ea20dd 100644
+--- a/b2tools/terrain/ground.py
++++ b/b2tools/terrain/ground.py
+@@ -169,6 +169,20 @@ def ground_under(world):
+             if px is not None and ((px[:, 0] > 190) & (px[:, 1] > 160) & (px[:, 2] < 190) & (px[:, 0] >= px[:, 1]) &
+                                    (px[:, 1] - px[:, 2] > 50)).sum() >= 12:
+                 out[(wx, wz)] = 'sand'
++    # (dewford_fix 2026-10-12) the rock at a cave mouth's foot that lies at the ground's level (the door row beside the
++    # opening, under terrain/cave_mouth.py's frame, and the row beside the approach tile) takes the approach's sand:
++    # world.py's grass showed there as green strips round Granite Cave's mouth on Route 106's beach
++    H = sys.modules.get('terrain.heights'); F = getattr(H, 'FIELD', None) if H else None
++    if F is not None:
++        from . import cave_mouth as cm
++        for x, y in cm.find(world):
++            ap = (x, y + 1)
++            if (world.get(ap) or (0, 0))[1] not in sandy: continue
++            for dx in range(-cm.SPAN, cm.SPAN + 1):
++                for k in ((x + dx, y), (x + dx, y + 1)):
++                    e = world.get(k)
++                    if e and not e[2] and e[1] in ('cliff', 'cliff_top', 'mountain') and F.y(*k) == F.y(*ap):
++                        out[k] = 'sand'
+     for _ in range(4):          # (a building's inner tiles: next to a footprint tile with a ground, no other ground)
+         for (wx, wz), e in world.items():
+             if e[1] not in UNDER_BY_NEIGHBOURS or (wx, wz) in out: continue
+@@ -680,16 +694,19 @@ def draw_walls(m, k):
+                 face(m, 't02_kabe01', [(x, 0, Z(a), 0, v0), (x, 0, Z(b + 1), b + 1 - a, v0),
+                                        (x, H, Z(b + 1), b + 1 - a, 1), (x, H, Z(a), 0, 1)], n)
+ 
+-def hedge(m, x0, x1, z0, z1, mat='plant01'):
++def hedge(m, x0, x1, z0, z1, mat='plant01', ends=(True, True)):
+     """Striaton's hedge (plant01, chunk 11): a leafy box 3 units inside the tile (y 2..12, sides u 0.66..1 from top to
+     bottom) under a gable of leaves (eaves y 12 at the tile edges, ridge y 16 along the middle; slopes u 0.56..0.28 and
+-    0.28..0, v one repeat per tile along the hedge) with triangular ends (u 0.47..0.56)."""
+-    L = (x1 - x0) / T; zm = (z0 + z1) / 2; xi0, xi1 = x0 + 2, x1 - 2; zi0, zi1 = z0 + 3, z1 - 3
++    0.28..0, v one repeat per tile along the hedge) with triangular ends (u 0.47..0.56). ends (west, east): False where
++    the hedge goes on in the next chunk (no end there; dewford_fix 2026-10-12)."""
++    L = (x1 - x0) / T; zm = (z0 + z1) / 2; zi0, zi1 = z0 + 3, z1 - 3
++    xi0, xi1 = (x0 + 2 if ends[0] else x0), (x1 - 2 if ends[1] else x1)
+     face(m, mat, [(x0, 12, z0, 0.56, 0), (x1, 12, z0, 0.56, -L), (xi1, 16, zm, 0.28, -L), (xi0, 16, zm, 0.28, 0)], (0, 1, -1))
+     face(m, mat, [(xi0, 16, zm, 0.28, 0), (xi1, 16, zm, 0.28, -L), (x1, 12, z1, 0.0, -L), (x0, 12, z1, 0.0, 0)], (0, 1, 1))
+     for z, n in ((zi1, SOUTH),):
+         face(m, mat, [(xi0, 2, z, 1.0, 0), (xi1, 2, z, 1.0, -L), (xi1, 12, z, 0.66, -L), (xi0, 12, z, 0.66, 0)], n)
+-    for x, xi, n in ((x0, xi0, WEST), (x1, xi1, EAST)):
++    for x, xi, n, end in ((x0, xi0, WEST, ends[0]), (x1, xi1, EAST, ends[1])):
++        if not end: continue
+         face(m, mat, [(x, 12, z0, 0.56, 0.94), (x, 12, z1, 0.56, 0.06), (xi, 16, zm, 0.47, 0.5)], n)
+         face(m, mat, [(xi, 2, zi0, 1.0, 1), (xi, 2, zi1, 1.0, 0), (xi, 12, zi1, 0.66, 0), (xi, 12, zi0, 0.66, 1)], n)
+ 
+@@ -842,6 +859,22 @@ def rock_card(m, cx, cz, n, wet, base=0, scale=1.0):
+     face(m, mat, [(cx - a, base + y0, cz + z0, 0, 0), (cx + a, base + y0, cz + z0, 1, 0), (cx + a, base + y1, cz + z1, 1, 1),
+                   (cx - a, base + y1, cz + z1, 0, 1)], (0, 0.7071, 0.7071))
+ 
++def rock_wet(world, wx, wz, n=1):
++    """Whether the rock group of n x n tiles from (wx, wz) stands in the water (its card is Black 2's sea rock, at the
++    water's level 8 under the ground). (dewford_fix 2026-10-12) A rock with land beside it (a walkable tile that is not
++    water) and no water drawn under any of its tiles (water.py look: the water module draws the sea under a rock only
++    when no land touches it; ground_under lays the land's sand or grass there) is a land rock, on the ground. Any water
++    tile in the ring round it, diagonals included, made it a sea rock before: a beach rock a tile from the waterline
++    stood 8 units down in the sand, a grey sliver poking out (Route 106's Stardust rock by the fisherman). Other rocks
++    keep that test (rocks in shallows, rows of rocks in the sea)."""
++    tiles = [(wx + dx, wz + dz) for dx in range(n) for dz in range(n)]
++    wm = sys.modules.get('terrain.water')
++    if wm is not None and any(wm.look(world, *t) == 'sea' for t in tiles): return True
++    ring = [(x, z) for x in range(wx - 1, wx + n + 1) for z in range(wz - 1, wz + n + 1) if (x, z) not in tiles]
++    side = [(x, z) for x, z in ring if wx <= x < wx + n or wz <= z < wz + n]
++    if any((world.get(k) or (0, 0, False))[2] and world[k][1] not in WATER for k in side): return False
++    return any((world.get(k) or (0, None))[1] in WATER for k in ring)
++
+ def draw_rocks(m, k):
+     """Every rock (Sapphire's 2x2 boulders and sea rocks, and single-tile rocks) as Black 2's rock card (rock_card):
+     2x2 groups as rock_01 / searock_01, single tiles as rock_02 / searock_02."""
+@@ -863,7 +896,7 @@ def draw_rocks(m, k):
+         for wx, wz, n in rocks:
+             if not _in_cell(k.cell, wx, wz): continue
+             tx, tz = wx - k.cell.X, wz - k.cell.Z
+-            wet = any(k.cls(tx + dx, tz + dz) in WATER for dx in range(-1, n + 1) for dz in range(-1, n + 1))
++            wet = rock_wet(k.cell.world, wx, wz, n)
+             rock_card(m, X(tx) + 8 * n, Z(tz) + 8 * n, n, wet, -8 if wet else 0)
+         return
+     rock = lambda x, z: (k.cell.world.get((x, z)) or (None, None))[1] == 'rock'
+diff --git a/b2tools/terrain/heights.py b/b2tools/terrain/heights.py
+index 53addfe..a054f9b 100644
+--- a/b2tools/terrain/heights.py
++++ b/b2tools/terrain/heights.py
+@@ -927,14 +927,20 @@ def height_field(world, maps, cfg, trees=()):
+     ROCKY_CLS = {'cliff', 'cliff_top', 'mountain'}
+     N8 = [(dx, dz) for dx in (-1, 0, 1) for dz in (-1, 0, 1) if dx or dz]
+     flat_walk = lambda n: n in walk and n not in F.slope and cls(n) not in LEDGES
++    # (dewford_fix 2026-10-12) ...except the rock beside a cave mouth's door on the door row: terrain/cave_mouth.py
++    # stands the mouth's frame there, on the ground, and raises the rock behind it itself (Black 2's 2-tier mouth). Raised
++    # here it stood in front of the frame as a flat-topped block a level high (Granite Cave's mouth on Route 106)
++    from . import cave_mouth as _cm
++    mouth_row = {(x + dx, y) for x, y in _cm.find(world) for dx in range(-_cm.SPAN, _cm.SPAN + 1)}
+     exposed = [k for k, e in world.items() if e[1] in ROCKY_CLS and k not in walk and k not in F.noface and k not in F.slope
++               and k not in mouth_row
+                and any(flat_walk(n) and abs(F.y(*n) - F.y(*k)) < 1 for n in nb(k))
+                and not any((k[0] + dx, k[1] + dz) in world and (k[0] + dx, k[1] + dz) not in F.slope
+                            and F.y(k[0] + dx, k[1] + dz) > F.y(*k) + 0.5 for dx, dz in N8)]   # (draw: no face up to a slope)
+     # (each exposed tile with the flat rock behind it at its height: the whole flat mass rises, so only its outline
+     # gets faces - raising the rim alone ringed every mass with skirts on both sides, +47,000 triangles)
+     flat_rock = lambda k: (k in world and world[k][1] in ROCKY_CLS and k not in walk and k not in F.noface and k not in F.slope
+-                           and not any((k[0] + dx, k[1] + dz) in world and (k[0] + dx, k[1] + dz) not in F.slope
++                           and k not in mouth_row and not any((k[0] + dx, k[1] + dz) in world and (k[0] + dx, k[1] + dz) not in F.slope
+                                        and F.y(k[0] + dx, k[1] + dz) > F.y(*k) + 0.5 for dx, dz in N8))
+     raise_, q = set(exposed), deque(exposed)
+     while q:
+diff --git a/b2tools/world.py b/b2tools/world.py
+index d81378d..71a8f17 100644
+--- a/b2tools/world.py
++++ b/b2tools/world.py
+@@ -227,6 +227,28 @@ def build_cell(m_name, cx, cz, world, trees, cfg_maps):
+             if any((c[0] - X, c[1] - Z) in covered for c in sq): continue
+             if walk_at(wx, wz - 1) or walk_at(wx + 1, wz - 1): continue    # keep the row south of walkable tiles open
+             anchors.add((wx - X, wz - Z))
++    # (dewford_fix 2026-10-12) that open row is blocked ground outside the map, drawn as the ground beside it: an
++    # invisible wall where a town or route ends at the forest (the user: the bottom of Dewford's beach). It gets
++    # Black 2's hedge (terrain/ground.py hedge, Striaton's: 16 units at its ridge, low enough that the player on the
++    # map's last row stays in view, which the gap is for: DECISIONS 2026-10-06), one run per row and height
++    if GROUND_MOD is not None:
++        treed = {(ax + dx, az + dz) for ax, az in anchors for dx in (0, 1) for dz in (0, 1)}
++        land_at = lambda wx, wz: (world.get((wx, wz)) or (None, None, False))[2] and world[(wx, wz)][1] not in WATER
++        gap_at = lambda wx, wz: ((wx, wz) not in world and (wx, wz) not in VOID and land_at(wx, wz - 1)
++                                 and not any(fl(world, wx, wz) for fl in fillers))     # (not the sea round the maps)
++        gap = {}
++        for tz in range(32):
++            for tx in range(32):
++                if (tx, tz) not in treed and gap_at(X + tx, Z + tz): gap.setdefault(tz, []).append(tx)
++        on = lambda tx, tz, d: (tx == 0 and d < 0 or tx == 31 and d > 0) and gap_at(X + tx + d, Z + tz) \
++            and (HF.y(X + tx + d, Z + tz) if HF else 0) == hy(tx, tz)      # (the hedge goes on in the next chunk)
++        for tz, xs in gap.items():
++            xs.sort(); run = [xs[0]]
++            for x in xs[1:] + [None]:
++                if x is not None and x == run[-1] + 1 and hy(x, tz) == hy(run[0], tz): run.append(x); continue
++                GROUND_MOD.hedge(m, bc.ux(run[0]), bc.ux(run[-1] + 1), bc.uz(tz), bc.uz(tz + 1),
++                                 ends=(not on(run[0], tz, -1), not on(run[-1], tz, 1)))
++                if x is not None: run = [x]
+     # Trees go into their own model, each row lifted as a whole to the lowest of its tiles (with heights): world.py's
+     # lift moves every triangle by the height under its centre, which tore a tree standing on two levels in two
+     # (outside the maps and in forest_fill's trees; exterior sweep 2026-10-06)

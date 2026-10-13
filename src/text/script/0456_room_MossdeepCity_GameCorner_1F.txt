@@ -1,0 +1,3 @@
+The door appears to be locked.
+It’s filled with all sorts of books.
+When I was young, I traveled the world\nas a Pokémon Trainer.{be01}\nNow that I’ve become an old buzzard,\nmy only amusement is watching young{be00}\nTrainers battle.

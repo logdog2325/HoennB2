@@ -1,0 +1,23 @@
+{
+ "kind": "overworld",
+ "code": 245,
+ "sheet": 223,
+ "frames": 5,
+ "size": [
+  32,
+  32
+ ],
+ "controller": 8,
+ "textures": [
+  "t4x4x5.0",
+  "t4x4x5.1",
+  "t4x4x5.2",
+  "t4x4x5.3",
+  "t4x4x5.4"
+ ],
+ "palette": "t4x4x5",
+ "name": "may-action5",
+ "note": "May (player), action5",
+ "source": "pokeruby graphics/object_events/pics/people/may/normal",
+ "made_by": "b2tools/sprite_upgrade_players.py"
+}

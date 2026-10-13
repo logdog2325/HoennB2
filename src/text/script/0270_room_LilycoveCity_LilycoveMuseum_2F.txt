@@ -1,0 +1,20 @@
+It’s a replica of a famous sculpture.{be01}\nIt depicts an ancient Bird Pokémon.
+It’s a replica of a famous sculpture.{be01}\nIt depicts an ancient Bird Pokémon.
+This is our special exhibit hall.
+As you can plainly see, there is not a\nsingle painting on exhibit.{be01}\nHere, I don’t wish to exhibit works of\nso-called classical art.{be01}\nSuch classical works you can see on\nour ground floor.{be01}\nI wish to exhibit work that is far\ndifferent from the classics.{be01}\nArt, after all, is not restricted to old,\nfamous works!{be01}\nThis exhibit hall, I wish to fill it with...{be01}\nModern and vibrant artworks of\nPokémon seemingly ready to spring{be00}\nforth into glorious life!
+I beg your pardon. I didn’t intend\nto monopolize the conversation.{be01}\nNow, as you are young, and yet\nobviously well traveled...{be01}\nYou must encounter lively Pokémon\nand works of art depicting them.{be01}\nIf you were to come across such a\npainting, may we ask you to obtain{be00}\nthe artist’s permission to exhibit{be00}\nit here?
+I wish to fill this exhibit hall with\nmodern and vibrant paintings of{be00}\nPokémon.
+Thanks to you, we’ve added a new\npainting to our collection!{be01}\nI’ve heard it depicts your Pokémon.\nTruly magnificent!{be01}\nThank you so very, very much!
+Ah! It’s you!\n{0100:0}!
+Isn’t this marvelous?\nThis collection of paintings!{be01}\nEach one of them flawless!\nNone better than another!{be01}\nThese paintings have attracted\nmore guests to our Art Museum.{be01}\nSincerely, I thank you, {0100:0}.\nThis is my dream come true!
+This is merely a token of my gratitude.
+Ah, so good to see you, {0100:0}!{be01}\nIt’s an honor to have you visit us\non your busy journeys.{be01}\nPlease, relax and do enjoy your\nvisit with us.
+It’s a picture frame with pink-colored\nadornments.
+It’s a picture frame with yellow-colored\nadornments.
+It’s a picture frame with blue-colored\nadornments.
+It’s a picture frame with red-colored\nadornments.
+It’s a picture frame with green-colored\nadornments.
+It’s a painting of Pokémon.
+I’ve been away awhile, so the new\npaintings up here surprised me.{be01}\nI wish someone would paint my Pokémon\nthis pretty.
+Well... So this is where they show the\ntopical Pokémon paintings.{be01}\nI see, these new paintings are indeed\nrather amusing.
+Wow, is that right?\nThese paintings are of your Pokémon.{be01}\nIsn’t that just the ultimate joy for\na Trainer?

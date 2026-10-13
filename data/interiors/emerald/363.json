@@ -1,0 +1,63 @@
+{
+ "zone": 363,
+ "room": "MirageTower_4F",
+ "cave": true,
+ "cave_auto": true,
+ "area": 332,
+ "dark": false,
+ "header": {
+  "map_type": 16,
+  "npc_cache": 24,
+  "weather_word": 64,
+  "flags": 23683,
+  "icon_word": 40975,
+  "place_display": 1,
+  "bgm0": 1076,
+  "bgm1": 1076,
+  "bgm2": 1076,
+  "bgm3": 1076,
+  "place": 107,
+  "encounters": 136,
+  "enc_slot": 2
+ },
+ "warps": [
+  {
+   "at": [
+    1,
+    4
+   ],
+   "to": [
+    362,
+    1
+   ],
+   "what": "Emerald warp 0 (1,4) -> MirageTower_3F 1"
+  }
+ ],
+ "triggers": [
+  {
+   "script": 1,
+   "var": 0,
+   "value": 0,
+   "at": [
+    1,
+    4
+   ]
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 3,
+   "model": 206,
+   "script": 10016,
+   "flag": 0,
+   "dir": 1,
+   "at": [
+    6,
+    7
+   ],
+   "what": "breakable rock"
+  }
+ ],
+ "signs": [],
+ "what": "MirageTower_4F: Emerald's cave (converter/gen_caves_emerald.py from emerald/MirageTower_4F, b2tools/models_cave.py); story objects: see notes/EMERALD.md"
+}

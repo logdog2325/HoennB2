@@ -1,0 +1,429 @@
+{
+ "_doc": "Stern's Shipyard 2F (Sapphire 17x15; zone 22, area 289), the design office. Doorway down (3,1) = ship cabin door cabin_door; wall panels (6,1) (7,1) (12,1) = monitor pictures (303). Desks in pairs along the west side (0-3, rows 5/8/11): white counters shelf03, the PC ones with monitor01 on top; red stools = chushion01; bin (7,11) = dust01; drawing boards (9-10, 3-4) (13-14, 3-4) = lab tables table02. Sapphire's railed pit (8-15, 5-12) looks down onto 1F's engine: here the floor sinks 48 units (a block with h -48: 1F's workshop floor in77k_yuka1 on its top, its side faces become the pit's west and east walls; the north wall = four wall pictures 60 units out from the back wall), and the engine (machine_l02 + machine_l01), the machinery standing on it (1F's girders are left out: a chunk holds at most 32 furniture placements). Black 2 has no railing model: the pit has none. The scientist Sapphire draws down there (no script, a 1F decoration) is left out.",
+ "map": "SlateportCity_SternsShipyard_2F",
+ "style": "fac_ship",
+ "floor": [
+  [
+   0,
+   2,
+   16,
+   14
+  ]
+ ],
+ "mats": [
+  {
+   "tex": "chip_mat",
+   "src": 285,
+   "rect": [
+    3,
+    2,
+    3,
+    2
+   ],
+   "border": 0.25,
+   "border_units": 3,
+   "y": 0,
+   "_what": "mat at the doorway"
+  }
+ ],
+ "decals": [
+  {
+   "tex": "in22_tv02",
+   "src": 303,
+   "at": [
+    6.5
+   ],
+   "y": 14,
+   "w": 12,
+   "h": 10,
+   "gap": 1,
+   "_what": "wall panel (6,1)"
+  },
+  {
+   "tex": "in22_tv05",
+   "src": 303,
+   "at": [
+    7.5
+   ],
+   "y": 14,
+   "w": 12,
+   "h": 10,
+   "gap": 1,
+   "_what": "wall panel (7,1)"
+  },
+  {
+   "tex": "in22_tv04",
+   "src": 303,
+   "at": [
+    12.5
+   ],
+   "y": 14,
+   "w": 12,
+   "h": 10,
+   "gap": 1,
+   "_what": "wall panel (12,1)"
+  },
+  {
+   "tex": "in22_kabe03",
+   "src": 303,
+   "at": [
+    9.0
+   ],
+   "z": 5,
+   "y": -50,
+   "w": 32,
+   "h": 48,
+   "gap": 60,
+   "_what": "the pit's north wall"
+  },
+  {
+   "tex": "in22_kabe03",
+   "src": 303,
+   "at": [
+    11.0
+   ],
+   "z": 5,
+   "y": -50,
+   "w": 32,
+   "h": 48,
+   "gap": 60,
+   "_what": "the pit's north wall"
+  },
+  {
+   "tex": "in22_kabe03",
+   "src": 303,
+   "at": [
+    13.0
+   ],
+   "z": 5,
+   "y": -50,
+   "w": 32,
+   "h": 48,
+   "gap": 60,
+   "_what": "the pit's north wall"
+  },
+  {
+   "tex": "in22_kabe03",
+   "src": 303,
+   "at": [
+    15.0
+   ],
+   "z": 5,
+   "y": -50,
+   "w": 32,
+   "h": 48,
+   "gap": 60,
+   "_what": "the pit's north wall"
+  }
+ ],
+ "furniture": [
+  {
+   "m": "cabin_door",
+   "at": [
+    3.5,
+    2.5
+   ],
+   "wall": "N",
+   "gap": 1,
+   "_what": "doorway down to 1F (warp tile 3,1)"
+  },
+  {
+   "m": "shelf03",
+   "tiles": [
+    0,
+    5,
+    1,
+    5
+   ],
+   "_what": "desk"
+  },
+  {
+   "m": "shelf03",
+   "tiles": [
+    2,
+    5,
+    3,
+    5
+   ],
+   "_what": "desk with PC"
+  },
+  {
+   "m": "monitor01",
+   "at": [
+    2.6,
+    5.5
+   ],
+   "y": 0,
+   "_what": "PC (2 units off the desk ends)",
+   "dx": -2
+  },
+  {
+   "m": "shelf03",
+   "tiles": [
+    0,
+    8,
+    1,
+    8
+   ],
+   "_what": "desk with PC"
+  },
+  {
+   "m": "monitor01",
+   "at": [
+    0.6,
+    8.5
+   ],
+   "y": 0,
+   "_what": "PC (2 units off the desk ends)",
+   "dx": -2
+  },
+  {
+   "m": "shelf03",
+   "tiles": [
+    2,
+    8,
+    3,
+    8
+   ],
+   "_what": "desk"
+  },
+  {
+   "m": "shelf03",
+   "tiles": [
+    0,
+    11,
+    1,
+    11
+   ],
+   "_what": "desk with PC"
+  },
+  {
+   "m": "monitor01",
+   "at": [
+    0.6,
+    11.5
+   ],
+   "y": 0,
+   "_what": "PC (2 units off the desk ends)",
+   "dx": -2
+  },
+  {
+   "m": "shelf03",
+   "tiles": [
+    2,
+    11,
+    3,
+    11
+   ],
+   "_what": "desk"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    1,
+    6
+   ],
+   "_what": "stool"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    3,
+    6
+   ],
+   "_what": "stool"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    0,
+    9
+   ],
+   "_what": "stool"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    3,
+    9
+   ],
+   "_what": "stool"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    1,
+    12
+   ],
+   "_what": "stool"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    3,
+    12
+   ],
+   "_what": "stool"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    8,
+    4
+   ],
+   "_what": "stool"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    7,
+    6
+   ],
+   "_what": "stool"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    7,
+    7
+   ],
+   "_what": "stool"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    7,
+    9
+   ],
+   "_what": "stool"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    11,
+    3
+   ],
+   "_what": "stool"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    12,
+    4
+   ],
+   "_what": "stool"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    15,
+    3
+   ],
+   "_what": "stool"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    11,
+    13
+   ],
+   "_what": "stool"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    12,
+    13
+   ],
+   "_what": "stool"
+  },
+  {
+   "m": "dust01",
+   "tile": [
+    7,
+    11
+   ],
+   "_what": "bin"
+  },
+  {
+   "m": "table02_2w",
+   "tiles": [
+    9,
+    3,
+    10,
+    4
+   ],
+   "_what": "drawing board (9-10, 3-4) (table02 at 2 tiles; one piece: the room has 32 placements)"
+  },
+  {
+   "m": "table02_2w",
+   "tiles": [
+    13,
+    3,
+    14,
+    4
+   ],
+   "_what": "drawing board (13-14, 3-4) (table02 at 2 tiles; one piece: the room has 32 placements)"
+  },
+  {
+   "m": "machine_l02",
+   "at": [
+    13.0,
+    7.0
+   ],
+   "y": -48,
+   "_what": "1F's engine seen from above"
+  },
+  {
+   "m": "machine_l01",
+   "at": [
+    13.0,
+    9.5
+   ],
+   "y": -48,
+   "_what": "1F's engine base"
+  },
+  {
+   "m": "machine01",
+   "tile": [
+    9,
+    6
+   ],
+   "y": -48,
+   "_what": "1F machinery"
+  },
+  {
+   "m": "machine02",
+   "tile": [
+    10,
+    6
+   ],
+   "y": -48,
+   "_what": "1F machinery"
+  }
+ ],
+ "blocks": [
+  {
+   "rect": [
+    8,
+    5,
+    15,
+    12
+   ],
+   "h": -48,
+   "top": {
+    "tex": "in77k_yuka1",
+    "src": 379,
+    "size": 32
+   },
+   "side": {
+    "tex": "in22_kabe03",
+    "src": 303,
+    "u_size": 48
+   },
+   "shade_top": 0.85,
+   "shade_we": 0.55,
+   "_what": "the pit: 1F's workshop floor 48 units below (a block with a negative height: its west/east faces become the pit's side walls)"
+  }
+ ]
+}

@@ -1,0 +1,48 @@
+{
+ "_doc": "frontier_pyramid (2026-10-12): BattleFrontier_BattlePyramidTop (notes/FRONTIER_PYRAMID.md), Emerald only (data/emerald/hoenn_interiors.json claim). People = Emerald's objects (uid = Emerald local id), sprites from data/sprite_map.json. Room origin [-1, -5].",
+ "zone": 420,
+ "room": "BattleFrontier_BattlePyramidTop",
+ "area": 282,
+ "parent": 17,
+ "warps": [],
+ "npcs": [
+  {
+   "uid": 1,
+   "model": 64,
+   "script": 1,
+   "dir": 1,
+   "at": [
+    17,
+    11
+   ],
+   "what": "attendant (HIKER)"
+  },
+  {
+   "uid": 2,
+   "model": 300,
+   "script": 2,
+   "dir": 0,
+   "at": [
+    17,
+    7
+   ],
+   "flag": 65,
+   "what": "Brandon (frontier_core sheet 300): hidden by map-local flag 0x41 unless the Brain is ready"
+  }
+ ],
+ "signs": [],
+ "triggers": [
+  {
+   "script": 3,
+   "var": 16401,
+   "value": 0,
+   "at": [
+    17,
+    9
+   ],
+   "w": 1,
+   "h": 1,
+   "what": "Emerald's coord event (17,9) VAR_TEMP_2 0 -> BattleBrandon"
+  }
+ ]
+}

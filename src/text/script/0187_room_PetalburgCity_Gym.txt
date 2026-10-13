@@ -1,0 +1,53 @@
+Dad: So, did it work out?
+Wally: Thank you, yes, it did.\nHere’s your Pokémon back.{be01}\n{0100:0}, thank you for coming along\nwith me.{be01}\nYou two are why I was able to catch\nmy Pokémon.{be01}\nI promise I’ll take really good\ncare of it.{be01}\nOh! My mom’s waiting for me, so I\nhave to go!{be01}\nBye, {0100:0}!
+Dad: Now...{be01}\n{0100:0}, if you want to become a\nstrong Trainer, here’s my advice.{be01}\nHead for Rustboro City beyond this\ntown.{be01}\nThere, you should challenge the Gym\nLeader, Roxanne.{be01}\nAfter her, go on to other Pokémon\nGyms and defeat their Leaders.{be01}\nCollect Badges from them,\nunderstood?{be01}\nOf course, I’m a Gym Leader, too.\nWe’ll battle one day, {0100:0}.{be01}\nBut that’s only after you become\nstronger, {0100:0}.
+Dad: Hm?{be01}\nWell, if it isn’t {0100:0}!\nSo you’re all finished moving in?{be01}\nI’m surprised that you managed to\nget here by yourself.{be01}\nOh, I see.\nYou’re with your Pokémon.{be01}\nHm... Then I guess you’re going to\nbecome a Trainer like me, {0100:0}.{be01}\nThat’s great news!\nI’ll be looking forward to it!
+Um... I... I’d like to get a\nPokémon, please...
+Dad: Hm? You’re... Uh... Oh, right.\nYou’re Wally, right?
+Wally: I’m going to go stay with my\nrelatives in Verdanturf Town.{be01}\nI thought I would be lonely by myself,\nso I wanted to take a Pokémon along.{be01}\nBut I’ve never caught a Pokémon before.\nI don’t know how...
+Dad: Hm. I see.
+Dad: {0100:0}, you heard that,\nright?{be01}\nGo with Wally and make sure that he\nsafely catches a Pokémon.
+Wally, here, I’ll loan you my Pokémon.{be01}\nWally received a Zigzagoon!
+Wally: Oh, wow!\nA Pokémon!{be01}\nDad: Hm. I’ll give you a Poké Ball, too.\nGo for it!{be01}\nWally received a Poké Ball!
+Wally: Oh, wow!\nThank you!
+{0100:0}... Would you really come\nwith me?
+Dad: Hm? Aren’t you going to the\nPokémon Gym in Rustboro City?{be01}\nThere’s no challenge for me to\nbattle a greenhorn Trainer.{be01}\n{0100:0}, I want you to challenge me\nwhen you become a lot stronger.{be01}\nI’ll battle you, {0100:0}, when you\ncan show me four Gym Badges, okay?
+Dad: I see... So, you’ve beaten the\nGym Leader in Rustboro City.{be01}\nBut there are many more Trainers\nwho are stronger than you, {0100:0}.{be01}\nAcross the sea in Dewford Town is a\nGym Leader named Brawly.{be01}\nYou should go challenge him.
+Dad: Hm... {0100:0}, you have gotten\nstronger.{be01}\nI can tell by the number of Badges\nthat you’ve earned.
+Dad: Hm...\nSo, you did get four Gym Badges.{be01}\nFine, as I promised, we will have a\nPokémon battle.{be01}\n{0100:0}...{be01}\nI’m so happy that I can have a \nreal battle with my own child.{be01}\nBut, a battle is a battle!{be01}\nI will do everything in my power as\na Gym Leader to win.{be01}\n{0100:0}, you’d better give it your\nbest shot, too!
+{0100:0} received the Balance Badge\nfrom Dad!
+Dad: With that Badge, the Defense\nof all your Pokémon will increase.{be01}\nPokémon that know the HM move Surf\nwill be able to travel over water.{be01}\nThis is my gift to you. {0100:0}, I’m\nsure you can use it correctly.
+Dad: TM42 contains Facade.{be01}\nIt doubles the power of moves if\nthe Pokémon is poisoned, paralyzed,{be00}\nor burned.{be01}\nIt might be able to turn a bad\nsituation into an advantage.
+Dad: As the Gym Leader, I can’t\nexpress how upset I am...{be01}\nBut as a father, it makes me both\nhappy and a little sad. It’s odd...
+Dad: Oh, yes...{be01}\nWally’s parents came calling\nearlier.{be01}\nThey said that they had something\nthey wanted to give you, {0100:0}.
+Dad: {0100:0}, you should go visit\nyour mother every so often.{be01}\nI’m going to stay here and redouble\nmy training.{be01}\nIt would bother me as a Trainer to\nnot avenge my loss to you, {0100:0}!
+Dad: {0100:0}, how are things going?{be01}\nThe world of Pokémon is deep.{be01}\nI honestly think that no amount of\ntraining would ever be enough.
+Hey, how’s it going, Champion-\nbound {0100:0}?{be01}\nThe doors in this Gym open when you\nbeat the awaiting Trainers.{be01}\nWhoops! The doors in this room are\nalready open, so don’t attack me!{be01}\nThe Trainers of Petalburg Gym use\nall kinds of items.{be01}\nThe door at the left leads to the\nSpeed Room.{be01}\nThe door at the right leads to the\nAccuracy Room.{be01}\nThe room’s name will be on the\ndoor, so choose carefully.{be01}\nOnce you’ve chosen the door...\nWell, hey, go for it!
+{0100:0}! Whoa! You’ve overcome even\nyour own father!{be01}\nLike, whoa!\nWhat a stunning turn of events!
+Go on to the next room where a new\nchallenge awaits you.{be01}\nAt the left is the Zero Reduction\nRoom.{be01}\nThe right door leads to the Defense\nRoom.
+Whomever you beat, and whomever you\nmay lose to, you never shirk from{be00}\ntraining yourself and your Pokémon.{be01}\nThat’s what I think being a\nGym Leader is all about.
+The next room is the Strength Room.\nCan you withstand brute force?
+After you beat our Leader, the\ntraining has become a lot tougher.
+I should have expected no less from\nour Leader’s kid.{be01}\nNo, wait! A Trainer’s abilities are\nearned only through effort.{be01}\nI lost because my own efforts\nweren’t enough.{be01}\nGo on! The One-Hit KO Room is next.
+I’m going to keep training at Gyms.\nOne day, I’ll become a Leader.
+Your father really is strong. He’s\na Trainer worth my respect.{be01}\nAnd, I sense the same glow coming\nfrom you as your father.{be01}\nI hope that you’ll stage a terrific\nbattle with your father!
+Since your dad became the Leader,\nthe Trainers of Petalburg City have{be00}\nbecome a lot tougher.
+There are some even stronger\nTrainers waiting for you.{be01}\nThe left is the Defense Room, and\nthe right is the Recovery Room.{be01}\nYour Pokémon’s Attack power will be\non trial either way.
+Do you know what we’re trying to\nachieve as Trainers?{be01}\nWe’re striving to become soul mates\nwith our Pokémon.
+I think you’ve taught me a valuable\nlesson here.{be01}\nNow, go on! The left door goes to\nthe Strength Room.{be01}\nThe right door opens to the\nOne-Hit KO Room.{be01}\nBoth of them have Trainers who are\noffensively skilled.
+Hi! Have you tried using Surf?
+The way you use your Pokémon...\nIt’s like your father’s style.{be01}\nGo on through! The Gym Leader, your\nfather, is waiting!
+Sure, it’s fine to make your Pokémon\nstronger.{be01}\nBut what decides the winner?{be01}\nWhy, it’s the feelings Trainers have for\ntheir Pokémon.
+This door appears to be locked\nright now...
+“Speed Room,” the sign says.{be01}\nDo you want to go through?
+“Accuracy Room,” the sign says.{be01}\nDo you want to go through?
+“Zero Reduction Room,” the sign\nsays.{be01}\nDo you want to go through?
+“Defense Room,” the sign says.{be01}\nDo you want to go through?
+“Recovery Room,” the sign says.{be01}\nDo you want to go through?
+“Strength Room,” the sign says.{be01}\nDo you want to go through?
+“One-Hit KO Room,” the sign says.{be01}\nDo you want to go through?
+“Gym Leader’s Room{be01}\n“See for yourself what Pokémon await\nyou!” the sign says.{be01}\nDo you want to go through?
+Petalburg City Pokémon Gym
+Petalburg City Pokémon Gym{be01}\nNorman’s Certified Trainers:\n{0100:0}
+Too bad!\nThe Bag is full...
+Dad: Hi, {0100:0}!{be01}\nI just received a very rare Berry.\nI’d like you to have it.

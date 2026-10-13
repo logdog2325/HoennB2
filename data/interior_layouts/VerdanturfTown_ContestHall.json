@@ -1,0 +1,434 @@
+{
+ "_doc": "Verdanturf Contest Hall (Sapphire 21x18, zone 59): Musical Theater floor (set 305) with its purple stage curtain as the wall; Sapphire's 4-row curtain wall with three speakers (Black 2's speaker picture in05_speaker, set 286). The stage (3-17, 5-14) as Sapphire's: its two solid rims are low raised walls (6 units, in24_tile top), the walkway between them gray tiles (in02_yuka7, set 283), the stage floor green (in24_yukag), the steps (9-11, 12-14) the Center's stair texture in02_step - all drawn into the floor itself (floor_tex), no layered surfaces. Four plants along the south wall as in Sapphire.",
+ "map": "VerdanturfTown_ContestHall",
+ "style": "sp_stage",
+ "floor": [
+  [
+   0,
+   4,
+   20,
+   17
+  ]
+ ],
+ "mats": [
+  {
+   "tex": "in24_mat",
+   "src": 305,
+   "rect": [
+    10,
+    17,
+    11,
+    17
+   ],
+   "border": 0.25,
+   "border_units": 4,
+   "y": 0,
+   "_what": "door mat"
+  }
+ ],
+ "decals": [
+  {
+   "tex": "in05_speaker",
+   "src": 286,
+   "at": [
+    4.5
+   ],
+   "y": 20,
+   "w": 22,
+   "h": 22,
+   "gap": 2,
+   "_what": "speaker"
+  },
+  {
+   "tex": "in05_speaker",
+   "src": 286,
+   "at": [
+    10.5
+   ],
+   "y": 20,
+   "w": 22,
+   "h": 22,
+   "gap": 2,
+   "_what": "speaker"
+  },
+  {
+   "tex": "in05_speaker",
+   "src": 286,
+   "at": [
+    16.5
+   ],
+   "y": 20,
+   "w": 22,
+   "h": 22,
+   "gap": 2,
+   "_what": "speaker"
+  }
+ ],
+ "furniture": [
+  {
+   "m": "plant01",
+   "tile": [
+    2,
+    17
+   ],
+   "_what": "plant"
+  },
+  {
+   "m": "plant01",
+   "tile": [
+    5,
+    17
+   ],
+   "_what": "plant"
+  },
+  {
+   "m": "plant01",
+   "tile": [
+    15,
+    17
+   ],
+   "_what": "plant"
+  },
+  {
+   "m": "plant01",
+   "tile": [
+    18,
+    17
+   ],
+   "_what": "plant"
+  }
+ ],
+ "floor_tex": [
+  {
+   "rect": [
+    4,
+    6,
+    16,
+    13
+   ],
+   "tex": "in02_yuka7",
+   "src": 283,
+   "size": 16
+  },
+  {
+   "rect": [
+    7,
+    8,
+    13,
+    11
+   ],
+   "tex": "in24_yukag",
+   "src": 305,
+   "size": 32
+  },
+  {
+   "rect": [
+    9,
+    12,
+    11,
+    14
+   ],
+   "tex": "in02_step",
+   "src": 283,
+   "size": 16
+  }
+ ],
+ "blocks": [
+  {
+   "top": {
+    "tex": "in24_tile",
+    "src": 305,
+    "size": 16
+   },
+   "side": {
+    "tex": "in24_kabe_03",
+    "src": 305,
+    "u_size": 32
+   },
+   "shade_top": 1.0,
+   "tiles": [
+    [
+     3,
+     5
+    ],
+    [
+     4,
+     5
+    ],
+    [
+     5,
+     5
+    ],
+    [
+     6,
+     5
+    ],
+    [
+     7,
+     5
+    ],
+    [
+     8,
+     5
+    ],
+    [
+     9,
+     5
+    ],
+    [
+     10,
+     5
+    ],
+    [
+     11,
+     5
+    ],
+    [
+     12,
+     5
+    ],
+    [
+     13,
+     5
+    ],
+    [
+     14,
+     5
+    ],
+    [
+     15,
+     5
+    ],
+    [
+     16,
+     5
+    ],
+    [
+     17,
+     5
+    ],
+    [
+     3,
+     14
+    ],
+    [
+     4,
+     14
+    ],
+    [
+     5,
+     14
+    ],
+    [
+     6,
+     14
+    ],
+    [
+     7,
+     14
+    ],
+    [
+     8,
+     14
+    ],
+    [
+     12,
+     14
+    ],
+    [
+     13,
+     14
+    ],
+    [
+     14,
+     14
+    ],
+    [
+     15,
+     14
+    ],
+    [
+     16,
+     14
+    ],
+    [
+     17,
+     14
+    ],
+    [
+     3,
+     6
+    ],
+    [
+     3,
+     7
+    ],
+    [
+     3,
+     8
+    ],
+    [
+     3,
+     9
+    ],
+    [
+     3,
+     10
+    ],
+    [
+     3,
+     11
+    ],
+    [
+     3,
+     12
+    ],
+    [
+     3,
+     13
+    ],
+    [
+     17,
+     6
+    ],
+    [
+     17,
+     7
+    ],
+    [
+     17,
+     8
+    ],
+    [
+     17,
+     9
+    ],
+    [
+     17,
+     10
+    ],
+    [
+     17,
+     11
+    ],
+    [
+     17,
+     12
+    ],
+    [
+     17,
+     13
+    ]
+   ],
+   "h": 6
+  },
+  {
+   "top": {
+    "tex": "in24_tile",
+    "src": 305,
+    "size": 16
+   },
+   "side": {
+    "tex": "in24_kabe_03",
+    "src": 305,
+    "u_size": 32
+   },
+   "shade_top": 1.0,
+   "tiles": [
+    [
+     6,
+     7
+    ],
+    [
+     7,
+     7
+    ],
+    [
+     8,
+     7
+    ],
+    [
+     9,
+     7
+    ],
+    [
+     10,
+     7
+    ],
+    [
+     11,
+     7
+    ],
+    [
+     12,
+     7
+    ],
+    [
+     13,
+     7
+    ],
+    [
+     14,
+     7
+    ],
+    [
+     6,
+     12
+    ],
+    [
+     7,
+     12
+    ],
+    [
+     8,
+     12
+    ],
+    [
+     12,
+     12
+    ],
+    [
+     13,
+     12
+    ],
+    [
+     14,
+     12
+    ],
+    [
+     6,
+     8
+    ],
+    [
+     6,
+     9
+    ],
+    [
+     6,
+     10
+    ],
+    [
+     6,
+     11
+    ],
+    [
+     14,
+     8
+    ],
+    [
+     14,
+     9
+    ],
+    [
+     14,
+     10
+    ],
+    [
+     14,
+     11
+    ]
+   ],
+   "h": 6
+  }
+ ]
+}

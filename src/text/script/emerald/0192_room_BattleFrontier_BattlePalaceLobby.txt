@@ -1,0 +1,65 @@
+Where the hearts of Trainers\nare put to the test.{be01}\nI welcome you to the Battle Palace.{be01}\nI accept challenges to the Single\nBattle Halls.
+Do you wish to take\nthe Single Battle Hall challenge?
+In the Battle Palace, there are\nseveral auditoriums for Single Battles{be00}\nthat are named Single Battle Halls.{be01}\nThe Single Battles are conducted in\nthe usual way, except with one crucial{be00}\nrule that must be obeyed.{be01}\nTrainers are permitted only to switch\ntheir Pokémon in and out.{be01}\nTrainers are otherwise forbidden to\ncommand their Pokémon.{be01}\nThe Pokémon are to behave according\nto their nature and battle on their own.{be01}\nYou must put your trust in your\nPokémon and watch over them.{be01}\nIf you achieve the honor of beating\nseven Trainers in succession,{be00}\nwe will present you with Battle Points.{be01}\nIf you want to interrupt your\nchallenge, you must save the game.{be01}\nIf you don’t save before interrupting,\nyou will be disqualified.
+There are two Battle Halls,\nLevel 50 and Open Level.{be00}\nWhich is your choice of a challenge?
+Sigh…{be01}\nYou do not have the three Pokémon\nrequired for the challenge.{be01}\nTo enter, you must provide three\ndifferent kinds of Pokémon.{be01}\nThese Pokémon must all be of\nLevel 50 or lower.{be01}\nThey also must not be holding\nthe same kinds of items.{be01}\nEggs{0100:1} ineligible.{be01}\nCome back when you have made\nyour preparations.
+Sigh…{be01}\nYou do not have the three Pokémon\nrequired for the challenge.{be01}\nTo enter, you must provide three\ndifferent kinds of Pokémon.{be01}\nThey also must not be holding\nthe same kinds of items.{be01}\nEggs{0100:1} ineligible.{be01}\nCome back when you have made\nyour preparations.
+Good. Now, you must select your\nthree Pokémon.
+I must save before I show you to\nthe Battle Hall. Is that okay?
+Good.\nNow, follow me.
+When you have fortified your heart\nand Pokémon, you must return.
+Sigh…{be01}\nYou failed to save before you ended\nyour challenge the last time.{be01}\nAs a result, your challenge has been\ndisqualified. It is most unfortunate.
+To achieve a 7-win streak…{be01}\nThe bonds that bind your heart with\nyour Pokémon seem firm and true.
+To defeat the Palace Maven\nand seven Trainers in a row…
+In honor of the bond you share with\nyour Pokémon, we present you with{be00}\nthese Battle Point(s).
+Your feat will be recorded.\nI must ask you to briefly wait.
+I feel privileged for having seen\nyour Pokémon’s exploits.{be01}\nThe results will be recorded.\nI must ask you to briefly wait.
+We have been waiting for you…
+Challenge
+Info
+Exit
+Lv. 50
+Open Level
+{0100:0} obtained {0100:1} Battle Point(s).
+For a hardy fellow like me,\nhardy Pokémon are the best.{be01}\nOffense is the best defense!\nA relentless attack is the ultimate!{be01}\nBut that’s not what I wanted to chat\nabout.{be01}\nEvery so often a really cute lady\nswings by here.{be01}\nShe says that she can tell what\nPokémon are thinking.{be01}\nI don’t know about that part,\nbut she is really cute.{be01}\nHuh?\nWhy are you looking at me like that?
+Hmm…{be01}\nIt appears that the nature of Pokémon\nand the moves that they have been{be00}\ntaught are the keys to battle here.{be01}\nTo be more precise, it’s how well\nthe moves match the nature of{be00}\nthe Pokémon.{be01}\nIf your Pokémon is in trouble and\nunable to live up to its potential,{be00}\nyou may need to examine how well{be00}\nits moves match its nature.
+My Pokémon is usually very docile.{be01}\nBut when it’s in a Battle Hall,\nit sometimes seems to become{be00}\ntransformed into something wicked!{be01}\nIt becomes totally intimidating.\nIt’s shocking, even.
+I wonder what sort of nature a Pokémon\nwould have if it favored enfeebling its{be00}\nopponents and chipping away slowly.{be01}\nI’d be surprised if it was a Lax nature.{be01}\nBut, nah, that can’t be right.
+The Battle Hall rules are listed.
+Which heading do you want to read?
+Here, Pokémon are required to think\nand battle by themselves.{be01}\nUnlike in the wild, Pokémon that live\nwith people behave differently{be00}\ndepending on their nature.
+Depending on its nature, a Pokémon\nmay prefer to attack no matter what.{be01}\nAnother Pokémon may prefer to protect\nitself from any harm.{be01}\nYet another may enjoy vexing or\nconfounding its foes.{be01}\nDue to its nature, a Pokémon\nwill have favorite moves that it is good{be00}\nat using.{be01}\nIt may also dislike certain moves that\nit has trouble using.
+There are offensive moves that inflict\ndirect damage on the foe.{be01}\nThere are defensive moves that are\nused to prepare for enemy attacks or{be00}\nused to heal HP and so on.{be01}\nThere are also other somewhat-odd\nmoves that may enfeeble the foes with{be00}\nstat problems including poison and {be00}\nparalysis.{be01}\nPokémon will consider using moves in\nthese three categories.
+When not under command by its Trainer,\na Pokémon may be unable to effectively{be00}\nuse certain moves.{be01}\nA Pokémon is not good at using any\nmove that it dislikes.{be01}\nIf a Pokémon only knows moves that\ndo not match its nature, it will often{be00}\nbe unable to live up to its potential.
+Depending on its nature, a Pokémon may\nstart using moves that don’t match its{be00}\nnature when it is in trouble.{be01}\nIf a Pokémon begins behaving oddly\nin a pinch, watch it carefully.
+Battle Basics
+Pokémon Nature
+Pokémon Moves
+Underpowered
+When In Danger
+Exit
+{0100:0}’s Battle Palace Single Battle Hall results{be01}\nLv. 50: current streak {0100:1}, record {0100:2}\nOpen Level: current streak {0100:3}, record {0100:4}
+{0100:0}’s Battle Palace Double Battle Hall results{be01}\nLv. 50: current streak {0100:1}, record {0100:2}\nOpen Level: current streak {0100:3}, record {0100:4}
+Where the hearts of Trainers\nare put to the test.{be01}\nI welcome you to the Battle Palace.{be01}\nI accept challenges to the Double\nBattle Halls.
+Do you wish to take\nthe Double Battle Hall challenge?
+In the Battle Palace, there are\nseveral auditoriums for Double Battles{be00}\nthat are named Double Battle Halls.{be01}\nThe Double Battles are conducted in\nthe usual way, except with one crucial{be00}\nrule that must be obeyed.{be01}\nTrainers are permitted only to switch\ntheir Pokémon in and out.{be01}\nTrainers are otherwise forbidden to\ncommand their Pokémon.{be01}\nThe Pokémon are to behave according\nto their nature and battle on their own.{be01}\nYou must put your trust in your\nPokémon and watch over them.{be01}\nIf you achieve the honor of beating\nseven Trainers in succession,{be00}\nwe will present you with Battle Points.{be01}\nIf you want to interrupt your\nchallenge, please save the game.{be01}\nIf you don’t save before interrupting,\nyou will be disqualified.
+There are two Battle Halls,\nLevel 50 and Open Level.{be00}\nWhich is your choice of a challenge?
+Sigh…{be01}\nYou do not have the three Pokémon\nrequired for the challenge.{be01}\nTo enter, you must provide three\ndifferent kinds of Pokémon.{be01}\nThese Pokémon must all be of\nLevel 50 or lower.{be01}\nThey also must not be holding\nthe same kinds of items.{be01}\nEggs{0100:1} ineligible.{be01}\nCome back when you have made\nyour preparations.
+Sigh…{be01}\nYou do not have the three Pokémon\nrequired for the challenge.{be01}\nTo enter, you must provide three\ndifferent kinds of Pokémon.{be01}\nThey also must not be holding\nthe same kinds of items.{be01}\nEggs{0100:1} ineligible.{be01}\nCome back when you have made\nyour preparations.
+Good. Now, you must select your\nthree Pokémon.
+I must save before I show you to\nthe Battle Hall. Is that okay?
+Good.\nNow, follow me.
+When you have fortified your heart\nand Pokémon, you must return.
+Sigh…{be01}\nYou failed to save before you ended\nyour challenge the last time.{be01}\nAs a result, your challenge has been\ndisqualified. It is most unfortunate.
+To achieve a 7-win streak…{be01}\nThe bonds that bind your heart with\nyour Pokémon seem firm and true.
+To defeat the Palace Maven\nand seven Trainers in a row…
+In honor of the bond you share with\nyour Pokémon, we present you with{be00}\nthese Battle Point(s).
+Your feat will be recorded.\nI must ask you to briefly wait.
+I feel privileged for having seen\nyour Pokémon’s exploits.{be01}\nThe results will be recorded.\nI must ask you to briefly wait.
+We have been waiting for you…
+Challenge
+Info
+Exit
+Lv. 50
+Open Level
+{0100:0} obtained {0100:1} Battle Point(s).

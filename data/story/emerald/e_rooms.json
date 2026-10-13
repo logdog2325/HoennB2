@@ -1,0 +1,899 @@
+{
+ "_doc": "emerald_rooms (b2tools/emerald_rooms.py writes this file: edit the script and rerun). Emerald-only story objects of the rooms Emerald changed (their puzzles: b2tools/emerald_rooms.py). Positions: Emerald's map tiles of the room (the variant's).",
+ "objects": [
+  {
+   "kind": "npc",
+   "map": "RustboroCity_Gym",
+   "at": [
+    1,
+    6
+   ],
+   "uid": 5,
+   "model": 64,
+   "script": 3320,
+   "evtype": 1,
+   "p0": 3,
+   "move": 15,
+   "dir": 1,
+   "what": "TRAINER_MARC 320: eye-contact trainer, Emerald only (pokeemerald RustboroCity_Gym object 5, HIKER, FACE_DOWN, sight 3)"
+  },
+  {
+   "kind": "npc",
+   "map": "DewfordTown_Gym",
+   "at": [
+    7,
+    8
+   ],
+   "uid": 6,
+   "model": 46,
+   "script": 3327,
+   "evtype": 1,
+   "p0": 3,
+   "move": 17,
+   "dir": 3,
+   "what": "TRAINER_CRISTIAN 327: eye-contact trainer, Emerald only (pokeemerald DewfordTown_Gym object 6, BLACK_BELT, FACE_RIGHT, sight 3)"
+  },
+  {
+   "kind": "npc",
+   "map": "DewfordTown_Gym",
+   "at": [
+    16,
+    9
+   ],
+   "uid": 7,
+   "model": 15,
+   "script": 3326,
+   "evtype": 1,
+   "p0": 3,
+   "move": 15,
+   "dir": 1,
+   "what": "TRAINER_LILITH 326: eye-contact trainer, Emerald only (pokeemerald DewfordTown_Gym object 7, GIRL_3, FACE_DOWN, sight 3)"
+  },
+  {
+   "kind": "npc",
+   "map": "DewfordTown_Gym",
+   "at": [
+    14,
+    12
+   ],
+   "uid": 8,
+   "model": 359,
+   "script": 3321,
+   "evtype": 1,
+   "p0": 2,
+   "move": 17,
+   "dir": 3,
+   "what": "TRAINER_BRENDEN 321: eye-contact trainer, Emerald only (pokeemerald DewfordTown_Gym object 8, SAILOR, FACE_RIGHT, sight 2)"
+  },
+  {
+   "kind": "npc",
+   "map": "FortreeCity_Gym",
+   "at": [
+    4,
+    23
+   ],
+   "uid": 7,
+   "model": 42,
+   "script": 3215,
+   "evtype": 1,
+   "p0": 1,
+   "move": 17,
+   "dir": 3,
+   "what": "TRAINER_HUMBERTO 215: eye-contact trainer, Emerald only (pokeemerald FortreeCity_Gym object 7, MAN_5, FACE_RIGHT, sight 1)"
+  },
+  {
+   "kind": "npc",
+   "map": "FortreeCity_Gym",
+   "at": [
+    1,
+    10
+   ],
+   "uid": 8,
+   "model": 42,
+   "script": 3606,
+   "evtype": 1,
+   "p0": 3,
+   "move": 14,
+   "dir": 0,
+   "what": "TRAINER_DARIUS 606: eye-contact trainer, Emerald only (pokeemerald FortreeCity_Gym object 8, MAN_5, FACE_UP, sight 3)"
+  },
+  {
+   "kind": "npc",
+   "map": "MauvilleCity_Gym",
+   "at": [
+    7,
+    10
+   ],
+   "uid": 7,
+   "model": 24,
+   "script": 3605,
+   "evtype": 1,
+   "p0": 1,
+   "move": 14,
+   "dir": 0,
+   "what": "TRAINER_ANGELO 605: eye-contact trainer, Emerald only (pokeemerald MauvilleCity_Gym object 7, MANIAC, FACE_UP, sight 1)"
+  },
+  {
+   "kind": "trigger",
+   "map": "MauvilleCity_Gym",
+   "at": [
+    8,
+    9
+   ],
+   "script": 10,
+   "var": 0,
+   "value": 0,
+   "what": "floor switch 4 (always; Emerald only: MauvilleCity_Gym_EventScript_Switch4, MG_Switch4Em)"
+  },
+  {
+   "kind": "npc",
+   "map": "LavaridgeTown_Gym_B1F",
+   "at": [
+    4,
+    18
+   ],
+   "uid": 1,
+   "model": 42,
+   "script": 3189,
+   "evtype": 1,
+   "p0": 1,
+   "move": 15,
+   "dir": 1,
+   "what": "TRAINER_JACE 189: eye-contact trainer, Emerald only (pokeemerald LavaridgeTown_Gym_B1F object 1, MAN_5, FACE_DOWN, sight 1)"
+  },
+  {
+   "kind": "npc",
+   "map": "LavaridgeTown_Gym_B1F",
+   "at": [
+    13,
+    17
+   ],
+   "uid": 3,
+   "model": 42,
+   "script": 3188,
+   "evtype": 1,
+   "p0": 1,
+   "move": 15,
+   "dir": 1,
+   "what": "TRAINER_JEFF 188: eye-contact trainer, Emerald only (pokeemerald LavaridgeTown_Gym_B1F object 3, MAN_5, FACE_DOWN, sight 1)"
+  },
+  {
+   "kind": "npc",
+   "map": "LavaridgeTown_Gym_B1F",
+   "at": [
+    4,
+    16
+   ],
+   "uid": 4,
+   "model": 64,
+   "script": 3260,
+   "evtype": 1,
+   "p0": 1,
+   "move": 15,
+   "dir": 1,
+   "what": "TRAINER_ELI 260: eye-contact trainer, Emerald only (pokeemerald LavaridgeTown_Gym_B1F object 4, HIKER, FACE_DOWN, sight 1)"
+  },
+  {
+   "kind": "trigger",
+   "map": "SootopolisCity_Gym_1F",
+   "at": [
+    8,
+    7
+   ],
+   "script": 75,
+   "var": 0,
+   "value": 0,
+   "what": "thin ice (8,7) (Emerald only: GY_EIce_8_7)"
+  },
+  {
+   "kind": "trigger",
+   "map": "SootopolisCity_Gym_1F",
+   "at": [
+    3,
+    9
+   ],
+   "script": 76,
+   "var": 0,
+   "value": 0,
+   "what": "thin ice (3,9) (Emerald only: GY_EIce_3_9)"
+  },
+  {
+   "kind": "trigger",
+   "map": "SootopolisCity_Gym_1F",
+   "at": [
+    9,
+    14
+   ],
+   "script": 77,
+   "var": 0,
+   "value": 0,
+   "what": "thin ice (9,14) (Emerald only: GY_EIce_9_14)"
+  },
+  {
+   "kind": "trigger",
+   "map": "SootopolisCity_Gym_1F",
+   "at": [
+    9,
+    17
+   ],
+   "script": 78,
+   "var": 0,
+   "value": 0,
+   "what": "thin ice (9,17) (Emerald only: GY_EIce_9_17)"
+  },
+  {
+   "kind": "trigger",
+   "map": "SootopolisCity_Gym_1F",
+   "at": [
+    7,
+    19
+   ],
+   "script": 79,
+   "var": 0,
+   "value": 0,
+   "what": "thin ice (7,19) (Emerald only: GY_EIce_7_19)"
+  },
+  {
+   "kind": "npc",
+   "map": "SootopolisCity_Gym_B1F",
+   "at": [
+    6,
+    13
+   ],
+   "uid": 9,
+   "model": 53,
+   "script": 3159,
+   "evtype": 1,
+   "p0": 3,
+   "move": 17,
+   "dir": 3,
+   "what": "TRAINER_DAPHNE 159: eye-contact trainer, Emerald only (pokeemerald SootopolisCity_Gym_B1F object 9, WOMAN_2, FACE_RIGHT, sight 3)"
+  },
+  {
+   "kind": "npc",
+   "map": "SootopolisCity_Gym_B1F",
+   "at": [
+    10,
+    13
+   ],
+   "uid": 10,
+   "model": 53,
+   "script": 3261,
+   "evtype": 1,
+   "p0": 3,
+   "move": 16,
+   "dir": 2,
+   "what": "TRAINER_ANNIKA 261: eye-contact trainer, Emerald only (pokeemerald SootopolisCity_Gym_B1F object 10, POKEFAN_F, FACE_LEFT, sight 3)"
+  },
+  {
+   "kind": "npc",
+   "map": "MossdeepCity_Gym",
+   "at": [
+    9,
+    8
+   ],
+   "uid": 17,
+   "model": 44,
+   "script": 3347,
+   "evtype": 1,
+   "p0": 1,
+   "move": 0,
+   "dir": 0,
+   "what": "TRAINER_NATE 347: eye-contact trainer, Emerald only (pokeemerald MossdeepCity_Gym object 17, GENTLEMAN, FACE_UP, sight 1)"
+  },
+  {
+   "kind": "npc",
+   "map": "MossdeepCity_Gym",
+   "at": [
+    7,
+    5
+   ],
+   "uid": 18,
+   "model": 184,
+   "script": 3328,
+   "evtype": 1,
+   "p0": 1,
+   "move": 0,
+   "dir": 3,
+   "what": "TRAINER_SYLVIA 328: eye-contact trainer, Emerald only (pokeemerald MossdeepCity_Gym object 18, HEX_MANIAC, FACE_RIGHT, sight 1)"
+  },
+  {
+   "kind": "npc",
+   "map": "MossdeepCity_Gym",
+   "at": [
+    22,
+    25
+   ],
+   "uid": 25,
+   "model": 44,
+   "script": 3349,
+   "evtype": 1,
+   "p0": 1,
+   "move": 0,
+   "dir": 0,
+   "what": "TRAINER_CLIFFORD 349: eye-contact trainer, Emerald only (pokeemerald MossdeepCity_Gym object 25, GENTLEMAN, FACE_UP, sight 1)"
+  },
+  {
+   "kind": "npc",
+   "map": "MossdeepCity_Gym",
+   "at": [
+    25,
+    25
+   ],
+   "uid": 27,
+   "model": 15,
+   "script": 3370,
+   "evtype": 1,
+   "p0": 1,
+   "move": 16,
+   "dir": 2,
+   "what": "TRAINER_MACEY 370: eye-contact trainer, Emerald only (pokeemerald MossdeepCity_Gym object 27, LASS, FACE_LEFT, sight 1)"
+  },
+  {
+   "kind": "npc",
+   "map": "MossdeepCity_Gym",
+   "at": [
+    22,
+    23
+   ],
+   "uid": 28,
+   "model": 184,
+   "script": 3348,
+   "evtype": 1,
+   "p0": 1,
+   "move": 0,
+   "dir": 1,
+   "what": "TRAINER_KATHLEEN 348: eye-contact trainer, Emerald only (pokeemerald MossdeepCity_Gym object 28, HEX_MANIAC, FACE_DOWN, sight 1)"
+  },
+  {
+   "kind": "npc",
+   "map": "MossdeepCity_Gym",
+   "at": [
+    25,
+    22
+   ],
+   "uid": 32,
+   "model": 183,
+   "script": 3350,
+   "evtype": 1,
+   "p0": 1,
+   "move": 0,
+   "dir": 0,
+   "what": "TRAINER_NICHOLAS 350: eye-contact trainer, Emerald only (pokeemerald MossdeepCity_Gym object 32, PSYCHIC_M, FACE_UP, sight 1)"
+  },
+  {
+   "kind": "npc",
+   "map": "MossdeepCity_Gym",
+   "at": [
+    2,
+    30
+   ],
+   "uid": 10,
+   "model": 206,
+   "script": 0,
+   "move": 0,
+   "dir": 1,
+   "what": "statue (pokeemerald object 10, TRICK_HOUSE_STATUE: Black 2's rock 206 stands in), carried by the rotating tiles (Emerald only)"
+  },
+  {
+   "kind": "npc",
+   "map": "MossdeepCity_Gym",
+   "at": [
+    1,
+    29
+   ],
+   "uid": 11,
+   "model": 206,
+   "script": 0,
+   "move": 0,
+   "dir": 1,
+   "what": "statue (pokeemerald object 11, TRICK_HOUSE_STATUE: Black 2's rock 206 stands in), carried by the rotating tiles (Emerald only)"
+  },
+  {
+   "kind": "npc",
+   "map": "MossdeepCity_Gym",
+   "at": [
+    4,
+    30
+   ],
+   "uid": 12,
+   "model": 206,
+   "script": 0,
+   "move": 0,
+   "dir": 1,
+   "what": "statue (pokeemerald object 12, TRICK_HOUSE_STATUE: Black 2's rock 206 stands in), carried by the rotating tiles (Emerald only)"
+  },
+  {
+   "kind": "npc",
+   "map": "MossdeepCity_Gym",
+   "at": [
+    5,
+    29
+   ],
+   "uid": 13,
+   "model": 206,
+   "script": 0,
+   "move": 0,
+   "dir": 1,
+   "what": "statue (pokeemerald object 13, TRICK_HOUSE_STATUE: Black 2's rock 206 stands in), carried by the rotating tiles (Emerald only)"
+  },
+  {
+   "kind": "npc",
+   "map": "MossdeepCity_Gym",
+   "at": [
+    5,
+    21
+   ],
+   "uid": 14,
+   "model": 206,
+   "script": 0,
+   "move": 0,
+   "dir": 1,
+   "what": "statue (pokeemerald object 14, TRICK_HOUSE_STATUE: Black 2's rock 206 stands in), carried by the rotating tiles (Emerald only)"
+  },
+  {
+   "kind": "npc",
+   "map": "MossdeepCity_Gym",
+   "at": [
+    7,
+    9
+   ],
+   "uid": 15,
+   "model": 206,
+   "script": 0,
+   "move": 0,
+   "dir": 1,
+   "what": "statue (pokeemerald object 15, TRICK_HOUSE_STATUE: Black 2's rock 206 stands in), carried by the rotating tiles (Emerald only)"
+  },
+  {
+   "kind": "npc",
+   "map": "MossdeepCity_Gym",
+   "at": [
+    10,
+    8
+   ],
+   "uid": 16,
+   "model": 206,
+   "script": 0,
+   "move": 0,
+   "dir": 1,
+   "what": "statue (pokeemerald object 16, TRICK_HOUSE_STATUE: Black 2's rock 206 stands in), carried by the rotating tiles (Emerald only)"
+  },
+  {
+   "kind": "npc",
+   "map": "MossdeepCity_Gym",
+   "at": [
+    6,
+    6
+   ],
+   "uid": 19,
+   "model": 206,
+   "script": 0,
+   "move": 0,
+   "dir": 1,
+   "what": "statue (pokeemerald object 19, TRICK_HOUSE_STATUE: Black 2's rock 206 stands in), carried by the rotating tiles (Emerald only)"
+  },
+  {
+   "kind": "npc",
+   "map": "MossdeepCity_Gym",
+   "at": [
+    12,
+    5
+   ],
+   "uid": 20,
+   "model": 206,
+   "script": 0,
+   "move": 0,
+   "dir": 1,
+   "what": "statue (pokeemerald object 20, TRICK_HOUSE_STATUE: Black 2's rock 206 stands in), carried by the rotating tiles (Emerald only)"
+  },
+  {
+   "kind": "npc",
+   "map": "MossdeepCity_Gym",
+   "at": [
+    11,
+    5
+   ],
+   "uid": 21,
+   "model": 206,
+   "script": 0,
+   "move": 0,
+   "dir": 1,
+   "what": "statue (pokeemerald object 21, TRICK_HOUSE_STATUE: Black 2's rock 206 stands in), carried by the rotating tiles (Emerald only)"
+  },
+  {
+   "kind": "npc",
+   "map": "MossdeepCity_Gym",
+   "at": [
+    11,
+    34
+   ],
+   "uid": 22,
+   "model": 206,
+   "script": 0,
+   "move": 0,
+   "dir": 1,
+   "what": "statue (pokeemerald object 22, TRICK_HOUSE_STATUE: Black 2's rock 206 stands in), carried by the rotating tiles (Emerald only)"
+  },
+  {
+   "kind": "npc",
+   "map": "MossdeepCity_Gym",
+   "at": [
+    12,
+    33
+   ],
+   "uid": 23,
+   "model": 206,
+   "script": 0,
+   "move": 0,
+   "dir": 1,
+   "what": "statue (pokeemerald object 23, TRICK_HOUSE_STATUE: Black 2's rock 206 stands in), carried by the rotating tiles (Emerald only)"
+  },
+  {
+   "kind": "npc",
+   "map": "MossdeepCity_Gym",
+   "at": [
+    12,
+    34
+   ],
+   "uid": 24,
+   "model": 206,
+   "script": 0,
+   "move": 0,
+   "dir": 1,
+   "what": "statue (pokeemerald object 24, TRICK_HOUSE_STATUE: Black 2's rock 206 stands in), carried by the rotating tiles (Emerald only)"
+  },
+  {
+   "kind": "npc",
+   "map": "MossdeepCity_Gym",
+   "at": [
+    23,
+    26
+   ],
+   "uid": 26,
+   "model": 206,
+   "script": 0,
+   "move": 0,
+   "dir": 1,
+   "what": "statue (pokeemerald object 26, TRICK_HOUSE_STATUE: Black 2's rock 206 stands in), carried by the rotating tiles (Emerald only)"
+  },
+  {
+   "kind": "npc",
+   "map": "MossdeepCity_Gym",
+   "at": [
+    21,
+    23
+   ],
+   "uid": 29,
+   "model": 206,
+   "script": 0,
+   "move": 0,
+   "dir": 1,
+   "what": "statue (pokeemerald object 29, TRICK_HOUSE_STATUE: Black 2's rock 206 stands in), carried by the rotating tiles (Emerald only)"
+  },
+  {
+   "kind": "npc",
+   "map": "MossdeepCity_Gym",
+   "at": [
+    21,
+    22
+   ],
+   "uid": 30,
+   "model": 206,
+   "script": 0,
+   "move": 0,
+   "dir": 1,
+   "what": "statue (pokeemerald object 30, TRICK_HOUSE_STATUE: Black 2's rock 206 stands in), carried by the rotating tiles (Emerald only)"
+  },
+  {
+   "kind": "npc",
+   "map": "MossdeepCity_Gym",
+   "at": [
+    22,
+    22
+   ],
+   "uid": 31,
+   "model": 206,
+   "script": 0,
+   "move": 0,
+   "dir": 1,
+   "what": "statue (pokeemerald object 31, TRICK_HOUSE_STATUE: Black 2's rock 206 stands in), carried by the rotating tiles (Emerald only)"
+  },
+  {
+   "kind": "npc",
+   "map": "MossdeepCity_Gym",
+   "at": [
+    24,
+    22
+   ],
+   "uid": 33,
+   "model": 206,
+   "script": 0,
+   "move": 0,
+   "dir": 1,
+   "what": "statue (pokeemerald object 33, TRICK_HOUSE_STATUE: Black 2's rock 206 stands in), carried by the rotating tiles (Emerald only)"
+  },
+  {
+   "kind": "npc",
+   "map": "MossdeepCity_Gym",
+   "at": [
+    24,
+    23
+   ],
+   "uid": 34,
+   "model": 206,
+   "script": 0,
+   "move": 0,
+   "dir": 1,
+   "what": "statue (pokeemerald object 34, TRICK_HOUSE_STATUE: Black 2's rock 206 stands in), carried by the rotating tiles (Emerald only)"
+  },
+  {
+   "kind": "npc",
+   "map": "MossdeepCity_Gym",
+   "at": [
+    6,
+    5
+   ],
+   "uid": 35,
+   "model": 206,
+   "script": 0,
+   "move": 0,
+   "dir": 1,
+   "what": "statue (pokeemerald object 35, TRICK_HOUSE_STATUE: Black 2's rock 206 stands in), carried by the rotating tiles (Emerald only)"
+  },
+  {
+   "kind": "npc",
+   "map": "MossdeepCity_Gym",
+   "at": [
+    23,
+    25
+   ],
+   "uid": 36,
+   "model": 206,
+   "script": 0,
+   "move": 0,
+   "dir": 1,
+   "what": "statue (pokeemerald object 36, TRICK_HOUSE_STATUE: Black 2's rock 206 stands in), carried by the rotating tiles (Emerald only)"
+  },
+  {
+   "kind": "trigger",
+   "map": "MossdeepCity_Gym",
+   "at": [
+    2,
+    21
+   ],
+   "script": 9,
+   "var": 0,
+   "value": 0,
+   "what": "yellow floor switch (Emerald only: EMG_SwitchYellow)"
+  },
+  {
+   "kind": "trigger",
+   "map": "MossdeepCity_Gym",
+   "at": [
+    3,
+    30
+   ],
+   "script": 9,
+   "var": 0,
+   "value": 0,
+   "what": "yellow floor switch (Emerald only: EMG_SwitchYellow)"
+  },
+  {
+   "kind": "trigger",
+   "map": "MossdeepCity_Gym",
+   "at": [
+    8,
+    10
+   ],
+   "script": 10,
+   "var": 0,
+   "value": 0,
+   "what": "blue floor switch (Emerald only: EMG_SwitchBlue)"
+  },
+  {
+   "kind": "trigger",
+   "map": "MossdeepCity_Gym",
+   "at": [
+    6,
+    7
+   ],
+   "script": 10,
+   "var": 0,
+   "value": 0,
+   "what": "blue floor switch (Emerald only: EMG_SwitchBlue)"
+  },
+  {
+   "kind": "trigger",
+   "map": "MossdeepCity_Gym",
+   "at": [
+    15,
+    34
+   ],
+   "script": 11,
+   "var": 0,
+   "value": 0,
+   "what": "green floor switch (Emerald only: EMG_SwitchGreen)"
+  },
+  {
+   "kind": "trigger",
+   "map": "MossdeepCity_Gym",
+   "at": [
+    23,
+    24
+   ],
+   "script": 12,
+   "var": 0,
+   "value": 0,
+   "what": "purple floor switch (Emerald only: EMG_SwitchPurple)"
+  },
+  {
+   "kind": "trigger",
+   "map": "MossdeepCity_Gym",
+   "at": [
+    23,
+    21
+   ],
+   "script": 12,
+   "var": 0,
+   "value": 0,
+   "what": "purple floor switch (Emerald only: EMG_SwitchPurple)"
+  },
+  {
+   "kind": "trigger",
+   "map": "MossdeepCity_Gym",
+   "at": [
+    8,
+    6
+   ],
+   "script": 13,
+   "var": 0,
+   "value": 0,
+   "what": "red floor switch (Emerald only: EMG_SwitchRed)"
+  },
+  {
+   "kind": "trigger",
+   "map": "MossdeepCity_Gym",
+   "at": [
+    3,
+    28
+   ],
+   "script": 14,
+   "var": 0,
+   "value": 0,
+   "what": "warp pad -> (1,23) (Emerald only: EMG_Pad2)"
+  },
+  {
+   "kind": "trigger",
+   "map": "MossdeepCity_Gym",
+   "at": [
+    1,
+    23
+   ],
+   "script": 15,
+   "var": 0,
+   "value": 0,
+   "what": "warp pad -> (3,28) (Emerald only: EMG_Pad3)"
+  },
+  {
+   "kind": "trigger",
+   "map": "MossdeepCity_Gym",
+   "at": [
+    7,
+    18
+   ],
+   "script": 16,
+   "var": 0,
+   "value": 0,
+   "what": "warp pad -> (8,12) (Emerald only: EMG_Pad4)"
+  },
+  {
+   "kind": "trigger",
+   "map": "MossdeepCity_Gym",
+   "at": [
+    8,
+    12
+   ],
+   "script": 17,
+   "var": 0,
+   "value": 0,
+   "what": "warp pad -> (7,18) (Emerald only: EMG_Pad5)"
+  },
+  {
+   "kind": "trigger",
+   "map": "MossdeepCity_Gym",
+   "at": [
+    9,
+    18
+   ],
+   "script": 18,
+   "var": 0,
+   "value": 0,
+   "what": "warp pad -> (23,20) (Emerald only: EMG_Pad6)"
+  },
+  {
+   "kind": "trigger",
+   "map": "MossdeepCity_Gym",
+   "at": [
+    23,
+    20
+   ],
+   "script": 19,
+   "var": 0,
+   "value": 0,
+   "what": "warp pad -> (9,18) (Emerald only: EMG_Pad7)"
+  },
+  {
+   "kind": "trigger",
+   "map": "MossdeepCity_Gym",
+   "at": [
+    1,
+    33
+   ],
+   "script": 20,
+   "var": 0,
+   "value": 0,
+   "what": "warp pad -> (20,24) (Emerald only: EMG_Pad8)"
+  },
+  {
+   "kind": "trigger",
+   "map": "MossdeepCity_Gym",
+   "at": [
+    20,
+    24
+   ],
+   "script": 21,
+   "var": 0,
+   "value": 0,
+   "what": "warp pad -> (1,33) (Emerald only: EMG_Pad9)"
+  },
+  {
+   "kind": "trigger",
+   "map": "MossdeepCity_Gym",
+   "at": [
+    11,
+    3
+   ],
+   "script": 22,
+   "var": 0,
+   "value": 0,
+   "what": "warp pad -> (11,35) (Emerald only: EMG_Pad10)"
+  },
+  {
+   "kind": "trigger",
+   "map": "MossdeepCity_Gym",
+   "at": [
+    11,
+    35
+   ],
+   "script": 23,
+   "var": 0,
+   "value": 0,
+   "what": "warp pad -> (11,3) (Emerald only: EMG_Pad11)"
+  },
+  {
+   "kind": "trigger",
+   "map": "MossdeepCity_Gym",
+   "at": [
+    13,
+    32
+   ],
+   "script": 24,
+   "var": 0,
+   "value": 0,
+   "what": "warp pad -> (21,10) (Emerald only: EMG_Pad12)"
+  },
+  {
+   "kind": "trigger",
+   "map": "MossdeepCity_Gym",
+   "at": [
+    21,
+    10
+   ],
+   "script": 25,
+   "var": 0,
+   "value": 0,
+   "what": "warp pad -> (13,32) (Emerald only: EMG_Pad13)"
+  }
+ ]
+}

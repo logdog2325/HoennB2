@@ -1,0 +1,715 @@
+{
+ "_doc": "Chapter 5 (ch5 agent, 2026-10-07) story objects (b2tools/patches/story.py): Mt. Chimney (Aqua vs Magma, scenes/MtChimney.inc), Lavaridge Town (rival, Egg woman: scenes/LavaridgeTown.inc), the Lavaridge Gym, Herb Shop and house, and both cable car stations (scripts in the rooms' own files after '// ---- story'). Sapphire tiles ('at') of the named map; uid = 100 + Sapphire local id outdoors, the local id in rooms. Written by work/agents/ch5/gen_objects.py.",
+ "objects": [
+  {
+   "kind": "npc",
+   "map": "MtChimney",
+   "at": [
+    13,
+    6
+   ],
+   "uid": 102,
+   "model": 353,
+   "model_emerald": 303,
+   "script": 3,
+   "flag": "FLAG_HIDE_EVIL_TEAM_MT_CHIMNEY",
+   "dir": 3,
+   "what": "Archie at the machine (Sapphire object 2, VAR_6, FACE_RIGHT)"
+  },
+  {
+   "kind": "npc",
+   "map": "MtChimney",
+   "at": [
+    24,
+    19
+   ],
+   "uid": 101,
+   "model": 303,
+   "model_emerald": 353,
+   "script": 2,
+   "flag": "FLAG_HIDE_OTHER_TEAM_MT_CHIMNEY",
+   "dir": 2,
+   "what": "Maxie (please stop) (Sapphire object 1, VAR_7, FACE_LEFT)"
+  },
+  {
+   "kind": "npc",
+   "map": "MtChimney",
+   "at": [
+    12,
+    11
+   ],
+   "uid": 103,
+   "model": 88,
+   "model_emerald": 290,
+   "script": 3045,
+   "flag": "FLAG_HIDE_EVIL_TEAM_MT_CHIMNEY",
+   "evtype": 1,
+   "p0": 2,
+   "move": 16,
+   "dir": 2,
+   "what": "Matt: eye-contact trainer TRAINER_MATT_2 45 (Sapphire object 3, VAR_1, FACE_LEFT); Emerald: Tabitha, Ruby NDS's Tabitha sheet on code 290 (user decision 2026-10-12, b2tools/sprite_emerald_story.py)",
+   "script_emerald": 3379
+  },
+  {
+   "kind": "npc",
+   "map": "MtChimney",
+   "at": [
+    9,
+    15
+   ],
+   "uid": 122,
+   "model": 293,
+   "model_emerald": 302,
+   "script": 3031,
+   "flag": "FLAG_HIDE_EVIL_TEAM_MT_CHIMNEY",
+   "evtype": 1,
+   "p0": 3,
+   "move": 17,
+   "dir": 3,
+   "what": "Grunt: eye-contact trainer TRAINER_GRUNT_13 31 (Sapphire object 22, VAR_1, FACE_RIGHT)",
+   "script_emerald": 3340,
+   "at_emerald": [
+    9,
+    16
+   ]
+  },
+  {
+   "kind": "npc",
+   "map": "MtChimney",
+   "at": [
+    23,
+    17
+   ],
+   "uid": 113,
+   "model": 293,
+   "model_emerald": 302,
+   "script": 9,
+   "flag": "FLAG_HIDE_EVIL_TEAM_MT_CHIMNEY",
+   "dir": 1,
+   "what": "15D13E (Sapphire object 13, VAR_1, FACE_DOWN)"
+  },
+  {
+   "kind": "npc",
+   "map": "MtChimney",
+   "at": [
+    21,
+    19
+   ],
+   "uid": 117,
+   "model": 293,
+   "model_emerald": 302,
+   "script": 9,
+   "flag": "FLAG_HIDE_EVIL_TEAM_MT_CHIMNEY",
+   "dir": 3,
+   "what": "15D13E (Sapphire object 17, VAR_1, FACE_RIGHT)",
+   "script_emerald": 15
+  },
+  {
+   "kind": "npc",
+   "map": "MtChimney",
+   "at": [
+    23,
+    21
+   ],
+   "uid": 116,
+   "model": 293,
+   "model_emerald": 302,
+   "script": 10,
+   "flag": "FLAG_HIDE_EVIL_TEAM_MT_CHIMNEY",
+   "dir": 0,
+   "what": "15D150 (Sapphire object 16, VAR_1, FACE_UP)"
+  },
+  {
+   "kind": "npc",
+   "map": "MtChimney",
+   "at": [
+    28,
+    12
+   ],
+   "uid": 105,
+   "model": 293,
+   "model_emerald": 302,
+   "script": 11,
+   "flag": "FLAG_HIDE_EVIL_TEAM_MT_CHIMNEY",
+   "dir": 3,
+   "what": "15D159 (Sapphire object 5, VAR_1, FACE_RIGHT)"
+  },
+  {
+   "kind": "npc",
+   "map": "MtChimney",
+   "at": [
+    32,
+    5
+   ],
+   "uid": 104,
+   "model": 293,
+   "model_emerald": 302,
+   "script": 12,
+   "flag": "FLAG_HIDE_EVIL_TEAM_MT_CHIMNEY",
+   "dir": 2,
+   "what": "15D162 (Sapphire object 4, VAR_1, FACE_LEFT)"
+  },
+  {
+   "kind": "npc",
+   "map": "MtChimney",
+   "at": [
+    22,
+    39
+   ],
+   "uid": 110,
+   "model": 293,
+   "model_emerald": 302,
+   "script": 12,
+   "flag": "FLAG_HIDE_EVIL_TEAM_MT_CHIMNEY",
+   "dir": 2,
+   "what": "15D162 (Sapphire object 10, VAR_1, FACE_LEFT)",
+   "script_emerald": 16
+  },
+  {
+   "kind": "npc",
+   "map": "MtChimney",
+   "at": [
+    29,
+    5
+   ],
+   "uid": 107,
+   "model": 302,
+   "model_emerald": 293,
+   "script": 6,
+   "flag": "FLAG_HIDE_OTHER_TEAM_MT_CHIMNEY",
+   "dir": 3,
+   "what": "15D0F5 (Sapphire object 7, VAR_4, FACE_RIGHT)"
+  },
+  {
+   "kind": "npc",
+   "map": "MtChimney",
+   "at": [
+    19,
+    39
+   ],
+   "uid": 106,
+   "model": 302,
+   "model_emerald": 293,
+   "script": 7,
+   "flag": "FLAG_HIDE_OTHER_TEAM_MT_CHIMNEY",
+   "dir": 3,
+   "what": "15D0FE (Sapphire object 6, VAR_4, FACE_RIGHT)"
+  },
+  {
+   "kind": "npc",
+   "map": "MtChimney",
+   "at": [
+    31,
+    12
+   ],
+   "uid": 108,
+   "model": 302,
+   "model_emerald": 293,
+   "script": 8,
+   "flag": "FLAG_HIDE_OTHER_TEAM_MT_CHIMNEY",
+   "dir": 2,
+   "what": "15D107 (Sapphire object 8, VAR_4, FACE_LEFT)"
+  },
+  {
+   "kind": "npc",
+   "map": "MtChimney",
+   "at": [
+    23,
+    18
+   ],
+   "uid": 112,
+   "model": 4390,
+   "script": 13,
+   "flag": "FLAG_HIDE_EVIL_TEAM_MT_CHIMNEY",
+   "dir": 1,
+   "what": "Aqua Poochyena (Sapphire object 12, POOCHYENA, WALK_IN_PLACE_DOWN)"
+  },
+  {
+   "kind": "npc",
+   "map": "MtChimney",
+   "at": [
+    23,
+    20
+   ],
+   "uid": 114,
+   "model": 4390,
+   "script": 13,
+   "flag": "FLAG_HIDE_EVIL_TEAM_MT_CHIMNEY",
+   "dir": 0,
+   "what": "Aqua Poochyena (Sapphire object 14, POOCHYENA, WALK_IN_PLACE_UP)"
+  },
+  {
+   "kind": "npc",
+   "map": "MtChimney",
+   "at": [
+    22,
+    19
+   ],
+   "uid": 115,
+   "model": 4390,
+   "script": 13,
+   "flag": "FLAG_HIDE_EVIL_TEAM_MT_CHIMNEY",
+   "dir": 3,
+   "what": "Aqua Poochyena (Sapphire object 15, POOCHYENA, WALK_IN_PLACE_RIGHT)"
+  },
+  {
+   "kind": "npc",
+   "map": "MtChimney",
+   "at": [
+    29,
+    12
+   ],
+   "uid": 119,
+   "model": 4390,
+   "script": 13,
+   "flag": "FLAG_HIDE_EVIL_TEAM_MT_CHIMNEY",
+   "dir": 3,
+   "what": "Aqua Poochyena (Sapphire object 19, POOCHYENA, WALK_IN_PLACE_RIGHT)"
+  },
+  {
+   "kind": "npc",
+   "map": "MtChimney",
+   "at": [
+    31,
+    5
+   ],
+   "uid": 121,
+   "model": 4390,
+   "script": 13,
+   "flag": "FLAG_HIDE_EVIL_TEAM_MT_CHIMNEY",
+   "dir": 2,
+   "what": "Aqua Poochyena (Sapphire object 21, POOCHYENA, WALK_IN_PLACE_LEFT)"
+  },
+  {
+   "kind": "npc",
+   "map": "MtChimney",
+   "at": [
+    21,
+    39
+   ],
+   "uid": 124,
+   "model": 4390,
+   "script": 13,
+   "flag": "FLAG_HIDE_EVIL_TEAM_MT_CHIMNEY",
+   "dir": 2,
+   "what": "Aqua Poochyena (Sapphire object 24, POOCHYENA, WALK_IN_PLACE_LEFT)"
+  },
+  {
+   "kind": "npc",
+   "map": "MtChimney",
+   "at": [
+    23,
+    19
+   ],
+   "uid": 111,
+   "model": 4390,
+   "script": 14,
+   "flag": "FLAG_HIDE_OTHER_TEAM_MT_CHIMNEY",
+   "dir": 2,
+   "what": "Magma Poochyena (Sapphire object 11, POOCHYENA, RUN_IN_PLACE_LEFT)"
+  },
+  {
+   "kind": "npc",
+   "map": "MtChimney",
+   "at": [
+    30,
+    12
+   ],
+   "uid": 118,
+   "model": 4390,
+   "script": 14,
+   "flag": "FLAG_HIDE_OTHER_TEAM_MT_CHIMNEY",
+   "dir": 2,
+   "what": "Magma Poochyena (Sapphire object 18, POOCHYENA, WALK_IN_PLACE_LEFT)"
+  },
+  {
+   "kind": "npc",
+   "map": "MtChimney",
+   "at": [
+    30,
+    5
+   ],
+   "uid": 120,
+   "model": 4390,
+   "script": 14,
+   "flag": "FLAG_HIDE_OTHER_TEAM_MT_CHIMNEY",
+   "dir": 3,
+   "what": "Magma Poochyena (Sapphire object 20, POOCHYENA, WALK_IN_PLACE_RIGHT)"
+  },
+  {
+   "kind": "npc",
+   "map": "MtChimney",
+   "at": [
+    20,
+    39
+   ],
+   "uid": 123,
+   "model": 4390,
+   "script": 14,
+   "flag": "FLAG_HIDE_OTHER_TEAM_MT_CHIMNEY",
+   "dir": 3,
+   "what": "Magma Poochyena (Sapphire object 23, POOCHYENA, WALK_IN_PLACE_RIGHT)"
+  },
+  {
+   "kind": "npc",
+   "map": "MtChimney",
+   "at": [
+    16,
+    37
+   ],
+   "uid": 109,
+   "model": 45,
+   "script": 5,
+   "flag": "FLAG_HIDE_MT_CHIMNEY_PEOPLE",
+   "dir": 1,
+   "what": "Lava Cookie lady (Sapphire object 9, OLD_WOMAN_2, FACE_DOWN)",
+   "at_emerald": [
+    19,
+    39
+   ],
+   "flag_emerald": "FLAG_HIDE_MT_CHIMNEY_LAVA_COOKIE_LADY",
+   "dir_emerald": 3
+  },
+  {
+   "kind": "npc",
+   "map": "MtChimney",
+   "at": [
+    16,
+    18
+   ],
+   "uid": 125,
+   "model": 29,
+   "script": 3437,
+   "flag": "FLAG_HIDE_MT_CHIMNEY_PEOPLE",
+   "evtype": 1,
+   "p0": 3,
+   "move": 45,
+   "dir": 1,
+   "what": "TRAINER_SHELBY_1: eye-contact trainer TRAINER_SHELBY_1 437 (Sapphire object 25, OLD_WOMAN_1, FACE_DOWN_AND_UP)"
+  },
+  {
+   "kind": "npc",
+   "map": "MtChimney",
+   "at": [
+    14,
+    7
+   ],
+   "uid": 126,
+   "model": 17,
+   "script": 3225,
+   "flag": "FLAG_HIDE_MT_CHIMNEY_PEOPLE",
+   "evtype": 1,
+   "p0": 4,
+   "move": 16,
+   "dir": 2,
+   "what": "TRAINER_MELISSA: eye-contact trainer TRAINER_MELISSA 225 (Sapphire object 26, BEAUTY, JOG_IN_PLACE_LEFT)",
+   "p0_emerald": 6
+  },
+  {
+   "kind": "npc",
+   "map": "MtChimney",
+   "at": [
+    29,
+    7
+   ],
+   "uid": 127,
+   "model": 17,
+   "script": 3226,
+   "flag": "FLAG_HIDE_MT_CHIMNEY_PEOPLE",
+   "evtype": 1,
+   "p0": 3,
+   "move": 8,
+   "dir": 1,
+   "what": "TRAINER_SHEILA: eye-contact trainer TRAINER_SHEILA 226 (Sapphire object 27, BEAUTY, FACE_DOWN_AND_LEFT)"
+  },
+  {
+   "kind": "npc",
+   "map": "MtChimney",
+   "at": [
+    27,
+    17
+   ],
+   "uid": 128,
+   "model": 17,
+   "script": 3252,
+   "flag": "FLAG_HIDE_MT_CHIMNEY_PEOPLE",
+   "evtype": 1,
+   "p0": 3,
+   "move": 7,
+   "dir": 0,
+   "what": "TRAINER_SHIRLEY: eye-contact trainer TRAINER_SHIRLEY 252 (Sapphire object 28, BEAUTY, FACE_UP_AND_RIGHT)"
+  },
+  {
+   "kind": "sign",
+   "map": "MtChimney",
+   "at": [
+    14,
+    6
+   ],
+   "script": 4,
+   "what": "the Meteorite machine (MtChimney_EventScript_15D17D; not a signboard)",
+   "cond": 1,
+   "dir": 6
+  },
+  {
+   "kind": "npc",
+   "map": "LavaridgeTown",
+   "at": [
+    12,
+    15
+   ],
+   "uid": 108,
+   "model": 162,
+   "script": 3,
+   "flag": "FLAG_HIDE_RIVAL_LAVARIDGE_1",
+   "dir": 1,
+   "what": "rival (walks out of the Herb Shop; talk script for the whiteout case) (Sapphire object 8, VAR_0, FACE_DOWN)"
+  },
+  {
+   "kind": "npc",
+   "map": "LavaridgeTown",
+   "at": [
+    6,
+    16
+   ],
+   "uid": 107,
+   "model": 162,
+   "script": 0,
+   "flag": "FLAG_HIDE_RIVAL_LAVARIDGE_2",
+   "dir": 2,
+   "what": "rival on the bike (no Brendan/May bike sprite yet: the walking one; the scene moves it) (Sapphire object 7, VAR_3, FACE_LEFT)"
+  },
+  {
+   "kind": "npc",
+   "map": "LavaridgeTown",
+   "at": [
+    4,
+    7
+   ],
+   "uid": 109,
+   "model": 29,
+   "script": 4,
+   "dir": 1,
+   "what": "Egg woman (Sapphire object 9, OLD_WOMAN_1, FACE_DOWN)"
+  },
+  {
+   "kind": "npc",
+   "map": "LavaridgeTown_Gym_1F",
+   "at": [
+    8,
+    10
+   ],
+   "uid": 1,
+   "model": 271,
+   "script": 21,
+   "dir": 1,
+   "what": "Flannery (Sapphire object 1, FLANNERY, FACE_DOWN)",
+   "at_emerald": [
+    13,
+    9
+   ]
+  },
+  {
+   "kind": "npc",
+   "map": "LavaridgeTown_Gym_1F",
+   "at": [
+    10,
+    19
+   ],
+   "uid": 2,
+   "model": 358,
+   "script": 3322,
+   "evtype": 1,
+   "p0": 1,
+   "move": 15,
+   "dir": 1,
+   "what": "TRAINER_COLE: eye-contact trainer TRAINER_COLE 322 (Sapphire object 2, MAN_6, FACE_DOWN)",
+   "at_emerald": [
+    3,
+    14
+   ]
+  },
+  {
+   "kind": "npc",
+   "map": "LavaridgeTown_Gym_1F",
+   "at": [
+    4,
+    17
+   ],
+   "uid": 3,
+   "model": 19,
+   "script": 3733,
+   "evtype": 1,
+   "p0": 1,
+   "move": 15,
+   "dir": 1,
+   "what": "TRAINER_ZANE: eye-contact trainer TRAINER_ZANE 733 (Sapphire object 3, MAN_4, FACE_DOWN)",
+   "at_emerald": [
+    2,
+    15
+   ]
+  },
+  {
+   "kind": "npc",
+   "map": "LavaridgeTown_Gym_1F",
+   "at": [
+    4,
+    12
+   ],
+   "uid": 4,
+   "model": 358,
+   "script": 3323,
+   "evtype": 1,
+   "p0": 1,
+   "move": 15,
+   "dir": 1,
+   "what": "TRAINER_AXLE: eye-contact trainer TRAINER_AXLE 323 (Sapphire object 4, MAN_6, FACE_DOWN)",
+   "at_emerald": [
+    3,
+    10
+   ]
+  },
+  {
+   "kind": "npc",
+   "map": "LavaridgeTown_Gym_1F",
+   "at": [
+    0,
+    2
+   ],
+   "uid": 5,
+   "model": 15,
+   "script": 3735,
+   "evtype": 1,
+   "p0": 1,
+   "move": 15,
+   "dir": 1,
+   "what": "TRAINER_SADIE: eye-contact trainer TRAINER_SADIE 735 (Sapphire object 5, GIRL_3, FACE_DOWN)",
+   "at_emerald": [
+    5,
+    2
+   ]
+  },
+  {
+   "kind": "npc",
+   "map": "LavaridgeTown_Gym_1F",
+   "at": [
+    6,
+    2
+   ],
+   "uid": 7,
+   "model": 358,
+   "script": 3324,
+   "evtype": 1,
+   "p0": 1,
+   "move": 15,
+   "dir": 1,
+   "what": "TRAINER_ANDY: eye-contact trainer TRAINER_ANDY 324 (Sapphire object 7, MAN_6, FACE_DOWN)",
+   "at_emerald": [
+    3,
+    6
+   ],
+   "map_emerald": "LavaridgeTown_Gym_B1F"
+  },
+  {
+   "kind": "npc",
+   "map": "LavaridgeTown_Gym_1F",
+   "at": [
+    6,
+    23
+   ],
+   "uid": 6,
+   "model": 24,
+   "script": 22,
+   "dir": 3,
+   "what": "Gym guide (Sapphire object 6, MAN_2, FACE_RIGHT)",
+   "at_emerald": [
+    12,
+    16
+   ]
+  },
+  {
+   "kind": "sign",
+   "map": "LavaridgeTown_Gym_1F",
+   "at": [
+    6,
+    17
+   ],
+   "script": 23,
+   "what": "left statue",
+   "dir": 0,
+   "at_emerald": [
+    10,
+    15
+   ]
+  },
+  {
+   "kind": "sign",
+   "map": "LavaridgeTown_Gym_1F",
+   "at": [
+    10,
+    17
+   ],
+   "script": 23,
+   "what": "right statue",
+   "dir": 0,
+   "at_emerald": [
+    16,
+    15
+   ]
+  },
+  {
+   "kind": "npc",
+   "map": "LavaridgeTown_HerbShop",
+   "at": [
+    7,
+    5
+   ],
+   "uid": 2,
+   "model": 187,
+   "script": 3,
+   "dir": 1,
+   "move": 2,
+   "what": "old man (Charcoal) (Sapphire object 2, OLD_MAN_2, LOOK_AROUND)"
+  },
+  {
+   "kind": "npc",
+   "map": "LavaridgeTown_House",
+   "at": [
+    6,
+    6
+   ],
+   "uid": 2,
+   "model": 4392,
+   "script": 4,
+   "dir": 1,
+   "move": 2,
+   "what": "Zigzagoon (cry) (Sapphire object 2, ZIGZAGOON, LOOK_AROUND)"
+  },
+  {
+   "kind": "npc",
+   "map": "Route112_CableCarStation",
+   "at": [
+    6,
+    6
+   ],
+   "uid": 1,
+   "model": 17,
+   "script": 2,
+   "dir": 1,
+   "what": "cable car attendant (the ride up) (Sapphire object 1, BEAUTY, FACE_DOWN)"
+  },
+  {
+   "kind": "npc",
+   "map": "MtChimney_CableCarStation",
+   "at": [
+    6,
+    6
+   ],
+   "uid": 1,
+   "model": 17,
+   "script": 2,
+   "dir": 1,
+   "what": "cable car attendant (the ride down) (Sapphire object 1, BEAUTY, FACE_DOWN)"
+  }
+ ]
+}

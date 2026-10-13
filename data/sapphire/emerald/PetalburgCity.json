@@ -1,0 +1,486 @@
+{
+ "map": "PetalburgCity",
+ "id": "MAP_PETALBURG_CITY",
+ "layout": "LAYOUT_PETALBURG_CITY",
+ "music": "MUS_PETALBURG",
+ "region_map_section": "MAPSEC_PETALBURG_CITY",
+ "weather": "WEATHER_SUNNY",
+ "connections": [
+  {
+   "map": "MAP_ROUTE104",
+   "offset": -50,
+   "direction": "left"
+  },
+  {
+   "map": "MAP_ROUTE102",
+   "offset": 10,
+   "direction": "right"
+  }
+ ],
+ "npcs": [
+  {
+   "local_id": 1,
+   "x": 16,
+   "y": 18,
+   "gfx": "OBJ_EVENT_GFX_WOMAN_4",
+   "movement": "MOVEMENT_TYPE_WANDER_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_PETALBURG_CITY_WALLYS_MOM",
+   "script": "PetalburgCity_EventScript_WallysMom",
+   "texts": {
+    "PetalburgCity_Text_WhereIsWally": "Where has our WALLY gone?\\pWe have to leave for VERDANTURF TOWN\\nvery soon…$"
+   }
+  },
+  {
+   "local_id": 2,
+   "x": 15,
+   "y": 10,
+   "gfx": "OBJ_EVENT_GFX_WALLY",
+   "movement": "MOVEMENT_TYPE_FACE_UP",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_PETALBURG_CITY_WALLY",
+   "script": "0x0",
+   "missing": true
+  },
+  {
+   "local_id": 3,
+   "x": 8,
+   "y": 22,
+   "gfx": "OBJ_EVENT_GFX_BOY_1",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "PetalburgCity_EventScript_Boy",
+   "texts": {
+    "PetalburgCity_Text_WaterReflection": "My face is reflected in the water.\\pIt's a shining grin full of hope…\\pOr it could be a look of somber silence\\nstruggling with fear…\\pWhat do you see reflected in your face?$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 4,
+   "x": 20,
+   "y": 10,
+   "gfx": "OBJ_EVENT_GFX_GENTLEMAN",
+   "movement": "MOVEMENT_TYPE_WANDER_UP_AND_DOWN",
+   "range": [
+    0,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "PetalburgCity_EventScript_Gentleman",
+   "texts": {
+    "PetalburgCity_Text_FullPartyExplanation": "Let's say you have six POKéMON.\\nIf you catch another one…\\pIt is automatically sent to a STORAGE\\nBOX over a PC connection.$"
+   }
+  },
+  {
+   "local_id": 5,
+   "x": 15,
+   "y": 10,
+   "gfx": "OBJ_EVENT_GFX_POKEFAN_M",
+   "movement": "MOVEMENT_TYPE_FACE_UP",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_PETALBURG_CITY_WALLYS_DAD",
+   "script": "0x0",
+   "missing": true
+  },
+  {
+   "local_id": 6,
+   "x": 19,
+   "y": 2,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_PETALBURG_CITY_MAX_REVIVE",
+   "script": "PetalburgCity_EventScript_ItemMaxRevive",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 7,
+   "x": 3,
+   "y": 28,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_PETALBURG_CITY_ETHER",
+   "script": "PetalburgCity_EventScript_ItemEther",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 8,
+   "x": 12,
+   "y": 15,
+   "gfx": "OBJ_EVENT_GFX_BOY_2",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "PetalburgCity_EventScript_GymBoy",
+   "texts": {
+    "PetalburgCity_Text_AreYouRookieTrainer": "Hiya! Are you maybe…\\nA rookie TRAINER?\\pDo you know what POKéMON TRAINERS\\ndo when they reach a new town?\\pThey first check what kind of GYM\\nis in the town.$"
+   }
+  },
+  {
+   "local_id": 9,
+   "x": 13,
+   "y": 12,
+   "gfx": "OBJ_EVENT_GFX_SCOTT",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_PETALBURG_CITY_SCOTT",
+   "script": "0x0",
+   "missing": true
+  }
+ ],
+ "signs": [
+  {
+   "x": 17,
+   "y": 10,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "PetalburgCity_EventScript_GymSign",
+   "texts": {
+    "PetalburgCity_Text_GymSign": "PETALBURG CITY POKéMON GYM\\nLEADER: NORMAN\\l“A man in pursuit of power!”$"
+   }
+  },
+  {
+   "x": 26,
+   "y": 12,
+   "facing": "BG_EVENT_PLAYER_FACING_NORTH",
+   "script": "Common_EventScript_ShowPokemartSign",
+   "texts": {
+    "gText_PokemartSign": "“Selected items for your convenience!”\\nPOKéMON MART$"
+   }
+  },
+  {
+   "x": 21,
+   "y": 16,
+   "facing": "BG_EVENT_PLAYER_FACING_NORTH",
+   "script": "Common_EventScript_ShowPokemonCenterSign",
+   "texts": {
+    "gText_PokemonCenterSign": "“Rejuvenate your tired partners!”\\nPOKéMON CENTER$"
+   }
+  },
+  {
+   "x": 17,
+   "y": 16,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "PetalburgCity_EventScript_CitySign",
+   "texts": {
+    "PetalburgCity_Text_CitySign": "PETALBURG CITY\\n“Where people mingle with nature.”$"
+   }
+  },
+  {
+   "x": 22,
+   "y": 16,
+   "facing": "BG_EVENT_PLAYER_FACING_NORTH",
+   "script": "Common_EventScript_ShowPokemonCenterSign",
+   "texts": {
+    "gText_PokemonCenterSign": "“Rejuvenate your tired partners!”\\nPOKéMON CENTER$"
+   }
+  },
+  {
+   "x": 27,
+   "y": 12,
+   "facing": "BG_EVENT_PLAYER_FACING_NORTH",
+   "script": "Common_EventScript_ShowPokemartSign",
+   "texts": {
+    "gText_PokemartSign": "“Selected items for your convenience!”\\nPOKéMON MART$"
+   }
+  },
+  {
+   "x": 8,
+   "y": 9,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "PetalburgCity_EventScript_WallyHouseSign",
+   "texts": {
+    "PetalburgCity_Text_WallyHouseSign": "WALLY'S HOUSE$"
+   }
+  },
+  {
+   "x": 11,
+   "y": 29,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 11,
+    "y": 29,
+    "elevation": 3,
+    "item": "ITEM_RARE_CANDY",
+    "flag": "FLAG_HIDDEN_ITEM_PETALBURG_CITY_RARE_CANDY"
+   }
+  }
+ ],
+ "warps": [
+  {
+   "id": 0,
+   "x": 10,
+   "y": 19,
+   "dest_map": "MAP_PETALBURG_CITY_HOUSE1",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 1,
+   "x": 7,
+   "y": 5,
+   "dest_map": "MAP_PETALBURG_CITY_WALLYS_HOUSE",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 2,
+   "x": 15,
+   "y": 8,
+   "dest_map": "MAP_PETALBURG_CITY_GYM",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 3,
+   "x": 20,
+   "y": 16,
+   "dest_map": "MAP_PETALBURG_CITY_POKEMON_CENTER_1F",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 4,
+   "x": 20,
+   "y": 24,
+   "dest_map": "MAP_PETALBURG_CITY_HOUSE2",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 5,
+   "x": 25,
+   "y": 12,
+   "dest_map": "MAP_PETALBURG_CITY_MART",
+   "dest_warp_id": "0"
+  }
+ ],
+ "coord_events": [
+  {
+   "type": "trigger",
+   "x": 8,
+   "y": 10,
+   "elevation": 3,
+   "var": "VAR_PETALBURG_CITY_STATE",
+   "var_value": "0",
+   "script": "PetalburgCity_EventScript_ShowGymToPlayer0",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 8,
+   "y": 11,
+   "elevation": 3,
+   "var": "VAR_PETALBURG_CITY_STATE",
+   "var_value": "0",
+   "script": "PetalburgCity_EventScript_ShowGymToPlayer1",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 8,
+   "y": 12,
+   "elevation": 3,
+   "var": "VAR_PETALBURG_CITY_STATE",
+   "var_value": "0",
+   "script": "PetalburgCity_EventScript_ShowGymToPlayer2",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 8,
+   "y": 13,
+   "elevation": 3,
+   "var": "VAR_PETALBURG_CITY_STATE",
+   "var_value": "0",
+   "script": "PetalburgCity_EventScript_ShowGymToPlayer3",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 4,
+   "y": 10,
+   "elevation": 3,
+   "var": "VAR_SCOTT_PETALBURG_ENCOUNTER",
+   "var_value": "0",
+   "script": "PetalburgCity_EventScript_Scott0",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 4,
+   "y": 11,
+   "elevation": 3,
+   "var": "VAR_SCOTT_PETALBURG_ENCOUNTER",
+   "var_value": "0",
+   "script": "PetalburgCity_EventScript_Scott1",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 4,
+   "y": 12,
+   "elevation": 3,
+   "var": "VAR_SCOTT_PETALBURG_ENCOUNTER",
+   "var_value": "0",
+   "script": "PetalburgCity_EventScript_Scott2",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 4,
+   "y": 13,
+   "elevation": 3,
+   "var": "VAR_SCOTT_PETALBURG_ENCOUNTER",
+   "var_value": "0",
+   "script": "PetalburgCity_EventScript_Scott3",
+   "texts": {},
+   "complex": true
+  }
+ ],
+ "wild": {
+  "water_mons": {
+   "encounter_rate": 1,
+   "slot_rates": [
+    60,
+    30,
+    5,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_MARILL",
+     "min": 20,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_MARILL",
+     "min": 10,
+     "max": 20
+    },
+    {
+     "species": "SPECIES_MARILL",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_MARILL",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_MARILL",
+     "min": 5,
+     "max": 10
+    }
+   ]
+  },
+  "fishing_mons": {
+   "encounter_rate": 10,
+   "slot_rates": [
+    70,
+    30,
+    60,
+    20,
+    20,
+    40,
+    40,
+    15,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_GOLDEEN",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_GOLDEEN",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_CORPHISH",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_CORPHISH",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_CORPHISH",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_CORPHISH",
+     "min": 20,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_CORPHISH",
+     "min": 35,
+     "max": 40
+    },
+    {
+     "species": "SPECIES_CORPHISH",
+     "min": 40,
+     "max": 45
+    }
+   ]
+  }
+ }
+}

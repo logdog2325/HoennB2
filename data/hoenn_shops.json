@@ -1,0 +1,866 @@
+{
+ "_doc": "Shops agent: Sapphire's Poké Mart item lists as Black 2 shop lists -> data/hoenn_shops.json (installed by the build\npatch b2tools/patches/shops.py).\n\n    python3 shops_data.py\n\nHow Black 2's shops work (read in its code and data, 2026-10-06):\n- A clerk script sets 0x8000 = shop id, 0x8001 = greeting (1 = \"Welcome! May I help you?\", 2 = the TM department's\n  greeting) and calls global script 10110 (data/field_scripts/1247.s: Buy/Sell/Quit menu, then CallFriendlyShopBuy).\n- ShopUI_Init / ShopUI_LoadPokeMartItems (ov036 0x021abf4c / 0x021ac724, b2tools/armdis.py): id 255 = the standard\n  clerk, list file BADGE_SHOP_DAT_IDS[badges] (files 0-5); ids 239-254 are BP / special shops; any other id k reads\n  list file k + 6. List files are NARC a/2/8/2 (u16 item ids), their item counts are bytes of a/2/8/3 file 0 (one per\n  list file). a/2/8/2 has 80 files: 0-5 badge lists, 6-31 Black 2's specialty lists (ids 0-25), 32-79 empty.\n- Prices are Black 2's own item prices.\n\nFixed archive size: the game keeps the ROM's file table in RAM, so a savestate made with an a/2/8/2 of another size\nreads at most the old size (notes/TESTING.md). a/2/8/2 is not one of build_rom.py's padded (RESERVE) archives, so the\npatch keeps it at exactly its original 1300 bytes: Sapphire's 21 lists take Black 2's specialty slots (ids 0-25), each\nHoenn Pokémon Center's second clerk (Black 2's Center scripts, ids in ID_FOR) gets its own town's Sapphire Mart list,\nunused ids get a one-item list. Badge lists 0-5 stay Black 2's.",
+ "shops": {
+  "0": {
+   "map": "OldaleTown_Mart",
+   "label": "OldaleTown_Mart_Pokemart_Expanded",
+   "sapphire": [
+    "ITEM_POKE_BALL",
+    "ITEM_POTION",
+    "ITEM_ANTIDOTE",
+    "ITEM_PARALYZE_HEAL",
+    "ITEM_AWAKENING"
+   ],
+   "items": [
+    "ITEM_POKE_BALL",
+    "ITEM_POTION",
+    "ITEM_ANTIDOTE",
+    "ITEM_PARLYZ_HEAL",
+    "ITEM_AWAKENING"
+   ],
+   "ids": [
+    4,
+    17,
+    18,
+    22,
+    21
+   ]
+  },
+  "1": {
+   "map": "OldaleTown_Mart",
+   "label": "OldaleTown_Mart_Pokemart_Basic",
+   "sapphire": [
+    "ITEM_POTION",
+    "ITEM_ANTIDOTE",
+    "ITEM_PARALYZE_HEAL",
+    "ITEM_AWAKENING"
+   ],
+   "items": [
+    "ITEM_POTION",
+    "ITEM_ANTIDOTE",
+    "ITEM_PARLYZ_HEAL",
+    "ITEM_AWAKENING"
+   ],
+   "ids": [
+    17,
+    18,
+    22,
+    21
+   ]
+  },
+  "2": {
+   "map": "PetalburgCity_Mart",
+   "label": "PetalburgCity_Mart_Pokemart_Basic",
+   "sapphire": [
+    "ITEM_POKE_BALL",
+    "ITEM_POTION",
+    "ITEM_ANTIDOTE",
+    "ITEM_PARALYZE_HEAL",
+    "ITEM_AWAKENING",
+    "ITEM_ESCAPE_ROPE",
+    "ITEM_REPEL",
+    "ITEM_X_SPEED",
+    "ITEM_X_ATTACK",
+    "ITEM_X_DEFEND",
+    "ITEM_ORANGE_MAIL"
+   ],
+   "items": [
+    "ITEM_POKE_BALL",
+    "ITEM_POTION",
+    "ITEM_ANTIDOTE",
+    "ITEM_PARLYZ_HEAL",
+    "ITEM_AWAKENING",
+    "ITEM_ESCAPE_ROPE",
+    "ITEM_REPEL",
+    "ITEM_X_SPEED",
+    "ITEM_X_ATTACK",
+    "ITEM_X_DEFEND",
+    "ITEM_FAVORED_MAIL"
+   ],
+   "ids": [
+    4,
+    17,
+    18,
+    22,
+    21,
+    78,
+    79,
+    59,
+    57,
+    58,
+    138
+   ]
+  },
+  "3": {
+   "map": "FallarborTown_Mart",
+   "label": "FallarborTown_Mart_Items",
+   "sapphire": [
+    "ITEM_GREAT_BALL",
+    "ITEM_SUPER_POTION",
+    "ITEM_ANTIDOTE",
+    "ITEM_PARALYZE_HEAL",
+    "ITEM_ESCAPE_ROPE",
+    "ITEM_SUPER_REPEL",
+    "ITEM_X_SPECIAL",
+    "ITEM_X_SPEED",
+    "ITEM_X_ATTACK",
+    "ITEM_X_DEFEND",
+    "ITEM_DIRE_HIT",
+    "ITEM_GUARD_SPEC"
+   ],
+   "items": [
+    "ITEM_GREAT_BALL",
+    "ITEM_SUPER_POTION",
+    "ITEM_ANTIDOTE",
+    "ITEM_PARLYZ_HEAL",
+    "ITEM_ESCAPE_ROPE",
+    "ITEM_SUPER_REPEL",
+    "ITEM_X_SPECIAL",
+    "ITEM_X_SPEED",
+    "ITEM_X_ATTACK",
+    "ITEM_X_DEFEND",
+    "ITEM_DIRE_HIT",
+    "ITEM_GUARD_SPEC"
+   ],
+   "ids": [
+    3,
+    26,
+    18,
+    22,
+    78,
+    76,
+    61,
+    59,
+    57,
+    58,
+    56,
+    55
+   ]
+  },
+  "4": {
+   "map": "FortreeCity_Mart",
+   "label": "FortreeCity_Mart_Items",
+   "sapphire": [
+    "ITEM_GREAT_BALL",
+    "ITEM_ULTRA_BALL",
+    "ITEM_SUPER_POTION",
+    "ITEM_HYPER_POTION",
+    "ITEM_ANTIDOTE",
+    "ITEM_PARALYZE_HEAL",
+    "ITEM_AWAKENING",
+    "ITEM_REVIVE",
+    "ITEM_SUPER_REPEL",
+    "ITEM_WOOD_MAIL"
+   ],
+   "items": [
+    "ITEM_GREAT_BALL",
+    "ITEM_ULTRA_BALL",
+    "ITEM_SUPER_POTION",
+    "ITEM_HYPER_POTION",
+    "ITEM_ANTIDOTE",
+    "ITEM_PARLYZ_HEAL",
+    "ITEM_AWAKENING",
+    "ITEM_REVIVE",
+    "ITEM_SUPER_REPEL",
+    "ITEM_INQUIRY_MAIL"
+   ],
+   "ids": [
+    3,
+    2,
+    26,
+    25,
+    18,
+    22,
+    21,
+    28,
+    76,
+    141
+   ]
+  },
+  "5": {
+   "map": "LavaridgeTown_Mart",
+   "label": "LavaridgeTown_Mart_Pokemart",
+   "sapphire": [
+    "ITEM_GREAT_BALL",
+    "ITEM_SUPER_POTION",
+    "ITEM_ANTIDOTE",
+    "ITEM_PARALYZE_HEAL",
+    "ITEM_AWAKENING",
+    "ITEM_BURN_HEAL",
+    "ITEM_REVIVE",
+    "ITEM_SUPER_REPEL",
+    "ITEM_X_SPEED"
+   ],
+   "items": [
+    "ITEM_GREAT_BALL",
+    "ITEM_SUPER_POTION",
+    "ITEM_ANTIDOTE",
+    "ITEM_PARLYZ_HEAL",
+    "ITEM_AWAKENING",
+    "ITEM_BURN_HEAL",
+    "ITEM_REVIVE",
+    "ITEM_SUPER_REPEL",
+    "ITEM_X_SPEED"
+   ],
+   "ids": [
+    3,
+    26,
+    18,
+    22,
+    21,
+    19,
+    28,
+    76,
+    59
+   ]
+  },
+  "6": {
+   "map": "LilycoveCity_DepartmentStore_2F",
+   "label": "LilycoveCity_DepartmentStore_2F_Pokemart1",
+   "sapphire": [
+    "ITEM_POKE_BALL",
+    "ITEM_GREAT_BALL",
+    "ITEM_ULTRA_BALL",
+    "ITEM_ESCAPE_ROPE",
+    "ITEM_FULL_HEAL",
+    "ITEM_ANTIDOTE",
+    "ITEM_PARALYZE_HEAL",
+    "ITEM_BURN_HEAL",
+    "ITEM_ICE_HEAL",
+    "ITEM_AWAKENING",
+    "ITEM_FLUFFY_TAIL"
+   ],
+   "items": [
+    "ITEM_POKE_BALL",
+    "ITEM_GREAT_BALL",
+    "ITEM_ULTRA_BALL",
+    "ITEM_ESCAPE_ROPE",
+    "ITEM_FULL_HEAL",
+    "ITEM_ANTIDOTE",
+    "ITEM_PARLYZ_HEAL",
+    "ITEM_BURN_HEAL",
+    "ITEM_ICE_HEAL",
+    "ITEM_AWAKENING",
+    "ITEM_FLUFFY_TAIL"
+   ],
+   "ids": [
+    4,
+    3,
+    2,
+    78,
+    27,
+    18,
+    22,
+    19,
+    20,
+    21,
+    64
+   ]
+  },
+  "7": {
+   "map": "MauvilleCity_Mart",
+   "label": "MauvilleCity_Mart_Pokemart",
+   "sapphire": [
+    "ITEM_POKE_BALL",
+    "ITEM_GREAT_BALL",
+    "ITEM_SUPER_POTION",
+    "ITEM_ANTIDOTE",
+    "ITEM_PARALYZE_HEAL",
+    "ITEM_AWAKENING",
+    "ITEM_X_SPEED",
+    "ITEM_X_ATTACK",
+    "ITEM_X_DEFEND",
+    "ITEM_GUARD_SPEC",
+    "ITEM_DIRE_HIT",
+    "ITEM_X_ACCURACY"
+   ],
+   "items": [
+    "ITEM_POKE_BALL",
+    "ITEM_GREAT_BALL",
+    "ITEM_SUPER_POTION",
+    "ITEM_ANTIDOTE",
+    "ITEM_PARLYZ_HEAL",
+    "ITEM_AWAKENING",
+    "ITEM_X_SPEED",
+    "ITEM_X_ATTACK",
+    "ITEM_X_DEFEND",
+    "ITEM_GUARD_SPEC",
+    "ITEM_DIRE_HIT",
+    "ITEM_X_ACCURACY"
+   ],
+   "ids": [
+    4,
+    3,
+    26,
+    18,
+    22,
+    21,
+    59,
+    57,
+    58,
+    55,
+    56,
+    60
+   ]
+  },
+  "8": {
+   "map": "MossdeepCity_Mart",
+   "label": "MossdeepCity_Mart_Pokemart",
+   "sapphire": [
+    "ITEM_ULTRA_BALL",
+    "ITEM_NET_BALL",
+    "ITEM_DIVE_BALL",
+    "ITEM_HYPER_POTION",
+    "ITEM_FULL_HEAL",
+    "ITEM_REVIVE",
+    "ITEM_MAX_REPEL",
+    "ITEM_X_ATTACK",
+    "ITEM_X_DEFEND"
+   ],
+   "items": [
+    "ITEM_ULTRA_BALL",
+    "ITEM_NET_BALL",
+    "ITEM_DIVE_BALL",
+    "ITEM_HYPER_POTION",
+    "ITEM_FULL_HEAL",
+    "ITEM_REVIVE",
+    "ITEM_MAX_REPEL",
+    "ITEM_X_ATTACK",
+    "ITEM_X_DEFEND"
+   ],
+   "ids": [
+    2,
+    6,
+    7,
+    25,
+    27,
+    28,
+    77,
+    57,
+    58
+   ]
+  },
+  "9": {
+   "map": "RustboroCity_Mart",
+   "label": "RustboroCity_Mart_Pokemart_Basic",
+   "sapphire": [
+    "ITEM_POKE_BALL",
+    "ITEM_POTION",
+    "ITEM_SUPER_POTION",
+    "ITEM_ANTIDOTE",
+    "ITEM_PARALYZE_HEAL",
+    "ITEM_ESCAPE_ROPE",
+    "ITEM_REPEL",
+    "ITEM_X_SPEED",
+    "ITEM_X_ATTACK",
+    "ITEM_X_DEFEND"
+   ],
+   "items": [
+    "ITEM_POKE_BALL",
+    "ITEM_POTION",
+    "ITEM_SUPER_POTION",
+    "ITEM_ANTIDOTE",
+    "ITEM_PARLYZ_HEAL",
+    "ITEM_ESCAPE_ROPE",
+    "ITEM_REPEL",
+    "ITEM_X_SPEED",
+    "ITEM_X_ATTACK",
+    "ITEM_X_DEFEND"
+   ],
+   "ids": [
+    4,
+    17,
+    26,
+    18,
+    22,
+    78,
+    79,
+    59,
+    57,
+    58
+   ]
+  },
+  "10": {
+   "map": "LilycoveCity_DepartmentStore_2F",
+   "label": "LilycoveCity_DepartmentStore_2F_Pokemart2",
+   "sapphire": [
+    "ITEM_POTION",
+    "ITEM_SUPER_POTION",
+    "ITEM_HYPER_POTION",
+    "ITEM_MAX_POTION",
+    "ITEM_REVIVE",
+    "ITEM_REPEL",
+    "ITEM_SUPER_REPEL",
+    "ITEM_MAX_REPEL",
+    "ITEM_WAVE_MAIL",
+    "ITEM_MECH_MAIL"
+   ],
+   "items": [
+    "ITEM_POTION",
+    "ITEM_SUPER_POTION",
+    "ITEM_HYPER_POTION",
+    "ITEM_MAX_POTION",
+    "ITEM_REVIVE",
+    "ITEM_REPEL",
+    "ITEM_SUPER_REPEL",
+    "ITEM_MAX_REPEL",
+    "ITEM_RSVP_MAIL",
+    "ITEM_LIKE_MAIL"
+   ],
+   "ids": [
+    17,
+    26,
+    25,
+    24,
+    28,
+    79,
+    76,
+    77,
+    139,
+    142
+   ]
+  },
+  "11": {
+   "map": "LavaridgeTown_HerbShop",
+   "label": "LavaridgeTown_HerbShop_Pokemart",
+   "sapphire": [
+    "ITEM_ENERGY_POWDER",
+    "ITEM_ENERGY_ROOT",
+    "ITEM_HEAL_POWDER",
+    "ITEM_REVIVAL_HERB"
+   ],
+   "items": [
+    "ITEM_ENERGY_POWDER",
+    "ITEM_ENERGY_ROOT",
+    "ITEM_HEAL_POWDER",
+    "ITEM_REVIVAL_HERB"
+   ],
+   "ids": [
+    34,
+    35,
+    36,
+    37
+   ]
+  },
+  "12": {
+   "map": "PetalburgCity_Mart",
+   "label": "PetalburgCity_Mart_Pokemart_Expanded",
+   "sapphire": [
+    "ITEM_POKE_BALL",
+    "ITEM_GREAT_BALL",
+    "ITEM_POTION",
+    "ITEM_SUPER_POTION",
+    "ITEM_ANTIDOTE",
+    "ITEM_PARALYZE_HEAL",
+    "ITEM_AWAKENING",
+    "ITEM_ESCAPE_ROPE",
+    "ITEM_REPEL",
+    "ITEM_X_SPEED",
+    "ITEM_X_ATTACK",
+    "ITEM_X_DEFEND",
+    "ITEM_ORANGE_MAIL"
+   ],
+   "items": [
+    "ITEM_POKE_BALL",
+    "ITEM_GREAT_BALL",
+    "ITEM_POTION",
+    "ITEM_SUPER_POTION",
+    "ITEM_ANTIDOTE",
+    "ITEM_PARLYZ_HEAL",
+    "ITEM_AWAKENING",
+    "ITEM_ESCAPE_ROPE",
+    "ITEM_REPEL",
+    "ITEM_X_SPEED",
+    "ITEM_X_ATTACK",
+    "ITEM_X_DEFEND",
+    "ITEM_FAVORED_MAIL"
+   ],
+   "ids": [
+    4,
+    3,
+    17,
+    26,
+    18,
+    22,
+    21,
+    78,
+    79,
+    59,
+    57,
+    58,
+    138
+   ]
+  },
+  "13": {
+   "map": "RustboroCity_Mart",
+   "label": "RustboroCity_Mart_Pokemart_Expanded",
+   "sapphire": [
+    "ITEM_POKE_BALL",
+    "ITEM_TIMER_BALL",
+    "ITEM_REPEAT_BALL",
+    "ITEM_POTION",
+    "ITEM_SUPER_POTION",
+    "ITEM_ANTIDOTE",
+    "ITEM_PARALYZE_HEAL",
+    "ITEM_ESCAPE_ROPE",
+    "ITEM_REPEL",
+    "ITEM_X_SPEED",
+    "ITEM_X_ATTACK",
+    "ITEM_X_DEFEND"
+   ],
+   "items": [
+    "ITEM_POKE_BALL",
+    "ITEM_TIMER_BALL",
+    "ITEM_REPEAT_BALL",
+    "ITEM_POTION",
+    "ITEM_SUPER_POTION",
+    "ITEM_ANTIDOTE",
+    "ITEM_PARLYZ_HEAL",
+    "ITEM_ESCAPE_ROPE",
+    "ITEM_REPEL",
+    "ITEM_X_SPEED",
+    "ITEM_X_ATTACK",
+    "ITEM_X_DEFEND"
+   ],
+   "ids": [
+    4,
+    10,
+    9,
+    17,
+    26,
+    18,
+    22,
+    78,
+    79,
+    59,
+    57,
+    58
+   ]
+  },
+  "14": {
+   "map": "LilycoveCity_DepartmentStore_3F",
+   "label": "LilycoveCity_DepartmentStore_3F_Pokemart_Vitamins",
+   "sapphire": [
+    "ITEM_PROTEIN",
+    "ITEM_CALCIUM",
+    "ITEM_IRON",
+    "ITEM_ZINC",
+    "ITEM_CARBOS",
+    "ITEM_HP_UP"
+   ],
+   "items": [
+    "ITEM_PROTEIN",
+    "ITEM_CALCIUM",
+    "ITEM_IRON",
+    "ITEM_ZINC",
+    "ITEM_CARBOS",
+    "ITEM_HP_UP"
+   ],
+   "ids": [
+    46,
+    49,
+    47,
+    52,
+    48,
+    45
+   ]
+  },
+  "15": {
+   "map": "LilycoveCity_DepartmentStore_3F",
+   "label": "LilycoveCity_DepartmentStore_3F_Pokemart_StatBoosters",
+   "sapphire": [
+    "ITEM_X_SPEED",
+    "ITEM_X_SPECIAL",
+    "ITEM_X_ATTACK",
+    "ITEM_X_DEFEND",
+    "ITEM_DIRE_HIT",
+    "ITEM_GUARD_SPEC",
+    "ITEM_X_ACCURACY"
+   ],
+   "items": [
+    "ITEM_X_SPEED",
+    "ITEM_X_SPECIAL",
+    "ITEM_X_ATTACK",
+    "ITEM_X_DEFEND",
+    "ITEM_DIRE_HIT",
+    "ITEM_GUARD_SPEC",
+    "ITEM_X_ACCURACY"
+   ],
+   "ids": [
+    59,
+    61,
+    57,
+    58,
+    56,
+    55,
+    60
+   ]
+  },
+  "16": {
+   "map": "LilycoveCity_DepartmentStore_4F",
+   "label": "LilycoveCity_DepartmentStore_4F_Pokemart_AttackTMs",
+   "sapphire": [
+    "ITEM_TM38_FIRE_BLAST",
+    "ITEM_TM25_THUNDER",
+    "ITEM_TM14_BLIZZARD",
+    "ITEM_TM15_HYPER_BEAM"
+   ],
+   "items": [
+    "ITEM_TM38",
+    "ITEM_TM25",
+    "ITEM_TM14",
+    "ITEM_TM15"
+   ],
+   "ids": [
+    365,
+    352,
+    341,
+    342
+   ]
+  },
+  "17": {
+   "map": "LilycoveCity_DepartmentStore_4F",
+   "label": "LilycoveCity_DepartmentStore_4F_Pokemart_DefenseTMs",
+   "sapphire": [
+    "ITEM_TM17_PROTECT",
+    "ITEM_TM20_SAFEGUARD",
+    "ITEM_TM33_REFLECT",
+    "ITEM_TM16_LIGHT_SCREEN"
+   ],
+   "items": [
+    "ITEM_TM17",
+    "ITEM_TM20",
+    "ITEM_TM33",
+    "ITEM_TM16"
+   ],
+   "ids": [
+    344,
+    347,
+    360,
+    343
+   ]
+  },
+  "18": {
+   "map": "SlateportCity",
+   "label": "SlateportCity_Pokemart_EnergyGuru",
+   "sapphire": [
+    "ITEM_PROTEIN",
+    "ITEM_IRON",
+    "ITEM_CARBOS",
+    "ITEM_ZINC",
+    "ITEM_CALCIUM",
+    "ITEM_HP_UP"
+   ],
+   "items": [
+    "ITEM_PROTEIN",
+    "ITEM_IRON",
+    "ITEM_CARBOS",
+    "ITEM_ZINC",
+    "ITEM_CALCIUM",
+    "ITEM_HP_UP"
+   ],
+   "ids": [
+    46,
+    47,
+    48,
+    52,
+    49,
+    45
+   ]
+  },
+  "19": {
+   "map": "SlateportCity",
+   "label": "SlateportCity_Pokemart_PowerTMs",
+   "sapphire": [
+    "ITEM_TM10_HIDDEN_POWER",
+    "ITEM_TM43_SECRET_POWER"
+   ],
+   "items": [
+    "ITEM_TM10",
+    "ITEM_TM43"
+   ],
+   "ids": [
+    337,
+    370
+   ]
+  },
+  "20": {
+   "map": "EverGrandeCity_PokemonLeague",
+   "label": "EverGrandeCity_PokemonLeague_Items",
+   "sapphire": [
+    "ITEM_ULTRA_BALL",
+    "ITEM_HYPER_POTION",
+    "ITEM_MAX_POTION",
+    "ITEM_FULL_RESTORE",
+    "ITEM_FULL_HEAL",
+    "ITEM_REVIVE",
+    "ITEM_MAX_REPEL"
+   ],
+   "items": [
+    "ITEM_ULTRA_BALL",
+    "ITEM_HYPER_POTION",
+    "ITEM_MAX_POTION",
+    "ITEM_FULL_RESTORE",
+    "ITEM_FULL_HEAL",
+    "ITEM_REVIVE",
+    "ITEM_MAX_REPEL"
+   ],
+   "ids": [
+    2,
+    25,
+    24,
+    23,
+    27,
+    28,
+    77
+   ]
+  },
+  "21": {
+   "map": "SlateportCity_Mart",
+   "label": "SlateportCity_Mart_Pokemart",
+   "sapphire": [
+    "ITEM_POKE_BALL",
+    "ITEM_GREAT_BALL",
+    "ITEM_POTION",
+    "ITEM_SUPER_POTION",
+    "ITEM_ANTIDOTE",
+    "ITEM_PARALYZE_HEAL",
+    "ITEM_ESCAPE_ROPE",
+    "ITEM_REPEL",
+    "ITEM_HARBOR_MAIL"
+   ],
+   "items": [
+    "ITEM_POKE_BALL",
+    "ITEM_GREAT_BALL",
+    "ITEM_POTION",
+    "ITEM_SUPER_POTION",
+    "ITEM_ANTIDOTE",
+    "ITEM_PARLYZ_HEAL",
+    "ITEM_ESCAPE_ROPE",
+    "ITEM_REPEL",
+    "ITEM_GREET_MAIL"
+   ],
+   "ids": [
+    4,
+    3,
+    17,
+    26,
+    18,
+    22,
+    78,
+    79,
+    137
+   ]
+  },
+  "22": {
+   "map": "VerdanturfTown_Mart",
+   "label": "VerdanturfTown_Mart_Pokemart",
+   "sapphire": [
+    "ITEM_GREAT_BALL",
+    "ITEM_NEST_BALL",
+    "ITEM_SUPER_POTION",
+    "ITEM_ANTIDOTE",
+    "ITEM_PARALYZE_HEAL",
+    "ITEM_AWAKENING",
+    "ITEM_BURN_HEAL",
+    "ITEM_ICE_HEAL",
+    "ITEM_REPEL",
+    "ITEM_X_SPECIAL",
+    "ITEM_FLUFFY_TAIL"
+   ],
+   "items": [
+    "ITEM_GREAT_BALL",
+    "ITEM_NEST_BALL",
+    "ITEM_SUPER_POTION",
+    "ITEM_ANTIDOTE",
+    "ITEM_PARLYZ_HEAL",
+    "ITEM_AWAKENING",
+    "ITEM_BURN_HEAL",
+    "ITEM_ICE_HEAL",
+    "ITEM_REPEL",
+    "ITEM_X_SPECIAL",
+    "ITEM_FLUFFY_TAIL"
+   ],
+   "ids": [
+    3,
+    8,
+    26,
+    18,
+    22,
+    21,
+    19,
+    20,
+    79,
+    61,
+    64
+   ]
+  },
+  "23": {
+   "map": null,
+   "label": "filler (no Sapphire list, no Hoenn Center uses this id)",
+   "items": [
+    "ITEM_POTION"
+   ],
+   "ids": [
+    17
+   ]
+  },
+  "24": {
+   "map": "SootopolisCity_Mart",
+   "label": "SootopolisCity_Mart_Pokemart",
+   "sapphire": [
+    "ITEM_ULTRA_BALL",
+    "ITEM_HYPER_POTION",
+    "ITEM_MAX_POTION",
+    "ITEM_FULL_HEAL",
+    "ITEM_REVIVE",
+    "ITEM_MAX_REPEL",
+    "ITEM_X_ATTACK",
+    "ITEM_X_DEFEND",
+    "ITEM_SHADOW_MAIL"
+   ],
+   "items": [
+    "ITEM_ULTRA_BALL",
+    "ITEM_HYPER_POTION",
+    "ITEM_MAX_POTION",
+    "ITEM_FULL_HEAL",
+    "ITEM_REVIVE",
+    "ITEM_MAX_REPEL",
+    "ITEM_X_ATTACK",
+    "ITEM_X_DEFEND",
+    "ITEM_THANKS_MAIL"
+   ],
+   "ids": [
+    2,
+    25,
+    24,
+    27,
+    28,
+    77,
+    57,
+    58,
+    140
+   ]
+  },
+  "25": {
+   "map": null,
+   "label": "filler (no Sapphire list, no Hoenn Center uses this id)",
+   "items": [
+    "ITEM_POTION"
+   ],
+   "ids": [
+    17
+   ]
+  }
+ },
+ "notes": [
+  "FortreeCity_Mart_Items: ITEM_WOOD_MAIL -> ITEM_INQUIRY_MAIL (Gen 3 mail, same stand-in as the item balls)",
+  "ITEM_TM43_SECRET_POWER: MOVE_SECRET_POWER is no Gen 5 TM/HM; stand-in ITEM_TM43",
+  "LilycoveCity_DepartmentStore_2F_Pokemart2: ITEM_MECH_MAIL -> ITEM_LIKE_MAIL (Gen 3 mail, same stand-in as the item balls)",
+  "LilycoveCity_DepartmentStore_2F_Pokemart2: ITEM_WAVE_MAIL -> ITEM_RSVP_MAIL (Gen 3 mail, same stand-in as the item balls)",
+  "PetalburgCity_Mart_Pokemart_Basic: ITEM_ORANGE_MAIL -> ITEM_FAVORED_MAIL (Gen 3 mail, same stand-in as the item balls)",
+  "PetalburgCity_Mart_Pokemart_Expanded: ITEM_ORANGE_MAIL -> ITEM_FAVORED_MAIL (Gen 3 mail, same stand-in as the item balls)",
+  "SlateportCity_Mart_Pokemart: ITEM_HARBOR_MAIL -> ITEM_GREET_MAIL (Gen 3 mail, same stand-in as the item balls)",
+  "SootopolisCity_Mart_Pokemart: ITEM_SHADOW_MAIL -> ITEM_THANKS_MAIL (Gen 3 mail, same stand-in as the item balls)"
+ ]
+}

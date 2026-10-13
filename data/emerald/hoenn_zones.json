@@ -1,0 +1,26 @@
+{
+ "_doc": "HOENN_VERSION=emerald (emerald_world 2026-10-12, notes/EMERALD.md \"Emerald's world\"): the Emerald-only outdoor maps (the groups' maps of data/emerald/hoenn_standalone.json that data/hoenn_zones.json lacks) -> data/emerald/hoenn_zones.json, deep-merged over data/hoenn_zones.json by the Emerald world's readers (version.load_json). Every other map keeps Sapphire's zone (rooms' exits, scripts and savestates name them), and data/hoenn_zones.json is never written here. An Emerald-only map shares the zone of the map it connects to in its group (pokeemerald connections, the first one that has a zone): the Safari Zone's expansion areas are their west neighbours' zones, the Battle Frontier's east half is the island's zone 17. A zone of its own needs its scripts, wild table, music and place in the ROM (phases 1/3, notes/EMERALD.md work list), so none is given out yet.",
+ "maps": {
+  "SafariZone_Northeast_Emerald": {
+   "zone": 38,
+   "type": "MAP_TYPE_ROUTE",
+   "mapsec": "MAPSEC_SAFARI_ZONE",
+   "place": 61,
+   "shares": "SafariZone_Northeast"
+  },
+  "SafariZone_Southeast_Emerald": {
+   "zone": 40,
+   "type": "MAP_TYPE_ROUTE",
+   "mapsec": "MAPSEC_SAFARI_ZONE",
+   "place": 61,
+   "shares": "SafariZone_Southeast"
+  },
+  "BattleFrontier_OutsideEast": {
+   "zone": 17,
+   "type": "MAP_TYPE_ROUTE",
+   "mapsec": "MAPSEC_BATTLE_FRONTIER",
+   "place": 62,
+   "shares": "BattleTower_Outside"
+  }
+ }
+}

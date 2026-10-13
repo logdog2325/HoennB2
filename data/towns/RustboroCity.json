@@ -1,0 +1,296 @@
+{
+ "_doc": "Rustboro City buildings (group towns1, notes/TOWNS_TOWNS1.md). Devon Corp is a prop (plan_map finds no footprint: its door tiles are walkable in Sapphire); lamps stand on the lower tile of each 2-tile Sapphire lamp (\"prop\" tiles); fountain = pack-0 fountain_01 (res 24); the door-less grey block east of the fountain = res 332.",
+ "group": "towns1",
+ "buildings": {
+  "MAP_RUSTBORO_CITY_GYM": {
+   "res": 320,
+   "front": 24
+  },
+  "MAP_RUSTBORO_CITY_HOUSE1": {
+   "res": 323,
+   "front": 20
+  },
+  "MAP_RUSTBORO_CITY_HOUSE2": {
+   "res": 323,
+   "front": 20
+  },
+  "MAP_RUSTBORO_CITY_FLAT1_1F": {
+   "res": 324,
+   "front": 20
+  },
+  "MAP_RUSTBORO_CITY_POKEMON_SCHOOL": {
+   "res": 325,
+   "front": 20
+  },
+  "MAP_RUSTBORO_CITY_CUTTERS_HOUSE": {
+   "res": 326,
+   "front": 20
+  },
+  "MAP_RUSTBORO_CITY_POKEMON_CENTER_1F": {
+   "res": 0,
+   "front": 20
+  },
+  "MAP_RUSTBORO_CITY_MART": {
+   "res": 3,
+   "front": 20
+  },
+  "MAP_RUSTBORO_CITY_HOUSE3": {
+   "res": 327,
+   "front": 20
+  },
+  "MAP_RUSTBORO_CITY_FLAT2_1F": {
+   "res": 328,
+   "front": 20
+  }
+ },
+ "props": [
+  {
+   "res": 329,
+   "x": 12.0,
+   "z": 15.0,
+   "what": "Devon Corp, tower front at the door row"
+  },
+  {
+   "res": 332,
+   "x": 33.0,
+   "z": 45.0,
+   "what": "door-less grey block (x 31-34, rows 39-46), front 4 units into row 46"
+  },
+  {
+   "res": 333,
+   "x": 19.5,
+   "z": 16.5,
+   "covers": [
+    [
+     19,
+     15,
+     19,
+     16
+    ]
+   ]
+  },
+  {
+   "res": 333,
+   "x": 22.5,
+   "z": 16.5,
+   "covers": [
+    [
+     22,
+     15,
+     22,
+     16
+    ]
+   ]
+  },
+  {
+   "res": 333,
+   "x": 8.5,
+   "z": 17.5,
+   "covers": [
+    [
+     8,
+     16,
+     8,
+     17
+    ]
+   ]
+  },
+  {
+   "res": 333,
+   "x": 15.5,
+   "z": 17.5,
+   "covers": [
+    [
+     15,
+     16,
+     15,
+     17
+    ]
+   ]
+  },
+  {
+   "res": 333,
+   "x": 9.5,
+   "z": 20.5,
+   "covers": [
+    [
+     9,
+     19,
+     9,
+     20
+    ]
+   ]
+  },
+  {
+   "res": 333,
+   "x": 14.5,
+   "z": 20.5,
+   "covers": [
+    [
+     14,
+     19,
+     14,
+     20
+    ]
+   ]
+  },
+  {
+   "res": 333,
+   "x": 19.5,
+   "z": 24.5,
+   "covers": [
+    [
+     19,
+     23,
+     19,
+     24
+    ]
+   ]
+  },
+  {
+   "res": 333,
+   "x": 22.5,
+   "z": 24.5,
+   "covers": [
+    [
+     22,
+     23,
+     22,
+     24
+    ]
+   ]
+  },
+  {
+   "res": 333,
+   "x": 19.5,
+   "z": 31.5,
+   "covers": [
+    [
+     19,
+     30,
+     19,
+     31
+    ]
+   ]
+  },
+  {
+   "res": 333,
+   "x": 22.5,
+   "z": 31.5,
+   "covers": [
+    [
+     22,
+     30,
+     22,
+     31
+    ]
+   ]
+  },
+  {
+   "res": 333,
+   "x": 19.5,
+   "z": 38.5,
+   "covers": [
+    [
+     19,
+     37,
+     19,
+     38
+    ]
+   ]
+  },
+  {
+   "res": 333,
+   "x": 22.5,
+   "z": 38.5,
+   "covers": [
+    [
+     22,
+     37,
+     22,
+     38
+    ]
+   ]
+  },
+  {
+   "res": 333,
+   "x": 19.5,
+   "z": 45.5,
+   "covers": [
+    [
+     19,
+     44,
+     19,
+     45
+    ]
+   ]
+  },
+  {
+   "res": 333,
+   "x": 22.5,
+   "z": 45.5,
+   "covers": [
+    [
+     22,
+     44,
+     22,
+     45
+    ]
+   ]
+  },
+  {
+   "res": 333,
+   "x": 29.5,
+   "z": 49.5,
+   "covers": [
+    [
+     29,
+     48,
+     29,
+     49
+    ]
+   ]
+  },
+  {
+   "res": 333,
+   "x": 14.5,
+   "z": 55.5,
+   "covers": [
+    [
+     14,
+     54,
+     14,
+     55
+    ]
+   ]
+  },
+  {
+   "res": 333,
+   "x": 17.5,
+   "z": 55.5,
+   "covers": [
+    [
+     17,
+     54,
+     17,
+     55
+    ]
+   ]
+  },
+  {
+   "res": 24,
+   "x": 28.5,
+   "z": 39.5,
+   "what": "fountain",
+   "covers": [
+    [
+     27,
+     38,
+     29,
+     40
+    ]
+   ]
+  }
+ ],
+ "_covers_doc": "props 'covers': map tile rects [x0, z0, x1, z1] the model stands on; world.py drops the ground module's plinths there (they stood under the lamps and around the fountain; exterior sweep 2026-10-06)."
+}

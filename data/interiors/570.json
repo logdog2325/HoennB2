@@ -1,0 +1,23 @@
+{
+ "_doc": "Route123_BerryMastersHouse: zone written by converter/gen_interior_recipes_houses.py (warps and parent from converter/gen_interiors.py); story people left for the story phase: person OLD_MAN_1 at (4,4) Route123_BerryMastersHouse_EventScript_1639E9 (story/complex script); person OLD_WOMAN_2 at (7,4) Route123_BerryMastersHouse_EventScript_163A64 (story/complex script)",
+ "zone": 570,
+ "room": "Route123_BerryMastersHouse",
+ "area": 313,
+ "parent": 154,
+ "warps": [
+  {
+   "at": [3, 7],
+   "tile_only": true,
+   "to": [154, 1],
+   "what": "Sapphire warp 0 -> Route123 0"
+  },
+  {
+   "at": [4, 7],
+   "tile_only": true,
+   "to": [154, 1],
+   "what": "Sapphire warp 1 -> Route123 0"
+  }
+ ],
+ "npcs": [],
+ "signs": []
+}

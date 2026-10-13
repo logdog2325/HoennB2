@@ -1,0 +1,40 @@
+{
+ "_doc": "FortreeCity_House3: zone written by converter/gen_interior_recipes_houses.py (warps and parent from converter/gen_interiors.py); story people left for the story phase: none",
+ "zone": 140,
+ "room": "FortreeCity_House3",
+ "area": 313,
+ "parent": 16,
+ "warps": [
+  {
+   "at": [3, 5],
+   "tile_only": true,
+   "to": [16, 17],
+   "what": "Sapphire warp 0 -> FortreeCity 5"
+  },
+  {
+   "at": [4, 5],
+   "tile_only": true,
+   "to": [16, 17],
+   "what": "Sapphire warp 1 -> FortreeCity 5"
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 1,
+   "model": 24,
+   "script": 1,
+   "dir": 3,
+   "at": [0, 3]
+  },
+  {
+   "uid": 2,
+   "model": 12,
+   "script": 2,
+   "dir": 1,
+   "at": [5, 4],
+   "move": 3,
+   "range": [1, 1]
+  }
+ ],
+ "signs": []
+}

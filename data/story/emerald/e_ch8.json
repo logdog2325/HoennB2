@@ -1,0 +1,88 @@
+{
+ "_doc": "Emerald-only story objects of Chapter 8 (emerald_ch45_magma 2026-10-12; read in an Emerald build only): Mt. Pyre summit (Maxie, the fourth Aqua grunt, the state-2 triggers two rows lower) and Scott in the Cove Lily Motel. Positions are pokeemerald's tiles.",
+ "objects": [
+  {
+   "kind": "npc",
+   "map": "MtPyre_Summit",
+   "at": [
+    23,
+    6
+   ],
+   "uid": 107,
+   "model": 303,
+   "script": 0,
+   "flag": "FLAG_HIDE_MT_PYRE_SUMMIT_MAXIE",
+   "move": 14,
+   "dir": 0,
+   "what": "Maxie (pokeemerald LOCALID_MT_PYRE_SUMMIT_MAXIE, FACE_UP; hidden until Sootopolis, Archie's twin when the leaders return the Orbs)"
+  },
+  {
+   "kind": "npc",
+   "map": "MtPyre_Summit",
+   "at": [
+    25,
+    11
+   ],
+   "uid": 108,
+   "model": 294,
+   "script": 3318,
+   "flag": "FLAG_HIDE_GRUNTS_MT_PYRE_SUMMIT",
+   "evtype": 1,
+   "p0": 3,
+   "move": 16,
+   "dir": 2,
+   "what": "the fourth Aqua grunt (F): eye-contact trainer TRAINER_GRUNT_MT_PYRE_4 318 (pokeemerald LOCALID_MT_PYRE_SUMMIT_GRUNT_4)"
+  },
+  {
+   "kind": "trigger",
+   "map": "MtPyre_Summit",
+   "at": [
+    22,
+    9
+   ],
+   "script": 6,
+   "var": "VAR_MT_PYRE_STATE",
+   "value": 2,
+   "what": "Archie and Maxie return the Orbs (pokeemerald coord events 4-6, VAR_MT_PYRE_STATE 2)"
+  },
+  {
+   "kind": "trigger",
+   "map": "MtPyre_Summit",
+   "at": [
+    23,
+    9
+   ],
+   "script": 7,
+   "var": "VAR_MT_PYRE_STATE",
+   "value": 2,
+   "what": "Archie and Maxie return the Orbs (pokeemerald coord events 4-6, VAR_MT_PYRE_STATE 2)"
+  },
+  {
+   "kind": "trigger",
+   "map": "MtPyre_Summit",
+   "at": [
+    24,
+    9
+   ],
+   "script": 8,
+   "var": "VAR_MT_PYRE_STATE",
+   "value": 2,
+   "what": "Archie and Maxie return the Orbs (pokeemerald coord events 4-6, VAR_MT_PYRE_STATE 2)"
+  },
+  {
+   "kind": "npc",
+   "map": "LilycoveCity_CoveLilyMotel_2F",
+   "at": [
+    1,
+    7
+   ],
+   "uid": 7,
+   "model": 289,
+   "script": 8,
+   "flag": "FLAG_HIDE_LILYCOVE_MOTEL_SCOTT",
+   "move": 17,
+   "dir": 3,
+   "what": "Scott (pokeemerald LilycoveCity_CoveLilyMotel_2F_EventScript_Scott, FACE_RIGHT): scenes in 0360_room_LilycoveCity_CoveLilyMotel_2F.s MO2_Scott"
+  }
+ ]
+}

@@ -1,0 +1,63 @@
+{
+ "zone": 149,
+ "room": "LavaridgeTown_HerbShop",
+ "area": 326,
+ "parent": 62,
+ "_doc": "LavaridgeTown_HerbShop: shops agent (b2tools/shops_rooms.py); recipe data/interior_layouts/LavaridgeTown_HerbShop.json (b2tools/shops_recipes.py)",
+ "warps": [
+  {
+   "at": [
+    3,
+    7
+   ],
+   "tile_only": true,
+   "to": [
+    62,
+    12
+   ],
+   "what": "Sapphire warp 0 -> LavaridgeTown 0"
+  },
+  {
+   "at": [
+    4,
+    7
+   ],
+   "tile_only": true,
+   "to": [
+    62,
+    12
+   ],
+   "what": "Sapphire warp 1 -> LavaridgeTown 0"
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 1,
+   "model": 27,
+   "script": 1,
+   "dir": 1,
+   "at": [
+    3,
+    2
+   ],
+   "_what": "clerk woman_3 (3,2), Sapphire LavaridgeTown_HerbShop_EventScript_Clerk"
+  },
+  {
+   "uid": 3,
+   "model": 28,
+   "script": 2,
+   "dir": 1,
+   "at": [
+    9,
+    3
+   ],
+   "_what": "old_man_1 (9,3), Sapphire LavaridgeTown_HerbShop_EventScript_ExpertM",
+   "move": 5,
+   "range": [
+    1,
+    1
+   ]
+  }
+ ],
+ "signs": []
+}

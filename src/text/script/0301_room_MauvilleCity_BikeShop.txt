@@ -1,0 +1,23 @@
+I’m learning about Bikes while\nI work here.{be01}\nIf you need advice on how to ride your\nBike, there’re a couple handbooks in{be00}\nthe back.
+Well, well, what have we here?\nA most energetic customer!{be01}\nMe? You may call me Rydel.\nI’m the owner of this cycle shop.
+Rydel: Your Running Shoes...\nThey’re awfully filthy.{be01}\nDid you come from far away?
+Rydel: Is that right?{be01}\nThen, I guess you have no need for\nany of my Bikes.
+Rydel: Hm, hm... ... ... ... ...\n... ... ... ... ... ... ... ...{be01}\nYou’re saying that you came all this\nway from Littleroot?{be01}\nMy goodness!\nThat’s ridiculously far!{be01}\nIf you had one of my Bikes, you could\ngo anywhere easily while feeling the{be00}\ngentle caress of the wind!{be01}\nI’ll tell you what!\nI’ll give you a Bike!{be01}\nOh, wait a second!{be01}\nI forgot to tell you that there are\ntwo kinds of Bikes!{be01}\nThey are the Mach Bike and the\nAcro Bike!{be01}\nMach Bike is for cyclists who want\nto feel the wind with their bodies!{be01}\nAnd an Acro Bike is for those who\nprefer technical rides!{be01}\nI’m a real sweetheart, so you can\nhave whichever one you like!{be01}\nWhich one will you choose?
+Mach
+{0100:0} chose the Mach Bike.
+Rydel: Good, good!\nI’m happy that you like it!
+It’s a handbook on the Mach Bike.{be01}\nWhich page do you want to read?
+How To Ride
+How To Turn
+Sandy Slopes
+Cancel
+A Bike moves in the direction that\nthe + Control Pad is pressed.{be01}\nIt will speed up once it gets rolling.{be01}\nTo stop, release the + Control Pad.\nThe Bike will slow to a stop.{be01}\nWant to read a different page?
+A Mach Bike is speedy, but it can’t\nstop very quickly.{be01}\nIt gets a little tricky to get around\na corner.{be01}\nRelease the + Control Pad a little\nbefore the corner and slow down.{be01}\nWant to read a different page?
+There are small sandy slopes throughout\nthe Hoenn region.{be01}\nThe loose, crumbly sand makes it\nimpossible to climb normally.{be01}\nBut if you have a Mach Bike, you can\nzip up a sandy slope.{be01}\nWant to read a different page?
+It’s a handbook on the Acro Bike.{be01}\nWhich page do you want to read?
+Wheelies
+Bunny-Hops
+Jumping
+Press the B Button while riding, and the\nfront wheel lifts up.{be01}\nYou can zip around with the front\nwheel up using the + Control Pad.{be01}\nThis technique is called a wheelie.{be01}\nWant to read a different page?
+Keeping the B Button pressed, your\nBike can hop on the spot.{be01}\nThis technique is called a bunny hop.{be01}\nYou can ride while hopping, too.{be01}\nWant to read a different page?
+Press the B Button and the + Control\nPad at the same time to jump.{be01}\nPress the + Control Pad to the side\nto jump sideways.{be01}\nPress it backwards to make the Bike\nchange directions while jumping.{be01}\nWant to read a different page?

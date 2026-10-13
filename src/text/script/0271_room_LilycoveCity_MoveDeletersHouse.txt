@@ -1,0 +1,9 @@
+…
+Uh...\nOh, yes, I’m the Move Deleter.{be01}\nI can make Pokémon forget their moves.{be01}\nWould you like me to do that?
+Which Pokémon should forget a move?
+Which move should be forgotten?
+{0100:1} seems to know only one\nmove...
+Hm! {0100:1}’s {0100:2}?\nThat move should be forgotten?
+It worked to perfection!{be01}\n{0100:1} has forgotten\n{0100:2} completely.
+Come again if there are other moves\nto be forgotten.
+What?\nNo Egg should know any moves.

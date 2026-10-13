@@ -1,0 +1,157 @@
+{
+ "_doc": "Buildings of the warp-only outdoor maps (b2tools/world.py standalone groups) in their own exterior pack (b2tools/patches/standalone.py builds it from pack 0's models they place plus these), res range 470-499 (format as data/buildings/slice.json). Models: b2tools/models_standalone.py -> work/buildings/standalone/<name>.nsbmd (HOENN_STANDALONE_BUILDINGS: another folder); their textures: textures.txt there (Black 2 sets, merged byte for byte into the pack's texture set). Pokemon Center/Mart/Gym are pack 0's res 0/3/320 (copied into the pack). door 65535 = no door model; dx as data/buildings/towns5.json (doors 259-261: door tile centre - footprint centre + 8; door_pc 93: + 0); dz = the model's front wall.",
+ "models": [
+  {
+   "res": 470,
+   "model": "work/buildings/standalone/dome.nsbmd",
+   "door": 261,
+   "dx": 8,
+   "dz": 20,
+   "what": "Sootopolis dome house (3 wide, door in the middle): Houses 1, 3, 4 and the door-less domes"
+  },
+  {
+   "res": 471,
+   "model": "work/buildings/standalone/block.nsbmd",
+   "door": 261,
+   "dx": 8,
+   "dz": 20,
+   "what": "Sootopolis block house (3 wide, door in the middle): Houses 2, 5-8 and the door-less blocks"
+  },
+  {
+   "res": 472,
+   "model": "work/buildings/standalone/origin.nsbmd",
+   "door": 65535,
+   "dx": 0,
+   "dz": 0,
+   "what": "Cave of Origin entrance in Sootopolis's crater wall (5 wide, dark doorway)"
+  },
+  {
+   "res": 473,
+   "model": "work/buildings/standalone/btower.nsbmd",
+   "door": 93,
+   "dx": 0,
+   "dz": 16,
+   "what": "Battle Tower (13 wide, sliding door in the middle)"
+  },
+  {
+   "res": 474,
+   "model": "work/buildings/standalone/safari.nsbmd",
+   "door": 93,
+   "dx": -40,
+   "dz": 16,
+   "what": "Safari Zone entrance from inside the zone (10 wide, door in column 2)"
+  },
+  {
+   "res": 475,
+   "model": "work/buildings/standalone/station.nsbmd",
+   "door": 261,
+   "dx": 0,
+   "dz": 20,
+   "what": "Mt. Chimney cable car station (Route 112's mirrored; origin between the door tiles, record door on the west one)"
+  },
+  {
+   "res": 476,
+   "model": "work/buildings/standalone/pylon.nsbmd",
+   "door": 65535,
+   "dx": 0,
+   "dz": 0,
+   "what": "Mt. Chimney cable car pylon with its cable (prop)"
+  },
+  {
+   "res": 477,
+   "model": "work/buildings/standalone/pillar.nsbmd",
+   "door": 65535,
+   "dx": 0,
+   "dz": 0,
+   "what": "Sky Pillar's foot (5 wide, dark doorway in the middle)"
+  },
+  {
+   "res": 478,
+   "model": "work/buildings/standalone/grave.nsbmd",
+   "door": 65535,
+   "dx": 0,
+   "dz": 0,
+   "what": "Mt. Pyre gravestone (prop, grey)"
+  },
+  {
+   "res": 479,
+   "model": "work/buildings/standalone/altar.nsbmd",
+   "door": 65535,
+   "dx": 0,
+   "dz": 0,
+   "what": "Mt. Pyre summit altar (prop)"
+  },
+  {
+   "res": 480,
+   "model": "work/buildings/standalone/post.nsbmd",
+   "door": 65535,
+   "dx": 0,
+   "dz": 0,
+   "what": "Mt. Pyre summit round stone (prop)"
+  },
+  {
+   "res": 481,
+   "model": "work/buildings/standalone/harbour.nsbmd",
+   "door": 65535,
+   "dx": 0,
+   "dz": 0,
+   "what": "Emerald's harbour at the end of Birth Island's and Navel Rock's docks (7 wide incl. its cranes, no door model: the harbour room is not built; buildings_audit)"
+  },
+  {
+   "res": 482,
+   "model": "work/buildings/standalone/spdoor.nsbmd",
+   "door": 65535,
+   "dx": 0,
+   "dz": 0,
+   "what": "Sky Pillar's top: the doorway down to 5F in the wall band, (16,14) (buildings_audit)"
+  },
+  {
+   "res": 483,
+   "model": "work/buildings/standalone/spsky_nw.nsbmd",
+   "door": 65535,
+   "dx": 0,
+   "dz": 0,
+   "what": "Sky Pillar's top, its north-west cell: the tower's face under the south parapet and the curb along the floor's edges inside the cell, Black 2's sea of clouds 200 under the floor (buildings_audit)"
+  },
+  {
+   "res": 484,
+   "model": "work/buildings/standalone/spsky_ne.nsbmd",
+   "door": 65535,
+   "dx": 0,
+   "dz": 0,
+   "what": "Sky Pillar's top, its north-east cell: the tower's face under the south parapet and the curb along the floor's edges inside the cell, Black 2's sea of clouds 200 under the floor (buildings_audit)"
+  },
+  {
+   "res": 485,
+   "model": "work/buildings/standalone/spsky_sw.nsbmd",
+   "door": 65535,
+   "dx": 0,
+   "dz": 0,
+   "what": "Sky Pillar's top, its south-west cell: the tower's face under the south parapet and the curb along the floor's edges inside the cell, Black 2's sea of clouds 200 under the floor (buildings_audit)"
+  },
+  {
+   "res": 486,
+   "model": "work/buildings/standalone/spsky_se.nsbmd",
+   "door": 65535,
+   "dx": 0,
+   "dz": 0,
+   "what": "Sky Pillar's top, its south-east cell: the tower's face under the south parapet and the curb along the floor's edges inside the cell, Black 2's sea of clouds 200 under the floor (buildings_audit)"
+  },
+  {
+   "res": 487,
+   "model": "work/buildings/standalone/navel.nsbmd",
+   "door": 65535,
+   "dx": 0,
+   "dz": 0,
+   "what": "Navel Rock's summit: the rock down from its edge, Black 2's sea of clouds 200 under it (buildings_audit)"
+  },
+  {
+   "res": 488,
+   "model": "work/buildings/standalone/pwt.nsbmd",
+   "door": 93,
+   "dx": 0,
+   "dz": 20,
+   "what": "The PWT's entrance on the Battle Tower island (3 wide, sliding door in the middle; its door leads into Black 2's PWT lobby, zone 192; battle_tower 2026-10-08)"
+  }
+ ]
+}

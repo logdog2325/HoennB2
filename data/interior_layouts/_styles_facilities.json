@@ -1,0 +1,341 @@
+{
+ "_doc": "Styles of the facilities agent's rooms (gTileset_Facility: Devon Corp, Stern's Shipyard, the harbors, the Space Center, the cable car stations, Mt. Pyre). Black 2 map textures only (src = a/0/1/4 texture set); every texture's palette is <tex>_pl in its set (checked).",
+ "fac_devon": {
+  "_doc": "Devon Corp: Sapphire's red carpet with light squares = floor07 (texture set 288, Black 2's Nacrene/Castelia cafe-house floor); Sapphire's striped wallpaper over a wood wainscot = m_h05_kabe (349, the house style's wall); stone entrance m_b08_genkan (349)",
+  "floor": {
+   "tex": "floor07",
+   "src": 288,
+   "size": 32
+  },
+  "wall": {
+   "tex": "m_h05_kabe",
+   "src": 349,
+   "u_size": 64
+  },
+  "genkan": {
+   "tex": "m_b08_genkan",
+   "src": 349,
+   "size": 16
+  },
+  "black": {
+   "tex": "black",
+   "src": 285
+  }
+ },
+ "fac_ship": {
+  "_doc": "Stern's Shipyard and the harbors: Sapphire's teal hexagon floor = bs_yuka_a (texture set 330, Black 2's Battle Subway platform floor, 64x64 texels at 1 texel per unit); grey metal panel walls in22_kabe03 (303, Poké Transfer Lab); grey entrance in22_yuka04 (303). Sapphire's olive workshop floor = floor_tex in77k_yuka1 (379, Plasma Frigate deck plate) in the recipes",
+  "floor": {
+   "tex": "bs_yuka_a",
+   "src": 330,
+   "size": 64
+  },
+  "wall": {
+   "tex": "in22_kabe03",
+   "src": 303,
+   "u_size": 48
+  },
+  "genkan": {
+   "tex": "in22_yuka04",
+   "src": 303,
+   "size": 16
+  },
+  "black": {
+   "tex": "black",
+   "src": 285
+  }
+ },
+ "fac_pyre": {
+  "_doc": "Mt. Pyre = Black 2's Celestial Tower (texture set 323): cobblestone floor in42_fl01 (64x32 texels: the recipes lay it with a floor_tex at 64x32 units), the tower's arched wall in42_wl01 (32x64 texels over the 50-unit wall: u_size 25), stone strip entrance in42_fl02",
+  "floor": {
+   "tex": "in42_fl01",
+   "src": 323,
+   "size": 64
+  },
+  "wall": {
+   "tex": "in42_wl01",
+   "src": 323,
+   "u_size": 25
+  },
+  "genkan": {
+   "tex": "in42_fl02",
+   "src": 323,
+   "size": 16
+  },
+  "black": {
+   "tex": "black",
+   "src": 285
+  }
+ },
+ "fac_tomb": {
+  "_doc": "Block style: Celestial Tower's tomb slab (tomb02, set 323) stretched once over each stone's top; the sides use the slab texture's plain edge; 14 units high (the tower's slabs are 13)",
+  "h": 14,
+  "top": {
+   "tex": "tomb02",
+   "src": 323,
+   "stretch": true
+  },
+  "side": {
+   "tex": "tomb02",
+   "src": 323,
+   "u_size": 16,
+   "v": [
+    0.0,
+    0.12
+   ]
+  },
+  "shade_s": 0.85,
+  "shade_we": 0.6
+ },
+ "fac_rail": {
+  "_doc": "Block style: a low balustrade for Sapphire's walls between two levels (Celestial Tower's ornate railing in42_slop02 on the faces, its stone strip in42_fl02 on top)",
+  "h": 14,
+  "top": {
+   "tex": "in42_fl02",
+   "src": 323,
+   "size": 16
+  },
+  "side": {
+   "tex": "in42_slop02",
+   "src": 323,
+   "u_size": 16
+  },
+  "shade_s": 0.9,
+  "shade_we": 0.6
+ },
+ "fac_partition": {
+  "_doc": "Block style: Sapphire's white partition walls inside the shipyard: a 40-unit wall of the shipyard's grey panels (in22_kabe03, set 303) with a white top (b03_wall_a, set 330: the cream-white station wall)",
+  "h": 40,
+  "top": {
+   "tex": "b03_wall_a",
+   "src": 330,
+   "size": 16
+  },
+  "side": {
+   "tex": "in22_kabe03",
+   "src": 303,
+   "u_size": 40
+  },
+  "shade_s": 0.9,
+  "shade_we": 0.6
+ },
+ "fac_railing": {
+  "_doc": "Block style: a thin metal railing (Sapphire's grey railings around the harbor pool, the cable car pits and the Space Center's window walk): the grey bar railing in67saku (set 348, transparent between the bars) on the faces, the grey metal in22_yuka04 (303) on its 3-unit top",
+  "h": 14,
+  "top": {
+   "tex": "in22_yuka04",
+   "src": 303,
+   "size": 16
+  },
+  "side": {
+   "tex": "in67saku",
+   "src": 348,
+   "u_size": 8
+  },
+  "shade_s": 1.0,
+  "shade_we": 0.7
+ },
+ "fac_harbor": {
+  "_doc": "The harbors (area 351 = Black 2's Humilau, whose texture animation 21 moves in70_sea1): Sapphire's teal hexagon floor = bs_yuka_a (330), the building's grey wall in22_kabe03 (303), grey entrance in22_yuka04 (303)",
+  "floor": {
+   "tex": "bs_yuka_a",
+   "src": 330,
+   "size": 64
+  },
+  "wall": {
+   "tex": "in22_kabe03",
+   "src": 303,
+   "u_size": 48
+  },
+  "genkan": {
+   "tex": "in22_yuka04",
+   "src": 303,
+   "size": 16
+  },
+  "black": {
+   "tex": "black",
+   "src": 285
+  }
+ },
+ "fac_pool": {
+  "_doc": "Block style: the harbor's sunken pool: Humilau's sea in70_sea1 (set 351, animated in area 351) 16 units below the floor; its side faces (the pool's west/east walls) Black 2's sewer concrete 17kabe00 (298)",
+  "h": -16,
+  "top": {
+   "tex": "in70_sea1",
+   "src": 351,
+   "size": 32
+  },
+  "side": {
+   "tex": "17kabe00",
+   "src": 298,
+   "u_size": 32
+  },
+  "shade_top": 1.0,
+  "shade_we": 0.5
+ },
+ "fac_space": {
+  "_doc": "The Space Center (area 338 = Black 2's Medal Office / Castelia research office): Sapphire's grey stone floor = in57_yuka02 (blue-grey stone, set 338), its light wall = in57_kabe01 (cream panels, 338), grey entrance in22_yuka04 (303)",
+  "floor": {
+   "tex": "in57_yuka02",
+   "src": 338,
+   "size": 32
+  },
+  "wall": {
+   "tex": "in57_kabe01",
+   "src": 338,
+   "u_size": 48
+  },
+  "genkan": {
+   "tex": "in22_yuka04",
+   "src": 303,
+   "size": 16
+  },
+  "black": {
+   "tex": "black",
+   "src": 285
+  }
+ },
+ "fac_pillar": {
+  "_doc": "Block style: a white pillar (Space Center 2F's west pillar): the cream panel wall in57_kabe01 (338) on its faces, white b03_wall_a (330) on top",
+  "h": 48,
+  "top": {
+   "tex": "b03_wall_a",
+   "src": 330,
+   "size": 16
+  },
+  "side": {
+   "tex": "in57_kabe01",
+   "src": 338,
+   "u_size": 32
+  },
+  "shade_s": 0.95,
+  "shade_we": 0.6
+ },
+ "fac_station": {
+  "_doc": "The cable car stations (area 330 = Black 2's Gear Station): Sapphire's grey tile floor = chip_yuka (the grey tile every interior set has; 16 units), its white wall = b03_wall_a (330, the Battle Subway's white wall), grey entrance in22_yuka04 (303)",
+  "floor": {
+   "tex": "chip_yuka",
+   "src": 330,
+   "size": 16
+  },
+  "wall": {
+   "tex": "b03_wall_a",
+   "src": 330,
+   "u_size": 32
+  },
+  "genkan": {
+   "tex": "in22_yuka04",
+   "src": 303,
+   "size": 16
+  },
+  "black": {
+   "tex": "black",
+   "src": 285
+  }
+ },
+ "fac_track": {
+  "_doc": "Block style: the cable's track along the platform (Sapphire row 3), sunk 10 units like the Gear Station's tracks: rails bs_senro_d (330) on the bottom, the platform edge bs_kiwa (330) on the sides",
+  "h": -10,
+  "top": {
+   "tex": "bs_senro_d",
+   "src": 330,
+   "size": 32
+  },
+  "side": {
+   "tex": "bs_kiwa",
+   "src": 330,
+   "u_size": 16
+  },
+  "shade_top": 0.8,
+  "shade_we": 0.6
+ },
+ "fac_drop": {
+  "_doc": "Block style: Sapphire's dark drops beside the boarding walkway (rows 5-6), 40 units deep: the Gear Station's track bed gs_senro (330) at the bottom, its grey wall bs_wall_c (330) on the sides",
+  "h": -40,
+  "top": {
+   "tex": "gs_senro",
+   "src": 330,
+   "size": 32
+  },
+  "side": {
+   "tex": "bs_wall_c",
+   "src": 330,
+   "u_size": 32
+  },
+  "shade_top": 0.45,
+  "shade_we": 0.5
+ },
+ "fac_planks": {
+  "_doc": "Block style: Sapphire's orange plank stacks in the shipyard: Black 2's vertical wood planks in48_tile03 (set 329) on top and faces, 32 units high",
+  "h": 32,
+  "top": {
+   "tex": "in48_tile03",
+   "src": 329,
+   "size": 32
+  },
+  "side": {
+   "tex": "in48_tile03",
+   "src": 329,
+   "u_size": 32
+  },
+  "shade_s": 0.9,
+  "shade_we": 0.6
+ },
+ "fac_girder": {
+  "_doc": "Block style: Sapphire's lattice girders in the shipyard: a thin 44-unit column of Black 2's metal lattice in20_saku02 (set 301, open between the bars) with a grey metal cap in22_yuka04 (303)",
+  "h": 44,
+  "top": {
+   "tex": "in22_yuka04",
+   "src": 303,
+   "size": 16
+  },
+  "side": {
+   "tex": "in20_saku02",
+   "src": 301,
+   "u_size": 10
+  },
+  "shade_s": 1.0,
+  "shade_we": 0.7
+ },
+ "fac_grave": {
+  "_doc": "Block style (sweep_rooms 2026-10-07): Mt. Pyre's upright grey gravestone (user choice, notes/DECISIONS.md: grey upright stones like Sapphire's, not the Celestial Tower's pale blue slabs): Black 2's smooth grey stone in82_ishi (set 389) on every face, shaded light at the top; 10 x 5 units, 18 high, on a fac_grave_base",
+  "h": 18,
+  "top": {
+   "tex": "in82_ishi",
+   "src": 389,
+   "stretch": true
+  },
+  "side": {
+   "tex": "in82_ishi",
+   "src": 389,
+   "u_size": 10,
+   "v": [
+    1.0,
+    0.0
+   ]
+  },
+  "shade_top": 1.0,
+  "shade_s": 0.9,
+  "shade_we": 0.6
+ },
+ "fac_grave_base": {
+  "_doc": "Block style (sweep_rooms): the gravestone's low base, the Celestial Tower's grey stone d17_wall_a (set 323), 14 x 8 units, 3 high",
+  "h": 3,
+  "top": {
+   "tex": "d17_wall_a",
+   "src": 323,
+   "size": 16
+  },
+  "side": {
+   "tex": "d17_wall_a",
+   "src": 323,
+   "u_size": 16,
+   "v": [
+    0.0,
+    0.1
+   ]
+  },
+  "shade_top": 0.85,
+  "shade_s": 0.75,
+  "shade_we": 0.55
+ }
+}

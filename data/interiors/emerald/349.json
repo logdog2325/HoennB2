@@ -1,0 +1,122 @@
+{
+ "zone": 349,
+ "room": "MagmaHideout_1F_Emerald",
+ "cave": true,
+ "cave_auto": true,
+ "area": 388,
+ "dark": false,
+ "header": {
+  "map_type": 16,
+  "npc_cache": 24,
+  "weather_word": 0,
+  "flags": 23683,
+  "icon_word": 32783,
+  "place_display": 0,
+  "bgm0": 1191,
+  "bgm1": 1191,
+  "bgm2": 1191,
+  "bgm3": 1191,
+  "place": 91,
+  "encounters": 137,
+  "enc_slot": 2
+ },
+ "warps": [
+  {
+   "at": [
+    10,
+    34
+   ],
+   "to": [
+    18,
+    6
+   ],
+   "what": "Emerald warp 0 (10,34) -> JaggedPass 4"
+  },
+  {
+   "at": [
+    25,
+    34
+   ],
+   "to": [
+    352,
+    1
+   ],
+   "what": "Emerald warp 1 (25,34) -> MagmaHideout_2F_1R 1"
+  },
+  {
+   "at": [
+    31,
+    3
+   ],
+   "to": [
+    353,
+    1
+   ],
+   "what": "Emerald warp 2 (31,3) -> MagmaHideout_2F_2R 1"
+  },
+  {
+   "at": [
+    20,
+    22
+   ],
+   "to": [
+    354,
+    0
+   ],
+   "what": "Emerald warp 3 (20,22) -> MagmaHideout_2F_3R 0"
+  }
+ ],
+ "triggers": [],
+ "npcs": [
+  {
+   "uid": 2,
+   "model": 110,
+   "script": 7177,
+   "flag": 1277,
+   "dir": 1,
+   "at": [
+    3,
+    20
+   ],
+   "what": "item ball ITEM_RARE_CANDY"
+  },
+  {
+   "uid": 4,
+   "model": 8196,
+   "script": 10000,
+   "flag": 0,
+   "dir": 1,
+   "at": [
+    5,
+    22
+   ],
+   "what": "Strength boulder"
+  },
+  {
+   "uid": 5,
+   "model": 8196,
+   "script": 10000,
+   "flag": 0,
+   "dir": 1,
+   "at": [
+    7,
+    22
+   ],
+   "what": "Strength boulder"
+  },
+  {
+   "uid": 6,
+   "model": 8196,
+   "script": 10000,
+   "flag": 0,
+   "dir": 1,
+   "at": [
+    6,
+    23
+   ],
+   "what": "Strength boulder"
+  }
+ ],
+ "signs": [],
+ "what": "MagmaHideout_1F_Emerald: Emerald's cave (converter/gen_caves_emerald.py from emerald/MagmaHideout_1F_Emerald, b2tools/models_cave.py); story objects: see notes/EMERALD.md"
+}

@@ -1,0 +1,167 @@
+{
+ "_doc": "Town buildings of group towns2 (Slateport, Mauville, Verdanturf) in exterior pack 0 (patches/area2_buildings.py; format as data/buildings/slice.json), res range 340-359. Models are made by b2tools/models_slateport.py, models_mauville.py, models_verdanturf.py (notes/TOWNS_TOWNS2.md). Shared models placed but not made here: res 0 Pokemon Center, res 3 Mart (slice), res 320 Gym (towns1), res 362 Contest Hall (towns3). door 65535 = no door model. dx: door models 259-261 span x -17..1 around their origin, so dx = door tile centre - footprint centre + 8; door_pc (93) is centred (+0). Door dz: the door model's glass (door 165/236 at z 0, 164 at -1) and plate (+2) must stay 1 unit or more off the wall and frame planes they overlap (melonDS flicker); dz was moved forward where b2tools/exterior_check.py found them closer (exterior sweep 2026-10-06).",
+ "models": [
+  {
+   "res": 340,
+   "model": "work/buildings/slateport/house.nsbmd",
+   "door": 260,
+   "dx": 0,
+   "dz": 20,
+   "what": "Slateport house, 4 wide, door in column 1 (Name Rater's house, left half of house 2)"
+  },
+  {
+   "res": 341,
+   "model": "work/buildings/slateport/annex.nsbmd",
+   "door": 65535,
+   "dx": 0,
+   "dz": 0,
+   "what": "Slateport house 2, right half (6 wide, no door)"
+  },
+  {
+   "res": 342,
+   "model": "work/buildings/slateport/fanclub.nsbmd",
+   "door": 261,
+   "dx": 8,
+   "dz": 21,
+   "what": "Pokemon Fan Club (5 wide, chamfered, door in the middle)"
+  },
+  {
+   "res": 343,
+   "model": "work/buildings/slateport/museum.nsbmd",
+   "door": 93,
+   "dx": 0,
+   "dz": 16,
+   "what": "Oceanic Museum (6 wide, sliding door between the two door tiles)"
+  },
+  {
+   "res": 344,
+   "model": "work/buildings/slateport/shipyard.nsbmd",
+   "door": 261,
+   "dx": -16,
+   "dz": 20,
+   "what": "Stern's Shipyard (8 wide, door in column 2) with the dock frames"
+  },
+  {
+   "res": 345,
+   "model": "work/buildings/slateport/harbor.nsbmd",
+   "door": 261,
+   "dx": 8,
+   "dz": 20,
+   "what": "Harbor (7 wide, door in the middle)"
+  },
+  {
+   "res": 346,
+   "model": "work/buildings/slateport/awning.nsbmd",
+   "door": 65535,
+   "dx": 0,
+   "dz": 0,
+   "what": "Market entrance canopy (prop, two in Slateport): orange tiles on two front posts"
+  },
+  {
+   "res": 347,
+   "model": "work/buildings/slateport/stall.nsbmd",
+   "door": 65535,
+   "dx": 0,
+   "dz": 0,
+   "what": "Market stall (prop, six in Slateport): green hip roof on two front posts"
+  },
+  {
+   "res": 348,
+   "model": "work/buildings/mauville/bikeshop.nsbmd",
+   "door": 260,
+   "dx": -8,
+   "dz": 20,
+   "what": "Rydel's Cycles (5 wide, door in column 1)"
+  },
+  {
+   "res": 349,
+   "model": "work/buildings/mauville/gamecorner.nsbmd",
+   "door": 93,
+   "dx": 0,
+   "dz": 20,
+   "what": "Game Corner (7 wide, door in the middle)"
+  },
+  {
+   "res": 350,
+   "model": "work/buildings/mauville/house1.nsbmd",
+   "door": 260,
+   "dx": -40,
+   "dz": 20,
+   "what": "Mauville house 1 with the door-less annex east of it (9 wide)"
+  },
+  {
+   "res": 351,
+   "model": "work/buildings/mauville/house.nsbmd",
+   "door": 260,
+   "dx": 0,
+   "dz": 20,
+   "what": "Mauville house 2 (4 wide, door in column 1)"
+  },
+  {
+   "res": 352,
+   "model": "work/buildings/verdanturf/house.nsbmd",
+   "door": 259,
+   "dx": 0,
+   "dz": 20,
+   "what": "Verdanturf house, 4 wide, door in column 1 (Friendship Rater's, east house)"
+  },
+  {
+   "res": 353,
+   "model": "work/buildings/verdanturf/wanda.nsbmd",
+   "door": 259,
+   "dx": 8,
+   "dz": 20,
+   "what": "Wanda's house (5 wide, door in the middle)"
+  },
+  {
+   "res": 354,
+   "model": "work/buildings/slateport/statue.nsbmd",
+   "door": 65535,
+   "dx": 0,
+   "dz": 0,
+   "what": "Slateport's white stone monument in the south plaza (prop tiles x 32-33, rows 52-54; buildings_audit)"
+  }
+ ],
+ "textures": [
+  [
+   "ext54",
+   "c13_ho01b"
+  ],
+  [
+   "ext09",
+   "h2"
+  ],
+  [
+   "ext06",
+   "c4_bp01"
+  ],
+  [
+   "ext06",
+   "wbase_a"
+  ],
+  [
+   "ext08",
+   "d5_conte01a"
+  ],
+  [
+   "ext08",
+   "d5_conte01b"
+  ],
+  [
+   "ext53",
+   "t06_h_03_a"
+  ],
+  [
+   "ext57",
+   "c14_h1_body"
+  ],
+  [
+   "ext02",
+   "c4m_yane_001"
+  ],
+  [
+   "ext05",
+   "r4_b03_yane01"
+  ]
+ ]
+}

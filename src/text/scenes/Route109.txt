@@ -1,0 +1,14 @@
+Mr. Briney: Aren’t you delivering the\nDevon Goods?{be01}\nOr were you meaning to sail back to\nDewford?
+Mr. Briney: Dewford it is, then!{be01}\nAnchors aweigh!\nPeeko, we’re setting sail, my darling!
+Mr. Briney: Then you go on and deliver\nthe Devon Goods. I’ll be waiting.
+Mr. Briney: Ahoy!\nFor you, I’ll go out to sea anytime!{be01}\nNow, my friend, where are we bound?
+Mr. Briney: You just tell me whenever\nyou need to set sail again!
+Our sand castle’s taking a long time\nto make.
+You can have this!
+We’re going to get all the sand from\nthe beach and make a big castle!{be01}\nAnd then we’re going to be a king and\nqueen.{be01}\nWe’ll let you be a servant.
+Zigzagoon: Guguu?
+Mr. Briney: Ahoy!\nWe’ve made land in Slateport!{be01}\nI suppose you’re going to visit Capt.\nStern and deliver the Devon Goods?
+Mr. Briney: Ahoy! We’ve made land in\nSlateport!{be01}\nYou just go on and tell me whenever\nyou want to set sail again!
+Dewford
+Cancel
+Too bad!\nThe Bag is full...

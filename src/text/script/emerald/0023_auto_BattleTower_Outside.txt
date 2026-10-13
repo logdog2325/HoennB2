@@ -1,0 +1,60 @@
+Hello, are you here for the ferry?\nMay I see your Ticket?
+{0100:0} doesn’t have the Ticket...{be01}\nI’m terribly sorry.{be01}\nYou must have a Ticket to board\nthe ferry.
+{0100:0} flashed the Ticket.{be01}\nPerfect! That’s all you need!{be01}\nAnd where would you like to go?
+Slateport City it is, then!
+Lilycove City it is, then!
+Please sail with us another time!
+Please board the ferry and wait for\ndeparture.
+Then, where would you like to go?
+Slateport
+Lilycove
+Cancel
+This is the Battle Tower!\nKeep the win streak as the toughest{be00}\nTrainer!
+This is the Battle Palace!\nKeep your eyes on Pokémon battles!
+This is the Battle Arena!\nLet the toughest teams gather!
+This is the Battle Pyramid!\nAdvance through the Battle Quest!
+Battle Point Exchange Service Corner\nExchange your Battle Points!
+Battle Frontier Ranking Hall\nSet your sights on new records!
+“Rejuvenate your tired partners!”\nPokémon Center
+Wow!\nIt’s huge!{be01}\nThe Battle Tower feels special.\nIt’s different from the others.
+My grand ambition is to conquer both\nthe Battle Frontier and the Pokémon{be00}\nLeague.{be01}\nAnd if my dream comes true…{be01}\nI… I’m going to ask Mimi next door\nif she will be friends with me!
+The Battle Pyramid’s too harsh!\nI just can’t make it to the top!{be01}\nSince I’m out of options, maybe I can\nclimb the outside…
+I thrive in darkness…\nYes… What is worthy of me?{be00}\nNone other than the Battle Pyramid…{be01}\nWhat say you to wandering in darkness\nand in utter and total desperation?
+I didn’t sleep for a week, but then\nI put together the ultimate team!{be01}\nI can’t see myself losing, no joke.\nWe’re storming the Battle Arena!
+Zigg!\nI believe in you, little buddy!{be01}\nI’ll make my little Zigg any favorite\ntasty treats you like if you win!
+I may not look that impressive now,\nbut I once beat a Gym Leader.{be01}\nWho knows, maybe I should give it\nanother shot at glory.
+Did Scott bring you here, too?\nWhat is it with that guy?{be01}\nIt sounds like he really does know\nhow to spot talented Trainers, but…{be01}\nI’ve never seen him battling in person\never.
+People call me a busybody,\nbut I can’t help it.{be01}\nYour hat’s on crooked!\nOh, no, trash on the ground!{be00}\nOops, it’s almost dinnertime!{be01}\nI don’t know if I can stand to just\nwatch at the Battle Palace…
+I’m fast on my Bike, and that goes for\nthe way I battle, too.{be01}\nI win matches in the blink of\nan eye!
+I’m better than my daddy\nat Pokémon.
+Go on, my baby sweetie!\nGo rack up some wins for Daddy!{be01}\nYou’re just like your mother,\nso you’ll be dominating!
+It wasn’t easy getting here,\nbut I’d heard about this knockout{be00}\npretty girl at the Battle Arena.{be01}\nInstead of her, do you know what\nI found?{be01}\nA whole teeming mob of sweaty,\nstinky, and primitive martial artists!
+I sometimes see this really important-\nlooking old man going in there.{be01}\nHe has these really awesome Pokémon.\nHe seems really nice, though.
+Do you know it?\nThe legend of the Battle Pyramid?{be01}\nWhen there comes a confident Trainer\nreaching for the golden pinnacle,{be00}\nthere shall appear a man among men.{be01}\nDon’t know that legend?\nWell, of course not!{be00}\nI just made it up!{be01}\nWhat’s it supposed to mean?\nThat, my friend, I can’t say!
+Man! Oh man!\nI’ve never lost once before!{be01}\nBut I got wiped out with no saving\ngrace at all!{be01}\nAnd then I’m told I don’t have any\ntalent?! Man!
+This guy ran into a horribly tough\nTrainer while he was on the Battle{be00}\nTower challenge.{be01}\nNow look at him…{be01}\nYou need to be cautious if you ever\ndecide to go to the Battle Tower.
+Yes!\nI’ve finally got enough Battle Points!{be01}\nI guess I’ll trade for another giant\nplush Doll!
+Oh, yeah, okay!\nSo this is the Ranking Hall!{be01}\nI’d like to go down in history as\na super champ and have my name{be00}\nrecorded here for posterity.
+With you by my side, I can do anything.
+Ooh, darling, you are so wonderful!{be01}\nOoh, I just can’t wait anymore!{be01}\nLet’s go to a Multi Battle Room\nright this instant!{be01}\nIf we get together in the Battle Salon,\nthe power of our love will overcome{be00}\neveryone we meet.{be01}\nWhy, before us, darling, everything\nwill topple like dominoes!
+The Battle Frontier isn’t exclusively\nfor tough Trainers.{be01}\nMany people with special abilities\nhave been invited, it seems.{be01}\nThat man Scott…{be01}\nHe may have built this place to serve\na bigger objective…
+I…\nI saw it!{be01}\nThere was a sticky sort of a Pokémon\nwith a long tail up ahead!{be01}\nIt was hiding under a boulder, and\nit kept staring at me!
+This is the Battle Dome!\nYour path to the invincible superstar!
+This is the Battle Pike!\nChoose one of three paths!
+This is the Battle Factory!\nSeek out the toughest Pokémon!
+“Selected items for your convenience!”\nPokémon Mart
+I’m the best out of all my friends.\nBut here…{be00}\nI’ve been useless!
+Ah, so this here is the Battle Dome?\nI won’t let Gentlemen beat me!{be01}\nBut where is the entrance?
+It’s not as if just anyone can come\nhere, you know?{be01}\nOnly those Trainers who’ve been\nrecognized as tough are brought here.{be01}\nThat’s why many Trainers don’t even\nknow about the Battle Frontier.
+I’ve finally arrived at the Battle\nFrontier!{be01}\nI’m sure to grab attention with\nmy looks and ability!
+Munch, munch…{be01}\nIt looks like this square’s filled with\ntough people.{be01}\nMunch, munch…
+Oh? You’re off to challenge\nthe Battle Dome?{be01}\nI’ll wish you the best of luck.\nLet us both win our way up and meet{be00}\nin challenges.
+There used to be nothing here not all\nthat long ago.{be01}\nBut, now look at this place! Amazing!\nI’ll bring my mother out to see this.
+Today, I’m going to keep battling, no\nmatter what, until I get a Symbol.
+The Battle Frontier…\nI’ve long dreamed about a place like it.
+I believe I’m the only person here who,\nfor some unknown reason, would choose{be00}\nfishing over battling.{be01}\nHuh? You can’t catch anything here?\nThat’s disappointing…
+Crunch, munch…{be01}\nA while back, I met this older girl\nat the Battle Pike.{be01}\nShe had these eyes that were scary\nin a real ornery way.{be01}\nCrunch, munch…{be01}\nShe got all furious: “Will you quit\neating!” Then she whaled on me.{be01}\nIt was a hair-raising kind of\nscary experience, sure enough.{be01}\nCrunch, munch…
+Huh? Will you listen to yourself?\nThat’s nothing!{be01}\nWhy, the last time I cheered for him,\nour eyes met and sparks flew!
+Whaaaaaat?!\nPfft!{be01}\nThat only happened because\nI happened to be sitting next to you!{be01}\nThe Dome Ace only looked our way\nbecause my cheering was so loud!
+Oh, shush!\nKeep that racket down!{be01}\nYou fair-weather fans should stick\nto cheering for some Gym Leader!{be01}\nThe Dome Ace is mine!\nThe only idol for me!
+I heard a rumor that someone saw\na Pokémon with an unusually long tail{be00}\nsomewhere in the Battle Frontier.{be01}\nIt must be adorable. I’m sure of it…{be01}\nOh, challenges can wait. I feel driven\nto find the delightful creature!

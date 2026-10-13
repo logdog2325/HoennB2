@@ -1,0 +1,594 @@
+{
+ "map": "Route103",
+ "id": "MAP_ROUTE103",
+ "layout": "LAYOUT_ROUTE103",
+ "music": "MUS_ROUTE101",
+ "region_map_section": "MAPSEC_ROUTE_103",
+ "weather": "WEATHER_SUNNY",
+ "connections": [
+  {
+   "map": "MAP_OLDALE_TOWN",
+   "offset": 0,
+   "direction": "down"
+  },
+  {
+   "map": "MAP_ROUTE110",
+   "offset": -60,
+   "direction": "right"
+  }
+ ],
+ "npcs": [
+  {
+   "local_id": 1,
+   "x": 49,
+   "y": 12,
+   "gfx": "OBJ_EVENT_GFX_MAN_3",
+   "movement": "MOVEMENT_TYPE_FACE_LEFT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "Route103_EventScript_Man",
+   "texts": {
+    "Route103_Text_ShortcutToOldale": "If you cross the sea from here,\\nit'll be a shortcut to OLDALE TOWN.\\pFufufu, that's useful, isn't it?$"
+   }
+  },
+  {
+   "local_id": 2,
+   "x": 10,
+   "y": 3,
+   "gfx": "OBJ_EVENT_GFX_VAR_0",
+   "movement": "MOVEMENT_TYPE_FACE_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_ROUTE_103_RIVAL",
+   "script": "Route103_EventScript_Rival",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 3,
+   "x": 71,
+   "y": 11,
+   "gfx": "OBJ_EVENT_GFX_WOMAN_2",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN_AND_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route103_EventScript_Daisy",
+   "texts": {
+    "Route103_Text_DaisyIntro": "Did you feel the tug of our\\nsoul-soothing fragrance?$",
+    "Route103_Text_DaisyDefeated": "You weren't led astray by our aroma…$",
+    "Route103_Text_DaisyPostBattle": "Aromatherapy is a form of mental\\nhealing that works with fragrances.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 4,
+   "x": 65,
+   "y": 12,
+   "gfx": "OBJ_EVENT_GFX_TWIN",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route103_EventScript_Liv",
+   "texts": {
+    "Route103_Text_LivIntro": "LIV: We battle together as one\\nteam.$",
+    "Route103_Text_LivDefeated": "LIV: Oh, we lost, big sister…$",
+    "Route103_Text_LivNotEnoughPokemon": "LIV: If you want to battle us,\\nyou have to have two POKéMON!\\lIt's not fair if you don't!$",
+    "Route103_Text_LivPostBattle": "LIV: We work perfectly together,\\nme and my big sister…\\pBut we still lost…$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 5,
+   "x": 64,
+   "y": 12,
+   "gfx": "OBJ_EVENT_GFX_TWIN",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route103_EventScript_Amy",
+   "texts": {
+    "Route103_Text_AmyIntro": "AMY: I'm AMY.\\nAnd this is my little sister LIV.\\lWe battle together!$",
+    "Route103_Text_AmyDefeated": "AMY: Uh-oh, we lost.$",
+    "Route103_Text_AmyNotEnoughPokemon": "AMY: Uh-oh, you have only one\\nPOKéMON with you.\\lYou can't battle us like that.$",
+    "Route103_Text_AmyPostBattle": "AMY: You have to think about all\\nkinds of things when you're battling\\lagainst two TRAINERS.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 6,
+   "x": 50,
+   "y": 8,
+   "gfx": "OBJ_EVENT_GFX_FISHERMAN",
+   "movement": "MOVEMENT_TYPE_WALK_DOWN_AND_UP",
+   "range": [
+    0,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route103_EventScript_Andrew",
+   "texts": {
+    "Route103_Text_AndrewIntro": "Gah! My fishing line's all snarled up!\\nI'm getting frustrated and mean!\\lThat's it! Battle me!$",
+    "Route103_Text_AndrewDefeated": "Gah! Lost it!\\nI'm even more annoyed now!$",
+    "Route103_Text_AndrewPostBattle": "Gah, I'm still boiling mad…\\nGrrrrr…$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 7,
+   "x": 58,
+   "y": 5,
+   "gfx": "OBJ_EVENT_GFX_BERRY_TREE",
+   "movement": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BerryTreeScript",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 8,
+   "x": 59,
+   "y": 5,
+   "gfx": "OBJ_EVENT_GFX_BERRY_TREE",
+   "movement": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BerryTreeScript",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 9,
+   "x": 60,
+   "y": 5,
+   "gfx": "OBJ_EVENT_GFX_BERRY_TREE",
+   "movement": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BerryTreeScript",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 10,
+   "x": 20,
+   "y": 10,
+   "gfx": "OBJ_EVENT_GFX_BOY_1",
+   "movement": "MOVEMENT_TYPE_WANDER_AROUND",
+   "range": [
+    1,
+    2
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "Route103_EventScript_Boy",
+   "texts": {
+    "Route103_Text_ShouldHaveBroughtPotion": "My POKéMON is staggeringly tired…\\nI should have brought a POTION…$"
+   }
+  },
+  {
+   "local_id": 11,
+   "x": 7,
+   "y": 3,
+   "gfx": "OBJ_EVENT_GFX_PROF_BIRCH",
+   "movement": "MOVEMENT_TYPE_WANDER_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_ROUTE_103_BIRCH",
+   "script": "ProfBirch_EventScript_RatePokedexOrRegister",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 12,
+   "x": 56,
+   "y": 13,
+   "gfx": "OBJ_EVENT_GFX_POKEFAN_M",
+   "movement": "MOVEMENT_TYPE_FACE_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route103_EventScript_Miguel",
+   "texts": {
+    "Route103_Text_MiguelIntro": "My POKéMON is delightfully adorable!\\nDon't be shy--I'll show you!$",
+    "Route103_Text_MiguelDefeated": "Oh, my gosh!\\nMy darling POKéMON!$",
+    "Route103_Text_MiguelPostBattle": "My delightful POKéMON looks darling\\neven when it's fainted!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 13,
+   "x": 50,
+   "y": 5,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_ROUTE_103_GUARD_SPEC",
+   "script": "Route103_EventScript_ItemGuardSpec",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 14,
+   "x": 67,
+   "y": 7,
+   "gfx": "OBJ_EVENT_GFX_CUTTABLE_TREE",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_TEMP_12",
+   "script": "EventScript_CutTree",
+   "texts": {
+    "Text_WantToCut": "This tree looks like it can be\\nCUT down!\\pWould you like to CUT it?$",
+    "Text_MonUsedFieldMove": "{STR_VAR_1} used {STR_VAR_2}!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 15,
+   "x": 72,
+   "y": 8,
+   "gfx": "OBJ_EVENT_GFX_CUTTABLE_TREE",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_TEMP_13",
+   "script": "EventScript_CutTree",
+   "texts": {
+    "Text_WantToCut": "This tree looks like it can be\\nCUT down!\\pWould you like to CUT it?$",
+    "Text_MonUsedFieldMove": "{STR_VAR_1} used {STR_VAR_2}!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 16,
+   "x": 67,
+   "y": 5,
+   "gfx": "OBJ_EVENT_GFX_BLACK_BELT",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route103_EventScript_Rhett",
+   "texts": {
+    "Route103_Text_RhettIntro": "Whoa!\\nHow'd you get into a space this small?$",
+    "Route103_Text_RhettDefeated": "Whoa!\\nThe kid can rock!$",
+    "Route103_Text_RhettPostBattle": "Do you like cramped quarters\\nlike this?$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 17,
+   "x": 67,
+   "y": 9,
+   "gfx": "OBJ_EVENT_GFX_MAN_5",
+   "movement": "MOVEMENT_TYPE_FACE_UP",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route103_EventScript_Marcos",
+   "texts": {
+    "Route103_Text_MarcosIntro": "Did my guitar's wailing draw you in?$",
+    "Route103_Text_MarcosDefeated": "My one-man show is ruined…$",
+    "Route103_Text_MarcosPostBattle": "I was playing my guitar where few\\npeople were around, but a lot of fans\\lhave gathered.\\pHeh, maybe I should turn pro.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 18,
+   "x": 36,
+   "y": 6,
+   "gfx": "OBJ_EVENT_GFX_SWIMMER_F",
+   "movement": "MOVEMENT_TYPE_WALK_DOWN_AND_UP",
+   "range": [
+    1,
+    3
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route103_EventScript_Isabelle",
+   "texts": {
+    "Route103_Text_IsabelleIntro": "Watch where you're going!\\nWe're going to crash!$",
+    "Route103_Text_IsabelleDefeated": "Groan…$",
+    "Route103_Text_IsabellePostBattle": "I'm a poor swimmer so I was practicing…\\nSorry for almost crashing into you.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 19,
+   "x": 36,
+   "y": 13,
+   "gfx": "OBJ_EVENT_GFX_SWIMMER_M",
+   "movement": "MOVEMENT_TYPE_WALK_UP_AND_DOWN",
+   "range": [
+    1,
+    3
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route103_EventScript_Pete",
+   "texts": {
+    "Route103_Text_PeteIntro": "This sort of distance…\\nYou should just swim it!$",
+    "Route103_Text_PeteDefeated": "Oh, that's good going!$",
+    "Route103_Text_PetePostBattle": "Oh, I understand where you're coming\\nfrom now.\\pIf I had a POKéMON that trusty,\\nI'd want to SURF on it, too!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 20,
+   "x": 64,
+   "y": 7,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_ROUTE_103_PP_UP",
+   "script": "Route103_EventScript_ItemPPUp",
+   "texts": {},
+   "complex": true
+  }
+ ],
+ "signs": [
+  {
+   "x": 11,
+   "y": 9,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "Route103_EventScript_RouteSign",
+   "texts": {
+    "Route103_Text_RouteSign": "ROUTE 103\\n{DOWN_ARROW} OLDALE TOWN$"
+   }
+  }
+ ],
+ "warps": [
+  {
+   "id": 0,
+   "x": 45,
+   "y": 6,
+   "dest_map": "MAP_ALTERING_CAVE",
+   "dest_warp_id": "0"
+  }
+ ],
+ "coord_events": [],
+ "wild": {
+  "land_mons": {
+   "encounter_rate": 20,
+   "slot_rates": [
+    20,
+    20,
+    10,
+    10,
+    10,
+    10,
+    5,
+    5,
+    4,
+    4,
+    1,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_POOCHYENA",
+     "min": 2,
+     "max": 2
+    },
+    {
+     "species": "SPECIES_POOCHYENA",
+     "min": 3,
+     "max": 3
+    },
+    {
+     "species": "SPECIES_POOCHYENA",
+     "min": 3,
+     "max": 3
+    },
+    {
+     "species": "SPECIES_POOCHYENA",
+     "min": 4,
+     "max": 4
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 2,
+     "max": 2
+    },
+    {
+     "species": "SPECIES_ZIGZAGOON",
+     "min": 3,
+     "max": 3
+    },
+    {
+     "species": "SPECIES_ZIGZAGOON",
+     "min": 3,
+     "max": 3
+    },
+    {
+     "species": "SPECIES_ZIGZAGOON",
+     "min": 4,
+     "max": 4
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 3,
+     "max": 3
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 3,
+     "max": 3
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 2,
+     "max": 2
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 4,
+     "max": 4
+    }
+   ]
+  },
+  "water_mons": {
+   "encounter_rate": 4,
+   "slot_rates": [
+    60,
+    30,
+    5,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 5,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 15,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_PELIPPER",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_PELIPPER",
+     "min": 25,
+     "max": 30
+    }
+   ]
+  },
+  "fishing_mons": {
+   "encounter_rate": 30,
+   "slot_rates": [
+    70,
+    30,
+    60,
+    20,
+    20,
+    40,
+    40,
+    15,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_SHARPEDO",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 35,
+     "max": 40
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 40,
+     "max": 45
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,12 @@
+Oldale Town\n“Where things start off scarce.”
+“Rejuvenate your tired partners!”\nPokémon Center
+“Selected items for your convenience!”\nPokémon Mart
+I want to take a rest, so I’m saving my\nprogress.
+I just discovered the footprints of\na rare Pokémon!{be01}\nWait until I finish sketching\nthem, okay?
+A Potion can be used anytime, so it’s\neven more useful than a Pokémon Center{be00}\nin certain situations.
+May: {0100:0}!\nOver here!{be00}\nLet’s hurry home!
+Brendan: I’m heading back to my dad’s\nLab now.{be00}\n{0100:0}, you should hustle back, too.
+Hi!\nI work at a Pokémon Mart.{be01}\nCan I get you to come with me?
+This is a Pokémon Mart.\nJust look for our blue roof.{be01}\nWe sell a variety of goods including\nPoké Balls for catching Pokémon.{be01}\nHere, I’d like you to have this as a\npromotional item.
+I finished sketching the footprints of\na rare Pokémon.{be01}\nBut it turns out they were only my\nown footprints...
+Aaaaah! Wait!\nPlease don’t come in here.{be01}\nI just discovered the footprints of\na rare Pokémon!{be01}\nWait until I finish sketching\nthem, okay?

@@ -1,0 +1,70 @@
+{
+ "zone": 101,
+ "room": "CaveOfOrigin_B2F",
+ "cave": true,
+ "cave_auto": true,
+ "area": 332,
+ "dark": true,
+ "header": {
+  "map_type": 16,
+  "npc_cache": 24,
+  "weather_word": 64,
+  "flags": 23715,
+  "icon_word": 40975,
+  "place_display": 0,
+  "bgm0": 1076,
+  "bgm1": 1076,
+  "bgm2": 1076,
+  "bgm3": 1076,
+  "place": 74,
+  "encounters": 49,
+  "enc_slot": 2
+ },
+ "warps": [
+  {
+   "at": [
+    5,
+    10
+   ],
+   "to": [
+    100,
+    1
+   ],
+   "what": "Sapphire warp 0 (5,10) -> CaveOfOrigin_B1F 1"
+  },
+  {
+   "at": [
+    8,
+    14
+   ],
+   "to": [
+    102,
+    0
+   ],
+   "what": "Sapphire warp 1 (8,14) -> CaveOfOrigin_B3F 0"
+  }
+ ],
+ "triggers": [
+  {
+   "script": 1,
+   "var": 0,
+   "value": 0,
+   "at": [
+    5,
+    10
+   ]
+  },
+  {
+   "script": 2,
+   "var": 0,
+   "value": 0,
+   "at": [
+    8,
+    14
+   ]
+  }
+ ],
+ "npcs": [],
+ "signs": [],
+ "what": "CaveOfOrigin_B2F: cave (converter/gen_caves.py, b2tools/models_cave.py); story objects: see notes/CAVES.md"
+}

@@ -1,0 +1,435 @@
+{
+ "_doc": "Black 2 cave looks for b2tools/models_cave.py (notes/CAVES.md). Every texture of a look comes from one Black 2 map texture set ('set'), the one its 'area' loads; models come from the area's interior building pack ('pack'). 'arch' copies Black 2's cave exit from a Black 2 chunk (box/anchor in chunk-corner units, 'into' = the direction its tunnel runs in that chunk; 'outside' swaps to the bright textures when the warp leads outdoors, 'inside' the other way for a template copied from an exit to the open air; 'arch_s'/'arch_n'/'arch_e'/'arch_w' override 'arch' for one wall direction). Colours: 'edge' (a tier's bottom/top edge), 'top_color' (rock tops), 'floor_color', 'rim_color', 'rim_depth' (units of rim past the last lip). 'header_zone' / 'header_zone_dark': the Black 2 zone whose header (music, weather, battle background, icon) a cave of this look copies (converter/gen_caves.py). caves_east keys (b2tools/models_cave_levels.py): 'bridge' = the deck texture of walk-under bridges (Seaside Cave chunk 631's d_hashi01), 'waterfall' = the texture of a waterfall's drop (the look's own animated cave water: Black 2's caves have no waterfall art; area 332's SRT 16 scrolls d0_miz), 'waterfall_foam' = the white water where it lands (d0_mizgiwa), 'waterfall_streaks' = drops falling over the sheet (d0sizuku, Wellspring's drips); both also animated by SRT 16.",
+ "_by_tileset": {
+  "gTileset_Cave": "d0",
+  "gTileset_RusturfTunnel": "d0",
+  "gTileset_MeteorFalls": "d0",
+  "gTileset_Lavaridge": "in81"
+ },
+ "d0": {
+  "_doc": "Wellspring Cave / Mistralton Cave / Relic Passage / Seaside Cave / Victory Road (B2 590-593): brown floor, dark green-grey rock (area 332, pack 50)",
+  "area": 332,
+  "set": 332,
+  "pack": 50,
+  "tiers": 2,
+  "header_zone": 324,
+  "header_zone_dark": 325,
+  "floor": "d0yuka_001",
+  "floor_size": 64,
+  "top": "d0yuka_002",
+  "top_size": 16,
+  "face_low": "d0gake_001",
+  "face_low_rock": "d0gake_001b",
+  "face_mid": "d0gake_001b",
+  "lip_floor": "d0gake_002",
+  "lip_rock": "d0gake_002b",
+  "face_u": 32,
+  "rim": "d0gake_heri",
+  "ledge": "d0dan_001",
+  "stairs": "d0kaidan_01",
+  "decals": [
+   [
+    "d0yuka_op1",
+    32,
+    0.05
+   ],
+   [
+    "d0yuka_op2",
+    16,
+    0.05
+   ]
+  ],
+  "cracked": [
+   "d29_gake3",
+   32
+  ],
+  "rock1": "drock02",
+  "rock2": "drock01",
+  "arch": {
+   "chunk": 788,
+   "box": [
+    176,
+    256,
+    456,
+    520
+   ],
+   "anchor": [
+    216,
+    480
+   ],
+   "materials": [
+    "d0ana_001",
+    "d0ana_002"
+   ],
+   "outside": {
+    "d0ana_001": "d0ana_001b",
+    "d0ana_002": "d0ana_002b"
+   }
+  },
+  "water": "d0_miz",
+  "water_top": "d0_miz2",
+  "water_bank": "d0mizu_gake",
+  "bridge": "d_hashi01",
+  "waterfall": "d0_miz",
+  "waterfall_foam": "d0_mizgiwa",
+  "waterfall_streaks": "d0sizuku"
+ },
+ "in81": {
+  "_doc": "Reversal Mountain inside (B2 zones 537-542, chunks 719-741): dark grey volcanic rock (area 388, pack 80). Wall profile traced on chunk 719 (west wall of the y16 room): the same 0/4/14/16 profile as Wellspring, in81_gake_b on the floor tier (its bottom rows fade out), in81_gake_a above, lip in81_gake_d, tops in81_yuka02 (colour 0.97), edge colour 0.74, an 8-unit in81_heri rim; floors in81_yuka01 (64 units per repeat, baked ~0.87). Exit arch: chunk 723 (zone 539 warp 0, a west-wall arch), outside version ana01b/ana02b (chunk 741). Loose rocks are terrain quads in this cave (chunk 723), not models. Arches per wall: south walls copy zone 537's exit to the open air (chunk 738, warp (25,27) dir 1), north walls zone 541's inner arch (chunk 740, warp (8,2) dir 2), east/west walls zone 539's (chunk 723). arch_n: chunk 740's floor in front of the arch is at 32 (its collision), so the template is moved down by \"base_y\" 32 (it floated 32 units up: Emerald's Magma Hideout doors, emerald_polish_caves 2026-10-12).",
+  "area": 388,
+  "set": 388,
+  "pack": 80,
+  "tiers": 2,
+  "header_zone": 539,
+  "floor": "in81_yuka01",
+  "floor_size": 64,
+  "floor_color": 0.87,
+  "top": "in81_yuka02",
+  "top_size": 16,
+  "top_color": 0.97,
+  "face_low": "in81_gake_b",
+  "face_low_rock": "in81_gake_a",
+  "face_mid": "in81_gake_a",
+  "lip_floor": "in81_gake_d",
+  "lip_rock": "in81_gake_d",
+  "face_u": 32,
+  "edge": 0.74,
+  "rim": "in81_heri",
+  "rim_depth": 8,
+  "rim_color": 0.74,
+  "ledge": "d0dan_001",
+  "stairs": "in81_kaidan",
+  "rock_sprites": {
+   "1": {
+    "chunk": 723,
+    "box": [
+     78,
+     98,
+     78,
+     98
+    ],
+    "anchor": [
+     88,
+     88
+    ],
+    "materials": [
+     "in81_drock1"
+    ]
+   },
+   "2": {
+    "chunk": 723,
+    "box": [
+     130,
+     190,
+     85,
+     145
+    ],
+    "anchor": [
+     160,
+     112
+    ],
+    "materials": [
+     "in81_drock1",
+     "in81_drock2"
+    ]
+   }
+  },
+  "arch": {
+   "chunk": 723,
+   "box": [
+    40,
+    100,
+    120,
+    184
+   ],
+   "anchor": [
+    80,
+    152
+   ],
+   "into": "w",
+   "materials": [
+    "in81_ana01",
+    "in81_ana02"
+   ],
+   "outside": {
+    "in81_ana01": "in81_ana01b",
+    "in81_ana02": "in81_ana02b"
+   }
+  },
+  "arch_s": {
+   "chunk": 738,
+   "box": [
+    380,
+    436,
+    410,
+    470
+   ],
+   "anchor": [
+    408,
+    432
+   ],
+   "into": "s",
+   "materials": [
+    "in81_ana01b",
+    "in81_ana02b"
+   ],
+   "inside": {
+    "in81_ana01b": "in81_ana01",
+    "in81_ana02b": "in81_ana02"
+   }
+  },
+  "arch_n": {
+   "chunk": 740,
+   "box": [
+    108,
+    164,
+    10,
+    70
+   ],
+   "anchor": [
+    136,
+    48
+   ],
+   "into": "n",
+   "base_y": 32,
+   "materials": [
+    "in81_ana01",
+    "in81_ana02"
+   ],
+   "outside": {
+    "in81_ana01": "in81_ana01b",
+    "in81_ana02": "in81_ana02b"
+   }
+  }
+ },
+ "in51": {
+  "_doc": "caves_misc: Giant Chasm's ice cave (B2 zone 604, chunks 808/809, area 332 = the d0 look's area/set/pack): grey rock, frosty floor, white ice. Wall profile traced on chunk 809 (the same 0/4/14/16 profile as Wellspring): in51_gake1 the floor tier (0..14, v 0..0.44..1, edge colour 0.77), in51_gake2 its lip (14..16), in51_futa the rock tops (16 units per repeat, colour 0.77), in51_gake1b / in51_gake2b the second tier and its lip, in51_gakeher the rim. Floor in51_yuka2 (64 per repeat), sliding ice in51_ike (the frozen pools of chunk 808; recipe 'ice': Black 2's class 0x18 under it). Loose rocks: chunk 808's ice crystals (in51_rock terrain, one-tile and 2x2 ones). No exit arch of its own is needed by its first user (Shoal Cave's ice room: a ladder only); 'arch' = chunk 809's (in51_ana1 frame + d0ana_002 tunnel, a south wall). Used by: ShoalCave_LowTideIceRoom (recipe 'look').",
+  "area": 332,
+  "set": 332,
+  "pack": 50,
+  "tiers": 2,
+  "header_zone": 324,
+  "header_zone_dark": 325,
+  "floor": "in51_yuka2",
+  "floor_size": 64,
+  "top": "in51_futa",
+  "top_size": 16,
+  "face_low": "in51_gake1",
+  "face_low_rock": "in51_gake1b",
+  "face_mid": "in51_gake1",
+  "lip_floor": "in51_gake2",
+  "lip_rock": "in51_gake2b",
+  "face_u": 32,
+  "rim": "in51_gakeher",
+  "ledge": "d0dan_001",
+  "stairs": "d0kaidan_01",
+  "decals": [],
+  "cracked": [
+   "d29_gake3",
+   32
+  ],
+  "ice": "in51_ike",
+  "ice_size": 64,
+  "rock_sprites": {
+   "1": {
+    "chunk": 808,
+    "box": [
+     140,
+     166,
+     188,
+     212
+    ],
+    "anchor": [
+     153,
+     200
+    ],
+    "materials": [
+     "in51_rock"
+    ]
+   },
+   "2": {
+    "chunk": 808,
+    "box": [
+     255,
+     290,
+     95,
+     130
+    ],
+    "anchor": [
+     272,
+     112
+    ],
+    "materials": [
+     "in51_rock"
+    ]
+   }
+  },
+  "arch": {
+   "chunk": 809,
+   "box": [
+    200,
+    300,
+    200,
+    270
+   ],
+   "anchor": [
+    248,
+    224
+   ],
+   "materials": [
+    "in51_ana1",
+    "d0ana_002"
+   ]
+  },
+  "water": "d0_miz",
+  "water_top": "d0_miz2",
+  "water_bank": "d0mizu_gake"
+ },
+ "uw": {
+  "_doc": "Underwater maps (dive agent, 2026-10-06; b2tools/models_cave_uw.py, recipe key 'underwater'): the Abyssal Ruins' area (340: its lights, music, the diving player; zone 241's header) with the seabed kit of Black 2's Marine Tube (zone 464, area 246, texture set 246: h06soko01 seabed, h06gake01 blue rock, h06sango2 coral), merged into set 340 ('tex_sets'). Trenches (Sapphire's walkable tiles) = the dark seabed floor, the raised seabed = one 16-unit tier of blue rock with sand tops over the whole map ('no_void'). Arches (water arrow warps) = Victory Road's cave arch (chunk 788) in blue rock with a black tunnel. Deep water (underwater_polish, 2026-10-08; 'depth', models_cave_uw.Depth): the raised seabed is the Abyssal Ruins' own sand (in59_sand, set 340) shaded as Black 2 shades it there (chunk 555: blue vertex colours fading to dark navy away from the lit middle), here from its trench lip outward; trench floors and walls take their brightness from Sapphire's own art per tile (deep navy trenches in Underwater3/4 and the Sealed Chamber, lit dive circles); Sapphire's lit tiles get Black 2's underwater caustics (in59_light_a) and light rays shaped as the Marine Tube's (pack 61 h06_light01) with in14_light_a's gradient; seaweed = a coral bed (h06sango2), big and small plants on a checkerboard. Outline (map_glitch_fix, 2026-10-09; models_cave.py lattice_diag, face_uv; models_cave_uw.py kelp_style, backdrop, foot_on_floor): the trench walls follow 45-degree contours with wedges cut into the rock's corner tiles (they stepped along the tile grid), split along the true corner crease (no flat ledges in the corners), the wall texture at one density up the slope ('face_uv', the top band was squeezed into a streaky rim), the seaweed as cards leaning back 30 degrees as Black 2's Marine Tube props, darker than the floor (flat bright blobs on a grid before), rays only where the floor spans their foot, and a deep blue sheet under everything so pixel seams show blue, not black; depth grid 64 on the raised seabed keeps the chunks under 110,600 B.",
+  "area": 340,
+  "set": 340,
+  "pack": 58,
+  "tiers": 1,
+  "header_zone": 241,
+  "header_zone_dark": 241,
+  "floor": "h06soko01",
+  "floor_size": 128,
+  "top": "in59_sand",
+  "top_size": 128,
+  "top_color": 1.0,
+  "face_low": "h06gake01",
+  "face_low_rock": "h06gake01",
+  "face_mid": "h06gake01",
+  "lip_floor": "h06gake01",
+  "lip_rock": "h06gake01",
+  "face_u": 64,
+  "face_uv": [
+   96,
+   48
+  ],
+  "outline": "diag",
+  "rim": "in59_sand",
+  "no_void": true,
+  "stairs": "h06gake01",
+  "ledge": "h06gake01",
+  "arch": {
+   "chunk": 788,
+   "box": [
+    176,
+    256,
+    456,
+    520
+   ],
+   "anchor": [
+    216,
+    480
+   ],
+   "materials": [
+    "d0ana_001",
+    "d0ana_002"
+   ],
+   "outside": {
+    "d0ana_001": "h06gake01",
+    "d0ana_002": "h06kuro"
+   },
+   "inside": {
+    "d0ana_001": "h06gake01",
+    "d0ana_002": "h06kuro"
+   }
+  },
+  "depth": {
+   "lum": [
+    9,
+    0.5,
+    100,
+    1.0,
+    1.4
+   ],
+   "top_near": [
+    0.0,
+    0.46,
+    0.82
+   ],
+   "top_far": [
+    0.0,
+    0.24,
+    0.46
+   ],
+   "fade": [
+    16,
+    96
+   ],
+   "wall_top": 0.8,
+   "wall_tint": [
+    0.7,
+    0.9,
+    1.0
+   ],
+   "kelp_tint": [
+    0.55,
+    0.75,
+    0.65
+   ],
+   "grid": [
+    32,
+    64
+   ],
+   "tol": 0.05,
+   "edge": 64,
+   "blur": 1,
+   "kelp_style": "stand",
+   "backdrop": [
+    0.45,
+    0.45,
+    0.45
+   ]
+  },
+  "caustics": [
+   "in59_light_a",
+   48,
+   90,
+   [
+    0.6,
+    0.9,
+    1.0
+   ]
+  ],
+  "kelp": [
+   "h06sango2",
+   22,
+   14
+  ],
+  "rays": {
+   "tex": "in14_light_a",
+   "min_lum": 90,
+   "spacing": 5,
+   "height": 128,
+   "lean": 48,
+   "width": [
+    32,
+    18
+   ],
+   "strips": [
+    1.0,
+    0.5
+   ],
+   "v": [
+    0.844,
+    0.531
+   ],
+   "color": [
+    0.72,
+    1.0,
+    1.0
+   ],
+   "foot_on_floor": true
+  },
+  "tex_sets": {
+   "h06soko01": 246,
+   "h06gake01": 246,
+   "h06sango2": 246,
+   "h06kuro": 246
+  }
+ }
+}

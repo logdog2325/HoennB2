@@ -1,0 +1,28 @@
+{
+ "zone": 216,
+ "room": "Underwater1",
+ "cave": true,
+ "cave_auto": true,
+ "area": 340,
+ "dark": false,
+ "header": {
+  "map_type": 16,
+  "npc_cache": 24,
+  "weather_word": 64,
+  "flags": 19715,
+  "icon_word": 32783,
+  "place_display": 1,
+  "bgm0": 1014,
+  "bgm1": 1014,
+  "bgm2": 1014,
+  "bgm3": 1014,
+  "place": 54,
+  "encounters": 91,
+  "enc_slot": 2
+ },
+ "warps": [],
+ "triggers": [],
+ "npcs": [],
+ "signs": [],
+ "what": "Underwater1: cave (converter/gen_caves.py, b2tools/models_cave.py); story objects: see notes/CAVES.md"
+}

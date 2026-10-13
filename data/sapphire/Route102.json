@@ -1,0 +1,391 @@
+{
+ "map": "Route102",
+ "id": "MAP_ROUTE102",
+ "layout": "LAYOUT_ROUTE102",
+ "music": "MUS_ROUTE101",
+ "region_map_section": "MAPSEC_ROUTE_102",
+ "weather": "WEATHER_SUNNY",
+ "connections": [
+  {
+   "direction": "left",
+   "offset": -10,
+   "map": "MAP_PETALBURG_CITY"
+  },
+  {
+   "direction": "right",
+   "offset": 0,
+   "map": "MAP_OLDALE_TOWN"
+  }
+ ],
+ "npcs": [
+  {
+   "local_id": 1,
+   "x": 18,
+   "y": 11,
+   "gfx": "OBJ_EVENT_GFX_LITTLE_BOY_2",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "Route102_EventScript_14EADA",
+   "texts": {
+    "Route102_Text_16D431": "I'm...not very tall, so I sink right\\ninto tall grass.\\pThe grass goes up my nose and...\\nFwafwafwafwafwa...\\pFwatchoo!$"
+   }
+  },
+  {
+   "local_id": 2,
+   "x": 33,
+   "y": 14,
+   "gfx": "OBJ_EVENT_GFX_YOUNGSTER",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route102_EventScript_14EAFE",
+   "texts": {
+    "Route102_Text_1B79C3": "If you have POKéMON with you, then\\nyou're an official POKéMON TRAINER!\\lYou can't say no to my challenge!$",
+    "Route102_Text_1B7A2C": "Arrgh, I lost...\\nI should have trained mine more...$",
+    "Route102_Text_1B7A60": "Listen, you. If you're strong, you\\nshould have told me before!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 3,
+   "x": 25,
+   "y": 15,
+   "gfx": "OBJ_EVENT_GFX_BUG_CATCHER",
+   "movement": "MOVEMENT_TYPE_FACE_UP",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route102_EventScript_14EB3C",
+   "texts": {
+    "Route102_Text_1B7C05": "Hahah! Our eyes met!\\nI'll take you on with my BUG POKéMON!$",
+    "Route102_Text_1B7C40": "Ow! Down and out!$",
+    "Route102_Text_1B7C52": "If you lock eyes with a TRAINER,\\nyou have to challenge! It's a rule!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 4,
+   "x": 8,
+   "y": 7,
+   "gfx": "OBJ_EVENT_GFX_LASS",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN_AND_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route102_EventScript_14EB53",
+   "texts": {
+    "Route102_Text_1B7C97": "I'm going to keep winning and aim\\nto be the best TRAINER.\\pHelp me further my career!$",
+    "Route102_Text_1B7CEC": "I ended up furthering your career...$",
+    "Route102_Text_1B7D11": "To keep winning my way up, I see that\\nI have to catch more POKéMON.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 5,
+   "x": 37,
+   "y": 4,
+   "gfx": "OBJ_EVENT_GFX_BOY_1",
+   "movement": "MOVEMENT_TYPE_WANDER_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "Route102_EventScript_14EAF5",
+   "texts": {
+    "Route102_Text_16D51A": "I'm going to catch a whole bunch of\\nPOKéMON!$"
+   }
+  },
+  {
+   "local_id": 6,
+   "x": 11,
+   "y": 15,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_ROUTE102_1",
+   "script": "Route102_EventScript_1B1439",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 7,
+   "x": 24,
+   "y": 2,
+   "gfx": "OBJ_EVENT_GFX_BERRY_TREE",
+   "movement": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "S_BerryTree",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 8,
+   "x": 25,
+   "y": 2,
+   "gfx": "OBJ_EVENT_GFX_BERRY_TREE",
+   "movement": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "S_BerryTree",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 9,
+   "x": 19,
+   "y": 4,
+   "gfx": "OBJ_EVENT_GFX_YOUNGSTER",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route102_EventScript_14EB6A",
+   "texts": {
+    "Route102_Text_1B7B68": "Did you just become a TRAINER?\\nWe're both beginners!$",
+    "Route102_Text_1B7B9D": "I called you because I thought I\\ncould beat you...$",
+    "Route102_Text_1B7BD0": "I haven't won once yet...\\nI wish I would win soon...$"
+   },
+   "complex": true
+  }
+ ],
+ "signs": [
+  {
+   "x": 17,
+   "y": 2,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "Route102_EventScript_14EAEC",
+   "texts": {
+    "Route102_Text_16D55F": "ROUTE 102\\n{0x7B} PETALBURG CITY$"
+   }
+  },
+  {
+   "x": 40,
+   "y": 9,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "Route102_EventScript_14EAE3",
+   "texts": {
+    "Route102_Text_16D547": "ROUTE 102\\n{0x7C} OLDALE TOWN$"
+   }
+  }
+ ],
+ "warps": [],
+ "coord_events": [],
+ "wild": {
+  "land_mons": {
+   "encounter_rate": 20,
+   "slot_rates": [
+    20,
+    20,
+    10,
+    10,
+    10,
+    10,
+    5,
+    5,
+    4,
+    4,
+    1,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_ZIGZAGOON",
+     "min": 3,
+     "max": 3
+    },
+    {
+     "species": "SPECIES_WURMPLE",
+     "min": 3,
+     "max": 3
+    },
+    {
+     "species": "SPECIES_ZIGZAGOON",
+     "min": 4,
+     "max": 4
+    },
+    {
+     "species": "SPECIES_WURMPLE",
+     "min": 4,
+     "max": 4
+    },
+    {
+     "species": "SPECIES_LOTAD",
+     "min": 3,
+     "max": 3
+    },
+    {
+     "species": "SPECIES_LOTAD",
+     "min": 4,
+     "max": 4
+    },
+    {
+     "species": "SPECIES_POOCHYENA",
+     "min": 3,
+     "max": 3
+    },
+    {
+     "species": "SPECIES_POOCHYENA",
+     "min": 3,
+     "max": 3
+    },
+    {
+     "species": "SPECIES_POOCHYENA",
+     "min": 4,
+     "max": 4
+    },
+    {
+     "species": "SPECIES_RALTS",
+     "min": 4,
+     "max": 4
+    },
+    {
+     "species": "SPECIES_POOCHYENA",
+     "min": 4,
+     "max": 4
+    },
+    {
+     "species": "SPECIES_SURSKIT",
+     "min": 3,
+     "max": 3
+    }
+   ]
+  },
+  "water_mons": {
+   "encounter_rate": 4,
+   "slot_rates": [
+    60,
+    30,
+    5,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_MARILL",
+     "min": 20,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_MARILL",
+     "min": 10,
+     "max": 20
+    },
+    {
+     "species": "SPECIES_MARILL",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_MARILL",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_SURSKIT",
+     "min": 20,
+     "max": 30
+    }
+   ]
+  },
+  "fishing_mons": {
+   "encounter_rate": 30,
+   "slot_rates": [
+    70,
+    30,
+    60,
+    20,
+    20,
+    40,
+    40,
+    15,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_GOLDEEN",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_GOLDEEN",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_CORPHISH",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_CORPHISH",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_CORPHISH",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_CORPHISH",
+     "min": 20,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_CORPHISH",
+     "min": 35,
+     "max": 40
+    },
+    {
+     "species": "SPECIES_CORPHISH",
+     "min": 40,
+     "max": 45
+    }
+   ]
+  }
+ }
+}

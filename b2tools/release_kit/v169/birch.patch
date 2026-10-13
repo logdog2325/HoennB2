@@ -1,0 +1,524 @@
+diff --git a/b2tools/sprite_community.py b/b2tools/sprite_community.py
+index 9f9aa11..f6acc84 100644
+--- a/b2tools/sprite_community.py
++++ b/b2tools/sprite_community.py
+@@ -37,6 +37,8 @@ pedalling sheet's stills) and Archie's overworld (353; Ruby's 303 copies it). Ma
+ Third batch (2026-10-12, `build wally`): Wally's battle front (127, hyo-oppa's trainer collection, on layout 108 like
+ Brendan's; 19 colours: one pair the DS shows as one, three closest pairs merged, FRONT_MERGES, reported) and his
+ overworld (87, CalculusNova's walking frames without the backpack, 14 colours, wally_plan).
++Fourth batch (2026-10-12, `build birch`): Prof. Birch's overworld (104, every Birch object; Wolfang62's Pokemon
++Essentials sheet at 2x, placed as DiegoWT's Archie; 16 colours: one pair merged, EXTRA_MERGES[104], reported).
+ """
+ import os, sys, json
+ import numpy as np
+@@ -72,6 +74,10 @@ SHEETS = {
+     # CalculusNova's Wally overworld sheet (Gen 3-sized 16x32 cells on a teal background)
+     'trainers_hyo': dict(file='trainer_collection_hyo-oppa.png', author='hyo-oppa', bg='alpha'),
+     'wally': dict(file='wally_sheet_CalculusNova.png', author='CalculusNova', bg=[(115, 197, 165)]),
++    # fourth batch (2026-10-12): Wolfang62's Prof. Birch, a Pokemon Essentials sheet at 2x (64x64 cells, rows down,
++    # left, right, up); each cell is an exact 2x upscale, but the down / up rows' 2x2 blocks start one pixel in
++    # (cell=64: checked per cell, see sheet())
++    'birch': dict(file='birch_sheet_Wolfang62.png', author='Wolfang62', bg='alpha', scale=2, cell=64),
+ }
+ 
+ # ------------------------------------------------------------------------------------------------ frames on the sheets
+@@ -218,12 +224,27 @@ def sheet(name):
+     a[a[..., 3] == 0] = 0                    # clear pixels: their colour does not matter
+     if spec.get('scale'):                    # an exact integer upscale (every k x k block one colour): back to 1x
+         k = spec['scale']
+-        assert (a.reshape(a.shape[0] // k, k, a.shape[1] // k, k, 4) == a[::k, ::k][:, None, :, None]).all(), name
++        if spec.get('cell'):                 # per cell, its k x k blocks may start up to k-1 pixels in (each cell's
++            n = spec['cell']                 # figure clear at its edges, so every block keeps one sample: lossless)
++            for y in range(0, a.shape[0], n):
++                for x in range(0, a.shape[1], n):
++                    assert any(_upscaled(a[y:y + n, x:x + n], k, oy, ox) for oy in range(k) for ox in range(k)), \
++                        (name, y, x)
++        else:
++            assert _upscaled(a, k), name
+         a = a[::k, ::k].copy()
+     a[a[..., 3] == 0] = 0
+     _sheets[name] = a
+     return a
+ 
++def _upscaled(a, k, oy=0, ox=0):
++    """True if RGBA a, moved (oy, ox) pixels down / right onto a clear canvas of whole k x k blocks, is made of
++    one-colour k x k blocks (i.e. an exact k-times upscale whose blocks start oy / ox pixels in)."""
++    H, W = a.shape[:2]
++    p = np.zeros(((H + oy + k - 1) // k * k, (W + ox + k - 1) // k * k, 4), a.dtype)
++    p[oy:oy + H, ox:ox + W] = a
++    return bool((p.reshape(p.shape[0] // k, k, p.shape[1] // k, k, 4) == p[::k, ::k][:, None, :, None]).all())
++
+ def _outside(m):
+     """Pixels of mask m connected (4-way) to the picture's border through m."""
+     from collections import deque
+@@ -692,7 +713,13 @@ def jpeg_review(path, scale=6):
+ # up/down frames use a lighter skin tone (223,165,123) on 30 pixels next to (214,153,110) (1-2 DS colour steps apart).
+ # DiegoWT's May bike sheet (16 colours): a gold (200,152,56) on 12 pixels next to her hair's (208,152,72).
+ # Changed pixels: screenshots/sprites/community_bike_merges.png
+-EXTRA_MERGES = {232: {(223, 165, 123): (214, 153, 110)}, 241: {(200, 152, 56): (208, 152, 72)}}
++# Wolfang62's Birch (16 colours; the page allows edits with credit): the single closest pair by the near-identical
++# measure (NEAR: largest channel difference, 13; 1-2 DS colour steps) is a brown (96,56,51) on 6 pixels (one shadow
++# pixel at the hand in each side frame) and the hair's (88,64,64); merged into the more used one. (In CIE Lab the two
++# dark hair browns (64,48,48) / (88,64,64) are a little closer, but merging them would recolour 439 pixels: the hair
++# loses its dark shading.) Before/after: screenshots/birch_sprite/birch_overworld_review.png
++EXTRA_MERGES = {232: {(223, 165, 123): (214, 153, 110)}, 241: {(200, 152, 56): (208, 152, 72)},
++                104: {(96, 56, 51): (88, 64, 64)}}
+ 
+ def _merge_extra(frames, code):
+     m = EXTRA_MERGES.get(code)
+@@ -990,6 +1017,9 @@ def analyze():
+     row('Wally front 127 (with FRONT_MERGES)', [_merge_front(crop('trainers_hyo', WALLY['front']), 127)])
+     fr = wally_plan()
+     row('Wally overworld 87 (CalculusNova)', [f for f, _, _ in fr], sum(l for _, l, _ in fr))
++    fr = ess_walk_plan('birch')
++    row('Birch overworld 104 (Wolfang62, as drawn)', [f for f, _, _ in fr], sum(l for _, l, _ in fr))
++    row('Birch overworld 104 (with EXTRA_MERGES)', _merge_extra([f for f, _, _ in fr], 104))
+     from PIL import Image
+     g = Image.open(os.path.join(INCOMING, 'brendan_front_hyo-oppa.gif'))
+     gf = []
+@@ -1033,6 +1063,14 @@ def build_wally_ow():
+                                         "CalculusNova (walking frames without the backpack; right = left mirrored)")
+     return [f'{os.path.relpath(folder, ROOT)} ({n} colours)']
+ 
++def build_birch_ow():
++    fr = ess_walk_plan('birch')
++    assert all(l == 0 for _, l, _ in fr)
++    folder, n, merges = write_overworld(104, 'prof-birch', [f for f, _, _ in fr], 'Prof. Birch (every Birch object)',
++                                        "community: src/sprites/community/incoming/birch_sheet_Wolfang62.png by "
++                                        "Wolfang62 (one colour merged: EXTRA_MERGES[104])")
++    return [f'{os.path.relpath(folder, ROOT)} ({n} colours)']
++
+ def merges_review(path):
+     """The extra-merged sheets (EXTRA_MERGES): every frame as drawn / as installed, changed pixels in magenta, 6x."""
+     plans = {232: brendan_plan()[232][1], 241: may_d_plan()[241][1]}
+@@ -1072,6 +1110,8 @@ def build(parts):
+         f, lay, rep = write_front(127)
+         out.append(f'{os.path.relpath(f, ROOT)} on layout {lay} ({rep["colours"]} colours, shift {rep["shift"]})')
+         out += build_wally_ow()
++    if 'birch' in parts:
++        out += build_birch_ow()
+     return out
+ 
+ 
+@@ -1118,7 +1158,7 @@ def review(path=None):
+     import mcss as _m
+     import sprite_upgrade as U
+     rows = []
+-    for code in list(BRENDAN_NAMES) + list(MAY_NAMES) + list(GRUNT_CODES.values()) + [353, 87]:
++    for code in list(BRENDAN_NAMES) + list(MAY_NAMES) + list(GRUNT_CODES.values()) + [353, 87, 104]:
+         folder = [os.path.join(GEN5, 'overworld', d) for d in os.listdir(os.path.join(GEN5, 'overworld'))
+                   if d.split('-')[0] == f'{code:03d}'][0]
+         rel = os.path.relpath(os.path.join(SRC, 'overworld', os.path.basename(folder)), ROOT)
+@@ -1230,21 +1270,25 @@ def may_d_plan():
+ # the pedalling sheet's first frame per direction stands still instead (16 colours: one merge, EXTRA_MERGES[241])
+ BIKE_STILLS = 'may_bike'
+ 
+-def archie_d_plan():
+-    dy = ess_feet_dy('archie_d')
++def ess_walk_plan(name):
++    """12 frames (up, down, left, right x stand, step, step) of an Essentials walking sheet: columns 0, 1, 3."""
++    dy = ess_feet_dy(name)
+     out = []
+     for d in DIRS:
+         for c in (0, 1, 3):
+-            fr, lost = ess_place(ess_cell('archie_d', d, c), 32, dy)
++            fr, lost = ess_place(ess_cell(name, d, c), 32, dy)
+             out.append((fr, lost, f'{d}'))
+     return out
+ 
++def archie_d_plan():
++    return ess_walk_plan('archie_d')
++
+ 
+ if __name__ == '__main__':
+     cmd = sys.argv[1] if len(sys.argv) > 1 else 'analyze'
+     if cmd == 'analyze':
+         print('\n'.join(analyze()))
+     elif cmd == 'build':
+-        print('\n'.join(build(sys.argv[2:] or ['brendan', 'maxie', 'grunts', 'may', 'archie', 'wally'])))
++        print('\n'.join(build(sys.argv[2:] or ['brendan', 'maxie', 'grunts', 'may', 'archie', 'wally', 'birch'])))
+     elif cmd == 'review':
+         print(review(*sys.argv[2:3]))
+diff --git a/src/sprites/community/incoming/CREDITS.md b/src/sprites/community/incoming/CREDITS.md
+index 8fb504b..753ca1c 100644
+--- a/src/sprites/community/incoming/CREDITS.md
++++ b/src/sprites/community/incoming/CREDITS.md
+@@ -12,6 +12,7 @@
+ | archie_oras_DiegoWT.png | Archie overworld (4x4) | DiegoWT (spriter), Kyledove (commissioned): "Please, give the proper credits" (deviantart.com/diegowt, GEN 6 ORAS - Team Aqua Leader Archie) |
+ | trainer_collection_hyo-oppa.png (user, 2026-10-12) | DS-style Gen III trainer battle fronts (15 figures, 1x); used: Wally's front only (top row, third figure) | hyo-oppa: "give credit if used" on the sheet; the DeviantArt page (deviantart.com/hyo-oppa/art/DS-Style-Gen-III-Pokemon-Trainer-Battle-Sprites-878566572) allows use in ROM hacks with credit and edits with credit (no "do not edit"). Wally has 19 colours: 3 pairs merged for the DS's 15 (b2tools/sprite_community.py FRONT_MERGES; screenshots/wally_sprite/wally_front_merges.png) |
+ | wally_sheet_CalculusNova.png (user, 2026-10-12) | Wally overworld: walk, run, watering, bike, each with and without a backpack (Gen 3-sized 16x32 cells); used: the walking frames without the backpack, unchanged | CalculusNova, CC BY-NC-SA 3.0 (deviantart.com/calculusnova/art/Wally-Multiple-Sprites-167000415) |
++| birch_sheet_Wolfang62.png (user, 2026-10-12) | Professor Birch overworld (walking, 4 directions x 4 frames; Pokémon Essentials sheet at 2x); used as Birch's NEW overworld (every Birch object) | Wolfang62 (DeviantArt, published 2021-07-16): free to use with credit, edits allowed (the user checked). 16 colours: one pair merged for the DS's 15, a 6-pixel brown into the hair's (b2tools/sprite_community.py EXTRA_MERGES[104]; screenshots/birch_sprite/birch_overworld_review.png). Credit line: "Wolfang62: Professor Birch (overworld)" |
+ 
+ The grunt sheet exists only as a JPEG (the user checked): the user approved converting it ("we may have to convert").
+ Snap each pixel to the sheet's real colours (never redraw) and show the user a zoomed before/after.
+diff --git a/src/sprites/community/incoming/birch_sheet_Wolfang62.png b/src/sprites/community/incoming/birch_sheet_Wolfang62.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..026cf17b849fee8f728eadb65e2ac75fa2080461
+GIT binary patch
+literal 5069
+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
+
+literal 0
+HcmV?d00001
+
+diff --git a/src/sprites_gen5/overworld/104-prof-birch/frame_00.png b/src/sprites_gen5/overworld/104-prof-birch/frame_00.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..4e44d4264655537d33771553da4a88045e8fe83e
+GIT binary patch
+literal 379
+zcmeAS@N?(olHy`uVBq!ia0vp^3LwnF3?v&v(vJfvg8-ipS0LRG;Q=Hg92^`B3|_qW
+z@#Dgd0|y@5SWr<=&@f}hf(i$Rj0}g485s@%9R>y#munrS164DY1o;IsI6S+N2ITzo
+zba4!+n3J3!A#i|W;S>oujX%{4NrsI-eg3?EdY@ZyWk4Of(9>Fma7A{df0_rj8q_jy
+z*E`K<WSMb*#pvXL0|!*jFF11Gz>*K~osEr+tSVXzMI0?`tADT?PHtq(vE<-xSRx_8
+z;^4=;`UgjuoU*bH>*34QO*}k3HU1Cv-g56y*EsS0Kt5AQ!)J!-!+WdwZ%O(&txZiy
+z_#t@ez#qmp!4tSz>)F0fo$^Hfg`tK6%RiPYe|MI@KewMvKBFQhI(ZlWk{iFe!WkkO
+zs()UrR$$EZ5AT?^o{=$OI@^vzHpeSB*z`1JpG$OEp&@N(U?ADtEFk5hU}nK$z{rpz
+XZOPm4e9AUpATW5k`njxgN@xNAbPAAT
+
+literal 0
+HcmV?d00001
+
+diff --git a/src/sprites_gen5/overworld/104-prof-birch/frame_01.png b/src/sprites_gen5/overworld/104-prof-birch/frame_01.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..cee67e993079f1ba52e2bf0b5ded7112e78ff02e
+GIT binary patch
+literal 384
+zcmV-`0e}99P)<h;3K|Lk000e1NJLTq001BW001Ba0{{R3fmCP50000mP)t-s0001h
+zSV#Z>09ZgkKrk@q==k{1xWK^R*r0fDaDbSYpm;z)XlOu)m}o#yh%hiX(|tgf00001
+zbW%=J06^y0W&i*H{z*hZRCt`dP&-b<Fc5tiXclSnfr^H;k_*sKL7R#u4Lt=1-~_7`
+z4c&?(a0HGLX`3w~%gq+skOT=>B;;Mq7$-gfmONvR-@Nxcz<;dBr5r|C!zYqECGD&|
+z4G_gUSEpt`TyU^zXrWHZA0tPwNJ1C^&<r_1YM%o*=4#4DTo#0NoPdb)PWcH)*_t4F
+zu@^-ifktOQ6mJHnlZDQ**vwxBW9x<1=DFT_*`?Xt;i!Z41yGU$=CXgQob1`puhxxy
+zVm~ZM4>v0V(CvBoN2*d5v~}r?T|Ej@#X(3*!pUof&v8Ijf8Dq8w_sAm^*Ay2*KbMA
+e7<aYo6F2}`(n138--{ps0000<MNUMnLSTX;>76D3
+
+literal 0
+HcmV?d00001
+
+diff --git a/src/sprites_gen5/overworld/104-prof-birch/frame_02.png b/src/sprites_gen5/overworld/104-prof-birch/frame_02.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..1172466a3ae9d281b3ee90ee5cae7968cec67582
+GIT binary patch
+literal 376
+zcmV-;0f+vHP)<h;3K|Lk000e1NJLTq001BW001Ba0{{R3fmCP50000mP)t-s0001h
+zSV#Z>09ZgkKrk@q==k{1xWK^R*r0fDaDbSYpm;z)XlOu)m}o#yh%hiX(|tgf00001
+zbW%=J06^y0W&i*H_DMuRRCt`dP&;k{F%W%gXd)Ew(g#+Xo(2v=1LvTjMO#9HH~}qP
+zBzn$}qz4%{l&}jDB1q9Jnlbx10V8=n&(AaC2fV^O7ed&8EN4n;)ri}1v&8s3G5T(E
+zMvEN<`4g20d?|XAOo=Od0IH1;P(d03s4}W~5f_C)t|uVF`DnfZG_NL%v#jTN83PC7
+z173ZXZ#s{R@7L{&bDr{MRTKf!p9~=2Z-B~?79$6&_s!oB(1jkC$-gnXdxgjHz}o8i
+z1>mE%SvtnG|IIwBSrGUAzW8w`lTdAuCPSFKDJ5w#B&nZP>&o{F32!2Wm<R-lDFYr&
+W{z3JF5-G?40000<MNUMnLSTZ|oRzQu
+
+literal 0
+HcmV?d00001
+
+diff --git a/src/sprites_gen5/overworld/104-prof-birch/frame_03.png b/src/sprites_gen5/overworld/104-prof-birch/frame_03.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..78c8b3d055c767aac282906e49eb4df813daadaa
+GIT binary patch
+literal 410
+zcmV;L0cHM)P)<h;3K|Lk000e1NJLTq001BW001Ba0{{R3fmCP50000mP)t-s0001h
+zSV#Z>09ZgkKrk@q==k{1xWK^R*r0fDaDbSYpm;z)XlOu)m}o#yh%hiX(|tgf00001
+zbW%=J06^y0W&i*I7)eAyRCt_YU>Fd<2%(f19w_{KfDmBfXAt<n_zuhj3&=Atd|>#m
+zfDlk%0<jd}0!$a=n3ex2TmrFKzyb;aLLUqmnBPHFFv$yDW;SNN#IFQXA@I>ifkBDk
+zy#Q3jzpwwLH!!T0XMG2C2a_3t9@yw#=b$RM1QZ`IJXGM~gIT+e;ok#>dkp^$zyvsN
+zGdeIh{(cE}SYO~I1_h>xeiNVqoCjF7HZiR-WjG0S2jjm75+7G<2;5_Zs!(8Hkj^<1
+ztpH|$1pWk^G5G(ULFa-GRK<k73?Bj*0zUjbFahFH?&XJ{Ed9V8BkSo34Oph5;dk#|
+z4?P4A56;7-t_)mr4kN-|*@%IG$rv1jP(2_vD0r{{04~)`EmJK+;s5{u07*qoM6N<$
+Ef+Z-MNB{r;
+
+literal 0
+HcmV?d00001
+
+diff --git a/src/sprites_gen5/overworld/104-prof-birch/frame_04.png b/src/sprites_gen5/overworld/104-prof-birch/frame_04.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..e24d282c4e888c6a58b2a267c3b22509d2eb1780
+GIT binary patch
+literal 412
+zcmV;N0b~A&P)<h;3K|Lk000e1NJLTq001BW001Ba0{{R3fmCP50000mP)t-s0001h
+zSV#Z>09ZgkKrk@q==k{1xWK^R*r0fDaDbSYpm;z)XlOu)m}o#yh%hiX(|tgf00001
+zbW%=J06^y0W&i*I8c9S!RCt_YV4w$JgiuNh4;21AKnO7LGYEWOd<SNN1>_kRJ}~@O
+zKnN%>fmjM~0j3Lb%*y{1E`iuAU;zaIp$`TO%<rHonB;{nGaEBs;#Y#H5cp`Mz@WtN
+zUI41%-`D@r8yHs0v%Z76gUO6R4{Y?Wb5Ipr0*Vh99x8D0!K~fK@b3Y`J%)b=;10XZ
+z=)mCk`z73AoQ;zh6qqK~O@OP|s<nw}mFWeL60krIgM{>I4Uj8fDj1}5&O|F1$Zvo;
+z{n1Z@|L+-enm)iBmSXcclHvOXUP)J|76suW0t_MtF1W({Vp{(1{`-3j0Z3u0z_mb-
+z;ValjV1a-4z9qb800%N0Fd1hfyMuv&G4wcElqrD&odEz|9!!c^tkYxw0000<MNUMn
+GLSTYtW~K`O
+
+literal 0
+HcmV?d00001
+
+diff --git a/src/sprites_gen5/overworld/104-prof-birch/frame_05.png b/src/sprites_gen5/overworld/104-prof-birch/frame_05.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..1c6302f71d6b9a81967c7f1edc06c9d80b056692
+GIT binary patch
+literal 418
+zcmV;T0bTxyP)<h;3K|Lk000e1NJLTq001BW001Ba0{{R3fmCP50000mP)t-s0001h
+zSV#Z>09ZgkKrk@q==k{1xWK^R*r0fDaDbSYpm;z)XlOu)m}o#yh%hiX(|tgf00001
+zbW%=J06^y0W&i*IAW1|)RCt_YV4w$JgiuNh4;21AKnO7LGYEWOd<SNN1>_kRJ}~@O
+zKnN%>fmjM~0j3Lb%*y{1E`iuAU;zaIp$`TO%<rHonB;{nGaEBs;#Y#H5cp`Mz@WtN
+zUI41%-`D@r8yHs0v%Z76gUO6R4{Y?Wb5Ipr0*Vh99x8D0!K~fK@b3Y`J%)b=U;>=C
+z866lLe}nx37U*l7#Gt@5u@ff1`QWP7CZ<)U8xVeBkdR)jA@FAcRA9Y=fppH9Xt3WP
+zDn8X1{D04&$@B>7Fz)4_KSVNoUn{a_9z@00fD1<i7(@;WfHXl24fuEe{XO<lkO#nF
+z%5<CI|A#P!dvHVlefa+&>>rp91>DI-Feb!|?^grS;!6qQDh37y0G^#vioS|E4gdfE
+M07*qoM6N<$f)zWcNB{r;
+
+literal 0
+HcmV?d00001
+
+diff --git a/src/sprites_gen5/overworld/104-prof-birch/frame_06.png b/src/sprites_gen5/overworld/104-prof-birch/frame_06.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..29629062f4ccd9a0d94f38478d7f269fc1a0cdfb
+GIT binary patch
+literal 362
+zcmeAS@N?(olHy`uVBq!ia0vp^3LwnF3?v&v(vJfvg8-ipS0LRG;Q=Hg92^`B3|_qW
+z@#Dgd0|y@5SWr<=&@f}hf(i$Rj0}g485s@%9R>y#munrS164DY1o;IsI6S+N2IRc(
+zba4!+n3J3!A#i|WVT6o?#5V=b%@$l-T)P!k7VJ6jrN6QBJ0mkQvv9;g)wX&rp8p4m
+z5*XRsSlJla*c3OYL^!lg?rd~?X&>`||Gxb(ZZ82*0bN!uH7}l?blC??JU&HC|KAzO
+zJ8;<i`98JNk$vIQL$+#-46WV;jMLcr_S+lOJaJxe<H#1x2Mr7-78)#%5BmH0o%|$*
+z?&g&}0jd!Ui=O&V;XC|Hp+jcI6P^?Qm=h1)Ir!PQ;UGg~!q=_K882*T3J~A&&$P}t
+z=wt2VS2`=WG!m?;zYBP+FxKGyW8a>`cDR<+V?q)W1IKHtt8q_))&l*^;OXk;vd$@?
+F2>_H~hqC|x
+
+literal 0
+HcmV?d00001
+
+diff --git a/src/sprites_gen5/overworld/104-prof-birch/frame_07.png b/src/sprites_gen5/overworld/104-prof-birch/frame_07.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..2a4519255c68f0384f2267c6c5d7f194c96ae37a
+GIT binary patch
+literal 371
+zcmeAS@N?(olHy`uVBq!ia0vp^3LwnF3?v&v(vJfvg8-ipS0LRG;Q=Hg92^`B3|_qW
+z@#Dgd0|y@5SWr<=&@f}hf(i$Rj0}g485s@%9R>y#munrS164DY1o;IsI6S+N2IPG7
+zba4!+n3J5afIXolK!=Zqr+Pw5qzo%-YwUy&i@1be#}6F&-O$+B$hqc$&|!Plw)zCi
+z4GheSnVK1xn*}0-bQT;sdE~%?FY<aH+TY7RW>xLr>X^pFDy+(OY%^a0Bb%CKV}1Ed
+zegzh}f4@&1S<rl;=%L(XhlWF{I~YzgAHOdzVfRTfBq!;XNPz>xlYkkQ^;iC@{Lb&$
+zaMbb2yE6Gnm;bx4%A|!l2tDAb_$+;>edpuzA#8059eEuNZgVb0r-<6eir=v~z<7;C
+zFksiNtc^{Io2D5vTL0T0*u<`Q*mj=Tb^hHGlbt&o9Z#}m8E#TAV_^6^(Y9e?gt8IP
+O^9-J@elF{r5}E)aDvh21
+
+literal 0
+HcmV?d00001
+
+diff --git a/src/sprites_gen5/overworld/104-prof-birch/frame_08.png b/src/sprites_gen5/overworld/104-prof-birch/frame_08.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..8a9f482bb4e162e1b23eb463689fe1109a66fe51
+GIT binary patch
+literal 374
+zcmeAS@N?(olHy`uVBq!ia0vp^3LwnF3?v&v(vJfvg8-ipS0LRG;Q=Hg92^`B3|_qW
+z@#Dgd0|y@5SWr<=&@f}hf(i$Rj0}g485s@%9R>y#munrS164DY1o;IsI6S+N2IPG4
+zba4!+n3J5afIXolK!=Zqr+Pw5qzo%-YwUy&i@1be#}6F&-O$+B$hqc$&|!Plw)zCi
+z4GheSnVK1xn*}0-bQT;sdE~%?FY<aH+TY7RW>xLr>X^pFDy+(OY%^a0Bb%CKV}1Ed
+zegzh}f4@&1S<rl;=%L(XhlWF{I~YzgAHOdzVfRTfBq!;XNPz>xlYkkQ^;iC@{Lb&$
+zaP(k^pN7oIm-UNE{;dsm_+<Bdx5w2BoE};d75@wk_O`re<5&|mA?>kC(8te*l9?M>
+zJ<<#^*IF%J(v!04)4bi~e&)@r3(|DLw|YHcx8_-O^oVC8=S^82FAW<J28Klwt&A(I
+SD@B3+XYh3Ob6Mw<&;$U%&XCRk
+
+literal 0
+HcmV?d00001
+
+diff --git a/src/sprites_gen5/overworld/104-prof-birch/frame_09.png b/src/sprites_gen5/overworld/104-prof-birch/frame_09.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..2a70c275b9f1dfaae56cf54188ebae046d4793b7
+GIT binary patch
+literal 358
+zcmeAS@N?(olHy`uVBq!ia0vp^3LwnF3?v&v(vJfvg8-ipS0LRG;Q=Hg92^`B3|_qW
+z@#Dgd0|y@5SWr<=&@f}hf(i$Rj0}g485s@%9R>y#munrS164DY1o;IsI6S+N2IM^P
+zba4!+n3J3!A#i|WVT^>tKN$z1g38|wjgjm+hgj6^*(C)0sAgT*)H%QLrF=8ff5sVH
+zt`k@$GeodPG&puPIyPS9R9tXk!I$s@4;1eNOxw)F<8{vGO@U}V&pF$Knk5GsE)>mh
+zJoukceo}*uu=e6Zd-roRw*TSzZ{G2zxPkjm@}I+6YZZE*h^w)>wwLzbSCBa-ps1#_
+zhB<9xgJ<a5-|f@8lr85zJS?AmjnhMGhGc}ghvLrW#>T7qWu}`B@b<BHE52*WN=%q5
+z`fE3X<(krW_ZqACq+Xq3`hR|5#?JL0_`_Wo8Md>SRun#adIacS22WQ%mvv4FO#t(M
+Bjt&3-
+
+literal 0
+HcmV?d00001
+
+diff --git a/src/sprites_gen5/overworld/104-prof-birch/frame_10.png b/src/sprites_gen5/overworld/104-prof-birch/frame_10.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..bd09c625ebd9a8ea124d8b4a2522d0b866bc185b
+GIT binary patch
+literal 367
+zcmeAS@N?(olHy`uVBq!ia0vp^3LwnF3?v&v(vJfvg8-ipS0LRG;Q=Hg92^`B3|_qW
+z@#Dgd0|y@5SWr<=&@f}hf(i$Rj0}g485s@%9R>y#munrS164DY1o;IsI6S+N2IRc;
+zba4!+n3J5afIXolK#zx~o=<^u$DY~)2i7o)B{B);%NuC?+1nIw@W}ZCU-}&z|1<cs
+zDtR<{GOS_JIk4c!fdvO%v<L*G1pLxY_#lv{aXONbO*LJuY)6+p+jBVsyPyPz49hbM
+z9{g|M_jH)nIW_R%z4(>`&UJ17rCt769$@`v_%Cs4*aWvv+>@IY9o}_3Ux4rT@hml!
+zHOy(7970%L)WmA_Jt<*Z#``-`U4e6jkwJyiA@*fWieDlvg9MCpZMR##`u&NWL-deO
+z)au%)0^2lVxr8gWGcRIIdMm{quGU)Ju_K`<kf~jYX+gmS28K^AW<iWbs-U1{@O1Ta
+JS?83{1OQqgip2l`
+
+literal 0
+HcmV?d00001
+
+diff --git a/src/sprites_gen5/overworld/104-prof-birch/frame_11.png b/src/sprites_gen5/overworld/104-prof-birch/frame_11.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..5cb4a5d9a0d11bfdefed11bf419883f059e9e991
+GIT binary patch
+literal 367
+zcmeAS@N?(olHy`uVBq!ia0vp^3LwnF3?v&v(vJfvg8-ipS0LRG;Q=Hg92^`B3|_qW
+z@#Dgd0|y@5SWr<=&@f}hf(i$Rj0}g485s@%9R>y#munrS164DY1o;IsI6S+N2IRc;
+zba4!+n3J5afIXolK#zx~o=<^u$DY~)2i7o)B{B);%NuC?+1nIw@W}ZCU-}&z|1<cs
+zDtR<{GOS_JIk4c!fdvO%v<L*G1pLxY_#lv{aXONbO*LJuY)6+p+jBVsyPyPz49hbM
+z9{g|M_jH)nIW_R%z4(>`&UJ17rCt769$@`v_%Cs4*aWvv+>@IY9o}_3Ux4p-c%qup
+z8s@Z34k35yJ{7FAm~{E3{GTmpa~o7HEI;t!fx;wf2{o?R)Tmya58V?Z-|J5jQ)`Uu
+zj@Uafbi>&slWQVQMKg^4ub)v`e@;=U*|X8}sN}2q9W#XbW-v1(&9=~Q(6ZtHdYr-2
+L)z4*}Q$iB}XBm?T
+
+literal 0
+HcmV?d00001
+
+diff --git a/src/sprites_gen5/overworld/104-prof-birch/palette.pal b/src/sprites_gen5/overworld/104-prof-birch/palette.pal
+new file mode 100644
+index 0000000..fca9436
+--- /dev/null
++++ b/src/sprites_gen5/overworld/104-prof-birch/palette.pal
+@@ -0,0 +1,19 @@
++JASC-PAL
++0100
++16
++0 0 0
++128 88 72
++0 0 0
++88 64 64
++64 48 48
++232 232 248
++248 208 184
++192 192 224
++216 160 120
++112 112 128
++152 152 160
++120 64 64
++104 104 64
++136 152 104
++64 80 136
++48 48 56
+diff --git a/src/sprites_gen5/overworld/104-prof-birch/sprite.json b/src/sprites_gen5/overworld/104-prof-birch/sprite.json
+new file mode 100644
+index 0000000..da6418d
+--- /dev/null
++++ b/src/sprites_gen5/overworld/104-prof-birch/sprite.json
+@@ -0,0 +1,32 @@
++{
++ "kind": "overworld",
++ "code": 104,
++ "sheet": 110,
++ "frames": 12,
++ "size": [
++  32,
++  32
++ ],
++ "controller": 3,
++ "textures": [
++  "t4x4x12.0",
++  "t4x4x12.1",
++  "t4x4x12.2",
++  "t4x4x12.3",
++  "t4x4x12.4",
++  "t4x4x12.5",
++  "t4x4x12.6",
++  "t4x4x12.7",
++  "t4x4x12.8",
++  "t4x4x12.9",
++  "t4x4x12.10",
++  "t4x4x12.11"
++ ],
++ "palette": "t4x4x12",
++ "name": "prof-birch",
++ "note": "Prof. Birch (every Birch object)",
++ "source": "community: src/sprites/community/incoming/birch_sheet_Wolfang62.png by Wolfang62 (one colour merged: EXTRA_MERGES[104])",
++ "colours": 15,
++ "merged_colours": [],
++ "made_by": "b2tools/sprite_community.py"
++}

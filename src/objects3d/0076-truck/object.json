@@ -1,0 +1,14 @@
+{
+ "code": 118,
+ "name": "truck",
+ "what": "OBJ_EVENT_GFX_TRUCK: the moving trucks of Brendan's and May's families in Littleroot (models_truck_ext.py's model, formerly exterior building res 460)",
+ "record_from": 8201,
+ "record": {
+  "collWidth": 1,
+  "collHeight": 1,
+  "offX": 1,
+  "offY": 0,
+  "offZ": 0
+ },
+ "made_by": "b2tools/models_objects.py"
+}

@@ -1,0 +1,394 @@
+{
+ "map": "JaggedPass",
+ "id": "MAP_JAGGED_PASS",
+ "layout": "LAYOUT_JAGGED_PASS",
+ "music": "MUS_PETALBURG_WOODS",
+ "region_map_section": "MAPSEC_JAGGED_PASS",
+ "weather": "WEATHER_NONE",
+ "connections": null,
+ "npcs": [
+  {
+   "local_id": 1,
+   "x": 10,
+   "y": 8,
+   "gfx": "OBJ_EVENT_GFX_HIKER",
+   "movement": "MOVEMENT_TYPE_FACE_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "JaggedPass_EventScript_Eric",
+   "texts": {
+    "JaggedPass_Text_EricIntro": "MT. CHIMNEY's JAGGED PASS…\\pNow this is what I've always wanted\\nin a mountain.\\pThis jagged bumpiness…\\nIt rocks my soul!$",
+    "JaggedPass_Text_EricDefeat": "Losing left me bitter!$",
+    "JaggedPass_Text_EricPostBattle": "Yes, I did lose at POKéMON…\\pBut, when it comes to the love of\\nthe mountains, I have you beat!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 2,
+   "x": 16,
+   "y": 35,
+   "gfx": "OBJ_EVENT_GFX_CAMPER",
+   "movement": "MOVEMENT_TYPE_FACE_LEFT_AND_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "JaggedPass_EventScript_Ethan",
+   "texts": {
+    "JaggedPass_Text_EthanIntro": "JAGGED PASS is hard to walk on.\\nIt's a good place for training.$",
+    "JaggedPass_Text_EthanDefeat": "It was all over while we were still\\ntrying to find a good footing…$",
+    "JaggedPass_Text_EthanPostBattle": "If I had an ACRO BIKE, I'd be able to\\njump ledges.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 3,
+   "x": 23,
+   "y": 24,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_JAGGED_PASS_BURN_HEAL",
+   "script": "JaggedPass_EventScript_ItemBurnHeal",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 4,
+   "x": 9,
+   "y": 21,
+   "gfx": "OBJ_EVENT_GFX_PICNICKER",
+   "movement": "MOVEMENT_TYPE_FACE_UP_AND_RIGHT",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "JaggedPass_EventScript_Diana",
+   "texts": {
+    "JaggedPass_Text_DianaIntro": "This place isn't your casual hike.\\nIt's not suited for a picnic.$",
+    "JaggedPass_Text_DianaDefeat": "Ohhh, no!\\nThe ground is too bumpy…$",
+    "JaggedPass_Text_DianaPostBattle": "Did you know?\\pSome people cleverly ride their\\nbicycles up this horribly bumpy pass.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 5,
+   "x": 16,
+   "y": 19,
+   "gfx": "OBJ_EVENT_GFX_MAGMA_MEMBER_M",
+   "movement": "MOVEMENT_TYPE_FACE_UP",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_JAGGED_PASS_MAGMA_GUARD",
+   "script": "JaggedPass_EventScript_MagmaHideoutGuard",
+   "texts": {
+    "JaggedPass_Text_GruntIntro": "Wah!\\nWhat are you doing here?\\pWhat am I doing in a place like this?\\pWhat business is it of yours?$",
+    "JaggedPass_Text_GruntDefeat": "Urrrgh…\\pI should've ducked into our HIDEOUT\\nright away…$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 6,
+   "x": 14,
+   "y": 25,
+   "gfx": "OBJ_EVENT_GFX_PICNICKER",
+   "movement": "MOVEMENT_TYPE_FACE_RIGHT",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "JaggedPass_EventScript_Autumn",
+   "texts": {
+    "JaggedPass_Text_AutumnIntro": "I climb this hill every day.\\nI have confidence in my strength!$",
+    "JaggedPass_Text_AutumnDefeat": "Hmm…\\nWhat went wrong?$",
+    "JaggedPass_Text_AutumnPostBattle": "What is that odd rock protrusion\\na little up the hill from here?$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 7,
+   "x": 18,
+   "y": 25,
+   "gfx": "OBJ_EVENT_GFX_CYCLING_TRIATHLETE_M",
+   "movement": "MOVEMENT_TYPE_FACE_LEFT",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "JaggedPass_EventScript_Julio",
+   "texts": {
+    "JaggedPass_Text_JulioIntro": "Aiyeeh! It's awfully scary to shoot\\ndown the mountain in one go!$",
+    "JaggedPass_Text_JulioDefeat": "I feel like I'm falling apart…$",
+    "JaggedPass_Text_JulioPostBattle": "My bicycle bounced around so much,\\nmy rear end's sore…$"
+   },
+   "complex": true
+  }
+ ],
+ "signs": [
+  {
+   "x": 8,
+   "y": 10,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 8,
+    "y": 10,
+    "elevation": 3,
+    "item": "ITEM_FULL_HEAL",
+    "flag": "FLAG_HIDDEN_ITEM_JAGGED_PASS_FULL_HEAL"
+   }
+  },
+  {
+   "x": 7,
+   "y": 29,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 7,
+    "y": 29,
+    "elevation": 3,
+    "item": "ITEM_GREAT_BALL",
+    "flag": "FLAG_HIDDEN_ITEM_JAGGED_PASS_GREAT_BALL"
+   }
+  }
+ ],
+ "warps": [
+  {
+   "id": 0,
+   "x": 14,
+   "y": 40,
+   "dest_map": "MAP_ROUTE112",
+   "dest_warp_id": "2"
+  },
+  {
+   "id": 1,
+   "x": 15,
+   "y": 40,
+   "dest_map": "MAP_ROUTE112",
+   "dest_warp_id": "3"
+  },
+  {
+   "id": 2,
+   "x": 13,
+   "y": 5,
+   "dest_map": "MAP_MT_CHIMNEY",
+   "dest_warp_id": "2"
+  },
+  {
+   "id": 3,
+   "x": 14,
+   "y": 5,
+   "dest_map": "MAP_MT_CHIMNEY",
+   "dest_warp_id": "3"
+  },
+  {
+   "id": 4,
+   "x": 16,
+   "y": 18,
+   "dest_map": "MAP_MAGMA_HIDEOUT_1F",
+   "dest_warp_id": "0"
+  }
+ ],
+ "coord_events": [
+  {
+   "type": "weather",
+   "x": 13,
+   "y": 15,
+   "elevation": 3,
+   "weather": "COORD_EVENT_WEATHER_SUNNY"
+  },
+  {
+   "type": "weather",
+   "x": 21,
+   "y": 12,
+   "elevation": 3,
+   "weather": "COORD_EVENT_WEATHER_VOLCANIC_ASH"
+  },
+  {
+   "type": "weather",
+   "x": 14,
+   "y": 15,
+   "elevation": 3,
+   "weather": "COORD_EVENT_WEATHER_SUNNY"
+  },
+  {
+   "type": "weather",
+   "x": 18,
+   "y": 17,
+   "elevation": 3,
+   "weather": "COORD_EVENT_WEATHER_SUNNY"
+  },
+  {
+   "type": "weather",
+   "x": 22,
+   "y": 19,
+   "elevation": 3,
+   "weather": "COORD_EVENT_WEATHER_SUNNY"
+  },
+  {
+   "type": "trigger",
+   "x": 21,
+   "y": 15,
+   "elevation": 3,
+   "var": "VAR_JAGGED_PASS_STATE",
+   "var_value": "1",
+   "script": "JaggedPass_EventScript_OpenMagmaHideout",
+   "texts": {
+    "JaggedPass_Text_BoulderShakingInResponseToEmblem": "Oh! This boulder is shaking in response\\nto the MAGMA EMBLEM!$"
+   },
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 22,
+   "y": 20,
+   "elevation": 3,
+   "var": "VAR_JAGGED_PASS_STATE",
+   "var_value": "1",
+   "script": "JaggedPass_EventScript_OpenMagmaHideout",
+   "texts": {
+    "JaggedPass_Text_BoulderShakingInResponseToEmblem": "Oh! This boulder is shaking in response\\nto the MAGMA EMBLEM!$"
+   },
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 21,
+   "y": 20,
+   "elevation": 3,
+   "var": "VAR_JAGGED_PASS_STATE",
+   "var_value": "1",
+   "script": "JaggedPass_EventScript_OpenMagmaHideout",
+   "texts": {
+    "JaggedPass_Text_BoulderShakingInResponseToEmblem": "Oh! This boulder is shaking in response\\nto the MAGMA EMBLEM!$"
+   },
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 14,
+   "y": 15,
+   "elevation": 3,
+   "var": "VAR_JAGGED_PASS_STATE",
+   "var_value": "1",
+   "script": "JaggedPass_EventScript_OpenMagmaHideout",
+   "texts": {
+    "JaggedPass_Text_BoulderShakingInResponseToEmblem": "Oh! This boulder is shaking in response\\nto the MAGMA EMBLEM!$"
+   },
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 13,
+   "y": 15,
+   "elevation": 3,
+   "var": "VAR_JAGGED_PASS_STATE",
+   "var_value": "1",
+   "script": "JaggedPass_EventScript_OpenMagmaHideout",
+   "texts": {
+    "JaggedPass_Text_BoulderShakingInResponseToEmblem": "Oh! This boulder is shaking in response\\nto the MAGMA EMBLEM!$"
+   },
+   "complex": true
+  }
+ ],
+ "wild": {
+  "land_mons": {
+   "encounter_rate": 20,
+   "slot_rates": [
+    20,
+    20,
+    10,
+    10,
+    10,
+    10,
+    5,
+    5,
+    4,
+    4,
+    1,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_NUMEL",
+     "min": 21,
+     "max": 21
+    },
+    {
+     "species": "SPECIES_NUMEL",
+     "min": 21,
+     "max": 21
+    },
+    {
+     "species": "SPECIES_MACHOP",
+     "min": 21,
+     "max": 21
+    },
+    {
+     "species": "SPECIES_NUMEL",
+     "min": 20,
+     "max": 20
+    },
+    {
+     "species": "SPECIES_SPOINK",
+     "min": 20,
+     "max": 20
+    },
+    {
+     "species": "SPECIES_MACHOP",
+     "min": 20,
+     "max": 20
+    },
+    {
+     "species": "SPECIES_SPOINK",
+     "min": 21,
+     "max": 21
+    },
+    {
+     "species": "SPECIES_MACHOP",
+     "min": 22,
+     "max": 22
+    },
+    {
+     "species": "SPECIES_NUMEL",
+     "min": 22,
+     "max": 22
+    },
+    {
+     "species": "SPECIES_SPOINK",
+     "min": 22,
+     "max": 22
+    },
+    {
+     "species": "SPECIES_NUMEL",
+     "min": 22,
+     "max": 22
+    },
+    {
+     "species": "SPECIES_SPOINK",
+     "min": 22,
+     "max": 22
+    }
+   ]
+  }
+ }
+}

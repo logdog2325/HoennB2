@@ -1,0 +1,13 @@
+I’m the Day-Care Man.{be01}\nI help take care of the precious\nPokémon of Trainers.{be01}\nIf you’d like me to raise your Pokémon,\nhave a word with my wife.
+Ah, it’s you!{be01}\nWe were raising your Pokémon, and my\ngoodness, were we surprised!{be01}\nYour Pokémon had an Egg!{be01}\nWe don’t know how it got there,\nbut your Pokémon had it.{be01}\nYou do want it, yes?
+I really will keep it.\nYou do want this, yes?
+Well then, I’ll keep it.\nThanks!
+You have no room for it...\nCome back when you’ve made room.
+{0100:0} received the Egg from\nthe Day-Care Man.
+Take good care of it.
+Ah, it’s you! Good to see you.\nYour {0100:1}’s doing fine.
+Ah, it’s you! Your {0100:1} and\n{0100:2} are doing fine.
+The two seem to get along very well.
+The two seem to get along.
+The two don’t seem to like each other.
+The two prefer to play with other\nPokémon than each other.

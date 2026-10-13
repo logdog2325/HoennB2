@@ -1,0 +1,7 @@
+{
+ "map": "emerald/Underwater_Route125",
+ "look": "uw",
+ "underwater": true,
+ "uw_effect": false,
+ "_doc": "emerald_caves 2026-10-12: Emerald's Underwater_Route125 (pokeemerald) as Emerald's world reads it; the underwater look of Underwater1-4 (look uw, no underwater effect: the Abyssal Ruins plugin's twelve zone slots hold Sapphire's underwater maps). Reached only by the abnormal weather's dive spots on Route 125 (Phase 4); doors to Underwater_MarineCave."
+}

@@ -1,0 +1,35 @@
+{
+ "_doc": "Emerald-only story objects of chapters 11 and 13 (emerald_ch11_gameclear, 2026-10-12; format: b2tools/patches/story.py; notes/EMERALD_STORY.md 2.3: a new e_<chapter>.json adds objects in an Emerald build). Scott in the Ever Grande Pokémon Center (pokeemerald EverGrandeCity_PokemonCenter_1F object 4; script 6 of the Emerald overlay src/field_scripts/emerald/0016_room_EverGrandeCity_PokemonCenter_1F.s; room tile = pokeemerald's tile) and the Southern Island's other Lati (Latias, model 4509; the shared ch13.json object 102 is Latios, 4510: the scene shows the one that is NOT the roamer, by VAR_ROAMER_POKEMON, scenes/emerald/SouthernIsland_Interior.inc).",
+ "objects": [
+  {
+   "kind": "npc",
+   "map": "EverGrandeCity_PokemonCenter_1F",
+   "at": [
+    9,
+    4
+   ],
+   "uid": 4,
+   "model": 289,
+   "script": 6,
+   "dir": 0,
+   "move": 15,
+   "flag": "FLAG_HIDE_EVER_GRANDE_POKEMON_CENTER_1F_SCOTT",
+   "what": "Scott (pokeemerald OBJ_EVENT_GFX_SCOTT, FACE_UP; shown by the zone init once the 6th Badge is owned, gone after he speaks or when Sidney's room is entered)"
+  },
+  {
+   "kind": "npc",
+   "map": "SouthernIsland_Interior",
+   "at": [
+    13,
+    2
+   ],
+   "uid": 103,
+   "model": 4509,
+   "script": 0,
+   "dir": 1,
+   "move": 15,
+   "flag": "FLAG_HIDE_SOUTHERN_ISLAND_UNCHOSEN_EON_DUO_MON",
+   "what": "Latias (the island's Pokémon when the player told Mom 'Blue': Latios roams; hidden until the slab scene; the shared object 102 is Latios)"
+  }
+ ]
+}

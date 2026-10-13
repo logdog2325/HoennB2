@@ -1,0 +1,8 @@
+Hey, man, is our leader really going\nto awaken that thing?
+Sounds like it, yeah. But I heard\nwe need a Meteorite to do it.
+Oh, I get it now. That’s why the rest\nof the crew went out to Fallarbor.
+You got it. And until they come back,\nwe’re not to let anyone pass, right.
+Mt. Chimney{be01}\n“For Lavaridge Town or the summit,\nplease take the Cable Car.”
+Mt. Chimney Cable Car\n“A short walk ↑ way!”
+Route 112\n← Lavaridge Town
+Eh, I’d like to get to Mauville, but if\nI went down these ledges, it’d be no{be00}\neasy matter to get back to Lavaridge.

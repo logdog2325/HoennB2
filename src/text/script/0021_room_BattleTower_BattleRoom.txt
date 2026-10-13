@@ -1,0 +1,6 @@
+We will restore your Pokémon to\nfull health.
+You will be facing opponent no. {0100:1}.\nAre you ready?
+Would you like to save and\nquit the game?
+Would you like to cancel your Battle\nRoom challenge?
+Saving...\nDon’t turn off the power.
+{0100:0} saved the game.

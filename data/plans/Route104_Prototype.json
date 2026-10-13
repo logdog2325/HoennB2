@@ -1,0 +1,47 @@
+{
+ "map": "Route104_Prototype",
+ "size": [
+  1,
+  1
+ ],
+ "tilesets": [
+  "gTileset_General",
+  "gTileset_Rustboro"
+ ],
+ "tiles": [
+  [
+   "prop"
+  ]
+ ],
+ "walkable": [
+  [
+   true
+  ]
+ ],
+ "trees": [],
+ "trees_below_edge": [],
+ "buildings": [],
+ "signs": [
+  {
+   "x": 7,
+   "y": 26,
+   "script": "Route104_Prototype_EventScript_160D1C"
+  },
+  {
+   "x": 18,
+   "y": 8,
+   "script": "Route104_Prototype_EventScript_160D25"
+  }
+ ],
+ "warps": [
+  {
+   "id": 0,
+   "x": 5,
+   "y": 24,
+   "dest": "MAP_ROUTE104_PROTOTYPE_PRETTY_PETAL_FLOWER_SHOP",
+   "dest_warp": "0"
+  }
+ ],
+ "connections": null,
+ "unclassified": {}
+}

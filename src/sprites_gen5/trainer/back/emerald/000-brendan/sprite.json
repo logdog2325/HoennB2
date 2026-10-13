@@ -1,0 +1,77 @@
+{
+ "kind": "trainer",
+ "side": "back",
+ "sprite": 0,
+ "archive": 72,
+ "files": {
+  "static": 0,
+  "parts": 1,
+  "palette": 7
+ },
+ "name": "brendan",
+ "note": "Brendan (player back), Emerald outfit",
+ "source": "community: src/sprites/community/incoming/emerald/brendan_emerald_hyo-oppa.png by hyo-oppa (cut, placed, palette-indexed; no colour merged) (back frames 1, 3, 4 of 5)",
+ "layout": "cells, quads and throw timing of Black 2 back sprite 0; whole-figure poses",
+ "colours": 14,
+ "merged_colours": [],
+ "node_edits": [
+  {
+   "mc": 0,
+   "node": 0,
+   "seq": 3
+  },
+  {
+   "mc": 0,
+   "node": 1,
+   "seq": 0,
+   "x": 7,
+   "y": -56
+  },
+  {
+   "mc": 1,
+   "node": 0,
+   "seq": 3
+  },
+  {
+   "mc": 1,
+   "node": 1,
+   "seq": 0,
+   "x": 7,
+   "y": -56
+  },
+  {
+   "mc": 2,
+   "node": 0,
+   "seq": 4,
+   "x": -42,
+   "y": -63
+  },
+  {
+   "mc": 2,
+   "node": 1,
+   "seq": 1,
+   "x": 21,
+   "y": -36
+  },
+  {
+   "mc": 3,
+   "node": 0,
+   "seq": 5,
+   "x": -30,
+   "y": -58
+  },
+  {
+   "mc": 4,
+   "node": 0,
+   "seq": 5,
+   "x": -30,
+   "y": -58
+  }
+ ],
+ "still_multicells": [
+  2,
+  3,
+  4
+ ],
+ "made_by": "b2tools/sprite_community_emerald.py"
+}

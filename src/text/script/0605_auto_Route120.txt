@@ -1,0 +1,32 @@
+Steven: Hm? {0100:0}, hi.\nIt’s been a while.{be01}\nThere’s something here that you can’t\nsee, right?{be01}\nNow, if I were to use this device on\nthe invisible obstacle...{be01}\nNo, no. Rather than describing it,\nI should just show you.{be00}\nThat would be more fun.{be01}\n{0100:0}, are your Pokémon ready for\nbattle?
+Steven: No?{be01}\nI’ll wait here, so you can get ready.
+Steven: {0100:0}, are your Pokémon\nready for battle?
+Steven: {0100:0}, show me your true\npower as a Trainer!
+Steven used the Devon Scope.{be01}\nAn invisible Pokémon became completely\nvisible!{be01}\nThe startled Pokémon attacked!
+Steven: I see...\nYour battle style is intriguing.{be01}\nYour Pokémon have obviously grown\nsince I first met you in Dewford.{be01}\nI’d like you to have this\nDevon Scope.{be01}\nWho knows, there may be other\nconcealed Pokémon.
+Steven: {0100:0}.{be01}\nI enjoy seeing Pokémon and Trainers\nwho strive together.{be01}\nI think you’re doing great.{be01}\nWell, let’s meet again somewhere.
+Give the case a shake, and out pops\na Pokéblock...{be01}\nAnd that Pokéblock is caught and eaten\nby a Pokémon...{be01}\nIt’s an expression of love, isn’t it?
+Yes, yes.\nYou understand what I mean.{be01}\nYou should take this.
+Oh... But it is important to make your\nown impressions, I guess...{be01}\nYou can have this.
+I think that Berry is rare.\nI hope you raise it with loving care.
+I’ll get more Berries from the\nBerry Master.
+Something unseeable is in the way.
+Something unseeable is in the way.{be01}\nWant to use the Devon Scope?
+{0100:0} used the Devon Scope.{be01}\nAn invisible Pokémon became completely\nvisible!{be01}\nThe startled Pokémon attacked!
+Too bad!\nThe Bag is full...
+Gabby: We’ll be keeping an eye out\nfor you!
+Ty: You’re a natural!\nGot me some prime footage right here!
+Gabby: Oh! We’ve just spotted a tough-\nlooking Trainer here of all places!{be01}\nOkay, roll camera!\nLet’s get this interview.
+Ty: Hey, lookie here! A tough-looking\nTrainer here, of all places!{be00}\nCamera’s rolling!
+Gabby: Is there a strong Trainer\nanywhere with a lot of Pokémon?
+Ty: Do you only have the one Pokémon\nand that’s it?{be01}\nIf you had more Pokémon, it’d make for\nbetter footage, but...
+Gabby: Oh! You’re {0100:0}! Hi!\nDo you remember us from last time?{be01}\nCan you show us how much stronger\nyou’ve become? Okay, cue interview!
+Ty: Hey, lookie here!\nI remember you!{be01}\nI’ll get this battle all on this\nhere camera!
+Gabby: Awesome! Awesome!\nWho are you?!{be01}\nI knew we were onto something wild\nwhen we spotted you!{be01}\nOh, please let me explain. We travel\naround everywhere interviewing all{be00}\nsorts of Trainers.{be01}\nSo, would you give us a bit of your time\nfor an interview?
+Gabby: Wow, you are something!{be01}\nYou’ve gotten a lot stronger - a lot -\nsince we last battled.{be01}\nWe were right about you when we\nspotted you as a hot Trainer.{be01}\nSo, anyway, what do you think?\nAre you willing to give us an interview{be00}\nthis time?
+Anyway, what do you think?\nDo you want to be interviewed again?
+You will?\nThank you!{be01}\nOkay, I need you to describe your\nfeelings about our battle, but it{be00}\nhas to be short and sweet. Go!
+Gabby: Mmm, yeah!\nThat’s the perfect clincher!{be01}\nI get the feeling that this will make\na great TV show.{be01}\nThere’s a chance that they’ll air this\non TV, so make sure to look for us!{be01}\nOkay!\nWe’ll be seeing you!
+Gabby: Oh...{be01}\nOkay, but don’t give up!\nWe’ll be keeping an eye out for you!
+Route 120\n← Fortree City
+→ Route 121\n← Route 120

@@ -1,0 +1,10 @@
+{
+ "_doc": "Terrain modules (b2tools/terrain/<name>.py) used in normal builds (agents test with HOENN_TERRAIN=<name>).",
+ "modules": [
+  "water",
+  "heights",
+  "ground",
+  "ship",
+  "palms"
+ ]
+}

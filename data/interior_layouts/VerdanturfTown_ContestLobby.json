@@ -1,0 +1,212 @@
+{
+ "_doc": "Verdanturf Contest Lobby (Sapphire 15x7, zone 60) in the look of Nimbasa's Musical Theater lobby (texture set 305). Back wall = Sapphire's curtain rows 0-1; floor from row 1 (the row along the wall: door to the hall at (1,1), PC (8,1), contest-winner portraits (11,1)/(13,1)). Reception counter (3-7, 2-3): two white counters (shelf03) as its sides and table02 as its front. Berry Blenders (10,3)/(12,5): Black 2 has no blender; a small table (desk02) with a Poké Ball (mball01) on it stands in. The orange sofas along the east wall (14, 3-6) are red armchairs (chair03) in a niche of the east wall (Sapphire draws them in the wall; the tiles stay walkable).",
+ "map": "VerdanturfTown_ContestLobby",
+ "style": "sp_theater",
+ "floor": [
+  [
+   0,
+   1,
+   14,
+   6
+  ]
+ ],
+ "floor_extra": [
+  [
+   15,
+   3,
+   15.75,
+   7
+  ]
+ ],
+ "mats": [
+  {
+   "tex": "in24_mat",
+   "src": 305,
+   "rect": [
+    5,
+    6,
+    6,
+    6
+   ],
+   "border": 0.25,
+   "border_units": 4,
+   "y": 0,
+   "_what": "door mat"
+  }
+ ],
+ "decals": [
+  {
+   "tex": "in76_caten1",
+   "src": 378,
+   "at": [
+    4.5
+   ],
+   "y": 6,
+   "w": 40,
+   "h": 42,
+   "gap": 2,
+   "_what": "curtain"
+  },
+  {
+   "tex": "in76_caten1",
+   "src": 378,
+   "at": [
+    10.0
+   ],
+   "y": 6,
+   "w": 40,
+   "h": 42,
+   "gap": 2,
+   "_what": "curtain"
+  }
+ ],
+ "furniture": [
+  {
+   "m": "cabin_door_r",
+   "tile": [
+    1,
+    1
+   ],
+   "wall": "N",
+   "gap": 1,
+   "_what": "door to the hall (Sapphire warp 2)"
+  },
+  {
+   "m": "shelf03",
+   "rot": 270,
+   "tiles": [
+    3,
+    2,
+    3,
+    3
+   ],
+   "_what": "counter, west side"
+  },
+  {
+   "m": "table02",
+   "tiles": [
+    4,
+    3,
+    6,
+    3
+   ],
+   "_what": "counter, front"
+  },
+  {
+   "m": "shelf03",
+   "rot": 90,
+   "tiles": [
+    7,
+    2,
+    7,
+    3
+   ],
+   "_what": "counter, east side"
+  },
+  {
+   "m": "pc01",
+   "tile": [
+    8,
+    1
+   ],
+   "wall": "N",
+   "_what": "PC"
+  },
+  {
+   "m": "art01",
+   "tile": [
+    11,
+    1
+   ],
+   "wall": "N",
+   "gap": 2,
+   "y": 18,
+   "_what": "contest winner portrait 1"
+  },
+  {
+   "m": "art01",
+   "tile": [
+    13,
+    1
+   ],
+   "wall": "N",
+   "gap": 2,
+   "y": 18,
+   "_what": "contest winner portrait 2"
+  },
+  {
+   "m": "desk02",
+   "tile": [
+    10,
+    3
+   ],
+   "_what": "Berry Blender (table)"
+  },
+  {
+   "m": "mball01",
+   "tile": [
+    10,
+    3
+   ],
+   "y": 10,
+   "_what": "Berry Blender (top)"
+  },
+  {
+   "m": "desk02",
+   "tile": [
+    12,
+    5
+   ],
+   "_what": "Berry Blender (table)"
+  },
+  {
+   "m": "mball01",
+   "tile": [
+    12,
+    5
+   ],
+   "y": 10,
+   "_what": "Berry Blender (top)"
+  },
+  {
+   "m": "chair03",
+   "rot": 270,
+   "tile": [
+    14,
+    3
+   ],
+   "wall": "E",
+   "_what": "sofa"
+  },
+  {
+   "m": "chair03",
+   "rot": 270,
+   "tile": [
+    14,
+    4
+   ],
+   "wall": "E",
+   "_what": "sofa"
+  },
+  {
+   "m": "chair03",
+   "rot": 270,
+   "tile": [
+    14,
+    5
+   ],
+   "wall": "E",
+   "_what": "sofa"
+  },
+  {
+   "m": "chair03",
+   "rot": 270,
+   "tile": [
+    14,
+    6
+   ],
+   "wall": "E",
+   "_what": "sofa"
+  }
+ ]
+}

@@ -1,0 +1,43 @@
+Mom: See, {0100:0}?\nIsn’t it nice in here, too?
+Fugiiiiih!
+Huggoh, uggo uggo…
+Like child, like father.{be01}\nMy husband is as wild about Pokémon\nas our child.{be01}\nIf he’s not at his Lab, he’s likely\nscrabbling about in grassy places.
+There is a movie on TV.{be01}\nTwo men are dancing on a big piano\nkeyboard.{be01}\nBetter get going!
+Mom: See, {0100:0}?\nIsn’t it nice in here, too?
+The mover’s Pokémon do all the work\nof moving us in and cleaning up after.{be00}\nThis is so convenient!{be01}\n{0100:0}, your room is upstairs.\nGo check it out, dear!{be01}\nDad bought you a new clock to mark\nour move here.{be00}\nDon’t forget to set it!
+Mom: Well, {0100:0}?{be01}\nAren’t you interested in seeing your\nvery own room?
+Mom: {0100:0}.{be01}\nGo set the clock in your room, honey.
+Mom: Oh! {0100:0}, {0100:0}!\nQuick! Come quickly!
+Mom: Look! It’s Petalburg Gym!\nMaybe Dad will be on!
+Interviewer: ...We brought you this\nreport from in front of Petalburg Gym.
+Mom: Oh... It’s over.{be01}\nI think Dad was on, but we missed him.\nToo bad.
+Oh, yes.\nOne of Dad’s friends lives in town.{be01}\nProf. Birch is his name.{be01}\nHe lives right next door, so you should\ngo over and introduce yourself.
+Mom: See you, honey!
+Mom: Did you introduce yourself to\nProf. Birch?
+Oh, hello. And you are?{be01}\n... ... ... ... ... ... ... ... ...\n... ... ... ... ... ... ... ... ...{be01}\nOh, you’re {0100:0}, our new next-door\nneighbor! Hi!{be01}\nWe have a daughter about the same\nage as you.{be01}\nOur daughter was excited about making\na new friend.{be01}\nOur daughter is upstairs, I think.
+Like child, like father.{be01}\nMy husband is as wild about Pokémon\nas our child.{be01}\nIf he’s not at his Lab, he’s likely\nscrabbling about in grassy places.
+Fugiiiiih!
+Huggoh, uggo uggo…
+Oh, May went out to Route 103\njust a little while ago.{be01}\nLike father, like child.\nMay can’t stay quietly at home.
+I think it’s wonderful for people to\ntravel with Pokémon.{be01}\nBut you should go home every so often\nto let your mother know you’re okay.{be01}\nShe might not say it, but I’m sure she\nworries about you, {0100:0}.
+That May!{be01}\nI guess our child is too busy with\nPokémon to notice that you came{be00}\nto visit, {0100:0}.
+It’s the instruction booklet for the\nRunning Shoes.{be01}\n“Press the B Button to run while\nwearing your Running Shoes.{be01}\n“Lace up your Running Shoes and hit\nthe road running!”
+Mom: Oh? Did Dad give you that Badge?{be01}\nThen here’s something from your Mom!
+Don’t push yourself too hard, dear.\nYou can always come home.{be01}\nGo for it, honey!
+Too bad!\nThe Bag is full...
+Mom: How are you doing, {0100:0}?\nYou look a little tired.{be01}\nI think you should rest a bit.
+Mom: Take care, honey!
+Dad: Hm?{be01}\nHey, it’s {0100:0}!{be01}\nIt’s been a while since I saw you,\nbut you look…stronger, somehow.{be01}\nThat’s the impression I get.\nBut your old man hasn’t given up yet!{be01}\nOh, yes, I have something for you.\nThis came to you from someone named{be00}\nMr. Briney.
+Dad: Hm, a Ticket for a ferry?{be01}\nIf I recall, there are ferry ports in\nSlateport and Lilycove.
+I’d better get back to Petalburg Gym.{be01}\nMom, thanks for looking after the house\nwhile I’m away.
+Mom: That Dad of yours…{be01}\nHe comes home for the first time in a\nwhile, but all he talks about is Pokémon.{be01}\nHe should relax and stay a little longer.
+Mom: Oh, {0100:0}! A letter came for\nyou while you were away.{be01}\nIt’s from the ferry company in\nLilycove City.{be01}\n“To our new Champion. Please accept\nthis Eon Ticket as our gift.”{be01}\nA ticket for a voyage to an island\nfar in the south! Here you go, honey.
+Mom: The ferry leaves from Lilycove\nCity’s harbor. Have fun, honey!
+We bring you this emergency\nnews flash!{be01}\nIn various Hoenn locales, there have\nbeen reports of a Bzzt…colored{be00}\nPokémon in flight.{be01}\nThe identity of this Pokémon is\ncurrently unknown.{be01}\nWe now return you to the regular\nmovie program.
+Mom: Is that a breaking news story?
+Mom: {0100:0}, did you catch that?{be01}\nWhat color did the announcer say\nthat Pokémon was?
+Mom: Well, isn’t that something!\nThere are still unknown Pokémon.
+Red
+Blue
+Huh?\nWho… Who are you?{be01}\n… … … … … … … …\n… … … … … … … …{be01}\nOh, you’re {0100:0}.\nSo your move was today.{be01}\nUm… I’m May.\nGlad to meet you!{be01}\nI…\nI have this dream of becoming friends{be00}\nwith Pokémon all over the world.{be01}\nI… I heard about you, {0100:0}, from\nmy dad, Prof. Birch.{be01}\nI was hoping that you would be nice,\n{0100:0}, and that we could be friends.{be01}\nOh, this is silly, isn’t it?\nI… I’ve just met you, {0100:0}.{be01}\nEheheh…{be01}\nOh, no! I forgot!{be01}\nI was supposed to go help Dad catch\nsome wild Pokémon!{be01}\n{0100:0}, I’ll catch you later!
+Hi, neighbor!{be01}\nDo you already have your\nown Pokémon?

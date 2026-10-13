@@ -1,0 +1,19 @@
+{
+ "_doc": "Emerald-only caves' wild-table files (a/1/2/7 ids; converter/gen_caves_emerald.py: free Unova files that no Sapphire or Emerald zone and no data/hoenn_encounters.json entry uses)",
+ "ArtisanCave_1F": 98,
+ "ArtisanCave_B1F": 98,
+ "DesertUnderpass": 97,
+ "MagmaHideout_1F_Emerald": 137,
+ "MagmaHideout_2F_1R": 137,
+ "MagmaHideout_2F_2R": 137,
+ "MagmaHideout_2F_3R": 137,
+ "MagmaHideout_3F_1R": 137,
+ "MagmaHideout_3F_2R": 137,
+ "MagmaHideout_3F_3R": 137,
+ "MagmaHideout_4F": 137,
+ "MeteorFalls_StevensCave": 135,
+ "MirageTower_1F": 136,
+ "MirageTower_2F": 136,
+ "MirageTower_3F": 136,
+ "MirageTower_4F": 136
+}

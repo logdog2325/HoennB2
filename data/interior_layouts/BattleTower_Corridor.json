@@ -1,0 +1,124 @@
+{
+ "_doc": "Battle Tower corridor (Sapphire 17x5, zone 336; reached only by script: the elevator's warp 255 -> (8,1)). Nimbasa's Battle Test look (style sp_battle, area 306) as the Lobby. Sapphire draws a 2-tile wall (rows 0-1) with four battle-room doors (x 1, 4, 12, 15) and the elevator door (x 8); its player walks along the wall's foot (row 1) while the attendant walks along row 2. Here row 1 is the floor row along the back wall (as the Lobby's row 1): the doors are Black 2's door_h5_in (the Lobby's blue double door, open/close animations, prop type 13) against the wall north of row 1 at x 1, 4, 12 (Lv. 50) and 15 (Lv. 100), the elevator door elevator01 at x 8 (its cab hidden behind the wall: keep it closed). Collision stays Sapphire's except the player's scripted path along row 1, (8,1)-(15,1), made walkable (unblock): the arrival tile (8,1) and the walk to the doors. Doors (12,0)/(15,0) stay solid: the player's last walk_up enters the door (Black 2's own scripts walk actors into doors and elevators: 1264 Movement_04CC). Plants at Sapphire's corners (0,4), (16,4). Origin (1,1) (default) as the other three Battle Tower rooms. No warps (script-only room). Doors (pwt_tower, 2026-10-11): \"doorway\": true cuts each door_h5_in's width out of the back wall with a black recess behind it (models_interior.py doorway_spans), so the halves swing open into a dark doorway as in Black 2's League (chunk 899) instead of into the wall; the doors stand 1 unit inside the doorway (gap -1) and 1 lower (y -1, top under the wall's black cap), so no edge of a swung half shows over the wall top.",
+ "map": "BattleTower_Corridor",
+ "style": "sp_battle",
+ "floor": [
+  [
+   0,
+   1,
+   16,
+   4
+  ]
+ ],
+ "unblock": [
+  [
+   8,
+   1
+  ],
+  [
+   9,
+   1
+  ],
+  [
+   10,
+   1
+  ],
+  [
+   11,
+   1
+  ],
+  [
+   12,
+   1
+  ],
+  [
+   13,
+   1
+  ],
+  [
+   14,
+   1
+  ],
+  [
+   15,
+   1
+  ]
+ ],
+ "furniture": [
+  {
+   "m": "door_h5_in",
+   "tile": [
+    1,
+    1
+   ],
+   "wall": "N",
+   "gap": -1,
+   "doorway": true,
+   "y": -1,
+   "_what": "battle-room door (Sapphire (1,0), stays closed)"
+  },
+  {
+   "m": "door_h5_in",
+   "tile": [
+    4,
+    1
+   ],
+   "wall": "N",
+   "gap": -1,
+   "doorway": true,
+   "y": -1,
+   "_what": "battle-room door (Sapphire (4,0), stays closed)"
+  },
+  {
+   "m": "elevator01",
+   "tile": [
+    8,
+    1
+   ],
+   "wall": "N",
+   "gap": -23,
+   "dx": -2,
+   "_what": "elevator door (Sapphire (8,0)); cab behind the wall"
+  },
+  {
+   "m": "door_h5_in",
+   "tile": [
+    12,
+    1
+   ],
+   "wall": "N",
+   "gap": -1,
+   "doorway": true,
+   "y": -1,
+   "_what": "Lv. 50 battle-room door (Sapphire (12,0))"
+  },
+  {
+   "m": "door_h5_in",
+   "tile": [
+    15,
+    1
+   ],
+   "wall": "N",
+   "gap": -1,
+   "doorway": true,
+   "y": -1,
+   "_what": "Lv. 100 battle-room door (Sapphire (15,0))"
+  },
+  {
+   "m": "plant01",
+   "tile": [
+    0,
+    4
+   ],
+   "_what": "plant (Sapphire (0,4))"
+  },
+  {
+   "m": "plant01",
+   "tile": [
+    16,
+    4
+   ],
+   "_what": "plant (Sapphire (16,4))"
+  }
+ ]
+}

@@ -1,0 +1,333 @@
+{
+ "_doc": "Mossdeep Space Center 2F (Sapphire 16x10; zone 338, area 338). Window walk (rows 2-3) behind Sapphire's long railing (1-12, 4) = a thin railing block (fac_railing); the white pillar (0, 1-4) = a white block (fac_pillar); consoles (1-2, 1) (15, 1) = machine02/machine01; window band (3-11, row 1) = in57_mado pictures; doorway down (13,1) = elevator01. Desks (2-3/5-6/8-9/11-12, 7) = shelf03 counters, three with monitor01 PCs as in Sapphire; red stools = cushions chushion01.",
+ "map": "MossdeepCity_SpaceCenter_2F",
+ "style": "fac_space",
+ "floor": [
+  [
+   0,
+   1,
+   15,
+   9
+  ]
+ ],
+ "block": [
+  [
+   1,
+   0
+  ],
+  [
+   2,
+   0
+  ],
+  [
+   15,
+   0
+  ]
+ ],
+ "blocks": [
+  {
+   "use": "fac_pillar",
+   "rect": [
+    0,
+    1,
+    0,
+    4
+   ],
+   "_what": "white pillar (0, 0-4)"
+  },
+  {
+   "use": "fac_railing",
+   "units": [
+    1.0,
+    4.4,
+    13.0,
+    4.6
+   ],
+   "_what": "railing (1-12, 4)"
+  }
+ ],
+ "decals": [
+  {
+   "tex": "in57_mado",
+   "src": 338,
+   "at": [
+    3.5
+   ],
+   "y": 18,
+   "w": 14,
+   "h": 14,
+   "gap": 1,
+   "_what": "window band (Sapphire row 1)"
+  },
+  {
+   "tex": "in57_mado",
+   "src": 338,
+   "at": [
+    4.5
+   ],
+   "y": 18,
+   "w": 14,
+   "h": 14,
+   "gap": 1,
+   "_what": "window band (Sapphire row 1)"
+  },
+  {
+   "tex": "in57_mado",
+   "src": 338,
+   "at": [
+    5.5
+   ],
+   "y": 18,
+   "w": 14,
+   "h": 14,
+   "gap": 1,
+   "_what": "window band (Sapphire row 1)"
+  },
+  {
+   "tex": "in57_mado",
+   "src": 338,
+   "at": [
+    6.5
+   ],
+   "y": 18,
+   "w": 14,
+   "h": 14,
+   "gap": 1,
+   "_what": "window band (Sapphire row 1)"
+  },
+  {
+   "tex": "in57_mado",
+   "src": 338,
+   "at": [
+    7.5
+   ],
+   "y": 18,
+   "w": 14,
+   "h": 14,
+   "gap": 1,
+   "_what": "window band (Sapphire row 1)"
+  },
+  {
+   "tex": "in57_mado",
+   "src": 338,
+   "at": [
+    8.5
+   ],
+   "y": 18,
+   "w": 14,
+   "h": 14,
+   "gap": 1,
+   "_what": "window band (Sapphire row 1)"
+  },
+  {
+   "tex": "in57_mado",
+   "src": 338,
+   "at": [
+    9.5
+   ],
+   "y": 18,
+   "w": 14,
+   "h": 14,
+   "gap": 1,
+   "_what": "window band (Sapphire row 1)"
+  },
+  {
+   "tex": "in57_mado",
+   "src": 338,
+   "at": [
+    10.5
+   ],
+   "y": 18,
+   "w": 14,
+   "h": 14,
+   "gap": 1,
+   "_what": "window band (Sapphire row 1)"
+  },
+  {
+   "tex": "in57_mado",
+   "src": 338,
+   "at": [
+    11.5
+   ],
+   "y": 18,
+   "w": 14,
+   "h": 14,
+   "gap": 1,
+   "_what": "window band (Sapphire row 1)"
+  }
+ ],
+ "furniture": [
+  {
+   "m": "machine02",
+   "tile": [
+    1,
+    1
+   ],
+   "wall": "N",
+   "_what": "console (1,1)"
+  },
+  {
+   "m": "machine01",
+   "tile": [
+    2,
+    1
+   ],
+   "wall": "N",
+   "_what": "console (2,1)"
+  },
+  {
+   "m": "machine01",
+   "tile": [
+    15,
+    1
+   ],
+   "wall": "N",
+   "_what": "console (15,1)"
+  },
+  {
+   "m": "elevator01",
+   "at": [
+    13.5,
+    1.5
+   ],
+   "wall": "N",
+   "gap": -23,
+   "dx": 6,
+   "_what": "doorway down to 1F (warp tile 13,1)"
+  },
+  {
+   "m": "shelf03",
+   "tiles": [
+    2,
+    7,
+    3,
+    7
+   ],
+   "_what": "desk (2-3, 7)"
+  },
+  {
+   "m": "monitor01",
+   "at": [
+    2.6,
+    7.5
+   ],
+   "y": 0,
+   "_what": "PC on the desk (2 units off the desk ends: their faces lay in one plane)",
+   "dx": -2
+  },
+  {
+   "m": "shelf03",
+   "tiles": [
+    5,
+    7,
+    6,
+    7
+   ],
+   "_what": "desk (5-6, 7)"
+  },
+  {
+   "m": "monitor01",
+   "at": [
+    5.6,
+    7.5
+   ],
+   "y": 0,
+   "_what": "PC on the desk (2 units off the desk ends: their faces lay in one plane)",
+   "dx": -2
+  },
+  {
+   "m": "shelf03",
+   "tiles": [
+    8,
+    7,
+    9,
+    7
+   ],
+   "_what": "desk (8-9, 7)"
+  },
+  {
+   "m": "shelf03",
+   "tiles": [
+    11,
+    7,
+    12,
+    7
+   ],
+   "_what": "desk (11-12, 7)"
+  },
+  {
+   "m": "monitor01",
+   "at": [
+    11.6,
+    7.5
+   ],
+   "y": 0,
+   "_what": "PC on the desk (2 units off the desk ends: their faces lay in one plane)",
+   "dx": -2
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    2,
+    3
+   ],
+   "_what": "stool"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    5,
+    3
+   ],
+   "_what": "stool"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    8,
+    3
+   ],
+   "_what": "stool"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    11,
+    3
+   ],
+   "_what": "stool"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    2,
+    8
+   ],
+   "_what": "stool"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    5,
+    8
+   ],
+   "_what": "stool"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    8,
+    8
+   ],
+   "_what": "stool"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    11,
+    8
+   ],
+   "_what": "stool"
+  }
+ ]
+}

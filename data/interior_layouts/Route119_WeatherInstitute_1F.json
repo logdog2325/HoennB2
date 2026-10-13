@@ -1,0 +1,241 @@
+{
+ "_doc": "Weather Institute 1F (Sapphire 20x13, zone 563), Juniper's lab look (set 285). Sapphire's inner walls are walls: the columns (3, 2-5) and (7, 2-5) and the partition (rows 8-9, open at 4-6). The PC (2,1) and the stairs up (17,1) stand in recesses of the back wall. Beds (0-1, 2-3) = bed01, bookcases (8-11, 2) = shelf01, the yellow PC desks (11-12, 16-17 at rows 4-6) = pcdesk02 with floor cushions on Sapphire's walkable green chairs, plants plant01.",
+ "map": "Route119_WeatherInstitute_1F",
+ "style": "lab",
+ "floor": [
+  [
+   0,
+   2,
+   2,
+   7
+  ],
+  [
+   4,
+   2,
+   6,
+   7
+  ],
+  [
+   8,
+   2,
+   19,
+   7
+  ],
+  [
+   3,
+   6,
+   3,
+   7
+  ],
+  [
+   7,
+   6,
+   7,
+   7
+  ],
+  [
+   4,
+   8,
+   6,
+   9
+  ],
+  [
+   0,
+   10,
+   19,
+   12
+  ],
+  [
+   2,
+   1,
+   2,
+   1
+  ],
+  [
+   17,
+   1,
+   17,
+   1
+  ]
+ ],
+ "mats": [
+  {
+   "tex": "chip_mat",
+   "src": 285,
+   "rect": [
+    9,
+    12,
+    10,
+    12
+   ],
+   "border": 0.25,
+   "border_units": 4,
+   "y": 0,
+   "_what": "door mat"
+  }
+ ],
+ "furniture": [
+  {
+   "m": "pc01",
+   "tile": [
+    2,
+    1
+   ],
+   "wall": "N",
+   "_what": "PC"
+  },
+  {
+   "m": "stair_u01",
+   "stair": [
+    17,
+    1
+   ],
+   "dir": "N",
+   "_what": "stairs up (warp tile 17,1)"
+  },
+  {
+   "m": "bed01",
+   "tiles": [
+    0,
+    2,
+    1,
+    3
+   ],
+   "wall": "N",
+   "_what": "bed"
+  },
+  {
+   "m": "shelf01",
+   "tiles": [
+    8,
+    2,
+    9,
+    2
+   ],
+   "wall": "N",
+   "_what": "bookcase"
+  },
+  {
+   "m": "shelf01",
+   "tiles": [
+    10,
+    2,
+    11,
+    2
+   ],
+   "wall": "N",
+   "_what": "bookcase"
+  },
+  {
+   "m": "plant01",
+   "tile": [
+    19,
+    2
+   ]
+  },
+  {
+   "m": "plant01",
+   "tile": [
+    1,
+    7
+   ]
+  },
+  {
+   "m": "plant01",
+   "tile": [
+    19,
+    7
+   ]
+  },
+  {
+   "m": "plant01",
+   "tile": [
+    8,
+    12
+   ]
+  },
+  {
+   "m": "plant01",
+   "tile": [
+    11,
+    12
+   ]
+  },
+  {
+   "m": "pcdesk02",
+   "tiles": [
+    11,
+    4,
+    11,
+    6
+   ]
+  },
+  {
+   "m": "pcdesk02",
+   "tiles": [
+    12,
+    4,
+    12,
+    6
+   ]
+  },
+  {
+   "m": "pcdesk02",
+   "tiles": [
+    16,
+    4,
+    16,
+    6
+   ]
+  },
+  {
+   "m": "pcdesk02",
+   "tiles": [
+    17,
+    4,
+    17,
+    6
+   ]
+  },
+  {
+   "m": "chushion02",
+   "tile": [
+    10,
+    5
+   ],
+   "_what": "chair (walkable)"
+  },
+  {
+   "m": "chushion02",
+   "tile": [
+    13,
+    5
+   ],
+   "_what": "chair (walkable)"
+  },
+  {
+   "m": "chushion02",
+   "tile": [
+    15,
+    5
+   ],
+   "_what": "chair (walkable)"
+  },
+  {
+   "m": "chushion02",
+   "tile": [
+    18,
+    5
+   ],
+   "_what": "chair (walkable)"
+  }
+ ],
+ "inner_walls": {
+  "top": {
+   "tex": "in04_wlab01",
+   "src": 285,
+   "size": 16
+  },
+  "_what": "sweep_rooms 2026-10-07: Sapphire's thin partitions are light-topped blocks, not black slabs (models_interior inner_walls)"
+ }
+}

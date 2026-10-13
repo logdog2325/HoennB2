@@ -1,0 +1,700 @@
+{
+ "_doc": "Chapter 12 (ch6 agent, 2026-10-07) story objects: Pacifidlog's and the southern routes' story people, the Regi puzzle (braille signs, Regis, triggers). Written by work/agents/ch6/tools/gen_objects.py.",
+ "objects": [
+  {
+   "kind": "npc",
+   "map": "PacifidlogTown_House2",
+   "at": [
+    3,
+    5
+   ],
+   "uid": 1,
+   "model": 44,
+   "script": 3,
+   "dir": 1,
+   "what": "the Fan Club Chairman's younger brother (Sapphire object 1, GENTLEMAN, FACE_DOWN)"
+  },
+  {
+   "kind": "npc",
+   "map": "PacifidlogTown_House2",
+   "at": [
+    8,
+    6
+   ],
+   "uid": 2,
+   "model": 4427,
+   "script": 4,
+   "dir": 1,
+   "move": 2,
+   "what": "happy Azurill (Sapphire object 2, AZURILL, LOOK_AROUND)"
+  },
+  {
+   "kind": "npc",
+   "map": "PacifidlogTown_House2",
+   "at": [
+    1,
+    7
+   ],
+   "uid": 3,
+   "model": 4427,
+   "script": 5,
+   "dir": 1,
+   "move": 2,
+   "what": "unhappy Azurill (Sapphire object 3, AZURILL, LOOK_AROUND)"
+  },
+  {
+   "kind": "npc",
+   "map": "PacifidlogTown_House3",
+   "at": [
+    4,
+    2
+   ],
+   "uid": 2,
+   "model": 22,
+   "script": 3,
+   "dir": 3,
+   "what": "the trader (Sapphire object 2, WOMAN_5, FACE_RIGHT)"
+  },
+  {
+   "kind": "npc",
+   "map": "PacifidlogTown_House4",
+   "at": [
+    7,
+    4
+   ],
+   "uid": 3,
+   "model": 10,
+   "script": 5,
+   "dir": 1,
+   "move": 3,
+   "areaw": 1,
+   "areah": 1,
+   "what": "the boy (where did you come from?) (Sapphire object 3, BOY_1, WANDER_AROUND)"
+  },
+  {
+   "kind": "npc",
+   "map": "PacifidlogTown_House5",
+   "at": [
+    9,
+    4
+   ],
+   "uid": 1,
+   "model": 28,
+   "script": 3,
+   "dir": 3,
+   "what": "the Mirage Island watcher (Sapphire object 1, OLD_MAN_1, FACE_RIGHT)"
+  },
+  {
+   "kind": "npc",
+   "map": "DesertRuins",
+   "at": [
+    8,
+    7
+   ],
+   "uid": 1,
+   "model": 350,
+   "script": 2,
+   "flag": "FLAG_HIDE_REGIROCK",
+   "dir": 1,
+   "what": "Regirock (Sapphire object 1, REGIROCK, FACE_DOWN)"
+  },
+  {
+   "kind": "npc",
+   "map": "IslandCave",
+   "at": [
+    8,
+    7
+   ],
+   "uid": 1,
+   "model": 351,
+   "script": 2,
+   "flag": "FLAG_HIDE_REGICE",
+   "dir": 1,
+   "what": "Regice (Sapphire object 1, REGICE, FACE_DOWN)"
+  },
+  {
+   "kind": "npc",
+   "map": "AncientTomb",
+   "at": [
+    8,
+    7
+   ],
+   "uid": 1,
+   "model": 352,
+   "script": 2,
+   "flag": "FLAG_HIDE_REGISTEEL",
+   "dir": 1,
+   "what": "Registeel (Sapphire object 1, REGISTEEL, FACE_DOWN)"
+  },
+  {
+   "kind": "sign",
+   "map": "SealedChamber_OuterRoom",
+   "at": [
+    5,
+    6
+   ],
+   "script": 2,
+   "what": "braille ABC",
+   "dir": 4
+  },
+  {
+   "kind": "sign",
+   "map": "SealedChamber_OuterRoom",
+   "at": [
+    6,
+    6
+   ],
+   "script": 2,
+   "what": "braille ABC",
+   "dir": 4
+  },
+  {
+   "kind": "sign",
+   "map": "SealedChamber_OuterRoom",
+   "at": [
+    4,
+    6
+   ],
+   "script": 2,
+   "what": "braille ABC",
+   "dir": 4
+  },
+  {
+   "kind": "sign",
+   "map": "SealedChamber_OuterRoom",
+   "at": [
+    11,
+    6
+   ],
+   "script": 3,
+   "what": "braille DEF",
+   "dir": 4
+  },
+  {
+   "kind": "sign",
+   "map": "SealedChamber_OuterRoom",
+   "at": [
+    10,
+    6
+   ],
+   "script": 3,
+   "what": "braille DEF",
+   "dir": 4
+  },
+  {
+   "kind": "sign",
+   "map": "SealedChamber_OuterRoom",
+   "at": [
+    12,
+    6
+   ],
+   "script": 3,
+   "what": "braille DEF",
+   "dir": 4
+  },
+  {
+   "kind": "sign",
+   "map": "SealedChamber_OuterRoom",
+   "at": [
+    5,
+    9
+   ],
+   "script": 4,
+   "what": "braille GHI",
+   "dir": 4
+  },
+  {
+   "kind": "sign",
+   "map": "SealedChamber_OuterRoom",
+   "at": [
+    4,
+    9
+   ],
+   "script": 4,
+   "what": "braille GHI",
+   "dir": 4
+  },
+  {
+   "kind": "sign",
+   "map": "SealedChamber_OuterRoom",
+   "at": [
+    6,
+    9
+   ],
+   "script": 4,
+   "what": "braille GHI",
+   "dir": 4
+  },
+  {
+   "kind": "sign",
+   "map": "SealedChamber_OuterRoom",
+   "at": [
+    11,
+    9
+   ],
+   "script": 5,
+   "what": "braille JKL",
+   "dir": 4
+  },
+  {
+   "kind": "sign",
+   "map": "SealedChamber_OuterRoom",
+   "at": [
+    10,
+    9
+   ],
+   "script": 5,
+   "what": "braille JKL",
+   "dir": 4
+  },
+  {
+   "kind": "sign",
+   "map": "SealedChamber_OuterRoom",
+   "at": [
+    12,
+    9
+   ],
+   "script": 5,
+   "what": "braille JKL",
+   "dir": 4
+  },
+  {
+   "kind": "sign",
+   "map": "SealedChamber_OuterRoom",
+   "at": [
+    5,
+    12
+   ],
+   "script": 6,
+   "what": "braille MNO",
+   "dir": 4
+  },
+  {
+   "kind": "sign",
+   "map": "SealedChamber_OuterRoom",
+   "at": [
+    4,
+    12
+   ],
+   "script": 6,
+   "what": "braille MNO",
+   "dir": 4
+  },
+  {
+   "kind": "sign",
+   "map": "SealedChamber_OuterRoom",
+   "at": [
+    6,
+    12
+   ],
+   "script": 6,
+   "what": "braille MNO",
+   "dir": 4
+  },
+  {
+   "kind": "sign",
+   "map": "SealedChamber_OuterRoom",
+   "at": [
+    11,
+    12
+   ],
+   "script": 7,
+   "what": "braille PQRS",
+   "dir": 4
+  },
+  {
+   "kind": "sign",
+   "map": "SealedChamber_OuterRoom",
+   "at": [
+    10,
+    12
+   ],
+   "script": 7,
+   "what": "braille PQRS",
+   "dir": 4
+  },
+  {
+   "kind": "sign",
+   "map": "SealedChamber_OuterRoom",
+   "at": [
+    12,
+    12
+   ],
+   "script": 7,
+   "what": "braille PQRS",
+   "dir": 4
+  },
+  {
+   "kind": "sign",
+   "map": "SealedChamber_OuterRoom",
+   "at": [
+    5,
+    15
+   ],
+   "script": 8,
+   "what": "braille TUV",
+   "dir": 4
+  },
+  {
+   "kind": "sign",
+   "map": "SealedChamber_OuterRoom",
+   "at": [
+    4,
+    15
+   ],
+   "script": 8,
+   "what": "braille TUV",
+   "dir": 4
+  },
+  {
+   "kind": "sign",
+   "map": "SealedChamber_OuterRoom",
+   "at": [
+    6,
+    15
+   ],
+   "script": 8,
+   "what": "braille TUV",
+   "dir": 4
+  },
+  {
+   "kind": "sign",
+   "map": "SealedChamber_OuterRoom",
+   "at": [
+    11,
+    15
+   ],
+   "script": 9,
+   "what": "braille WXYZ",
+   "dir": 4
+  },
+  {
+   "kind": "sign",
+   "map": "SealedChamber_OuterRoom",
+   "at": [
+    10,
+    15
+   ],
+   "script": 9,
+   "what": "braille WXYZ",
+   "dir": 4
+  },
+  {
+   "kind": "sign",
+   "map": "SealedChamber_OuterRoom",
+   "at": [
+    12,
+    15
+   ],
+   "script": 9,
+   "what": "braille WXYZ",
+   "dir": 4
+  },
+  {
+   "kind": "sign",
+   "map": "SealedChamber_OuterRoom",
+   "at": [
+    16,
+    6
+   ],
+   "script": 10,
+   "what": "braille .",
+   "dir": 4
+  },
+  {
+   "kind": "sign",
+   "map": "SealedChamber_OuterRoom",
+   "at": [
+    16,
+    9
+   ],
+   "script": 11,
+   "what": "braille ,",
+   "dir": 4
+  },
+  {
+   "kind": "sign",
+   "map": "SealedChamber_OuterRoom",
+   "at": [
+    10,
+    2
+   ],
+   "script": 12,
+   "what": "braille dig here (door)",
+   "dir": 4
+  },
+  {
+   "kind": "sign",
+   "map": "SealedChamber_OuterRoom",
+   "at": [
+    9,
+    2
+   ],
+   "script": 13,
+   "what": "braille dig here (sides)",
+   "dir": 4
+  },
+  {
+   "kind": "sign",
+   "map": "SealedChamber_OuterRoom",
+   "at": [
+    11,
+    2
+   ],
+   "script": 13,
+   "what": "braille dig here (sides)",
+   "dir": 4
+  },
+  {
+   "kind": "trigger",
+   "map": "SealedChamber_OuterRoom",
+   "at": [
+    9,
+    3
+   ],
+   "script": 14,
+   "var": 0,
+   "value": 0,
+   "what": "the Dig spot (Sapphire (9..11,3))",
+   "w": 3
+  },
+  {
+   "kind": "sign",
+   "map": "SealedChamber_InnerRoom",
+   "at": [
+    10,
+    4
+   ],
+   "script": 2,
+   "what": "braille",
+   "dir": 4
+  },
+  {
+   "kind": "sign",
+   "map": "SealedChamber_InnerRoom",
+   "at": [
+    9,
+    4
+   ],
+   "script": 2,
+   "what": "braille",
+   "dir": 4
+  },
+  {
+   "kind": "sign",
+   "map": "SealedChamber_InnerRoom",
+   "at": [
+    11,
+    4
+   ],
+   "script": 2,
+   "what": "braille",
+   "dir": 4
+  },
+  {
+   "kind": "sign",
+   "map": "SealedChamber_InnerRoom",
+   "at": [
+    6,
+    8
+   ],
+   "script": 3,
+   "what": "braille",
+   "dir": 4
+  },
+  {
+   "kind": "sign",
+   "map": "SealedChamber_InnerRoom",
+   "at": [
+    14,
+    8
+   ],
+   "script": 4,
+   "what": "braille",
+   "dir": 4
+  },
+  {
+   "kind": "sign",
+   "map": "SealedChamber_InnerRoom",
+   "at": [
+    4,
+    13
+   ],
+   "script": 5,
+   "what": "braille",
+   "dir": 4
+  },
+  {
+   "kind": "sign",
+   "map": "SealedChamber_InnerRoom",
+   "at": [
+    16,
+    13
+   ],
+   "script": 6,
+   "what": "braille",
+   "dir": 4
+  },
+  {
+   "kind": "sign",
+   "map": "SealedChamber_InnerRoom",
+   "at": [
+    6,
+    18
+   ],
+   "script": 7,
+   "what": "braille",
+   "dir": 4
+  },
+  {
+   "kind": "sign",
+   "map": "SealedChamber_InnerRoom",
+   "at": [
+    14,
+    18
+   ],
+   "script": 8,
+   "what": "braille",
+   "dir": 4
+  },
+  {
+   "kind": "sign",
+   "map": "DesertRuins",
+   "at": [
+    8,
+    20
+   ],
+   "script": 3,
+   "what": "braille (door)",
+   "dir": 4
+  },
+  {
+   "kind": "sign",
+   "map": "DesertRuins",
+   "at": [
+    7,
+    20
+   ],
+   "script": 4,
+   "what": "braille",
+   "dir": 4
+  },
+  {
+   "kind": "sign",
+   "map": "DesertRuins",
+   "at": [
+    9,
+    20
+   ],
+   "script": 4,
+   "what": "braille",
+   "dir": 4
+  },
+  {
+   "kind": "sign",
+   "map": "IslandCave",
+   "at": [
+    8,
+    20
+   ],
+   "script": 3,
+   "what": "braille (door)",
+   "dir": 4
+  },
+  {
+   "kind": "sign",
+   "map": "IslandCave",
+   "at": [
+    7,
+    20
+   ],
+   "script": 4,
+   "what": "braille",
+   "dir": 4
+  },
+  {
+   "kind": "sign",
+   "map": "IslandCave",
+   "at": [
+    9,
+    20
+   ],
+   "script": 4,
+   "what": "braille",
+   "dir": 4
+  },
+  {
+   "kind": "sign",
+   "map": "AncientTomb",
+   "at": [
+    8,
+    20
+   ],
+   "script": 3,
+   "what": "braille (door)",
+   "dir": 4
+  },
+  {
+   "kind": "sign",
+   "map": "AncientTomb",
+   "at": [
+    7,
+    20
+   ],
+   "script": 4,
+   "what": "braille",
+   "dir": 4
+  },
+  {
+   "kind": "sign",
+   "map": "AncientTomb",
+   "at": [
+    9,
+    20
+   ],
+   "script": 4,
+   "what": "braille",
+   "dir": 4
+  },
+  {
+   "kind": "trigger",
+   "map": "DesertRuins",
+   "at": [
+    9,
+    23
+   ],
+   "at_emerald": [
+    5,
+    23
+   ],
+   "script": 5,
+   "var": 0,
+   "value": 0,
+   "what": "the Strength spot (Sapphire (9..11,23)); Emerald: the Rock Smash spot (5..7,23) (emerald_ch12_13: pokeemerald ShouldDoBrailleRegirockEffect)",
+   "w": 3
+  },
+  {
+   "kind": "trigger",
+   "map": "AncientTomb",
+   "at": [
+    8,
+    25
+   ],
+   "script": 5,
+   "var": 0,
+   "value": 0,
+   "what": "the Fly spot (Sapphire (8,25))"
+  },
+  {
+   "kind": "sign",
+   "map": "Underwater_SealedChamber",
+   "at": [
+    12,
+    43
+   ],
+   "script": 2,
+   "what": "braille: go up here",
+   "dir": 4
+  }
+ ]
+}

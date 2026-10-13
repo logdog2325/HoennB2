@@ -1,0 +1,321 @@
+{
+ "map": "SafariZone_Southeast_Emerald",
+ "id": "MAP_SAFARI_ZONE_SOUTHEAST",
+ "layout": "LAYOUT_SAFARI_ZONE_SOUTHEAST",
+ "music": "MUS_SAFARI_ZONE",
+ "region_map_section": "MAPSEC_SAFARI_ZONE",
+ "weather": "WEATHER_NONE",
+ "connections": [
+  {
+   "map": "MAP_SAFARI_ZONE_SOUTH",
+   "offset": 0,
+   "direction": "left"
+  },
+  {
+   "map": "MAP_SAFARI_ZONE_NORTHEAST",
+   "offset": 0,
+   "direction": "up"
+  }
+ ],
+ "npcs": [
+  {
+   "local_id": 1,
+   "x": 7,
+   "y": 7,
+   "gfx": "OBJ_EVENT_GFX_RICH_BOY",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "SafariZone_Southeast_EventScript_RichBoy",
+   "texts": {
+    "SafariZone_Southeast_Text_RichBoy": "The POKéMON around here seem to be\\nfrom somewhere other than HOENN.$"
+   }
+  },
+  {
+   "local_id": 2,
+   "x": 20,
+   "y": 30,
+   "gfx": "OBJ_EVENT_GFX_FAT_MAN",
+   "movement": "MOVEMENT_TYPE_WANDER_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "SafariZone_Southeast_EventScript_FatMan",
+   "texts": {
+    "SafariZone_Southeast_Text_FatMan": "The POKéMON in this area are all\\nnew to me.\\pAnd I'm allowed to catch these rare\\nPOKéMON! Too cool!$"
+   }
+  },
+  {
+   "local_id": 3,
+   "x": 8,
+   "y": 26,
+   "gfx": "OBJ_EVENT_GFX_LITTLE_GIRL",
+   "movement": "MOVEMENT_TYPE_WANDER_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "SafariZone_Southeast_EventScript_LittleGirl",
+   "texts": {
+    "SafariZone_Southeast_Text_LittleGirl": "Wow! Whee! I haven't seen any of\\nthese POKéMON before!$"
+   }
+  },
+  {
+   "local_id": 4,
+   "x": 31,
+   "y": 15,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_SAFARI_ZONE_SOUTH_EAST_BIG_PEARL",
+   "script": "SafariZone_Southeast_EventScript_ItemBigPearl",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 5,
+   "x": 12,
+   "y": 16,
+   "gfx": "OBJ_EVENT_GFX_CAMPER",
+   "movement": "MOVEMENT_TYPE_FACE_LEFT",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_SAFARI_ZONE_SOUTH_EAST_EXPANSION",
+   "script": "SafariZone_Southeast_EventScript_ExpansionZoneAttendant",
+   "texts": {
+    "SafariZone_Southeast_Text_ExpansionIsFinished": "The SAFARI ZONE's expansion project\\nis finished now.\\pWe hope you will enjoy the new area.$"
+   }
+  }
+ ],
+ "signs": [
+  {
+   "x": 19,
+   "y": 36,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 19,
+    "y": 36,
+    "elevation": 3,
+    "item": "ITEM_PP_UP",
+    "flag": "FLAG_HIDDEN_ITEM_SAFARI_ZONE_SOUTH_EAST_PP_UP"
+   }
+  },
+  {
+   "x": 32,
+   "y": 33,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 32,
+    "y": 33,
+    "elevation": 0,
+    "item": "ITEM_FULL_RESTORE",
+    "flag": "FLAG_HIDDEN_ITEM_SAFARI_ZONE_SOUTH_EAST_FULL_RESTORE"
+   }
+  }
+ ],
+ "warps": [],
+ "coord_events": [],
+ "wild": {
+  "land_mons": {
+   "encounter_rate": 25,
+   "slot_rates": [
+    20,
+    20,
+    10,
+    10,
+    10,
+    10,
+    5,
+    5,
+    4,
+    4,
+    1,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_SUNKERN",
+     "min": 33,
+     "max": 33
+    },
+    {
+     "species": "SPECIES_MAREEP",
+     "min": 34,
+     "max": 34
+    },
+    {
+     "species": "SPECIES_SUNKERN",
+     "min": 35,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_MAREEP",
+     "min": 36,
+     "max": 36
+    },
+    {
+     "species": "SPECIES_AIPOM",
+     "min": 34,
+     "max": 34
+    },
+    {
+     "species": "SPECIES_SPINARAK",
+     "min": 33,
+     "max": 33
+    },
+    {
+     "species": "SPECIES_HOOTHOOT",
+     "min": 35,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_SNUBBULL",
+     "min": 34,
+     "max": 34
+    },
+    {
+     "species": "SPECIES_STANTLER",
+     "min": 36,
+     "max": 36
+    },
+    {
+     "species": "SPECIES_GLIGAR",
+     "min": 37,
+     "max": 37
+    },
+    {
+     "species": "SPECIES_STANTLER",
+     "min": 39,
+     "max": 39
+    },
+    {
+     "species": "SPECIES_GLIGAR",
+     "min": 40,
+     "max": 40
+    }
+   ]
+  },
+  "water_mons": {
+   "encounter_rate": 9,
+   "slot_rates": [
+    60,
+    30,
+    5,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_WOOPER",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_MARILL",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_MARILL",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_MARILL",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_QUAGSIRE",
+     "min": 35,
+     "max": 40
+    }
+   ]
+  },
+  "fishing_mons": {
+   "encounter_rate": 35,
+   "slot_rates": [
+    70,
+    30,
+    60,
+    20,
+    20,
+    40,
+    40,
+    15,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_GOLDEEN",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_GOLDEEN",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_REMORAID",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_GOLDEEN",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_REMORAID",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_REMORAID",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_REMORAID",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_OCTILLERY",
+     "min": 35,
+     "max": 40
+    }
+   ]
+  }
+ }
+}

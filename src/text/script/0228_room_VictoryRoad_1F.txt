@@ -1,0 +1,5 @@
+…
+Wally: Hi! {0100:0}!{be01}\nI bet you’re surprised to see me here!{be01}\nI made it all the way here, and it’s\nall thanks to you!{be01}\n{0100:0}, losing to you that time\nmade me stronger!{be01}\nBut I’m not going to lose anymore!{be01}\nI’m going to win! For the Pokémon who\ngave me courage and strength!{be01}\nOkay... Here I come!
+Wally: I couldn’t beat you today,\n{0100:0}, but one of these days, I’ll{be00}\ncatch up to you!
+Wally: Hi! {0100:0}!{be01}\nI’ve gotten stronger since that last\ntime! I wanted to show you, {0100:0}!{be01}\nOkay... Here I come!
+Wally: I couldn’t beat you this time,\ntoo... But one of these days, {0100:0},{be00}\nI’m going to catch up to you...{be01}\nAnd challenge the Pokémon League!

@@ -1,0 +1,1 @@
+When a Pokémon battle starts, the one\nat the left of the list goes out first.{be01}\nSo, when you get more Pokémon in your\nparty, try switching around the order{be00}\nof your Pokémon.{be01}\nIt could give you an advantage.

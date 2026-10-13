@@ -1,0 +1,1084 @@
+{
+ "_doc": "Sapphire's item balls as Black 2 item balls.",
+ "balls": {
+  "Route102_EventScript_1B1439": {
+   "n": 1,
+   "sapphire": "ITEM_POTION",
+   "item": "ITEM_POTION",
+   "count": 1,
+   "script": 7000,
+   "flag": 1100
+  },
+  "Route103_EventScript_1B1446": {
+   "n": 2,
+   "sapphire": "ITEM_GUARD_SPEC",
+   "item": "ITEM_GUARD_SPEC",
+   "count": 1,
+   "script": 7001,
+   "flag": 1101
+  },
+  "Route104_EventScript_1B1453": {
+   "n": 3,
+   "sapphire": "ITEM_PP_UP",
+   "item": "ITEM_PP_UP",
+   "count": 1,
+   "script": 7002,
+   "flag": 1102
+  },
+  "Route104_EventScript_1B1460": {
+   "n": 4,
+   "sapphire": "ITEM_POKE_BALL",
+   "item": "ITEM_POKE_BALL",
+   "count": 1,
+   "script": 7003,
+   "flag": 1103
+  },
+  "Route104_EventScript_1B146D": {
+   "n": 5,
+   "sapphire": "ITEM_X_ACCURACY",
+   "item": "ITEM_X_ACCURACY",
+   "count": 1,
+   "script": 7004,
+   "flag": 1104
+  },
+  "Route104_EventScript_1B147A": {
+   "n": 6,
+   "sapphire": "ITEM_POTION",
+   "item": "ITEM_POTION",
+   "count": 1,
+   "script": 7005,
+   "flag": 1105
+  },
+  "Route105_EventScript_1B1487": {
+   "n": 7,
+   "sapphire": "ITEM_IRON",
+   "item": "ITEM_IRON",
+   "count": 1,
+   "script": 7006,
+   "flag": 1106
+  },
+  "Route106_EventScript_1B1494": {
+   "n": 8,
+   "sapphire": "ITEM_PROTEIN",
+   "item": "ITEM_PROTEIN",
+   "count": 1,
+   "script": 7007,
+   "flag": 1107
+  },
+  "Route109_EventScript_1B14A1": {
+   "n": 9,
+   "sapphire": "ITEM_PP_UP",
+   "item": "ITEM_PP_UP",
+   "count": 1,
+   "script": 7008,
+   "flag": 1108
+  },
+  "Route110_EventScript_1B14AE": {
+   "n": 10,
+   "sapphire": "ITEM_RARE_CANDY",
+   "item": "ITEM_RARE_CANDY",
+   "count": 1,
+   "script": 7009,
+   "flag": 1109
+  },
+  "Route110_EventScript_1B14BB": {
+   "n": 11,
+   "sapphire": "ITEM_DIRE_HIT",
+   "item": "ITEM_DIRE_HIT",
+   "count": 1,
+   "script": 7010,
+   "flag": 1110
+  },
+  "Route111_EventScript_1B14C8": {
+   "n": 12,
+   "sapphire": "ITEM_TM37_SANDSTORM",
+   "item": "ITEM_TM37",
+   "count": 1,
+   "script": 7011,
+   "flag": 1111
+  },
+  "Route111_EventScript_1B14D5": {
+   "n": 13,
+   "sapphire": "ITEM_STARDUST",
+   "item": "ITEM_STARDUST",
+   "count": 1,
+   "script": 7012,
+   "flag": 1112
+  },
+  "Route111_EventScript_1B14E2": {
+   "n": 14,
+   "sapphire": "ITEM_HP_UP",
+   "item": "ITEM_HP_UP",
+   "count": 1,
+   "script": 7013,
+   "flag": 1113
+  },
+  "Route112_EventScript_1B14EF": {
+   "n": 15,
+   "sapphire": "ITEM_NUGGET",
+   "item": "ITEM_NUGGET",
+   "count": 1,
+   "script": 7014,
+   "flag": 1114
+  },
+  "Route113_EventScript_1B14FC": {
+   "n": 16,
+   "sapphire": "ITEM_MAX_ETHER",
+   "item": "ITEM_MAX_ETHER",
+   "count": 1,
+   "script": 7015,
+   "flag": 1115
+  },
+  "Route113_EventScript_1B1509": {
+   "n": 17,
+   "sapphire": "ITEM_SUPER_REPEL",
+   "item": "ITEM_SUPER_REPEL",
+   "count": 1,
+   "script": 7016,
+   "flag": 1116
+  },
+  "Route114_EventScript_1B1516": {
+   "n": 18,
+   "sapphire": "ITEM_RARE_CANDY",
+   "item": "ITEM_RARE_CANDY",
+   "count": 1,
+   "script": 7017,
+   "flag": 1117
+  },
+  "Route114_EventScript_1B1523": {
+   "n": 19,
+   "sapphire": "ITEM_PROTEIN",
+   "item": "ITEM_PROTEIN",
+   "count": 1,
+   "script": 7018,
+   "flag": 1118
+  },
+  "Route115_EventScript_1B1530": {
+   "n": 20,
+   "sapphire": "ITEM_SUPER_POTION",
+   "item": "ITEM_SUPER_POTION",
+   "count": 1,
+   "script": 7019,
+   "flag": 1119
+  },
+  "Route115_EventScript_1B153D": {
+   "n": 21,
+   "sapphire": "ITEM_TM01_FOCUS_PUNCH",
+   "item": "ITEM_TM01",
+   "count": 1,
+   "script": 7020,
+   "flag": 1120
+  },
+  "Route115_EventScript_1B154A": {
+   "n": 22,
+   "sapphire": "ITEM_IRON",
+   "item": "ITEM_IRON",
+   "count": 1,
+   "script": 7021,
+   "flag": 1121
+  },
+  "Route115_EventScript_1B1557": {
+   "n": 23,
+   "sapphire": "ITEM_GREAT_BALL",
+   "item": "ITEM_GREAT_BALL",
+   "count": 1,
+   "script": 7022,
+   "flag": 1122
+  },
+  "Route116_EventScript_1B1564": {
+   "n": 24,
+   "sapphire": "ITEM_X_SPECIAL",
+   "item": "ITEM_X_SPECIAL",
+   "count": 1,
+   "script": 7023,
+   "flag": 1123
+  },
+  "Route116_EventScript_1B1571": {
+   "n": 25,
+   "sapphire": "ITEM_ETHER",
+   "item": "ITEM_ETHER",
+   "count": 1,
+   "script": 7024,
+   "flag": 1124
+  },
+  "Route116_EventScript_1B157E": {
+   "n": 26,
+   "sapphire": "ITEM_REPEL",
+   "item": "ITEM_REPEL",
+   "count": 1,
+   "script": 7025,
+   "flag": 1125
+  },
+  "Route116_EventScript_1B158B": {
+   "n": 27,
+   "sapphire": "ITEM_HP_UP",
+   "item": "ITEM_HP_UP",
+   "count": 1,
+   "script": 7026,
+   "flag": 1126
+  },
+  "Route117_EventScript_1B1598": {
+   "n": 28,
+   "sapphire": "ITEM_GREAT_BALL",
+   "item": "ITEM_GREAT_BALL",
+   "count": 1,
+   "script": 7027,
+   "flag": 1127
+  },
+  "Route117_EventScript_1B15A5": {
+   "n": 29,
+   "sapphire": "ITEM_REVIVE",
+   "item": "ITEM_REVIVE",
+   "count": 1,
+   "script": 7028,
+   "flag": 1128
+  },
+  "Route118_EventScript_1B15B2": {
+   "n": 30,
+   "sapphire": "ITEM_HYPER_POTION",
+   "item": "ITEM_HYPER_POTION",
+   "count": 1,
+   "script": 7029,
+   "flag": 1129
+  },
+  "Route119_EventScript_1B15BF": {
+   "n": 31,
+   "sapphire": "ITEM_SUPER_REPEL",
+   "item": "ITEM_SUPER_REPEL",
+   "count": 1,
+   "script": 7030,
+   "flag": 1130
+  },
+  "Route119_EventScript_1B15CC": {
+   "n": 32,
+   "sapphire": "ITEM_ZINC",
+   "item": "ITEM_ZINC",
+   "count": 1,
+   "script": 7031,
+   "flag": 1131
+  },
+  "Route119_EventScript_1B15D9": {
+   "n": 33,
+   "sapphire": "ITEM_ELIXIR",
+   "item": "ITEM_ELIXIR",
+   "count": 1,
+   "script": 7032,
+   "flag": 1132
+  },
+  "Route119_EventScript_1B15E6": {
+   "n": 34,
+   "sapphire": "ITEM_LEAF_STONE",
+   "item": "ITEM_LEAF_STONE",
+   "count": 1,
+   "script": 7033,
+   "flag": 1133
+  },
+  "Route119_EventScript_1B15F3": {
+   "n": 35,
+   "sapphire": "ITEM_RARE_CANDY",
+   "item": "ITEM_RARE_CANDY",
+   "count": 1,
+   "script": 7034,
+   "flag": 1134
+  },
+  "Route119_EventScript_1B1600": {
+   "n": 36,
+   "sapphire": "ITEM_HYPER_POTION",
+   "item": "ITEM_HYPER_POTION",
+   "count": 1,
+   "script": 7035,
+   "flag": 1135
+  },
+  "Route119_EventScript_1B160D": {
+   "n": 37,
+   "sapphire": "ITEM_HYPER_POTION",
+   "item": "ITEM_HYPER_POTION",
+   "count": 1,
+   "script": 7036,
+   "flag": 1136
+  },
+  "Route120_EventScript_1B161A": {
+   "n": 38,
+   "sapphire": "ITEM_NUGGET",
+   "item": "ITEM_NUGGET",
+   "count": 1,
+   "script": 7037,
+   "flag": 1137
+  },
+  "Route120_EventScript_1B1627": {
+   "n": 39,
+   "sapphire": "ITEM_FULL_HEAL",
+   "item": "ITEM_FULL_HEAL",
+   "count": 1,
+   "script": 7038,
+   "flag": 1138
+  },
+  "Route120_EventScript_1B1634": {
+   "n": 40,
+   "sapphire": "ITEM_HYPER_POTION",
+   "item": "ITEM_HYPER_POTION",
+   "count": 1,
+   "script": 7039,
+   "flag": 1139
+  },
+  "Route120_EventScript_1B1641": {
+   "n": 41,
+   "sapphire": "ITEM_NEST_BALL",
+   "item": "ITEM_NEST_BALL",
+   "count": 1,
+   "script": 7040,
+   "flag": 1140
+  },
+  "Route121_EventScript_1B164E": {
+   "n": 42,
+   "sapphire": "ITEM_CARBOS",
+   "item": "ITEM_CARBOS",
+   "count": 1,
+   "script": 7041,
+   "flag": 1141
+  },
+  "Route123_EventScript_1B165B": {
+   "n": 43,
+   "sapphire": "ITEM_CALCIUM",
+   "item": "ITEM_CALCIUM",
+   "count": 1,
+   "script": 7042,
+   "flag": 1142
+  },
+  "Route123_EventScript_1B1668": {
+   "n": 44,
+   "sapphire": "ITEM_RARE_CANDY",
+   "item": "ITEM_RARE_CANDY",
+   "count": 1,
+   "script": 7043,
+   "flag": 1143
+  },
+  "Route123_EventScript_1B1675": {
+   "n": 45,
+   "sapphire": "ITEM_ULTRA_BALL",
+   "item": "ITEM_ULTRA_BALL",
+   "count": 1,
+   "script": 7044,
+   "flag": 1144
+  },
+  "Route123_EventScript_1B1682": {
+   "n": 46,
+   "sapphire": "ITEM_ELIXIR",
+   "item": "ITEM_ELIXIR",
+   "count": 1,
+   "script": 7045,
+   "flag": 1145
+  },
+  "Route124_EventScript_1B168F": {
+   "n": 47,
+   "sapphire": "ITEM_RED_SHARD",
+   "item": "ITEM_RED_SHARD",
+   "count": 1,
+   "script": 7046,
+   "flag": 1146
+  },
+  "Route124_EventScript_1B169C": {
+   "n": 48,
+   "sapphire": "ITEM_BLUE_SHARD",
+   "item": "ITEM_BLUE_SHARD",
+   "count": 1,
+   "script": 7047,
+   "flag": 1147
+  },
+  "Route124_EventScript_1B16A9": {
+   "n": 49,
+   "sapphire": "ITEM_YELLOW_SHARD",
+   "item": "ITEM_YELLOW_SHARD",
+   "count": 1,
+   "script": 7048,
+   "flag": 1148
+  },
+  "Route126_EventScript_1B16B6": {
+   "n": 50,
+   "sapphire": "ITEM_GREEN_SHARD",
+   "item": "ITEM_GREEN_SHARD",
+   "count": 1,
+   "script": 7049,
+   "flag": 1149
+  },
+  "Route127_EventScript_1B16C3": {
+   "n": 51,
+   "sapphire": "ITEM_ZINC",
+   "item": "ITEM_ZINC",
+   "count": 1,
+   "script": 7050,
+   "flag": 1150
+  },
+  "Route127_EventScript_1B16D0": {
+   "n": 52,
+   "sapphire": "ITEM_CARBOS",
+   "item": "ITEM_CARBOS",
+   "count": 1,
+   "script": 7051,
+   "flag": 1151
+  },
+  "Route132_EventScript_1B16DD": {
+   "n": 53,
+   "sapphire": "ITEM_RARE_CANDY",
+   "item": "ITEM_RARE_CANDY",
+   "count": 1,
+   "script": 7052,
+   "flag": 1152
+  },
+  "Route133_EventScript_1B16EA": {
+   "n": 54,
+   "sapphire": "ITEM_BIG_PEARL",
+   "item": "ITEM_BIG_PEARL",
+   "count": 1,
+   "script": 7053,
+   "flag": 1153
+  },
+  "Route133_EventScript_1B16F7": {
+   "n": 55,
+   "sapphire": "ITEM_STAR_PIECE",
+   "item": "ITEM_STAR_PIECE",
+   "count": 1,
+   "script": 7054,
+   "flag": 1154
+  },
+  "PetalburgCity_EventScript_ItemMaxRevive": {
+   "n": 56,
+   "sapphire": "ITEM_MAX_REVIVE",
+   "item": "ITEM_MAX_REVIVE",
+   "count": 1,
+   "script": 7055,
+   "flag": 1155
+  },
+  "PetalburgCity_EventScript_1B1711": {
+   "n": 57,
+   "sapphire": "ITEM_ETHER",
+   "item": "ITEM_ETHER",
+   "count": 1,
+   "script": 7056,
+   "flag": 1156
+  },
+  "MauvilleCity_EventScript_ItemXSpeed": {
+   "n": 58,
+   "sapphire": "ITEM_X_SPEED",
+   "item": "ITEM_X_SPEED",
+   "count": 1,
+   "script": 7057,
+   "flag": 1157
+  },
+  "RustboroCity_EventScript_ItemXDefend": {
+   "n": 59,
+   "sapphire": "ITEM_X_DEFEND",
+   "item": "ITEM_X_DEFEND",
+   "count": 1,
+   "script": 7058,
+   "flag": 1158
+  },
+  "LilycoveCity_EventScript_1B1738": {
+   "n": 60,
+   "sapphire": "ITEM_MAX_REPEL",
+   "item": "ITEM_MAX_REPEL",
+   "count": 1,
+   "script": 7059,
+   "flag": 1159
+  },
+  "MossdeepCity_EventScript_1B1745": {
+   "n": 61,
+   "sapphire": "ITEM_NET_BALL",
+   "item": "ITEM_NET_BALL",
+   "count": 1,
+   "script": 7060,
+   "flag": 1160
+  },
+  "PetalburgWoods_EventScript_1B1752": {
+   "n": 62,
+   "sapphire": "ITEM_X_ATTACK",
+   "item": "ITEM_X_ATTACK",
+   "count": 1,
+   "script": 7061,
+   "flag": 1161
+  },
+  "PetalburgWoods_EventScript_1B175F": {
+   "n": 63,
+   "sapphire": "ITEM_GREAT_BALL",
+   "item": "ITEM_GREAT_BALL",
+   "count": 1,
+   "script": 7062,
+   "flag": 1162
+  },
+  "PetalburgWoods_EventScript_1B176C": {
+   "n": 64,
+   "sapphire": "ITEM_ETHER",
+   "item": "ITEM_ETHER",
+   "count": 1,
+   "script": 7063,
+   "flag": 1163
+  },
+  "PetalburgWoods_EventScript_1B1779": {
+   "n": 65,
+   "sapphire": "ITEM_PARALYZE_HEAL",
+   "item": "ITEM_PARLYZ_HEAL",
+   "count": 1,
+   "script": 7064,
+   "flag": 1164
+  },
+  "RusturfTunnel_EventScript_1B1786": {
+   "n": 66,
+   "sapphire": "ITEM_POKE_BALL",
+   "item": "ITEM_POKE_BALL",
+   "count": 1,
+   "script": 7065,
+   "flag": 1165
+  },
+  "RusturfTunnel_EventScript_1B1793": {
+   "n": 67,
+   "sapphire": "ITEM_MAX_ETHER",
+   "item": "ITEM_MAX_ETHER",
+   "count": 1,
+   "script": 7066,
+   "flag": 1166
+  },
+  "GraniteCave_1F_EventScript_1B17A0": {
+   "n": 68,
+   "sapphire": "ITEM_ESCAPE_ROPE",
+   "item": "ITEM_ESCAPE_ROPE",
+   "count": 1,
+   "script": 7067,
+   "flag": 1167
+  },
+  "GraniteCave_B1F_EventScript_1B17AD": {
+   "n": 69,
+   "sapphire": "ITEM_POKE_BALL",
+   "item": "ITEM_POKE_BALL",
+   "count": 1,
+   "script": 7068,
+   "flag": 1168
+  },
+  "GraniteCave_B2F_EventScript_1B17BA": {
+   "n": 70,
+   "sapphire": "ITEM_REPEL",
+   "item": "ITEM_REPEL",
+   "count": 1,
+   "script": 7069,
+   "flag": 1169
+  },
+  "GraniteCave_B2F_EventScript_1B17C7": {
+   "n": 71,
+   "sapphire": "ITEM_RARE_CANDY",
+   "item": "ITEM_RARE_CANDY",
+   "count": 1,
+   "script": 7070,
+   "flag": 1170
+  },
+  "JaggedPass_EventScript_1B17D4": {
+   "n": 72,
+   "sapphire": "ITEM_BURN_HEAL",
+   "item": "ITEM_BURN_HEAL",
+   "count": 1,
+   "script": 7071,
+   "flag": 1171
+  },
+  "FieryPath_EventScript_1B17E1": {
+   "n": 73,
+   "sapphire": "ITEM_FIRE_STONE",
+   "item": "ITEM_FIRE_STONE",
+   "count": 1,
+   "script": 7072,
+   "flag": 1172
+  },
+  "FieryPath_EventScript_1B17EE": {
+   "n": 74,
+   "sapphire": "ITEM_TM06_TOXIC",
+   "item": "ITEM_TM06",
+   "count": 1,
+   "script": 7073,
+   "flag": 1173
+  },
+  "MeteorFalls_1F_1R_EventScript_1B17FB": {
+   "n": 75,
+   "sapphire": "ITEM_TM23_IRON_TAIL",
+   "item": "ITEM_TM23",
+   "count": 1,
+   "script": 7074,
+   "flag": 1174
+  },
+  "MeteorFalls_1F_1R_EventScript_1B1808": {
+   "n": 76,
+   "sapphire": "ITEM_FULL_HEAL",
+   "item": "ITEM_FULL_HEAL",
+   "count": 1,
+   "script": 7075,
+   "flag": 1175
+  },
+  "MeteorFalls_1F_1R_EventScript_1B1815": {
+   "n": 77,
+   "sapphire": "ITEM_MOON_STONE",
+   "item": "ITEM_MOON_STONE",
+   "count": 1,
+   "script": 7076,
+   "flag": 1176
+  },
+  "MeteorFalls_1F_1R_EventScript_1B1822": {
+   "n": 78,
+   "sapphire": "ITEM_PP_UP",
+   "item": "ITEM_PP_UP",
+   "count": 1,
+   "script": 7077,
+   "flag": 1177
+  },
+  "MeteorFalls_B1F_2R_EventScript_1B182F": {
+   "n": 79,
+   "sapphire": "ITEM_TM02_DRAGON_CLAW",
+   "item": "ITEM_TM02",
+   "count": 1,
+   "script": 7078,
+   "flag": 1178
+  },
+  "NewMauville_Inside_EventScript_1B183C": {
+   "n": 80,
+   "sapphire": "ITEM_ULTRA_BALL",
+   "item": "ITEM_ULTRA_BALL",
+   "count": 1,
+   "script": 7079,
+   "flag": 1179
+  },
+  "NewMauville_Inside_EventScript_1B1849": {
+   "n": 81,
+   "sapphire": "ITEM_ESCAPE_ROPE",
+   "item": "ITEM_ESCAPE_ROPE",
+   "count": 1,
+   "script": 7080,
+   "flag": 1180
+  },
+  "NewMauville_Inside_EventScript_1B1856": {
+   "n": 82,
+   "sapphire": "ITEM_THUNDER_STONE",
+   "item": "ITEM_THUNDERSTONE",
+   "count": 1,
+   "script": 7081,
+   "flag": 1181
+  },
+  "NewMauville_Inside_EventScript_1B1863": {
+   "n": 83,
+   "sapphire": "ITEM_FULL_HEAL",
+   "item": "ITEM_FULL_HEAL",
+   "count": 1,
+   "script": 7082,
+   "flag": 1182
+  },
+  "NewMauville_Inside_EventScript_1B1870": {
+   "n": 84,
+   "sapphire": "ITEM_PARALYZE_HEAL",
+   "item": "ITEM_PARLYZ_HEAL",
+   "count": 1,
+   "script": 7083,
+   "flag": 1183
+  },
+  "AbandonedShip_Rooms_1F_EventScript_ItemHarborMail": {
+   "n": 85,
+   "sapphire": "ITEM_HARBOR_MAIL",
+   "item": "ITEM_GREET_MAIL",
+   "count": 1,
+   "script": 7084,
+   "flag": 1184
+  },
+  "AbandonedShip_Rooms_B1F_EventScript_ItemEscapeRope": {
+   "n": 86,
+   "sapphire": "ITEM_ESCAPE_ROPE",
+   "item": "ITEM_ESCAPE_ROPE",
+   "count": 1,
+   "script": 7085,
+   "flag": 1185
+  },
+  "AbandonedShip_Rooms2_B1F_EventScript_ItemDiveBall": {
+   "n": 87,
+   "sapphire": "ITEM_DIVE_BALL",
+   "item": "ITEM_DIVE_BALL",
+   "count": 1,
+   "script": 7086,
+   "flag": 1186
+  },
+  "AbandonedShip_Room_B1F_EventScript_ItemTMIceBeam": {
+   "n": 88,
+   "sapphire": "ITEM_TM13_ICE_BEAM",
+   "item": "ITEM_TM13",
+   "count": 1,
+   "script": 7087,
+   "flag": 1187
+  },
+  "AbandonedShip_Rooms2_1F_EventScript_ItemRevive": {
+   "n": 89,
+   "sapphire": "ITEM_REVIVE",
+   "item": "ITEM_REVIVE",
+   "count": 1,
+   "script": 7088,
+   "flag": 1188
+  },
+  "AbandonedShip_CaptainsOffice_EventScript_ItemStorageKey": {
+   "n": 90,
+   "sapphire": "ITEM_STORAGE_KEY",
+   "item": "ITEM_STORAGE_KEY",
+   "count": 1,
+   "script": 7089,
+   "flag": 1189
+  },
+  "AbandonedShip_HiddenFloorRooms_EventScript_ItemLuxuryBall": {
+   "n": 91,
+   "sapphire": "ITEM_LUXURY_BALL",
+   "item": "ITEM_LUXURY_BALL",
+   "count": 1,
+   "script": 7090,
+   "flag": 1190
+  },
+  "AbandonedShip_HiddenFloorRooms_EventScript_ItemWaterStone": {
+   "n": 92,
+   "sapphire": "ITEM_WATER_STONE",
+   "item": "ITEM_WATER_STONE",
+   "count": 1,
+   "script": 7091,
+   "flag": 1191
+  },
+  "AbandonedShip_HiddenFloorRooms_EventScript_ItemTMRainDance": {
+   "n": 93,
+   "sapphire": "ITEM_TM18_RAIN_DANCE",
+   "item": "ITEM_TM18",
+   "count": 1,
+   "script": 7092,
+   "flag": 1192
+  },
+  "ScorchedSlab_EventScript_1B18FF": {
+   "n": 94,
+   "sapphire": "ITEM_TM11_SUNNY_DAY",
+   "item": "ITEM_TM11",
+   "count": 1,
+   "script": 7093,
+   "flag": 1193
+  },
+  "SafariZone_Northwest_EventScript_1B190C": {
+   "n": 95,
+   "sapphire": "ITEM_TM22_SOLARBEAM",
+   "item": "ITEM_TM22",
+   "count": 1,
+   "script": 7094,
+   "flag": 1194
+  },
+  "SafariZone_Northeast_EventScript_1B1919": {
+   "n": 96,
+   "sapphire": "ITEM_CALCIUM",
+   "item": "ITEM_CALCIUM",
+   "count": 1,
+   "script": 7095,
+   "flag": 1195
+  },
+  "SafariZone_Southwest_EventScript_1B1926": {
+   "n": 97,
+   "sapphire": "ITEM_MAX_REVIVE",
+   "item": "ITEM_MAX_REVIVE",
+   "count": 1,
+   "script": 7096,
+   "flag": 1196
+  },
+  "MtPyre_2F_EventScript_1B1933": {
+   "n": 98,
+   "sapphire": "ITEM_ULTRA_BALL",
+   "item": "ITEM_ULTRA_BALL",
+   "count": 1,
+   "script": 7097,
+   "flag": 1197
+  },
+  "MtPyre_3F_EventScript_1B1940": {
+   "n": 99,
+   "sapphire": "ITEM_SUPER_REPEL",
+   "item": "ITEM_SUPER_REPEL",
+   "count": 1,
+   "script": 7098,
+   "flag": 1198
+  },
+  "MtPyre_4F_EventScript_1B194D": {
+   "n": 100,
+   "sapphire": "ITEM_SEA_INCENSE",
+   "item": "ITEM_SEA_INCENSE",
+   "count": 1,
+   "script": 7099,
+   "flag": 1199
+  },
+  "MtPyre_5F_EventScript_1B195A": {
+   "n": 101,
+   "sapphire": "ITEM_LAX_INCENSE",
+   "item": "ITEM_LAX_INCENSE",
+   "count": 1,
+   "script": 7100,
+   "flag": 1200
+  },
+  "MtPyre_6F_EventScript_1B1967": {
+   "n": 102,
+   "sapphire": "ITEM_TM30_SHADOW_BALL",
+   "item": "ITEM_TM30",
+   "count": 1,
+   "script": 7101,
+   "flag": 1201
+  },
+  "MtPyre_Exterior_EventScript_1B1974": {
+   "n": 103,
+   "sapphire": "ITEM_MAX_POTION",
+   "item": "ITEM_MAX_POTION",
+   "count": 1,
+   "script": 7102,
+   "flag": 1202
+  },
+  "MtPyre_Exterior_EventScript_1B1981": {
+   "n": 104,
+   "sapphire": "ITEM_TM48_SKILL_SWAP",
+   "item": "ITEM_TM48",
+   "count": 1,
+   "script": 7103,
+   "flag": 1203
+  },
+  "AquaHideout_B1F_EventScript_1B198E": {
+   "n": 105,
+   "sapphire": "ITEM_MASTER_BALL",
+   "item": "ITEM_MASTER_BALL",
+   "count": 1,
+   "script": 7104,
+   "flag": 1204
+  },
+  "AquaHideout_B1F_EventScript_1B199B": {
+   "n": 106,
+   "sapphire": "ITEM_NUGGET",
+   "item": "ITEM_NUGGET",
+   "count": 1,
+   "script": 7105,
+   "flag": 1205
+  },
+  "AquaHideout_B1F_EventScript_1B19A8": {
+   "n": 107,
+   "sapphire": "ITEM_MAX_ELIXIR",
+   "item": "ITEM_MAX_ELIXIR",
+   "count": 1,
+   "script": 7106,
+   "flag": 1206
+  },
+  "AquaHideout_B2F_EventScript_1B19B5": {
+   "n": 108,
+   "sapphire": "ITEM_NEST_BALL",
+   "item": "ITEM_NEST_BALL",
+   "count": 1,
+   "script": 7107,
+   "flag": 1207
+  },
+  "MagmaHideout_B1F_EventScript_1B19C2": {
+   "n": 109,
+   "sapphire": "ITEM_MASTER_BALL",
+   "item": "ITEM_MASTER_BALL",
+   "count": 1,
+   "script": 7108,
+   "flag": 1208
+  },
+  "MagmaHideout_B1F_EventScript_1B19CF": {
+   "n": 110,
+   "sapphire": "ITEM_NUGGET",
+   "item": "ITEM_NUGGET",
+   "count": 1,
+   "script": 7109,
+   "flag": 1209
+  },
+  "MagmaHideout_B1F_EventScript_1B19DC": {
+   "n": 111,
+   "sapphire": "ITEM_MAX_ELIXIR",
+   "item": "ITEM_MAX_ELIXIR",
+   "count": 1,
+   "script": 7110,
+   "flag": 1210
+  },
+  "MagmaHideout_B2F_EventScript_1B19E9": {
+   "n": 112,
+   "sapphire": "ITEM_NEST_BALL",
+   "item": "ITEM_NEST_BALL",
+   "count": 1,
+   "script": 7111,
+   "flag": 1211
+  },
+  "ShoalCave_LowTideEntranceRoom_EventScript_1B19F6": {
+   "n": 113,
+   "sapphire": "ITEM_BIG_PEARL",
+   "item": "ITEM_BIG_PEARL",
+   "count": 1,
+   "script": 7112,
+   "flag": 1212
+  },
+  "ShoalCave_LowTideInnerRoom_EventScript_1B1A03": {
+   "n": 114,
+   "sapphire": "ITEM_RARE_CANDY",
+   "item": "ITEM_RARE_CANDY",
+   "count": 1,
+   "script": 7113,
+   "flag": 1213
+  },
+  "ShoalCave_LowTideStairsRoom_EventScript_1B1A10": {
+   "n": 115,
+   "sapphire": "ITEM_ICE_HEAL",
+   "item": "ITEM_ICE_HEAL",
+   "count": 1,
+   "script": 7114,
+   "flag": 1214
+  },
+  "ShoalCave_LowTideIceRoom_EventScript_1B1A1D": {
+   "n": 116,
+   "sapphire": "ITEM_TM07_HAIL",
+   "item": "ITEM_TM07",
+   "count": 1,
+   "script": 7115,
+   "flag": 1215
+  },
+  "ShoalCave_LowTideIceRoom_EventScript_1B1A2A": {
+   "n": 117,
+   "sapphire": "ITEM_NEVER_MELT_ICE",
+   "item": "ITEM_NEVER_MELT_ICE",
+   "count": 1,
+   "script": 7116,
+   "flag": 1216
+  },
+  "SeafloorCavern_Room9_EventScript_1B1A37": {
+   "n": 118,
+   "sapphire": "ITEM_TM26_EARTHQUAKE",
+   "item": "ITEM_TM26",
+   "count": 1,
+   "script": 7117,
+   "flag": 1217
+  },
+  "CaveOfOrigin_B3F_EventScript_1B1A44": {
+   "n": 119,
+   "sapphire": "ITEM_HM07_WATERFALL",
+   "item": "ITEM_HM05",
+   "count": 1,
+   "script": 7118,
+   "flag": 1218
+  },
+  "Route110_TrickHousePuzzle1_EventScript_ItemOrangeMail": {
+   "n": 120,
+   "sapphire": "ITEM_ORANGE_MAIL",
+   "item": "ITEM_FAVORED_MAIL",
+   "count": 1,
+   "script": 7119,
+   "flag": 1219
+  },
+  "Route110_TrickHousePuzzle2_EventScript_ItemHarborMail": {
+   "n": 121,
+   "sapphire": "ITEM_HARBOR_MAIL",
+   "item": "ITEM_GREET_MAIL",
+   "count": 1,
+   "script": 7120,
+   "flag": 1220
+  },
+  "Route110_TrickHousePuzzle2_EventScript_ItemWaveMail": {
+   "n": 122,
+   "sapphire": "ITEM_WAVE_MAIL",
+   "item": "ITEM_RSVP_MAIL",
+   "count": 1,
+   "script": 7121,
+   "flag": 1221
+  },
+  "Route110_TrickHousePuzzle3_EventScript_ItemShadowMail": {
+   "n": 123,
+   "sapphire": "ITEM_SHADOW_MAIL",
+   "item": "ITEM_THANKS_MAIL",
+   "count": 1,
+   "script": 7122,
+   "flag": 1222
+  },
+  "Route110_TrickHousePuzzle3_EventScript_ItemWoodMail": {
+   "n": 124,
+   "sapphire": "ITEM_WOOD_MAIL",
+   "item": "ITEM_INQUIRY_MAIL",
+   "count": 1,
+   "script": 7123,
+   "flag": 1223
+  },
+  "Route110_TrickHousePuzzle4_EventScript_ItemMechMail": {
+   "n": 125,
+   "sapphire": "ITEM_MECH_MAIL",
+   "item": "ITEM_LIKE_MAIL",
+   "count": 1,
+   "script": 7124,
+   "flag": 1224
+  },
+  "Route110_TrickHousePuzzle6_EventScript_ItemGlitterMail": {
+   "n": 126,
+   "sapphire": "ITEM_GLITTER_MAIL",
+   "item": "ITEM_REPLY_MAIL",
+   "count": 1,
+   "script": 7125,
+   "flag": 1225
+  },
+  "Route110_TrickHousePuzzle7_EventScript_ItemTropicMail": {
+   "n": 127,
+   "sapphire": "ITEM_TROPIC_MAIL",
+   "item": "ITEM_BRIDGE_MAIL_S",
+   "count": 1,
+   "script": 7126,
+   "flag": 1226
+  },
+  "Route110_TrickHousePuzzle8_EventScript_ItemBeadMail": {
+   "n": 128,
+   "sapphire": "ITEM_BEAD_MAIL",
+   "item": "ITEM_BRIDGE_MAIL_D",
+   "count": 1,
+   "script": 7127,
+   "flag": 1227
+  },
+  "VictoryRoad_1F_EventScript_1B1AC6": {
+   "n": 129,
+   "sapphire": "ITEM_MAX_ELIXIR",
+   "item": "ITEM_MAX_ELIXIR",
+   "count": 1,
+   "script": 7128,
+   "flag": 1228
+  },
+  "VictoryRoad_1F_EventScript_1B1AD3": {
+   "n": 130,
+   "sapphire": "ITEM_PP_UP",
+   "item": "ITEM_PP_UP",
+   "count": 1,
+   "script": 7129,
+   "flag": 1229
+  },
+  "VictoryRoad_B1F_EventScript_1B1AE0": {
+   "n": 131,
+   "sapphire": "ITEM_TM29_PSYCHIC",
+   "item": "ITEM_TM29",
+   "count": 1,
+   "script": 7130,
+   "flag": 1230
+  },
+  "VictoryRoad_B1F_EventScript_1B1AED": {
+   "n": 132,
+   "sapphire": "ITEM_FULL_RESTORE",
+   "item": "ITEM_FULL_RESTORE",
+   "count": 1,
+   "script": 7131,
+   "flag": 1231
+  },
+  "VictoryRoad_B2F_EventScript_1B1AFA": {
+   "n": 133,
+   "sapphire": "ITEM_FULL_HEAL",
+   "item": "ITEM_FULL_HEAL",
+   "count": 1,
+   "script": 7132,
+   "flag": 1232
+  }
+ },
+ "notes": [
+  "ITEM_TM01_FOCUS_PUNCH: MOVE_FOCUS_PUNCH is no Gen 5 TM/HM; stand-in ITEM_TM01",
+  "ITEM_TM23_IRON_TAIL: MOVE_IRON_TAIL is no Gen 5 TM/HM; stand-in ITEM_TM23",
+  "ITEM_HARBOR_MAIL: Gen 3 mail; stand-in ITEM_GREET_MAIL",
+  "ITEM_SCANNER: not in Black 2 (key item?) - skipped",
+  "ITEM_TM48_SKILL_SWAP: MOVE_SKILL_SWAP is no Gen 5 TM/HM; stand-in ITEM_TM48",
+  "ITEM_ORANGE_MAIL: Gen 3 mail; stand-in ITEM_FAVORED_MAIL",
+  "ITEM_WAVE_MAIL: Gen 3 mail; stand-in ITEM_RSVP_MAIL",
+  "ITEM_SHADOW_MAIL: Gen 3 mail; stand-in ITEM_THANKS_MAIL",
+  "ITEM_WOOD_MAIL: Gen 3 mail; stand-in ITEM_INQUIRY_MAIL",
+  "ITEM_MECH_MAIL: Gen 3 mail; stand-in ITEM_LIKE_MAIL",
+  "ITEM_GLITTER_MAIL: Gen 3 mail; stand-in ITEM_REPLY_MAIL",
+  "ITEM_TROPIC_MAIL: Gen 3 mail; stand-in ITEM_BRIDGE_MAIL_S",
+  "ITEM_BEAD_MAIL: Gen 3 mail; stand-in ITEM_BRIDGE_MAIL_D"
+ ]
+}

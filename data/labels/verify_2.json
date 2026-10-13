@@ -1,0 +1,42 @@
+{
+ "corrections": [
+  {
+   "tileset": "gTileset_General",
+   "id": "08d",
+   "current": "ledge_s",
+   "suggested": "ledge_cap",
+   "map": "Route115",
+   "position": [
+    22,
+    69
+   ],
+   "why": "Ledge corner (W-facing ledge 085 above turning into S-facing ledge 087 to the east). Behaviour 0x3F (MB_JUMP_SOUTHWEST) is never jumpable in pokeruby: GetLedgeJumpDirection (src/event_object_movement.c) only tests MetatileBehavior_IsJumpSouth/North/West/East, which match 0x3B/0x3A/0x39/0x38 only, and the tile has collision 1 in all 7 uses. In Sapphire it is a solid ledge corner; labelled ledge_s the builder would add a jump that does not exist. Same as Mauville 201/2bb, which are already ledge_cap. Other uses: Route115 (15,71), (29,67); Route123 (29,11)."
+  },
+  {
+   "tileset": "gTileset_General",
+   "id": "08e",
+   "current": "ledge_s",
+   "suggested": "ledge_cap",
+   "map": "Route118",
+   "position": [
+    5,
+    14
+   ],
+   "why": "Ledge corner where the E-jump column (086, x=5) turns west into the S-facing ledge (087). Behaviour 0x3E (MB_JUMP_SOUTHEAST), collision 1, so it cannot be jumped in pokeruby (same reason as 08d). This label comes from converter/metatiles.json, not data/labels/gTileset_General.json."
+  },
+  {
+   "tileset": "gTileset_Fortree",
+   "id": "20b",
+   "current": "ledge_e",
+   "suggested": "ledge_cap",
+   "map": "Route120",
+   "position": [
+    21,
+    63
+   ],
+   "why": "Bottom corner of the E-jump column 203 (x=21, y=60-62) where it turns west into the S ledge 204 at (20,63). Behaviour 0x3E (MB_JUMP_SOUTHEAST), collision 1: not jumpable in pokeruby, so it is a solid ledge corner, like Fortree 20c at the top of the same column (already ledge_cap)."
+  }
+ ],
+ "unlabelled": [],
+ "notes": "Scope: 31 maps (Route115-Route134, RustboroCity, SafariZone_NE/NW/SE/SW, SkyPillar_Outside, SkyPillar_Top, SlateportCity, SootopolisCity, SouthernIsland_Exterior, VerdanturfTown), 1550 distinct (tileset, id) pairs, 0 unlabelled. Method: ran render_labels.py for every map, then a scratch copy of it with 4-letter codes and a collision dot, because the 3-letter tags merge cliff/cliff_top, tree_top_l/r/bot/tip, ledge_s/e/w/cap, water/water_edge and current_*. Looked at 126 crops of up to 24x20 tiles that together show every pair in context, plus one contact sheet per class. Also checked every label against the behaviour byte (tall/long grass, water/deep/puddle, currents, waterfall, doors, bridges, ledge directions) and against collision in every pokeruby layout. Every ledge_e/ledge_w/ledge_s tile matches its jump behaviour and the side its face is drawn on. Not listed as corrections. The class text and the collision data disagree here, but the art fits the class, and plan_map.py keeps collision in a separate 'walkable' grid. If the builder takes walkability from the class instead, these need a look: (1) cliff_top tiles that have collision 1 in every pokeruby layout: Fallarbor 23b, 23d; Fortree 231; General 099, 0b4, 0b6, 0df, 157, 173, 17b; Mossdeep 33c, 33e. Most are the edges of rock plateaus in the sea. The plateau interior is General 071 (cliff_top, walkable elsewhere), so relabelling only the edges would mix classes on one plateau. (2) 'water' that is not surfable (behaviour 0x00, collision 1): Fortree 206, 207, 20f, 28b, 28c (Route 119 Acro Bike rail area and the shadow under the Route 119 bridge). Their _notes already say this. (3) Solid classes on walkable tiles: General 056 fence (collision 0 in all 9 uses; Rustboro 285, the same railing-on-paving idea, is labelled path); Lilycove 318 prop and Lilycove 319 prop (319 is surfable pond water, behaviour 0x10, with the Pokeblock feeder's legs drawn on it); Sootopolis 282-284 building_roof drawn over surfable lake water; building rows with collision 0 (Fortree 2d0-2d2, 2d5, 2d6; General 1c8, 1c9, 1cc; Rustboro 2d8-2da); walk-behind tops (Rustboro 212, 213, 2cc; Slateport 24e, 24f, 29c; General 01e, 01f, 130; Mossdeep 2f0, 2f1). All of these follow LABELS.md's 'label what stands on the tile'. (4) Walkable classes on solid tiles: Fortree 20e and 239 grass (collision 1); Fortree 284 tree_tip (collision 1 in all 9 uses); General 01d tree_tip (collision 1 in 29 of 40 uses here); Pacifidlog 2b7 and 2bb sand (collision 1 along the top edge of SkyPillar_Outside). Map-level issues, not tile labels: General 0d1 (puddle, correct on Route 117/119) is reused as the flat sky backdrop on SkyPillar_Top (81 uses, collision 1), so that map needs an override there. Fortree 2f4 at Route120 (13,17) is drawn as water and labelled water, but its behaviour is 0x72 (a Route 120 bridge type), which is not surfable in sTileBitAttributes. What Sapphire does when you surf onto it is unknown; an emulator test would settle it. Slateport 27d (water_edge) is mostly sea with a seawall corner (behaviour 0x00, collision 0, elevation 1, map edge, 1 use), so 'water' would describe it better; it cannot be reached, so the label does no harm. Pacifidlog 237 (cracked_floor) is already a hole (behaviour 0x66), as its note says."
+}

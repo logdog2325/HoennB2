@@ -1,0 +1,51 @@
+First, we will hold your Pokémon for\nsafekeeping.{be01}\nYou may then choose from our\nselection of Pokémon.
+Thank you for competing!\nLet us restore your Pokémon!
+The 2nd match is next!\nAre you ready?
+The 3rd match is next!\nAre you ready?
+The 4th match is next!\nAre you ready?
+The 5th match is next!\nAre you ready?
+The 6th match is next!\nAre you ready?
+Finally, the 7th match is next!\nAre you ready?
+Would you like to save and quit\nthe game?
+Would you like to retire from your\nBattle Swap challenge?
+I’ve conducted a little investigation\nabout your upcoming opponent.
+The Trainer is apparently skilled\nin the handling of the Normal type.
+The Trainer is apparently skilled\nin the handling of the Fighting type.
+The Trainer is apparently skilled\nin the handling of the Flying type.
+The Trainer is apparently skilled\nin the handling of the Poison type.
+The Trainer is apparently skilled\nin the handling of the Ground type.
+The Trainer is apparently skilled\nin the handling of the Rock type.
+The Trainer is apparently skilled\nin the handling of the Bug type.
+The Trainer is apparently skilled\nin the handling of the Ghost type.
+The Trainer is apparently skilled\nin the handling of the Steel type.
+…
+The Trainer is apparently skilled\nin the handling of the Fire type.
+The Trainer is apparently skilled\nin the handling of the Water type.
+The Trainer is apparently skilled\nin the handling of the Grass type.
+The Trainer is apparently skilled\nin the handling of the Electric type.
+The Trainer is apparently skilled\nin the handling of the Psychic type.
+The Trainer is apparently skilled\nin the handling of the Ice type.
+The Trainer is apparently skilled\nin the handling of the Dragon type.
+The Trainer is apparently skilled\nin the handling of the Dark type.
+The Trainer appears to have no clear\nfavorites when it comes to type.
+The favorite battle style appears to\nbe free-spirited and unrestrained.
+The favorite battle style appears to\nbe one based on total preparation.
+The favorite battle style appears to\nbe slow and steady.
+The favorite battle style appears to\nbe one of endurance.
+The favorite battle style appears to\nbe high risk, high return.
+The favorite battle style appears\nto be weakening the foe to start.
+The favorite battle style appears to\nbe impossible to predict.
+The favorite battle style appears to\ndepend on the battle’s flow.
+The favorite battle style appears to\nbe flexibly adaptable to the situation.
+Before starting the battle, would you\nlike to swap a Pokémon?
+Thank you!\nYour Pokémon swap is complete.
+Right this way, please!
+I am saving your data.\nPlease wait.
+Excuse me! Excuse me, please!\nMay I get you to wait a few moments?
+…Uh-huh? What?! …Whoa!\nUnderstood, sir! Will do!
+Oh, my…\nSorry to keep you waiting!{be01}\nI have a message from this facility’s\nboss, the Factory Head.{be01}\nHe says, “We’re going to do it!\nCome here right now!”
+The Factory Head is demanding you.\nAre you prepared to face him?
+I’m terribly sorry, but I can’t tell you\nanything about the Factory Head.
+Go On
+Rest
+Retire

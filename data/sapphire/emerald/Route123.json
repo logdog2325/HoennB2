@@ -1,0 +1,1269 @@
+{
+ "map": "Route123",
+ "id": "MAP_ROUTE123",
+ "layout": "LAYOUT_ROUTE123",
+ "music": "MUS_ROUTE122",
+ "region_map_section": "MAPSEC_ROUTE_123",
+ "weather": "WEATHER_SUNNY",
+ "connections": [
+  {
+   "map": "MAP_ROUTE122",
+   "offset": 100,
+   "direction": "up"
+  },
+  {
+   "map": "MAP_ROUTE118",
+   "offset": 0,
+   "direction": "left"
+  }
+ ],
+ "npcs": [
+  {
+   "local_id": 1,
+   "x": 11,
+   "y": 3,
+   "gfx": "OBJ_EVENT_GFX_BERRY_TREE",
+   "movement": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BerryTreeScript",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 2,
+   "x": 12,
+   "y": 3,
+   "gfx": "OBJ_EVENT_GFX_BERRY_TREE",
+   "movement": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BerryTreeScript",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 3,
+   "x": 14,
+   "y": 3,
+   "gfx": "OBJ_EVENT_GFX_BERRY_TREE",
+   "movement": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BerryTreeScript",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 4,
+   "x": 15,
+   "y": 3,
+   "gfx": "OBJ_EVENT_GFX_BERRY_TREE",
+   "movement": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BerryTreeScript",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 5,
+   "x": 81,
+   "y": 1,
+   "gfx": "OBJ_EVENT_GFX_BERRY_TREE",
+   "movement": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BerryTreeScript",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 6,
+   "x": 82,
+   "y": 1,
+   "gfx": "OBJ_EVENT_GFX_BERRY_TREE",
+   "movement": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BerryTreeScript",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 7,
+   "x": 83,
+   "y": 1,
+   "gfx": "OBJ_EVENT_GFX_BERRY_TREE",
+   "movement": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BerryTreeScript",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 8,
+   "x": 70,
+   "y": 12,
+   "gfx": "OBJ_EVENT_GFX_WOMAN_5",
+   "movement": "MOVEMENT_TYPE_ROTATE_CLOCKWISE",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route123_EventScript_Wendy",
+   "texts": {
+    "Route123_Text_WendyIntro": "Want to determine how strong you are?\\nI'll be the test!$",
+    "Route123_Text_WendyDefeat": "You passed with flying colors!$",
+    "Route123_Text_WendyPostBattle": "To best even me…\\nYour strength is marvelous!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 9,
+   "x": 58,
+   "y": 7,
+   "gfx": "OBJ_EVENT_GFX_MAN_3",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN_AND_LEFT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route123_EventScript_Braxton",
+   "texts": {
+    "Route123_Text_BraxtonIntro": "You seem to have a big collection\\nof GYM BADGES.\\pLet me see if you're actually worthy of\\nthose BADGES!$",
+    "Route123_Text_BraxtonDefeat": "Oh, you're worthy, all right!$",
+    "Route123_Text_BraxtonPostBattle": "You did your BADGES proud in that\\nmatch!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 10,
+   "x": 14,
+   "y": 5,
+   "gfx": "OBJ_EVENT_GFX_BERRY_TREE",
+   "movement": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BerryTreeScript",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 11,
+   "x": 15,
+   "y": 5,
+   "gfx": "OBJ_EVENT_GFX_BERRY_TREE",
+   "movement": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BerryTreeScript",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 12,
+   "x": 17,
+   "y": 5,
+   "gfx": "OBJ_EVENT_GFX_BERRY_TREE",
+   "movement": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BerryTreeScript",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 13,
+   "x": 18,
+   "y": 5,
+   "gfx": "OBJ_EVENT_GFX_BERRY_TREE",
+   "movement": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BerryTreeScript",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 14,
+   "x": 17,
+   "y": 3,
+   "gfx": "OBJ_EVENT_GFX_BERRY_TREE",
+   "movement": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BerryTreeScript",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 15,
+   "x": 18,
+   "y": 3,
+   "gfx": "OBJ_EVENT_GFX_BERRY_TREE",
+   "movement": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BerryTreeScript",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 16,
+   "x": 11,
+   "y": 5,
+   "gfx": "OBJ_EVENT_GFX_BERRY_TREE",
+   "movement": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BerryTreeScript",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 17,
+   "x": 12,
+   "y": 5,
+   "gfx": "OBJ_EVENT_GFX_BERRY_TREE",
+   "movement": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BerryTreeScript",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 18,
+   "x": 101,
+   "y": 13,
+   "gfx": "OBJ_EVENT_GFX_CUTTABLE_TREE",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_TEMP_11",
+   "script": "EventScript_CutTree",
+   "texts": {
+    "Text_WantToCut": "This tree looks like it can be\\nCUT down!\\pWould you like to CUT it?$",
+    "Text_MonUsedFieldMove": "{STR_VAR_1} used {STR_VAR_2}!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 19,
+   "x": 129,
+   "y": 14,
+   "gfx": "OBJ_EVENT_GFX_CUTTABLE_TREE",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_TEMP_12",
+   "script": "EventScript_CutTree",
+   "texts": {
+    "Text_WantToCut": "This tree looks like it can be\\nCUT down!\\pWould you like to CUT it?$",
+    "Text_MonUsedFieldMove": "{STR_VAR_1} used {STR_VAR_2}!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 20,
+   "x": 92,
+   "y": 9,
+   "gfx": "OBJ_EVENT_GFX_CUTTABLE_TREE",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_TEMP_13",
+   "script": "EventScript_CutTree",
+   "texts": {
+    "Text_WantToCut": "This tree looks like it can be\\nCUT down!\\pWould you like to CUT it?$",
+    "Text_MonUsedFieldMove": "{STR_VAR_1} used {STR_VAR_2}!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 21,
+   "x": 31,
+   "y": 8,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_ROUTE_123_CALCIUM",
+   "script": "Route123_EventScript_ItemCalcium",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 22,
+   "x": 108,
+   "y": 13,
+   "gfx": "OBJ_EVENT_GFX_GIRL_3",
+   "movement": "MOVEMENT_TYPE_FACE_UP_AND_LEFT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "Route123_EventScript_GigaDrainGirl",
+   "texts": {
+    "Route123_Text_LoveGrassMonsHaveAny": "I love GRASS-type POKéMON!\\pDo you have any GRASS-type POKéMON?$",
+    "Route123_Text_YouLikeGrassMonsTooHaveThis": "Oh?\\pYou like GRASS-type POKéMON, too,\\ndon't you?\\pI'm so happy, you can have this!\\nIt's a token of our friendship.$",
+    "Route123_Text_CheckTreesWithMyGrassMon": "I check trees with my GRASS-type\\nPOKéMON. I'm like a tree doctor.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 23,
+   "x": 109,
+   "y": 13,
+   "gfx": "OBJ_EVENT_GFX_BERRY_TREE",
+   "movement": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BerryTreeScript",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 24,
+   "x": 110,
+   "y": 13,
+   "gfx": "OBJ_EVENT_GFX_BERRY_TREE",
+   "movement": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BerryTreeScript",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 25,
+   "x": 111,
+   "y": 13,
+   "gfx": "OBJ_EVENT_GFX_BERRY_TREE",
+   "movement": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BerryTreeScript",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 26,
+   "x": 18,
+   "y": 9,
+   "gfx": "OBJ_EVENT_GFX_WOMAN_2",
+   "movement": "MOVEMENT_TYPE_ROTATE_COUNTERCLOCKWISE",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route123_EventScript_Violet",
+   "texts": {
+    "Route123_Text_VioletIntro": "They say that good times are filled\\nwith good aromas.$",
+    "Route123_Text_VioletDefeat": "Oh…\\nI smell the bitter scent of misery…$",
+    "Route123_Text_VioletPostBattle": "The BERRY MASTER's garden is filled\\nwith uplifting fragrances.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 27,
+   "x": 38,
+   "y": 13,
+   "gfx": "OBJ_EVENT_GFX_TWIN",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route123_EventScript_Yuki",
+   "texts": {
+    "Route123_Text_YukiIntro": "YUKI: Okay!\\nWe're beating the TRAINER's POKéMON!$",
+    "Route123_Text_YukiDefeat": "YUKI: Uh-oh, we lost.$",
+    "Route123_Text_YukiNotEnoughMons": "YUKI: It's no fun to battle if you\\ndon't have two POKéMON.$",
+    "Route123_Text_YukiPostBattle": "YUKI: Why are you so strong?\\nWe've never lost before.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 28,
+   "x": 37,
+   "y": 13,
+   "gfx": "OBJ_EVENT_GFX_TWIN",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route123_EventScript_Miu",
+   "texts": {
+    "Route123_Text_MiuIntro": "MIU: Hello, TRAINER. I hope your\\nPOKéMON won't cry when they lose.$",
+    "Route123_Text_MiuDefeat": "MIU: Uh-oh, we lost.$",
+    "Route123_Text_MiuNotEnoughMons": "MIU: It's no fun to battle if you\\ndon't have two POKéMON.$",
+    "Route123_Text_MiuPostBattle": "MIU: TRAINER, your POKéMON are\\nstrong because you are friends.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 29,
+   "x": 138,
+   "y": 12,
+   "gfx": "OBJ_EVENT_GFX_PSYCHIC_M",
+   "movement": "MOVEMENT_TYPE_FACE_LEFT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route123_EventScript_Cameron",
+   "texts": {
+    "Route123_Text_CameronIntro": "Being a psychic is about willpower.\\pI've willed myself not to lose to\\nanyone. That makes me strong!$",
+    "Route123_Text_CameronDefeat": "I feel sad…$",
+    "Route123_Text_CameronPostBattle": "Being a psychic is about willpower.\\nI thought I wouldn't lose to you…$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 30,
+   "x": 49,
+   "y": 16,
+   "gfx": "OBJ_EVENT_GFX_LASS",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route123_EventScript_Jacki",
+   "texts": {
+    "Route123_Text_JackiIntro": "Don't be too happy if your POKéMON\\ndevelop psychic powers.\\pYou need to refine those powers to\\nmake them really useful.$",
+    "Route123_Text_JackiDefeat": "Overwhelmed!$",
+    "Route123_Text_JackiPostBattle": "We all have psychic powers.\\nWe've just forgotten how to use them.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 31,
+   "x": 87,
+   "y": 12,
+   "gfx": "OBJ_EVENT_GFX_HEX_MANIAC",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route123_EventScript_Kindra",
+   "texts": {
+    "Route123_Text_KindraIntro": "MT. PYRE…\\nWhere the spirits of POKéMON sleep…\\lWill your POKéMON sleep?$",
+    "Route123_Text_KindraDefeat": "Overflowing with vitality…$",
+    "Route123_Text_KindraPostBattle": "MT. PYRE…\\nWhere the spirits of POKéMON sleep…\\pIt must overflow with a power that\\nsoothes spirits…$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 32,
+   "x": 27,
+   "y": 18,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_ROUTE_123_ULTRA_BALL",
+   "script": "Route123_EventScript_ItemUltraBall",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 33,
+   "x": 75,
+   "y": 9,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_ROUTE_123_ELIXIR",
+   "script": "Route123_EventScript_ItemElixir",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 34,
+   "x": 138,
+   "y": 14,
+   "gfx": "OBJ_EVENT_GFX_NINJA_BOY",
+   "movement": "MOVEMENT_TYPE_TREE_DISGUISE",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route123_EventScript_Jonas",
+   "texts": {
+    "Route123_Text_JonasIntro": "I lay in ambush, and a TRAINER has\\nlanded in my trap!$",
+    "Route123_Text_JonasDefeat": "If you don't lose, how am I supposed\\nto have fun playing ninja?$",
+    "Route123_Text_JonasPostBattle": "I'm going to ambush a weaker-looking\\nTRAINER next time.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 35,
+   "x": 138,
+   "y": 16,
+   "gfx": "OBJ_EVENT_GFX_WOMAN_2",
+   "movement": "MOVEMENT_TYPE_FACE_UP",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route123_EventScript_Kayley",
+   "texts": {
+    "Route123_Text_KayleyIntro": "I just bought this parasol.\\nMy cuteness should be up by a third!$",
+    "Route123_Text_KayleyDefeat": "You're better than me by about\\nfive times!$",
+    "Route123_Text_KayleyPostBattle": "Using accessories effectively is\\nthe secret behind fashion appeal.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 36,
+   "x": 87,
+   "y": 17,
+   "gfx": "OBJ_EVENT_GFX_MANIAC",
+   "movement": "MOVEMENT_TYPE_FACE_UP",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route123_EventScript_Ed",
+   "texts": {
+    "Route123_Text_EdIntro": "When there are no TRAINERS around,\\nI let my POKéMON battle each other.\\lI watch them.$",
+    "Route123_Text_EdDefeat": "I kind of like your POKéMON.$",
+    "Route123_Text_EdPostBattle": "Hehe, I'm swiping your battling ideas!\\nI think they'll make me better.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 37,
+   "x": 66,
+   "y": 16,
+   "gfx": "OBJ_EVENT_GFX_MAN_5",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route123_EventScript_Fernando",
+   "texts": {
+    "Route123_Text_FernandoIntro": "I'll turn your lights out while\\nI rip through this tune!$",
+    "Route123_Text_FernandoDefeat": "Hey, hold it!\\nI was still playing the intro!$",
+    "Route123_Text_FernandoPostBattle": "You're rock steady.\\nI'd like to write a tune about you.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 38,
+   "x": 66,
+   "y": 19,
+   "gfx": "OBJ_EVENT_GFX_MAN_5",
+   "movement": "MOVEMENT_TYPE_FACE_UP",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route123_EventScript_Alberto",
+   "texts": {
+    "Route123_Text_AlbertoIntro": "I have to tell you, BIRD POKéMON\\nare my obsession!\\pBirds are cool!\\nThey're the best!$",
+    "Route123_Text_AlbertoDefeat": "Even in defeat, BIRD POKéMON are cool!$",
+    "Route123_Text_AlbertoPostBattle": "I gather BIRD POKéMON feathers that\\nscatter during battles.\\pI'm going to make a hat with\\nBIRD POKéMON feathers.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 39,
+   "x": 49,
+   "y": 19,
+   "gfx": "OBJ_EVENT_GFX_EXPERT_M",
+   "movement": "MOVEMENT_TYPE_FACE_UP",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route123_EventScript_Frederick",
+   "texts": {
+    "Route123_Text_FrederickIntro": "Hello, child!\\nCan you spare some time?$",
+    "Route123_Text_FrederickDefeat": "Ah, a mighty capable child!\\nLet me contribute to your allowance.$",
+    "Route123_Text_FrederickPostBattle": "Contribute to your allowance?\\nWasn't the prize money enough?$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 40,
+   "x": 43,
+   "y": 15,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_ROUTE_123_PP_UP",
+   "script": "Route123_EventScript_ItemPPUp",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 41,
+   "x": 14,
+   "y": 16,
+   "gfx": "OBJ_EVENT_GFX_WOMAN_5",
+   "movement": "MOVEMENT_TYPE_FACE_UP",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route123_EventScript_Jazmyn",
+   "texts": {
+    "Route123_Text_JazmynIntro": "My confidence will get a boost by\\nbeating someone obviously strong!$",
+    "Route123_Text_JazmynDefeat": "There goes my confidence…$",
+    "Route123_Text_JazmynPostBattle": "They say that you can't judge a person\\nby their appearance.\\pBut often, their looks don't lie…$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 42,
+   "x": 14,
+   "y": 12,
+   "gfx": "OBJ_EVENT_GFX_YOUNGSTER",
+   "movement": "MOVEMENT_TYPE_WALK_DOWN_AND_UP",
+   "range": [
+    1,
+    3
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route123_EventScript_Davis",
+   "texts": {
+    "Route123_Text_DavisIntro": "This is my awesome BUG POKéMON!\\nMy big brother got it for me.$",
+    "Route123_Text_DavisDefeat": "Waaaah!\\nYou meanie!$",
+    "Route123_Text_DavisPostBattle": "Don't tell my brother I lost.\\nYou have to keep it a secret!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 43,
+   "x": 57,
+   "y": 16,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_ROUTE_123_REVIVAL_HERB",
+   "script": "Route123_EventScript_ItemRevivalHerb",
+   "texts": {},
+   "complex": true
+  }
+ ],
+ "signs": [
+  {
+   "x": 117,
+   "y": 10,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "Route123_EventScript_RouteSignMtPyre",
+   "texts": {
+    "Route123_Text_RouteSignMtPyre": "{UP_ARROW} MT. PYRE\\n“Forbidden to the faint of heart.”$"
+   }
+  },
+  {
+   "x": 47,
+   "y": 3,
+   "type": "secret_base",
+   "raw": {
+    "type": "secret_base",
+    "x": 47,
+    "y": 3,
+    "elevation": 0,
+    "secret_base_id": "SECRET_BASE_BLUE_CAVE1_2"
+   }
+  },
+  {
+   "x": 49,
+   "y": 3,
+   "type": "secret_base",
+   "raw": {
+    "type": "secret_base",
+    "x": 49,
+    "y": 3,
+    "elevation": 0,
+    "secret_base_id": "SECRET_BASE_BLUE_CAVE2_2"
+   }
+  },
+  {
+   "x": 10,
+   "y": 12,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "Route123_EventScript_RouteSign",
+   "texts": {
+    "Route123_Text_RouteSign": "{RIGHT_ARROW} ROUTE 123\\n{LEFT_ARROW} ROUTE 118$"
+   }
+  },
+  {
+   "x": 75,
+   "y": 1,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 75,
+    "y": 1,
+    "elevation": 3,
+    "item": "ITEM_SUPER_REPEL",
+    "flag": "FLAG_HIDDEN_ITEM_ROUTE_123_SUPER_REPEL"
+   }
+  },
+  {
+   "x": 20,
+   "y": 7,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "Route123_EventScript_BerryMastersHouseSign",
+   "texts": {
+    "Route123_Text_BerryMastersHouse": "BERRY MASTER'S HOUSE$"
+   }
+  },
+  {
+   "x": 57,
+   "y": 5,
+   "type": "secret_base",
+   "raw": {
+    "type": "secret_base",
+    "x": 57,
+    "y": 5,
+    "elevation": 0,
+    "secret_base_id": "SECRET_BASE_BLUE_CAVE1_3"
+   }
+  },
+  {
+   "x": 12,
+   "y": 1,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 12,
+    "y": 1,
+    "elevation": 3,
+    "item": "ITEM_REVIVE",
+    "flag": "FLAG_HIDDEN_ITEM_ROUTE_123_REVIVE"
+   }
+  },
+  {
+   "x": 91,
+   "y": 15,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 91,
+    "y": 15,
+    "elevation": 3,
+    "item": "ITEM_HYPER_POTION",
+    "flag": "FLAG_HIDDEN_ITEM_ROUTE_123_HYPER_POTION"
+   }
+  },
+  {
+   "x": 139,
+   "y": 15,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 139,
+    "y": 15,
+    "elevation": 3,
+    "item": "ITEM_PP_UP",
+    "flag": "FLAG_HIDDEN_ITEM_ROUTE_123_PP_UP"
+   }
+  },
+  {
+   "x": 138,
+   "y": 18,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 138,
+    "y": 18,
+    "elevation": 3,
+    "item": "ITEM_RARE_CANDY",
+    "flag": "FLAG_HIDDEN_ITEM_ROUTE_123_RARE_CANDY"
+   }
+  }
+ ],
+ "warps": [
+  {
+   "id": 0,
+   "x": 22,
+   "y": 6,
+   "dest_map": "MAP_ROUTE123_BERRY_MASTERS_HOUSE",
+   "dest_warp_id": "0"
+  }
+ ],
+ "coord_events": [
+  {
+   "type": "weather",
+   "x": 90,
+   "y": 16,
+   "elevation": 3,
+   "weather": "COORD_EVENT_WEATHER_ROUTE123_CYCLE"
+  },
+  {
+   "type": "weather",
+   "x": 92,
+   "y": 9,
+   "elevation": 3,
+   "weather": "COORD_EVENT_WEATHER_ROUTE123_CYCLE"
+  },
+  {
+   "type": "weather",
+   "x": 93,
+   "y": 12,
+   "elevation": 3,
+   "weather": "COORD_EVENT_WEATHER_ROUTE123_CYCLE"
+  },
+  {
+   "type": "weather",
+   "x": 92,
+   "y": 13,
+   "elevation": 3,
+   "weather": "COORD_EVENT_WEATHER_ROUTE123_CYCLE"
+  },
+  {
+   "type": "weather",
+   "x": 91,
+   "y": 14,
+   "elevation": 3,
+   "weather": "COORD_EVENT_WEATHER_ROUTE123_CYCLE"
+  },
+  {
+   "type": "weather",
+   "x": 19,
+   "y": 13,
+   "elevation": 3,
+   "weather": "COORD_EVENT_WEATHER_ROUTE123_CYCLE"
+  },
+  {
+   "type": "weather",
+   "x": 19,
+   "y": 12,
+   "elevation": 3,
+   "weather": "COORD_EVENT_WEATHER_ROUTE123_CYCLE"
+  },
+  {
+   "type": "weather",
+   "x": 34,
+   "y": 13,
+   "elevation": 3,
+   "weather": "COORD_EVENT_WEATHER_ROUTE123_CYCLE"
+  },
+  {
+   "type": "weather",
+   "x": 19,
+   "y": 14,
+   "elevation": 3,
+   "weather": "COORD_EVENT_WEATHER_ROUTE123_CYCLE"
+  },
+  {
+   "type": "weather",
+   "x": 19,
+   "y": 15,
+   "elevation": 3,
+   "weather": "COORD_EVENT_WEATHER_ROUTE123_CYCLE"
+  },
+  {
+   "type": "weather",
+   "x": 19,
+   "y": 16,
+   "elevation": 3,
+   "weather": "COORD_EVENT_WEATHER_ROUTE123_CYCLE"
+  },
+  {
+   "type": "weather",
+   "x": 108,
+   "y": 14,
+   "elevation": 3,
+   "weather": "COORD_EVENT_WEATHER_SUNNY"
+  },
+  {
+   "type": "weather",
+   "x": 109,
+   "y": 15,
+   "elevation": 3,
+   "weather": "COORD_EVENT_WEATHER_SUNNY"
+  },
+  {
+   "type": "weather",
+   "x": 110,
+   "y": 16,
+   "elevation": 3,
+   "weather": "COORD_EVENT_WEATHER_SUNNY"
+  },
+  {
+   "type": "weather",
+   "x": 111,
+   "y": 17,
+   "elevation": 3,
+   "weather": "COORD_EVENT_WEATHER_SUNNY"
+  },
+  {
+   "type": "weather",
+   "x": 112,
+   "y": 18,
+   "elevation": 3,
+   "weather": "COORD_EVENT_WEATHER_SUNNY"
+  },
+  {
+   "type": "weather",
+   "x": 9,
+   "y": 12,
+   "elevation": 3,
+   "weather": "COORD_EVENT_WEATHER_SUNNY"
+  },
+  {
+   "type": "weather",
+   "x": 9,
+   "y": 13,
+   "elevation": 3,
+   "weather": "COORD_EVENT_WEATHER_SUNNY"
+  },
+  {
+   "type": "weather",
+   "x": 9,
+   "y": 14,
+   "elevation": 3,
+   "weather": "COORD_EVENT_WEATHER_SUNNY"
+  },
+  {
+   "type": "weather",
+   "x": 9,
+   "y": 15,
+   "elevation": 3,
+   "weather": "COORD_EVENT_WEATHER_SUNNY"
+  },
+  {
+   "type": "weather",
+   "x": 9,
+   "y": 16,
+   "elevation": 3,
+   "weather": "COORD_EVENT_WEATHER_SUNNY"
+  },
+  {
+   "type": "weather",
+   "x": 94,
+   "y": 10,
+   "elevation": 3,
+   "weather": "COORD_EVENT_WEATHER_ROUTE123_CYCLE"
+  }
+ ],
+ "wild": {
+  "land_mons": {
+   "encounter_rate": 20,
+   "slot_rates": [
+    20,
+    20,
+    10,
+    10,
+    10,
+    10,
+    5,
+    5,
+    4,
+    4,
+    1,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_POOCHYENA",
+     "min": 26,
+     "max": 26
+    },
+    {
+     "species": "SPECIES_SHUPPET",
+     "min": 26,
+     "max": 26
+    },
+    {
+     "species": "SPECIES_MIGHTYENA",
+     "min": 26,
+     "max": 26
+    },
+    {
+     "species": "SPECIES_SHUPPET",
+     "min": 28,
+     "max": 28
+    },
+    {
+     "species": "SPECIES_MIGHTYENA",
+     "min": 28,
+     "max": 28
+    },
+    {
+     "species": "SPECIES_ODDISH",
+     "min": 26,
+     "max": 26
+    },
+    {
+     "species": "SPECIES_ODDISH",
+     "min": 28,
+     "max": 28
+    },
+    {
+     "species": "SPECIES_GLOOM",
+     "min": 28,
+     "max": 28
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 26,
+     "max": 26
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 27,
+     "max": 27
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 28,
+     "max": 28
+    },
+    {
+     "species": "SPECIES_KECLEON",
+     "min": 25,
+     "max": 25
+    }
+   ]
+  },
+  "water_mons": {
+   "encounter_rate": 4,
+   "slot_rates": [
+    60,
+    30,
+    5,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 5,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 15,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_PELIPPER",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_PELIPPER",
+     "min": 25,
+     "max": 30
+    }
+   ]
+  },
+  "fishing_mons": {
+   "encounter_rate": 30,
+   "slot_rates": [
+    70,
+    30,
+    60,
+    20,
+    20,
+    40,
+    40,
+    15,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 20,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 35,
+     "max": 40
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 40,
+     "max": 45
+    }
+   ]
+  }
+ }
+}

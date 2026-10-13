@@ -1,0 +1,689 @@
+{
+ "map": "Route117",
+ "id": "MAP_ROUTE117",
+ "layout": "LAYOUT_ROUTE117",
+ "music": "MUS_ROUTE110",
+ "region_map_section": "MAPSEC_ROUTE_117",
+ "weather": "WEATHER_SUNNY",
+ "connections": [
+  {
+   "map": "MAP_VERDANTURF_TOWN",
+   "offset": 0,
+   "direction": "left"
+  },
+  {
+   "map": "MAP_MAUVILLE_CITY",
+   "offset": 0,
+   "direction": "right"
+  }
+ ],
+ "npcs": [
+  {
+   "local_id": 1,
+   "x": 13,
+   "y": 13,
+   "gfx": "OBJ_EVENT_GFX_WOMAN_1",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "Route117_EventScript_Woman",
+   "texts": {
+    "Route117_Text_ArentTheseFlowersPretty": "What do you think?\\nAren't these flowers pretty?\\pI planted them all!$"
+   }
+  },
+  {
+   "local_id": 2,
+   "x": 25,
+   "y": 5,
+   "gfx": "OBJ_EVENT_GFX_LITTLE_BOY",
+   "movement": "MOVEMENT_TYPE_WALK_SEQUENCE_DOWN_RIGHT_LEFT_UP",
+   "range": [
+    2,
+    2
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "Route117_EventScript_LittleBoy",
+   "texts": {
+    "Route117_Text_AirIsTastyHere": "The air is tasty here!$"
+   }
+  },
+  {
+   "local_id": 3,
+   "x": 47,
+   "y": 4,
+   "gfx": "OBJ_EVENT_GFX_OLD_MAN",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "Route117_EventScript_DaycareMan",
+   "texts": {
+    "Route117_Text_SeeWifeIfYoudLikeMeToRaiseMon": "I'm the DAY-CARE MAN.\\pI help take care of the precious\\nPOKéMON of TRAINERS.\\pIf you'd like me to raise your POKéMON,\\nhave a word with my wife.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 4,
+   "x": 33,
+   "y": 3,
+   "gfx": "OBJ_EVENT_GFX_ZIGZAGOON_2",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "0x0",
+   "missing": true
+  },
+  {
+   "local_id": 5,
+   "x": 39,
+   "y": 4,
+   "gfx": "OBJ_EVENT_GFX_KECLEON",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "0x0",
+   "missing": true
+  },
+  {
+   "local_id": 6,
+   "x": 42,
+   "y": 2,
+   "gfx": "OBJ_EVENT_GFX_AZUMARILL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "0x0",
+   "missing": true
+  },
+  {
+   "local_id": 7,
+   "x": 49,
+   "y": 2,
+   "gfx": "OBJ_EVENT_GFX_PIKACHU",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "0x0",
+   "missing": true
+  },
+  {
+   "local_id": 8,
+   "x": 38,
+   "y": 16,
+   "gfx": "OBJ_EVENT_GFX_RUNNING_TRIATHLETE_M",
+   "movement": "MOVEMENT_TYPE_WALK_RIGHT_AND_LEFT",
+   "range": [
+    8,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route117_EventScript_Dylan",
+   "texts": {
+    "Route117_Text_DylanIntro": "I'm in the middle of a triathlon, but,\\nwhatever, let's have a battle!$",
+    "Route117_Text_DylanDefeat": "I ran out of energy!$",
+    "Route117_Text_DylanPostBattle": "I may have blown it…\\pI might have dropped to last during\\nthat battle…$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 9,
+   "x": 8,
+   "y": 10,
+   "gfx": "OBJ_EVENT_GFX_WOMAN_2",
+   "movement": "MOVEMENT_TYPE_ROTATE_COUNTERCLOCKWISE",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route117_EventScript_Lydia",
+   "texts": {
+    "Route117_Text_LydiaIntro": "Please, allow me to evaluate if you\\nhave raised your POKéMON properly.$",
+    "Route117_Text_LydiaDefeat": "Yes, they are growing properly.$",
+    "Route117_Text_LydiaPostBattle": "Try raising POKéMON with more\\nattention to their character traits.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 10,
+   "x": 33,
+   "y": 11,
+   "gfx": "OBJ_EVENT_GFX_MAN_4",
+   "movement": "MOVEMENT_TYPE_FACE_UP_AND_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route117_EventScript_Isaac",
+   "texts": {
+    "Route117_Text_IsaacIntro": "Listen, could I get you to battle\\nthe POKéMON I'm raising?$",
+    "Route117_Text_IsaacDefeat": "You've raised yours superbly…$",
+    "Route117_Text_IsaacPostBattle": "POKéMON isn't all about power.\\pPolishing a unique aspect of one's\\ncharacter is another way of enjoying\\lPOKéMON.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 11,
+   "x": 41,
+   "y": 13,
+   "gfx": "OBJ_EVENT_GFX_BERRY_TREE",
+   "movement": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BerryTreeScript",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 12,
+   "x": 42,
+   "y": 13,
+   "gfx": "OBJ_EVENT_GFX_BERRY_TREE",
+   "movement": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BerryTreeScript",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 13,
+   "x": 43,
+   "y": 13,
+   "gfx": "OBJ_EVENT_GFX_BERRY_TREE",
+   "movement": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BerryTreeScript",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 14,
+   "x": 16,
+   "y": 18,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_ROUTE_117_GREAT_BALL",
+   "script": "Route117_EventScript_ItemGreatBall",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 15,
+   "x": 15,
+   "y": 2,
+   "gfx": "OBJ_EVENT_GFX_CUTTABLE_TREE",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_TEMP_11",
+   "script": "EventScript_CutTree",
+   "texts": {
+    "Text_WantToCut": "This tree looks like it can be\\nCUT down!\\pWould you like to CUT it?$",
+    "Text_MonUsedFieldMove": "{STR_VAR_1} used {STR_VAR_2}!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 16,
+   "x": 9,
+   "y": 1,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_ROUTE_117_REVIVE",
+   "script": "Route117_EventScript_ItemRevive",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 17,
+   "x": 26,
+   "y": 13,
+   "gfx": "OBJ_EVENT_GFX_RUNNING_TRIATHLETE_F",
+   "movement": "MOVEMENT_TYPE_WALK_SEQUENCE_UP_LEFT_RIGHT_DOWN",
+   "range": [
+    2,
+    2
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route117_EventScript_Maria",
+   "texts": {
+    "Route117_Text_MariaIntro": "I do my triathlon training with POKéMON,\\nso I'm pretty confident about my speed.$",
+    "Route117_Text_MariaDefeat": "I need to get more practices in,\\nI guess.$",
+    "Route117_Text_MariaPostBattle": "Training is meaningful only if you\\nkeep it up regularly.\\pOkay! I'll resume my training!\\nTomorrow!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 18,
+   "x": 17,
+   "y": 12,
+   "gfx": "OBJ_EVENT_GFX_MANIAC",
+   "movement": "MOVEMENT_TYPE_FACE_UP",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route117_EventScript_Derek",
+   "texts": {
+    "Route117_Text_DerekIntro": "Once a BUG CATCHER!\\nAnd now a BUG MANIAC!\\pBut my love for POKéMON remains\\nunchanged!$",
+    "Route117_Text_DerekDefeat": "My ineptitude also remains\\nunchanged…$",
+    "Route117_Text_DerekPostBattle": "All I did was follow my heart, and now\\nthey call me a BUG MANIAC…\\pStill, I am an expert on BUG POKéMON,\\nso it's only natural that they call me\\la BUG MANIAC.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 19,
+   "x": 43,
+   "y": 6,
+   "gfx": "OBJ_EVENT_GFX_LASS",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route117_EventScript_Meg",
+   "texts": {
+    "Route117_Text_MegIntro": "MEG: I'm going to tag up with my super\\nsenior student partner and beat you!$",
+    "Route117_Text_MegDefeat": "MEG: Oh, no!\\nI'm sorry, ANNA! I let you down…$",
+    "Route117_Text_MegNotEnoughMons": "MEG: Do you only have one POKéMON?\\nWe can't battle with you, then.\\pWe want to have a 2-on-2 battle.$",
+    "Route117_Text_MegPostBattle": "MEG: I dragged ANNA down…\\nIf I didn't, she would have won!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 20,
+   "x": 42,
+   "y": 6,
+   "gfx": "OBJ_EVENT_GFX_LASS",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route117_EventScript_Anna",
+   "texts": {
+    "Route117_Text_AnnaIntro": "ANNA: I'm with my pretty junior student\\npartner. I have to do good!$",
+    "Route117_Text_AnnaDefeat": "ANNA: I'm with my pretty junior student\\npartner! Let me win!$",
+    "Route117_Text_AnnaNotEnoughMons": "ANNA: If you want to battle us,\\nbring two POKéMON with you.$",
+    "Route117_Text_AnnaPostBattle": "ANNA: Your POKéMON have some good\\ncombinations.\\pI'd say you're second only to us!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 21,
+   "x": 48,
+   "y": 10,
+   "gfx": "OBJ_EVENT_GFX_GIRL_2",
+   "movement": "MOVEMENT_TYPE_WANDER_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "Route117_EventScript_Girl",
+   "texts": {
+    "Route117_Text_DayCarePokemonHadNewMove": "I left my POKéMON at the DAY CARE.\\pWhen I got it back, it had a new move\\nthat I didn't teach it.\\lI was really, really surprised.$"
+   }
+  },
+  {
+   "local_id": 22,
+   "x": 15,
+   "y": 4,
+   "gfx": "OBJ_EVENT_GFX_LASS",
+   "movement": "MOVEMENT_TYPE_FACE_RIGHT",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route117_EventScript_Brandi",
+   "texts": {
+    "Route117_Text_BrandiIntro": "Let me demonstrate the power\\nhidden within a PSYCHIC POKéMON!$",
+    "Route117_Text_BrandiDefeat": "Astonishing!$",
+    "Route117_Text_BrandiPostBattle": "PSYCHIC POKéMON are complex.\\nYou should try catching some.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 23,
+   "x": 21,
+   "y": 4,
+   "gfx": "OBJ_EVENT_GFX_GIRL_3",
+   "movement": "MOVEMENT_TYPE_FACE_LEFT",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route117_EventScript_Aisha",
+   "texts": {
+    "Route117_Text_AishaIntro": "Concentrate on getting the win.\\nThat's how I battle!$",
+    "Route117_Text_AishaDefeat": "I don't waste any time being angry\\nover a loss--I would rather train.$",
+    "Route117_Text_AishaPostBattle": "I think that if you worry about losing,\\nyou're more likely to lose.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 24,
+   "x": 16,
+   "y": 4,
+   "gfx": "OBJ_EVENT_GFX_RUNNING_TRIATHLETE_F",
+   "movement": "MOVEMENT_TYPE_WALK_RIGHT_AND_LEFT",
+   "range": [
+    4,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route117_EventScript_Melina",
+   "texts": {
+    "Route117_Text_MelinaIntro": "Isn't it nice? To battle while looking\\nat pretty flowers?$",
+    "Route117_Text_MelinaDefeat": "Oh, that's quite impressive!$",
+    "Route117_Text_MelinaPostBattle": "It feels wonderful to go for a jog\\nwhile looking at flowers.$"
+   },
+   "complex": true
+  }
+ ],
+ "signs": [
+  {
+   "x": 16,
+   "y": 6,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "Route117_EventScript_RouteSignVerdanturf",
+   "texts": {
+    "Route117_Text_RouteSignVerdanturf": "ROUTE 117\\n{LEFT_ARROW} VERDANTURF TOWN$"
+   }
+  },
+  {
+   "x": 49,
+   "y": 12,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "Route117_EventScript_RouteSignMauville",
+   "texts": {
+    "Route117_Text_RouteSignMauville": "ROUTE 117\\n{RIGHT_ARROW} MAUVILLE CITY$"
+   }
+  },
+  {
+   "x": 49,
+   "y": 5,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "Route117_EventScript_DayCareSign",
+   "texts": {
+    "Route117_Text_DayCareSign": "POKéMON DAY CARE\\n“Let us raise your POKéMON.”$"
+   }
+  },
+  {
+   "x": 3,
+   "y": 18,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 3,
+    "y": 18,
+    "elevation": 3,
+    "item": "ITEM_REPEL",
+    "flag": "FLAG_HIDDEN_ITEM_ROUTE_117_REPEL"
+   }
+  }
+ ],
+ "warps": [
+  {
+   "id": 0,
+   "x": 51,
+   "y": 5,
+   "dest_map": "MAP_ROUTE117_POKEMON_DAY_CARE",
+   "dest_warp_id": "0"
+  }
+ ],
+ "coord_events": [],
+ "wild": {
+  "land_mons": {
+   "encounter_rate": 20,
+   "slot_rates": [
+    20,
+    20,
+    10,
+    10,
+    10,
+    10,
+    5,
+    5,
+    4,
+    4,
+    1,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_POOCHYENA",
+     "min": 13,
+     "max": 13
+    },
+    {
+     "species": "SPECIES_ODDISH",
+     "min": 13,
+     "max": 13
+    },
+    {
+     "species": "SPECIES_POOCHYENA",
+     "min": 14,
+     "max": 14
+    },
+    {
+     "species": "SPECIES_ODDISH",
+     "min": 14,
+     "max": 14
+    },
+    {
+     "species": "SPECIES_MARILL",
+     "min": 13,
+     "max": 13
+    },
+    {
+     "species": "SPECIES_ODDISH",
+     "min": 13,
+     "max": 13
+    },
+    {
+     "species": "SPECIES_ILLUMISE",
+     "min": 13,
+     "max": 13
+    },
+    {
+     "species": "SPECIES_ILLUMISE",
+     "min": 13,
+     "max": 13
+    },
+    {
+     "species": "SPECIES_ILLUMISE",
+     "min": 14,
+     "max": 14
+    },
+    {
+     "species": "SPECIES_ILLUMISE",
+     "min": 14,
+     "max": 14
+    },
+    {
+     "species": "SPECIES_VOLBEAT",
+     "min": 13,
+     "max": 13
+    },
+    {
+     "species": "SPECIES_SEEDOT",
+     "min": 13,
+     "max": 13
+    }
+   ]
+  },
+  "water_mons": {
+   "encounter_rate": 4,
+   "slot_rates": [
+    60,
+    30,
+    5,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_MARILL",
+     "min": 20,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_MARILL",
+     "min": 10,
+     "max": 20
+    },
+    {
+     "species": "SPECIES_MARILL",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_MARILL",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_GOLDEEN",
+     "min": 20,
+     "max": 30
+    }
+   ]
+  },
+  "fishing_mons": {
+   "encounter_rate": 30,
+   "slot_rates": [
+    70,
+    30,
+    60,
+    20,
+    20,
+    40,
+    40,
+    15,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_GOLDEEN",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_GOLDEEN",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_CORPHISH",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_CORPHISH",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_CORPHISH",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_CORPHISH",
+     "min": 20,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_CORPHISH",
+     "min": 35,
+     "max": 40
+    },
+    {
+     "species": "SPECIES_CORPHISH",
+     "min": 40,
+     "max": 45
+    }
+   ]
+  }
+ }
+}

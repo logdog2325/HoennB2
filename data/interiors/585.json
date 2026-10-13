@@ -1,0 +1,38 @@
+{
+ "_doc": "RustboroCity_House1: zone written by converter/gen_interior_recipes_houses.py (warps and parent from converter/gen_interiors.py); story people left for the story phase: person LITTLE_BOY_1 at (6,4) RustboroCity_House1_EventScript_Trader (story/complex script)",
+ "zone": 585,
+ "room": "RustboroCity_House1",
+ "area": 313,
+ "parent": 113,
+ "warps": [
+  {
+   "at": [5, 7],
+   "tile_only": true,
+   "to": [113, 14],
+   "what": "Sapphire warp 0 -> RustboroCity 7"
+  },
+  {
+   "at": [6, 7],
+   "tile_only": true,
+   "to": [113, 14],
+   "what": "Sapphire warp 1 -> RustboroCity 7"
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 2,
+   "model": 64,
+   "script": 1,
+   "dir": 1,
+   "at": [9, 2]
+  }
+ ],
+ "signs": [
+  {
+   "script": 2,
+   "at": [11, 1],
+   "dir": 4,
+   "what": "PictureBookshelf"
+  }
+ ]
+}

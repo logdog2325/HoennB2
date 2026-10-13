@@ -1,0 +1,71 @@
+{
+ "zone": 511,
+ "room": "Route110_SeasideCyclingRoadSouthEntrance",
+ "area": 326,
+ "parent": 368,
+ "_doc": "Route110_SeasideCyclingRoadSouthEntrance: shops agent (b2tools/shops_rooms.py); recipe data/interior_layouts/Route110_SeasideCyclingRoadSouthEntrance.json (b2tools/shops_recipes.py)",
+ "warps": [
+  {
+   "at": [
+    1,
+    5
+   ],
+   "tile_only": true,
+   "to": [
+    368,
+    5
+   ],
+   "what": "Sapphire warp 0 -> Route110 4"
+  },
+  {
+   "at": [
+    2,
+    5
+   ],
+   "tile_only": true,
+   "to": [
+    368,
+    5
+   ],
+   "what": "Sapphire warp 1 -> Route110 4"
+  },
+  {
+   "at": [
+    12,
+    5
+   ],
+   "tile_only": true,
+   "to": [
+    368,
+    6
+   ],
+   "what": "Sapphire warp 2 -> Route110 5"
+  },
+  {
+   "at": [
+    13,
+    5
+   ],
+   "tile_only": true,
+   "to": [
+    368,
+    6
+   ],
+   "what": "Sapphire warp 3 -> Route110 5"
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 1,
+   "model": 77,
+   "script": 1,
+   "dir": 1,
+   "at": [
+    7,
+    2
+   ],
+   "_what": "mart_employee (7,2), Sapphire Route110_SeasideCyclingRoadSouthEntrance_EventScript_16347F"
+  }
+ ],
+ "signs": []
+}

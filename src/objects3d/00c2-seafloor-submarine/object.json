@@ -1,0 +1,14 @@
+{
+ "code": 194,
+ "name": "seafloor-submarine",
+ "what": "the stolen submarine in Underwater_SeafloorCavern (Sapphire: map metatiles 0x2e0-0x2eb, rock after the legend escaped): its own pixels on a camera-facing quad + its floor shadow",
+ "record_from": 8201,
+ "record": {
+  "collWidth": 4,
+  "collHeight": 1,
+  "offX": 0,
+  "offY": 0,
+  "offZ": 0
+ },
+ "made_by": "b2tools/models_objects.py"
+}

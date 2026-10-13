@@ -1,0 +1,333 @@
+{
+ "map": "MtPyre_Summit",
+ "id": "MAP_MT_PYRE_SUMMIT",
+ "layout": "LAYOUT_MT_PYRE_SUMMIT",
+ "music": "MUS_MT_PYRE_EXTERIOR",
+ "region_map_section": "MAPSEC_MT_PYRE",
+ "weather": "WEATHER_FOG_1",
+ "connections": null,
+ "npcs": [
+  {
+   "local_id": 1,
+   "x": 22,
+   "y": 5,
+   "gfx": "OBJ_EVENT_GFX_OLD_MAN_2",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "MtPyre_Summit_EventScript_15D5EF",
+   "texts": {
+    "UnknownString_81B586F": "MT. PYRE is where we calm the spirits\\nof POKéMON that have passed on...\\pThis is a high place where one can\\nsee all of HOENN...\\pThe disembodied spirits of POKéMON\\nmust find solace here...\\pIs it coincidence that you are here...\\pWill you hear out my tale? A tale long\\ntold in the HOENN region?$",
+    "MtPyre_Summit_Text_1B64B3": "MT. PYRE is where we calm the spirits\\nof POKéMON that have passed on...\\pThis is a high place where one can\\nsee all of HOENN...\\pThe disembodied spirits of POKéMON\\nmust find solace here...\\pIs it coincidence that you are here...\\pWill you hear out my tale? A tale long\\ntold in the HOENN region?$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 2,
+   "x": 23,
+   "y": 6,
+   "gfx": "OBJ_EVENT_GFX_VAR_6",
+   "movement": "MOVEMENT_TYPE_FACE_UP",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_LEADER_MT_PYRE_SUMMIT",
+   "script": "0x0",
+   "missing": true
+  },
+  {
+   "local_id": 3,
+   "x": 23,
+   "y": 5,
+   "gfx": "OBJ_EVENT_GFX_OLD_WOMAN_1",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "MtPyre_Summit_EventScript_15D623",
+   "texts": {
+    "UnknownString_81B54BE": "The BLUE ORB you have been entrusted\\nwith and the stolen RED ORB...\\pThey must never be apart...\\nSomething terrible will happen...$",
+    "MtPyre_Summit_Text_1B60F9": "The RED ORB you have been entrusted\\nwith and the stolen BLUE ORB...\\pThey must never be apart...\\nSomething terrible will happen...$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 4,
+   "x": 21,
+   "y": 18,
+   "gfx": "OBJ_EVENT_GFX_VAR_1",
+   "movement": "MOVEMENT_TYPE_FACE_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "FLAG_HIDE_GRUNTS_MT_PYRE_SUMMIT",
+   "script": "MtPyre_Summit_EventScript_1B2DA9",
+   "texts": {
+    "UnknownString_81B50C3": "I'll show you exactly how scary\\nTEAM AQUA can be!$",
+    "UnknownString_81B50F5": "So you think you can stand up alone\\nto TEAM AQUA's might...$",
+    "UnknownString_81B5131": "Yeah, so you are strong...\\nBut there're a lot of us!$",
+    "MtPyre_Summit_Text_1B5CFD": "I'll show you exactly how scary\\nTEAM MAGMA can be!$",
+    "MtPyre_Summit_Text_1B5D30": "So you think you can stand up alone\\nto TEAM MAGMA's might...$",
+    "MtPyre_Summit_Text_1B5D6D": "Yeah, so you are strong...\\nBut there're a lot of us!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 5,
+   "x": 25,
+   "y": 15,
+   "gfx": "OBJ_EVENT_GFX_VAR_1",
+   "movement": "MOVEMENT_TYPE_FACE_LEFT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "FLAG_HIDE_GRUNTS_MT_PYRE_SUMMIT",
+   "script": "MtPyre_Summit_EventScript_1B2DC0",
+   "texts": {
+    "UnknownString_81B5166": "What's up with you?\\nWhat does a single kid expect to do?$",
+    "UnknownString_81B519F": "Dang...\\nToo strong...$",
+    "UnknownString_81B51B5": "You don't know anything.\\nQuit messing around with us!$",
+    "MtPyre_Summit_Text_1B5DA2": "What's up with you?\\nWhat does a single kid expect to do?$",
+    "MtPyre_Summit_Text_1B5DDB": "Dang...\\nToo strong...$",
+    "MtPyre_Summit_Text_1B5DF1": "You don't know anything.\\nQuit messing around with us!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 6,
+   "x": 21,
+   "y": 11,
+   "gfx": "OBJ_EVENT_GFX_VAR_1",
+   "movement": "MOVEMENT_TYPE_FACE_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "FLAG_HIDE_GRUNTS_MT_PYRE_SUMMIT",
+   "script": "MtPyre_Summit_EventScript_1B2DD7",
+   "texts": {
+    "UnknownString_81B51EB": "Hey, I remember you from MT. CHIMNEY!\\nIt's payback time!$",
+    "UnknownString_81B5224": "Urgggh...\\nBeaten by some kid again!$",
+    "UnknownString_81B5248": "Heh, it doesn't matter!\\nWe bought ourselves some time!\\pThe BOSS should have snatched what\\nhe was after!$",
+    "MtPyre_Summit_Text_1B5E27": "Hey, I remember you from MT. CHIMNEY!\\nIt's payback time!$",
+    "MtPyre_Summit_Text_1B5E60": "Urgggh...\\nBeaten by some kid again!$",
+    "MtPyre_Summit_Text_1B5E84": "Heh, it doesn't matter!\\nWe bought ourselves some time!\\pThe BOSS should have snatched what\\nhe was after!$"
+   },
+   "complex": true
+  }
+ ],
+ "signs": [
+  {
+   "x": 9,
+   "y": 25,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 9,
+    "y": 25,
+    "elevation": 0,
+    "item": "ITEM_ZINC",
+    "flag": "FLAG_HIDDEN_ITEM_4F"
+   }
+  },
+  {
+   "x": 37,
+   "y": 7,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 37,
+    "y": 7,
+    "elevation": 3,
+    "item": "ITEM_RARE_CANDY",
+    "flag": "FLAG_HIDDEN_ITEM_50"
+   }
+  }
+ ],
+ "warps": [
+  {
+   "id": 0,
+   "x": 22,
+   "y": 31,
+   "dest_map": "MAP_MT_PYRE_EXTERIOR",
+   "dest_warp_id": "1"
+  },
+  {
+   "id": 1,
+   "x": 23,
+   "y": 31,
+   "dest_map": "MAP_MT_PYRE_EXTERIOR",
+   "dest_warp_id": "1"
+  },
+  {
+   "id": 2,
+   "x": 24,
+   "y": 31,
+   "dest_map": "MAP_MT_PYRE_EXTERIOR",
+   "dest_warp_id": "1"
+  }
+ ],
+ "coord_events": [
+  {
+   "type": "trigger",
+   "x": 22,
+   "y": 7,
+   "elevation": 3,
+   "var": "VAR_MT_PYRE_STATE",
+   "var_value": "0",
+   "script": "MtPyre_Summit_EventScript_15D4BD",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 23,
+   "y": 7,
+   "elevation": 3,
+   "var": "VAR_MT_PYRE_STATE",
+   "var_value": "0",
+   "script": "MtPyre_Summit_EventScript_15D4C9",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 24,
+   "y": 7,
+   "elevation": 3,
+   "var": "VAR_MT_PYRE_STATE",
+   "var_value": "0",
+   "script": "MtPyre_Summit_EventScript_15D4D5",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 22,
+   "y": 7,
+   "elevation": 3,
+   "var": "VAR_MT_PYRE_STATE",
+   "var_value": "2",
+   "script": "MtPyre_Summit_EventScript_15D6CE",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 23,
+   "y": 7,
+   "elevation": 3,
+   "var": "VAR_MT_PYRE_STATE",
+   "var_value": "2",
+   "script": "MtPyre_Summit_EventScript_15D6DA",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 24,
+   "y": 7,
+   "elevation": 3,
+   "var": "VAR_MT_PYRE_STATE",
+   "var_value": "2",
+   "script": "MtPyre_Summit_EventScript_15D6E6",
+   "texts": {},
+   "complex": true
+  }
+ ],
+ "wild": {
+  "land_mons": {
+   "encounter_rate": 10,
+   "slot_rates": [
+    20,
+    20,
+    10,
+    10,
+    10,
+    10,
+    5,
+    5,
+    4,
+    4,
+    1,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_SHUPPET",
+     "min": 28,
+     "max": 28
+    },
+    {
+     "species": "SPECIES_SHUPPET",
+     "min": 29,
+     "max": 29
+    },
+    {
+     "species": "SPECIES_SHUPPET",
+     "min": 27,
+     "max": 27
+    },
+    {
+     "species": "SPECIES_SHUPPET",
+     "min": 26,
+     "max": 26
+    },
+    {
+     "species": "SPECIES_SHUPPET",
+     "min": 30,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_SHUPPET",
+     "min": 25,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_SHUPPET",
+     "min": 24,
+     "max": 24
+    },
+    {
+     "species": "SPECIES_DUSKULL",
+     "min": 28,
+     "max": 28
+    },
+    {
+     "species": "SPECIES_DUSKULL",
+     "min": 26,
+     "max": 26
+    },
+    {
+     "species": "SPECIES_DUSKULL",
+     "min": 30,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_CHIMECHO",
+     "min": 28,
+     "max": 28
+    },
+    {
+     "species": "SPECIES_CHIMECHO",
+     "min": 28,
+     "max": 28
+    }
+   ]
+  }
+ }
+}

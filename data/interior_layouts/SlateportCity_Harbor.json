@@ -1,0 +1,676 @@
+{
+ "_doc": "Slateport Harbor (Sapphire 24x15; zone 596, area 351 = Black 2's Humilau, whose texture animation moves the sea in70_sea1). The building's wall (Sapphire rows 0-3, pairs of windows on row 2 = Black 2's dark-framed windows win02) stands north of the first floor row 4. The ferry pool (4-23, 5-9) is sunk 16 units (block style fac_pool: the sea on its bottom, concrete on its west/east faces; its north face = four concrete pictures 28 units out from the wall); Sapphire's grey railing around it (row 4, col 3, row 10 except the boarding gangway at 7-8) and along the crate yard (col 17) = thin railing blocks (fac_railing); the gangway (7-8, 10) = the steps texture d17_slope_a; the crate yard (18-23, 11-14) = the Plasma Frigate deck floor in77k_yuka1 with cardboard boxes box02/box01 for Sapphire's crates; the three stools (9/12/15, 11) = cushions chushion01. Sapphire's unreachable walkable tiles in the wall rows 0-2 are blocked (they would widen the camera box). The ferry S.S. Tidal and the ferry crew are story objects: not placed.",
+ "map": "SlateportCity_Harbor",
+ "style": "fac_harbor",
+ "floor": [
+  [
+   0,
+   4,
+   23,
+   14
+  ]
+ ],
+ "block": [
+  [
+   0,
+   0
+  ],
+  [
+   1,
+   0
+  ],
+  [
+   2,
+   0
+  ],
+  [
+   3,
+   0
+  ],
+  [
+   4,
+   0
+  ],
+  [
+   5,
+   0
+  ],
+  [
+   6,
+   0
+  ],
+  [
+   7,
+   0
+  ],
+  [
+   8,
+   0
+  ],
+  [
+   9,
+   0
+  ],
+  [
+   10,
+   0
+  ],
+  [
+   11,
+   0
+  ],
+  [
+   12,
+   0
+  ],
+  [
+   13,
+   0
+  ],
+  [
+   14,
+   0
+  ],
+  [
+   15,
+   0
+  ],
+  [
+   16,
+   0
+  ],
+  [
+   17,
+   0
+  ],
+  [
+   18,
+   0
+  ],
+  [
+   19,
+   0
+  ],
+  [
+   20,
+   0
+  ],
+  [
+   21,
+   0
+  ],
+  [
+   22,
+   0
+  ],
+  [
+   23,
+   0
+  ],
+  [
+   0,
+   1
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   2,
+   1
+  ],
+  [
+   3,
+   1
+  ],
+  [
+   4,
+   1
+  ],
+  [
+   5,
+   1
+  ],
+  [
+   6,
+   1
+  ],
+  [
+   7,
+   1
+  ],
+  [
+   8,
+   1
+  ],
+  [
+   9,
+   1
+  ],
+  [
+   10,
+   1
+  ],
+  [
+   11,
+   1
+  ],
+  [
+   12,
+   1
+  ],
+  [
+   13,
+   1
+  ],
+  [
+   14,
+   1
+  ],
+  [
+   15,
+   1
+  ],
+  [
+   16,
+   1
+  ],
+  [
+   17,
+   1
+  ],
+  [
+   18,
+   1
+  ],
+  [
+   19,
+   1
+  ],
+  [
+   20,
+   1
+  ],
+  [
+   21,
+   1
+  ],
+  [
+   22,
+   1
+  ],
+  [
+   23,
+   1
+  ],
+  [
+   0,
+   2
+  ],
+  [
+   1,
+   2
+  ],
+  [
+   2,
+   2
+  ],
+  [
+   3,
+   2
+  ],
+  [
+   4,
+   2
+  ],
+  [
+   5,
+   2
+  ],
+  [
+   6,
+   2
+  ],
+  [
+   7,
+   2
+  ],
+  [
+   8,
+   2
+  ],
+  [
+   9,
+   2
+  ],
+  [
+   10,
+   2
+  ],
+  [
+   11,
+   2
+  ],
+  [
+   12,
+   2
+  ],
+  [
+   13,
+   2
+  ],
+  [
+   14,
+   2
+  ],
+  [
+   15,
+   2
+  ],
+  [
+   16,
+   2
+  ],
+  [
+   17,
+   2
+  ],
+  [
+   18,
+   2
+  ],
+  [
+   19,
+   2
+  ],
+  [
+   20,
+   2
+  ],
+  [
+   21,
+   2
+  ],
+  [
+   22,
+   2
+  ],
+  [
+   23,
+   2
+  ]
+ ],
+ "floor_tex": [
+  {
+   "rect": [
+    18,
+    11,
+    23,
+    14
+   ],
+   "tex": "in77k_yuka1",
+   "src": 379,
+   "size": 32,
+   "_what": "crate yard"
+  },
+  {
+   "rect": [
+    7,
+    10,
+    8,
+    10
+   ],
+   "tex": "d17_slope_a",
+   "src": 323,
+   "size": 16,
+   "_what": "boarding gangway"
+  }
+ ],
+ "blocks": [
+  {
+   "use": "fac_pool",
+   "rect": [
+    4,
+    5,
+    23,
+    9
+   ],
+   "_what": "the ferry pool"
+  },
+  {
+   "use": "fac_railing",
+   "units": [
+    3.35,
+    4.75,
+    24,
+    4.95
+   ],
+   "_what": "railing along the pool's north side (row 4)"
+  },
+  {
+   "use": "fac_railing",
+   "units": [
+    3.35,
+    4.75,
+    3.55,
+    10.45
+   ],
+   "_what": "railing along the pool's west side (col 3)"
+  },
+  {
+   "use": "fac_railing",
+   "units": [
+    3.35,
+    10.25,
+    7.0,
+    10.45
+   ],
+   "_what": "railing south of the pool (3-6, 10)"
+  },
+  {
+   "use": "fac_railing",
+   "units": [
+    9.0,
+    10.25,
+    24,
+    10.45
+   ],
+   "_what": "railing south of the pool (9-23, 10)"
+  },
+  {
+   "use": "fac_railing",
+   "units": [
+    17.05,
+    10.45,
+    17.25,
+    15
+   ],
+   "_what": "railing along the crate yard (col 17)"
+  }
+ ],
+ "decals": [
+  {
+   "tex": "17kabe00",
+   "src": 298,
+   "at": [
+    5
+   ],
+   "z": 5,
+   "y": -18,
+   "w": 32,
+   "h": 16,
+   "gap": 28,
+   "_what": "the pool's north wall"
+  },
+  {
+   "tex": "17kabe00",
+   "src": 298,
+   "at": [
+    7
+   ],
+   "z": 5,
+   "y": -18,
+   "w": 32,
+   "h": 16,
+   "gap": 28,
+   "_what": "the pool's north wall"
+  },
+  {
+   "tex": "17kabe00",
+   "src": 298,
+   "at": [
+    9
+   ],
+   "z": 5,
+   "y": -18,
+   "w": 32,
+   "h": 16,
+   "gap": 28,
+   "_what": "the pool's north wall"
+  },
+  {
+   "tex": "17kabe00",
+   "src": 298,
+   "at": [
+    11
+   ],
+   "z": 5,
+   "y": -18,
+   "w": 32,
+   "h": 16,
+   "gap": 28,
+   "_what": "the pool's north wall"
+  },
+  {
+   "tex": "17kabe00",
+   "src": 298,
+   "at": [
+    13
+   ],
+   "z": 5,
+   "y": -18,
+   "w": 32,
+   "h": 16,
+   "gap": 28,
+   "_what": "the pool's north wall"
+  },
+  {
+   "tex": "17kabe00",
+   "src": 298,
+   "at": [
+    15
+   ],
+   "z": 5,
+   "y": -18,
+   "w": 32,
+   "h": 16,
+   "gap": 28,
+   "_what": "the pool's north wall"
+  },
+  {
+   "tex": "17kabe00",
+   "src": 298,
+   "at": [
+    17
+   ],
+   "z": 5,
+   "y": -18,
+   "w": 32,
+   "h": 16,
+   "gap": 28,
+   "_what": "the pool's north wall"
+  },
+  {
+   "tex": "17kabe00",
+   "src": 298,
+   "at": [
+    19
+   ],
+   "z": 5,
+   "y": -18,
+   "w": 32,
+   "h": 16,
+   "gap": 28,
+   "_what": "the pool's north wall"
+  },
+  {
+   "tex": "17kabe00",
+   "src": 298,
+   "at": [
+    21
+   ],
+   "z": 5,
+   "y": -18,
+   "w": 32,
+   "h": 16,
+   "gap": 28,
+   "_what": "the pool's north wall"
+  },
+  {
+   "tex": "17kabe00",
+   "src": 298,
+   "at": [
+    23
+   ],
+   "z": 5,
+   "y": -18,
+   "w": 32,
+   "h": 16,
+   "gap": 28,
+   "_what": "the pool's north wall"
+  }
+ ],
+ "mats": [
+  {
+   "tex": "chip_mat",
+   "src": 285,
+   "rect": [
+    11,
+    14,
+    12,
+    14
+   ],
+   "border": 0.25,
+   "border_units": 4,
+   "y": 0,
+   "_what": "door mat"
+  }
+ ],
+ "furniture": [
+  {
+   "m": "win02",
+   "at": [
+    2.0,
+    4.5
+   ],
+   "wall": "N",
+   "gap": 2,
+   "y": 14,
+   "_what": "windows (Sapphire row 2)"
+  },
+  {
+   "m": "win02",
+   "at": [
+    7.0,
+    4.5
+   ],
+   "wall": "N",
+   "gap": 2,
+   "y": 14,
+   "_what": "windows (Sapphire row 2)"
+  },
+  {
+   "m": "win02",
+   "at": [
+    12.0,
+    4.5
+   ],
+   "wall": "N",
+   "gap": 2,
+   "y": 14,
+   "_what": "windows (Sapphire row 2)"
+  },
+  {
+   "m": "win02",
+   "at": [
+    17.0,
+    4.5
+   ],
+   "wall": "N",
+   "gap": 2,
+   "y": 14,
+   "_what": "windows (Sapphire row 2)"
+  },
+  {
+   "m": "win02",
+   "at": [
+    22.0,
+    4.5
+   ],
+   "wall": "N",
+   "gap": 2,
+   "y": 14,
+   "_what": "windows (Sapphire row 2)"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    9,
+    11
+   ],
+   "_what": "stool"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    12,
+    11
+   ],
+   "_what": "stool"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    15,
+    11
+   ],
+   "_what": "stool"
+  },
+  {
+   "m": "box02",
+   "at": [
+    18.6,
+    11.2
+   ],
+   "_what": "crates (18-19, 10-11)"
+  },
+  {
+   "m": "box02",
+   "at": [
+    20.6,
+    12.2
+   ],
+   "_what": "crates (20-21, 11-12)"
+  },
+  {
+   "m": "box02",
+   "at": [
+    22.5,
+    13.1
+   ],
+   "_what": "crates (22-23, 12-13)"
+  },
+  {
+   "m": "box01",
+   "tile": [
+    18,
+    13
+   ],
+   "_what": "crate"
+  },
+  {
+   "m": "box01",
+   "tile": [
+    19,
+    13
+   ],
+   "_what": "crate"
+  },
+  {
+   "m": "box01",
+   "tile": [
+    22,
+    14
+   ],
+   "_what": "crate"
+  },
+  {
+   "m": "box01",
+   "tile": [
+    23,
+    14
+   ],
+   "_what": "crate"
+  }
+ ]
+}

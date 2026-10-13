@@ -1,0 +1,14 @@
+{
+ "_doc": "halloffame agent (2026-10-07): Sapphire's Hall of Fame (EverGrandeCity_HallOfFame) in zone 57 (Black 2's Medal Office; its own script/text files after Black 2's: data/hoenn_interiors.json own_*). Room: data/interior_layouts/EverGrandeCity_HallOfFame.json (Black 2's Hall of Fame look, area 319 = Iris's set with the c09_dendo machine and the mball01 balls BMPlayHOFMachineSeq puts on it). Sapphire tile + (1, 0) = zone tile. Scripts: src/field_scripts/0114_room_EverGrandeCity_HallOfFame.s (the Champion's room warps here with script 2 reserved), text src/text/script/0066_room_EverGrandeCity_HallOfFame.txt. No warp: the room is left by Black 2's game-clear sequence (CallGameClear).",
+ "zone": 57,
+ "room": "EverGrandeCity_HallOfFame",
+ "area": 319,
+ "bgm": 1015,
+ "parent": 412,
+ "battle_bg": 16,
+ "what": "halloffame: the Hall of Fame (Steven walks the player to the machine; the record; Black 2's CallGameClear). EMERALD: this file replaces data/interiors/57.json in an Emerald build (emerald_ch11_gameclear 2026-10-12): the Champion who walks the player in is Wallace (Black 2's Wallace, model 288), nothing else differs",
+ "warps": [],
+ "npcs": [{"uid": 1, "model": 288, "script": 1, "dir": 0, "at": [6, 16], "move": 14, "what": "Steven (Sapphire object 1, STEVEN, FACE_UP; no script: the scene runs from the arrival script)"}],
+ "signs": [],
+ "triggers": []
+}

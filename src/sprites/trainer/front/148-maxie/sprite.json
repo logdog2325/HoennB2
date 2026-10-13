@@ -1,0 +1,17 @@
+{
+ "kind": "trainer",
+ "side": "front",
+ "sprite": 148,
+ "archive": 71,
+ "files": {
+  "static": 1184,
+  "parts": 1185,
+  "palette": 1191
+ },
+ "name": "maxie",
+ "note": "Maxie (Team Magma leader)",
+ "source": "pokeruby graphics/trainers/maxie.png",
+ "layout": "parts and animations of Black 2 front sprite 108",
+ "made_by": "b2tools/sprite_upgrade.py",
+ "mcss_from": 108
+}

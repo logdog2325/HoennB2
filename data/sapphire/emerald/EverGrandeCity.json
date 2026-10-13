@@ -1,0 +1,322 @@
+{
+ "map": "EverGrandeCity",
+ "id": "MAP_EVER_GRANDE_CITY",
+ "layout": "LAYOUT_EVER_GRANDE_CITY",
+ "music": "MUS_EVER_GRANDE",
+ "region_map_section": "MAPSEC_EVER_GRANDE_CITY",
+ "weather": "WEATHER_SUNNY",
+ "connections": [
+  {
+   "map": "MAP_ROUTE128",
+   "offset": 40,
+   "direction": "left"
+  }
+ ],
+ "npcs": [],
+ "signs": [
+  {
+   "x": 19,
+   "y": 43,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "EverGrandeCity_EventScript_VictoryRoadSign",
+   "texts": {
+    "EverGrandeCity_Text_EnteringVictoryRoad": "ENTERING VICTORY ROAD$"
+   }
+  },
+  {
+   "x": 29,
+   "y": 48,
+   "facing": "BG_EVENT_PLAYER_FACING_NORTH",
+   "script": "Common_EventScript_ShowPokemonCenterSign",
+   "texts": {
+    "gText_PokemonCenterSign": "“Rejuvenate your tired partners!”\\nPOKéMON CENTER$"
+   }
+  },
+  {
+   "x": 18,
+   "y": 52,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "EverGrandeCity_EventScript_CitySign",
+   "texts": {
+    "EverGrandeCity_Text_CitySign": "EVER GRANDE CITY\\p“The paradise of flowers, the sea,\\nand POKéMON.”$"
+   }
+  },
+  {
+   "x": 23,
+   "y": 15,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "EverGrandeCity_EventScript_PokemonLeagueSign",
+   "texts": {
+    "EverGrandeCity_Text_EnteringPokemonLeague": "ENTERING POKéMON LEAGUE\\nCENTER GATE$"
+   }
+  },
+  {
+   "x": 28,
+   "y": 48,
+   "facing": "BG_EVENT_PLAYER_FACING_NORTH",
+   "script": "Common_EventScript_ShowPokemonCenterSign",
+   "texts": {
+    "gText_PokemonCenterSign": "“Rejuvenate your tired partners!”\\nPOKéMON CENTER$"
+   }
+  }
+ ],
+ "warps": [
+  {
+   "id": 0,
+   "x": 18,
+   "y": 5,
+   "dest_map": "MAP_EVER_GRANDE_CITY_POKEMON_LEAGUE_1F",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 1,
+   "x": 27,
+   "y": 48,
+   "dest_map": "MAP_EVER_GRANDE_CITY_POKEMON_CENTER_1F",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 2,
+   "x": 18,
+   "y": 41,
+   "dest_map": "MAP_VICTORY_ROAD_1F",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 3,
+   "x": 18,
+   "y": 27,
+   "dest_map": "MAP_VICTORY_ROAD_1F",
+   "dest_warp_id": "1"
+  }
+ ],
+ "coord_events": [
+  {
+   "type": "trigger",
+   "x": 17,
+   "y": 58,
+   "elevation": 1,
+   "var": "VAR_TEMP_1",
+   "var_value": "0",
+   "script": "EverGrandeCity_EventScript_SetVisitedEverGrande",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 16,
+   "y": 58,
+   "elevation": 1,
+   "var": "VAR_TEMP_1",
+   "var_value": "0",
+   "script": "EverGrandeCity_EventScript_SetVisitedEverGrande",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 18,
+   "y": 58,
+   "elevation": 1,
+   "var": "VAR_TEMP_1",
+   "var_value": "0",
+   "script": "EverGrandeCity_EventScript_SetVisitedEverGrande",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 19,
+   "y": 58,
+   "elevation": 1,
+   "var": "VAR_TEMP_1",
+   "var_value": "0",
+   "script": "EverGrandeCity_EventScript_SetVisitedEverGrande",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 20,
+   "y": 58,
+   "elevation": 1,
+   "var": "VAR_TEMP_1",
+   "var_value": "0",
+   "script": "EverGrandeCity_EventScript_SetVisitedEverGrande",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 21,
+   "y": 58,
+   "elevation": 1,
+   "var": "VAR_TEMP_1",
+   "var_value": "0",
+   "script": "EverGrandeCity_EventScript_SetVisitedEverGrande",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 22,
+   "y": 58,
+   "elevation": 1,
+   "var": "VAR_TEMP_1",
+   "var_value": "0",
+   "script": "EverGrandeCity_EventScript_SetVisitedEverGrande",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 23,
+   "y": 58,
+   "elevation": 1,
+   "var": "VAR_TEMP_1",
+   "var_value": "0",
+   "script": "EverGrandeCity_EventScript_SetVisitedEverGrande",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 24,
+   "y": 58,
+   "elevation": 1,
+   "var": "VAR_TEMP_1",
+   "var_value": "0",
+   "script": "EverGrandeCity_EventScript_SetVisitedEverGrande",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 25,
+   "y": 58,
+   "elevation": 1,
+   "var": "VAR_TEMP_1",
+   "var_value": "0",
+   "script": "EverGrandeCity_EventScript_SetVisitedEverGrande",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 26,
+   "y": 58,
+   "elevation": 1,
+   "var": "VAR_TEMP_1",
+   "var_value": "0",
+   "script": "EverGrandeCity_EventScript_SetVisitedEverGrande",
+   "texts": {},
+   "complex": true
+  }
+ ],
+ "wild": {
+  "water_mons": {
+   "encounter_rate": 4,
+   "slot_rates": [
+    60,
+    30,
+    5,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 5,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 15,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_PELIPPER",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_PELIPPER",
+     "min": 25,
+     "max": 30
+    }
+   ]
+  },
+  "fishing_mons": {
+   "encounter_rate": 10,
+   "slot_rates": [
+    70,
+    30,
+    60,
+    20,
+    20,
+    40,
+    40,
+    15,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_LUVDISC",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_LUVDISC",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_CORSOLA",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 35,
+     "max": 40
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 40,
+     "max": 45
+    }
+   ]
+  }
+ }
+}

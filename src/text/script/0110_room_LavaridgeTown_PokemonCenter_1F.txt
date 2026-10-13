@@ -1,0 +1,9 @@
+Hello, and welcome to the Pokémon\nCenter.{be01}\nWe restore your tired Pokémon to\nfull health.{be01}\nWould you like to rest your Pokémon?
+Okay, I’ll take your Pokémon for a\nfew seconds.
+Thank you for waiting.{be01}\nWe’ve restored your Pokémon to\nfull health.
+We hope to see you again!
+Your Pokémon may be infected with\nPokérus.{be01}\nLittle is known about the Pokérus\nexcept that they are microscopic life-{be00}\nforms that attach to Pokémon.{be01}\nWhile infected, Pokémon are said to\ngrow exceptionally well.
+I gave a Red Pokéblock to my Pokémon.\nIt looks a lot cooler all of a sudden.{be01}\nHmm...\nMaybe I ought to eat a Red Pokéblock.
+I think Pokémon get closer to their\nTrainers if they spend time together.{be01}\nThe longer the better.\nThat’s what I think.
+Hohoho! Hey, kid, you can reach\nthe hot springs from here.{be01}\nIf Pokémon are getting rest, so too\nshould their Trainers.
+{0100:0} took a closer look at the\nHoenn region map.

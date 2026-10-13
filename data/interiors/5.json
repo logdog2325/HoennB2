@@ -1,0 +1,497 @@
+{
+ "zone": 5,
+ "room": "AquaHideout_B1F",
+ "area": 379,
+ "header": {
+  "map_type": 16,
+  "npc_cache": 24,
+  "weather_word": 0,
+  "flags": 22817,
+  "icon_word": 32783,
+  "bgm0": 1194,
+  "bgm1": 1194,
+  "bgm2": 1194,
+  "bgm3": 1194,
+  "place": 69,
+  "place_display": 0,
+  "parent": 2,
+  "encounters": 8191,
+  "enc_slot": 6
+ },
+ "warps": [
+  {
+   "at": [
+    29,
+    1
+   ],
+   "tile_only": true,
+   "to": [
+    2,
+    2
+   ],
+   "what": "Sapphire warp 0 (29,1) -> AquaHideout_1F 2"
+  },
+  {
+   "at": [
+    18,
+    1
+   ],
+   "tile_only": true,
+   "to": [
+    10,
+    0
+   ],
+   "what": "Sapphire warp 1 (18,1) -> AquaHideout_B2F 0"
+  },
+  {
+   "at": [
+    12,
+    1
+   ],
+   "tile_only": true,
+   "to": [
+    10,
+    1
+   ],
+   "what": "Sapphire warp 2 (12,1) -> AquaHideout_B2F 1"
+  },
+  {
+   "at": [
+    3,
+    3
+   ],
+   "tile_only": true,
+   "to": [
+    10,
+    2
+   ],
+   "what": "Sapphire warp 3 (3,3) -> AquaHideout_B2F 2"
+  },
+  {
+   "at": [
+    31,
+    4
+   ],
+   "tile_only": true,
+   "to": [
+    5,
+    7
+   ],
+   "what": "Sapphire warp 4 (31,4) -> AquaHideout_B1F 7",
+   "type": 5,
+   "dir": 0
+  },
+  {
+   "at": [
+    27,
+    4
+   ],
+   "tile_only": true,
+   "to": [
+    5,
+    8
+   ],
+   "what": "Sapphire warp 5 (27,4) -> AquaHideout_B1F 8",
+   "type": 5,
+   "dir": 0
+  },
+  {
+   "at": [
+    20,
+    4
+   ],
+   "tile_only": true,
+   "to": [
+    5,
+    10
+   ],
+   "what": "Sapphire warp 6 (20,4) -> AquaHideout_B1F 10",
+   "type": 5,
+   "dir": 0
+  },
+  {
+   "at": [
+    27,
+    12
+   ],
+   "tile_only": true,
+   "to": [
+    5,
+    4
+   ],
+   "what": "Sapphire warp 7 (27,12) -> AquaHideout_B1F 4",
+   "type": 5,
+   "dir": 0
+  },
+  {
+   "at": [
+    3,
+    15
+   ],
+   "tile_only": true,
+   "to": [
+    5,
+    5
+   ],
+   "what": "Sapphire warp 8 (3,15) -> AquaHideout_B1F 5",
+   "type": 5,
+   "dir": 0
+  },
+  {
+   "at": [
+    3,
+    20
+   ],
+   "tile_only": true,
+   "to": [
+    5,
+    12
+   ],
+   "what": "Sapphire warp 9 (3,20) -> AquaHideout_B1F 12",
+   "type": 5,
+   "dir": 0
+  },
+  {
+   "at": [
+    32,
+    19
+   ],
+   "tile_only": true,
+   "to": [
+    5,
+    6
+   ],
+   "what": "Sapphire warp 10 (32,19) -> AquaHideout_B1F 6",
+   "type": 5,
+   "dir": 0
+  },
+  {
+   "at": [
+    23,
+    10
+   ],
+   "tile_only": true,
+   "to": [
+    5,
+    22
+   ],
+   "what": "Sapphire warp 11 (23,10) -> AquaHideout_B1F 22",
+   "type": 5,
+   "dir": 0
+  },
+  {
+   "at": [
+    45,
+    3
+   ],
+   "tile_only": true,
+   "to": [
+    5,
+    9
+   ],
+   "what": "Sapphire warp 12 (45,3) -> AquaHideout_B1F 9",
+   "type": 5,
+   "dir": 0
+  },
+  {
+   "at": [
+    42,
+    5
+   ],
+   "tile_only": true,
+   "to": [
+    5,
+    18
+   ],
+   "what": "Sapphire warp 13 (42,5) -> AquaHideout_B1F 18",
+   "type": 5,
+   "dir": 0
+  },
+  {
+   "at": [
+    45,
+    5
+   ],
+   "tile_only": true,
+   "to": [
+    5,
+    12
+   ],
+   "what": "Sapphire warp 14 (45,5) -> AquaHideout_B1F 12",
+   "type": 5,
+   "dir": 0
+  },
+  {
+   "at": [
+    48,
+    5
+   ],
+   "tile_only": true,
+   "to": [
+    5,
+    16
+   ],
+   "what": "Sapphire warp 15 (48,5) -> AquaHideout_B1F 16",
+   "type": 5,
+   "dir": 0
+  },
+  {
+   "at": [
+    42,
+    9
+   ],
+   "tile_only": true,
+   "to": [
+    5,
+    15
+   ],
+   "what": "Sapphire warp 16 (42,9) -> AquaHideout_B1F 15",
+   "type": 5,
+   "dir": 0
+  },
+  {
+   "at": [
+    45,
+    9
+   ],
+   "tile_only": true,
+   "to": [
+    5,
+    20
+   ],
+   "what": "Sapphire warp 17 (45,9) -> AquaHideout_B1F 20",
+   "type": 5,
+   "dir": 0
+  },
+  {
+   "at": [
+    48,
+    9
+   ],
+   "tile_only": true,
+   "to": [
+    5,
+    13
+   ],
+   "what": "Sapphire warp 18 (48,9) -> AquaHideout_B1F 13",
+   "type": 5,
+   "dir": 0
+  },
+  {
+   "at": [
+    42,
+    13
+   ],
+   "tile_only": true,
+   "to": [
+    5,
+    24
+   ],
+   "what": "Sapphire warp 19 (42,13) -> AquaHideout_B1F 24",
+   "type": 5,
+   "dir": 0
+  },
+  {
+   "at": [
+    45,
+    13
+   ],
+   "tile_only": true,
+   "to": [
+    5,
+    17
+   ],
+   "what": "Sapphire warp 20 (45,13) -> AquaHideout_B1F 17",
+   "type": 5,
+   "dir": 0
+  },
+  {
+   "at": [
+    48,
+    13
+   ],
+   "tile_only": true,
+   "to": [
+    5,
+    12
+   ],
+   "what": "Sapphire warp 21 (48,13) -> AquaHideout_B1F 12",
+   "type": 5,
+   "dir": 0
+  },
+  {
+   "at": [
+    42,
+    17
+   ],
+   "tile_only": true,
+   "to": [
+    5,
+    11
+   ],
+   "what": "Sapphire warp 22 (42,17) -> AquaHideout_B1F 11",
+   "type": 5,
+   "dir": 0
+  },
+  {
+   "at": [
+    45,
+    17
+   ],
+   "tile_only": true,
+   "to": [
+    5,
+    17
+   ],
+   "what": "Sapphire warp 23 (45,17) -> AquaHideout_B1F 17",
+   "type": 5,
+   "dir": 0
+  },
+  {
+   "at": [
+    48,
+    17
+   ],
+   "tile_only": true,
+   "to": [
+    5,
+    19
+   ],
+   "what": "Sapphire warp 24 (48,17) -> AquaHideout_B1F 19",
+   "type": 5,
+   "dir": 0
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 3,
+   "model": 110,
+   "script": 7106,
+   "flag": 1206,
+   "dir": 1,
+   "at": [
+    29,
+    12
+   ],
+   "what": "item ball ITEM_MAX_ELIXIR"
+  },
+  {
+   "uid": 5,
+   "model": 110,
+   "script": 7104,
+   "flag": 1204,
+   "dir": 1,
+   "at": [
+    15,
+    9
+   ],
+   "what": "item ball ITEM_MASTER_BALL"
+  },
+  {
+   "uid": 7,
+   "model": 110,
+   "script": 7105,
+   "flag": 1205,
+   "dir": 1,
+   "at": [
+    15,
+    10
+   ],
+   "what": "item ball ITEM_NUGGET"
+  }
+ ],
+ "signs": [
+  {
+   "script": 1,
+   "at": [
+    5,
+    7
+   ],
+   "dir": 4,
+   "what": "trash can (Sapphire MB_TRASH_CAN, EventScript_EmptyTrashCan)"
+  },
+  {
+   "script": 1,
+   "at": [
+    10,
+    9
+   ],
+   "dir": 4,
+   "what": "trash can (Sapphire MB_TRASH_CAN, EventScript_EmptyTrashCan)"
+  },
+  {
+   "script": 2,
+   "at": [
+    17,
+    15
+   ],
+   "dir": 4,
+   "what": "blueprint (MB_BLUEPRINT, EventScript_Blueprint)"
+  },
+  {
+   "script": 2,
+   "at": [
+    18,
+    15
+   ],
+   "dir": 4,
+   "what": "blueprint (MB_BLUEPRINT, EventScript_Blueprint)"
+  },
+  {
+   "script": 2,
+   "at": [
+    22,
+    15
+   ],
+   "dir": 4,
+   "what": "blueprint (MB_BLUEPRINT, EventScript_Blueprint)"
+  },
+  {
+   "script": 2,
+   "at": [
+    23,
+    15
+   ],
+   "dir": 4,
+   "what": "blueprint (MB_BLUEPRINT, EventScript_Blueprint)"
+  },
+  {
+   "script": 2,
+   "at": [
+    17,
+    16
+   ],
+   "dir": 4,
+   "what": "blueprint (MB_BLUEPRINT, EventScript_Blueprint)"
+  },
+  {
+   "script": 2,
+   "at": [
+    18,
+    16
+   ],
+   "dir": 4,
+   "what": "blueprint (MB_BLUEPRINT, EventScript_Blueprint)"
+  },
+  {
+   "script": 2,
+   "at": [
+    22,
+    16
+   ],
+   "dir": 4,
+   "what": "blueprint (MB_BLUEPRINT, EventScript_Blueprint)"
+  },
+  {
+   "script": 2,
+   "at": [
+    23,
+    16
+   ],
+   "dir": 4,
+   "what": "blueprint (MB_BLUEPRINT, EventScript_Blueprint)"
+  }
+ ],
+ "triggers": [],
+ "what": "ship_hideouts: AquaHideout_B1F (b2tools/ship_hideouts_rooms.py); story: trainer OBJ_EVENT_GFX_VAR_1 (27,18) AquaHideout_B1F_EventScript_15D850 | trainer OBJ_EVENT_GFX_VAR_1 (6,6) AquaHideout_B1F_EventScript_15D875 | trainer OBJ_EVENT_GFX_VAR_2 (20,18) AquaHideout_B1F_EventScript_15D89A | story object OBJ_EVENT_GFX_ITEM_BALL (16,9) Hideout_B1F_EventScript_Electrode1 hide flag FLAG_HIDE_ELECTRODE_1_HIDEOUT | story object OBJ_EVENT_GFX_ITEM_BALL (16,10) Hideout_B1F_EventScript_Electrode2 hide flag FLAG_HIDE_ELECTRODE_2_HIDEOUT"
+}

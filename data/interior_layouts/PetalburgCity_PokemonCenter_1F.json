@@ -1,0 +1,115 @@
+{
+ "_doc": "Copy of OldaleTown_PokemonCenter_1F, written by b2tools/centers_rooms.py: edit the master and rerun.",
+ "map": "PetalburgCity_PokemonCenter_1F",
+ "style": "center",
+ "origin": [0, 8],
+ "floor": [[0, 1, 13, 8]],
+ "stairs": [[1, 6]],
+ "block": [[0, 5], [1, 5], [0, 7], [1, 7]],
+ "classes": {"0xd4": [[7, 3]], "0xd6": [[10, 1]]},
+ "mats": [
+  {
+   "tex": "in02_logo",
+   "src": 283,
+   "rect": [5, 4, 6, 7],
+   "border": 0,
+   "border_units": 0,
+   "y": 0,
+   "_what": "Poké Ball floor sign, left half (Black 2's own Center floor logo)"
+  },
+  {
+   "tex": "in02_logo",
+   "src": 283,
+   "rect": [9, 8, 6, 3],
+   "border": 0,
+   "border_units": 0,
+   "y": 0,
+   "_what": "right half: the rect reversed in x and z turns the texture 180 degrees (the half ball is symmetric top to bottom), which keeps the quad facing up (a mirror would face down and be culled)"
+  },
+  {
+   "tex": "in70_mat1",
+   "src": 351,
+   "rect": [6, 8, 7, 8],
+   "border": 0.25,
+   "border_units": 3,
+   "y": 0,
+   "_what": "exit mat"
+  },
+  {
+   "tex": "in02_pc",
+   "src": 283,
+   "uv": [0.0625, 0.95, 0.1875, 0.55],
+   "rect": [4, 3, 9, 2.90625],
+   "border": 0,
+   "border_units": 0,
+   "y": 14,
+   "_what": "counter top: Black 2's own Center counter colour (in02_pc's orange-red column, set 283, as chunk 827 draws its counter; the floor's cream made it vanish), 2 units above the counters' own tops; 16 above the floor and its front edge 1.5 units back from the row's south edge: the Center camera (zone header camera 3) looks down only 31.75 degrees and gives people no depth margin, so a higher top or one reaching the edge is drawn across the heads of people standing in front (indoor_check, rooms_view.py kind m)"
+  },
+  {
+   "tex": "in02_pc",
+   "src": 283,
+   "uv": [0.0625, 0.95, 0.1875, 0.55],
+   "rect": [8, 2, 9, 2],
+   "border": 0,
+   "border_units": 0,
+   "y": 14,
+   "_what": "counter top right of the nurse"
+  }
+ ],
+ "furniture": [
+  {"m": "plant01", "tile": [1, 1], "wall": "N", "_what": "plant"},
+  {
+   "m": "pcshelf01",
+   "tiles": [2, 1, 3, 1],
+   "wall": "N",
+   "_what": "magazine shelf (Sapphire MB_POKEMON_CENTER_BOOKSHELF)"
+  },
+  {
+   "m": "pcmachine01",
+   "at": [5.7, 1.5],
+   "wall": "N",
+   "_what": "healing machine (Sapphire 5-6,1-2): PokecenPlayHealingSequence finds it"
+  },
+  {"m": "shelf03", "tiles": [4, 3, 5, 3], "y": -4, "_what": "counter (sunk 4: top 12)"},
+  {"m": "shelf03", "tiles": [6, 3, 7, 3], "y": -4, "_what": "counter; (7,3) is the reception counter tile"},
+  {"m": "shelf03", "tiles": [8, 3, 9, 3], "y": -4, "_what": "counter"},
+  {"m": "shelf03", "tiles": [8, 2, 9, 2], "y": -4, "_what": "counter right of the nurse"},
+  {"m": "cashier01", "tile": [8, 2], "y": 14, "_what": "terminal on the counter (Sapphire 8,2)"},
+  {"m": "mball01", "at": [4.5, 3.4], "y": 13, "_what": "Poké Ball on the counter corner"},
+  {"m": "mball01", "at": [9.5, 3.4], "y": 13, "_what": "Poké Ball on the counter corner"},
+  {
+   "m": "tv01",
+   "at": [8.0, 1.5],
+   "wall": "N",
+   "gap": 2,
+   "y": 18,
+   "_what": "wall screen behind the nurse (Sapphire 7-8, 0-1)"
+  },
+  {"m": "pc01", "tile": [10, 1], "wall": "N", "_what": "PC (Sapphire MB_PC, tile class 0xd6)"},
+  {
+   "m": "art02",
+   "at": [12.3, 1.5],
+   "wall": "N",
+   "gap": 2,
+   "y": 10,
+   "_what": "Hoenn map on the wall (Sapphire MB_REGION_MAP; clear of the PC, which is 1.4 tiles wide)"
+  },
+  {"m": "stair_u01", "stair": [1, 6], "dir": "W", "_what": "escalator up (rises west into the wall)"},
+  {
+   "m": "pcchair01",
+   "tile": [1, 3],
+   "y": -12,
+   "_what": "red seat (walkable: Black 2's Center stool sunk to a cushion, its top 3.5 above the floor)"
+  },
+  {"m": "chushion01", "tile": [2, 3], "_what": "yellow seat"},
+  {"m": "chushion01", "tile": [10, 6], "_what": "yellow seat"},
+  {"m": "pcchair01", "tile": [10, 7], "y": -12, "_what": "red seat"},
+  {"m": "pcchair01", "tile": [11, 8], "y": -12, "_what": "red seat"},
+  {"m": "chushion01", "tile": [12, 8], "_what": "yellow seat"},
+  {
+   "m": "table01_2x2",
+   "tiles": [11, 6, 12, 7],
+   "_what": "glass table (Sapphire 11-12, 6-7; Black 2's house table at Sapphire's 2x2 size: its glass top)"
+  }
+ ]
+}

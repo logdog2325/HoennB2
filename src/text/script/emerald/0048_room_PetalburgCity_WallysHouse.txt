@@ -1,0 +1,10 @@
+…
+You’re...\nAh, you must be {0100:0}, right?{be01}\nThank you for playing with Wally a\nlittle while ago.{be01}\nHe’s been frail and sickly ever\nsince he was a baby.{be01}\nWe’ve sent him to stay with my relatives\nin Verdanturf Town for a while.{be01}\nThe air is a lot cleaner there\nthan it is here.{be01}\nWhat’s that? Where’s Wally?\nHe’s already left, our Wally.{be01}\nI wonder where he could have\ngotten by now?
+{0100:0}! Please excuse us for\ndragging you here this way.{be01}\nBut our Wally’s become very healthy\nsince he went to Verdanturf Town.{be01}\nWe owe it all to you!{be01}\nWhen Wally left town, you helped\nhim catch a Pokémon, right?{be01}\nI think that made Wally really\nhappy.{be01}\nActually, not just Wally.\nIt made me, his father, happy too.{be01}\nHappy that he’s gained such a great\nfriend as you.{be01}\nThis isn’t a bribe or anything, but\nI’d really like you to have this.
+If your Pokémon can Surf, you’ll be\nable to go to all sorts of places.
+Wally’s coming home soon.\nI’m looking forward to that.
+Oh? You met Wally in\nEver Grande City?{be01}\nOh, {0100:0}, don’t be silly.{be01}\nHe may have gotten healthy, but he\ncan’t go somewhere far away like{be00}\nthat all by himself.
+I wonder how our Wally is doing?
+Wally was really happy when he told\nus that he caught a Pokémon.{be01}\nIt’s been ages since I’ve seen him\nsmile like that.
+Oh, hello, {0100:0}! We’ve got\nsomething we want you to have.{be01}\nMy husband has it, so please have a\nword with him, dear.
+I want you to keep this a secret\nfrom my husband...{be01}\nBut our Wally left Verdanturf Town\nwithout telling anyone.{be01}\nYou know, Wally is frail, but\nhe’s surprisingly strong-willed.{be01}\nI’m sure that he’ll come back safe\nand sound one day!

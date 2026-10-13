@@ -1,0 +1,51 @@
+{
+ "zone": 177,
+ "room": "SeafloorCavern_Entrance",
+ "cave": true,
+ "cave_auto": true,
+ "area": 332,
+ "dark": false,
+ "header": {
+  "map_type": 16,
+  "npc_cache": 24,
+  "weather_word": 64,
+  "flags": 23683,
+  "icon_word": 40975,
+  "place_display": 1,
+  "bgm0": 1076,
+  "bgm1": 1076,
+  "bgm2": 1076,
+  "bgm3": 1076,
+  "place": 71,
+  "encounters": 93,
+  "enc_slot": 2
+ },
+ "warps": [
+  {
+   "at": [
+    10,
+    18
+   ],
+   "to": [
+    219,
+    0
+   ],
+   "what": "Sapphire warp 0 (10,18) -> Underwater4 0"
+  },
+  {
+   "at": [
+    10,
+    1
+   ],
+   "to": [
+    179,
+    0
+   ],
+   "what": "Sapphire warp 1 (10,1) -> SeafloorCavern_Room1 0"
+  }
+ ],
+ "triggers": [],
+ "npcs": [],
+ "signs": [],
+ "what": "SeafloorCavern_Entrance: cave (converter/gen_caves.py, b2tools/models_cave.py); story objects: see notes/CAVES.md"
+}

@@ -1,0 +1,52 @@
+{
+ "_doc": "Route114_LanettesHouse (zone 559), built by the specials agent (recipe data/interior_layouts/Route114_LanettesHouse.json): Juniper's lab look, Black 2 interior area 285. Warps in Sapphire's order (one per Sapphire warp tile). People/signs: Sapphire's one-message ones as generated; story people are left for the story phase.",
+ "zone": 559,
+ "room": "Route114_LanettesHouse",
+ "area": 285,
+ "parent": 383,
+ "warps": [
+  {
+   "at": [
+    5,
+    7
+   ],
+   "tile_only": true,
+   "to": [
+    383,
+    5
+   ],
+   "what": "Sapphire warp 0 -> Route114 2"
+  },
+  {
+   "at": [
+    6,
+    7
+   ],
+   "tile_only": true,
+   "to": [
+    383,
+    5
+   ],
+   "what": "Sapphire warp 1 -> Route114 2"
+  }
+ ],
+ "npcs": [],
+ "signs": [
+  {
+   "script": 1,
+   "at": [
+    8,
+    1
+   ],
+   "dir": 4
+  },
+  {
+   "script": 2,
+   "at": [
+    7,
+    1
+   ],
+   "dir": 4
+  }
+ ]
+}

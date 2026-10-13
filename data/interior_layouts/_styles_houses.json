@@ -1,0 +1,135 @@
+{
+ "_doc": "Texture styles of the houses agent's rooms (gTileset_GenericBuilding, converter/gen_interior_recipes_houses.py picks one per room from Sapphire's floor metatiles). Black 2 map textures only (src = map texture set a/0/1/4). Floor size = units per repeat (Sapphire scale: 16 units = one 16-pixel tile), wall u_size = units per horizontal repeat (the texture spans the wall height once, as Black 2's m_h05_kabe does).",
+ "houses_wood": {
+  "_doc": "Sapphire's wood-floor houses (pale wall, teal wainscot, yellow planks): wall in67kabe01 (set 348: cream with a teal band top and bottom), floor m_h06_yuka (set 347: yellow planks, 64x32 over 32 units)",
+  "floor": {
+   "tex": "m_h06_yuka",
+   "src": 347,
+   "size": 32
+  },
+  "wall": {
+   "tex": "in67kabe01",
+   "src": 348,
+   "u_size": 32
+  },
+  "genkan": {
+   "tex": "m_b08_genkan",
+   "src": 349,
+   "size": 16
+  },
+  "black": {
+   "tex": "black",
+   "src": 285
+  }
+ },
+ "houses_tatami": {
+  "_doc": "Sapphire's Japanese rooms (plaster wall in a wood frame, green tatami, concrete entrance strip): wall m_a01_kabe (set 349: plaster over a wood panel), floor b2_yuka2 (set 282: two-tone green squares, one per tile)",
+  "floor": {
+   "tex": "b2_yuka2",
+   "src": 282,
+   "size": 32
+  },
+  "wall": {
+   "tex": "m_a01_kabe",
+   "src": 349,
+   "u_size": 64
+  },
+  "genkan": {
+   "tex": "m_b08_genkan",
+   "src": 349,
+   "size": 16
+  },
+  "black": {
+   "tex": "black",
+   "src": 285
+  }
+ },
+ "houses_tile": {
+  "_doc": "Rustboro's rooms (yellow wall, yellow checker floor): wall m_h01_07 (set 282: yellow bands), floor in01_gyuka (set 282: yellow checker, two squares per tile as Sapphire)",
+  "floor": {
+   "tex": "in01_gyuka",
+   "src": 282,
+   "size": 32
+  },
+  "wall": {
+   "tex": "m_h01_07",
+   "src": 282,
+   "u_size": 32
+  },
+  "genkan": {
+   "tex": "m_b08_genkan",
+   "src": 349,
+   "size": 16
+  },
+  "black": {
+   "tex": "black",
+   "src": 285
+  }
+ },
+ "houses_soot": {
+  "_doc": "Sootopolis houses (pale wall, grey/beige checker floor): wall in67kabe01 (set 348), floor in22_tile01 (set 303: light grey tiles, two per Sapphire tile)",
+  "floor": {
+   "tex": "in22_tile01",
+   "src": 303,
+   "size": 32
+  },
+  "wall": {
+   "tex": "in67kabe01",
+   "src": 348,
+   "u_size": 32
+  },
+  "genkan": {
+   "tex": "m_b08_genkan",
+   "src": 349,
+   "size": 16
+  },
+  "black": {
+   "tex": "black",
+   "src": 285
+  }
+ },
+ "houses_log": {
+  "_doc": "Pacifidlog's log cabins (log walls, yellow vertical planks): wall in01_wall2 (set 282: horizontal wood planks), floor out70_yuka12 (set 278: yellow vertical planks)",
+  "floor": {
+   "tex": "out70_yuka12",
+   "src": 278,
+   "size": 64
+  },
+  "wall": {
+   "tex": "in01_wall2",
+   "src": 282,
+   "u_size": 32
+  },
+  "genkan": {
+   "tex": "m_b08_genkan",
+   "src": 349,
+   "size": 16
+  },
+  "black": {
+   "tex": "black",
+   "src": 285
+  }
+ },
+ "houses_tree": {
+  "_doc": "Fortree's tree houses (honey planks, a tree trunk through the room): wall dining_wall02 (set 288: wood panelling), floor m_b08_yuka (set 349: honey planks, as Littleroot)",
+  "floor": {
+   "tex": "m_b08_yuka",
+   "src": 349,
+   "size": 32
+  },
+  "wall": {
+   "tex": "dining_wall02",
+   "src": 288,
+   "u_size": 32
+  },
+  "genkan": {
+   "tex": "m_b08_genkan",
+   "src": 349,
+   "size": 16
+  },
+  "black": {
+   "tex": "black",
+   "src": 285
+  }
+ }
+}

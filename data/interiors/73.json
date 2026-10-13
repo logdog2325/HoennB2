@@ -1,0 +1,140 @@
+{
+ "zone": 73,
+ "room": "AbandonedShip_Corridors_B1F",
+ "area": 337,
+ "header": {
+  "map_type": 16,
+  "npc_cache": 24,
+  "weather_word": 0,
+  "flags": 22817,
+  "icon_word": 32783,
+  "bgm0": 1193,
+  "bgm1": 1193,
+  "bgm2": 1193,
+  "bgm3": 1193,
+  "place": 65,
+  "place_display": 0,
+  "parent": 74,
+  "encounters": 8191,
+  "enc_slot": 6
+ },
+ "warps": [
+  {
+   "at": [
+    6,
+    4
+   ],
+   "tile_only": true,
+   "to": [
+    90,
+    2
+   ],
+   "what": "Sapphire warp 0 (6,4) -> AbandonedShip_Rooms2_B1F 2"
+  },
+  {
+   "at": [
+    3,
+    4
+   ],
+   "tile_only": true,
+   "to": [
+    90,
+    0
+   ],
+   "what": "Sapphire warp 1 (3,4) -> AbandonedShip_Rooms2_B1F 0"
+  },
+  {
+   "at": [
+    5,
+    7
+   ],
+   "tile_only": true,
+   "to": [
+    92,
+    0
+   ],
+   "what": "Sapphire warp 2 (5,7) -> AbandonedShip_Rooms_B1F 0"
+  },
+  {
+   "at": [
+    8,
+    7
+   ],
+   "tile_only": true,
+   "to": [
+    92,
+    1
+   ],
+   "what": "Sapphire warp 3 (8,7) -> AbandonedShip_Rooms_B1F 1"
+  },
+  {
+   "at": [
+    11,
+    7
+   ],
+   "tile_only": true,
+   "to": [
+    92,
+    2
+   ],
+   "what": "Sapphire warp 4 (11,7) -> AbandonedShip_Rooms_B1F 2"
+  },
+  {
+   "at": [
+    11,
+    4
+   ],
+   "tile_only": true,
+   "to": [
+    88,
+    0
+   ],
+   "what": "Sapphire warp 5 (11,4) -> AbandonedShip_Room_B1F 0"
+  },
+  {
+   "at": [
+    1,
+    2
+   ],
+   "tile_only": true,
+   "to": [
+    72,
+    10
+   ],
+   "what": "Sapphire warp 6 (0,2) -> AbandonedShip_Corridors_1F 10"
+  },
+  {
+   "at": [
+    9,
+    2
+   ],
+   "tile_only": true,
+   "to": [
+    72,
+    9
+   ],
+   "what": "Sapphire warp 7 (8,2) -> AbandonedShip_Corridors_1F 9"
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 1,
+   "model": 153,
+   "script": 1,
+   "dir": 1,
+   "at": [
+    2,
+    8
+   ],
+   "what": "OBJ_EVENT_GFX_TUBER_M AbandonedShip_Corridors_B1F_EventScript_TuberM",
+   "move": 3,
+   "range": [
+    1,
+    1
+   ]
+  }
+ ],
+ "signs": [],
+ "triggers": [],
+ "what": "ship_hideouts: AbandonedShip_Corridors_B1F (b2tools/ship_hideouts_rooms.py); story: trainer OBJ_EVENT_GFX_SAILOR (9,6) AbandonedShip_Corridors_B1F_EventScript_Duncan | sign (11,4) AbandonedShip_Corridors_B1F_EventScript_StorageRoomDoor"
+}

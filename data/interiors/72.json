@@ -1,0 +1,188 @@
+{
+ "zone": 72,
+ "room": "AbandonedShip_Corridors_1F",
+ "area": 337,
+ "header": {
+  "map_type": 16,
+  "npc_cache": 24,
+  "weather_word": 0,
+  "flags": 22817,
+  "icon_word": 32783,
+  "bgm0": 1193,
+  "bgm1": 1193,
+  "bgm2": 1193,
+  "bgm3": 1193,
+  "place": 65,
+  "place_display": 0,
+  "parent": 74,
+  "encounters": 8191,
+  "enc_slot": 6
+ },
+ "warps": [
+  {
+   "at": [
+    9,
+    11
+   ],
+   "tile_only": true,
+   "to": [
+    74,
+    2
+   ],
+   "what": "Sapphire warp 0 (9,11) -> AbandonedShip_Deck 2"
+  },
+  {
+   "at": [
+    8,
+    11
+   ],
+   "tile_only": true,
+   "to": [
+    74,
+    2
+   ],
+   "what": "Sapphire warp 1 (8,11) -> AbandonedShip_Deck 2"
+  },
+  {
+   "at": [
+    0,
+    11
+   ],
+   "tile_only": true,
+   "to": [
+    74,
+    3
+   ],
+   "what": "Sapphire warp 2 (0,11) -> AbandonedShip_Deck 3"
+  },
+  {
+   "at": [
+    1,
+    11
+   ],
+   "tile_only": true,
+   "to": [
+    74,
+    3
+   ],
+   "what": "Sapphire warp 3 (1,11) -> AbandonedShip_Deck 3"
+  },
+  {
+   "at": [
+    11,
+    9
+   ],
+   "tile_only": true,
+   "to": [
+    91,
+    0
+   ],
+   "what": "Sapphire warp 4 (11,9) -> AbandonedShip_Rooms_1F 0"
+  },
+  {
+   "at": [
+    14,
+    9
+   ],
+   "tile_only": true,
+   "to": [
+    91,
+    3
+   ],
+   "what": "Sapphire warp 5 (14,9) -> AbandonedShip_Rooms_1F 3"
+  },
+  {
+   "at": [
+    11,
+    3
+   ],
+   "tile_only": true,
+   "to": [
+    91,
+    2
+   ],
+   "what": "Sapphire warp 6 (11,3) -> AbandonedShip_Rooms_1F 2"
+  },
+  {
+   "at": [
+    14,
+    3
+   ],
+   "tile_only": true,
+   "to": [
+    91,
+    4
+   ],
+   "what": "Sapphire warp 7 (14,3) -> AbandonedShip_Rooms_1F 4"
+  },
+  {
+   "at": [
+    3,
+    9
+   ],
+   "tile_only": true,
+   "to": [
+    89,
+    0
+   ],
+   "what": "Sapphire warp 8 (3,9) -> AbandonedShip_Rooms2_1F 0"
+  },
+  {
+   "at": [
+    17,
+    2
+   ],
+   "tile_only": true,
+   "to": [
+    73,
+    7
+   ],
+   "what": "Sapphire warp 9 (16,2) -> AbandonedShip_Corridors_B1F 7"
+  },
+  {
+   "at": [
+    6,
+    2
+   ],
+   "tile_only": true,
+   "to": [
+    73,
+    6
+   ],
+   "what": "Sapphire warp 10 (5,2) -> AbandonedShip_Corridors_B1F 6"
+  },
+  {
+   "at": [
+    3,
+    3
+   ],
+   "tile_only": true,
+   "to": [
+    89,
+    2
+   ],
+   "what": "Sapphire warp 11 (3,3) -> AbandonedShip_Rooms2_1F 2"
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 1,
+   "model": 11,
+   "script": 1,
+   "dir": 1,
+   "at": [
+    17,
+    7
+   ],
+   "what": "OBJ_EVENT_GFX_YOUNGSTER AbandonedShip_Corridors_1F_EventScript_Youngster",
+   "move": 3,
+   "range": [
+    1,
+    1
+   ]
+  }
+ ],
+ "signs": [],
+ "triggers": [],
+ "what": "ship_hideouts: AbandonedShip_Corridors_1F (b2tools/ship_hideouts_rooms.py); story: trainer OBJ_EVENT_GFX_TUBER_M (5,10) AbandonedShip_Corridors_1F_EventScript_Charlie"
+}

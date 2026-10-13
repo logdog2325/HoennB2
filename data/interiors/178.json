@@ -1,0 +1,29 @@
+{
+ "_doc": "LilycoveCity_CoveLilyMotel_1F: zone written by converter/gen_interior_recipes_houses.py (warps and parent from converter/gen_interiors.py); story people left for the story phase: person MAN_1 at (10,3) LilycoveCity_CoveLilyMotel_1F_EventScript_MotelOwner (story/complex script)",
+ "zone": 178,
+ "room": "LilycoveCity_CoveLilyMotel_1F",
+ "area": 313,
+ "parent": 96,
+ "warps": [
+  {
+   "at": [5, 8],
+   "tile_only": true,
+   "to": [96, 15],
+   "what": "Sapphire warp 0 -> LilycoveCity 1"
+  },
+  {
+   "at": [6, 8],
+   "tile_only": true,
+   "to": [96, 15],
+   "what": "Sapphire warp 1 -> LilycoveCity 1"
+  },
+  {
+   "at": [2, 1],
+   "tile_only": true,
+   "to": [180, 0],
+   "what": "Sapphire warp 2 -> LilycoveCity_CoveLilyMotel_2F 0"
+  }
+ ],
+ "npcs": [],
+ "signs": []
+}

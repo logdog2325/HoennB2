@@ -1,0 +1,65 @@
+{
+ "kind": "trainer",
+ "side": "back",
+ "sprite": 6,
+ "archive": 72,
+ "files": {
+  "static": 48,
+  "parts": 49,
+  "palette": 55
+ },
+ "name": "wally",
+ "note": "Wally, the catching tutorial's thrower (Black 2's capture demo shows back sprite 6)",
+ "source": "pokeruby graphics/trainers/wally_back.png (frames 0-2)",
+ "layout": "cells, quads and throw timing of Black 2 back sprite 6 (Bianca); whole-figure poses",
+ "node_edits": [
+  {
+   "mc": 1,
+   "node": 1,
+   "seq": 0,
+   "x": 2,
+   "y": -56
+  },
+  {
+   "mc": 0,
+   "node": 1,
+   "seq": 0,
+   "x": 2,
+   "y": -56
+  },
+  {
+   "mc": 3,
+   "node": 0,
+   "seq": 5,
+   "x": 4,
+   "y": -56
+  },
+  {
+   "mc": 2,
+   "node": 2,
+   "seq": 5,
+   "x": 4,
+   "y": -56
+  },
+  {
+   "mc": 4,
+   "node": 0,
+   "seq": 6,
+   "x": -4,
+   "y": -56
+  },
+  {
+   "mc": 4,
+   "node": 1,
+   "seq": 7,
+   "x": 14,
+   "y": -112
+  }
+ ],
+ "still_multicells": [
+  2,
+  3,
+  4
+ ],
+ "made_by": "b2tools/sprite_upgrade_backs.py"
+}

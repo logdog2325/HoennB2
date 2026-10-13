@@ -1,0 +1,703 @@
+{
+ "map": "Route118",
+ "id": "MAP_ROUTE118",
+ "layout": "LAYOUT_ROUTE118",
+ "music": "MUS_ROUTE_118",
+ "region_map_section": "MAPSEC_ROUTE_118",
+ "weather": "WEATHER_SUNNY",
+ "connections": [
+  {
+   "direction": "up",
+   "offset": 40,
+   "map": "MAP_ROUTE119"
+  },
+  {
+   "direction": "left",
+   "offset": 0,
+   "map": "MAP_MAUVILLE_CITY"
+  },
+  {
+   "direction": "right",
+   "offset": 0,
+   "map": "MAP_ROUTE123"
+  }
+ ],
+ "npcs": [
+  {
+   "local_id": 1,
+   "x": 35,
+   "y": 5,
+   "gfx": "OBJ_EVENT_GFX_BERRY_TREE",
+   "movement": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "S_BerryTree",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 2,
+   "x": 36,
+   "y": 5,
+   "gfx": "OBJ_EVENT_GFX_BERRY_TREE",
+   "movement": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "S_BerryTree",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 3,
+   "x": 37,
+   "y": 5,
+   "gfx": "OBJ_EVENT_GFX_BERRY_TREE",
+   "movement": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "S_BerryTree",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 4,
+   "x": 64,
+   "y": 10,
+   "gfx": "OBJ_EVENT_GFX_MAN_6",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route118_EventScript_151139",
+   "texts": {
+    "Route118_Text_1BE148": "BIRD POKéMON that FLY elegantly in\\nthe sky... They're the best!$",
+    "Route118_Text_1BE188": "Urgh... I crashed...$",
+    "Route118_Text_1BE19D": "You've got great POKéMON.\\nI'll have to train mine better.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 5,
+   "x": 33,
+   "y": 8,
+   "gfx": "OBJ_EVENT_GFX_REPORTER_F",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_GABBY_AND_TY_ROUTE118_1",
+   "script": "Route118_EventScript_1AE462",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 6,
+   "x": 34,
+   "y": 8,
+   "gfx": "OBJ_EVENT_GFX_CAMERAMAN",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_GABBY_AND_TY_ROUTE118_1",
+   "script": "Route118_EventScript_1AE482",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 7,
+   "x": 12,
+   "y": 8,
+   "gfx": "OBJ_EVENT_GFX_GIRL_2",
+   "movement": "MOVEMENT_TYPE_WANDER_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "Route118_EventScript_150F93",
+   "texts": {
+    "Route118_Text_170FFE": "Even if there isn't a boat, you can\\ncross rivers and the sea if you have\\la POKéMON that knows SURF.\\pPOKéMON can be counted on to do so\\nmuch!$"
+   }
+  },
+  {
+   "local_id": 8,
+   "x": 33,
+   "y": 8,
+   "gfx": "OBJ_EVENT_GFX_REPORTER_F",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_GABBY_AND_TY_ROUTE118_2",
+   "script": "Route118_EventScript_1AE522",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 9,
+   "x": 34,
+   "y": 8,
+   "gfx": "OBJ_EVENT_GFX_CAMERAMAN",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_GABBY_AND_TY_ROUTE118_2",
+   "script": "Route118_EventScript_1AE542",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 10,
+   "x": 33,
+   "y": 8,
+   "gfx": "OBJ_EVENT_GFX_REPORTER_F",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_GABBY_AND_TY_ROUTE118_3",
+   "script": "Route118_EventScript_1AE562",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 11,
+   "x": 34,
+   "y": 8,
+   "gfx": "OBJ_EVENT_GFX_CAMERAMAN",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_GABBY_AND_TY_ROUTE118_3",
+   "script": "Route118_EventScript_1AE582",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 12,
+   "x": 38,
+   "y": 8,
+   "gfx": "OBJ_EVENT_GFX_CUTTABLE_TREE",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_TEMP_11",
+   "script": "S_CuttableTree",
+   "texts": {
+    "UseCutPromptText": "This tree looks like it can be CUT down.\\pWould you like to CUT it?$",
+    "UsedCutRockSmashText": "{STR_VAR_1} used {STR_VAR_2}.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 13,
+   "x": 28,
+   "y": 8,
+   "gfx": "OBJ_EVENT_GFX_FISHERMAN",
+   "movement": "MOVEMENT_TYPE_FACE_LEFT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "Route118_EventScript_150F34",
+   "texts": {
+    "Route118_Text_170F12": "Hmm!\\nA GOOD ROD is really good!\\pWouldn't you agree?$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 14,
+   "x": 7,
+   "y": 10,
+   "gfx": "OBJ_EVENT_GFX_WOMAN_3",
+   "movement": "MOVEMENT_TYPE_ROTATE_CLOCKWISE",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route118_EventScript_15108F",
+   "texts": {
+    "Route118_Text_1BDFF4": "The aroma of flowers has a magical\\npower. It cleanses us body and soul.$",
+    "Route118_Text_1BE03C": "Oh, dear me.\\nI seem to have lost.$",
+    "Route118_Text_1BE05E": "Flowers, POKéMON...\\nI love whatever smells nice.\\pStinky things...\\nI'll pass.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 15,
+   "x": 14,
+   "y": 14,
+   "gfx": "OBJ_EVENT_GFX_FISHERMAN",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route118_EventScript_1510E4",
+   "texts": {
+    "Route118_Text_1BE318": "For FISHERMEN, equipment is the key.\\pBut for TRAINERS, the key ingredients\\nare POKéMON and heart, of course!$",
+    "Route118_Text_1BE385": "I was beaten in heart?$",
+    "Route118_Text_1BE39C": "Come to think of it, fishing is a battle\\nbetween a FISHERMAN and a POKéMON.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 16,
+   "x": 56,
+   "y": 7,
+   "gfx": "OBJ_EVENT_GFX_MAN_6",
+   "movement": "MOVEMENT_TYPE_FACE_UP_AND_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route118_EventScript_151150",
+   "texts": {
+    "Route118_Text_1BE1D7": "Take flight!\\nMy BIRD POKéMON!$",
+    "Route118_Text_1BE1F5": "They did take flight...$",
+    "Route118_Text_1BE20D": "If they'd get stronger, they'd be able\\nto fly more freely...$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 17,
+   "x": 39,
+   "y": 15,
+   "gfx": "OBJ_EVENT_GFX_FISHERMAN",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route118_EventScript_1510CD",
+   "texts": {
+    "Route118_Text_1BE24A": "I'm a FISHERMAN, but also a TRAINER.\\nI'm raising the POKéMON I caught.$",
+    "Route118_Text_1BE291": "I thought I was doing okay in my\\ntraining...$",
+    "Route118_Text_1BE2BE": "I couldn't win by training POKéMON\\nwhile I fished...\\pWas I doing things in half measures?$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 18,
+   "x": 17,
+   "y": 11,
+   "gfx": "OBJ_EVENT_GFX_MAN_6",
+   "movement": "MOVEMENT_TYPE_FACE_UP_AND_LEFT",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route118_EventScript_1510FB",
+   "texts": {
+    "Route118_Text_1BE3E8": "Let my melody rock your soul!$",
+    "Route118_Text_1BE406": "La-lalala...$",
+    "Route118_Text_1BE413": "An electric guitar doesn't always\\nhave to be noisy...\\pIt can be strummed to squeeze out\\nthis heart-stirring melody...$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 19,
+   "x": 44,
+   "y": 7,
+   "gfx": "OBJ_EVENT_GFX_STEVEN",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_STEVEN_ROUTE118",
+   "script": "0x0",
+   "missing": true
+  },
+  {
+   "local_id": 20,
+   "x": 69,
+   "y": 7,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_ROUTE118_1",
+   "script": "Route118_EventScript_1B15B2",
+   "texts": {},
+   "complex": true
+  }
+ ],
+ "signs": [
+  {
+   "x": 47,
+   "y": 14,
+   "type": "secret_base",
+   "raw": {
+    "type": "secret_base",
+    "x": 47,
+    "y": 14,
+    "elevation": 0,
+    "secret_base_id": "SECRET_BASE_RED_CAVE1_1"
+   }
+  },
+  {
+   "x": 13,
+   "y": 6,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "Route118_EventScript_150F9C",
+   "texts": {
+    "Route118_Text_17108B": "ROUTE 118\\n{0x7B} MAUVILLE CITY$"
+   }
+  },
+  {
+   "x": 56,
+   "y": 8,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "Route118_EventScript_150FA5",
+   "texts": {
+    "Route118_Text_1710A5": "ROUTE 118\\n{0x79} ROUTE 119$"
+   }
+  },
+  {
+   "x": 67,
+   "y": 6,
+   "type": "secret_base",
+   "raw": {
+    "type": "secret_base",
+    "x": 67,
+    "y": 6,
+    "elevation": 0,
+    "secret_base_id": "SECRET_BASE_RED_CAVE2_1"
+   }
+  },
+  {
+   "x": 29,
+   "y": 5,
+   "type": "secret_base",
+   "raw": {
+    "type": "secret_base",
+    "x": 29,
+    "y": 5,
+    "elevation": 0,
+    "secret_base_id": "SECRET_BASE_YELLOW_CAVE1_2"
+   }
+  },
+  {
+   "x": 47,
+   "y": 5,
+   "type": "secret_base",
+   "raw": {
+    "type": "secret_base",
+    "x": 47,
+    "y": 5,
+    "elevation": 0,
+    "secret_base_id": "SECRET_BASE_TREE1_3"
+   }
+  },
+  {
+   "x": 46,
+   "y": 5,
+   "type": "secret_base",
+   "raw": {
+    "type": "secret_base",
+    "x": 46,
+    "y": 5,
+    "elevation": 0,
+    "secret_base_id": "SECRET_BASE_TREE2_1"
+   }
+  },
+  {
+   "x": 31,
+   "y": 13,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 31,
+    "y": 13,
+    "elevation": 3,
+    "item": "ITEM_IRON",
+    "flag": "FLAG_HIDDEN_ITEM_43"
+   }
+  },
+  {
+   "x": 12,
+   "y": 14,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 12,
+    "y": 14,
+    "elevation": 3,
+    "item": "ITEM_HEART_SCALE",
+    "flag": "FLAG_HIDDEN_ITEM_42"
+   }
+  }
+ ],
+ "warps": [],
+ "coord_events": [
+  {
+   "type": "trigger",
+   "x": 43,
+   "y": 11,
+   "elevation": 3,
+   "var": "VAR_ROUTE118_STATE",
+   "var_value": "0",
+   "script": "Route118_EventScript_150FAE",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 44,
+   "y": 11,
+   "elevation": 3,
+   "var": "VAR_ROUTE118_STATE",
+   "var_value": "0",
+   "script": "Route118_EventScript_150FCE",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 45,
+   "y": 11,
+   "elevation": 3,
+   "var": "VAR_ROUTE118_STATE",
+   "var_value": "0",
+   "script": "Route118_EventScript_150FE4",
+   "texts": {},
+   "complex": true
+  }
+ ],
+ "wild": {
+  "land_mons": {
+   "encounter_rate": 20,
+   "slot_rates": [
+    20,
+    20,
+    10,
+    10,
+    10,
+    10,
+    5,
+    5,
+    4,
+    4,
+    1,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_ZIGZAGOON",
+     "min": 24,
+     "max": 24
+    },
+    {
+     "species": "SPECIES_ELECTRIKE",
+     "min": 24,
+     "max": 24
+    },
+    {
+     "species": "SPECIES_ZIGZAGOON",
+     "min": 26,
+     "max": 26
+    },
+    {
+     "species": "SPECIES_ELECTRIKE",
+     "min": 26,
+     "max": 26
+    },
+    {
+     "species": "SPECIES_LINOONE",
+     "min": 26,
+     "max": 26
+    },
+    {
+     "species": "SPECIES_MANECTRIC",
+     "min": 26,
+     "max": 26
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 25,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 25,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 26,
+     "max": 26
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 26,
+     "max": 26
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 27,
+     "max": 27
+    },
+    {
+     "species": "SPECIES_KECLEON",
+     "min": 25,
+     "max": 25
+    }
+   ]
+  },
+  "water_mons": {
+   "encounter_rate": 4,
+   "slot_rates": [
+    60,
+    30,
+    5,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 5,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 15,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_PELIPPER",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_PELIPPER",
+     "min": 25,
+     "max": 30
+    }
+   ]
+  },
+  "fishing_mons": {
+   "encounter_rate": 30,
+   "slot_rates": [
+    70,
+    30,
+    60,
+    20,
+    20,
+    40,
+    40,
+    15,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_CARVANHA",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_SHARPEDO",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_CARVANHA",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_CARVANHA",
+     "min": 20,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_CARVANHA",
+     "min": 35,
+     "max": 40
+    },
+    {
+     "species": "SPECIES_CARVANHA",
+     "min": 40,
+     "max": 45
+    }
+   ]
+  }
+ }
+}

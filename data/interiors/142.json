@@ -1,0 +1,39 @@
+{
+ "_doc": "FortreeCity_House5: zone written by converter/gen_interior_recipes_houses.py (warps and parent from converter/gen_interiors.py); story people left for the story phase: person ZIGZAGOON at (6,3) FortreeCity_House5_EventScript_Zigzagoon (story/complex script)",
+ "zone": 142,
+ "room": "FortreeCity_House5",
+ "area": 313,
+ "parent": 16,
+ "warps": [
+  {
+   "at": [3, 5],
+   "tile_only": true,
+   "to": [16, 19],
+   "what": "Sapphire warp 0 -> FortreeCity 7"
+  },
+  {
+   "at": [4, 5],
+   "tile_only": true,
+   "to": [16, 19],
+   "what": "Sapphire warp 1 -> FortreeCity 7"
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 1,
+   "model": 53,
+   "script": 1,
+   "dir": 1,
+   "at": [6, 4],
+   "move": 11
+  },
+  {
+   "uid": 3,
+   "model": 61,
+   "script": 2,
+   "dir": 3,
+   "at": [2, 4]
+  }
+ ],
+ "signs": []
+}

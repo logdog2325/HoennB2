@@ -1,0 +1,594 @@
+{
+ "map": "RustboroCity",
+ "id": "MAP_RUSTBORO_CITY",
+ "layout": "LAYOUT_RUSTBORO_CITY",
+ "music": "MUS_RUSTBORO",
+ "region_map_section": "MAPSEC_RUSTBORO_CITY",
+ "weather": "WEATHER_SUNNY",
+ "connections": [
+  {
+   "direction": "up",
+   "offset": 0,
+   "map": "MAP_ROUTE115"
+  },
+  {
+   "direction": "down",
+   "offset": 0,
+   "map": "MAP_ROUTE104"
+  },
+  {
+   "direction": "right",
+   "offset": 0,
+   "map": "MAP_ROUTE116"
+  }
+ ],
+ "npcs": [
+  {
+   "local_id": 1,
+   "x": 22,
+   "y": 34,
+   "gfx": "OBJ_EVENT_GFX_WOMAN_7",
+   "movement": "MOVEMENT_TYPE_WANDER_UP_AND_DOWN",
+   "range": [
+    0,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "RustboroCity_EventScript_Woman",
+   "texts": {
+    "RustboroCity_Text_GymLeaderIsntEasyWithFire": "I challenged the GYM LEADER, but...\\pIt's not going to be easy winning with\\nmy FIRE-type POKéMON...\\pFIRE-type POKéMON don't match up\\nwell against ROCK-type POKéMON...$"
+   }
+  },
+  {
+   "local_id": 2,
+   "x": 19,
+   "y": 13,
+   "gfx": "OBJ_EVENT_GFX_FAT_MAN",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "RustboroCity_EventScript_FatMan",
+   "texts": {
+    "RustboroCity_Text_WeShortenItToDevon": "The DEVON CORPORATION...\\nWe all just shorten it to DEVON.\\pThat company makes all sorts of\\nconvenient products.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 3,
+   "x": 25,
+   "y": 37,
+   "gfx": "OBJ_EVENT_GFX_LITTLE_BOY_1",
+   "movement": "MOVEMENT_TYPE_FACE_UP",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "RustboroCity_EventScript_NinjaBoy",
+   "texts": {
+    "RustboroCity_Text_CatchRarePokemonIfIGoToSchool": "POKéMON TRAINER'S SCHOOL!\\pIf I go to this school, will I be able\\nto catch rare POKéMON easily?$"
+   }
+  },
+  {
+   "local_id": 4,
+   "x": 21,
+   "y": 46,
+   "gfx": "OBJ_EVENT_GFX_LITTLE_GIRL_1",
+   "movement": "MOVEMENT_TYPE_WANDER_UP_AND_DOWN",
+   "range": [
+    0,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "RustboroCity_EventScript_Twin",
+   "texts": {
+    "RustboroCity_Text_WowYouHavePokemon": "Wow, you have POKéMON with you, too.\\pWhen I get bigger, I'm going to go\\nplaces with POKéMON, too.$"
+   }
+  },
+  {
+   "local_id": 5,
+   "x": 12,
+   "y": 45,
+   "gfx": "OBJ_EVENT_GFX_BOY_2",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "RustboroCity_EventScript_Boy2",
+   "texts": {
+    "RustboroCity_Text_MrBrineyWalksInTheTunnel": "The old sailor MR. BRINEY lives in a\\ncottage by the sea.\\pHe goes for walks in the tunnel every\\nso often.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 6,
+   "x": 26,
+   "y": 23,
+   "gfx": "OBJ_EVENT_GFX_MAN_4",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "RustboroCity_EventScript_Man1",
+   "texts": {
+    "RustboroCity_Text_HaveYouChallengedGym": "Have you taken the POKéMON GYM\\nchallenge?\\pWhen you get that shiny GYM BADGE\\nin hand, I guess TRAINERS begin to\\lrealize what is required of them.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 7,
+   "x": 24,
+   "y": 51,
+   "gfx": "OBJ_EVENT_GFX_LITTLE_BOY_2",
+   "movement": "MOVEMENT_TYPE_FACE_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "RustboroCity_EventScript_LittleBoy",
+   "texts": {
+    "RustboroCity_Text_PokemonCanChangeLookFromExp": "If a POKéMON gains experience in\\nbattles, it can sometimes change in\\lthe way it looks.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 8,
+   "x": 25,
+   "y": 51,
+   "gfx": "OBJ_EVENT_GFX_LITTLE_GIRL_2",
+   "movement": "MOVEMENT_TYPE_FACE_LEFT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "RustboroCity_EventScript_LittleGirl",
+   "texts": {
+    "RustboroCity_Text_PokemonChangeShape": "A POKéMON changes shape?\\nIf one did that, I would be shocked!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 9,
+   "x": 30,
+   "y": 10,
+   "gfx": "OBJ_EVENT_GFX_MAN_2",
+   "movement": "MOVEMENT_TYPE_FACE_RIGHT",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_DEVON_RUSTBORO",
+   "script": "RustboroCity_EventScript_DevonEmployee1",
+   "texts": {
+    "RustboroCity_Text_ShadyCharacterTookOffTowardsTunnel": "That shady character, I think he took\\noff towards the tunnel over there.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 10,
+   "x": 13,
+   "y": 21,
+   "gfx": "OBJ_EVENT_GFX_VAR_1",
+   "movement": "MOVEMENT_TYPE_FACE_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_GRUNT_RUSTBORO",
+   "script": "0x0",
+   "missing": true
+  },
+  {
+   "local_id": 11,
+   "x": 13,
+   "y": 34,
+   "gfx": "OBJ_EVENT_GFX_MAN_7",
+   "movement": "MOVEMENT_TYPE_WANDER_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "RustboroCity_EventScript_DevonEmployee2",
+   "texts": {
+    "RustboroCity_Text_YoureNewAroundHere": "Oh? Who might you be?\\nYou're a new face around these parts.\\pHave you just transferred into the\\nPOKéMON TRAINER'S SCHOOL?$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 12,
+   "x": 36,
+   "y": 51,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_RUSTBORO_CITY_X_DEFEND",
+   "script": "RustboroCity_EventScript_ItemXDefend",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 13,
+   "x": 19,
+   "y": 27,
+   "gfx": "OBJ_EVENT_GFX_MAN_5",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "RustboroCity_EventScript_Man2",
+   "texts": {
+    "RustboroCity_Text_TradePokemonGrowFast": "A POKéMON you get in a trade from\\nsomeone grows fast.\\pBut if you don't have certain GYM\\nBADGES, it may not obey you...$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 14,
+   "x": 16,
+   "y": 50,
+   "gfx": "OBJ_EVENT_GFX_VAR_0",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_RIVAL_RUSTBORO",
+   "script": "RustboroCity_EventScript_RivalEncounter",
+   "texts": {},
+   "complex": true
+  }
+ ],
+ "signs": [
+  {
+   "x": 23,
+   "y": 19,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "RustboroCity_EventScript_GymSign",
+   "texts": {
+    "RustboroCity_Text_GymSign": "RUSTBORO CITY POKéMON GYM\\nLEADER: ROXANNE\\p“The ROCK-loving honors student!”$",
+    "RustboroCity_Text_DevonCorpBranchOfficeSign": "DEVON CORP. BRANCH OFFICE\\p“Access limited to DEVON employees\\nand authorized personnel.”$"
+   }
+  },
+  {
+   "x": 25,
+   "y": 35,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "RustboroCity_EventScript_TrainersSchoolSign",
+   "texts": {
+    "RustboroCity_Text_TrainersSchoolSign": "POKéMON TRAINER'S SCHOOL\\p“We'll teach you anything about\\nPOKéMON!”$"
+   }
+  },
+  {
+   "x": 17,
+   "y": 45,
+   "facing": "BG_EVENT_PLAYER_FACING_NORTH",
+   "script": "Common_EventScript_PokemartSign",
+   "texts": {
+    "Text_PokemartSign": "“Selected items for your convenience!”\\nPOKéMON MART$"
+   }
+  },
+  {
+   "x": 18,
+   "y": 38,
+   "facing": "BG_EVENT_PLAYER_FACING_NORTH",
+   "script": "Common_EventScript_PokemonCenterSign",
+   "texts": {
+    "Text_PokemonCenterSign": "“Rejuvenate your tired partners!”\\nPOKéMON CENTER$"
+   }
+  },
+  {
+   "x": 19,
+   "y": 49,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "RustboroCity_EventScript_CitySign",
+   "texts": {
+    "RustboroCity_Text_CitySign": "RUSTBORO CITY\\p“The city probing the integration of\\nnature and science.”$"
+   }
+  },
+  {
+   "x": 18,
+   "y": 45,
+   "facing": "BG_EVENT_PLAYER_FACING_NORTH",
+   "script": "Common_EventScript_PokemartSign",
+   "texts": {
+    "Text_PokemartSign": "“Selected items for your convenience!”\\nPOKéMON MART$"
+   }
+  },
+  {
+   "x": 17,
+   "y": 38,
+   "facing": "BG_EVENT_PLAYER_FACING_NORTH",
+   "script": "Common_EventScript_PokemonCenterSign",
+   "texts": {
+    "Text_PokemonCenterSign": "“Rejuvenate your tired partners!”\\nPOKéMON CENTER$"
+   }
+  },
+  {
+   "x": 17,
+   "y": 20,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "RustboroCity_EventScript_DevonCorpSign",
+   "texts": {
+    "RustboroCity_Text_DevonCorpSign": "DEVON CORPORATION\\p“For all your living needs, we make\\nit all.”$"
+   }
+  },
+  {
+   "x": 30,
+   "y": 8,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "RustboroCity_EventScript_TunnelSign",
+   "texts": {
+    "RustboroCity_Text_TunnelNearingCompletion": "“Timesaving tunnel nearing\\ncompletion!”\\p...Is what it says on the sign, but\\nthere's also a big “X” splashed\\lacross it in red paint...$"
+   }
+  },
+  {
+   "x": 12,
+   "y": 38,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "RustboroCity_EventScript_CuttersHouseSign",
+   "texts": {
+    "RustboroCity_Text_CuttersHouse": "CUTTER'S HOUSE$"
+   }
+  }
+ ],
+ "warps": [
+  {
+   "id": 0,
+   "x": 27,
+   "y": 19,
+   "dest_map": "MAP_RUSTBORO_CITY_GYM",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 1,
+   "x": 13,
+   "y": 30,
+   "dest_map": "MAP_RUSTBORO_CITY_FLAT1_1F",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 2,
+   "x": 16,
+   "y": 45,
+   "dest_map": "MAP_RUSTBORO_CITY_MART",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 3,
+   "x": 16,
+   "y": 38,
+   "dest_map": "MAP_RUSTBORO_CITY_POKEMON_CENTER_1F",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 4,
+   "x": 27,
+   "y": 34,
+   "dest_map": "MAP_RUSTBORO_CITY_POKEMON_SCHOOL",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 5,
+   "x": 11,
+   "y": 15,
+   "dest_map": "MAP_RUSTBORO_CITY_DEVON_CORP_1F",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 6,
+   "x": 12,
+   "y": 15,
+   "dest_map": "MAP_RUSTBORO_CITY_DEVON_CORP_1F",
+   "dest_warp_id": "1"
+  },
+  {
+   "id": 7,
+   "x": 33,
+   "y": 19,
+   "dest_map": "MAP_RUSTBORO_CITY_HOUSE1",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 8,
+   "x": 9,
+   "y": 38,
+   "dest_map": "MAP_RUSTBORO_CITY_CUTTERS_HOUSE",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 9,
+   "x": 30,
+   "y": 28,
+   "dest_map": "MAP_RUSTBORO_CITY_HOUSE2",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 10,
+   "x": 5,
+   "y": 51,
+   "dest_map": "MAP_RUSTBORO_CITY_FLAT2_1F",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 11,
+   "x": 26,
+   "y": 46,
+   "dest_map": "MAP_RUSTBORO_CITY_HOUSE3",
+   "dest_warp_id": "0"
+  }
+ ],
+ "coord_events": [
+  {
+   "type": "trigger",
+   "x": 23,
+   "y": 20,
+   "elevation": 3,
+   "var": "VAR_RUSTBORO_STATE",
+   "var_value": "1",
+   "script": "RustboroCity_EventScript_StolenGoodsTrigger0",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 23,
+   "y": 21,
+   "elevation": 3,
+   "var": "VAR_RUSTBORO_STATE",
+   "var_value": "1",
+   "script": "RustboroCity_EventScript_StolenGoodsTrigger1",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 23,
+   "y": 22,
+   "elevation": 3,
+   "var": "VAR_RUSTBORO_STATE",
+   "var_value": "1",
+   "script": "RustboroCity_EventScript_StolenGoodsTrigger2",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 23,
+   "y": 23,
+   "elevation": 3,
+   "var": "VAR_RUSTBORO_STATE",
+   "var_value": "1",
+   "script": "RustboroCity_EventScript_StolenGoodsTrigger3",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 23,
+   "y": 24,
+   "elevation": 3,
+   "var": "VAR_RUSTBORO_STATE",
+   "var_value": "1",
+   "script": "RustboroCity_EventScript_StolenGoodsTrigger4",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 30,
+   "y": 9,
+   "elevation": 3,
+   "var": "VAR_RUSTBORO_STATE",
+   "var_value": "2",
+   "script": "RustboroCity_EventScript_HelpGetGoodsTrigger0",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 29,
+   "y": 10,
+   "elevation": 3,
+   "var": "VAR_RUSTBORO_STATE",
+   "var_value": "2",
+   "script": "RustboroCity_EventScript_HelpGetGoodsTrigger1",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 30,
+   "y": 11,
+   "elevation": 3,
+   "var": "VAR_RUSTBORO_STATE",
+   "var_value": "2",
+   "script": "RustboroCity_EventScript_HelpGetGoodsTrigger2",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 30,
+   "y": 12,
+   "elevation": 3,
+   "var": "VAR_RUSTBORO_STATE",
+   "var_value": "2",
+   "script": "RustboroCity_EventScript_HelpGetGoodsTrigger3",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 30,
+   "y": 9,
+   "elevation": 3,
+   "var": "VAR_RUSTBORO_STATE",
+   "var_value": "4",
+   "script": "RustboroCity_EventScript_ReturnGoodsTrigger0",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 31,
+   "y": 10,
+   "elevation": 3,
+   "var": "VAR_RUSTBORO_STATE",
+   "var_value": "4",
+   "script": "RustboroCity_EventScript_ReturnGoodsTrigger1",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 30,
+   "y": 11,
+   "elevation": 3,
+   "var": "VAR_RUSTBORO_STATE",
+   "var_value": "4",
+   "script": "RustboroCity_EventScript_ReturnGoodsTrigger2",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 30,
+   "y": 12,
+   "elevation": 3,
+   "var": "VAR_RUSTBORO_STATE",
+   "var_value": "4",
+   "script": "RustboroCity_EventScript_ReturnGoodsTrigger3",
+   "texts": {},
+   "complex": true
+  }
+ ],
+ "wild": {}
+}

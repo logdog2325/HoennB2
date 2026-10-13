@@ -1,0 +1,11 @@
+Fallarbor Town\n“A farm community with small gardens.”
+Hehehe!{be01}\nWith this Meteorite, that thing in\nMt. Chimney will…
+Heh?{be01}\nI don’t know who you are, but if you get\nin the way of Team Magma, don’t{be00}\nexpect any mercy!
+Hold it right there, Team Magma!{be01}\nYou’re badly mistaken if you think you\ncan have your way with the world!
+Hehehe!\nEven Team Aqua joins us!{be01}\nBut it’s too much trouble to deal with\nyou all…{be01}\nHeh, it doesn’t matter!{be01}\nWe’ve got the Meteorite, so off to\nMt. Chimney we go!{be01}\nHehehe! Be seeing you, you Team\nAqua dingbats!
+Archie: Didn’t I see you before?\nAt Slateport’s Museum?{be01}\nAh, so your name is {0100:0}.{be01}\nAt the time, I thought you were one\nof Team Magma’s goons.{be01}\nHumph…\nYou’re one odd kid.{be01}\nTeam Magma is a dangerous group of\ntotal fanatics.{be01}\nThey engage in destruction, claiming\nto expand the land mass.{be01}\nThey are the rivals to us,\nthe sea-loving Team Aqua!
+Boss, we should give chase to\nTeam Magma…
+Archie: Yes, yes, we must!\nWe’ve got to hurry.{be01}\nThere’s no telling what Team Magma\nwill do at Mt. Chimney!
+Archie: {0100:0}, you should keep\nan eye out for Team Magma, too.{be01}\nFarewell!
+I… I’m Cozmo…\nI’m a Professor…{be01}\nTeam Magma asked me to guide them\nto Meteor Falls…{be01}\nBut they tricked me.\nThey even took my Meteorite away…{be01}\nAnd then another similar bunch,\nTeam Aqua showed up.{be01}\nAfter that…\nI don’t understand any of it.{be01}\nBut that Team Magma…{be01}\nWhat are they going to do with that\nMeteorite at Mt. Chimney?
+Prof. Cozmo: But that Team Magma…{be01}\nWhat are they going to do with that\nMeteorite at Mt. Chimney?

@@ -1,0 +1,3 @@
+Oh! This boulder is shaking in response\nto the Magma Emblem!
+Wah!\nWhat are you doing here?{be01}\nWhat am I doing in a place like this?{be01}\nWhat business is it of yours?
+Okay, oh-kay!\nI admit it--you’re strong!{be01}\nDon’t worry about me.\nGo wherever you want!

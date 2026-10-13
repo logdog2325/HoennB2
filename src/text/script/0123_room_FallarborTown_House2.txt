@@ -1,0 +1,9 @@
+…
+I’m the Move Tutor.{be01}\nI know all the moves that Pokémon\nlearn - every one of them - and I can{be00}\nteach Pokémon those moves.{be01}\nI can teach a move to a Pokémon\nof yours if you’d like.{be01}\nI’ll do it for a Heart Scale.\nI’m collecting those now.
+Oh! That’s it! That’s an honest to\ngoodness Heart Scale!{be01}\nLet me guess, you want me to teach\na move?
+Which Pokémon needs tutoring?
+Which move should I teach?
+{0100:0} handed over one Heart Scale\nin exchange.
+Sorry...{be01}\nIt doesn’t appear as if I have any move\nI can teach that Pokémon.
+Hunh? There isn’t a single move that\nI can teach an Egg.
+If your Pokémon need to learn a move,\ncome back with a Heart Scale.

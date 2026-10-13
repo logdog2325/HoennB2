@@ -1,0 +1,94 @@
+{
+ "_doc": "Battle Dome battle room (Emerald 20x10, no walls in its collision: the player is under script). Floor rows 3-9; Emerald's crowd in the stands as the PWT stadium's crowd textures on the back wall; the battle field = the stadium's green field texture in79kabe01 (381).",
+ "map": "BattleFrontier_BattleDomeBattleRoom",
+ "decomp": "pokeemerald",
+ "style": "fd_stadium",
+ "origin": [
+  1,
+  -1
+ ],
+ "floor": [
+  [
+   0,
+   3,
+   19,
+   9
+  ]
+ ],
+ "exits": [],
+ "floor_tex": [
+  {
+   "rect": [
+    7,
+    4,
+    12,
+    8
+   ],
+   "tex": "in79kabe01",
+   "src": 381,
+   "stretch": true
+  }
+ ],
+ "decals": [
+  {
+   "tex": "in79_fan1",
+   "src": 381,
+   "at": [
+    2.5
+   ],
+   "y": 6,
+   "w": 48,
+   "h": 36
+  },
+  {
+   "tex": "in79_fan1",
+   "src": 381,
+   "at": [
+    8.5
+   ],
+   "y": 6,
+   "w": 48,
+   "h": 36
+  },
+  {
+   "tex": "in79_fan1",
+   "src": 381,
+   "at": [
+    14.5
+   ],
+   "y": 6,
+   "w": 48,
+   "h": 36
+  },
+  {
+   "tex": "in79_fan2",
+   "src": 381,
+   "at": [
+    5.5
+   ],
+   "y": 6,
+   "w": 48,
+   "h": 36
+  },
+  {
+   "tex": "in79_fan2",
+   "src": 381,
+   "at": [
+    11.5
+   ],
+   "y": 6,
+   "w": 48,
+   "h": 36
+  },
+  {
+   "tex": "in79_fan2",
+   "src": 381,
+   "at": [
+    17.5
+   ],
+   "y": 6,
+   "w": 48,
+   "h": 36
+  }
+ ]
+}

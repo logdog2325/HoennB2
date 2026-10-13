@@ -1,0 +1,59 @@
+{
+ "_doc": "Route110_TrickHousePuzzle1 (zone 552), built by the specials agent (recipe data/interior_layouts/Route110_TrickHousePuzzle1.json): Black 2 house / Route 3 Day Care look, Black 2 interior area 282. Warps in Sapphire's order (one per Sapphire warp tile). People/signs: Sapphire's one-message ones as generated; story people are left for the story phase.",
+ "zone": 552,
+ "room": "Route110_TrickHousePuzzle1",
+ "area": 282,
+ "parent": 368,
+ "warps": [
+  {
+   "at": [
+    0,
+    21
+   ],
+   "tile_only": true,
+   "to": [
+    514,
+    2
+   ],
+   "what": "Sapphire warp 0 -> Route110_TrickHouseEntrance 2"
+  },
+  {
+   "at": [
+    1,
+    21
+   ],
+   "tile_only": true,
+   "to": [
+    514,
+    2
+   ],
+   "what": "Sapphire warp 1 -> Route110_TrickHouseEntrance 2"
+  },
+  {
+   "at": [
+    13,
+    1
+   ],
+   "tile_only": true,
+   "to": [
+    513,
+    0
+   ],
+   "what": "Sapphire warp 2 -> Route110_TrickHouseEnd 0"
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 18,
+   "model": 110,
+   "script": 7119,
+   "flag": 1219,
+   "dir": 1,
+   "at": [
+    9,
+    12
+   ]
+  }
+ ],
+ "signs": []
+}

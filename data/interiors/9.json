@@ -1,0 +1,173 @@
+{
+ "_doc": "SlateportCity_OceanicMuseum_1F (zone 9), built by the specials agent (recipe data/interior_layouts/SlateportCity_OceanicMuseum_1F.json): Nacrene Museum look, Black 2 interior area 287. Warps in Sapphire's order (one per Sapphire warp tile). People/signs: Sapphire's one-message ones as generated; story people are left for the story phase.",
+ "zone": 9,
+ "room": "SlateportCity_OceanicMuseum_1F",
+ "area": 287,
+ "parent": 448,
+ "warps": [
+  {
+   "at": [
+    9,
+    8
+   ],
+   "tile_only": true,
+   "to": [
+    448,
+    13
+   ],
+   "what": "Sapphire warp 0 -> SlateportCity 5"
+  },
+  {
+   "at": [
+    10,
+    8
+   ],
+   "tile_only": true,
+   "to": [
+    448,
+    15
+   ],
+   "what": "Sapphire warp 1 -> SlateportCity 7"
+  },
+  {
+   "at": [
+    6,
+    1
+   ],
+   "tile_only": true,
+   "to": [
+    11,
+    0
+   ],
+   "what": "Sapphire warp 2 -> SlateportCity_OceanicMuseum_2F 0"
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 1,
+   "model": 17,
+   "script": 1,
+   "dir": 3,
+   "at": [
+    7,
+    7
+   ]
+  },
+  {
+   "uid": 7,
+   "model": 17,
+   "script": 2,
+   "dir": 2,
+   "at": [
+    12,
+    7
+   ]
+  }
+ ],
+ "signs": [
+  {
+   "script": 3,
+   "at": [
+    2,
+    7
+   ],
+   "dir": 4
+  },
+  {
+   "script": 4,
+   "at": [
+    2,
+    4
+   ],
+   "dir": 4
+  },
+  {
+   "script": 5,
+   "at": [
+    9,
+    1
+   ],
+   "dir": 4
+  },
+  {
+   "script": 6,
+   "at": [
+    12,
+    1
+   ],
+   "dir": 4
+  },
+  {
+   "script": 7,
+   "at": [
+    10,
+    1
+   ],
+   "dir": 4
+  },
+  {
+   "script": 8,
+   "at": [
+    13,
+    1
+   ],
+   "dir": 4
+  },
+  {
+   "script": 9,
+   "at": [
+    15,
+    4
+   ],
+   "dir": 4
+  },
+  {
+   "script": 10,
+   "at": [
+    18,
+    4
+   ],
+   "dir": 4
+  },
+  {
+   "script": 11,
+   "at": [
+    18,
+    7
+   ],
+   "dir": 4
+  },
+  {
+   "script": 12,
+   "at": [
+    2,
+    1
+   ],
+   "dir": 4
+  },
+  {
+   "script": 13,
+   "at": [
+    3,
+    1
+   ],
+   "dir": 4
+  },
+  {
+   "script": 14,
+   "at": [
+    16,
+    1
+   ],
+   "dir": 4
+  },
+  {
+   "script": 15,
+   "at": [
+    17,
+    1
+   ],
+   "dir": 4
+  }
+ ]
+}

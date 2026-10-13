@@ -1,0 +1,53 @@
+{
+ "map": "ShoalCave_LowTideStairsRoom",
+ "ladders": {
+  "7,4": "up",
+  "3,12": "up"
+ },
+ "tide": {
+  "event": 9,
+  "inside_event": 8
+ },
+ "_doc": "caves_misc: Sapphire's stairs room is five terraces joined by one-tile stairs (all elevation 3, the steps drawn in the art): terraces 16 apart (models_cave_levels heights + one-tile ramps rising north on the stair tiles); the single walkable tiles shut in by rocks take their terrace's height.",
+ "heights": {
+  "5,12": 0,
+  "5,10": 16,
+  "2,10": 16,
+  "5,8": 32,
+  "9,8": 32,
+  "9,6": 48,
+  "5,6": 48,
+  "9,4": 64,
+  "13,4": 64
+ },
+ "ramps": [
+  [
+   7,
+   11,
+   7,
+   11,
+   "n"
+  ],
+  [
+   4,
+   9,
+   4,
+   9,
+   "n"
+  ],
+  [
+   7,
+   7,
+   7,
+   7,
+   "n"
+  ],
+  [
+   11,
+   5,
+   11,
+   5,
+   "n"
+  ]
+ ]
+}

@@ -1,0 +1,5 @@
+That device you have there...\nIt’s a PokéNav.{be01}\nWhen Trainers that have PokéNavs\nbattle, it keeps a record of how{be00}\nthings went, I think.{be01}\nOh, pardon me.\nMy name is Steven.{be01}\nI’m interested in rare stones, so\nI travel here and there.{be01}\nOh?\nA Letter for me?
+{0100:0} handed over the\n{0100:1}.
+Steven: Okay, thank you.{be01}\nYou went through all this trouble to\ndeliver that. I need to thank you.{be01}\nLet me see...\nI’ll give you this TM.{be01}\nIt contains my favorite move,\nLow Sweep.
+Steven: Your Pokémon appear quite\ncapable.{be01}\nIf you keep training, you could even\nbecome the Champion of the Pokémon{be00}\nLeague one day. That’s what I think.{be01}\nNow, I’ve got to hurry along.
+Oh, your Bag is full...\nThat’s too bad, then.

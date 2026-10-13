@@ -1,0 +1,111 @@
+{
+ "map": "emerald/MagmaHideout_4F",
+ "void": [
+  [
+   1,
+   3,
+   1,
+   3
+  ],
+  [
+   15,
+   8,
+   15,
+   8
+  ],
+  [
+   17,
+   8,
+   17,
+   8
+  ],
+  [
+   20,
+   11,
+   20,
+   11
+  ],
+  [
+   21,
+   12,
+   21,
+   12
+  ],
+  [
+   24,
+   14,
+   24,
+   14
+  ],
+  [
+   8,
+   16,
+   8,
+   16
+  ],
+  [
+   45,
+   26,
+   46,
+   26
+  ],
+  [
+   48,
+   26,
+   48,
+   26
+  ],
+  [
+   55,
+   26,
+   57,
+   26
+  ],
+  [
+   42,
+   27,
+   46,
+   27
+  ],
+  [
+   48,
+   27,
+   48,
+   27
+  ]
+ ],
+ "_doc": "emerald_caves 2026-10-12: Emerald's MagmaHideout_4F (pokeemerald) read as Emerald's world reads it (models_cave 'emerald/<Map>'); void = walkable tiles no warp reaches, pools = its blocked water; its lava (blocked lava metatiles) drawn as Black 2's Reversal Mountain lava (Ruby's Cave of Origin recipe)",
+ "pools": [
+  [
+   0,
+   0,
+   58,
+   27,
+   {
+    "metatiles": [
+     "0x213",
+     "0x215",
+     "0x21c",
+     "0x2bd",
+     "0x32c",
+     "0x333",
+     "0x334",
+     "0x33a",
+     "0x33b",
+     "0x33c"
+    ]
+   }
+  ]
+ ],
+ "look_over": {
+  "water": "in81_magu00",
+  "water_top": "in81_magu01",
+  "water_top_size": 64,
+  "water_bank": "in81_mizuga1",
+  "tex_sets": {
+   "in81_magu00": 388,
+   "in81_magu01": 388,
+   "in81_mizuga1": 388
+  }
+ }
+}

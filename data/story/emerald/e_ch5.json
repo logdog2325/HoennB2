@@ -1,0 +1,114 @@
+{
+ "_doc": "Emerald-only story objects of Chapter 5 (emerald_ch45_magma 2026-10-12; b2tools/patches/story.py reads this file only in an Emerald build): Mt. Chimney (pokeemerald objects 29 and 30) and Jagged Pass (the Magma guard and the five triggers that open the hideout). Positions are pokeemerald's tiles (both maps keep their size); uid = 100 + pokeemerald's local object number.",
+ "objects": [
+  {
+   "kind": "npc",
+   "map": "MtChimney",
+   "at": [
+    13,
+    16
+   ],
+   "uid": 129,
+   "model": 192,
+   "script": 3165,
+   "flag": "FLAG_HIDE_EVIL_TEAM_MT_CHIMNEY",
+   "evtype": 1,
+   "p0": 3,
+   "move": 16,
+   "dir": 2,
+   "what": "Magma grunt (F): eye-contact trainer TRAINER_GRUNT_MT_CHIMNEY_1 165 (pokeemerald object 29, FACE_LEFT)"
+  },
+  {
+   "kind": "npc",
+   "map": "MtChimney",
+   "at": [
+    7,
+    7
+   ],
+   "uid": 130,
+   "model": 64,
+   "script": 3138,
+   "flag": "FLAG_HIDE_MT_CHIMNEY_PEOPLE",
+   "evtype": 1,
+   "p0": 6,
+   "move": 17,
+   "dir": 3,
+   "what": "Sawyer: eye-contact trainer TRAINER_SAWYER_1 138 (pokeemerald object 30, HIKER, FACE_RIGHT; appears with the other Mt. Chimney trainers)"
+  },
+  {
+   "kind": "npc",
+   "map": "JaggedPass",
+   "at": [
+    16,
+    19
+   ],
+   "uid": 105,
+   "model": 302,
+   "script": 2,
+   "flag": "FLAG_HIDE_JAGGED_PASS_MAGMA_GUARD",
+   "move": 14,
+   "dir": 0,
+   "what": "the Magma grunt guarding the hideout door (pokeemerald LOCALID_MAGMA_HIDEOUT_GUARD, FACE_UP): scenes/JaggedPass.inc JP_Guard"
+  },
+  {
+   "kind": "trigger",
+   "map": "JaggedPass",
+   "at": [
+    21,
+    15
+   ],
+   "script": 3,
+   "var": "VAR_JAGGED_PASS_STATE",
+   "value": 1,
+   "what": "opens the Magma Hideout once you own the Magma Emblem (pokeemerald coord events 6-10): scenes/JaggedPass.inc JP_OpenHideout"
+  },
+  {
+   "kind": "trigger",
+   "map": "JaggedPass",
+   "at": [
+    22,
+    20
+   ],
+   "script": 3,
+   "var": "VAR_JAGGED_PASS_STATE",
+   "value": 1,
+   "what": "opens the Magma Hideout once you own the Magma Emblem (pokeemerald coord events 6-10): scenes/JaggedPass.inc JP_OpenHideout"
+  },
+  {
+   "kind": "trigger",
+   "map": "JaggedPass",
+   "at": [
+    21,
+    20
+   ],
+   "script": 3,
+   "var": "VAR_JAGGED_PASS_STATE",
+   "value": 1,
+   "what": "opens the Magma Hideout once you own the Magma Emblem (pokeemerald coord events 6-10): scenes/JaggedPass.inc JP_OpenHideout"
+  },
+  {
+   "kind": "trigger",
+   "map": "JaggedPass",
+   "at": [
+    14,
+    15
+   ],
+   "script": 3,
+   "var": "VAR_JAGGED_PASS_STATE",
+   "value": 1,
+   "what": "opens the Magma Hideout once you own the Magma Emblem (pokeemerald coord events 6-10): scenes/JaggedPass.inc JP_OpenHideout"
+  },
+  {
+   "kind": "trigger",
+   "map": "JaggedPass",
+   "at": [
+    13,
+    15
+   ],
+   "script": 3,
+   "var": "VAR_JAGGED_PASS_STATE",
+   "value": 1,
+   "what": "opens the Magma Hideout once you own the Magma Emblem (pokeemerald coord events 6-10): scenes/JaggedPass.inc JP_OpenHideout"
+  }
+ ]
+}

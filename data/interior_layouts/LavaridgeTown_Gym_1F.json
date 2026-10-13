@@ -1,0 +1,314 @@
+{
+ "_doc": "gyms_league: Lavaridge Gym 1F: three bands of sand behind red-rock walls (rows 7 and 15), the pillar x 5, the sand holes you drop through (Sapphire's 0x68 warp tiles) as dark holes; statues.",
+ "map": "LavaridgeTown_Gym_1F",
+ "style": "gl_lavaridge",
+ "floor": [
+  [
+   0,
+   1,
+   10,
+   23
+  ]
+ ],
+ "floor_tex": [
+  {
+   "tex": "in81_ana02",
+   "src": 388,
+   "stretch": true,
+   "rect": [
+    0,
+    2,
+    0,
+    2
+   ]
+  },
+  {
+   "tex": "in81_ana02",
+   "src": 388,
+   "stretch": true,
+   "rect": [
+    4,
+    2,
+    4,
+    2
+   ]
+  },
+  {
+   "tex": "in81_ana02",
+   "src": 388,
+   "stretch": true,
+   "rect": [
+    6,
+    2,
+    6,
+    2
+   ]
+  },
+  {
+   "tex": "in81_ana02",
+   "src": 388,
+   "stretch": true,
+   "rect": [
+    9,
+    2,
+    9,
+    2
+   ]
+  },
+  {
+   "tex": "in81_ana02",
+   "src": 388,
+   "stretch": true,
+   "rect": [
+    1,
+    6,
+    1,
+    6
+   ]
+  },
+  {
+   "tex": "in81_ana02",
+   "src": 388,
+   "stretch": true,
+   "rect": [
+    4,
+    6,
+    4,
+    6
+   ]
+  },
+  {
+   "tex": "in81_ana02",
+   "src": 388,
+   "stretch": true,
+   "rect": [
+    6,
+    6,
+    6,
+    6
+   ]
+  },
+  {
+   "tex": "in81_ana02",
+   "src": 388,
+   "stretch": true,
+   "rect": [
+    10,
+    6,
+    10,
+    6
+   ]
+  },
+  {
+   "tex": "in81_ana02",
+   "src": 388,
+   "stretch": true,
+   "rect": [
+    4,
+    9,
+    4,
+    9
+   ]
+  },
+  {
+   "tex": "in81_ana02",
+   "src": 388,
+   "stretch": true,
+   "rect": [
+    0,
+    11,
+    0,
+    11
+   ]
+  },
+  {
+   "tex": "in81_ana02",
+   "src": 388,
+   "stretch": true,
+   "rect": [
+    4,
+    12,
+    4,
+    12
+   ]
+  },
+  {
+   "tex": "in81_ana02",
+   "src": 388,
+   "stretch": true,
+   "rect": [
+    1,
+    14,
+    1,
+    14
+   ]
+  },
+  {
+   "tex": "in81_ana02",
+   "src": 388,
+   "stretch": true,
+   "rect": [
+    6,
+    14,
+    6,
+    14
+   ]
+  },
+  {
+   "tex": "in81_ana02",
+   "src": 388,
+   "stretch": true,
+   "rect": [
+    10,
+    14,
+    10,
+    14
+   ]
+  },
+  {
+   "tex": "in81_ana02",
+   "src": 388,
+   "stretch": true,
+   "rect": [
+    0,
+    17,
+    0,
+    17
+   ]
+  },
+  {
+   "tex": "in81_ana02",
+   "src": 388,
+   "stretch": true,
+   "rect": [
+    4,
+    17,
+    4,
+    17
+   ]
+  },
+  {
+   "tex": "in81_ana02",
+   "src": 388,
+   "stretch": true,
+   "rect": [
+    10,
+    19,
+    10,
+    19
+   ]
+  },
+  {
+   "tex": "in81_ana02",
+   "src": 388,
+   "stretch": true,
+   "rect": [
+    6,
+    20,
+    6,
+    20
+   ]
+  },
+  {
+   "tex": "in81_ana02",
+   "src": 388,
+   "stretch": true,
+   "rect": [
+    3,
+    21,
+    3,
+    21
+   ]
+  },
+  {
+   "tex": "in81_ana02",
+   "src": 388,
+   "stretch": true,
+   "rect": [
+    0,
+    23,
+    0,
+    23
+   ]
+  }
+ ],
+ "blocks": [
+  {
+   "use": "gl_lava_band",
+   "rect": [
+    0,
+    7,
+    10,
+    7
+   ]
+  },
+  {
+   "use": "gl_lava_band",
+   "rect": [
+    0,
+    15,
+    10,
+    15
+   ]
+  },
+  {
+   "use": "gl_lava_pillar",
+   "units": [
+    5.2,
+    1.0,
+    5.8,
+    7.0
+   ]
+  },
+  {
+   "use": "gl_lava_pillar",
+   "units": [
+    5.2,
+    8.0,
+    5.8,
+    15.0
+   ]
+  },
+  {
+   "use": "gl_lava_pillar",
+   "units": [
+    5.2,
+    16.0,
+    5.8,
+    24.0
+   ]
+  }
+ ],
+ "furniture": [
+  {
+   "m": "object02_1",
+   "at": [
+    6.5,
+    17
+   ]
+  },
+  {
+   "m": "object02_1",
+   "at": [
+    10.5,
+    17
+   ]
+  }
+ ],
+ "mats": [
+  {
+   "tex": "in70_mat1",
+   "src": 351,
+   "border": 0.25,
+   "border_units": 3,
+   "y": 0,
+   "rect": [
+    8,
+    23,
+    9,
+    23
+   ],
+   "_what": "exit mat (Sapphire's Gym entrance mat)"
+  }
+ ]
+}

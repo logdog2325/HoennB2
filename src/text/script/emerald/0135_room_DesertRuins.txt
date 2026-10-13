@@ -1,0 +1,3 @@
+Left, left,\ndown, down.{be01}\nThen, use\nRock Smash.
+There is a big hole in the wall.
+{0102:0} used Rock Smash!

@@ -1,0 +1,4 @@
+…
+I don’t have any Pokéblocks, but I caught\na good number of Pokémon.{be01}\nYou can improve your chances of making\na catch by getting closer to them{be00}\nbefore throwing a Safari Ball.
+If you use Pokéblocks, wild Pokémon won’t\nbe so quick to run away.{be01}\nIt’s not much use to give Pokéblocks to\nPokémon that don’t flee easily.
+If you put a Pokéblock on the Feeder,\nPokémon are attracted to it.{be01}\nI think Pokémon with the same sort of\nnature are drawn by a certain Pokéblock.

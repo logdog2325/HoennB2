@@ -1,0 +1,11 @@
+{
+ "_doc": "Fallarbor Town's buildings (group towns3, notes/TOWNS_TOWNS3.md). buildings: Sapphire door destination -> pack-0 res and front (z of the model's front wall; world.py puts it 4 units into the door tile, footprint centre from data/plans/FallarborTown.json).",
+ "group": "towns3",
+ "buildings": {
+  "MAP_FALLARBOR_TOWN_HOUSE2": {"res": 360, "front": 20},
+  "MAP_FALLARBOR_TOWN_CONTEST_LOBBY": {"res": 362, "front": 20},
+  "MAP_FALLARBOR_TOWN_POKEMON_CENTER_1F": {"res": 0, "front": 20},
+  "MAP_FALLARBOR_TOWN_MART": {"res": 3, "front": 20},
+  "MAP_FALLARBOR_TOWN_HOUSE1": {"res": 361, "front": 20}
+ }
+}

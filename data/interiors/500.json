@@ -1,0 +1,23 @@
+{
+ "_doc": "PetalburgCity_WallysHouse: zone written by converter/gen_interior_recipes_houses.py (warps and parent from converter/gen_interiors.py); story people left for the story phase: person MAN_3 at (3,4) PetalburgCity_WallysHouse_EventScript_WallysDad (story/complex script); person WOMAN_5 at (7,5) PetalburgCity_WallysHouse_EventScript_WallysMom (story/complex script)",
+ "zone": 500,
+ "room": "PetalburgCity_WallysHouse",
+ "area": 313,
+ "parent": 439,
+ "warps": [
+  {
+   "at": [3, 7],
+   "tile_only": true,
+   "to": [439, 6],
+   "what": "Sapphire warp 0 -> PetalburgCity 1"
+  },
+  {
+   "at": [4, 7],
+   "tile_only": true,
+   "to": [439, 6],
+   "what": "Sapphire warp 1 -> PetalburgCity 1"
+  }
+ ],
+ "npcs": [],
+ "signs": []
+}

@@ -1,0 +1,31 @@
+{
+ "kind": "overworld",
+ "code": 111,
+ "sheet": 116,
+ "frames": 12,
+ "size": [
+  32,
+  32
+ ],
+ "controller": 3,
+ "textures": [
+  "t4x4x12.0",
+  "t4x4x12.1",
+  "t4x4x12.2",
+  "t4x4x12.3",
+  "t4x4x12.4",
+  "t4x4x12.5",
+  "t4x4x12.6",
+  "t4x4x12.7",
+  "t4x4x12.8",
+  "t4x4x12.9",
+  "t4x4x12.10",
+  "t4x4x12.11"
+ ],
+ "palette": "t4x4x12",
+ "name": "berry-trees-4",
+ "donor": "unused Black 2 sheet 111",
+ "note": "Sapphire berry trees (berry stage), one per facing: up Mago, down Pomeg",
+ "sapphire": "pokeruby graphics/object_events/pics/berry_trees/*.png frame 4, palette 01",
+ "made_by": "b2tools/models_objects.py berry_trees (sprite_upgrade resize)"
+}

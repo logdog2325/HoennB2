@@ -1,0 +1,11 @@
+{0100:0}, welcome!{be01}\nWhat can I do for you?
+Please come again!
+Hello!{be01}\nThis is the Pretty Petal flower shop.\nSpreading flowers all over the world!
+Your name is?{be01}\n{0100:0}.\nThat’s a nice name.{be01}\n{0100:0}, would you like to learn about\nBerries?
+{0100:0}, would you like to learn about\nBerries?
+Berries grow on trees that thrive\nonly in soft, loamy soil.{be01}\nIf you take some Berries, be sure to\nplant one in the loamy soil again.{be01}\nA planted Berry will soon sprout,\ngrow into a plant, flower beautifully,{be00}\nthen grow Berries again.{be01}\nI want to see the whole wide world\nfilled with beautiful flowers.{be00}\nThat’s my dream.{be01}\nPlease help me, {0100:0}. Plant Berries\nand bring more flowers into the world.
+Flowers bring so much happiness to\npeople, don’t they?
+Hello!{be01}\nThe more attention you give to flowers,\nthe more beautifully they bloom.{be01}\nYou’ll like tending flowers. I’m sure\nof it. You can have this.
+While Berry plants are growing,\nwater them with the Wailmer Pail.{be01}\nOh, another thing.{be01}\nIf you don’t pick Berries for a while,\nthey’ll drop off onto the ground.{be00}\nBut they’ll sprout again.{be01}\nIsn’t that awesome?\nIt’s like they have the will to live.
+I’m trying to be like my big sisters.\nI’m growing flowers, too!{be01}\nHere you go!\nIt’s for you!
+You can plant a Berry and grow it big,\nor you can make a Pokémon hold it.{be01}\nBut now they have a machine that mixes\nup different Berries and makes candies{be00}\nfor Pokémon.{be01}\nI want some candy, too.

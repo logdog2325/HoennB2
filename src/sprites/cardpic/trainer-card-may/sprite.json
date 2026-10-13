@@ -1,0 +1,27 @@
+{
+ "kind": "cardpic",
+ "archive": 40,
+ "ncgr": [
+  24,
+  25,
+  26,
+  27,
+  28,
+  29,
+  30,
+  31
+ ],
+ "nclr": [
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15
+ ],
+ "from_front": 1,
+ "note": "Trainer card picture: May (battle front 1 still) for every girl avatar",
+ "made_by": "b2tools/sprite_players.py"
+}

@@ -1,0 +1,113 @@
+{
+ "_doc": "Texture styles of the shops agent (gTileset_Shop rooms: Poké Marts, Herb Shop, Lilycove Department Store, Cycling Road and Safari Zone entrances). All from Black 2's Shopping Mall Nine (map texture set 326, chunks 873 and 908): its pale green diamond tile floor (in45_yuka01, one diamond per tile = 16 units, as chunk 873 lays it), its stockroom wall (in45_kabe03, white with grey bands, one texture over the wall height as chunk 908) and its entrance step (in45_step01). Black caps from the lab set (285), as the other styles.",
+ "shop": {
+  "_doc": "Poké Mart / department store: Shopping Mall Nine floor and stockroom wall (texture set 326)",
+  "floor": {
+   "tex": "in45_yuka01",
+   "src": 326,
+   "size": 16
+  },
+  "wall": {
+   "tex": "in45_kabe03",
+   "src": 326,
+   "u_size": 64
+  },
+  "genkan": {
+   "tex": "in45_step01",
+   "src": 326,
+   "stretch": true
+  },
+  "black": {
+   "tex": "black",
+   "src": 285
+  }
+ },
+ "shop_gate": {
+  "_doc": "Cycling Road / Safari Zone entrance buildings: Shopping Mall Nine's plain green-grey stockroom tiles (in45_yuka03, 16 units per tile as chunk 908) and stockroom wall",
+  "floor": {
+   "tex": "in45_yuka03",
+   "src": 326,
+   "size": 16
+  },
+  "wall": {
+   "tex": "in45_kabe03",
+   "src": 326,
+   "u_size": 64
+  },
+  "genkan": {
+   "tex": "in45_step01",
+   "src": 326,
+   "stretch": true
+  },
+  "black": {
+   "tex": "black",
+   "src": 285
+  }
+ },
+ "shop_herb": {
+  "_doc": "Lavaridge Herb Shop and Lilycove Department Store 1F: Black 2's Pokémon Center orange floor tiles (in02_yuka6, texture set 283, one per tile) for Sapphire's orange floor; Shopping Mall Nine wall and step",
+  "floor": {
+   "tex": "in02_yuka6",
+   "src": 283,
+   "size": 16
+  },
+  "wall": {
+   "tex": "in45_kabe03",
+   "src": 326,
+   "u_size": 64
+  },
+  "genkan": {
+   "tex": "in45_step01",
+   "src": 326,
+   "stretch": true
+  },
+  "black": {
+   "tex": "black",
+   "src": 285
+  }
+ },
+ "shop_pink": {
+  "_doc": "Lilycove Department Store 5F (Poké Doll Floor): pink patterned tiles chip_yuka2 (texture set 326, one per tile) for Sapphire's pink/yellow check floor; Shopping Mall Nine wall and step",
+  "floor": {
+   "tex": "chip_yuka2",
+   "src": 326,
+   "size": 16
+  },
+  "wall": {
+   "tex": "in45_kabe03",
+   "src": 326,
+   "u_size": 64
+  },
+  "genkan": {
+   "tex": "in45_step01",
+   "src": 326,
+   "stretch": true
+  },
+  "black": {
+   "tex": "black",
+   "src": 285
+  }
+ },
+ "shop_roof": {
+  "_doc": "Lilycove Department Store rooftop: grey roof tiles chip_yuka (texture set 326, one per tile); the walls around the roof are Black 2's sky-with-clouds picture in39_sora (texture set 320) so the roof stands against the sky (Sapphire: railings with the sky behind)",
+  "floor": {
+   "tex": "chip_yuka",
+   "src": 326,
+   "size": 16
+  },
+  "wall": {
+   "tex": "in39_sora",
+   "src": 320,
+   "u_size": 64
+  },
+  "genkan": {
+   "tex": "in45_step01",
+   "src": 326,
+   "stretch": true
+  },
+  "black": {
+   "tex": "black",
+   "src": 285
+  }
+ }
+}

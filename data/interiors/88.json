@@ -1,0 +1,74 @@
+{
+ "zone": 88,
+ "room": "AbandonedShip_Room_B1F",
+ "area": 337,
+ "header": {
+  "map_type": 16,
+  "npc_cache": 24,
+  "weather_word": 0,
+  "flags": 22817,
+  "icon_word": 32783,
+  "bgm0": 1193,
+  "bgm1": 1193,
+  "bgm2": 1193,
+  "bgm3": 1193,
+  "place": 65,
+  "place_display": 0,
+  "parent": 74,
+  "encounters": 8191,
+  "enc_slot": 6
+ },
+ "warps": [
+  {
+   "at": [
+    4,
+    7
+   ],
+   "tile_only": true,
+   "to": [
+    73,
+    5
+   ],
+   "what": "Sapphire warp 0 (4,7) -> AbandonedShip_Corridors_B1F 5"
+  },
+  {
+   "at": [
+    5,
+    7
+   ],
+   "tile_only": true,
+   "to": [
+    73,
+    5
+   ],
+   "what": "Sapphire warp 1 (5,7) -> AbandonedShip_Corridors_B1F 5"
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 1,
+   "model": 110,
+   "script": 7087,
+   "flag": 1187,
+   "dir": 1,
+   "at": [
+    4,
+    4
+   ],
+   "what": "item ball ITEM_TM13"
+  }
+ ],
+ "signs": [
+  {
+   "script": 1,
+   "at": [
+    7,
+    7
+   ],
+   "dir": 4,
+   "what": "trash can (Sapphire MB_TRASH_CAN, EventScript_EmptyTrashCan)"
+  }
+ ],
+ "triggers": [],
+ "what": "ship_hideouts: AbandonedShip_Room_B1F (b2tools/ship_hideouts_rooms.py); story: "
+}

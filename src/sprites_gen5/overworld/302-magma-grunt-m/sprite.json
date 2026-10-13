@@ -1,0 +1,32 @@
+{
+ "kind": "overworld",
+ "code": 302,
+ "sheet": 280,
+ "frames": 12,
+ "size": [
+  32,
+  32
+ ],
+ "controller": 3,
+ "textures": [
+  "t4x4x12.0",
+  "t4x4x12.1",
+  "t4x4x12.2",
+  "t4x4x12.3",
+  "t4x4x12.4",
+  "t4x4x12.5",
+  "t4x4x12.6",
+  "t4x4x12.7",
+  "t4x4x12.8",
+  "t4x4x12.9",
+  "t4x4x12.10",
+  "t4x4x12.11"
+ ],
+ "palette": "t4x4x12",
+ "name": "magma-grunt-m",
+ "note": "Team Magma grunt (M)",
+ "source": "community: aqua_magma_grunts_Kimmylube_AzureAquarian.jpg by Kimmylube / AzureAquarian (JPEG snapped to its 15 true colours)",
+ "colours": 15,
+ "merged_colours": [],
+ "made_by": "b2tools/sprite_community.py"
+}

@@ -1,0 +1,167 @@
+{
+ "zone": 128,
+ "room": "MeteorFalls_1F_1R",
+ "cave": true,
+ "cave_auto": true,
+ "area": 332,
+ "dark": false,
+ "header": {
+  "map_type": 16,
+  "npc_cache": 24,
+  "weather_word": 64,
+  "flags": 23683,
+  "icon_word": 40975,
+  "place_display": 1,
+  "bgm0": 1076,
+  "bgm1": 1076,
+  "bgm2": 1076,
+  "bgm3": 1076,
+  "place": 67,
+  "encounters": 52,
+  "enc_slot": 2
+ },
+ "warps": [
+  {
+   "at": [
+    27,
+    18
+   ],
+   "to": [
+    383,
+    3
+   ],
+   "what": "Emerald warp 0 (27,18) -> Route114 0"
+  },
+  {
+   "at": [
+    6,
+    39
+   ],
+   "to": [
+    387,
+    1
+   ],
+   "what": "Emerald warp 1 (6,39) -> Route115 0"
+  },
+  {
+   "at": [
+    10,
+    3
+   ],
+   "to": [
+    129,
+    0
+   ],
+   "what": "Emerald warp 2 (10,3) -> MeteorFalls_1F_2R 0"
+  },
+  {
+   "at": [
+    5,
+    4
+   ],
+   "to": [
+    130,
+    4
+   ],
+   "what": "Emerald warp 3 (5,4) -> MeteorFalls_B1F_1R 4"
+  },
+  {
+   "at": [
+    26,
+    28
+   ],
+   "to": [
+    130,
+    5
+   ],
+   "what": "Emerald warp 4 (26,28) -> MeteorFalls_B1F_1R 5"
+  },
+  {
+   "at": [
+    4,
+    2
+   ],
+   "to": [
+    377,
+    0
+   ],
+   "what": "Emerald warp 5 (4,2) -> MeteorFalls_StevensCave 0"
+  }
+ ],
+ "triggers": [
+  {
+   "script": 1,
+   "var": 0,
+   "value": 0,
+   "at": [
+    5,
+    4
+   ],
+   "y": 96
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 1,
+   "model": 110,
+   "script": 7074,
+   "flag": 1174,
+   "dir": 1,
+   "at": [
+    2,
+    4
+   ],
+   "what": "item ball ITEM_TM23"
+  },
+  {
+   "uid": 2,
+   "model": 110,
+   "script": 7076,
+   "flag": 1176,
+   "dir": 1,
+   "at": [
+    2,
+    14
+   ],
+   "what": "item ball ITEM_MOON_STONE"
+  },
+  {
+   "uid": 3,
+   "model": 110,
+   "script": 7075,
+   "flag": 1175,
+   "dir": 1,
+   "at": [
+    27,
+    5
+   ],
+   "what": "item ball ITEM_FULL_HEAL"
+  },
+  {
+   "uid": 4,
+   "model": 110,
+   "script": 7077,
+   "flag": 1177,
+   "dir": 1,
+   "at": [
+    26,
+    32
+   ],
+   "what": "item ball ITEM_PP_UP"
+  },
+  {
+   "uid": 100,
+   "model": 206,
+   "script": 0,
+   "dir": 1,
+   "at": [
+    4,
+    3
+   ],
+   "flag": 2400,
+   "what": "Steven's Cave closed until the game is clear (Emerald: rock wall tiles; Black 2: Clay Tunnel's rock 206, hidden by the game-clear flag)"
+  }
+ ],
+ "signs": [],
+ "what": "MeteorFalls_1F_1R: Emerald's cave (converter/gen_caves_emerald.py from emerald/MeteorFalls_1F_1R, b2tools/models_cave.py, room MeteorFalls_1F_1R_Emerald); story objects: see notes/EMERALD.md"
+}

@@ -1,0 +1,13 @@
+{
+ "_doc": "Birth Island (warp-only map, group 'standalone': its own exterior pack, data/buildings/standalone.json res 481, b2tools/models_standalone.py harbour; buildings_audit 2026-10-08): Emerald's harbour at the end of the dock, x 12-18, rows 24-28 (gTileset_Dewford 0x352-0x377, labelled solid water: nothing drew it). Its door warp (15,24) stays parked (the harbour room is not built; the ferry sailor stands on it). props: model origin in map tile coordinates.",
+ "group": "standalone",
+ "buildings": {},
+ "props": [
+  {
+   "res": 481,
+   "x": 15.5,
+   "z": 27.0,
+   "what": "harbour: body x 13-17 rows 25-28, cranes on columns 12 and 18"
+  }
+ ]
+}

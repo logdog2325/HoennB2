@@ -1,0 +1,12 @@
+{
+ "map": "CaveOfOrigin_B1F",
+ "_doc": "caves_east: the lone walkable tile at the map's south edge (4,22) is rock.",
+ "void": [
+  [
+   4,
+   22,
+   4,
+   22
+  ]
+ ]
+}

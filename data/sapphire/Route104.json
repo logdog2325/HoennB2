@@ -1,0 +1,938 @@
+{
+ "map": "Route104",
+ "id": "MAP_ROUTE104",
+ "layout": "LAYOUT_ROUTE104",
+ "music": "MUS_ROUTE104",
+ "region_map_section": "MAPSEC_ROUTE_104",
+ "weather": "WEATHER_SUNNY",
+ "connections": [
+  {
+   "direction": "up",
+   "offset": 0,
+   "map": "MAP_RUSTBORO_CITY"
+  },
+  {
+   "direction": "down",
+   "offset": 0,
+   "map": "MAP_ROUTE105"
+  },
+  {
+   "direction": "right",
+   "offset": 50,
+   "map": "MAP_PETALBURG_CITY"
+  }
+ ],
+ "npcs": [
+  {
+   "local_id": 1,
+   "x": 15,
+   "y": 60,
+   "gfx": "OBJ_EVENT_GFX_BUG_CATCHER",
+   "movement": "MOVEMENT_TYPE_FACE_LEFT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "Route104_EventScript_14EF4B",
+   "texts": {
+    "Route104_Text_16DA89": "The sea, huh?\\pI wonder what it's like at the bottom\\nof the sea?$"
+   }
+  },
+  {
+   "local_id": 2,
+   "x": 25,
+   "y": 49,
+   "gfx": "OBJ_EVENT_GFX_GIRL_2",
+   "movement": "MOVEMENT_TYPE_WANDER_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "Route104_EventScript_14EF42",
+   "texts": {
+    "Route104_Text_16DA13": "That seaside cottage is where\\nMR. BRINEY lives.\\pHe was once a mighty sailor who never\\nfeared the sea, however stormy.$"
+   }
+  },
+  {
+   "local_id": 3,
+   "x": 31,
+   "y": 24,
+   "gfx": "OBJ_EVENT_GFX_LASS",
+   "movement": "MOVEMENT_TYPE_FACE_LEFT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route104_EventScript_14F1A0",
+   "texts": {
+    "Route104_Text_1B8770": "Should I...\\nOr shouldn't I?\\pOkay, sure, I will battle!$",
+    "Route104_Text_1B87A7": "I shouldn't have battled...$",
+    "Route104_Text_1B87C3": "If you're faced with a decision and\\nyou let someone else choose for you,\\lyou will regret it, however things\\lturn out.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 4,
+   "x": 27,
+   "y": 63,
+   "gfx": "OBJ_EVENT_GFX_BOY_1",
+   "movement": "MOVEMENT_TYPE_WANDER_UP_AND_DOWN",
+   "range": [
+    0,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "Route104_EventScript_14EF81",
+   "texts": {
+    "Route104_Text_16DAC9": "If you're going to throw a POKé BALL,\\nweaken the wild POKéMON first.\\pIt will be easier to catch if it's been\\npoisoned, burned, or lulled to sleep.$"
+   }
+  },
+  {
+   "local_id": 5,
+   "x": 30,
+   "y": 50,
+   "gfx": "OBJ_EVENT_GFX_WOMAN_3",
+   "movement": "MOVEMENT_TYPE_WANDER_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "Route104_EventScript_14EF8A",
+   "texts": {
+    "Route104_Text_16DB5C": "You're a thief if you try to steal\\nsomeone else's POKéMON.\\pYou should throw POKé BALLS only at\\nwild POKéMON.$"
+   }
+  },
+  {
+   "local_id": 6,
+   "x": 28,
+   "y": 74,
+   "gfx": "OBJ_EVENT_GFX_GIRL_3",
+   "movement": "MOVEMENT_TYPE_FACE_UP",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "Route104_EventScript_14EFCC",
+   "texts": {
+    "Route104_Text_16DBC9": "Oh, no, I'm not a TRAINER.\\pBut that's right, if TRAINERS lock eyes,\\nit's a challenge to battle.\\pIf you don't want to battle, stay out\\nof their sight.$"
+   }
+  },
+  {
+   "local_id": 7,
+   "x": 12,
+   "y": 54,
+   "gfx": "OBJ_EVENT_GFX_MR_BRINEYS_BOAT",
+   "movement": "MOVEMENT_TYPE_FACE_UP",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_MR_BRINEY_BOAT_ROUTE104",
+   "script": "0x0",
+   "missing": true
+  },
+  {
+   "local_id": 8,
+   "x": 12,
+   "y": 51,
+   "gfx": "OBJ_EVENT_GFX_OLD_MAN_1",
+   "movement": "MOVEMENT_TYPE_FACE_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_MR_BRINEY_ROUTE104",
+   "script": "0x0",
+   "missing": true
+  },
+  {
+   "local_id": 9,
+   "x": 29,
+   "y": 8,
+   "gfx": "OBJ_EVENT_GFX_FISHERMAN",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route104_EventScript_14F172",
+   "texts": {
+    "Route104_Text_1B85EB": "Why keep it a secret?\\nI'm the WATER POKéMON expert!\\pHuh?\\nYou don't know me?$",
+    "Route104_Text_1B8637": "I thought I wasn't too bad, if I may\\nsay so, but I guess not... Bleah...$",
+    "Route104_Text_1B8680": "I got too into fishing.\\nI forgot I had to raise my POKéMON...$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 10,
+   "x": 34,
+   "y": 6,
+   "gfx": "OBJ_EVENT_GFX_BERRY_TREE",
+   "movement": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "S_BerryTree",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 11,
+   "x": 35,
+   "y": 6,
+   "gfx": "OBJ_EVENT_GFX_BERRY_TREE",
+   "movement": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "S_BerryTree",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 12,
+   "x": 36,
+   "y": 6,
+   "gfx": "OBJ_EVENT_GFX_BERRY_TREE",
+   "movement": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "S_BerryTree",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 13,
+   "x": 22,
+   "y": 41,
+   "gfx": "OBJ_EVENT_GFX_BERRY_TREE",
+   "movement": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "S_BerryTree",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 14,
+   "x": 23,
+   "y": 41,
+   "gfx": "OBJ_EVENT_GFX_BERRY_TREE",
+   "movement": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "S_BerryTree",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 15,
+   "x": 24,
+   "y": 41,
+   "gfx": "OBJ_EVENT_GFX_BERRY_TREE",
+   "movement": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "S_BerryTree",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 16,
+   "x": 37,
+   "y": 8,
+   "gfx": "OBJ_EVENT_GFX_OLD_WOMAN_1",
+   "movement": "MOVEMENT_TYPE_FACE_LEFT",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "Route104_EventScript_14EEC8",
+   "texts": {
+    "Route104_Text_1C55B9": "If you see BERRIES growing in loamy\\nsoil, feel free to take them.\\pBut make sure you plant a BERRY in the\\nsame spot. That's common courtesy.\\pHere, I'll share this with you.$",
+    "Route104_Text_1C5665": "The way you look, you must be a\\nTRAINER, no?\\pTRAINERS often make POKéMON hold\\nBERRIES.\\pIt's up to you whether to grow BERRIES\\nor use them.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 17,
+   "x": 3,
+   "y": 22,
+   "gfx": "OBJ_EVENT_GFX_BERRY_TREE",
+   "movement": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "S_BerryTree",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 18,
+   "x": 3,
+   "y": 23,
+   "gfx": "OBJ_EVENT_GFX_BERRY_TREE",
+   "movement": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "S_BerryTree",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 19,
+   "x": 3,
+   "y": 24,
+   "gfx": "OBJ_EVENT_GFX_BERRY_TREE",
+   "movement": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "S_BerryTree",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 20,
+   "x": 3,
+   "y": 25,
+   "gfx": "OBJ_EVENT_GFX_BERRY_TREE",
+   "movement": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "S_BerryTree",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 21,
+   "x": 39,
+   "y": 15,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_ROUTE104_1",
+   "script": "Route104_EventScript_1B1453",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 22,
+   "x": 8,
+   "y": 19,
+   "gfx": "OBJ_EVENT_GFX_WOMAN_7",
+   "movement": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
+   "range": [
+    1,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_FLOWER_SHOP_WORKER_OUTSIDE",
+   "script": "Route104_EventScript_14EF09",
+   "texts": {
+    "Route104_Text_16DD91": "This FLOWER SHOP started selling\\nsaplings recently.\\pIt made me so happy, I went overboard\\nshopping. I don't need this WHITE HERB\\lanymore. Would you take it, please?$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 23,
+   "x": 27,
+   "y": 15,
+   "gfx": "OBJ_EVENT_GFX_LITTLE_GIRL_1",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route104_EventScript_14F25A",
+   "texts": {
+    "Route104_Text_1B83E9": "GINA: Okay, let's battle with our\\nPOKéMON!$",
+    "Route104_Text_1B8414": "GINA: Losing upsets me!$",
+    "Route104_Text_1B845C": "GINA: Oh? Only one POKéMON?\\nThen, we don't battle with you.\\pIf there's only one POKéMON, it will\\nbe lonesome. That's not nice.$",
+    "Route104_Text_1B842C": "GINA: {STR_VAR_1} is strong!\\nWe have to train lots more!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 24,
+   "x": 28,
+   "y": 15,
+   "gfx": "OBJ_EVENT_GFX_LITTLE_GIRL_1",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route104_EventScript_14F279",
+   "texts": {
+    "Route104_Text_1B84DB": "MIA: We are twins, so we battle\\nPOKéMON together.$",
+    "Route104_Text_1B850D": "MIA: We battled together, but we\\nboth lost...$",
+    "Route104_Text_1B8577": "MIA: You want to battle with us?\\pIt's a big no-no if you don't have two\\nPOKéMON with you.\\lWe're too strong for you!$",
+    "Route104_Text_1B853B": "MIA: We will train our POKéMON more\\nand be strong like you.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 25,
+   "x": 11,
+   "y": 44,
+   "gfx": "OBJ_EVENT_GFX_BOY_4",
+   "movement": "MOVEMENT_TYPE_FACE_UP_AND_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route104_EventScript_14F1DE",
+   "texts": {
+    "Route104_Text_1B88D4": "Oh, sure, I'll accept your challenge.\\nI have a lot of money.$",
+    "Route104_Text_1B8911": "Why couldn't I win?$",
+    "Route104_Text_1B8925": "There are some things money can't buy.\\nThat's POKéMON...$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 26,
+   "x": 22,
+   "y": 25,
+   "gfx": "OBJ_EVENT_GFX_WOMAN_3",
+   "movement": "MOVEMENT_TYPE_ROTATE_COUNTERCLOCKWISE",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route104_EventScript_14F21C",
+   "texts": {
+    "Route104_Text_1B8A24": "We must have been fated to meet.\\nMay I ask you for a battle?$",
+    "Route104_Text_1B8A61": "Oh, my!$",
+    "Route104_Text_1B8A69": "“Hello” is the beginning of “good-bye.”\\nI hope we meet again.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 27,
+   "x": 29,
+   "y": 53,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_ROUTE104_2",
+   "script": "Route104_EventScript_1B1460",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 28,
+   "x": 18,
+   "y": 67,
+   "gfx": "OBJ_EVENT_GFX_YOUNGSTER",
+   "movement": "MOVEMENT_TYPE_WALK_SEQUENCE_DOWN_RIGHT_UP_LEFT",
+   "range": [
+    5,
+    6
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route104_EventScript_14F189",
+   "texts": {
+    "Route104_Text_1B86BE": "Leaving footprints in the sand is\\nso fun!$",
+    "Route104_Text_1B86E8": "Waah! I got sand in my runners!\\nThey're all gritty!$",
+    "Route104_Text_1B871C": "I want to leave my footprints in the\\nsand everywhere, but they disappear\\lquickly...$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 29,
+   "x": 37,
+   "y": 22,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_ROUTE104_3",
+   "script": "Route104_EventScript_1B146D",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 30,
+   "x": 35,
+   "y": 22,
+   "gfx": "OBJ_EVENT_GFX_CUTTABLE_TREE",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_TEMP_11",
+   "script": "S_CuttableTree",
+   "texts": {
+    "UseCutPromptText": "This tree looks like it can be CUT down.\\pWould you like to CUT it?$",
+    "UsedCutRockSmashText": "{STR_VAR_1} used {STR_VAR_2}.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 31,
+   "x": 5,
+   "y": 8,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_ROUTE104_4",
+   "script": "Route104_EventScript_1B147A",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 32,
+   "x": 5,
+   "y": 26,
+   "gfx": "OBJ_EVENT_GFX_BOY_2",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "Route104_EventScript_14EF93",
+   "texts": {
+    "Route104_Text_16DC5F": "I like filling my mouth with seeds,\\nthen spitting them out fast!\\pYou can have this, so you try it out!\\pUse it on a POKéMON, and it will learn\\na move for firing seeds rapidly.$"
+   },
+   "complex": true
+  }
+ ],
+ "signs": [
+  {
+   "x": 20,
+   "y": 50,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "Route104_EventScript_14EF54",
+   "texts": {
+    "Route104_Text_16DEB3": "MR. BRINEY'S COTTAGE$"
+   }
+  },
+  {
+   "x": 27,
+   "y": 66,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "Route104_EventScript_14EF5D",
+   "texts": {
+    "Route104_Text_16DEC8": "ROUTE 1O4\\n{0x7C} PETALBURG CITY$"
+   }
+  },
+  {
+   "x": 23,
+   "y": 5,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "Route104_EventScript_14EF66",
+   "texts": {
+    "Route104_Text_16DEE3": "ROUTE 1O4\\n{0x79} RUSTBORO CITY$"
+   }
+  },
+  {
+   "x": 7,
+   "y": 20,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "Route104_EventScript_14EF6F",
+   "texts": {
+    "Route104_Text_16DEFD": "PRETTY PETAL FLOWER SHOP$"
+   }
+  },
+  {
+   "x": 17,
+   "y": 23,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "Route104_EventScript_14EF78",
+   "texts": {
+    "Route104_Text_16DF16": "TRAINER TIPS\\pIn the HOENN region there are pairs\\nof TRAINERS who challenge others\\lfor 2-on-2 POKéMON battles called\\lDOUBLE BATTLES.\\pIn a DOUBLE BATTLE, the TRAINER must\\nsend out two POKéMON, the one at the\\lleft of the list and the top one.\\lWatch how POKéMON are lined up.$"
+   }
+  },
+  {
+   "x": 7,
+   "y": 6,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 7,
+    "y": 6,
+    "elevation": 3,
+    "item": "ITEM_SUPER_POTION",
+    "flag": "FLAG_HIDDEN_ITEM_2C"
+   }
+  },
+  {
+   "x": 3,
+   "y": 9,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 3,
+    "y": 9,
+    "elevation": 3,
+    "item": "ITEM_POKE_BALL",
+    "flag": "FLAG_HIDDEN_ITEM_3E"
+   }
+  },
+  {
+   "x": 14,
+   "y": 55,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 14,
+    "y": 55,
+    "elevation": 3,
+    "item": "ITEM_POTION",
+    "flag": "FLAG_HIDDEN_ITEM_25"
+   }
+  },
+  {
+   "x": 16,
+   "y": 72,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 16,
+    "y": 72,
+    "elevation": 3,
+    "item": "ITEM_ANTIDOTE",
+    "flag": "FLAG_HIDDEN_ITEM_55"
+   }
+  },
+  {
+   "x": 16,
+   "y": 64,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 16,
+    "y": 64,
+    "elevation": 3,
+    "item": "ITEM_HEART_SCALE",
+    "flag": "FLAG_HIDDEN_ITEM_58"
+   }
+  }
+ ],
+ "warps": [
+  {
+   "id": 0,
+   "x": 17,
+   "y": 50,
+   "dest_map": "MAP_ROUTE104_MR_BRINEYS_HOUSE",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 1,
+   "x": 5,
+   "y": 18,
+   "dest_map": "MAP_ROUTE104_PRETTY_PETAL_FLOWER_SHOP",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 2,
+   "x": 10,
+   "y": 30,
+   "dest_map": "MAP_PETALBURG_WOODS",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 3,
+   "x": 11,
+   "y": 30,
+   "dest_map": "MAP_PETALBURG_WOODS",
+   "dest_warp_id": "1"
+  },
+  {
+   "id": 4,
+   "x": 10,
+   "y": 38,
+   "dest_map": "MAP_PETALBURG_WOODS",
+   "dest_warp_id": "2"
+  },
+  {
+   "id": 5,
+   "x": 11,
+   "y": 38,
+   "dest_map": "MAP_PETALBURG_WOODS",
+   "dest_warp_id": "3"
+  },
+  {
+   "id": 6,
+   "x": 32,
+   "y": 42,
+   "dest_map": "MAP_PETALBURG_WOODS",
+   "dest_warp_id": "4"
+  },
+  {
+   "id": 7,
+   "x": 33,
+   "y": 42,
+   "dest_map": "MAP_PETALBURG_WOODS",
+   "dest_warp_id": "5"
+  }
+ ],
+ "coord_events": [],
+ "wild": {
+  "land_mons": {
+   "encounter_rate": 20,
+   "slot_rates": [
+    20,
+    20,
+    10,
+    10,
+    10,
+    10,
+    5,
+    5,
+    4,
+    4,
+    1,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_ZIGZAGOON",
+     "min": 4,
+     "max": 4
+    },
+    {
+     "species": "SPECIES_WURMPLE",
+     "min": 4,
+     "max": 4
+    },
+    {
+     "species": "SPECIES_ZIGZAGOON",
+     "min": 5,
+     "max": 5
+    },
+    {
+     "species": "SPECIES_WURMPLE",
+     "min": 5,
+     "max": 5
+    },
+    {
+     "species": "SPECIES_ZIGZAGOON",
+     "min": 4,
+     "max": 4
+    },
+    {
+     "species": "SPECIES_ZIGZAGOON",
+     "min": 5,
+     "max": 5
+    },
+    {
+     "species": "SPECIES_TAILLOW",
+     "min": 4,
+     "max": 4
+    },
+    {
+     "species": "SPECIES_TAILLOW",
+     "min": 5,
+     "max": 5
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 4,
+     "max": 4
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 4,
+     "max": 4
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 3,
+     "max": 3
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 5,
+     "max": 5
+    }
+   ]
+  },
+  "water_mons": {
+   "encounter_rate": 4,
+   "slot_rates": [
+    60,
+    30,
+    5,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 15,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 15,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_PELIPPER",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_PELIPPER",
+     "min": 25,
+     "max": 30
+    }
+   ]
+  },
+  "fishing_mons": {
+   "encounter_rate": 30,
+   "slot_rates": [
+    70,
+    30,
+    60,
+    20,
+    20,
+    40,
+    40,
+    15,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 20,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 35,
+     "max": 40
+    },
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 40,
+     "max": 45
+    }
+   ]
+  }
+ }
+}

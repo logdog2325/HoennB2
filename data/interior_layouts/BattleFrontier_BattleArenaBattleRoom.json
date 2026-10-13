@@ -1,0 +1,123 @@
+{
+ "_doc": "Battle Arena battle room (Emerald 16x11; the player is always under script). Floor rows 3-10 = the stone entrance floor m_b08_genkan (Emerald's grey cobbles); the mat (Emerald's green mat x 4-11, rows 4-8) = the green mat m_b07_mat; the side walkways (x 0-3 / 12-15, rows 6-7) where the player and the opponent come in = the dojo's planks m_a01_yuka. Dojo wall with name plates and tassels.",
+ "map": "BattleFrontier_BattleArenaBattleRoom",
+ "decomp": "pokeemerald",
+ "style": "pa_dojo_battle",
+ "origin": [
+  1,
+  -1
+ ],
+ "floor": [
+  [
+   0,
+   3,
+   15,
+   10
+  ]
+ ],
+ "exits": [],
+ "floor_tex": [
+  {
+   "rect": [
+    4,
+    4,
+    11,
+    8
+   ],
+   "tex": "m_b07_mat",
+   "src": 349,
+   "size": 32
+  },
+  {
+   "rect": [
+    0,
+    6,
+    3,
+    7
+   ],
+   "tex": "m_a01_yuka",
+   "src": 349,
+   "size": 32
+  },
+  {
+   "rect": [
+    12,
+    6,
+    15,
+    7
+   ],
+   "tex": "m_a01_yuka",
+   "src": 349,
+   "size": 32
+  }
+ ],
+ "decals": [
+  {
+   "tex": "m_a01_fuda",
+   "src": 349,
+   "at": [
+    2.5
+   ],
+   "y": 26,
+   "w": 32,
+   "h": 16,
+   "_what": "name plates"
+  },
+  {
+   "tex": "m_a01_fuda",
+   "src": 349,
+   "at": [
+    13.5
+   ],
+   "y": 26,
+   "w": 32,
+   "h": 16,
+   "_what": "name plates"
+  },
+  {
+   "tex": "m_a01_nuno",
+   "src": 349,
+   "at": [
+    8.0
+   ],
+   "y": 12,
+   "w": 28,
+   "h": 30,
+   "_what": "hanging cloth"
+  },
+  {
+   "tex": "m_a01_kakej",
+   "src": 349,
+   "at": [
+    6.4
+   ],
+   "y": 18,
+   "w": 12,
+   "h": 24,
+   "uv": [
+    0,
+    0,
+    0.5,
+    1
+   ],
+   "_what": "tassel"
+  },
+  {
+   "tex": "m_a01_kakej",
+   "src": 349,
+   "at": [
+    9.6
+   ],
+   "y": 18,
+   "w": 12,
+   "h": 24,
+   "uv": [
+    0,
+    0,
+    0.5,
+    1
+   ],
+   "_what": "tassel"
+  }
+ ]
+}

@@ -1,0 +1,22 @@
+{
+ "kind": "overworld",
+ "code": 244,
+ "sheet": 222,
+ "frames": 2,
+ "size": [
+  32,
+  32
+ ],
+ "controller": 9,
+ "textures": [
+  "t4x4x2.0",
+  "t4x4x2.1"
+ ],
+ "palette": "t4x4x2",
+ "name": "may-action2",
+ "note": "May (player), action2",
+ "source": "community: src/sprites/community/incoming/may_oras_DiegoWT/ by DiegoWT (Zailens commissioned): hands in front (use HM); stand (walking frame)",
+ "colours": 14,
+ "merged_colours": [],
+ "made_by": "b2tools/sprite_community.py"
+}

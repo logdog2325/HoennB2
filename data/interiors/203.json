@@ -1,0 +1,59 @@
+{
+ "_doc": "Lilycove Harbor (zone 203; scripts src/field_scripts/0406_room_LilycoveCity_Harbor.s, text 0261). Area 351 = Black 2's Humilau (interior pack 69; texture animation 21 moves the pool's sea in70_sea1). Story, not placed yet: the ferry attendant (8,10) and the S.S. Tidal (8,9) and its sailor (hide flags), the wandering sailor (3,13) (his script branches on the ferry tickets). Warps 2-3 (Sapphire (20-21,15), off the map) are the ferry's boarding warps (scripted).",
+ "zone": 203,
+ "room": "LilycoveCity_Harbor",
+ "area": 351,
+ "parent": 96,
+ "warps": [
+  {
+   "at": [
+    11,
+    14
+   ],
+   "tile_only": true,
+   "to": [
+    96,
+    25
+   ],
+   "what": "Sapphire warp 0 -> LilycoveCity 12"
+  },
+  {
+   "at": [
+    12,
+    14
+   ],
+   "tile_only": true,
+   "to": [
+    96,
+    25
+   ],
+   "what": "Sapphire warp 1 -> LilycoveCity 12"
+  },
+  {
+   "at": [
+    20,
+    15
+   ],
+   "tile_only": true,
+   "to": [
+    202,
+    0
+   ],
+   "what": "Sapphire warp 2 -> LilycoveCity_EmptyMap 0"
+  },
+  {
+   "at": [
+    21,
+    15
+   ],
+   "tile_only": true,
+   "to": [
+    202,
+    0
+   ],
+   "what": "Sapphire warp 3 -> LilycoveCity_EmptyMap 0"
+  }
+ ],
+ "npcs": [],
+ "signs": []
+}

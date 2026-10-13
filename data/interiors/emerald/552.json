@@ -1,0 +1,60 @@
+{
+ "_doc": "emerald_rooms (b2tools/emerald_rooms.py writes this file: edit the script and rerun). Emerald's overlay of 552.json (positions in the tiles of Route110_TrickHousePuzzle1's Emerald variant): Emerald's Orange Mail ball at (9,4) (data/emerald/hoenn_items.json n 167, script 7166, flag 1266; Sapphire's ball (9,12) is not Emerald's). The scroll's sign and the three trainers (Sally (14,20), Eddie (14,8), Robin (2,15)) and the Cut trees are story (not placed, as in Sapphire). Route110_TrickHousePuzzle1 (zone 552), built by the specials agent (recipe data/interior_layouts/Route110_TrickHousePuzzle1.json): Black 2 house / Route 3 Day Care look, Black 2 interior area 282. Warps in Sapphire's order (one per Sapphire warp tile). People/signs: Sapphire's one-message ones as generated; story people are left for the story phase.",
+ "zone": 552,
+ "room": "Route110_TrickHousePuzzle1",
+ "area": 282,
+ "parent": 368,
+ "warps": [
+  {
+   "at": [
+    0,
+    21
+   ],
+   "tile_only": true,
+   "to": [
+    514,
+    2
+   ],
+   "what": "Sapphire warp 0 -> Route110_TrickHouseEntrance 2"
+  },
+  {
+   "at": [
+    1,
+    21
+   ],
+   "tile_only": true,
+   "to": [
+    514,
+    2
+   ],
+   "what": "Sapphire warp 1 -> Route110_TrickHouseEntrance 2"
+  },
+  {
+   "at": [
+    13,
+    1
+   ],
+   "tile_only": true,
+   "to": [
+    513,
+    0
+   ],
+   "what": "Sapphire warp 2 -> Route110_TrickHouseEnd 0"
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 18,
+   "model": 110,
+   "script": 7166,
+   "flag": 1266,
+   "dir": 1,
+   "at": [
+    9,
+    4
+   ],
+   "_what": "item ball: Emerald's Orange Mail (data/emerald/hoenn_items.json n 167; Sapphire's ball was at (9, 12))"
+  }
+ ],
+ "signs": []
+}

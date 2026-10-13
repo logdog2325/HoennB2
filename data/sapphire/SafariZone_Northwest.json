@@ -1,0 +1,243 @@
+{
+ "map": "SafariZone_Northwest",
+ "id": "MAP_SAFARI_ZONE_NORTHWEST",
+ "layout": "LAYOUT_SAFARI_ZONE_NORTHWEST",
+ "music": "MUS_SAFARI_ZONE",
+ "region_map_section": "MAPSEC_SAFARI_ZONE",
+ "weather": "WEATHER_NONE",
+ "connections": [
+  {
+   "direction": "right",
+   "offset": 0,
+   "map": "MAP_SAFARI_ZONE_NORTHEAST"
+  },
+  {
+   "direction": "down",
+   "offset": 0,
+   "map": "MAP_SAFARI_ZONE_SOUTHWEST"
+  }
+ ],
+ "npcs": [
+  {
+   "local_id": 1,
+   "x": 8,
+   "y": 8,
+   "gfx": "OBJ_EVENT_GFX_MAN_1",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "SafariZone_Northwest_EventScript_160007",
+   "texts": {
+    "SafariZone_Northwest_Text_1C3CAE": "Gasp... Gasp...\\nI...made it out here...but...\\pI'm exhausted... I don't have the\\nenergy to catch POKéMON...$"
+   }
+  },
+  {
+   "local_id": 2,
+   "x": 33,
+   "y": 7,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_SAFARI_ZONE_NORTHWEST_1",
+   "script": "SafariZone_Northwest_EventScript_1B190C",
+   "texts": {},
+   "complex": true
+  }
+ ],
+ "signs": [],
+ "warps": [],
+ "coord_events": [],
+ "wild": {
+  "land_mons": {
+   "encounter_rate": 25,
+   "slot_rates": [
+    20,
+    20,
+    10,
+    10,
+    10,
+    10,
+    5,
+    5,
+    4,
+    4,
+    1,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_RHYHORN",
+     "min": 27,
+     "max": 27
+    },
+    {
+     "species": "SPECIES_ODDISH",
+     "min": 27,
+     "max": 27
+    },
+    {
+     "species": "SPECIES_RHYHORN",
+     "min": 29,
+     "max": 29
+    },
+    {
+     "species": "SPECIES_ODDISH",
+     "min": 29,
+     "max": 29
+    },
+    {
+     "species": "SPECIES_DODUO",
+     "min": 27,
+     "max": 27
+    },
+    {
+     "species": "SPECIES_GLOOM",
+     "min": 29,
+     "max": 29
+    },
+    {
+     "species": "SPECIES_GLOOM",
+     "min": 31,
+     "max": 31
+    },
+    {
+     "species": "SPECIES_DODUO",
+     "min": 29,
+     "max": 29
+    },
+    {
+     "species": "SPECIES_DODRIO",
+     "min": 29,
+     "max": 29
+    },
+    {
+     "species": "SPECIES_PINSIR",
+     "min": 27,
+     "max": 27
+    },
+    {
+     "species": "SPECIES_DODRIO",
+     "min": 31,
+     "max": 31
+    },
+    {
+     "species": "SPECIES_PINSIR",
+     "min": 29,
+     "max": 29
+    }
+   ]
+  },
+  "water_mons": {
+   "encounter_rate": 9,
+   "slot_rates": [
+    60,
+    30,
+    5,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_PSYDUCK",
+     "min": 20,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_PSYDUCK",
+     "min": 20,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_PSYDUCK",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_GOLDUCK",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_GOLDUCK",
+     "min": 25,
+     "max": 40
+    }
+   ]
+  },
+  "fishing_mons": {
+   "encounter_rate": 35,
+   "slot_rates": [
+    70,
+    30,
+    60,
+    20,
+    20,
+    40,
+    40,
+    15,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_GOLDEEN",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_GOLDEEN",
+     "min": 10,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_GOLDEEN",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_GOLDEEN",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_GOLDEEN",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_SEAKING",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_SEAKING",
+     "min": 35,
+     "max": 40
+    },
+    {
+     "species": "SPECIES_SEAKING",
+     "min": 25,
+     "max": 30
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,12 @@
+This vase looks expensive...\nPeered inside...{be01}\nBut, it was empty.
+Mr. Briney: Hold on, lass!\nWait up, Peeko!
+Hm? You’re {0100:0}!\nYou saved my darling Peeko!{be00}\nWe owe so much to you!{be01}\nWhat’s that?\nYou want to sail with me?{be01}\nHmhm...{be01}\nYou have a Letter bound for Dewford\nand a package for Slateport, then?{be01}\nQuite the busy life you must lead!{be01}\nBut, certainly, what you’re asking is\nno problem at all.{be01}\nYou’ve come to the right man!\nWe’ll set sail for Dewford.
+Mr. Briney: Dewford, here we come!{be01}\nAnchors aweigh!\nPeeko, we’re setting sail, my darling!
+Mr. Briney: Is that so?\nYour deliveries can wait?{be01}\nYou just go on and tell me whenever\nyou want to set sail!
+Mr. Briney: Ahoy!\nI know exactly what you want to say!{be01}\nYou’re to deliver a Letter to Dewford\nand a package to Slateport.{be01}\nWhat you need me to do is no problem\nat all - I’m the man for the job!{be01}\nFirst, we’ll set sail for Dewford.
+Mr. Briney: Ahoy!\nI know exactly what you want to say!{be01}\nYou’re to deliver a package to\nCapt. Stern in Slateport.{be01}\nWhat you need me to do is no problem\nat all - I’m the man for the job!{be01}\nFirst, we’ll set sail for Dewford.
+Mr. Briney: Ahoy!\nFor you, I’ll go out to sea anytime!{be01}\nNow, my friend, where are we bound?
+Mr. Briney: Is that so?\nWell, Peeko owes her life to you.{be01}\nYou just go on and tell me whenever\nyou want to set sail!
+Peeko: Pii pihyoroo!
+Dewford
+Cancel

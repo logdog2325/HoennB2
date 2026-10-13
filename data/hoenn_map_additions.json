@@ -1,0 +1,56 @@
+{
+ "_doc": "Additions to pokeruby's own maps that come from Emerald (postgame_maps agent, 2026-10-07; converter/gba.py map_additions: every reader through gba.Repo sees them). 'layouts': another layout of a map = one of its layouts plus setmetatile-style edits ({at, metatile, collision (bits 10-11), elevation (bits 12-15); the base's bits kept when not given}), used as an alt layout (data/hoenn_world.json alt_layouts); a layout whose id is its own base edits that layout in place (the Battle Tower island's PWT building, battle_tower 2026-10-08). 'events': event lists appended to the pokeruby map's own (map.json keys).",
+ "layouts": {
+  "LAYOUT_BATTLE_TOWER_OUTSIDE": {
+   "_doc": "The Battle Tower island with a second building, the PWT's entrance (user decision 2026-10-08, notes/DECISIONS.md: the PWT is reached separately, through a second building on the island; b2tools/models_standalone.py pwt, res 488). An in-place edit (id = base): plan_map.py, world.py, the terrain modules and outdoor_check.py all see the building as Sapphire's own. Spot: the east lawn, x 19-21, rows 10-12, door (20,12) facing south onto the lawn (20,13), the fewest changes to Sapphire's map: Sapphire's tiles there are grass and one shrub (19,10), nobody stands on them (the Bug Catcher's home (18,11) stays; his 1-tile wander box loses x 19), row 9 stays open so the strip east of the tower (rows 6-9, x 17-22) is still reached, and the sign (16,13), the other people, the stairs, the ferry attendant (19,24) and the ferry landing (19,23) are untouched. Its 3 x 3 metatiles are Sapphire's own tower porch (rows 6-8, x 13-15: canopy, door 0x25d in the middle), solid, elevation 0 as the tower's.",
+   "base": "LAYOUT_BATTLE_TOWER_OUTSIDE",
+   "edits": [
+    {"at": [19, 10], "metatile": "0x24C", "collision": 1, "elevation": 0},
+    {"at": [20, 10], "metatile": "0x24D", "collision": 1, "elevation": 0},
+    {"at": [21, 10], "metatile": "0x24E", "collision": 1, "elevation": 0},
+    {"at": [19, 11], "metatile": "0x254", "collision": 1, "elevation": 0},
+    {"at": [20, 11], "metatile": "0x255", "collision": 1, "elevation": 0},
+    {"at": [21, 11], "metatile": "0x256", "collision": 1, "elevation": 0},
+    {"at": [19, 12], "metatile": "0x25C", "collision": 1, "elevation": 0},
+    {"at": [20, 12], "metatile": "0x25D", "collision": 1, "elevation": 0},
+    {"at": [21, 12], "metatile": "0x25E", "collision": 1, "elevation": 0}
+   ]
+  },
+  "LAYOUT_ROUTE103_ALTERING_CAVE": {
+   "_doc": "Route 103 after the game, with Emerald's Altering Cave mouth. Emerald (pokeemerald data/maps/Route103/scripts.inc Route103_OnLoad: call_if_set FLAG_SYS_GAME_CLEAR -> setmetatile 45, 5, METATILE_General_CaveEntrance_Top, TRUE; setmetatile 45, 6, METATILE_General_CaveEntrance_Bottom, FALSE) opens the mouth in the middle of its cliff's 5-tile foot, with a strip of land in front of it that its redrawn Route 103 has (row 7, x 44-49, between the cliff and the sea; Sapphire's cliff foot meets the sea there). On Sapphire's map: the same two metatiles in the middle of Sapphire's cliff foot (x 45-49 at row 6, corners at 45 and 49: x 47), Emerald's land strip (metatile 0x001, elevation 3) along it (x 45-48 at row 7, joining Sapphire's land at x 49) and Emerald's shore metatiles under it (row 8: 0x19a, 0x189 x3, 0x18a; row 7 x 44: 0x18a), the same tiles Emerald draws around its strip.",
+   "base": "LAYOUT_ROUTE103",
+   "edits": [
+    {"at": [47, 5], "metatile": "0x09F", "collision": 1},
+    {"at": [47, 6], "metatile": "0x0A7", "collision": 0},
+    {"at": [44, 7], "metatile": "0x18A", "collision": 0, "elevation": 1},
+    {"at": [45, 7], "metatile": "0x001", "collision": 0, "elevation": 3},
+    {"at": [46, 7], "metatile": "0x001", "collision": 0, "elevation": 3},
+    {"at": [47, 7], "metatile": "0x001", "collision": 0, "elevation": 3},
+    {"at": [48, 7], "metatile": "0x001", "collision": 0, "elevation": 3},
+    {"at": [44, 8], "metatile": "0x19A", "collision": 0, "elevation": 1},
+    {"at": [45, 8], "metatile": "0x189", "collision": 0, "elevation": 1},
+    {"at": [46, 8], "metatile": "0x189", "collision": 0, "elevation": 1},
+    {"at": [47, 8], "metatile": "0x189", "collision": 0, "elevation": 1},
+    {"at": [48, 8], "metatile": "0x18A", "collision": 0, "elevation": 1}
+   ]
+  }
+ },
+ "events": {
+  "Route103": {
+   "warp_events": [
+    {
+     "_doc": "Emerald's Route 103 warp 0 -> MAP_ALTERING_CAVE warp 0 (Emerald (45,6), the middle of its cliff foot: here (47,6), see LAYOUT_ROUTE103_ALTERING_CAVE). dest_warp_id 256 = Black 2's dynamic warp (ov035 EventMapChangeWarp_CreateFromEntity: dest id 0x100 goes to GameData's next zone): Route 103's zone init sets it to the Altering Cave zone of the day (src/field_scripts/scenes/Route103_AlteringCave.inc). The mouth exists only in the post-game layout (map replace event 7): before, the door stands on the cliff with the sea in front at another height and never fires.",
+     "x": 47, "y": 6, "elevation": 0, "dest_map": "MAP_ALTERING_CAVE", "dest_warp_id": "256"
+    }
+   ]
+  },
+  "BattleTower_Outside": {
+   "warp_events": [
+    {
+     "_doc": "The PWT building's door (LAYOUT_BATTLE_TOWER_OUTSIDE above): warp 1, after Sapphire's tower door (warp 0), so the tower door keeps its index. dest_map B2_ZONE_192 = Black 2's own zone 192 (the PWT lobby), dest_warp_id 0 = its entrance mat (warp 0, tiles (14..16, 26)): b2tools/world.py standalone_door. The lobby's exit (zone 192 warp 0) is pointed back at this door by b2tools/patches/pwt.py.",
+     "x": 20, "y": 12, "elevation": 0, "dest_map": "B2_ZONE_192", "dest_warp_id": "0"
+    }
+   ]
+  }
+ }
+}

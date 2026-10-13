@@ -1,0 +1,60 @@
+{
+ "cm_skypillar": {
+  "_doc": "caves_misc: Sky Pillar inside = Black 2's Dragonspiral Tower (texture set 295, area 295): grey stone slab floor in14_yuka_c, tan stone wall in14_yuka_a (Sapphire's wall is brown; Dragonspiral's own walls are teal brick), Dragonspiral's lit doorway in14_exit_a as the exit notch.",
+  "floor": {
+   "tex": "in14_yuka_c",
+   "src": 295,
+   "size": 32
+  },
+  "wall": {
+   "tex": "in14_yuka_a",
+   "src": 295,
+   "u_size": 32
+  },
+  "genkan": {
+   "tex": "in14_exit_a",
+   "src": 295,
+   "size": 16
+  },
+  "black": {
+   "tex": "black",
+   "src": 285
+  }
+ },
+ "cm_newmauville": {
+  "_doc": "caves_misc: New Mauville = Black 2's P2 Laboratory (texture set 345, area 345): pale tile floor in64_lab03_01, beige panel wall in64_lab03_04 (Sapphire's riveted wall).",
+  "floor": {
+   "tex": "in64_lab03_01",
+   "src": 345,
+   "size": 16
+  },
+  "wall": {
+   "tex": "in64_lab03_04",
+   "src": 345,
+   "u_size": 32
+  },
+  "genkan": {
+   "tex": "in64_lab03_01",
+   "src": 345,
+   "size": 16
+  },
+  "black": {
+   "tex": "black",
+   "src": 285
+  }
+ },
+ "cm_nm_wall": {
+  "_doc": "caves_misc: block style: New Mauville's two-tile walls: P2 Lab's beige panel wall over 18 units (a 40-unit wall hid the player standing north of it from Black 2's camera; at 24 its black top was drawn across the head of a person standing south of it: indoor_check, rooms_view.py kind m), a black top (Black 2's wall caps).",
+  "h": 18,
+  "top": {
+   "tex": "black",
+   "src": 285,
+   "size": 16
+  },
+  "side": {
+   "tex": "in64_lab03_04",
+   "src": 345,
+   "u_size": 32
+  }
+ }
+}

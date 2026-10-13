@@ -1,0 +1,1484 @@
+{
+ "about": "Sapphire outdoor maps placed on one global tile grid from pokeruby map connections (56 connections, 8 loops, 0 conflicts). Main component = 49 maps connected by walking/surfing. tile = 1 Gen 3 metatile = 1 Gen 5 tile; a matrix cell (chunk) is 32x32 tiles. Global offset chosen to minimise cells holding 2+ maps. Made by the world-layout research (notes/RESEARCH_WORLD.md). Safari Zone: 4 maps, internally consistent, separate component.",
+ "main": {
+  "tile_offset": [
+   16,
+   28
+  ],
+  "matrix_cells": [
+   26,
+   13
+  ],
+  "bbox_tiles": [
+   800,
+   380
+  ],
+  "cells_with_map_tiles": 190,
+  "cells_with_2plus_maps": 63,
+  "maps": {
+   "Route114": {
+    "tile_x": 56,
+    "tile_z": 28,
+    "w": 40,
+    "h": 80,
+    "type": "MAP_TYPE_ROUTE",
+    "cells_x": [
+     1,
+     2
+    ],
+    "cells_z": [
+     0,
+     3
+    ]
+   },
+   "FallarborTown": {
+    "tile_x": 96,
+    "tile_z": 28,
+    "w": 20,
+    "h": 20,
+    "type": "MAP_TYPE_TOWN",
+    "cells_x": [
+     3,
+     3
+    ],
+    "cells_z": [
+     0,
+     1
+    ]
+   },
+   "Route113": {
+    "tile_x": 116,
+    "tile_z": 28,
+    "w": 100,
+    "h": 20,
+    "type": "MAP_TYPE_ROUTE",
+    "cells_x": [
+     3,
+     6
+    ],
+    "cells_z": [
+     0,
+     1
+    ]
+   },
+   "Route111": {
+    "tile_x": 216,
+    "tile_z": 28,
+    "w": 40,
+    "h": 140,
+    "type": "MAP_TYPE_ROUTE",
+    "cells_x": [
+     6,
+     7
+    ],
+    "cells_z": [
+     0,
+     5
+    ]
+   },
+   "Route119": {
+    "tile_x": 296,
+    "tile_z": 28,
+    "w": 40,
+    "h": 140,
+    "type": "MAP_TYPE_ROUTE",
+    "cells_x": [
+     9,
+     10
+    ],
+    "cells_z": [
+     0,
+     5
+    ]
+   },
+   "FortreeCity": {
+    "tile_x": 336,
+    "tile_z": 28,
+    "w": 40,
+    "h": 20,
+    "type": "MAP_TYPE_CITY",
+    "cells_x": [
+     10,
+     11
+    ],
+    "cells_z": [
+     0,
+     1
+    ]
+   },
+   "Route120": {
+    "tile_x": 376,
+    "tile_z": 28,
+    "w": 40,
+    "h": 100,
+    "type": "MAP_TYPE_ROUTE",
+    "cells_x": [
+     11,
+     12
+    ],
+    "cells_z": [
+     0,
+     3
+    ]
+   },
+   "Route112": {
+    "tile_x": 176,
+    "tile_z": 48,
+    "w": 40,
+    "h": 60,
+    "type": "MAP_TYPE_ROUTE",
+    "cells_x": [
+     5,
+     6
+    ],
+    "cells_z": [
+     1,
+     3
+    ]
+   },
+   "Route115": {
+    "tile_x": 16,
+    "tile_z": 68,
+    "w": 40,
+    "h": 80,
+    "type": "MAP_TYPE_ROUTE",
+    "cells_x": [
+     0,
+     1
+    ],
+    "cells_z": [
+     2,
+     4
+    ]
+   },
+   "LavaridgeTown": {
+    "tile_x": 156,
+    "tile_z": 88,
+    "w": 20,
+    "h": 20,
+    "type": "MAP_TYPE_TOWN",
+    "cells_x": [
+     4,
+     5
+    ],
+    "cells_z": [
+     2,
+     3
+    ]
+   },
+   "Route124": {
+    "tile_x": 576,
+    "tile_z": 88,
+    "w": 80,
+    "h": 80,
+    "type": "MAP_TYPE_6",
+    "cells_x": [
+     18,
+     20
+    ],
+    "cells_z": [
+     2,
+     5
+    ]
+   },
+   "Route125": {
+    "tile_x": 656,
+    "tile_z": 88,
+    "w": 80,
+    "h": 40,
+    "type": "MAP_TYPE_6",
+    "cells_x": [
+     20,
+     22
+    ],
+    "cells_z": [
+     2,
+     3
+    ]
+   },
+   "LilycoveCity": {
+    "tile_x": 496,
+    "tile_z": 98,
+    "w": 80,
+    "h": 40,
+    "type": "MAP_TYPE_CITY",
+    "cells_x": [
+     15,
+     17
+    ],
+    "cells_z": [
+     3,
+     4
+    ]
+   },
+   "Route121": {
+    "tile_x": 416,
+    "tile_z": 108,
+    "w": 80,
+    "h": 20,
+    "type": "MAP_TYPE_ROUTE",
+    "cells_x": [
+     13,
+     15
+    ],
+    "cells_z": [
+     3,
+     3
+    ]
+   },
+   "Route122": {
+    "tile_x": 436,
+    "tile_z": 128,
+    "w": 40,
+    "h": 40,
+    "type": "MAP_TYPE_ROUTE",
+    "cells_x": [
+     13,
+     14
+    ],
+    "cells_z": [
+     4,
+     5
+    ]
+   },
+   "MossdeepCity": {
+    "tile_x": 656,
+    "tile_z": 128,
+    "w": 80,
+    "h": 40,
+    "type": "MAP_TYPE_CITY",
+    "cells_x": [
+     20,
+     22
+    ],
+    "cells_z": [
+     4,
+     5
+    ]
+   },
+   "RustboroCity": {
+    "tile_x": 16,
+    "tile_z": 148,
+    "w": 40,
+    "h": 60,
+    "type": "MAP_TYPE_CITY",
+    "cells_x": [
+     0,
+     1
+    ],
+    "cells_z": [
+     4,
+     6
+    ]
+   },
+   "Route116": {
+    "tile_x": 56,
+    "tile_z": 148,
+    "w": 100,
+    "h": 20,
+    "type": "MAP_TYPE_ROUTE",
+    "cells_x": [
+     1,
+     4
+    ],
+    "cells_z": [
+     4,
+     5
+    ]
+   },
+   "VerdanturfTown": {
+    "tile_x": 136,
+    "tile_z": 168,
+    "w": 20,
+    "h": 20,
+    "type": "MAP_TYPE_TOWN",
+    "cells_x": [
+     4,
+     4
+    ],
+    "cells_z": [
+     5,
+     5
+    ]
+   },
+   "Route117": {
+    "tile_x": 156,
+    "tile_z": 168,
+    "w": 60,
+    "h": 20,
+    "type": "MAP_TYPE_ROUTE",
+    "cells_x": [
+     4,
+     6
+    ],
+    "cells_z": [
+     5,
+     5
+    ]
+   },
+   "MauvilleCity": {
+    "tile_x": 216,
+    "tile_z": 168,
+    "w": 40,
+    "h": 20,
+    "type": "MAP_TYPE_CITY",
+    "cells_x": [
+     6,
+     7
+    ],
+    "cells_z": [
+     5,
+     5
+    ]
+   },
+   "Route118": {
+    "tile_x": 256,
+    "tile_z": 168,
+    "w": 80,
+    "h": 20,
+    "type": "MAP_TYPE_ROUTE",
+    "cells_x": [
+     8,
+     10
+    ],
+    "cells_z": [
+     5,
+     5
+    ]
+   },
+   "Route123": {
+    "tile_x": 336,
+    "tile_z": 168,
+    "w": 140,
+    "h": 20,
+    "type": "MAP_TYPE_ROUTE",
+    "cells_x": [
+     10,
+     14
+    ],
+    "cells_z": [
+     5,
+     5
+    ]
+   },
+   "Route126": {
+    "tile_x": 576,
+    "tile_z": 168,
+    "w": 80,
+    "h": 80,
+    "type": "MAP_TYPE_6",
+    "cells_x": [
+     18,
+     20
+    ],
+    "cells_z": [
+     5,
+     7
+    ]
+   },
+   "Route127": {
+    "tile_x": 656,
+    "tile_z": 168,
+    "w": 80,
+    "h": 80,
+    "type": "MAP_TYPE_6",
+    "cells_x": [
+     20,
+     22
+    ],
+    "cells_z": [
+     5,
+     7
+    ]
+   },
+   "Route110": {
+    "tile_x": 216,
+    "tile_z": 188,
+    "w": 40,
+    "h": 100,
+    "type": "MAP_TYPE_ROUTE",
+    "cells_x": [
+     6,
+     7
+    ],
+    "cells_z": [
+     5,
+     8
+    ]
+   },
+   "Route104": {
+    "tile_x": 16,
+    "tile_z": 208,
+    "w": 40,
+    "h": 80,
+    "type": "MAP_TYPE_ROUTE",
+    "cells_x": [
+     0,
+     1
+    ],
+    "cells_z": [
+     6,
+     8
+    ]
+   },
+   "EverGrandeCity": {
+    "tile_x": 776,
+    "tile_z": 208,
+    "w": 40,
+    "h": 80,
+    "type": "MAP_TYPE_CITY",
+    "cells_x": [
+     24,
+     25
+    ],
+    "cells_z": [
+     6,
+     8
+    ]
+   },
+   "Route103": {
+    "tile_x": 136,
+    "tile_z": 248,
+    "w": 80,
+    "h": 20,
+    "type": "MAP_TYPE_ROUTE",
+    "cells_x": [
+     4,
+     6
+    ],
+    "cells_z": [
+     7,
+     8
+    ]
+   },
+   "Route128": {
+    "tile_x": 656,
+    "tile_z": 248,
+    "w": 120,
+    "h": 40,
+    "type": "MAP_TYPE_6",
+    "cells_x": [
+     20,
+     24
+    ],
+    "cells_z": [
+     7,
+     8
+    ]
+   },
+   "PetalburgCity": {
+    "tile_x": 56,
+    "tile_z": 258,
+    "w": 30,
+    "h": 30,
+    "type": "MAP_TYPE_CITY",
+    "cells_x": [
+     1,
+     2
+    ],
+    "cells_z": [
+     8,
+     8
+    ]
+   },
+   "Route102": {
+    "tile_x": 86,
+    "tile_z": 268,
+    "w": 50,
+    "h": 20,
+    "type": "MAP_TYPE_ROUTE",
+    "cells_x": [
+     2,
+     4
+    ],
+    "cells_z": [
+     8,
+     8
+    ]
+   },
+   "OldaleTown": {
+    "tile_x": 136,
+    "tile_z": 268,
+    "w": 20,
+    "h": 20,
+    "type": "MAP_TYPE_TOWN",
+    "cells_x": [
+     4,
+     4
+    ],
+    "cells_z": [
+     8,
+     8
+    ]
+   },
+   "Route105": {
+    "tile_x": 16,
+    "tile_z": 288,
+    "w": 40,
+    "h": 80,
+    "type": "MAP_TYPE_ROUTE",
+    "cells_x": [
+     0,
+     1
+    ],
+    "cells_z": [
+     9,
+     11
+    ]
+   },
+   "Route101": {
+    "tile_x": 136,
+    "tile_z": 288,
+    "w": 20,
+    "h": 20,
+    "type": "MAP_TYPE_ROUTE",
+    "cells_x": [
+     4,
+     4
+    ],
+    "cells_z": [
+     9,
+     9
+    ]
+   },
+   "SlateportCity": {
+    "tile_x": 216,
+    "tile_z": 288,
+    "w": 40,
+    "h": 60,
+    "type": "MAP_TYPE_CITY",
+    "cells_x": [
+     6,
+     7
+    ],
+    "cells_z": [
+     9,
+     10
+    ]
+   },
+   "Route134": {
+    "tile_x": 256,
+    "tile_z": 288,
+    "w": 80,
+    "h": 40,
+    "type": "MAP_TYPE_6",
+    "cells_x": [
+     8,
+     10
+    ],
+    "cells_z": [
+     9,
+     10
+    ]
+   },
+   "Route133": {
+    "tile_x": 336,
+    "tile_z": 288,
+    "w": 80,
+    "h": 40,
+    "type": "MAP_TYPE_6",
+    "cells_x": [
+     10,
+     12
+    ],
+    "cells_z": [
+     9,
+     10
+    ]
+   },
+   "Route132": {
+    "tile_x": 416,
+    "tile_z": 288,
+    "w": 80,
+    "h": 40,
+    "type": "MAP_TYPE_6",
+    "cells_x": [
+     13,
+     15
+    ],
+    "cells_z": [
+     9,
+     10
+    ]
+   },
+   "PacifidlogTown": {
+    "tile_x": 496,
+    "tile_z": 288,
+    "w": 20,
+    "h": 40,
+    "type": "MAP_TYPE_TOWN",
+    "cells_x": [
+     15,
+     16
+    ],
+    "cells_z": [
+     9,
+     10
+    ]
+   },
+   "Route131": {
+    "tile_x": 516,
+    "tile_z": 288,
+    "w": 60,
+    "h": 40,
+    "type": "MAP_TYPE_6",
+    "cells_x": [
+     16,
+     17
+    ],
+    "cells_z": [
+     9,
+     10
+    ]
+   },
+   "Route130": {
+    "tile_x": 576,
+    "tile_z": 288,
+    "w": 80,
+    "h": 40,
+    "type": "MAP_TYPE_6",
+    "cells_x": [
+     18,
+     20
+    ],
+    "cells_z": [
+     9,
+     10
+    ]
+   },
+   "Route129": {
+    "tile_x": 656,
+    "tile_z": 288,
+    "w": 80,
+    "h": 40,
+    "type": "MAP_TYPE_6",
+    "cells_x": [
+     20,
+     22
+    ],
+    "cells_z": [
+     9,
+     10
+    ]
+   },
+   "LittlerootTown": {
+    "tile_x": 136,
+    "tile_z": 308,
+    "w": 20,
+    "h": 20,
+    "type": "MAP_TYPE_TOWN",
+    "cells_x": [
+     4,
+     4
+    ],
+    "cells_z": [
+     9,
+     10
+    ]
+   },
+   "Route109": {
+    "tile_x": 216,
+    "tile_z": 348,
+    "w": 40,
+    "h": 60,
+    "type": "MAP_TYPE_ROUTE",
+    "cells_x": [
+     6,
+     7
+    ],
+    "cells_z": [
+     10,
+     12
+    ]
+   },
+   "Route106": {
+    "tile_x": 16,
+    "tile_z": 368,
+    "w": 80,
+    "h": 20,
+    "type": "MAP_TYPE_ROUTE",
+    "cells_x": [
+     0,
+     2
+    ],
+    "cells_z": [
+     11,
+     12
+    ]
+   },
+   "DewfordTown": {
+    "tile_x": 76,
+    "tile_z": 388,
+    "w": 20,
+    "h": 20,
+    "type": "MAP_TYPE_TOWN",
+    "cells_x": [
+     2,
+     2
+    ],
+    "cells_z": [
+     12,
+     12
+    ]
+   },
+   "Route107": {
+    "tile_x": 96,
+    "tile_z": 388,
+    "w": 60,
+    "h": 20,
+    "type": "MAP_TYPE_ROUTE",
+    "cells_x": [
+     3,
+     4
+    ],
+    "cells_z": [
+     12,
+     12
+    ]
+   },
+   "Route108": {
+    "tile_x": 156,
+    "tile_z": 388,
+    "w": 60,
+    "h": 20,
+    "type": "MAP_TYPE_ROUTE",
+    "cells_x": [
+     4,
+     6
+    ],
+    "cells_z": [
+     12,
+     12
+    ]
+   }
+  },
+  "cells": {
+   "1,0": [
+    "Route114"
+   ],
+   "2,0": [
+    "Route114"
+   ],
+   "3,0": [
+    "FallarborTown",
+    "Route113"
+   ],
+   "4,0": [
+    "Route113"
+   ],
+   "5,0": [
+    "Route113"
+   ],
+   "6,0": [
+    "Route111",
+    "Route113"
+   ],
+   "7,0": [
+    "Route111"
+   ],
+   "9,0": [
+    "Route119"
+   ],
+   "10,0": [
+    "FortreeCity",
+    "Route119"
+   ],
+   "11,0": [
+    "FortreeCity",
+    "Route120"
+   ],
+   "12,0": [
+    "Route120"
+   ],
+   "1,1": [
+    "Route114"
+   ],
+   "2,1": [
+    "Route114"
+   ],
+   "3,1": [
+    "FallarborTown",
+    "Route113"
+   ],
+   "4,1": [
+    "Route113"
+   ],
+   "5,1": [
+    "Route112",
+    "Route113"
+   ],
+   "6,1": [
+    "Route111",
+    "Route112",
+    "Route113"
+   ],
+   "7,1": [
+    "Route111"
+   ],
+   "9,1": [
+    "Route119"
+   ],
+   "10,1": [
+    "FortreeCity",
+    "Route119"
+   ],
+   "11,1": [
+    "FortreeCity",
+    "Route120"
+   ],
+   "12,1": [
+    "Route120"
+   ],
+   "0,2": [
+    "Route115"
+   ],
+   "1,2": [
+    "Route114",
+    "Route115"
+   ],
+   "2,2": [
+    "Route114"
+   ],
+   "4,2": [
+    "LavaridgeTown"
+   ],
+   "5,2": [
+    "LavaridgeTown",
+    "Route112"
+   ],
+   "6,2": [
+    "Route111",
+    "Route112"
+   ],
+   "7,2": [
+    "Route111"
+   ],
+   "9,2": [
+    "Route119"
+   ],
+   "10,2": [
+    "Route119"
+   ],
+   "11,2": [
+    "Route120"
+   ],
+   "12,2": [
+    "Route120"
+   ],
+   "18,2": [
+    "Route124"
+   ],
+   "19,2": [
+    "Route124"
+   ],
+   "20,2": [
+    "Route124",
+    "Route125"
+   ],
+   "21,2": [
+    "Route125"
+   ],
+   "22,2": [
+    "Route125"
+   ],
+   "0,3": [
+    "Route115"
+   ],
+   "1,3": [
+    "Route114",
+    "Route115"
+   ],
+   "2,3": [
+    "Route114"
+   ],
+   "4,3": [
+    "LavaridgeTown"
+   ],
+   "5,3": [
+    "LavaridgeTown",
+    "Route112"
+   ],
+   "6,3": [
+    "Route111",
+    "Route112"
+   ],
+   "7,3": [
+    "Route111"
+   ],
+   "9,3": [
+    "Route119"
+   ],
+   "10,3": [
+    "Route119"
+   ],
+   "11,3": [
+    "Route120"
+   ],
+   "12,3": [
+    "Route120"
+   ],
+   "13,3": [
+    "Route121"
+   ],
+   "14,3": [
+    "Route121"
+   ],
+   "15,3": [
+    "LilycoveCity",
+    "Route121"
+   ],
+   "16,3": [
+    "LilycoveCity"
+   ],
+   "17,3": [
+    "LilycoveCity"
+   ],
+   "18,3": [
+    "Route124"
+   ],
+   "19,3": [
+    "Route124"
+   ],
+   "20,3": [
+    "Route124",
+    "Route125"
+   ],
+   "21,3": [
+    "Route125"
+   ],
+   "22,3": [
+    "Route125"
+   ],
+   "0,4": [
+    "Route115",
+    "RustboroCity"
+   ],
+   "1,4": [
+    "Route115",
+    "Route116",
+    "RustboroCity"
+   ],
+   "2,4": [
+    "Route116"
+   ],
+   "3,4": [
+    "Route116"
+   ],
+   "4,4": [
+    "Route116"
+   ],
+   "6,4": [
+    "Route111"
+   ],
+   "7,4": [
+    "Route111"
+   ],
+   "9,4": [
+    "Route119"
+   ],
+   "10,4": [
+    "Route119"
+   ],
+   "13,4": [
+    "Route122"
+   ],
+   "14,4": [
+    "Route122"
+   ],
+   "15,4": [
+    "LilycoveCity"
+   ],
+   "16,4": [
+    "LilycoveCity"
+   ],
+   "17,4": [
+    "LilycoveCity"
+   ],
+   "18,4": [
+    "Route124"
+   ],
+   "19,4": [
+    "Route124"
+   ],
+   "20,4": [
+    "MossdeepCity",
+    "Route124"
+   ],
+   "21,4": [
+    "MossdeepCity"
+   ],
+   "22,4": [
+    "MossdeepCity"
+   ],
+   "0,5": [
+    "RustboroCity"
+   ],
+   "1,5": [
+    "Route116",
+    "RustboroCity"
+   ],
+   "2,5": [
+    "Route116"
+   ],
+   "3,5": [
+    "Route116"
+   ],
+   "4,5": [
+    "Route116",
+    "Route117",
+    "VerdanturfTown"
+   ],
+   "5,5": [
+    "Route117"
+   ],
+   "6,5": [
+    "MauvilleCity",
+    "Route110",
+    "Route111",
+    "Route117"
+   ],
+   "7,5": [
+    "MauvilleCity",
+    "Route110",
+    "Route111"
+   ],
+   "8,5": [
+    "Route118"
+   ],
+   "9,5": [
+    "Route118",
+    "Route119"
+   ],
+   "10,5": [
+    "Route118",
+    "Route119",
+    "Route123"
+   ],
+   "11,5": [
+    "Route123"
+   ],
+   "12,5": [
+    "Route123"
+   ],
+   "13,5": [
+    "Route122",
+    "Route123"
+   ],
+   "14,5": [
+    "Route122",
+    "Route123"
+   ],
+   "18,5": [
+    "Route124",
+    "Route126"
+   ],
+   "19,5": [
+    "Route124",
+    "Route126"
+   ],
+   "20,5": [
+    "MossdeepCity",
+    "Route124",
+    "Route126",
+    "Route127"
+   ],
+   "21,5": [
+    "MossdeepCity",
+    "Route127"
+   ],
+   "22,5": [
+    "MossdeepCity",
+    "Route127"
+   ],
+   "0,6": [
+    "Route104",
+    "RustboroCity"
+   ],
+   "1,6": [
+    "Route104",
+    "RustboroCity"
+   ],
+   "6,6": [
+    "Route110"
+   ],
+   "7,6": [
+    "Route110"
+   ],
+   "18,6": [
+    "Route126"
+   ],
+   "19,6": [
+    "Route126"
+   ],
+   "20,6": [
+    "Route126",
+    "Route127"
+   ],
+   "21,6": [
+    "Route127"
+   ],
+   "22,6": [
+    "Route127"
+   ],
+   "24,6": [
+    "EverGrandeCity"
+   ],
+   "25,6": [
+    "EverGrandeCity"
+   ],
+   "0,7": [
+    "Route104"
+   ],
+   "1,7": [
+    "Route104"
+   ],
+   "4,7": [
+    "Route103"
+   ],
+   "5,7": [
+    "Route103"
+   ],
+   "6,7": [
+    "Route103",
+    "Route110"
+   ],
+   "7,7": [
+    "Route110"
+   ],
+   "18,7": [
+    "Route126"
+   ],
+   "19,7": [
+    "Route126"
+   ],
+   "20,7": [
+    "Route126",
+    "Route127",
+    "Route128"
+   ],
+   "21,7": [
+    "Route127",
+    "Route128"
+   ],
+   "22,7": [
+    "Route127",
+    "Route128"
+   ],
+   "23,7": [
+    "Route128"
+   ],
+   "24,7": [
+    "EverGrandeCity",
+    "Route128"
+   ],
+   "25,7": [
+    "EverGrandeCity"
+   ],
+   "0,8": [
+    "Route104"
+   ],
+   "1,8": [
+    "PetalburgCity",
+    "Route104"
+   ],
+   "2,8": [
+    "PetalburgCity",
+    "Route102"
+   ],
+   "3,8": [
+    "Route102"
+   ],
+   "4,8": [
+    "OldaleTown",
+    "Route102",
+    "Route103"
+   ],
+   "5,8": [
+    "Route103"
+   ],
+   "6,8": [
+    "Route103",
+    "Route110"
+   ],
+   "7,8": [
+    "Route110"
+   ],
+   "20,8": [
+    "Route128"
+   ],
+   "21,8": [
+    "Route128"
+   ],
+   "22,8": [
+    "Route128"
+   ],
+   "23,8": [
+    "Route128"
+   ],
+   "24,8": [
+    "EverGrandeCity",
+    "Route128"
+   ],
+   "25,8": [
+    "EverGrandeCity"
+   ],
+   "0,9": [
+    "Route105"
+   ],
+   "1,9": [
+    "Route105"
+   ],
+   "4,9": [
+    "LittlerootTown",
+    "Route101"
+   ],
+   "6,9": [
+    "SlateportCity"
+   ],
+   "7,9": [
+    "SlateportCity"
+   ],
+   "8,9": [
+    "Route134"
+   ],
+   "9,9": [
+    "Route134"
+   ],
+   "10,9": [
+    "Route133",
+    "Route134"
+   ],
+   "11,9": [
+    "Route133"
+   ],
+   "12,9": [
+    "Route133"
+   ],
+   "13,9": [
+    "Route132"
+   ],
+   "14,9": [
+    "Route132"
+   ],
+   "15,9": [
+    "PacifidlogTown",
+    "Route132"
+   ],
+   "16,9": [
+    "PacifidlogTown",
+    "Route131"
+   ],
+   "17,9": [
+    "Route131"
+   ],
+   "18,9": [
+    "Route130"
+   ],
+   "19,9": [
+    "Route130"
+   ],
+   "20,9": [
+    "Route129",
+    "Route130"
+   ],
+   "21,9": [
+    "Route129"
+   ],
+   "22,9": [
+    "Route129"
+   ],
+   "0,10": [
+    "Route105"
+   ],
+   "1,10": [
+    "Route105"
+   ],
+   "4,10": [
+    "LittlerootTown"
+   ],
+   "6,10": [
+    "Route109",
+    "SlateportCity"
+   ],
+   "7,10": [
+    "Route109",
+    "SlateportCity"
+   ],
+   "8,10": [
+    "Route134"
+   ],
+   "9,10": [
+    "Route134"
+   ],
+   "10,10": [
+    "Route133",
+    "Route134"
+   ],
+   "11,10": [
+    "Route133"
+   ],
+   "12,10": [
+    "Route133"
+   ],
+   "13,10": [
+    "Route132"
+   ],
+   "14,10": [
+    "Route132"
+   ],
+   "15,10": [
+    "PacifidlogTown",
+    "Route132"
+   ],
+   "16,10": [
+    "PacifidlogTown",
+    "Route131"
+   ],
+   "17,10": [
+    "Route131"
+   ],
+   "18,10": [
+    "Route130"
+   ],
+   "19,10": [
+    "Route130"
+   ],
+   "20,10": [
+    "Route129",
+    "Route130"
+   ],
+   "21,10": [
+    "Route129"
+   ],
+   "22,10": [
+    "Route129"
+   ],
+   "0,11": [
+    "Route105",
+    "Route106"
+   ],
+   "1,11": [
+    "Route105",
+    "Route106"
+   ],
+   "2,11": [
+    "Route106"
+   ],
+   "6,11": [
+    "Route109"
+   ],
+   "7,11": [
+    "Route109"
+   ],
+   "0,12": [
+    "Route106"
+   ],
+   "1,12": [
+    "Route106"
+   ],
+   "2,12": [
+    "DewfordTown",
+    "Route106"
+   ],
+   "3,12": [
+    "Route107"
+   ],
+   "4,12": [
+    "Route107",
+    "Route108"
+   ],
+   "5,12": [
+    "Route108"
+   ],
+   "6,12": [
+    "Route108",
+    "Route109"
+   ],
+   "7,12": [
+    "Route109"
+   ]
+  }
+ },
+ "standalone": {
+  "BattleTower_Outside": {
+   "w": 29,
+   "h": 30,
+   "chunks": 1
+  },
+  "JaggedPass": {
+   "w": 30,
+   "h": 46,
+   "chunks": 2
+  },
+  "MtChimney": {
+   "w": 40,
+   "h": 47,
+   "chunks": 4
+  },
+  "MtPyre_Exterior": {
+   "w": 38,
+   "h": 51,
+   "chunks": 4
+  },
+  "MtPyre_Summit": {
+   "w": 50,
+   "h": 37,
+   "chunks": 4
+  },
+  "PetalburgWoods": {
+   "w": 48,
+   "h": 44,
+   "chunks": 4
+  },
+  "Route104_Prototype": {
+   "w": 1,
+   "h": 1,
+   "chunks": 1
+  },
+  "SafariZone_Northeast": {
+   "w": 40,
+   "h": 40,
+   "chunks": 4
+  },
+  "SafariZone_Northwest": {
+   "w": 40,
+   "h": 40,
+   "chunks": 4
+  },
+  "SafariZone_Southeast": {
+   "w": 40,
+   "h": 40,
+   "chunks": 4
+  },
+  "SafariZone_Southwest": {
+   "w": 40,
+   "h": 40,
+   "chunks": 4
+  },
+  "SkyPillar_Outside": {
+   "w": 28,
+   "h": 23,
+   "chunks": 1
+  },
+  "SkyPillar_Top": {
+   "w": 27,
+   "h": 24,
+   "chunks": 1
+  },
+  "SootopolisCity": {
+   "w": 60,
+   "h": 60,
+   "chunks": 4
+  },
+  "SouthernIsland_Exterior": {
+   "w": 33,
+   "h": 30,
+   "chunks": 2
+  },
+  "SouthernIsland_Interior": {
+   "w": 27,
+   "h": 24,
+   "chunks": 1
+  }
+ }
+}

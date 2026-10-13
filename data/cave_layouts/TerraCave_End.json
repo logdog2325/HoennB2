@@ -1,0 +1,45 @@
+{
+ "map": "emerald/TerraCave_End",
+ "void": [
+  [
+   21,
+   25,
+   23,
+   25
+  ]
+ ],
+ "pools": [
+  [
+   0,
+   0,
+   26,
+   29,
+   {
+    "metatiles": [
+     "0x35f",
+     "0x362",
+     "0x364",
+     "0x365",
+     "0x366",
+     "0x367",
+     "0x370",
+     "0x371",
+     "0x372",
+     "0x373"
+    ]
+   }
+  ]
+ ],
+ "_doc": "emerald_caves 2026-10-12: Emerald's TerraCave_End (pokeemerald) read as Emerald's world reads it (models_cave 'emerald/<Map>'); void = walkable tiles no warp reaches, pools = its blocked water; its lava (blocked lava metatiles) drawn as Black 2's Reversal Mountain lava (Ruby's Cave of Origin recipe)",
+ "look_over": {
+  "water": "in81_magu00",
+  "water_top": "in81_magu01",
+  "water_top_size": 64,
+  "water_bank": "in81_mizuga1",
+  "tex_sets": {
+   "in81_magu00": 388,
+   "in81_magu01": 388,
+   "in81_mizuga1": 388
+  }
+ }
+}

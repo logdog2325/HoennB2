@@ -1,0 +1,29 @@
+…
+I beg your pardon?\nYou’re looking for a ship?{be01}\nI’m sorry, the ferry service isn’t\navailable at present...
+Until they finish making the ferry, we\nsailors have nothing to do...{be01}\nI wish they’d get a move on, the folks\nat the Shipyard in Slateport.
+The ferry S.S. Tidal is finally in\noperation.{be01}\nThe folks at the Shipyard in Slateport\nmust’ve worked extra hard.{be01}\nWell, it’s my turn to get busy now!
+Hello, are you here for the ferry?\nMay I see your Ticket?
+{0100:0} doesn’t have the Ticket...{be01}\nI’m terribly sorry.{be01}\nYou must have a Ticket to board\nthe ferry.
+{0100:0} flashed the Ticket.{be01}\nPerfect! That’s all you need!{be01}\nAnd where would you like to go?
+Slateport City it is, then!
+Battle Tower it is, then!
+Then, where would you like to go?
+Please board the ferry and wait for\ndeparture.
+Please sail with us another time!
+Slateport
+Battle Tower
+Cancel
+We hope you enjoy your voyage on\nour ferry.
+We have made land in Lilycove City.\nThank you for sailing with us.
+The ferry to Slateport is...{be01}\nOh?\nThat Pass...
+Aye, mate, are you the one who brought\nthat mighty odd Pass?{be01}\nI’ll tell you, you’re trying to reach a\ntiny spit of an island far in the south.{be01}\nThere’s no telling what we’ll encounter\nonce we reach there, aye.{be00}\nThat shivers my timbers!{be01}\nAll aboard!
+Is it you who brought that odd\nticket?{be01}\nWhere you’re trying to go is an island\nthat’s far, far away.{be01}\nNo one knows what awaits there…{be01}\nThe very thought excites my blood\nas a sailing man!{be01}\nGet on board, youngster!
+The ferry to Slateport is…{be01}\nI beg your pardon?\nCan we sail to this place on the map?{be01}\nI know someone who will help you better.\nPlease wait.
+What’s up, youngster?{be01}\nWhat, it’s you who’s supposed to have\na tattered old map?{be01}\nLet’s have a look.\n… … … … … …{be01}\nBoy, this is quite a ways away.\nI’m afraid I can’t help you…
+Briney: Hold on a second!{be01}\nWhat’s the idea of turning down\nsomeone that I owe so much to?
+{0100:0}, I’m terribly sorry.{be01}\nYou came to me seeking my help,\nand we almost turned you away.{be01}\nWell, let me make things right.{be01}\nWe’ll sail right away, of course!{be01}\nLet’s find this island on\nthis Old Sea Map!
+Is it you who brought those\nodd tickets?{be01}\n… … …Hm.{be01}\nThese tickets will get you to islands\nthat are far, far away.{be01}\nNo one knows what awaits there,\nor what may happen there.{be01}\nThe very thought excites my blood\nas a sailing man!{be01}\nGet on board, youngster!\nWhere shall we sail first?
+Navel Rock
+Birth Island
+Faraway Island
+Aye, right, as you like, then.

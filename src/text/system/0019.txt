@@ -1,0 +1,223 @@
+●●
+A wild {0101:0} appeared!
+Oh! A wild {0101:0} and\n{0101:1} appeared!
+A wild {0101:0} appeared!
+A wild {0101:0} appeared!
+The {0101:0} your Pokémon saw\nin the dream appeared!
+{0101:0} appeared!
+You are challenged by\n{010e:0} {0100:1}!{be01}
+You are challenged by\n{0100:0}!{be01}
+You are challenged by\n{010e:0} {0100:1} and{be00}\n{010e:2} {0100:3}!{be01}
+You are challenged by\n{0100:0} and {0100:1}!{be01}
+Go! {0102:0}!
+Go! {0102:0} and\n{0102:1}!
+Go! {0102:0},\n{0102:1}, and {0102:2}!
+{010e:0} {0100:1} sent\nout {0102:2}!
+{010e:0} {0100:1} sent out\n{0102:2} and {0102:3}!
+{010e:0} {0100:1} sent out\n{0102:2}, {0102:3},{be00}\nand {0102:4}!
+{0100:0} sent out\n{0102:1}!
+{0100:0} sent out\n{0102:1} and {0102:2}!
+{0100:0} sent out\n{0102:1}, {0102:2},{be00}\nand {0102:3}!
+{010e:0} {0100:1} is\nabout to send in {0102:2}.{be00}\nWill you switch your Pokémon?
+You're in charge, {0102:0}!
+Go for it, {0102:0}!
+Just a little more!\nHang in there, {0102:0}!
+Your foe's weak!\nGet 'em, {0102:0}!
+{0102:0}, switch out!\nCome back!
+{0102:0}, come back!
+{0102:0}, enough!\nGet back!
+{0102:0}, OK!\nCome back!
+{0102:0}, good job!\nGet back!
+{010e:0} {0100:1}\nwithdrew {0102:2}!
+{0100:0}\nwithdrew {0102:1}!
+Hit {0200:0} time(s)!
+{0100:0} used the\n{0109:1}.
+{0100:0} used the\n{0109:1}.
+{010e:0} {0100:1}\nused one {0109:2}!
+{0100:0} launched the {0109:2}\ntoward {0102:1}!
+You cannot use your\nWonder Launcher now!
+{0100:0}'s Pokémon\nrotated to the left!
+{0100:0}'s Pokémon\nrotated to the left!
+{0100:0}'s Pokémon\nrotated to the right!
+{0100:0}'s Pokémon\nrotated to the right!
+{010c:0} gained\n{0206:1} Exp. Points!
+{010c:0} gained a boosted\n{0206:1} Exp. Points!
+Player defeated\n{010e:0} {0100:1}!
+Player beat\n{010e:0} {0100:1}{be00}\nand {010e:2} {0100:3}!
+Player lost against\n{010e:0} {0100:1}!
+Player battled to a draw against\n{010e:0} {0100:1}!
+Player defeated\n{0100:0}!
+Player defeated {0100:0}\nand {0100:1}!
+Player lost against\n{0100:0}!
+Player lost to {0100:0}\nand {0100:1}!
+Player battled to a draw against\n{0100:0}!
+Player battled to a draw against\n{0100:0} and {0100:1}!
+{0100:0} is out of\nusable Pokémon!{be01}
+{0100:0} dropped ${0204:1}\nin panic...
+{0100:0} paid out ${0204:1}\nto the winner...
+{0100:0} blacked out!
+{0100:0} got ${0204:1}\nfor winning!
+{0100:0} picked up\n${0204:1}!
+{010c:0} grew to\nLv. {0202:1}!
+Oh, no!\nThe Pokémon broke free!
+Aww!\nIt appeared to be caught!
+Aargh!\nAlmost had it!
+Shoot!\nIt was so close, too!
+Gotcha!\n{0101:0} was caught!
+{0101:0}'s data was\nadded to the Pokédex.
+The Trainer blocked the Ball!{be01}\nDon't be a thief!
+But it had no effect!
+What will {010c:0} do?
+What will {0100:0} do?
+{be09:60}But it failed!
+Got away safely!
+Couldn't get away!
+Can't escape!
+The wild {0102:0} fled!
+No! There's no running\nfrom a Trainer battle!
+Would you like to forfeit the match\nand quit now?
+It's super effective!
+It's not very effective...
+It hurt itself in its confusion!
+A critical hit!
+But there was no PP left\nfor the move!
+{0100:0} came to the rescue\nto restore {0102:1}'s health!
+The sunlight turned harsh!
+It started to rain!
+A sandstorm kicked up!
+It started to hail!
+Fog crept up as thick as soup!
+The sunlight faded.
+The rain stopped.
+The sandstorm subsided.
+The hail stopped.
+The fog lifted.
+The effects of weather disappeared.
+The sandstorm rages.
+The hail crashes down.
+It's a one-hit KO!
+The {0109:0} weakened\n{0107:1}'s power!
+The {0109:0} allows the\nuse of only {0107:1}!
+{010c:0} can use only\n{0107:1}!
+All stat changes were eliminated!
+But nothing happened!
+{0102:0}'s\n{0106:1}
+Magnitude 4!
+Magnitude 5!
+Magnitude 6!
+Magnitude 7!
+Magnitude 8!
+Magnitude 9!
+Magnitude 10!
+A bell chimed!
+A soothing aroma wafted\nthrough the area!
+The battlers shared\ntheir pain!
+Fire's power was weakened!
+Electricity's power was weakened!
+The twisted dimensions returned\nto normal!
+Gravity intensified!
+Gravity returned to normal!
+All Pokémon hearing the song\nwill faint in three turns!
+Waggling a finger\nlet it use {0107:0}!
+Nature Power turned into\n{0107:0}!
+Coins were scattered everywhere!
+It was too weak to make\na substitute!
+Reflect raised your team's\nDefense!
+Reflect raised the\nopposing team's Defense!
+Your team's Reflect\nwore off!
+The opposing team's Reflect\nwore off!
+Light Screen raised your team's\nSpecial Defense!
+Light Screen raised\nthe opposing team's Special Defense!
+Your team's Light Screen\nwore off!
+The opposing team's Light Screen\nwore off!
+Your team became cloaked in\na mystical veil!
+The foe's team became\ncloaked in a mystical veil!
+Your team is no longer protected\nby Safeguard!
+The foe's team is no longer protected\nby Safeguard!
+Your team became\nshrouded in mist!
+The foe's team became\nshrouded in mist!
+Your team is no longer protected\nby mist!
+The foe's team is no longer protected\nby mist!
+The tailwind blew from behind\nyour team!
+The tailwind blew from behind\nthe foe's team!
+Your team's tailwind petered out!
+The foe's team's tailwind petered out!
+The Lucky Chant shielded your team\nfrom critical hits!
+The Lucky Chant shielded the opposing team\nfrom critical hits!
+Your team's Lucky Chant wore off!
+The opposing team's Lucky Chant wore off!
+Spikes were scattered all around\nyour team's feet!
+Spikes were scattered all around\nthe feet of the foe's team!
+The spikes disappeared from\naround your team's feet!
+The spikes disappeared from\naround the foe's team's feet!
+Poison spikes were scattered all\naround your team's feet!
+Poison spikes were scattered all\naround the foe's team's feet!
+The poison spikes disappeared\nfrom around your team's feet!
+The poison spikes disappeared\nfrom around the foe's team's feet!
+Pointed stones float in the air\naround your team!
+Pointed stones float in the air\naround your foe's team!
+The pointed stones disappeared\nfrom around your team!
+The pointed stones disappeared\nfrom around the foe's team!
+Wide Guard protected your team!
+Wide Guard protected the foe's team!
+Quick Guard protected your team!
+Quick Guard protected the foe's team!
+A rainbow appeared in the sky\non your team's side!
+A rainbow appeared in the sky\non the foe's team's side!
+The rainbow on your team's side\ndisappeared!
+The rainbow on the foe's team's side\ndisappeared!
+A sea of fire enveloped\nyour team!
+A sea of fire enveloped\nthe foe's team!
+The sea of fire around your team\ndisappeared!
+The sea of fire around the foe's team\ndisappeared!
+A swamp enveloped your team!
+A swamp enveloped the\nfoe's team!
+The swamp around your team\ndisappeared!
+The swamp around the foe's team\ndisappeared!
+Your team is too nervous to\neat Berries!
+The foe's team is too nervous to\neat Berries!
+It created a bizarre area in which\nthe Defense and Sp. Def stats are swapped!
+Wonder Room wore off, and the Defense\nand Sp. Def stats returned to normal!
+It created a bizarre area in which\nPokémon's held items lose their effects!
+Magic Room wore off, and the held items'\neffects returned to normal!
+The {0109:0} strengthened\n{0107:1}'s power!
+The time limit is up!\nThe battle will end!
+The battle is too long.\nPlayback canceled.
+Zen Mode triggered!
+Zen Mode ended!
+The two moves are joined!\nIt's a combined move!
+{010c:0} won't obey!
+{010c:0} is\nloafing around!
+{010c:0} turned away!
+{010c:0} pretended\nnot to notice!
+{010c:0} ignored orders!
+{010c:0} began to nap!
+{010c:0} ignored\norders while asleep!
+Automatic center!
+But it's not where this item\ncan be used!
+Sky Drop won't let {010c:0} go!
+The match was forfeited.
+({0200:0})'s Metronome {0202:1}:{0107:2}
+A wild {0101:0} appeared?!
+SCENE 01
+SCENE 02
+SCENE 03
+SCENE 04
+SCENE 05
+SCENE 06
+SCENE 07
+SCENE 08
+SCENE 09
+SCENE 10
+SCENE 11
+SCENE 12
+SCENE 13
+SCENE 14
+SCENE 15
+SCENE 16
+SCENE 17
+SCENE 18
+SCENE 19
+SCENE 20
+The rest of your team gained Exp. Points\nthanks to the Exp. Share!
+\pad{48}

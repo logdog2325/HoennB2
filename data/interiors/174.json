@@ -1,0 +1,293 @@
+{
+ "zone": 174,
+ "room": "AbandonedShip_HiddenFloorRooms",
+ "area": 337,
+ "header": {
+  "map_type": 16,
+  "npc_cache": 24,
+  "weather_word": 0,
+  "flags": 22817,
+  "icon_word": 32783,
+  "bgm0": 1193,
+  "bgm1": 1193,
+  "bgm2": 1193,
+  "bgm3": 1193,
+  "place": 65,
+  "place_display": 0,
+  "parent": 74,
+  "encounters": 8191,
+  "enc_slot": 6
+ },
+ "warps": [
+  {
+   "at": [
+    6,
+    14
+   ],
+   "tile_only": true,
+   "to": [
+    173,
+    0
+   ],
+   "what": "Sapphire warp 0 (6,14) -> AbandonedShip_HiddenFloorCorridors 0"
+  },
+  {
+   "at": [
+    7,
+    14
+   ],
+   "tile_only": true,
+   "to": [
+    173,
+    0
+   ],
+   "what": "Sapphire warp 1 (7,14) -> AbandonedShip_HiddenFloorCorridors 0"
+  },
+  {
+   "at": [
+    21,
+    14
+   ],
+   "tile_only": true,
+   "to": [
+    173,
+    1
+   ],
+   "what": "Sapphire warp 2 (21,14) -> AbandonedShip_HiddenFloorCorridors 1"
+  },
+  {
+   "at": [
+    22,
+    14
+   ],
+   "tile_only": true,
+   "to": [
+    173,
+    1
+   ],
+   "what": "Sapphire warp 3 (22,14) -> AbandonedShip_HiddenFloorCorridors 1"
+  },
+  {
+   "at": [
+    36,
+    14
+   ],
+   "tile_only": true,
+   "to": [
+    173,
+    2
+   ],
+   "what": "Sapphire warp 4 (36,14) -> AbandonedShip_HiddenFloorCorridors 2"
+  },
+  {
+   "at": [
+    37,
+    14
+   ],
+   "tile_only": true,
+   "to": [
+    173,
+    2
+   ],
+   "what": "Sapphire warp 5 (37,14) -> AbandonedShip_HiddenFloorCorridors 2"
+  },
+  {
+   "at": [
+    6,
+    1
+   ],
+   "tile_only": true,
+   "to": [
+    173,
+    3
+   ],
+   "what": "Sapphire warp 6 (6,1) -> AbandonedShip_HiddenFloorCorridors 3"
+  },
+  {
+   "at": [
+    21,
+    1
+   ],
+   "tile_only": true,
+   "to": [
+    173,
+    4
+   ],
+   "what": "Sapphire warp 7 (21,1) -> AbandonedShip_HiddenFloorCorridors 4"
+  },
+  {
+   "at": [
+    36,
+    1
+   ],
+   "tile_only": true,
+   "to": [
+    173,
+    5
+   ],
+   "what": "Sapphire warp 8 (36,1) -> AbandonedShip_HiddenFloorCorridors 5"
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 1,
+   "model": 110,
+   "script": 7090,
+   "flag": 1190,
+   "dir": 1,
+   "at": [
+    41,
+    4
+   ],
+   "what": "item ball ITEM_LUXURY_BALL"
+  },
+  {
+   "uid": 3,
+   "model": 110,
+   "script": 7092,
+   "flag": 1192,
+   "dir": 1,
+   "at": [
+    5,
+    11
+   ],
+   "what": "item ball ITEM_TM18"
+  },
+  {
+   "uid": 4,
+   "model": 110,
+   "script": 7091,
+   "flag": 1191,
+   "dir": 1,
+   "at": [
+    31,
+    11
+   ],
+   "what": "item ball ITEM_WATER_STONE"
+  }
+ ],
+ "signs": [
+  {
+   "script": 1,
+   "at": [
+    8,
+    5
+   ],
+   "dir": 4
+  },
+  {
+   "script": 2,
+   "at": [
+    11,
+    3
+   ],
+   "dir": 4
+  },
+  {
+   "script": 3,
+   "at": [
+    10,
+    10
+   ],
+   "dir": 4
+  },
+  {
+   "script": 4,
+   "at": [
+    16,
+    3
+   ],
+   "dir": 4
+  },
+  {
+   "script": 5,
+   "at": [
+    25,
+    2
+   ],
+   "dir": 4
+  },
+  {
+   "script": 6,
+   "at": [
+    24,
+    6
+   ],
+   "dir": 4
+  },
+  {
+   "script": 7,
+   "at": [
+    1,
+    2
+   ],
+   "dir": 4,
+   "what": "trash can (Sapphire MB_TRASH_CAN, EventScript_EmptyTrashCan)"
+  },
+  {
+   "script": 7,
+   "at": [
+    20,
+    2
+   ],
+   "dir": 4,
+   "what": "trash can (Sapphire MB_TRASH_CAN, EventScript_EmptyTrashCan)"
+  },
+  {
+   "script": 7,
+   "at": [
+    21,
+    3
+   ],
+   "dir": 4,
+   "what": "trash can (Sapphire MB_TRASH_CAN, EventScript_EmptyTrashCan)"
+  },
+  {
+   "script": 7,
+   "at": [
+    33,
+    3
+   ],
+   "dir": 4,
+   "what": "trash can (Sapphire MB_TRASH_CAN, EventScript_EmptyTrashCan)"
+  },
+  {
+   "script": 7,
+   "at": [
+    38,
+    5
+   ],
+   "dir": 4,
+   "what": "trash can (Sapphire MB_TRASH_CAN, EventScript_EmptyTrashCan)"
+  },
+  {
+   "script": 7,
+   "at": [
+    7,
+    10
+   ],
+   "dir": 4,
+   "what": "trash can (Sapphire MB_TRASH_CAN, EventScript_EmptyTrashCan)"
+  },
+  {
+   "script": 7,
+   "at": [
+    25,
+    11
+   ],
+   "dir": 4,
+   "what": "trash can (Sapphire MB_TRASH_CAN, EventScript_EmptyTrashCan)"
+  },
+  {
+   "script": 7,
+   "at": [
+    33,
+    14
+   ],
+   "dir": 4,
+   "what": "trash can (Sapphire MB_TRASH_CAN, EventScript_EmptyTrashCan)"
+  }
+ ],
+ "triggers": [],
+ "what": "ship_hideouts: AbandonedShip_HiddenFloorRooms (b2tools/ship_hideouts_rooms.py); story: story object OBJ_EVENT_GFX_ITEM_BALL (16,10) AbandonedShip_HiddenFloorRooms_EventScript_ItemScanner hide flag FLAG_ITEM_ABANDONED_SHIP_HIDDEN_FLOOR_ROOM_2_SCANNER | hidden item ITEM_ROOM_1_KEY (42,10) FLAG_HIDDEN_ITEM_ABANDONED_SHIP_RM_1_KEY | hidden item ITEM_ROOM_2_KEY (20,5) FLAG_HIDDEN_ITEM_ABANDONED_SHIP_RM_2_KEY | hidden item ITEM_ROOM_4_KEY (1,12) FLAG_HIDDEN_ITEM_ABANDONED_SHIP_RM_4_KEY | hidden item ITEM_ROOM_6_KEY (1,2) FLAG_HIDDEN_ITEM_ABANDONED_SHIP_RM_6_KEY"
+}

@@ -1,0 +1,2557 @@
+{
+ "_doc": "HOENN_VERSION=emerald (emerald_world 2026-10-12, notes/EMERALD.md \"Emerald's world\"): the rooms and caves Emerald's outdoor maps lead to that data/hoenn_interiors.json lacks (Emerald-only: Battle Tents, Trainer Hill, Mirage Tower, Terra Cave, the Battle Frontier's buildings, the Mystery Events House, ...), found as rooms() finds Sapphire's but through Emerald's maps (converter/gba.py world_repo: HoennB2 names, Sapphire's ids for the rooms Sapphire has) -> data/emerald/hoenn_interiors.json \"rooms\" (deep-merged over data/hoenn_interiors.json by the Emerald world's readers), status \"todo\" and no zone: b2tools/world.py makes no door for them (the building or cave mouth stands closed) until a rooms agent builds the room and gives it a zone (notes/EMERALD.md work list). Sapphire's file is never written here, and the rooms Sapphire has keep their entries (their Emerald changes: data/versions.json \"ground\").",
+ "rooms": {
+  "BattleFrontier_BattleArenaLobby": {
+   "status": "auto",
+   "map_id": "MAP_BATTLE_FRONTIER_BATTLE_ARENA_LOBBY",
+   "map_type": "MAP_TYPE_INDOOR",
+   "entered_from": "BattleFrontier_OutsideEast",
+   "tilesets": [
+    "gTileset_Building",
+    "gTileset_BattleArena"
+   ],
+   "size": [
+    16,
+    13
+   ],
+   "warps": [
+    {
+     "x": 7,
+     "y": 12,
+     "dest": "BattleFrontier_OutsideEast",
+     "dest_warp": 1
+    }
+   ],
+   "emerald": "BattleFrontier_BattleArenaLobby",
+   "zone": 429,
+   "scripts": 858,
+   "init_scripts": 859,
+   "text": 174,
+   "entities": 168,
+   "area": 349,
+   "own_matrix": false,
+   "own_scripts": 2034,
+   "own_init": 2035,
+   "own_text": 1032,
+   "claimed": "frontier_palace_arena (2026-10-12): the Battle Palace / Battle Arena, notes/FRONTIER.md; zone, own script/init/text numbers and the room are this agent's"
+  },
+  "BattleFrontier_BattlePalaceLobby": {
+   "status": "auto",
+   "map_id": "MAP_BATTLE_FRONTIER_BATTLE_PALACE_LOBBY",
+   "map_type": "MAP_TYPE_INDOOR",
+   "entered_from": "BattleFrontier_OutsideEast",
+   "tilesets": [
+    "gTileset_Building",
+    "gTileset_BattlePalace"
+   ],
+   "size": [
+    25,
+    12
+   ],
+   "warps": [
+    {
+     "x": 12,
+     "y": 11,
+     "dest": "BattleFrontier_OutsideEast",
+     "dest_warp": 2
+    },
+    {
+     "x": 13,
+     "y": 11,
+     "dest": "BattleFrontier_OutsideEast",
+     "dest_warp": 2
+    },
+    {
+     "x": 5,
+     "y": 4,
+     "dest": "BattleFrontier_BattlePalaceCorridor",
+     "dest_warp": 0
+    }
+   ],
+   "emerald": "BattleFrontier_BattlePalaceLobby",
+   "zone": 466,
+   "scripts": 932,
+   "init_scripts": 933,
+   "text": 192,
+   "entities": 186,
+   "area": 351,
+   "own_matrix": false,
+   "own_scripts": 2028,
+   "own_init": 2029,
+   "own_text": 1029,
+   "claimed": "frontier_palace_arena (2026-10-12): the Battle Palace / Battle Arena, notes/FRONTIER.md; zone, own script/init/text numbers and the room are this agent's"
+  },
+  "BattleFrontier_BattlePyramidLobby": {
+   "status": "auto",
+   "map_id": "MAP_BATTLE_FRONTIER_BATTLE_PYRAMID_LOBBY",
+   "map_type": "MAP_TYPE_INDOOR",
+   "entered_from": "BattleFrontier_OutsideEast",
+   "tilesets": [
+    "gTileset_Building",
+    "gTileset_BattlePyramid"
+   ],
+   "size": [
+    15,
+    18
+   ],
+   "warps": [
+    {
+     "x": 7,
+     "y": 17,
+     "dest": "BattleFrontier_OutsideEast",
+     "dest_warp": 3
+    }
+   ],
+   "emerald": "BattleFrontier_BattlePyramidLobby",
+   "zone": 347,
+   "scripts": 694,
+   "init_scripts": 695,
+   "text": 559,
+   "entities": 516,
+   "area": 316,
+   "own_matrix": false,
+   "own_scripts": 2040,
+   "own_init": 2041,
+   "own_text": 1035,
+   "claimed": "frontier_pyramid (2026-10-12): the Battle Pyramid, notes/FRONTIER_PYRAMID.md; zone, own script/init/text numbers and the room are this agent's"
+  },
+  "BattleFrontier_Lounge1": {
+   "status": "todo",
+   "map_id": "MAP_BATTLE_FRONTIER_LOUNGE1",
+   "map_type": "MAP_TYPE_INDOOR",
+   "entered_from": "BattleFrontier_OutsideEast",
+   "tilesets": [
+    "gTileset_Building",
+    "gTileset_BattleFrontier"
+   ],
+   "size": [
+    9,
+    10
+   ],
+   "warps": [
+    {
+     "x": 4,
+     "y": 9,
+     "dest": "BattleFrontier_OutsideEast",
+     "dest_warp": 5
+    }
+   ],
+   "emerald": "BattleFrontier_Lounge1"
+  },
+  "BattleFrontier_ExchangeServiceCorner": {
+   "status": "auto",
+   "map_id": "MAP_BATTLE_FRONTIER_EXCHANGE_SERVICE_CORNER",
+   "map_type": "MAP_TYPE_INDOOR",
+   "entered_from": "BattleFrontier_OutsideEast",
+   "tilesets": [
+    "gTileset_Building",
+    "gTileset_BattleFrontier"
+   ],
+   "size": [
+    15,
+    11
+   ],
+   "warps": [
+    {
+     "x": 7,
+     "y": 10,
+     "dest": "BattleFrontier_OutsideEast",
+     "dest_warp": 6
+    },
+    {
+     "x": 6,
+     "y": 10,
+     "dest": "BattleFrontier_OutsideEast",
+     "dest_warp": 6
+    },
+    {
+     "x": 8,
+     "y": 10,
+     "dest": "BattleFrontier_OutsideEast",
+     "dest_warp": 6
+    }
+   ],
+   "emerald": "BattleFrontier_ExchangeServiceCorner",
+   "zone": 419,
+   "scripts": 838,
+   "init_scripts": 839,
+   "text": 648,
+   "entities": 596,
+   "area": 282,
+   "own_matrix": false,
+   "own_scripts": 1976,
+   "own_init": 1977,
+   "own_text": 1003,
+   "claimed": "frontier_core_room (2026-10-12): the Exchange Service Corner (for frontier_core, notes/FRONTIER.md); zone 419 (Black 2: an Anville Town house), own script/init/text numbers 1976/1977/1003 and the room are this agent's; room data/interior_layouts/BattleFrontier_ExchangeServiceCorner.json, zone file data/interiors/emerald/419.json"
+  },
+  "BattleFrontier_Lounge5": {
+   "status": "todo",
+   "map_id": "MAP_BATTLE_FRONTIER_LOUNGE5",
+   "map_type": "MAP_TYPE_INDOOR",
+   "entered_from": "BattleFrontier_OutsideEast",
+   "tilesets": [
+    "gTileset_Building",
+    "gTileset_BattleFrontier"
+   ],
+   "size": [
+    13,
+    8
+   ],
+   "warps": [
+    {
+     "x": 1,
+     "y": 7,
+     "dest": "BattleFrontier_OutsideEast",
+     "dest_warp": 7
+    },
+    {
+     "x": 2,
+     "y": 7,
+     "dest": "BattleFrontier_OutsideEast",
+     "dest_warp": 7
+    }
+   ],
+   "emerald": "BattleFrontier_Lounge5"
+  },
+  "BattleFrontier_Lounge6": {
+   "status": "todo",
+   "map_id": "MAP_BATTLE_FRONTIER_LOUNGE6",
+   "map_type": "MAP_TYPE_INDOOR",
+   "entered_from": "BattleFrontier_OutsideEast",
+   "tilesets": [
+    "gTileset_Building",
+    "gTileset_BattleFrontier"
+   ],
+   "size": [
+    9,
+    10
+   ],
+   "warps": [
+    {
+     "x": 4,
+     "y": 9,
+     "dest": "BattleFrontier_OutsideEast",
+     "dest_warp": 8
+    }
+   ],
+   "emerald": "BattleFrontier_Lounge6"
+  },
+  "BattleFrontier_Lounge3": {
+   "status": "todo",
+   "map_id": "MAP_BATTLE_FRONTIER_LOUNGE3",
+   "map_type": "MAP_TYPE_INDOOR",
+   "entered_from": "BattleFrontier_OutsideEast",
+   "tilesets": [
+    "gTileset_Building",
+    "gTileset_BattleFrontier"
+   ],
+   "size": [
+    9,
+    10
+   ],
+   "warps": [
+    {
+     "x": 4,
+     "y": 9,
+     "dest": "BattleFrontier_OutsideEast",
+     "dest_warp": 9
+    }
+   ],
+   "emerald": "BattleFrontier_Lounge3"
+  },
+  "BattleFrontier_Lounge8": {
+   "status": "todo",
+   "map_id": "MAP_BATTLE_FRONTIER_LOUNGE8",
+   "map_type": "MAP_TYPE_INDOOR",
+   "entered_from": "BattleFrontier_OutsideEast",
+   "tilesets": [
+    "gTileset_Building",
+    "gTileset_BattleFrontier"
+   ],
+   "size": [
+    9,
+    10
+   ],
+   "warps": [
+    {
+     "x": 4,
+     "y": 9,
+     "dest": "BattleFrontier_OutsideEast",
+     "dest_warp": 10
+    }
+   ],
+   "emerald": "BattleFrontier_Lounge8"
+  },
+  "BattleFrontier_Lounge9": {
+   "status": "todo",
+   "map_id": "MAP_BATTLE_FRONTIER_LOUNGE9",
+   "map_type": "MAP_TYPE_INDOOR",
+   "entered_from": "BattleFrontier_OutsideEast",
+   "tilesets": [
+    "gTileset_Building",
+    "gTileset_BattleFrontier"
+   ],
+   "size": [
+    9,
+    10
+   ],
+   "warps": [
+    {
+     "x": 1,
+     "y": 9,
+     "dest": "BattleFrontier_OutsideEast",
+     "dest_warp": 11
+    },
+    {
+     "x": 2,
+     "y": 9,
+     "dest": "BattleFrontier_OutsideEast",
+     "dest_warp": 11
+    }
+   ],
+   "emerald": "BattleFrontier_Lounge9"
+  },
+  "BattleFrontier_PokemonCenter_1F": {
+   "status": "todo",
+   "map_id": "MAP_BATTLE_FRONTIER_POKEMON_CENTER_1F",
+   "map_type": "MAP_TYPE_INDOOR",
+   "entered_from": "BattleFrontier_OutsideEast",
+   "tilesets": [
+    "gTileset_Building",
+    "gTileset_PokemonCenter"
+   ],
+   "size": [
+    14,
+    9
+   ],
+   "warps": [
+    {
+     "x": 7,
+     "y": 8,
+     "dest": "BattleFrontier_OutsideEast",
+     "dest_warp": 12
+    },
+    {
+     "x": 6,
+     "y": 8,
+     "dest": "BattleFrontier_OutsideEast",
+     "dest_warp": 12
+    },
+    {
+     "x": 1,
+     "y": 6,
+     "dest": "BattleFrontier_PokemonCenter_2F",
+     "dest_warp": 0
+    }
+   ],
+   "emerald": "BattleFrontier_PokemonCenter_1F"
+  },
+  "ArtisanCave_1F": {
+   "status": "cave",
+   "map_id": "MAP_ARTISAN_CAVE_1F",
+   "map_type": "MAP_TYPE_UNDERGROUND",
+   "entered_from": "BattleFrontier_OutsideEast",
+   "tilesets": [
+    "gTileset_General",
+    "gTileset_Cave"
+   ],
+   "size": [
+    21,
+    22
+   ],
+   "warps": [
+    {
+     "x": 10,
+     "y": 17,
+     "dest": "BattleFrontier_OutsideEast",
+     "dest_warp": 13
+    },
+    {
+     "x": 6,
+     "y": 5,
+     "dest": "ArtisanCave_B1F",
+     "dest_warp": 1
+    }
+   ],
+   "emerald": "ArtisanCave_1F",
+   "zone": 372,
+   "scripts": 744,
+   "init_scripts": 745,
+   "text": 584,
+   "entities": 541,
+   "area": 316,
+   "own_matrix": false,
+   "own_scripts": 2012,
+   "own_init": 2013,
+   "own_text": 1021,
+   "claimed_by": "emerald_caves"
+  },
+  "BattleFrontier_BattlePikeLobby": {
+   "status": "auto",
+   "map_id": "MAP_BATTLE_FRONTIER_BATTLE_PIKE_LOBBY",
+   "map_type": "MAP_TYPE_INDOOR",
+   "entered_from": "BattleTower_Outside",
+   "tilesets": [
+    "gTileset_Building",
+    "gTileset_BattlePike"
+   ],
+   "size": [
+    11,
+    13
+   ],
+   "warps": [
+    {
+     "x": 5,
+     "y": 12,
+     "dest": "BattleTower_Outside",
+     "dest_warp": 0
+    },
+    {
+     "x": 4,
+     "y": 12,
+     "dest": "BattleTower_Outside",
+     "dest_warp": 0
+    },
+    {
+     "x": 6,
+     "y": 12,
+     "dest": "BattleTower_Outside",
+     "dest_warp": 0
+    }
+   ],
+   "emerald": "BattleFrontier_BattlePikeLobby",
+   "zone": 399,
+   "scripts": 798,
+   "init_scripts": 799,
+   "text": 628,
+   "entities": 576,
+   "area": 282,
+   "own_matrix": false,
+   "own_scripts": 1950,
+   "own_init": 1951,
+   "own_text": 990,
+   "claimed": "frontier_pike (2026-10-12): the Battle Pike, notes/FRONTIER_PIKE.md; zone, own script/init/text numbers and the room are this agent's"
+  },
+  "BattleFrontier_BattleDomeLobby": {
+   "status": "auto",
+   "map_id": "MAP_BATTLE_FRONTIER_BATTLE_DOME_LOBBY",
+   "map_type": "MAP_TYPE_INDOOR",
+   "entered_from": "BattleTower_Outside",
+   "tilesets": [
+    "gTileset_Building",
+    "gTileset_BattleDome"
+   ],
+   "size": [
+    23,
+    17
+   ],
+   "warps": [
+    {
+     "x": 11,
+     "y": 16,
+     "dest": "BattleTower_Outside",
+     "dest_warp": 1
+    },
+    {
+     "x": 12,
+     "y": 16,
+     "dest": "BattleTower_Outside",
+     "dest_warp": 1
+    }
+   ],
+   "emerald": "BattleFrontier_BattleDomeLobby",
+   "zone": 411,
+   "scripts": 822,
+   "init_scripts": 823,
+   "text": 640,
+   "entities": 588,
+   "area": 328,
+   "own_matrix": false,
+   "own_scripts": 1968,
+   "own_init": 1969,
+   "own_text": 999,
+   "claimed": "frontier_factory_dome (2026-10-12): the Battle Factory / Battle Dome, notes/FRONTIER_FACTORY_DOME.md; zone, own script/init/text numbers and the room are this agent's"
+  },
+  "BattleFrontier_BattleFactoryLobby": {
+   "status": "auto",
+   "map_id": "MAP_BATTLE_FRONTIER_BATTLE_FACTORY_LOBBY",
+   "map_type": "MAP_TYPE_INDOOR",
+   "entered_from": "BattleTower_Outside",
+   "tilesets": [
+    "gTileset_Building",
+    "gTileset_BattleFactory"
+   ],
+   "size": [
+    19,
+    12
+   ],
+   "warps": [
+    {
+     "x": 9,
+     "y": 11,
+     "dest": "BattleTower_Outside",
+     "dest_warp": 2
+    },
+    {
+     "x": 10,
+     "y": 11,
+     "dest": "BattleTower_Outside",
+     "dest_warp": 2
+    }
+   ],
+   "emerald": "BattleFrontier_BattleFactoryLobby",
+   "zone": 408,
+   "scripts": 816,
+   "init_scripts": 817,
+   "text": 637,
+   "entities": 585,
+   "area": 328,
+   "own_matrix": false,
+   "own_scripts": 1962,
+   "own_init": 1963,
+   "own_text": 996,
+   "claimed": "frontier_factory_dome (2026-10-12): the Battle Factory / Battle Dome, notes/FRONTIER_FACTORY_DOME.md; zone, own script/init/text numbers and the room are this agent's"
+  },
+  "BattleFrontier_Lounge2": {
+   "status": "todo",
+   "map_id": "MAP_BATTLE_FRONTIER_LOUNGE2",
+   "map_type": "MAP_TYPE_INDOOR",
+   "entered_from": "BattleTower_Outside",
+   "tilesets": [
+    "gTileset_Building",
+    "gTileset_BattleFrontier"
+   ],
+   "size": [
+    13,
+    8
+   ],
+   "warps": [
+    {
+     "x": 1,
+     "y": 7,
+     "dest": "BattleTower_Outside",
+     "dest_warp": 3
+    },
+    {
+     "x": 2,
+     "y": 7,
+     "dest": "BattleTower_Outside",
+     "dest_warp": 3
+    }
+   ],
+   "emerald": "BattleFrontier_Lounge2"
+  },
+  "BattleFrontier_Mart": {
+   "status": "todo",
+   "map_id": "MAP_BATTLE_FRONTIER_MART",
+   "map_type": "MAP_TYPE_INDOOR",
+   "entered_from": "BattleTower_Outside",
+   "tilesets": [
+    "gTileset_Building",
+    "gTileset_Shop"
+   ],
+   "size": [
+    11,
+    8
+   ],
+   "warps": [
+    {
+     "x": 3,
+     "y": 7,
+     "dest": "BattleTower_Outside",
+     "dest_warp": 4
+    },
+    {
+     "x": 4,
+     "y": 7,
+     "dest": "BattleTower_Outside",
+     "dest_warp": 4
+    }
+   ],
+   "emerald": "BattleFrontier_Mart"
+  },
+  "BattleFrontier_ScottsHouse": {
+   "status": "todo",
+   "map_id": "MAP_BATTLE_FRONTIER_SCOTTS_HOUSE",
+   "map_type": "MAP_TYPE_INDOOR",
+   "entered_from": "BattleTower_Outside",
+   "tilesets": [
+    "gTileset_Building",
+    "gTileset_BattleFrontier"
+   ],
+   "size": [
+    6,
+    8
+   ],
+   "warps": [
+    {
+     "x": 2,
+     "y": 7,
+     "dest": "BattleTower_Outside",
+     "dest_warp": 5
+    },
+    {
+     "x": 3,
+     "y": 7,
+     "dest": "BattleTower_Outside",
+     "dest_warp": 5
+    }
+   ],
+   "emerald": "BattleFrontier_ScottsHouse"
+  },
+  "BattleFrontier_Lounge4": {
+   "status": "todo",
+   "map_id": "MAP_BATTLE_FRONTIER_LOUNGE4",
+   "map_type": "MAP_TYPE_INDOOR",
+   "entered_from": "BattleTower_Outside",
+   "tilesets": [
+    "gTileset_Building",
+    "gTileset_BattleFrontier"
+   ],
+   "size": [
+    9,
+    10
+   ],
+   "warps": [
+    {
+     "x": 4,
+     "y": 9,
+     "dest": "BattleTower_Outside",
+     "dest_warp": 6
+    }
+   ],
+   "emerald": "BattleFrontier_Lounge4"
+  },
+  "BattleFrontier_Lounge7": {
+   "status": "todo",
+   "map_id": "MAP_BATTLE_FRONTIER_LOUNGE7",
+   "map_type": "MAP_TYPE_INDOOR",
+   "entered_from": "BattleTower_Outside",
+   "tilesets": [
+    "gTileset_Building",
+    "gTileset_BattleFrontier"
+   ],
+   "size": [
+    9,
+    10
+   ],
+   "warps": [
+    {
+     "x": 4,
+     "y": 9,
+     "dest": "BattleTower_Outside",
+     "dest_warp": 7
+    }
+   ],
+   "emerald": "BattleFrontier_Lounge7"
+  },
+  "BattleFrontier_ReceptionGate": {
+   "status": "todo",
+   "map_id": "MAP_BATTLE_FRONTIER_RECEPTION_GATE",
+   "map_type": "MAP_TYPE_INDOOR",
+   "entered_from": "BattleTower_Outside",
+   "tilesets": [
+    "gTileset_General",
+    "gTileset_BattleFrontier"
+   ],
+   "size": [
+    9,
+    14
+   ],
+   "warps": [
+    {
+     "x": 4,
+     "y": 13,
+     "dest": "BattleTower_Outside",
+     "dest_warp": 8
+    },
+    {
+     "x": 4,
+     "y": 1,
+     "dest": "BattleTower_Outside",
+     "dest_warp": 9
+    }
+   ],
+   "emerald": "BattleFrontier_ReceptionGate"
+  },
+  "ArtisanCave_B1F": {
+   "status": "cave",
+   "map_id": "MAP_ARTISAN_CAVE_B1F",
+   "map_type": "MAP_TYPE_UNDERGROUND",
+   "entered_from": "BattleTower_Outside",
+   "tilesets": [
+    "gTileset_General",
+    "gTileset_Cave"
+   ],
+   "size": [
+    46,
+    54
+   ],
+   "warps": [
+    {
+     "x": 8,
+     "y": 48,
+     "dest": "BattleTower_Outside",
+     "dest_warp": 10
+    },
+    {
+     "x": 38,
+     "y": 5,
+     "dest": "ArtisanCave_1F",
+     "dest_warp": 1
+    }
+   ],
+   "emerald": "ArtisanCave_B1F",
+   "zone": 373,
+   "scripts": 746,
+   "init_scripts": 747,
+   "text": 585,
+   "entities": 542,
+   "area": 328,
+   "own_matrix": false,
+   "own_scripts": 2014,
+   "own_init": 2015,
+   "own_text": 1022,
+   "claimed_by": "emerald_caves"
+  },
+  "BirthIsland_Harbor": {
+   "status": "todo",
+   "map_id": "MAP_BIRTH_ISLAND_HARBOR",
+   "map_type": "MAP_TYPE_INDOOR",
+   "entered_from": "BirthIsland_Exterior",
+   "tilesets": [
+    "gTileset_General",
+    "gTileset_IslandHarbor"
+   ],
+   "size": [
+    17,
+    13
+   ],
+   "warps": [
+    {
+     "x": 8,
+     "y": 2,
+     "dest": "BirthIsland_Exterior",
+     "dest_warp": 0
+    }
+   ],
+   "emerald": "BirthIsland_Harbor"
+  },
+  "FallarborTown_BattleTentLobby": {
+   "status": "todo",
+   "map_id": "MAP_FALLARBOR_TOWN_BATTLE_TENT_LOBBY",
+   "map_type": "MAP_TYPE_INDOOR",
+   "entered_from": "FallarborTown",
+   "tilesets": [
+    "gTileset_Building",
+    "gTileset_BattleTent"
+   ],
+   "size": [
+    13,
+    10
+   ],
+   "warps": [
+    {
+     "x": 6,
+     "y": 9,
+     "dest": "FallarborTown",
+     "dest_warp": 1
+    },
+    {
+     "x": 7,
+     "y": 9,
+     "dest": "FallarborTown",
+     "dest_warp": 1
+    }
+   ],
+   "emerald": "FallarborTown_BattleTentLobby"
+  },
+  "MagmaHideout_1F_Emerald": {
+   "status": "cave",
+   "map_id": "MAP_MAGMA_HIDEOUT_1F_EMERALD",
+   "map_type": "MAP_TYPE_UNDERGROUND",
+   "entered_from": "JaggedPass",
+   "tilesets": [
+    "gTileset_General",
+    "gTileset_Lavaridge"
+   ],
+   "size": [
+    37,
+    38
+   ],
+   "warps": [
+    {
+     "x": 10,
+     "y": 34,
+     "dest": "JaggedPass",
+     "dest_warp": 4
+    },
+    {
+     "x": 25,
+     "y": 34,
+     "dest": "MagmaHideout_2F_1R",
+     "dest_warp": 1
+    },
+    {
+     "x": 31,
+     "y": 3,
+     "dest": "MagmaHideout_2F_2R",
+     "dest_warp": 1
+    },
+    {
+     "x": 20,
+     "y": 22,
+     "dest": "MagmaHideout_2F_3R",
+     "dest_warp": 0
+    }
+   ],
+   "emerald": "MagmaHideout_1F",
+   "zone": 349,
+   "scripts": 698,
+   "init_scripts": 699,
+   "text": 561,
+   "entities": 518,
+   "area": 316,
+   "own_matrix": false,
+   "own_scripts": 1978,
+   "own_init": 1979,
+   "own_text": 1004,
+   "claimed_by": "emerald_caves"
+  },
+  "NavelRock_Harbor": {
+   "status": "todo",
+   "map_id": "MAP_NAVEL_ROCK_HARBOR",
+   "map_type": "MAP_TYPE_INDOOR",
+   "entered_from": "NavelRock_Exterior",
+   "tilesets": [
+    "gTileset_General",
+    "gTileset_IslandHarbor"
+   ],
+   "size": [
+    17,
+    13
+   ],
+   "warps": [
+    {
+     "x": 8,
+     "y": 2,
+     "dest": "NavelRock_Exterior",
+     "dest_warp": 0
+    }
+   ],
+   "emerald": "NavelRock_Harbor"
+  },
+  "MirageTower_1F": {
+   "status": "cave",
+   "map_id": "MAP_MIRAGE_TOWER_1F",
+   "map_type": "MAP_TYPE_UNDERGROUND",
+   "entered_from": "Route111",
+   "tilesets": [
+    "gTileset_General",
+    "gTileset_MirageTower"
+   ],
+   "size": [
+    21,
+    17
+   ],
+   "warps": [
+    {
+     "x": 10,
+     "y": 14,
+     "dest": "Route111",
+     "dest_warp": 3
+    },
+    {
+     "x": 15,
+     "y": 2,
+     "dest": "MirageTower_2F",
+     "dest_warp": 1
+    }
+   ],
+   "emerald": "MirageTower_1F",
+   "zone": 360,
+   "scripts": 720,
+   "init_scripts": 721,
+   "text": 572,
+   "entities": 529,
+   "area": 282,
+   "own_matrix": false,
+   "own_scripts": 1994,
+   "own_init": 1995,
+   "own_text": 1012,
+   "claimed_by": "emerald_caves"
+  },
+  "TrainerHill_Entrance": {
+   "status": "todo",
+   "map_id": "MAP_TRAINER_HILL_ENTRANCE",
+   "map_type": "MAP_TYPE_INDOOR",
+   "entered_from": "Route111",
+   "tilesets": [
+    "gTileset_Building",
+    "gTileset_TrainerHill"
+   ],
+   "size": [
+    19,
+    17
+   ],
+   "warps": [
+    {
+     "x": 9,
+     "y": 16,
+     "dest": "Route111",
+     "dest_warp": 4
+    },
+    {
+     "x": 10,
+     "y": 16,
+     "dest": "Route111",
+     "dest_warp": 4
+    },
+    {
+     "x": 9,
+     "y": 1,
+     "dest": "TrainerHill_1F",
+     "dest_warp": 0
+    }
+   ],
+   "emerald": "TrainerHill_Entrance"
+  },
+  "TerraCave_Entrance": {
+   "status": "cave",
+   "map_id": "MAP_TERRA_CAVE_ENTRANCE",
+   "map_type": "MAP_TYPE_UNDERGROUND",
+   "entered_from": "Route113",
+   "tilesets": [
+    "gTileset_General",
+    "gTileset_Cave"
+   ],
+   "size": [
+    20,
+    20
+   ],
+   "warps": [
+    {
+     "x": 8,
+     "y": 18,
+     "dest": "MAP_DYNAMIC",
+     "dest_warp": "WARP_ID_DYNAMIC"
+    },
+    {
+     "x": 14,
+     "y": 1,
+     "dest": "TerraCave_End",
+     "dest_warp": 0
+    }
+   ],
+   "emerald": "TerraCave_Entrance",
+   "zone": 364,
+   "scripts": 728,
+   "init_scripts": 729,
+   "text": 576,
+   "entities": 533,
+   "area": 282,
+   "own_matrix": false,
+   "own_scripts": 2002,
+   "own_init": 2003,
+   "own_text": 1016,
+   "claimed_by": "emerald_caves",
+   "doors_parked": true,
+   "_doors_parked": "Emerald's eight Terra Cave mouths (Routes 114 x2, 115 x2, 116 x2, 118 x2; pokeemerald data/scripts/abnormal_weather.inc) open one at a time with the abnormal weather (post-game, Phase 4): b2tools/world.py gives each its door into the cave and patches/hoenn_world.py parks it off the map; the weather's zone init moves the open one in (ObjInitWarpGPos)"
+  },
+  "SlateportCity_BattleTentLobby": {
+   "status": "todo",
+   "map_id": "MAP_SLATEPORT_CITY_BATTLE_TENT_LOBBY",
+   "map_type": "MAP_TYPE_INDOOR",
+   "entered_from": "SlateportCity",
+   "tilesets": [
+    "gTileset_Building",
+    "gTileset_BattleTent"
+   ],
+   "size": [
+    13,
+    10
+   ],
+   "warps": [
+    {
+     "x": 6,
+     "y": 9,
+     "dest": "SlateportCity",
+     "dest_warp": 3
+    },
+    {
+     "x": 7,
+     "y": 9,
+     "dest": "SlateportCity",
+     "dest_warp": 3
+    }
+   ],
+   "emerald": "SlateportCity_BattleTentLobby"
+  },
+  "SootopolisCity_MysteryEventsHouse_1F": {
+   "status": "todo",
+   "map_id": "MAP_SOOTOPOLIS_CITY_MYSTERY_EVENTS_HOUSE_1F",
+   "map_type": "MAP_TYPE_INDOOR",
+   "entered_from": "SootopolisCity",
+   "tilesets": [
+    "gTileset_Building",
+    "gTileset_MysteryEventsHouse"
+   ],
+   "size": [
+    11,
+    8
+   ],
+   "warps": [
+    {
+     "x": 3,
+     "y": 7,
+     "dest": "SootopolisCity",
+     "dest_warp": 12
+    },
+    {
+     "x": 4,
+     "y": 7,
+     "dest": "SootopolisCity",
+     "dest_warp": 12
+    },
+    {
+     "x": 3,
+     "y": 1,
+     "dest": "SootopolisCity_MysteryEventsHouse_B1F",
+     "dest_warp": 0
+    }
+   ],
+   "emerald": "SootopolisCity_MysteryEventsHouse_1F"
+  },
+  "VerdanturfTown_BattleTentLobby": {
+   "status": "todo",
+   "map_id": "MAP_VERDANTURF_TOWN_BATTLE_TENT_LOBBY",
+   "map_type": "MAP_TYPE_INDOOR",
+   "entered_from": "VerdanturfTown",
+   "tilesets": [
+    "gTileset_Building",
+    "gTileset_BattleTent"
+   ],
+   "size": [
+    13,
+    10
+   ],
+   "warps": [
+    {
+     "x": 6,
+     "y": 9,
+     "dest": "VerdanturfTown",
+     "dest_warp": 0
+    },
+    {
+     "x": 7,
+     "y": 9,
+     "dest": "VerdanturfTown",
+     "dest_warp": 0
+    }
+   ],
+   "emerald": "VerdanturfTown_BattleTentLobby"
+  },
+  "BattleFrontier_BattlePalaceCorridor": {
+   "status": "auto",
+   "map_id": "MAP_BATTLE_FRONTIER_BATTLE_PALACE_CORRIDOR",
+   "map_type": "MAP_TYPE_INDOOR",
+   "entered_from": "BattleFrontier_BattlePalaceLobby",
+   "tilesets": [
+    "gTileset_General",
+    "gTileset_BattlePalace"
+   ],
+   "size": [
+    17,
+    14
+   ],
+   "warps": [
+    {
+     "x": 8,
+     "y": 13,
+     "dest": "BattleFrontier_BattlePalaceLobby",
+     "dest_warp": 2
+    },
+    {
+     "x": 9,
+     "y": 13,
+     "dest": "BattleFrontier_BattlePalaceLobby",
+     "dest_warp": 2
+    },
+    {
+     "x": 6,
+     "y": 3,
+     "dest": "BattleFrontier_BattlePalaceBattleRoom",
+     "dest_warp": 0
+    },
+    {
+     "x": 10,
+     "y": 3,
+     "dest": "BattleFrontier_BattlePalaceBattleRoom",
+     "dest_warp": 0
+    }
+   ],
+   "emerald": "BattleFrontier_BattlePalaceCorridor",
+   "zone": 467,
+   "scripts": 934,
+   "init_scripts": 935,
+   "text": 193,
+   "entities": 187,
+   "area": 351,
+   "own_matrix": false,
+   "own_scripts": 2030,
+   "own_init": 2031,
+   "own_text": 1030,
+   "claimed": "frontier_palace_arena (2026-10-12): the Battle Palace / Battle Arena, notes/FRONTIER.md; zone, own script/init/text numbers and the room are this agent's"
+  },
+  "BattleFrontier_PokemonCenter_2F": {
+   "status": "todo",
+   "map_id": "MAP_BATTLE_FRONTIER_POKEMON_CENTER_2F",
+   "map_type": "MAP_TYPE_INDOOR",
+   "entered_from": "BattleFrontier_PokemonCenter_1F",
+   "tilesets": [
+    "gTileset_Building",
+    "gTileset_PokemonCenter"
+   ],
+   "size": [
+    14,
+    10
+   ],
+   "warps": [
+    {
+     "x": 1,
+     "y": 6,
+     "dest": "BattleFrontier_PokemonCenter_1F",
+     "dest_warp": 2
+    },
+    {
+     "x": 5,
+     "y": 1,
+     "dest": "UnionRoom",
+     "dest_warp": 0
+    },
+    {
+     "x": 9,
+     "y": 1,
+     "dest": "TradeCenter",
+     "dest_warp": 0
+    }
+   ],
+   "emerald": "BattleFrontier_PokemonCenter_2F"
+  },
+  "MagmaHideout_2F_1R": {
+   "status": "cave",
+   "map_id": "MAP_MAGMA_HIDEOUT_2F_1R",
+   "map_type": "MAP_TYPE_UNDERGROUND",
+   "entered_from": "MagmaHideout_1F_Emerald",
+   "tilesets": [
+    "gTileset_General",
+    "gTileset_Lavaridge"
+   ],
+   "size": [
+    33,
+    39
+   ],
+   "warps": [
+    {
+     "x": 11,
+     "y": 23,
+     "dest": "MagmaHideout_2F_2R",
+     "dest_warp": 0
+    },
+    {
+     "x": 8,
+     "y": 2,
+     "dest": "MagmaHideout_1F_Emerald",
+     "dest_warp": 1
+    },
+    {
+     "x": 17,
+     "y": 33,
+     "dest": "MagmaHideout_3F_1R",
+     "dest_warp": 2
+    }
+   ],
+   "emerald": "MagmaHideout_2F_1R",
+   "zone": 352,
+   "scripts": 704,
+   "init_scripts": 705,
+   "text": 564,
+   "entities": 521,
+   "area": 282,
+   "own_matrix": false,
+   "own_scripts": 1980,
+   "own_init": 1981,
+   "own_text": 1005,
+   "claimed_by": "emerald_caves"
+  },
+  "MagmaHideout_2F_2R": {
+   "status": "cave",
+   "map_id": "MAP_MAGMA_HIDEOUT_2F_2R",
+   "map_type": "MAP_TYPE_UNDERGROUND",
+   "entered_from": "MagmaHideout_1F_Emerald",
+   "tilesets": [
+    "gTileset_General",
+    "gTileset_Lavaridge"
+   ],
+   "size": [
+    49,
+    28
+   ],
+   "warps": [
+    {
+     "x": 10,
+     "y": 22,
+     "dest": "MagmaHideout_2F_1R",
+     "dest_warp": 0
+    },
+    {
+     "x": 36,
+     "y": 4,
+     "dest": "MagmaHideout_1F_Emerald",
+     "dest_warp": 2
+    }
+   ],
+   "emerald": "MagmaHideout_2F_2R",
+   "zone": 353,
+   "scripts": 706,
+   "init_scripts": 707,
+   "text": 565,
+   "entities": 522,
+   "area": 282,
+   "own_matrix": false,
+   "own_scripts": 1982,
+   "own_init": 1983,
+   "own_text": 1006,
+   "claimed_by": "emerald_caves"
+  },
+  "MagmaHideout_2F_3R": {
+   "status": "cave",
+   "map_id": "MAP_MAGMA_HIDEOUT_2F_3R",
+   "map_type": "MAP_TYPE_UNDERGROUND",
+   "entered_from": "MagmaHideout_1F_Emerald",
+   "tilesets": [
+    "gTileset_General",
+    "gTileset_Lavaridge"
+   ],
+   "size": [
+    60,
+    19
+   ],
+   "warps": [
+    {
+     "x": 16,
+     "y": 1,
+     "dest": "MagmaHideout_1F_Emerald",
+     "dest_warp": 3
+    },
+    {
+     "x": 16,
+     "y": 13,
+     "dest": "MagmaHideout_3F_3R",
+     "dest_warp": 0
+    }
+   ],
+   "emerald": "MagmaHideout_2F_3R",
+   "zone": 354,
+   "scripts": 708,
+   "init_scripts": 709,
+   "text": 566,
+   "entities": 523,
+   "area": 282,
+   "own_matrix": false,
+   "own_scripts": 1984,
+   "own_init": 1985,
+   "own_text": 1007,
+   "claimed_by": "emerald_caves"
+  },
+  "MirageTower_2F": {
+   "status": "cave",
+   "map_id": "MAP_MIRAGE_TOWER_2F",
+   "map_type": "MAP_TYPE_UNDERGROUND",
+   "entered_from": "MirageTower_1F",
+   "tilesets": [
+    "gTileset_General",
+    "gTileset_MirageTower"
+   ],
+   "size": [
+    21,
+    17
+   ],
+   "warps": [
+    {
+     "x": 18,
+     "y": 12,
+     "dest": "MirageTower_3F",
+     "dest_warp": 0
+    },
+    {
+     "x": 15,
+     "y": 2,
+     "dest": "MirageTower_1F",
+     "dest_warp": 1
+    }
+   ],
+   "emerald": "MirageTower_2F",
+   "zone": 361,
+   "scripts": 722,
+   "init_scripts": 723,
+   "text": 573,
+   "entities": 530,
+   "area": 282,
+   "own_matrix": false,
+   "own_scripts": 1996,
+   "own_init": 1997,
+   "own_text": 1013,
+   "claimed_by": "emerald_caves"
+  },
+  "TrainerHill_1F": {
+   "status": "todo",
+   "map_id": "MAP_TRAINER_HILL_1F",
+   "map_type": "MAP_TYPE_INDOOR",
+   "entered_from": "TrainerHill_Entrance",
+   "tilesets": [
+    "gTileset_Building",
+    "gTileset_TrainerHill"
+   ],
+   "size": [
+    16,
+    21
+   ],
+   "warps": [
+    {
+     "x": 2,
+     "y": 1,
+     "dest": "TrainerHill_Entrance",
+     "dest_warp": 2
+    },
+    {
+     "x": 12,
+     "y": 1,
+     "dest": "TrainerHill_2F",
+     "dest_warp": 0
+    }
+   ],
+   "emerald": "TrainerHill_1F"
+  },
+  "TerraCave_End": {
+   "status": "cave",
+   "map_id": "MAP_TERRA_CAVE_END",
+   "map_type": "MAP_TYPE_UNDERGROUND",
+   "entered_from": "TerraCave_Entrance",
+   "tilesets": [
+    "gTileset_General",
+    "gTileset_Cave"
+   ],
+   "size": [
+    27,
+    30
+   ],
+   "warps": [
+    {
+     "x": 5,
+     "y": 4,
+     "dest": "TerraCave_Entrance",
+     "dest_warp": 1
+    }
+   ],
+   "emerald": "TerraCave_End",
+   "zone": 366,
+   "scripts": 732,
+   "init_scripts": 733,
+   "text": 578,
+   "entities": 535,
+   "area": 316,
+   "own_matrix": false,
+   "own_scripts": 2004,
+   "own_init": 2005,
+   "own_text": 1017,
+   "claimed_by": "emerald_caves"
+  },
+  "SootopolisCity_MysteryEventsHouse_B1F": {
+   "status": "todo",
+   "map_id": "MAP_SOOTOPOLIS_CITY_MYSTERY_EVENTS_HOUSE_B1F",
+   "map_type": "MAP_TYPE_INDOOR",
+   "entered_from": "SootopolisCity_MysteryEventsHouse_1F",
+   "tilesets": [
+    "gTileset_Building",
+    "gTileset_MysteryEventsHouse"
+   ],
+   "size": [
+    12,
+    9
+   ],
+   "warps": [
+    {
+     "x": 3,
+     "y": 1,
+     "dest": "SootopolisCity_MysteryEventsHouse_1F",
+     "dest_warp": 2
+    }
+   ],
+   "emerald": "SootopolisCity_MysteryEventsHouse_B1F"
+  },
+  "BattleFrontier_BattlePalaceBattleRoom": {
+   "status": "auto",
+   "map_id": "MAP_BATTLE_FRONTIER_BATTLE_PALACE_BATTLE_ROOM",
+   "map_type": "MAP_TYPE_INDOOR",
+   "entered_from": "BattleFrontier_BattlePalaceCorridor",
+   "tilesets": [
+    "gTileset_General",
+    "gTileset_BattlePalace"
+   ],
+   "size": [
+    15,
+    10
+   ],
+   "warps": [
+    {
+     "x": 0,
+     "y": 9,
+     "dest": "BattleFrontier_BattlePalaceCorridor",
+     "dest_warp": 2
+    },
+    {
+     "x": 1,
+     "y": 9,
+     "dest": "BattleFrontier_BattlePalaceCorridor",
+     "dest_warp": 2
+    }
+   ],
+   "emerald": "BattleFrontier_BattlePalaceBattleRoom",
+   "zone": 468,
+   "scripts": 936,
+   "init_scripts": 937,
+   "text": 194,
+   "entities": 188,
+   "area": 351,
+   "own_matrix": false,
+   "own_scripts": 2032,
+   "own_init": 2033,
+   "own_text": 1031,
+   "claimed": "frontier_palace_arena (2026-10-12): the Battle Palace / Battle Arena, notes/FRONTIER.md; zone, own script/init/text numbers and the room are this agent's"
+  },
+  "UnionRoom": {
+   "status": "todo",
+   "map_id": "MAP_UNION_ROOM",
+   "map_type": "MAP_TYPE_INDOOR",
+   "entered_from": "BattleFrontier_PokemonCenter_2F",
+   "tilesets": [
+    "gTileset_Building",
+    "gTileset_UnionRoom"
+   ],
+   "size": [
+    15,
+    12
+   ],
+   "warps": [
+    {
+     "x": 7,
+     "y": 11,
+     "dest": "MAP_DYNAMIC",
+     "dest_warp": "WARP_ID_DYNAMIC"
+    },
+    {
+     "x": 8,
+     "y": 11,
+     "dest": "MAP_DYNAMIC",
+     "dest_warp": "WARP_ID_DYNAMIC"
+    }
+   ],
+   "emerald": "UnionRoom"
+  },
+  "MagmaHideout_3F_1R": {
+   "status": "cave",
+   "map_id": "MAP_MAGMA_HIDEOUT_3F_1R",
+   "map_type": "MAP_TYPE_UNDERGROUND",
+   "entered_from": "MagmaHideout_2F_1R",
+   "tilesets": [
+    "gTileset_General",
+    "gTileset_Lavaridge"
+   ],
+   "size": [
+    28,
+    24
+   ],
+   "warps": [
+    {
+     "x": 7,
+     "y": 21,
+     "dest": "MagmaHideout_4F",
+     "dest_warp": 0
+    },
+    {
+     "x": 21,
+     "y": 9,
+     "dest": "MagmaHideout_3F_2R",
+     "dest_warp": 0
+    },
+    {
+     "x": 23,
+     "y": 3,
+     "dest": "MagmaHideout_2F_1R",
+     "dest_warp": 2
+    }
+   ],
+   "emerald": "MagmaHideout_3F_1R",
+   "zone": 356,
+   "scripts": 712,
+   "init_scripts": 713,
+   "text": 568,
+   "entities": 525,
+   "area": 282,
+   "own_matrix": false,
+   "own_scripts": 1986,
+   "own_init": 1987,
+   "own_text": 1008,
+   "claimed_by": "emerald_caves"
+  },
+  "MagmaHideout_3F_3R": {
+   "status": "cave",
+   "map_id": "MAP_MAGMA_HIDEOUT_3F_3R",
+   "map_type": "MAP_TYPE_UNDERGROUND",
+   "entered_from": "MagmaHideout_2F_3R",
+   "tilesets": [
+    "gTileset_General",
+    "gTileset_Lavaridge"
+   ],
+   "size": [
+    33,
+    24
+   ],
+   "warps": [
+    {
+     "x": 16,
+     "y": 1,
+     "dest": "MagmaHideout_2F_3R",
+     "dest_warp": 1
+    },
+    {
+     "x": 16,
+     "y": 21,
+     "dest": "MagmaHideout_4F",
+     "dest_warp": 1
+    }
+   ],
+   "emerald": "MagmaHideout_3F_3R",
+   "zone": 358,
+   "scripts": 716,
+   "init_scripts": 717,
+   "text": 570,
+   "entities": 527,
+   "area": 282,
+   "own_matrix": false,
+   "own_scripts": 1990,
+   "own_init": 1991,
+   "own_text": 1010,
+   "claimed_by": "emerald_caves"
+  },
+  "MirageTower_3F": {
+   "status": "cave",
+   "map_id": "MAP_MIRAGE_TOWER_3F",
+   "map_type": "MAP_TYPE_UNDERGROUND",
+   "entered_from": "MirageTower_2F",
+   "tilesets": [
+    "gTileset_General",
+    "gTileset_MirageTower"
+   ],
+   "size": [
+    21,
+    17
+   ],
+   "warps": [
+    {
+     "x": 18,
+     "y": 12,
+     "dest": "MirageTower_2F",
+     "dest_warp": 0
+    },
+    {
+     "x": 2,
+     "y": 4,
+     "dest": "MirageTower_4F",
+     "dest_warp": 0
+    }
+   ],
+   "emerald": "MirageTower_3F",
+   "zone": 362,
+   "scripts": 724,
+   "init_scripts": 725,
+   "text": 574,
+   "entities": 531,
+   "area": 282,
+   "own_matrix": false,
+   "own_scripts": 1998,
+   "own_init": 1999,
+   "own_text": 1014,
+   "claimed_by": "emerald_caves"
+  },
+  "TrainerHill_2F": {
+   "status": "todo",
+   "map_id": "MAP_TRAINER_HILL_2F",
+   "map_type": "MAP_TYPE_INDOOR",
+   "entered_from": "TrainerHill_1F",
+   "tilesets": [
+    "gTileset_Building",
+    "gTileset_TrainerHill"
+   ],
+   "size": [
+    16,
+    21
+   ],
+   "warps": [
+    {
+     "x": 2,
+     "y": 1,
+     "dest": "TrainerHill_1F",
+     "dest_warp": 1
+    },
+    {
+     "x": 12,
+     "y": 1,
+     "dest": "TrainerHill_3F",
+     "dest_warp": 0
+    }
+   ],
+   "emerald": "TrainerHill_2F"
+  },
+  "MagmaHideout_4F": {
+   "status": "cave",
+   "map_id": "MAP_MAGMA_HIDEOUT_4F",
+   "map_type": "MAP_TYPE_UNDERGROUND",
+   "entered_from": "MagmaHideout_3F_1R",
+   "tilesets": [
+    "gTileset_General",
+    "gTileset_Lavaridge"
+   ],
+   "size": [
+    59,
+    28
+   ],
+   "warps": [
+    {
+     "x": 46,
+     "y": 7,
+     "dest": "MagmaHideout_3F_1R",
+     "dest_warp": 0
+    },
+    {
+     "x": 20,
+     "y": 21,
+     "dest": "MagmaHideout_3F_3R",
+     "dest_warp": 1
+    }
+   ],
+   "emerald": "MagmaHideout_4F",
+   "zone": 359,
+   "scripts": 718,
+   "init_scripts": 719,
+   "text": 571,
+   "entities": 528,
+   "area": 282,
+   "own_matrix": false,
+   "own_scripts": 1992,
+   "own_init": 1993,
+   "own_text": 1011,
+   "claimed_by": "emerald_caves"
+  },
+  "MagmaHideout_3F_2R": {
+   "status": "cave",
+   "map_id": "MAP_MAGMA_HIDEOUT_3F_2R",
+   "map_type": "MAP_TYPE_UNDERGROUND",
+   "entered_from": "MagmaHideout_3F_1R",
+   "tilesets": [
+    "gTileset_General",
+    "gTileset_Lavaridge"
+   ],
+   "size": [
+    24,
+    17
+   ],
+   "warps": [
+    {
+     "x": 12,
+     "y": 15,
+     "dest": "MagmaHideout_3F_1R",
+     "dest_warp": 1
+    }
+   ],
+   "emerald": "MagmaHideout_3F_2R",
+   "zone": 357,
+   "scripts": 714,
+   "init_scripts": 715,
+   "text": 569,
+   "entities": 526,
+   "area": 282,
+   "own_matrix": false,
+   "own_scripts": 1988,
+   "own_init": 1989,
+   "own_text": 1009,
+   "claimed_by": "emerald_caves"
+  },
+  "MirageTower_4F": {
+   "status": "cave",
+   "map_id": "MAP_MIRAGE_TOWER_4F",
+   "map_type": "MAP_TYPE_UNDERGROUND",
+   "entered_from": "MirageTower_3F",
+   "tilesets": [
+    "gTileset_General",
+    "gTileset_MirageTower"
+   ],
+   "size": [
+    13,
+    10
+   ],
+   "warps": [
+    {
+     "x": 1,
+     "y": 4,
+     "dest": "MirageTower_3F",
+     "dest_warp": 1
+    }
+   ],
+   "emerald": "MirageTower_4F",
+   "zone": 363,
+   "scripts": 726,
+   "init_scripts": 727,
+   "text": 575,
+   "entities": 532,
+   "area": 282,
+   "own_matrix": false,
+   "own_scripts": 2000,
+   "own_init": 2001,
+   "own_text": 1015,
+   "claimed_by": "emerald_caves"
+  },
+  "TrainerHill_3F": {
+   "status": "todo",
+   "map_id": "MAP_TRAINER_HILL_3F",
+   "map_type": "MAP_TYPE_INDOOR",
+   "entered_from": "TrainerHill_2F",
+   "tilesets": [
+    "gTileset_Building",
+    "gTileset_TrainerHill"
+   ],
+   "size": [
+    16,
+    21
+   ],
+   "warps": [
+    {
+     "x": 2,
+     "y": 1,
+     "dest": "TrainerHill_2F",
+     "dest_warp": 1
+    },
+    {
+     "x": 12,
+     "y": 1,
+     "dest": "TrainerHill_4F",
+     "dest_warp": 0
+    }
+   ],
+   "emerald": "TrainerHill_3F"
+  },
+  "TrainerHill_4F": {
+   "status": "todo",
+   "map_id": "MAP_TRAINER_HILL_4F",
+   "map_type": "MAP_TYPE_INDOOR",
+   "entered_from": "TrainerHill_3F",
+   "tilesets": [
+    "gTileset_Building",
+    "gTileset_TrainerHill"
+   ],
+   "size": [
+    16,
+    21
+   ],
+   "warps": [
+    {
+     "x": 2,
+     "y": 1,
+     "dest": "TrainerHill_3F",
+     "dest_warp": 1
+    },
+    {
+     "x": 12,
+     "y": 1,
+     "dest": "TrainerHill_Roof",
+     "dest_warp": 0
+    }
+   ],
+   "emerald": "TrainerHill_4F"
+  },
+  "TrainerHill_Roof": {
+   "status": "todo",
+   "map_id": "MAP_TRAINER_HILL_ROOF",
+   "map_type": "MAP_TYPE_INDOOR",
+   "entered_from": "TrainerHill_4F",
+   "tilesets": [
+    "gTileset_Building",
+    "gTileset_TrainerHill"
+   ],
+   "size": [
+    25,
+    16
+   ],
+   "warps": [
+    {
+     "x": 9,
+     "y": 5,
+     "dest": "TrainerHill_4F",
+     "dest_warp": 1
+    },
+    {
+     "x": 15,
+     "y": 5,
+     "dest": "TrainerHill_Elevator",
+     "dest_warp": 1
+    }
+   ],
+   "emerald": "TrainerHill_Roof"
+  },
+  "TrainerHill_Elevator": {
+   "status": "todo",
+   "map_id": "MAP_TRAINER_HILL_ELEVATOR",
+   "map_type": "MAP_TYPE_INDOOR",
+   "entered_from": "TrainerHill_Roof",
+   "tilesets": [
+    "gTileset_Building",
+    "gTileset_BattleFrontier"
+   ],
+   "size": [
+    5,
+    7
+   ],
+   "warps": [
+    {
+     "x": 1,
+     "y": 6,
+     "dest": "TrainerHill_Roof",
+     "dest_warp": 1
+    },
+    {
+     "x": 2,
+     "y": 6,
+     "dest": "TrainerHill_Roof",
+     "dest_warp": 1
+    }
+   ],
+   "emerald": "TrainerHill_Elevator"
+  },
+  "EverGrandeCity_PokemonLeague_2F": {
+   "status": "auto",
+   "map_id": "MAP_EVER_GRANDE_CITY_POKEMON_LEAGUE_2F",
+   "map_type": "MAP_TYPE_INDOOR",
+   "entered_from": "EverGrandeCity_PokemonLeague",
+   "tilesets": [
+    "gTileset_Building",
+    "gTileset_PokemonCenter"
+   ],
+   "size": [
+    14,
+    10
+   ],
+   "warps": [
+    {
+     "x": 1,
+     "y": 6,
+     "dest": "EverGrandeCity_PokemonLeague",
+     "dest_warp": 4
+    },
+    {
+     "x": 5,
+     "y": 1,
+     "dest": "UnionRoom",
+     "dest_warp": 0
+    },
+    {
+     "x": 9,
+     "y": 1,
+     "dest": "TradeCenter",
+     "dest_warp": 0
+    }
+   ],
+   "emerald": "EverGrandeCity_PokemonLeague_2F",
+   "zone": 344,
+   "scripts": 688,
+   "init_scripts": 689,
+   "text": 556,
+   "entities": 513,
+   "area": 282,
+   "own_matrix": false,
+   "own_scripts": 2026,
+   "own_init": 2027,
+   "own_text": 1028,
+   "claimed_by": "emerald_rooms",
+   "claimed": "emerald_rooms (2026-10-12): Emerald's Pok\u00e9mon League 2F (the Cable Club floor above the League lobby, Emerald's Pok\u00e9mon Center 2F layout); room data/interior_layouts/EverGrandeCity_PokemonLeague_2F.json (b2tools/emerald_rooms.py), zone file data/interiors/emerald/344.json"
+  },
+  "MeteorFalls_StevensCave": {
+   "status": "cave",
+   "map_id": "MAP_METEOR_FALLS_STEVENS_CAVE",
+   "map_type": "MAP_TYPE_UNDERGROUND",
+   "entered_from": "MeteorFalls_1F_1R",
+   "tilesets": [
+    "gTileset_General",
+    "gTileset_MeteorFalls"
+   ],
+   "size": [
+    30,
+    32
+   ],
+   "warps": [
+    {
+     "x": 10,
+     "y": 29,
+     "dest": "MeteorFalls_1F_1R",
+     "dest_warp": 5
+    }
+   ],
+   "emerald": "MeteorFalls_StevensCave",
+   "zone": 377,
+   "scripts": 754,
+   "init_scripts": 755,
+   "text": 589,
+   "entities": 546,
+   "area": 282,
+   "own_matrix": false,
+   "own_scripts": 2018,
+   "own_init": 2019,
+   "own_text": 1024,
+   "claimed_by": "emerald_caves"
+  },
+  "Underwater_Route105": {
+   "status": "cave",
+   "map_id": "MAP_UNDERWATER_ROUTE105",
+   "map_type": "MAP_TYPE_UNDERWATER",
+   "entered_from": "Route105",
+   "tilesets": [
+    "gTileset_General",
+    "gTileset_Underwater"
+   ],
+   "size": [
+    40,
+    80
+   ],
+   "warps": [
+    {
+     "x": 13,
+     "y": 4,
+     "dest": "Underwater_MarineCave",
+     "dest_warp": 0
+    },
+    {
+     "x": 17,
+     "y": 66,
+     "dest": "Underwater_MarineCave",
+     "dest_warp": 0
+    }
+   ],
+   "emerald": "Underwater_Route105",
+   "zone": 379,
+   "scripts": 758,
+   "init_scripts": 759,
+   "text": 591,
+   "entities": 548,
+   "area": 316,
+   "own_matrix": false,
+   "own_scripts": 2020,
+   "own_init": 2021,
+   "own_text": 1025,
+   "claimed_by": "emerald_caves"
+  },
+  "DesertUnderpass": {
+   "status": "cave",
+   "map_id": "MAP_DESERT_UNDERPASS",
+   "map_type": "MAP_TYPE_UNDERGROUND",
+   "entered_from": "Route114_FossilManiacsTunnel",
+   "tilesets": [
+    "gTileset_General",
+    "gTileset_Cave"
+   ],
+   "size": [
+    139,
+    23
+   ],
+   "warps": [
+    {
+     "x": 10,
+     "y": 12,
+     "dest": "Route114_FossilManiacsTunnel",
+     "dest_warp": 2
+    }
+   ],
+   "emerald": "DesertUnderpass",
+   "zone": 375,
+   "scripts": 750,
+   "init_scripts": 751,
+   "text": 587,
+   "entities": 544,
+   "area": 316,
+   "own_matrix": false,
+   "own_scripts": 2016,
+   "own_init": 2017,
+   "own_text": 1023,
+   "claimed_by": "emerald_caves"
+  },
+  "Underwater_Route125": {
+   "status": "cave",
+   "map_id": "MAP_UNDERWATER_ROUTE125",
+   "map_type": "MAP_TYPE_UNDERWATER",
+   "entered_from": "Route125",
+   "tilesets": [
+    "gTileset_General",
+    "gTileset_Underwater"
+   ],
+   "size": [
+    80,
+    40
+   ],
+   "warps": [
+    {
+     "x": 22,
+     "y": 10,
+     "dest": "Underwater_MarineCave",
+     "dest_warp": 0
+    },
+    {
+     "x": 45,
+     "y": 30,
+     "dest": "Underwater_MarineCave",
+     "dest_warp": 0
+    }
+   ],
+   "emerald": "Underwater_Route125",
+   "zone": 382,
+   "scripts": 764,
+   "init_scripts": 765,
+   "text": 594,
+   "entities": 551,
+   "area": 282,
+   "own_matrix": false,
+   "own_scripts": 2022,
+   "own_init": 2023,
+   "own_text": 1026,
+   "claimed_by": "emerald_caves"
+  },
+  "Underwater_Route129": {
+   "status": "cave",
+   "map_id": "MAP_UNDERWATER_ROUTE129",
+   "map_type": "MAP_TYPE_UNDERWATER",
+   "entered_from": "Route129",
+   "tilesets": [
+    "gTileset_General",
+    "gTileset_Underwater"
+   ],
+   "size": [
+    80,
+    40
+   ],
+   "warps": [
+    {
+     "x": 26,
+     "y": 3,
+     "dest": "Underwater_MarineCave",
+     "dest_warp": 0
+    },
+    {
+     "x": 32,
+     "y": 21,
+     "dest": "Underwater_MarineCave",
+     "dest_warp": 0
+    }
+   ],
+   "emerald": "Underwater_Route129",
+   "zone": 386,
+   "scripts": 772,
+   "init_scripts": 773,
+   "text": 598,
+   "entities": 555,
+   "area": 282,
+   "own_matrix": false,
+   "own_scripts": 2024,
+   "own_init": 2025,
+   "own_text": 1027,
+   "claimed_by": "emerald_caves"
+  },
+  "Underwater_MarineCave": {
+   "status": "cave",
+   "map_id": "MAP_UNDERWATER_MARINE_CAVE",
+   "map_type": "MAP_TYPE_UNDERWATER",
+   "entered_from": "Underwater3",
+   "tilesets": [
+    "gTileset_General",
+    "gTileset_Underwater"
+   ],
+   "size": [
+    20,
+    10
+   ],
+   "warps": [
+    {
+     "x": 9,
+     "y": 8,
+     "dest": "MAP_DYNAMIC",
+     "dest_warp": "WARP_ID_DYNAMIC"
+    }
+   ],
+   "emerald": "Underwater_MarineCave",
+   "zone": 371,
+   "scripts": 742,
+   "init_scripts": 743,
+   "text": 583,
+   "entities": 540,
+   "area": 328,
+   "own_matrix": false,
+   "own_scripts": 2010,
+   "own_init": 2011,
+   "own_text": 1020,
+   "claimed_by": "emerald_caves"
+  },
+  "MarineCave_Entrance": {
+   "status": "cave",
+   "map_id": "MAP_MARINE_CAVE_ENTRANCE",
+   "map_type": "MAP_TYPE_UNDERGROUND",
+   "entered_from": "Underwater_MarineCave",
+   "tilesets": [
+    "gTileset_General",
+    "gTileset_Cave"
+   ],
+   "size": [
+    20,
+    20
+   ],
+   "warps": [
+    {
+     "x": 14,
+     "y": 1,
+     "dest": "MarineCave_End",
+     "dest_warp": 0
+    }
+   ],
+   "emerald": "MarineCave_Entrance",
+   "zone": 367,
+   "scripts": 734,
+   "init_scripts": 735,
+   "text": 579,
+   "entities": 536,
+   "area": 282,
+   "own_matrix": false,
+   "own_scripts": 2006,
+   "own_init": 2007,
+   "own_text": 1018,
+   "claimed_by": "emerald_caves"
+  },
+  "MarineCave_End": {
+   "status": "cave",
+   "map_id": "MAP_MARINE_CAVE_END",
+   "map_type": "MAP_TYPE_UNDERGROUND",
+   "entered_from": "MarineCave_Entrance",
+   "tilesets": [
+    "gTileset_General",
+    "gTileset_Cave"
+   ],
+   "size": [
+    27,
+    30
+   ],
+   "warps": [
+    {
+     "x": 20,
+     "y": 4,
+     "dest": "MarineCave_Entrance",
+     "dest_warp": 0
+    }
+   ],
+   "emerald": "MarineCave_End",
+   "zone": 369,
+   "scripts": 738,
+   "init_scripts": 739,
+   "text": 581,
+   "entities": 538,
+   "area": 316,
+   "own_matrix": false,
+   "own_scripts": 2008,
+   "own_init": 2009,
+   "own_text": 1019,
+   "claimed_by": "emerald_caves"
+  },
+  "BattleFrontier_BattlePikeCorridor": {
+   "map_id": "MAP_BATTLE_FRONTIER_BATTLE_PIKE_CORRIDOR",
+   "map_type": "MAP_TYPE_INDOOR",
+   "entered_from": "BattleFrontier_BattlePikeLobby",
+   "tilesets": [
+    "gTileset_Building",
+    "gTileset_BattlePike"
+   ],
+   "size": [
+    14,
+    8
+   ],
+   "warps": [],
+   "emerald": "BattleFrontier_BattlePikeCorridor",
+   "zone": 400,
+   "status": "auto",
+   "scripts": 800,
+   "init_scripts": 801,
+   "text": 629,
+   "entities": 577,
+   "area": 282,
+   "own_matrix": false,
+   "own_scripts": 1952,
+   "own_init": 1953,
+   "own_text": 991,
+   "claimed": "frontier_pike (2026-10-12): the Battle Pike, notes/FRONTIER_PIKE.md; zone, own script/init/text numbers and the room are this agent's"
+  },
+  "BattleFrontier_BattlePikeThreePathRoom": {
+   "map_id": "MAP_BATTLE_FRONTIER_BATTLE_PIKE_THREE_PATH_ROOM",
+   "map_type": "MAP_TYPE_INDOOR",
+   "entered_from": "BattleFrontier_BattlePikeCorridor",
+   "tilesets": [
+    "gTileset_Building",
+    "gTileset_BattlePike"
+   ],
+   "size": [
+    13,
+    11
+   ],
+   "warps": [],
+   "emerald": "BattleFrontier_BattlePikeThreePathRoom",
+   "zone": 401,
+   "status": "auto",
+   "scripts": 802,
+   "init_scripts": 803,
+   "text": 630,
+   "entities": 578,
+   "area": 282,
+   "own_matrix": false,
+   "own_scripts": 1954,
+   "own_init": 1955,
+   "own_text": 992,
+   "claimed": "frontier_pike (2026-10-12): the Battle Pike, notes/FRONTIER_PIKE.md; zone, own script/init/text numbers and the room are this agent's"
+  },
+  "BattleFrontier_BattlePikeRoomNormal": {
+   "map_id": "MAP_BATTLE_FRONTIER_BATTLE_PIKE_ROOM_NORMAL",
+   "map_type": "MAP_TYPE_INDOOR",
+   "entered_from": "BattleFrontier_BattlePikeThreePathRoom",
+   "tilesets": [
+    "gTileset_Building",
+    "gTileset_BattlePike"
+   ],
+   "size": [
+    9,
+    8
+   ],
+   "warps": [],
+   "emerald": "BattleFrontier_BattlePikeRoomNormal",
+   "zone": 402,
+   "status": "auto",
+   "scripts": 804,
+   "init_scripts": 805,
+   "text": 631,
+   "entities": 579,
+   "area": 282,
+   "own_matrix": false,
+   "own_scripts": 1956,
+   "own_init": 1957,
+   "own_text": 993,
+   "claimed": "frontier_pike (2026-10-12): the Battle Pike, notes/FRONTIER_PIKE.md; zone, own script/init/text numbers and the room are this agent's"
+  },
+  "BattleFrontier_BattlePikeRoomWildMons": {
+   "map_id": "MAP_BATTLE_FRONTIER_BATTLE_PIKE_ROOM_WILD_MONS",
+   "map_type": "MAP_TYPE_INDOOR",
+   "entered_from": "BattleFrontier_BattlePikeThreePathRoom",
+   "tilesets": [
+    "gTileset_Building",
+    "gTileset_BattlePike"
+   ],
+   "size": [
+    9,
+    20
+   ],
+   "warps": [],
+   "emerald": "BattleFrontier_BattlePikeRoomWildMons",
+   "zone": 403,
+   "status": "auto",
+   "scripts": 806,
+   "init_scripts": 807,
+   "text": 632,
+   "entities": 580,
+   "area": 282,
+   "own_matrix": false,
+   "own_scripts": 1958,
+   "own_init": 1959,
+   "own_text": 994,
+   "claimed": "frontier_pike (2026-10-12): the Battle Pike, notes/FRONTIER_PIKE.md; zone, own script/init/text numbers and the room are this agent's"
+  },
+  "BattleFrontier_BattlePikeRoomFinal": {
+   "map_id": "MAP_BATTLE_FRONTIER_BATTLE_PIKE_ROOM_FINAL",
+   "map_type": "MAP_TYPE_INDOOR",
+   "entered_from": "BattleFrontier_BattlePikeRoomNormal",
+   "tilesets": [
+    "gTileset_Building",
+    "gTileset_BattlePike"
+   ],
+   "size": [
+    5,
+    8
+   ],
+   "warps": [],
+   "emerald": "BattleFrontier_BattlePikeRoomFinal",
+   "zone": 404,
+   "status": "auto",
+   "scripts": 808,
+   "init_scripts": 809,
+   "text": 633,
+   "entities": 581,
+   "area": 289,
+   "own_matrix": false,
+   "own_scripts": 1960,
+   "own_init": 1961,
+   "own_text": 995,
+   "claimed": "frontier_pike (2026-10-12): the Battle Pike, notes/FRONTIER_PIKE.md; zone, own script/init/text numbers and the room are this agent's"
+  },
+  "BattleFrontier_BattleFactoryPreBattleRoom": {
+   "map_id": "MAP_BATTLE_FRONTIER_BATTLE_FACTORY_PRE_BATTLE_ROOM",
+   "map_type": "MAP_TYPE_INDOOR",
+   "entered_from": "BattleFrontier_BattleFactoryLobby",
+   "tilesets": [
+    "gTileset_Building",
+    "gTileset_BattleFactory"
+   ],
+   "size": [
+    17,
+    14
+   ],
+   "warps": [],
+   "emerald": "BattleFrontier_BattleFactoryPreBattleRoom",
+   "zone": 409,
+   "status": "auto",
+   "scripts": 818,
+   "init_scripts": 819,
+   "text": 638,
+   "entities": 586,
+   "area": 328,
+   "own_matrix": false,
+   "own_scripts": 1964,
+   "own_init": 1965,
+   "own_text": 997,
+   "claimed": "frontier_factory_dome (2026-10-12): the Battle Factory / Battle Dome, notes/FRONTIER_FACTORY_DOME.md; zone, own script/init/text numbers and the room are this agent's"
+  },
+  "BattleFrontier_BattleFactoryBattleRoom": {
+   "map_id": "MAP_BATTLE_FRONTIER_BATTLE_FACTORY_BATTLE_ROOM",
+   "map_type": "MAP_TYPE_INDOOR",
+   "entered_from": "BattleFrontier_BattleFactoryPreBattleRoom",
+   "tilesets": [
+    "gTileset_Building",
+    "gTileset_BattleFactory"
+   ],
+   "size": [
+    13,
+    12
+   ],
+   "warps": [],
+   "emerald": "BattleFrontier_BattleFactoryBattleRoom",
+   "zone": 410,
+   "status": "auto",
+   "scripts": 820,
+   "init_scripts": 821,
+   "text": 639,
+   "entities": 587,
+   "area": 328,
+   "own_matrix": false,
+   "own_scripts": 1966,
+   "own_init": 1967,
+   "own_text": 998,
+   "claimed": "frontier_factory_dome (2026-10-12): the Battle Factory / Battle Dome, notes/FRONTIER_FACTORY_DOME.md; zone, own script/init/text numbers and the room are this agent's"
+  },
+  "BattleFrontier_BattleDomeCorridor": {
+   "map_id": "MAP_BATTLE_FRONTIER_BATTLE_DOME_CORRIDOR",
+   "map_type": "MAP_TYPE_INDOOR",
+   "entered_from": "BattleFrontier_BattleDomeLobby",
+   "tilesets": [
+    "gTileset_Building",
+    "gTileset_BattleDome"
+   ],
+   "size": [
+    48,
+    7
+   ],
+   "warps": [],
+   "emerald": "BattleFrontier_BattleDomeCorridor",
+   "zone": 415,
+   "status": "auto",
+   "scripts": 830,
+   "init_scripts": 831,
+   "text": 644,
+   "entities": 592,
+   "area": 282,
+   "own_matrix": false,
+   "own_scripts": 1970,
+   "own_init": 1971,
+   "own_text": 1000,
+   "claimed": "frontier_factory_dome (2026-10-12): the Battle Factory / Battle Dome, notes/FRONTIER_FACTORY_DOME.md; zone, own script/init/text numbers and the room are this agent's"
+  },
+  "BattleFrontier_BattleDomePreBattleRoom": {
+   "map_id": "MAP_BATTLE_FRONTIER_BATTLE_DOME_PRE_BATTLE_ROOM",
+   "map_type": "MAP_TYPE_INDOOR",
+   "entered_from": "BattleFrontier_BattleDomeCorridor",
+   "tilesets": [
+    "gTileset_Building",
+    "gTileset_BattleDome"
+   ],
+   "size": [
+    9,
+    8
+   ],
+   "warps": [],
+   "emerald": "BattleFrontier_BattleDomePreBattleRoom",
+   "zone": 416,
+   "status": "auto",
+   "scripts": 832,
+   "init_scripts": 833,
+   "text": 645,
+   "entities": 593,
+   "area": 282,
+   "own_matrix": false,
+   "own_scripts": 1972,
+   "own_init": 1973,
+   "own_text": 1001,
+   "claimed": "frontier_factory_dome (2026-10-12): the Battle Factory / Battle Dome, notes/FRONTIER_FACTORY_DOME.md; zone, own script/init/text numbers and the room are this agent's"
+  },
+  "BattleFrontier_BattleDomeBattleRoom": {
+   "map_id": "MAP_BATTLE_FRONTIER_BATTLE_DOME_BATTLE_ROOM",
+   "map_type": "MAP_TYPE_INDOOR",
+   "entered_from": "BattleFrontier_BattleDomePreBattleRoom",
+   "tilesets": [
+    "gTileset_Building",
+    "gTileset_BattleDome"
+   ],
+   "size": [
+    20,
+    10
+   ],
+   "warps": [],
+   "emerald": "BattleFrontier_BattleDomeBattleRoom",
+   "zone": 417,
+   "status": "auto",
+   "scripts": 834,
+   "init_scripts": 835,
+   "text": 646,
+   "entities": 594,
+   "area": 282,
+   "own_matrix": false,
+   "own_scripts": 1974,
+   "own_init": 1975,
+   "own_text": 1002,
+   "claimed": "frontier_factory_dome (2026-10-12): the Battle Factory / Battle Dome, notes/FRONTIER_FACTORY_DOME.md; zone, own script/init/text numbers and the room are this agent's"
+  },
+  "BattleFrontier_BattleArenaCorridor": {
+   "map_id": "MAP_BATTLE_FRONTIER_BATTLE_ARENA_CORRIDOR",
+   "map_type": "MAP_TYPE_INDOOR",
+   "entered_from": "BattleFrontier_BattleArenaLobby",
+   "tilesets": [
+    "gTileset_Building",
+    "gTileset_BattleArena"
+   ],
+   "size": [
+    18,
+    14
+   ],
+   "warps": [],
+   "emerald": "BattleFrontier_BattleArenaCorridor",
+   "status": "auto",
+   "zone": 431,
+   "scripts": 862,
+   "init_scripts": 863,
+   "text": 176,
+   "entities": 170,
+   "area": 349,
+   "own_matrix": false,
+   "own_scripts": 2036,
+   "own_init": 2037,
+   "own_text": 1033,
+   "claimed": "frontier_palace_arena (2026-10-12): the Battle Palace / Battle Arena, notes/FRONTIER.md; zone, own script/init/text numbers and the room are this agent's"
+  },
+  "BattleFrontier_BattleArenaBattleRoom": {
+   "map_id": "MAP_BATTLE_FRONTIER_BATTLE_ARENA_BATTLE_ROOM",
+   "map_type": "MAP_TYPE_INDOOR",
+   "entered_from": "BattleFrontier_BattleArenaCorridor",
+   "tilesets": [
+    "gTileset_Building",
+    "gTileset_BattleArena"
+   ],
+   "size": [
+    16,
+    11
+   ],
+   "warps": [],
+   "emerald": "BattleFrontier_BattleArenaBattleRoom",
+   "status": "auto",
+   "zone": 433,
+   "scripts": 866,
+   "init_scripts": 867,
+   "text": 178,
+   "entities": 172,
+   "area": 349,
+   "own_matrix": false,
+   "own_scripts": 2038,
+   "own_init": 2039,
+   "own_text": 1034,
+   "claimed": "frontier_palace_arena (2026-10-12): the Battle Palace / Battle Arena, notes/FRONTIER.md; zone, own script/init/text numbers and the room are this agent's"
+  },
+  "BattleFrontier_BattlePyramidFloor": {
+   "status": "auto",
+   "map_id": "MAP_BATTLE_FRONTIER_BATTLE_PYRAMID_FLOOR",
+   "map_type": "MAP_TYPE_INDOOR",
+   "entered_from": "BattleFrontier_BattlePyramidLobby",
+   "tilesets": [
+    "gTileset_Building",
+    "gTileset_BattlePyramid"
+   ],
+   "size": [
+    32,
+    32
+   ],
+   "warps": [],
+   "emerald": "BattleFrontier_BattlePyramidFloor",
+   "zone": 388,
+   "scripts": 776,
+   "init_scripts": 777,
+   "text": 600,
+   "entities": 557,
+   "area": 327,
+   "own_matrix": false,
+   "own_scripts": 2042,
+   "own_init": 2043,
+   "own_text": 1036,
+   "claimed": "frontier_pyramid (2026-10-12): the Battle Pyramid, notes/FRONTIER_PYRAMID.md; zone, own script/init/text numbers and the room are this agent's"
+  },
+  "BattleFrontier_BattlePyramidTop": {
+   "status": "auto",
+   "map_id": "MAP_BATTLE_FRONTIER_BATTLE_PYRAMID_TOP",
+   "map_type": "MAP_TYPE_INDOOR",
+   "entered_from": "BattleFrontier_BattlePyramidFloor",
+   "tilesets": [
+    "gTileset_Building",
+    "gTileset_BattlePyramid"
+   ],
+   "size": [
+    34,
+    23
+   ],
+   "warps": [],
+   "emerald": "BattleFrontier_BattlePyramidTop",
+   "zone": 420,
+   "scripts": 840,
+   "init_scripts": 841,
+   "text": 649,
+   "entities": 597,
+   "area": 282,
+   "own_matrix": false,
+   "own_scripts": 2044,
+   "own_init": 2045,
+   "own_text": 1037,
+   "claimed": "frontier_pyramid (2026-10-12): the Battle Pyramid, notes/FRONTIER_PYRAMID.md; zone, own script/init/text numbers and the room are this agent's"
+  }
+ }
+}

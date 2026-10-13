@@ -1,0 +1,8 @@
+…
+Welcome to Lilycove Department Store.{be01}\nWhich floor would you like?
+1F
+2F
+3F
+4F
+5F
+Cancel

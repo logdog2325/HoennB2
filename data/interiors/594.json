@@ -1,0 +1,183 @@
+{
+ "_doc": "SlateportCity_ContestHall (zone 594), built by the specials agent (recipe data/interior_layouts/SlateportCity_ContestHall.json): Musical Theater look, Black 2 interior area 305. Warps in Sapphire's order (one per Sapphire warp tile). People/signs: Sapphire's one-message ones as generated; story people are left for the story phase.",
+ "zone": 594,
+ "room": "SlateportCity_ContestHall",
+ "area": 305,
+ "parent": 448,
+ "warps": [
+  {
+   "at": [
+    10,
+    17
+   ],
+   "tile_only": true,
+   "to": [
+    595,
+    2
+   ],
+   "what": "Sapphire warp 0 -> SlateportCity_ContestLobby 2"
+  },
+  {
+   "at": [
+    11,
+    17
+   ],
+   "tile_only": true,
+   "to": [
+    595,
+    2
+   ],
+   "what": "Sapphire warp 1 -> SlateportCity_ContestLobby 2"
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 1,
+   "model": 25,
+   "script": 1,
+   "dir": 1,
+   "at": [
+    19,
+    15
+   ],
+   "move": 3,
+   "range": [
+    2,
+    2
+   ]
+  },
+  {
+   "uid": 2,
+   "model": 8,
+   "script": 2,
+   "dir": 1,
+   "at": [
+    1,
+    4
+   ],
+   "move": 3,
+   "range": [
+    3,
+    3
+   ]
+  },
+  {
+   "uid": 3,
+   "model": 26,
+   "script": 3,
+   "dir": 1,
+   "at": [
+    9,
+    8
+   ]
+  },
+  {
+   "uid": 4,
+   "model": 44,
+   "script": 4,
+   "dir": 1,
+   "at": [
+    12,
+    8
+   ]
+  },
+  {
+   "uid": 5,
+   "model": 16,
+   "script": 5,
+   "dir": 0,
+   "at": [
+    7,
+    11
+   ]
+  },
+  {
+   "uid": 6,
+   "model": 21,
+   "script": 6,
+   "dir": 0,
+   "at": [
+    9,
+    11
+   ]
+  },
+  {
+   "uid": 7,
+   "model": 10,
+   "script": 7,
+   "dir": 0,
+   "at": [
+    11,
+    11
+   ]
+  },
+  {
+   "uid": 8,
+   "model": 25,
+   "script": 8,
+   "dir": 0,
+   "at": [
+    13,
+    11
+   ]
+  },
+  {
+   "uid": 9,
+   "model": 24,
+   "script": 9,
+   "dir": 1,
+   "at": [
+    8,
+    6
+   ]
+  },
+  {
+   "uid": 10,
+   "model": 64,
+   "script": 10,
+   "dir": 1,
+   "at": [
+    12,
+    6
+   ]
+  },
+  {
+   "uid": 11,
+   "model": 14,
+   "script": 11,
+   "dir": 3,
+   "at": [
+    5,
+    10
+   ]
+  },
+  {
+   "uid": 12,
+   "model": 10,
+   "script": 12,
+   "dir": 2,
+   "at": [
+    15,
+    10
+   ]
+  }
+ ],
+ "signs": [
+  {
+   "script": 13,
+   "at": [
+    12,
+    14
+   ],
+   "dir": 4
+  },
+  {
+   "script": 14,
+   "at": [
+    8,
+    14
+   ],
+   "dir": 4
+  }
+ ]
+}

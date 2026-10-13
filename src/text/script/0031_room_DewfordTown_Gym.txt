@@ -1,0 +1,9 @@
+{0100:0} received the Knuckle Badge\nfrom Brawly.
+The Knuckle Badge makes all Pokémon\nup to Level 30, even those you get in{be00}\ntrades, obey without question.{be01}\nAnd, you’ll be able to use the move\nFlash from TM70 outside of battle.{be01}\nIf you’d like, use this Technical\nMachine, too.
+That TM08 contains Bulk Up.{be01}\nIt’s a move that raises both Attack\nand Defense stats.
+I can see your talent becoming a giant\nwave to cause a storm of astonishment{be00}\namong Trainers one day!
+Hey, how’s it going, Champion-\nbound {0100:0}?{be01}\nDewford’s Gym Leader Brawly commands\nFighting-type Pokémon.{be01}\nGoing against him with Normal-type\nPokémon is asking for trouble.{be01}\nFighting Pokémon will lay a serious\nsmack down on Normal Pokémon,{be00}\nso be careful!{be01}\nWhat’s worse, the Gym is as dark as\nthe ocean floor.{be01}\nBut it will get brighter after defeating\nthe Trainers in your way.{be01}\nHey, okay, go for it!
+Whoah! It’s turned too bright in here!{be01}\nYour future is bright, too!
+Dewford Town Pokémon Gym
+Dewford Town Pokémon Gym{be01}\nBrawly’s Certified Trainers:\n{0100:0}
+Too bad!\nThe Bag is full...

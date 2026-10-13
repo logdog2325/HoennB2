@@ -1,0 +1,17 @@
+{
+ "kind": "trainer",
+ "side": "front",
+ "sprite": 34,
+ "archive": 71,
+ "files": {
+  "static": 272,
+  "parts": 273,
+  "palette": 279
+ },
+ "name": "greta",
+ "note": "Greta (Arena Tycoon, Battle Arena): Black 2 spare class 34's own sprite (Emerald builds only)",
+ "source": "pokeemerald graphics/trainers/front_pics/arena_tycoon_greta.png and its palette (graphics/trainers/front_pics/arena_tycoon_greta.png at 0x8d649d8, png:graphics/trainers/front_pics/arena_tycoon_greta.png palette at 0x8d64d08 in roms/emerald_original.gba)",
+ "layout": "parts and animations of Black 2 front sprite 26",
+ "made_by": "b2tools/sprite_emerald_frontier.py (sprite_upgrade.battle_sprite, as Sapphire's characters)",
+ "mcss_from": 26
+}

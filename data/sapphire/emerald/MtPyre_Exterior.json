@@ -1,0 +1,232 @@
+{
+ "map": "MtPyre_Exterior",
+ "id": "MAP_MT_PYRE_EXTERIOR",
+ "layout": "LAYOUT_MT_PYRE_EXTERIOR",
+ "music": "MUS_MT_PYRE_EXTERIOR",
+ "region_map_section": "MAPSEC_MT_PYRE",
+ "weather": "WEATHER_NONE",
+ "connections": null,
+ "npcs": [
+  {
+   "local_id": 1,
+   "x": 27,
+   "y": 15,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_MT_PYRE_EXTERIOR_MAX_POTION",
+   "script": "MtPyre_Exterior_EventScript_ItemMaxPotion",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 2,
+   "x": 19,
+   "y": 40,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_MT_PYRE_EXTERIOR_TM_SKILL_SWAP",
+   "script": "MtPyre_Exterior_EventScript_ItemTMSkillSwap",
+   "texts": {},
+   "complex": true
+  }
+ ],
+ "signs": [
+  {
+   "x": 9,
+   "y": 8,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 9,
+    "y": 8,
+    "elevation": 0,
+    "item": "ITEM_ULTRA_BALL",
+    "flag": "FLAG_HIDDEN_ITEM_MT_PYRE_EXTERIOR_ULTRA_BALL"
+   }
+  },
+  {
+   "x": 16,
+   "y": 22,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 16,
+    "y": 22,
+    "elevation": 0,
+    "item": "ITEM_MAX_ETHER",
+    "flag": "FLAG_HIDDEN_ITEM_MT_PYRE_EXTERIOR_MAX_ETHER"
+   }
+  }
+ ],
+ "warps": [
+  {
+   "id": 0,
+   "x": 10,
+   "y": 42,
+   "dest_map": "MAP_MT_PYRE_1F",
+   "dest_warp_id": "1"
+  },
+  {
+   "id": 1,
+   "x": 19,
+   "y": 10,
+   "dest_map": "MAP_MT_PYRE_SUMMIT",
+   "dest_warp_id": "1"
+  },
+  {
+   "id": 2,
+   "x": 20,
+   "y": 10,
+   "dest_map": "MAP_MT_PYRE_SUMMIT",
+   "dest_warp_id": "1"
+  }
+ ],
+ "coord_events": [
+  {
+   "type": "trigger",
+   "x": 24,
+   "y": 21,
+   "elevation": 3,
+   "var": "TRIGGER_RUN_IMMEDIATELY",
+   "var_value": "0",
+   "script": "MtPyre_Exterior_EventScript_FogTrigger",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 25,
+   "y": 21,
+   "elevation": 3,
+   "var": "TRIGGER_RUN_IMMEDIATELY",
+   "var_value": "0",
+   "script": "MtPyre_Exterior_EventScript_FogTrigger",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 22,
+   "y": 27,
+   "elevation": 3,
+   "var": "TRIGGER_RUN_IMMEDIATELY",
+   "var_value": "0",
+   "script": "MtPyre_Exterior_EventScript_SunTrigger",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 23,
+   "y": 28,
+   "elevation": 3,
+   "var": "TRIGGER_RUN_IMMEDIATELY",
+   "var_value": "0",
+   "script": "MtPyre_Exterior_EventScript_SunTrigger",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 26,
+   "y": 21,
+   "elevation": 3,
+   "var": "TRIGGER_RUN_IMMEDIATELY",
+   "var_value": "0",
+   "script": "MtPyre_Exterior_EventScript_FogTrigger",
+   "texts": {},
+   "complex": true
+  }
+ ],
+ "wild": {
+  "land_mons": {
+   "encounter_rate": 10,
+   "slot_rates": [
+    20,
+    20,
+    10,
+    10,
+    10,
+    10,
+    5,
+    5,
+    4,
+    4,
+    1,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_SHUPPET",
+     "min": 27,
+     "max": 27
+    },
+    {
+     "species": "SPECIES_SHUPPET",
+     "min": 27,
+     "max": 27
+    },
+    {
+     "species": "SPECIES_SHUPPET",
+     "min": 28,
+     "max": 28
+    },
+    {
+     "species": "SPECIES_SHUPPET",
+     "min": 29,
+     "max": 29
+    },
+    {
+     "species": "SPECIES_VULPIX",
+     "min": 29,
+     "max": 29
+    },
+    {
+     "species": "SPECIES_VULPIX",
+     "min": 27,
+     "max": 27
+    },
+    {
+     "species": "SPECIES_VULPIX",
+     "min": 29,
+     "max": 29
+    },
+    {
+     "species": "SPECIES_VULPIX",
+     "min": 25,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 27,
+     "max": 27
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 27,
+     "max": 27
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 26,
+     "max": 26
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 28,
+     "max": 28
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,12 @@
+My papa told me.{be01}\nHe says this tunnel is full of\ntimid Pokémon.{be01}\nThey get all scared of loud noise and\nmake a big uproar.{be01}\nSo they had to stop the big tunnel\nproject.{be01}\nBut there’s one man.\nHe’s trying to dig the tunnel by himself!
+There was a man who dug a tunnel for\na lady he loved.{be01}\nI don’t really get it, but hey!
+Did you see the cave next to the\nPokémon Mart?{be01}\nThere’s a guy in there who’s trying to\nbust up boulders so he can bust out{be00}\nthrough to the other side.{be01}\nIt’d be great if we could go through...\nIt’ll make it easy to visit Rustboro.
+That cave next to the Pokémon Mart\nis now a tunnel to the other side.{be01}\nIt’s great - it’s easy to go shop for new\nDevon products in Rustboro now.
+“Selected items for your convenience!”\nPokémon Mart
+Verdanturf Town{be01}\n“The windswept highlands with the\nsweet fragrance of grass.”
+“Rejuvenate your tired partners!”\nPokémon Center
+Wanda’s House
+Pokémon Contests\nNormal Rank Registration{be01}\n“Gather here, all ye Pokémon Trainers!”
+Rusturf Tunnel\n“Linking Rustboro and Verdanturf{be01}\n“The tunnel project has been\ncanceled.”
+The way the winds blow, volcanic ash\nis never blown in this direction.{be01}\nThe air is clean and delicious here.\nLiving here should do wonders for even{be00}\nfrail and sickly people.
+I’m feeling a little confident about the\ncuteness of my Pokémon.{be01}\nI wanted to make its Contest debut,\nso that’s why I’m here.

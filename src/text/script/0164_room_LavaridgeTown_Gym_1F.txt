@@ -1,0 +1,9 @@
+{0100:0} received the Heat Badge\nfrom Flannery.
+If you have a Heat Badge, all Pokémon\nup to Level 50, even those you get in{be00}\ntrades from other people, will obey{be00}\nyou completely.{be01}\nAnd, it lets Pokémon use the HM move\nStrength outside of battle.{be01}\nThis is a token of my appreciation.\nDon’t be shy about taking it!
+That TM50 contains Overheat.{be01}\nThat move inflicts serious damage on\nthe opponent.{be01}\nBut it also sharply cuts the Sp. Atk\nof the Pokémon using it. It might not{be00}\nbe suitable for longer battles.
+Your power reminds me of someone...{be01}\nOh! I know! You battle like Norman,\nthe Gym Leader of Petalburg.
+Hey, how’s it going, Champion-\nbound {0100:0}?{be01}\nLavaridge’s Gym Leader Flannery\nuses Fire-type Pokémon.{be01}\nHer passion for Pokémon burns stronger\nand hotter than a volcano.{be01}\nDon’t get too close to her - you’ll burn!\nHose her down with water and then{be00}\ngo for it!
+Yow! That was a scorching hot battle!
+Lavaridge Town Pokémon Gym
+Lavaridge Town Pokémon Gym{be01}\nFlannery’s Certified Trainers:\n{0100:0}
+Too bad!\nThe Bag is full...

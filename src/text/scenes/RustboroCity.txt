@@ -1,0 +1,20 @@
+The Devon Corporation...\nWe all just shorten it to Devon.{be01}\nThat company makes all sorts of\nconvenient products.
+Hm? A sneaky-looking man?{be01}\nCome to think of it, yes, a shady-\nlooking guy went around the corner.
+Have you taken the Pokémon Gym\nchallenge?{be01}\nWhen you get that shiny Gym Badge\nin hand, I guess Trainers begin to{be00}\nrealize what is required of them.
+Hey, that’s Rustboro’s Gym Badge!{be01}\nOut of all the Pokémon Gym Badges,\nRustboro’s is the coolest, I’d say.
+The old sailor Mr. Briney lives in a\ncottage by the sea.{be01}\nHe goes for walks in the tunnel every\nso often.
+The old sailor Mr. Briney lives in a\ncottage by the sea.{be01}\nHe said he was going shopping in\nSlateport for his pet, Peeko.{be01}\nThat old seadog, he must really love\nthat Peeko.
+If a Pokémon gains experience in\nbattles, it can sometimes change in{be00}\nthe way it looks.
+A Pokémon changes shape?\nIf one did that, I would be shocked!
+Get out! Out of the way!
+Wait! Pleeeaaase!{be01}\nDon’t take my Goods!
+Oh, it’s you!{be01}\nYou’re that fantastic Trainer who\nhelped me in Petalburg Woods!{be01}\nHelp me! I was robbed by Team Aqua!\nI have to get the Devon Goods back!{be01}\nIf I don’t...\nI’m going to be in serious trouble.
+That shady character, I think he took\noff towards the tunnel over there.
+Oh! How did it go?\nThe Devon Goods?{be01}\nYou did!\nYou got them back!{be01}\nYou really are a great Trainer!{be01}\nI know! As my thanks, I’ll give you\nanother Great Ball!
+Your Bag’s full.\nI can’t give you this Great Ball.
+Excuse me, please!\nPlease come with me!
+May: Oh, hi, {0100:0}!\nHow’s your Pokédex coming along?{be01}\nMine’s looking pretty decent.{be01}\nI caught Pokémon in Petalburg Woods\nuntil I ran out of Poké Balls.
+Brendan: {0100:0}, how’s your Pokédex?\nHave you filled in any pages yet?{be01}\nMine rules.{be01}\nI went on a Pokémon-catching frenzy\nin Petalburg Woods until I ran out{be00}\nof Poké Balls.
+May: Oh, by the way, I passed Mr. Briney\nin Petalburg Woods.{be01}\nI guess he’s on his way home to his\ncottage by the sea.{be01}\n{0100:0}, you just moved here so you\nmight not know this, but Mr. Briney{be00}\nwas once a revered seafarer.
+Brendan: By the way, I walked by Mr.\nBriney in Petalburg Woods.{be01}\nI bet he was on his way home to his\ncottage by the sea.{be01}\nI bet you didn’t know this, but he’s\nalways got a Pokémon with him.
+Rustboro City Pokémon Gym\nLeader: Roxanne{be01}\n“The Rock-loving honors student!”

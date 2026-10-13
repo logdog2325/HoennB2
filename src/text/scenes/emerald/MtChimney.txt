@@ -1,0 +1,27 @@
+Lava Cookies are Mt. Chimney’s local\nspecialty.{be01}\nTry one. It’s just $200.
+Thank you, dear!
+Oh, fine then.
+Oh, dear. You can’t buy a thing if\nyou’ve not got the money.
+Too bad!\nThe Bag is full...
+Darn… Team Magma outnumbers us!\nWe can’t keep up with them!
+If they expand the land, there’ll be\nless habitats for Water Pokémon!
+We’re Team Aqua!{be01}\nThey’re Team Magma!{be01}\nIt burns me up that they’d use such\na confusing name!
+Meteorites pack amazing power!
+You’d better not mess with us!{be01}\nWe’re trying to awaken that thing\nfor the benefit of everyone!
+We’re Team Magma!{be01}\nThey’re Team Aqua!{be01}\nIt totally annoys me that they’d\nuse a name like ours!
+Yeah!\nDouse them in fire!
+Bufoh!
+Bushaa!
+A Meteorite is fitted on a mysterious\nmachine…{be01}\nDo you want to remove the Meteorite?
+{0100:0} removed the Meteorite from\nthe mysterious machine.
+{0100:0} left the Meteorite where\nit was.
+This mysterious machine…\nIt makes no response whatsoever.
+A Meteorite is fitted on a mysterious\nmachine…{be01}\nThe machine seems to be storing\nenergy in the Meteorite.
+Archie: Grr, {0100:0}!\nI should’ve guessed you’d show up!{be01}\nSee for yourself what the fanatics\nof Team Magma are up to!{be01}\nThey’re trying to inject the stolen\nMeteorite’s power into the volcano!{be01}\nDoing something like that will cause\nthe volcano’s eruption!
+Archie: Grrr…{be01}\nI want to stop that Maxie,\nbut I can’t!{be01}\nNot when I have my hands full battling\nthree opponents at once!
+The power contained in the Meteorite…{be01}\nBy amplifying its power with this\nmachine, Mt. Chimney’s volcanic{be00}\nactivity will instantly intensify…{be01}\nIts energy will grow deep inside\nthe crater and…{be00}\nFufufu…
+Maxie: Hm?\nWho are you?{be01}\n… … … … … …\n… … … … … …{be01}\nI’d heard Archie bemoaning a child\nwho’s been meddling in Team Aqua’s{be00}\naffairs.{be01}\nIt must be you he meant.{be01}\nHumph! So you’re thinking of\ninterfering with us, Team Magma?{be01}\nNow you listen.\nLong ago, living things used the{be00}\nland to live and grow.{be01}\nThat is why land is all important!\nIt is the cradle of all!{be01}\nThat is why Team Magma is dedicated\nto the expansion of the land mass.{be01}\nIt is for further advancement of\nhumankind and Pokémon!{be01}\nAnd for that, we need the power of\nwhat sleeps within this mountain…{be01}\nOh! There was no need for you to\nlearn that much.{be01}\nBut, no matter!\nI’ll teach you the consequences of{be00}\nmeddling in our grand design!
+Maxie: But, enough.\nI will back off this time.{be01}\nBut don’t think that this is the last\nyou’ve seen of Team Magma.{be01}\nFufufu…{be01}\nEven without the Meteorite, if we\nobtain that Orb… Fufufu…
+Archie: {0100:0}!\nThank you!{be01}\nWith your help, we thwarted Team\nMagma’s destructive plan!{be01}\nBut… You…\nWhose side are you on?{be01}\nAh, it doesn’t matter.{be01}\nWe will remain vigilant and keep up\nour pursuit of Team Magma.{be01}\n{0100:0}, we shall meet again!
+That annoying Team Aqua…\nThey always mess with our plans!
+We’re going to keep making more land!

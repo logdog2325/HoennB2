@@ -1,0 +1,115 @@
+{
+ "rows": [
+  {
+   "feature": "Player & rival houses (Littleroot)",
+   "sapphire": "../screenshots/plan/sap_player_house.png",
+   "models": [
+    {
+     "label": "t1_house_01 (Nuvema)",
+     "path": "../work/models/nuvema_accumula/pack0_004_t1_house_01/t1_house_01.glb"
+    },
+    {
+     "label": "t1_house_02 (Nuvema)",
+     "path": "../work/models/nuvema_accumula/pack0_005_t1_house_02/t1_house_02.glb"
+    }
+   ],
+   "note": "<b>New model in Littleroot's house shape</b> (two-tier roof, door left of centre, window right, mailbox), sized to Sapphire's 5\u00d75 footprint, textured with these Nuvema house textures. Shown: style reference."
+  },
+  {
+   "feature": "Prof. Birch's lab",
+   "sapphire": "../screenshots/plan/sap_lab.png",
+   "models": [
+    {
+     "label": "t1_labo_01 (Juniper's lab)",
+     "path": "../work/models/nuvema_accumula/pack0_006_t1_labo_01/t1_labo_01.glb"
+    }
+   ],
+   "note": "<b>New model in Birch's lab shape</b> (long ridged roof, rooftop vent, two windows), 7\u00d76 footprint, textured with Juniper's lab textures. Shown: style reference."
+  },
+  {
+   "feature": "Pok\u00e9mon Center (Oldale)",
+   "sapphire": "../screenshots/plan/sap_pokecenter.png",
+   "models": [
+    {
+     "label": "pc_01 (every town)",
+     "path": "../work/models/nuvema_accumula/pack0_000_pc_01/pc_01.glb"
+    }
+   ],
+   "note": "<b>New model in the Gen 3 Center shape</b> (rounded red roof with Pok\u00e9 Ball, glass front), 4\u00d74 footprint, built from <code>pc_01</code>'s own textures. Shown: style reference."
+  },
+  {
+   "feature": "Pok\u00e9 Mart (Oldale)",
+   "sapphire": "../screenshots/plan/sap_mart.png",
+   "models": [
+    {
+     "label": "t2_house01 (Accumula, blue roof)",
+     "path": "../work/models/nuvema_accumula/pack0_002_t2_house01/t2_house01.glb"
+    },
+    {
+     "label": "c5_market_01 (Castelia, other pack)",
+     "path": "../work/models/shops/pack8_052_c5_market_01/c5_market_01.glb"
+    },
+    {
+     "label": "wf_shop_s1 (White Forest)",
+     "path": "../work/models/shops/pack47_419_wf_shop_s1/wf_shop_s1.glb"
+    }
+   ],
+   "note": "<b>New model in the Gen 3 Mart shape</b> (same body as the Center, blue roof), 4\u00d74 footprint: <code>pc_01</code> walls + Black 2 blue roof tiles. Black 2 has no Mart building of its own; these are style references only."
+  },
+  {
+   "feature": "Oldale houses",
+   "sapphire": "../screenshots/plan/sap_oldale_house.png",
+   "models": [
+    {
+     "label": "t2_house01 (Accumula)",
+     "path": "../work/models/nuvema_accumula/pack0_002_t2_house01/t2_house01.glb"
+    },
+    {
+     "label": "t06_house_03 (Floccesy, other pack)",
+     "path": "../work/models/floccesy_aspertia/pack53_311_t06_house_03/t06_house_03.glb"
+    }
+   ],
+   "note": "<b>New model in Oldale's house shape</b> (flat orange ridged roof, door + window), 4\u00d74 footprint, orange roof tiles from Floccesy/the lab. Shown: style reference."
+  },
+  {
+   "feature": "Trees, tall grass, ledges, paths",
+   "sapphire": "../screenshots/plan/sap_tallgrass_ledge.png",
+   "models": [
+    {
+     "label": "Route 1 chunk 1",
+     "path": "../work/models/route1/chunk0001_area2/map23_23.glb"
+    },
+    {
+     "label": "Route 1 chunk 3",
+     "path": "../work/models/route1/chunk0003_area2/map24_22.glb"
+    },
+    {
+     "label": "Nuvema chunk 0",
+     "path": "../work/models/nuvema_accumula/chunk0000_area2/map24_23.glb"
+    }
+   ],
+   "note": "<b>These are not separate models in Gen 5</b>: trees, grass, ledges, fences and paths are baked into each map chunk's terrain model, textured from the area's texture set. We build new terrain from area 2's textures (and pieces cut from these chunks). Tool choice is in the next section of the plan."
+  },
+  {
+   "feature": "Signs",
+   "sapphire": "../screenshots/plan/sap_sign.png",
+   "models": [
+    {
+     "label": "sign01",
+     "path": "../work/models/nuvema_accumula/pack0_151_sign01/sign01.glb"
+    },
+    {
+     "label": "sign04",
+     "path": "../work/models/nuvema_accumula/pack0_154_sign04/sign04.glb"
+    }
+   ],
+   "note": "<b>Use the shared Gen 5 sign models</b> (town sign, route sign, info sign) \u2014 placed as buildings, with a sign event on the tile in front."
+  },
+  {
+   "feature": "Texture kit (Black 2)",
+   "sapphire": "",
+   "models": [],
+   "note": "<img src=\"../screenshots/plan/b2_building_textures.png\" style=\"max-width:100%;image-rendering:pixelated;border-radius:4px\">"
+  }
+ ]
+}

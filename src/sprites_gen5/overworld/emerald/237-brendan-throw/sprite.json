@@ -1,0 +1,24 @@
+{
+ "kind": "overworld",
+ "code": 237,
+ "sheet": 215,
+ "frames": 4,
+ "size": [
+  32,
+  32
+ ],
+ "controller": 11,
+ "textures": [
+  "t4x4x4.0",
+  "t4x4x4.1",
+  "t4x4x4.2",
+  "t4x4x4.3"
+ ],
+ "palette": "t4x4x4",
+ "name": "brendan-throw",
+ "note": "Brendan (player, Emerald outfit), throw: throw: stand, ball raised, raised high x2",
+ "source": "community: src/sprites/community/incoming/emerald/brendan_emerald_hyo-oppa.png by hyo-oppa (cut, placed, palette-indexed; no colour merged)",
+ "colours": 13,
+ "merged_colours": [],
+ "made_by": "b2tools/sprite_community_emerald.py"
+}

@@ -1,0 +1,97 @@
+{
+ "zone": 92,
+ "room": "AbandonedShip_Rooms_B1F",
+ "area": 337,
+ "header": {
+  "map_type": 16,
+  "npc_cache": 24,
+  "weather_word": 0,
+  "flags": 22817,
+  "icon_word": 32783,
+  "bgm0": 1193,
+  "bgm1": 1193,
+  "bgm2": 1193,
+  "bgm3": 1193,
+  "place": 65,
+  "place_display": 0,
+  "parent": 74,
+  "encounters": 41,
+  "enc_slot": 2
+ },
+ "warps": [
+  {
+   "at": [
+    4,
+    1
+   ],
+   "tile_only": true,
+   "to": [
+    73,
+    2
+   ],
+   "what": "Sapphire warp 0 (4,1) -> AbandonedShip_Corridors_B1F 2"
+  },
+  {
+   "at": [
+    13,
+    1
+   ],
+   "tile_only": true,
+   "to": [
+    73,
+    3
+   ],
+   "what": "Sapphire warp 1 (13,1) -> AbandonedShip_Corridors_B1F 3"
+  },
+  {
+   "at": [
+    22,
+    1
+   ],
+   "tile_only": true,
+   "to": [
+    73,
+    4
+   ],
+   "what": "Sapphire warp 2 (22,1) -> AbandonedShip_Corridors_B1F 4"
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 1,
+   "model": 25,
+   "script": 1,
+   "dir": 2,
+   "at": [
+    25,
+    6
+   ],
+   "what": "OBJ_EVENT_GFX_FAT_MAN AbandonedShip_Rooms_B1F_EventScript_FatMan"
+  },
+  {
+   "uid": 2,
+   "model": 110,
+   "script": 7085,
+   "flag": 1185,
+   "dir": 1,
+   "at": [
+    6,
+    7
+   ],
+   "what": "item ball ITEM_ESCAPE_ROPE"
+  }
+ ],
+ "signs": [
+  {
+   "script": 2,
+   "at": [
+    24,
+    6
+   ],
+   "dir": 4,
+   "what": "trash can (Sapphire MB_TRASH_CAN, EventScript_EmptyTrashCan)"
+  }
+ ],
+ "triggers": [],
+ "what": "ship_hideouts: AbandonedShip_Rooms_B1F (b2tools/ship_hideouts_rooms.py); story: "
+}

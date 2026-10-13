@@ -1,0 +1,3 @@
+The door is closed.
+Use the Basement Key?
+{0100:0} used the Basement Key.{be01}\nThe door opened!

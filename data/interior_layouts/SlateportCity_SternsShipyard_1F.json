@@ -1,0 +1,401 @@
+{
+ "_doc": "Stern's Shipyard 1F (Sapphire 21x15; zone 14, area 289). Office (cols 0-5, Sapphire's teal hexagon floor = the style floor) and workshop (cols 7-20, Sapphire's olive metal floor = floor_tex in77k_yuka1) separated by Sapphire's white partition at col 6 (rows 2-8 and 11-14: a 40-unit block, open at rows 9-10). Workshop furniture row along the back wall (row 1): consoles (8-10, 1) = Black 2 lab cabinets machine02/machine01, wall panels (13,1) (15,1) = monitor pictures in22_tv02/in22_tv04 (303). Doorway up (3,1) = Black 2's ship cabin door cabin_door (Royal Unova). Office: the ship-model counter (0-1, 2) = white counter shelf03; desks with PCs (0-1, 5/8/11) = shelf03 + monitor01 on top; Sapphire's drawing board (4-5, 6-7) = lab table table02; red stools = cushions chushion01. Workshop: Sapphire's big engine (11-14, 4-9) = Juniper's lab machines machine_l02 + machine_l01; the small machinery (9-10, 5-6) = machine01/machine02; orange lattice girders (7, 4-6) (10, 12) (14, 12) = thin lattice blocks (fac_girder); orange plank stacks (19-20, 4-6) (7-9, 12-14) (18-20, 11-13) = wood plank blocks (fac_planks). Blocks are terrain: a chunk holds at most 32 furniture placements (field_g3d_mapper.c: propCapacity1 = 0x20, and the game writes past the array without a check), so the stacks are not furniture. Sapphire's ceiling hooks (17,0) (20,0) have no Black 2 model: left out. Girders end 12 units north of the walkable tile in front of them (FRONT_H; walkability 2026-10-11).",
+ "map": "SlateportCity_SternsShipyard_1F",
+ "style": "fac_ship",
+ "floor": [
+  [
+   0,
+   2,
+   5,
+   14
+  ],
+  [
+   6,
+   2,
+   6,
+   14
+  ],
+  [
+   7,
+   1,
+   20,
+   14
+  ]
+ ],
+ "mats": [
+  {
+   "tex": "chip_mat",
+   "src": 285,
+   "rect": [
+    2,
+    14,
+    3,
+    14
+   ],
+   "border": 0.25,
+   "border_units": 4,
+   "y": 0,
+   "_what": "door mat"
+  }
+ ],
+ "decals": [
+  {
+   "tex": "in22_tv02",
+   "src": 303,
+   "at": [
+    13.5
+   ],
+   "y": 14,
+   "w": 12,
+   "h": 10,
+   "gap": 1,
+   "_what": "wall panel (13,1)"
+  },
+  {
+   "tex": "in22_tv04",
+   "src": 303,
+   "at": [
+    15.5
+   ],
+   "y": 14,
+   "w": 12,
+   "h": 10,
+   "gap": 1,
+   "_what": "wall panel (15,1)"
+  }
+ ],
+ "furniture": [
+  {
+   "m": "cabin_door",
+   "at": [
+    3.5,
+    2.5
+   ],
+   "wall": "N",
+   "gap": 1,
+   "_what": "doorway up to 2F (warp tile 3,1, entered walking north)"
+  },
+  {
+   "m": "shelf03",
+   "tiles": [
+    0,
+    2,
+    1,
+    2
+   ],
+   "wall": "N",
+   "_what": "ship model counter (0-1, 2)"
+  },
+  {
+   "m": "shelf03",
+   "tiles": [
+    0,
+    5,
+    1,
+    5
+   ],
+   "_what": "desk (0-1, 5)"
+  },
+  {
+   "m": "monitor01",
+   "at": [
+    0.6,
+    5.5
+   ],
+   "y": 0,
+   "_what": "PC on the desk (2 units off the desk ends: their faces lay in one plane)",
+   "dx": -2
+  },
+  {
+   "m": "shelf03",
+   "tiles": [
+    0,
+    8,
+    1,
+    8
+   ],
+   "_what": "desk (0-1, 8)"
+  },
+  {
+   "m": "monitor01",
+   "at": [
+    0.6,
+    8.5
+   ],
+   "y": 0,
+   "_what": "PC on the desk (2 units off the desk ends: their faces lay in one plane)",
+   "dx": -2
+  },
+  {
+   "m": "shelf03",
+   "tiles": [
+    0,
+    11,
+    1,
+    11
+   ],
+   "_what": "desk (0-1, 11)"
+  },
+  {
+   "m": "monitor01",
+   "at": [
+    0.6,
+    11.5
+   ],
+   "y": 0,
+   "_what": "PC on the desk (2 units off the desk ends: their faces lay in one plane)",
+   "dx": -2
+  },
+  {
+   "m": "table02_2w",
+   "tiles": [
+    4,
+    6,
+    5,
+    6
+   ],
+   "_what": "drawing board (4-5, 6-7) (row 1/2: table02 at 2 tiles)"
+  },
+  {
+   "m": "table02_2w",
+   "tiles": [
+    4,
+    7,
+    5,
+    7
+   ],
+   "_what": "drawing board (4-5, 6-7) (row 2/2: table02 at 2 tiles)"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    1,
+    6
+   ],
+   "_what": "stool"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    0,
+    9
+   ],
+   "_what": "stool"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    1,
+    12
+   ],
+   "_what": "stool"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    4,
+    8
+   ],
+   "_what": "stool"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    5,
+    5
+   ],
+   "_what": "stool (the dock worker's)"
+  },
+  {
+   "m": "machine02",
+   "tile": [
+    8,
+    1
+   ],
+   "wall": "N",
+   "_what": "console (8,1)"
+  },
+  {
+   "m": "machine01",
+   "tile": [
+    9,
+    1
+   ],
+   "wall": "N",
+   "_what": "console (9,1)"
+  },
+  {
+   "m": "machine02",
+   "tile": [
+    10,
+    1
+   ],
+   "wall": "N",
+   "_what": "cabinet (10,1)"
+  },
+  {
+   "m": "machine_l02",
+   "at": [
+    13.0,
+    5.6
+   ],
+   "_what": "engine, top (11-14, 4-6)"
+  },
+  {
+   "m": "machine_l01",
+   "at": [
+    13.0,
+    8.0
+   ],
+   "_what": "engine, base (11-14, 7-9)"
+  },
+  {
+   "m": "machine01",
+   "tile": [
+    9,
+    5
+   ],
+   "_what": "machinery (9,5)"
+  },
+  {
+   "m": "machine02",
+   "tile": [
+    10,
+    5
+   ],
+   "_what": "machinery (10,5)"
+  },
+  {
+   "m": "table02_2w",
+   "tiles": [
+    9,
+    6,
+    10,
+    6
+   ],
+   "_what": "machinery (9-10, 6) (table02 at 2 tiles)"
+  }
+ ],
+ "floor_tex": [
+  {
+   "rect": [
+    7,
+    1,
+    20,
+    14
+   ],
+   "tex": "in77k_yuka1",
+   "src": 379,
+   "size": 32,
+   "_what": "workshop floor (Sapphire's olive metal floor)"
+  }
+ ],
+ "blocks": [
+  {
+   "use": "fac_partition",
+   "rect": [
+    6,
+    2,
+    6,
+    8
+   ],
+   "_what": "white partition (6, 2-8)"
+  },
+  {
+   "use": "fac_partition",
+   "rect": [
+    6,
+    11,
+    6,
+    14
+   ],
+   "_what": "white partition (6, 11-14)"
+  },
+  {
+   "use": "fac_girder",
+   "units": [
+    7.2,
+    4.0,
+    7.8,
+    6.25
+   ],
+   "_what": "girder (7, 4-6) (walkability 2026-10-11: ends 12 units north of the walkable tile south of it, the head rule FRONT_H: it cut the player standing there)"
+  },
+  {
+   "use": "fac_girder",
+   "units": [
+    10.2,
+    12.0,
+    10.8,
+    12.25
+   ],
+   "h": 18,
+   "_what": "girder (10, 9-12; solid at 12) (walkability 2026-10-11: walkable on both sides, so a stub FRONT_H (18) high ending 12 units north of the tile south of it: taller it cut the head of the player south of it, or hid the head of the player north of it)"
+  },
+  {
+   "use": "fac_girder",
+   "units": [
+    14.2,
+    12.0,
+    14.8,
+    12.25
+   ],
+   "h": 18,
+   "_what": "girder (14, 10-12; solid at 12) (walkability 2026-10-11: walkable on both sides, so a stub FRONT_H (18) high ending 12 units north of the tile south of it: taller it cut the head of the player south of it, or hid the head of the player north of it)"
+  },
+  {
+   "use": "fac_planks",
+   "rect": [
+    19,
+    4,
+    20,
+    6
+   ],
+   "_what": "plank stack (19-20, 4-6)"
+  },
+  {
+   "use": "fac_planks",
+   "tiles": [
+    [
+     7,
+     12
+    ],
+    [
+     7,
+     13
+    ],
+    [
+     7,
+     14
+    ],
+    [
+     8,
+     13
+    ],
+    [
+     8,
+     14
+    ],
+    [
+     9,
+     13
+    ],
+    [
+     9,
+     14
+    ]
+   ],
+   "_what": "plank stacks (7-9, 12-14)"
+  },
+  {
+   "use": "fac_planks",
+   "rect": [
+    18,
+    11,
+    20,
+    13
+   ],
+   "_what": "plank stacks (18-20, 11-13)"
+  }
+ ]
+}

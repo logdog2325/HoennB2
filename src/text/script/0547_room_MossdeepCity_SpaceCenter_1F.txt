@@ -1,0 +1,12 @@
+A rocket launch demands perfection.\nNot even a 1% margin of error is allowed.{be01}\nEven if it’s 99% okay, the whole thing\nis useless if 1% happens to be no good.{be01}\nDespite that, we never stop trying.\nWhy? It’s a dream that never ends.
+Some people claim that Pokémon came\nfrom space. Could it be true?
+A giant chunk of metal bursts through\nthe skies and flies into space...{be01}\nIt boggles my mind!
+The rocket’s launch is imminent!
+The rocket launched safely!\nThat’s successful launch no. {0100:1}!
+I was taking a stroll down the beach\nwhen I found this.{be01}\nIt’s not anything I need, so you can\nhave it.
+The Hoenn region has been famous for \nits meteor showers for a long time.
+Too bad!\nThe Bag is full...
+Oh! You’re the new Champion!\nThen let me tell you something.{be01}\nLast night, a comet passed over the\nHoenn region.{be01}\nThat comet comes back only once\nevery thousand years.{be01}\nAs we watched it, a light fell from\nthe sky onto Mossdeep’s beach.{be01}\nWe went to see, and found this\nPokémon fast asleep on the sand.{be01}\nIt’s called Jirachi. They say it\nsleeps for a thousand years...{be01}\n...and wakes for only seven days,\nwhen that comet shines in the sky.{be01}\nThey also say it grants any wish\nmade while it’s awake.{be01}\nBut the Space Center is no place to\nlook after a Pokémon.{be01}\nChampion, will you take care of\nJirachi for us?
+{0100:0} received Jirachi!
+Hm? You don’t seem to have any room\nfor this Pokémon.
+Jirachi woke up for the comet...\nWhat wish will it grant you, I wonder?{be01}\nSome people claim that Pokémon came\nfrom space. Maybe it’s true!

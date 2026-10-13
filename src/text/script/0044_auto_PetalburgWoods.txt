@@ -1,0 +1,18 @@
+Hmmm...\nNot a one to be found...
+Hello, have you seen any Pokémon\ncalled Shroomish around here?{be01}\nI really love that Pokémon.
+I was going to ambush you, but you\nhad to dawdle in Petalburg Woods{be00}\nforever, didn’t you?{be01}\nI got sick of waiting, so here I am!
+You! Devon Researcher!{be01}\nHand over those papers!
+Aiyeeeh!{be01}\nYou’re a Pokémon Trainer, aren’t you?\nYou’ve got to help me, please!
+Hunh? What do you think you’re doing?\nWhat, you’re going to protect him?{be01}\nNo one who crosses Team Aqua\ngets any mercy, not even a kid!{be01}\nCome on and battle me!
+Grrr... You’ve got some nerve\nmeddling with Team Aqua!{be00}\nCome on and battle me again!{be01}\nI wish I could say that, but I’m out of\nPokémon...{be01}\nAnd, hey, we of Team Aqua are also\nafter something in Rustboro.{be01}\nI’ll let you go today!
+Whew...\nThat was awfully close!{be01}\nThanks to you, he didn’t rob me of\nthese important papers.{be01}\nI know, I’ll give you a Great Ball as\nmy thanks!
+You’re loaded with items.\nI can’t give you this Great Ball.
+Didn’t that Team Aqua thug say\nthey were after something in{be00}\nRustboro, too?
+Uh-oh! It’s a crisis!\nI can’t be wasting time!
+Oh, neat!\nThat’s the Badge from Rustboro Gym!{be01}\nYou must be a Trainer.\nYou should try using this item.
+It’s a Miracle Seed.\nIf a Pokémon holds that item, its{be00}\nGrass-type moves become stronger.{be01}\nBesides Miracle Seed, I think there are\nother convenient items for Pokémon{be00}\nto hold.
+The {0100:1} flew away!
+Trainer Tips{be01}\nAny Pokémon that appears even once\nin a battle is awarded Exp. Points.{be01}\nTo raise a weak Pokémon, put it at the\ntop of the team list.{be01}\nAs soon as a battle starts, switch it\nout. It will earn Exp. Points without{be00}\nbeing exposed to any harm.
+Trainer Tips{be01}\nIn addition to Hit Points (HP), Pokémon\nhave Power Points (PP) that are used to{be00}\nmake moves during battle.{be01}\nIf a Pokémon runs out of PP, it must be\ntaken to a Pokémon Center.
+Yo, there!\nYour Pokémon doing okay?{be01}\nIf your Pokémon are weak and you want\nto avoid battles, you should stay out{be00}\nof tall grass.
+Sometimes, there are things on the\nground even if you can’t see them.{be01}\nThat’s why I always check where I’m\nwalking.

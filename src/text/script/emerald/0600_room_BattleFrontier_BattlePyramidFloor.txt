@@ -1,0 +1,739 @@
+This floor’s exit is in\nthat direction: ↑
+This floor’s exit is in\nthat direction: ←
+This floor’s exit is in\nthat direction: →
+This floor’s exit is in\nthat direction: ↓
+Are you looking for items?{be01}\nThere isn’t anything left to\nbe found!
+Are you looking for items?{be01}\nThere is one item left to\nbe found.
+Are you looking for items?{be01}\nThere are two items left to\nbe found.
+Are you looking for items?{be01}\nThere are three items left to\nbe found.
+Are you looking for items?{be01}\nThere are four items left to\nbe found.
+Are you looking for items?{be01}\nThere are five items left to\nbe found.
+Are you looking for items?{be01}\nThere are six items left to\nbe found.
+Are you looking for items?{be01}\nThere are seven items left to\nbe found.
+Are you looking for items?{be01}\nThere are eight items left to\nbe found.
+You were really awesome!{be01}\nThere’s no one left that\ncan beat you!
+You were really awesome!{be01}\nBut there’s still one tough\nTrainer other than me!
+You were really awesome!{be01}\nBut there are still two tough\nTrainers other than me!
+You were really awesome!{be01}\nBut there are still three tough\nTrainers other than me!
+You were really awesome!{be01}\nBut there are still four tough\nTrainers other than me!
+You were really awesome!{be01}\nBut there are still five tough\nTrainers other than me!
+You were really awesome!{be01}\nBut there are still six tough\nTrainers other than me!
+You were really awesome!{be01}\nBut there are still seven tough\nTrainers other than me!
+The exit on this floor is in\nthe ↑ direction.
+The exit on this floor is in\nthe ← direction.
+The exit on this floor is in\nthe → direction.
+The exit on this floor is in\nthe ↓ direction.
+Because you won, I’ll tell you\na little secret!{be01}\nThere isn’t anything left\nlying around here.
+Because you won, I’ll tell you\na little secret!{be01}\nThere is just one item\nlying around here.
+Because you won, I’ll tell you\na little secret!{be01}\nThere are two items left\nlying around here.
+Because you won, I’ll tell you\na little secret!{be01}\nThere are three items left\nlying around here.
+Because you won, I’ll tell you\na little secret!{be01}\nThere are four items left\nlying around here.
+Because you won, I’ll tell you\na little secret!{be01}\nThere are five items left\nlying around here.
+Because you won, I’ll tell you\na little secret!{be01}\nThere are six items left\nlying around here.
+Because you won, I’ll tell you\na little secret!{be01}\nThere are seven items left\nlying around here.
+Because you won, I’ll tell you\na little secret!{be01}\nThere are eight items\nlying around here.
+This is so upsetting!{be01}\nBut there are no more Trainers\nwho can engage you!
+This is so upsetting!{be01}\nBut there’s one Trainer left!\nI’m sure you will be humbled!
+This is so upsetting!{be01}\nBut there are two Trainers left!\nSomeone will humble you!
+This is so upsetting!{be01}\nBut there are three Trainers left!\nSomeone will humble you!
+This is so upsetting!{be01}\nBut there are four Trainers left!\nSomeone will humble you!
+This is so upsetting!{be01}\nBut there are five Trainers left!\nSomeone will humble you!
+This is so upsetting!{be01}\nBut there are six Trainers left!\nSomeone will humble you!
+This is so upsetting!{be01}\nBut there are seven Trainers left!\nSomeone will humble you!
+The exit is over\nthat ↑ way.
+The exit is over\nthat ← way.
+The exit is over\nthat → way.
+The exit is over\nthat ↓ way.
+How’s your stock of items holding up?{be01}\nI reckon there are no more items\nwaiting to be found on this floor.{be00}\nYou take care now!
+How’s your stock of items holding up?{be01}\nI reckon there’s but one item left\nwaiting to be found on this floor.
+How’s your stock of items holding up?{be01}\nI reckon there are two items left\nwaiting to be found on this floor.
+How’s your stock of items holding up?{be01}\nI reckon there are three items left\nwaiting to be found on this floor.
+How’s your stock of items holding up?{be01}\nI reckon there are four items left\nwaiting to be found on this floor.
+How’s your stock of items holding up?{be01}\nI reckon there are five items left\nwaiting to be found on this floor.
+How’s your stock of items holding up?{be01}\nI reckon there are six items left\nwaiting to be found on this floor.
+How’s your stock of items holding up?{be01}\nI reckon there are seven items left\nwaiting to be found on this floor.
+How’s your stock of items holding up?{be01}\nI reckon there are eight items left\nwaiting to be found on this floor.
+That’s pretty impressive!{be01}\nYou’ve gone through all the Trainers\non this floor.
+That’s pretty impressive!{be01}\nBut there’s still one more Trainer\non this floor. Can you prevail?
+That’s pretty impressive!{be01}\nBut there are two more Trainers\non this floor. Can you beat them both?
+That’s pretty impressive!{be01}\nBut there are three more Trainers\non this floor. Can you beat them all?
+That’s pretty impressive!{be01}\nBut there are four more Trainers\non this floor. Can you beat them all?
+That’s pretty impressive!{be01}\nBut there are five more Trainers\non this floor. Can you beat them all?
+That’s pretty impressive!{be01}\nBut there are six more Trainers\non this floor. Can you beat them all?
+That’s pretty impressive!{be01}\nBut there are seven more Trainers\non this floor. Can you beat them all?
+On this floor, the exit is somewhere\nin the ↑ direction.
+On this floor, the exit is somewhere\nin the ← direction.
+On this floor, the exit is somewhere\nin the → direction.
+On this floor, the exit is somewhere\nin the ↓ direction.
+You’re strong, so you’ve earned\na hint!{be01}\nThere appear to be no more\nitems on the ground.
+You’re strong, so you’ve earned\na hint!{be01}\nThere appears to be only one more\nitem on the ground.
+You’re strong, so you’ve earned\na hint!{be01}\nThere appear to be two more\nitems on the ground.
+You’re strong, so you’ve earned\na hint!{be01}\nThere appear to be three more\nitems on the ground.
+You’re strong, so you’ve earned\na hint!{be01}\nThere appear to be four more\nitems on the ground.
+You’re strong, so you’ve earned\na hint!{be01}\nThere appear to be five more\nitems on the ground.
+You’re strong, so you’ve earned\na hint!{be01}\nThere appear to be six more\nitems on the ground.
+You’re strong, so you’ve earned\na hint!{be01}\nThere appear to be seven more\nitems on the ground.
+You’re strong, so you’ve earned\na hint!{be01}\nThere appear to be eight more\nitems on the ground.
+There isn’t a single person left who\ncan defeat you now…
+Maybe you could complete your sweep\nwith the one Trainer left on this floor.
+Maybe you could sweep through\nthe two Trainers left on this floor.
+Maybe you could sweep through\nthe three Trainers left on this floor.
+Maybe you could sweep through\nthe four Trainers left on this floor.
+Maybe you could sweep through\nthe five Trainers left on this floor.
+Maybe you could sweep through\nthe six Trainers left on this floor.
+Maybe you could sweep through\nthe seven Trainers left on this floor.
+The exit?\nIt’s that ↑ way.
+The exit?\nIt’s that ← way.
+The exit?\nIt’s that → way.
+The exit?\nIt’s that ↓ way.
+On this floor of the Pyramid,\nI hear there are no items…
+On this floor of the Pyramid,\nI hear there is one item…
+On this floor of the Pyramid,\nI hear there are two items…
+On this floor of the Pyramid,\nI hear there are three items…
+On this floor of the Pyramid,\nI hear there are four items…
+On this floor of the Pyramid,\nI hear there are five items…
+On this floor of the Pyramid,\nI hear there are six items…
+On this floor of the Pyramid,\nI hear there are seven items…
+On this floor of the Pyramid,\nI hear there are eight items…
+Your skills are beyond reproach.{be01}\nThere are no more Trainers here\nwho have any chance of beating you.
+You may have what it takes to beat\nthe one expert Trainer who remains.
+You may have what it takes to beat\nthe two expert Trainers who remain.
+You may have what it takes to beat\nthe three expert Trainers who remain.
+You may have what it takes to beat\nthe four expert Trainers who remain.
+You may have what it takes to beat\nthe five expert Trainers who remain.
+You may have what it takes to beat\nthe six expert Trainers who remain.
+You may have what it takes to beat\nthe seven expert Trainers who remain.
+The exit happens to be in\nthe ↑ direction.
+The exit happens to be in\nthe ← direction.
+The exit happens to be in\nthe → direction.
+The exit happens to be in\nthe ↓ direction.
+Have you collected any items?{be01}\nI believe there are no more\nitems on this floor.
+Have you collected any items?{be01}\nI believe there is one more\nitem on this floor.
+Have you collected any items?{be01}\nI believe there are two more\nitems on this floor.
+Have you collected any items?{be01}\nI believe there are three more\nitems on this floor.
+Have you collected any items?{be01}\nI believe there are four more\nitems on this floor.
+Have you collected any items?{be01}\nI believe there are five more\nitems on this floor.
+Have you collected any items?{be01}\nI believe there are six more\nitems on this floor.
+Have you collected any items?{be01}\nI believe there are seven more\nitems on this floor.
+Have you collected any items?{be01}\nI believe there are eight more\nitems on this floor.
+There aren’t any Trainers left that\ncan take you on now…
+Can you keep winning against\nthe last remaining Trainer?
+Can you keep winning against\nthe two remaining Trainers?
+Can you keep winning against\nthe three remaining Trainers?
+Can you keep winning against\nthe four remaining Trainers?
+Can you keep winning against\nthe five remaining Trainers?
+Can you keep winning against\nthe six remaining Trainers?
+Can you keep winning against\nthe seven remaining Trainers?
+{0100:0} found one {0100:2}!
+{0100:0} put away the {0100:2}\nin the Bag.
+Obtained the {0100:2}!
+Too bad!\nThe Bag is full…
+Your Battle Pyramid quest will be\nsaved so that you may quit for now.{be00}\nIs that okay?
+Are you sure you want to quit your\nPyramid quest?
+Rest
+Retire
+Cancel
+Battle Pyramid\n{0100:1}
+Saving…\nDon’t turn off the power.
+I am never going\nto lose!
+Losing doesn’t Bug\nme
+Hey, there! You’re\nmy opponent today
+You’re really not very\nscary at all
+Oh this is\nso exciting!
+Get ready to\nbe destroyed!
+I don’t just\nstudy you know
+A Pokémon battle\nisn’t child’s play!
+I would be\ncool if I win
+I won’t give up\nuntil I win
+My strategy is\nfrom my father
+Please battle like\nyou mean it
+Me lose?\nThat’s preposterous!
+They all want\nmy fabulous Pokémon
+I really like\ncool Pokémon
+If I win you can\nhave a Sweet Kiss
+The gourmet thing\nis so yesterday
+I haven’t a\nworry at all
+I am totally ready\nto Rock today
+Your look says\nyou’re really tough
+Mother nature is\nmy ally!
+I can’t wait\nlet’s battle now
+Cute and awfully\nstrong that’s me
+I am old but\nI am also good
+If I win I am going\nto go Surf
+Teach me a\ngood strategy
+I am a pretty\nnew trainer
+It’s so exciting\nit really is
+Let’s pretend I am\nan adult ok?
+My summer vacation\nis for Pokémon
+Victory will come\nto me!
+Come on I need\na hot battle
+I Surf in\nthe winter too
+I like to\nSynchronize my Swift Swim
+I am a knockout\nyou can’t win!
+I’ve won every\nmatch today!
+I am never disappointed\nwith my Pokémon
+You adore your\nPokémon right?
+My Pokémon are\nbut a dream
+I don’t know\nhow I am feeling
+I come from\na trainer family
+All Pokémon have\ntheir own Cute Charm
+Come on! Let’s\nsee some spirit
+A genius that’s\nwhat I am!
+I train from\nthe egg up
+All Pokémon adore\na kind trainer
+I adore Pokémon\nlike my children
+I promise to\nbattle seriously
+A little Bug is\nscary? Hahaha
+Bug Pokémon make\nme feeling lovey-dovey
+It’s way too\nhot here
+Forgive me but\nhere I come!
+I promise you\na hot battle
+Show me a\nreally smooth move
+Let’s see you\nMeditate like me
+PoisonPowder is in\nour Cotton Spore move
+Huh?\nwhere is it?
+Come over for some\ntasty Water
+My Pokémon will\nmake you downcast
+Is how I\ncry
+Get ready for\nme to Thrash
+I am young at\nheart!
+My party is\nready to Rock
+I am no. 1 I\nhave no rival
+Yahoo!\nYahoo!!
+Confused?\nI am a genius
+I think I am\nshopping too much
+Show me that\nyou have Guts
+I seriously mean\nto win!
+You must be my\nopponent now!
+If I lose you can\nhave a Present
+I believe in\ncute fashion appeal
+What is that\nI smell?
+You try my\nsecret Aromatherapy ok?
+My boy friend\nworks too much
+I know how\nto go go
+Hello I think\nI adore you
+You have to\ndance with power
+Color Change version toys\nare useless!
+I get to\nBeat Up on you
+There is none\nbetter than me
+I am perfect!\nGive up now
+What are you\nup to?
+Hey, there who is your\nrival?
+I only know\nhow to Charge
+You better not\nSlack Off with me
+Your Facade doesn’t\nTrick me
+I can’t be\ndefeated!
+A pokédex is\na little radio?
+I am on Fire\nbaby!
+Hahaha! Happy\nto meet you!
+My Quick Attack can\nbeat a Teleport
+I don’t train\ngood enough?
+Crush you like\nan egg!
+Okay!\nThis is perfection
+Here I come feeling ready\nfor it all
+Every day is\na great day
+Come see an\nincredible Swift Swim!
+Oh not another\nbattle please…
+I am the Quick Attack\ntrainer!
+I am the Speed Boost\nhero!
+I would rather\nrun than bike
+I am going to\nbe a father
+I am going to\nbe a mother
+What should I\ndo today?
+Hah!!\nYeah!!
+Me worry?\nI have none
+My bike is\nvery expensive
+Yeah!!\nHah!!
+Come on! Play\ntime is over
+Show me that\nyou’re serious!
+You’re going to\nlose right away
+My night school\nis really scary
+I am no. 1 when\nit’s about power
+Every battle has\na smell
+Good!\nCome on!!
+Fufufu…\n
+Hahaha…\na kid…
+Huh? what is it?\n
+Come we will\ndo battle now
+I know only\nyou
+My joking is\npretty terrible…
+I am an excellent\nMimic of Pokémon
+I crush things\nwith Psychic power
+My Pokémon will\ncrush you!
+If you’re smart\nstop right now
+Will my Cute Charm\nAttract you?
+I Forecast terrible\nthings for you
+I haven’t slept\nin days…
+I don’t allow\nPokémon to Thrash
+I Swallow Sludge\nto Transform myself
+I got my\nPokémon on rental
+You’re up to\nthe challenge?
+I Wish to\nsee the news
+Screech is like\nmusic to me!
+Can you Dig\nit yo?
+Pound the Thick Fat\non my Belly Drum
+How about a tiny bit\nof Hypnosis?
+You don’t know\nmy secret…
+Loudred probably has\na Sweet Scent
+I choose you!\nThis is it!
+They overdo that\ngourmet thing…
+This should absolutely\nbe a pushover
+Spirit alone won’t\nmake you win
+Wroooaar!!! I am\nso ready!!
+Your secret can’t\nbe hidden forever
+Your battle sense\nis sadly lacking
+I have this\nexcellent camera
+I Mimic Pokémon\nafter every battle
+I Wish you\nwould not Glare
+School is over\ntime to play
+School is out\ntime to play
+Dragon Pokémon are\ninvincible!
+My Pure Power is\nmachine like!
+My fashion sense\nseems Oddish?
+Yeah!\nYeah, yeah!!
+Are you feeling\nmy Heat Wave?
+Fighting spirit?\nMe?
+A battle is\ndecided on spirit
+Is your pokédex\nreally awesome?
+I have my\nown place yeehaw!
+Winter will soon\nbe here
+Do you battle\nwith beauty?
+I am feeling thirsty\nright now…
+I pretend to\nstudy a lot
+I enjoy comics\nand this game
+I worry too\nmuch to sleep
+I believe in\nan Aromatherapy bath
+My hobby?\n
+I am sad cause\nI am too weak
+You’ve got your\nHustle on!
+I am bored…\ndance for me
+Let’s commemorate my\ncoolness in battle
+We will have\na cool battle
+My Secret Power is\noverwhelming to Pokémon
+I Cut down\nevery opponent
+I can’t wait\nfor my train
+There was a\nHeat Wave last week
+I like to\nplay in Water
+This kindergarten magazine\nis too much
+There is a\nBug event soon
+The invincible Bug\ntrainer is here
+I went to\na fishing school
+Show me a\ntotally cool Cross Chop
+My work is\nmaking me healthy
+Hey, there!\nLook look!!
+Want to see\nmy Hypnosis?
+This battle is\nfor my mother
+Our music will\nplay all night
+I am trendy aren’t\nI?
+Here it is a Flying\ntype hidden move
+I am feeling weird\nfrom a dream
+Come on let’s dance\nlike it’s yesterday
+My girl gives\nme a little Sweet Kiss
+Smartness alone won’t\nmake you win
+Charge!\nCharge!!
+Take that! It’s\nmy fiery Trick
+A fiery gourmet\nam I!
+I can’t wait\nto get going
+A Present for\nme?
+A Shell Armor is\nwhat I want
+If I lose I will\nstudy for school
+Is this kind\nof battle ok?
+A Pokémon fashion\ncontest is pretty
+I need more\nGrass type Pokémon
+Ingrain is my\nchoice battle move
+I want to\nenjoy this battle
+I Wish Sunday\nis a Sunny Day
+A Swift Swim will\ndo you good
+I will Tackle\nyou down!
+My heroine adventure\nisn’t going well
+You make me\ngo ahaha!
+You’re a Lightningrod\nfor my power
+I will Bide\nmy time
+Promise to show\nme cute Pokémon
+I want a\nnice Present…
+Let’s see your\npower in full
+Work is making\nme an Early Bird
+Yay! A\ntough trainer!
+Want some Gulpin\ndesign sweets?
+I am better than\nany other trainer
+I’ve not lost\nonce yet!
+The top trainer\nthat’s me!
+My Barrage will\nSlam you!
+I am a treasure\nof this world
+Oh a trainer\nwith a Scary Face
+I will show\nyou gutsy!
+I seek a\ntruly great battle
+Yo!\nLet’s go!!
+My Pokémon have\ntoo much power
+Well, then will this\nPokémon work?
+All my Pokémon\nabsolutely adore me
+I want to\nsee your Pokémon
+I am young and\nstrong!
+Dragon Pokémon are\nmy no. 1 choice
+Let’s hear you\nRoar!
+I am living only\nwith Dragon Pokémon
+This should be\nover soon enough
+I like rock-solid\nPokémon the best
+I reject every\nweak trainer
+And yet another\nbattle?
+A battle girl\nthat’s me!
+Eat my invincible\nattack you!
+Good to meet you\nyoung trainer!
+I don’t play\ndown all right?
+I am not old\nI am skilled!
+You can’t beat\nme down!
+Well well\nlet’s start
+I’ve been hearing\nabout you
+I am a super\nPokémon hero!
+This should be\nan easy match
+My Foresight says\nI will win
+Something good will\ncome of this
+Every trainer has\nbeen too weak…
+I am not a\nvery mean trainer
+Don’t Grudge me\nif I win ok?
+I will scatter\nsome PoisonPowder about
+Want to see\nscary Pokémon?
+Hello?\nHello?!
+You can lose\nyour Swagger now
+I know I am\ntotally cool!
+This is a\nhigh level battle
+I am not that\nold yet
+I’ve a couple\nthings
+Please don’t make\nthis scary
+Listen up\nI always win
+The sports world\nshould accept Pokémon
+Come on you need\na Speed Boost?
+Not another trainer\nbattle…
+I Dive below\nthe Surf!
+Did you Limber\nup before?
+I like to\nattack with Suction Cups
+Like a SonicBoom\nI’ve arrived
+A Pokémon master\nthat’s my dream
+Don’t you think\nI am cute?
+I am always happy\nhappy happy!
+I’ve got a lot\nof Bug Pokémon
+We really dislike\nFire and Flying
+Fishing is my\nchoice in life
+I am an adult\nI battle easy
+I try the\nbest I can
+I was on vacation\nuntil only yesterday
+What’s up? you think\nI am scary?
+I would rather\nlook at Pokémon
+It’s hopeless to\nStruggle with me
+Want to hear\nmy song?
+Flying Pokémon are\nabove the Rest
+My Pokémon appeal\nto you?
+Let me win in Return\nfor a Present
+I brag about\nmy happiness ok?
+Come on let’s get\na move on
+Let’s teach you\nhow tough I am
+Now this is\na perfect Flame Body
+I am no. 1 in\nthe old class
+I am feeling giddy\nso should you
+Let’s enjoy our\nbattle together
+I dislike oh\nso pretty fashion
+I go all\nout!
+I like a\ntrainer that’s refreshing
+I cause Outrage\nas a trainer
+What?\nBut how?
+Darn… losing\ndoes Bug me
+Tomorrow is when\nwe really battle
+This can’t be\nhappening to me!
+Oh, dear… I am\njust no good
+I am feeling sad\nthanks to you
+I need to\nstudy more…
+We were like\ntoys to you
+I am not going\nto be cool
+That’s it…\nI give up…
+Forgive me father\nfor I’ve lost
+Were you really\nbeing serious?
+Waaah!\nI lost mother
+How could you\ndo that?
+I like myself\nif I lose too
+You want a\nSwift Mega Kick instead
+Losing doesn’t disappoint\nme
+I worry about\nmy Pokémon skill
+I’ve lost my\nFocus Energy and toughness
+I am right!\nYou’re really tough
+Mother nature didn’t\nlet me win?
+You’ve destroyed my\nhappiness…
+I am weak…\nbut I am cute
+What a weird\ndream that was!
+Oh no!\nA Whirlpool!
+Wow that is\nan awesome strategy
+I am new so\nwhat if I lose?
+I am so sad\nI will cry
+An adult can’t\nbeat you?
+I can’t win like\nthis…
+Nothing is working\nout for me
+You have me\nfeeling Ice cold
+I will Beat Up\nmy Surf board
+I need to\nSynchronize better…
+That’s not the\nknockout I mean
+Huh? I should\nnot have lost
+I adore my\nPokémon more if I lose
+You do adore\nyour Pokémon!
+This is an\nawful Nightmare!
+Destroyed is the\nway I am feeling
+I want to\ngo home right now
+Should I not\nadore Pokémon?
+Well so much\nfor our spirit
+You’re more a\ngenius than I am
+That was a\nloss…
+You’re kind and\nyou’re also strong
+Oh, dear I am so\nsorry about this
+Promise me another\nbattle please!
+Oh a Bug\nisn’t scary…
+You’re ignorant about\nBug Pokémon
+Please I need\nsome Water
+I am sorry…\n
+I see I am\nnot so cool
+You really are\nsmooth!
+I will Meditate\nfor a Calm Mind
+My Cotton Spore was\nuseless
+Where is it? I’ve\nlost my sense
+I got this\ntasty Water shopping
+I am the trainer\nwho is feeling downcast
+!!!\n
+It’s a tough\nloss to Swallow
+I am old and\nfeeling shaky…
+I cry for\nmy party…
+No! I\nwon’t accept this
+Good-bye!\nGood-bye!!
+I am not a\ngenius in battle
+I so want\nanother Pokémon plush doll
+That was gutsy…\nyou’re quite super
+You’re far too strong\nfor me
+That was good and\nthis is good-bye
+Your Present?!\nHere it is a DoubleSlap
+That was awful!\nI am going home
+It’s your offensive\nStench that’s what
+Didn’t you smell\na thing?!
+I am so lonesome\nwithout him…
+Go go…\njust Flail about
+This is it!\ngood-bye forever!
+Okay you understand\nall right!
+I Attract Color Change\nversion toys…
+Why?!\nI Curse you
+Serious?!\n
+But how?\nI am perfect…
+I don’t know\nwho I am…
+I am making you\nmy rival
+You’re going to\na legend!
+I am sorry…\n
+That was really tough\non me
+I am tired…\nit’s so hot
+It’s not?\nIs pokénav?
+Aiyeeh!!\nNo Water please
+I will Thrash\nmy toys!
+I was kidding about\nthat Teleport thing
+Why couldn’t I\nwin this?
+Too tough to\ncrush!
+It’s a secret\nwhy I am happy
+That was not what\nI need
+My Dive left\nme cold…
+I am feeling Beat Up\nand tired
+I finally lost\n… I am tired
+The Quick Attack trainer\ngives up!
+Waaah!!\nNo no!!
+Bye-bye! I am\ngoing to Run Away
+My baby will\nbe totally awesome
+I am too happy\nto be angry
+I will go\nplay a game
+I lost at\nExtremeSpeed…
+Ahaha see?\nThat was entertaining!
+My bike is\nmy best friend
+Aiyeeh!!\nI am sorry!!
+Please don’t hit\nme!
+You’re perfect in\nevery way!
+I refuse to\naccept that Outrage
+The home work\nis awfully scary
+Terrible…\nI am terrible…
+The awful Stench\nof a loss
+What?!\nBut how?
+Hahaha…\n
+A tough kid\nhuh? humph!
+Oh no!\nWhy not?
+Oh!\nStrong you are
+You’re some kind\nof awesome!
+Your Rock Head come\nto shine
+I am angry like\na!
+No no…\nthis won’t do
+You have Guts\nand skill
+Why didn’t you\nstop?
+Oh how could\nyou?
+My Foresight didn’t\nshow me this
+You have destroyed\nmy sleep…
+Why is this\nso hard?
+I have a\nGrowth of Suction Cups
+Rental Pokémon aren’t\nup to Scratch
+I am feeling perfect\nthank you so much
+The tight money\nliving channel?!
+You’re Soundproof?\n
+Break down Dive\ntime for me
+My Belly Drum was\ntoo weak…
+My Hypnosis strategy\nwent badly…
+But how did\nyou know?
+I work at\nthe dept. store
+All right!\nI surrender!
+Hey this is\npretty tasty
+Please!\nSorry I am sorry
+For now, good-bye but\nit’s not over
+That’s too much\nto Tackle!
+You can’t Safeguard\nyour own secret
+I was Minus my\nNormal power today
+My camera doesn’t\nmiss a thing
+If I lose I pretend\nI am a
+You have a\nreally Scary Face!
+I have to\nwork next week
+It’s back to\nschool soon
+Aren’t you satisfied\nyet?
+Arrgh!\nNo!!
+I question your\nfashion sense seriously
+I am sorry…\nit’s my bad
+But I was on\nFire for you
+Your Pokémon look\nquite cute
+I will be\non my way
+An avant garde pokédex\nwould be awesome
+You can’t flatten\nmy happiness!
+I always use\nmy allowance up
+What is beauty\nto you?
+That loss is\nhard to Swallow
+I don’t want\nto study more
+But I have\nto study more
+My Insomnia will\nget bad…
+If only Aromatherapy\nwere less expensive
+I dislike any\nkind of Mud Sport
+Hey what did\nI do?
+I don’t get\nhow I lost
+Take your Frustration\nsome other place
+Your battle sense\nis amusing
+Hello? I am\njust a kid
+I will use\nto escape
+Please lose that\nScary Face of yours
+Here it is my train\nsee ya!
+Didn’t it Hail\ntoo?
+You’re not much\ngood in Water
+Enjoy a tasty\nschool diet?
+Don’t you like\nBug Pokémon?
+See how fast\nI Run Away!
+I want to\ngo back…
+Was it a\nmistake?
+You’re more healthy\nthan I am…
+Wowee!\nNo no!!
+Tch…\nI am too weak…
+I want my\nmother!
+Let’s party until\nthe Morning Sun!
+I am always trendy\nthank you very much
+If I lose I just\nFly away
+My incredible dream\nwas so weird
+You don’t appreciate\nhow I dance
+A treasure isn’t\nalways about money
+How did you\nFake Out me?
+You can’t make\nme surrender yet
+You didn’t fall\nfor my Trick
+What a disaster\nthat was!
+I’ve got to\nget going
+Oh it’s a\ngame is it?
+Please I need\na Shell Armor!
+No thanks I am\ngoing to sleep
+How about a\nRock Slide show?
+You’re totally lacking\nin fashion sense
+There aren’t enough\nGrass type Pokémon
+You Cut me\ndown…
+Please stop I\ndon’t enjoy this
+The Forecast says\nit will Hail
+Uh-oh!\nA Whirlpool!
+I didn’t think\nyou would Counter
+I know I am\nnot a heroine
+Lalala…\nhuh?
+You Reflect my\npower back?
+My mistake was\ntoo expensive…
+Tch your Pokémon\naren’t very nice
+Message cards make\na weak Present
+Not funny…\nyou’re too strong
+Endure is all\nI can do
+Cool! A\ngenius trainer!
+They’re tasty!\nRefreshing too!
+Back home I\nwill go…
+I don’t believe\nthis…
+I will appeal\nthis Outrage!
+I just don’t\nget it…
+Why are you\nso terrible?
+Aiyeeh! You\nreally are scary
+Oh no…\nmode!
+That was a little too\nmuch to take
+Yo!\nI lost yo
+Yeah Take Down their\npower a tiny bit please
+It didn’t match up\nwell I think
+You’re so mean\nto cute Pokémon
+Your Pokémon are\nsomething else all right
+This isn’t working\nout at all
+Dragon Pokémon should\nnot lose!
+Wroooaar!\nwhy?!
+You’ve destroyed the\nway I am living
+I can’t lose\nso soon!
+I also have\na plush doll collection
+There is nothing\nweak about you
+Good it’s over\nat last…
+You dislike a\nbattle girl?
+So much for\nmy invincible attack
+You are a\nstrong trainer kid
+Well well…\nI surrender…
+I am shocked!\nDown I go
+I am Beat Up and\ndowncast…
+Well I see\nthat I am too weak
+What I’ve been\nhearing is right
+You should not\nbeat a hero
+Are you happy\nnow?
+I didn’t see\nthis Reversal…
+That something good\nwent to you
+I slept and\nso I lost
+I lost cause\nyou’re mean…
+I have a\nGrudge with you
+I dislike you\nand your Pokémon
+You’re more scary\nthan my Pokémon
+My phone isn’t\nworking…
+Go on Swagger\nall you want
+You’re cool!\nNo really!
+You’re too high\nin level…
+Please I am really\nnot that old
+Instead of television\nget a book
+I am disappointed…\n
+I can beat\nyou at smartness
+Thank you! That\nloss was refreshing
+Oh you!\n
+I finally get\nto Rest a little
+I am going to\nsink…
+Being Limber didn’t\nwork for me
+I don’t get\nhow Suction Cups work
+I am going with\na Supersonic Speed Boost
+What I dream\nisn’t happening…
+My Cute Charm doesn’t\nAttract you?
+Yahoo! I am\nhappy for you
+My Bug Pokémon\nare all upside down
+You know what\nwe dislike hey?
+Don’t count on that\nhappening another time
+I am an adult\nI Swallow Frustration
+I did try\ndidn’t I?
+That’s it…\nI need sleep
+Look at my\nfabulous fashion sense
+See?\nI always lose
+I am going down\ndown down!
+Satisfied is what\nI can’t be
+Aren’t there more\nFlying Pokémon?
+So you dislike\nmy Pokémon?
+Your Present?\nWhat for?!
+I am disappointed you\nwon’t listen to me
+I need to\nnap after that
+My Frustration is\nclose to Eruption
+You want an\nExplosion here?
+I am not no. 1\nany more…
+I will giddy\nup and away
+That’s it!\ndo go on
+Pretty could be\ngood
+You won!\nMove on!
+What an awful\nStench!
+It’s hard to\nbelieve but congrats
+That’s it! You’ve done great!\nYou’ve worked hard for this!
+That’s it! You’ve done it!\nYou kept working for this!

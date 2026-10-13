@@ -1,0 +1,14 @@
+There’s a set of Pokémon picture books.
+This vase looks expensive...\nPeered inside...{be01}\nBut, it was empty.
+Er-hem!{be01}\nI am the Pokémon Fan Club’s most\nimportant person, the Chairman’s{be00}\nyounger brother.{be01}\nI’m here enjoying my vacation with\nPokémon, yes, indeed.
+Ah!\nYour Pokémon...
+It clearly likes you very much.{be01}\nA Pokémon that adoring and adorable\ndeserves a TM like this, no?
+Hmm...\nIt’s not bad, but it’s also not good.{be01}\nYou, as the Trainer, need to put in\nsome more effort.
+It has a vicious look to it.{be01}\nA frightening Pokémon like that\ndeserves a TM like this.
+If a Pokémon likes you a lot, Return’s\npower is enhanced.{be01}\nIf it doesn’t like you, Frustration’s\npower goes up.
+Oh, yes. In about {0100:1} or so days,\nI should be getting a good TM or two.{be01}\nYou should come see me then.\nI’ll give you a TM that’s suitable for{be00}\nyour Pokémon.
+Azurill: Rurii.
+It appears to be very friendly with the\nTrainer.
+Azurill: Rururi!
+It doesn’t appear to like the Trainer\nvery much.
+Too bad!\nThe Bag is full...

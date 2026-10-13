@@ -1,0 +1,29 @@
+{
+ "_doc": "Brendan's house 1F (Sapphire 11x9; zone 390). Kitchen along the back wall (fridge, sink, glass cabinet, two windows), counter + TV in the middle, table with four seats on a rug, stairs in the right-hand wall recess, exit mat bottom right. Sapphire's walkable chairs are Black 2 floor cushions (Black 2 puts chairs only on solid tiles, cushions on walkable ones). The right part's back wall is one row further south (Sapphire's art); the stair recess goes back to the main wall line.",
+ "map": "LittlerootTown_BrendansHouse_1F",
+ "style": "house",
+ "origin": [1, 0],
+ "floor": [
+  [0, 2, 9, 8],
+  [10, 3, 10, 8]
+],
+ "mats": [
+  {"tex": "m_b08_mat3", "src": 349, "rect": [1, 6, 6, 8], "border": 0.25, "border_units": 6, "_what": "pink rug under the table"},
+  {"tex": "in70_mat1", "src": 351, "rect": [8, 8, 9, 8], "border": 0.25, "border_units": 3, "_what": "door mat"}
+],
+ "furniture": [
+  {"m": "ref01", "tile": [0, 2], "wall": "N", "_what": "fridge"},
+  {"m": "sink01", "tiles": [1, 2, 2, 2], "wall": "N", "_what": "sink and stove"},
+  {"m": "shelf02", "tiles": [3, 2, 4, 2], "wall": "N", "_what": "glass dish cabinet"},
+  {"m": "win01", "at": [2.0, 2.5], "wall": "N", "gap": 4, "y": 8, "_what": "window over the sink"},
+  {"m": "win01", "at": [6.0, 2.5], "wall": "N", "gap": 4, "y": 8, "_what": "double window"},
+  {"m": "stair_u01", "stair": [8, 2], "dir": "N", "_what": "stairs up (warp tile 8,2, entered from the south)"},
+  {"m": "shelf03", "tiles": [2, 4, 3, 4], "_what": "kitchen counter"},
+  {"m": "monitor01", "tile": [4, 4], "_what": "TV"},
+  {"m": "table01_2x2", "tiles": [3, 6, 4, 7], "_what": "dining table (Sapphire's 2x2 table: Black 2's table01 at 2 tiles, models_interior.py DERIVED_MODELS)"},
+  {"m": "chushion02", "tile": [2, 6], "_what": "seat"},
+  {"m": "chushion02", "tile": [2, 7], "_what": "seat"},
+  {"m": "chushion02", "tile": [5, 6], "_what": "seat"},
+  {"m": "chushion02", "tile": [5, 7], "_what": "seat"}
+]
+}

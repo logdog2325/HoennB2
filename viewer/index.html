@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Model Contact Sheet</title>
+<style>
+  :root { --bg: #1d1f21; --card: #2a2d30; --fg: #e8e8e8; --muted: #9aa0a6; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 13px/1.4 -apple-system, system-ui, sans-serif; }
+  header { padding: 10px 16px; display: flex; gap: 12px; align-items: baseline; flex-wrap: wrap; }
+  header h1 { font-size: 16px; margin: 0; }
+  header span { color: var(--muted); }
+  #grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(var(--cell, 220px), 1fr)); gap: 8px; padding: 0 16px 16px; }
+  figure { margin: 0; background: var(--card); border-radius: 6px; overflow: hidden; }
+  figure img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: contain; background: #8fb3c9; }
+  figcaption { padding: 4px 8px; font-family: ui-monospace, monospace; font-size: 11px; word-break: break-all; }
+  figcaption small { color: var(--muted); display: block; }
+</style>
+</head>
+<body>
+<header><h1 id="title">Models</h1><span id="status">loading…</span></header>
+<div id="grid"></div>
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+} }
+</script>
+<script type="module">
+// Renders every glTF listed in a manifest to a still image (one shared WebGL context), as a contact sheet.
+// URL params: ?manifest=path/to/manifest.json&view=iso|top&size=220
+// manifest.json: { "title": "...", "models": [ { "path": "rel/to/manifest/model.gltf", "label": "...", "note": "..." } ] }
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+
+const q = new URLSearchParams(location.search);
+const manifestUrl = q.get('manifest') || 'manifest.json';
+const view = q.get('view') || 'iso';
+const size = +(q.get('size') || 220);
+document.documentElement.style.setProperty('--cell', size + 'px');
+
+const W = 640, H = 480;
+const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
+renderer.setSize(W, H);
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+const loader = new GLTFLoader();
+
+function frame(obj) {
+  const scene = new THREE.Scene();
+  scene.background = new THREE.Color(0x8fb3c9);
+  scene.add(new THREE.AmbientLight(0xffffff, 2.2));
+  const sun = new THREE.DirectionalLight(0xffffff, 1.2); sun.position.set(1, 2, 1.5); scene.add(sun);
+  scene.add(obj);
+  const box = new THREE.Box3().setFromObject(obj);
+  const c = box.getCenter(new THREE.Vector3()), s = box.getSize(new THREE.Vector3());
+  const r = Math.max(s.x, s.y, s.z) * 0.62 || 1;
+  const cam = new THREE.OrthographicCamera(-r * W / H, r * W / H, r, -r, -r * 20, r * 20);
+  // DS field camera looks down from the south (+Z); 'top' is straight down for layout checks
+  const dir = view === 'top' ? new THREE.Vector3(0, 1, 0.0001) : new THREE.Vector3(0.6, 0.9, 1.1);
+  cam.position.copy(c).add(dir.normalize().multiplyScalar(r * 5));
+  cam.lookAt(c);
+  return { scene, cam, s };
+}
+
+async function main() {
+  const man = await (await fetch(manifestUrl)).json();
+  const base = manifestUrl.replace(/[^/]*$/, '');
+  document.getElementById('title').textContent = man.title || 'Models';
+  const grid = document.getElementById('grid'), status = document.getElementById('status');
+  let done = 0, failed = 0;
+  for (const m of man.models) {
+    const fig = document.createElement('figure');
+    const img = document.createElement('img');
+    const cap = document.createElement('figcaption');
+    cap.innerHTML = `${m.label || m.path}<small>${m.note || ''}</small>`;
+    fig.append(img, cap); grid.append(fig);
+    try {
+      const g = await loader.loadAsync(base + m.path);
+      g.scene.traverse(o => { if (o.material) { o.material.side = THREE.DoubleSide; if (o.material.map) o.material.map.magFilter = THREE.NearestFilter; } });
+      const { scene, cam, s } = frame(g.scene);
+      renderer.render(scene, cam);
+      img.src = renderer.domElement.toDataURL('image/png');
+      cap.querySelector('small').textContent = (m.note ? m.note + ' · ' : '') + `${s.x.toFixed(0)}×${s.z.toFixed(0)}×${s.y.toFixed(0)}`;
+    } catch (e) { failed++; cap.querySelector('small').textContent = 'failed: ' + e.message; }
+    status.textContent = `${++done}/${man.models.length}` + (failed ? ` (${failed} failed)` : '');
+  }
+  document.body.dataset.done = '1';
+}
+main();
+</script>
+</body>
+</html>

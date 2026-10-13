@@ -1,0 +1,14 @@
+{
+ "code": 8193,
+ "name": "briney-boat",
+ "what": "OBJ_EVENT_GFX_MR_BRINEYS_BOAT: Mr. Briney's boat docked (Route 104, Dewford, Route 109): Black 2's white motorboat c03_ship_04 (exterior pack 21 res 208, the boat of demo 4)",
+ "record_from": 8201,
+ "record": {
+  "collWidth": 1,
+  "collHeight": 2,
+  "offX": 0,
+  "offY": 3,
+  "offZ": -8
+ },
+ "made_by": "b2tools/models_objects.py"
+}

@@ -1,0 +1,10 @@
+You still have time left. Would you like\nto exit the Safari Zone now?
+Please enjoy the rest of your wild\nadventure!
+Okay.{be01}\nI’ll take back your remaining Safari\nBalls.{be01}\nThank you for playing.\nWe hope to see you again.
+Good luck!{be01}\nIf you need anything, don’t hesitate\nto tell me, please!
+Did you know?{be01}\nIf you put a Pokéblock in that square box,\nPokémon gather around.
+I put a Pokéblock on the Pokéblock Feeder.\nBut it seems to have disappeared.{be01}\nI guess Pokémon must have eaten it\nwithout me noticing.
+I want to keep going deeper, but I\nforgot to bring a Bike.{be01}\nSomething tells me that rare Pokémon\nlive in the outlying areas.
+The Pokémon around here seem to be\nfrom somewhere other than Hoenn.
+The Pokémon in this area are all\nnew to me.{be01}\nAnd I’m allowed to catch these rare\nPokémon! Too cool!
+Wow! Whee! I haven’t seen any of\nthese Pokémon before!

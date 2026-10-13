@@ -1,0 +1,2 @@
+Stop and wait.\nWait for time to pass twice.
+There is a big hole in the wall.

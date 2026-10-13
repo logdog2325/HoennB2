@@ -1,0 +1,126 @@
+{
+ "_doc": "emerald_rooms (b2tools/emerald_rooms.py writes this file: edit the script and rerun). Emerald's Battle Tower elevator car: one tile wider (5x7); the shaft window over the five tiles; pokeemerald's empty column (0, 0-2) above the car stays solid. Sapphire recipe: BattleTower_Elevator.json. Battle Tower elevator car (Sapphire 4x7, zone 343; reached only by script: the Lobby's receptionist walks the player through the door at (6,1), warp 255 -> (1,6)). Black 2 has no lift-car room (its elevators are the elevator01 door model in a hall with a shallow cab behind its doors, the ride a fade: global script 1264, ElevatorChangeMap), so the car is a small room in Nimbasa's Battle Test family (style bt_lift, _styles_battle_tower.json): dark teal floor in25yuka_02, teal light-seam panel walls in25kabe_02. Sapphire's back wall (rows 0-2) is a window onto the shaft with lights going by and an orange handrail: here wall decals from the Battle Subway car (set 330): the shaft's steel panels gs_wall_c framed by steel posts b03_wall_b, the Subway's white light bars b03_yuka_b (four across, as Sapphire's dashes) and a brass rail gs_tokei_a. The lift door is Sapphire's south-arrow pair (1,6)-(2,6): the open front with Black 2's entrance notch below and the Subway car's steel door sill b03_mat on it (exits key: no warp is installed, the room is script-only). Walkable as Sapphire (rows 3-6). Origin (1,1) as the other three Battle Tower rooms (zone tile = Sapphire tile + (1,1)). Scripted paths (all walkable): attendant (1,5) up -> (1,4), right -> (2,4), later down -> (2,5), (2,6); player (1,6) up -> (1,5), (1,4), later right -> (2,4), down -> (2,5), (2,6).",
+ "map": "pokeemerald/BattleFrontier_BattleTowerElevator",
+ "style": "bt_lift",
+ "origin": [
+  1,
+  1
+ ],
+ "floor": [
+  [
+   0,
+   3,
+   4,
+   6
+  ]
+ ],
+ "exits": [
+  [
+   1,
+   6
+  ],
+  [
+   2,
+   6
+  ]
+ ],
+ "mats": [
+  {
+   "tex": "b03_mat",
+   "src": 330,
+   "rect": [
+    1,
+    6,
+    2,
+    6
+   ],
+   "border": 0.25,
+   "border_units": 4,
+   "y": 0,
+   "_what": "lift door sill (Sapphire's mat at the open front, Battle Subway car's door sill)"
+  }
+ ],
+ "decals": [
+  {
+   "tex": "gs_wall_c",
+   "src": 330,
+   "at": [
+    2.5
+   ],
+   "y": 8,
+   "w": 74,
+   "h": 36,
+   "uv": [
+    0,
+    0,
+    2.5517241379310347,
+    1.25
+   ],
+   "_what": "window onto the shaft (Sapphire rows 0-2): the shaft's steel panels"
+  },
+  {
+   "tex": "b03_yuka_b",
+   "src": 330,
+   "at": [
+    2.5
+   ],
+   "y": 23,
+   "w": 74,
+   "h": 8,
+   "uv": [
+    0,
+    0,
+    5.103448275862069,
+    0.5
+   ],
+   "_what": "lights going by in the shaft (Sapphire's four white dashes)"
+  },
+  {
+   "tex": "b03_wall_b",
+   "src": 330,
+   "at": [
+    0.12
+   ],
+   "y": 8,
+   "w": 4,
+   "h": 36,
+   "_what": "window frame, west post"
+  },
+  {
+   "tex": "b03_wall_b",
+   "src": 330,
+   "at": [
+    4.88
+   ],
+   "y": 8,
+   "w": 4,
+   "h": 36,
+   "_what": "window frame, east post"
+  },
+  {
+   "tex": "gs_tokei_a",
+   "src": 330,
+   "at": [
+    2.5
+   ],
+   "y": 12,
+   "w": 80,
+   "h": 4,
+   "_what": "handrail (Sapphire's orange rail)"
+  }
+ ],
+ "block": [
+  [
+   0,
+   0
+  ],
+  [
+   0,
+   1
+  ],
+  [
+   0,
+   2
+  ]
+ ]
+}

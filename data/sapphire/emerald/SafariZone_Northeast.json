@@ -1,0 +1,312 @@
+{
+ "map": "SafariZone_Northeast",
+ "id": "MAP_SAFARI_ZONE_NORTH",
+ "layout": "LAYOUT_SAFARI_ZONE_NORTH",
+ "music": "MUS_SAFARI_ZONE",
+ "region_map_section": "MAPSEC_SAFARI_ZONE",
+ "weather": "WEATHER_NONE",
+ "connections": [
+  {
+   "map": "MAP_SAFARI_ZONE_NORTHWEST",
+   "offset": 0,
+   "direction": "left"
+  },
+  {
+   "map": "MAP_SAFARI_ZONE_SOUTH",
+   "offset": 0,
+   "direction": "down"
+  },
+  {
+   "map": "MAP_SAFARI_ZONE_NORTHEAST",
+   "offset": 0,
+   "direction": "right"
+  }
+ ],
+ "npcs": [
+  {
+   "local_id": 1,
+   "x": 22,
+   "y": 9,
+   "gfx": "OBJ_EVENT_GFX_FISHERMAN",
+   "movement": "MOVEMENT_TYPE_WANDER_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "SafariZone_North_EventScript_Fisherman",
+   "texts": {
+    "SafariZone_North_Text_Fisherman": "I'm on a mission to find WATER POKéMON\\nyou don't see in HOENN.\\pDo you have any idea where the lake is?$"
+   }
+  },
+  {
+   "local_id": 2,
+   "x": 6,
+   "y": 29,
+   "gfx": "OBJ_EVENT_GFX_MAN_4",
+   "movement": "MOVEMENT_TYPE_WANDER_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "SafariZone_North_EventScript_Man",
+   "texts": {
+    "SafariZone_North_Text_Man": "I'm going to catch a lot of rare POKéMON\\nhere and trade them with my friends!$"
+   }
+  },
+  {
+   "local_id": 3,
+   "x": 25,
+   "y": 10,
+   "gfx": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_TEMP_11",
+   "script": "EventScript_RockSmash",
+   "texts": {
+    "Text_WantToSmash": "This rock appears to be breakable.\\nWould you like to use ROCK SMASH?$",
+    "Text_MonUsedFieldMove": "{STR_VAR_1} used {STR_VAR_2}!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 4,
+   "x": 25,
+   "y": 13,
+   "gfx": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_TEMP_12",
+   "script": "EventScript_RockSmash",
+   "texts": {
+    "Text_WantToSmash": "This rock appears to be breakable.\\nWould you like to use ROCK SMASH?$",
+    "Text_MonUsedFieldMove": "{STR_VAR_1} used {STR_VAR_2}!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 5,
+   "x": 28,
+   "y": 14,
+   "gfx": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_TEMP_13",
+   "script": "EventScript_RockSmash",
+   "texts": {
+    "Text_WantToSmash": "This rock appears to be breakable.\\nWould you like to use ROCK SMASH?$",
+    "Text_MonUsedFieldMove": "{STR_VAR_1} used {STR_VAR_2}!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 6,
+   "x": 23,
+   "y": 6,
+   "gfx": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_TEMP_14",
+   "script": "EventScript_RockSmash",
+   "texts": {
+    "Text_WantToSmash": "This rock appears to be breakable.\\nWould you like to use ROCK SMASH?$",
+    "Text_MonUsedFieldMove": "{STR_VAR_1} used {STR_VAR_2}!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 7,
+   "x": 20,
+   "y": 7,
+   "gfx": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_TEMP_15",
+   "script": "EventScript_RockSmash",
+   "texts": {
+    "Text_WantToSmash": "This rock appears to be breakable.\\nWould you like to use ROCK SMASH?$",
+    "Text_MonUsedFieldMove": "{STR_VAR_1} used {STR_VAR_2}!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 8,
+   "x": 27,
+   "y": 7,
+   "gfx": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_TEMP_16",
+   "script": "EventScript_RockSmash",
+   "texts": {
+    "Text_WantToSmash": "This rock appears to be breakable.\\nWould you like to use ROCK SMASH?$",
+    "Text_MonUsedFieldMove": "{STR_VAR_1} used {STR_VAR_2}!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 9,
+   "x": 7,
+   "y": 6,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_SAFARI_ZONE_NORTH_CALCIUM",
+   "script": "SafariZone_North_EventScript_ItemCalcium",
+   "texts": {},
+   "complex": true
+  }
+ ],
+ "signs": [],
+ "warps": [],
+ "coord_events": [],
+ "wild": {
+  "land_mons": {
+   "encounter_rate": 25,
+   "slot_rates": [
+    20,
+    20,
+    10,
+    10,
+    10,
+    10,
+    5,
+    5,
+    4,
+    4,
+    1,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_PHANPY",
+     "min": 27,
+     "max": 27
+    },
+    {
+     "species": "SPECIES_ODDISH",
+     "min": 27,
+     "max": 27
+    },
+    {
+     "species": "SPECIES_PHANPY",
+     "min": 29,
+     "max": 29
+    },
+    {
+     "species": "SPECIES_ODDISH",
+     "min": 29,
+     "max": 29
+    },
+    {
+     "species": "SPECIES_NATU",
+     "min": 27,
+     "max": 27
+    },
+    {
+     "species": "SPECIES_GLOOM",
+     "min": 29,
+     "max": 29
+    },
+    {
+     "species": "SPECIES_GLOOM",
+     "min": 31,
+     "max": 31
+    },
+    {
+     "species": "SPECIES_NATU",
+     "min": 29,
+     "max": 29
+    },
+    {
+     "species": "SPECIES_XATU",
+     "min": 29,
+     "max": 29
+    },
+    {
+     "species": "SPECIES_HERACROSS",
+     "min": 27,
+     "max": 27
+    },
+    {
+     "species": "SPECIES_XATU",
+     "min": 31,
+     "max": 31
+    },
+    {
+     "species": "SPECIES_HERACROSS",
+     "min": 29,
+     "max": 29
+    }
+   ]
+  },
+  "rock_smash_mons": {
+   "encounter_rate": 25,
+   "slot_rates": [
+    60,
+    30,
+    5,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_GEODUDE",
+     "min": 10,
+     "max": 15
+    },
+    {
+     "species": "SPECIES_GEODUDE",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_GEODUDE",
+     "min": 15,
+     "max": 20
+    },
+    {
+     "species": "SPECIES_GEODUDE",
+     "min": 20,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_GEODUDE",
+     "min": 25,
+     "max": 30
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,97 @@
+{
+ "_doc": "frontier_pyramid (2026-10-12): BattleFrontier_BattlePyramidLobby (notes/FRONTIER_PYRAMID.md), Emerald only (data/emerald/hoenn_interiors.json claim). People = Emerald's objects (uid = Emerald local id), sprites from data/sprite_map.json. Room origin [0, -2].",
+ "zone": 347,
+ "room": "BattleFrontier_BattlePyramidLobby",
+ "area": 316,
+ "parent": 17,
+ "warps": [
+  {
+   "at": [
+    7,
+    17
+   ],
+   "tile_only": true,
+   "to": [
+    17,
+    5
+   ],
+   "what": "Emerald warp 0 -> the Frontier (zone 17 door 5: BattleFrontier_OutsideEast warp 3)"
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 1,
+   "model": 64,
+   "script": 1,
+   "dir": 1,
+   "at": [
+    7,
+    12
+   ],
+   "what": "attendant (HIKER)"
+  },
+  {
+   "uid": 2,
+   "model": 184,
+   "script": 2,
+   "dir": 2,
+   "at": [
+    14,
+    13
+   ],
+   "what": "hint giver (HEX_MANIAC: Black 2 psychic)"
+  },
+  {
+   "uid": 3,
+   "model": 27,
+   "script": 3,
+   "dir": 1,
+   "at": [
+    2,
+    15
+   ],
+   "move": 3,
+   "range": [
+    1,
+    1
+   ],
+   "what": "WOMAN_3"
+  },
+  {
+   "uid": 4,
+   "model": 25,
+   "script": 4,
+   "dir": 1,
+   "at": [
+    12,
+    16
+   ],
+   "move": 3,
+   "range": [
+    1,
+    1
+   ],
+   "what": "FAT_MAN"
+  }
+ ],
+ "signs": [
+  {
+   "script": 5,
+   "at": [
+    5,
+    12
+   ],
+   "dir": 0,
+   "what": "results"
+  },
+  {
+   "script": 6,
+   "at": [
+    1,
+    12
+   ],
+   "dir": 4,
+   "what": "rules board"
+  }
+ ]
+}

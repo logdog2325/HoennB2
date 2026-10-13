@@ -1,0 +1,7 @@
+{
+ "map": "emerald/Underwater_MarineCave",
+ "look": "uw",
+ "underwater": true,
+ "uw_effect": false,
+ "_doc": "emerald_caves 2026-10-12: Emerald's Underwater_MarineCave (pokeemerald) as Emerald's world reads it; the underwater look of Underwater1-4 (look uw, no underwater effect: the Abyssal Ruins plugin's twelve zone slots hold Sapphire's underwater maps). The Marine Cave's underwater mouth: surfacing leads to MarineCave_Entrance (10,17) (b2tools/patches/dive.py LINKS_EMERALD); its exit (9,8) is a dynamic warp back to the underwater route it was entered from."
+}

@@ -1,0 +1,32 @@
+Welcome to Lilycove Museum.{be01}\nPlease take the time to enjoy our\ncollection of fantastic artwork{be00}\nfeaturing Pokémon.
+Battling with Pokémon is fun,\nI’ll grant you that.{be01}\nBut one mustn’t forget our love for\nthe fine arts.
+This Art Museum... Well, you could\nsee many fantastic paintings.{be01}\nAnd the Curator is a wonderful person.{be01}\nAmong artists like myself, this Museum\nis an inspiration.
+This lady is pretty!\nShe’s like Mommy!
+This Pokémon is adorable!\nJust like our little boy!
+It’s an odd landscape with bizarre\nand fantastic scenery.
+It’s an odd landscape with bizarre\nand fantastic scenery.
+It’s a delicious-looking painting\nof Berries.{be01}\nThis painting could make you hungry!
+It’s a delicious-looking painting\nof Berries.{be01}\nThis painting could make you hungry!
+It’s a very old painting.\nThe paint is peeling here and there.
+It’s a painting of a beautiful, smiling\nwoman with a Pokémon on her lap.
+It’s a painting of a beautiful, smiling\nwoman with a Pokémon on her lap.
+It’s a replica of a famous sculpture.{be01}\nIt depicts an ancient Bird Pokémon.
+It’s a very old painting.\nThe paint is peeling here and there.
+It’s a painting of Grass Pokémon\nswaying in a breeze.{be01}\nThey appear to be enjoying the wind’s\ngentle caress.
+It’s a huge stone tablet inscribed\nwith Pokémon and dense text in the{be00}\nsmall characters of an ancient,{be00}\nunreadable language.
+It’s a painting of a legendary Pokémon\nfrom long ago.{be01}\nThe artist painted this from\nimagination.
+It’s a painting of a legendary Pokémon\nfrom long ago.{be01}\nThe artist painted this from\nimagination.
+It’s a huge stone tablet inscribed\nwith Pokémon and dense text in the{be00}\nsmall characters of an ancient,{be00}\nunreadable language.
+It’s a big Poké Ball carved from a\nblack stone.{be01}\nIt was apparently used in festivals\nin the olden days.
+It’s a huge stone tablet inscribed\nwith Pokémon and dense text in the{be00}\nsmall characters of an ancient,{be00}\nunreadable language.
+I’m the Curator of this Museum of\nfine arts.{be01}\nIt’s heartening to see someone so\nyoung as you in our Museum.{be01}\nHave you viewed our collection of\npaintings already?
+Saw it
+Not yet
+Ah, then let me not disturb you.\nPlease, do take your time.
+Oh? I do believe that you seem to\nbe a Pokémon Trainer.{be01}\nHave you an interest in paintings,\ntoo?
+I see...{be01}\nI’m honored that you would visit\nus in spite of that.
+Ah, excellent!\nYou do like paintings!{be01}\nThen, may I ask you to come with me?
+I’d heard that this Art Museum got\nin some new paintings.{be01}\nSo, naturally I hurried over.{be01}\nAre the new paintings up on the\nsecond floor?
+Lately, the Curator has been\nunusually cheerful.{be01}\nI bet something good happened for him.\nDefinitely.
+I aim to see many great paintings\nhere and learn from them.{be01}\nI have this dream of one day having\nmy artwork exhibited here.
+The Art Museum has become a favorite\ntourist destination.{be01}\nIt’s great for Lilycove...\nNo, great for the Hoenn region!{be01}\nThis is what I’ve heard - a lone Trainer\nprocured all the paintings upstairs.

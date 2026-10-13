@@ -1,0 +1,13 @@
+{
+ "_doc": "Lilycove's empty map (Sapphire 1x1, zone 202, area 351): Sapphire's placeholder that the harbor's ferry warps (2-3, off the map's south edge) name; nothing to see, one floor tile. Its warp (Sapphire (7,5), off the map) leads back to the harbor's warp 2.",
+ "map": "LilycoveCity_EmptyMap",
+ "style": "fac_harbor",
+ "floor": [
+  [
+   0,
+   0,
+   0,
+   0
+  ]
+ ]
+}

@@ -1,0 +1,17 @@
+Littleroot Town\n“A town that can’t be shaded any hue.”
+{0100:0}’s House
+Prof. Birch’s House
+Prof. Birch’s Pokémon Lab
+If you go in the tall grass at the sides\nof this road, wild Pokémon will appear.
+If you use a PC, you can store items\nand Pokémon.{be01}\nThe power of science is staggering!
+Prof. Birch spends days in his Lab\nstudying, then he’ll suddenly go out in{be01}\nthe wild to do more research...{be01}\nWhen does Prof. Birch spend time\nat home?
+Mom: {0100:0}, we’re here, honey!{be01}\nIt must be tiring riding with our things\nin the moving truck.{be01}\nWell, this is Littleroot Town.{be01}\nHow do you like it?\nThis is our new home!{be01}\nIt has a quaint feel, but it seems to be\nan easy place to live, don’t you think?{be01}\nAnd, you get your own room, {0100:0}!\nLet’s go inside.
+It’s not safe to go out there if you\ndon’t have any Pokémon with you.
+I can hear someone shouting down the\nroad here.{be01}\nWhat should I do? What should we do?\nSomebody has to go help...
+Boy, am I glad you went and rescued\nthe Professor.
+Mom: Wait, {0100:0}!
+Mom: {0100:0}! {0100:0}! Did you\nintroduce yourself to Prof. Birch?{be01}\nOh! What an adorable Pokémon!\nYou got it from Prof. Birch. How nice!{be01}\nYou’re your father’s child, all right.\nYou look good together with Pokémon!{be01}\nHere, honey! If you’re going out on an\nadventure, wear these Running Shoes.{be01}\nThey’ll put a zip in your step!
+{0100:0} switched shoes with the\nRunning Shoes.
+Mom: {0100:0}, those shoes came with\ninstructions.{be01}\n“Press the B Button while wearing these\nRunning Shoes to run extra-fast!{be01}\n“Slip on these Running Shoes and race\nin the great outdoors!”
+... ... ... ... ... ... ... ...\n... ... ... ... ... ... ... ...{be01}\nTo think that you have your very own\nPokémon now...{be00}\nYour father will be overjoyed.{be01}\n...But please be careful.\nIf anything happens, you can come home.{be01}\nGo on, go get them, honey!
+Prof. Birch: Well, well, {0100:0}!\nThat was good work out there!{be01}\nI knew there was something special\nabout you when I first saw you,{be00}\nbut I never expected this.{be01}\nOh, yes. Do you still have the Pokédex\nI gave you?{be01}\nI have something to show you.\nLet’s go to my Lab.

@@ -1,0 +1,558 @@
+{
+ "map": "BattleTower_Outside",
+ "id": "MAP_BATTLE_FRONTIER_OUTSIDE_WEST",
+ "layout": "LAYOUT_BATTLE_FRONTIER_OUTSIDE_WEST",
+ "music": "MUS_B_FRONTIER",
+ "region_map_section": "MAPSEC_BATTLE_FRONTIER",
+ "weather": "WEATHER_NONE",
+ "connections": [
+  {
+   "map": "MAP_BATTLE_FRONTIER_OUTSIDE_EAST",
+   "offset": 0,
+   "direction": "right"
+  }
+ ],
+ "npcs": [
+  {
+   "local_id": 1,
+   "x": 26,
+   "y": 38,
+   "gfx": "OBJ_EVENT_GFX_BOY_2",
+   "movement": "MOVEMENT_TYPE_WANDER_AROUND",
+   "range": [
+    2,
+    2
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BattleFrontier_OutsideWest_EventScript_Boy1",
+   "texts": {
+    "BattleFrontier_OutsideWest_Text_BestOutOfAllMyFriends": "I'm the best out of all my friends.\\nBut here…\\lI've been useless!$"
+   }
+  },
+  {
+   "local_id": 2,
+   "x": 20,
+   "y": 70,
+   "gfx": "OBJ_EVENT_GFX_SS_TIDAL",
+   "movement": "MOVEMENT_TYPE_FACE_RIGHT",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "0x0",
+   "missing": true
+  },
+  {
+   "local_id": 3,
+   "x": 19,
+   "y": 68,
+   "gfx": "OBJ_EVENT_GFX_BEAUTY",
+   "movement": "MOVEMENT_TYPE_FACE_UP",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BattleFrontier_OutsideWest_EventScript_FerryAttendant",
+   "texts": {
+    "BattleFrontier_OutsideWest_Text_MayISeeYourTicket": "Hello, are you here for the ferry?\\nMay I see your TICKET?$",
+    "BattleFrontier_OutsideWest_Text_WhereWouldYouLikeToGo": "{PLAYER} flashed the TICKET.\\pPerfect! That's all you need!\\pAnd where would you like to go?$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 4,
+   "x": 26,
+   "y": 20,
+   "gfx": "OBJ_EVENT_GFX_EXPERT_M",
+   "movement": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
+   "range": [
+    8,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BattleFrontier_OutsideWest_EventScript_ExpertM",
+   "texts": {
+    "BattleFrontier_OutsideWest_Text_WontLetGentlemenBeatMe": "Ah, so this here is the BATTLE DOME?\\nI won't let GENTLEMEN beat me!\\pBut where is the entrance?$"
+   }
+  },
+  {
+   "local_id": 5,
+   "x": 27,
+   "y": 30,
+   "gfx": "OBJ_EVENT_GFX_MAN_3",
+   "movement": "MOVEMENT_TYPE_WANDER_AROUND",
+   "range": [
+    1,
+    3
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BattleFrontier_OutsideWest_EventScript_Man1",
+   "texts": {
+    "BattleFrontier_OutsideWest_Text_OnlyToughTrainersBroughtHere": "It's not as if just anyone can come\\nhere, you know?\\pOnly those TRAINERS who've been\\nrecognized as tough are brought here.\\pThat's why many TRAINERS don't even\\nknow about the BATTLE FRONTIER.$"
+   }
+  },
+  {
+   "local_id": 6,
+   "x": 33,
+   "y": 41,
+   "gfx": "OBJ_EVENT_GFX_WOMAN_5",
+   "movement": "MOVEMENT_TYPE_WANDER_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BattleFrontier_OutsideWest_EventScript_Woman1",
+   "texts": {
+    "BattleFrontier_OutsideWest_Text_FinallyArrivedAtFrontier": "I've finally arrived at the BATTLE\\nFRONTIER!\\pI'm sure to grab attention with\\nmy looks and ability!$"
+   }
+  },
+  {
+   "local_id": 7,
+   "x": 28,
+   "y": 43,
+   "gfx": "OBJ_EVENT_GFX_FAT_MAN",
+   "movement": "MOVEMENT_TYPE_WANDER_UP_AND_DOWN",
+   "range": [
+    0,
+    3
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BattleFrontier_OutsideWest_EventScript_FatMan1",
+   "texts": {
+    "BattleFrontier_OutsideWest_Text_SquareFilledWithToughPeople": "Munch, munch…\\pIt looks like this square's filled with\\ntough people.\\pMunch, munch…$"
+   }
+  },
+  {
+   "local_id": 8,
+   "x": 17,
+   "y": 20,
+   "gfx": "OBJ_EVENT_GFX_GENTLEMAN",
+   "movement": "MOVEMENT_TYPE_WANDER_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BattleFrontier_OutsideWest_EventScript_Gentleman",
+   "texts": {
+    "BattleFrontier_OutsideWest_Text_YoureOffToChallengeDome": "Oh? You're off to challenge\\nthe BATTLE DOME?\\pI'll wish you the best of luck.\\nLet us both win our way up and meet\\lin challenges.$"
+   }
+  },
+  {
+   "local_id": 9,
+   "x": 13,
+   "y": 44,
+   "gfx": "OBJ_EVENT_GFX_MANIAC",
+   "movement": "MOVEMENT_TYPE_FACE_UP",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BattleFrontier_OutsideWest_EventScript_Maniac1",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 10,
+   "x": 14,
+   "y": 44,
+   "gfx": "OBJ_EVENT_GFX_MANIAC",
+   "movement": "MOVEMENT_TYPE_FACE_UP",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BattleFrontier_OutsideWest_EventScript_Maniac2",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 11,
+   "x": 23,
+   "y": 47,
+   "gfx": "OBJ_EVENT_GFX_MAN_5",
+   "movement": "MOVEMENT_TYPE_FACE_UP_AND_LEFT",
+   "range": [
+    2,
+    2
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BattleFrontier_OutsideWest_EventScript_Man2",
+   "texts": {
+    "BattleFrontier_OutsideWest_Text_NothingHereNotLongAgo": "There used to be nothing here not all\\nthat long ago.\\pBut, now look at this place! Amazing!\\nI'll bring my mother out to see this.$"
+   }
+  },
+  {
+   "local_id": 12,
+   "x": 38,
+   "y": 27,
+   "gfx": "OBJ_EVENT_GFX_GIRL_1",
+   "movement": "MOVEMENT_TYPE_WANDER_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BattleFrontier_OutsideWest_EventScript_Girl",
+   "texts": {
+    "BattleFrontier_OutsideWest_Text_ScaredOfPikeBecauseSeviper": "I'm scared of going into the BATTLE\\nPIKE because of SEVIPER…\\pB-but I came all the way here, so I will\\ntry to conquer everything!\\l…Shudder…$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 13,
+   "x": 45,
+   "y": 18,
+   "gfx": "OBJ_EVENT_GFX_WOMAN_3",
+   "movement": "MOVEMENT_TYPE_WANDER_UP_AND_DOWN",
+   "range": [
+    1,
+    3
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BattleFrontier_OutsideWest_EventScript_Woman2",
+   "texts": {
+    "BattleFrontier_OutsideWest_Text_LetsPlayRockPaperScissors": "Let's play rock, paper, scissors!\\nOne, two, three!\\p… … … … … …$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 14,
+   "x": 9,
+   "y": 47,
+   "gfx": "OBJ_EVENT_GFX_CAMPER",
+   "movement": "MOVEMENT_TYPE_FACE_UP_AND_LEFT",
+   "range": [
+    1,
+    2
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BattleFrontier_OutsideWest_EventScript_Camper",
+   "texts": {
+    "BattleFrontier_OutsideWest_Text_WhosRaisingThoseRentalMons": "That's the BATTLE FACTORY.\\nYou can rent strong POKéMON there.\\pBut it makes me wonder.\\nWho's raising those rental POKéMON?$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 15,
+   "x": 35,
+   "y": 5,
+   "gfx": "OBJ_EVENT_GFX_LASS",
+   "movement": "MOVEMENT_TYPE_WANDER_AROUND",
+   "range": [
+    2,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BattleFrontier_OutsideWest_EventScript_Lass",
+   "texts": {
+    "BattleFrontier_OutsideWest_Text_KeepBattlingUntilIGetSymbol": "Today, I'm going to keep battling, no\\nmatter what, until I get a Symbol.$"
+   }
+  },
+  {
+   "local_id": 16,
+   "x": 11,
+   "y": 66,
+   "gfx": "OBJ_EVENT_GFX_MAN_2",
+   "movement": "MOVEMENT_TYPE_FACE_LEFT",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BattleFrontier_OutsideWest_EventScript_Man3",
+   "texts": {
+    "BattleFrontier_OutsideWest_Text_LongDreamedAboutBattleFrontier": "The BATTLE FRONTIER…\\nI've long dreamed about a place like it.$"
+   }
+  },
+  {
+   "local_id": 17,
+   "x": 31,
+   "y": 31,
+   "gfx": "OBJ_EVENT_GFX_FISHERMAN",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BattleFrontier_OutsideWest_EventScript_Fisherman1",
+   "texts": {
+    "BattleFrontier_OutsideWest_Text_ChooseFishingOverBattling": "I believe I'm the only person here who,\\nfor some unknown reason, would choose\\lfishing over battling.\\pHuh? You can't catch anything here?\\nThat's disappointing…$"
+   }
+  },
+  {
+   "local_id": 18,
+   "x": 42,
+   "y": 48,
+   "gfx": "OBJ_EVENT_GFX_FISHERMAN",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN_AND_RIGHT",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BattleFrontier_OutsideWest_EventScript_Fisherman2",
+   "texts": {
+    "BattleFrontier_OutsideWest_Text_GotSeasickOnWayHere": "I wanted to take a challenge as soon\\nas I arrived here.\\pBut on the way, I got seasick…\\nUrrrrp…$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 19,
+   "x": 38,
+   "y": 22,
+   "gfx": "OBJ_EVENT_GFX_FAT_MAN",
+   "movement": "MOVEMENT_TYPE_WANDER_UP_AND_DOWN",
+   "range": [
+    0,
+    3
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BattleFrontier_OutsideWest_EventScript_FatMan2",
+   "texts": {
+    "BattleFrontier_OutsideWest_Text_MetOlderGirlAtPike": "Crunch, munch…\\pA while back, I met this older girl\\nat the BATTLE PIKE.\\pShe had these eyes that were scary\\nin a real ornery way.\\pCrunch, munch…\\pShe got all furious: “Will you quit\\neating!” Then she whaled on me.\\pIt was a hair-raising kind of\\nscary experience, sure enough.\\pCrunch, munch…$"
+   }
+  },
+  {
+   "local_id": 20,
+   "x": 12,
+   "y": 9,
+   "gfx": "OBJ_EVENT_GFX_WOMAN_2",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BattleFrontier_OutsideWest_EventScript_Woman3",
+   "texts": {
+    "BattleFrontier_OutsideWest_Text_LastTimeOurEyesMet": "Huh? Will you listen to yourself?\\nThat's nothing!\\pWhy, the last time I cheered for him,\\nour eyes met and sparks flew!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 21,
+   "x": 12,
+   "y": 10,
+   "gfx": "OBJ_EVENT_GFX_BOY_1",
+   "movement": "MOVEMENT_TYPE_FACE_UP",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BattleFrontier_OutsideWest_EventScript_Boy2",
+   "texts": {
+    "BattleFrontier_OutsideWest_Text_DomeAceLookedBecauseOfMyCheering": "Whaaaaaat?!\\nPfft!\\pThat only happened because\\nI happened to be sitting next to you!\\pThe DOME ACE only looked our way\\nbecause my cheering was so loud!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 22,
+   "x": 11,
+   "y": 10,
+   "gfx": "OBJ_EVENT_GFX_OLD_MAN",
+   "movement": "MOVEMENT_TYPE_ROTATE_COUNTERCLOCKWISE",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BattleFrontier_OutsideWest_EventScript_OldMan",
+   "texts": {
+    "BattleFrontier_OutsideWest_Text_DomeAceIsMine": "Oh, shush!\\nKeep that racket down!\\pYou fair-weather fans should stick\\nto cheering for some GYM LEADER!\\pThe DOME ACE is mine!\\nThe only idol for me!$"
+   }
+  },
+  {
+   "local_id": 23,
+   "x": 8,
+   "y": 5,
+   "gfx": "OBJ_EVENT_GFX_MAN_4",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BattleFrontier_OutsideWest_EventScript_Man4",
+   "texts": {
+    "BattleFrontier_OutsideWest_Text_FansOverThereUsedToBeTrainers": "Those people squabbling over there…\\pIt's hard to believe, but they once\\nwere TRAINERS, and good ones, too.\\pThey used to be incredibly tough,\\nand they were famous, too.\\pBut they were obliterated by this\\ncertain TRAINER at a tournament.\\pThey were so thoroughly whipped,\\nthey became smitten by the TRAINER.\\pNow they're just fans of the TRAINER.\\nThey go cheer for their idol at the\\lBATTLE DOME every day now.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 24,
+   "x": 4,
+   "y": 26,
+   "gfx": "OBJ_EVENT_GFX_POKEFAN_F",
+   "movement": "MOVEMENT_TYPE_ROTATE_CLOCKWISE",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "BattleFrontier_OutsideWest_EventScript_PokefanF",
+   "texts": {
+    "BattleFrontier_OutsideWest_Text_MonWithLongTailInFrontier": "I heard a rumor that someone saw\\na POKéMON with an unusually long tail\\lsomewhere in the BATTLE FRONTIER.\\pIt must be adorable. I'm sure of it…\\pOh, challenges can wait. I feel driven\\nto find the delightful creature!$"
+   }
+  }
+ ],
+ "signs": [
+  {
+   "x": 15,
+   "y": 18,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "BattleFrontier_OutsideWest_EventScript_BattleDomeSign",
+   "texts": {
+    "BattleFrontier_OutsideWest_Text_BattleDomeSign": "This is the BATTLE DOME!\\nYour path to the invincible superstar!$"
+   }
+  },
+  {
+   "x": 45,
+   "y": 30,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "BattleFrontier_OutsideWest_EventScript_BattlePikeSign",
+   "texts": {
+    "BattleFrontier_OutsideWest_Text_BattlePikeSign": "This is the BATTLE PIKE!\\nChoose one of three paths!$"
+   }
+  },
+  {
+   "x": 16,
+   "y": 43,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "BattleFrontier_OutsideWest_EventScript_BattleFactorySign",
+   "texts": {
+    "BattleFrontier_OutsideWest_Text_BattleFactorySign": "This is the BATTLE FACTORY!\\nSeek out the toughest POKéMON!$"
+   }
+  },
+  {
+   "x": 52,
+   "y": 51,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "Common_EventScript_ShowPokemartSign",
+   "texts": {
+    "gText_PokemartSign": "“Selected items for your convenience!”\\nPOKéMON MART$"
+   }
+  },
+  {
+   "x": 53,
+   "y": 51,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "Common_EventScript_ShowPokemartSign",
+   "texts": {
+    "gText_PokemartSign": "“Selected items for your convenience!”\\nPOKéMON MART$"
+   }
+  }
+ ],
+ "warps": [
+  {
+   "id": 0,
+   "x": 42,
+   "y": 27,
+   "dest_map": "MAP_BATTLE_FRONTIER_BATTLE_PIKE_LOBBY",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 1,
+   "x": 19,
+   "y": 17,
+   "dest_map": "MAP_BATTLE_FRONTIER_BATTLE_DOME_LOBBY",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 2,
+   "x": 11,
+   "y": 38,
+   "dest_map": "MAP_BATTLE_FRONTIER_BATTLE_FACTORY_LOBBY",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 3,
+   "x": 45,
+   "y": 44,
+   "dest_map": "MAP_BATTLE_FRONTIER_LOUNGE2",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 4,
+   "x": 51,
+   "y": 51,
+   "dest_map": "MAP_BATTLE_FRONTIER_MART",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 5,
+   "x": 44,
+   "y": 5,
+   "dest_map": "MAP_BATTLE_FRONTIER_SCOTTS_HOUSE",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 6,
+   "x": 53,
+   "y": 44,
+   "dest_map": "MAP_BATTLE_FRONTIER_LOUNGE4",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 7,
+   "x": 5,
+   "y": 20,
+   "dest_map": "MAP_BATTLE_FRONTIER_LOUNGE7",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 8,
+   "x": 26,
+   "y": 65,
+   "dest_map": "MAP_BATTLE_FRONTIER_RECEPTION_GATE",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 9,
+   "x": 26,
+   "y": 61,
+   "dest_map": "MAP_BATTLE_FRONTIER_RECEPTION_GATE",
+   "dest_warp_id": "1"
+  },
+  {
+   "id": 10,
+   "x": 39,
+   "y": 55,
+   "dest_map": "MAP_ARTISAN_CAVE_B1F",
+   "dest_warp_id": "0"
+  }
+ ],
+ "coord_events": [],
+ "wild": {}
+}

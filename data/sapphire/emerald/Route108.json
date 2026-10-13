@@ -1,0 +1,289 @@
+{
+ "map": "Route108",
+ "id": "MAP_ROUTE108",
+ "layout": "LAYOUT_ROUTE108",
+ "music": "MUS_ROUTE104",
+ "region_map_section": "MAPSEC_ROUTE_108",
+ "weather": "WEATHER_SUNNY",
+ "connections": [
+  {
+   "map": "MAP_ROUTE107",
+   "offset": 0,
+   "direction": "left"
+  },
+  {
+   "map": "MAP_ROUTE109",
+   "offset": -40,
+   "direction": "right"
+  }
+ ],
+ "npcs": [
+  {
+   "local_id": 1,
+   "x": 52,
+   "y": 13,
+   "gfx": "OBJ_EVENT_GFX_SWIMMER_M",
+   "movement": "MOVEMENT_TYPE_WALK_SEQUENCE_UP_LEFT_DOWN_RIGHT",
+   "range": [
+    3,
+    3
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route108_EventScript_Jerome",
+   "texts": {
+    "Route108_Text_JeromeIntro": "My dream is to swim the world's seven\\nseas!$",
+    "Route108_Text_JeromeDefeated": "I won't be able to swim the seven seas\\nlike this…$",
+    "Route108_Text_JeromePostBattle": "Playing with marine POKéMON is one of\\nthe pleasures of swimming!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 2,
+   "x": 35,
+   "y": 12,
+   "gfx": "OBJ_EVENT_GFX_SWIMMER_F",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN_AND_UP",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route108_EventScript_Tara",
+   "texts": {
+    "Route108_Text_TaraIntro": "My liar of a boyfriend told me that\\nI look great in a bikini…$",
+    "Route108_Text_TaraDefeated": "Oh, boo!$",
+    "Route108_Text_TaraPostBattle": "Even if it's a lie, I love being told\\nI look great…\\lWe girls are so complex…$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 3,
+   "x": 13,
+   "y": 13,
+   "gfx": "OBJ_EVENT_GFX_SWIMMER_M",
+   "movement": "MOVEMENT_TYPE_ROTATE_CLOCKWISE",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route108_EventScript_Matthew",
+   "texts": {
+    "Route108_Text_MatthewIntro": "Ahoy, there! Are you going out to\\nthe ABANDONED SHIP, too?$",
+    "Route108_Text_MatthewDefeated": "I'm sinking!\\nGlub… Glub…$",
+    "Route108_Text_MatthewPostBattle": "Some people even go inside that\\nABANDONED SHIP.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 4,
+   "x": 8,
+   "y": 7,
+   "gfx": "OBJ_EVENT_GFX_SWIMMER_F",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN_UP_AND_RIGHT",
+   "range": [
+    6,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route108_EventScript_Missy",
+   "texts": {
+    "Route108_Text_MissyIntro": "I love the sea!\\nI forget all my worries when I swim!$",
+    "Route108_Text_MissyDefeated": "When I lose a battle, I get all\\nstressed out!$",
+    "Route108_Text_MissyPostBattle": "Work off your stress by swimming!\\nIt's so healthy!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 5,
+   "x": 41,
+   "y": 5,
+   "gfx": "OBJ_EVENT_GFX_WOMAN_5",
+   "movement": "MOVEMENT_TYPE_FACE_RIGHT",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route108_EventScript_Carolina",
+   "texts": {
+    "Route108_Text_CarolinaIntro": "I take huge pride in my POKéMON.\\nWe'll show you one speedy battle!$",
+    "Route108_Text_CarolinaDefeated": "That wasn't cute at all.$",
+    "Route108_Text_CarolinaPostBattle": "Since I'm at sea like this, I wouldn't\\nmind putting on a pink, frilly swimsuit…$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 6,
+   "x": 43,
+   "y": 5,
+   "gfx": "OBJ_EVENT_GFX_SAILOR",
+   "movement": "MOVEMENT_TYPE_FACE_LEFT",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route108_EventScript_Cory",
+   "texts": {
+    "Route108_Text_CoryIntro": "I love WATER-type POKéMON.\\nI love other POKéMON, too!$",
+    "Route108_Text_CoryDefeated": "Waaah! I lost!\\nWaaah! Waaah!$",
+    "Route108_Text_CoryPostBattle": "Shouting is good for me!\\nIt uplifts me!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 7,
+   "x": 42,
+   "y": 4,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_ROUTE_108_STAR_PIECE",
+   "script": "Route108_EventScript_ItemStarPiece",
+   "texts": {},
+   "complex": true
+  }
+ ],
+ "signs": [
+  {
+   "x": 38,
+   "y": 14,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 38,
+    "y": 14,
+    "elevation": 3,
+    "item": "ITEM_RARE_CANDY",
+    "flag": "FLAG_HIDDEN_ITEM_ROUTE_108_RARE_CANDY"
+   }
+  }
+ ],
+ "warps": [
+  {
+   "id": 0,
+   "x": 29,
+   "y": 6,
+   "dest_map": "MAP_ABANDONED_SHIP_DECK",
+   "dest_warp_id": "0"
+  }
+ ],
+ "coord_events": [],
+ "wild": {
+  "water_mons": {
+   "encounter_rate": 4,
+   "slot_rates": [
+    60,
+    30,
+    5,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 5,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 15,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_PELIPPER",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_PELIPPER",
+     "min": 25,
+     "max": 30
+    }
+   ]
+  },
+  "fishing_mons": {
+   "encounter_rate": 30,
+   "slot_rates": [
+    70,
+    30,
+    60,
+    20,
+    20,
+    40,
+    40,
+    15,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 20,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 35,
+     "max": 40
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 40,
+     "max": 45
+    }
+   ]
+  }
+ }
+}

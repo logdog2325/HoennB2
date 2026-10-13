@@ -1,0 +1,11 @@
+…
+{0100:0} received the Dynamo Badge\nfrom Wattson.
+With the Dynamo Badge, Pokémon can\nuse Rock Smash out of battle.{be01}\nAnd, it will make your Pokémon a little\nbit faster, too.{be01}\nHmm...\nYou should take this, too!
+That TM34 there contains Sludge Wave.{be01}\nIt’s a trustworthy move that may\npoison the foe! You can count on it!
+I swell with optimism, seeing a promising\nyoung Trainer like you!
+Wahahahah!\nGo forth and endeavor, youngster!
+Hey, how’s it going, Champion-\nbound {0100:0}?{be01}\nWattson, the Leader of Mauville\nGym, uses Electric-type Pokémon.{be01}\nIf you challenge him with Water-type\nPokémon, he’ll zap them! Bzzt!{be01}\nAnd, he’s put in switch-controlled\ndoors all over his Gym! Eccentric!{be01}\nHey, go for it!
+Whoa, you’re electrifying!\nYou’ve powered the door open!
+Mauville City Pokémon Gym
+Mauville City Pokémon Gym{be01}\nWattson’s Certified Trainers:\n{0100:0}
+Too bad!\nThe Bag is full...

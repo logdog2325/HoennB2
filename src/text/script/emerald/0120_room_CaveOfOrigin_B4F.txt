@@ -1,0 +1,12 @@
+{0100:0}’s Blue Orb suddenly began\nglowing!
+Kyogre appears to have settled\ninto sleep again...
+Ah, so you are {0100:0}?\nI’ve heard tales of your exploits.{be01}\nMy name is Wallace.{be01}\nI was once the Gym Leader of\nSootopolis, but something came up.{be01}\nSo now, I’ve entrusted my mentor Juan\nwith the Gym’s operation.{be01}\n… … … … … …\n… … … … … …{be01}\nGroudon and Kyogre, the two Pokémon\nwreaking havoc here, are considered{be00}\nto be super-ancient Pokémon.{be01}\nBut there aren’t just two super-\nancient Pokémon.{be01}\nThere is one more somewhere.{be01}\nSomewhere, there is a super-\nancient Pokémon named Rayquaza.{be01}\nIt’s said that it was Rayquaza that\nbecalmed the two combatants in{be00}\nthe distant past.{be01}\nBut even I have no clue as to\nRayquaza’s whereabouts…
+Wallace: {0100:0}, do you perhaps\nknow where Rayquaza is now?{be01}\nIf you do, please tell me.
+Wallace: The Cave Of Origin?{be01}\nBut that’s right here!\nI need you to do better than that!{be01}\nPlease, I need you to think about\nwhere Rayquaza might be right now.
+Wallace: Mt. Pyre?{be01}\nBut when I met the old lady there\nearlier, she made no mention of it.{be01}\nI very much doubt that the old lady\nwould try to hide something from me…{be01}\n{0100:0}, could you think about this\nmore carefully for me?
+Wallace: Huh? You don’t remember?\nHmm… That’s a problem…{be01}\nCan’t you remember somehow?
+Wallace: The Sky Pillar?{be01}\nThat’s it!\nIt must be the Sky Pillar!{be01}\n{0100:0}, there’s not a moment to lose!\nWe’ll head to the Sky Pillar right away!
+Cave of Origin
+Mt. Pyre
+Sky Pillar
+Don’t remember

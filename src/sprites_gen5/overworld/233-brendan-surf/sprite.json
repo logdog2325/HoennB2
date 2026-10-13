@@ -1,0 +1,85 @@
+{
+ "kind": "overworld",
+ "code": 233,
+ "sheet": 211,
+ "frames": 4,
+ "size": [
+  32,
+  32
+ ],
+ "controller": 5,
+ "textures": [
+  "t4x4x4.0",
+  "t4x4x4.1",
+  "t4x4x4.2",
+  "t4x4x4.3"
+ ],
+ "palette": "t4x4x4",
+ "name": "brendan-surf",
+ "note": "Brendan (player), surf",
+ "source": "community: brendan_sheet_hyo-oppa.png by hyo-oppa",
+ "colours": 15,
+ "merged_colours": [
+  [
+   [
+    3,
+    3,
+    5
+   ],
+   [
+    0,
+    0,
+    0
+   ]
+  ],
+  [
+   [
+    53,
+    57,
+    69
+   ],
+   [
+    57,
+    61,
+    72
+   ]
+  ],
+  [
+   [
+    214,
+    153,
+    110
+   ],
+   [
+    215,
+    154,
+    111
+   ]
+  ],
+  [
+   [
+    193,
+    57,
+    61
+   ],
+   [
+    193,
+    57,
+    57
+   ]
+  ],
+  [
+   [
+    241,
+    105,
+    73
+   ],
+   [
+    241,
+    100,
+    73
+   ]
+  ]
+ ],
+ "made_by": "b2tools/sprite_community.py"
+}

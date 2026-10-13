@@ -1,0 +1,44 @@
+{
+ "map": "DesertRuins",
+ "_doc": "caves_east: the sealed chamber. Sapphire's walkable filler between and around the two rooms (rows 0-1, 13-19, 31-32 outside the walls) is rock; the six rocks around the regi are Black 2's drock02 (as Black 2's own regi chambers ring their statue with them, chunk 815); the braille wall over the sealed door (7-9,19-20) is Black 2's dotted stone panel d29_door1 (the regi chambers' set 332) standing on the wall's top above the door's arch (Black 2's arch, 3 tiles wide and as high as the wall, covers the braille tiles themselves).",
+ "void": [
+  [
+   0,
+   0,
+   16,
+   2
+  ],
+  [
+   0,
+   12,
+   16,
+   19
+  ],
+  [
+   0,
+   30,
+   16,
+   32
+  ]
+ ],
+ "tiles": {
+  "6,4": "boulder",
+  "10,4": "boulder",
+  "4,7": "boulder",
+  "12,7": "boulder",
+  "6,10": "boulder",
+  "10,10": "boulder"
+ },
+ "wall_decals": [
+  {
+   "at": [
+    7,
+    21
+   ],
+   "w": 3,
+   "tex": "d29_door1",
+   "h": 20,
+   "tier": "top"
+  }
+ ]
+}

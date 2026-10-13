@@ -1,0 +1,39 @@
+{
+ "zone": 43,
+ "room": "EverGrandeCity_Corridor4",
+ "area": 334,
+ "bgm": 1072,
+ "what": "gyms_league: EverGrandeCity_Corridor4 (b2tools/gyms_league_rooms.py); story phase: ",
+ "parent": 412,
+ "warps": [
+  {
+   "at": [
+    5,
+    33
+   ],
+   "tile_only": true,
+   "to": [
+    51,
+    1
+   ],
+   "what": "Sapphire warp 0 -> EverGrandeCity_DrakesRoom 1",
+   "type": 2,
+   "dir": 0
+  },
+  {
+   "at": [
+    5,
+    2
+   ],
+   "tile_only": true,
+   "to": [
+    34,
+    0
+   ],
+   "what": "Sapphire warp 1 -> EverGrandeCity_ChampionsRoom 0"
+  }
+ ],
+ "npcs": [],
+ "signs": [],
+ "triggers": []
+}

@@ -1,0 +1,19 @@
+{
+ "_doc": "Emerald Ch7 (emerald_ch0_3 2026-10-12): Scott on Route 119 after the rival's Fly scene (notes/EMERALD_STORY.md Ch7; script scenes/emerald/Route119.inc). Positions are pokeemerald's own tiles.",
+ "objects": [
+  {
+   "kind": "npc",
+   "map": "Route119",
+   "at": [
+    28,
+    25
+   ],
+   "uid": 193,
+   "model": 289,
+   "script": 0,
+   "dir": 1,
+   "flag": "FLAG_HIDE_ROUTE_119_SCOTT",
+   "what": "Scott (LOCALID_ROUTE119_SCOTT): hidden until the scene, which puts him at (27 or 28, 25)"
+  }
+ ]
+}

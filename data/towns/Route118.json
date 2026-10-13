@@ -1,0 +1,13 @@
+{
+ "_doc": "Route 118's door-less house by the water (group towns5, data/buildings/towns5.json res 411, b2tools/models_routes.py house118; buildings_audit 2026-10-08): Sapphire's Mauville-tileset house at x 0-3, rows 15-17 + roof row 14, no door, which no model drew (a solid 4x3 patch of grass). props: model origin in Sapphire map tile coordinates (footprint centre x, bottom row - 1: the front wall 4 units into the bottom row, as world.py places buildings).",
+ "group": "towns5",
+ "buildings": {},
+ "props": [
+  {
+   "res": 411,
+   "x": 2.0,
+   "z": 16.0,
+   "what": "door-less house x 0-3, rows 15-17 (Mauville house 2's build, no door)"
+  }
+ ]
+}

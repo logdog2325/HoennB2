@@ -1,0 +1,56 @@
+{
+ "_doc": "MauvilleCity_GameCorner (zone 237), built by the specials agent (recipe data/interior_layouts/MauvilleCity_GameCorner.json): Musical Theater look, Black 2 interior area 305. Warps in Sapphire's order (one per Sapphire warp tile). People/signs: Sapphire's one-message ones as generated; story people are left for the story phase.",
+ "zone": 237,
+ "room": "MauvilleCity_GameCorner",
+ "area": 305,
+ "parent": 406,
+ "warps": [
+  {
+   "at": [
+    11,
+    10
+   ],
+   "tile_only": true,
+   "to": [
+    406,
+    10
+   ],
+   "what": "Sapphire warp 0 -> MauvilleCity 5"
+  },
+  {
+   "at": [
+    12,
+    10
+   ],
+   "tile_only": true,
+   "to": [
+    406,
+    10
+   ],
+   "what": "Sapphire warp 1 -> MauvilleCity 5"
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 1,
+   "model": 27,
+   "script": 1,
+   "dir": 1,
+   "at": [
+    12,
+    7
+   ]
+  },
+  {
+   "uid": 2,
+   "model": 44,
+   "script": 2,
+   "dir": 1,
+   "at": [
+    16,
+    5
+   ]
+  }
+ ],
+ "signs": []
+}

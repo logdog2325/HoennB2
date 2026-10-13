@@ -1,0 +1,35 @@
+{
+ "_doc": "Emerald Ch6 (emerald_ch0_3 2026-10-12): Wally's father in the Petalburg Gym and in the town (he leads the player to his house; notes/EMERALD_STORY.md Ch6; scripts scenes/emerald/PetalburgCity_Gym_ch6.inc and PetalburgCity.inc). Positions are pokeemerald's own tiles.",
+ "objects": [
+  {
+   "kind": "npc",
+   "map": "PetalburgCity_Gym",
+   "at": [
+    1,
+    7
+   ],
+   "uid": 30,
+   "model": 20,
+   "script": 0,
+   "dir": 0,
+   "move": 14,
+   "flag": "FLAG_HIDE_PETALBURG_GYM_WALLYS_DAD",
+   "what": "Wally's father (POKEFAN_M -> MAN_3 sprite 20) who walks in after Norman's badge scene"
+  },
+  {
+   "kind": "npc",
+   "map": "PetalburgCity",
+   "at": [
+    15,
+    10
+   ],
+   "uid": 120,
+   "model": 20,
+   "script": 0,
+   "dir": 0,
+   "move": 14,
+   "flag": "FLAG_HIDE_PETALBURG_CITY_WALLYS_DAD",
+   "what": "Wally's father in front of the Gym (appears with the state 4 walk)"
+  }
+ ]
+}

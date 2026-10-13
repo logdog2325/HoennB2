@@ -1,0 +1,284 @@
+{
+ "map": "Route106",
+ "id": "MAP_ROUTE106",
+ "layout": "LAYOUT_ROUTE106",
+ "music": "MUS_ROUTE104",
+ "region_map_section": "MAPSEC_ROUTE_106",
+ "weather": "WEATHER_SUNNY",
+ "connections": [
+  {
+   "map": "MAP_ROUTE105",
+   "offset": 0,
+   "direction": "up"
+  },
+  {
+   "map": "MAP_DEWFORD_TOWN",
+   "offset": 60,
+   "direction": "down"
+  }
+ ],
+ "npcs": [
+  {
+   "local_id": 1,
+   "x": 18,
+   "y": 5,
+   "gfx": "OBJ_EVENT_GFX_SWIMMER_M",
+   "movement": "MOVEMENT_TYPE_WALK_LEFT_AND_RIGHT",
+   "range": [
+    4,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route106_EventScript_Douglas",
+   "texts": {
+    "Route106_Text_DouglasIntro": "Hahahah! I'm a lousy runner, but in\\nthe water you can't catch me!$",
+    "Route106_Text_DouglasDefeated": "I give up!$",
+    "Route106_Text_DouglasPostBattle": "I wouldn't lose in a swim race…$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 2,
+   "x": 29,
+   "y": 10,
+   "gfx": "OBJ_EVENT_GFX_SWIMMER_F",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route106_EventScript_Kyla",
+   "texts": {
+    "Route106_Text_KylaIntro": "The sea is my backyard. I'm not going\\nto take it easy because you're a kid!$",
+    "Route106_Text_KylaDefeated": "Did you take it easy on me by any\\nchance?$",
+    "Route106_Text_KylaPostBattle": "Drifting along with the waves…\\nI love it! Why don't you give it a try?$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 3,
+   "x": 51,
+   "y": 14,
+   "gfx": "OBJ_EVENT_GFX_FISHERMAN",
+   "movement": "MOVEMENT_TYPE_FACE_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route106_EventScript_Elliot",
+   "texts": {
+    "Route106_Text_ElliotIntro": "Which do you prefer, fishing in the\\nsea or a stream?$",
+    "Route106_Text_ElliotDefeated": "Like in deep-sea fishing, I lost\\nspectacularly!$",
+    "Route106_Text_ElliotPostBattle": "Fishing is the greatest whether it's\\nin the sea or a stream.\\lYou agree with me, right?$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 4,
+   "x": 65,
+   "y": 14,
+   "gfx": "OBJ_EVENT_GFX_FISHERMAN",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route106_EventScript_Ned",
+   "texts": {
+    "Route106_Text_NedIntro": "What do people do if they need to go\\nto a washroom?\\pWhat if my ROD hooks a big one while\\nI'm in the washroom? I just can't go…$",
+    "Route106_Text_NedDefeated": "I lost because I'm trying to not go\\nto the washroom…$",
+    "Route106_Text_NedPostBattle": "Oh, no! I've got this feeling I'll hook\\na big one!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 5,
+   "x": 29,
+   "y": 14,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_ROUTE_106_PROTEIN",
+   "script": "Route106_EventScript_ItemProtein",
+   "texts": {},
+   "complex": true
+  }
+ ],
+ "signs": [
+  {
+   "x": 41,
+   "y": 11,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 41,
+    "y": 11,
+    "elevation": 3,
+    "item": "ITEM_POKE_BALL",
+    "flag": "FLAG_HIDDEN_ITEM_ROUTE_106_POKE_BALL"
+   }
+  },
+  {
+   "x": 53,
+   "y": 12,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 53,
+    "y": 12,
+    "elevation": 0,
+    "item": "ITEM_STARDUST",
+    "flag": "FLAG_HIDDEN_ITEM_ROUTE_106_STARDUST"
+   }
+  },
+  {
+   "x": 68,
+   "y": 15,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 68,
+    "y": 15,
+    "elevation": 3,
+    "item": "ITEM_HEART_SCALE",
+    "flag": "FLAG_HIDDEN_ITEM_ROUTE_106_HEART_SCALE"
+   }
+  },
+  {
+   "x": 59,
+   "y": 13,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "Route106_EventScript_TrainerTipsSign",
+   "texts": {
+    "Route106_Text_TrainerTips": "TRAINER TIPS\\pAdvice on catching POKéMON with a ROD:\\nPress the A Button if you get a bite.$"
+   }
+  }
+ ],
+ "warps": [
+  {
+   "id": 0,
+   "x": 48,
+   "y": 16,
+   "dest_map": "MAP_GRANITE_CAVE_1F",
+   "dest_warp_id": "0"
+  }
+ ],
+ "coord_events": [],
+ "wild": {
+  "water_mons": {
+   "encounter_rate": 4,
+   "slot_rates": [
+    60,
+    30,
+    5,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 5,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 15,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_PELIPPER",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_PELIPPER",
+     "min": 25,
+     "max": 30
+    }
+   ]
+  },
+  "fishing_mons": {
+   "encounter_rate": 30,
+   "slot_rates": [
+    70,
+    30,
+    60,
+    20,
+    20,
+    40,
+    40,
+    15,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 20,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 35,
+     "max": 40
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 40,
+     "max": 45
+    }
+   ]
+  }
+ }
+}

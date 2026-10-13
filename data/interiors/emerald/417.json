@@ -1,0 +1,111 @@
+{
+ "_doc": "frontier_factory_dome (2026-10-12): BattleFrontier_BattleDomeBattleRoom (notes/FRONTIER_FACTORY_DOME.md), Emerald only (data/emerald/hoenn_interiors.json claim). People = Emerald's objects (uid = Emerald local id), their sprites from data/sprite_map.json. Room origin [1, -1].",
+ "zone": 417,
+ "room": "BattleFrontier_BattleDomeBattleRoom",
+ "area": 352,
+ "parent": 17,
+ "warps": [],
+ "npcs": [
+  {
+   "uid": 1,
+   "model": 341,
+   "script": 2,
+   "dir": 1,
+   "at": [
+    5,
+    4
+   ],
+   "what": "announcer (REPORTER_M)"
+  },
+  {
+   "uid": 2,
+   "model": 162,
+   "script": 2,
+   "dir": 2,
+   "at": [
+    11,
+    6
+   ],
+   "flag": 1094,
+   "what": "opponent (code 162 = work 0x4020; hidden by FLAG_HIDE_BATTLE_TOWER_OPPONENT until shown)"
+  },
+  {
+   "uid": 3,
+   "model": 24,
+   "script": 2,
+   "dir": 3,
+   "at": [
+    0,
+    4
+   ],
+   "what": "referee (MAN_2)"
+  },
+  {
+   "uid": 4,
+   "model": 16,
+   "script": 2,
+   "dir": 1,
+   "at": [
+    3,
+    3
+   ],
+   "what": "audience"
+  },
+  {
+   "uid": 5,
+   "model": 10,
+   "script": 2,
+   "dir": 1,
+   "at": [
+    8,
+    3
+   ],
+   "what": "audience"
+  },
+  {
+   "uid": 6,
+   "model": 21,
+   "script": 2,
+   "dir": 1,
+   "at": [
+    10,
+    3
+   ],
+   "what": "audience"
+  },
+  {
+   "uid": 7,
+   "model": 17,
+   "script": 2,
+   "dir": 1,
+   "at": [
+    13,
+    3
+   ],
+   "what": "audience"
+  },
+  {
+   "uid": 8,
+   "model": 27,
+   "script": 2,
+   "dir": 1,
+   "at": [
+    15,
+    3
+   ],
+   "what": "audience"
+  },
+  {
+   "uid": 9,
+   "model": 25,
+   "script": 2,
+   "dir": 1,
+   "at": [
+    17,
+    3
+   ],
+   "what": "audience"
+  }
+ ],
+ "signs": []
+}

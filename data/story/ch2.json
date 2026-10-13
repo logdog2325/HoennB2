@@ -1,0 +1,1248 @@
+{
+ "_doc": "Chapter Ch2 story objects (b2tools/patches/story.py), written by work/agents/ch2/tools/mkjson.py. Sapphire tiles (\"at\") of the named map; uids: rooms = Sapphire local id (a second copy of a person: 50 + id), Rustboro 150 + id (from when zone 113 held Route 104's north end), other outdoor maps 100 + id. Scripts: scenes/<Map>.inc of outdoor maps, the rooms' own files after \"// ---- story\".",
+ "objects": [
+  {
+   "kind": "npc",
+   "map": "RustboroCity",
+   "at": [
+    19,
+    13
+   ],
+   "uid": 152,
+   "model": 25,
+   "script": 2,
+   "dir": 1,
+   "move": 2,
+   "what": "fat man (Sapphire object 2, FAT_MAN)"
+  },
+  {
+   "kind": "npc",
+   "map": "RustboroCity",
+   "at": [
+    12,
+    45
+   ],
+   "uid": 155,
+   "model": 21,
+   "script": 4,
+   "dir": 1,
+   "move": 2,
+   "what": "boy (Mr. Briney) (Sapphire object 5, BOY_2)"
+  },
+  {
+   "kind": "npc",
+   "map": "RustboroCity",
+   "at": [
+    26,
+    23
+   ],
+   "uid": 156,
+   "model": 19,
+   "script": 3,
+   "dir": 1,
+   "move": 2,
+   "what": "man (Gym Badge) (Sapphire object 6, MAN_4)"
+  },
+  {
+   "kind": "npc",
+   "map": "RustboroCity",
+   "at": [
+    24,
+    51
+   ],
+   "uid": 157,
+   "model": 8,
+   "script": 5,
+   "dir": 3,
+   "move": 17,
+   "what": "little boy (Sapphire object 7, LITTLE_BOY_2)"
+  },
+  {
+   "kind": "npc",
+   "map": "RustboroCity",
+   "at": [
+    25,
+    51
+   ],
+   "uid": 158,
+   "model": 154,
+   "script": 6,
+   "dir": 2,
+   "move": 16,
+   "what": "little girl (Sapphire object 8, LITTLE_GIRL_2)"
+  },
+  {
+   "kind": "npc",
+   "map": "RustboroCity",
+   "at": [
+    30,
+    10
+   ],
+   "uid": 159,
+   "model": 24,
+   "script": 20,
+   "dir": 3,
+   "move": 17,
+   "flag": "FLAG_HIDE_DEVON_RUSTBORO",
+   "what": "Devon employee (Sapphire object 9, MAN_2)"
+  },
+  {
+   "kind": "npc",
+   "map": "RustboroCity",
+   "at": [
+    13,
+    21
+   ],
+   "uid": 160,
+   "model": 293,
+   "script": 23,
+   "dir": 3,
+   "move": 17,
+   "flag": "FLAG_HIDE_GRUNT_RUSTBORO",
+   "what": "Team Aqua grunt (OBJ_EVENT_GFX_VAR_1 = Aqua grunt M in Sapphire) (Sapphire object 10, VAR_1)"
+  },
+  {
+   "kind": "npc",
+   "map": "RustboroCity",
+   "at": [
+    16,
+    50
+   ],
+   "uid": 164,
+   "model": 162,
+   "script": 21,
+   "dir": 1,
+   "move": 2,
+   "flag": "FLAG_HIDE_RIVAL_RUSTBORO",
+   "what": "rival (RIVAL_GFX) (Sapphire object 14, VAR_0)"
+  },
+  {
+   "kind": "trigger",
+   "map": "RustboroCity",
+   "at": [
+    23,
+    20
+   ],
+   "script": 7,
+   "var": "VAR_RUSTBORO_STATE",
+   "value": 1,
+   "what": "StolenGoodsTrigger0"
+  },
+  {
+   "kind": "trigger",
+   "map": "RustboroCity",
+   "at": [
+    23,
+    21
+   ],
+   "script": 8,
+   "var": "VAR_RUSTBORO_STATE",
+   "value": 1,
+   "what": "StolenGoodsTrigger1"
+  },
+  {
+   "kind": "trigger",
+   "map": "RustboroCity",
+   "at": [
+    23,
+    22
+   ],
+   "script": 9,
+   "var": "VAR_RUSTBORO_STATE",
+   "value": 1,
+   "what": "StolenGoodsTrigger2"
+  },
+  {
+   "kind": "trigger",
+   "map": "RustboroCity",
+   "at": [
+    23,
+    23
+   ],
+   "script": 10,
+   "var": "VAR_RUSTBORO_STATE",
+   "value": 1,
+   "what": "StolenGoodsTrigger3"
+  },
+  {
+   "kind": "trigger",
+   "map": "RustboroCity",
+   "at": [
+    23,
+    24
+   ],
+   "script": 11,
+   "var": "VAR_RUSTBORO_STATE",
+   "value": 1,
+   "what": "StolenGoodsTrigger4"
+  },
+  {
+   "kind": "trigger",
+   "map": "RustboroCity",
+   "at": [
+    30,
+    9
+   ],
+   "script": 12,
+   "var": "VAR_RUSTBORO_STATE",
+   "value": 2,
+   "what": "HelpGetGoodsTrigger0"
+  },
+  {
+   "kind": "trigger",
+   "map": "RustboroCity",
+   "at": [
+    29,
+    10
+   ],
+   "script": 13,
+   "var": "VAR_RUSTBORO_STATE",
+   "value": 2,
+   "what": "HelpGetGoodsTrigger1"
+  },
+  {
+   "kind": "trigger",
+   "map": "RustboroCity",
+   "at": [
+    30,
+    11
+   ],
+   "script": 14,
+   "var": "VAR_RUSTBORO_STATE",
+   "value": 2,
+   "what": "HelpGetGoodsTrigger2"
+  },
+  {
+   "kind": "trigger",
+   "map": "RustboroCity",
+   "at": [
+    30,
+    12
+   ],
+   "script": 15,
+   "var": "VAR_RUSTBORO_STATE",
+   "value": 2,
+   "what": "HelpGetGoodsTrigger3"
+  },
+  {
+   "kind": "trigger",
+   "map": "RustboroCity",
+   "at": [
+    30,
+    9
+   ],
+   "script": 16,
+   "var": "VAR_RUSTBORO_STATE",
+   "value": 4,
+   "what": "ReturnGoodsTrigger0"
+  },
+  {
+   "kind": "trigger",
+   "map": "RustboroCity",
+   "at": [
+    31,
+    10
+   ],
+   "script": 17,
+   "var": "VAR_RUSTBORO_STATE",
+   "value": 4,
+   "what": "ReturnGoodsTrigger1"
+  },
+  {
+   "kind": "trigger",
+   "map": "RustboroCity",
+   "at": [
+    30,
+    11
+   ],
+   "script": 18,
+   "var": "VAR_RUSTBORO_STATE",
+   "value": 4,
+   "what": "ReturnGoodsTrigger2"
+  },
+  {
+   "kind": "trigger",
+   "map": "RustboroCity",
+   "at": [
+    30,
+    12
+   ],
+   "script": 19,
+   "var": "VAR_RUSTBORO_STATE",
+   "value": 4,
+   "what": "ReturnGoodsTrigger3"
+  },
+  {
+   "kind": "npc",
+   "map": "Route116",
+   "at": [
+    46,
+    9
+   ],
+   "uid": 111,
+   "model": 28,
+   "script": 4,
+   "dir": 1,
+   "move": 2,
+   "flag": "FLAG_HIDE_BRINEY_ROUTE116",
+   "what": "Mr. Briney (Peeko taken) (Sapphire object 11, OLD_MAN_1)"
+  },
+  {
+   "kind": "npc",
+   "map": "Route116",
+   "at": [
+    46,
+    11
+   ],
+   "uid": 119,
+   "model": 24,
+   "script": 3,
+   "dir": 1,
+   "move": 2,
+   "flag": "FLAG_HIDE_DEVON_EMPLOYEE_ROUTE116",
+   "what": "Devon employee (Repeat Ball) (Sapphire object 19, MAN_2)"
+  },
+  {
+   "kind": "npc",
+   "map": "Route116",
+   "at": [
+    38,
+    9
+   ],
+   "uid": 121,
+   "model": 46,
+   "script": 2,
+   "dir": 3,
+   "move": 17,
+   "flag": 88,
+   "what": "tunneler at the rest house door (hidden by local flag 0x58 once the goods are recovered) (Sapphire object 21, BLACK_BELT)"
+  },
+  {
+   "kind": "npc",
+   "map": "Route116",
+   "at": [
+    41,
+    10
+   ],
+   "uid": 171,
+   "model": 46,
+   "script": 2,
+   "dir": 3,
+   "move": 17,
+   "flag": 89,
+   "what": "tunneler moved (OnTransition setobjectxyperm 21, 41, 10; hidden by local flag 0x59 before) (Sapphire object 21, BLACK_BELT)"
+  },
+  {
+   "kind": "trigger",
+   "map": "Route116",
+   "at": [
+    47,
+    9
+   ],
+   "script": 5,
+   "var": "VAR_ROUTE116_STATE",
+   "value": 1,
+   "what": "Mr. Briney stops you (Route116_EventScript_150B6E)"
+  },
+  {
+   "kind": "npc",
+   "map": "Route116",
+   "at": [
+    74,
+    13
+   ],
+   "uid": 172,
+   "model": 24,
+   "script": 6,
+   "dir": 1,
+   "move": 2,
+   "flag": "FLAG_HIDE_LOST_GLASSES_MAN",
+   "what": "lost-glasses man: script 6 of scenes/Route116.inc (scenes/Route116_GlassesMan.inc; in Verdanturf's zone 120 and its file until every map had its own zone up to its edges, zone_edges 2026-10-08) (Sapphire object 22, MANIAC)"
+  },
+  {
+   "kind": "npc",
+   "map": "RusturfTunnel",
+   "at": [
+    23,
+    5
+   ],
+   "uid": 1,
+   "model": 46,
+   "script": 3,
+   "dir": 3,
+   "move": 17,
+   "flag": "FLAG_HIDE_BOYFRIEND_RUSTURF_TUNNEL",
+   "what": "Wanda's boyfriend (digging) (Sapphire object 1, BLACK_BELT)"
+  },
+  {
+   "kind": "npc",
+   "map": "RusturfTunnel",
+   "at": [
+    5,
+    4
+   ],
+   "uid": 5,
+   "model": 28,
+   "script": 7,
+   "dir": 3,
+   "move": 17,
+   "flag": "FLAG_HIDE_BRINEY_RUSTURF_TUNNEL",
+   "what": "Mr. Briney (comes for Peeko) (Sapphire object 5, OLD_MAN_1)"
+  },
+  {
+   "kind": "npc",
+   "map": "RusturfTunnel",
+   "at": [
+    14,
+    5
+   ],
+   "uid": 6,
+   "model": 293,
+   "script": 6,
+   "dir": 2,
+   "move": 16,
+   "flag": "FLAG_HIDE_GRUNT_RUSTURF_TUNNEL",
+   "what": "Team Aqua grunt with the Devon Goods (OBJ_EVENT_GFX_VAR_1 = Aqua grunt M) (Sapphire object 6, VAR_1)"
+  },
+  {
+   "kind": "npc",
+   "map": "RusturfTunnel",
+   "at": [
+    14,
+    4
+   ],
+   "uid": 7,
+   "model": 4407,
+   "script": 5,
+   "dir": 2,
+   "move": 16,
+   "flag": "FLAG_HIDE_PEEKO_RUSTURF_TUNNEL",
+   "what": "Peeko (Sapphire object 7, WINGULL)"
+  },
+  {
+   "kind": "npc",
+   "map": "RusturfTunnel",
+   "at": [
+    25,
+    4
+   ],
+   "uid": 10,
+   "model": 27,
+   "script": 2,
+   "dir": 2,
+   "move": 16,
+   "flag": "FLAG_HIDE_GIRLFRIEND_RUSTURF_TUNNEL",
+   "what": "Wanda (girlfriend) (Sapphire object 10, WOMAN_3)"
+  },
+  {
+   "kind": "npc",
+   "map": "RusturfTunnel",
+   "at": [
+    32,
+    13
+   ],
+   "uid": 9,
+   "model": 64,
+   "script": 3720,
+   "dir": 2,
+   "move": 16,
+   "evtype": 1,
+   "p0": 3,
+   "what": "Hiker Mike (eye contact; not placed by the trainers patch: the cave was unbuilt) (Sapphire object 9, HIKER)"
+  },
+  {
+   "kind": "trigger",
+   "map": "RusturfTunnel",
+   "at": [
+    9,
+    4
+   ],
+   "script": 4,
+   "var": "VAR_RUSTURF_TUNNEL_STATE",
+   "value": 2,
+   "what": "the grunt steps back (RusturfTunnel_EventScript_15C9AB)"
+  },
+  {
+   "kind": "trigger",
+   "map": "RusturfTunnel",
+   "at": [
+    9,
+    5
+   ],
+   "script": 4,
+   "var": "VAR_RUSTURF_TUNNEL_STATE",
+   "value": 2,
+   "what": "the grunt steps back (RusturfTunnel_EventScript_15C9AB)"
+  },
+  {
+   "kind": "npc",
+   "map": "Route104_MrBrineysHouse",
+   "at": [
+    5,
+    3
+   ],
+   "uid": 1,
+   "model": 28,
+   "script": 2,
+   "dir": 1,
+   "move": 15,
+   "areaw": 3,
+   "areah": 3,
+   "flag": "FLAG_HIDE_MR_BRINEY_ROUTE104_HOUSE",
+   "what": "Mr. Briney (Sapphire object 1, OLD_MAN_1, range 3x3); after the Rusturf rescue (VAR_BRINEY_HOUSE_STATE 1) he chases Peeko around the table: move code 42 set by the room's script 7"
+  },
+  {
+   "kind": "npc",
+   "map": "Route104_MrBrineysHouse",
+   "at": [
+    6,
+    3
+   ],
+   "uid": 2,
+   "model": 4407,
+   "script": 3,
+   "dir": 1,
+   "move": 15,
+   "areaw": 3,
+   "areah": 3,
+   "flag": "FLAG_HIDE_PEEKO_BRINEY_HOUSE",
+   "what": "Peeko (Sapphire object 2, WINGULL, range 3x3); after the Rusturf rescue she flies around the table ahead of him: move code 43 set by the room's script 7"
+  },
+  {
+   "kind": "npc",
+   "map": "Route104",
+   "at": [
+    12,
+    51
+   ],
+   "uid": 108,
+   "model": 28,
+   "script": 5,
+   "dir": 3,
+   "move": 17,
+   "flag": "FLAG_HIDE_MR_BRINEY_ROUTE104",
+   "what": "Mr. Briney at his dock (boat scene) (Sapphire object 8, OLD_MAN_1)"
+  },
+  {
+   "kind": "npc",
+   "map": "DewfordTown",
+   "at": [
+    12,
+    9
+   ],
+   "uid": 102,
+   "model": 28,
+   "script": 2,
+   "dir": 2,
+   "move": 16,
+   "flag": "FLAG_HIDE_MR_BRINEY_DEWFORD_TOWN",
+   "what": "Mr. Briney (Sapphire object 2, OLD_MAN_1)"
+  },
+  {
+   "kind": "npc",
+   "map": "DewfordTown",
+   "at": [
+    12,
+    14
+   ],
+   "uid": 103,
+   "model": 63,
+   "script": 3,
+   "dir": 2,
+   "move": 5,
+   "areaw": 1,
+   "areah": 0,
+   "what": "Old Rod fisherman (Sapphire object 3, FISHERMAN)"
+  },
+  {
+   "kind": "npc",
+   "map": "DewfordTown",
+   "at": [
+    1,
+    6
+   ],
+   "uid": 105,
+   "model": 10,
+   "script": 4,
+   "dir": 1,
+   "move": 2,
+   "what": "trendy-phrase boy (Sapphire object 5, BOY_1)"
+  },
+  {
+   "kind": "npc",
+   "map": "Route109",
+   "at": [
+    21,
+    24
+   ],
+   "uid": 102,
+   "model": 28,
+   "script": 2,
+   "dir": 0,
+   "move": 14,
+   "flag": "FLAG_HIDE_MR_BRINEY_ROUTE109",
+   "what": "Mr. Briney (Sapphire object 2, OLD_MAN_1)"
+  },
+  {
+   "kind": "npc",
+   "map": "Route109",
+   "at": [
+    24,
+    17
+   ],
+   "uid": 114,
+   "model": 153,
+   "script": 3,
+   "dir": 3,
+   "move": 17,
+   "what": "tuber boy (sand castle) (Sapphire object 14, TUBER_M)"
+  },
+  {
+   "kind": "npc",
+   "map": "Route109",
+   "at": [
+    25,
+    17
+   ],
+   "uid": 115,
+   "model": 154,
+   "script": 4,
+   "dir": 2,
+   "move": 16,
+   "what": "tuber girl (Soft Sand) (Sapphire object 15, TUBER_F)"
+  },
+  {
+   "kind": "npc",
+   "map": "Route109",
+   "at": [
+    32,
+    6
+   ],
+   "uid": 120,
+   "model": 4392,
+   "script": 5,
+   "dir": 1,
+   "move": 2,
+   "what": "Zigzagoon (Sapphire object 20, ZIGZAGOON)"
+  },
+  {
+   "kind": "npc",
+   "map": "DewfordTown_Gym",
+   "at": [
+    14,
+    4
+   ],
+   "uid": 1,
+   "model": 269,
+   "script": 1,
+   "dir": 1,
+   "move": 15,
+   "what": "Brawly (Sapphire object 1, BRAWLY)",
+   "at_emerald": [
+    4,
+    3
+   ]
+  },
+  {
+   "kind": "npc",
+   "map": "DewfordTown_Gym",
+   "at": [
+    2,
+    17
+   ],
+   "uid": 2,
+   "model": 46,
+   "script": 3301,
+   "dir": 0,
+   "move": 14,
+   "evtype": 1,
+   "p0": 3,
+   "what": "Black Belt Hideki (Sapphire object 2, BLACK_BELT)",
+   "at_emerald": [
+    2,
+    18
+   ]
+  },
+  {
+   "kind": "npc",
+   "map": "DewfordTown_Gym",
+   "at": [
+    1,
+    10
+   ],
+   "uid": 3,
+   "model": 15,
+   "script": 3567,
+   "dir": 0,
+   "move": 14,
+   "evtype": 1,
+   "p0": 3,
+   "what": "Battle Girl Tessa (Sapphire object 3, GIRL_3)",
+   "at_emerald": [
+    15,
+    3
+   ],
+   "dir_emerald": 1,
+   "move_emerald": 15
+  },
+  {
+   "kind": "npc",
+   "map": "DewfordTown_Gym",
+   "at": [
+    12,
+    24
+   ],
+   "uid": 4,
+   "model": 15,
+   "script": 3568,
+   "dir": 0,
+   "move": 14,
+   "evtype": 1,
+   "p0": 2,
+   "what": "Battle Girl Laura (Sapphire object 4, GIRL_3)",
+   "at_emerald": [
+    12,
+    25
+   ]
+  },
+  {
+   "kind": "npc",
+   "map": "DewfordTown_Gym",
+   "at": [
+    5,
+    24
+   ],
+   "uid": 5,
+   "model": 24,
+   "script": 2,
+   "dir": 1,
+   "move": 15,
+   "what": "Gym guide (Sapphire object 5, MAN_2)"
+  },
+  {
+   "kind": "sign",
+   "map": "DewfordTown_Gym",
+   "at": [
+    7,
+    21
+   ],
+   "script": 3,
+   "what": "Gym statue plaque (player facing north)",
+   "cond": 0,
+   "dir": 0,
+   "skip_emerald": true
+  },
+  {
+   "kind": "sign",
+   "map": "DewfordTown_Gym",
+   "at": [
+    10,
+    21
+   ],
+   "script": 3,
+   "what": "Gym statue plaque (player facing north)",
+   "cond": 0,
+   "dir": 0,
+   "skip_emerald": true
+  },
+  {
+   "kind": "sign",
+   "map": "DewfordTown_Gym",
+   "at": [
+    4,
+    24
+   ],
+   "script": 3,
+   "what": "Gym statue plaque (player facing north)",
+   "cond": 0,
+   "dir": 0
+  },
+  {
+   "kind": "sign",
+   "map": "DewfordTown_Gym",
+   "at": [
+    7,
+    24
+   ],
+   "script": 3,
+   "what": "Gym statue plaque (player facing north)",
+   "cond": 0,
+   "dir": 0
+  },
+  {
+   "kind": "npc",
+   "map": "GraniteCave_1F",
+   "at": [
+    36,
+    9
+   ],
+   "uid": 1,
+   "model": 64,
+   "script": 3,
+   "dir": 1,
+   "move": 2,
+   "what": "hiker (HM05 Flash) (Sapphire object 1, HIKER)"
+  },
+  {
+   "kind": "npc",
+   "map": "GraniteCave_StevensRoom",
+   "at": [
+    7,
+    8
+   ],
+   "uid": 1,
+   "model": 287,
+   "script": 1,
+   "dir": 1,
+   "move": 2,
+   "flag": "FLAG_HIDE_STEVEN_GRANITE_CAVE",
+   "what": "Steven (Sapphire object 1, STEVEN)"
+  },
+  {
+   "kind": "npc",
+   "map": "Route116_TunnelersRestHouse",
+   "at": [
+    3,
+    6
+   ],
+   "uid": 2,
+   "model": 20,
+   "script": 3,
+   "dir": 1,
+   "move": 2,
+   "what": "tunneler (tunnel opened?) (Sapphire object 2, MAN_3)"
+  },
+  {
+   "kind": "npc",
+   "map": "DewfordTown_House1",
+   "at": [
+    4,
+    2
+   ],
+   "uid": 3,
+   "model": 4392,
+   "script": 5,
+   "dir": 1,
+   "move": 15,
+   "what": "Zigzagoon (Sapphire object 3, ZIGZAGOON)"
+  },
+  {
+   "kind": "npc",
+   "map": "DewfordTown_House2",
+   "at": [
+    6,
+    5
+   ],
+   "uid": 1,
+   "model": 19,
+   "script": 3,
+   "dir": 3,
+   "move": 17,
+   "what": "man (Silk Scarf) (Sapphire object 1, MAN_4)"
+  },
+  {
+   "kind": "npc",
+   "map": "Route109_SeashoreHouse",
+   "at": [
+    6,
+    2
+   ],
+   "uid": 1,
+   "model": 20,
+   "script": 1,
+   "dir": 1,
+   "move": 15,
+   "what": "Mr. Sea (owner) (Sapphire object 1, MAN_3)"
+  },
+  {
+   "kind": "npc",
+   "map": "Route109_SeashoreHouse",
+   "at": [
+    2,
+    3
+   ],
+   "uid": 2,
+   "model": 359,
+   "script": 3631,
+   "dir": 1,
+   "move": 15,
+   "evtype": 1,
+   "p0": 2,
+   "what": "Sailor Dwayne (Sapphire object 2, SAILOR)"
+  },
+  {
+   "kind": "npc",
+   "map": "Route109_SeashoreHouse",
+   "at": [
+    14,
+    9
+   ],
+   "uid": 3,
+   "model": 153,
+   "script": 3163,
+   "dir": 2,
+   "move": 16,
+   "evtype": 1,
+   "p0": 2,
+   "what": "Tuber Simon (Sapphire object 3, TUBER_M)"
+  },
+  {
+   "kind": "npc",
+   "map": "Route109_SeashoreHouse",
+   "at": [
+    10,
+    5
+   ],
+   "uid": 4,
+   "model": 17,
+   "script": 3732,
+   "dir": 2,
+   "move": 46,
+   "evtype": 1,
+   "p0": 2,
+   "what": "Beauty Johanna (Sapphire object 4, BEAUTY)"
+  },
+  {
+   "kind": "npc",
+   "map": "DewfordTown_Hall",
+   "at": [
+    4,
+    6
+   ],
+   "uid": 1,
+   "model": 17,
+   "script": 1,
+   "dir": 0,
+   "move": 14,
+   "what": "girl (Sapphire object 1, GIRL_2)"
+  },
+  {
+   "kind": "npc",
+   "map": "DewfordTown_Hall",
+   "at": [
+    1,
+    5
+   ],
+   "uid": 2,
+   "model": 27,
+   "script": 2,
+   "dir": 3,
+   "move": 17,
+   "what": "woman (Sapphire object 2, WOMAN_3)"
+  },
+  {
+   "kind": "npc",
+   "map": "DewfordTown_Hall",
+   "at": [
+    5,
+    4
+   ],
+   "uid": 3,
+   "model": 61,
+   "script": 3,
+   "dir": 2,
+   "move": 16,
+   "what": "man (Sapphire object 3, MAN_1)"
+  },
+  {
+   "kind": "npc",
+   "map": "DewfordTown_Hall",
+   "at": [
+    9,
+    3
+   ],
+   "uid": 4,
+   "model": 28,
+   "script": 4,
+   "dir": 0,
+   "move": 14,
+   "what": "old man (TV show) (Sapphire object 4, OLD_MAN_1)"
+  },
+  {
+   "kind": "npc",
+   "map": "DewfordTown_Hall",
+   "at": [
+    5,
+    2
+   ],
+   "uid": 5,
+   "model": 9,
+   "script": 5,
+   "dir": 0,
+   "move": 14,
+   "what": "twin (Sapphire object 5, LITTLE_GIRL_1)"
+  },
+  {
+   "kind": "npc",
+   "map": "DewfordTown_Hall",
+   "at": [
+    14,
+    7
+   ],
+   "uid": 6,
+   "model": 8,
+   "script": 6,
+   "dir": 2,
+   "move": 5,
+   "areaw": 1,
+   "areah": 0,
+   "what": "little boy (Sapphire object 6, LITTLE_BOY_2)"
+  },
+  {
+   "kind": "npc",
+   "map": "DewfordTown_Hall",
+   "at": [
+    12,
+    3
+   ],
+   "uid": 7,
+   "model": 12,
+   "script": 9,
+   "dir": 3,
+   "move": 17,
+   "what": "school kid (debate) (Sapphire object 7, SCHOOL_KID_M)"
+  },
+  {
+   "kind": "npc",
+   "map": "DewfordTown_Hall",
+   "at": [
+    15,
+    3
+   ],
+   "uid": 8,
+   "model": 183,
+   "script": 10,
+   "dir": 2,
+   "move": 16,
+   "what": "psychic (debate) (Sapphire object 8, PSYCHIC_M)"
+  },
+  {
+   "kind": "npc",
+   "map": "DewfordTown_Hall",
+   "at": [
+    8,
+    6
+   ],
+   "uid": 9,
+   "model": 24,
+   "script": 11,
+   "dir": 2,
+   "move": 5,
+   "flag": "FLAG_HIDE_SLUDGE_BOMB_MAN_DEWFORD_HALL",
+   "areaw": 1,
+   "areah": 0,
+   "what": "Sludge Bomb man (Ch6; FLAG_HIDE_SLUDGE_BOMB_MAN_DEWFORD_HALL) (Sapphire object 9, MANIAC)"
+  },
+  {
+   "kind": "sign",
+   "map": "DewfordTown_Hall",
+   "at": [
+    0,
+    1
+   ],
+   "script": 7,
+   "what": "bookshelf",
+   "cond": 0,
+   "dir": 4
+  },
+  {
+   "kind": "sign",
+   "map": "DewfordTown_Hall",
+   "at": [
+    7,
+    1
+   ],
+   "script": 8,
+   "what": "painting",
+   "cond": 0,
+   "dir": 4
+  },
+  {
+   "kind": "sign",
+   "map": "DewfordTown_Hall",
+   "at": [
+    7,
+    0
+   ],
+   "script": 8,
+   "what": "painting, read from the walkable strip in front of it (the back-wall strip, option C: v165_fixes)",
+   "cond": 0,
+   "dir": 0
+  },
+  {
+   "kind": "npc",
+   "map": "RustboroCity_DevonCorp_1F",
+   "at": [
+    2,
+    6
+   ],
+   "uid": 1,
+   "model": 52,
+   "script": 1,
+   "dir": 1,
+   "move": 3,
+   "areaw": 1,
+   "areah": 1,
+   "what": "employee (Sapphire object 1, MAN_7)"
+  },
+  {
+   "kind": "npc",
+   "map": "RustboroCity_DevonCorp_1F",
+   "at": [
+    15,
+    5
+   ],
+   "uid": 2,
+   "model": 52,
+   "script": 2,
+   "dir": 1,
+   "move": 3,
+   "areaw": 2,
+   "areah": 1,
+   "flag": 88,
+   "what": "stair guard, wandering (hidden by local flag 0x58 until the goods are returned) (Sapphire object 2, MAN_7)"
+  },
+  {
+   "kind": "npc",
+   "map": "RustboroCity_DevonCorp_1F",
+   "at": [
+    14,
+    2
+   ],
+   "uid": 52,
+   "model": 52,
+   "script": 2,
+   "dir": 1,
+   "move": 15,
+   "areaw": 0,
+   "areah": 0,
+   "flag": "FLAG_RETURNED_DEVON_GOODS",
+   "what": "stair guard on the stairs (OnTransition setobjectxyperm 2, 14, 2, facing down) (Sapphire object 2, MAN_7)"
+  },
+  {
+   "kind": "npc",
+   "map": "RustboroCity_DevonCorp_1F",
+   "at": [
+    5,
+    3
+   ],
+   "uid": 3,
+   "model": 26,
+   "script": 3,
+   "dir": 1,
+   "move": 15,
+   "what": "greeter (Sapphire object 3, WOMAN_4)"
+  },
+  {
+   "kind": "npc",
+   "map": "RustboroCity_DevonCorp_2F",
+   "at": [
+    6,
+    5
+   ],
+   "uid": 1,
+   "model": 73,
+   "script": 1,
+   "dir": 0,
+   "move": 14,
+   "what": "scientist (talking to Pokémon) (Sapphire object 1, SCIENTIST_1)"
+  },
+  {
+   "kind": "npc",
+   "map": "RustboroCity_DevonCorp_2F",
+   "at": [
+    1,
+    5
+   ],
+   "uid": 2,
+   "model": 73,
+   "script": 2,
+   "dir": 3,
+   "move": 17,
+   "what": "Poké Ball scientist (Sapphire object 2, SCIENTIST_1)"
+  },
+  {
+   "kind": "npc",
+   "map": "RustboroCity_DevonCorp_2F",
+   "at": [
+    2,
+    6
+   ],
+   "uid": 3,
+   "model": 73,
+   "script": 3,
+   "dir": 0,
+   "move": 6,
+   "what": "PokéNav scientist (Sapphire object 3, SCIENTIST_1)"
+  },
+  {
+   "kind": "npc",
+   "map": "RustboroCity_DevonCorp_2F",
+   "at": [
+    10,
+    5
+   ],
+   "uid": 4,
+   "model": 73,
+   "script": 4,
+   "dir": 0,
+   "move": 14,
+   "what": "Pokémon dreams scientist (Sapphire object 4, SCIENTIST_1)"
+  },
+  {
+   "kind": "npc",
+   "map": "RustboroCity_DevonCorp_2F",
+   "at": [
+    14,
+    8
+   ],
+   "uid": 5,
+   "model": 73,
+   "script": 5,
+   "dir": 0,
+   "move": 14,
+   "what": "fossil scientist (Ch4) (Sapphire object 5, SCIENTIST_1)"
+  },
+  {
+   "kind": "npc",
+   "map": "RustboroCity_DevonCorp_3F",
+   "at": [
+    17,
+    5
+   ],
+   "uid": 1,
+   "model": 44,
+   "script": 4,
+   "dir": 2,
+   "move": 16,
+   "what": "Mr. Stone (Sapphire object 1, GENTLEMAN)"
+  },
+  {
+   "kind": "npc",
+   "map": "RustboroCity_DevonCorp_3F",
+   "at": [
+    3,
+    5
+   ],
+   "uid": 2,
+   "model": 24,
+   "script": 5,
+   "dir": 3,
+   "move": 17,
+   "flag": "FLAG_HIDE_EMPLOYEE_DEVON_CORP_3F",
+   "what": "employee (Sapphire object 2, MAN_2)"
+  },
+  {
+   "kind": "sign",
+   "map": "RustboroCity_DevonCorp_3F",
+   "at": [
+    15,
+    5
+   ],
+   "script": 6,
+   "what": "Mr. Stone's invisible object (talked to across the desk)",
+   "cond": 0,
+   "dir": 4
+  }
+ ]
+}

@@ -1,0 +1,17 @@
+{
+ "_doc": "Fortree City's buildings (group towns3, notes/TOWNS_TOWNS3.md). The tree houses' doorways are walkable in Sapphire, so plan_map.py finds no footprint for them (and merges House 1 into the Pokemon Center's footprint): the Center and the tree houses are props, x = door column centre (Center: footprint centre), z = door row + (4 - front)/16 with the model's own front: the Center's front wall is 20 (z = door row - 1), the tree houses' cabin front is -12 (models_fortree.py: origin at the door row's south edge, z = door row + 1; until 2026-10-09 they used 20 too and stood two rows north of their doors, behind a strip of ground, House 5 and the Decoration Shop over the cliff of the clearing north of their walkway: map_glitch_fix). Sapphire map tile coordinates. Gym: shared res 320 (group towns1).",
+ "group": "towns3",
+ "buildings": {
+  "MAP_FORTREE_CITY_MART": {"res": 3, "front": 20},
+  "MAP_FORTREE_CITY_GYM": {"res": 320, "front": 24}
+ },
+ "props": [
+  {"res": 0, "x": 6.0, "z": 5.0, "what": "Pokemon Center (door 5,6; footprint x 4-7)"},
+  {"res": 364, "x": 10.5, "z": 4.0, "what": "House 1 (door 10,3)"},
+  {"res": 364, "x": 17.5, "z": 4.0, "what": "House 2 (door 17,3)"},
+  {"res": 364, "x": 25.5, "z": 4.0, "what": "House 3 (door 25,3)"},
+  {"res": 365, "x": 32.5, "z": 3.0, "what": "House 4 (door 32,2)"},
+  {"res": 364, "x": 12.5, "z": 14.0, "what": "House 5 (door 12,13)"},
+  {"res": 364, "x": 37.5, "z": 14.0, "what": "Decoration Shop (door 37,13)"}
+ ]
+}

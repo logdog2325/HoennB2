@@ -1,0 +1,20 @@
+{
+ "kind": "overworld",
+ "code": 243,
+ "sheet": 221,
+ "frames": 2,
+ "size": [
+  32,
+  32
+ ],
+ "controller": 7,
+ "textures": [
+  "t4x4x2.0",
+  "t4x4x2.1"
+ ],
+ "palette": "t4x4x2",
+ "name": "may-item",
+ "note": "May (player), item",
+ "source": "pokeruby graphics/object_events/pics/people/may/field_move, normal",
+ "made_by": "b2tools/sprite_upgrade_players.py"
+}

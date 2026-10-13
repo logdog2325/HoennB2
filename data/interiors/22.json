@@ -1,0 +1,44 @@
+{
+ "_doc": "Stern's Shipyard 2F (zone 22; scripts src/field_scripts/0044_room_SlateportCity_SternsShipyard_2F.s, text 0028). Area 289 = Black 2's Castelia office area (interior pack 7). Sapphire's scientist at (10,7) is a scriptless decoration standing on 1F (seen through the pit): left out.",
+ "zone": 22,
+ "room": "SlateportCity_SternsShipyard_2F",
+ "area": 289,
+ "parent": 448,
+ "warps": [
+  {
+   "at": [
+    3,
+    1
+   ],
+   "tile_only": true,
+   "to": [
+    14,
+    2
+   ],
+   "what": "Sapphire warp 0 -> SlateportCity_SternsShipyard_1F 2"
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 2,
+   "model": 73,
+   "script": 1,
+   "dir": 3,
+   "at": [
+    8,
+    4
+   ]
+  },
+  {
+   "uid": 3,
+   "model": 73,
+   "script": 2,
+   "dir": 0,
+   "at": [
+    0,
+    9
+   ]
+  }
+ ],
+ "signs": []
+}

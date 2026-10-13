@@ -1,0 +1,99 @@
+{
+ "_doc": "Emerald Ch3 (emerald_ch0_3 2026-10-12): Scott outside the Slateport Museum and in Mauville, the three extra Team Aqua people of Slateport's queue, and the closed Battle Tent doors of Slateport and Verdanturf (notes/EMERALD_STORY.md Ch3; scripts scenes/emerald/SlateportCity.inc, MauvilleCity.inc). Positions are pokeemerald's own tiles (Slateport's ground differs from Sapphire's in 271 blocks: check them on Emerald's world).",
+ "objects": [
+  {
+   "kind": "npc",
+   "map": "SlateportCity",
+   "at": [
+    23,
+    27
+   ],
+   "uid": 191,
+   "model": 289,
+   "script": 0,
+   "dir": 3,
+   "flag": "FLAG_HIDE_SLATEPORT_CITY_SCOTT",
+   "what": "Scott (LOCALID_SLATEPORT_SCOTT): hidden until the OnFrame scene, which puts him at (22 or 23, 27)"
+  },
+  {
+   "kind": "npc",
+   "map": "SlateportCity",
+   "at": [
+    26,
+    27
+   ],
+   "uid": 140,
+   "model": 293,
+   "script": 30,
+   "dir": 0,
+   "flag": "FLAG_HIDE_EVIL_TEAM_SLATEPORT",
+   "what": "Team Aqua grunt 9 (SlateportCity_EventScript_AquaGrunt9, reads the sign)"
+  },
+  {
+   "kind": "npc",
+   "map": "SlateportCity",
+   "at": [
+    28,
+    27
+   ],
+   "uid": 141,
+   "model": 293,
+   "script": 31,
+   "dir": 0,
+   "flag": "FLAG_HIDE_EVIL_TEAM_SLATEPORT",
+   "what": "Team Aqua grunt 10 (AquaGrunt10, a sign-style line)"
+  },
+  {
+   "kind": "npc",
+   "map": "SlateportCity",
+   "at": [
+    25,
+    27
+   ],
+   "uid": 142,
+   "model": 293,
+   "script": 32,
+   "dir": 0,
+   "flag": "FLAG_HIDE_EVIL_TEAM_SLATEPORT",
+   "what": "Team Aqua grunt 11 (AquaGrunt11)"
+  },
+  {
+   "kind": "sign",
+   "map": "SlateportCity",
+   "at": [
+    10,
+    12
+   ],
+   "script": 2291,
+   "dir": 0,
+   "cond": 0,
+   "what": "the Battle Tent door (pokeemerald warp 3): closed, decision 2 (emerald_mech's closed-door global 2291); the world agent gives the door no warp"
+  },
+  {
+   "kind": "sign",
+   "map": "VerdanturfTown",
+   "at": [
+    3,
+    7
+   ],
+   "script": 2291,
+   "dir": 0,
+   "cond": 0,
+   "what": "the Battle Tent door (pokeemerald warp 0): closed, decision 2"
+  },
+  {
+   "kind": "npc",
+   "map": "MauvilleCity",
+   "at": [
+    12,
+    14
+   ],
+   "uid": 192,
+   "model": 289,
+   "script": 0,
+   "dir": 0,
+   "flag": "FLAG_HIDE_MAUVILLE_CITY_SCOTT",
+   "what": "Scott (LOCALID_MAUVILLE_SCOTT): hidden until Wally's battle is won"
+  }
+ ]
+}

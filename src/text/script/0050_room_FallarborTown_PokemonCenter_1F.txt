@@ -1,0 +1,10 @@
+Hello, and welcome to the Pokémon\nCenter.{be01}\nWe restore your tired Pokémon to\nfull health.{be01}\nWould you like to rest your Pokémon?
+Okay, I’ll take your Pokémon for a\nfew seconds.
+Thank you for waiting.{be01}\nWe’ve restored your Pokémon to\nfull health.
+We hope to see you again!
+Your Pokémon may be infected with\nPokérus.{be01}\nLittle is known about the Pokérus\nexcept that they are microscopic life-{be00}\nforms that attach to Pokémon.{be01}\nWhile infected, Pokémon are said to\ngrow exceptionally well.
+I wonder what Pokémon looked like\nlong, long ago?{be01}\nMaybe the Fossil Maniac at the edge\nof town will know.
+In the fields of Fallarbor, we plant\nseedlings of hardy trees that thrive{be00}\neven in volcanic ash.
+Oh, hello.\nYou are?{be01}\nOkay, your name’s {0100:0}.\nI can see that you’re a Trainer.{be01}\nSo that means you use the Pokémon\nStorage System I developed.{be01}\nHow I arrived at that conclusion is\na simple deductive process.{be01}\nYou spoke to me because you wanted\nto access something on this PC.{be01}\nOh, I’m sorry. I’m Lanette.{be01}\nHonestly, I’m glad to meet you - it’s\ngreat you’re using the Storage System.{be01}\nIf you could, please visit me at home.\nMy house is on Route 114.
+Pokémon magazines!\nPokémon Pal...{be01}\nPokémon Handbook...\nAdorable Pokémon...
+{0100:0} took a closer look at the\nHoenn region map.

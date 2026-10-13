@@ -1,0 +1,158 @@
+{
+ "_doc": "Mt. Pyre 2F (zone 342; scripts/text: the generated *_room_MtPyre_2F files). Area 323 = Black 2's Celestial Tower (interior pack 41). Warps in Sapphire's order, then the holes' extra directions (b2tools/facilities_pyre.py). Item balls as generated.",
+ "zone": 342,
+ "room": "MtPyre_2F",
+ "area": 323,
+ "parent": 551,
+ "warps": [
+  {
+   "at": [
+    2,
+    1
+   ],
+   "tile_only": true,
+   "to": [
+    341,
+    4
+   ],
+   "what": "Sapphire warp 0 -> MtPyre_1F 4"
+  },
+  {
+   "at": [
+    10,
+    1
+   ],
+   "tile_only": true,
+   "to": [
+    346,
+    0
+   ],
+   "what": "Sapphire warp 1 -> MtPyre_3F 0"
+  },
+  {
+   "at": [
+    10,
+    12
+   ],
+   "tile_only": true,
+   "to": [
+    65535,
+    65535
+   ],
+   "what": "Sapphire warp 2: landing spot of the hole above (arrival only)",
+   "type": 1,
+   "dir": 1
+  },
+  {
+   "at": [
+    6,
+    12
+   ],
+   "tile_only": true,
+   "to": [
+    65535,
+    65535
+   ],
+   "what": "Sapphire warp 3: landing spot of the hole above (arrival only)",
+   "type": 1,
+   "dir": 1
+  },
+  {
+   "at": [
+    11,
+    9
+   ],
+   "tile_only": true,
+   "to": [
+    341,
+    5
+   ],
+   "what": "Sapphire warp 4 -> MtPyre_1F 5",
+   "type": 2,
+   "dir": 2
+  },
+  {
+   "at": [
+    11,
+    9
+   ],
+   "tile_only": true,
+   "type": 2,
+   "dir": 1,
+   "to": [
+    341,
+    5
+   ],
+   "_extra": true,
+   "what": "hole of Sapphire warp 4, entered walking S"
+  },
+  {
+   "at": [
+    11,
+    9
+   ],
+   "tile_only": true,
+   "type": 2,
+   "dir": 3,
+   "to": [
+    341,
+    5
+   ],
+   "_extra": true,
+   "what": "hole of Sapphire warp 4, entered walking E"
+  },
+  {
+   "at": [
+    11,
+    9
+   ],
+   "tile_only": true,
+   "type": 2,
+   "dir": 4,
+   "to": [
+    341,
+    5
+   ],
+   "_extra": true,
+   "what": "hole of Sapphire warp 4, entered walking W"
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 2,
+   "model": 110,
+   "script": 7097,
+   "flag": 1197,
+   "dir": 1,
+   "at": [
+    0,
+    10
+   ]
+  },
+  {
+   "uid": 3,
+   "model": 23,
+   "script": 1,
+   "dir": 3,
+   "at": [
+    5,
+    3
+   ]
+  },
+  {
+   "uid": 4,
+   "model": 20,
+   "script": 2,
+   "dir": 1,
+   "at": [
+    7,
+    11
+   ]
+  }
+ ],
+ "signs": [],
+ "header": {
+  "encounters": 95,
+  "enc_slot": 2
+ }
+}

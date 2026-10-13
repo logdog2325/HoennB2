@@ -1,0 +1,23 @@
+{
+ "_doc": "DewfordTown_Hall: zone written by converter/gen_interior_recipes_houses.py (warps and parent from converter/gen_interiors.py); story people left for the story phase: person GIRL_2 at (4,6) DewfordTown_Hall_EventScript_Girl (story/complex script); person WOMAN_3 at (1,5) DewfordTown_Hall_EventScript_Woman (story/complex script); person MAN_1 at (5,4) DewfordTown_Hall_EventScript_Man (story/complex script); person OLD_MAN_1 at (9,3) DewfordTown_Hall_EventScript_ExpertM (story/complex script); person LITTLE_GIRL_1 at (5,2) DewfordTown_Hall_EventScript_Twin (story/complex script); person LITTLE_BOY_2 at (14,7) DewfordTown_Hall_EventScript_LittleBoy (story/complex script); person SCHOOL_KID_M at (12,3) DewfordTown_Hall_EventScript_SchoolKidM (story/complex script); person PSYCHIC_M at (15,3) DewfordTown_Hall_EventScript_PsychicM (story/complex script); story person MANIAC at (8,6) DewfordTown_Hall_EventScript_SludgeBombMan (hide flag FLAG_HIDE_SLUDGE_BOMB_MAN_DEWFORD_HALL); sign at (0,1) DewfordTown_Hall_EventScript_Bookshelf (story/complex script); sign at (7,1) DewfordTown_Hall_EventScript_Painting (story/complex script)",
+ "zone": 26,
+ "room": "DewfordTown_Hall",
+ "area": 313,
+ "parent": 465,
+ "warps": [
+  {
+   "at": [5, 8],
+   "tile_only": true,
+   "to": [465, 8],
+   "what": "Sapphire warp 0 -> DewfordTown 0"
+  },
+  {
+   "at": [6, 8],
+   "tile_only": true,
+   "to": [465, 8],
+   "what": "Sapphire warp 1 -> DewfordTown 0"
+  }
+ ],
+ "npcs": [],
+ "signs": []
+}

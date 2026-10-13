@@ -1,0 +1,159 @@
+{
+ "_doc": "Buildings of group towns5 (Ever Grande City and every building with a door on a route map) in exterior pack 0 (patches/area2_buildings.py; format as data/buildings/slice.json), res range 400-419. Models: b2tools/models_routes.py (res 400-408, 410, 411) and models_evergrande.py (409); details per building in notes/TOWNS_TOWNS5.md. Placed but not made here: res 0 Pokemon Center (slice), res 321/322 General-tileset houses (towns1: routes 111, 114, 116, 117, 119, 123, 124), res 360 Fallarbor house (towns3: Route 114 Fossil Maniac), door model 261 as a prop (the second door of the Cycling Road gates and the cable car station). door 65535 = none; dx for door models 259-261: door tile centre - footprint centre + 8 (they span x -17..1), 236: same, 93: + 0 (centred).",
+ "models": [
+  {
+   "res": 400,
+   "model": "work/buildings/routes/briney.nsbmd",
+   "door": 260,
+   "dx": 8,
+   "dz": 20,
+   "what": "Route 104 Mr. Briney's cottage (5 wide, door in the middle)"
+  },
+  {
+   "res": 401,
+   "model": "work/buildings/routes/flowershop.nsbmd",
+   "door": 260,
+   "dx": 0,
+   "dz": 20,
+   "what": "Route 104 Pretty Petal flower shop (6 wide, door in column 2)"
+  },
+  {
+   "res": 402,
+   "model": "work/buildings/routes/seashore.nsbmd",
+   "door": 260,
+   "dx": 8,
+   "dz": 20,
+   "what": "Route 109 Seashore House (5 wide, door in the middle)"
+  },
+  {
+   "res": 403,
+   "model": "work/buildings/routes/gate.nsbmd",
+   "door": 261,
+   "dx": -16,
+   "dz": 21,
+   "what": "Route 110 Seaside Cycling Road entrance, north and south (6 wide, doors in columns 1 and 4; the second door is a res 261 prop); door 1 unit in front of the front wall (it lay in the wall plane and depth-fought it: outdoor sweep 2026-10-07)"
+  },
+  {
+   "res": 404,
+   "model": "work/buildings/routes/trickhouse.nsbmd",
+   "door": 261,
+   "dx": 8,
+   "dz": 20,
+   "what": "Route 110 Trick House (5 wide, two tiers, door in the middle)"
+  },
+  {
+   "res": 405,
+   "model": "work/buildings/routes/winstrate.nsbmd",
+   "door": 261,
+   "dx": 8,
+   "dz": 20,
+   "what": "Route 111 Winstrate family's house (5 wide, door in the middle)"
+  },
+  {
+   "res": 406,
+   "model": "work/buildings/routes/cablecar.nsbmd",
+   "door": 261,
+   "dx": 0,
+   "dz": 20,
+   "what": "Route 112 cable car station with its pylon (4 wide + east wing; door on the west door tile, the east door tile's door is a res 261 prop)"
+  },
+  {
+   "res": 407,
+   "model": "work/buildings/routes/weather.nsbmd",
+   "door": 261,
+   "dx": 8,
+   "dz": 20,
+   "what": "Route 119 Weather Institute (11 wide, door in the middle)"
+  },
+  {
+   "res": 408,
+   "model": "work/buildings/routes/safari.nsbmd",
+   "door": 93,
+   "dx": 0,
+   "dz": 16,
+   "what": "Route 121 Safari Zone entrance (5 wide, sliding door in the middle)"
+  },
+  {
+   "res": 409,
+   "model": "work/buildings/evergrande/league.nsbmd",
+   "door": 93,
+   "dx": 0,
+   "dz": 16,
+   "what": "Ever Grande City Pokemon League (11 wide, sliding door in the middle)"
+  },
+  {
+   "res": 410,
+   "model": "work/buildings/routes/glassworks.nsbmd",
+   "door": 236,
+   "dx": 0,
+   "dz": 21,
+   "what": "Route 113 glass workshop (Fallarbor house under an ash-grey roof, 4 wide, door in column 1); door 1 unit in front of the front wall (it lay in the wall plane and depth-fought it: outdoor sweep 2026-10-07)"
+  },
+  {
+   "res": 411,
+   "model": "work/buildings/routes/house118.nsbmd",
+   "door": 65535,
+   "dx": 0,
+   "dz": 0,
+   "what": "Route 118 door-less house by the water (4 wide; Mauville house 2's build without a door; buildings_audit)"
+  },
+  {
+   "res": 412,
+   "model": "work/buildings/routes/pylon_mid.nsbmd",
+   "door": 65535,
+   "dx": 0,
+   "dz": 0,
+   "what": "Route 112 cable car pylon on the prop tiles x 12, rows 19-21, 140 high, cable east to the station's pylon (buildings_audit)"
+  },
+  {
+   "res": 413,
+   "model": "work/buildings/routes/pylon_top.nsbmd",
+   "door": 65535,
+   "dx": 0,
+   "dz": 0,
+   "what": "Route 112 cable car pylon on the prop tiles x 4, rows 15-17, 102 high on the 48-high ground, cable east to res 412's and west off the map (buildings_audit)"
+  }
+ ],
+ "textures": [
+  [
+   "ext57",
+   "c14_h1_body"
+  ],
+  [
+   "ext57",
+   "c14_h2_yane"
+  ],
+  [
+   "ext57",
+   "c14_h2_kabe"
+  ],
+  [
+   "ext05",
+   "r4_b03_yane01"
+  ],
+  [
+   "ext53",
+   "t06_h_03_a"
+  ],
+  [
+   "ext06",
+   "wbase_a"
+  ],
+  [
+   "ext06",
+   "c4_bp01"
+  ],
+  [
+   "ext09",
+   "h2"
+  ],
+  [
+   "ext54",
+   "c13_ho01b"
+  ],
+  [
+   "ext59",
+   "rr_misel1_02"
+  ]
+ ]
+}

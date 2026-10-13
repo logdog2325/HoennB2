@@ -1,0 +1,89 @@
+{
+ "_doc": "frontier_factory_dome (2026-10-12): BattleFrontier_BattleFactoryBattleRoom (notes/FRONTIER_FACTORY_DOME.md), Emerald only (data/emerald/hoenn_interiors.json claim). People = Emerald's objects (uid = Emerald local id), their sprites from data/sprite_map.json. Room origin [1, 0].",
+ "zone": 410,
+ "room": "BattleFrontier_BattleFactoryBattleRoom",
+ "area": 345,
+ "parent": 17,
+ "warps": [],
+ "npcs": [
+  {
+   "uid": 1,
+   "model": 162,
+   "script": 2,
+   "dir": 1,
+   "at": [
+    7,
+    2
+   ],
+   "flag": 1094,
+   "what": "opponent (code 162 = work 0x4020, as the Battle Tower; hidden by FLAG_HIDE_BATTLE_TOWER_OPPONENT until shown)"
+  },
+  {
+   "uid": 2,
+   "model": 73,
+   "script": 2,
+   "dir": 3,
+   "at": [
+    0,
+    4
+   ],
+   "what": "scientist"
+  },
+  {
+   "uid": 3,
+   "model": 73,
+   "script": 2,
+   "dir": 3,
+   "at": [
+    0,
+    6
+   ],
+   "what": "scientist"
+  },
+  {
+   "uid": 4,
+   "model": 73,
+   "script": 2,
+   "dir": 3,
+   "at": [
+    0,
+    8
+   ],
+   "what": "scientist"
+  },
+  {
+   "uid": 5,
+   "model": 73,
+   "script": 2,
+   "dir": 2,
+   "at": [
+    12,
+    4
+   ],
+   "what": "scientist"
+  },
+  {
+   "uid": 6,
+   "model": 73,
+   "script": 2,
+   "dir": 2,
+   "at": [
+    12,
+    6
+   ],
+   "what": "scientist"
+  },
+  {
+   "uid": 7,
+   "model": 73,
+   "script": 2,
+   "dir": 2,
+   "at": [
+    12,
+    8
+   ],
+   "what": "scientist"
+  }
+ ],
+ "signs": []
+}

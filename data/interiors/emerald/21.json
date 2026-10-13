@@ -1,0 +1,139 @@
+{
+ "_doc": "emerald_rooms (b2tools/emerald_rooms.py writes this file: edit the script and rerun). Emerald's overlay of 21.json (positions in the tiles of BattleTower_Lobby's Emerald variant): the exits (12,9) (13,9); MAN_5 (12,3: a counter in Emerald) at Emerald's MAN_4 (23,5), the woman, the boy and the reporter at Emerald's places (17,8) (15,9) (11,9); the records terminal's sign on the singles counter (5,5) (Sapphire's (3,5) is floor in Emerald). The doubles / multis / link multis receptionists (10,5) (14,5) (18,5) are not placed. BattleTower_Lobby (zone 21), built by the specials agent (recipe data/interior_layouts/BattleTower_Lobby.json): Nimbasa Battle Test look, Black 2 interior area 306. A plain Sapphire room for now: the PWT link waits for the island and the story (notes/DECISIONS.md). Warps in Sapphire's order (warps 0/1 lead to BattleTower_Outside, not built yet: they point at this room's own warp 0 until the island exists). People (battle_tower agent, 2026-10-08): Sapphire's six objects by their local ids as uids, in uid order (index = uid - 1): the receptionist (TEALA = Teala, code 79 (data/sprite_map.json OBJ_EVENT_GFX_TEALA: Sapphire's own Teala redrawn, as in the Pokémon Centers)), MAN_5, WOMAN_7 and BOY_1 (uids 3/4, the specials agent's), the reporter and the award man (hidden by their flags); the records sign (3,5), read facing north. Scripts 3-7 are the battle_tower agent's.",
+ "zone": 21,
+ "room": "BattleTower_Lobby",
+ "area": 306,
+ "parent": 17,
+ "warps": [
+  {
+   "at": [
+    12,
+    9
+   ],
+   "tile_only": true,
+   "to": [
+    17,
+    2
+   ],
+   "what": "Sapphire warp 0 -> BattleTower_Outside 0"
+  },
+  {
+   "at": [
+    13,
+    9
+   ],
+   "tile_only": true,
+   "to": [
+    17,
+    2
+   ],
+   "what": "Sapphire warp 1 -> BattleTower_Outside 0"
+  },
+  {
+   "at": [
+    6,
+    1
+   ],
+   "tile_only": true,
+   "to": [
+    15,
+    0
+   ],
+   "what": "Sapphire warp 2 -> BattleTower_BattleRoom 0"
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 1,
+   "model": 79,
+   "script": 3,
+   "dir": 1,
+   "at": [
+    6,
+    5
+   ],
+   "what": "receptionist (Sapphire TEALA, FACE_DOWN, BattleTower_Lobby_EventScript_16049E): Teala, code 79 (data/sprite_map.json: Sapphire's own Teala redrawn)"
+  },
+  {
+   "uid": 2,
+   "model": 42,
+   "script": 4,
+   "dir": 1,
+   "at": [
+    23,
+    5
+   ],
+   "what": "MAN_5 (FACE_DOWN, BattleTower_Lobby_EventScript_1606A5): code 42 (sprite_map)",
+   "_what": "MAN_5 (FACE_DOWN, BattleTower_Lobby_EventScript_1606A5): code 42 (sprite_map) (Emerald: (23, 5), Sapphire (12, 3))"
+  },
+  {
+   "uid": 3,
+   "model": 43,
+   "script": 1,
+   "dir": 1,
+   "at": [
+    17,
+    8
+   ],
+   "move": 3,
+   "range": [
+    1,
+    1
+   ],
+   "_what": " (Emerald: (17, 8), Sapphire (10, 8))"
+  },
+  {
+   "uid": 4,
+   "model": 10,
+   "script": 2,
+   "dir": 1,
+   "at": [
+    15,
+    9
+   ],
+   "move": 3,
+   "range": [
+    1,
+    1
+   ],
+   "_what": " (Emerald: (15, 9), Sapphire (1, 2))"
+  },
+  {
+   "uid": 5,
+   "model": 331,
+   "script": 5,
+   "dir": 1,
+   "move": 2,
+   "at": [
+    11,
+    9
+   ],
+   "flag": 1501,
+   "what": "reporter Gabby (REPORTER_F, LOOK_AROUND, BattleTower_Lobby_EventScript_1AE1FF; FLAG_HIDE_REPORTER_BATTLE_TOWER): code 331 (sprite_map)",
+   "_what": "reporter Gabby (REPORTER_F, LOOK_AROUND, BattleTower_Lobby_EventScript_1AE1FF; FLAG_HIDE_REPORTER_BATTLE_TOWER): code 331 (sprite_map) (Emerald: (11, 9), Sapphire (4, 7))"
+  },
+  {
+   "uid": 6,
+   "model": 24,
+   "script": 6,
+   "dir": 2,
+   "at": [
+    7,
+    6
+   ],
+   "flag": 1093,
+   "what": "award man (MAN_2, FACE_LEFT, BattleTower_Lobby_EventScript_160733; FLAG_HIDE_AWARD_MAN_BATTLE_TOWER): code 24 (sprite_map)"
+  }
+ ],
+ "signs": [
+  {
+   "script": 7,
+   "at": [
+    5,
+    5
+   ],
+   "dir": 0,
+   "what": "records terminal on the counter (Sapphire sign, PLAYER_FACING_NORTH, BattleTower_Lobby_EventScript_160727)"
+  }
+ ]
+}

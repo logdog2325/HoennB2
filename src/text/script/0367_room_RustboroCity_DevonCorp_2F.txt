@@ -1,0 +1,15 @@
+We’re developing a device for talking\nwith Pokémon.{be01}\nBut we haven’t had much success...
+I’m developing new kinds of\nPoké Balls...{be01}\nBut I haven’t made much headway...
+We finally made new kinds of Poké Balls!{be01}\nThe Repeat Ball makes it easier to\ncatch Pokémon you’d caught before.{be01}\nThe Timer Ball gets better at catching\nPokémon the longer a battle runs.{be01}\nBoth are proudly developed by the\nDevon Corporation.{be01}\nPlease give them a try!
+I made the PokéNav!{be01}\nAs an engineer, I feel blessed to have\nmade something so great!
+Oh, wow!\nThat’s a PokéNav!{be01}\nIt came about as a result of our\nPresident’s desire to learn about{be00}\nthe feelings of Pokémon.{be01}\nWould you like me to describe its\nfeatures in detail?{be01}\nNo, no. I think you’ll find out just by\ntrying the PokéNav out.
+I’m trying to develop a device that\nvisually reproduces the dreams of{be00}\nPokémon...{be01}\nBut it’s not going well.
+I’ve been trying to develop a device\nthat resurrects Pokémon from fossils...{be01}\nAnd, it’s working!
+Wait! That thing you have there...\nIs that a Pokémon fossil?{be01}\nWould you like to bring that Pokémon\nback to life?{be01}\nI can with my newly developed\nFossil Regenerator.
+Excellent!\nLet’s do this right away.{be01}\n{0100:0} handed the {0100:1} to\nthe Devon Researcher.
+Oh, is that so?{be01}\nDevon’s technological expertise\nis outstanding, I tell you.
+The Fossil Regenerator, which I made,\nis incredible.{be01}\nBut it has one drawback - it takes\na long time to work.{be01}\nSo, uh... How about you go for a stroll\nand look around for a while?
+Thanks for waiting!{be01}\nYour fossilized Pokémon has been\nbrought back to life!{be01}\nThe fossil was an ancient Pokémon.\n{0100:2}, it was!
+{0100:0} received {0100:2} from\nthe Devon Researcher.
+Want to give a nickname to the\n{0100:2} you received?
+Uh-oh, you’ve got too many Pokémon.\nYou have no room for this one.

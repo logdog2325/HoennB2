@@ -1,0 +1,8 @@
+{"map": "ShoalCave_LowTideIceRoom",
+ "_doc": "caves_misc: Shoal Cave's ice room in Black 2's Giant Chasm ice look (in51): Sapphire's MB_ICE tiles slide (recipe 'ice': class 0x18), the raised middle (elevation 4) one tier up; Wellspring's cave header like the rest of Shoal Cave.",
+ "look": "in51",
+ "levels": {"3": 0, "4": 16},
+ "ice": true,
+ "ladders": {"17,10": "up"},
+ "header_zone": 324,
+ "tide": {"event": 9, "inside_event": 8}}

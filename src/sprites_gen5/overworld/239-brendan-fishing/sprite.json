@@ -1,0 +1,110 @@
+{
+ "kind": "overworld",
+ "code": 239,
+ "sheet": 217,
+ "frames": 12,
+ "size": [
+  64,
+  64
+ ],
+ "controller": 10,
+ "textures": [
+  "t8x8x12.0",
+  "t8x8x12.1",
+  "t8x8x12.2",
+  "t8x8x12.3",
+  "t8x8x12.4",
+  "t8x8x12.5",
+  "t8x8x12.6",
+  "t8x8x12.7",
+  "t8x8x12.8",
+  "t8x8x12.9",
+  "t8x8x12.10",
+  "t8x8x12.11"
+ ],
+ "palette": "t8x8x12",
+ "name": "brendan-fishing",
+ "note": "Brendan (player), fishing",
+ "source": "community: brendan_sheet_hyo-oppa.png by hyo-oppa",
+ "colours": 15,
+ "merged_colours": [
+  [
+   [
+    3,
+    3,
+    5
+   ],
+   [
+    0,
+    0,
+    0
+   ]
+  ],
+  [
+   [
+    53,
+    57,
+    69
+   ],
+   [
+    57,
+    61,
+    72
+   ],
+   [
+    56,
+    64,
+    64
+   ]
+  ],
+  [
+   [
+    214,
+    153,
+    110
+   ],
+   [
+    215,
+    154,
+    111
+   ]
+  ],
+  [
+   [
+    123,
+    65,
+    65
+   ],
+   [
+    122,
+    65,
+    65
+   ]
+  ],
+  [
+   [
+    193,
+    57,
+    61
+   ],
+   [
+    193,
+    57,
+    57
+   ]
+  ],
+  [
+   [
+    241,
+    100,
+    73
+   ],
+   [
+    241,
+    105,
+    73
+   ]
+  ]
+ ],
+ "made_by": "b2tools/sprite_community.py"
+}

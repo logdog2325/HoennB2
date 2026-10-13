@@ -1,0 +1,17 @@
+It’s filled with all sorts of books.
+Do you know the Pokémon Shroomish?\nIt’s hardly ever seen in Sootopolis.{be01}\nAnyway, I love big Shroomish.\nThe bigger the better.{be01}\nBut my younger brother, he says that\nBarboach is bigger.{be01}\nThat’s silly. Shroomish has to be\nbigger than that!{be01}\nHuh? Do you have a Shroomish with you?\nP-p-please, show me!
+{0100:2} inches!\nOh, my gosh, this is a big one!{be01}\nIt might even beat the big Barboach\nmy younger brother saw!{be01}\nThanks for showing me.\nThis is my thanks!
+Hunh?\nYour Bag is crammed full.
+{0100:2} inches, is it?{be01}\nHmm... I’ve seen a bigger Shroomish\nthan this one.
+Oh, now this is quite something...\nBut it’s not a Shroomish!
+You don’t have a big Shroomish?\nThat’s too bad...{be01}\nIf you get a big Shroomish, please\ncome show me.
+The biggest Shroomish in history!\n{0100:2}’s {0100:3}-inch giant!{be01}\nA Shroomish bigger than a Barboach\nalways wanted!
+The biggest Shroomish in history!\nMarco’s {0100:3}-inch giant!{be01}\nA Shroomish bigger than a Barboach\nalways wanted!
+Do you know the Pokémon Barboach?\nIt’s rarely seen in Sootopolis.{be01}\nI love, I mean love, big Barboach!{be01}\nMy big brother says that Shroomish is\nbigger.{be01}\nBut that’s wrong! Everyone knows that\nBarboach is a lot bigger.{be01}\nHunh? Do you have a Barboach?\nP-p-please show me!
+{0100:2} inches!\nWow, that is big!{be01}\nIt might be even bigger than the huge\nShroomish my big brother saw.{be01}\nThanks for showing me!\nThis is my thanks!
+{0100:2} inches?{be01}\nHmm... I’ve seen a bigger Barboach\nthan this one here.
+Well, isn’t this something!\nBut it’s no Barboach!
+Don’t you have a big Barboach?\nHow disappointing...{be01}\nIf you get a big Barboach, please\ncome show me!
+The biggest Barboach in history!\n{0100:2}’s {0100:3}-inch colossus!{be01}\nA Barboach bigger than a Shroomish\nalways wanted!
+The biggest Barboach in history!\nMarco’s {0100:3}-inch colossus!{be01}\nA Barboach bigger than a Shroomish\nalways wanted!
+Whoops, looks like your Bag is full.

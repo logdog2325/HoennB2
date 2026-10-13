@@ -1,0 +1,70 @@
+{
+ "kind": "trainer",
+ "side": "front",
+ "sprite": 127,
+ "archive": 71,
+ "files": {
+  "static": 1016,
+  "parts": 1017,
+  "palette": 1023
+ },
+ "name": "wally",
+ "note": "Wally",
+ "source": "community: trainer_collection_hyo-oppa.png by hyo-oppa",
+ "layout": "parts and animations of Black 2 front sprite 108",
+ "colours": 15,
+ "merged_colours": [
+  [
+   [
+    66,
+    82,
+    120
+   ],
+   [
+    66,
+    82,
+    121
+   ]
+  ]
+ ],
+ "made_by": "b2tools/sprite_community.py",
+ "extra_merges": [
+  [
+   [
+    189,
+    181,
+    215
+   ],
+   [
+    158,
+    169,
+    195
+   ]
+  ],
+  [
+   [
+    146,
+    98,
+    62
+   ],
+   [
+    182,
+    125,
+    83
+   ]
+  ],
+  [
+   [
+    233,
+    233,
+    249
+   ],
+   [
+    214,
+    218,
+    210
+   ]
+  ]
+ ],
+ "mcss_from": 108
+}

@@ -1,0 +1,35 @@
+{
+ "_doc": "Route110_TrickHouseCorridor: zone written by converter/gen_interior_recipes_houses.py (warps and parent from converter/gen_interiors.py); story people left for the story phase: none",
+ "zone": 512,
+ "room": "Route110_TrickHouseCorridor",
+ "area": 313,
+ "parent": 368,
+ "warps": [
+  {
+   "at": [13, 3],
+   "tile_only": true,
+   "to": [513, 1],
+   "what": "Sapphire warp 0 -> Route110_TrickHouseEnd 1"
+  },
+  {
+   "at": [14, 3],
+   "tile_only": true,
+   "to": [513, 1],
+   "what": "Sapphire warp 1 -> Route110_TrickHouseEnd 1"
+  },
+  {
+   "at": [4, 23],
+   "tile_only": true,
+   "to": [514, 2],
+   "what": "Sapphire warp 2 -> Route110_TrickHouseEntrance 2"
+  },
+  {
+   "at": [5, 23],
+   "tile_only": true,
+   "to": [514, 2],
+   "what": "Sapphire warp 3 -> Route110_TrickHouseEntrance 2"
+  }
+ ],
+ "npcs": [],
+ "signs": []
+}

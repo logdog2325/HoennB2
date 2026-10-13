@@ -1,0 +1,15 @@
+Ohh... I’m bone-dry thirsty!
+Don’t they have set dates for their\nclear-out sales?{be01}\nI watch TV, but they never show any\ncommercials.
+Yes! I’ve been waiting a long time for\nthis clear-out sale.{be01}\nThey have items that you can only get\nhere. I’m going to load up, that I am!
+Welcome!{be01}\nHow may I serve you?
+Please come again!
+It’s a Vending Machine.\nWhich drink would you like?
+Fresh Water   $200
+Soda Pop   $300
+Lemonade   $350
+Cancel
+Clang!{be01}\nA can of {0100:1} dropped down.
+Clang!{be01}\nScore! An extra can of {0100:1}\ndropped down!
+Not enough money...
+Decided against buying a drink.
+The Bag is full...

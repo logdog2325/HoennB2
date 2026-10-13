@@ -1,0 +1,3 @@
+The generator is radiating heat that\ncan be felt even at a distance.{be01}\nIt looks like it should be turned off\nas soon as possible.
+The generator quieted down.
+{0100:0} stepped on the switch.{be01}\nClick...{be01}\n... ... ... ... ... ... ... ...\n... ... ... ... ... ... ... ...{be01}\nThe generator appears to have\nstopped...

@@ -1,0 +1,259 @@
+{
+ "_doc": "Lilycove Museum 1F (Sapphire 21x14, zone 210): Nacrene Museum's parquet floor and white walls (set 287). Paintings on the back wall (1-2, 5-6, 9, 11, 19-20) = Black 2's framed pictures art02 (2 tiles) / art01 (1 tile); stairs up in a recess of the back wall (16,1). Sapphire's inner walls are walls here too: the pillar (13, 2-4) and the gallery wall (0-9, 5-6) with its paintings (2-3, 6) and (6, 6) on its south face. The stone tablet (15-19, 7-9) is a white plinth (in6yuka_01) with a Black 2 rock (d6rock01); bird sculpture (15,12) = statue object03, Poké Ball sculpture (18,11) = a Poké Ball (mball01) on a small table; the reception desk (1-6, 10-13) is a ring of white counters (shelf03), the greeter inside.",
+ "map": "LilycoveCity_LilycoveMuseum_1F",
+ "style": "sp_artmuseum",
+ "floor": [
+  [
+   0,
+   2,
+   12,
+   4
+  ],
+  [
+   14,
+   2,
+   20,
+   4
+  ],
+  [
+   10,
+   5,
+   20,
+   6
+  ],
+  [
+   0,
+   7,
+   20,
+   13
+  ],
+  [
+   16,
+   1,
+   16,
+   1
+  ]
+ ],
+ "mats": [
+  {
+   "tex": "in6yuka_01",
+   "src": 287,
+   "rect": [
+    15,
+    7,
+    19,
+    9
+   ],
+   "border": 0.25,
+   "border_units": 4,
+   "y": 0,
+   "_what": "plinth of the stone tablet"
+  },
+  {
+   "tex": "chip_mat",
+   "src": 287,
+   "rect": [
+    9,
+    13,
+    10,
+    13
+   ],
+   "border": 0.25,
+   "border_units": 4,
+   "y": 0,
+   "_what": "door mat"
+  }
+ ],
+ "furniture": [
+  {
+   "m": "art02",
+   "at": [
+    2.0,
+    2.5
+   ],
+   "wall": "N",
+   "gap": 2,
+   "y": 12,
+   "_what": "fantasy painting"
+  },
+  {
+   "m": "art02",
+   "at": [
+    6.0,
+    2.5
+   ],
+   "wall": "N",
+   "gap": 2,
+   "y": 12,
+   "_what": "berry painting"
+  },
+  {
+   "m": "art01",
+   "at": [
+    9.5,
+    2.5
+   ],
+   "wall": "N",
+   "gap": 2,
+   "y": 16,
+   "_what": "old painting"
+  },
+  {
+   "m": "art01",
+   "at": [
+    11.5,
+    2.5
+   ],
+   "wall": "N",
+   "gap": 2,
+   "y": 16,
+   "_what": "old painting"
+  },
+  {
+   "m": "art02",
+   "at": [
+    20.0,
+    2.5
+   ],
+   "wall": "N",
+   "gap": 2,
+   "y": 12,
+   "_what": "legendary Pokémon painting"
+  },
+  {
+   "m": "stair_u01",
+   "stair": [
+    16,
+    1
+   ],
+   "dir": "N",
+   "_what": "stairs up (warp tile 16,1)"
+  },
+  {
+   "m": "art02",
+   "at": [
+    3.0,
+    7.5
+   ],
+   "wall": "N",
+   "gap": 2,
+   "y": 12,
+   "_what": "woman painting"
+  },
+  {
+   "m": "art01",
+   "at": [
+    6.5,
+    7.5
+   ],
+   "wall": "N",
+   "gap": 2,
+   "y": 16,
+   "_what": "grass Pokémon painting"
+  },
+  {
+   "m": "d6rock01",
+   "at": [
+    17.5,
+    8.4
+   ],
+   "y": 0,
+   "_what": "stone tablet"
+  },
+  {
+   "m": "object03",
+   "tile": [
+    15,
+    12
+   ],
+   "_what": "bird sculpture"
+  },
+  {
+   "m": "desk02",
+   "tile": [
+    18,
+    11
+   ],
+   "_what": "plinth"
+  },
+  {
+   "m": "mball01",
+   "tile": [
+    18,
+    11
+   ],
+   "y": 10,
+   "_what": "Poké Ball sculpture"
+  },
+  {
+   "m": "shelf03",
+   "tiles": [
+    2,
+    10,
+    3,
+    10
+   ],
+   "_what": "reception, north"
+  },
+  {
+   "m": "shelf03",
+   "tiles": [
+    4,
+    10,
+    5,
+    10
+   ],
+   "_what": "reception, north"
+  },
+  {
+   "m": "shelf03",
+   "tiles": [
+    2,
+    13,
+    3,
+    13
+   ],
+   "_what": "reception, south"
+  },
+  {
+   "m": "shelf03",
+   "tiles": [
+    4,
+    13,
+    5,
+    13
+   ],
+   "_what": "reception, south"
+  },
+  {
+   "m": "shelf03",
+   "rot": 270,
+   "tiles": [
+    1,
+    11,
+    1,
+    12
+   ],
+   "_what": "reception, west"
+  },
+  {
+   "m": "shelf03",
+   "rot": 90,
+   "tiles": [
+    6,
+    11,
+    6,
+    12
+   ],
+   "_what": "reception, east"
+  }
+ ],
+ "inner_walls": {
+  "top": {
+   "tex": "b03_wall_a",
+   "src": 330,
+   "size": 16
+  },
+  "_what": "sweep_rooms 2026-10-07: Sapphire's thin partitions are light-topped blocks, not black slabs (models_interior inner_walls)"
+ }
+}

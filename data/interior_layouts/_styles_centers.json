@@ -1,0 +1,10 @@
+{
+ "_doc": "Styles of the centers agent (Pokémon Center 1F/2F, gTileset_Building + gTileset_PokemonCenter). Black 2 map textures only (src = a/0/1/4 texture set; each texture's palette is <tex>_pl in its set). Sapphire's Center: cream floor tiles with a dotted grid, orange plank walls (also the 2F pillars), an orange door mat.",
+ "center": {
+  "_doc": "Floor b01_yuka (set 282: a cream tile with a darker edge, one per tile = 16 units, for Sapphire's cream tile grid); wall in76en_kabe1 (set 378: orange vertical panels over a red skirting, for Sapphire's orange plank wall; 16x32 texels over the 50-unit wall, u_size 25 keeps the texels square); entrance in02_yuka6 (set 283: Black 2's own Pokémon Center floor) fading to black; black caps from the Center's own set 283",
+  "floor": {"tex": "b01_yuka", "src": 282, "size": 16},
+  "wall": {"tex": "in76en_kabe1", "src": 378, "u_size": 25},
+  "genkan": {"tex": "in02_yuka6", "src": 283, "size": 16},
+  "black": {"tex": "black", "src": 283}
+ }
+}

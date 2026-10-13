@@ -1,0 +1,56 @@
+{
+ "kind": "objframes",
+ "archive": 30,
+ "palette": 4,
+ "from_code": 231,
+ "ncgr": {
+  "5": [
+   3,
+   0,
+   6,
+   9,
+   1,
+   2,
+   4,
+   5,
+   7,
+   8,
+   10,
+   11,
+   12,
+   15,
+   18,
+   21,
+   13,
+   14,
+   16,
+   17,
+   19,
+   20,
+   22,
+   23
+  ],
+  "14": [
+   0,
+   9,
+   3,
+   6,
+   1,
+   2,
+   5,
+   4,
+   8,
+   7,
+   11,
+   10
+  ],
+  "20": [
+   3,
+   12,
+   6,
+   9
+  ]
+ },
+ "note": "Brendan: start menu Continue panel (NCGR 5), GTS (14), Spin Trade / Battle Video (20): frames of overworld sheet 231",
+ "made_by": "b2tools/sprite_players.py"
+}

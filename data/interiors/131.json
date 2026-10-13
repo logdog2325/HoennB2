@@ -1,0 +1,53 @@
+{
+ "zone": 131,
+ "room": "MeteorFalls_B1F_2R",
+ "cave": true,
+ "cave_auto": true,
+ "area": 332,
+ "dark": false,
+ "header": {
+  "map_type": 16,
+  "npc_cache": 24,
+  "weather_word": 64,
+  "flags": 23683,
+  "icon_word": 40975,
+  "place_display": 1,
+  "bgm0": 1076,
+  "bgm1": 1076,
+  "bgm2": 1076,
+  "bgm3": 1076,
+  "place": 67,
+  "encounters": 55,
+  "enc_slot": 2
+ },
+ "warps": [
+  {
+   "at": [
+    5,
+    15
+   ],
+   "to": [
+    130,
+    3
+   ],
+   "what": "Sapphire warp 0 (5,15) -> MeteorFalls_B1F_1R 3"
+  }
+ ],
+ "triggers": [],
+ "npcs": [
+  {
+   "uid": 1,
+   "model": 110,
+   "script": 7078,
+   "flag": 1178,
+   "dir": 1,
+   "at": [
+    5,
+    3
+   ],
+   "what": "item ball ITEM_TM02"
+  }
+ ],
+ "signs": [],
+ "what": "MeteorFalls_B1F_2R: cave (converter/gen_caves.py, b2tools/models_cave.py); story objects: see notes/CAVES.md"
+}

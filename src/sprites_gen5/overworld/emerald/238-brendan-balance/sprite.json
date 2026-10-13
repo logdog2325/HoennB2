@@ -1,0 +1,36 @@
+{
+ "kind": "overworld",
+ "code": 238,
+ "sheet": 216,
+ "frames": 16,
+ "size": [
+  32,
+  32
+ ],
+ "controller": 12,
+ "textures": [
+  "t4x4x16.0",
+  "t4x4x16.1",
+  "t4x4x16.2",
+  "t4x4x16.3",
+  "t4x4x16.4",
+  "t4x4x16.5",
+  "t4x4x16.6",
+  "t4x4x16.7",
+  "t4x4x16.8",
+  "t4x4x16.9",
+  "t4x4x16.10",
+  "t4x4x16.11",
+  "t4x4x16.12",
+  "t4x4x16.13",
+  "t4x4x16.14",
+  "t4x4x16.15"
+ ],
+ "palette": "t4x4x16",
+ "name": "brendan-balance",
+ "note": "Brendan (player, Emerald outfit), balance: balance up: walking frame (none on the sheet); balance down: walking frame (none on the sheet); balance left: walking frame (none on the sheet); balance right: walking frame (none on the sheet)",
+ "source": "community: src/sprites/community/incoming/emerald/brendan_emerald_hyo-oppa.png by hyo-oppa (cut, placed, palette-indexed; no colour merged)",
+ "colours": 15,
+ "merged_colours": [],
+ "made_by": "b2tools/sprite_community_emerald.py"
+}

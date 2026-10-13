@@ -1,0 +1,41 @@
+{
+ "zone": 176,
+ "room": "AbandonedShip_Underwater2",
+ "area": 337,
+ "header": {
+  "map_type": 16,
+  "npc_cache": 24,
+  "weather_word": 0,
+  "flags": 22817,
+  "icon_word": 32783,
+  "bgm0": 1014,
+  "bgm1": 1014,
+  "bgm2": 1014,
+  "bgm3": 1014,
+  "place": 65,
+  "place_display": 0,
+  "parent": 74,
+  "encounters": 8191,
+  "enc_slot": 6
+ },
+ "warps": [
+  {
+   "at": [
+    3,
+    1
+   ],
+   "tile_only": true,
+   "to": [
+    175,
+    0
+   ],
+   "what": "Sapphire warp 0 (3,1) -> AbandonedShip_Underwater1 0",
+   "type": 2,
+   "dir": 2
+  }
+ ],
+ "npcs": [],
+ "signs": [],
+ "triggers": [],
+ "what": "ship_hideouts: AbandonedShip_Underwater2 (b2tools/ship_hideouts_rooms.py); story: "
+}

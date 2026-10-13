@@ -1,0 +1,48 @@
+{
+ "_doc": "Emerald Ch1 (emerald_ch0_3 2026-10-12): Scott in Petalburg City (his four coord triggers are one 1x4 trigger) and at the Pokemon School (notes/EMERALD_STORY.md Ch1; scripts scenes/emerald/PetalburgCity.inc, 1182_room_RustboroCity_PokemonSchool.s). Positions are pokeemerald's own tiles.",
+ "objects": [
+  {
+   "kind": "npc",
+   "map": "PetalburgCity",
+   "at": [
+    13,
+    12
+   ],
+   "uid": 190,
+   "model": 289,
+   "script": 0,
+   "dir": 2,
+   "flag": "FLAG_HIDE_PETALBURG_CITY_SCOTT",
+   "what": "Scott (pokeemerald LOCALID_PETALBURG_SCOTT, hidden until the trigger; the script puts him on the player's row)"
+  },
+  {
+   "kind": "trigger",
+   "map": "PetalburgCity",
+   "at": [
+    4,
+    10
+   ],
+   "w": 1,
+   "h": 4,
+   "script": 9,
+   "var": "VAR_SCOTT_PETALBURG_ENCOUNTER",
+   "value": 0,
+   "what": "Scott0-3 (x = 4, y 10-13): one trigger, script 9 reads the player's row"
+  },
+  {
+   "kind": "npc",
+   "map": "RustboroCity_PokemonSchool",
+   "at": [
+    0,
+    10
+   ],
+   "uid": 20,
+   "model": 289,
+   "script": 9,
+   "dir": 0,
+   "move": 14,
+   "flag": "FLAG_HIDE_RUSTBORO_CITY_POKEMON_SCHOOL_SCOTT",
+   "what": "Scott in the Pokemon School (RustboroCity_PokemonSchool_EventScript_Scott); Mr. Stone's scene hides him"
+  }
+ ]
+}

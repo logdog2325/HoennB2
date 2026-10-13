@@ -1,0 +1,24 @@
+{
+ "kind": "overworld",
+ "code": 246,
+ "sheet": 224,
+ "frames": 4,
+ "size": [
+  32,
+  32
+ ],
+ "controller": 11,
+ "textures": [
+  "t4x4x4.0",
+  "t4x4x4.1",
+  "t4x4x4.2",
+  "t4x4x4.3"
+ ],
+ "palette": "t4x4x4",
+ "name": "may-throw",
+ "note": "May (player), throw -- Emerald NEW set: a copy of the shared NEW folder (DiegoWT's ORAS May)",
+ "source": "community: src/sprites/community/incoming/may_oras_DiegoWT/ by DiegoWT (Zailens commissioned): ball (use HM); raised (use HM); stand (walking frame); throw (use HM)",
+ "colours": 14,
+ "merged_colours": [],
+ "made_by": "b2tools/sprite_community.py"
+}

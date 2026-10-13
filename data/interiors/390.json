@@ -1,0 +1,119 @@
+{
+ "_doc": "Brendan's house 1F (zone 390; scripts src/field_scripts/0780_brendans_house_1f.s, text src/text/script/0619_brendans_house_1f.txt). Room: data/interior_layouts/LittlerootTown_BrendansHouse_1F.json, Sapphire tile + (1, 0) = zone tile. NPCs = Sapphire's object events (uid = Sapphire local id, flag = the same-named hoenn.h define); signs = Sapphire's TV tile. Installed by b2tools/patches/interiors.py.",
+ "zone": 390,
+ "room": "LittlerootTown_BrendansHouse_1F",
+ "npcs": [
+  {
+   "uid": 1,
+   "model": 251,
+   "script": 26,
+   "dir": 3,
+   "at": [
+    2,
+    6
+   ],
+   "flag": 2054,
+   "what": "Mom (FLAG_HIDE_BRENDAN_MOM_DOWNSTAIRS)"
+  },
+  {
+   "uid": 2,
+   "model": 54,
+   "script": 27,
+   "dir": 3,
+   "at": [
+    1,
+    3
+   ],
+   "move": 20,
+   "range": [
+    3,
+    0
+   ],
+   "flag": 2062,
+   "what": "Machoke carrying a box: Black 2 worker (code 54) (FLAG_HIDE_MACHOKE_MOVER_2) (walks back and forth as Sapphire's WALK_RIGHT_AND_LEFT: Black 2 code 20; v165_fixes)"
+  },
+  {
+   "uid": 3,
+   "model": 54,
+   "script": 28,
+   "dir": 0,
+   "at": [
+    4,
+    5
+   ],
+   "flag": 2061,
+   "what": "Machoke facing the TV: Black 2 worker (code 54) (FLAG_HIDE_MACHOKE_MOVER_1)"
+  },
+  {
+   "uid": 4,
+   "model": 22,
+   "script": 29,
+   "dir": 3,
+   "at": [
+    2,
+    7
+   ],
+   "flag": 2052,
+   "what": "the rival's mom (WOMAN_5 -> 22) (FLAG_HIDE_BRENDAN_MOM)"
+  },
+  {
+   "uid": 5,
+   "model": 272,
+   "script": 5,
+   "dir": 2,
+   "at": [
+    5,
+    6
+   ],
+   "flag": 2064,
+   "what": "Norman (PWT sprite 272) (FLAG_HIDE_NORMAN_LITTLEROOT); Sapphire gives him no script"
+  }
+ ],
+ "signs": [
+  {
+   "script": 6,
+   "at": [
+    4,
+    4
+   ],
+   "dir": 0,
+   "what": "TV (Sapphire MB_TELEVISION: read facing north)"
+  }
+ ],
+ "warps": [
+  {
+   "at": [
+    8,
+    8
+   ],
+   "to": [
+    389,
+    0
+   ],
+   "what": "exit (genkan below the mat) -> Littleroot warp 0"
+  },
+  {
+   "at": [
+    8,
+    2
+   ],
+   "to": [
+    391,
+    0
+   ],
+   "what": "stairs up -> 2F warp 0"
+  }
+ ],
+ "triggers": [
+  {
+   "script": 25,
+   "var": 16462,
+   "value": 4,
+   "at": [
+    8,
+    8
+   ],
+   "what": "Sapphire's GoSeeRoom coord event (lead's script 25 when VAR_LITTLEROOT_INTRO_STATE == 4)"
+  }
+ ]
+}

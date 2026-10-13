@@ -1,0 +1,29 @@
+{
+ "_doc": "Emerald builds (frontier_core, 2026-10-12; notes/FRONTIER.md): written by b2tools/frontier_text.py install from pokeemerald. script/0690_room_BattleTower_Lobby.txt (src/text/script/0027_room_BattleTower_Lobby.txt) lines 68-90: the Battle Frontier lobby text block of the Battle Tower (hoenn_frontier.inc FRT_*), 91: the 50th Trainer line (src/field_scripts/0042_room_BattleTower_Lobby.s, #ifdef HOENN_EMERALD).",
+ "script/0690_room_BattleTower_Lobby.txt": {
+  "68": "Where the talents of Trainers\\nare put to the test!{be01}\\nWelcome to the Battle Tower!{be01}\\nI am your guide to the Single\\nBattle Rooms.",
+  "69": "Would you like to take the Single\\nBattle Room challenge?",
+  "70": "The Battle Tower’s Single Battle\\nRooms are facilities for conducting{be00}\\nSingle Battles with three Pokémon.{be01}\\nThere are many Single Battle Rooms\\nin the Battle Tower for team battles.{be01}\\nIn each of the Single Battle Rooms,\\nseven Trainers await your challenge.{be01}\\nIf you manage to defeat all seven,\\nyou will earn Battle Points.{be01}\\nIf you want to interrupt your\\nchallenge, please save the game.{be01}\\nIf you don’t save before interrupting,\\nyou will be disqualified.",
+  "71": "The Battle Room offers two levels\\nof challenge, Level 50 and Open Level.{be00}\\nWhich is your choice?",
+  "72": "Excuse me!{be01}\\nYou don’t have three eligible Pokémon.{be01}\\nYou must have three different Pokémon\\nof Level 50 or less to enter.{be01}\\nThey also must be holding different\\nkinds of items.{be01}\\nEggs{0100:1} ineligible.{be01}\\nPlease come see me when you are ready.",
+  "73": "Excuse me!{be01}\\nYou don’t have three eligible Pokémon.{be01}\\nYou must have three different Pokémon\\nto enter.{be01}\\nThey also must be holding different\\nkinds of items.{be01}\\nEggs{0100:1} ineligible.{be01}\\nPlease come see me when you are ready.",
+  "74": "Now please select the three Pokémon\\nthat are to be entered.",
+  "75": "Before entering a Battle Room, your\\nprogress must be saved. Is that okay?",
+  "76": "I will now show you to the\\nSingle Battle Room.",
+  "77": "We look forward to seeing you on\\nanother challenge!",
+  "78": "Excuse me!{be01}\\nYou didn’t save before you quit your\\nchallenge last time.{be01}\\nBecause of that, your challenge so far\\nhas been disqualified. Sorry!",
+  "79": "Congratulations!\\nYou’ve beaten all seven Trainers!",
+  "80": "Congratulations!\\nYou have defeated the Salon Maiden{be00}\\nand swept seven Trainers!",
+  "81": "In recognition of your infinite talent,\\nwe award you these Battle Point(s).",
+  "82": "Your record will be saved.\\nPlease wait.",
+  "83": "Thank you for playing!",
+  "84": "We’ve been waiting for you!",
+  "85": "Challenge",
+  "86": "Info",
+  "87": "Exit",
+  "88": "Lv. 50",
+  "89": "Open Level",
+  "90": "{0100:0} obtained {0100:1} Battle Point(s).",
+  "91": "You’re finally about to face the\\n50th Trainer.{be01}\\nFrom here on, every time you beat seven\\nTrainers in a row, your Pokémon will{be00}\\nreceive a commemorative Ribbon.{be01}\\nGood luck!"
+ }
+}

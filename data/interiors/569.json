@@ -1,0 +1,81 @@
+{
+ "zone": 569,
+ "room": "Route121_SafariZoneEntrance",
+ "area": 326,
+ "parent": 40,
+ "_doc": "Route121_SafariZoneEntrance: shops agent (b2tools/shops_rooms.py); recipe data/interior_layouts/Route121_SafariZoneEntrance.json (b2tools/shops_recipes.py)",
+ "warps": [
+  {
+   "at": [
+    2,
+    5
+   ],
+   "tile_only": true,
+   "to": [
+    40,
+    3
+   ],
+   "what": "Sapphire warp 0 -> SafariZone_Southeast 0"
+  },
+  {
+   "at": [
+    3,
+    5
+   ],
+   "tile_only": true,
+   "to": [
+    40,
+    3
+   ],
+   "what": "Sapphire warp 1 -> SafariZone_Southeast 0"
+  },
+  {
+   "at": [
+    14,
+    13
+   ],
+   "tile_only": true,
+   "to": [
+    475,
+    4
+   ],
+   "what": "Sapphire warp 2 -> Route121 0"
+  },
+  {
+   "at": [
+    15,
+    13
+   ],
+   "tile_only": true,
+   "to": [
+    475,
+    4
+   ],
+   "what": "Sapphire warp 3 -> Route121 0"
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 1,
+   "model": 35,
+   "script": 1,
+   "dir": 2,
+   "at": [
+    17,
+    9
+   ],
+   "_what": "picnicker (17,9), Sapphire Route121_SafariZoneEntrance_EventScript_15C351"
+  }
+ ],
+ "signs": [
+  {
+   "script": 2,
+   "at": [
+    15,
+    1
+   ],
+   "dir": 4,
+   "_what": "sign (15,1), Sapphire Route121_SafariZoneEntrance_EventScript_15C487"
+  }
+ ]
+}

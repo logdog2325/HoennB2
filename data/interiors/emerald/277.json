@@ -1,0 +1,47 @@
+{
+ "_doc": "emerald_rooms (b2tools/emerald_rooms.py writes this file: edit the script and rerun). Emerald's overlay of 277.json (positions in the tiles of MossdeepCity_GameCorner_1F's Emerald variant): the exits (5,9) (6,9), the basement warp on Emerald's (2,0) (the zone init moves it off the map, as in Sapphire); no locked-door sign (Emerald moved it into the wall, out of reach) and no bookshelves (Sapphire's (9,1) (10,1)). Emerald's two link men (4,2) (6,2) and the record boards' signs are not placed (link features). MossdeepCity_GameCorner_1F: zone written by converter/gen_interior_recipes_houses.py (warps and parent from converter/gen_interiors.py); story people left for the story phase: person OLD_MAN_1 at (4,4) MossdeepCity_GameCorner_1F_EventScript_15AD42 (story/complex script)",
+ "zone": 277,
+ "room": "MossdeepCity_GameCorner_1F",
+ "area": 313,
+ "parent": 107,
+ "warps": [
+  {
+   "at": [
+    5,
+    9
+   ],
+   "tile_only": true,
+   "to": [
+    107,
+    14
+   ],
+   "what": "Sapphire warp 0 -> MossdeepCity 9"
+  },
+  {
+   "at": [
+    6,
+    9
+   ],
+   "tile_only": true,
+   "to": [
+    107,
+    14
+   ],
+   "what": "Sapphire warp 1 -> MossdeepCity 9"
+  },
+  {
+   "at": [
+    2,
+    0
+   ],
+   "tile_only": true,
+   "to": [
+    278,
+    0
+   ],
+   "what": "Sapphire warp 2 -> MossdeepCity_GameCorner_B1F 0"
+  }
+ ],
+ "npcs": [],
+ "signs": []
+}

@@ -1,0 +1,6 @@
+{
+ "map": "emerald/CaveOfOrigin_1F",
+ "alt_of": "CaveOfOrigin_1F",
+ "emerald_zone": true,
+ "_doc": "emerald_caves 2026-10-12 (work/agents/emerald_caves/tools/variants.py): Emerald's CaveOfOrigin_1F (pokeemerald) as Emerald's world reads it, installed for CaveOfOrigin_1F in an Emerald build (data/versions.json room_variants.emerald). Same rock as Sapphire's; Emerald's 1F is lit (no Flash) and its ladder leads to Emerald's B1F (Sapphire's B4F zone): own zone json (\"emerald_zone\"). Sapphire recipe: CaveOfOrigin_1F.json."
+}

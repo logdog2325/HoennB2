@@ -1,0 +1,59 @@
+{
+ "_doc": "emerald_caves (b2tools/emerald_caves_rooms.py writes this file: edit the script and rerun). Emerald's tunnel: Sapphire's zone json (Route114_FossilManiacsTunnel (zone 558), built by the specials agent (recipe data/interior_layouts/Route114_FossilManiacsTunnel.json): Clay Tunnel look, Black 2 interior area 332. Warps in Sapphire's order (one per Sapphire warp tile). People/signs: Sapphire's one-message ones as generated; story people are left for the story phase.) + warp 2 (Emerald's (6,2) -> DesertUnderpass warp 0, zone 375) + a boulder (0x2004, no script) on (6,3), hidden by the game-clear flag (pokeemerald Route114_FossilManiacsTunnel_OnLoad: rock wall over (6,1)-(6,2) until FLAG_SYS_GAME_CLEAR).",
+ "zone": 558,
+ "room": "Route114_FossilManiacsTunnel",
+ "area": 332,
+ "parent": 383,
+ "warps": [
+  {
+   "at": [
+    6,
+    25
+   ],
+   "tile_only": true,
+   "to": [
+    557,
+    2
+   ],
+   "what": "Sapphire warp 0 -> Route114_FossilManiacsHouse 2"
+  },
+  {
+   "at": [
+    7,
+    25
+   ],
+   "tile_only": true,
+   "to": [
+    557,
+    2
+   ],
+   "what": "Sapphire warp 1 -> Route114_FossilManiacsHouse 2"
+  },
+  {
+   "at": [
+    6,
+    2
+   ],
+   "to": [
+    375,
+    0
+   ],
+   "what": "Emerald warp 2 -> DesertUnderpass 0"
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 100,
+   "model": 8196,
+   "script": 0,
+   "dir": 1,
+   "at": [
+    6,
+    3
+   ],
+   "flag": 2400,
+   "what": "the Desert Underpass closed until the game is clear"
+  }
+ ],
+ "signs": []
+}

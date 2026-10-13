@@ -1,0 +1,6 @@
+{
+ "_doc_emerald": "Emerald's overlay of data/hoenn_weather.json (emerald_world 2026-10-12): deep-merged over it by version.load_json (b2tools/patches/fixed_weather.py data()) in HOENN_VERSION=emerald builds. Emerald's weather triggers stand where Sapphire's do (Route 111, 113, Jagged Pass, Mt. Pyre: checked); the parts recomputed on Emerald's maps with the weather agent's own flood fill and cover (work/agents/weather/regions.py; work/agents/emerald_world/tools/weather_parts.py) differ only on Route 111: the desert's east strip ends at row 107, north of Emerald's Trainer Hill (Sapphire's ran on to row 127 through the strip Trainer Hill now stands on), so Trainer Hill and its plaza have Route 111's clear weather and music. Route 113's and Jagged Pass's hand-made rects already hold Emerald's few extra tiles.",
+ "parts": {
+  "Route111_Desert": {"rects": [[21, 33, 37, 100], [17, 38, 20, 93], [16, 39, 16, 93], [15, 40, 15, 68], [14, 41, 14, 62], [13, 42, 13, 62], [12, 43, 12, 62], [11, 44, 11, 62], [10, 46, 10, 61], [30, 33, 33, 107]]}
+ }
+}

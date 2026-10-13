@@ -1,0 +1,152 @@
+{
+ "_doc": "Lilycove Museum 2F (Sapphire 22x13, zone 211): Nacrene Museum's white tiles and walls. The back wall is recessed in the middle (4-17) as Sapphire's; the corner blocks (0-3, 18-21 at row 2) are wall. Stairs down at (13,1) = stair_d01 in a floor opening. The five painting cases (4x2 each) = two glass cabinets shelf02 each; bird sculptures (11,2)/(15,2) = statues object02/object03.",
+ "map": "LilycoveCity_LilycoveMuseum_2F",
+ "style": "sp_gallery",
+ "floor": [
+  [
+   0,
+   3,
+   21,
+   12
+  ],
+  [
+   4,
+   2,
+   17,
+   2
+  ],
+  [
+   12,
+   1,
+   14,
+   1
+  ]
+ ],
+ "furniture": [
+  {
+   "m": "stair_d01",
+   "stair": [
+    13,
+    1
+   ],
+   "dir": "N",
+   "_what": "stairs down (warp tile 13,1)"
+  },
+  {
+   "m": "object02",
+   "tile": [
+    11,
+    2
+   ],
+   "_what": "bird sculpture"
+  },
+  {
+   "m": "object03",
+   "tile": [
+    15,
+    2
+   ],
+   "_what": "bird sculpture"
+  },
+  {
+   "m": "shelf02",
+   "tiles": [
+    1,
+    5,
+    2,
+    6
+   ],
+   "_what": "painting case tough"
+  },
+  {
+   "m": "shelf02",
+   "tiles": [
+    3,
+    5,
+    4,
+    6
+   ],
+   "_what": "painting case tough"
+  },
+  {
+   "m": "shelf02",
+   "tiles": [
+    9,
+    5,
+    10,
+    6
+   ],
+   "_what": "painting case cool"
+  },
+  {
+   "m": "shelf02",
+   "tiles": [
+    11,
+    5,
+    12,
+    6
+   ],
+   "_what": "painting case cool"
+  },
+  {
+   "m": "shelf02",
+   "tiles": [
+    17,
+    5,
+    18,
+    6
+   ],
+   "_what": "painting case beauty"
+  },
+  {
+   "m": "shelf02",
+   "tiles": [
+    19,
+    5,
+    20,
+    6
+   ],
+   "_what": "painting case beauty"
+  },
+  {
+   "m": "shelf02",
+   "tiles": [
+    5,
+    9,
+    6,
+    10
+   ],
+   "_what": "painting case smart"
+  },
+  {
+   "m": "shelf02",
+   "tiles": [
+    7,
+    9,
+    8,
+    10
+   ],
+   "_what": "painting case smart"
+  },
+  {
+   "m": "shelf02",
+   "tiles": [
+    13,
+    9,
+    14,
+    10
+   ],
+   "_what": "painting case cute"
+  },
+  {
+   "m": "shelf02",
+   "tiles": [
+    15,
+    9,
+    16,
+    10
+   ],
+   "_what": "painting case cute"
+  }
+ ]
+}

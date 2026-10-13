@@ -1,0 +1,1045 @@
+{
+ "map": "Route110",
+ "id": "MAP_ROUTE110",
+ "layout": "LAYOUT_ROUTE110",
+ "music": "MUS_ROUTE110",
+ "region_map_section": "MAPSEC_ROUTE_110",
+ "weather": "WEATHER_SUNNY",
+ "connections": [
+  {
+   "direction": "up",
+   "offset": 0,
+   "map": "MAP_MAUVILLE_CITY"
+  },
+  {
+   "direction": "down",
+   "offset": 0,
+   "map": "MAP_SLATEPORT_CITY"
+  },
+  {
+   "direction": "left",
+   "offset": 60,
+   "map": "MAP_ROUTE103"
+  }
+ ],
+ "npcs": [
+  {
+   "local_id": 1,
+   "x": 17,
+   "y": 90,
+   "gfx": "OBJ_EVENT_GFX_CAMPER",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "Route110_EventScript_14F9D4",
+   "texts": {
+    "Route110_Text_16EEF6": "Which should I choose?\\pMake a beeline for MAUVILLE on\\nCYCLING ROAD, or take the low road\\land look for POKéMON?$"
+   }
+  },
+  {
+   "local_id": 2,
+   "x": 29,
+   "y": 79,
+   "gfx": "OBJ_EVENT_GFX_CYCLING_TRIATHLETE_M",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "Route110_EventScript_14F9CB",
+   "texts": {
+    "Route110_Text_16EE74": "Learning techniques will make BIKE\\nriding even more fun.\\pThere are some places that you can\\nreach only by using a BIKE technique.$"
+   }
+  },
+  {
+   "local_id": 3,
+   "x": 14,
+   "y": 69,
+   "gfx": "OBJ_EVENT_GFX_OLD_WOMAN_1",
+   "movement": "MOVEMENT_TYPE_WANDER_UP_AND_DOWN",
+   "range": [
+    0,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "Route110_EventScript_14F9C2",
+   "texts": {
+    "Route110_Text_16EE30": "I don't have a BIKE, so I'll take a\\nleisurely walk on the low road.$"
+   }
+  },
+  {
+   "local_id": 4,
+   "x": 9,
+   "y": 57,
+   "gfx": "OBJ_EVENT_GFX_CYCLING_TRIATHLETE_M",
+   "movement": "MOVEMENT_TYPE_WANDER_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "Route110_EventScript_14F9B0",
+   "texts": {
+    "Route110_Text_16EBC9": "Oh, hey, you got that BIKE from RYDEL!\\pOh, it's glaringly obvious.\\nIt says right on your bike...\\pRYDEL, RYDEL, RYDEL, RYDEL, RYDEL,\\nRYDEL, RYDEL, RYDEL, RYDEL, RYDEL,\\pRYDEL, RYDEL, RYDEL, RYDEL, RYDEL,\\nRYDEL, RYDEL, RYDEL, RYDEL, RYDEL,\\pRYDEL, RYDEL, RYDEL, RYDEL, RYDEL,\\nRYDEL, RYDEL, RYDEL, RYDEL, RYDEL,\\pRYDEL, RYDEL, RYDEL, RYDEL, RYDEL,\\nRYDEL, RYDEL, RYDEL, RYDEL, RYDEL,\\pRYDEL, RYDEL, RYDEL, RYDEL, RYDEL...\\nThat name's everywhere.\\pYou should ride it around all over\\nthe place - it's good advertising!$"
+   }
+  },
+  {
+   "local_id": 5,
+   "x": 10,
+   "y": 11,
+   "gfx": "OBJ_EVENT_GFX_OLD_MAN_1",
+   "movement": "MOVEMENT_TYPE_WANDER_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "Route110_EventScript_14F9B9",
+   "texts": {
+    "Route110_Text_16EDC5": "The two roads, one above, one below...\\pA road each for people and POKéMON.\\nPerhaps that is right and fair.$"
+   }
+  },
+  {
+   "local_id": 6,
+   "x": 27,
+   "y": 24,
+   "gfx": "OBJ_EVENT_GFX_CYCLING_TRIATHLETE_F",
+   "movement": "MOVEMENT_TYPE_WANDER_AROUND",
+   "range": [
+    1,
+    3
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "Route110_EventScript_14F9A7",
+   "texts": {
+    "Route110_Text_16EB65": "How do you like the way my raven-\\ncolored hair streams behind me?\\pI grew my hair out just for that.$"
+   }
+  },
+  {
+   "local_id": 7,
+   "x": 15,
+   "y": 7,
+   "gfx": "OBJ_EVENT_GFX_BOY_3",
+   "movement": "MOVEMENT_TYPE_WANDER_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "Route110_EventScript_14F99E",
+   "texts": {
+    "Route110_Text_16EB22": "Wouldn't it be great to ride a BIKE\\nat full speed on CYCLING ROAD?$"
+   }
+  },
+  {
+   "local_id": 8,
+   "x": 16,
+   "y": 73,
+   "gfx": "OBJ_EVENT_GFX_CYCLING_TRIATHLETE_F",
+   "movement": "MOVEMENT_TYPE_WALK_SEQUENCE_UP_RIGHT_DOWN_LEFT",
+   "range": [
+    2,
+    14
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route110_EventScript_14FB7D",
+   "texts": {
+    "Route110_Text_1BA5FF": "I've been riding without stopping.\\nMy thighs are like rocks!$",
+    "Route110_Text_1BA63C": "I'm worried about muscle cramps...$",
+    "Route110_Text_1BA65F": "Oh, you have some GYM BADGES?\\nNo wonder you're so strong!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 9,
+   "x": 19,
+   "y": 31,
+   "gfx": "OBJ_EVENT_GFX_CYCLING_TRIATHLETE_M",
+   "movement": "MOVEMENT_TYPE_WALK_SEQUENCE_LEFT_UP_RIGHT_DOWN",
+   "range": [
+    10,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route110_EventScript_14FB28",
+   "texts": {
+    "Route110_Text_1BA2D4": "Yo, you!\\nCan you keep up with my speed?$",
+    "Route110_Text_1BA2FC": "Crash and burn!$",
+    "Route110_Text_1BA30C": "Speed alone won't let me win at POKéMON.\\nI need to reconsider this...$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 10,
+   "x": 30,
+   "y": 31,
+   "gfx": "OBJ_EVENT_GFX_CYCLING_TRIATHLETE_F",
+   "movement": "MOVEMENT_TYPE_FACE_LEFT",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route110_EventScript_14FB94",
+   "texts": {
+    "Route110_Text_1BA4A0": "The triathlon is hard in the extreme.\\pYou have to complete the three events\\nof swimming, cycling, and running.$",
+    "Route110_Text_1BA50F": "POKéMON battles are hard, too!$",
+    "Route110_Text_1BA52E": "I'm exhausted, so I need a break.\\nIt's important to get proper rest.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 11,
+   "x": 16,
+   "y": 55,
+   "gfx": "OBJ_EVENT_GFX_CYCLING_TRIATHLETE_M",
+   "movement": "MOVEMENT_TYPE_WALK_SEQUENCE_UP_LEFT_DOWN_RIGHT",
+   "range": [
+    4,
+    4
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route110_EventScript_14FB3F",
+   "texts": {
+    "Route110_Text_1BA352": "Don't panic if your BIKE's going fast!$",
+    "Route110_Text_1BA379": "I shouldn't panic during POKéMON\\nbattles...$",
+    "Route110_Text_1BA3A5": "There's no need to panic or stress.\\nTake it easy. There's plenty of time.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 12,
+   "x": 5,
+   "y": 39,
+   "gfx": "OBJ_EVENT_GFX_PSYCHIC_M",
+   "movement": "MOVEMENT_TYPE_ROTATE_COUNTERCLOCKWISE",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route110_EventScript_14FA8E",
+   "texts": {
+    "Route110_Text_1BA699": "I have foreseen your intentions!\\nI cannot possibly lose!$",
+    "Route110_Text_1BA6D2": "I failed to prophesize my own demise!$",
+    "Route110_Text_1BA6F8": "I see your future...\\pHmm...\\nI see a shining light...$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 13,
+   "x": 33,
+   "y": 15,
+   "gfx": "OBJ_EVENT_GFX_LASS",
+   "movement": "MOVEMENT_TYPE_FACE_LEFT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route110_EventScript_14FAA5",
+   "texts": {
+    "Route110_Text_1BA72D": "Ahahahaha!\\nI'll dazzle you with my wonders!$",
+    "Route110_Text_1BA759": "I wondrously lost!$",
+    "Route110_Text_1BA76C": "You managed to win only because it was\\na wonder! Yes, a wonder!\\lDon't think you can win all the time!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 14,
+   "x": 23,
+   "y": 40,
+   "gfx": "OBJ_EVENT_GFX_MANIAC",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN_UP_AND_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route110_EventScript_14FABC",
+   "texts": {
+    "Route110_Text_1BA7D2": "Could I see your POKéMON?\\nJust one look, please?$",
+    "Route110_Text_1BA803": "I wanted to complete my\\ncollection...$",
+    "Route110_Text_1BA829": "When I see a POKéMON that I don't know,\\nmy passion as a collector is ignited!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 15,
+   "x": 10,
+   "y": 19,
+   "gfx": "OBJ_EVENT_GFX_FISHERMAN",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route110_EventScript_14FAFA",
+   "texts": {
+    "Route110_Text_1BA913": "Hey!\\nDon't sneak up behind me like that!$",
+    "Route110_Text_1BA93C": "I lost!\\nDrat!$",
+    "Route110_Text_1BA94A": "Fishing is all about concentration.\\nYou have to focus on the floater.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 16,
+   "x": 5,
+   "y": 11,
+   "gfx": "OBJ_EVENT_GFX_BERRY_TREE",
+   "movement": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "S_BerryTree",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 17,
+   "x": 6,
+   "y": 11,
+   "gfx": "OBJ_EVENT_GFX_BERRY_TREE",
+   "movement": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "S_BerryTree",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 18,
+   "x": 7,
+   "y": 11,
+   "gfx": "OBJ_EVENT_GFX_BERRY_TREE",
+   "movement": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "S_BerryTree",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 19,
+   "x": 30,
+   "y": 69,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_ROUTE110_2",
+   "script": "Route110_EventScript_1B14BB",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 20,
+   "x": 26,
+   "y": 47,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_ROUTE110_1",
+   "script": "Route110_EventScript_1B14AE",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 21,
+   "x": 27,
+   "y": 92,
+   "gfx": "OBJ_EVENT_GFX_CYCLING_TRIATHLETE_M",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "Route110_EventScript_14FA53",
+   "texts": {
+    "Route110_Text_16F26A": "Regardless of the results, I count on\\nseeing more challenges from you.\\lAlways aim higher!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 22,
+   "x": 7,
+   "y": 83,
+   "gfx": "OBJ_EVENT_GFX_VAR_1",
+   "movement": "MOVEMENT_TYPE_FACE_UP",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_EVIL_TEAM_ROUTE110",
+   "script": "Route110_EventScript_14F946",
+   "texts": {
+    "Route110_Text_16E6C0": "TEAM {EVIL_TEAM}'s activities must be kept\\nsecret for now.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 23,
+   "x": 8,
+   "y": 83,
+   "gfx": "OBJ_EVENT_GFX_VAR_1",
+   "movement": "MOVEMENT_TYPE_FACE_UP",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_EVIL_TEAM_ROUTE110",
+   "script": "Route110_EventScript_14F95C",
+   "texts": {
+    "Route110_Text_16E6F2": "I want to get going to SLATEPORT and\\nkick up a ruckus!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 24,
+   "x": 9,
+   "y": 83,
+   "gfx": "OBJ_EVENT_GFX_VAR_1",
+   "movement": "MOVEMENT_TYPE_FACE_UP",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_EVIL_TEAM_ROUTE110",
+   "script": "Route110_EventScript_14F972",
+   "texts": {
+    "Route110_Text_16E729": "This is my first job after joining\\nTEAM {EVIL_TEAM}. I've got the shakes!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 25,
+   "x": 10,
+   "y": 83,
+   "gfx": "OBJ_EVENT_GFX_VAR_1",
+   "movement": "MOVEMENT_TYPE_FACE_UP",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_EVIL_TEAM_ROUTE110",
+   "script": "Route110_EventScript_14F988",
+   "texts": {
+    "Route110_Text_16E76A": "TEAM {EVIL_TEAM}'s actions will put a smile\\non everyone's face!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 26,
+   "x": 8,
+   "y": 82,
+   "gfx": "OBJ_EVENT_GFX_VAR_1",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_EVIL_TEAM_ROUTE110",
+   "script": "0x0",
+   "missing": true
+  },
+  {
+   "local_id": 27,
+   "x": 21,
+   "y": 78,
+   "gfx": "OBJ_EVENT_GFX_CYCLING_TRIATHLETE_M",
+   "movement": "MOVEMENT_TYPE_WALK_SEQUENCE_LEFT_UP_RIGHT_DOWN",
+   "range": [
+    7,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route110_EventScript_14FB11",
+   "texts": {
+    "Route110_Text_1BA22C": "Whoa! Watch it!\\nI guess you're not used to BIKE racing.$",
+    "Route110_Text_1BA264": "Whoa!\\nMy brakes failed!$",
+    "Route110_Text_1BA27C": "Flat tires and brake problems can\\ncause serious injury!\\lInspect your BIKE for problems!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 28,
+   "x": 34,
+   "y": 54,
+   "gfx": "OBJ_EVENT_GFX_VAR_0",
+   "movement": "MOVEMENT_TYPE_FACE_LEFT_AND_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_RIVAL_ROUTE110",
+   "script": "0x0",
+   "missing": true
+  },
+  {
+   "local_id": 29,
+   "x": 34,
+   "y": 54,
+   "gfx": "OBJ_EVENT_GFX_VAR_3",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_RIVAL_ON_BIKE_ROUTE110",
+   "script": "0x0",
+   "missing": true
+  },
+  {
+   "local_id": 30,
+   "x": 33,
+   "y": 69,
+   "gfx": "OBJ_EVENT_GFX_YOUNGSTER",
+   "movement": "MOVEMENT_TYPE_FACE_LEFT_AND_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route110_EventScript_14FC10",
+   "texts": {
+    "Route110_Text_1BAAC3": "I found some cool POKéMON in the grass\\naround here!$",
+    "Route110_Text_1BAAF7": "Being cool isn't enough to win...$",
+    "Route110_Text_1BAB19": "It's hard to battle with POKéMON you\\njust caught.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 31,
+   "x": 11,
+   "y": 73,
+   "gfx": "OBJ_EVENT_GFX_WOMAN_2",
+   "movement": "MOVEMENT_TYPE_FACE_LEFT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route110_EventScript_14FBD2",
+   "texts": {
+    "Route110_Text_1BA990": "Ahahaha! I would go anywhere to show\\noff my delightful POKéMON.$",
+    "Route110_Text_1BA9D0": "Oh, dear, this won't do.$",
+    "Route110_Text_1BA9E9": "Perhaps I should groom my POKéMON for\\nCONTESTS rather than battles.$"
+   },
+   "complex": true
+  }
+ ],
+ "signs": [
+  {
+   "x": 15,
+   "y": 25,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "Route110_EventScript_14F9EF",
+   "texts": {
+    "Route110_Text_16F3B1": "“TEAM {EVIL_TEAM} RULEZ!”\\pSomebody scribbled that on the sign...$"
+   }
+  },
+  {
+   "x": 9,
+   "y": 51,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "Route110_EventScript_14FA01",
+   "texts": {
+    "Route110_Text_16F3FF": "SEASIDE PARKING$"
+   }
+  },
+  {
+   "x": 14,
+   "y": 88,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "Route110_EventScript_14F9E6",
+   "texts": {
+    "Route110_Text_16F39C": "SEASIDE CYCLING ROAD$"
+   }
+  },
+  {
+   "x": 20,
+   "y": 94,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "Route110_EventScript_14F9DD",
+   "texts": {
+    "Route110_Text_16F381": "ROUTE 110\\n{0x7A} SLATEPORT CITY$"
+   }
+  },
+  {
+   "x": 7,
+   "y": 75,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "Route110_EventScript_14F9F8",
+   "texts": {
+    "Route110_Text_16F3E9": "ROUTE 110\\n{0x7B} ROUTE 103$"
+   }
+  },
+  {
+   "x": 3,
+   "y": 17,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "Route110_EventScript_14FA0A",
+   "texts": {
+    "Route110_Text_16F40F": "ROUTE 110\\n{0x79} MAUVILLE CITY$"
+   }
+  },
+  {
+   "x": 16,
+   "y": 25,
+   "type": "secret_base",
+   "raw": {
+    "type": "secret_base",
+    "x": 16,
+    "y": 25,
+    "elevation": 0,
+    "secret_base_id": "SECRET_BASE_TREE3_1"
+   }
+  },
+  {
+   "x": 17,
+   "y": 25,
+   "type": "secret_base",
+   "raw": {
+    "type": "secret_base",
+    "x": 17,
+    "y": 25,
+    "elevation": 0,
+    "secret_base_id": "SECRET_BASE_TREE4_1"
+   }
+  },
+  {
+   "x": 35,
+   "y": 39,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "Route110_EventScript_14FA13",
+   "texts": {
+    "Route110_Text_16F429": "TRAINER TIPS\\pThe foe can be made helpless by\\nparalyzing it or causing it to sleep.\\pIt is an important technique for\\nPOKéMON battles.$"
+   }
+  },
+  {
+   "x": 37,
+   "y": 70,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "Route110_EventScript_14FA1C",
+   "texts": {
+    "Route110_Text_16F4AE": "TRAINER TIPS\\pThe items in the BAG can be reorganized\\nby pressing SELECT.$"
+   }
+  },
+  {
+   "x": 8,
+   "y": 67,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "Route110_EventScript_14FA25",
+   "texts": {
+    "Route110_Text_16F4F7": "“Three steps {0x7C} and two steps {0x79}\\nto reach the wondrous TRICK HOUSE.”$"
+   }
+  },
+  {
+   "x": 32,
+   "y": 93,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "Route110_EventScript_14FA2E",
+   "texts": {
+    "Route110_Text_16F53A": "THE BEST RECORD TO DATE...\\pNo. of collisions: {STR_VAR_1}\\pElapsed time: {STR_VAR_2}$"
+   },
+   "complex": true
+  },
+  {
+   "x": 26,
+   "y": 40,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 26,
+    "y": 40,
+    "elevation": 3,
+    "item": "ITEM_REVIVE",
+    "flag": "FLAG_HIDDEN_ITEM_36"
+   }
+  },
+  {
+   "x": 34,
+   "y": 42,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 34,
+    "y": 42,
+    "elevation": 3,
+    "item": "ITEM_GREAT_BALL",
+    "flag": "FLAG_HIDDEN_ITEM_35"
+   }
+  },
+  {
+   "x": 4,
+   "y": 35,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 4,
+    "y": 35,
+    "elevation": 3,
+    "item": "ITEM_POKE_BALL",
+    "flag": "FLAG_HIDDEN_ITEM_41"
+   }
+  },
+  {
+   "x": 37,
+   "y": 67,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 37,
+    "y": 67,
+    "elevation": 3,
+    "item": "ITEM_FULL_HEAL",
+    "flag": "FLAG_HIDDEN_ITEM_37"
+   }
+  },
+  {
+   "x": 13,
+   "y": 16,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "Route110_EventScript_14F9E6",
+   "texts": {
+    "Route110_Text_16F39C": "SEASIDE CYCLING ROAD$"
+   }
+  }
+ ],
+ "warps": [
+  {
+   "id": 0,
+   "x": 35,
+   "y": 24,
+   "dest_map": "MAP_NEW_MAUVILLE_ENTRANCE",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 1,
+   "x": 11,
+   "y": 66,
+   "dest_map": "MAP_ROUTE110_TRICK_HOUSE_ENTRANCE",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 2,
+   "x": 15,
+   "y": 16,
+   "dest_map": "MAP_ROUTE110_SEASIDE_CYCLING_ROAD_NORTH_ENTRANCE",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 3,
+   "x": 18,
+   "y": 16,
+   "dest_map": "MAP_ROUTE110_SEASIDE_CYCLING_ROAD_NORTH_ENTRANCE",
+   "dest_warp_id": "2"
+  },
+  {
+   "id": 4,
+   "x": 16,
+   "y": 88,
+   "dest_map": "MAP_ROUTE110_SEASIDE_CYCLING_ROAD_SOUTH_ENTRANCE",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 5,
+   "x": 19,
+   "y": 88,
+   "dest_map": "MAP_ROUTE110_SEASIDE_CYCLING_ROAD_SOUTH_ENTRANCE",
+   "dest_warp_id": "2"
+  }
+ ],
+ "coord_events": [
+  {
+   "type": "trigger",
+   "x": 28,
+   "y": 92,
+   "elevation": 3,
+   "var": "VAR_CYCLING_CHALLENGE_STATE",
+   "var_value": "2",
+   "script": "Route110_EventScript_14FC27",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 29,
+   "y": 92,
+   "elevation": 3,
+   "var": "VAR_CYCLING_CHALLENGE_STATE",
+   "var_value": "2",
+   "script": "Route110_EventScript_14FC27",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 33,
+   "y": 56,
+   "elevation": 3,
+   "var": "VAR_ROUTE110_STATE",
+   "var_value": "0",
+   "script": "Route110_EventScript_14FD13",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 34,
+   "y": 56,
+   "elevation": 3,
+   "var": "VAR_ROUTE110_STATE",
+   "var_value": "0",
+   "script": "Route110_EventScript_14FD1E",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 35,
+   "y": 56,
+   "elevation": 3,
+   "var": "VAR_ROUTE110_STATE",
+   "var_value": "0",
+   "script": "Route110_EventScript_14FD29",
+   "texts": {},
+   "complex": true
+  }
+ ],
+ "wild": {
+  "land_mons": {
+   "encounter_rate": 20,
+   "slot_rates": [
+    20,
+    20,
+    10,
+    10,
+    10,
+    10,
+    5,
+    5,
+    4,
+    4,
+    1,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_ZIGZAGOON",
+     "min": 12,
+     "max": 12
+    },
+    {
+     "species": "SPECIES_ELECTRIKE",
+     "min": 12,
+     "max": 12
+    },
+    {
+     "species": "SPECIES_GULPIN",
+     "min": 12,
+     "max": 12
+    },
+    {
+     "species": "SPECIES_ELECTRIKE",
+     "min": 13,
+     "max": 13
+    },
+    {
+     "species": "SPECIES_PLUSLE",
+     "min": 13,
+     "max": 13
+    },
+    {
+     "species": "SPECIES_ODDISH",
+     "min": 13,
+     "max": 13
+    },
+    {
+     "species": "SPECIES_PLUSLE",
+     "min": 13,
+     "max": 13
+    },
+    {
+     "species": "SPECIES_GULPIN",
+     "min": 13,
+     "max": 13
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 12,
+     "max": 12
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 12,
+     "max": 12
+    },
+    {
+     "species": "SPECIES_MINUN",
+     "min": 12,
+     "max": 12
+    },
+    {
+     "species": "SPECIES_MINUN",
+     "min": 13,
+     "max": 13
+    }
+   ]
+  },
+  "water_mons": {
+   "encounter_rate": 4,
+   "slot_rates": [
+    60,
+    30,
+    5,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 5,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 15,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_PELIPPER",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_PELIPPER",
+     "min": 25,
+     "max": 30
+    }
+   ]
+  },
+  "fishing_mons": {
+   "encounter_rate": 30,
+   "slot_rates": [
+    70,
+    30,
+    60,
+    20,
+    20,
+    40,
+    40,
+    15,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 20,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 35,
+     "max": 40
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 40,
+     "max": 45
+    }
+   ]
+  }
+ }
+}

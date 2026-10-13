@@ -1,0 +1,29 @@
+{
+ "map": "SkyPillar_Outside",
+ "id": "MAP_SKY_PILLAR_OUTSIDE",
+ "layout": "LAYOUT_SKY_PILLAR_OUTSIDE",
+ "music": "MUS_MT_CHIMNEY",
+ "region_map_section": "MAPSEC_SKY_PILLAR",
+ "weather": "WEATHER_NONE",
+ "connections": null,
+ "npcs": [],
+ "signs": [],
+ "warps": [
+  {
+   "id": 0,
+   "x": 17,
+   "y": 13,
+   "dest_map": "MAP_SKY_PILLAR_ENTRANCE",
+   "dest_warp_id": "1"
+  },
+  {
+   "id": 1,
+   "x": 14,
+   "y": 5,
+   "dest_map": "MAP_SKY_PILLAR_1F",
+   "dest_warp_id": "0"
+  }
+ ],
+ "coord_events": [],
+ "wild": {}
+}

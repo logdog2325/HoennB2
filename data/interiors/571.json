@@ -1,0 +1,29 @@
+{
+ "_doc": "Route124_DivingTreasureHuntersHouse: zone written by converter/gen_interior_recipes_houses.py (warps and parent from converter/gen_interiors.py); story people left for the story phase: person MAN_6 at (5,4) Route124_DivingTreasureHuntersHouse_EventScript_163E04 (story/complex script)",
+ "zone": 571,
+ "room": "Route124_DivingTreasureHuntersHouse",
+ "area": 313,
+ "parent": 157,
+ "warps": [
+  {
+   "at": [3, 8],
+   "tile_only": true,
+   "to": [157, 1],
+   "what": "Sapphire warp 0 -> Route124 0"
+  },
+  {
+   "at": [4, 8],
+   "tile_only": true,
+   "to": [157, 1],
+   "what": "Sapphire warp 1 -> Route124 0"
+  }
+ ],
+ "npcs": [],
+ "signs": [
+  {
+   "script": 1,
+   "at": [7, 1],
+   "dir": 4
+  }
+ ]
+}

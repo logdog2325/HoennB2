@@ -1,0 +1,1915 @@
+{
+ "_doc": "Emerald overlay of data/hoenn_hidden_items.json (version.load_json deep merge), written by converter/gen_hidden_items.py with HOENN_VERSION=emerald: pokeemerald's hidden items by flag; one with a Sapphire item's flag or tile (sapphire_twin; moved = on another tile) keeps its slot n, the others have free slots. map = the HoennB2 map, built = this build has it. sapphire_only: Sapphire's that Emerald does not have (not placed in Emerald: data/story/emerald/hidden_items.json replaces the signs).",
+ "items": {
+  "FLAG_HIDDEN_ITEM_FALLARBOR_TOWN_NUGGET": {
+   "n": 1,
+   "map": "FallarborTown",
+   "emerald_map": "FallarborTown",
+   "at": [
+    2,
+    15
+   ],
+   "emerald": "ITEM_NUGGET",
+   "item": "ITEM_NUGGET",
+   "script": 8000,
+   "flag": 2820,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_FALLARBOR_TOWN_NUGGET",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_GRANITE_CAVE_B2F_EVERSTONE_1": {
+   "n": 2,
+   "map": "GraniteCave_B2F",
+   "emerald_map": "GraniteCave_B2F",
+   "at": [
+    28,
+    6
+   ],
+   "emerald": "ITEM_EVERSTONE",
+   "item": "ITEM_EVERSTONE",
+   "script": 8001,
+   "flag": 2821,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_30",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_GRANITE_CAVE_B2F_EVERSTONE_2": {
+   "n": 3,
+   "map": "GraniteCave_B2F",
+   "emerald_map": "GraniteCave_B2F",
+   "at": [
+    15,
+    11
+   ],
+   "emerald": "ITEM_EVERSTONE",
+   "item": "ITEM_EVERSTONE",
+   "script": 8002,
+   "flag": 2822,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_31",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_JAGGED_PASS_FULL_HEAL": {
+   "n": 4,
+   "map": "JaggedPass",
+   "emerald_map": "JaggedPass",
+   "at": [
+    8,
+    10
+   ],
+   "emerald": "ITEM_FULL_HEAL",
+   "item": "ITEM_FULL_HEAL",
+   "script": 8003,
+   "flag": 2823,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_4D",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_JAGGED_PASS_GREAT_BALL": {
+   "n": 5,
+   "map": "JaggedPass",
+   "emerald_map": "JaggedPass",
+   "at": [
+    7,
+    29
+   ],
+   "emerald": "ITEM_GREAT_BALL",
+   "item": "ITEM_GREAT_BALL",
+   "script": 8004,
+   "flag": 2824,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_4C",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_LAVARIDGE_TOWN_ICE_HEAL": {
+   "n": 6,
+   "map": "LavaridgeTown",
+   "emerald_map": "LavaridgeTown",
+   "at": [
+    4,
+    5
+   ],
+   "emerald": "ITEM_ICE_HEAL",
+   "item": "ITEM_ICE_HEAL",
+   "script": 8005,
+   "flag": 2825,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_LAVARIDGE_TOWN_ICE_HEAL",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_LILYCOVE_CITY_HEART_SCALE": {
+   "n": 7,
+   "map": "LilycoveCity",
+   "emerald_map": "LilycoveCity",
+   "at": [
+    36,
+    31
+   ],
+   "emerald": "ITEM_HEART_SCALE",
+   "item": "ITEM_HEART_SCALE",
+   "script": 8006,
+   "flag": 2826,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_1B",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_LILYCOVE_CITY_PP_UP": {
+   "n": 8,
+   "map": "LilycoveCity",
+   "emerald_map": "LilycoveCity",
+   "at": [
+    61,
+    7
+   ],
+   "emerald": "ITEM_PP_UP",
+   "item": "ITEM_PP_UP",
+   "script": 8007,
+   "flag": 2827,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_LILYCOVE_CITY_PP_UP",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_LILYCOVE_CITY_POKE_BALL": {
+   "n": 9,
+   "map": "LilycoveCity",
+   "emerald_map": "LilycoveCity",
+   "at": [
+    64,
+    31
+   ],
+   "emerald": "ITEM_POKE_BALL",
+   "item": "ITEM_POKE_BALL",
+   "script": 8008,
+   "flag": 2828,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_LILYCOVE_CITY_POKE_BALL",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_MT_PYRE_EXTERIOR_ULTRA_BALL": {
+   "n": 10,
+   "map": "MtPyre_Exterior",
+   "emerald_map": "MtPyre_Exterior",
+   "at": [
+    9,
+    8
+   ],
+   "emerald": "ITEM_ULTRA_BALL",
+   "item": "ITEM_ULTRA_BALL",
+   "script": 8009,
+   "flag": 2829,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_1D",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_MT_PYRE_EXTERIOR_MAX_ETHER": {
+   "n": 11,
+   "map": "MtPyre_Exterior",
+   "emerald_map": "MtPyre_Exterior",
+   "at": [
+    16,
+    22
+   ],
+   "emerald": "ITEM_MAX_ETHER",
+   "item": "ITEM_MAX_ETHER",
+   "script": 8010,
+   "flag": 2830,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_4E",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_MT_PYRE_SUMMIT_ZINC": {
+   "n": 12,
+   "map": "MtPyre_Summit",
+   "emerald_map": "MtPyre_Summit",
+   "at": [
+    9,
+    25
+   ],
+   "emerald": "ITEM_ZINC",
+   "item": "ITEM_ZINC",
+   "script": 8011,
+   "flag": 2831,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_4F",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_MT_PYRE_SUMMIT_RARE_CANDY": {
+   "n": 13,
+   "map": "MtPyre_Summit",
+   "emerald_map": "MtPyre_Summit",
+   "at": [
+    37,
+    7
+   ],
+   "emerald": "ITEM_RARE_CANDY",
+   "item": "ITEM_RARE_CANDY",
+   "script": 8012,
+   "flag": 2832,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_50",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_PETALBURG_CITY_RARE_CANDY": {
+   "n": 14,
+   "map": "PetalburgCity",
+   "emerald_map": "PetalburgCity",
+   "at": [
+    11,
+    29
+   ],
+   "emerald": "ITEM_RARE_CANDY",
+   "item": "ITEM_RARE_CANDY",
+   "script": 8013,
+   "flag": 2833,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_5F",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_PETALBURG_WOODS_POTION": {
+   "n": 15,
+   "map": "PetalburgWoods",
+   "emerald_map": "PetalburgWoods",
+   "at": [
+    39,
+    35
+   ],
+   "emerald": "ITEM_POTION",
+   "item": "ITEM_POTION",
+   "script": 8014,
+   "flag": 2834,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_3A",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_PETALBURG_WOODS_TINY_MUSHROOM_1": {
+   "n": 16,
+   "map": "PetalburgWoods",
+   "emerald_map": "PetalburgWoods",
+   "at": [
+    26,
+    6
+   ],
+   "emerald": "ITEM_TINY_MUSHROOM",
+   "item": "ITEM_TINY_MUSHROOM",
+   "script": 8015,
+   "flag": 2835,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_3B",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_PETALBURG_WOODS_TINY_MUSHROOM_2": {
+   "n": 17,
+   "map": "PetalburgWoods",
+   "emerald_map": "PetalburgWoods",
+   "at": [
+    40,
+    29
+   ],
+   "emerald": "ITEM_TINY_MUSHROOM",
+   "item": "ITEM_TINY_MUSHROOM",
+   "script": 8016,
+   "flag": 2836,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_3C",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_PETALBURG_WOODS_POKE_BALL": {
+   "n": 18,
+   "map": "PetalburgWoods",
+   "emerald_map": "PetalburgWoods",
+   "at": [
+    4,
+    19
+   ],
+   "emerald": "ITEM_POKE_BALL",
+   "item": "ITEM_POKE_BALL",
+   "script": 8017,
+   "flag": 2837,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_3D",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_ROUTE_104_SUPER_POTION": {
+   "n": 19,
+   "map": "Route104",
+   "emerald_map": "Route104",
+   "at": [
+    7,
+    6
+   ],
+   "emerald": "ITEM_SUPER_POTION",
+   "item": "ITEM_SUPER_POTION",
+   "script": 8018,
+   "flag": 2838,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_2C",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_ROUTE_104_POKE_BALL": {
+   "n": 20,
+   "map": "Route104",
+   "emerald_map": "Route104",
+   "at": [
+    3,
+    9
+   ],
+   "emerald": "ITEM_POKE_BALL",
+   "item": "ITEM_POKE_BALL",
+   "script": 8019,
+   "flag": 2839,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_3E",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_ROUTE_104_POTION": {
+   "n": 21,
+   "map": "Route104",
+   "emerald_map": "Route104",
+   "at": [
+    14,
+    55
+   ],
+   "emerald": "ITEM_POTION",
+   "item": "ITEM_POTION",
+   "script": 8020,
+   "flag": 2840,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_25",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_ROUTE_104_ANTIDOTE": {
+   "n": 22,
+   "map": "Route104",
+   "emerald_map": "Route104",
+   "at": [
+    16,
+    72
+   ],
+   "emerald": "ITEM_ANTIDOTE",
+   "item": "ITEM_ANTIDOTE",
+   "script": 8021,
+   "flag": 2841,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_55",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_ROUTE_104_HEART_SCALE": {
+   "n": 23,
+   "map": "Route104",
+   "emerald_map": "Route104",
+   "at": [
+    16,
+    64
+   ],
+   "emerald": "ITEM_HEART_SCALE",
+   "item": "ITEM_HEART_SCALE",
+   "script": 8022,
+   "flag": 2842,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_58",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_ROUTE_105_HEART_SCALE": {
+   "n": 24,
+   "map": "Route105",
+   "emerald_map": "Route105",
+   "at": [
+    15,
+    68
+   ],
+   "emerald": "ITEM_HEART_SCALE",
+   "item": "ITEM_HEART_SCALE",
+   "script": 8023,
+   "flag": 2843,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_59",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_ROUTE_106_POKE_BALL": {
+   "n": 25,
+   "map": "Route106",
+   "emerald_map": "Route106",
+   "at": [
+    41,
+    11
+   ],
+   "emerald": "ITEM_POKE_BALL",
+   "item": "ITEM_POKE_BALL",
+   "script": 8024,
+   "flag": 2844,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_3F",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_ROUTE_106_STARDUST": {
+   "n": 26,
+   "map": "Route106",
+   "emerald_map": "Route106",
+   "at": [
+    53,
+    12
+   ],
+   "emerald": "ITEM_STARDUST",
+   "item": "ITEM_STARDUST",
+   "script": 8025,
+   "flag": 2845,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_2E",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_ROUTE_106_HEART_SCALE": {
+   "n": 27,
+   "map": "Route106",
+   "emerald_map": "Route106",
+   "at": [
+    68,
+    15
+   ],
+   "emerald": "ITEM_HEART_SCALE",
+   "item": "ITEM_HEART_SCALE",
+   "script": 8026,
+   "flag": 2846,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_2F",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_ROUTE_108_RARE_CANDY": {
+   "n": 28,
+   "map": "Route108",
+   "emerald_map": "Route108",
+   "at": [
+    38,
+    14
+   ],
+   "emerald": "ITEM_RARE_CANDY",
+   "item": "ITEM_RARE_CANDY",
+   "script": 8027,
+   "flag": 2847,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_56",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_ROUTE_109_REVIVE": {
+   "n": 29,
+   "map": "Route109",
+   "emerald_map": "Route109",
+   "at": [
+    16,
+    23
+   ],
+   "emerald": "ITEM_REVIVE",
+   "item": "ITEM_REVIVE",
+   "script": 8028,
+   "flag": 2848,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_32",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_ROUTE_109_HEART_SCALE_1": {
+   "n": 30,
+   "map": "Route109",
+   "emerald_map": "Route109",
+   "at": [
+    33,
+    5
+   ],
+   "emerald": "ITEM_HEART_SCALE",
+   "item": "ITEM_HEART_SCALE",
+   "script": 8029,
+   "flag": 2849,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_34",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_ROUTE_109_GREAT_BALL": {
+   "n": 31,
+   "map": "Route109",
+   "emerald_map": "Route109",
+   "at": [
+    9,
+    10
+   ],
+   "emerald": "ITEM_GREAT_BALL",
+   "item": "ITEM_GREAT_BALL",
+   "script": 8030,
+   "flag": 2850,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_33",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_ROUTE_109_ETHER": {
+   "n": 32,
+   "map": "Route109",
+   "emerald_map": "Route109",
+   "at": [
+    28,
+    20
+   ],
+   "emerald": "ITEM_ETHER",
+   "item": "ITEM_ETHER",
+   "script": 8031,
+   "flag": 2851,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_40",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_ROUTE_109_HEART_SCALE_2": {
+   "n": 33,
+   "map": "Route109",
+   "emerald_map": "Route109",
+   "at": [
+    13,
+    16
+   ],
+   "emerald": "ITEM_HEART_SCALE",
+   "item": "ITEM_HEART_SCALE",
+   "script": 8032,
+   "flag": 2852,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_5A",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_ROUTE_109_HEART_SCALE_3": {
+   "n": 34,
+   "map": "Route109",
+   "emerald_map": "Route109",
+   "at": [
+    8,
+    42
+   ],
+   "emerald": "ITEM_HEART_SCALE",
+   "item": "ITEM_HEART_SCALE",
+   "script": 8033,
+   "flag": 2853,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_5B",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_ROUTE_110_POKE_BALL": {
+   "n": 37,
+   "map": "Route110",
+   "emerald_map": "Route110",
+   "at": [
+    4,
+    35
+   ],
+   "emerald": "ITEM_POKE_BALL",
+   "item": "ITEM_POKE_BALL",
+   "script": 8036,
+   "flag": 2856,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_41",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_ROUTE_110_FULL_HEAL": {
+   "n": 38,
+   "map": "Route110",
+   "emerald_map": "Route110",
+   "at": [
+    37,
+    67
+   ],
+   "emerald": "ITEM_FULL_HEAL",
+   "item": "ITEM_FULL_HEAL",
+   "script": 8037,
+   "flag": 2857,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_37",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_TRICK_HOUSE_NUGGET": {
+   "n": 39,
+   "map": "Route110_TrickHouseEnd",
+   "emerald_map": "Route110_TrickHouseEnd",
+   "at": [
+    4,
+    5
+   ],
+   "emerald": "ITEM_NUGGET",
+   "item": "ITEM_NUGGET",
+   "script": 8038,
+   "flag": 2858,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_1",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_ROUTE_111_STARDUST": {
+   "n": 40,
+   "map": "Route111",
+   "emerald_map": "Route111",
+   "at": [
+    26,
+    70
+   ],
+   "emerald": "ITEM_STARDUST",
+   "item": "ITEM_STARDUST",
+   "script": 8039,
+   "flag": 2859,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_2",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_ROUTE_111_PROTEIN": {
+   "n": 41,
+   "map": "Route111",
+   "emerald_map": "Route111",
+   "at": [
+    19,
+    55
+   ],
+   "emerald": "ITEM_PROTEIN",
+   "item": "ITEM_PROTEIN",
+   "script": 8040,
+   "flag": 2860,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_38",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_ROUTE_111_RARE_CANDY": {
+   "n": 42,
+   "map": "Route111",
+   "emerald_map": "Route111",
+   "at": [
+    35,
+    66
+   ],
+   "emerald": "ITEM_RARE_CANDY",
+   "item": "ITEM_RARE_CANDY",
+   "script": 8041,
+   "flag": 2861,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_39",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_ROUTE_113_TM_DOUBLE_TEAM": {
+   "n": 44,
+   "map": "Route113",
+   "emerald_map": "Route113",
+   "at": [
+    22,
+    5
+   ],
+   "emerald": "ITEM_TM_DOUBLE_TEAM",
+   "item": "ITEM_TM32",
+   "script": 8043,
+   "flag": 2863,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_1E",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_ROUTE_114_CARBOS": {
+   "n": 45,
+   "map": "Route114",
+   "emerald_map": "Route114",
+   "at": [
+    20,
+    57
+   ],
+   "emerald": "ITEM_CARBOS",
+   "item": "ITEM_CARBOS",
+   "script": 8044,
+   "flag": 2864,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_4",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_ROUTE_114_REVIVE": {
+   "n": 46,
+   "map": "Route114",
+   "emerald_map": "Route114",
+   "at": [
+    7,
+    30
+   ],
+   "emerald": "ITEM_REVIVE",
+   "item": "ITEM_REVIVE",
+   "script": 8045,
+   "flag": 2865,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_2A",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_ROUTE_115_HEART_SCALE": {
+   "n": 47,
+   "map": "Route115",
+   "emerald_map": "Route115",
+   "at": [
+    15,
+    49
+   ],
+   "emerald": "ITEM_HEART_SCALE",
+   "item": "ITEM_HEART_SCALE",
+   "script": 8046,
+   "flag": 2866,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_61",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_ROUTE_116_SUPER_POTION": {
+   "n": 48,
+   "map": "Route116",
+   "emerald_map": "Route116",
+   "at": [
+    22,
+    9
+   ],
+   "emerald": "ITEM_SUPER_POTION",
+   "item": "ITEM_SUPER_POTION",
+   "script": 8047,
+   "flag": 2867,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_2D",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_ROUTE_116_BLACK_GLASSES": {
+   "n": 49,
+   "map": "Route116",
+   "emerald_map": "Route116",
+   "at": [
+    70,
+    13
+   ],
+   "emerald": "ITEM_BLACK_GLASSES",
+   "item": "ITEM_BLACK_GLASSES",
+   "script": 8048,
+   "flag": 2868,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_BLACK_GLASSES",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_ROUTE_117_REPEL": {
+   "n": 50,
+   "map": "Route117",
+   "emerald_map": "Route117",
+   "at": [
+    3,
+    18
+   ],
+   "emerald": "ITEM_REPEL",
+   "item": "ITEM_REPEL",
+   "script": 8049,
+   "flag": 2869,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_48",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_ROUTE_118_IRON": {
+   "n": 51,
+   "map": "Route118",
+   "emerald_map": "Route118",
+   "at": [
+    31,
+    13
+   ],
+   "emerald": "ITEM_IRON",
+   "item": "ITEM_IRON",
+   "script": 8050,
+   "flag": 2870,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_43",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_ROUTE_118_HEART_SCALE": {
+   "n": 52,
+   "map": "Route118",
+   "emerald_map": "Route118",
+   "at": [
+    12,
+    14
+   ],
+   "emerald": "ITEM_HEART_SCALE",
+   "item": "ITEM_HEART_SCALE",
+   "script": 8051,
+   "flag": 2871,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_42",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_ROUTE_119_CALCIUM": {
+   "n": 53,
+   "map": "Route119",
+   "emerald_map": "Route119",
+   "at": [
+    17,
+    82
+   ],
+   "emerald": "ITEM_CALCIUM",
+   "item": "ITEM_CALCIUM",
+   "script": 8052,
+   "flag": 2872,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_5",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_ROUTE_119_ULTRA_BALL": {
+   "n": 54,
+   "map": "Route119",
+   "emerald_map": "Route119",
+   "at": [
+    38,
+    63
+   ],
+   "emerald": "ITEM_ULTRA_BALL",
+   "item": "ITEM_ULTRA_BALL",
+   "script": 8053,
+   "flag": 2873,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_6",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_ROUTE_119_FULL_HEAL": {
+   "n": 55,
+   "map": "Route119",
+   "emerald_map": "Route119",
+   "at": [
+    26,
+    120
+   ],
+   "emerald": "ITEM_FULL_HEAL",
+   "item": "ITEM_FULL_HEAL",
+   "script": 8054,
+   "flag": 2874,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_44",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_ROUTE_119_MAX_ETHER": {
+   "n": 56,
+   "map": "Route119",
+   "emerald_map": "Route119",
+   "at": [
+    20,
+    29
+   ],
+   "emerald": "ITEM_MAX_ETHER",
+   "item": "ITEM_MAX_ETHER",
+   "script": 8055,
+   "flag": 2875,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_57",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_ROUTE_120_RARE_CANDY_1": {
+   "n": 57,
+   "map": "Route120",
+   "emerald_map": "Route120",
+   "at": [
+    9,
+    1
+   ],
+   "emerald": "ITEM_RARE_CANDY",
+   "item": "ITEM_RARE_CANDY",
+   "script": 8056,
+   "flag": 2876,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_47",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_ROUTE_120_REVIVE": {
+   "n": 58,
+   "map": "Route120",
+   "emerald_map": "Route120",
+   "at": [
+    31,
+    11
+   ],
+   "emerald": "ITEM_REVIVE",
+   "item": "ITEM_REVIVE",
+   "script": 8057,
+   "flag": 2877,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_54",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_ROUTE_120_RARE_CANDY_2": {
+   "n": 59,
+   "map": "Route120",
+   "emerald_map": "Route120",
+   "at": [
+    0,
+    86
+   ],
+   "emerald": "ITEM_RARE_CANDY",
+   "item": "ITEM_RARE_CANDY",
+   "script": 8058,
+   "flag": 2878,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_45",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_ROUTE_120_ZINC": {
+   "n": 60,
+   "map": "Route120",
+   "emerald_map": "Route120",
+   "at": [
+    24,
+    42
+   ],
+   "emerald": "ITEM_ZINC",
+   "item": "ITEM_ZINC",
+   "script": 8059,
+   "flag": 2879,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_46",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_ROUTE_121_HP_UP": {
+   "n": 61,
+   "map": "Route121",
+   "emerald_map": "Route121",
+   "at": [
+    23,
+    10
+   ],
+   "emerald": "ITEM_HP_UP",
+   "item": "ITEM_HP_UP",
+   "script": 8060,
+   "flag": 2880,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_27",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_ROUTE_121_NUGGET": {
+   "n": 62,
+   "map": "Route121",
+   "emerald_map": "Route121",
+   "at": [
+    58,
+    3
+   ],
+   "emerald": "ITEM_NUGGET",
+   "item": "ITEM_NUGGET",
+   "script": 8061,
+   "flag": 2881,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_28",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_ROUTE_121_FULL_HEAL": {
+   "n": 63,
+   "map": "Route121",
+   "emerald_map": "Route121",
+   "at": [
+    72,
+    5
+   ],
+   "emerald": "ITEM_FULL_HEAL",
+   "item": "ITEM_FULL_HEAL",
+   "script": 8062,
+   "flag": 2882,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_49",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_ROUTE_123_SUPER_REPEL": {
+   "n": 64,
+   "map": "Route123",
+   "emerald_map": "Route123",
+   "at": [
+    75,
+    1
+   ],
+   "emerald": "ITEM_SUPER_REPEL",
+   "item": "ITEM_SUPER_REPEL",
+   "script": 8063,
+   "flag": 2883,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_7",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_ROUTE_123_REVIVE": {
+   "n": 65,
+   "map": "Route123",
+   "emerald_map": "Route123",
+   "at": [
+    12,
+    1
+   ],
+   "emerald": "ITEM_REVIVE",
+   "item": "ITEM_REVIVE",
+   "script": 8064,
+   "flag": 2884,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_29",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_ROUTE_123_HYPER_POTION": {
+   "n": 66,
+   "map": "Route123",
+   "emerald_map": "Route123",
+   "at": [
+    91,
+    15
+   ],
+   "emerald": "ITEM_HYPER_POTION",
+   "item": "ITEM_HYPER_POTION",
+   "script": 8065,
+   "flag": 2885,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_4A",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_ROUTE_128_HEART_SCALE_1": {
+   "n": 67,
+   "map": "Route128",
+   "emerald_map": "Route128",
+   "at": [
+    49,
+    9
+   ],
+   "emerald": "ITEM_HEART_SCALE",
+   "item": "ITEM_HEART_SCALE",
+   "script": 8066,
+   "flag": 2886,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_5C",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_ROUTE_128_HEART_SCALE_2": {
+   "n": 68,
+   "map": "Route128",
+   "emerald_map": "Route128",
+   "at": [
+    57,
+    21
+   ],
+   "emerald": "ITEM_HEART_SCALE",
+   "item": "ITEM_HEART_SCALE",
+   "script": 8067,
+   "flag": 2887,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_5D",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_ROUTE_128_HEART_SCALE_3": {
+   "n": 69,
+   "map": "Route128",
+   "emerald_map": "Route128",
+   "at": [
+    31,
+    33
+   ],
+   "emerald": "ITEM_HEART_SCALE",
+   "item": "ITEM_HEART_SCALE",
+   "script": 8068,
+   "flag": 2888,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_5E",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_SS_TIDAL_LOWER_DECK_LEFTOVERS": {
+   "n": 70,
+   "map": "SSTidalLowerDeck",
+   "emerald_map": "SSTidalLowerDeck",
+   "at": [
+    0,
+    2
+   ],
+   "emerald": "ITEM_LEFTOVERS",
+   "item": "ITEM_LEFTOVERS",
+   "script": 8069,
+   "flag": 2889,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_23",
+   "moved": false,
+   "built": false,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_UNDERWATER_124_CARBOS": {
+   "n": 71,
+   "map": "Underwater1",
+   "emerald_map": "Underwater_Route124",
+   "at": [
+    42,
+    51
+   ],
+   "emerald": "ITEM_CARBOS",
+   "item": "ITEM_CARBOS",
+   "script": 8070,
+   "flag": 2890,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_8",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_UNDERWATER_124_GREEN_SHARD": {
+   "n": 72,
+   "map": "Underwater1",
+   "emerald_map": "Underwater_Route124",
+   "at": [
+    14,
+    40
+   ],
+   "emerald": "ITEM_GREEN_SHARD",
+   "item": "ITEM_GREEN_SHARD",
+   "script": 8071,
+   "flag": 2891,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_9",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_UNDERWATER_124_PEARL": {
+   "n": 73,
+   "map": "Underwater1",
+   "emerald_map": "Underwater_Route124",
+   "at": [
+    66,
+    34
+   ],
+   "emerald": "ITEM_PEARL",
+   "item": "ITEM_PEARL",
+   "script": 8072,
+   "flag": 2892,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_A",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_UNDERWATER_124_BIG_PEARL": {
+   "n": 74,
+   "map": "Underwater1",
+   "emerald_map": "Underwater_Route124",
+   "at": [
+    64,
+    54
+   ],
+   "emerald": "ITEM_BIG_PEARL",
+   "item": "ITEM_BIG_PEARL",
+   "script": 8073,
+   "flag": 2893,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_B",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_UNDERWATER_124_HEART_SCALE_1": {
+   "n": 75,
+   "map": "Underwater1",
+   "emerald_map": "Underwater_Route124",
+   "at": [
+    70,
+    64
+   ],
+   "emerald": "ITEM_HEART_SCALE",
+   "item": "ITEM_HEART_SCALE",
+   "script": 8074,
+   "flag": 2894,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_D",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_UNDERWATER_124_CALCIUM": {
+   "n": 76,
+   "map": "Underwater1",
+   "emerald_map": "Underwater_Route124",
+   "at": [
+    42,
+    5
+   ],
+   "emerald": "ITEM_CALCIUM",
+   "item": "ITEM_CALCIUM",
+   "script": 8075,
+   "flag": 2895,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_24",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_UNDERWATER_124_HEART_SCALE_2": {
+   "n": 77,
+   "map": "Underwater1",
+   "emerald_map": "Underwater_Route124",
+   "at": [
+    45,
+    36
+   ],
+   "emerald": "ITEM_HEART_SCALE",
+   "item": "ITEM_HEART_SCALE",
+   "script": 8076,
+   "flag": 2896,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_26",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_UNDERWATER_126_HEART_SCALE": {
+   "n": 78,
+   "map": "Underwater2",
+   "emerald_map": "Underwater_Route126",
+   "at": [
+    30,
+    17
+   ],
+   "emerald": "ITEM_HEART_SCALE",
+   "item": "ITEM_HEART_SCALE",
+   "script": 8077,
+   "flag": 2897,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_E",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_UNDERWATER_126_ULTRA_BALL": {
+   "n": 79,
+   "map": "Underwater2",
+   "emerald_map": "Underwater_Route126",
+   "at": [
+    41,
+    19
+   ],
+   "emerald": "ITEM_ULTRA_BALL",
+   "item": "ITEM_ULTRA_BALL",
+   "script": 8078,
+   "flag": 2898,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_F",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_UNDERWATER_126_STARDUST": {
+   "n": 80,
+   "map": "Underwater2",
+   "emerald_map": "Underwater_Route126",
+   "at": [
+    63,
+    19
+   ],
+   "emerald": "ITEM_STARDUST",
+   "item": "ITEM_STARDUST",
+   "script": 8079,
+   "flag": 2899,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_10",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_UNDERWATER_126_PEARL": {
+   "n": 81,
+   "map": "Underwater2",
+   "emerald_map": "Underwater_Route126",
+   "at": [
+    10,
+    36
+   ],
+   "emerald": "ITEM_PEARL",
+   "item": "ITEM_PEARL",
+   "script": 8080,
+   "flag": 2900,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_11",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_UNDERWATER_126_IRON": {
+   "n": 82,
+   "map": "Underwater2",
+   "emerald_map": "Underwater_Route126",
+   "at": [
+    11,
+    39
+   ],
+   "emerald": "ITEM_IRON",
+   "item": "ITEM_IRON",
+   "script": 8081,
+   "flag": 2901,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_13",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_UNDERWATER_126_YELLOW_SHARD": {
+   "n": 83,
+   "map": "Underwater2",
+   "emerald_map": "Underwater_Route126",
+   "at": [
+    12,
+    35
+   ],
+   "emerald": "ITEM_YELLOW_SHARD",
+   "item": "ITEM_YELLOW_SHARD",
+   "script": 8082,
+   "flag": 2902,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_12",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_UNDERWATER_126_BIG_PEARL": {
+   "n": 84,
+   "map": "Underwater2",
+   "emerald_map": "Underwater_Route126",
+   "at": [
+    65,
+    60
+   ],
+   "emerald": "ITEM_BIG_PEARL",
+   "item": "ITEM_BIG_PEARL",
+   "script": 8083,
+   "flag": 2903,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_14",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_UNDERWATER_126_BLUE_SHARD": {
+   "n": 85,
+   "map": "Underwater2",
+   "emerald_map": "Underwater_Route126",
+   "at": [
+    9,
+    77
+   ],
+   "emerald": "ITEM_BLUE_SHARD",
+   "item": "ITEM_BLUE_SHARD",
+   "script": 8084,
+   "flag": 2904,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_C",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_UNDERWATER_127_STAR_PIECE": {
+   "n": 86,
+   "map": "Underwater3",
+   "emerald_map": "Underwater_Route127",
+   "at": [
+    12,
+    42
+   ],
+   "emerald": "ITEM_STAR_PIECE",
+   "item": "ITEM_STAR_PIECE",
+   "script": 8085,
+   "flag": 2905,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_15",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_UNDERWATER_127_HP_UP": {
+   "n": 87,
+   "map": "Underwater3",
+   "emerald_map": "Underwater_Route127",
+   "at": [
+    50,
+    36
+   ],
+   "emerald": "ITEM_HP_UP",
+   "item": "ITEM_HP_UP",
+   "script": 8086,
+   "flag": 2906,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_16",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_UNDERWATER_127_HEART_SCALE": {
+   "n": 88,
+   "map": "Underwater3",
+   "emerald_map": "Underwater_Route127",
+   "at": [
+    34,
+    72
+   ],
+   "emerald": "ITEM_HEART_SCALE",
+   "item": "ITEM_HEART_SCALE",
+   "script": 8087,
+   "flag": 2907,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_17",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_UNDERWATER_127_RED_SHARD": {
+   "n": 89,
+   "map": "Underwater3",
+   "emerald_map": "Underwater_Route127",
+   "at": [
+    72,
+    20
+   ],
+   "emerald": "ITEM_RED_SHARD",
+   "item": "ITEM_RED_SHARD",
+   "script": 8088,
+   "flag": 2908,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_18",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_UNDERWATER_128_PROTEIN": {
+   "n": 90,
+   "map": "Underwater4",
+   "emerald_map": "Underwater_Route128",
+   "at": [
+    38,
+    19
+   ],
+   "emerald": "ITEM_PROTEIN",
+   "item": "ITEM_PROTEIN",
+   "script": 8089,
+   "flag": 2909,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_19",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_UNDERWATER_128_PEARL": {
+   "n": 91,
+   "map": "Underwater4",
+   "emerald_map": "Underwater_Route128",
+   "at": [
+    69,
+    18
+   ],
+   "emerald": "ITEM_PEARL",
+   "item": "ITEM_PEARL",
+   "script": 8090,
+   "flag": 2910,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_1A",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_VICTORY_ROAD_1F_ULTRA_BALL": {
+   "n": 92,
+   "map": "VictoryRoad_1F",
+   "emerald_map": "VictoryRoad_1F",
+   "at": [
+    30,
+    39
+   ],
+   "emerald": "ITEM_ULTRA_BALL",
+   "item": "ITEM_ULTRA_BALL",
+   "script": 8091,
+   "flag": 2911,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_51",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_VICTORY_ROAD_B2F_ELIXIR": {
+   "n": 93,
+   "map": "VictoryRoad_B2F",
+   "emerald_map": "VictoryRoad_B2F",
+   "at": [
+    28,
+    5
+   ],
+   "emerald": "ITEM_ELIXIR",
+   "item": "ITEM_ELIXIR",
+   "script": 8092,
+   "flag": 2912,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_52",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_VICTORY_ROAD_B2F_MAX_REPEL": {
+   "n": 94,
+   "map": "VictoryRoad_B2F",
+   "emerald_map": "VictoryRoad_B2F",
+   "at": [
+    37,
+    1
+   ],
+   "emerald": "ITEM_MAX_REPEL",
+   "item": "ITEM_MAX_REPEL",
+   "script": 8093,
+   "flag": 2913,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_53",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_ABANDONED_SHIP_RM_1_KEY": {
+   "n": 95,
+   "map": "AbandonedShip_HiddenFloorRooms",
+   "emerald_map": "AbandonedShip_HiddenFloorRooms",
+   "at": [
+    42,
+    10
+   ],
+   "emerald": "ITEM_ROOM_1_KEY",
+   "item": "ITEM_SUITE_KEY",
+   "script": 8094,
+   "flag": 2914,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_ABANDONED_SHIP_RM_1_KEY",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_ABANDONED_SHIP_RM_2_KEY": {
+   "n": 96,
+   "map": "AbandonedShip_HiddenFloorRooms",
+   "emerald_map": "AbandonedShip_HiddenFloorRooms",
+   "at": [
+    20,
+    5
+   ],
+   "emerald": "ITEM_ROOM_2_KEY",
+   "item": "ITEM_WORKS_KEY",
+   "script": 8095,
+   "flag": 2915,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_ABANDONED_SHIP_RM_2_KEY",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_ABANDONED_SHIP_RM_4_KEY": {
+   "n": 97,
+   "map": "AbandonedShip_HiddenFloorRooms",
+   "emerald_map": "AbandonedShip_HiddenFloorRooms",
+   "at": [
+    1,
+    12
+   ],
+   "emerald": "ITEM_ROOM_4_KEY",
+   "item": "ITEM_SECRET_KEY",
+   "script": 8096,
+   "flag": 2916,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_ABANDONED_SHIP_RM_4_KEY",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_ABANDONED_SHIP_RM_6_KEY": {
+   "n": 98,
+   "map": "AbandonedShip_HiddenFloorRooms",
+   "emerald_map": "AbandonedShip_HiddenFloorRooms",
+   "at": [
+    1,
+    2
+   ],
+   "emerald": "ITEM_ROOM_6_KEY",
+   "item": "ITEM_CARD_KEY",
+   "script": 8097,
+   "flag": 2917,
+   "sapphire_twin": "FLAG_HIDDEN_ITEM_ABANDONED_SHIP_RM_6_KEY",
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_ARTISAN_CAVE_B1F_ZINC": {
+   "n": 99,
+   "map": "ArtisanCave_B1F",
+   "emerald_map": "ArtisanCave_B1F",
+   "at": [
+    32,
+    29
+   ],
+   "emerald": "ITEM_ZINC",
+   "item": "ITEM_ZINC",
+   "script": 8098,
+   "flag": 2918,
+   "sapphire_twin": null,
+   "moved": false,
+   "built": false,
+   "emerald_only_map": true
+  },
+  "FLAG_HIDDEN_ITEM_ARTISAN_CAVE_B1F_CALCIUM": {
+   "n": 100,
+   "map": "ArtisanCave_B1F",
+   "emerald_map": "ArtisanCave_B1F",
+   "at": [
+    27,
+    8
+   ],
+   "emerald": "ITEM_CALCIUM",
+   "item": "ITEM_CALCIUM",
+   "script": 8099,
+   "flag": 2919,
+   "sapphire_twin": null,
+   "moved": false,
+   "built": false,
+   "emerald_only_map": true
+  },
+  "FLAG_HIDDEN_ITEM_ARTISAN_CAVE_B1F_PROTEIN": {
+   "n": 101,
+   "map": "ArtisanCave_B1F",
+   "emerald_map": "ArtisanCave_B1F",
+   "at": [
+    7,
+    5
+   ],
+   "emerald": "ITEM_PROTEIN",
+   "item": "ITEM_PROTEIN",
+   "script": 8100,
+   "flag": 2920,
+   "sapphire_twin": null,
+   "moved": false,
+   "built": false,
+   "emerald_only_map": true
+  },
+  "FLAG_HIDDEN_ITEM_ARTISAN_CAVE_B1F_IRON": {
+   "n": 102,
+   "map": "ArtisanCave_B1F",
+   "emerald_map": "ArtisanCave_B1F",
+   "at": [
+    19,
+    43
+   ],
+   "emerald": "ITEM_IRON",
+   "item": "ITEM_IRON",
+   "script": 8101,
+   "flag": 2921,
+   "sapphire_twin": null,
+   "moved": false,
+   "built": false,
+   "emerald_only_map": true
+  },
+  "FLAG_HIDDEN_ITEM_NAVEL_ROCK_TOP_SACRED_ASH": {
+   "n": 103,
+   "map": "NavelRock_Top",
+   "emerald_map": "NavelRock_Top",
+   "at": [
+    12,
+    9
+   ],
+   "emerald": "ITEM_SACRED_ASH",
+   "item": "ITEM_SACRED_ASH",
+   "script": 8102,
+   "flag": 2922,
+   "sapphire_twin": null,
+   "moved": false,
+   "built": true,
+   "emerald_only_map": true
+  },
+  "FLAG_HIDDEN_ITEM_ROUTE_105_BIG_PEARL": {
+   "n": 104,
+   "map": "Route105",
+   "emerald_map": "Route105",
+   "at": [
+    5,
+    56
+   ],
+   "emerald": "ITEM_BIG_PEARL",
+   "item": "ITEM_BIG_PEARL",
+   "script": 8103,
+   "flag": 2923,
+   "sapphire_twin": null,
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_ROUTE_110_REVIVE": {
+   "n": 105,
+   "map": "Route110",
+   "emerald_map": "Route110",
+   "at": [
+    35,
+    39
+   ],
+   "emerald": "ITEM_REVIVE",
+   "item": "ITEM_REVIVE",
+   "script": 8104,
+   "flag": 2924,
+   "sapphire_twin": null,
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_ROUTE_110_GREAT_BALL": {
+   "n": 106,
+   "map": "Route110",
+   "emerald_map": "Route110",
+   "at": [
+    33,
+    45
+   ],
+   "emerald": "ITEM_GREAT_BALL",
+   "item": "ITEM_GREAT_BALL",
+   "script": 8105,
+   "flag": 2925,
+   "sapphire_twin": null,
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_ROUTE_113_ETHER": {
+   "n": 107,
+   "map": "Route113",
+   "emerald_map": "Route113",
+   "at": [
+    66,
+    3
+   ],
+   "emerald": "ITEM_ETHER",
+   "item": "ITEM_ETHER",
+   "script": 8106,
+   "flag": 2926,
+   "sapphire_twin": null,
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_ROUTE_113_NUGGET": {
+   "n": 108,
+   "map": "Route113",
+   "emerald_map": "Route113",
+   "at": [
+    73,
+    3
+   ],
+   "emerald": "ITEM_NUGGET",
+   "item": "ITEM_NUGGET",
+   "script": 8107,
+   "flag": 2927,
+   "sapphire_twin": null,
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_ROUTE_121_MAX_REVIVE": {
+   "n": 109,
+   "map": "Route121",
+   "emerald_map": "Route121",
+   "at": [
+    68,
+    8
+   ],
+   "emerald": "ITEM_MAX_REVIVE",
+   "item": "ITEM_MAX_REVIVE",
+   "script": 8108,
+   "flag": 2928,
+   "sapphire_twin": null,
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_ROUTE_123_PP_UP": {
+   "n": 110,
+   "map": "Route123",
+   "emerald_map": "Route123",
+   "at": [
+    139,
+    15
+   ],
+   "emerald": "ITEM_PP_UP",
+   "item": "ITEM_PP_UP",
+   "script": 8109,
+   "flag": 2929,
+   "sapphire_twin": null,
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_ROUTE_123_RARE_CANDY": {
+   "n": 111,
+   "map": "Route123",
+   "emerald_map": "Route123",
+   "at": [
+    138,
+    18
+   ],
+   "emerald": "ITEM_RARE_CANDY",
+   "item": "ITEM_RARE_CANDY",
+   "script": 8110,
+   "flag": 2930,
+   "sapphire_twin": null,
+   "moved": false,
+   "built": true,
+   "emerald_only_map": false
+  },
+  "FLAG_HIDDEN_ITEM_SAFARI_ZONE_NORTH_EAST_RARE_CANDY": {
+   "n": 112,
+   "map": "SafariZone_Northeast_Emerald",
+   "emerald_map": "SafariZone_Northeast",
+   "at": [
+    31,
+    35
+   ],
+   "emerald": "ITEM_RARE_CANDY",
+   "item": "ITEM_RARE_CANDY",
+   "script": 8111,
+   "flag": 2931,
+   "sapphire_twin": null,
+   "moved": false,
+   "built": false,
+   "emerald_only_map": true
+  },
+  "FLAG_HIDDEN_ITEM_SAFARI_ZONE_NORTH_EAST_ZINC": {
+   "n": 113,
+   "map": "SafariZone_Northeast_Emerald",
+   "emerald_map": "SafariZone_Northeast",
+   "at": [
+    21,
+    5
+   ],
+   "emerald": "ITEM_ZINC",
+   "item": "ITEM_ZINC",
+   "script": 8112,
+   "flag": 2932,
+   "sapphire_twin": null,
+   "moved": false,
+   "built": false,
+   "emerald_only_map": true
+  },
+  "FLAG_HIDDEN_ITEM_SAFARI_ZONE_SOUTH_EAST_PP_UP": {
+   "n": 114,
+   "map": "SafariZone_Southeast_Emerald",
+   "emerald_map": "SafariZone_Southeast",
+   "at": [
+    19,
+    36
+   ],
+   "emerald": "ITEM_PP_UP",
+   "item": "ITEM_PP_UP",
+   "script": 8113,
+   "flag": 2933,
+   "sapphire_twin": null,
+   "moved": false,
+   "built": false,
+   "emerald_only_map": true
+  },
+  "FLAG_HIDDEN_ITEM_SAFARI_ZONE_SOUTH_EAST_FULL_RESTORE": {
+   "n": 115,
+   "map": "SafariZone_Southeast_Emerald",
+   "emerald_map": "SafariZone_Southeast",
+   "at": [
+    32,
+    33
+   ],
+   "emerald": "ITEM_FULL_RESTORE",
+   "item": "ITEM_FULL_RESTORE",
+   "script": 8114,
+   "flag": 2934,
+   "sapphire_twin": null,
+   "moved": false,
+   "built": false,
+   "emerald_only_map": true
+  }
+ },
+ "sapphire_only": [
+  "FLAG_HIDDEN_ITEM_3",
+  "FLAG_HIDDEN_ITEM_35",
+  "FLAG_HIDDEN_ITEM_36"
+ ],
+ "notes": []
+}

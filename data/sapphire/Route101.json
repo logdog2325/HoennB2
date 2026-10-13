@@ -1,0 +1,336 @@
+{
+ "map": "Route101",
+ "id": "MAP_ROUTE101",
+ "layout": "LAYOUT_ROUTE101",
+ "music": "MUS_ROUTE101",
+ "region_map_section": "MAPSEC_ROUTE_101",
+ "weather": "WEATHER_SUNNY",
+ "connections": [
+  {
+   "direction": "up",
+   "offset": 0,
+   "map": "MAP_OLDALE_TOWN"
+  },
+  {
+   "direction": "down",
+   "offset": 0,
+   "map": "MAP_LITTLEROOT_TOWN"
+  }
+ ],
+ "npcs": [
+  {
+   "local_id": 1,
+   "x": 16,
+   "y": 8,
+   "gfx": "OBJ_EVENT_GFX_YOUNGSTER",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "Route101_EventScript_14EA64",
+   "texts": {
+    "Route101_Text_16D25E": "If POKéMON get tired, take them to\\na POKéMON CENTER.\\pThere's a POKéMON CENTER in OLDALE\\nTOWN right close by.$"
+   }
+  },
+  {
+   "local_id": 2,
+   "x": 9,
+   "y": 13,
+   "gfx": "OBJ_EVENT_GFX_PROF_BIRCH",
+   "movement": "MOVEMENT_TYPE_JOG_IN_PLACE_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_BIRCH_BATTLE_POOCHYENA",
+   "script": "0x0",
+   "missing": true
+  },
+  {
+   "local_id": 3,
+   "x": 7,
+   "y": 14,
+   "gfx": "OBJ_EVENT_GFX_BIRCHS_BAG",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_BIRCH_STARTERS_BAG",
+   "script": "Route101_EventScript_14EA7F",
+   "texts": {
+    "Route101_Text_16D191": "PROF. BIRCH: Whew...\\pI was in the tall grass studying wild\\nPOKéMON when I was jumped.\\pYou saved me.\\nThanks a lot!\\pOh?\\pHi, you're {PLAYER}{KUN}!\\pThis is not the place to chat, so come\\nby my POKéMON LAB later, okay?$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 4,
+   "x": 10,
+   "y": 13,
+   "gfx": "OBJ_EVENT_GFX_POOCHYENA",
+   "movement": "MOVEMENT_TYPE_JOG_IN_PLACE_LEFT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_POOCHYENA_ROUTE101",
+   "script": "0x0",
+   "missing": true
+  },
+  {
+   "local_id": 5,
+   "x": 5,
+   "y": 11,
+   "gfx": "OBJ_EVENT_GFX_PROF_BIRCH",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_BIRCH_ROUTE101",
+   "script": "ProfBirch_EventScript_AskRatePokedex",
+   "texts": {
+    "gBirchDexRatingText_ComeToShowMePokedex": "PROF. BIRCH: Ah, {PLAYER}{KUN}!\\pHave you come to show me how your\\nPOKéDEX is coming along?$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 6,
+   "x": 2,
+   "y": 13,
+   "gfx": "OBJ_EVENT_GFX_BOY_2",
+   "movement": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_BOY_ROUTE101",
+   "script": "Route101_EventScript_14EA6D",
+   "texts": {
+    "Route101_Text_16D2CB": "Wild POKéMON will jump out at you in\\ntall grass.\\pIf you want to catch POKéMON, you have\\nto go into the tall grass and search.$"
+   }
+  }
+ ],
+ "signs": [
+  {
+   "x": 5,
+   "y": 9,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "Route101_EventScript_14EA76",
+   "texts": {
+    "Route101_Text_16D349": "ROUTE 101\\n{0x79} OLDALE TOWN$"
+   }
+  }
+ ],
+ "warps": [],
+ "coord_events": [
+  {
+   "type": "trigger",
+   "x": 10,
+   "y": 19,
+   "elevation": 3,
+   "var": "VAR_ROUTE101_STATE",
+   "var_value": "1",
+   "script": "Route101_EventScript_14E948",
+   "texts": {
+    "Route101_Text_16D10E": "H-help me!$",
+    "Route101_Text_16D119": "Hello! You over there!\\nPlease! Help!\\pIn my BAG!\\nThere's a POKé BALL!$"
+   },
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 11,
+   "y": 19,
+   "elevation": 3,
+   "var": "VAR_ROUTE101_STATE",
+   "var_value": "1",
+   "script": "Route101_EventScript_14E948",
+   "texts": {
+    "Route101_Text_16D10E": "H-help me!$",
+    "Route101_Text_16D119": "Hello! You over there!\\nPlease! Help!\\pIn my BAG!\\nThere's a POKé BALL!$"
+   },
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 10,
+   "y": 18,
+   "elevation": 3,
+   "var": "VAR_ROUTE101_STATE",
+   "var_value": "2",
+   "script": "Route101_EventScript_14E9B8",
+   "texts": {
+    "Route101_Text_16D15E": "Wh-Where are you going?!\\nDon't leave me like this!$"
+   },
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 11,
+   "y": 18,
+   "elevation": 3,
+   "var": "VAR_ROUTE101_STATE",
+   "var_value": "2",
+   "script": "Route101_EventScript_14E9B8",
+   "texts": {
+    "Route101_Text_16D15E": "Wh-Where are you going?!\\nDon't leave me like this!$"
+   },
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 6,
+   "y": 16,
+   "elevation": 3,
+   "var": "VAR_ROUTE101_STATE",
+   "var_value": "2",
+   "script": "Route101_EventScript_14E9CE",
+   "texts": {
+    "Route101_Text_16D15E": "Wh-Where are you going?!\\nDon't leave me like this!$"
+   },
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 6,
+   "y": 15,
+   "elevation": 3,
+   "var": "VAR_ROUTE101_STATE",
+   "var_value": "2",
+   "script": "Route101_EventScript_14E9CE",
+   "texts": {
+    "Route101_Text_16D15E": "Wh-Where are you going?!\\nDon't leave me like this!$"
+   },
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 6,
+   "y": 17,
+   "elevation": 3,
+   "var": "VAR_ROUTE101_STATE",
+   "var_value": "2",
+   "script": "Route101_EventScript_14E9CE",
+   "texts": {
+    "Route101_Text_16D15E": "Wh-Where are you going?!\\nDon't leave me like this!$"
+   },
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 6,
+   "y": 18,
+   "elevation": 3,
+   "var": "VAR_ROUTE101_STATE",
+   "var_value": "2",
+   "script": "Route101_EventScript_14E9CE",
+   "texts": {
+    "Route101_Text_16D15E": "Wh-Where are you going?!\\nDon't leave me like this!$"
+   },
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 7,
+   "y": 13,
+   "elevation": 3,
+   "var": "VAR_ROUTE101_STATE",
+   "var_value": "2",
+   "script": "Route101_EventScript_14E9E4",
+   "texts": {
+    "Route101_Text_16D15E": "Wh-Where are you going?!\\nDon't leave me like this!$"
+   },
+   "complex": true
+  }
+ ],
+ "wild": {
+  "land_mons": {
+   "encounter_rate": 20,
+   "slot_rates": [
+    20,
+    20,
+    10,
+    10,
+    10,
+    10,
+    5,
+    5,
+    4,
+    4,
+    1,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_WURMPLE",
+     "min": 2,
+     "max": 2
+    },
+    {
+     "species": "SPECIES_ZIGZAGOON",
+     "min": 2,
+     "max": 2
+    },
+    {
+     "species": "SPECIES_WURMPLE",
+     "min": 2,
+     "max": 2
+    },
+    {
+     "species": "SPECIES_WURMPLE",
+     "min": 3,
+     "max": 3
+    },
+    {
+     "species": "SPECIES_ZIGZAGOON",
+     "min": 3,
+     "max": 3
+    },
+    {
+     "species": "SPECIES_ZIGZAGOON",
+     "min": 3,
+     "max": 3
+    },
+    {
+     "species": "SPECIES_WURMPLE",
+     "min": 3,
+     "max": 3
+    },
+    {
+     "species": "SPECIES_ZIGZAGOON",
+     "min": 3,
+     "max": 3
+    },
+    {
+     "species": "SPECIES_POOCHYENA",
+     "min": 2,
+     "max": 2
+    },
+    {
+     "species": "SPECIES_POOCHYENA",
+     "min": 2,
+     "max": 2
+    },
+    {
+     "species": "SPECIES_POOCHYENA",
+     "min": 3,
+     "max": 3
+    },
+    {
+     "species": "SPECIES_POOCHYENA",
+     "min": 3,
+     "max": 3
+    }
+   ]
+  }
+ }
+}

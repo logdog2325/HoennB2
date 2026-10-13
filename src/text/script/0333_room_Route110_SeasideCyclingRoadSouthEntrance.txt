@@ -1,0 +1,2 @@
+On Cycling Road, you can go all out\nand cycle as fast as you’d like.{be01}\nIt feels great to go that fast, but try\nnot to crash into anyone!
+Sorry, you can’t walk on Cycling\nRoad. It’s too dangerous.{be01}\nPlease come back with a Bike.

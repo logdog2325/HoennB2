@@ -1,0 +1,37 @@
+{
+ "_doc": "Sky Pillar's top (warp-only map, group 'standalone': data/buildings/standalone.json res 482, b2tools/models_standalone.py spdoor; buildings_audit 2026-10-08): the doorway down to 5F at (16,14), Sapphire's dark arched door in the wall band (metatile 0x2a2), which nothing drew. Origin: the door tile's centre x, z at the foot of the cliff face the heights module draws there (the north edge of row 15; the face leans back 8 units to y 28, the upper floor rows <= 13 are 32 high). Since the polish (2026-10-08): res 483-486, one per cell of the matrix (Black 2 draws only the buildings of the chunks loaded round the player): the tower's face under the south parapet, a curb along the floor's other edges and Black 2's sea of clouds 200 under the floor; each on an upper-floor tile (32 high) of its cell.",
+ "group": "standalone",
+ "buildings": {},
+ "props": [
+  {
+   "res": 482,
+   "x": 16.5,
+   "z": 15.0,
+   "what": "doorway (16,14) in the wall band"
+  },
+  {
+   "res": 483,
+   "x": 5.5,
+   "z": 5.5,
+   "what": "north-west cell: curb, clouds"
+  },
+  {
+   "res": 484,
+   "x": 20.5,
+   "z": 5.5,
+   "what": "north-east cell: curb, clouds"
+  },
+  {
+   "res": 485,
+   "x": 5.5,
+   "z": 11.5,
+   "what": "south-west cell: tower face, curb, clouds"
+  },
+  {
+   "res": 486,
+   "x": 22.5,
+   "z": 11.5,
+   "what": "south-east cell: tower face, curb, clouds"
+  }
+ ]
+}

@@ -1,0 +1,2 @@
+Hey, you.\nIt gets awfully dark ahead.{be00}\nIt’ll be tough trying to explore.{be01}\nThat guy who came by earlier...\nSteven, I think it was.{be01}\nHe knew how to use Flash, so he ought\nto be all right, but...{be01}\nWell, for us Hikers, helping out those\nthat we meet is our motto.{be01}\nHere you go, I’ll pass this on to you.
+Teach the move Flash from TM70 to a\nPokémon and use it.{be01}\nIt lights up even the inky darkness\nof caves.{be01}\nBut, to use it, you need the Gym Badge\nfrom Dewford’s Pokémon Gym.

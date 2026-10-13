@@ -1,0 +1,11 @@
+Fallarbor Town\n“A farm community with small gardens.”
+Hehehe!{be01}\nWith this Meteorite, Mt. Chimney\nwill...
+Heh?{be01}\nI don’t know who you are, but if you get\nin the way of Team Magma, don’t{be00}\nexpect any mercy!
+Hold it right there, Team Magma!{be01}\nWe, Team Aqua, won’t allow you to\nget away with your misdeeds!
+Hehehe!\nEven Team Aqua joins us!{be01}\nBut it’s too much trouble to deal with\nyou all...{be01}\nHeh, it doesn’t matter!{be01}\nWe’ve got the Meteorite, so off to\nMt. Chimney we go!{be01}\nHehehe! Be seeing you, you Team\nAqua dingbats!
+Who might you be?{be01}\n... ... ... ... ... ... ... ...\n... ... ... ... ... ... ... ...{be01}\nAh, so you are {0100:0}.{be01}\nI am Archie. As the head of Team Aqua,\nI have dedicated myself to thwarting{be00}\nthe dangerous plans of Team Magma.{be01}\nWhy? Because Team Magma is a grave\nthreat to us all.{be01}\nThey have committed many destructive\nacts in their bid to expand the land.{be01}\nWe, Team Aqua, love the sea above\nall! Team Magma is our sworn enemy!
+Archie, we should give chase to\nTeam Magma...
+Archie: Yes, yes, we must!\nWe’ve got to hurry.{be01}\nThere’s no telling what Team Magma\nwill do at Mt. Chimney!
+Archie: {0100:0}, you should keep\nan eye out for Team Magma, too.{be01}\nFarewell!
+I... I’m Cozmo...\nI’m a Professor...{be01}\nI usually study Meteorites in\nFallarbor Town...{be01}\nThen some people from Team Magma\nmade me guide them to Meteor Falls...{be01}\nThey promised me that they would\nexcavate Meteorites for me...{be01}\nBut, I...\nTeam Magma tricked me...{be01}\nOh... That Meteorite...\nIt will never be mine now...{be01}\nBut that Team Magma...{be01}\nWhat are they going to do with that\nMeteorite at Mt. Chimney?
+Prof. Cozmo: That Team Magma...{be01}\nWhat are they going to do with that\nMeteorite at Mt. Chimney?

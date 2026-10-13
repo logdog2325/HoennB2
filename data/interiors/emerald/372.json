@@ -1,0 +1,74 @@
+{
+ "zone": 372,
+ "room": "ArtisanCave_1F",
+ "cave": true,
+ "cave_auto": true,
+ "area": 332,
+ "dark": false,
+ "header": {
+  "map_type": 16,
+  "npc_cache": 24,
+  "weather_word": 64,
+  "flags": 23683,
+  "icon_word": 40975,
+  "place_display": 1,
+  "bgm0": 1076,
+  "bgm1": 1076,
+  "bgm2": 1076,
+  "bgm3": 1076,
+  "place": 110,
+  "encounters": 98,
+  "enc_slot": 2
+ },
+ "warps": [
+  {
+   "at": [
+    10,
+    17
+   ],
+   "to": [
+    17,
+    15
+   ],
+   "what": "Emerald warp 0 (10,17) -> BattleFrontier_OutsideEast 13"
+  },
+  {
+   "at": [
+    6,
+    5
+   ],
+   "to": [
+    373,
+    1
+   ],
+   "what": "Emerald warp 1 (6,5) -> ArtisanCave_B1F 1"
+  }
+ ],
+ "triggers": [
+  {
+   "script": 1,
+   "var": 0,
+   "value": 0,
+   "at": [
+    6,
+    5
+   ]
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 1,
+   "model": 110,
+   "script": 7176,
+   "flag": 1276,
+   "dir": 1,
+   "at": [
+    14,
+    5
+   ],
+   "what": "item ball ITEM_CARBOS"
+  }
+ ],
+ "signs": [],
+ "what": "ArtisanCave_1F: Emerald's cave (converter/gen_caves_emerald.py from emerald/ArtisanCave_1F, b2tools/models_cave.py); story objects: see notes/EMERALD.md"
+}

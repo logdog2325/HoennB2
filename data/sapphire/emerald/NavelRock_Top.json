@@ -1,0 +1,64 @@
+{
+ "map": "NavelRock_Top",
+ "id": "MAP_NAVEL_ROCK_TOP",
+ "layout": "LAYOUT_NAVEL_ROCK_TOP",
+ "music": "MUS_RG_SEVII_CAVE",
+ "region_map_section": "MAPSEC_NAVEL_ROCK",
+ "weather": "WEATHER_SHADE",
+ "connections": null,
+ "npcs": [
+  {
+   "local_id": 1,
+   "x": 12,
+   "y": 4,
+   "gfx": "OBJ_EVENT_GFX_HOOH",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_HO_OH",
+   "script": "0x0",
+   "missing": true
+  }
+ ],
+ "signs": [
+  {
+   "x": 12,
+   "y": 9,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 12,
+    "y": 9,
+    "elevation": 3,
+    "item": "ITEM_SACRED_ASH",
+    "flag": "FLAG_HIDDEN_ITEM_NAVEL_ROCK_TOP_SACRED_ASH"
+   }
+  }
+ ],
+ "warps": [
+  {
+   "id": 0,
+   "x": 13,
+   "y": 20,
+   "dest_map": "MAP_NAVEL_ROCK_UP4",
+   "dest_warp_id": "1"
+  }
+ ],
+ "coord_events": [
+  {
+   "type": "trigger",
+   "x": 12,
+   "y": 10,
+   "elevation": 3,
+   "var": "VAR_TEMP_1",
+   "var_value": "0",
+   "script": "NavelRock_Top_EventScript_HoOh",
+   "texts": {},
+   "complex": true
+  }
+ ],
+ "wild": {}
+}

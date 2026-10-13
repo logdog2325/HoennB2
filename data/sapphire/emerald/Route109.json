@@ -1,0 +1,686 @@
+{
+ "map": "Route109",
+ "id": "MAP_ROUTE109",
+ "layout": "LAYOUT_ROUTE109",
+ "music": "MUS_ROUTE104",
+ "region_map_section": "MAPSEC_ROUTE_109",
+ "weather": "WEATHER_SUNNY",
+ "connections": [
+  {
+   "map": "MAP_SLATEPORT_CITY",
+   "offset": 0,
+   "direction": "up"
+  },
+  {
+   "map": "MAP_ROUTE108",
+   "offset": 40,
+   "direction": "left"
+  }
+ ],
+ "npcs": [
+  {
+   "local_id": 1,
+   "x": 21,
+   "y": 26,
+   "gfx": "OBJ_EVENT_GFX_MR_BRINEYS_BOAT",
+   "movement": "MOVEMENT_TYPE_FACE_UP",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_ROUTE_109_MR_BRINEY_BOAT",
+   "script": "0x0",
+   "missing": true
+  },
+  {
+   "local_id": 2,
+   "x": 21,
+   "y": 24,
+   "gfx": "OBJ_EVENT_GFX_EXPERT_M",
+   "movement": "MOVEMENT_TYPE_FACE_UP",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_ROUTE_109_MR_BRINEY",
+   "script": "Route109_EventScript_MrBriney",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 3,
+   "x": 12,
+   "y": 36,
+   "gfx": "OBJ_EVENT_GFX_SWIMMER_M",
+   "movement": "MOVEMENT_TYPE_FACE_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route109_EventScript_David",
+   "texts": {
+    "Route109_Text_DavidIntro": "Hiyah! Look at my chiseled abs!\\nThis is what you call “cut”!$",
+    "Route109_Text_DavidDefeated": "Aiyah!\\nFlubbed out!$",
+    "Route109_Text_DavidPostBattle": "Hiyah!\\pMy sculpted abs have nothing to do\\nwith POKéMON battles!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 4,
+   "x": 25,
+   "y": 39,
+   "gfx": "OBJ_EVENT_GFX_SWIMMER_F",
+   "movement": "MOVEMENT_TYPE_FACE_UP_AND_LEFT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route109_EventScript_Alice",
+   "texts": {
+    "Route109_Text_AliceIntro": "Are you properly protected against\\nthe sun?$",
+    "Route109_Text_AliceDefeated": "Ouch, ouch, ouch!$",
+    "Route109_Text_AlicePostBattle": "Cheeks are the most prone to burning!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 5,
+   "x": 15,
+   "y": 17,
+   "gfx": "OBJ_EVENT_GFX_SAILOR",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route109_EventScript_Huey",
+   "texts": {
+    "Route109_Text_HueyIntro": "I've laid anchor in ports around\\nthe world, but SLATEPORT's the best.$",
+    "Route109_Text_HueyDefeated": "You're the best!$",
+    "Route109_Text_HueyPostBattle": "In the best port was the best\\nTRAINER…$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 6,
+   "x": 24,
+   "y": 13,
+   "gfx": "OBJ_EVENT_GFX_SAILOR",
+   "movement": "MOVEMENT_TYPE_FACE_LEFT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route109_EventScript_Edmond",
+   "texts": {
+    "Route109_Text_EdmondIntro": "Urrrrppp…\\nBattle? With me?$",
+    "Route109_Text_EdmondDefeated": "Urp… Ooooooohhhhhh…\\nUrrrrpppp…$",
+    "Route109_Text_EdmondPostBattle": "I'm usually stronger than this!\\nI'm just seasick as a dog!\\pI'm a SAILOR, but…$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 7,
+   "x": 19,
+   "y": 10,
+   "gfx": "OBJ_EVENT_GFX_TUBER_M",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route109_EventScript_Ricky",
+   "texts": {
+    "Route109_Text_RickyIntro": "I'm thirsty… I could go for a SODA POP\\nat the SEASHORE HOUSE…$",
+    "Route109_Text_RickyDefeated": "Groan…$",
+    "Route109_Text_RickyPostBattle": "I'm getting famished… My inner tube\\nlooks like a giant doughnut…$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 8,
+   "x": 22,
+   "y": 7,
+   "gfx": "OBJ_EVENT_GFX_TUBER_F",
+   "movement": "MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route109_EventScript_Lola",
+   "texts": {
+    "Route109_Text_LolaIntro": "Doesn't a beach umbrella look like\\na giant flower?$",
+    "Route109_Text_LolaDefeated": "Mommy!$",
+    "Route109_Text_LolaPostBattle": "If you look at the beach from the sky,\\nit looks like a big flower garden!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 9,
+   "x": 11,
+   "y": 6,
+   "gfx": "OBJ_EVENT_GFX_LITTLE_GIRL",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "Route109_EventScript_SeashoreHouseGirl",
+   "texts": {
+    "Route109_Text_ChillAtMyPapasSpot": "Yo, TRAINERS!\\nWhether you're hot to trot,\\lor cool cat not,\\lchill at my papa's spot!$"
+   }
+  },
+  {
+   "local_id": 10,
+   "x": 27,
+   "y": 46,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_ROUTE_109_PP_UP",
+   "script": "Route109_EventScript_ItemPPUp",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 11,
+   "x": 29,
+   "y": 32,
+   "gfx": "OBJ_EVENT_GFX_TUBER_F",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN_AND_UP",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route109_EventScript_Gwen",
+   "texts": {
+    "Route109_Text_GwenIntro": "Hi, big TRAINER.\\nWill you battle with me?$",
+    "Route109_Text_GwenDefeated": "Oh, you're strong.$",
+    "Route109_Text_GwenPostBattle": "How did you get to be so strong?$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 12,
+   "x": 28,
+   "y": 31,
+   "gfx": "OBJ_EVENT_GFX_TUBER_F",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN_AND_LEFT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route109_EventScript_Austina",
+   "texts": {
+    "Route109_Text_AustinaIntro": "I can't swim without my inner tube,\\nbut I won't lose at POKéMON!$",
+    "Route109_Text_AustinaDefeated": "Did I lose because I have an inner\\ntube?$",
+    "Route109_Text_AustinaPostBattle": "My inner tube is a fashion item.\\nI can't be seen without it.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 13,
+   "x": 21,
+   "y": 56,
+   "gfx": "OBJ_EVENT_GFX_FISHERMAN",
+   "movement": "MOVEMENT_TYPE_FACE_LEFT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route109_EventScript_Carter",
+   "texts": {
+    "Route109_Text_CarterIntro": "Wahahah! This dude's going to catch\\nhimself a big one!$",
+    "Route109_Text_CarterDefeated": "This dude just lost one…$",
+    "Route109_Text_CarterPostBattle": "This dude thinks you're a big one.\\nNo, you're a big-one-to-be!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 14,
+   "x": 24,
+   "y": 18,
+   "gfx": "OBJ_EVENT_GFX_TUBER_M",
+   "movement": "MOVEMENT_TYPE_FACE_RIGHT",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "Route109_EventScript_SandCastleBoy",
+   "texts": {
+    "Route109_Text_SandCastleTakingLongTime": "Our sand castle's taking a long time\\nto make.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 15,
+   "x": 25,
+   "y": 18,
+   "gfx": "OBJ_EVENT_GFX_TUBER_F",
+   "movement": "MOVEMENT_TYPE_FACE_LEFT",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "Route109_EventScript_SoftSandGirl",
+   "texts": {
+    "Route109_Text_YouCanHaveThis": "You can have this!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 16,
+   "x": 30,
+   "y": 32,
+   "gfx": "OBJ_EVENT_GFX_POKEFAN_F",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "Route109_EventScript_Woman",
+   "texts": {
+    "Route109_Text_LittleKidsDartAround": "Little kids can dart around so quickly…\\pYou don't dare take your eyes off them\\nfor an instant. It's very taxing.\\pMine are with my POKéMON, so they\\nshould be okay, but…$"
+   }
+  },
+  {
+   "local_id": 17,
+   "x": 8,
+   "y": 41,
+   "gfx": "OBJ_EVENT_GFX_WOMAN_4",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route109_EventScript_Mel",
+   "texts": {
+    "Route109_Text_MelIntro": "MEL: We're, like, totally in love.\\nOur romance is heating up all of HOENN!$",
+    "Route109_Text_MelDefeated": "MEL: We lost, and it's my fault!\\nPAUL will hate me!$",
+    "Route109_Text_MelNotEnoughPokemon": "MEL: We're, like, deeply and truly in love.\\nThat's why we make our POKéMON\\lbattle together.$",
+    "Route109_Text_MelPostBattle": "MEL: Um, PAUL, are you angry with me?\\nPlease don't be angry.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 18,
+   "x": 9,
+   "y": 41,
+   "gfx": "OBJ_EVENT_GFX_MAN_4",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route109_EventScript_Paul",
+   "texts": {
+    "Route109_Text_PaulIntro": "PAUL: Well, this is a mood-breaker.\\pI wish you wouldn't disturb our\\nprecious time together.$",
+    "Route109_Text_PaulDefeated": "PAUL: Well, I give up.$",
+    "Route109_Text_PaulNotEnoughPokemon": "PAUL: We're totally, deeply in love.\\nThat's why we make our POKéMON battle\\ltogether.$",
+    "Route109_Text_PaulPostBattle": "PAUL: Well, don't tell anyone that\\nwe're here.\\lThis is just our private world of two!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 19,
+   "x": 33,
+   "y": 6,
+   "gfx": "OBJ_EVENT_GFX_OLD_MAN",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "Route109_EventScript_OldMan",
+   "texts": {
+    "Route109_Text_ZigzagoonPicksUpLitter": "The water around these parts is clean.\\pBut, I get my ZIGZAGOON to pick up\\nlitter from the shoreline at times.\\pDirty water becomes rain and joins our\\nrivers, which we drink from…\\pIf we pollute the sea, it all comes\\nback to haunt us eventually.$"
+   }
+  },
+  {
+   "local_id": 20,
+   "x": 32,
+   "y": 6,
+   "gfx": "OBJ_EVENT_GFX_ZIGZAGOON_2",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "Route109_EventScript_Zigzagoon",
+   "texts": {
+    "Route109_Text_ZigzagoonCry": "ZIGZAGOON: Guguu?$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 21,
+   "x": 17,
+   "y": 13,
+   "gfx": "OBJ_EVENT_GFX_TUBER_F",
+   "movement": "MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_RIGHT",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route109_EventScript_Hailey",
+   "texts": {
+    "Route109_Text_HaileyIntro": "I can't swim, so I'm pretending\\nto swim.$",
+    "Route109_Text_HaileyDefeated": "I thought so!\\nI didn't think we could win.$",
+    "Route109_Text_HaileyPostBattle": "When I learn how to swim, I think\\nmy POKéMON will become tougher.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 22,
+   "x": 27,
+   "y": 7,
+   "gfx": "OBJ_EVENT_GFX_TUBER_M",
+   "movement": "MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_LEFT",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route109_EventScript_Chandler",
+   "texts": {
+    "Route109_Text_ChandlerIntro": "Tadaah! See?\\nMy inner tube's round!$",
+    "Route109_Text_ChandlerDefeated": "Oh, oh!\\nToo bad!$",
+    "Route109_Text_ChandlerPostBattle": "After I showed you my round inner\\ntube, too…$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 23,
+   "x": 25,
+   "y": 6,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_ROUTE_109_POTION",
+   "script": "Route109_EventScript_ItemPotion",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 24,
+   "x": 17,
+   "y": 56,
+   "gfx": "OBJ_EVENT_GFX_MAN_5",
+   "movement": "MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_RIGHT",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route109_EventScript_Elijah",
+   "texts": {
+    "Route109_Text_ElijahIntro": "For a guy as macho as me, this kind\\nof POKéMON is the perfect match!$",
+    "Route109_Text_ElijahDefeated": "I'm cool even in defeat, hey?$",
+    "Route109_Text_ElijahPostBattle": "For a guy as macho as me, a port\\nis the perfect setting!\\pI guess I'll head for SLATEPORT.$"
+   },
+   "complex": true
+  }
+ ],
+ "signs": [
+  {
+   "x": 15,
+   "y": 5,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "Route109_EventScript_SeashoreHouseSign",
+   "texts": {
+    "Route109_Text_SeashoreHouseSign": "SEASHORE HOUSE\\p“May hot battles rage on hot sands!\\nThe place for hot TRAINERS!”$"
+   }
+  },
+  {
+   "x": 29,
+   "y": 10,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "Route109_EventScript_TrainerTipsSign",
+   "texts": {
+    "Route109_Text_TrainerTipsSign": "TRAINER TIPS\\pPOKéMON at the same level may not\\nalways have identical stats.\\pPOKéMON raised by TRAINERS are said\\nto grow stronger than wild POKéMON.$"
+   }
+  },
+  {
+   "x": 16,
+   "y": 23,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 16,
+    "y": 23,
+    "elevation": 3,
+    "item": "ITEM_REVIVE",
+    "flag": "FLAG_HIDDEN_ITEM_ROUTE_109_REVIVE"
+   }
+  },
+  {
+   "x": 33,
+   "y": 5,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 33,
+    "y": 5,
+    "elevation": 3,
+    "item": "ITEM_HEART_SCALE",
+    "flag": "FLAG_HIDDEN_ITEM_ROUTE_109_HEART_SCALE_1"
+   }
+  },
+  {
+   "x": 9,
+   "y": 10,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 9,
+    "y": 10,
+    "elevation": 3,
+    "item": "ITEM_GREAT_BALL",
+    "flag": "FLAG_HIDDEN_ITEM_ROUTE_109_GREAT_BALL"
+   }
+  },
+  {
+   "x": 28,
+   "y": 20,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 28,
+    "y": 20,
+    "elevation": 3,
+    "item": "ITEM_ETHER",
+    "flag": "FLAG_HIDDEN_ITEM_ROUTE_109_ETHER"
+   }
+  },
+  {
+   "x": 13,
+   "y": 16,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 13,
+    "y": 16,
+    "elevation": 3,
+    "item": "ITEM_HEART_SCALE",
+    "flag": "FLAG_HIDDEN_ITEM_ROUTE_109_HEART_SCALE_2"
+   }
+  },
+  {
+   "x": 8,
+   "y": 42,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 8,
+    "y": 42,
+    "elevation": 3,
+    "item": "ITEM_HEART_SCALE",
+    "flag": "FLAG_HIDDEN_ITEM_ROUTE_109_HEART_SCALE_3"
+   }
+  }
+ ],
+ "warps": [
+  {
+   "id": 0,
+   "x": 12,
+   "y": 5,
+   "dest_map": "MAP_ROUTE109_SEASHORE_HOUSE",
+   "dest_warp_id": "0"
+  }
+ ],
+ "coord_events": [],
+ "wild": {
+  "water_mons": {
+   "encounter_rate": 4,
+   "slot_rates": [
+    60,
+    30,
+    5,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 5,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 15,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_PELIPPER",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_PELIPPER",
+     "min": 25,
+     "max": 30
+    }
+   ]
+  },
+  "fishing_mons": {
+   "encounter_rate": 30,
+   "slot_rates": [
+    70,
+    30,
+    60,
+    20,
+    20,
+    40,
+    40,
+    15,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 20,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 35,
+     "max": 40
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 40,
+     "max": 45
+    }
+   ]
+  }
+ }
+}

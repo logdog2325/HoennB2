@@ -1,0 +1,12 @@
+{
+ "_doc": "Emerald overlay of data/hoenn_shops.json (version.load_json deep merge), written by b2tools/shops_data.py with HOENN_VERSION=emerald: the shop ids whose pokeemerald list differs from Sapphire's (label = Sapphire's, the same mart; emerald_label = pokeemerald's). later: pokeemerald marts on maps this build does not have.",
+ "shops": {},
+ "later": [
+  "BattleFrontier_Mart_Pokemart",
+  "TrainerHill_Entrance_Pokemart_Basic",
+  "TrainerHill_Entrance_Pokemart_Expanded"
+ ],
+ "notes": [
+  "ITEM_TM43_SECRET_POWER: MOVE_SECRET_POWER is no Gen 5 TM/HM; stand-in ITEM_TM43"
+ ]
+}

@@ -1,0 +1,5 @@
+I want to go to the Pokémon Gym, but\nsomething’s blocking the way.{be01}\nAfter all the bother I went through\ntraining on Route 120...
+I’ve got my pride-and-joy Pokémon\nwith me. This time, I’ll beat Winona.
+Something unseeable is in the way.
+Something unseeable is in the way.{be01}\nWant to use the Devon Scope?
+{0100:0} used the Devon Scope.{be01}\nAn invisible Pokémon became completely\nvisible!{be01}\nThe startled Pokémon fled!

@@ -1,0 +1,213 @@
+{
+ "_doc": "Slateport Pokémon Fan Club (Sapphire 14x11, zone 13) in the look of Icirrus's Pokémon Fan Club (texture set 307: wood floor, green wallpaper). Row 2 along the back wall: low bookcases (0-1, 12-13) = shelf01, plants (3, 10) = plant01, the pictures (6-7, 1) = art01. The red rug (2-11, 4-8) = b01_mat (set 282); Sapphire's sofas (5-8, 5), (3, 6-7), (10, 6-7) are walkable seats = floor cushions (chushion02); the glass table (5-8, 6-7) = two white low tables (table02). Plants (0, 10)/(13, 10).",
+ "map": "SlateportCity_PokemonFanClub",
+ "style": "sp_fanclub",
+ "floor": [
+  [
+   0,
+   2,
+   13,
+   10
+  ]
+ ],
+ "mats": [
+  {
+   "tex": "b01_mat",
+   "src": 282,
+   "rect": [
+    2,
+    4,
+    11,
+    8
+   ],
+   "border": 0.25,
+   "border_units": 6,
+   "y": 0,
+   "_what": "rug"
+  },
+  {
+   "tex": "in26_yuka_02",
+   "src": 307,
+   "rect": [
+    6,
+    10,
+    7,
+    10
+   ],
+   "border": 0.0,
+   "border_units": 0,
+   "y": 0,
+   "_what": "door mat"
+  }
+ ],
+ "furniture": [
+  {
+   "m": "shelf01",
+   "tiles": [
+    0,
+    2,
+    1,
+    2
+   ],
+   "wall": "N",
+   "_what": "bookcase"
+  },
+  {
+   "m": "plant01",
+   "tile": [
+    3,
+    2
+   ],
+   "_what": "plant"
+  },
+  {
+   "m": "art01",
+   "at": [
+    6.5,
+    2.5
+   ],
+   "wall": "N",
+   "gap": 2,
+   "y": 16,
+   "_what": "picture"
+  },
+  {
+   "m": "art01",
+   "at": [
+    7.6,
+    2.5
+   ],
+   "wall": "N",
+   "gap": 2,
+   "y": 18,
+   "_what": "picture"
+  },
+  {
+   "m": "plant01",
+   "tile": [
+    10,
+    2
+   ],
+   "_what": "plant"
+  },
+  {
+   "m": "shelf01",
+   "tiles": [
+    12,
+    2,
+    13,
+    2
+   ],
+   "wall": "N",
+   "_what": "bookcase"
+  },
+  {
+   "m": "table02",
+   "tiles": [
+    5,
+    6,
+    8,
+    6
+   ],
+   "_what": "glass table"
+  },
+  {
+   "m": "table02",
+   "tiles": [
+    5,
+    7,
+    8,
+    7
+   ],
+   "_what": "glass table"
+  },
+  {
+   "m": "plant01",
+   "tile": [
+    0,
+    10
+   ],
+   "_what": "plant"
+  },
+  {
+   "m": "plant01",
+   "tile": [
+    13,
+    10
+   ],
+   "_what": "plant"
+  },
+  {
+   "m": "chushion02",
+   "tile": [
+    5,
+    5
+   ],
+   "y": 2,
+   "_what": "sofa seat (walkable)"
+  },
+  {
+   "m": "chushion02",
+   "tile": [
+    6,
+    5
+   ],
+   "y": 2,
+   "_what": "sofa seat (walkable)"
+  },
+  {
+   "m": "chushion02",
+   "tile": [
+    7,
+    5
+   ],
+   "y": 2,
+   "_what": "sofa seat (walkable)"
+  },
+  {
+   "m": "chushion02",
+   "tile": [
+    8,
+    5
+   ],
+   "y": 2,
+   "_what": "sofa seat (walkable)"
+  },
+  {
+   "m": "chushion02",
+   "tile": [
+    3,
+    6
+   ],
+   "y": 2,
+   "_what": "sofa seat (walkable)"
+  },
+  {
+   "m": "chushion02",
+   "tile": [
+    3,
+    7
+   ],
+   "y": 2,
+   "_what": "sofa seat (walkable)"
+  },
+  {
+   "m": "chushion02",
+   "tile": [
+    10,
+    6
+   ],
+   "y": 2,
+   "_what": "sofa seat (walkable)"
+  },
+  {
+   "m": "chushion02",
+   "tile": [
+    10,
+    7
+   ],
+   "y": 2,
+   "_what": "sofa seat (walkable)"
+  }
+ ]
+}

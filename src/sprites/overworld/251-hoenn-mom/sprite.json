@@ -1,0 +1,26 @@
+{
+ "kind": "overworld",
+ "code": 251,
+ "sheet": 229,
+ "frames": 7,
+ "size": [
+  32,
+  32
+ ],
+ "controller": 2,
+ "textures": [
+  "t4x4x7.0",
+  "t4x4x7.1",
+  "t4x4x7.2",
+  "t4x4x7.3",
+  "t4x4x7.4",
+  "t4x4x7.5",
+  "t4x4x7.6"
+ ],
+ "palette": "t4x4x7",
+ "name": "hoenn-mom",
+ "note": "Hoenn Mom (Littleroot), drawn from Sapphire's Mom",
+ "sapphire": "mom 3",
+ "drawn": "src/sprites/drawn/mom.txt",
+ "made_by": "b2tools/sprite_unique.py"
+}

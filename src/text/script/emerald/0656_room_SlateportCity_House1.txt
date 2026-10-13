@@ -1,0 +1,11 @@
+There’s a set of Pokémon picture books.
+It’s filled with all sorts of books.
+Hi, hi! I’m the Name Rater!\nI’m the fortune-teller of names!{be01}\nI shall be pleased to rate your\nPokémon’s nickname.
+Which Pokémon’s nickname should\nI critique?
+I see.\nDo come visit again.
+Hmmm... {0100:1}, is it? That is\nquite a fine name you bestowed.{be01}\nBut! What say you, if I were to\nsuggest a slightly better name?
+Now, now.\nThat is merely an Egg!
+Hmmm... {0100:1} it is!{be01}\nThis is a magnificent nickname!\nIt is impeccably beyond reproach!{be01}\nYou’ll do well to cherish your\n{0100:1} now and beyond.
+Ah, good. Then, what shall the new\nnickname be?
+Done! From now on, this Pokémon\nshall be known as {0100:1}!{be01}\nIt looks no different from before,\nand yet, this is vastly superior!{be00}\nHow fortunate for you!
+Done! From now on, this Pokémon\nshall be known as {0100:1}!{be01}\nIt is a better name than before!\nHow fortunate for you!

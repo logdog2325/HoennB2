@@ -1,0 +1,282 @@
+{
+ "_doc": "Rustboro Pokémon School (Sapphire 12x11, zone 591) in the look of Aspertia's Trainers' School (texture set 286: classroom floor, white wall, the school's green Poké Ball mat at the door). Row 2 is the row along the back wall: the blackboard (Black 2's blackboard picture in05_sch_b2 on the wall) over its ledge (4-7, 2) = a long low desk (desk01). Windows (0-2, 9-11) = win01. Teacher's desk (5-6, 4) = table02; the twelve pupils' desks = small tables (desk02) with a floor cushion on the walkable tile south of each (Sapphire's chairs; Black 2 puts cushions, not chairs, on walkable tiles).",
+ "map": "RustboroCity_PokemonSchool",
+ "style": "sp_school",
+ "floor": [
+  [
+   0,
+   2,
+   11,
+   10
+  ]
+ ],
+ "mats": [
+  {
+   "tex": "in05_mat1",
+   "src": 286,
+   "rect": [
+    5,
+    10,
+    6,
+    10
+   ],
+   "border": 0.0,
+   "border_units": 0,
+   "y": 0,
+   "_what": "door mat"
+  }
+ ],
+ "decals": [
+  {
+   "tex": "in05_sch_b2",
+   "src": 286,
+   "at": [
+    6.0
+   ],
+   "y": 12,
+   "w": 64,
+   "h": 30,
+   "gap": 2,
+   "_what": "blackboard"
+  }
+ ],
+ "furniture": [
+  {
+   "m": "desk01",
+   "rot": 90,
+   "tiles": [
+    4,
+    2,
+    7,
+    2
+   ],
+   "wall": "N",
+   "gap": 2,
+   "_what": "blackboard ledge"
+  },
+  {
+   "m": "win01",
+   "at": [
+    1.5,
+    2.5
+   ],
+   "wall": "N",
+   "gap": 4,
+   "y": 10,
+   "_what": "window"
+  },
+  {
+   "m": "win01",
+   "at": [
+    10.5,
+    2.5
+   ],
+   "wall": "N",
+   "gap": 4,
+   "y": 10,
+   "_what": "window"
+  },
+  {
+   "m": "table02_2w",
+   "tiles": [
+    5,
+    4,
+    6,
+    4
+   ],
+   "_what": "teacher's desk"
+  },
+  {
+   "m": "desk02",
+   "tile": [
+    1,
+    5
+   ],
+   "_what": "desk"
+  },
+  {
+   "m": "desk02",
+   "tile": [
+    3,
+    5
+   ],
+   "_what": "desk"
+  },
+  {
+   "m": "desk02",
+   "tile": [
+    8,
+    5
+   ],
+   "_what": "desk"
+  },
+  {
+   "m": "desk02",
+   "tile": [
+    10,
+    5
+   ],
+   "_what": "desk"
+  },
+  {
+   "m": "desk02",
+   "tile": [
+    1,
+    7
+   ],
+   "_what": "desk"
+  },
+  {
+   "m": "desk02",
+   "tile": [
+    3,
+    7
+   ],
+   "_what": "desk"
+  },
+  {
+   "m": "desk02",
+   "tile": [
+    8,
+    7
+   ],
+   "_what": "desk"
+  },
+  {
+   "m": "desk02",
+   "tile": [
+    10,
+    7
+   ],
+   "_what": "desk"
+  },
+  {
+   "m": "desk02",
+   "tile": [
+    1,
+    9
+   ],
+   "_what": "desk"
+  },
+  {
+   "m": "desk02",
+   "tile": [
+    3,
+    9
+   ],
+   "_what": "desk"
+  },
+  {
+   "m": "desk02",
+   "tile": [
+    8,
+    9
+   ],
+   "_what": "desk"
+  },
+  {
+   "m": "desk02",
+   "tile": [
+    10,
+    9
+   ],
+   "_what": "desk"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    1,
+    6
+   ],
+   "_what": "chair (walkable)"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    3,
+    6
+   ],
+   "_what": "chair (walkable)"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    8,
+    6
+   ],
+   "_what": "chair (walkable)"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    10,
+    6
+   ],
+   "_what": "chair (walkable)"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    1,
+    8
+   ],
+   "_what": "chair (walkable)"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    3,
+    8
+   ],
+   "_what": "chair (walkable)"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    8,
+    8
+   ],
+   "_what": "chair (walkable)"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    10,
+    8
+   ],
+   "_what": "chair (walkable)"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    1,
+    10
+   ],
+   "_what": "chair (walkable)"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    3,
+    10
+   ],
+   "_what": "chair (walkable)"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    8,
+    10
+   ],
+   "_what": "chair (walkable)"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    10,
+    10
+   ],
+   "_what": "chair (walkable)"
+  }
+ ]
+}

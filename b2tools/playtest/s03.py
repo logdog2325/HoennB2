@@ -1,0 +1,11 @@
+import sys; sys.path.insert(0, sys.path[0])
+from pt import *
+g = G('s02_clock.dst', name='s03')
+print('down', g.warp(0), g.zone(), g.tile()); g.adv(); g.S()
+print('after TV', g.zone(), g.tile())
+print('exit', g.warp(0), g.zone(), g.tile()); g.adv(); g.S()
+print('to May house', g.warp(1), g.zone(), g.tile()); g.adv(); g.S()
+print('upstairs', g.warp(1), g.zone(), g.tile()); g.adv(); g.S()
+for a in g.actors(): print(' actor', a['uid'], a['x'], a['z'], a['scr'])
+g.save('s03_mayroom.dst')
+g.sheet(os.path.join(PT, 'scratch.png'), cols=5)

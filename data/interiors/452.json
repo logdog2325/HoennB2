@@ -1,0 +1,541 @@
+{
+ "zone": 452,
+ "room": "PetalburgCity_Gym",
+ "area": 286,
+ "bgm": 1062,
+ "what": "gyms_league: PetalburgCity_Gym (b2tools/gyms_league_rooms.py); story phase: Norman (4,3), the six trainers (4,16/29/42/55/68/81/94), Wally's tutorial and Norman's first talk (VAR_PETALBURG_GYM_STATE), Gym guide (3,109), statue plaques | the doors open only after the room's trainer is beaten (Sapphire: setmetatile to MB_PETALBURG_GYM_DOOR); here every door is open",
+ "parent": 439,
+ "warps": [
+  {
+   "at": [
+    4,
+    111
+   ],
+   "tile_only": true,
+   "to": [
+    439,
+    10
+   ],
+   "what": "Sapphire warp 0 -> PetalburgCity 2"
+  },
+  {
+   "at": [
+    5,
+    111
+   ],
+   "tile_only": true,
+   "to": [
+    439,
+    10
+   ],
+   "what": "Sapphire warp 1 -> PetalburgCity 2"
+  },
+  {
+   "at": [
+    1,
+    105
+   ],
+   "tile_only": true,
+   "to": [
+    452,
+    3
+   ],
+   "what": "Sapphire warp 2 -> PetalburgCity_Gym 3",
+   "type": 2,
+   "dir": 2
+  },
+  {
+   "at": [
+    7,
+    85
+   ],
+   "tile_only": true,
+   "to": [
+    452,
+    2
+   ],
+   "what": "Sapphire warp 3 -> PetalburgCity_Gym 2",
+   "type": 2,
+   "dir": 0
+  },
+  {
+   "at": [
+    6,
+    85
+   ],
+   "tile_only": true,
+   "to": [
+    452,
+    2
+   ],
+   "what": "Sapphire warp 4 -> PetalburgCity_Gym 2",
+   "type": 2,
+   "dir": 0
+  },
+  {
+   "at": [
+    7,
+    105
+   ],
+   "tile_only": true,
+   "to": [
+    452,
+    6
+   ],
+   "what": "Sapphire warp 5 -> PetalburgCity_Gym 6",
+   "type": 2,
+   "dir": 2
+  },
+  {
+   "at": [
+    1,
+    98
+   ],
+   "tile_only": true,
+   "to": [
+    452,
+    5
+   ],
+   "what": "Sapphire warp 6 -> PetalburgCity_Gym 5",
+   "type": 2,
+   "dir": 0
+  },
+  {
+   "at": [
+    2,
+    98
+   ],
+   "tile_only": true,
+   "to": [
+    452,
+    5
+   ],
+   "what": "Sapphire warp 7 -> PetalburgCity_Gym 5",
+   "type": 2,
+   "dir": 0
+  },
+  {
+   "at": [
+    1,
+    79
+   ],
+   "tile_only": true,
+   "to": [
+    452,
+    10
+   ],
+   "what": "Sapphire warp 8 -> PetalburgCity_Gym 10",
+   "type": 2,
+   "dir": 2
+  },
+  {
+   "at": [
+    7,
+    79
+   ],
+   "tile_only": true,
+   "to": [
+    452,
+    12
+   ],
+   "what": "Sapphire warp 9 -> PetalburgCity_Gym 12",
+   "type": 2,
+   "dir": 2
+  },
+  {
+   "at": [
+    7,
+    46
+   ],
+   "tile_only": true,
+   "to": [
+    452,
+    8
+   ],
+   "what": "Sapphire warp 10 -> PetalburgCity_Gym 8",
+   "type": 2,
+   "dir": 0
+  },
+  {
+   "at": [
+    6,
+    46
+   ],
+   "tile_only": true,
+   "to": [
+    452,
+    8
+   ],
+   "what": "Sapphire warp 11 -> PetalburgCity_Gym 8",
+   "type": 2,
+   "dir": 0
+  },
+  {
+   "at": [
+    1,
+    59
+   ],
+   "tile_only": true,
+   "to": [
+    452,
+    9
+   ],
+   "what": "Sapphire warp 12 -> PetalburgCity_Gym 9",
+   "type": 2,
+   "dir": 0
+  },
+  {
+   "at": [
+    2,
+    59
+   ],
+   "tile_only": true,
+   "to": [
+    452,
+    9
+   ],
+   "what": "Sapphire warp 13 -> PetalburgCity_Gym 9",
+   "type": 2,
+   "dir": 0
+  },
+  {
+   "at": [
+    1,
+    92
+   ],
+   "tile_only": true,
+   "to": [
+    452,
+    16
+   ],
+   "what": "Sapphire warp 14 -> PetalburgCity_Gym 16",
+   "type": 2,
+   "dir": 2
+  },
+  {
+   "at": [
+    7,
+    92
+   ],
+   "tile_only": true,
+   "to": [
+    452,
+    18
+   ],
+   "what": "Sapphire warp 15 -> PetalburgCity_Gym 18",
+   "type": 2,
+   "dir": 2
+  },
+  {
+   "at": [
+    7,
+    59
+   ],
+   "tile_only": true,
+   "to": [
+    452,
+    14
+   ],
+   "what": "Sapphire warp 16 -> PetalburgCity_Gym 14",
+   "type": 2,
+   "dir": 0
+  },
+  {
+   "at": [
+    6,
+    59
+   ],
+   "tile_only": true,
+   "to": [
+    452,
+    14
+   ],
+   "what": "Sapphire warp 17 -> PetalburgCity_Gym 14",
+   "type": 2,
+   "dir": 0
+  },
+  {
+   "at": [
+    1,
+    72
+   ],
+   "tile_only": true,
+   "to": [
+    452,
+    15
+   ],
+   "what": "Sapphire warp 18 -> PetalburgCity_Gym 15",
+   "type": 2,
+   "dir": 0
+  },
+  {
+   "at": [
+    2,
+    72
+   ],
+   "tile_only": true,
+   "to": [
+    452,
+    15
+   ],
+   "what": "Sapphire warp 19 -> PetalburgCity_Gym 15",
+   "type": 2,
+   "dir": 0
+  },
+  {
+   "at": [
+    7,
+    40
+   ],
+   "tile_only": true,
+   "to": [
+    452,
+    24
+   ],
+   "what": "Sapphire warp 20 -> PetalburgCity_Gym 24",
+   "type": 2,
+   "dir": 2
+  },
+  {
+   "at": [
+    1,
+    53
+   ],
+   "tile_only": true,
+   "to": [
+    452,
+    26
+   ],
+   "what": "Sapphire warp 21 -> PetalburgCity_Gym 26",
+   "type": 2,
+   "dir": 2
+  },
+  {
+   "at": [
+    7,
+    53
+   ],
+   "tile_only": true,
+   "to": [
+    452,
+    28
+   ],
+   "what": "Sapphire warp 22 -> PetalburgCity_Gym 28",
+   "type": 2,
+   "dir": 2
+  },
+  {
+   "at": [
+    1,
+    66
+   ],
+   "tile_only": true,
+   "to": [
+    452,
+    30
+   ],
+   "what": "Sapphire warp 23 -> PetalburgCity_Gym 30",
+   "type": 2,
+   "dir": 2
+  },
+  {
+   "at": [
+    1,
+    20
+   ],
+   "tile_only": true,
+   "to": [
+    452,
+    20
+   ],
+   "what": "Sapphire warp 24 -> PetalburgCity_Gym 20",
+   "type": 2,
+   "dir": 0
+  },
+  {
+   "at": [
+    2,
+    20
+   ],
+   "tile_only": true,
+   "to": [
+    452,
+    20
+   ],
+   "what": "Sapphire warp 25 -> PetalburgCity_Gym 20",
+   "type": 2,
+   "dir": 0
+  },
+  {
+   "at": [
+    7,
+    20
+   ],
+   "tile_only": true,
+   "to": [
+    452,
+    21
+   ],
+   "what": "Sapphire warp 26 -> PetalburgCity_Gym 21",
+   "type": 2,
+   "dir": 0
+  },
+  {
+   "at": [
+    6,
+    20
+   ],
+   "tile_only": true,
+   "to": [
+    452,
+    21
+   ],
+   "what": "Sapphire warp 27 -> PetalburgCity_Gym 21",
+   "type": 2,
+   "dir": 0
+  },
+  {
+   "at": [
+    1,
+    33
+   ],
+   "tile_only": true,
+   "to": [
+    452,
+    22
+   ],
+   "what": "Sapphire warp 28 -> PetalburgCity_Gym 22",
+   "type": 2,
+   "dir": 0
+  },
+  {
+   "at": [
+    2,
+    33
+   ],
+   "tile_only": true,
+   "to": [
+    452,
+    22
+   ],
+   "what": "Sapphire warp 29 -> PetalburgCity_Gym 22",
+   "type": 2,
+   "dir": 0
+  },
+  {
+   "at": [
+    7,
+    33
+   ],
+   "tile_only": true,
+   "to": [
+    452,
+    23
+   ],
+   "what": "Sapphire warp 30 -> PetalburgCity_Gym 23",
+   "type": 2,
+   "dir": 0
+  },
+  {
+   "at": [
+    6,
+    33
+   ],
+   "tile_only": true,
+   "to": [
+    452,
+    23
+   ],
+   "what": "Sapphire warp 31 -> PetalburgCity_Gym 23",
+   "type": 2,
+   "dir": 0
+  },
+  {
+   "at": [
+    7,
+    14
+   ],
+   "tile_only": true,
+   "to": [
+    452,
+    34
+   ],
+   "what": "Sapphire warp 32 -> PetalburgCity_Gym 34",
+   "type": 2,
+   "dir": 2
+  },
+  {
+   "at": [
+    1,
+    27
+   ],
+   "tile_only": true,
+   "to": [
+    452,
+    36
+   ],
+   "what": "Sapphire warp 33 -> PetalburgCity_Gym 36",
+   "type": 2,
+   "dir": 2
+  },
+  {
+   "at": [
+    1,
+    7
+   ],
+   "tile_only": true,
+   "to": [
+    452,
+    32
+   ],
+   "what": "Sapphire warp 34 -> PetalburgCity_Gym 32",
+   "type": 2,
+   "dir": 0
+  },
+  {
+   "at": [
+    2,
+    7
+   ],
+   "tile_only": true,
+   "to": [
+    452,
+    32
+   ],
+   "what": "Sapphire warp 35 -> PetalburgCity_Gym 32",
+   "type": 2,
+   "dir": 0
+  },
+  {
+   "at": [
+    7,
+    7
+   ],
+   "tile_only": true,
+   "to": [
+    452,
+    33
+   ],
+   "what": "Sapphire warp 36 -> PetalburgCity_Gym 33",
+   "type": 2,
+   "dir": 0
+  },
+  {
+   "at": [
+    6,
+    7
+   ],
+   "tile_only": true,
+   "to": [
+    452,
+    33
+   ],
+   "what": "Sapphire warp 37 -> PetalburgCity_Gym 33",
+   "type": 2,
+   "dir": 0
+  }
+ ],
+ "npcs": [],
+ "signs": [],
+ "triggers": []
+}

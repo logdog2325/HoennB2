@@ -1,0 +1,269 @@
+{
+ "map": "Route105",
+ "id": "MAP_ROUTE105",
+ "layout": "LAYOUT_ROUTE105",
+ "music": "MUS_ROUTE104",
+ "region_map_section": "MAPSEC_ROUTE_105",
+ "weather": "WEATHER_SUNNY",
+ "connections": [
+  {
+   "direction": "up",
+   "offset": 0,
+   "map": "MAP_ROUTE104"
+  },
+  {
+   "direction": "down",
+   "offset": 0,
+   "map": "MAP_ROUTE106"
+  }
+ ],
+ "npcs": [
+  {
+   "local_id": 1,
+   "x": 18,
+   "y": 60,
+   "gfx": "OBJ_EVENT_GFX_SWIMMER_M",
+   "movement": "MOVEMENT_TYPE_FACE_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route105_EventScript_14F2D2",
+   "texts": {
+    "Route105_Text_1B8C28": "Whew! I was worried that a kid was\\ndrowning when I saw you.\\pYou seem to be okay, so what do you\\nsay to a battle?$",
+    "Route105_Text_1B8C99": "Glub... Glub...$",
+    "Route105_Text_1B8CA9": "If you are drowning, the signal is to\\nwave one arm toward the beach.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 2,
+   "x": 10,
+   "y": 44,
+   "gfx": "OBJ_EVENT_GFX_SWIMMER_M",
+   "movement": "MOVEMENT_TYPE_WALK_LEFT_AND_RIGHT",
+   "range": [
+    7,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route105_EventScript_14F2E9",
+   "texts": {
+    "Route105_Text_1B8CEE": "Swimming the deep blue sea...\\nIt feels the greatest!$",
+    "Route105_Text_1B8D23": "I lost...\\nNow I'm feeling blue...$",
+    "Route105_Text_1B8D45": "Why is the sea blue?\\pI learned about that at the MUSEUM in\\nSLATEPORT, but I forgot.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 3,
+   "x": 26,
+   "y": 36,
+   "gfx": "OBJ_EVENT_GFX_SWIMMER_F",
+   "movement": "MOVEMENT_TYPE_WALK_UP_AND_DOWN",
+   "range": [
+    0,
+    7
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route105_EventScript_14F300",
+   "texts": {
+    "Route105_Text_1B8D99": "My body feels lighter in the water.\\nIt's as if I've gotten slimmer!$",
+    "Route105_Text_1B8DDD": "I'm floating...$",
+    "Route105_Text_1B8DED": "Your body weight is reduced to just\\none tenth in the water.\\pThat would make me...\\nWhoops! I'm not telling you my weight!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 4,
+   "x": 19,
+   "y": 9,
+   "gfx": "OBJ_EVENT_GFX_SWIMMER_F",
+   "movement": "MOVEMENT_TYPE_ROTATE_CLOCKWISE",
+   "range": [
+    0,
+    5
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route105_EventScript_14F317",
+   "texts": {
+    "Route105_Text_1B8E66": "The blue, blue sky...\\nThe vast sea...\\lIt's so peaceful...$",
+    "Route105_Text_1B8EA0": "I lost while I was lounging!$",
+    "Route105_Text_1B8EBD": "I want to be told I'm relaxing to be\\nwith. Giggle.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 5,
+   "x": 8,
+   "y": 73,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_ROUTE105_1",
+   "script": "Route105_EventScript_1B1487",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 6,
+   "x": 12,
+   "y": 51,
+   "gfx": "OBJ_EVENT_GFX_HIKER",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN_AND_UP",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route105_EventScript_14F2BB",
+   "texts": {
+    "Route105_Text_1B8B40": "There's supposed to be a mystical\\nrock around here.\\lDo you know anything about it?$",
+    "Route105_Text_1B8B93": "I was thinking too much about that\\nrock, while my POKéMON remained weak...$",
+    "Route105_Text_1B8BDE": "I can spend hours and hours staring\\nat a nice rock without growing bored.$"
+   },
+   "complex": true
+  }
+ ],
+ "signs": [
+  {
+   "x": 15,
+   "y": 68,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 15,
+    "y": 68,
+    "elevation": 3,
+    "item": "ITEM_HEART_SCALE",
+    "flag": "FLAG_HIDDEN_ITEM_59"
+   }
+  }
+ ],
+ "warps": [
+  {
+   "id": 0,
+   "x": 9,
+   "y": 20,
+   "dest_map": "MAP_ISLAND_CAVE",
+   "dest_warp_id": "0"
+  }
+ ],
+ "coord_events": [],
+ "wild": {
+  "water_mons": {
+   "encounter_rate": 4,
+   "slot_rates": [
+    60,
+    30,
+    5,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 5,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 15,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_PELIPPER",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_PELIPPER",
+     "min": 25,
+     "max": 30
+    }
+   ]
+  },
+  "fishing_mons": {
+   "encounter_rate": 30,
+   "slot_rates": [
+    70,
+    30,
+    60,
+    20,
+    20,
+    40,
+    40,
+    15,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 20,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 35,
+     "max": 40
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 40,
+     "max": 45
+    }
+   ]
+  }
+ }
+}

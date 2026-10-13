@@ -1,0 +1,53 @@
+{
+ "zone": 219,
+ "room": "Underwater4",
+ "cave": true,
+ "cave_auto": true,
+ "area": 340,
+ "dark": false,
+ "header": {
+  "map_type": 16,
+  "npc_cache": 24,
+  "weather_word": 64,
+  "flags": 19715,
+  "icon_word": 32783,
+  "place_display": 1,
+  "bgm0": 1014,
+  "bgm1": 1014,
+  "bgm2": 1014,
+  "bgm3": 1014,
+  "place": 57,
+  "encounters": 8191,
+  "enc_slot": 6
+ },
+ "warps": [
+  {
+   "at": [
+    38,
+    26
+   ],
+   "to": [
+    221,
+    0
+   ],
+   "what": "Sapphire warp 0 (38,26) -> Underwater_SeafloorCavern 0"
+  },
+  {
+   "x": 29,
+   "z": 0,
+   "w": 8,
+   "h": 1,
+   "type": 4,
+   "dir": 2,
+   "to": [
+    218,
+    0
+   ],
+   "what": "Sapphire connection n (x 29-36) -> Underwater3 warp 0"
+  }
+ ],
+ "triggers": [],
+ "npcs": [],
+ "signs": [],
+ "what": "Underwater4: cave (converter/gen_caves.py, b2tools/models_cave.py); story objects: see notes/CAVES.md"
+}

@@ -1,0 +1,69 @@
+{
+ "zone": 590,
+ "room": "RustboroCity_PokemonCenter_2F",
+ "area": 283,
+ "what": "RustboroCity_PokemonCenter_2F: centers agent (b2tools/centers_rooms.py); recipe data/interior_layouts/RustboroCity_PokemonCenter_2F.json",
+ "header": {"parent": 113, "place": 15, "bgm0": 1060, "bgm1": 1060, "bgm2": 1060, "bgm3": 1060},
+ "warps": [
+  {
+   "at": [1, 5],
+   "tile_only": true,
+   "to": [425, 2],
+   "what": "Sapphire warp 0 -> RustboroCity_PokemonCenter_1F 2 (escalator, entered walking west)",
+   "type": 2,
+   "dir": 4
+  },
+  {
+   "at": [5, 1],
+   "tile_only": true,
+   "to": [593, 0],
+   "what": "Sapphire warp 1 -> SingleBattleColosseum 0 (Cable Club door: a solid tile, reached only by script in Sapphire)"
+  },
+  {
+   "at": [8, 1],
+   "tile_only": true,
+   "to": [58, 0],
+   "what": "Sapphire warp 2 -> TradeCenter 0 (Cable Club door: a solid tile, reached only by script in Sapphire)"
+  },
+  {
+   "at": [11, 1],
+   "tile_only": true,
+   "to": [501, 0],
+   "what": "Sapphire warp 3 -> RecordCorner 0 (Cable Club door: a solid tile, reached only by script in Sapphire)"
+  },
+  {
+   "at": [0, 0],
+   "tile_only": true,
+   "to": [33, 0],
+   "what": "Sapphire warp 4 -> DoubleBattleColosseum 0 (Cable Club door: a solid tile, reached only by script in Sapphire)"
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 1,
+   "model": 79,
+   "script": 1,
+   "dir": 1,
+   "at": [4, 2],
+   "_what": "teala (4,2), Sapphire RustboroCity_PokemonCenter_2F_EventScript_157BC1"
+  },
+  {
+   "uid": 2,
+   "model": 79,
+   "script": 2,
+   "dir": 1,
+   "at": [7, 2],
+   "_what": "teala (7,2), Sapphire RustboroCity_PokemonCenter_2F_EventScript_157BC7"
+  },
+  {
+   "uid": 3,
+   "model": 79,
+   "script": 3,
+   "dir": 1,
+   "at": [10, 2],
+   "_what": "teala (10,2), Sapphire RustboroCity_PokemonCenter_2F_EventScript_157BCD"
+  }
+ ],
+ "signs": [],
+ "parent": 113
+}

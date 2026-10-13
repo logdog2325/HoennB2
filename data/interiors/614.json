@@ -1,0 +1,42 @@
+{
+ "_doc": "SlateportCity_House1: zone written by converter/gen_interior_recipes_houses.py (warps and parent from converter/gen_interiors.py); story people left for the story phase: person OLD_MAN_1 at (7,5) SlateportCity_NameRatersHouse_EventScript_NameRater (story/complex script)",
+ "zone": 614,
+ "room": "SlateportCity_House1",
+ "area": 313,
+ "parent": 448,
+ "warps": [
+  {
+   "at": [3, 7],
+   "tile_only": true,
+   "to": [448, 14],
+   "what": "Sapphire warp 0 -> SlateportCity 6"
+  },
+  {
+   "at": [4, 7],
+   "tile_only": true,
+   "to": [448, 14],
+   "what": "Sapphire warp 1 -> SlateportCity 6"
+  }
+ ],
+ "npcs": [],
+ "signs": [
+  {
+   "script": 1,
+   "at": [1, 1],
+   "dir": 4,
+   "what": "PictureBookshelf"
+  },
+  {
+   "script": 2,
+   "at": [8, 1],
+   "dir": 4,
+   "what": "Bookshelf"
+  },
+  {
+   "script": 2,
+   "at": [9, 1],
+   "dir": 4,
+   "what": "Bookshelf"
+  }
+ ]
+}

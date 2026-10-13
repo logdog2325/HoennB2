@@ -1,0 +1,9 @@
+The seasons, the weather, where the\nmoon sits in the sky...{be01}\nThese and other conditions make the\nsea change its expression.{be01}\nThat’s right!\nThe sea is like a living thing!
+I get seasick real easily.\nSo I get to help out here instead.
+Umm... If this goes here, and that\ngoes over there...{be01}\nThen where does this thing go?\nAnd what about that doohickey?{be01}\nAaargh! I can’t make heads or tails\nof this!
+Hm?\nHi, I’m Dock.{be01}\nCapt. Stern commissioned me to\ndesign a ferry.{be01}\nOh! That there...\nAre they Devon Goods?{be01}\nBut, hmm...\nThis won’t do...{be01}\nCapt. Stern went off somewhere.\nHe said he had some work to do.{be01}\nCould I get you to go find Capt.\nStern and deliver that to him?
+Dock: The ferry is finally ready!{be01}\nThe new S.S. Tidal is truly a marvel\nof technology!{be01}\nBut, I get the feeling that we can\nmake something even better.{be01}\nYou know, there’s never an end to\ntechnology’s march.
+Dock: Hi! Mr. Briney’s joined us to\nlend us his help.{be01}\nThanks to the veteran sailor, the\nferry is steadily coming together.
+Dock: Where could Capt. Stern have\ngone off to?{be01}\nCould you go find Capt. Stern and\ndeliver that parcel to him?
+Dock: Shipbuilding is an art.{be01}\nA lot of things can’t be figured out\njust by calculating.{be01}\nI really could use advice from a veteran\nwho knows the seas...
+Mr. Briney: Ah, {0100:0}!\nIt’s been too long!{be01}\nAye, since I met you, this old seadog’s\nbeen feeling frisky!{be01}\nSo I’ve decided to help Dock make a\nferry.{be01}\nAye, after all, a ferry would be able\nto carry a lot of people.{be01}\nBut, you know, that Dock is really\nsomething special.{be01}\nWith his knack for technology and\nmy experience, I’m sure that we can{be00}\nbuild one great ship, aye!

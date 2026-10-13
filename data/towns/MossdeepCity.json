@@ -1,0 +1,46 @@
+{
+ "_doc": "Mossdeep City's buildings (group towns4, notes/TOWNS_TOWNS4.md). The Gym is the shared Gen 3 Gym (res 320, group towns1, front 24): Sapphire's Mossdeep Gym uses Petalburg's gym metatiles (data/plans).",
+ "group": "towns4",
+ "buildings": {
+  "MAP_MOSSDEEP_CITY_HOUSE3": {
+   "res": 386,
+   "front": 20
+  },
+  "MAP_MOSSDEEP_CITY_GYM": {
+   "res": 320,
+   "front": 24
+  },
+  "MAP_MOSSDEEP_CITY_SPACE_CENTER_1F": {
+   "res": 388,
+   "front": 20
+  },
+  "MAP_MOSSDEEP_CITY_HOUSE1": {
+   "res": 386,
+   "front": 20
+  },
+  "MAP_MOSSDEEP_CITY_STEVENS_HOUSE": {
+   "res": 386,
+   "front": 20
+  },
+  "MAP_MOSSDEEP_CITY_HOUSE4": {
+   "res": 386,
+   "front": 20
+  },
+  "MAP_MOSSDEEP_CITY_POKEMON_CENTER_1F": {
+   "res": 0,
+   "front": 20
+  },
+  "MAP_MOSSDEEP_CITY_MART": {
+   "res": 3,
+   "front": 20
+  },
+  "MAP_MOSSDEEP_CITY_GAME_CORNER_1F": {
+   "res": 387,
+   "front": 20
+  },
+  "MAP_MOSSDEEP_CITY_HOUSE2": {
+   "res": 386,
+   "front": 20
+  }
+ }
+}

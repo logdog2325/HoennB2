@@ -1,0 +1,23 @@
+{
+ "_doc": "Lilycove's empty map (zone 202): Sapphire's 1x1 placeholder that the harbor's ferry warps name. Area 351 = Black 2's Humilau (the harbors' area).",
+ "zone": 202,
+ "room": "LilycoveCity_EmptyMap",
+ "area": 351,
+ "parent": 96,
+ "warps": [
+  {
+   "at": [
+    7,
+    5
+   ],
+   "tile_only": true,
+   "to": [
+    203,
+    2
+   ],
+   "what": "Sapphire warp 0 -> LilycoveCity_Harbor 2"
+  }
+ ],
+ "npcs": [],
+ "signs": []
+}

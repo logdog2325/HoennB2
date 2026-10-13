@@ -1,0 +1,209 @@
+{
+ "map": "FallarborTown",
+ "id": "MAP_FALLARBOR_TOWN",
+ "layout": "LAYOUT_FALLARBOR_TOWN",
+ "music": "MUS_FALLARBOR",
+ "region_map_section": "MAPSEC_FALLARBOR_TOWN",
+ "weather": "WEATHER_SUNNY",
+ "connections": [
+  {
+   "map": "MAP_ROUTE114",
+   "offset": 0,
+   "direction": "left"
+  },
+  {
+   "map": "MAP_ROUTE113",
+   "offset": 0,
+   "direction": "right"
+  }
+ ],
+ "npcs": [
+  {
+   "local_id": 1,
+   "x": 8,
+   "y": 11,
+   "gfx": "OBJ_EVENT_GFX_GIRL_1",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "FallarborTown_EventScript_Girl",
+   "texts": {
+    "FallarborTown_Text_MyPreciousAzurill": "See! Take a look!\\nThis is my precious AZURILL!\\pIt's slick and smooth and plushy, too!$"
+   }
+  },
+  {
+   "local_id": 2,
+   "x": 11,
+   "y": 9,
+   "gfx": "OBJ_EVENT_GFX_EXPERT_M",
+   "movement": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
+   "range": [
+    1,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "FallarborTown_EventScript_ExpertM",
+   "texts": {
+    "FallarborTown_Text_ShadyCharactersCozmosHome": "Something's happening,\\nand I don't like it!\\pI've seen shady characters wandering\\nin and out of PROF. COZMO's home…$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 3,
+   "x": 11,
+   "y": 15,
+   "gfx": "OBJ_EVENT_GFX_GENTLEMAN",
+   "movement": "MOVEMENT_TYPE_WANDER_UP_AND_DOWN",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "FallarborTown_EventScript_Gentleman",
+   "texts": {
+    "FallarborTown_Text_HaveYouChallengedFlannery": "Have you already challenged FLANNERY,\\nthe LEADER of LAVARIDGE GYM?\\pThe girl's grandfather was famous.\\nHe was one of the ELITE FOUR in the\\lPOKéMON LEAGUE at one point.\\pIt wouldn't surprise me to see FLANNERY\\nbecome a great TRAINER in her own\\lright.$"
+   }
+  },
+  {
+   "local_id": 4,
+   "x": 8,
+   "y": 12,
+   "gfx": "OBJ_EVENT_GFX_AZURILL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_FALLARBOR_AZURILL",
+   "script": "FallarborTown_EventScript_Azurill",
+   "texts": {
+    "FallarborTown_Text_Azurill": "AZURILL: Rooreelooo.$"
+   },
+   "complex": true
+  }
+ ],
+ "signs": [
+  {
+   "x": 16,
+   "y": 15,
+   "facing": "BG_EVENT_PLAYER_FACING_NORTH",
+   "script": "Common_EventScript_ShowPokemartSign",
+   "texts": {
+    "gText_PokemartSign": "“Selected items for your convenience!”\\nPOKéMON MART$"
+   }
+  },
+  {
+   "x": 15,
+   "y": 7,
+   "facing": "BG_EVENT_PLAYER_FACING_NORTH",
+   "script": "Common_EventScript_ShowPokemonCenterSign",
+   "texts": {
+    "gText_PokemonCenterSign": "“Rejuvenate your tired partners!”\\nPOKéMON CENTER$"
+   }
+  },
+  {
+   "x": 6,
+   "y": 8,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "FallarborTown_EventScript_BattleTentSign",
+   "texts": {
+    "FallarborTown_Text_BattleTentSign": "BATTLE TENT FALLARBOR SITE\\n“May the Greatest Teams Gather!”$"
+   }
+  },
+  {
+   "x": 16,
+   "y": 7,
+   "facing": "BG_EVENT_PLAYER_FACING_NORTH",
+   "script": "Common_EventScript_ShowPokemonCenterSign",
+   "texts": {
+    "gText_PokemonCenterSign": "“Rejuvenate your tired partners!”\\nPOKéMON CENTER$"
+   }
+  },
+  {
+   "x": 10,
+   "y": 11,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "FallarborTown_EventScript_TownSign",
+   "texts": {
+    "FallarborTown_Text_TownSign": "FALLARBOR TOWN\\n“A farm community with small gardens.”$"
+   }
+  },
+  {
+   "x": 17,
+   "y": 15,
+   "facing": "BG_EVENT_PLAYER_FACING_NORTH",
+   "script": "Common_EventScript_ShowPokemartSign",
+   "texts": {
+    "gText_PokemartSign": "“Selected items for your convenience!”\\nPOKéMON MART$"
+   }
+  },
+  {
+   "x": 3,
+   "y": 7,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "FallarborTown_EventScript_MoveTutorSign",
+   "texts": {
+    "FallarborTown_Text_MoveTutorSign": "MOVE TUTOR'S HOUSE\\n“New moves taught to POKéMON.”$"
+   }
+  },
+  {
+   "x": 2,
+   "y": 15,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 2,
+    "y": 15,
+    "elevation": 3,
+    "item": "ITEM_NUGGET",
+    "flag": "FLAG_HIDDEN_ITEM_FALLARBOR_TOWN_NUGGET"
+   }
+  }
+ ],
+ "warps": [
+  {
+   "id": 0,
+   "x": 15,
+   "y": 15,
+   "dest_map": "MAP_FALLARBOR_TOWN_MART",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 1,
+   "x": 8,
+   "y": 7,
+   "dest_map": "MAP_FALLARBOR_TOWN_BATTLE_TENT_LOBBY",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 2,
+   "x": 14,
+   "y": 7,
+   "dest_map": "MAP_FALLARBOR_TOWN_POKEMON_CENTER_1F",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 3,
+   "x": 6,
+   "y": 17,
+   "dest_map": "MAP_FALLARBOR_TOWN_COZMOS_HOUSE",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 4,
+   "x": 1,
+   "y": 6,
+   "dest_map": "MAP_FALLARBOR_TOWN_MOVE_RELEARNERS_HOUSE",
+   "dest_warp_id": "0"
+  }
+ ],
+ "coord_events": [],
+ "wild": {}
+}

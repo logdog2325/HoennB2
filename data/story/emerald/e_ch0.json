@@ -1,0 +1,199 @@
+{
+ "_doc": "Emerald Ch0 (emerald_ch0_3 2026-10-12): the rival's introduction in the two Littleroot houses (notes/EMERALD_STORY.md Ch0; scripts scenes/emerald/players_house_1f.inc and _2f.inc). Positions are pokeemerald's own tiles (the rooms are the same size and place in both versions).",
+ "objects": [
+  {
+   "kind": "npc",
+   "map": "LittlerootTown_BrendansHouse_1F",
+   "at": [
+    8,
+    8
+   ],
+   "uid": 6,
+   "model": 1,
+   "script": 4,
+   "dir": 0,
+   "flag": "FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_BRENDAN",
+   "move": 14,
+   "what": "Brendan at the front door, hidden until the meeting (pokeemerald LOCALID_RIVALS_HOUSE_1F_RIVAL, MovementType FACE_UP; script 4 = nothing)"
+  },
+  {
+   "kind": "npc",
+   "map": "LittlerootTown_BrendansHouse_1F",
+   "at": [
+    1,
+    5
+   ],
+   "uid": 7,
+   "model": 8,
+   "script": 10,
+   "dir": 3,
+   "flag": "FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_RIVAL_SIBLING",
+   "move": 5,
+   "areaw": 1,
+   "areah": 1,
+   "what": "the rival's little brother (NINJA_BOY -> LITTLE_BOY_1 sprite 8), wanders left and right (RivalsHouse_1F_EventScript_RivalSibling; hidden in the player's own house)"
+  },
+  {
+   "kind": "trigger",
+   "map": "LittlerootTown_BrendansHouse_1F",
+   "at": [
+    7,
+    3
+   ],
+   "script": 7,
+   "var": "VAR_LITTLEROOT_RIVAL_STATE",
+   "value": 2,
+   "what": "MeetRival0 (7,3): VAR_LITTLEROOT_RIVAL_STATE 2"
+  },
+  {
+   "kind": "trigger",
+   "map": "LittlerootTown_BrendansHouse_1F",
+   "at": [
+    8,
+    4
+   ],
+   "script": 8,
+   "var": "VAR_LITTLEROOT_RIVAL_STATE",
+   "value": 2,
+   "what": "MeetRival1 (8,4): VAR_LITTLEROOT_RIVAL_STATE 2"
+  },
+  {
+   "kind": "trigger",
+   "map": "LittlerootTown_BrendansHouse_1F",
+   "at": [
+    9,
+    3
+   ],
+   "script": 9,
+   "var": "VAR_LITTLEROOT_RIVAL_STATE",
+   "value": 2,
+   "what": "MeetRival2 (9,3): VAR_LITTLEROOT_RIVAL_STATE 2"
+  },
+  {
+   "kind": "npc",
+   "map": "LittlerootTown_MaysHouse_1F",
+   "at": [
+    2,
+    8
+   ],
+   "uid": 6,
+   "model": 4,
+   "script": 4,
+   "dir": 0,
+   "flag": "FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_MAY",
+   "move": 14,
+   "what": "May at the front door, hidden until the meeting (pokeemerald LOCALID_RIVALS_HOUSE_1F_RIVAL, MovementType FACE_UP; script 4 = nothing)"
+  },
+  {
+   "kind": "npc",
+   "map": "LittlerootTown_MaysHouse_1F",
+   "at": [
+    9,
+    5
+   ],
+   "uid": 7,
+   "model": 8,
+   "script": 10,
+   "dir": 3,
+   "flag": "FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_RIVAL_SIBLING",
+   "move": 5,
+   "areaw": 1,
+   "areah": 1,
+   "what": "the rival's little brother (NINJA_BOY -> LITTLE_BOY_1 sprite 8), wanders left and right (RivalsHouse_1F_EventScript_RivalSibling; hidden in the player's own house)"
+  },
+  {
+   "kind": "trigger",
+   "map": "LittlerootTown_MaysHouse_1F",
+   "at": [
+    1,
+    3
+   ],
+   "script": 7,
+   "var": "VAR_LITTLEROOT_RIVAL_STATE",
+   "value": 2,
+   "what": "MeetRival0 (1,3): VAR_LITTLEROOT_RIVAL_STATE 2"
+  },
+  {
+   "kind": "trigger",
+   "map": "LittlerootTown_MaysHouse_1F",
+   "at": [
+    2,
+    4
+   ],
+   "script": 8,
+   "var": "VAR_LITTLEROOT_RIVAL_STATE",
+   "value": 2,
+   "what": "MeetRival1 (2,4): VAR_LITTLEROOT_RIVAL_STATE 2"
+  },
+  {
+   "kind": "trigger",
+   "map": "LittlerootTown_MaysHouse_1F",
+   "at": [
+    3,
+    3
+   ],
+   "script": 9,
+   "var": "VAR_LITTLEROOT_RIVAL_STATE",
+   "value": 2,
+   "what": "MeetRival2 (3,3): VAR_LITTLEROOT_RIVAL_STATE 2"
+  },
+  {
+   "kind": "npc",
+   "map": "LittlerootTown_BrendansHouse_2F",
+   "at": [
+    7,
+    2
+   ],
+   "uid": 25,
+   "model": 1,
+   "script": 21,
+   "dir": 1,
+   "flag": "FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_RIVAL_BEDROOM",
+   "move": 15,
+   "what": "Brendan in the room: appears on the tile in front of the stairs at the meeting, then stands at the PC (zone init, Sub_Em_2FInit); script 21 = 'Pokémon fully restored...'"
+  },
+  {
+   "kind": "npc",
+   "map": "LittlerootTown_BrendansHouse_2F",
+   "at": [
+    3,
+    4
+   ],
+   "uid": 26,
+   "model": 110,
+   "script": 9,
+   "dir": 1,
+   "flag": "FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F_POKE_BALL",
+   "what": "Brendan's Poké Ball on the table (RivalsPokeBall: examine it to meet the rival; hidden in the player's own room)"
+  },
+  {
+   "kind": "npc",
+   "map": "LittlerootTown_MaysHouse_2F",
+   "at": [
+    1,
+    2
+   ],
+   "uid": 25,
+   "model": 4,
+   "script": 21,
+   "dir": 1,
+   "flag": "FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_RIVAL_BEDROOM",
+   "move": 15,
+   "what": "May in the room: appears on the tile in front of the stairs at the meeting, then stands at the PC (zone init, Sub_Em_2FInit); script 21 = 'Pokémon fully restored...'"
+  },
+  {
+   "kind": "npc",
+   "map": "LittlerootTown_MaysHouse_2F",
+   "at": [
+    5,
+    4
+   ],
+   "uid": 26,
+   "model": 110,
+   "script": 9,
+   "dir": 1,
+   "flag": "FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_2F_POKE_BALL",
+   "what": "May's Poké Ball on the table (RivalsPokeBall: examine it to meet the rival; hidden in the player's own room)"
+  }
+ ]
+}

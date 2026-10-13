@@ -1,0 +1,299 @@
+{
+ "map": "DewfordTown",
+ "id": "MAP_DEWFORD_TOWN",
+ "layout": "LAYOUT_DEWFORD_TOWN",
+ "music": "MUS_DEWFORD",
+ "region_map_section": "MAPSEC_DEWFORD_TOWN",
+ "weather": "WEATHER_SUNNY",
+ "connections": [
+  {
+   "map": "MAP_ROUTE106",
+   "offset": -60,
+   "direction": "up"
+  },
+  {
+   "map": "MAP_ROUTE107",
+   "offset": 0,
+   "direction": "right"
+  }
+ ],
+ "npcs": [
+  {
+   "local_id": 1,
+   "x": 7,
+   "y": 12,
+   "gfx": "OBJ_EVENT_GFX_WOMAN_2",
+   "movement": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
+   "range": [
+    1,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "DewfordTown_EventScript_Woman",
+   "texts": {
+    "DewfordTown_Text_TinyIslandCommunity": "DEWFORD is a tiny island community.\\nIf something gets trendy here,\\leveryone picks up on it right away.$"
+   }
+  },
+  {
+   "local_id": 2,
+   "x": 12,
+   "y": 9,
+   "gfx": "OBJ_EVENT_GFX_EXPERT_M",
+   "movement": "MOVEMENT_TYPE_FACE_LEFT",
+   "range": [
+    0,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_MR_BRINEY_DEWFORD_TOWN",
+   "script": "DewfordTown_EventScript_Briney",
+   "texts": {
+    "DewfordTown_Text_WhereAreWeBound": "MR. BRINEY: Ahoy!\\nFor you, I'll go out to sea anytime!\\pNow, my friend, where are we bound?$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 3,
+   "x": 12,
+   "y": 14,
+   "gfx": "OBJ_EVENT_GFX_FISHERMAN",
+   "movement": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
+   "range": [
+    1,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "DewfordTown_EventScript_OldRodFisherman",
+   "texts": {
+    "DewfordTown_Text_GettingItchToFish": "This is a renowned fishing spot.\\nAre you getting the itch to fish?$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 4,
+   "x": 12,
+   "y": 8,
+   "gfx": "OBJ_EVENT_GFX_MR_BRINEYS_BOAT",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_MR_BRINEY_BOAT_DEWFORD_TOWN",
+   "script": "0x0",
+   "missing": true
+  },
+  {
+   "local_id": 5,
+   "x": 1,
+   "y": 6,
+   "gfx": "OBJ_EVENT_GFX_BOY_1",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "DewfordTown_EventScript_TrendyPhraseBoy",
+   "texts": {
+    "DewfordTown_Text_XIsTheBiggestHappeningThingRight": "I like what's hip, happening, and trendy.\\nI'm always checking it out.\\pListen, have you heard about this new\\n“{STR_VAR_1}”?\\pThat's right!\\nOf course you know!\\pI mean, sheesh,\\n“{STR_VAR_1}”…\\lIt's the hottest thing in cool!\\pWherever you're from,\\n“{STR_VAR_1}”\\lis the biggest happening thing, right?$"
+   },
+   "complex": true
+  }
+ ],
+ "signs": [
+  {
+   "x": 10,
+   "y": 10,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "DewfordTown_EventScript_TownSign",
+   "texts": {
+    "DewfordTown_Text_TownSign": "DEWFORD TOWN\\n“A tiny island in the blue sea.”$"
+   }
+  },
+  {
+   "x": 11,
+   "y": 16,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "DewfordTown_EventScript_GymSign",
+   "texts": {
+    "DewfordTown_Text_GymSign": "DEWFORD TOWN POKéMON GYM\\nLEADER: BRAWLY\\l“A big wave in fighting!”$"
+   }
+  },
+  {
+   "x": 4,
+   "y": 10,
+   "facing": "BG_EVENT_PLAYER_FACING_NORTH",
+   "script": "Common_EventScript_ShowPokemonCenterSign",
+   "texts": {
+    "gText_PokemonCenterSign": "“Rejuvenate your tired partners!”\\nPOKéMON CENTER$"
+   }
+  },
+  {
+   "x": 3,
+   "y": 10,
+   "facing": "BG_EVENT_PLAYER_FACING_NORTH",
+   "script": "Common_EventScript_ShowPokemonCenterSign",
+   "texts": {
+    "gText_PokemonCenterSign": "“Rejuvenate your tired partners!”\\nPOKéMON CENTER$"
+   }
+  },
+  {
+   "x": 2,
+   "y": 4,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "DewfordTown_EventScript_HallSign",
+   "texts": {
+    "DewfordTown_Text_HallSign": "DEWFORD HALL\\n“Everyone's information exchange!”$"
+   }
+  }
+ ],
+ "warps": [
+  {
+   "id": 0,
+   "x": 3,
+   "y": 3,
+   "dest_map": "MAP_DEWFORD_TOWN_HALL",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 1,
+   "x": 2,
+   "y": 10,
+   "dest_map": "MAP_DEWFORD_TOWN_POKEMON_CENTER_1F",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 2,
+   "x": 8,
+   "y": 17,
+   "dest_map": "MAP_DEWFORD_TOWN_GYM",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 3,
+   "x": 17,
+   "y": 14,
+   "dest_map": "MAP_DEWFORD_TOWN_HOUSE1",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 4,
+   "x": 8,
+   "y": 8,
+   "dest_map": "MAP_DEWFORD_TOWN_HOUSE2",
+   "dest_warp_id": "0"
+  }
+ ],
+ "coord_events": [],
+ "wild": {
+  "water_mons": {
+   "encounter_rate": 4,
+   "slot_rates": [
+    60,
+    30,
+    5,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 5,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 15,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_PELIPPER",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_PELIPPER",
+     "min": 25,
+     "max": 30
+    }
+   ]
+  },
+  "fishing_mons": {
+   "encounter_rate": 10,
+   "slot_rates": [
+    70,
+    30,
+    60,
+    20,
+    20,
+    40,
+    40,
+    15,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 20,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 35,
+     "max": 40
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 40,
+     "max": 45
+    }
+   ]
+  }
+ }
+}

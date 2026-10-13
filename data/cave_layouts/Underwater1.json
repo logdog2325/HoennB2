@@ -1,0 +1,6 @@
+{
+ "map": "Underwater1",
+ "look": "uw",
+ "underwater": true,
+ "uw_effect": false
+}

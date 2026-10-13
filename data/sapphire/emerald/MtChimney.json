@@ -1,0 +1,605 @@
+{
+ "map": "MtChimney",
+ "id": "MAP_MT_CHIMNEY",
+ "layout": "LAYOUT_MT_CHIMNEY",
+ "music": "MUS_MT_CHIMNEY",
+ "region_map_section": "MAPSEC_MT_CHIMNEY",
+ "weather": "WEATHER_VOLCANIC_ASH",
+ "connections": null,
+ "npcs": [
+  {
+   "local_id": 1,
+   "x": 24,
+   "y": 19,
+   "gfx": "OBJ_EVENT_GFX_ARCHIE",
+   "movement": "MOVEMENT_TYPE_FACE_LEFT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_MT_CHIMNEY_TEAM_AQUA",
+   "script": "MtChimney_EventScript_Archie",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 2,
+   "x": 13,
+   "y": 6,
+   "gfx": "OBJ_EVENT_GFX_MAXIE",
+   "movement": "MOVEMENT_TYPE_FACE_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_MT_CHIMNEY_TEAM_MAGMA",
+   "script": "MtChimney_EventScript_Maxie",
+   "texts": {
+    "MtChimney_Text_MeteoriteWillActivateVolcano": "The power contained in the METEORITE…\\pBy amplifying its power with this\\nmachine, MT. CHIMNEY's volcanic\\lactivity will instantly intensify…\\pIts energy will grow deep inside\\nthe crater and…\\lFufufu…$",
+    "MtChimney_Text_MaxieIntro": "MAXIE: Hm?\\nWho are you?\\p… … … … … …\\n… … … … … …\\pI'd heard ARCHIE bemoaning a child\\nwho's been meddling in TEAM AQUA's\\laffairs.\\pIt must be you he meant.\\pHumph! So you're thinking of\\ninterfering with us, TEAM MAGMA?\\pNow you listen.\\nLong ago, living things used the\\lland to live and grow.\\pThat is why land is all important!\\nIt is the cradle of all!\\pThat is why TEAM MAGMA is dedicated\\nto the expansion of the land mass.\\pIt is for further advancement of\\nhumankind and POKéMON!\\pAnd for that, we need the power of\\nwhat sleeps within this mountain…\\pOh! There was no need for you to\\nlearn that much.\\pBut, no matter!\\nI'll teach you the consequences of\\lmeddling in our grand design!$",
+    "MtChimney_Text_MaxieDefeat": "What?!\\pI, MAXIE, was caught off guard?!$",
+    "MtChimney_Text_MaxieYouHaventSeenLastOfMagma": "MAXIE: But, enough.\\nI will back off this time.\\pBut don't think that this is the last\\nyou've seen of TEAM MAGMA.\\pFufufu…\\pEven without the METEORITE, if we\\nobtain that ORB… Fufufu…$",
+    "MtChimney_Text_ArchieThankYou": "ARCHIE: {PLAYER}!\\nThank you!\\pWith your help, we thwarted TEAM\\nMAGMA's destructive plan!\\pBut… You…\\nWhose side are you on?\\pAh, it doesn't matter.\\pWe will remain vigilant and keep up\\nour pursuit of TEAM MAGMA.\\p{PLAYER}, we shall meet again!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 3,
+   "x": 12,
+   "y": 11,
+   "gfx": "OBJ_EVENT_GFX_MAGMA_MEMBER_M",
+   "movement": "MOVEMENT_TYPE_FACE_LEFT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "FLAG_HIDE_MT_CHIMNEY_TEAM_MAGMA",
+   "script": "MtChimney_EventScript_Tabitha",
+   "texts": {
+    "MtChimney_Text_TabithaIntro": "Hehehe!\\pSo you've come all the way here!\\pBut you're too late!\\nI've already delivered the METEORITE\\lfrom METEOR FALLS to the BOSS!$",
+    "MtChimney_Text_TabithaDefeat": "Hehehe…\\pEven though I've lost, if our leader\\nawakens that thing…$",
+    "MtChimney_Text_TabithaPostBattle": "BOSS, hurry!\\nGive it the METEORITE's energy!\\pHehehe…$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 4,
+   "x": 32,
+   "y": 5,
+   "gfx": "OBJ_EVENT_GFX_MAGMA_MEMBER_M",
+   "movement": "MOVEMENT_TYPE_FACE_LEFT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_MT_CHIMNEY_TEAM_MAGMA",
+   "script": "MtChimney_EventScript_BusyMagmaGrunt5",
+   "texts": {
+    "MtChimney_Text_DouseThemInFire": "Yeah!\\nDouse them in fire!$"
+   }
+  },
+  {
+   "local_id": 5,
+   "x": 28,
+   "y": 12,
+   "gfx": "OBJ_EVENT_GFX_MAGMA_MEMBER_M",
+   "movement": "MOVEMENT_TYPE_FACE_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_MT_CHIMNEY_TEAM_MAGMA",
+   "script": "MtChimney_EventScript_BusyMagmaGrunt4",
+   "texts": {
+    "MtChimney_Text_AquasNameSimilar": "We're TEAM MAGMA!\\pThey're TEAM AQUA!\\pIt totally annoys me that they'd\\nuse a name like ours!$"
+   }
+  },
+  {
+   "local_id": 6,
+   "x": 19,
+   "y": 39,
+   "gfx": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
+   "movement": "MOVEMENT_TYPE_FACE_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_MT_CHIMNEY_TEAM_AQUA",
+   "script": "MtChimney_EventScript_BusyAquaGrunt2",
+   "texts": {
+    "MtChimney_Text_LessHabitatForWaterPokemon": "If they expand the land, there'll be\\nless habitats for WATER POKéMON!$"
+   }
+  },
+  {
+   "local_id": 7,
+   "x": 29,
+   "y": 5,
+   "gfx": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
+   "movement": "MOVEMENT_TYPE_FACE_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_MT_CHIMNEY_TEAM_AQUA",
+   "script": "MtChimney_EventScript_BusyAquaGrunt1",
+   "texts": {
+    "MtChimney_Text_MagmaOutnumbersUs": "Darn… TEAM MAGMA outnumbers us!\\nWe can't keep up with them!$"
+   }
+  },
+  {
+   "local_id": 8,
+   "x": 31,
+   "y": 12,
+   "gfx": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
+   "movement": "MOVEMENT_TYPE_FACE_LEFT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_MT_CHIMNEY_TEAM_AQUA",
+   "script": "MtChimney_EventScript_BusyAquaGrunt3",
+   "texts": {
+    "MtChimney_Text_MagmasNameSimilar": "We're TEAM AQUA!\\pThey're TEAM MAGMA!\\pIt burns me up that they'd use such\\na confusing name!$"
+   }
+  },
+  {
+   "local_id": 9,
+   "x": 19,
+   "y": 39,
+   "gfx": "OBJ_EVENT_GFX_OLD_WOMAN",
+   "movement": "MOVEMENT_TYPE_FACE_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_MT_CHIMNEY_LAVA_COOKIE_LADY",
+   "script": "MtChimney_EventScript_LavaCookieLady",
+   "texts": {
+    "MtChimney_Text_LavaCookiesJust200": "LAVA COOKIES are MT. CHIMNEY's local\\nspecialty.\\pTry one. It's just ¥200.$",
+    "MtChimney_Text_ThankYouDear": "Thank you, dear!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 10,
+   "x": 22,
+   "y": 39,
+   "gfx": "OBJ_EVENT_GFX_MAGMA_MEMBER_M",
+   "movement": "MOVEMENT_TYPE_FACE_LEFT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_MT_CHIMNEY_TEAM_MAGMA",
+   "script": "MtChimney_EventScript_BusyMagmaGrunt6",
+   "texts": {
+    "MtChimney_Text_KeepMakingMoreLand": "We're going to keep making more land!$"
+   }
+  },
+  {
+   "local_id": 11,
+   "x": 23,
+   "y": 19,
+   "gfx": "OBJ_EVENT_GFX_POOCHYENA",
+   "movement": "MOVEMENT_TYPE_RUN_IN_PLACE_LEFT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_MT_CHIMNEY_TEAM_AQUA",
+   "script": "MtChimney_EventScript_AquaPoochyena",
+   "texts": {
+    "MtChimney_Text_Bushaa": "Bushaa!$"
+   }
+  },
+  {
+   "local_id": 12,
+   "x": 23,
+   "y": 18,
+   "gfx": "OBJ_EVENT_GFX_POOCHYENA",
+   "movement": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_MT_CHIMNEY_TEAM_MAGMA",
+   "script": "MtChimney_EventScript_MagmaPoochyena",
+   "texts": {
+    "MtChimney_Text_Bufoh": "Bufoh!$"
+   }
+  },
+  {
+   "local_id": 13,
+   "x": 23,
+   "y": 17,
+   "gfx": "OBJ_EVENT_GFX_MAGMA_MEMBER_M",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_MT_CHIMNEY_TEAM_MAGMA",
+   "script": "MtChimney_EventScript_BusyMagmaGrunt2",
+   "texts": {
+    "MtChimney_Text_MeteoritesPackAmazingPower": "METEORITES pack amazing power!$"
+   }
+  },
+  {
+   "local_id": 14,
+   "x": 23,
+   "y": 20,
+   "gfx": "OBJ_EVENT_GFX_POOCHYENA",
+   "movement": "MOVEMENT_TYPE_WALK_IN_PLACE_UP",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_MT_CHIMNEY_TEAM_MAGMA",
+   "script": "MtChimney_EventScript_MagmaPoochyena",
+   "texts": {
+    "MtChimney_Text_Bufoh": "Bufoh!$"
+   }
+  },
+  {
+   "local_id": 15,
+   "x": 22,
+   "y": 19,
+   "gfx": "OBJ_EVENT_GFX_POOCHYENA",
+   "movement": "MOVEMENT_TYPE_WALK_IN_PLACE_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_MT_CHIMNEY_TEAM_MAGMA",
+   "script": "MtChimney_EventScript_MagmaPoochyena",
+   "texts": {
+    "MtChimney_Text_Bufoh": "Bufoh!$"
+   }
+  },
+  {
+   "local_id": 16,
+   "x": 23,
+   "y": 21,
+   "gfx": "OBJ_EVENT_GFX_MAGMA_MEMBER_M",
+   "movement": "MOVEMENT_TYPE_FACE_UP",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_MT_CHIMNEY_TEAM_MAGMA",
+   "script": "MtChimney_EventScript_BusyMagmaGrunt3",
+   "texts": {
+    "MtChimney_Text_YouBetterNotMessWithUs": "You'd better not mess with us!\\pWe're trying to awaken that thing\\nfor the benefit of everyone!$"
+   }
+  },
+  {
+   "local_id": 17,
+   "x": 21,
+   "y": 19,
+   "gfx": "OBJ_EVENT_GFX_MAGMA_MEMBER_M",
+   "movement": "MOVEMENT_TYPE_FACE_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_MT_CHIMNEY_TEAM_MAGMA",
+   "script": "MtChimney_EventScript_BusyMagmaGrunt1",
+   "texts": {
+    "MtChimney_Text_TeamAquaAlwaysMessingWithPlans": "That annoying TEAM AQUA…\\nThey always mess with our plans!$"
+   }
+  },
+  {
+   "local_id": 18,
+   "x": 30,
+   "y": 12,
+   "gfx": "OBJ_EVENT_GFX_POOCHYENA",
+   "movement": "MOVEMENT_TYPE_WALK_IN_PLACE_LEFT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_MT_CHIMNEY_TEAM_AQUA",
+   "script": "MtChimney_EventScript_AquaPoochyena",
+   "texts": {
+    "MtChimney_Text_Bushaa": "Bushaa!$"
+   }
+  },
+  {
+   "local_id": 19,
+   "x": 29,
+   "y": 12,
+   "gfx": "OBJ_EVENT_GFX_POOCHYENA",
+   "movement": "MOVEMENT_TYPE_WALK_IN_PLACE_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_MT_CHIMNEY_TEAM_MAGMA",
+   "script": "MtChimney_EventScript_MagmaPoochyena",
+   "texts": {
+    "MtChimney_Text_Bufoh": "Bufoh!$"
+   }
+  },
+  {
+   "local_id": 20,
+   "x": 30,
+   "y": 5,
+   "gfx": "OBJ_EVENT_GFX_POOCHYENA",
+   "movement": "MOVEMENT_TYPE_WALK_IN_PLACE_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_MT_CHIMNEY_TEAM_AQUA",
+   "script": "MtChimney_EventScript_AquaPoochyena",
+   "texts": {
+    "MtChimney_Text_Bushaa": "Bushaa!$"
+   }
+  },
+  {
+   "local_id": 21,
+   "x": 31,
+   "y": 5,
+   "gfx": "OBJ_EVENT_GFX_POOCHYENA",
+   "movement": "MOVEMENT_TYPE_WALK_IN_PLACE_LEFT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_MT_CHIMNEY_TEAM_MAGMA",
+   "script": "MtChimney_EventScript_MagmaPoochyena",
+   "texts": {
+    "MtChimney_Text_Bufoh": "Bufoh!$"
+   }
+  },
+  {
+   "local_id": 22,
+   "x": 9,
+   "y": 16,
+   "gfx": "OBJ_EVENT_GFX_MAGMA_MEMBER_M",
+   "movement": "MOVEMENT_TYPE_FACE_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "FLAG_HIDE_MT_CHIMNEY_TEAM_MAGMA",
+   "script": "MtChimney_EventScript_Grunt2",
+   "texts": {
+    "MtChimney_Text_Grunt2Intro": "We of TEAM MAGMA are working hard for\\neveryone's sake.\\pLike, if that thing's power made more\\nland, there'd be more places to live.\\pEveryone'd be happy!$",
+    "MtChimney_Text_Grunt2Defeat": "Hunh?\\nWhat do you mean I lost?$",
+    "MtChimney_Text_Grunt2PostBattle": "Our BOSS says, “It will make everyone\\nhappy.”\\pBut why does everyone keep getting\\nin our way?$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 23,
+   "x": 20,
+   "y": 39,
+   "gfx": "OBJ_EVENT_GFX_POOCHYENA",
+   "movement": "MOVEMENT_TYPE_WALK_IN_PLACE_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_MT_CHIMNEY_TEAM_AQUA",
+   "script": "MtChimney_EventScript_AquaPoochyena",
+   "texts": {
+    "MtChimney_Text_Bushaa": "Bushaa!$"
+   }
+  },
+  {
+   "local_id": 24,
+   "x": 21,
+   "y": 39,
+   "gfx": "OBJ_EVENT_GFX_POOCHYENA",
+   "movement": "MOVEMENT_TYPE_WALK_IN_PLACE_LEFT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_MT_CHIMNEY_TEAM_MAGMA",
+   "script": "MtChimney_EventScript_MagmaPoochyena",
+   "texts": {
+    "MtChimney_Text_Bufoh": "Bufoh!$"
+   }
+  },
+  {
+   "local_id": 25,
+   "x": 16,
+   "y": 18,
+   "gfx": "OBJ_EVENT_GFX_EXPERT_F",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN_AND_UP",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "FLAG_HIDE_MT_CHIMNEY_TRAINERS",
+   "script": "MtChimney_EventScript_Shelby",
+   "texts": {
+    "MtChimney_Text_ShelbyIntro": "I've been to the hot springs and\\nrefreshed my tired bones.\\lRight now I'm feeling strong!$",
+    "MtChimney_Text_ShelbyDefeat": "Oh, my goodness.\\nNow, aren't you something!$",
+    "MtChimney_Text_ShelbyPostBattle": "Well, well, I've lost. I can't call\\nmyself an EXPERT now, can I?$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 26,
+   "x": 14,
+   "y": 7,
+   "gfx": "OBJ_EVENT_GFX_BEAUTY",
+   "movement": "MOVEMENT_TYPE_JOG_IN_PLACE_LEFT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "FLAG_HIDE_MT_CHIMNEY_TRAINERS",
+   "script": "MtChimney_EventScript_Melissa",
+   "texts": {
+    "MtChimney_Text_MelissaIntro": "I've got the fire in me, baby.\\nI can't stand it! I have to battle!$",
+    "MtChimney_Text_MelissaDefeat": "Ooh, that was a scorching-hot match!$",
+    "MtChimney_Text_MelissaPostBattle": "The heat of MT. CHIMNEY warms\\nme up, baby!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 27,
+   "x": 29,
+   "y": 7,
+   "gfx": "OBJ_EVENT_GFX_BEAUTY",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN_AND_LEFT",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "FLAG_HIDE_MT_CHIMNEY_TRAINERS",
+   "script": "MtChimney_EventScript_Sheila",
+   "texts": {
+    "MtChimney_Text_SheilaIntro": "I've finally made it to MT. CHIMNEY.\\nI want to make my POKéMON battle!$",
+    "MtChimney_Text_SheilaDefeat": "The way you battle…\\nIt's like a MT. CHIMNEY eruption!$",
+    "MtChimney_Text_SheilaPostBattle": "Like I said, I've finally made it to\\nMT. CHIMNEY. It would be a shame if\\lI only do a little sightseeing…\\pI want to get in some battles and buy\\nCOOKIES as souvenirs.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 28,
+   "x": 27,
+   "y": 17,
+   "gfx": "OBJ_EVENT_GFX_BEAUTY",
+   "movement": "MOVEMENT_TYPE_FACE_UP_AND_RIGHT",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "FLAG_HIDE_MT_CHIMNEY_TRAINERS",
+   "script": "MtChimney_EventScript_Shirley",
+   "texts": {
+    "MtChimney_Text_ShirleyIntro": "Since I bathed in the hot springs,\\nI've been feeling great!\\lI'm sure I'm going to win!$",
+    "MtChimney_Text_ShirleyDefeat": "Yowch!\\nI'm getting a chill out of the water.$",
+    "MtChimney_Text_ShirleyPostBattle": "I'll have to take another dip in the\\nhot springs. Want to join me?\\pJust joking!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 29,
+   "x": 13,
+   "y": 16,
+   "gfx": "OBJ_EVENT_GFX_MAGMA_MEMBER_F",
+   "movement": "MOVEMENT_TYPE_FACE_LEFT",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "FLAG_HIDE_MT_CHIMNEY_TEAM_MAGMA",
+   "script": "MtChimney_EventScript_Grunt1",
+   "texts": {
+    "MtChimney_Text_Grunt1Intro": "If there were more land, I'd be able\\nto get a big house of my own!\\pI'm going to build it on hardened lava!$",
+    "MtChimney_Text_Grunt1Defeat": "My dream of a big house…$",
+    "MtChimney_Text_Grunt1PostBattle": "A kid like you, you ought to be\\nsplashing about in the waves!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 30,
+   "x": 7,
+   "y": 7,
+   "gfx": "OBJ_EVENT_GFX_HIKER",
+   "movement": "MOVEMENT_TYPE_FACE_RIGHT",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "FLAG_HIDE_MT_CHIMNEY_TRAINERS",
+   "script": "MtChimney_EventScript_Sawyer",
+   "texts": {
+    "MtChimney_Text_SawyerIntro": "This is one fine mountain! Plenty of\\nhot people around for company!$",
+    "MtChimney_Text_SawyerDefeat": "Oh, you're a real firebrand, too!$",
+    "MtChimney_Text_SawyerPostBattle": "I think I need a dip in LAVARIDGE\\nHOT SPRING with the locals!$"
+   },
+   "complex": true
+  }
+ ],
+ "signs": [
+  {
+   "x": 14,
+   "y": 6,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "MtChimney_EventScript_MeteoriteMachine",
+   "texts": {
+    "MtChimney_Text_RemoveTheMeteorite": "A METEORITE is fitted on a mysterious\\nmachine…\\pDo you want to remove the METEORITE?$",
+    "MtChimney_Text_PlayerRemovedMeteorite": "{PLAYER} removed the METEORITE from\\nthe mysterious machine.$"
+   },
+   "complex": true
+  },
+  {
+   "x": 24,
+   "y": 37,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "MtChimney_EventScript_RouteSign",
+   "texts": {
+    "MtChimney_Text_RouteSign": "{DOWN_ARROW} JAGGED PATH\\nLAVARIDGE TOWN AHEAD$"
+   }
+  }
+ ],
+ "warps": [
+  {
+   "id": 0,
+   "x": 17,
+   "y": 36,
+   "dest_map": "MAP_MT_CHIMNEY_CABLE_CAR_STATION",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 1,
+   "x": 18,
+   "y": 36,
+   "dest_map": "MAP_MT_CHIMNEY_CABLE_CAR_STATION",
+   "dest_warp_id": "1"
+  },
+  {
+   "id": 2,
+   "x": 20,
+   "y": 41,
+   "dest_map": "MAP_JAGGED_PASS",
+   "dest_warp_id": "2"
+  },
+  {
+   "id": 3,
+   "x": 21,
+   "y": 41,
+   "dest_map": "MAP_JAGGED_PASS",
+   "dest_warp_id": "3"
+  }
+ ],
+ "coord_events": [],
+ "wild": {}
+}

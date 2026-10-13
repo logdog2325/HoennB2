@@ -1,0 +1,46 @@
+{
+ "_doc": "RustboroCity_CuttersHouse: zone written by converter/gen_interior_recipes_houses.py (warps and parent from converter/gen_interiors.py); story people left for the story phase: person MAN_3 at (7,5) RustboroCity_CuttersHouse_EventScript_Cutter (story/complex script)",
+ "zone": 572,
+ "room": "RustboroCity_CuttersHouse",
+ "area": 313,
+ "parent": 113,
+ "warps": [
+  {
+   "at": [5, 8],
+   "tile_only": true,
+   "to": [113, 15],
+   "what": "Sapphire warp 0 -> RustboroCity 8"
+  },
+  {
+   "at": [6, 8],
+   "tile_only": true,
+   "to": [113, 15],
+   "what": "Sapphire warp 1 -> RustboroCity 8"
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 2,
+   "model": 15,
+   "script": 1,
+   "dir": 1,
+   "at": [9, 2],
+   "move": 5,
+   "range": [1, 0]
+  }
+ ],
+ "signs": [
+  {
+   "script": 2,
+   "at": [0, 1],
+   "dir": 4,
+   "what": "Bookshelf"
+  },
+  {
+   "script": 2,
+   "at": [1, 1],
+   "dir": 4,
+   "what": "Bookshelf"
+  }
+ ]
+}

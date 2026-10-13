@@ -1,0 +1,42 @@
+{
+ "zone": 34,
+ "room": "EverGrandeCity_ChampionsRoom",
+ "area": 319,
+ "bgm": 1072,
+ "what": "gyms_league: EverGrandeCity_ChampionsRoom (b2tools/gyms_league_rooms.py); story phase: Steven (6,5): Champion battle, then the walk to the Hall of Fame (door (6,2)) | rival (6,12, FLAG_HIDE_RIVAL_CHAMPIONS_ROOM) and Prof. Birch (6,12, FLAG_HIDE_BIRCH_CHAMPIONS_ROOM): after the battle",
+ "parent": 412,
+ "battle_bg": 16,
+ "warps": [
+  {
+   "at": [
+    6,
+    12
+   ],
+   "tile_only": true,
+   "to": [
+    43,
+    1
+   ],
+   "what": "Sapphire warp 0 -> EverGrandeCity_Corridor4 1",
+   "type": 2,
+   "dir": 0
+  },
+  {
+   "at": [
+    6,
+    2
+   ],
+   "tile_only": true,
+   "to": [
+    34,
+    0
+   ],
+   "what": "Sapphire warp 1 -> EverGrandeCity_HallOfFame 0 (not built yet: points at this room's warp 0)",
+   "type": 2,
+   "dir": 2
+  }
+ ],
+ "npcs": [],
+ "signs": [],
+ "triggers": []
+}

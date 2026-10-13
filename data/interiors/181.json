@@ -1,0 +1,35 @@
+{
+ "_doc": "LilycoveCity_DepartmentStoreElevator (zone 181), built by the specials agent (recipe data/interior_layouts/LilycoveCity_DepartmentStoreElevator.json): Castelia office look, Black 2 interior area 341. Warps in Sapphire's order (one per Sapphire warp tile). People/signs: Sapphire's one-message ones as generated; story people are left for the story phase.",
+ "zone": 181,
+ "room": "LilycoveCity_DepartmentStoreElevator",
+ "area": 341,
+ "parent": 389,
+ "warps": [
+  {
+   "at": [
+    1,
+    5
+   ],
+   "tile_only": true,
+   "to": [
+    181,
+    256
+   ],
+   "what": "Sapphire warp 0 -> MAP_DYNAMIC WARP_ID_DYNAMIC"
+  },
+  {
+   "at": [
+    2,
+    5
+   ],
+   "tile_only": true,
+   "to": [
+    181,
+    256
+   ],
+   "what": "Sapphire warp 1 -> MAP_DYNAMIC WARP_ID_DYNAMIC"
+  }
+ ],
+ "npcs": [],
+ "signs": []
+}

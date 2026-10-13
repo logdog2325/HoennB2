@@ -1,0 +1,38 @@
+{
+ "zone": 322,
+ "room": "MossdeepCity_Gym",
+ "area": 335,
+ "bgm": 1062,
+ "what": "gyms_league: MossdeepCity_Gym (b2tools/gyms_league_rooms.py); story phase: Tate & Liza (8,3)/(9,3), trainers Preston, Fritz, Maura, Samantha, Virgil, Hannah, Gym guide (8,29), plaques | the spin tiles (Sapphire MB_WALK_*/MB_SLIDE_*: forced movement until a stop tile) and the four switches (2,7)/(8,10)/(17,15)/(5,24) that turn them: Black 2 has no such tile class, needs scripts or code",
+ "parent": 107,
+ "warps": [
+  {
+   "at": [
+    6,
+    35
+   ],
+   "tile_only": true,
+   "to": [
+    107,
+    15
+   ],
+   "what": "Sapphire warp 0 -> MossdeepCity 1"
+  },
+  {
+   "at": [
+    7,
+    35
+   ],
+   "tile_only": true,
+   "to": [
+    107,
+    15
+   ],
+   "what": "Sapphire warp 1 -> MossdeepCity 1"
+  }
+ ],
+ "npcs": [],
+ "signs": [],
+ "triggers": [],
+ "_doc": "emerald_rooms (b2tools/emerald_rooms.py writes this file: edit the script and rerun). Emerald's overlay of 322.json (positions in the tiles of MossdeepCity_Gym's Emerald variant): the exits (6,35) (7,35) (the warp pads are step triggers, not warps). "
+}

@@ -1,0 +1,101 @@
+{
+ "_doc": "Brendan's house 2F (zone 391; scripts 0782_brendans_house_2f.s, text 0620_brendans_house_2f.txt). Sapphire tile + (1, 1) = zone tile. NPCs = Sapphire's object events except the VAR_* bedroom decorations (uid = Sapphire local id). Signs = Sapphire's bg events (PC, notebook, clock, GameCube) and its TV / region map tiles.",
+ "zone": 391,
+ "room": "LittlerootTown_BrendansHouse_2F",
+ "npcs": [
+  {
+   "uid": 1,
+   "model": 1,
+   "script": 21,
+   "dir": 0,
+   "at": [
+    0,
+    2
+   ],
+   "flag": 2053,
+   "what": "rival Brendan (FLAG_HIDE_BRENDAN_UPSTAIRS)"
+  },
+  {
+   "uid": 14,
+   "model": 251,
+   "script": 2,
+   "dir": 1,
+   "at": [
+    7,
+    1
+   ],
+   "flag": 2063,
+   "what": "Mom upstairs, on the stairs (FLAG_HIDE_MOM_UPSTAIRS)"
+  }
+ ],
+ "signs": [
+  {
+   "script": 3,
+   "at": [
+    0,
+    1
+   ],
+   "dir": 0,
+   "what": "PC (facing north)"
+  },
+  {
+   "script": 4,
+   "at": [
+    1,
+    1
+   ],
+   "dir": 4,
+   "what": "notebook"
+  },
+  {
+   "script": 20,
+   "at": [
+    5,
+    1
+   ],
+   "dir": 0,
+   "what": "wall clock (lead script 20), facing north"
+  },
+  {
+   "script": 5,
+   "at": [
+    3,
+    1
+   ],
+   "dir": 4,
+   "what": "GameCube"
+  },
+  {
+   "script": 7,
+   "at": [
+    2,
+    1
+   ],
+   "dir": 4,
+   "what": "Hoenn region map (MB_REGION_MAP)"
+  },
+  {
+   "script": 8,
+   "at": [
+    4,
+    1
+   ],
+   "dir": 0,
+   "what": "TV (MB_TELEVISION, facing north)"
+  }
+ ],
+ "warps": [
+  {
+   "at": [
+    7,
+    1
+   ],
+   "to": [
+    390,
+    1
+   ],
+   "what": "stairs down -> 1F warp 1"
+  }
+ ],
+ "triggers": []
+}

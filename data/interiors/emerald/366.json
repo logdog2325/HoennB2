@@ -1,0 +1,40 @@
+{
+ "zone": 366,
+ "room": "TerraCave_End",
+ "cave": true,
+ "cave_auto": true,
+ "area": 332,
+ "dark": false,
+ "header": {
+  "map_type": 16,
+  "npc_cache": 24,
+  "weather_word": 64,
+  "flags": 23683,
+  "icon_word": 40975,
+  "place_display": 1,
+  "bgm0": 1076,
+  "bgm1": 1076,
+  "bgm2": 1076,
+  "bgm3": 1076,
+  "place": 112,
+  "encounters": 8191,
+  "enc_slot": 6
+ },
+ "warps": [
+  {
+   "at": [
+    5,
+    4
+   ],
+   "to": [
+    364,
+    1
+   ],
+   "what": "Emerald warp 0 (5,4) -> TerraCave_Entrance 1"
+  }
+ ],
+ "triggers": [],
+ "npcs": [],
+ "signs": [],
+ "what": "TerraCave_End: Emerald's cave (converter/gen_caves_emerald.py from emerald/TerraCave_End, b2tools/models_cave.py); story objects: see notes/EMERALD.md"
+}

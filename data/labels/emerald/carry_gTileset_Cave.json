@@ -1,0 +1,17 @@
+{
+ "_doc": "Sapphire's labels carried over to Emerald's gTileset_Cave (converter/emerald_labels.py, generated: do not edit; labels by eye go in gTileset_Cave.json, which wins). _how: 'same' = drawn and behaving as Sapphire's same id, 'placed <map> (x,y)' = behaving the same and standing where Sapphire has that id in that map.",
+ "gTileset_Cave": {
+  "204": "stairs",
+  "27d": "cliff",
+  "27e": "cliff",
+  "285": "cliff",
+  "286": "cliff"
+ },
+ "_how": {
+  "204": "same",
+  "27d": "same",
+  "27e": "same",
+  "285": "same",
+  "286": "same"
+ }
+}

@@ -1,0 +1,22 @@
+{
+ "_doc": "frontier_factory_dome (2026-10-12): BattleFrontier_BattleDomeCorridor (notes/FRONTIER_FACTORY_DOME.md), Emerald only (data/emerald/hoenn_interiors.json claim). People = Emerald's objects (uid = Emerald local id), their sprites from data/sprite_map.json. Room origin [-11, -2].",
+ "zone": 415,
+ "room": "BattleFrontier_BattleDomeCorridor",
+ "area": 352,
+ "parent": 17,
+ "warps": [],
+ "npcs": [
+  {
+   "uid": 1,
+   "model": 79,
+   "script": 2,
+   "dir": 1,
+   "at": [
+    23,
+    5
+   ],
+   "what": "attendant (TEALA)"
+  }
+ ],
+ "signs": []
+}

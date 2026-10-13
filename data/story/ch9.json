@@ -1,0 +1,770 @@
+{
+ "_doc": "Chapter 9 (ch9 agent, 2026-10-07) story objects (b2tools/patches/story.py): Mossdeep City, its Gym, Steven's house, Space Center, houses, the Treasure Hunter's house and Shoal Cave (scripts: scenes/MossdeepCity.inc, the rooms' own files after '// ---- story' and 0644_room_MossdeepCity_Gym.s). Sapphire tiles ('at') of the named map; outdoor uid = 100 + Sapphire local id (207/209 in Mossdeep), rooms the local id (invented ids for the Shoal pickups). Written by work/agents/ch9/gen_objects.py.",
+ "objects": [
+  {
+   "kind": "npc",
+   "map": "MossdeepCity",
+   "at": [
+    53,
+    5
+   ],
+   "at_emerald": [55, 5],
+   "uid": 207,
+   "model": 61,
+   "script": 2,
+   "dir": 0,
+   "move": 14,
+   "what": "man on the north shore (Surf) (Sapphire object 7, MAN_1, FACE_UP)"
+  },
+  {
+   "kind": "npc",
+   "map": "MossdeepCity",
+   "at": [
+    23,
+    13
+   ],
+   "uid": 209,
+   "model": 21,
+   "script": 3,
+   "dir": 1,
+   "move": 3,
+   "what": "boy with Steven's King's Rock (Sapphire object 9, BOY_2, WANDER_AROUND) (move 3 area 1x1: v165_fixes)",
+   "areaw": 1,
+   "areah": 1
+  },
+  {
+   "kind": "npc",
+   "map": "MossdeepCity_Gym",
+   "at": [
+    8,
+    3
+   ],
+   "uid": 1,
+   "model": 274,
+   "script": 1,
+   "dir": 1,
+   "move": 15,
+   "what": "Tate (double battle with Liza) (Sapphire object 1, TATE, FACE_DOWN)",
+   "at_emerald": [
+    23,
+    7
+   ]
+  },
+  {
+   "kind": "npc",
+   "map": "MossdeepCity_Gym",
+   "at": [
+    9,
+    3
+   ],
+   "uid": 9,
+   "model": 275,
+   "script": 1,
+   "dir": 1,
+   "move": 15,
+   "what": "Liza (double battle with Tate) (Sapphire object 9, LIZA, FACE_DOWN)",
+   "at_emerald": [
+    24,
+    7
+   ]
+  },
+  {
+   "kind": "npc",
+   "map": "MossdeepCity_Gym",
+   "at": [
+    2,
+    24
+   ],
+   "uid": 2,
+   "model": 183,
+   "script": 3352,
+   "dir": 0,
+   "move": 14,
+   "evtype": 1,
+   "p0": 1,
+   "what": "TRAINER_PRESTON 352: eye-contact trainer (Sapphire object 2, PSYCHIC_M, FACE_UP)",
+   "at_emerald": [
+    1,
+    30
+   ],
+   "dir_emerald": 1,
+   "move_emerald": 0
+  },
+  {
+   "kind": "npc",
+   "map": "MossdeepCity_Gym",
+   "at": [
+    17,
+    18
+   ],
+   "uid": 3,
+   "model": 183,
+   "script": 3354,
+   "dir": 0,
+   "move": 14,
+   "evtype": 1,
+   "p0": 1,
+   "what": "TRAINER_FRITZ 354: eye-contact trainer (Sapphire object 3, PSYCHIC_M, FACE_UP)",
+   "at_emerald": [
+    5,
+    20
+   ],
+   "move_emerald": 0
+  },
+  {
+   "kind": "npc",
+   "map": "MossdeepCity_Gym",
+   "at": [
+    9,
+    17
+   ],
+   "uid": 4,
+   "model": 15,
+   "script": 3365,
+   "dir": 2,
+   "move": 16,
+   "evtype": 1,
+   "p0": 1,
+   "what": "TRAINER_MAURA 365: eye-contact trainer (Sapphire object 4, LASS, FACE_LEFT)",
+   "at_emerald": [
+    4,
+    29
+   ],
+   "dir_emerald": 0,
+   "move_emerald": 0
+  },
+  {
+   "kind": "npc",
+   "map": "MossdeepCity_Gym",
+   "at": [
+    11,
+    10
+   ],
+   "uid": 5,
+   "model": 15,
+   "script": 3364,
+   "dir": 1,
+   "move": 15,
+   "evtype": 1,
+   "p0": 1,
+   "what": "TRAINER_SAMANTHA 364: eye-contact trainer (Sapphire object 5, LASS, FACE_DOWN)",
+   "at_emerald": [
+    4,
+    23
+   ],
+   "dir_emerald": 0,
+   "move_emerald": 14
+  },
+  {
+   "kind": "npc",
+   "map": "MossdeepCity_Gym",
+   "at": [
+    0,
+    7
+   ],
+   "uid": 6,
+   "model": 183,
+   "script": 3353,
+   "dir": 3,
+   "move": 17,
+   "evtype": 1,
+   "p0": 1,
+   "what": "TRAINER_VIRGIL 353: eye-contact trainer (Sapphire object 6, PSYCHIC_M, FACE_RIGHT)",
+   "at_emerald": [
+    6,
+    9
+   ],
+   "dir_emerald": 1,
+   "move_emerald": 0
+  },
+  {
+   "kind": "npc",
+   "map": "MossdeepCity_Gym",
+   "at": [
+    4,
+    3
+   ],
+   "uid": 7,
+   "model": 15,
+   "script": 3363,
+   "dir": 1,
+   "move": 15,
+   "evtype": 1,
+   "p0": 2,
+   "what": "TRAINER_HANNAH 363: eye-contact trainer (Sapphire object 7, LASS, FACE_DOWN)",
+   "at_emerald": [
+    6,
+    3
+   ],
+   "p0_emerald": 1
+  },
+  {
+   "kind": "npc",
+   "map": "MossdeepCity_Gym",
+   "at": [
+    8,
+    29
+   ],
+   "uid": 8,
+   "model": 24,
+   "script": 2,
+   "dir": 3,
+   "move": 17,
+   "what": "Gym guide (Sapphire object 8, MAN_2, FACE_RIGHT)",
+   "at_emerald": [
+    5,
+    33
+   ],
+   "dir_emerald": 1,
+   "move_emerald": 15
+  },
+  {
+   "kind": "sign",
+   "map": "MossdeepCity_Gym",
+   "at": [
+    7,
+    27
+   ],
+   "script": 3,
+   "dir": 0,
+   "what": "left Gym statue plaque (player facing north)",
+   "at_emerald": [
+    4,
+    34
+   ]
+  },
+  {
+   "kind": "sign",
+   "map": "MossdeepCity_Gym",
+   "at": [
+    11,
+    27
+   ],
+   "script": 3,
+   "dir": 0,
+   "what": "right Gym statue plaque (player facing north)",
+   "at_emerald": [
+    8,
+    34
+   ]
+  },
+  {
+   "kind": "sign",
+   "map": "MossdeepCity_Gym",
+   "at": [
+    2,
+    7
+   ],
+   "script": 4,
+   "dir": 4,
+   "what": "floor switch 1",
+   "skip_emerald": true
+  },
+  {
+   "kind": "sign",
+   "map": "MossdeepCity_Gym",
+   "at": [
+    8,
+    10
+   ],
+   "script": 5,
+   "dir": 4,
+   "what": "floor switch 2",
+   "skip_emerald": true
+  },
+  {
+   "kind": "sign",
+   "map": "MossdeepCity_Gym",
+   "at": [
+    17,
+    15
+   ],
+   "script": 6,
+   "dir": 4,
+   "what": "floor switch 3",
+   "skip_emerald": true
+  },
+  {
+   "kind": "sign",
+   "map": "MossdeepCity_Gym",
+   "at": [
+    5,
+    24
+   ],
+   "script": 7,
+   "dir": 4,
+   "what": "floor switch 4",
+   "skip_emerald": true
+  },
+  {
+   "kind": "trigger",
+   "map": "MossdeepCity_Gym",
+   "at": [
+    12,
+    3
+   ],
+   "script": 8,
+   "var": 0,
+   "value": 0,
+   "what": "warp pad: back to the entrance (Sapphire VAR_TEMP_1 0, always)",
+   "at_emerald": [
+    21,
+    6
+   ]
+  },
+  {
+   "kind": "npc",
+   "map": "MossdeepCity_StevensHouse",
+   "at": [
+    9,
+    6
+   ],
+   "uid": 1,
+   "model": 287,
+   "script": 6,
+   "dir": 3,
+   "move": 17,
+   "flag": "FLAG_HIDE_STEVEN_STEVENS_HOUSE",
+   "flag_emerald": "FLAG_HIDE_MOSSDEEP_CITY_STEVENS_HOUSE_STEVEN",
+   "what": "Steven (hidden by FLAG_HIDE_STEVEN_STEVENS_HOUSE) (Sapphire object 1, STEVEN, FACE_RIGHT)"
+  },
+  {
+   "kind": "npc",
+   "map": "MossdeepCity_StevensHouse",
+   "at": [
+    4,
+    3
+   ],
+   "uid": 2,
+   "model": 110,
+   "script": 10,
+   "dir": 1,
+   "move": 2,
+   "flag": "FLAG_HIDE_BELDUM_BALL_STEVENS_HOUSE",
+   "what": "Steven's Poké Ball with Beldum (Ch13's beat, fallback written by ch9)"
+  },
+  {
+   "kind": "npc",
+   "map": "MossdeepCity_StevensHouse",
+   "at": [
+    5,
+    3
+   ],
+   "uid": 3,
+   "model": 110,
+   "script": 9,
+   "dir": 1,
+   "move": 2,
+   "flag": "FLAG_ITEM_MOSSDEEP_STEVENS_HOUSE_HM08",
+   "what": "the HM Dive ball (shown by the Hall of Fame when HM08 was not received)"
+  },
+  {
+   "kind": "sign",
+   "map": "MossdeepCity_StevensHouse",
+   "at": [
+    6,
+    4
+   ],
+   "script": 11,
+   "dir": 4,
+   "what": "Steven's letter on the table (Sapphire: an invisible object hidden by FLAG_HIDE_STEVENS_LETTER; Ch13's beat)"
+  },
+  {
+   "kind": "npc",
+   "map": "MossdeepCity_SpaceCenter_1F",
+   "at": [
+    7,
+    2
+   ],
+   "uid": 1,
+   "model": 73,
+   "script": 4,
+   "dir": 0,
+   "move": 14,
+   "what": "scientist at the rocket launch counter (Sapphire object 1, SCIENTIST_1, FACE_UP)"
+  },
+  {
+   "kind": "npc",
+   "map": "MossdeepCity_SpaceCenter_1F",
+   "at": [
+    6,
+    6
+   ],
+   "uid": 3,
+   "model": 359,
+   "script": 5,
+   "dir": 2,
+   "move": 16,
+   "what": "Sun Stone man (Sapphire object 3, SAILOR, FACE_LEFT)"
+  },
+  {
+   "kind": "npc",
+   "map": "MossdeepCity_House1",
+   "at": [
+    3,
+    3
+   ],
+   "uid": 1,
+   "model": 46,
+   "script": 2,
+   "dir": 1,
+   "move": 4,
+   "what": "Black Belt (Pokéblock) (Sapphire object 1, BLACK_BELT, WANDER_UP_AND_DOWN) (move 4 area 1x1: v165_fixes)",
+   "areaw": 1,
+   "areah": 1
+  },
+  {
+   "kind": "npc",
+   "map": "MossdeepCity_House1",
+   "at": [
+    7,
+    4
+   ],
+   "uid": 2,
+   "model": 27,
+   "script": 3,
+   "dir": 2,
+   "move": 16,
+   "what": "his wife (Sapphire object 2, WOMAN_3, FACE_LEFT)"
+  },
+  {
+   "kind": "npc",
+   "map": "MossdeepCity_House2",
+   "at": [
+    4,
+    5
+   ],
+   "uid": 3,
+   "model": 4407,
+   "script": 3,
+   "dir": 0,
+   "move": 14,
+   "flag": "FLAG_HIDE_WINGULL_MOSSDEEP_HOUSE",
+   "what": "Wingull (hidden until Fortree's boy sends it) (Sapphire object 3, WINGULL, FACE_UP)"
+  },
+  {
+   "kind": "npc",
+   "map": "MossdeepCity_House3",
+   "at": [
+    4,
+    4
+   ],
+   "uid": 1,
+   "model": 63,
+   "script": 2,
+   "dir": 3,
+   "move": 17,
+   "what": "Super Rod fisherman (Sapphire object 1, FISHERMAN, FACE_RIGHT)"
+  },
+  {
+   "kind": "npc",
+   "map": "MossdeepCity_House4",
+   "at": [
+    3,
+    4
+   ],
+   "uid": 1,
+   "model": 27,
+   "script": 3,
+   "dir": 2,
+   "move": 16,
+   "what": "woman (Sapphire object 1, WOMAN_3, FACE_LEFT)"
+  },
+  {
+   "kind": "npc",
+   "map": "MossdeepCity_House4",
+   "at": [
+    6,
+    6
+   ],
+   "uid": 2,
+   "model": 8,
+   "script": 4,
+   "dir": 2,
+   "move": 5,
+   "what": "boy (Secret Base) (Sapphire object 2, LITTLE_BOY_1, WANDER_LEFT_AND_RIGHT) (move 5 area 1x0: v165_fixes)",
+   "areaw": 1,
+   "areah": 0
+  },
+  {
+   "kind": "npc",
+   "map": "MossdeepCity_House4",
+   "at": [
+    2,
+    4
+   ],
+   "uid": 3,
+   "model": 4429,
+   "script": 5,
+   "dir": 1,
+   "move": 2,
+   "what": "Delcatty (Skitty sprite) (Sapphire object 3, SKITTY, LOOK_AROUND)"
+  },
+  {
+   "kind": "npc",
+   "map": "MossdeepCity_GameCorner_1F",
+   "at": [
+    4,
+    4
+   ],
+   "uid": 1,
+   "model": 28,
+   "script": 3,
+   "dir": 3,
+   "move": 17,
+   "what": "old man (e-Reader trainer house) (Sapphire object 1, OLD_MAN_1, FACE_RIGHT)"
+  },
+  {
+   "kind": "npc",
+   "map": "Route124_DivingTreasureHuntersHouse",
+   "at": [
+    5,
+    4
+   ],
+   "uid": 1,
+   "model": 358,
+   "script": 2,
+   "dir": 2,
+   "move": 16,
+   "what": "Diving Treasure Hunter (Sapphire object 1, MAN_6, FACE_LEFT)"
+  },
+  {
+   "kind": "npc",
+   "map": "ShoalCave_LowTideEntranceRoom",
+   "at": [
+    18,
+    15
+   ],
+   "uid": 2,
+   "model": 28,
+   "script": 2,
+   "dir": 2,
+   "move": 16,
+   "what": "old man (Shell Bell) (Sapphire object 2, OLD_MAN_1, FACE_LEFT)"
+  },
+  {
+   "kind": "npc",
+   "map": "ShoalCave_LowTideInnerRoom",
+   "at": [
+    31,
+    8
+   ],
+   "uid": 2,
+   "model": 110,
+   "script": 5,
+   "dir": 1,
+   "move": 2,
+   "flag": "FLAG_HIDE_TOOK_SHOAL_SALT_1",
+   "what": "Shoal Salt 1 (Sapphire bg event: a pile / stone tile)"
+  },
+  {
+   "kind": "sign",
+   "map": "ShoalCave_LowTideInnerRoom",
+   "at": [
+    31,
+    8
+   ],
+   "script": 5,
+   "dir": 4,
+   "what": "Shoal Salt 1: \"nothing here now\" line"
+  },
+  {
+   "kind": "npc",
+   "map": "ShoalCave_LowTideInnerRoom",
+   "at": [
+    14,
+    26
+   ],
+   "uid": 3,
+   "model": 110,
+   "script": 6,
+   "dir": 1,
+   "move": 2,
+   "flag": "FLAG_HIDE_TOOK_SHOAL_SALT_2",
+   "what": "Shoal Salt 2 (Sapphire bg event: a pile / stone tile)"
+  },
+  {
+   "kind": "sign",
+   "map": "ShoalCave_LowTideInnerRoom",
+   "at": [
+    14,
+    26
+   ],
+   "script": 6,
+   "dir": 4,
+   "what": "Shoal Salt 2: \"nothing here now\" line"
+  },
+  {
+   "kind": "npc",
+   "map": "ShoalCave_LowTideInnerRoom",
+   "at": [
+    41,
+    20
+   ],
+   "uid": 4,
+   "model": 110,
+   "script": 7,
+   "dir": 1,
+   "move": 2,
+   "flag": "FLAG_HIDE_TOOK_SHOAL_SHELL_1",
+   "what": "Shoal Shell 1 (Sapphire bg event: a pile / stone tile)"
+  },
+  {
+   "kind": "sign",
+   "map": "ShoalCave_LowTideInnerRoom",
+   "at": [
+    41,
+    20
+   ],
+   "script": 7,
+   "dir": 4,
+   "what": "Shoal Shell 1: \"nothing here now\" line"
+  },
+  {
+   "kind": "npc",
+   "map": "ShoalCave_LowTideInnerRoom",
+   "at": [
+    41,
+    10
+   ],
+   "uid": 5,
+   "model": 110,
+   "script": 8,
+   "dir": 1,
+   "move": 2,
+   "flag": "FLAG_HIDE_TOOK_SHOAL_SHELL_2",
+   "what": "Shoal Shell 2 (Sapphire bg event: a pile / stone tile)"
+  },
+  {
+   "kind": "sign",
+   "map": "ShoalCave_LowTideInnerRoom",
+   "at": [
+    41,
+    10
+   ],
+   "script": 8,
+   "dir": 4,
+   "what": "Shoal Shell 2: \"nothing here now\" line"
+  },
+  {
+   "kind": "npc",
+   "map": "ShoalCave_LowTideInnerRoom",
+   "at": [
+    6,
+    9
+   ],
+   "uid": 6,
+   "model": 110,
+   "script": 9,
+   "dir": 1,
+   "move": 2,
+   "flag": "FLAG_HIDE_TOOK_SHOAL_SHELL_3",
+   "what": "Shoal Shell 3 (Sapphire bg event: a pile / stone tile)"
+  },
+  {
+   "kind": "sign",
+   "map": "ShoalCave_LowTideInnerRoom",
+   "at": [
+    6,
+    9
+   ],
+   "script": 9,
+   "dir": 4,
+   "what": "Shoal Shell 3: \"nothing here now\" line"
+  },
+  {
+   "kind": "npc",
+   "map": "ShoalCave_LowTideInnerRoom",
+   "at": [
+    16,
+    13
+   ],
+   "uid": 7,
+   "model": 110,
+   "script": 10,
+   "dir": 1,
+   "move": 2,
+   "flag": "FLAG_HIDE_TOOK_SHOAL_SHELL_4",
+   "what": "Shoal Shell 4 (Sapphire bg event: a pile / stone tile)"
+  },
+  {
+   "kind": "sign",
+   "map": "ShoalCave_LowTideInnerRoom",
+   "at": [
+    16,
+    13
+   ],
+   "script": 10,
+   "dir": 4,
+   "what": "Shoal Shell 4: \"nothing here now\" line"
+  },
+  {
+   "kind": "npc",
+   "map": "ShoalCave_LowTideStairsRoom",
+   "at": [
+    11,
+    11
+   ],
+   "uid": 2,
+   "model": 110,
+   "script": 4,
+   "dir": 1,
+   "move": 2,
+   "flag": "FLAG_HIDE_TOOK_SHOAL_SALT_3",
+   "what": "Shoal Salt 3"
+  },
+  {
+   "kind": "sign",
+   "map": "ShoalCave_LowTideStairsRoom",
+   "at": [
+    11,
+    11
+   ],
+   "script": 4,
+   "dir": 4,
+   "what": "Shoal Salt 3: \"nothing here now\" line"
+  },
+  {
+   "kind": "npc",
+   "map": "ShoalCave_LowTideLowerRoom",
+   "at": [
+    18,
+    2
+   ],
+   "uid": 3,
+   "model": 110,
+   "script": 4,
+   "dir": 1,
+   "move": 2,
+   "flag": "FLAG_HIDE_TOOK_SHOAL_SALT_4",
+   "what": "Shoal Salt 4"
+  },
+  {
+   "kind": "sign",
+   "map": "ShoalCave_LowTideLowerRoom",
+   "at": [
+    18,
+    2
+   ],
+   "script": 4,
+   "dir": 4,
+   "what": "Shoal Salt 4: \"nothing here now\" line"
+  },
+  {
+   "kind": "npc",
+   "map": "ShoalCave_LowTideLowerRoom",
+   "at": [
+    11,
+    4
+   ],
+   "uid": 2,
+   "model": 46,
+   "script": 5,
+   "dir": 1,
+   "move": 3,
+   "what": "Black Belt (Focus Band) (Sapphire object 2, BLACK_BELT, WANDER_AROUND) (move 3 area 1x1: v165_fixes)",
+   "areaw": 1,
+   "areah": 1
+  }
+ ]
+}

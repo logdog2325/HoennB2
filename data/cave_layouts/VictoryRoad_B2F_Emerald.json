@@ -1,0 +1,21 @@
+{
+ "map": "emerald/VictoryRoad_B2F",
+ "origin": [
+  8,
+  0
+ ],
+ "levels": {
+  "3": 0,
+  "4": 16
+ },
+ "heights": {
+  "4,8": 32,
+  "15,7": 32,
+  "28,5": 32,
+  "10,3": 32
+ },
+ "bridges": true,
+ "waterfalls": true,
+ "alt_of": "VictoryRoad_B2F",
+ "_doc": "emerald_caves 2026-10-12 (work/agents/emerald_caves/tools/variants.py): Emerald's VictoryRoad_B2F (pokeemerald) as Emerald's world reads it, installed for VictoryRoad_B2F in an Emerald build (data/versions.json room_variants.emerald). Emerald opens (10,24)-(10,26) and redraws 3 more blocks; warps and objects as Sapphire's. Sapphire recipe: VictoryRoad_B2F.json."
+}

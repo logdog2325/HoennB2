@@ -1,0 +1,332 @@
+{
+ "map": "SafariZone_Northeast_Emerald",
+ "id": "MAP_SAFARI_ZONE_NORTHEAST",
+ "layout": "LAYOUT_SAFARI_ZONE_NORTHEAST",
+ "music": "MUS_SAFARI_ZONE",
+ "region_map_section": "MAPSEC_SAFARI_ZONE",
+ "weather": "WEATHER_NONE",
+ "connections": [
+  {
+   "map": "MAP_SAFARI_ZONE_NORTH",
+   "offset": 0,
+   "direction": "left"
+  },
+  {
+   "map": "MAP_SAFARI_ZONE_SOUTHEAST",
+   "offset": 0,
+   "direction": "down"
+  }
+ ],
+ "npcs": [
+  {
+   "local_id": 1,
+   "x": 8,
+   "y": 20,
+   "gfx": "OBJ_EVENT_GFX_BOY_3",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "SafariZone_Northeast_EventScript_Boy",
+   "texts": {
+    "SafariZone_Northeast_Text_Boy": "I only have a couple SAFARI BALLS left.\\pI'm having a hard time trying to\\ndecide what I should catch.$"
+   }
+  },
+  {
+   "local_id": 2,
+   "x": 30,
+   "y": 22,
+   "gfx": "OBJ_EVENT_GFX_GIRL_3",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "SafariZone_Northeast_EventScript_Girl",
+   "texts": {
+    "SafariZone_Northeast_Text_Girl": "Oh, boo!\\nI can't seem to catch anything!\\pI'll end up wasting the admission\\nprice if I don't catch something!$"
+   }
+  },
+  {
+   "local_id": 3,
+   "x": 11,
+   "y": 11,
+   "gfx": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_TEMP_15",
+   "script": "EventScript_RockSmash",
+   "texts": {
+    "Text_WantToSmash": "This rock appears to be breakable.\\nWould you like to use ROCK SMASH?$",
+    "Text_MonUsedFieldMove": "{STR_VAR_1} used {STR_VAR_2}!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 4,
+   "x": 13,
+   "y": 35,
+   "gfx": "OBJ_EVENT_GFX_WOMAN_1",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "SafariZone_Northeast_EventScript_Woman",
+   "texts": {
+    "SafariZone_Northeast_Text_Woman": "I heard that you can see PIKACHU here.\\nWhere might one be?$"
+   }
+  },
+  {
+   "local_id": 5,
+   "x": 8,
+   "y": 13,
+   "gfx": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_TEMP_13",
+   "script": "EventScript_RockSmash",
+   "texts": {
+    "Text_WantToSmash": "This rock appears to be breakable.\\nWould you like to use ROCK SMASH?$",
+    "Text_MonUsedFieldMove": "{STR_VAR_1} used {STR_VAR_2}!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 6,
+   "x": 9,
+   "y": 7,
+   "gfx": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_TEMP_11",
+   "script": "EventScript_RockSmash",
+   "texts": {
+    "Text_WantToSmash": "This rock appears to be breakable.\\nWould you like to use ROCK SMASH?$",
+    "Text_MonUsedFieldMove": "{STR_VAR_1} used {STR_VAR_2}!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 7,
+   "x": 8,
+   "y": 10,
+   "gfx": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_TEMP_14",
+   "script": "EventScript_RockSmash",
+   "texts": {
+    "Text_WantToSmash": "This rock appears to be breakable.\\nWould you like to use ROCK SMASH?$",
+    "Text_MonUsedFieldMove": "{STR_VAR_1} used {STR_VAR_2}!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 8,
+   "x": 12,
+   "y": 8,
+   "gfx": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_TEMP_12",
+   "script": "EventScript_RockSmash",
+   "texts": {
+    "Text_WantToSmash": "This rock appears to be breakable.\\nWould you like to use ROCK SMASH?$",
+    "Text_MonUsedFieldMove": "{STR_VAR_1} used {STR_VAR_2}!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 9,
+   "x": 8,
+   "y": 17,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_SAFARI_ZONE_NORTH_EAST_NUGGET",
+   "script": "SafariZone_Northeast_EventScript_ItemNugget",
+   "texts": {},
+   "complex": true
+  }
+ ],
+ "signs": [
+  {
+   "x": 31,
+   "y": 35,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 31,
+    "y": 35,
+    "elevation": 3,
+    "item": "ITEM_RARE_CANDY",
+    "flag": "FLAG_HIDDEN_ITEM_SAFARI_ZONE_NORTH_EAST_RARE_CANDY"
+   }
+  },
+  {
+   "x": 21,
+   "y": 5,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 21,
+    "y": 5,
+    "elevation": 3,
+    "item": "ITEM_ZINC",
+    "flag": "FLAG_HIDDEN_ITEM_SAFARI_ZONE_NORTH_EAST_ZINC"
+   }
+  }
+ ],
+ "warps": [],
+ "coord_events": [],
+ "wild": {
+  "land_mons": {
+   "encounter_rate": 25,
+   "slot_rates": [
+    20,
+    20,
+    10,
+    10,
+    10,
+    10,
+    5,
+    5,
+    4,
+    4,
+    1,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_AIPOM",
+     "min": 33,
+     "max": 33
+    },
+    {
+     "species": "SPECIES_TEDDIURSA",
+     "min": 34,
+     "max": 34
+    },
+    {
+     "species": "SPECIES_AIPOM",
+     "min": 35,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_TEDDIURSA",
+     "min": 36,
+     "max": 36
+    },
+    {
+     "species": "SPECIES_SUNKERN",
+     "min": 34,
+     "max": 34
+    },
+    {
+     "species": "SPECIES_LEDYBA",
+     "min": 33,
+     "max": 33
+    },
+    {
+     "species": "SPECIES_HOOTHOOT",
+     "min": 35,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_PINECO",
+     "min": 34,
+     "max": 34
+    },
+    {
+     "species": "SPECIES_HOUNDOUR",
+     "min": 36,
+     "max": 36
+    },
+    {
+     "species": "SPECIES_MILTANK",
+     "min": 37,
+     "max": 37
+    },
+    {
+     "species": "SPECIES_HOUNDOUR",
+     "min": 39,
+     "max": 39
+    },
+    {
+     "species": "SPECIES_MILTANK",
+     "min": 40,
+     "max": 40
+    }
+   ]
+  },
+  "rock_smash_mons": {
+   "encounter_rate": 25,
+   "slot_rates": [
+    60,
+    30,
+    5,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_SHUCKLE",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_SHUCKLE",
+     "min": 20,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_SHUCKLE",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_SHUCKLE",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_SHUCKLE",
+     "min": 35,
+     "max": 40
+    }
+   ]
+  }
+ }
+}

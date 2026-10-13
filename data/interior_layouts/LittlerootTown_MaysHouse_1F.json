@@ -1,0 +1,6 @@
+{
+ "_doc": "May's house 1F (Sapphire 11x9; zone 392): Sapphire's map is Brendan's 1F mirrored left-right, so the recipe is too.",
+ "map": "LittlerootTown_MaysHouse_1F",
+ "mirror_of": "LittlerootTown_BrendansHouse_1F",
+ "origin": [1, 0]
+}

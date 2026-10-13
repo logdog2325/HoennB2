@@ -1,0 +1,17 @@
+{
+ "kind": "trainer",
+ "side": "front",
+ "sprite": 9,
+ "archive": 71,
+ "files": {
+  "static": 72,
+  "parts": 73,
+  "palette": 79
+ },
+ "name": "anabel",
+ "note": "Anabel (Salon Maiden, Battle Tower): Black 2 spare class 9's own sprite (Emerald builds only)",
+ "source": "pokeemerald graphics/trainers/front_pics/salon_maiden_anabel.png and its palette (graphics/trainers/front_pics/salon_maiden_anabel.png at 0x8d63eb0, png:graphics/trainers/front_pics/salon_maiden_anabel.png palette at 0x8d641b8 in roms/emerald_original.gba)",
+ "layout": "parts and animations of Black 2 front sprite 108",
+ "made_by": "b2tools/sprite_emerald_frontier.py (sprite_upgrade.battle_sprite, as Sapphire's characters)",
+ "mcss_from": 108
+}

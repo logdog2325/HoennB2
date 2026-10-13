@@ -1,0 +1,548 @@
+{
+ "_doc": "The Battle Frontier's east half (Emerald-only map BattleFrontier_OutsideEast, emerald_world 2026-10-12; b2tools/world.py load: group standalone, the Battle Tower island's group, data/emerald/hoenn_standalone.json). Buildings: the Battle Tower is HoennB2's tower (res 473, 13 wide; its door leads into our Battle Tower lobby), the rest stand-ins until Frontier models are made: the Exchange Service Corner the Game Corner (res 349, 7 wide), the Battle Arena Rustboro's Flat 1 (res 324, 9 wide), the lounges a Sootopolis block house (res 471) or the Cove Lily Motel (res 385, 6 wide), the Pokemon Center Black 2's (res 0). Every door is closed (no room yet: data/emerald/hoenn_interiors.json) but the Battle Tower's and the Ranking Hall's, which leads into Black 2's PWT (data/emerald/hoenn_map_additions.json warps). The Battle Pyramid (the Weather Institute, res 407), the Ranking Hall (Slateport's Harbor, res 345) and the Battle Palace (the Pokemon League building, res 409) have no plan footprint (walkable door tiles in Emerald): placed as props; Lounge 9 (21,45) and the Artisan Cave mouth (28,7) are Emerald's own ground and rock. 'retile' (world.py retile_map): the Tower's outer columns and the Arena's deck as wall blocks.",
+ "group": "standalone",
+ "buildings": {
+  "MAP_BATTLE_TOWER_LOBBY": {
+   "res": 473,
+   "front": 20
+  },
+  "MAP_BATTLE_FRONTIER_EXCHANGE_SERVICE_CORNER": {
+   "res": 349,
+   "front": 20
+  },
+  "MAP_BATTLE_FRONTIER_BATTLE_ARENA_LOBBY": {
+   "res": 324,
+   "front": 20
+  },
+  "MAP_BATTLE_FRONTIER_LOUNGE6": {
+   "res": 471,
+   "front": 20
+  },
+  "MAP_BATTLE_FRONTIER_LOUNGE3": {
+   "res": 471,
+   "front": 20
+  },
+  "MAP_BATTLE_FRONTIER_LOUNGE1": {
+   "res": 471,
+   "front": 20
+  },
+  "MAP_BATTLE_FRONTIER_LOUNGE8": {
+   "res": 471,
+   "front": 20
+  },
+  "MAP_BATTLE_FRONTIER_LOUNGE5": {
+   "res": 385,
+   "front": 20
+  },
+  "MAP_BATTLE_FRONTIER_POKEMON_CENTER_1F": {
+   "res": 0,
+   "front": 20
+  }
+ },
+ "props": [
+  {
+   "res": 407,
+   "x": 58.5,
+   "z": 13.0,
+   "what": "Battle Pyramid (x 51-65, rows 6-14, door 58,14): stand-in, the Weather Institute (11 wide)",
+   "covers": [
+    [
+     51,
+     6,
+     65,
+     14
+    ]
+   ]
+  },
+  {
+   "res": 345,
+   "x": 35.5,
+   "z": 11.0,
+   "what": "Ranking Hall (x 32-38, rows 9-12, door 35,12): stand-in, Slateport's Harbor (7 wide)",
+   "covers": [
+    [
+     32,
+     9,
+     38,
+     12
+    ]
+   ]
+  },
+  {
+   "res": 409,
+   "x": 45.5,
+   "z": 55.0,
+   "what": "Battle Palace (x 40-50, rows 51-56, door 45,56): stand-in, the Pokemon League building (11 wide)",
+   "covers": [
+    [
+     40,
+     51,
+     50,
+     56
+    ]
+   ]
+  }
+ ],
+ "retile": [
+  {
+   "tiles": [
+    [
+     8,
+     0
+    ],
+    [
+     8,
+     1
+    ],
+    [
+     8,
+     2
+    ],
+    [
+     8,
+     3
+    ],
+    [
+     8,
+     4
+    ],
+    [
+     8,
+     5
+    ],
+    [
+     8,
+     6
+    ],
+    [
+     8,
+     7
+    ],
+    [
+     8,
+     8
+    ],
+    [
+     8,
+     9
+    ],
+    [
+     8,
+     10
+    ],
+    [
+     8,
+     11
+    ],
+    [
+     8,
+     12
+    ],
+    [
+     8,
+     13
+    ],
+    [
+     8,
+     14
+    ],
+    [
+     24,
+     0
+    ],
+    [
+     24,
+     1
+    ],
+    [
+     24,
+     2
+    ],
+    [
+     24,
+     3
+    ],
+    [
+     24,
+     4
+    ],
+    [
+     24,
+     5
+    ],
+    [
+     24,
+     6
+    ],
+    [
+     24,
+     7
+    ],
+    [
+     24,
+     8
+    ],
+    [
+     24,
+     9
+    ],
+    [
+     24,
+     10
+    ],
+    [
+     24,
+     11
+    ],
+    [
+     24,
+     12
+    ],
+    [
+     24,
+     13
+    ],
+    [
+     24,
+     14
+    ]
+   ],
+   "from": [
+    "building",
+    "building_roof"
+   ],
+   "to": "wall",
+   "_what": "the Battle Tower's outer columns (x 8 and 24, rows 0-14): Emerald's tower is 17 wide, HoennB2's tower model 13: stone wall blocks beside it"
+  },
+  {
+   "tiles": [
+    [
+     33,
+     24
+    ],
+    [
+     33,
+     25
+    ],
+    [
+     33,
+     26
+    ],
+    [
+     33,
+     27
+    ],
+    [
+     33,
+     28
+    ],
+    [
+     33,
+     29
+    ],
+    [
+     33,
+     30
+    ],
+    [
+     33,
+     31
+    ],
+    [
+     34,
+     24
+    ],
+    [
+     34,
+     31
+    ],
+    [
+     35,
+     23
+    ],
+    [
+     35,
+     24
+    ],
+    [
+     35,
+     31
+    ],
+    [
+     36,
+     23
+    ],
+    [
+     36,
+     24
+    ],
+    [
+     36,
+     31
+    ],
+    [
+     37,
+     23
+    ],
+    [
+     37,
+     24
+    ],
+    [
+     37,
+     31
+    ],
+    [
+     38,
+     23
+    ],
+    [
+     38,
+     24
+    ],
+    [
+     39,
+     23
+    ],
+    [
+     39,
+     24
+    ],
+    [
+     40,
+     23
+    ],
+    [
+     40,
+     24
+    ],
+    [
+     41,
+     23
+    ],
+    [
+     41,
+     24
+    ],
+    [
+     41,
+     31
+    ],
+    [
+     42,
+     23
+    ],
+    [
+     42,
+     24
+    ],
+    [
+     42,
+     31
+    ],
+    [
+     43,
+     23
+    ],
+    [
+     43,
+     24
+    ],
+    [
+     43,
+     31
+    ],
+    [
+     44,
+     24
+    ],
+    [
+     44,
+     31
+    ],
+    [
+     45,
+     24
+    ],
+    [
+     45,
+     25
+    ],
+    [
+     45,
+     26
+    ],
+    [
+     45,
+     27
+    ],
+    [
+     45,
+     28
+    ],
+    [
+     45,
+     29
+    ],
+    [
+     45,
+     30
+    ],
+    [
+     45,
+     31
+    ]
+   ],
+   "from": [
+    "building",
+    "building_roof",
+    "door"
+   ],
+   "to": "wall",
+   "_what": "the Battle Arena's deck, railings and gate posts round its hall (the hall: res 324)"
+  },
+  {
+   "tiles": [
+    [
+     51,
+     8
+    ],
+    [
+     51,
+     9
+    ],
+    [
+     51,
+     10
+    ],
+    [
+     51,
+     11
+    ],
+    [
+     51,
+     12
+    ],
+    [
+     51,
+     13
+    ],
+    [
+     51,
+     14
+    ],
+    [
+     65,
+     8
+    ],
+    [
+     65,
+     9
+    ],
+    [
+     65,
+     10
+    ],
+    [
+     65,
+     11
+    ],
+    [
+     65,
+     12
+    ],
+    [
+     65,
+     13
+    ],
+    [
+     65,
+     14
+    ]
+   ],
+   "from": [
+    "building",
+    "building_roof"
+   ],
+   "to": "wall",
+   "_what": "the Battle Pyramid's outer edges (15 wide; its stand-in model 11)"
+  },
+  {
+   "tiles": [
+    [
+     36,
+     40
+    ],
+    [
+     37,
+     40
+    ],
+    [
+     41,
+     40
+    ],
+    [
+     42,
+     40
+    ]
+   ],
+   "from": [
+    "building",
+    "building_roof"
+   ],
+   "to": "prop",
+   "_what": "posts south of the Battle Arena"
+  },
+  {
+   "tiles": [
+    [
+     11,
+     25
+    ],
+    [
+     12,
+     14
+    ],
+    [
+     20,
+     14
+    ],
+    [
+     52,
+     14
+    ],
+    [
+     53,
+     14
+    ],
+    [
+     54,
+     14
+    ],
+    [
+     63,
+     14
+    ],
+    [
+     64,
+     14
+    ],
+    [
+     51,
+     7
+    ],
+    [
+     65,
+     7
+    ]
+   ],
+   "from": [
+    "building",
+    "building_roof",
+    "prop"
+   ],
+   "to": "wall",
+   "_what": "corners of the Exchange Corner's, the Battle Tower's and the Battle Pyramid's fronts and the Pyramid's two corner posts that their stand-in models leave bare"
+  }
+ ]
+}

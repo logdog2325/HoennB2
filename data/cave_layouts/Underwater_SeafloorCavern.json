@@ -1,0 +1,17 @@
+{
+ "map": "Underwater_SeafloorCavern",
+ "look": "uw",
+ "underwater": true,
+ "origin": [
+  9,
+  12
+ ],
+ "tiers": 2,
+ "tiles": {
+  "5,4": "floor",
+  "6,4": "floor",
+  "7,4": "floor",
+  "8,4": "floor"
+ },
+ "_tiles_note": "(missing_objects 2026-10-08) Sapphire's hull tiles (5..8,4): the stolen submarine floats there in open water (its metatiles; FloorShadow after the legend escaped), so they are seabed, not rock; the submarine object (3D object 194, data/story/missing_objects.json) blocks them while it is there"
+}

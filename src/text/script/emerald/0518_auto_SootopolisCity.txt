@@ -1,0 +1,58 @@
+Who might you be?{be01}\nThis is the Cave Of Origin.{be01}\nThe spirits of Pokémon, becalmed at\nMt. Pyre, are said to be revived here.{be01}\nPlease leave.
+A person with a strong will and\nsuperior talent…{be01}\nA Trainer who has knowledge and\nexperience of many kinds of Pokémon…{be01}\nIf such a person were to appear, I was\ninstructed by Wallace to lead that{be00}\nTrainer to this Cave.
+This is the Cave Of Origin…{be01}\nWith the passing of the crisis,\nthe cave, too, shall sleep…
+Oh, my…{be01}\nThe clash between the two awakened\nPokémon was quelled by the awakening{be00}\nof a third Pokémon…
+A big Pokémon is fighting with\nanother big Pokémon!{be01}\nPlease, someone make them stop!
+A pretty Pokémon came down from\nthe sky…
+Hi, what’s your name?{be01}\n… … …  … … …  … … …\nOkay. That’s nice!{be01}\nMy name is Kiri.{be01}\nMy mommy and daddy named me that so\nI would grow healthy and warmhearted.{be00}\nThat’s what they wished.{be01}\nYou can have one of these.
+Kiri will give you this Berry, too!\nI really like it lots!
+I wonder what kind of wish is included\nin your name.
+Spring, summer, autumn, and winter.{be01}\nIf you’re born in springtime, do you like\nthe spring, and if you’re born in the{be00}\nsummer, do you like the summer?
+Oh…\nIt doesn’t matter…{be01}\nThere’s so much that I want to know…
+Then Kiri was born in the autumn,\nso I love the autumn!{be01}\nWhich season do you like?
+The weather was clear this morning,\nbut…{be01}\nAll of a sudden, dark clouds brewed up,\nrain started falling in sheets, and{be00}\nthere was thunder and lightning, too.{be01}\nThe weather just went completely\nwild!{be01}\nIs all of this because of those\nPokémon?
+Oh?{be01}\nIt was you who brought that flying\nPokémon here?{be01}\nWell, aren’t you amazing!
+Hm!\nYou’ve come all the way to Sootopolis?{be00}\nYou’re no ordinary tourist.{be01}\nBut I suppose that doesn’t make you\nan extraordinary tourist, either.
+The city has regained its calm…
+Sootopolis sprang up as a town in\nthe crater of a volcano.{be01}\nIf you look up at the sky, the lip of\nthe crater is also visible.{be00}\nSo, all you see is the sky in a circle.{be01}\nBut that’s what makes the sky above\nSootopolis the most beautiful.
+When two Pokémon that gigantic\nare fighting that savagely, there’s{be00}\nnot much that we can do.
+A circle of a night sky framed by\nthe crater of a volcano…{be01}\nAnd in that ring, stars flicker and\nblink as if they were alive…{be00}\nIt’s my favorite scenery.
+When that third Pokémon flew down,\nI feared the worst.
+Wow!\nThis is wicked!
+I… I’ve never been out of this city.{be01}\nI wonder what the world is like on\nthe other side of this round sky?
+Wow!\nThat was wicked!
+These giant Pokémon suddenly appeared\nin the middle of the city!{be01}\nAnd, I’ve never seen them before!{be01}\nWhy are they smashing into each\nother like that?{be01}\nWhy can’t they be friends, those\nPokémon?
+What? What? What?\nWhat is that green Pokémon?!
+Groudon and Kyogre…\nWhere did they go?{be01}\nWill they cause droughts or downpours\nsomewhere else?
+Diving in the sea. Climbing up and\ndown stairs all the time…{be01}\nIf you live in this town, you end up\ngetting physically fit.
+Steven: So that’s Rayquaza…{be01}\nIt’s incredible how the two rampaging\nPokémon would flee from it in fear…
+Steven: I think you have what’s\nneeded to help him…
+Steven: It looks like both Maxie and\nArchie have gone away somewhere.{be01}\nPerhaps they’ve gone to Mt. Pyre to\nreturn those Orbs…
+Steven: The Sky Pillar…{be01}\nI’ve never been there.\nI wonder where it could be?
+Steven: Those Pokémon fighting…\nGroudon… And Kyogre…{be01}\nThe two super-ancient Pokémon\nwere awakened from a long sleep…{be01}\nAnd now they are smashing each other\nwith their uncontrollable energy…{be01}\n…{0100:0}.{be01}\nYou being here now I’ll take to mean\nthat you’re prepared to become{be00}\ninvolved in this crisis.{be01}\nWell, then, there’s someone that\nI’d like you to meet.{be01}\nCome with me, please.
+Steven: Listen, {0100:0}.{be01}\nDoes seeing Groudon and Kyogre make\nyou think Pokémon are to be feared?{be01}\nBut that’s not true.\nPokémon are really more…{be01}\n…Why am I asking you this?\nYou already know.
+Steven: Okay, here we are!{be01}\nInside here you’ll find someone named\nWallace.{be01}\nI think you have what’s needed to\nhelp him…
+I just get this sense somehow that\nthe two Pokémon aren’t angry.{be01}\nI think… They probably can’t control\ntheir own power…
+That flying Pokémon came down from\nthe sky and stopped the rampaging{be00}\nPokémon…
+Go for it, red Pokémon!\nDon’t back off, blue Pokémon!
+… … … … … …{be01}\nHi, do you know the names of those\nPokémon fighting over there?
+I was wondering which one would win,\nthe red one or the blue one, but, oh no,{be00}\nit’s the green one that settles things!{be01}\nTalk about a huge turn of events!
+Oh, no!\nSootopolis City will get wrecked!
+Sootopolis City didn’t get wrecked!
+There’s an ancient legend that claims\nthe land and sea were shaped by{be00}\na colossal battle between Pokémon.{be01}\nWell, I’m seeing that happen with\nmy very own eyes!{be01}\nWhoa! I never expected to be\nwitness to something this huge!
+There’s an ancient legend that claims\nthe land and sea were shaped by{be00}\na colossal battle between Pokémon.{be01}\nWell, I saw that happen with\nmy very own eyes!{be01}\nWhoa! I never expected to be\nwitness to something this huge!
+Wallace: Oh?\n{0100:0}?{be01}\nHaven’t you scaled the Sky Pillar\nyet?{be01}\nI’m sure that you can make it to\nthe top of the Sky Pillar…
+Wallace: I’m sure that you will be\ndazzled by my mentor’s breathtakingly{be00}\nelegant battle style.
+Wallace: {0100:0}…{be01}\nThe leaders of Team Magma and Aqua,\nI don’t think they meant harm.{be01}\nIt wouldn’t hurt to hear what they\nhave to say for themselves.
+Wallace: {0100:0}…\nMy eyes didn’t deceive me.{be01}\nThanks to your help, Sootopolis…\nNo, all of Hoenn was saved.{be01}\nOn behalf of the people, I thank you.{be01}\nThis is a gift from me.\nPlease accept it.
+That Hidden Machine contains\nWaterfall.{be01}\nIf you have the Rain Badge, a Pokémon\nthat has learned that HM move can{be00}\nforce its way up waterfalls.{be01}\nAnd where does one get the Rain Badge?\nYou know, don’t you?{be01}\nThat’s right! You have to beat\nthe Sootopolis Gym Leader.{be01}\nWhen you’re all set to go, step through\nthat door.
+Maxie: G… Groudon…\nPlease! Stop what you’re doing!{be01}\nI know the extent of your power now!{be01}\nIf you keep going, all Hoenn, not just\nSootopolis, will be utterly ruined!
+Maxie: So the super-ancient Pokémon\nweren’t only Groudon and Kyogre…{be01}\nAfter all our fruitless scheming and\nfrantic efforts, that one Pokémon’s{be00}\nsimple action puts everything right{be00}\nagain as if nothing had happened…{be01}\nFu…\nFuhahaha…
+Archie: Kyogre! What’s wrong?!\nLook over here! It’s the Red Orb!{be00}\nCalm down! Kyogre!{be01}\n… … … … … …\n… … … … … …{be01}\nIt’s no good!\nIt’s not responding at all!
+Archie: Kyogre and Groudon both\nflew off to who knows where.{be01}\nThe weather in Hoenn has returned\nto its normal state…{be01}\nHaha…\nHahaha…{be01}\nMaybe what we were trying to do was\nsomething small, even meaningless,{be00}\nto Pokémon…
+The door is closed.
+Too bad!\nThe Bag is full...
+Sootopolis City Pokémon Gym\nLeader: Juan{be01}\n“The Gym Leader with the beauty\nof pure water!”
+“Selected items for your convenience!”\nPokémon Mart
+“Rejuvenate your tired partners!”\nPokémon Center
+Sootopolis City{be01}\n“The mystical city where history\nslumbers.”

@@ -1,0 +1,30 @@
+{
+ "_doc": "Petalburg City buildings (group towns1, notes/TOWNS_TOWNS1.md).",
+ "group": "towns1",
+ "buildings": {
+  "MAP_PETALBURG_CITY_WALLYS_HOUSE": {
+   "res": 321,
+   "front": 20
+  },
+  "MAP_PETALBURG_CITY_GYM": {
+   "res": 320,
+   "front": 24
+  },
+  "MAP_PETALBURG_CITY_MART": {
+   "res": 3,
+   "front": 20
+  },
+  "MAP_PETALBURG_CITY_POKEMON_CENTER_1F": {
+   "res": 0,
+   "front": 20
+  },
+  "MAP_PETALBURG_CITY_HOUSE1": {
+   "res": 322,
+   "front": 20
+  },
+  "MAP_PETALBURG_CITY_HOUSE2": {
+   "res": 322,
+   "front": 20
+  }
+ }
+}

@@ -1,0 +1,4 @@
+…
+Woohoo, your Pokémon look pretty\nstrong.{be01}\nI like that!\nHere, take this TM!
+That TM contains Rock Smash.{be01}\nIf you come across large boulders\nthat block your path...{be01}\nWell, use that TM move and smash\nit right out of your way!
+Oh, yes, if you smash a rock, a Pokémon\ncould come flying out of hiding.{be01}\nWoohoo!

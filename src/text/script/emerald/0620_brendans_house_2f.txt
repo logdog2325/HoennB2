@@ -1,0 +1,16 @@
+Mom: See, {0100:0}?\nIsn’t it nice in here, too?
+Pokémon fully restored...\nItems all packed, and...
+{0100:0} booted up the PC.
+There’s an e-mail from Pokémon Trainer\nSchool.{be01}\n... ... ... ... ... ...{be01}\nA Pokémon may learn up to four moves.{be01}\nA Trainer’s expertise is tested on the\nmove sets chosen for Pokémon.{be01}\n... ... ... ... ... ...
+{0100:0} flipped open the notebook.{be01}\nAdventure Rule No. 1\nOpen the Menu with Start.{be01}\nAdventure Rule No. 2\nRecord your progress with Save.{be01}\nThe remaining pages are blank…
+It’s a Nintendo GameCube.{be01}\nA Game Boy Advance is connected to\nserve as the Controller.
+The clock is stopped...{be01}\nBetter set it and start it!
+{0100:0} took a closer look at the\nHoenn region map.
+Mom might like this program.\n... ... ... ... ... ... ... ...{be00}\n... ... ... ... ... ... ... ...{be01}\nBetter get going!
+The clock is stopped...{be01}\nBetter set it and start it!
+Mom: {0100:0}, how do you like your\nnew room?{be01}\nGood! Everything’s put away neatly!{be01}\nThey finished moving everything in\ndownstairs, too.{be01}\nPokémon movers are so convenient!{be01}\nOh, you should make sure that\neverything’s all there on your desk.
+Pokémon fully restored...\nItems all packed, and...
+Hey!\nYou...{be01}\nWho are you?{be01}\nOh, you’re {0100:0}, aren’t you?\nMoved in next door, right?{be01}\nI didn’t know that you’re a girl.{be01}\nDad, Prof. Birch, said that our new\nnext-door neighbor is a Gym Leader’s{be00}\nkid, so I assumed you’d be a guy.{be01}\nMy name’s Brendan.\nSo, hi, neighbor!{be01}\nHuh? Hey, {0100:0}, don’t you have\na Pokémon?{be01}\nDo you want me to go catch you one?{be01}\nAw, darn, I forgot...{be01}\nI’m supposed to go help my dad catch\nsome wild Pokémon.{be01}\nSome other time, okay?
+Brendan: Hey, it’s {0100:0}.{be01}\nI was just checking out my Pokédex.{be01}\nThere are still many Pokémon that\nI need to catch, I know, but this{be00}\nis looking pretty good.{be01}\nChecking this Pokédex out gives me\nthe urge to hit the road again.
+Brendan: I’m having a hard time deciding\nwhere I should catch Pokémon next.{be01}\nHey, {0100:0}, if I see you while I’m out\ncatching Pokémon, I can pitch you a{be00}\nbattle if you’d like.
+It’s Brendan’s Poké Ball!{be01}\nBetter leave it right where it is.

@@ -1,0 +1,5 @@
+Wallace: Oh, my, I’m terribly sorry!{be01}\nIn my haste, I didn’t notice that\nI’d left you behind!{be01}\nI’ve opened the locked door of\nthe Sky Pillar.{be01}\n{0100:0}, let’s be on our way!
+Wallace: It’s an earthquake!{be01}\nThere’s not a moment to waste!\nWe’ve got to hurry!
+Wallace: Hmm…\nThe situation is getting worse…
+Wallace: This isn’t good…{be01}\nThe weather distortion is spreading\neven here…{be01}\n{0100:0}.{be01}\nRayquaza should be farther up\nfrom here.{be01}\nI’m worried about Sootopolis.\nI’ve got to go back.{be01}\nEverything is in your hands now.\nDon’t fail us!
+The door is closed.

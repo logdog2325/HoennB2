@@ -1,0 +1,25 @@
+{
+ "map": "SkyPillar_Entrance",
+ "_doc": "caves_misc: three floors climbing north (Route 131's mouth at the bottom, the way out to the pillar at the top), joined by Sapphire's one-tile stairs (6,11) and (6,6): 16 apart (models_cave_levels heights + ramps).",
+ "heights": {
+  "6,15": 0,
+  "6,9": 16,
+  "8,3": 32
+ },
+ "ramps": [
+  [
+   6,
+   11,
+   6,
+   11,
+   "n"
+  ],
+  [
+   6,
+   6,
+   6,
+   6,
+   "n"
+  ]
+ ]
+}

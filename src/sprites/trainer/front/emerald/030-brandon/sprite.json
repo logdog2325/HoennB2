@@ -1,0 +1,17 @@
+{
+ "kind": "trainer",
+ "side": "front",
+ "sprite": 30,
+ "archive": 71,
+ "files": {
+  "static": 240,
+  "parts": 241,
+  "palette": 247
+ },
+ "name": "brandon",
+ "note": "Brandon (Pyramid King, Battle Pyramid): Black 2 spare class 30's own sprite (Emerald builds only)",
+ "source": "pokeemerald graphics/trainers/front_pics/pyramid_king_brandon.png and its palette (graphics/trainers/front_pics/pyramid_king_brandon.png at 0x8d653f0, png:graphics/trainers/front_pics/pyramid_king_brandon.png palette at 0x8d6575c in roms/emerald_original.gba)",
+ "layout": "parts and animations of Black 2 front sprite 108",
+ "made_by": "b2tools/sprite_emerald_frontier.py (sprite_upgrade.battle_sprite, as Sapphire's characters)",
+ "mcss_from": 108
+}

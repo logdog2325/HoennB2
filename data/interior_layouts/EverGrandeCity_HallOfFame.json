@@ -1,0 +1,17 @@
+{
+ "_doc": "halloffame agent (2026-10-07): Sapphire's Hall of Fame (15x17: the screen bays of the back wall, the machine at the top, the way in at the bottom) in Black 2's Hall of Fame look (style hof: zone 145's set 319): a marble runway from the way in to the dais, the Hall of Fame machine (c09_dendo, Black 2's own, animated by BMPlayHOFMachineSeq) on a dais where Sapphire's machine stands, gold pillars along the side walls (the player never walks there: the room is only the scene). No exit: the room is left by the game-clear sequence.",
+ "map": "EverGrandeCity_HallOfFame",
+ "style": "hof",
+ "exits": [],
+ "stairs": [],
+ "floor": [[2, 2, 4, 2], [10, 2, 12, 2], [1, 3, 13, 15], [6, 16, 8, 16]],
+ "open": [[6, 17, 8, 17]],
+ "floor_tex": [{"tex": "in38_line01", "src": 319, "rect": [6, 5, 8, 16], "size": 32},
+               {"tex": "in38_tile01", "src": 319, "rect": [5, 3, 9, 4], "size": 32}],
+ "blocks": [{"use": "hof_dais", "rect": [6, 3, 8, 4]},
+            {"use": "hof_pillar", "rect": [1, 6, 1, 6]}, {"use": "hof_pillar", "rect": [13, 6, 13, 6]},
+            {"use": "hof_pillar", "rect": [1, 11, 1, 11]}, {"use": "hof_pillar", "rect": [13, 11, 13, 11]}],
+ "decals": [{"tex": "in38_pira04", "src": 319, "at": [3.5], "y": 14, "w": 40, "h": 24},
+            {"tex": "in38_pira04", "src": 319, "at": [11.5], "y": 14, "w": 40, "h": 24}],
+ "furniture": [{"m": "c09_dendo", "tiles": [6, 3, 8, 4], "y": 8}]
+}

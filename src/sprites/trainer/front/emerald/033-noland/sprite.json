@@ -1,0 +1,17 @@
+{
+ "kind": "trainer",
+ "side": "front",
+ "sprite": 33,
+ "archive": 71,
+ "files": {
+  "static": 264,
+  "parts": 265,
+  "palette": 271
+ },
+ "name": "noland",
+ "note": "Noland (Factory Head, Battle Factory): Black 2 spare class 33's own sprite (Emerald builds only)",
+ "source": "pokeemerald graphics/trainers/front_pics/factory_head_noland.png and its palette (graphics/trainers/front_pics/factory_head_noland.png at 0x8d64d30, png:graphics/trainers/front_pics/factory_head_noland.png palette at 0x8d650ac in roms/emerald_original.gba)",
+ "layout": "parts and animations of Black 2 front sprite 51",
+ "made_by": "b2tools/sprite_emerald_frontier.py (sprite_upgrade.battle_sprite, as Sapphire's characters)",
+ "mcss_from": 51
+}

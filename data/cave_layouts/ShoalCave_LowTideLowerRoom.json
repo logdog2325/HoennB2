@@ -1,0 +1,11 @@
+{
+ "map": "ShoalCave_LowTideLowerRoom",
+ "ladders": {
+  "7,2": "up",
+  "28,11": "down"
+ },
+ "tide": {
+  "event": 9,
+  "inside_event": 8
+ }
+}

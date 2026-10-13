@@ -1,0 +1,51 @@
+{
+ "_doc": "PacifidlogTown_House3: zone written by converter/gen_interior_recipes_houses.py (warps and parent from converter/gen_interiors.py); story people left for the story phase: person WOMAN_5 at (4,2) PacifidlogTown_House3_EventScript_Trader (story/complex script)",
+ "zone": 418,
+ "room": "PacifidlogTown_House3",
+ "area": 313,
+ "parent": 458,
+ "warps": [
+  {
+   "at": [4, 8],
+   "tile_only": true,
+   "to": [458, 6],
+   "what": "Sapphire warp 0 -> PacifidlogTown 3"
+  },
+  {
+   "at": [5, 8],
+   "tile_only": true,
+   "to": [458, 6],
+   "what": "Sapphire warp 1 -> PacifidlogTown 3"
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 1,
+   "model": 17,
+   "script": 1,
+   "dir": 1,
+   "at": [3, 5],
+   "move": 9
+  }
+ ],
+ "signs": [
+  {
+   "script": 2,
+   "at": [5, 2],
+   "dir": 4,
+   "what": "Vase"
+  },
+  {
+   "script": 2,
+   "at": [0, 5],
+   "dir": 4,
+   "what": "Vase"
+  },
+  {
+   "script": 2,
+   "at": [0, 7],
+   "dir": 4,
+   "what": "Vase"
+  }
+ ]
+}

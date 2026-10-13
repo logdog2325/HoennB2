@@ -1,0 +1,33 @@
+{
+ "_doc": "FortreeCity_House4: zone written by converter/gen_interior_recipes_houses.py (warps and parent from converter/gen_interiors.py); story people left for the story phase: person BOY_3 at (1,3) FortreeCity_House4_EventScript_Boy (story/complex script); story person WINGULL at (2,3) FortreeCity_House4_EventScript_Wingull (hide flag FLAG_HIDE_WINGULL_FORTREE_HOUSE)",
+ "zone": 141,
+ "room": "FortreeCity_House4",
+ "area": 313,
+ "parent": 16,
+ "warps": [
+  {
+   "at": [3, 5],
+   "tile_only": true,
+   "to": [16, 18],
+   "what": "Sapphire warp 0 -> FortreeCity 6"
+  },
+  {
+   "at": [4, 5],
+   "tile_only": true,
+   "to": [16, 18],
+   "what": "Sapphire warp 1 -> FortreeCity 6"
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 1,
+   "model": 22,
+   "script": 1,
+   "dir": 1,
+   "at": [6, 4],
+   "move": 3,
+   "range": [1, 1]
+  }
+ ],
+ "signs": []
+}

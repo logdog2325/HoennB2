@@ -1,0 +1,16 @@
+{
+ "kind": "trainer",
+ "side": "front",
+ "sprite": 22,
+ "archive": 71,
+ "files": {
+  "static": 176,
+  "parts": 177,
+  "palette": 183
+ },
+ "name": "interviewers",
+ "note": "Gabby & Ty (Interviewer class), Sapphire's interviewer pic touched up to Black 2's look",
+ "sapphire": "interviewer",
+ "drawn": "src/sprites/drawn/interviewers-battle.txt",
+ "made_by": "b2tools/sprite_unique.py"
+}

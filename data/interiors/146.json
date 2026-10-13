@@ -1,0 +1,167 @@
+{
+ "zone": 146,
+ "room": "ShoalCave_LowTideInnerRoom",
+ "cave": true,
+ "cave_auto": true,
+ "area": 332,
+ "dark": false,
+ "header": {
+  "map_type": 16,
+  "npc_cache": 24,
+  "weather_word": 64,
+  "flags": 23683,
+  "icon_word": 40975,
+  "place_display": 1,
+  "bgm0": 1076,
+  "bgm1": 1076,
+  "bgm2": 1076,
+  "bgm3": 1076,
+  "place": 70,
+  "encounters": 60,
+  "enc_slot": 2
+ },
+ "warps": [
+  {
+   "at": [
+    34,
+    29
+   ],
+   "to": [
+    138,
+    1
+   ],
+   "what": "Sapphire warp 0 (34,29) -> ShoalCave_LowTideEntranceRoom 1"
+  },
+  {
+   "at": [
+    38,
+    15
+   ],
+   "to": [
+    163,
+    0
+   ],
+   "what": "Sapphire warp 1 (38,15) -> ShoalCave_LowTideStairsRoom 0"
+  },
+  {
+   "at": [
+    42,
+    4
+   ],
+   "to": [
+    163,
+    1
+   ],
+   "what": "Sapphire warp 2 (42,4) -> ShoalCave_LowTideStairsRoom 1"
+  },
+  {
+   "at": [
+    19,
+    14
+   ],
+   "to": [
+    162,
+    0
+   ],
+   "what": "Sapphire warp 3 (19,14) -> ShoalCave_LowTideLowerRoom 0"
+  },
+  {
+   "at": [
+    15,
+    19
+   ],
+   "to": [
+    162,
+    1
+   ],
+   "what": "Sapphire warp 4 (15,19) -> ShoalCave_LowTideLowerRoom 1"
+  },
+  {
+   "at": [
+    30,
+    25
+   ],
+   "to": [
+    162,
+    2
+   ],
+   "what": "Sapphire warp 5 (30,25) -> ShoalCave_LowTideLowerRoom 2"
+  },
+  {
+   "at": [
+    14,
+    33
+   ],
+   "to": [
+    138,
+    2
+   ],
+   "what": "Sapphire warp 6 (14,33) -> ShoalCave_LowTideEntranceRoom 2"
+  },
+  {
+   "at": [
+    40,
+    33
+   ],
+   "to": [
+    138,
+    3
+   ],
+   "what": "Sapphire warp 7 (40,33) -> ShoalCave_LowTideEntranceRoom 3"
+  }
+ ],
+ "triggers": [
+  {
+   "script": 1,
+   "var": 16442,
+   "value": 0,
+   "at": [
+    38,
+    15
+   ],
+   "y": 8
+  },
+  {
+   "script": 2,
+   "var": 0,
+   "value": 0,
+   "at": [
+    42,
+    4
+   ],
+   "y": 64
+  },
+  {
+   "script": 3,
+   "var": 0,
+   "value": 0,
+   "at": [
+    19,
+    14
+   ],
+   "y": 48
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 1,
+   "model": 110,
+   "script": 7113,
+   "flag": 1213,
+   "dir": 1,
+   "at": [
+    26,
+    14
+   ],
+   "what": "item ball ITEM_RARE_CANDY"
+  }
+ ],
+ "signs": [],
+ "what": "ShoalCave_LowTideInnerRoom: cave (converter/gen_caves.py, b2tools/models_cave.py); story objects: see notes/CAVES.md",
+ "alt_rooms": [
+  {
+   "room": "ShoalCave_HighTideInnerRoom",
+   "event": 9
+  }
+ ]
+}

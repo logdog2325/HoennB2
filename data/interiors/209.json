@@ -1,0 +1,42 @@
+{
+ "_doc": "LilycoveCity_House4: zone written by converter/gen_interior_recipes_houses.py (warps and parent from converter/gen_interiors.py); story people left for the story phase: none",
+ "zone": 209,
+ "room": "LilycoveCity_House4",
+ "area": 313,
+ "parent": 96,
+ "warps": [
+  {
+   "at": [3, 8],
+   "tile_only": true,
+   "to": [96, 24],
+   "what": "Sapphire warp 0 -> LilycoveCity 11"
+  },
+  {
+   "at": [4, 8],
+   "tile_only": true,
+   "to": [96, 24],
+   "what": "Sapphire warp 1 -> LilycoveCity 11"
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 1,
+   "model": 42,
+   "script": 1,
+   "dir": 1,
+   "at": [1, 4],
+   "move": 3,
+   "range": [1, 1]
+  },
+  {
+   "uid": 2,
+   "model": 61,
+   "script": 2,
+   "dir": 1,
+   "at": [7, 4],
+   "move": 3,
+   "range": [1, 1]
+  }
+ ],
+ "signs": []
+}

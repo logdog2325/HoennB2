@@ -1,0 +1,31 @@
+{
+ "_doc": "Maps of other pret decomps that the converters read as if they were pokeruby's (events agent, 2026-10-07): Emerald's event islands (user decision 2026-10-07: pokeemerald and pokefirered cloned in external/, source only). converter/gba.py: Repo(pokeruby).map_json(name) falls back to the decomp named here, its layout is registered under its own id and its tilesets are namespaced '<tag>:gTileset_X' (Emerald's General/Dewford/Rustboro/Fortree differ from Ruby's at some metatiles, checked pixel by pixel), map_folders() knows their MAP_ ids. Labels for the namespaced tilesets: data/labels/emerald_islands.json (plan_map.py; a metatile that renders and behaves exactly as Ruby's same tileset id takes Ruby's label). Metatile behaviour numbers are the same in both decomps (checked: only names differ). Not listed (not built): BirthIsland_Harbor and NavelRock_Harbor, the S.S. Tidal's landing rooms: the ferry docks at the islands' docks as at Southern Island, and the exteriors' doors to them stay parked. To add another event map: list it here, then follow notes/EVENTS.md.",
+ "decomps": {"pokeemerald": "emerald", "pokefirered": "frlg"},
+ "maps": {
+  "FarawayIsland_Entrance": "pokeemerald",
+  "FarawayIsland_Interior": "pokeemerald",
+  "BirthIsland_Exterior": "pokeemerald",
+  "NavelRock_Exterior": "pokeemerald",
+  "NavelRock_Entrance": "pokeemerald",
+  "NavelRock_B1F": "pokeemerald",
+  "NavelRock_Fork": "pokeemerald",
+  "NavelRock_Up1": "pokeemerald",
+  "NavelRock_Up2": "pokeemerald",
+  "NavelRock_Up3": "pokeemerald",
+  "NavelRock_Up4": "pokeemerald",
+  "NavelRock_Top": "pokeemerald",
+  "NavelRock_Down01": "pokeemerald",
+  "NavelRock_Down02": "pokeemerald",
+  "NavelRock_Down03": "pokeemerald",
+  "NavelRock_Down04": "pokeemerald",
+  "NavelRock_Down05": "pokeemerald",
+  "NavelRock_Down06": "pokeemerald",
+  "NavelRock_Down07": "pokeemerald",
+  "NavelRock_Down08": "pokeemerald",
+  "NavelRock_Down09": "pokeemerald",
+  "NavelRock_Down10": "pokeemerald",
+  "NavelRock_Down11": "pokeemerald",
+  "NavelRock_Bottom": "pokeemerald",
+  "AlteringCave": "pokeemerald"
+ }
+}

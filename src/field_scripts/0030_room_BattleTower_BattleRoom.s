@@ -1,0 +1,191 @@
+// BattleTower_BattleRoom (zone 15): Sapphire's Battle Room (data/maps/BattleTower_BattleRoom/scripts.inc; battle_tower
+// agent, 2026-10-08, notes/BATTLE_TOWER.md). Reached only from the Corridor (its map change reserves script 1); the
+// battles are Black 2's Battle Subway (plugin 1, b2tools/patches/battle_tower.py): the trainer of each of the seven
+// battles was chosen at registration with Sapphire's rule, command 307 builds its party, 309 the battle. Messages:
+// src/text/script/0021_room_BattleTower_BattleRoom.txt; the trainers' greetings are system text 376 (Black 2's balloon).
+#include "asm/field_script.inc"
+#include "hoenn.h"
+#include "hoenn_story.inc"
+#include "scenes/battle_tower_lib.inc"
+
+    ScriptEntry BTB_Enter               // 1: ON_FRAME_TABLE VAR_TEMP_0 0 (BattleTower_BattleRoom_EventScript_1608EB)
+    ScriptEntry Script_None             // 2: the opponent and the attendant (Sapphire: no script)
+    ScriptEntriesEnd
+
+Script_None:
+    VMHalt
+
+// ---- story (battle_tower)
+    .macro bt_room_say n                // msgbox by the attendant (object 2)
+    ActorMsg MSGFILE_SCRIPT, \n, BT_ROOM_ATTENDANT, 0, 0
+    LastKeyWait
+    .endm
+    .macro bt_room_yesno n, var
+    ActorMsg MSGFILE_SCRIPT, \n, BT_ROOM_ATTENDANT, 0, 0
+    YesNoWin \var
+    .endm
+
+BTB_Enter:                              // the player arrives at Sapphire (4,8)
+    ActorsPauseAll
+    FadeInBlack
+    FadeWait
+    h_applymovement BT_PLAYER, BTB_MvPlayerIn       // BattleTower_BattleRoom_Movement_160AB7
+    h_waitmovement
+L_BTB_Next:                             // 1608FA
+    BSubwayCmd_Tool 307, 0, 0, 0        // ChooseNextBattleTowerTrainer (chosen at registration) + FillBattleTowerTrainerParty
+    BSubwayCmd_Tool 308, 0, 0, BT_OPPONENT_GFX      // SetBattleTowerTrainerGfxId (its class's sprite: battle_tower.py)
+    h_addobject BT_OPPONENT, FLAG_HIDE_BATTLE_TOWER_OPPONENT
+    h_applymovement BT_OPPONENT, BTB_MvOppIn        // _160AC0
+    h_waitmovement
+    BSubwayCmd_Tool 352, 0, BT_OPPONENT, 0          // PrintBattleTowerTrainerGreeting + msgbox gStringVar4
+    h_heal                              // ScrSpecial_HealPlayerParty
+    BSubwayCmd_Tool 309, 0, 0, 0        // StartSpecialBattle
+    BSubwayCmd_Tool 332, 0, 0, BT_T1    // 1 = won (switch VAR_RESULT, case 1)
+    BSubwayCmd_Tool 347, 0, 0, 0        // (Black 2: the battle setup freed)
+    h_goto_if_eq BT_T1, 1, L_BTB_Won
+    // lost: LoadPlayerParty, SetBattleTowerProperty 0 = 5, 14; sub_810FF60 (0x8004 = 3); warp to the lobby
+    BSubwayCmd_Tool 304, 0, 0, 0        // Black 2: the streak ends here (its length kept, best, round 0)
+    WorkCmpConst VAR_BT_LEVEL_TYPE, 0
+    VMJumpIf CMP_NE, L_BTB_Lost100
+    WorkSetConst VAR_BT_STATUS_LV50, BT_ST_LOST
+    VMJump L_BTB_ToLobby
+L_BTB_Lost100:
+    WorkSetConst VAR_BT_STATUS_LV100, BT_ST_LOST
+L_BTB_ToLobby:
+    WorkSetConst 0x8004, 3
+    VMCall Sub_FanClub_CountWin
+    h_warp_arrive BT_LOBBY_ZONE, 6 + BT_LOBBY_OX, 6 + BT_LOBBY_OZ, 0     // warp MAP_BATTLE_TOWER_LOBBY, 255, 6, 6
+    FinishAllEvents
+    ActorsUnpauseAll
+    VMHalt
+
+L_BTB_Won:                              // 160961: SetBattleTowerProperty 6 (battle number + 1, SaveCurrentWinStreak)
+    BSubwayCmd_Tool 357, 0, 0, BT_T2    // Black 2: round + 1, wins + 1 -> the streak
+#if defined(HOENN_TEST_CHBT) && HOENN_TEST_CHBT == 2
+    BSubwayCmd_Tool 8, 0, 0, BT_T3      // (test build: the first win of a challenge counts as six)
+    h_goto_if_ne BT_T3, 2, L_BTB_TestDone
+    BSubwayCmd_Tool 357, 0, 0, BT_T2
+    BSubwayCmd_Tool 357, 0, 0, BT_T2
+    BSubwayCmd_Tool 357, 0, 0, BT_T2
+    BSubwayCmd_Tool 357, 0, 0, BT_T2
+    BSubwayCmd_Tool 357, 0, 0, BT_T2
+L_BTB_TestDone:
+#endif
+    VMCall Sub_BTB_SaveStreak
+    BSubwayCmd_Tool 303, 0, 0, BT_T3    // seven won (VAR_RESULT 8)?
+    h_goto_if_eq BT_T3, 1, L_BTB_Seven
+    h_applymovement BT_OPPONENT, BTB_MvOppOut       // _160AC6
+    h_waitmovement
+    h_removeobject BT_OPPONENT, FLAG_HIDE_BATTLE_TOWER_OPPONENT
+    h_applymovement BT_ROOM_ATTENDANT, BTB_MvAttIn  // _160ACB
+    h_waitmovement
+    h_applymovement BT_PLAYER, BTB_MvFaceDown       // _160ABC
+    h_waitmovement
+    bt_room_say 0                       // We will restore your Pokémon to full health.
+    MEPlay MUS_HEAL                     // (LoadPlayerParty, SavePlayerParty, SetBattleTowerParty: Black 2's battles
+    MEWait                              //  use a copy of the three, the party itself is never changed)
+    h_heal
+L_BTB_Ask:                              // 1609B2
+    BSubwayCmd_Tool 8, 0, 0, BT_T1      // the next battle's number
+    WordSetNumber 1, BT_T1, 1
+    bt_room_yesno 1, BT_T2              // You will be facing opponent no. <n>. Are you ready?
+    h_goto_if_yes BT_T2, L_BTB_Continue
+    bt_room_yesno 2, BT_T2              // Would you like to save and quit the game?
+    h_goto_if_yes BT_T2, L_BTB_Rest
+    bt_room_yesno 3, BT_T2              // Would you like to cancel your Battle Room challenge?
+    h_goto_if_yes BT_T2, L_BTB_Retire
+    VMJump L_BTB_Ask
+L_BTB_Continue:                         // 160A3C
+    h_closemessage
+    h_applymovement BT_PLAYER, BTB_MvFaceRight      // _160ABE
+    h_waitmovement
+    h_applymovement BT_ROOM_ATTENDANT, BTB_MvAttOut // _160AD0
+    h_waitmovement
+    VMJump L_BTB_Next
+
+L_BTB_Rest:                             // 160A94: SaveBattleTowerProgress 2, "SAVING...", the save, soft reset
+    WorkCmpConst VAR_BT_LEVEL_TYPE, 0
+    VMJumpIf CMP_NE, L_BTB_Rest100
+    WorkSetConst VAR_BT_STATUS_LV50, BT_ST_RESTED
+    VMJump L_BTB_RestSave
+L_BTB_Rest100:
+    WorkSetConst VAR_BT_STATUS_LV100, BT_ST_RESTED
+L_BTB_RestSave:
+    BSubwayCmd_Tool 306, 0, 0, 0        // Black 2: the play block keeps the mode, the party, the trainers (the round is
+    Plugin1_Cmd1002                     // in it already)
+    // Sapphire writes only gSaveBlock2 here, so its Continue starts where the challenge was saved: in the lobby in
+    // front of the receptionist. Black 2: the next zone (Sapphire (6,6), facing up) + EVENT_FLAG_CONTINUE_SCRIPT 2405
+    // make Continue load the lobby and run its zone init (ov035 EventFieldContinue_Callback)
+    FieldSetNextZone BT_LOBBY_ZONE, 1, 6 + BT_LOBBY_OX, 0, 6 + BT_LOBBY_OZ
+    FlagSet 2405
+    ActorMsg MSGFILE_SCRIPT, 4, BT_ROOM_ATTENDANT, 0, 0     // SAVING... DON'T TURN OFF THE POWER.
+    h_delay 60
+    SaveDataWrite BT_T1
+    SEPlay SEQ_SE_SAVE
+    SEWait
+    h_buffer_player
+    bt_room_say 5                       // <player> saved the game.
+L_BTB_Retire:                           // 160AB1: fadescreen FADE_TO_BLACK, BattleTower_SoftReset
+    h_closemessage
+    FadeOutBlack
+    FadeWait
+    BSubwayCmd_Tool 1, 0, 0, 0          // Black 2's Battle Subway reset (sys_reset)
+    VMHalt
+
+L_BTB_Seven:                            // 160A56: seven won: LoadPlayerParty, SetBattleTowerProperty 0 = 4, 2 = 1, 7, 14;
+    BSubwayCmd_Tool 305, 0, 0, 0        // sub_810FF60; warp to the lobby. Black 2: the streak goes on (sets + 1, round 0)
+    WorkCmpConst VAR_BT_LEVEL_TYPE, 0
+    VMJumpIf CMP_NE, L_BTB_Seven100
+    WorkSetConst VAR_BT_STATUS_LV50, BT_ST_WON
+    VMJump L_BTB_ToLobby
+L_BTB_Seven100:
+    WorkSetConst VAR_BT_STATUS_LV100, BT_ST_WON
+    VMJump L_BTB_ToLobby
+
+Sub_BTB_SaveStreak:                     // SaveCurrentWinStreak: recordWinStreaks[level] = max(it, the streak in BT_T2)
+    WorkCmpConst VAR_BT_LEVEL_TYPE, 0
+    VMJumpIf CMP_NE, L_BTB_SS100
+    VMStackPush BT_T2
+    VMStackPush VAR_BT_RECORD_LV50
+    VMStackCmp CMP_GT
+    VMJumpIf CMP_STACK, L_BTB_SSDone
+    WorkSet VAR_BT_RECORD_LV50, BT_T2
+    VMReturn
+L_BTB_SS100:
+    VMStackPush BT_T2
+    VMStackPush VAR_BT_RECORD_LV100
+    VMStackCmp CMP_GT
+    VMJumpIf CMP_STACK, L_BTB_SSDone
+    WorkSet VAR_BT_RECORD_LV100, BT_T2
+L_BTB_SSDone:
+    VMReturn
+
+#include "common/fan_club.inc"
+
+    .balign 4, 0
+BTB_MvPlayerIn:                         // _160AB7
+    walk_up 3
+    face_right
+    step_end
+BTB_MvFaceDown:                         // _160ABC
+    face_down
+    step_end
+BTB_MvFaceRight:                        // _160ABE
+    face_right
+    step_end
+BTB_MvOppIn:                            // _160AC0
+    walk_down 4
+    face_left
+    step_end
+BTB_MvOppOut:                           // _160AC6
+    walk_up 4
+    step_end
+BTB_MvAttIn:                            // _160ACB
+    walk_right 3
+    walk_up
+    step_end
+BTB_MvAttOut:                           // _160AD0
+    walk_down
+    walk_left 3
+    face_right
+    step_end

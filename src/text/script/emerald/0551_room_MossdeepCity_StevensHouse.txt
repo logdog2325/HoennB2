@@ -1,0 +1,16 @@
+It’s a collection of rare rocks and\nstones assembled by Steven.
+It’s a collection of rare rocks and\nstones assembled by Steven.
+It’s a collection of rare rocks and\nstones assembled by Steven.
+It’s a collection of rare rocks and\nstones assembled by Steven.
+There’s a set of Pokémon picture books.
+Steven: Apparently, there’s an\nunderwater cavern between{be00}\nMossdeep and Sootopolis.{be01}\nYou know, the one that Capt. Stern\nfound in his submarine.
+Steven: {0100:0}…{be01}\nAs you can see, there’s not much here,\nbut this is my home.{be01}\nThank you for all that you’ve done.{be01}\nThis is my token of appreciation.\nIt’s the Hidden Machine Dive.{be01}\nNo need to be shy--you’ve earned\nthis HM.
+Steven: While you’re using Surf, you\nshould notice dark patches of water.{be01}\nUse Dive if you come to deep water\nlike it. You’ll drop to the seafloor.{be01}\nWhen you want to come back up, use\nDive again.{be01}\nIn some places, it won’t be possible\nfor you to surface, though.
+{0100:0} checked the Poké Ball.{be01}\nIt contained the Pokémon\nBeldum.{be01}\nTake the Poké Ball?
+{0100:0} obtained a Beldum.
+There is no space for another Pokémon.
+{0100:0} left the Poké Ball where\nit was.
+It’s a letter.{be01}\n… … … … … …{be01}\nTo {0100:0}…{be01}\nI’ve decided to do a little soul-\nsearching and train on the road.{be01}\nI don’t plan to return home for some\ntime.{be01}\nI have a favor to ask of you.{be01}\nI want you to take the Poké Ball on\nthe desk.{be01}\nInside it is a Beldum, my favorite\nPokémon.{be01}\nI’m counting on you.{be01}\nMay our paths cross someday.{be01}\nSteven Stone
+It’s a letter.{be01}\n… … … … … …{be01}\nTo {0100:0}…{be01}\nI’ve decided to do a little soul-\nsearching and train on the road.{be01}\nI don’t plan to return home for some\ntime.{be01}\nI have a favor to ask of you.{be01}\nI want you to take the Poké Ball on\nthe desk.{be01}\nInside it is a Beldum, my favorite\nPokémon.{be01}\nI’m counting on you.{be01}\nMay our paths cross someday.{be01}\nSteven Stone
+Do you want to give a nickname to\nthis {0100:2}?
+Too bad!\nThe Bag is full...

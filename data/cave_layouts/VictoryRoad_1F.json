@@ -1,0 +1,13 @@
+{
+ "map": "VictoryRoad_1F",
+ "_doc": "caves_east: Sapphire elevation 3 = 0, elevation 4 = 16 (Black 2's step per tile of rock); the plank bridges (cave_tiles.json bridge metatiles) are decks over a chasm, the elevation-15 crossings walk-under bridges (two collision layers). Origin (8,8) spreads it over its four chunks (a chunk file must stay under 110,600 bytes).",
+ "origin": [
+  8,
+  8
+ ],
+ "levels": {
+  "3": 0,
+  "4": 16
+ },
+ "bridges": true
+}

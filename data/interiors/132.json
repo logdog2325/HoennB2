@@ -1,0 +1,51 @@
+{
+ "zone": 132,
+ "room": "NewMauville_Entrance",
+ "cave": true,
+ "cave_auto": true,
+ "area": 332,
+ "dark": false,
+ "header": {
+  "map_type": 16,
+  "npc_cache": 24,
+  "weather_word": 0,
+  "flags": 18721,
+  "icon_word": 40975,
+  "place_display": 0,
+  "bgm0": 1077,
+  "bgm1": 1077,
+  "bgm2": 1077,
+  "bgm3": 1077,
+  "place": 66,
+  "encounters": 56,
+  "enc_slot": 2
+ },
+ "warps": [
+  {
+   "at": [
+    4,
+    6
+   ],
+   "to": [
+    368,
+    1
+   ],
+   "what": "Sapphire warp 0 (4,6) -> Route110 0"
+  },
+  {
+   "at": [
+    4,
+    1
+   ],
+   "to": [
+    133,
+    0
+   ],
+   "what": "Sapphire warp 1 (4,1) -> NewMauville_Inside 0"
+  }
+ ],
+ "triggers": [],
+ "npcs": [],
+ "signs": [],
+ "what": "NewMauville_Entrance: cave (converter/gen_caves.py, b2tools/models_cave.py); story objects: see notes/CAVES.md"
+}

@@ -1,0 +1,92 @@
+{
+ "_doc": "gyms_league: the Champion's octagonal room (Sapphire's walkable octagon rows 3-9), the stairs x 5-7 rows 10-12 up from Corridor 4, the door to the Hall of Fame at (6,2).",
+ "map": "EverGrandeCity_ChampionsRoom",
+ "style": "gl_champion",
+ "open": [
+  [
+   0,
+   3,
+   12,
+   12
+  ]
+ ],
+ "floor": [
+  [
+   5,
+   3,
+   7,
+   3
+  ],
+  [
+   4,
+   4,
+   8,
+   4
+  ],
+  [
+   3,
+   5,
+   9,
+   5
+  ],
+  [
+   2,
+   6,
+   10,
+   7
+  ],
+  [
+   3,
+   8,
+   9,
+   8
+  ],
+  [
+   4,
+   9,
+   8,
+   9
+  ],
+  [
+   5,
+   10,
+   7,
+   12
+  ]
+ ],
+ "floor_tex": [
+  {
+   "tex": "in38_kaidan",
+   "src": 319,
+   "rect": [
+    5,
+    10,
+    7,
+    12
+   ],
+   "size": 16,
+   "size_v": 32
+  },
+  {
+   "tex": "in38_yuka2",
+   "src": 319,
+   "rect": [
+    5,
+    5,
+    7,
+    7
+   ],
+   "stretch": true
+  }
+ ],
+ "furniture": [
+  {
+   "m": "door_h5_in",
+   "tile": [
+    6,
+    3
+   ],
+   "wall": "N"
+  }
+ ]
+}

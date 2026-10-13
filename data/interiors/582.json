@@ -1,0 +1,53 @@
+{
+ "_doc": "RustboroCity_Flat2_3F: zone written by converter/gen_interior_recipes_houses.py (warps and parent from converter/gen_interiors.py); story people left for the story phase: none",
+ "zone": 582,
+ "room": "RustboroCity_Flat2_3F",
+ "area": 313,
+ "parent": 113,
+ "warps": [
+  {
+   "at": [1, 1],
+   "tile_only": true,
+   "to": [581, 1],
+   "what": "Sapphire warp 0 -> RustboroCity_Flat2_2F 1"
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 1,
+   "model": 52,
+   "script": 1,
+   "dir": 1,
+   "at": [7, 3],
+   "move": 5,
+   "range": [2, 0]
+  },
+  {
+   "uid": 2,
+   "model": 23,
+   "script": 2,
+   "dir": 1,
+   "at": [12, 2]
+  }
+ ],
+ "signs": [
+  {
+   "script": 3,
+   "at": [5, 1],
+   "dir": 4,
+   "what": "Bookshelf"
+  },
+  {
+   "script": 3,
+   "at": [6, 1],
+   "dir": 4,
+   "what": "Bookshelf"
+  },
+  {
+   "script": 4,
+   "at": [7, 1],
+   "dir": 4,
+   "what": "PictureBookshelf"
+  }
+ ]
+}

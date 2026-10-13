@@ -1,0 +1,11 @@
+We’re standing lookout here.{be01}\nHey, you! Stay away from the Weather\nInstitute. It’s not safe.
+Lookout duty is surprisingly boring.{be01}\nHey, you! Please don’t go near the\nWeather Institute.
+Something unseeable is in the way.
+Something unseeable is in the way.{be01}\nWant to use the Devon Scope?
+{0100:0} used the Devon Scope.{be01}\nAn invisible Pokémon became completely\nvisible!{be01}\nThe startled Pokémon attacked!
+May: {0100:0}!\nWhere were you? I was looking for you!{be01}\nHow much stronger have you gotten?\nLet me check for you!{be01}\nReady with your Pokémon?\nOf course you are! Go!
+May: But I had absolutely nothing to\nworry about! Keep it up!{be01}\nAnd, here! I have a present for you.
+May: Use Fly, and your Pokémon will\ninstantly carry you to any town you’ve{be00}\nalready visited.{be01}\nBut, to use Fly, you have to get the\nGym Badge from Fortree City.{be00}\nThat’s important, so don’t forget.{be01}\nYou should Fly home and visit\nLittleroot for a change.{be01}\nI bet your mom’s worried about you,\n{0100:0}.{be01}\nWell, let’s meet again somewhere!
+Brendan: {0100:0}! So this is where\nyou’ve been looking for Pokémon?{be01}\nLet me see how good you got.\nI’ll test you!{be01}\nNow!\nIt’s a battle, so battle!
+Brendan: I’d say you’re good enough\nto search for Pokémon anywhere.{be01}\nHere, I’ll give you this.\nTry it out.
+Brendan: Use Fly, and your Pokémon\ninstantly carries you to any town{be00}\nyou’ve already visited.{be01}\nBut you need the Fortree Gym Badge \nto do that.{be01}\nAnyway, I have to move along.

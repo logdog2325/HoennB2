@@ -1,0 +1,19 @@
+{
+ "kind": "trainer",
+ "side": "front",
+ "sprite": 0,
+ "archive": 71,
+ "files": {
+  "static": 0,
+  "parts": 1,
+  "palette": 7
+ },
+ "name": "brendan",
+ "note": "Brendan (rival battles, Hall of Fame)",
+ "source": "community: brendan_sheet_hyo-oppa.png by hyo-oppa",
+ "layout": "parts and animations of Black 2 front sprite 108",
+ "colours": 14,
+ "merged_colours": [],
+ "made_by": "b2tools/sprite_community.py",
+ "mcss_from": 108
+}

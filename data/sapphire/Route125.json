@@ -1,0 +1,330 @@
+{
+ "map": "Route125",
+ "id": "MAP_ROUTE125",
+ "layout": "LAYOUT_ROUTE125",
+ "music": "MUS_ROUTE120",
+ "region_map_section": "MAPSEC_ROUTE_125",
+ "weather": "WEATHER_SUNNY",
+ "connections": [
+  {
+   "direction": "down",
+   "offset": 0,
+   "map": "MAP_MOSSDEEP_CITY"
+  },
+  {
+   "direction": "left",
+   "offset": 0,
+   "map": "MAP_ROUTE124"
+  }
+ ],
+ "npcs": [
+  {
+   "local_id": 1,
+   "x": 46,
+   "y": 9,
+   "gfx": "OBJ_EVENT_GFX_SWIMMER_M",
+   "movement": "MOVEMENT_TYPE_ROTATE_COUNTERCLOCKWISE",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route125_EventScript_151F2E",
+   "texts": {
+    "Route125_Text_1C0FCF": "I heard you approaching, so I hung\\naround for you!$",
+    "Route125_Text_1C1002": "I beg for peace!$",
+    "Route125_Text_1C1013": "Sound travels faster in water than\\nit does through air.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 2,
+   "x": 9,
+   "y": 32,
+   "gfx": "OBJ_EVENT_GFX_SWIMMER_M",
+   "movement": "MOVEMENT_TYPE_FACE_RIGHT",
+   "range": [
+    2,
+    5
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route125_EventScript_151F45",
+   "texts": {
+    "Route125_Text_1C104B": "Hey, there!\\nCheck out my sweet POKéMON!$",
+    "Route125_Text_1C1073": "I floundered...$",
+    "Route125_Text_1C1083": "I was blown away by HORSEA's charm,\\nso I started swimming, too.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 3,
+   "x": 31,
+   "y": 33,
+   "gfx": "OBJ_EVENT_GFX_SWIMMER_F",
+   "movement": "MOVEMENT_TYPE_WALK_RIGHT_AND_LEFT",
+   "range": [
+    6,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route125_EventScript_151F5C",
+   "texts": {
+    "Route125_Text_1C10C3": "I'm tired of swimming.\\nAre you up for a battle with me?$",
+    "Route125_Text_1C10FB": "You're too much!$",
+    "Route125_Text_1C110C": "Whew...\\nWhich way is it to MOSSDEEP CITY?$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 4,
+   "x": 39,
+   "y": 20,
+   "gfx": "OBJ_EVENT_GFX_SWIMMER_F",
+   "movement": "MOVEMENT_TYPE_WALK_SEQUENCE_RIGHT_DOWN_LEFT_UP",
+   "range": [
+    9,
+    9
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route125_EventScript_151F73",
+   "texts": {
+    "Route125_Text_1C1136": "How would you like to take on the\\nWATER-type POKéMON I raised?$",
+    "Route125_Text_1C1175": "I lost...$",
+    "Route125_Text_1C117F": "Your power... You're the real deal.\\nI'm amazed!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 5,
+   "x": 23,
+   "y": 28,
+   "gfx": "OBJ_EVENT_GFX_SAILOR",
+   "movement": "MOVEMENT_TYPE_FACE_LEFT_AND_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route125_EventScript_151F8A",
+   "texts": {
+    "Route125_Text_1C11AF": "Ahoy! I'm a buff, tough SAILOR!\\nI've braved the world's seas!$",
+    "Route125_Text_1C11ED": "Gwrroooar!\\nI couldn't win!$",
+    "Route125_Text_1C1208": "The tide ebbs and flows inside the\\nSHOAL CAVE.\\pBy the way, it's about six hours from\\nhigh tide to low tide. Did you know?$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 6,
+   "x": 20,
+   "y": 21,
+   "gfx": "OBJ_EVENT_GFX_LASS",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route125_EventScript_151FC8",
+   "texts": {
+    "Route125_Text_1C13A1": "KIM: A funny old man lives in the\\nSHOAL CAVE. Someone told me.\\lAre you going to see him, too?$",
+    "Route125_Text_1C13FF": "KIM: I thought we would win.$",
+    "Route125_Text_1C146E": "KIM: No, no, no! You need two POKéMON,\\nor it's just no good!$",
+    "Route125_Text_1C141C": "KIM: A funny old man lives in the\\nSHOAL CAVE, doesn't he?\\pLet's go see him, IRIS!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 7,
+   "x": 21,
+   "y": 21,
+   "gfx": "OBJ_EVENT_GFX_LASS",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route125_EventScript_151FE3",
+   "texts": {
+    "Route125_Text_1C14AB": "IRIS: KIM, can you tell me what we're\\nlooking for out here?$",
+    "Route125_Text_1C14E7": "IRIS: Oh, we came sort of close.$",
+    "Route125_Text_1C154F": "IRIS: Oh, we could never, ever do\\nanything like a 2-on-1 battle.$",
+    "Route125_Text_1C1508": "IRIS: KIM, are we really going into\\nthe SHOAL CAVE?\\lWe'll get all wet.$"
+   },
+   "complex": true
+  }
+ ],
+ "signs": [
+  {
+   "x": 53,
+   "y": 10,
+   "type": "secret_base",
+   "raw": {
+    "type": "secret_base",
+    "x": 53,
+    "y": 10,
+    "elevation": 0,
+    "secret_base_id": "SECRET_BASE_RED_CAVE1_2"
+   }
+  },
+  {
+   "x": 55,
+   "y": 11,
+   "type": "secret_base",
+   "raw": {
+    "type": "secret_base",
+    "x": 55,
+    "y": 11,
+    "elevation": 0,
+    "secret_base_id": "SECRET_BASE_RED_CAVE4_2"
+   }
+  },
+  {
+   "x": 7,
+   "y": 25,
+   "type": "secret_base",
+   "raw": {
+    "type": "secret_base",
+    "x": 7,
+    "y": 25,
+    "elevation": 0,
+    "secret_base_id": "SECRET_BASE_YELLOW_CAVE2_2"
+   }
+  },
+  {
+   "x": 24,
+   "y": 32,
+   "type": "secret_base",
+   "raw": {
+    "type": "secret_base",
+    "x": 24,
+    "y": 32,
+    "elevation": 0,
+    "secret_base_id": "SECRET_BASE_YELLOW_CAVE4_2"
+   }
+  }
+ ],
+ "warps": [
+  {
+   "id": 0,
+   "x": 22,
+   "y": 19,
+   "dest_map": "MAP_SHOAL_CAVE_LOW_TIDE_ENTRANCE_ROOM",
+   "dest_warp_id": "0"
+  }
+ ],
+ "coord_events": [],
+ "wild": {
+  "water_mons": {
+   "encounter_rate": 4,
+   "slot_rates": [
+    60,
+    30,
+    5,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 5,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 15,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_PELIPPER",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_PELIPPER",
+     "min": 25,
+     "max": 30
+    }
+   ]
+  },
+  "fishing_mons": {
+   "encounter_rate": 30,
+   "slot_rates": [
+    70,
+    30,
+    60,
+    20,
+    20,
+    40,
+    40,
+    15,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_SHARPEDO",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 35,
+     "max": 40
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 40,
+     "max": 45
+    }
+   ]
+  }
+ }
+}

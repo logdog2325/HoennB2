@@ -1,0 +1,20 @@
+{
+ "kind": "overworld",
+ "code": 292,
+ "sheet": 270,
+ "frames": 1,
+ "size": [
+  32,
+  32
+ ],
+ "controller": 4,
+ "textures": [
+  "t4x4x1.0"
+ ],
+ "palette": "t4x4x1",
+ "name": "fossil",
+ "donor": "blue Poke Ball 292 (unused)",
+ "note": "OBJ_EVENT_GFX_FOSSIL: the Root and Claw Fossils in the Route 111 desert",
+ "sapphire": "pokeruby graphics/object_events/pics/misc/fossil.png, palette 00",
+ "made_by": "b2tools/models_objects.py (Sapphire's pixels 1:1)"
+}

@@ -1,0 +1,589 @@
+{
+ "_doc": [
+  "Hoenn music on Black 2's instruments (notes/MUSIC.md). b2tools/m4a_to_sseq.py reads this file; b2tools/patches/hoenn_music.py installs the songs and the Hoenn/Unova option.",
+  "library: the Black 2 bank whose instruments the converted songs use (BANK_MUS_WB_SOUNDLIST: Black/White's whole instrument set under fixed program numbers; no sequence plays it). Each song gets its own bank and wave archive cut from it.",
+  "instruments: what each library program is (Black 2's own Hoenn remixes SEQ_BGM_VS_RS_LEADER / VS_RS_CHAMP, how Black/White's songs use each program, envelopes and spectra: notes/MUSIC.md).",
+  "defaults: GBA sample name (pokeruby, without the _NN key suffix) or 'drums' -> program. drum_keys: GBA drum key -> Black 2 kit key where the General MIDI layouts differ. noise: the GBA noise channel as the kit's closed (short) / open (long_gate ticks and longer) hi-hat. roles: square waves and the programmable wave by role (b2tools/music_roles.py) and context (battle: vs_*, encounter_*, victory_*; else field): a program, 'psg' (Black 2's PSG square of the same duty) or [[min_key, program], ...] (first match).",
+  "volume: the INFO volume per context (linear in amplitude, measured); songs: per song (pokeruby name): context, volume, level (factor on the GBA VOL bytes), once (no loop: played as a jingle), voices / parts ('t<track>v<voice>') overrides with program, transpose, gain, drum_key, why; track_gain. Balance is automatic (data/hoenn_music_levels.json); gain/track_gain multiply it.",
+  "Hoenn/Unova option (b2tools/patches/hoenn_music.py, .c): slots = each song's sequence slot (fixed, b2tools/music_slots.py); zones get their Sapphire map's song in bgm2 (pokeruby map.json music; zone_songs / part_songs override); redirect = Black 2 id -> Hoenn song when the Hoenn option is on (redirect_ruby in Ruby builds); a Black 2 sequence that ends (every SEQ_ME_* jingle, the evolution intro SEQ_BGM_SHINKA: the game waits for them to end) must get a Hoenn song that ends too, or the wait never returns (v16 froze at the starter: SEQ_ME_POKEGET -> the looping mus_caught); hoenn_music.py refuses such a redirect; reverse = Hoenn song -> Black 2 stand-in when it is off (songs scripts name directly); wild = species -> song; classes = per Black 2 trainer class overrides of the computed eye / battle / victory songs; win_by_class = victory ids whose song follows the last trainer's class (Elite Four: victory_league)."
+ ],
+ "library": "BANK_MUS_WB_SOUNDLIST",
+ "instruments": {
+  "0": "piano",
+  "3": "celesta / vibraphone (bell-like mallet, decays)",
+  "11": "marimba",
+  "20": "pizzicato strings",
+  "25": "electric (finger) bass",
+  "30": "string ensemble (Black 2's Hoenn champion remix plays the GBA strings with it)",
+  "34": "harp",
+  "36": "nylon guitar",
+  "39": "brass section (the Hoenn champion remix plays the GBA trumpet and horn with it)",
+  "45": "clarinet",
+  "47": "flute",
+  "80": "drum kit (General MIDI key layout, as the GBA kit)",
+  "94": "square-wave lead",
+  "95": "synth lead (Black 2's Hoenn gym leader and champion remixes play the GBA square leads with it)",
+  "86": "timpani (Black 2 plays it in its Johto gym leader / champion remixes, SEQ_BGM_VS_GS_*)",
+  "10": "glockenspiel (high bell)",
+  "14": "tubular bells",
+  "17": "organ",
+  "19": "accordion",
+  "29": "synth bass (sustained)",
+  "40": "low brass (trombone / tuba)",
+  "101": "PSG square 12.5 %",
+  "102": "PSG square 25 %",
+  "104": "PSG square 50 %",
+  "106": "PSG square 75 %"
+ },
+ "defaults": {
+  "sc88pro_piano1": {
+   "program": 0
+  },
+  "sc88pro_string_ensemble": {
+   "program": 30
+  },
+  "sc88pro_flute": {
+   "program": 47
+  },
+  "sc88pro_fretless_bass": {
+   "program": 25
+  },
+  "sc88pro_fingered_bass": {
+   "program": 25
+  },
+  "sc88pro_synth_bass": {
+   "program": 29
+  },
+  "sc88pro_pizzicato_strings": {
+   "program": 20
+  },
+  "sc88pro_trumpet": {
+   "program": 39
+  },
+  "sc88pro_french_horn": {
+   "program": 39
+  },
+  "sc88pro_harp": {
+   "program": 34
+  },
+  "sc88pro_nylon_str_guitar": {
+   "program": 36
+  },
+  "sc88pro_xylophone": {
+   "program": 11
+  },
+  "sc88pro_glockenspiel": {
+   "program": 10
+  },
+  "drums": {
+   "program": 80
+  },
+  "sc88pro_timpani": {
+   "program": 86
+  },
+  "sc88pro_tuba": {
+   "program": 40
+  },
+  "sc88pro_organ2": {
+   "program": 17
+  },
+  "sc88pro_tubular_bell": {
+   "program": 14
+  },
+  "sc88pro_slap_bass": {
+   "program": 25
+  },
+  "sc88pro_accordion": {
+   "program": 19
+  },
+  "sc88pro_accordion_duplicate": {
+   "program": 19
+  },
+  "sc88pro_orchestra_cymbal_crash": {
+   "program": 80,
+   "drum_key": 49
+  },
+  "sc88pro_timpani_with_snare": {
+   "program": 86
+  },
+  "trinity_big_boned": {
+   "program": 29
+  },
+  "trinity_30303_mega_bass": {
+   "program": 29
+  },
+  "sc88pro_bubbles": {
+   "program": 10
+  }
+ },
+ "drum_keys": {
+  "44": 42,
+  "52": 42,
+  "58": 42,
+  "59": 57,
+  "60": 49
+ },
+ "noise": {
+  "short": 42,
+  "long": 46,
+  "long_gate": 24
+ },
+ "roles": {
+  "field": {
+   "square": {
+    "lead": [
+     [
+      72,
+      47
+     ],
+     [
+      0,
+      45
+     ]
+    ],
+    "double": [
+     [
+      67,
+      3
+     ],
+     [
+      0,
+      45
+     ]
+    ],
+    "arpeggio": 34,
+    "stabs": 36,
+    "pad": 30,
+    "bass": 25
+   },
+   "wave": {
+    "lead": [
+     [
+      67,
+      47
+     ],
+     [
+      0,
+      45
+     ]
+    ],
+    "double": [
+     [
+      67,
+      47
+     ],
+     [
+      0,
+      45
+     ]
+    ],
+    "arpeggio": 34,
+    "stabs": 20,
+    "pad": 30,
+    "bass": 25
+   }
+  },
+  "battle": {
+   "square": {
+    "lead": 95,
+    "double": 95,
+    "arpeggio": "psg",
+    "stabs": "psg",
+    "pad": 30,
+    "bass": 29
+   },
+   "wave": {
+    "lead": 30,
+    "double": 30,
+    "arpeggio": 30,
+    "stabs": 20,
+    "pad": 30,
+    "bass": 29
+   }
+  }
+ },
+ "volume": {
+  "field": 56,
+  "battle": 170
+ },
+ "songs": {
+  "mus_credits": {"loop": true, "_doc": "loops from its start (~171 s) until Black 2's frame-timed credits end (~262 s): user, 2026-10-11"},
+  "mus_littleroot": {
+   "voices": {
+    "4": {
+     "program": 3,
+     "why": "square 2 doubling the flute melody (track 6): a bell-like mallet doubles it instead"
+    },
+    "6": {
+     "program": 3,
+     "why": "same part, second square voice"
+    },
+    "5": {
+     "program": 36,
+     "why": "square 1 off-beat chord stabs (track 7): nylon guitar"
+    },
+    "7": {
+     "program": 36,
+     "why": "same part, second square voice"
+    }
+   },
+   "no_auto_gain": true,
+   "track_gain": {
+    "0": 1.18,
+    "1": 1.1,
+    "2": 0.61,
+    "3": 0.94,
+    "4": 0.78,
+    "5": 0.85,
+    "6": 0.21,
+    "7": 0.23,
+    "8": 0.65
+   },
+   "volume": 100,
+   "_balance": "the approved check (2026-10-08, the user: \"it sounds good\"), kept as it was: track_gain measured in game track by track against the GBA render (work/agents/music_check/scripts/stems.py), no automatic gain, INFO volume 100 (Littleroot as loud as SEQ_BGM_T_01 within 0.5 dB)"
+  },
+  "mus_vs_wild": {
+   "voices": {
+    "5": {
+     "program": 95,
+     "why": "as in the approved check: square 1 -> the synth lead (the battle default is Black 2's own PSG)"
+    }
+   },
+   "no_auto_gain": true,
+   "track_gain": {
+    "0": 1.11,
+    "1": 0.91,
+    "2": 0.81,
+    "3": 0.45,
+    "4": 0.71,
+    "5": 0.38,
+    "6": 1.05,
+    "7": 0.69
+   },
+   "volume": 127,
+   "level": 1.32,
+   "_balance": "the approved check, kept: track_gain measured in game against the GBA render, volume 127 + level 1.32 (as loud as SEQ_BGM_VS_NORAPOKE within 0.1 dB)"
+  }
+ },
+ "pool": {
+  "_doc": "b2tools/music_slots.py: the sequence entries and file bytes the Hoenn songs use (never played by the game under either option); checked against the pristine archive by the patch.",
+  "bgm_slots": [
+   "SEQ_BGM_E_CHEREN",
+   "SEQ_BGM_E_BERU",
+   "SEQ_BGM_E_DOCTOR",
+   "SEQ_BGM_E_DOCTOR2",
+   "SEQ_BGM_E_N_SWAN",
+   "SEQ_BGM_E_SAGE",
+   "SEQ_BGM_E_NEW_G_CIS",
+   "SEQ_BGM_E_INISHIE",
+   "SEQ_BGM_SW_DEMO_OPENING",
+   "SEQ_BGM_E_KANRANSYA",
+   "SEQ_BGM_MSL_DRESSUP",
+   "SEQ_BGM_MSL_BEFORE",
+   "SEQ_BGM_MSL_01",
+   "SEQ_BGM_MSL_02",
+   "SEQ_BGM_MSL_03",
+   "SEQ_BGM_MSL_04",
+   "SEQ_BGM_E_SHIRONA",
+   "SEQ_BGM_E_LEGEND_BORN_W",
+   "SEQ_BGM_E_EPIROGUE",
+   "SEQ_BGM_E_EPIROGUE_W",
+   "SEQ_BGM_MSL_DL_01",
+   "SEQ_BGM_MSL_DL_02",
+   "SEQ_BGM_MSL_DL_03",
+   "SEQ_BGM_MSL_DL_04",
+   "SEQ_BGM_PW_FILMING",
+   "SEQ_BGM_PW_SCENARIO_01_F",
+   "SEQ_BGM_PW_SCENARIO_01_L",
+   "SEQ_BGM_PW_SCENARIO_02_F",
+   "SEQ_BGM_PW_SCENARIO_02_L",
+   "SEQ_BGM_PW_SCENARIO_03_F",
+   "SEQ_BGM_PW_SCENARIO_03_L",
+   "SEQ_BGM_PW_SCENARIO_04_F",
+   "SEQ_BGM_PW_SCENARIO_04_L",
+   "SEQ_BGM_PW_SCENARIO_05_F",
+   "SEQ_BGM_PW_SCENARIO_05_L",
+   "SEQ_BGM_PW_SCENARIO_06_F",
+   "SEQ_BGM_PW_SCENARIO_06_L",
+   "SEQ_BGM_PW_SCENARIO_07_F",
+   "SEQ_BGM_PW_SCENARIO_07_L",
+   "SEQ_BGM_PW_SCENARIO_08_F",
+   "SEQ_BGM_SW_DEMO_FLIGHT",
+   "SEQ_BGM_SW_DEMO_UNION_00",
+   "SEQ_BGM_SW_DEMO_UNION_01",
+   "SEQ_BGM_SW_DEMO_UNION_02",
+   "SEQ_BGM_SW_DEMO_UNION_03B",
+   "SEQ_BGM_SW_DEMO_UNION_03W",
+   "SEQ_BGM_SW_DEMO_AJITO_SHIP",
+   "SEQ_BGM_SW_DEMO_FRIGATE",
+   "SEQ_BGM_E_ACHROMA",
+   "SEQ_BGM_E_7_SAGE",
+   "SEQ_BGM_E_C08_ICE",
+   "SEQ_BGM_E_EPILOGUE",
+   "SEQ_BGM_EV_GIANTHOLE_01",
+   "SEQ_BGM_EV_GIANTHOLE_02",
+   "SEQ_BGM_C_03",
+   "SEQ_BGM_C_10_B",
+   "SEQ_BGM_C_10_W",
+   "SEQ_BGM_H_02",
+   "SEQ_BGM_H_05",
+   "SEQ_BGM_PLEASURE_BOAT",
+   "SEQ_BGM_PALACE",
+   "SEQ_BGM_INSECT_GYM_01",
+   "SEQ_BGM_SW_C_12",
+   "SEQ_BGM_MSL_FIELD",
+   "SEQ_BGM_SW_D_23",
+   "SEQ_BGM_SW_D_GESUI",
+   "SEQ_BGM_SW_D_24_B",
+   "SEQ_BGM_SW_D_REGI",
+   "SEQ_BGM_SW_D_UMA",
+   "SEQ_BGM_WATER_GYM_01",
+   "SEQ_BGM_REZO_RIZO",
+   "SEQ_BGM_KEMONOMICHI"
+  ],
+  "se_groups": [
+   "KYUREON",
+   "FRIGATE",
+   "SOURYUCITY",
+   "PKWOOD_AUD",
+   "KYUREM",
+   "GEEMA",
+   "KUSABI_IN"
+  ],
+  "bytes_only": [
+   "BANK_MUS_WB_SOUNDLIST",
+   "WAVE_MUS_WB_SOUNDLIST",
+   "SEQ_BGM_T_03",
+   "SEQ_BGM_H_01",
+   "SEQ_BGM_H_03",
+   "SEQ_BGM_H_04",
+   "SEQ_BGM_D_CHAMPROAD",
+   "SEQ_BGM_ERECTRIC_GYM_01"
+  ]
+ },
+ "slots": {
+  "mus_caught": "SEQ_BGM_E_DOCTOR2",
+  "mus_victory_wild": "SEQ_BGM_E_N_SWAN",
+  "mus_victory_gym_leader": "SEQ_BGM_E_SAGE",
+  "mus_victory_league": "SEQ_BGM_E_NEW_G_CIS",
+  "mus_route101": "SEQ_BGM_E_INISHIE",
+  "mus_route110": "SEQ_BGM_SW_DEMO_OPENING",
+  "mus_route120": "SEQ_BGM_E_KANRANSYA",
+  "mus_petalburg": "SEQ_BGM_MSL_DRESSUP",
+  "mus_oldale": "SEQ_BGM_MSL_BEFORE",
+  "mus_gym": "SEQ_BGM_MSL_01",
+  "mus_surf": "SEQ_BGM_MSL_02",
+  "mus_petalburg_woods": "SEQ_BGM_MSL_03",
+  "mus_level_up": "SEQ_BGM_MSL_04",
+  "mus_heal": "SEQ_BGM_E_SHIRONA",
+  "mus_obtain_badge": "SEQ_BGM_E_LEGEND_BORN_W",
+  "mus_obtain_item": "SEQ_BGM_E_EPIROGUE",
+  "mus_evolved": "SEQ_BGM_E_EPIROGUE_W",
+  "mus_obtain_tmhm": "SEQ_BGM_MSL_DL_01",
+  "mus_lilycove_museum": "SEQ_BGM_MSL_DL_02",
+  "mus_route122": "SEQ_BGM_MSL_DL_03",
+  "mus_oceanic_museum": "SEQ_BGM_MSL_DL_04",
+  "mus_evolution_intro": "SEQ_BGM_PW_FILMING",
+  "mus_evolution": "SEQ_BGM_PW_SCENARIO_01_F",
+  "mus_move_deleted": "SEQ_BGM_PW_SCENARIO_01_L",
+  "mus_encounter_girl": "SEQ_BGM_PW_SCENARIO_02_F",
+  "mus_encounter_male": "SEQ_BGM_PW_SCENARIO_02_L",
+  "mus_abandoned_ship": "SEQ_BGM_PW_SCENARIO_03_F",
+  "mus_fortree": "SEQ_BGM_PW_SCENARIO_03_L",
+  "mus_birch_lab": "SEQ_BGM_PW_SCENARIO_04_F",
+  "mus_b_tower": "SEQ_BGM_PW_SCENARIO_04_L",
+  "mus_encounter_swimmer": "SEQ_BGM_PW_SCENARIO_05_F",
+  "mus_cave_of_origin": "SEQ_BGM_PW_SCENARIO_05_L",
+  "mus_obtain_berry": "SEQ_BGM_PW_SCENARIO_06_F",
+  "mus_awaken_legend": "SEQ_BGM_PW_SCENARIO_06_L",
+  "mus_slots_jackpot": "SEQ_BGM_PW_SCENARIO_07_F",
+  "mus_slots_win": "SEQ_BGM_PW_SCENARIO_07_L",
+  "mus_too_bad": "SEQ_BGM_PW_SCENARIO_08_F",
+  "mus_roulette": "SEQ_BGM_SW_DEMO_FLIGHT",
+  "mus_encounter_rich": "SEQ_BGM_SW_DEMO_UNION_00",
+  "mus_verdanturf": "SEQ_BGM_SW_DEMO_UNION_01",
+  "mus_rustboro": "SEQ_BGM_SW_DEMO_UNION_02",
+  "mus_poke_center": "SEQ_BGM_SW_DEMO_UNION_03B",
+  "mus_route104": "SEQ_BGM_SW_DEMO_UNION_03W",
+  "mus_route119": "SEQ_BGM_SW_DEMO_AJITO_SHIP",
+  "mus_cycling": "SEQ_BGM_SW_DEMO_FRIGATE",
+  "mus_poke_mart": "SEQ_BGM_E_ACHROMA",
+  "mus_littleroot": "SEQ_BGM_E_7_SAGE",
+  "mus_mt_chimney": "SEQ_BGM_E_C08_ICE",
+  "mus_encounter_female": "SEQ_BGM_E_EPILOGUE",
+  "mus_lilycove": "SEQ_BGM_EV_GIANTHOLE_01",
+  "mus_route111": "SEQ_BGM_EV_GIANTHOLE_02",
+  "mus_help": "SEQ_BGM_C_03",
+  "mus_underwater": "SEQ_BGM_C_10_B",
+  "mus_victory_trainer": "SEQ_BGM_C_10_W",
+  "mus_title": "SEQ_BGM_H_02",
+  "mus_intro": "SEQ_BGM_H_05",
+  "mus_encounter_may": "SEQ_BGM_E_CHEREN",
+  "mus_encounter_intense": "SEQ_BGM_PLEASURE_BOAT",
+  "mus_encounter_cool": "SEQ_BGM_PALACE",
+  "mus_route113": "SEQ_BGM_INSECT_GYM_01",
+  "mus_encounter_aqua": "SEQ_BGM_SW_C_12",
+  "mus_follow_me": "SEQ_BGM_MSL_FIELD",
+  "mus_encounter_brendan": "SEQ_BGM_E_BERU",
+  "mus_ever_grande": "SEQ_BGM_SW_D_23",
+  "mus_encounter_suspicious": "SEQ_BGM_SW_D_GESUI",
+  "mus_victory_aqua_magma": "SEQ_BGM_SW_D_24_B",
+  "mus_cable_car": "SEQ_BGM_SW_D_REGI",
+  "mus_game_corner": "SEQ_BGM_SW_D_UMA",
+  "mus_dewford": "SEQ_BGM_WATER_GYM_01",
+  "mus_safari_zone": "SEQ_BGM_REZO_RIZO",
+  "mus_victory_road": "SEQ_BGM_KEMONOMICHI",
+  "mus_aqua_magma_hideout": "SEQ_SE_SW_KYUREON_00_01",
+  "mus_sailing": "SEQ_BGM_E_DOCTOR",
+  "mus_mt_pyre": "SEQ_SE_SW_KYUREON_00_02a",
+  "mus_slateport": "SEQ_SE_SW_KYUREON_00_02b",
+  "mus_mt_pyre_exterior": "SEQ_SE_SW_KYUREON_00_02c",
+  "mus_school": "SEQ_SE_SW_KYUREON_00_02d",
+  "mus_hall_of_fame": "SEQ_SE_SW_KYUREON_00_03a",
+  "mus_fallarbor": "SEQ_SE_SW_KYUREON_00_03b",
+  "mus_sealed_chamber": "SEQ_SE_SW_KYUREON_01_01",
+  "mus_contest_winner": "SEQ_SE_SW_KYUREON_01_01b",
+  "mus_contest": "SEQ_SE_SW_KYUREON_01_02a",
+  "mus_encounter_magma": "SEQ_SE_SW_KYUREON_01_02b",
+  "mus_intro_battle": "SEQ_SE_SW_KYUREON_01_03",
+  "mus_weather_kyogre": "SEQ_SE_SW_KYUREON_01_04",
+  "mus_weather_groudon": "SEQ_SE_SW_KYUREON_01_05",
+  "mus_sootopolis": "SEQ_SE_SW_KYUREON_01_06",
+  "mus_contest_results": "SEQ_SE_SW_KYUREON_01_07",
+  "mus_hall_of_fame_room": "SEQ_SE_SW_KYUREON_01_07b",
+  "mus_trick_house": "SEQ_SE_SW_KYUREON_01_08",
+  "mus_encounter_twins": "SEQ_SE_SW_KYUREON_01_09",
+  "mus_encounter_elite_four": "SEQ_SE_SW_KYUREON_01_10",
+  "mus_encounter_hiker": "SEQ_SE_SW_KYUREON_01_11",
+  "mus_contest_lobby": "SEQ_SE_SW_KYUREON_01_12",
+  "mus_encounter_interviewer": "SEQ_SE_SW_KYUREON_01_13",
+  "mus_encounter_champion": "SEQ_SE_SW_KYUREON_01_14b",
+  "mus_credits": "SEQ_SE_SW_KYUREON_01_14w",
+  "mus_end": "SEQ_SE_SW_KYUREON_01_15",
+  "mus_vs_wild": "SEQ_SE_SW_KYUREON_01_16",
+  "mus_vs_aqua_magma": "SEQ_SE_SW_KYUREON_02_01",
+  "mus_vs_trainer": "SEQ_SE_SW_KYUREON_02_02",
+  "mus_vs_gym_leader": "SEQ_SE_SW_KYUREON_02_03",
+  "mus_vs_champion": "SEQ_SE_SW_KYUREON_02_04",
+  "mus_vs_regi": "SEQ_SE_SW_KYUREON_02_05",
+  "mus_vs_kyogre_groudon": "SEQ_SE_SW_KYUREON_02_06",
+  "mus_vs_rival": "SEQ_SE_SW_KYUREON_02_06w",
+  "mus_vs_elite_four": "SEQ_SE_SW_KYUREON_02_07",
+  "mus_vs_aqua_magma_leader": "SEQ_SE_SW_KYUREON_02_08"
+ },
+ "redirect": {
+  "SEQ_BGM_NAMINORI": "mus_surf",
+  "SEQ_BGM_BICYCLE": "mus_cycling",
+  "SEQ_BGM_DIVING": "mus_underwater",
+  "SEQ_BGM_VS_NORAPOKE": "mus_vs_wild",
+  "SEQ_BGM_VS_TSUYOPOKE": "mus_vs_wild",
+  "SEQ_BGM_VS_TRAINER": "mus_vs_trainer",
+  "SEQ_BGM_VS_SUBWAY_TRAINER": "mus_vs_trainer",
+  "SEQ_BGM_VS_GYMLEADER": "mus_vs_gym_leader",
+  "SEQ_BGM_VS_RIVAL": "mus_vs_rival",
+  "SEQ_BGM_VS_DPLEGEND": "mus_vs_kyogre_groudon",
+  "SEQ_BGM_VS_SHITENNO": "mus_vs_elite_four",
+  "SEQ_BGM_VS_CHAMP": "mus_vs_champion",
+  "SEQ_BGM_VS_SWAN_N": "mus_vs_trainer",
+  "SEQ_BGM_VS_UMA": "mus_vs_kyogre_groudon",
+  "SEQ_BGM_VS_REGI": "mus_vs_regi",
+  "SEQ_BGM_VS_SHIN": "mus_vs_kyogre_groudon",
+  "SEQ_BGM_VS_MU": "mus_vs_kyogre_groudon",
+  "SEQ_BGM_VS_RAI": "mus_vs_kyogre_groudon",
+  "SEQ_BGM_VS_MOVEPOKE": "mus_vs_wild",
+  "SEQ_BGM_VS_SETPOKE": "mus_vs_wild",
+  "SEQ_BGM_VS_SHIRONA": "mus_vs_champion",
+  "SEQ_BGM_VS_TRAINER_M": "mus_vs_trainer",
+  "SEQ_BGM_VS_TRAINER_S": "mus_vs_trainer",
+  "SEQ_BGM_VS_TRAINER_WIFI": "mus_vs_trainer",
+  "SEQ_BGM_VS_RS_LEADER": "mus_vs_gym_leader",
+  "SEQ_BGM_VS_RS_CHAMP": "mus_vs_champion",
+  "SEQ_BGM_VS_KYURAMU": "mus_vs_kyogre_groudon",
+  "SEQ_BGM_VS_KYUROMU": "mus_vs_kyogre_groudon",
+  "SEQ_BGM_VS_NEO_PLASMA": "mus_vs_aqua_magma",
+  "SEQ_BGM_VS_ACHROMA": "mus_vs_aqua_magma_leader",
+  "SEQ_BGM_VS_NEW_G_CIS": "mus_vs_aqua_magma_leader",
+  "SEQ_BGM_VS_IRIS": "mus_vs_champion",
+  "SEQ_BGM_VS_BANJIROU": "mus_vs_trainer",
+  "SEQ_BGM_VS_HUE": "mus_vs_rival",
+  "SEQ_BGM_VS_ELITE_PLASMA": "mus_vs_aqua_magma",
+  "SEQ_BGM_WIN1": "mus_victory_wild",
+  "SEQ_BGM_WIN2": "mus_victory_trainer",
+  "SEQ_BGM_WIN3": "mus_victory_gym_leader",
+  "SEQ_BGM_WIN4": "mus_victory_aqua_magma",
+  "SEQ_BGM_WIN5": "mus_victory_league",
+  "SEQ_BGM_WIN6": "mus_victory_aqua_magma",
+  "SEQ_BGM_SHINKA": "mus_evolution_intro",
+  "SEQ_BGM_KOUKAN": "mus_evolution",
+  "SEQ_BGM_E_DENDOUIRI": "mus_hall_of_fame",
+  "SEQ_BGM_ENDING": "mus_credits",
+  "SEQ_BGM_GF_LOGO": "mus_intro",
+  "SEQ_BGM_THEEND": "mus_end",
+  "SEQ_BGM_E_PLASMA": "mus_encounter_aqua",
+  "SEQ_BGM_E_TSURETEKE2": "mus_follow_me",
+  "SEQ_BGM_E_CHAMPION": "mus_encounter_champion",
+  "SEQ_BGM_E_LEGEND_BORN_B": "mus_awaken_legend",
+  "SEQ_BGM_SW_DEMO_SHIP": "mus_sailing",
+  "SEQ_ME_LVUP": "mus_level_up",
+  "SEQ_ME_ITEM": "mus_obtain_item",
+  "SEQ_ME_KEYITEM": "mus_obtain_item",
+  "SEQ_ME_POKEGET": "mus_obtain_item",
+  "SEQ_ME_SHINKAOME": "mus_evolved",
+  "SEQ_ME_BADGE": "mus_obtain_badge",
+  "SEQ_ME_WAZA": "mus_obtain_tmhm",
+  "SEQ_ME_KINOMI": "mus_obtain_berry",
+  "SEQ_ME_WASURE": "mus_move_deleted",
+  "SEQ_ME_ASA": "mus_heal"
+ },
+ "redirect_ruby": {
+  "SEQ_BGM_E_PLASMA": "mus_encounter_magma"
+ },
+ "reverse": {
+  "mus_encounter_may": "SEQ_BGM_E_HUE",
+  "mus_encounter_brendan": "SEQ_BGM_E_HUE",
+  "mus_sailing": "SEQ_BGM_NAMINORI"
+ },
+ "wild": {
+  "382": "mus_vs_kyogre_groudon",
+  "383": "mus_vs_kyogre_groudon",
+  "384": "mus_vs_kyogre_groudon",
+  "377": "mus_vs_regi",
+  "378": "mus_vs_regi",
+  "379": "mus_vs_regi",
+  "380": "mus_vs_wild",
+  "381": "mus_vs_wild"
+ },
+ "win_by_class": [
+  "SEQ_BGM_WIN3"
+ ],
+ "classes": {},
+ "zone_songs": {
+  "17": "mus_b_tower",
+  "21": "mus_b_tower",
+  "343": "mus_b_tower",
+  "336": "mus_b_tower",
+  "15": "mus_b_tower",
+  "394": null
+ },
+ "part_songs": {
+  "Route111_Desert": "mus_route111"
+ },
+ "silence": "SEQ_BGM_SILENCE_FIELD",
+ "title": "mus_title",
+ "after_catch": "mus_caught",
+ "not_waited": ["SEQ_BGM_ENDING"],
+ "zone_rules": {
+  "_doc": "Sapphire's own zone music rules (pokeruby overworld.c GetLocationMusic): b2tools/patches/hoenn_music.py zone_rules",
+  "crisis_song": {"sapphire": "mus_weather_kyogre", "ruby": "mus_weather_groudon"},
+  "institute_maps": ["Route119_WeatherInstitute_1F", "Route119_WeatherInstitute_2F"],
+  "institute_song": "mus_mt_chimney"
+ },
+ "emerald_music": {
+  "MUS_ABANDONED_SHIP": "mus_abandoned_ship",
+  "MUS_NONE": "mus_sealed_chamber",
+  "MUS_RG_SEVII_ROUTE": "mus_route119",
+  "MUS_RG_SEVII_CAVE": "mus_cave_of_origin",
+  "AlteringCave": "mus_petalburg_woods"
+ },
+ "_volume": "volume: field 56 = Oldale and Route 104 (automatic balance) as loud as Black 2's town theme T_01 / the approved Littleroot (-21.5 dBFS; at 100 they were -16.2 / -16.5 dBFS, in game 2026-10-08); battle 170 (-> 127 + level): trainer / gym battles -13.8 / -13.0 dBFS against Black 2's wild battle -12.7"
+}

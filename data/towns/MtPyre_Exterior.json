@@ -1,0 +1,329 @@
+{
+ "_doc": "MtPyre Exterior's buildings and props (warp-only map: group 'standalone', its own exterior pack, data/buildings/standalone.json, b2tools/models_standalone.py). buildings: Sapphire door destination -> res and front (z of the model's front wall; world.py puts it 4 units into the door tile, footprint centre from data/plans); props: model origin in Sapphire map tile coordinates (footprint centre x, door row + (4 - 20)/16 for a building), 'covers': map tile rects the model stands on (no ground-module plinths there). Gravestones: Sapphire metatiles 0x324/0x325, grey (user choice).",
+ "group": "standalone",
+ "buildings": {},
+ "props": [
+  {
+   "res": 478,
+   "x": 15.5,
+   "z": 5.5,
+   "what": "gravestone (15,5)",
+   "covers": [
+    [
+     15,
+     5,
+     15,
+     5
+    ]
+   ]
+  },
+  {
+   "res": 478,
+   "x": 24.5,
+   "z": 5.5,
+   "what": "gravestone (24,5)",
+   "covers": [
+    [
+     24,
+     5,
+     24,
+     5
+    ]
+   ]
+  },
+  {
+   "res": 478,
+   "x": 9.5,
+   "z": 8.5,
+   "what": "gravestone (9,8)",
+   "covers": [
+    [
+     9,
+     8,
+     9,
+     8
+    ]
+   ]
+  },
+  {
+   "res": 478,
+   "x": 16.5,
+   "z": 8.5,
+   "what": "gravestone (16,8)",
+   "covers": [
+    [
+     16,
+     8,
+     16,
+     8
+    ]
+   ]
+  },
+  {
+   "res": 478,
+   "x": 23.5,
+   "z": 8.5,
+   "what": "gravestone (23,8)",
+   "covers": [
+    [
+     23,
+     8,
+     23,
+     8
+    ]
+   ]
+  },
+  {
+   "res": 478,
+   "x": 15.5,
+   "z": 9.5,
+   "what": "gravestone (15,9)",
+   "covers": [
+    [
+     15,
+     9,
+     15,
+     9
+    ]
+   ]
+  },
+  {
+   "res": 478,
+   "x": 24.5,
+   "z": 9.5,
+   "what": "gravestone (24,9)",
+   "covers": [
+    [
+     24,
+     9,
+     24,
+     9
+    ]
+   ]
+  },
+  {
+   "res": 478,
+   "x": 14.5,
+   "z": 11.5,
+   "what": "gravestone (14,11)",
+   "covers": [
+    [
+     14,
+     11,
+     14,
+     11
+    ]
+   ]
+  },
+  {
+   "res": 478,
+   "x": 16.5,
+   "z": 11.5,
+   "what": "gravestone (16,11)",
+   "covers": [
+    [
+     16,
+     11,
+     16,
+     11
+    ]
+   ]
+  },
+  {
+   "res": 478,
+   "x": 18.5,
+   "z": 11.5,
+   "what": "gravestone (18,11)",
+   "covers": [
+    [
+     18,
+     11,
+     18,
+     11
+    ]
+   ]
+  },
+  {
+   "res": 478,
+   "x": 21.5,
+   "z": 11.5,
+   "what": "gravestone (21,11)",
+   "covers": [
+    [
+     21,
+     11,
+     21,
+     11
+    ]
+   ]
+  },
+  {
+   "res": 478,
+   "x": 23.5,
+   "z": 11.5,
+   "what": "gravestone (23,11)",
+   "covers": [
+    [
+     23,
+     11,
+     23,
+     11
+    ]
+   ]
+  },
+  {
+   "res": 478,
+   "x": 25.5,
+   "z": 11.5,
+   "what": "gravestone (25,11)",
+   "covers": [
+    [
+     25,
+     11,
+     25,
+     11
+    ]
+   ]
+  },
+  {
+   "res": 478,
+   "x": 14.5,
+   "z": 13.5,
+   "what": "gravestone (14,13)",
+   "covers": [
+    [
+     14,
+     13,
+     14,
+     13
+    ]
+   ]
+  },
+  {
+   "res": 478,
+   "x": 16.5,
+   "z": 13.5,
+   "what": "gravestone (16,13)",
+   "covers": [
+    [
+     16,
+     13,
+     16,
+     13
+    ]
+   ]
+  },
+  {
+   "res": 478,
+   "x": 23.5,
+   "z": 13.5,
+   "what": "gravestone (23,13)",
+   "covers": [
+    [
+     23,
+     13,
+     23,
+     13
+    ]
+   ]
+  },
+  {
+   "res": 478,
+   "x": 25.5,
+   "z": 13.5,
+   "what": "gravestone (25,13)",
+   "covers": [
+    [
+     25,
+     13,
+     25,
+     13
+    ]
+   ]
+  },
+  {
+   "res": 478,
+   "x": 27.5,
+   "z": 13.5,
+   "what": "gravestone (27,13)",
+   "covers": [
+    [
+     27,
+     13,
+     27,
+     13
+    ]
+   ]
+  },
+  {
+   "res": 478,
+   "x": 28.5,
+   "z": 13.5,
+   "what": "gravestone (28,13)",
+   "covers": [
+    [
+     28,
+     13,
+     28,
+     13
+    ]
+   ]
+  },
+  {
+   "res": 478,
+   "x": 30.5,
+   "z": 15.5,
+   "what": "gravestone (30,15)",
+   "covers": [
+    [
+     30,
+     15,
+     30,
+     15
+    ]
+   ]
+  },
+  {
+   "res": 478,
+   "x": 30.5,
+   "z": 17.5,
+   "what": "gravestone (30,17)",
+   "covers": [
+    [
+     30,
+     17,
+     30,
+     17
+    ]
+   ]
+  },
+  {
+   "res": 478,
+   "x": 31.5,
+   "z": 18.5,
+   "what": "gravestone (31,18)",
+   "covers": [
+    [
+     31,
+     18,
+     31,
+     18
+    ]
+   ]
+  },
+  {
+   "res": 478,
+   "x": 16.5,
+   "z": 22.5,
+   "what": "gravestone (16,22)",
+   "covers": [
+    [
+     16,
+     22,
+     16,
+     22
+    ]
+   ]
+  }
+ ]
+}

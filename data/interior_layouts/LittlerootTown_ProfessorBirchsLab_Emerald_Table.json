@@ -1,0 +1,313 @@
+{
+ "_doc": "emerald_rooms (b2tools/emerald_rooms.py writes this file: edit the script and rerun). Emerald's Lab with the table for the Johto starters (LAYOUT_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB_WITH_TABLE): the boxes at (9,4) (10,4) gone, a low table on (8,4)-(10,4) whose top the three Poke Balls stand on (solid_y). Loaded instead of LittlerootTown_ProfessorBirchsLab_Emerald while map replace event 4 is set (scenes/emerald/BirchLab_JohtoStarters.inc EM_LabJohtoInit: states >= 4).",
+ "map": "pokeemerald/LittlerootTown_ProfessorBirchsLab",
+ "style": "lab",
+ "origin": [
+  1,
+  1
+ ],
+ "floor": [
+  [
+   0,
+   1,
+   12,
+   12
+  ]
+ ],
+ "mats": [
+  {
+   "tex": "chip_mat",
+   "src": 285,
+   "rect": [
+    6,
+    12,
+    7,
+    12
+   ],
+   "border": 0.25,
+   "border_units": 4,
+   "_what": "door mat"
+  }
+ ],
+ "furniture": [
+  {
+   "m": "shelf01",
+   "tiles": [
+    0,
+    1,
+    1,
+    1
+   ],
+   "wall": "N",
+   "_what": "bookshelf"
+  },
+  {
+   "m": "box01",
+   "tile": [
+    0,
+    2
+   ],
+   "_what": "boxes (Sapphire's cabinet, upper half)"
+  },
+  {
+   "m": "box02_1",
+   "tile": [
+    0,
+    3
+   ],
+   "_what": "boxes (Black 2's stacked boxes box02 at one tile: two stacked box01 layered a shadow on a box top)"
+  },
+  {
+   "m": "plant01",
+   "tile": [
+    2,
+    2
+   ],
+   "_what": "plant"
+  },
+  {
+   "m": "pcdesk02",
+   "rot": 90,
+   "at": [
+    4.0,
+    1.5
+   ],
+   "wall": "N",
+   "_what": "PC desk (3,1)-(4,1)"
+  },
+  {
+   "m": "shelf03",
+   "tiles": [
+    6,
+    1,
+    7,
+    1
+   ],
+   "wall": "N",
+   "_what": "desk with books"
+  },
+  {
+   "m": "shelf03",
+   "tiles": [
+    8,
+    1,
+    9,
+    1
+   ],
+   "wall": "N",
+   "_what": "desk with books"
+  },
+  {
+   "m": "box02_1",
+   "tile": [
+    0,
+    6
+   ],
+   "_what": "boxes behind the bookshelves (box02 at one tile: the full-size one stuck into row 5)"
+  },
+  {
+   "m": "box02_1",
+   "tile": [
+    1,
+    6
+   ],
+   "_what": "boxes behind the bookshelves"
+  },
+  {
+   "m": "box02_1",
+   "tile": [
+    2,
+    6
+   ],
+   "_what": "boxes behind the bookshelves"
+  },
+  {
+   "m": "box02_1",
+   "tile": [
+    3,
+    6
+   ],
+   "_what": "boxes behind the bookshelves"
+  },
+  {
+   "m": "shelf01",
+   "tiles": [
+    0,
+    7,
+    1,
+    7
+   ],
+   "s_edge": 8,
+   "_what": "bookshelf"
+  },
+  {
+   "m": "shelf01",
+   "tiles": [
+    2,
+    7,
+    3,
+    7
+   ],
+   "s_edge": 8,
+   "_what": "bookshelf"
+  },
+  {
+   "m": "machine_l02",
+   "tiles": [
+    10,
+    6,
+    11,
+    7
+   ],
+   "_what": "the machine"
+  },
+  {
+   "m": "machine02",
+   "tile": [
+    12,
+    7
+   ],
+   "_what": "white cabinet"
+  },
+  {
+   "m": "pcdesk02",
+   "tiles": [
+    1,
+    9,
+    1,
+    11
+   ],
+   "_what": "PC desk"
+  },
+  {
+   "m": "chair01",
+   "tile": [
+    0,
+    10
+   ],
+   "rot": 90,
+   "_what": "chair"
+  },
+  {
+   "m": "chair01",
+   "tile": [
+    0,
+    11
+   ],
+   "rot": 90,
+   "_what": "chair"
+  },
+  {
+   "m": "chushion02",
+   "tile": [
+    2,
+    10
+   ],
+   "dx": 3,
+   "_what": "seat (walkable; 3 units off the PC desk's shadow)"
+  },
+  {
+   "m": "pcdesk02",
+   "tiles": [
+    11,
+    9,
+    11,
+    11
+   ],
+   "_what": "PC desk"
+  },
+  {
+   "m": "plant01",
+   "tile": [
+    12,
+    9
+   ],
+   "_what": "plant"
+  },
+  {
+   "m": "box02_1",
+   "tile": [
+    12,
+    11
+   ],
+   "_what": "boxes (cabinet)"
+  },
+  {
+   "m": "chushion02",
+   "tile": [
+    10,
+    10
+   ],
+   "dx": -3,
+   "_what": "seat (walkable; 3 units off the PC desk's shadow)"
+  },
+  {
+   "m": "plant01",
+   "tile": [
+    3,
+    12
+   ],
+   "_what": "plant"
+  },
+  {
+   "m": "chair01",
+   "tile": [
+    11,
+    2
+   ],
+   "_what": "chair (Emerald's, facing south)"
+  },
+  {
+   "m": "chair01",
+   "tile": [
+    12,
+    2
+   ],
+   "_what": "chair (Emerald's, facing south)"
+  },
+  {
+   "m": "chair01",
+   "tile": [
+    12,
+    3
+   ],
+   "_what": "chair (Emerald's, facing south)"
+  },
+  {
+   "m": "desk01",
+   "at": [
+    9.5,
+    4.5
+   ],
+   "rot": 90,
+   "_what": "Emerald's table for the Johto starters' balls (8-10,4)"
+  }
+ ],
+ "alt_of": "LittlerootTown_ProfessorBirchsLab",
+ "block": [
+  [
+   8,
+   4
+  ]
+ ],
+ "solid_y": [
+  {
+   "y": 11,
+   "tiles": [
+    [
+     8,
+     4
+    ],
+    [
+     9,
+     4
+    ],
+    [
+     10,
+     4
+    ]
+   ],
+   "_what": "the three balls stand on the table (desk01, top 11)"
+  }
+ ]
+}

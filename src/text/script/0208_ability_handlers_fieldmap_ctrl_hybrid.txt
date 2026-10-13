@@ -1,0 +1,34 @@
+          \x{ffff}
+${0205:2}
+Would you like to save the game?
+                               \x{ffff}
+Saving...\nDon't turn off the power.
+{0100:0} saved the game.
+                                                                                                                                   \x{ffff}
+Save error.{be01}
+There is already a saved game file.\nIt is impossible to save.{be01}\nPlease refer to the Instruction\nBooklet for details.{be01}\nPress Up + SELECT + B Button on\nthe title screen if you want to erase{be00}\nthe current saved game file.
+There is already a saved game file.\nIt is impossible to save.{be01}\nPlease refer to the Instruction\nBooklet for details.{be01}\nPress Up + SELECT + B Button on\nthe title screen if you want to erase{be00}\nthe current saved game file.{be01}
+Saving a lot of data...\nDon't turn off the power.
+              \x{ffff}
+              \x{ffff}
+              \x{ffff}
+                                            \x{ffff}
+It looks like you are connecting\nwith somebody. Is it OK to disconnect?
+Ending communication.\nPlease wait.
+                                                                                \x{ffff}
+                                                                                                                                                                                                                                   \x{ffff}
+First, let's restore your Pokémon\nto full health.
+Please visit a Pokémon Center when your\nPokémon's HP goes down.{be01}\nIf you're planning to travel any\ndistance, you should stock up on Potions{be00}\nat a Poké Mart.{be01}\nGood luck, Trainer!
+There! All happy and healthy!{be01}\nGood luck and take care!
+Wireless communications are turned OFF.\nTurn wireless communications ON{be00}\nin the System Settings.{be00}\nError code: 50699{be01}
+                                                                  \x{ffff}
+Juniper's words echoed...\n{0100:0}! There's a time and place{be00}\nfor everything! But not now.
+You can't dismount your Bike here.
+There is no Pokémon\nwith a Ribbon in your party.
+The {0109:1} can't be used\nwhen you have someone with you!
+It’s soft, loamy soil.
+There are {0100:2} {0100:1}!{be01}\nDo you want to pick the\n{0100:1}?
+{0100:0} picked the {0100:2} {0100:1}.
+{0100:0} put away the {0100:1}\nin the Bag’s Berries Pocket.{be01}\nThe soil returned to its soft and\nloamy state.
+The Bag’s Berries Pocket is full.{be01}\nThe {0100:1} couldn’t be taken.
+{0100:0} left the {0100:1}\nunpicked.

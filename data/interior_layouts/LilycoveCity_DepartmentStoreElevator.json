@@ -1,0 +1,43 @@
+{
+ "_doc": "Lilycove Department Store elevator (Sapphire 4x6, zone 181): Castelia office look (texture set 341) with Black 2's elevator door (elevator01) on the back wall; Sapphire's wall row 2 is the row it stands in.",
+ "map": "LilycoveCity_DepartmentStoreElevator",
+ "style": "sp_elevator",
+ "floor": [
+  [
+   0,
+   2,
+   3,
+   5
+  ]
+ ],
+ "mats": [
+  {
+   "tex": "in70_mat1",
+   "src": 351,
+   "rect": [
+    1,
+    5,
+    2,
+    5
+   ],
+   "border": 0.25,
+   "border_units": 3,
+   "y": 0,
+   "_what": "exit mat (Sapphire's red mat in front of the elevator door)"
+  }
+ ],
+ "furniture": [
+  {
+   "m": "elevator01",
+   "tiles": [
+    1,
+    2,
+    2,
+    2
+   ],
+   "wall": "N",
+   "_what": "elevator door (2 units off the wall: its door lay in the wall)",
+   "gap": 2
+  }
+ ]
+}

@@ -1,0 +1,7 @@
+I went in through the entrance and\ntook a look around the Contest hall.{be01}\nGetting up on that big stage...\nIt’s going to be tense!
+Which Contest are you planning on\nentering?{be01}\nIf you’re entering a Cool Contest,\na cool Pokémon has to be the one!{be01}\nPick a Pokémon worthy of the Contest\ntheme, and make sure it has the{be00}\nright set of moves to match.{be01}\nThat’s fundamental!
+Hello, there!{be01}\nWe’re accepting registrations for\nNormal Rank Pokémon Contests.
+We hope you will participate another\ntime.
+Oh, my love for Pokémon...\nThe attraction they evoke in me...{be01}\nWhoops!\nYou weren’t meant to see that!{be00}\nWell, anyway.{be01}\nIf you’re entering a Contest, try this\nmove on for size.
+My feelings for Pokémon...\nOh, they attract me so...
+Too bad!\nThe Bag is full...

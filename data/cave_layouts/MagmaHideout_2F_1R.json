@@ -1,0 +1,24 @@
+{
+ "map": "emerald/MagmaHideout_2F_1R",
+ "void": [
+  [
+   13,
+   22,
+   13,
+   22
+  ],
+  [
+   8,
+   1,
+   8,
+   1
+  ],
+  [
+   11,
+   22,
+   11,
+   22
+  ]
+ ],
+ "_doc": "emerald_caves 2026-10-12: Emerald's MagmaHideout_2F_1R (pokeemerald) read as Emerald's world reads it (models_cave 'emerald/<Map>'); void = walkable tiles no warp reaches, pools = its blocked water; emerald_polish_caves 2026-10-12: void also the top half of each door (MB_ANIMATED_DOOR 0x60 in Lavaridge's tileset is two tiles tall: Gen 3 marks the upper tile walkable but nobody reaches it; drawn as floor, the door's arch opened into a black floor square)"
+}

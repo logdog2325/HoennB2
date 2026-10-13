@@ -1,0 +1,42 @@
+{
+ "kind": "overworld",
+ "code": 231,
+ "sheet": 209,
+ "frames": 24,
+ "size": [
+  32,
+  32
+ ],
+ "controller": 1,
+ "textures": [
+  "t4x4x24.0",
+  "t4x4x24.1",
+  "t4x4x24.2",
+  "t4x4x24.3",
+  "t4x4x24.4",
+  "t4x4x24.5",
+  "t4x4x24.6",
+  "t4x4x24.7",
+  "t4x4x24.8",
+  "t4x4x24.9",
+  "t4x4x24.10",
+  "t4x4x24.11",
+  "t4x4x24.12",
+  "t4x4x24.13",
+  "t4x4x24.14",
+  "t4x4x24.15",
+  "t4x4x24.16",
+  "t4x4x24.17",
+  "t4x4x24.18",
+  "t4x4x24.19",
+  "t4x4x24.20",
+  "t4x4x24.21",
+  "t4x4x24.22",
+  "t4x4x24.23"
+ ],
+ "palette": "t4x4x24",
+ "name": "brendan-walk-run",
+ "note": "Brendan (player), walk-run",
+ "source": "pokeruby graphics/object_events/pics/people/brendan/normal",
+ "made_by": "b2tools/sprite_upgrade_players.py"
+}

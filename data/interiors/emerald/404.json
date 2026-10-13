@@ -1,0 +1,22 @@
+{
+ "_doc": "frontier_pike (2026-10-12): Emerald's Battle Pike, Emerald only (data/versions.json rooms: \"emerald\"; claimed in data/emerald/hoenn_interiors.json). Room data/interior_layouts/BattleFrontier_BattlePikeRoomFinal.json (pike_rooms; Emerald tile + origin (1, -2) = zone tile). Scripts: src/field_scripts/emerald/<Black 2 script number>_room_*.s (+ _init), text src/text/script/emerald/<Black 2 text number>_room_*.txt, named after the zone's Black 2 numbers and written at the room's own numbers (data/emerald/hoenn_interiors.json own_*; patches/scripts.py, text.py, interiors.py). Music and place: the Battle Frontier island's (parent 17). notes/FRONTIER_PIKE.md.",
+ "zone": 404,
+ "room": "BattleFrontier_BattlePikeRoomFinal",
+ "parent": 17,
+ "npcs": [
+  {
+   "uid": 1,
+   "model": 65,
+   "script": 2,
+   "dir": 1,
+   "at": [
+    2,
+    4
+   ],
+   "what": "LOCALID_PIKE_FINAL_ROOM_ATTENDANT (FACE_DOWN), no script"
+  }
+ ],
+ "signs": [],
+ "warps": [],
+ "triggers": []
+}

@@ -1,0 +1,1151 @@
+{
+ "_doc": "Sapphire overworld graphics id -> Black 2 overworld object code, for every graphics_id used by an object_event in external/pokeruby/data/maps/*/map.json (131 ids, 2103 objects; \"count\" = objects using the id). \"code\" = Black 2 object code as used in zone entity NPCs (a/1/2/6) and ActorNew: 0-376 people/objects, 0x1000+ Pokemon (a/2/0/8 species table, GetPokemonFieldOBJCODE), 0x2000+ 3D objects; looked up in a/0/4/7 as GetIndexOfObjID. \"b2\" = what the code is in Black 2. \"stand_in\": false = Black 2 has this role/species (trainer classes, Pokemon Center staff, obstacles, the same Pokemon, or a generic townsperson for a generic townsperson); true = Black 2 has no such person/thing, the code is the closest look (Hoenn characters, Hoenn-only roles). code null = no usable Black 2 sprite (VAR_* are dynamic). Identities checked against: the trainer class -> object code table in ov012 rodata at 0x0216d9ac (55 pairs of u16 class, u16 code, read by func_ov012_02162490; agrees with all 54 zone trainer class/code uses it covers), zone trainer NPCs (script 3000+n = trainer n, class from data/trainers), Pokemon Center NPCs and their global scripts (zone 435), NPC dialogue in data/field_scripts, and the sheets themselves (python3 converter/sprite_sheet.py b2 FIRST LAST OUT.png). Black 2 sprites only; Sapphire's pictures were only looked at. Review sheet: screenshots/sprite_map.png (python3 converter/sprite_sheet.py review).",
+ "OBJ_EVENT_GFX_LITTLE_BOY_1": {
+  "code": 8,
+  "b2": "Little boy",
+  "note": "generic townsperson; nearest Black 2 look",
+  "stand_in": false,
+  "count": 24
+ },
+ "OBJ_EVENT_GFX_LITTLE_GIRL_1": {
+  "code": 9,
+  "b2": "Little girl (Twins)",
+  "note": "generic townsperson; nearest Black 2 look (hair bow); also the Twins trainer sprite",
+  "stand_in": false,
+  "count": 19
+ },
+ "OBJ_EVENT_GFX_BOY_1": {
+  "code": 10,
+  "b2": "Boy",
+  "note": "generic townsperson; nearest Black 2 look",
+  "stand_in": false,
+  "count": 26
+ },
+ "OBJ_EVENT_GFX_GIRL_1": {
+  "code": 16,
+  "b2": "School Kid (F)",
+  "note": "generic townsperson; nearest Black 2 look; trainer class SCHOOL_KID_F",
+  "stand_in": false,
+  "count": 17
+ },
+ "OBJ_EVENT_GFX_BOY_2": {
+  "code": 21,
+  "b2": "Boy in a cap",
+  "note": "generic townsperson; nearest Black 2 look (cap, pink shirt)",
+  "stand_in": false,
+  "count": 17
+ },
+ "OBJ_EVENT_GFX_GIRL_2": {
+  "code": 17,
+  "b2": "Lady",
+  "note": "generic townsperson; nearest Black 2 look (long hair, white dress); trainer class LADY",
+  "stand_in": false,
+  "count": 13
+ },
+ "OBJ_EVENT_GFX_LITTLE_BOY_2": {
+  "code": 8,
+  "b2": "Little boy",
+  "note": "generic townsperson; nearest Black 2 look",
+  "stand_in": false,
+  "count": 5
+ },
+ "OBJ_EVENT_GFX_LITTLE_GIRL_2": {
+  "code": 154,
+  "b2": "Preschooler (F)",
+  "note": "generic townsperson; nearest Black 2 look; trainer class PRESCHOOLER_F",
+  "stand_in": false,
+  "count": 11
+ },
+ "OBJ_EVENT_GFX_BOY_3": {
+  "code": 14,
+  "b2": "Boy",
+  "note": "generic townsperson; nearest Black 2 look (dark hair, red shirt)",
+  "stand_in": false,
+  "count": 11
+ },
+ "OBJ_EVENT_GFX_GIRL_3": {
+  "code": 15,
+  "b2": "Lass",
+  "note": "generic townsperson; nearest Black 2 look; same sprite as LASS",
+  "stand_in": false,
+  "count": 21
+ },
+ "OBJ_EVENT_GFX_BOY_4": {
+  "code": 18,
+  "b2": "Young man",
+  "note": "generic townsperson; nearest Black 2 look (green shirt)",
+  "stand_in": false,
+  "count": 9
+ },
+ "OBJ_EVENT_GFX_WOMAN_1": {
+  "code": 23,
+  "b2": "Nursery Aide",
+  "note": "generic townsperson; nearest Black 2 look (apron); trainer class NURSERY_AIDE",
+  "stand_in": false,
+  "count": 7
+ },
+ "OBJ_EVENT_GFX_FAT_MAN": {
+  "code": 25,
+  "b2": "Fat man",
+  "note": "generic townsperson; nearest Black 2 look",
+  "stand_in": false,
+  "count": 15
+ },
+ "OBJ_EVENT_GFX_WOMAN_2": {
+  "code": 53,
+  "b2": "Clerk (F)",
+  "note": "generic townsperson; nearest Black 2 look; trainer class CLERK_F",
+  "stand_in": false,
+  "count": 25
+ },
+ "OBJ_EVENT_GFX_MAN_1": {
+  "code": 61,
+  "b2": "Bald man (Roughneck)",
+  "note": "generic townsperson; nearest Black 2 look; trainer class ROUGHNECK",
+  "stand_in": false,
+  "count": 30
+ },
+ "OBJ_EVENT_GFX_WOMAN_3": {
+  "code": 27,
+  "b2": "Woman",
+  "note": "generic townsperson; nearest Black 2 look (brown hair, green dress)",
+  "stand_in": false,
+  "count": 40
+ },
+ "OBJ_EVENT_GFX_OLD_MAN_1": {
+  "code": 28,
+  "b2": "Old man (Artist)",
+  "note": "generic townsperson; nearest Black 2 look (bald, white beard)",
+  "stand_in": false,
+  "count": 38
+ },
+ "OBJ_EVENT_GFX_OLD_WOMAN_1": {
+  "code": 29,
+  "b2": "Old woman",
+  "note": "generic townsperson; nearest Black 2 look",
+  "stand_in": false,
+  "count": 18
+ },
+ "OBJ_EVENT_GFX_MAN_2": {
+  "code": 24,
+  "b2": "Man (Pokefan M)",
+  "note": "generic townsperson; nearest Black 2 look; trainer class POKEFAN_M",
+  "stand_in": false,
+  "count": 18
+ },
+ "OBJ_EVENT_GFX_WOMAN_4": {
+  "code": 26,
+  "b2": "Woman (Pokefan F)",
+  "note": "generic townsperson; nearest Black 2 look; trainer class POKEFAN_F",
+  "stand_in": false,
+  "count": 21
+ },
+ "OBJ_EVENT_GFX_MAN_3": {
+  "code": 20,
+  "b2": "Man (Backers M)",
+  "note": "generic townsperson; nearest Black 2 look (orange/red shirt)",
+  "stand_in": false,
+  "count": 21
+ },
+ "OBJ_EVENT_GFX_WOMAN_5": {
+  "code": 22,
+  "b2": "Young woman (Backers F)",
+  "note": "generic townsperson; nearest Black 2 look (light hair, pink)",
+  "stand_in": false,
+  "count": 22
+ },
+ "OBJ_EVENT_GFX_COOK": {
+  "code": 66,
+  "b2": "Baker",
+  "note": "chef hat; trainer class BAKER -> 66 (class table); Black 2 has no Cook",
+  "stand_in": false,
+  "count": 3
+ },
+ "OBJ_EVENT_GFX_WOMAN_6": {
+  "code": 65,
+  "b2": "Maid",
+  "note": "generic townsperson; nearest Black 2 look (bandana and apron; Sapphire uses her at link rooms/contest hall); trainer class MAID",
+  "stand_in": false,
+  "count": 4
+ },
+ "OBJ_EVENT_GFX_OLD_MAN_2": {
+  "code": 187,
+  "b2": "Old man",
+  "note": "generic townsperson; nearest Black 2 look (white hair and moustache)",
+  "stand_in": false,
+  "count": 14
+ },
+ "OBJ_EVENT_GFX_OLD_WOMAN_2": {
+  "code": 45,
+  "b2": "Old lady (Socialite)",
+  "note": "generic townsperson; nearest Black 2 look; trainer class SOCIALITE",
+  "stand_in": false,
+  "count": 8
+ },
+ "OBJ_EVENT_GFX_CAMPER": {
+  "code": 21,
+  "b2": "Boy in a cap",
+  "note": "no Camper in Black 2; boy in a green cap",
+  "stand_in": true,
+  "count": 18
+ },
+ "OBJ_EVENT_GFX_PICNICKER": {
+  "code": 35,
+  "b2": "Pokemon Breeder (F)",
+  "note": "no Picnicker in Black 2; girl in green headwear",
+  "stand_in": true,
+  "count": 12
+ },
+ "OBJ_EVENT_GFX_MAN_4": {
+  "code": 19,
+  "b2": "Young man",
+  "note": "generic townsperson; nearest Black 2 look",
+  "stand_in": false,
+  "count": 34
+ },
+ "OBJ_EVENT_GFX_WOMAN_7": {
+  "code": 43,
+  "b2": "Waitress",
+  "note": "generic townsperson; nearest Black 2 look (white headband); trainer class WAITRESS",
+  "stand_in": false,
+  "count": 39
+ },
+ "OBJ_EVENT_GFX_YOUNGSTER": {
+  "code": 11,
+  "b2": "Youngster",
+  "note": "trainer class YOUNGSTER -> 11 (class table; 18 in zones)",
+  "stand_in": false,
+  "count": 21
+ },
+ "OBJ_EVENT_GFX_BUG_CATCHER": {
+  "code": 153,
+  "b2": "Preschooler (M)",
+  "note": "no Bug Catcher in Black 2; straw-coloured hat, but a smaller child than Sapphire's",
+  "stand_in": true,
+  "count": 10
+ },
+ "OBJ_EVENT_GFX_PSYCHIC_M": {
+  "code": 183,
+  "b2": "Psychic (M)",
+  "note": "trainer class PSYCHIC_M -> 183 (class table)",
+  "stand_in": false,
+  "count": 11
+ },
+ "OBJ_EVENT_GFX_SCHOOL_KID_M": {
+  "code": 12,
+  "b2": "School Kid (M)",
+  "note": "trainer class SCHOOL_KID_M -> 12 (class table)",
+  "stand_in": false,
+  "count": 11
+ },
+ "OBJ_EVENT_GFX_MANIAC": {
+  "code": 24,
+  "b2": "Pokefan (M)",
+  "note": "no Poke Maniac in Black 2; Pokefan is the nearest Pokemon-collector class",
+  "stand_in": true,
+  "count": 23
+ },
+ "OBJ_EVENT_GFX_HEX_MANIAC": {
+  "code": 184,
+  "b2": "Psychic (F)",
+  "note": "no Hex Maniac in Black 2; dark-haired mystic woman",
+  "stand_in": true,
+  "count": 5
+ },
+ "OBJ_EVENT_GFX_SWIMMER_M": {
+  "code": 40,
+  "b2": "Swimmer (M)",
+  "note": "swimming in water, as Sapphire's; 7 Swimmer M trainers in zones (not in the class table)",
+  "stand_in": false,
+  "count": 25
+ },
+ "OBJ_EVENT_GFX_SWIMMER_F": {
+  "code": 41,
+  "b2": "Swimmer (F)",
+  "note": "swimming in water, as Sapphire's; 6 Swimmer F trainers in zones",
+  "stand_in": false,
+  "count": 28
+ },
+ "OBJ_EVENT_GFX_BLACK_BELT": {
+  "code": 46,
+  "b2": "Black Belt",
+  "note": "trainer class BLACK_BELT -> 46 (class table)",
+  "stand_in": false,
+  "count": 18
+ },
+ "OBJ_EVENT_GFX_BEAUTY": {
+  "code": 17,
+  "b2": "Lady",
+  "note": "Black 2's Beauty class has no overworld code (not in the class table, no zone trainer); young woman in a white dress",
+  "stand_in": true,
+  "count": 25
+ },
+ "OBJ_EVENT_GFX_SCIENTIST_1": {
+  "code": 73,
+  "b2": "Scientist (M)",
+  "note": "trainer class SCIENTIST_M -> 73 (class table)",
+  "stand_in": false,
+  "count": 23
+ },
+ "OBJ_EVENT_GFX_LASS": {
+  "code": 15,
+  "b2": "Lass",
+  "note": "trainer class LASS -> 15 (class table; 10 Lass trainers in zones)",
+  "stand_in": false,
+  "count": 29
+ },
+ "OBJ_EVENT_GFX_GENTLEMAN": {
+  "code": 44,
+  "b2": "Gentleman",
+  "note": "trainer class GENTLEMAN -> 44 (class table)",
+  "stand_in": false,
+  "count": 26
+ },
+ "OBJ_EVENT_GFX_SAILOR": {
+  "code": 359,
+  "b2": "Ferry sailor",
+  "note": "navy uniform, white cap; Black 2's Castelia/Virbank ferry crew (\"Would you like to sail to Virbank City?\"). Black 2 has no Sailor trainer class",
+  "stand_in": false,
+  "count": 23
+ },
+ "OBJ_EVENT_GFX_FISHERMAN": {
+  "code": 63,
+  "b2": "Fisherman",
+  "note": "trainer class FISHERMAN -> 63 (class table)",
+  "stand_in": false,
+  "count": 23
+ },
+ "OBJ_EVENT_GFX_RUNNING_TRIATHLETE_M": {
+  "code": 58,
+  "b2": "Striker",
+  "note": "no runner in Black 2; athlete (football kit)",
+  "stand_in": true,
+  "count": 2
+ },
+ "OBJ_EVENT_GFX_RUNNING_TRIATHLETE_F": {
+  "code": 60,
+  "b2": "Smasher",
+  "note": "no runner in Black 2; athlete (tennis)",
+  "stand_in": true,
+  "count": 1
+ },
+ "OBJ_EVENT_GFX_TUBER_F": {
+  "code": 154,
+  "b2": "Preschooler (F)",
+  "note": "no Tuber in Black 2 (no inner tube)",
+  "stand_in": true,
+  "count": 4
+ },
+ "OBJ_EVENT_GFX_TUBER_M": {
+  "code": 153,
+  "b2": "Preschooler (M)",
+  "note": "no Tuber in Black 2 (no inner tube)",
+  "stand_in": true,
+  "count": 5
+ },
+ "OBJ_EVENT_GFX_HIKER": {
+  "code": 64,
+  "b2": "Hiker",
+  "note": "trainer class HIKER -> 64 (class table)",
+  "stand_in": false,
+  "count": 18
+ },
+ "OBJ_EVENT_GFX_CYCLING_TRIATHLETE_M": {
+  "code": 38,
+  "b2": "Cyclist (M)",
+  "note": "rider on a bike; trainer class CYCLIST_M -> 38 (class table); Sapphire calls them Triathletes",
+  "stand_in": false,
+  "count": 7
+ },
+ "OBJ_EVENT_GFX_CYCLING_TRIATHLETE_F": {
+  "code": 39,
+  "b2": "Cyclist (F)",
+  "note": "rider on a bike; trainer class CYCLIST_F -> 39 (class table)",
+  "stand_in": false,
+  "count": 3
+ },
+ "OBJ_EVENT_GFX_NURSE": {
+  "code": 78,
+  "b2": "Nurse Joy",
+  "note": "Pokemon Center nurse: heal script 2100 (Aspertia PC, zone 435 NPC uid 6). Not 51, which is the Nurse trainer class",
+  "stand_in": false,
+  "count": 16
+ },
+ "OBJ_EVENT_GFX_ITEM_BALL": {
+  "code": 110,
+  "b2": "Item ball",
+  "note": "378 item pickups in zones (scripts 7000-7799) use 110; 210 and 216 are the same ball",
+  "stand_in": false,
+  "count": 144
+ },
+ "OBJ_EVENT_GFX_BERRY_TREE": {
+  "code": null,
+  "b2": "7 unused Black 2 12-frame sheets (90, 102, 106, 111, 113, 114, 180) with Sapphire's grown trees, one tree per facing",
+  "note": "Gen 5 has no berry trees: each daily berry spot (converter/gen_hidden_items.py) shows Sapphire's grown tree of its berry as an NPC (data/story/berry_spots.json; sheet + facing per berry in data/berry_tree_sprites.json, b2tools/models_objects.py berry_trees), hidden by FLAG_BERRY_TREE_PICKED_<k> once picked; the tree zones' inits reset the flags on a new day (user decision 2026-10-08)",
+  "stand_in": false,
+  "count": 88
+ },
+ "OBJ_EVENT_GFX_PROF_BIRCH": {
+  "code": 104,
+  "b2": "Cedric Juniper",
+  "note": "no Birch in Black 2; male professor in a lab coat, donor for the Birch repaint (RESEARCH_STORY_SPRITES 5.1)",
+  "stand_in": true,
+  "count": 5
+ },
+ "OBJ_EVENT_GFX_MAN_5": {
+  "code": 42,
+  "b2": "Waiter",
+  "note": "generic townsperson; nearest Black 2 look (white shirt, dark vest); trainer class WAITER",
+  "stand_in": false,
+  "count": 21
+ },
+ "OBJ_EVENT_GFX_MAN_6": {
+  "code": 358,
+  "b2": "Blond man",
+  "note": "generic townsperson; nearest Black 2 look (Virbank/Pokestar townsperson)",
+  "stand_in": false,
+  "count": 23
+ },
+ "OBJ_EVENT_GFX_REPORTER_M": {
+  "code": 341,
+  "b2": "flashback-zone NPC slot (zone 598, Memory Link [inferred]), now the contest reporter",
+  "note": "redrawn from Sapphire's own sprite (glasses, microphone, plum jacket and tie) (b2tools/sprite_unique.py, src/sprites/drawn/contest-reporter.txt); the Contest Lobbies' interviewer (and the Oceanic Museum visitor with the same sprite); was 52 (Clerk M), which Hoenn uses for MAN_7; review: screenshots/sprites/unique_upgrade_review.png",
+  "stand_in": false,
+  "count": 5
+ },
+ "OBJ_EVENT_GFX_REPORTER_F": {
+  "code": 331,
+  "b2": "flashback-zone NPC slot (zone 599, a second Undella Town; zones 597-607 are BW1-town copies for the Memory Link flashbacks [inferred]), now Gabby",
+  "note": "redrawn from Sapphire's own sprite (microphone, pink top, white skirt) (b2tools/sprite_unique.py, src/sprites/drawn/gabby.txt); was 53 (Clerk F), which Hoenn also uses for WOMAN_2, so it stays; review: screenshots/sprites/unique_upgrade_review.png",
+  "stand_in": false,
+  "count": 11
+ },
+ "OBJ_EVENT_GFX_CUTTABLE_TREE": {
+  "code": 108,
+  "b2": "Cut tree",
+  "note": "Cut script 10004 (1243.s Script_5 \"This tree looks like it can be cut down!\"); 19 in zones",
+  "stand_in": false,
+  "count": 36
+ },
+ "OBJ_EVENT_GFX_MART_EMPLOYEE": {
+  "code": 77,
+  "b2": "Poke Mart clerk",
+  "note": "shop counter in Black 2's Pokemon Centers (zone 435 uid 4/5 -> shop scripts)",
+  "stand_in": false,
+  "count": 20
+ },
+ "OBJ_EVENT_GFX_ROOFTOP_SALE_WOMAN": {
+  "code": 339,
+  "b2": "flashback-zone NPC slot (zone 598, Memory Link [inferred]), now the rooftop sale woman",
+  "note": "redrawn from Sapphire's own sprite (puffy olive hair, light-blue shirt, white apron) (b2tools/sprite_unique.py, src/sprites/drawn/rooftop-sale-woman.txt); was 77 (Poke Mart clerk, also MART_EMPLOYEE); review: screenshots/sprites/unique_upgrade_review.png",
+  "stand_in": false,
+  "count": 1
+ },
+ "OBJ_EVENT_GFX_TEALA": {
+  "code": 79,
+  "b2": "Union Room receptionist slot (Unova Pokemon Centers only; Hoenn's Centers use it only for Teala), now Teala",
+  "note": "redrawn from Sapphire's own sprite (long blue hair, pink dress, hands folded) (b2tools/sprite_unique.py, src/sprites/drawn/teala.txt); review: screenshots/sprites/unique_upgrade_review.png",
+  "stand_in": false,
+  "count": 55
+ },
+ "OBJ_EVENT_GFX_BREAKABLE_ROCK": {
+  "code": 206,
+  "b2": "Rock (Clay Tunnel)",
+  "note": "Gen 5 has no Rock Smash rocks. 206 is a one-frame grey rock that blocks Clay Tunnel until a story flag (958) hides it; no break animation, so the Rock Smash script must hide it with a flag",
+  "stand_in": true,
+  "count": 40
+ },
+ "OBJ_EVENT_GFX_PUSHABLE_BOULDER": {
+  "code": 8195,
+  "b2": "Strength boulder (3D bigrock)",
+  "note": "code 0x2003, Strength script 10000 (1243.s Script_1); 25 in zones. A 3D BMD0 model, and 2x2 tiles (collWidth/collHeight 2, offset +8/-8) where Sapphire's boulder is 1x1: boulder puzzles (Seafloor Cavern, Victory Road, Fiery Path, Trick House 4) need checking. 8197 (0x2005, bigrock2, same texture) is the copy Black 2 uses in caves",
+  "stand_in": false,
+  "count": 60
+ },
+ "OBJ_EVENT_GFX_MR_BRINEYS_BOAT": {
+  "code": 8193,
+  "b2": "3D object 0x2001 (new): Black 2's motorboat c03_ship_04 (the Briney cutscene's boat)",
+  "note": "3D field objects 0x2001 (bow north: Route 104, Route 109) and 112 (bow south: Dewford): Black 2's motorboat (exterior pack 21 res 208) scaled to Sapphire's boat, wake ring left off (field heap); data/story/missing_objects.json",
+  "stand_in": false,
+  "count": 3
+ },
+ "OBJ_EVENT_GFX_TRUCK": {
+  "code": null,
+  "b2": "",
+  "note": "no vehicle object code in Black 2: built as the exterior building model res 460 (b2tools/models_truck_ext.py), hidden with BMSetVisible; code stays null (not an actor)",
+  "stand_in": false,
+  "count": 2
+ },
+ "OBJ_EVENT_GFX_MACHOKE_CARRYING_BOX": {
+  "code": 4164,
+  "b2": "Machoke",
+  "note": "Pokemon code 0x1044 (species 67); no box-carrying frames",
+  "stand_in": true,
+  "count": 2
+ },
+ "OBJ_EVENT_GFX_MACHOKE_FACING_AWAY": {
+  "code": 4164,
+  "b2": "Machoke",
+  "note": "Pokemon code 0x1044; movers in the player's house; ordinary Machoke sheet",
+  "stand_in": true,
+  "count": 2
+ },
+ "OBJ_EVENT_GFX_BIRCHS_BAG": {
+  "code": 208,
+  "b2": "Gift box 208 sheet with Sapphire's bag",
+  "note": "one-frame billboard: Sapphire's own bag pixels 1:1 (models_objects.py; replaced sprite_art.py's hand-drawn satchel 2026-10-08)",
+  "stand_in": false,
+  "count": 1
+ },
+ "OBJ_EVENT_GFX_POOCHYENA": {
+  "code": 4390,
+  "b2": "Poochyena",
+  "note": "Pokemon code 0x1126 (a/2/0/8 species 261)",
+  "stand_in": false,
+  "count": 12
+ },
+ "OBJ_EVENT_GFX_ARTIST": {
+  "code": 28,
+  "b2": "Artist",
+  "note": "trainer class ARTIST -> 28 (class table). Black 2's Artist is an old bald bearded man, Sapphire's a painter in a beret; Black 2 also uses 28 as a generic old man",
+  "stand_in": false,
+  "count": 7
+ },
+ "OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL": {
+  "code": 1,
+  "b2": "Hilbert",
+  "note": "no Brendan in Black 2; Hilbert walk+run sheet = the rival-Brendan donor (b2tools/sprite_art.py \"rivals\"). No Black 2 zone NPC uses 1, so it is untested as an NPC",
+  "stand_in": true,
+  "count": 5
+ },
+ "OBJ_EVENT_GFX_RIVAL_MAY_NORMAL": {
+  "code": 4,
+  "b2": "Hilda",
+  "note": "no May in Black 2; Hilda walk+run sheet = the rival-May donor (sprite_art.py \"rivals\"). No Black 2 zone NPC uses 4, so it is untested as an NPC",
+  "stand_in": true,
+  "count": 1
+ },
+ "OBJ_EVENT_GFX_CAMERAMAN": {
+  "code": 340,
+  "b2": "flashback-zone NPC slot (zone 598, a second Nacrene City, Memory Link [inferred]), now Ty",
+  "note": "redrawn from Sapphire's own sprite (cap, video camera on his shoulder, pink jacket) (b2tools/sprite_unique.py, src/sprites/drawn/ty.txt); was 75 (Royal Unova crew), which the PWT lobby (zone 192) shows, so it stays; review: screenshots/sprites/unique_upgrade_review.png",
+  "stand_in": false,
+  "count": 9
+ },
+ "OBJ_EVENT_GFX_MOVING_BOX": {
+  "code": null,
+  "b2": "",
+  "note": "Black 2's interior building models box01/box02 in the truck room (b2tools/models_truck.py); code stays null (not an actor)",
+  "stand_in": false,
+  "count": 3
+ },
+ "OBJ_EVENT_GFX_CABLE_CAR": {
+  "code": 356,
+  "b2": "Regigigas 356 sheet (64x64, unused in Hoenn) repainted with Sapphire's cable car",
+  "note": "one-frame 64x64 billboard: Sapphire's own cable car pixels 1:1 (models_objects.py billboards, src/sprites/overworld/356-cable-car); placed at both stations by data/story/missing_objects.json",
+  "stand_in": false,
+  "count": 2
+ },
+ "OBJ_EVENT_GFX_MAN_7": {
+  "code": 52,
+  "b2": "Clerk (M)",
+  "note": "office worker in a suit (Sapphire: Devon Corp. staff); trainer class CLERK_M",
+  "stand_in": false,
+  "count": 4
+ },
+ "OBJ_EVENT_GFX_SIDNEY": {
+  "code": 94,
+  "b2": "Grimsley slot (Unova League only), now Sidney",
+  "note": "redrawn from Sapphire's own sprite in Gen 5 style (b2tools/sprite_upgrade.py, src/sprites/overworld/094-sidney); review: screenshots/sprites/upgrade_review.png",
+  "stand_in": false,
+  "count": 1
+ },
+ "OBJ_EVENT_GFX_PHOEBE": {
+  "code": 93,
+  "b2": "Shauntal slot (Unova League/Undella only), now Phoebe",
+  "note": "redrawn from Sapphire's own sprite in Gen 5 style (b2tools/sprite_upgrade.py, src/sprites/overworld/093-phoebe); review: screenshots/sprites/upgrade_review.png",
+  "stand_in": false,
+  "count": 1
+ },
+ "OBJ_EVENT_GFX_GLACIA": {
+  "code": 96,
+  "b2": "Caitlin slot (Unova League/Undella only), now Glacia",
+  "note": "redrawn from Sapphire's own sprite in Gen 5 style (b2tools/sprite_upgrade.py, src/sprites/overworld/096-glacia); review: screenshots/sprites/upgrade_review.png",
+  "stand_in": false,
+  "count": 1
+ },
+ "OBJ_EVENT_GFX_DRAKE": {
+  "code": 89,
+  "b2": "unused Black 2 sheet (no zone, script or PWT use; a BW1 character), now Drake",
+  "note": "redrawn from Sapphire's own sprite in Gen 5 style (b2tools/sprite_upgrade.py, src/sprites/overworld/089-drake); review: screenshots/sprites/upgrade_review.png; was 229 (Drayden), which the PWT shows (Unova Leaders tournament), so it must not be repainted",
+  "stand_in": false,
+  "count": 1
+ },
+ "OBJ_EVENT_GFX_ROXANNE": {
+  "code": 268,
+  "b2": "Roxanne (PWT)",
+  "note": "Black 2 PWT sprite of the same character; its placeholder X frames (0, 1, 3: the back view and walking toward / away from the camera) are drawn from the sheet's own front and side frames (b2tools/sprite_pwt.py, src/sprites/overworld/268-roxanne); review: screenshots/sprites/pwt_frames_review.png",
+  "stand_in": true,
+  "count": 1
+ },
+ "OBJ_EVENT_GFX_BRAWLY": {
+  "code": 269,
+  "b2": "Brawly (PWT)",
+  "note": "Black 2 PWT sprite of the same character; its placeholder X frames (0, 1, 3: the back view and walking toward / away from the camera) are drawn from the sheet's own front and side frames (b2tools/sprite_pwt.py, src/sprites/overworld/269-brawly); review: screenshots/sprites/pwt_frames_review.png",
+  "stand_in": true,
+  "count": 1
+ },
+ "OBJ_EVENT_GFX_WATTSON": {
+  "code": 270,
+  "b2": "Wattson (PWT)",
+  "note": "Black 2 PWT sprite of the same character; its placeholder X frames (0, 1, 3: the back view and walking toward / away from the camera) are drawn from the sheet's own front and side frames (b2tools/sprite_pwt.py, src/sprites/overworld/270-wattson); review: screenshots/sprites/pwt_frames_review.png",
+  "stand_in": true,
+  "count": 2
+ },
+ "OBJ_EVENT_GFX_FLANNERY": {
+  "code": 271,
+  "b2": "Flannery (PWT)",
+  "note": "Black 2 PWT sprite of the same character; its placeholder X frames (0-2, 4, 5: the back view and walking toward / away from the camera) are drawn from the sheet's own front and side frames (b2tools/sprite_pwt.py, src/sprites/overworld/271-flannery); review: screenshots/sprites/pwt_frames_review.png",
+  "stand_in": true,
+  "count": 1
+ },
+ "OBJ_EVENT_GFX_NORMAN": {
+  "code": 272,
+  "b2": "Norman (PWT)",
+  "note": "Black 2 PWT sprite of the same character; its placeholder X frames (0, 1, 3: the back view and walking toward / away from the camera) are drawn from the sheet's own front and side frames (b2tools/sprite_pwt.py, src/sprites/overworld/272-norman); review: screenshots/sprites/pwt_frames_review.png",
+  "stand_in": true,
+  "count": 3
+ },
+ "OBJ_EVENT_GFX_WINONA": {
+  "code": 273,
+  "b2": "Winona (PWT)",
+  "note": "Black 2 PWT sprite of the same character; its placeholder X frames (0, 1, 3: the back view and walking toward / away from the camera) are drawn from the sheet's own front and side frames (b2tools/sprite_pwt.py, src/sprites/overworld/273-winona); review: screenshots/sprites/pwt_frames_review.png",
+  "stand_in": true,
+  "count": 1
+ },
+ "OBJ_EVENT_GFX_LIZA": {
+  "code": 275,
+  "b2": "Liza (PWT)",
+  "note": "Black 2 PWT sprite of the same character; its placeholder X frames (0-2, 4, 5: the back view and walking toward / away from the camera) are drawn from the sheet's own front and side frames (b2tools/sprite_pwt.py, src/sprites/overworld/275-liza); review: screenshots/sprites/pwt_frames_review.png",
+  "stand_in": true,
+  "count": 1
+ },
+ "OBJ_EVENT_GFX_TATE": {
+  "code": 274,
+  "b2": "Tate (PWT)",
+  "note": "Black 2 PWT sprite of the same character; its placeholder X frames (0-2, 4, 5: the back view and walking toward / away from the camera) are drawn from the sheet's own front and side frames (b2tools/sprite_pwt.py, src/sprites/overworld/274-tate); review: screenshots/sprites/pwt_frames_review.png",
+  "stand_in": true,
+  "count": 1
+ },
+ "OBJ_EVENT_GFX_WALLACE": {
+  "code": 288,
+  "b2": "Wallace (PWT)",
+  "note": "Black 2 PWT sprite of the same character; its placeholder X frames (0-2, 4, 5: the back view and walking toward / away from the camera) are drawn from the sheet's own front and side frames (b2tools/sprite_pwt.py, src/sprites/overworld/288-wallace); review: screenshots/sprites/pwt_frames_review.png",
+  "stand_in": true,
+  "count": 2
+ },
+ "OBJ_EVENT_GFX_STEVEN": {
+  "code": 287,
+  "b2": "Steven (PWT)",
+  "note": "Black 2 PWT sprite of the same character; its placeholder X frames (0, 1, 3: the back view and walking toward / away from the camera) are drawn from the sheet's own front and side frames (b2tools/sprite_pwt.py, src/sprites/overworld/287-steven); review: screenshots/sprites/pwt_frames_review.png",
+  "stand_in": true,
+  "count": 8
+ },
+ "OBJ_EVENT_GFX_WALLY": {
+  "code": 87,
+  "b2": "unused Black 2 sheet (no zone, script or PWT use; a BW1 character), now Wally",
+  "note": "redrawn from Sapphire's own sprite in Gen 5 style (b2tools/sprite_upgrade.py, src/sprites/overworld/087-wally); review: screenshots/sprites/upgrade_review.png; was 85 (Cilan), which the PWT (kept as the Battle Tower) shows, so it must not be repainted",
+  "stand_in": false,
+  "count": 6
+ },
+ "OBJ_EVENT_GFX_LITTLE_BOY_3": {
+  "code": 153,
+  "b2": "Preschooler (M)",
+  "note": "generic townsperson; nearest Black 2 look (cap); trainer class PRESCHOOLER_M",
+  "stand_in": false,
+  "count": 1
+ },
+ "OBJ_EVENT_GFX_HOT_SPRINGS_OLD_WOMAN": {
+  "code": 332,
+  "b2": "flashback-zone NPC slot (zone 599, Memory Link [inferred]), now the hot-springs old woman",
+  "note": "redrawn from Sapphire's own sprite: grey bun, sitting in the water up to her shoulders (a ring of water is drawn round her: Black 2's hot spring here is a flat puddle); the walk frames bob her in the water (b2tools/sprite_unique.py, src/sprites/drawn/hot-springs-old-woman.txt); was 29 (Old woman, also OLD_WOMAN_1); the slot keeps Black 2's shadow flag (no free shadowless NPC slot); review: screenshots/sprites/unique_upgrade_review.png",
+  "stand_in": false,
+  "count": 2
+ },
+ "OBJ_EVENT_GFX_SS_TIDAL": {
+  "code": 8194,
+  "b2": "3D object 0x2002 (new): Black 2's Virbank ferry c13_ship_01",
+  "note": "3D field object 0x2002: Black 2's ferry model (exterior pack 54 res 318) scaled to Sapphire's ship and turned bow east (models_objects.py); placed by data/story/missing_objects.json in the four docks",
+  "stand_in": false,
+  "count": 4
+ },
+ "OBJ_EVENT_GFX_SUBMARINE_SHADOW": {
+  "code": 8192,
+  "b2": "3D object 0x2000 (new): Sapphire's shadow on the water",
+  "note": "3D field object 0x2000 (b2tools/models_objects.py, src/objects3d/2000-submarine-shadow, patches/objects3d.py): a flat quad on the water with Sapphire's 88x32 shadow, 50 % alpha; placed by data/story/missing_objects.json (Harbor, Aqua/Magma Hideout B2F) and moved by the Ch8 scenes (missing_objects 2026-10-08)",
+  "stand_in": false,
+  "count": 3
+ },
+ "OBJ_EVENT_GFX_PICHU_DOLL": {
+  "code": 143,
+  "b2": "grey ball 143 sheet (unused in Hoenn) repainted with Sapphire's Pichu Doll",
+  "note": "one-frame billboard: Sapphire's own doll pixels 1:1 (src/sprites/overworld/143-pichu-doll); May's room, data/story/missing_objects.json",
+  "stand_in": false,
+  "count": 1
+ },
+ "OBJ_EVENT_GFX_BOY_5": {
+  "code": 13,
+  "b2": "Rich Boy",
+  "note": "generic townsperson; nearest Black 2 look (white top); trainer class RICH_BOY",
+  "stand_in": false,
+  "count": 8
+ },
+ "OBJ_EVENT_GFX_CONTEST_JUDGE": {
+  "code": 343,
+  "b2": "flashback-zone NPC slot (zones 603/607, Driftveil/Chargestone copies, Memory Link [inferred]), now the Contest Judge",
+  "note": "redrawn from Sapphire's own sprite (swept lavender hair, white moustache, red bow tie, green suit) (b2tools/sprite_unique.py, src/sprites/drawn/contest-judge.txt); was 44 (Gentleman, a trainer class); review: screenshots/sprites/unique_upgrade_review.png",
+  "stand_in": false,
+  "count": 5
+ },
+ "OBJ_EVENT_GFX_FOSSIL": {
+  "code": 292,
+  "b2": "blue Poke Ball 292 sheet (unused) repainted with Sapphire's fossil",
+  "note": "one-frame billboard: Sapphire's own fossil pixels 1:1 (src/sprites/overworld/292-fossil); data/story/ch4.json Root/Claw Fossils",
+  "stand_in": false,
+  "count": 2
+ },
+ "OBJ_EVENT_GFX_REGIROCK": {
+  "code": 350,
+  "b2": "Regirock",
+  "note": "Black 2's own legendary encounter sprite (Rock Peak Chamber, 12 frames); 4506 is the Pokemon-table one",
+  "stand_in": false,
+  "count": 1
+ },
+ "OBJ_EVENT_GFX_REGICE": {
+  "code": 351,
+  "b2": "Regice",
+  "note": "Black 2's own legendary encounter sprite (Iceberg Chamber); 4507 is the Pokemon-table one",
+  "stand_in": false,
+  "count": 1
+ },
+ "OBJ_EVENT_GFX_REGISTEEL": {
+  "code": 352,
+  "b2": "Registeel",
+  "note": "Black 2's own legendary encounter sprite (Iron Chamber); 4508 is the Pokemon-table one",
+  "stand_in": false,
+  "count": 1
+ },
+ "OBJ_EVENT_GFX_SKITTY": {
+  "code": 4429,
+  "b2": "Skitty",
+  "note": "Pokemon code 0x114D (species 300)",
+  "stand_in": false,
+  "count": 4
+ },
+ "OBJ_EVENT_GFX_KECLEON_1": {
+  "code": 4481,
+  "b2": "Kecleon",
+  "note": "Pokemon code 0x1181 (species 352); Sapphire hides these until the Devon Scope - script side",
+  "stand_in": false,
+  "count": 12
+ },
+ "OBJ_EVENT_GFX_RAYQUAZA": {
+  "code": 4513,
+  "b2": "Rayquaza",
+  "note": "Pokemon code 0x11A1 (species 384), 64x64 billboard; no Black 2 zone uses it",
+  "stand_in": false,
+  "count": 1
+ },
+ "OBJ_EVENT_GFX_ZIGZAGOON": {
+  "code": 4392,
+  "b2": "Zigzagoon",
+  "note": "Pokemon code 0x1128 (species 263)",
+  "stand_in": false,
+  "count": 7
+ },
+ "OBJ_EVENT_GFX_PIKACHU": {
+  "code": 4121,
+  "b2": "Pikachu (male)",
+  "note": "Pokemon code 0x1019 (species 25, sex 0); 4122 is the female form",
+  "stand_in": false,
+  "count": 3
+ },
+ "OBJ_EVENT_GFX_AZUMARILL": {
+  "code": 4283,
+  "b2": "Azumarill",
+  "note": "Pokemon code 0x10BB (species 184)",
+  "stand_in": false,
+  "count": 4
+ },
+ "OBJ_EVENT_GFX_WINGULL": {
+  "code": 4407,
+  "b2": "Wingull",
+  "note": "Pokemon code 0x1137 (species 278); Black 2 itself places it on Route 13",
+  "stand_in": false,
+  "count": 11
+ },
+ "OBJ_EVENT_GFX_KECLEON_2": {
+  "code": 4481,
+  "b2": "Kecleon",
+  "note": "Pokemon code 0x1181; Sapphire's second Kecleon id (Route 120 bridge)",
+  "stand_in": false,
+  "count": 1
+ },
+ "OBJ_EVENT_GFX_TUBER_M_SWIMMING": {
+  "code": 40,
+  "b2": "Swimmer (M)",
+  "note": "no Tuber in Black 2; adult swimmer in water",
+  "stand_in": true,
+  "count": 3
+ },
+ "OBJ_EVENT_GFX_AZURILL": {
+  "code": 4427,
+  "b2": "Azurill",
+  "note": "Pokemon code 0x114B (species 298)",
+  "stand_in": false,
+  "count": 3
+ },
+ "OBJ_EVENT_GFX_MOM": {
+  "code": 251,
+  "b2": "Black 2's Mom slot (Aspertia only), now Hoenn Mom",
+  "note": "redrawn from Sapphire's own sprite in Gen 5 style (b2tools/sprite_unique.py, src/sprites/drawn/mom.txt -> src/sprites/overworld/251-hoenn-mom); 357 (Mom with phone frames, Aspertia's opening only) shows the same drawing (357-hoenn-mom-phone); review: screenshots/sprites/unique_upgrade_review.png",
+  "stand_in": false,
+  "count": 5
+ },
+ "OBJ_EVENT_GFX_VAR_0": {
+  "code": null,
+  "b2": "",
+  "note": "dynamic: the real id comes from VAR_OBJ_GFX_ID_0 at run time (rival Brendan/May, Aqua/Magma grunt F, Mauville old man, Battle Tower opponent, contest entrant, secret-base/bedroom decorations). Black 2 equivalent: WKOBJCODE code 162 reads var 0x4020 (GetWKOBJCODENPCOBJCODE)",
+  "stand_in": false,
+  "count": 42
+ },
+ "OBJ_EVENT_GFX_VAR_1": {
+  "code": null,
+  "b2": "",
+  "note": "dynamic: the real id comes from VAR_OBJ_GFX_ID_1 at run time (Aqua/Magma grunt M, Latias/Latios, contest entrant, secret-base/bedroom decorations). Black 2 equivalent: WKOBJCODE code 163 reads var 0x4021 (GetWKOBJCODENPCOBJCODE)",
+  "stand_in": false,
+  "count": 97
+ },
+ "OBJ_EVENT_GFX_VAR_2": {
+  "code": null,
+  "b2": "",
+  "note": "dynamic: the real id comes from VAR_OBJ_GFX_ID_2 at run time (Aqua/Magma grunt F, contest entrant, secret-base/bedroom decorations). Black 2 equivalent: WKOBJCODE code 164 reads var 0x4022 (GetWKOBJCODENPCOBJCODE)",
+  "stand_in": false,
+  "count": 34
+ },
+ "OBJ_EVENT_GFX_VAR_3": {
+  "code": null,
+  "b2": "",
+  "note": "dynamic: the real id comes from VAR_OBJ_GFX_ID_3 at run time (rival Brendan/May walking or on the Mach Bike, contest entrant, secret-base/bedroom decorations). Black 2 equivalent: WKOBJCODE code 165 reads var 0x4023 (GetWKOBJCODENPCOBJCODE)",
+  "stand_in": false,
+  "count": 30
+ },
+ "OBJ_EVENT_GFX_VAR_4": {
+  "code": null,
+  "b2": "",
+  "note": "dynamic: the real id comes from VAR_OBJ_GFX_ID_4 at run time (Aqua/Magma grunt M, secret-base/bedroom decorations). Black 2 equivalent: WKOBJCODE code 166 reads var 0x4024 (GetWKOBJCODENPCOBJCODE)",
+  "stand_in": false,
+  "count": 33
+ },
+ "OBJ_EVENT_GFX_VAR_5": {
+  "code": null,
+  "b2": "",
+  "note": "dynamic: the real id comes from VAR_OBJ_GFX_ID_5 at run time (Aqua/Magma grunt F, secret-base/bedroom decorations). Black 2 equivalent: WKOBJCODE code 167 reads var 0x4025 (GetWKOBJCODENPCOBJCODE)",
+  "stand_in": false,
+  "count": 28
+ },
+ "OBJ_EVENT_GFX_VAR_6": {
+  "code": null,
+  "b2": "",
+  "note": "dynamic: the real id comes from VAR_OBJ_GFX_ID_6 at run time (Archie/Maxie, secret-base/bedroom decorations). Black 2 equivalent: WKOBJCODE code 168 reads var 0x4026 (GetWKOBJCODENPCOBJCODE)",
+  "stand_in": false,
+  "count": 33
+ },
+ "OBJ_EVENT_GFX_VAR_7": {
+  "code": null,
+  "b2": "",
+  "note": "dynamic: the real id comes from VAR_OBJ_GFX_ID_7 at run time (Archie/Maxie, secret-base/bedroom decorations). Black 2 equivalent: WKOBJCODE code 169 reads var 0x4027 (GetWKOBJCODENPCOBJCODE)",
+  "stand_in": false,
+  "count": 31
+ },
+ "OBJ_EVENT_GFX_VAR_8": {
+  "code": null,
+  "b2": "",
+  "note": "dynamic: the real id comes from VAR_OBJ_GFX_ID_8 at run time (Kyogre/Groudon, secret-base/bedroom decorations). Black 2 equivalent: WKOBJCODE code 170 reads var 0x4028 (GetWKOBJCODENPCOBJCODE)",
+  "stand_in": false,
+  "count": 29
+ },
+ "OBJ_EVENT_GFX_VAR_9": {
+  "code": null,
+  "b2": "",
+  "note": "dynamic: the real id comes from VAR_OBJ_GFX_ID_9 at run time (Kyogre/Groudon, secret-base/bedroom decorations). Black 2 equivalent: WKOBJCODE code 171 reads var 0x4029 (GetWKOBJCODENPCOBJCODE)",
+  "stand_in": false,
+  "count": 28
+ },
+ "OBJ_EVENT_GFX_VAR_A": {
+  "code": null,
+  "b2": "",
+  "note": "dynamic: the real id comes from VAR_OBJ_GFX_ID_A at run time (secret-base/bedroom decorations). Black 2 equivalent: WKOBJCODE code 172 reads var 0x402A (GetWKOBJCODENPCOBJCODE)",
+  "stand_in": false,
+  "count": 27
+ },
+ "OBJ_EVENT_GFX_VAR_B": {
+  "code": null,
+  "b2": "",
+  "note": "dynamic: the real id comes from VAR_OBJ_GFX_ID_B at run time (secret-base/bedroom decorations). Black 2 equivalent: WKOBJCODE code 173 reads var 0x402B (GetWKOBJCODENPCOBJCODE)",
+  "stand_in": false,
+  "count": 26
+ },
+ "OBJ_EVENT_GFX_VAR_C": {
+  "code": null,
+  "b2": "",
+  "note": "dynamic: the real id comes from VAR_OBJ_GFX_ID_C at run time (secret-base/bedroom decorations). Black 2 equivalent: WKOBJCODE code 174 reads var 0x402C (GetWKOBJCODENPCOBJCODE)",
+  "stand_in": false,
+  "count": 24
+ },
+ "OBJ_EVENT_GFX_VAR_D": {
+  "code": null,
+  "b2": "",
+  "note": "dynamic: the real id comes from VAR_OBJ_GFX_ID_D at run time (secret-base/bedroom decorations). Black 2 equivalent: WKOBJCODE code 175 reads var 0x402D (GetWKOBJCODENPCOBJCODE)",
+  "stand_in": false,
+  "count": 24
+ },
+ "OBJ_EVENT_GFX_VAR_F": {
+  "code": null,
+  "b2": "",
+  "note": "dynamic: the real id comes from VAR_OBJ_GFX_ID_F at run time (secret-base/bedroom decorations). Black 2 equivalent: WKOBJCODE code 177 reads var 0x402F (GetWKOBJCODENPCOBJCODE)",
+  "stand_in": false,
+  "count": 24
+ },
+ "OBJ_EVENT_GFX_AQUA_MEMBER_M": {
+  "code": 293,
+  "b2": "Neo Team Plasma grunt (M) slot, now Team Aqua grunt (M)",
+  "note": "redrawn from Sapphire's own sprite in Gen 5 style (b2tools/sprite_upgrade.py, src/sprites/overworld/293-aqua-grunt-m); review: screenshots/sprites/upgrade_review.png; Sapphire also uses it for Matt (Matt's own sheet: code 88, _overworld_extra). not placed directly in Sapphire maps: set at run time through VAR_OBJ_GFX_ID_x by Common_EventScript_SetupEvilTeamGfxIds (data/scripts/dynamic_npc_graphics.inc) and Slateport's OnTransition, so count = 0; in Black 2 put the code in a WKOBJCODE var or use it directly",
+  "stand_in": false,
+  "count": 0
+ },
+ "OBJ_EVENT_GFX_AQUA_MEMBER_F": {
+  "code": 294,
+  "b2": "Neo Team Plasma grunt (F) slot, now Team Aqua grunt (F)",
+  "note": "redrawn from Sapphire's own sprite in Gen 5 style (b2tools/sprite_upgrade.py, src/sprites/overworld/294-aqua-grunt-f); review: screenshots/sprites/upgrade_review.png; Sapphire also uses it for Shelly (Shelly's own sheet: code 92, _overworld_extra). not placed directly in Sapphire maps: set at run time through VAR_OBJ_GFX_ID_x by Common_EventScript_SetupEvilTeamGfxIds (data/scripts/dynamic_npc_graphics.inc) and Slateport's OnTransition, so count = 0; in Black 2 put the code in a WKOBJCODE var or use it directly",
+  "stand_in": false,
+  "count": 0
+ },
+ "OBJ_EVENT_GFX_MAGMA_MEMBER_M": {
+  "code": 302,
+  "b2": "Zinzolin slot (Unova-only), now Team Magma grunt (M)",
+  "note": "redrawn from Sapphire's own sprite in Gen 5 style (b2tools/sprite_upgrade.py, src/sprites/overworld/302-magma-grunt-m); review: screenshots/sprites/upgrade_review.png. not placed directly in Sapphire maps: set at run time through VAR_OBJ_GFX_ID_x by Common_EventScript_SetupEvilTeamGfxIds (data/scripts/dynamic_npc_graphics.inc) and Slateport's OnTransition, so count = 0; in Black 2 put the code in a WKOBJCODE var or use it directly",
+  "stand_in": false,
+  "count": 0
+ },
+ "OBJ_EVENT_GFX_MAGMA_MEMBER_F": {
+  "code": 192,
+  "b2": "robed elder slot (Undella only), now Team Magma grunt (F)",
+  "note": "redrawn from Sapphire's own sprite in Gen 5 style (b2tools/sprite_upgrade.py, src/sprites/overworld/192-magma-grunt-f); review: screenshots/sprites/upgrade_review.png. not placed directly in Sapphire maps: set at run time through VAR_OBJ_GFX_ID_x by Common_EventScript_SetupEvilTeamGfxIds (data/scripts/dynamic_npc_graphics.inc) and Slateport's OnTransition, so count = 0; in Black 2 put the code in a WKOBJCODE var or use it directly",
+  "stand_in": false,
+  "count": 0
+ },
+ "OBJ_EVENT_GFX_ARCHIE": {
+  "code": 353,
+  "b2": "Ghetsis slot (Giant Chasm only), now Archie",
+  "note": "redrawn from Sapphire's own sprite in Gen 5 style (b2tools/sprite_upgrade.py, src/sprites/overworld/353-archie); review: screenshots/sprites/upgrade_review.png. not placed directly in Sapphire maps: set at run time through VAR_OBJ_GFX_ID_x by Common_EventScript_SetupEvilTeamGfxIds (data/scripts/dynamic_npc_graphics.inc) and Slateport's OnTransition, so count = 0; in Black 2 put the code in a WKOBJCODE var or use it directly",
+  "stand_in": false,
+  "count": 0
+ },
+ "OBJ_EVENT_GFX_MAXIE": {
+  "code": 303,
+  "b2": "Pokestar Studios actor slot (Nimbasa/Pokestar only), now Maxie",
+  "note": "redrawn from Sapphire's own sprite in Gen 5 style (b2tools/sprite_upgrade.py, src/sprites/overworld/303-maxie); review: screenshots/sprites/upgrade_review.png. not placed directly in Sapphire maps: set at run time through VAR_OBJ_GFX_ID_x by Common_EventScript_SetupEvilTeamGfxIds (data/scripts/dynamic_npc_graphics.inc) and Slateport's OnTransition, so count = 0; in Black 2 put the code in a WKOBJCODE var or use it directly",
+  "stand_in": false,
+  "count": 0
+ },
+ "_trainer_front_doc": "Sapphire trainer pic (TRAINER_PIC_*, pokeruby include/constants/trainers.h) -> Black 2 front trainer sprite (a/0/7/1, sprite s = files 8s..8s+7) and the Black 2 trainer class that shows it (TRAINER_CLASS_RESOURCES, arm9 0x02092394, byte 0 of each 4-byte entry). \"art\": src/sprites/trainer/front folder (b2tools/sprite_upgrade.py, redrawn from Sapphire's own pic) or \"black2\" (Black 2's own PWT sprite of the same character, kept). Slots were Unova-only (Team Plasma, Unova Elite Four, Hugh) or unused; none is used by the PWT. Rival battles use classes 0/1 (Nate/Rosa sprites 0/1 -> Brendan/May, b2tools/sprite_art.py).",
+ "_trainer_front": {
+  "TRAINER_PIC_AQUA_GRUNT_M": {
+   "sprite": 149,
+   "b2_class": "TEAM_PLASMA_GRUNT_M (187)",
+   "art": "149-aqua-grunt-m",
+   "note": "Team Aqua grunt (M)"
+  },
+  "TRAINER_PIC_AQUA_GRUNT_F": {
+   "sprite": 150,
+   "b2_class": "TEAM_PLASMA_GRUNT_F (188)",
+   "art": "150-aqua-grunt-f",
+   "note": "Team Aqua grunt (F)"
+  },
+  "TRAINER_PIC_ARCHIE": {
+   "sprite": 151,
+   "b2_class": "TEAM_PLASMA_GHETSIS (189)",
+   "art": "151-archie",
+   "note": "Archie"
+  },
+  "TRAINER_PIC_AQUA_ADMIN_M": {
+   "sprite": 152,
+   "b2_class": "PKMN_TRAINER_ROOD (190)",
+   "art": "152-matt",
+   "note": "Matt (Aqua Admin)"
+  },
+  "TRAINER_PIC_AQUA_ADMIN_F": {
+   "sprite": 153,
+   "b2_class": "TEAM_PLASMA_ZINZOLIN (191)",
+   "art": "153-shelly",
+   "note": "Shelly (Aqua Admin)"
+  },
+  "TRAINER_PIC_MAGMA_GRUNT_M": {
+   "sprite": 154,
+   "b2_class": "TEAM_PLASMA_SHADOW (192)",
+   "art": "154-magma-grunt-m",
+   "note": "Team Magma grunt (M); Sapphire never battles Team Magma"
+  },
+  "TRAINER_PIC_MAGMA_GRUNT_F": {
+   "sprite": 156,
+   "b2_class": "MASKED_MAN (194)",
+   "art": "156-magma-grunt-f",
+   "note": "Team Magma grunt (F); Sapphire never battles Team Magma"
+  },
+  "TRAINER_PIC_MAXIE": {
+   "sprite": 148,
+   "b2_class": "TEAM_PLASMA_COLRESS (186), PKMN_TRAINER_COLRESS (195, 235)",
+   "art": "148-maxie",
+   "note": "Maxie; Sapphire never battles him"
+  },
+  "TRAINER_PIC_WALLY": {
+   "sprite": 127,
+   "b2_class": "PKMN_TRAINER_RIVAL (145, Hugh)",
+   "art": "127-wally",
+   "note": "Wally"
+  },
+  "TRAINER_PIC_SIDNEY": {
+   "sprite": 79,
+   "b2_class": "ELITE_FOUR_GRIMSLEY (80)",
+   "art": "079-sidney",
+   "note": "Sidney"
+  },
+  "TRAINER_PIC_PHOEBE": {
+   "sprite": 77,
+   "b2_class": "ELITE_FOUR_SHAUNTAL (78)",
+   "art": "077-phoebe",
+   "note": "Phoebe"
+  },
+  "TRAINER_PIC_GLACIA": {
+   "sprite": 80,
+   "b2_class": "ELITE_FOUR_CAITLIN (81)",
+   "art": "080-glacia",
+   "note": "Glacia"
+  },
+  "TRAINER_PIC_DRAKE": {
+   "sprite": 78,
+   "b2_class": "ELITE_FOUR_MARSHAL (79)",
+   "art": "078-drake",
+   "note": "Drake"
+  },
+  "TRAINER_PIC_ROXANNE": {
+   "sprite": 118,
+   "b2_class": "ROXANNE (136)",
+   "art": "black2",
+   "note": "Black 2 PWT sprite, kept"
+  },
+  "TRAINER_PIC_BRAWLY": {
+   "sprite": 119,
+   "b2_class": "BRAWLY (137)",
+   "art": "black2",
+   "note": "Black 2 PWT sprite, kept"
+  },
+  "TRAINER_PIC_WATTSON": {
+   "sprite": 120,
+   "b2_class": "WATTSON (138)",
+   "art": "black2",
+   "note": "Black 2 PWT sprite, kept"
+  },
+  "TRAINER_PIC_FLANNERY": {
+   "sprite": 121,
+   "b2_class": "FLANNERY (139)",
+   "art": "black2",
+   "note": "Black 2 PWT sprite, kept"
+  },
+  "TRAINER_PIC_NORMAN": {
+   "sprite": 122,
+   "b2_class": "NORMAN (140)",
+   "art": "black2",
+   "note": "Black 2 PWT sprite, kept"
+  },
+  "TRAINER_PIC_WINONA": {
+   "sprite": 123,
+   "b2_class": "WINONA (141)",
+   "art": "black2",
+   "note": "Black 2 PWT sprite, kept"
+  },
+  "TRAINER_PIC_TATE_AND_LIZA": {
+   "sprite": 124,
+   "b2_class": "TATE (142) / LIZA (143): sprites 124 / 125, one each",
+   "art": "black2",
+   "note": "Black 2 PWT sprites, kept (Sapphire has one picture of both)"
+  },
+  "TRAINER_PIC_WALLACE": {
+   "sprite": 140,
+   "b2_class": "WALLACE (178)",
+   "art": "black2",
+   "note": "Black 2 PWT sprite, kept (Sapphire: Sootopolis leader)"
+  },
+  "TRAINER_PIC_STEVEN": {
+   "sprite": 139,
+   "b2_class": "STEVEN (177)",
+   "art": "black2",
+   "note": "Black 2 PWT sprite, kept (Sapphire: champion)"
+  },
+  "TRAINER_PIC_INTERVIEWER": {
+   "sprite": 22,
+   "b2_class": "NO_DATA_M_22 (22), the class converter/gen_trainers.py repurposes as the Interviewer",
+   "art": "022-interviewers",
+   "note": "Gabby & Ty, redrawn from Sapphire's own pic (b2tools/sprite_unique.py, src/sprites/drawn/interviewers-battle.txt); sprite 22 is class 22's own placeholder slot (one still 80x80 cell, so no idle animation). converter/gen_trainers.py PIC_SPRITE still says 'INTERVIEWER': 67 (Backers M stand-in): change it to 22 (then class 22 needs no sprite edit); review: screenshots/sprites/unique_upgrade_review.png"
+  }
+ },
+ "OBJ_EVENT_GFX_BARD": {
+  "code": 328,
+  "b2": "flashback-zone NPC slot (zone 597, Memory Link [inferred]), now the Bard (mauville_old_man_1, palette 0: blue)",
+  "note": "redrawn from Sapphire's own sprite in Gen 5 style (b2tools/sprite_unique.py, src/sprites/drawn/mauville-old-man-1.txt / -2.txt; one slot per colour scheme, a sheet has one palette). not placed directly in Sapphire maps: SetMauvilleOldManObjEventGfx (src/mauville_man.c) sets VAR_OBJ_GFX_ID_0 = BARD + the old man's type, so count = 0; in Black 2 the Mauville house's zone-init script sets WKOBJCODE var 0x4020 (b2tools/centers_rooms.py MAUVILLE_MEN); review: screenshots/sprites/unique_upgrade_review.png",
+  "stand_in": false,
+  "count": 0
+ },
+ "OBJ_EVENT_GFX_HIPSTER": {
+  "code": 329,
+  "b2": "flashback-zone NPC slot (zone 597, Memory Link [inferred]), now the Hipster (mauville_old_man_1, palette 1: red)",
+  "note": "redrawn from Sapphire's own sprite in Gen 5 style (b2tools/sprite_unique.py, src/sprites/drawn/mauville-old-man-1.txt / -2.txt; one slot per colour scheme, a sheet has one palette). not placed directly in Sapphire maps: SetMauvilleOldManObjEventGfx (src/mauville_man.c) sets VAR_OBJ_GFX_ID_0 = BARD + the old man's type, so count = 0; in Black 2 the Mauville house's zone-init script sets WKOBJCODE var 0x4020 (b2tools/centers_rooms.py MAUVILLE_MEN); review: screenshots/sprites/unique_upgrade_review.png",
+  "stand_in": false,
+  "count": 0
+ },
+ "OBJ_EVENT_GFX_TRADER": {
+  "code": 334,
+  "b2": "flashback-zone NPC slot (zone 600, Memory Link [inferred]), now the Trader (mauville_old_man_1, palette 2: green)",
+  "note": "redrawn from Sapphire's own sprite in Gen 5 style (b2tools/sprite_unique.py, src/sprites/drawn/mauville-old-man-1.txt / -2.txt; one slot per colour scheme, a sheet has one palette). not placed directly in Sapphire maps: SetMauvilleOldManObjEventGfx (src/mauville_man.c) sets VAR_OBJ_GFX_ID_0 = BARD + the old man's type, so count = 0; in Black 2 the Mauville house's zone-init script sets WKOBJCODE var 0x4020 (b2tools/centers_rooms.py MAUVILLE_MEN); review: screenshots/sprites/unique_upgrade_review.png",
+  "stand_in": false,
+  "count": 0
+ },
+ "OBJ_EVENT_GFX_STORYTELLER": {
+  "code": 335,
+  "b2": "flashback-zone NPC slot (zone 600, Memory Link [inferred]), now the Storyteller (mauville_old_man_2, palette 0: pink)",
+  "note": "redrawn from Sapphire's own sprite in Gen 5 style (b2tools/sprite_unique.py, src/sprites/drawn/mauville-old-man-1.txt / -2.txt; one slot per colour scheme, a sheet has one palette). not placed directly in Sapphire maps: SetMauvilleOldManObjEventGfx (src/mauville_man.c) sets VAR_OBJ_GFX_ID_0 = BARD + the old man's type, so count = 0; in Black 2 the Mauville house's zone-init script sets WKOBJCODE var 0x4020 (b2tools/centers_rooms.py MAUVILLE_MEN); review: screenshots/sprites/unique_upgrade_review.png",
+  "stand_in": false,
+  "count": 0
+ },
+ "OBJ_EVENT_GFX_GIDDY": {
+  "code": 336,
+  "b2": "flashback-zone NPC slot (zone 601, Memory Link [inferred]), now Giddy (mauville_old_man_2, palette 1: yellow)",
+  "note": "redrawn from Sapphire's own sprite in Gen 5 style (b2tools/sprite_unique.py, src/sprites/drawn/mauville-old-man-1.txt / -2.txt; one slot per colour scheme, a sheet has one palette). not placed directly in Sapphire maps: SetMauvilleOldManObjEventGfx (src/mauville_man.c) sets VAR_OBJ_GFX_ID_0 = BARD + the old man's type, so count = 0; in Black 2 the Mauville house's zone-init script sets WKOBJCODE var 0x4020 (b2tools/centers_rooms.py MAUVILLE_MEN); review: screenshots/sprites/unique_upgrade_review.png",
+  "stand_in": false,
+  "count": 0
+ },
+ "_overworld_extra_doc": "Hoenn characters Sapphire draws with another graphics id, given their own Black 2 sheet (b2tools/sprite_upgrade.py): name -> Black 2 object code. Use the code directly (ActorNew / zone NPC model) or through a WKOBJCODE var, as for the Team Aqua/Magma ids.",
+ "_overworld_extra": {
+  "MATT": {
+   "code": 88,
+   "b2": "unused Black 2 sheet (no zone, script or PWT use; a BW1 character), now Matt",
+   "note": "src/sprites/overworld/088-matt: the Aqua grunt (M) sheet in Matt's battle design (open blue vest, bare chest and arms); Sapphire shows Matt with OBJ_EVENT_GFX_AQUA_MEMBER_M"
+  },
+  "SHELLY": {
+   "code": 92,
+   "b2": "unused Black 2 sheet (no zone, script or PWT use; a BW1 character), now Shelly",
+   "note": "src/sprites/overworld/092-shelly: the Aqua grunt (F) sheet in Shelly's battle design (long orange hair, black top, blue vest); Sapphire shows Shelly with OBJ_EVENT_GFX_AQUA_MEMBER_F"
+  }
+ }
+}

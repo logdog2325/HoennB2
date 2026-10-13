@@ -1,0 +1,517 @@
+{
+ "zone": 231,
+ "room": "MagmaHideout_B1F",
+ "area": 379,
+ "header": {
+  "map_type": 16,
+  "npc_cache": 24,
+  "weather_word": 0,
+  "flags": 22817,
+  "icon_word": 32783,
+  "bgm0": 1194,
+  "bgm1": 1194,
+  "bgm2": 1194,
+  "bgm3": 1194,
+  "place": 69,
+  "place_display": 0,
+  "parent": 228,
+  "encounters": 8191,
+  "enc_slot": 6
+ },
+ "warps": [
+  {
+   "at": [
+    3,
+    3
+   ],
+   "tile_only": true,
+   "to": [
+    228,
+    1
+   ],
+   "what": "Sapphire warp 0 (3,3) -> MagmaHideout_1F 1"
+  },
+  {
+   "at": [
+    14,
+    3
+   ],
+   "tile_only": true,
+   "to": [
+    234,
+    0
+   ],
+   "what": "Sapphire warp 1 (14,3) -> MagmaHideout_B2F 0"
+  },
+  {
+   "at": [
+    23,
+    1
+   ],
+   "tile_only": true,
+   "to": [
+    234,
+    1
+   ],
+   "what": "Sapphire warp 2 (23,1) -> MagmaHideout_B2F 1"
+  },
+  {
+   "at": [
+    29,
+    1
+   ],
+   "tile_only": true,
+   "to": [
+    234,
+    2
+   ],
+   "what": "Sapphire warp 3 (29,1) -> MagmaHideout_B2F 2"
+  },
+  {
+   "at": [
+    8,
+    5
+   ],
+   "tile_only": true,
+   "to": [
+    231,
+    6
+   ],
+   "what": "Sapphire warp 4 (8,5) -> MagmaHideout_B1F 6",
+   "type": 5,
+   "dir": 0
+  },
+  {
+   "at": [
+    8,
+    7
+   ],
+   "tile_only": true,
+   "to": [
+    231,
+    9
+   ],
+   "what": "Sapphire warp 5 (8,7) -> MagmaHideout_B1F 9",
+   "type": 5,
+   "dir": 0
+  },
+  {
+   "at": [
+    14,
+    8
+   ],
+   "tile_only": true,
+   "to": [
+    231,
+    4
+   ],
+   "what": "Sapphire warp 6 (14,8) -> MagmaHideout_B1F 4",
+   "type": 5,
+   "dir": 0
+  },
+  {
+   "at": [
+    23,
+    5
+   ],
+   "tile_only": true,
+   "to": [
+    231,
+    10
+   ],
+   "what": "Sapphire warp 7 (23,5) -> MagmaHideout_B1F 10",
+   "type": 5,
+   "dir": 0
+  },
+  {
+   "at": [
+    39,
+    5
+   ],
+   "tile_only": true,
+   "to": [
+    231,
+    13
+   ],
+   "what": "Sapphire warp 8 (39,5) -> MagmaHideout_B1F 13",
+   "type": 5,
+   "dir": 0
+  },
+  {
+   "at": [
+    16,
+    16
+   ],
+   "tile_only": true,
+   "to": [
+    231,
+    5
+   ],
+   "what": "Sapphire warp 9 (16,16) -> MagmaHideout_B1F 5",
+   "type": 5,
+   "dir": 0
+  },
+  {
+   "at": [
+    21,
+    14
+   ],
+   "tile_only": true,
+   "to": [
+    231,
+    7
+   ],
+   "what": "Sapphire warp 10 (21,14) -> MagmaHideout_B1F 7",
+   "type": 5,
+   "dir": 0
+  },
+  {
+   "at": [
+    21,
+    20
+   ],
+   "tile_only": true,
+   "to": [
+    231,
+    12
+   ],
+   "what": "Sapphire warp 11 (21,20) -> MagmaHideout_B1F 12",
+   "type": 5,
+   "dir": 0
+  },
+  {
+   "at": [
+    38,
+    11
+   ],
+   "tile_only": true,
+   "to": [
+    231,
+    11
+   ],
+   "what": "Sapphire warp 12 (38,11) -> MagmaHideout_B1F 11",
+   "type": 5,
+   "dir": 0
+  },
+  {
+   "at": [
+    43,
+    19
+   ],
+   "tile_only": true,
+   "to": [
+    231,
+    8
+   ],
+   "what": "Sapphire warp 13 (43,19) -> MagmaHideout_B1F 8",
+   "type": 5,
+   "dir": 0
+  },
+  {
+   "at": [
+    34,
+    11
+   ],
+   "tile_only": true,
+   "to": [
+    231,
+    28
+   ],
+   "what": "Sapphire warp 14 (34,11) -> MagmaHideout_B1F 28",
+   "type": 5,
+   "dir": 0
+  },
+  {
+   "at": [
+    41,
+    11
+   ],
+   "tile_only": true,
+   "to": [
+    231,
+    16
+   ],
+   "what": "Sapphire warp 15 (41,11) -> MagmaHideout_B1F 16",
+   "type": 5,
+   "dir": 0
+  },
+  {
+   "at": [
+    56,
+    3
+   ],
+   "tile_only": true,
+   "to": [
+    231,
+    15
+   ],
+   "what": "Sapphire warp 16 (56,3) -> MagmaHideout_B1F 15",
+   "type": 5,
+   "dir": 0
+  },
+  {
+   "at": [
+    56,
+    5
+   ],
+   "tile_only": true,
+   "to": [
+    231,
+    16
+   ],
+   "what": "Sapphire warp 17 (56,5) -> MagmaHideout_B1F 16",
+   "type": 5,
+   "dir": 0
+  },
+  {
+   "at": [
+    53,
+    5
+   ],
+   "tile_only": true,
+   "to": [
+    231,
+    22
+   ],
+   "what": "Sapphire warp 18 (53,5) -> MagmaHideout_B1F 22",
+   "type": 5,
+   "dir": 0
+  },
+  {
+   "at": [
+    59,
+    5
+   ],
+   "tile_only": true,
+   "to": [
+    231,
+    20
+   ],
+   "what": "Sapphire warp 19 (59,5) -> MagmaHideout_B1F 20",
+   "type": 5,
+   "dir": 0
+  },
+  {
+   "at": [
+    53,
+    9
+   ],
+   "tile_only": true,
+   "to": [
+    231,
+    19
+   ],
+   "what": "Sapphire warp 20 (53,9) -> MagmaHideout_B1F 19",
+   "type": 5,
+   "dir": 0
+  },
+  {
+   "at": [
+    56,
+    9
+   ],
+   "tile_only": true,
+   "to": [
+    231,
+    24
+   ],
+   "what": "Sapphire warp 21 (56,9) -> MagmaHideout_B1F 24",
+   "type": 5,
+   "dir": 0
+  },
+  {
+   "at": [
+    59,
+    9
+   ],
+   "tile_only": true,
+   "to": [
+    231,
+    18
+   ],
+   "what": "Sapphire warp 22 (59,9) -> MagmaHideout_B1F 18",
+   "type": 5,
+   "dir": 0
+  },
+  {
+   "at": [
+    53,
+    13
+   ],
+   "tile_only": true,
+   "to": [
+    231,
+    17
+   ],
+   "what": "Sapphire warp 23 (53,13) -> MagmaHideout_B1F 17",
+   "type": 5,
+   "dir": 0
+  },
+  {
+   "at": [
+    56,
+    13
+   ],
+   "tile_only": true,
+   "to": [
+    231,
+    21
+   ],
+   "what": "Sapphire warp 24 (56,13) -> MagmaHideout_B1F 21",
+   "type": 5,
+   "dir": 0
+  },
+  {
+   "at": [
+    59,
+    13
+   ],
+   "tile_only": true,
+   "to": [
+    231,
+    26
+   ],
+   "what": "Sapphire warp 25 (59,13) -> MagmaHideout_B1F 26",
+   "type": 5,
+   "dir": 0
+  },
+  {
+   "at": [
+    53,
+    17
+   ],
+   "tile_only": true,
+   "to": [
+    231,
+    25
+   ],
+   "what": "Sapphire warp 26 (53,17) -> MagmaHideout_B1F 25",
+   "type": 5,
+   "dir": 0
+  },
+  {
+   "at": [
+    56,
+    17
+   ],
+   "tile_only": true,
+   "to": [
+    231,
+    21
+   ],
+   "what": "Sapphire warp 27 (56,17) -> MagmaHideout_B1F 21",
+   "type": 5,
+   "dir": 0
+  },
+  {
+   "at": [
+    59,
+    17
+   ],
+   "tile_only": true,
+   "to": [
+    231,
+    14
+   ],
+   "what": "Sapphire warp 28 (59,17) -> MagmaHideout_B1F 14",
+   "type": 5,
+   "dir": 0
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 4,
+   "model": 110,
+   "script": 7108,
+   "flag": 1208,
+   "dir": 1,
+   "at": [
+    26,
+    10
+   ],
+   "what": "item ball ITEM_MASTER_BALL"
+  },
+  {
+   "uid": 5,
+   "model": 110,
+   "script": 7110,
+   "flag": 1210,
+   "dir": 1,
+   "at": [
+    14,
+    18
+   ],
+   "what": "item ball ITEM_MAX_ELIXIR"
+  },
+  {
+   "uid": 7,
+   "model": 110,
+   "script": 7109,
+   "flag": 1209,
+   "dir": 1,
+   "at": [
+    26,
+    11
+   ],
+   "what": "item ball ITEM_NUGGET"
+  }
+ ],
+ "signs": [
+  {
+   "script": 1,
+   "at": [
+    34,
+    4
+   ],
+   "dir": 4,
+   "what": "trash can (Sapphire MB_TRASH_CAN, EventScript_EmptyTrashCan)"
+  },
+  {
+   "script": 1,
+   "at": [
+    23,
+    7
+   ],
+   "dir": 4,
+   "what": "trash can (Sapphire MB_TRASH_CAN, EventScript_EmptyTrashCan)"
+  },
+  {
+   "script": 2,
+   "at": [
+    30,
+    17
+   ],
+   "dir": 4,
+   "what": "blueprint (MB_BLUEPRINT, EventScript_Blueprint)"
+  },
+  {
+   "script": 2,
+   "at": [
+    31,
+    17
+   ],
+   "dir": 4,
+   "what": "blueprint (MB_BLUEPRINT, EventScript_Blueprint)"
+  },
+  {
+   "script": 2,
+   "at": [
+    30,
+    18
+   ],
+   "dir": 4,
+   "what": "blueprint (MB_BLUEPRINT, EventScript_Blueprint)"
+  },
+  {
+   "script": 2,
+   "at": [
+    31,
+    18
+   ],
+   "dir": 4,
+   "what": "blueprint (MB_BLUEPRINT, EventScript_Blueprint)"
+  }
+ ],
+ "triggers": [],
+ "what": "ship_hideouts: MagmaHideout_B1F (b2tools/ship_hideouts_rooms.py); story: trainer OBJ_EVENT_GFX_VAR_1 (33,3) MagmaHideout_B1F_EventScript_15D850 | trainer OBJ_EVENT_GFX_VAR_1 (41,17) MagmaHideout_B1F_EventScript_15D875 | trainer OBJ_EVENT_GFX_VAR_2 (33,19) MagmaHideout_B1F_EventScript_15D89A | story object OBJ_EVENT_GFX_ITEM_BALL (27,10) Hideout_B1F_EventScript_Electrode1 hide flag FLAG_HIDE_ELECTRODE_1_HIDEOUT | story object OBJ_EVENT_GFX_ITEM_BALL (27,11) Hideout_B1F_EventScript_Electrode2 hide flag FLAG_HIDE_ELECTRODE_2_HIDEOUT"
+}

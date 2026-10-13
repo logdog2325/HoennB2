@@ -1,0 +1,37 @@
+{
+ "zone": 583,
+ "room": "RustboroCity_Gym",
+ "area": 308,
+ "bgm": 1062,
+ "what": "gyms_league: RustboroCity_Gym (b2tools/gyms_league_rooms.py); story phase: Roxanne (5,2), trainers Josh (7,12) and Tommy (3,7), Gym guide (3,17), statue plaques (2,17)/(8,17)",
+ "parent": 113,
+ "warps": [
+  {
+   "at": [
+    5,
+    18
+   ],
+   "tile_only": true,
+   "to": [
+    113,
+    7
+   ],
+   "what": "Sapphire warp 0 -> RustboroCity 0"
+  },
+  {
+   "at": [
+    6,
+    18
+   ],
+   "tile_only": true,
+   "to": [
+    113,
+    7
+   ],
+   "what": "Sapphire warp 1 -> RustboroCity 0"
+  }
+ ],
+ "npcs": [],
+ "signs": [],
+ "triggers": []
+}

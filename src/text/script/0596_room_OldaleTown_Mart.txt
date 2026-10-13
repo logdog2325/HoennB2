@@ -1,0 +1,3 @@
+If a Pokémon gets hurt and loses its HP\nand faints, it won’t be able to battle.{be01}\nTo prevent your Pokémon from fainting,\nrestore its HP with a Potion.
+The clerk says they’re all sold out.\nI can’t buy any Poké Balls.
+I’m going to buy a bunch of Poké Balls\nand catch a bunch of Pokémon!

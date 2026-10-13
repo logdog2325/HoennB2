@@ -1,0 +1,324 @@
+{
+ "_doc": "Lilycove Contest Lobby (Sapphire 23x12, zone 161): Musical Theater look (set 305), as the other lobbies. Two doors to the hall (1,1)/(13,1) = cabin_door_r, PC (11,1), four contest-winner portraits = art01, reception counter (3-10, 2-3) = white counters, Berry Blenders (18,5)/(18,9) = small table + Poké Ball, the sofas along both side walls (rows 6-7, 9-10) = red armchairs in niches of the side walls.",
+ "map": "LilycoveCity_ContestLobby",
+ "style": "sp_theater",
+ "floor": [
+  [
+   0,
+   1,
+   22,
+   11
+  ]
+ ],
+ "floor_extra": [
+  [
+   -0.75,
+   6,
+   0,
+   11
+  ],
+  [
+   23,
+   6,
+   23.75,
+   11
+  ]
+ ],
+ "mats": [
+  {
+   "tex": "in24_mat",
+   "src": 305,
+   "rect": [
+    6,
+    11,
+    7,
+    11
+   ],
+   "border": 0.25,
+   "border_units": 4,
+   "y": 0,
+   "_what": "door mat"
+  }
+ ],
+ "decals": [
+  {
+   "tex": "in76_caten1",
+   "src": 378,
+   "at": [
+    4.0
+   ],
+   "y": 6,
+   "w": 40,
+   "h": 42,
+   "gap": 2,
+   "_what": "curtain"
+  },
+  {
+   "tex": "in76_caten1",
+   "src": 378,
+   "at": [
+    9.0
+   ],
+   "y": 6,
+   "w": 40,
+   "h": 42,
+   "gap": 2,
+   "_what": "curtain"
+  },
+  {
+   "tex": "in76_caten1",
+   "src": 378,
+   "at": [
+    16.0
+   ],
+   "y": 6,
+   "w": 40,
+   "h": 42,
+   "gap": 2,
+   "_what": "curtain"
+  },
+  {
+   "tex": "in76_caten1",
+   "src": 378,
+   "at": [
+    20.5
+   ],
+   "y": 6,
+   "w": 40,
+   "h": 42,
+   "gap": 2,
+   "_what": "curtain"
+  }
+ ],
+ "furniture": [
+  {
+   "m": "cabin_door_r",
+   "tile": [
+    1,
+    1
+   ],
+   "wall": "N",
+   "gap": 1,
+   "_what": "door to the hall (Sapphire warp 2)"
+  },
+  {
+   "m": "cabin_door_r",
+   "tile": [
+    13,
+    1
+   ],
+   "wall": "N",
+   "gap": 1,
+   "_what": "door to the hall (Sapphire warp 3)"
+  },
+  {
+   "m": "shelf03",
+   "rot": 270,
+   "tiles": [
+    3,
+    2,
+    3,
+    3
+   ],
+   "_what": "counter, west side"
+  },
+  {
+   "m": "table02",
+   "tiles": [
+    4,
+    3,
+    6,
+    3
+   ],
+   "_what": "counter, front"
+  },
+  {
+   "m": "table02",
+   "tiles": [
+    7,
+    3,
+    9,
+    3
+   ],
+   "_what": "counter, front"
+  },
+  {
+   "m": "shelf03",
+   "rot": 90,
+   "tiles": [
+    10,
+    2,
+    10,
+    3
+   ],
+   "_what": "counter, east side"
+  },
+  {
+   "m": "pc01",
+   "tile": [
+    11,
+    1
+   ],
+   "wall": "N",
+   "_what": "PC"
+  },
+  {
+   "m": "art01",
+   "tile": [
+    15,
+    1
+   ],
+   "wall": "N",
+   "gap": 2,
+   "y": 18,
+   "_what": "contest winner portrait"
+  },
+  {
+   "m": "art01",
+   "tile": [
+    17,
+    1
+   ],
+   "wall": "N",
+   "gap": 2,
+   "y": 18,
+   "_what": "contest winner portrait"
+  },
+  {
+   "m": "art01",
+   "tile": [
+    19,
+    1
+   ],
+   "wall": "N",
+   "gap": 2,
+   "y": 18,
+   "_what": "contest winner portrait"
+  },
+  {
+   "m": "art01",
+   "tile": [
+    22,
+    1
+   ],
+   "wall": "N",
+   "gap": 2,
+   "y": 18,
+   "_what": "contest winner portrait"
+  },
+  {
+   "m": "desk02",
+   "tile": [
+    18,
+    5
+   ],
+   "_what": "Berry Blender (table)"
+  },
+  {
+   "m": "mball01",
+   "tile": [
+    18,
+    5
+   ],
+   "y": 10,
+   "_what": "Berry Blender (top)"
+  },
+  {
+   "m": "desk02",
+   "tile": [
+    18,
+    9
+   ],
+   "_what": "Berry Blender (table)"
+  },
+  {
+   "m": "mball01",
+   "tile": [
+    18,
+    9
+   ],
+   "y": 10,
+   "_what": "Berry Blender (top)"
+  },
+  {
+   "m": "chair03",
+   "rot": 90,
+   "tile": [
+    0,
+    6
+   ],
+   "wall": "W",
+   "_what": "sofa"
+  },
+  {
+   "m": "chair03",
+   "rot": 90,
+   "tile": [
+    0,
+    7
+   ],
+   "wall": "W",
+   "_what": "sofa"
+  },
+  {
+   "m": "chair03",
+   "rot": 90,
+   "tile": [
+    0,
+    9
+   ],
+   "wall": "W",
+   "_what": "sofa"
+  },
+  {
+   "m": "chair03",
+   "rot": 90,
+   "tile": [
+    0,
+    10
+   ],
+   "wall": "W",
+   "_what": "sofa"
+  },
+  {
+   "m": "chair03",
+   "rot": 270,
+   "tile": [
+    22,
+    6
+   ],
+   "wall": "E",
+   "_what": "sofa"
+  },
+  {
+   "m": "chair03",
+   "rot": 270,
+   "tile": [
+    22,
+    7
+   ],
+   "wall": "E",
+   "_what": "sofa"
+  },
+  {
+   "m": "chair03",
+   "rot": 270,
+   "tile": [
+    22,
+    9
+   ],
+   "wall": "E",
+   "_what": "sofa"
+  },
+  {
+   "m": "chair03",
+   "rot": 270,
+   "tile": [
+    22,
+    10
+   ],
+   "wall": "E",
+   "_what": "sofa"
+  }
+ ]
+}

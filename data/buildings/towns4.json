@@ -1,0 +1,131 @@
+{
+ "_doc": "Group towns4 (Lilycove, Mossdeep, Pacifidlog): building models in exterior pack 0, res range 380-399 (format: data/buildings/slice.json). Models are made by b2tools/models_lilycove.py, models_mossdeep.py, models_pacifidlog.py (notes/TOWNS_TOWNS4.md). Pokemon Centers/Marts use the shared res 0/3, Mossdeep's Gym the shared res 320 (group towns1), Lilycove's Harbor the Slateport Harbor res 345 (group towns2). door 65535 = no door model. dx: the door models 259/260 span x -17..1 around their origin, door_pc (93) x -13..13 (apicula conversion of pack 0's door models), so dx = door tile centre - footprint centre + 8 (+0 for door 93); dz = the model's front wall.",
+ "models": [
+  {
+   "res": 380,
+   "model": "work/buildings/lilycove/house.nsbmd",
+   "door": 259,
+   "dx": 0,
+   "dz": 20,
+   "what": "Lilycove house (blue ribbed roof, 4 wide, door in column 1): Houses 1-4, Move Deleter's house"
+  },
+  {
+   "res": 381,
+   "model": "work/buildings/lilycove/fanclub.nsbmd",
+   "door": 259,
+   "dx": 8,
+   "dz": 20,
+   "what": "Lilycove Pokemon Trainer Fan Club (the same house 5 wide, door in the middle)"
+  },
+  {
+   "res": 382,
+   "model": "work/buildings/lilycove/dept.nsbmd",
+   "door": 93,
+   "dx": 0,
+   "dz": 16,
+   "what": "Lilycove Department Store (9 wide, tall, door in the middle)"
+  },
+  {
+   "res": 383,
+   "model": "work/buildings/lilycove/contest.nsbmd",
+   "door": 93,
+   "dx": 0,
+   "dz": 16,
+   "what": "Lilycove Contest Hall (7 wide, door in the middle)"
+  },
+  {
+   "res": 384,
+   "model": "work/buildings/lilycove/museum.nsbmd",
+   "door": 65535,
+   "dx": 0,
+   "dz": 0,
+   "what": "Lilycove Museum (prop: walkable doorway in Sapphire; dark doorway modelled)"
+  },
+  {
+   "res": 385,
+   "model": "work/buildings/lilycove/motel.nsbmd",
+   "door": 260,
+   "dx": -16,
+   "dz": 20,
+   "what": "Cove Lily Motel (6 wide, two-tier roof, door in column 1)"
+  },
+  {
+   "res": 386,
+   "model": "work/buildings/mossdeep/house.nsbmd",
+   "door": 260,
+   "dx": 0,
+   "dz": 20,
+   "what": "Mossdeep house (stone walls, kawara roof, 4 wide, door in column 1): Houses 1-4, Steven's house"
+  },
+  {
+   "res": 387,
+   "model": "work/buildings/mossdeep/gamecorner.nsbmd",
+   "door": 260,
+   "dx": -8,
+   "dz": 20,
+   "what": "Mossdeep MOSSDEEP_CITY_GAME_CORNER_1F building (the house 5 wide, 5 rows, door in column 1)"
+  },
+  {
+   "res": 388,
+   "model": "work/buildings/mossdeep/space.nsbmd",
+   "door": 93,
+   "dx": 0,
+   "dz": 20,
+   "what": "Mossdeep Space Center (9 wide, 8 rows, door in the middle)"
+  },
+  {
+   "res": 389,
+   "model": "work/buildings/pacifidlog/hut.nsbmd",
+   "door": 260,
+   "dx": 8,
+   "dz": 20,
+   "what": "Pacifidlog hut (octagonal, green thatch, 3 wide, door in the middle): all five houses"
+  },
+  {
+   "res": 390,
+   "model": "work/buildings/lilycove/beacon.nsbmd",
+   "door": 65535,
+   "dx": 0,
+   "dz": 0,
+   "what": "Lilycove harbour light on the cape (prop, Sapphire prop tiles 61,33-34)"
+  }
+ ],
+ "textures": [
+  [
+   "ext08",
+   "d5whouse1a"
+  ],
+  [
+   "ext06",
+   "c4_bp01"
+  ],
+  [
+   "ext04",
+   "trailer_01a"
+  ],
+  [
+   "ext48",
+   "en_sekia1"
+  ],
+  [
+   "ext10",
+   "c7h2_1"
+  ],
+  [
+   "ext08",
+   "c5_rb_03_w1"
+  ],
+  [
+   "ext05",
+   "r4_b03_yane01"
+  ],
+  [
+   "ext57",
+   "c14_h1_body"
+  ],
+  [
+   "ext57",
+   "c14_h2_yane"
+  ]
+ ]
+}

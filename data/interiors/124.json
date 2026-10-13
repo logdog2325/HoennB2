@@ -1,0 +1,741 @@
+{
+ "zone": 124,
+ "room": "GraniteCave_B1F",
+ "cave": true,
+ "cave_auto": true,
+ "area": 332,
+ "dark": true,
+ "header": {
+  "map_type": 16,
+  "npc_cache": 24,
+  "weather_word": 64,
+  "flags": 23715,
+  "icon_word": 40975,
+  "place_display": 0,
+  "bgm0": 1076,
+  "bgm1": 1076,
+  "bgm2": 1076,
+  "bgm3": 1076,
+  "place": 59,
+  "encounters": 35,
+  "enc_slot": 2
+ },
+ "warps": [
+  {
+   "at": [
+    25,
+    13
+   ],
+   "to": [
+    118,
+    1
+   ],
+   "what": "Sapphire warp 0 (25,13) -> GraniteCave_1F 1"
+  },
+  {
+   "at": [
+    4,
+    21
+   ],
+   "to": [
+    118,
+    2
+   ],
+   "what": "Sapphire warp 1 (4,21) -> GraniteCave_1F 2"
+  },
+  {
+   "at": [
+    29,
+    13
+   ],
+   "to": [
+    125,
+    0
+   ],
+   "what": "Sapphire warp 2 (29,13) -> GraniteCave_B2F 0"
+  },
+  {
+   "at": [
+    28,
+    21
+   ],
+   "to": [
+    125,
+    1
+   ],
+   "what": "Sapphire warp 3 (28,21) -> GraniteCave_B2F 1"
+  },
+  {
+   "at": [
+    8,
+    5
+   ],
+   "to": [
+    125,
+    2
+   ],
+   "what": "Sapphire warp 4 (8,5) -> GraniteCave_B2F 2"
+  },
+  {
+   "at": [
+    12,
+    3
+   ],
+   "to": [
+    125,
+    3
+   ],
+   "what": "Sapphire warp 5 (12,3) -> GraniteCave_B2F 3"
+  },
+  {
+   "at": [
+    29,
+    2
+   ],
+   "to": [
+    125,
+    4
+   ],
+   "what": "Sapphire warp 6 (29,2) -> GraniteCave_B2F 4"
+  }
+ ],
+ "triggers": [
+  {
+   "script": 1,
+   "var": 0,
+   "value": 0,
+   "at": [
+    25,
+    13
+   ]
+  },
+  {
+   "script": 2,
+   "var": 0,
+   "value": 0,
+   "at": [
+    4,
+    21
+   ]
+  },
+  {
+   "script": 3,
+   "var": 0,
+   "value": 0,
+   "at": [
+    29,
+    13
+   ]
+  },
+  {
+   "script": 4,
+   "var": 0,
+   "value": 0,
+   "at": [
+    28,
+    21
+   ]
+  },
+  {
+   "script": 5,
+   "var": 0,
+   "value": 0,
+   "at": [
+    8,
+    5
+   ]
+  },
+  {
+   "script": 6,
+   "var": 0,
+   "value": 0,
+   "at": [
+    12,
+    3
+   ]
+  },
+  {
+   "script": 7,
+   "var": 0,
+   "value": 0,
+   "at": [
+    29,
+    2
+   ]
+  },
+  {
+   "script": 8,
+   "var": 0,
+   "value": 0,
+   "at": [
+    2,
+    1
+   ]
+  },
+  {
+   "script": 9,
+   "var": 0,
+   "value": 0,
+   "at": [
+    3,
+    1
+   ]
+  },
+  {
+   "script": 10,
+   "var": 0,
+   "value": 0,
+   "at": [
+    4,
+    1
+   ]
+  },
+  {
+   "script": 11,
+   "var": 0,
+   "value": 0,
+   "at": [
+    5,
+    1
+   ]
+  },
+  {
+   "script": 12,
+   "var": 0,
+   "value": 0,
+   "at": [
+    6,
+    1
+   ]
+  },
+  {
+   "script": 13,
+   "var": 0,
+   "value": 0,
+   "at": [
+    7,
+    1
+   ]
+  },
+  {
+   "script": 14,
+   "var": 0,
+   "value": 0,
+   "at": [
+    15,
+    1
+   ]
+  },
+  {
+   "script": 15,
+   "var": 0,
+   "value": 0,
+   "at": [
+    16,
+    1
+   ]
+  },
+  {
+   "script": 16,
+   "var": 0,
+   "value": 0,
+   "at": [
+    17,
+    1
+   ]
+  },
+  {
+   "script": 17,
+   "var": 0,
+   "value": 0,
+   "at": [
+    18,
+    1
+   ]
+  },
+  {
+   "script": 18,
+   "var": 0,
+   "value": 0,
+   "at": [
+    19,
+    1
+   ]
+  },
+  {
+   "script": 19,
+   "var": 0,
+   "value": 0,
+   "at": [
+    20,
+    1
+   ]
+  },
+  {
+   "script": 20,
+   "var": 0,
+   "value": 0,
+   "at": [
+    21,
+    1
+   ]
+  },
+  {
+   "script": 21,
+   "var": 0,
+   "value": 0,
+   "at": [
+    22,
+    1
+   ]
+  },
+  {
+   "script": 22,
+   "var": 0,
+   "value": 0,
+   "at": [
+    2,
+    2
+   ]
+  },
+  {
+   "script": 23,
+   "var": 0,
+   "value": 0,
+   "at": [
+    3,
+    2
+   ]
+  },
+  {
+   "script": 24,
+   "var": 0,
+   "value": 0,
+   "at": [
+    4,
+    2
+   ]
+  },
+  {
+   "script": 25,
+   "var": 0,
+   "value": 0,
+   "at": [
+    5,
+    2
+   ]
+  },
+  {
+   "script": 26,
+   "var": 0,
+   "value": 0,
+   "at": [
+    6,
+    2
+   ]
+  },
+  {
+   "script": 27,
+   "var": 0,
+   "value": 0,
+   "at": [
+    7,
+    2
+   ]
+  },
+  {
+   "script": 28,
+   "var": 0,
+   "value": 0,
+   "at": [
+    15,
+    2
+   ]
+  },
+  {
+   "script": 29,
+   "var": 0,
+   "value": 0,
+   "at": [
+    16,
+    2
+   ]
+  },
+  {
+   "script": 30,
+   "var": 0,
+   "value": 0,
+   "at": [
+    17,
+    2
+   ]
+  },
+  {
+   "script": 31,
+   "var": 0,
+   "value": 0,
+   "at": [
+    18,
+    2
+   ]
+  },
+  {
+   "script": 32,
+   "var": 0,
+   "value": 0,
+   "at": [
+    19,
+    2
+   ]
+  },
+  {
+   "script": 33,
+   "var": 0,
+   "value": 0,
+   "at": [
+    20,
+    2
+   ]
+  },
+  {
+   "script": 34,
+   "var": 0,
+   "value": 0,
+   "at": [
+    21,
+    2
+   ]
+  },
+  {
+   "script": 35,
+   "var": 0,
+   "value": 0,
+   "at": [
+    22,
+    2
+   ]
+  },
+  {
+   "script": 36,
+   "var": 0,
+   "value": 0,
+   "at": [
+    15,
+    3
+   ]
+  },
+  {
+   "script": 37,
+   "var": 0,
+   "value": 0,
+   "at": [
+    16,
+    3
+   ]
+  },
+  {
+   "script": 38,
+   "var": 0,
+   "value": 0,
+   "at": [
+    17,
+    3
+   ]
+  },
+  {
+   "script": 39,
+   "var": 0,
+   "value": 0,
+   "at": [
+    18,
+    3
+   ]
+  },
+  {
+   "script": 40,
+   "var": 0,
+   "value": 0,
+   "at": [
+    19,
+    3
+   ]
+  },
+  {
+   "script": 41,
+   "var": 0,
+   "value": 0,
+   "at": [
+    20,
+    3
+   ]
+  },
+  {
+   "script": 42,
+   "var": 0,
+   "value": 0,
+   "at": [
+    21,
+    3
+   ]
+  },
+  {
+   "script": 43,
+   "var": 0,
+   "value": 0,
+   "at": [
+    22,
+    3
+   ]
+  },
+  {
+   "script": 44,
+   "var": 0,
+   "value": 0,
+   "at": [
+    18,
+    4
+   ]
+  },
+  {
+   "script": 45,
+   "var": 0,
+   "value": 0,
+   "at": [
+    19,
+    4
+   ]
+  },
+  {
+   "script": 46,
+   "var": 0,
+   "value": 0,
+   "at": [
+    20,
+    4
+   ]
+  },
+  {
+   "script": 47,
+   "var": 0,
+   "value": 0,
+   "at": [
+    22,
+    4
+   ]
+  },
+  {
+   "script": 48,
+   "var": 0,
+   "value": 0,
+   "at": [
+    23,
+    4
+   ]
+  },
+  {
+   "script": 49,
+   "var": 0,
+   "value": 0,
+   "at": [
+    24,
+    4
+   ]
+  },
+  {
+   "script": 50,
+   "var": 0,
+   "value": 0,
+   "at": [
+    3,
+    5
+   ]
+  },
+  {
+   "script": 51,
+   "var": 0,
+   "value": 0,
+   "at": [
+    4,
+    5
+   ]
+  },
+  {
+   "script": 52,
+   "var": 0,
+   "value": 0,
+   "at": [
+    5,
+    5
+   ]
+  },
+  {
+   "script": 53,
+   "var": 0,
+   "value": 0,
+   "at": [
+    18,
+    5
+   ]
+  },
+  {
+   "script": 54,
+   "var": 0,
+   "value": 0,
+   "at": [
+    19,
+    5
+   ]
+  },
+  {
+   "script": 55,
+   "var": 0,
+   "value": 0,
+   "at": [
+    20,
+    5
+   ]
+  },
+  {
+   "script": 56,
+   "var": 0,
+   "value": 0,
+   "at": [
+    21,
+    5
+   ]
+  },
+  {
+   "script": 57,
+   "var": 0,
+   "value": 0,
+   "at": [
+    22,
+    5
+   ]
+  },
+  {
+   "script": 58,
+   "var": 0,
+   "value": 0,
+   "at": [
+    23,
+    5
+   ]
+  },
+  {
+   "script": 59,
+   "var": 0,
+   "value": 0,
+   "at": [
+    24,
+    5
+   ]
+  },
+  {
+   "script": 60,
+   "var": 0,
+   "value": 0,
+   "at": [
+    3,
+    6
+   ]
+  },
+  {
+   "script": 61,
+   "var": 0,
+   "value": 0,
+   "at": [
+    4,
+    6
+   ]
+  },
+  {
+   "script": 62,
+   "var": 0,
+   "value": 0,
+   "at": [
+    5,
+    6
+   ]
+  },
+  {
+   "script": 63,
+   "var": 0,
+   "value": 0,
+   "at": [
+    18,
+    6
+   ]
+  },
+  {
+   "script": 64,
+   "var": 0,
+   "value": 0,
+   "at": [
+    19,
+    6
+   ]
+  },
+  {
+   "script": 65,
+   "var": 0,
+   "value": 0,
+   "at": [
+    20,
+    6
+   ]
+  },
+  {
+   "script": 66,
+   "var": 0,
+   "value": 0,
+   "at": [
+    21,
+    6
+   ]
+  },
+  {
+   "script": 67,
+   "var": 0,
+   "value": 0,
+   "at": [
+    22,
+    6
+   ]
+  },
+  {
+   "script": 68,
+   "var": 0,
+   "value": 0,
+   "at": [
+    23,
+    6
+   ]
+  },
+  {
+   "script": 69,
+   "var": 0,
+   "value": 0,
+   "at": [
+    24,
+    6
+   ]
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 1,
+   "model": 110,
+   "script": 7068,
+   "flag": 1168,
+   "dir": 1,
+   "at": [
+    15,
+    21
+   ],
+   "what": "item ball ITEM_POKE_BALL"
+  }
+ ],
+ "signs": [],
+ "what": "GraniteCave_B1F: cave (converter/gen_caves.py, b2tools/models_cave.py); story objects: see notes/CAVES.md"
+}

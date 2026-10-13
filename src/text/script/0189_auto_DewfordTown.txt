@@ -1,0 +1,30 @@
+Mr. Briney: Ahoy!\nFor you, I’ll go out to sea anytime!{be01}\nNow, my friend, where are we bound?
+Mr. Briney: Petalburg, is it?{be01}\nAnchors aweigh!\nPeeko, we’re setting sail, my darling!
+Mr. Briney: Slateport, is it?{be01}\nAnchors aweigh!\nPeeko, we’re setting sail, my darling!
+Mr. Briney: Just tell me whenever you\nwant to set sail again.
+Mr. Briney: Have you delivered your\nLetter?{be01}\nOr were you meaning to sail back to\nPetalburg?
+Mr. Briney: Then you go on and deliver\nthe Letter. I’ll be waiting.
+Mr. Briney: Petalburg it is, then!{be01}\nAnchors aweigh!\nPeeko, we’re setting sail, my darling!
+This is a renowned fishing spot.\nAre you getting the itch to fish?
+I hear you, and I like what\nyou’re saying!{be01}\nI’ll give you one of my fishing Rods.
+And, as an added bonus, I’ll even throw\nin a little fishing advice!{be01}\nFirst, you want to face the water,\nthen use the Rod.{be01}\nFocus your mind...\nIf you get a bite, pull on the Rod.{be01}\nSometimes you can snag something\nimmediately, but with bigger catches,{be00}\nyou need to time the pulls on your Rod{be00}\nto haul them in.
+Oh, is that so?\nThat’s too bad, then.
+Yo!\nHow’s your fishing?
+Is that right! That’s great!\nHaul in some big ones!
+Oh, hey, don’t get down on yourself!\nI’ll give you a little fishing advice.{be01}\nFirst, you want to face the water,\nthen use the Rod.{be01}\nFocus your mind...\nIf you get a bite, pull the Rod.{be01}\nSometimes you can snag something\nimmediately, but with bigger catches,{be00}\nyou need to time the pulls on your Rod{be00}\nto haul them in.
+Mr. Briney: Ahoy!\nWe’ve hit land in Dewford.{be01}\nI suppose you’re off to deliver that\nLetter to, who was it now, Steven!
+Mr. Briney: Ahoy!\nWe’ve hit land in Dewford!{be01}\nYou just go on and tell me whenever\nyou want to set sail again!
+I like what’s hip, happening, and trendy.\nI’m always checking it out.{be01}\nListen, have you heard about this new\n“Hot Idol”?{be01}\nThat’s right!\nOf course you know!{be01}\nI mean, sheesh,\n“Hot Idol”...{be00}\nIt’s the hottest thing in cool!{be01}\nWherever you’re from,\n“Hot Idol”{be00}\nis the biggest happening thing, right?
+Yeah, absolutely right!{be01}\n“Hot Idol” is the\ndefinition of “in” right now.
+Hunh?\nIt’s not the hip and happening thing?{be01}\nWell, hey, you have to tell me,\nwhat’s new and what’s “in”?
+Well, if you hear of any happening new\ntrends, come share them with me, okay?
+Petalburg
+Slateport
+Cancel
+Excellent!
+Not so hot
+Dewford Town\n“A tiny island in the blue sea.”
+Dewford Town Pokémon Gym\nLeader: Brawly{be00}\n“A big wave in fighting!”
+“Rejuvenate your tired partners!”\nPokémon Center
+Dewford Hall\n“Everyone’s information exchange!”
+Dewford Town is a tiny island community.\nIf something gets trendy here,{be00}\neveryone picks up on it right away.

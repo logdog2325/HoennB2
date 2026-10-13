@@ -1,0 +1,74 @@
+{
+ "map": "SouthernIsland_Exterior",
+ "id": "MAP_SOUTHERN_ISLAND_EXTERIOR",
+ "layout": "LAYOUT_SOUTHERN_ISLAND_EXTERIOR",
+ "music": "MUS_ABANDONED_SHIP",
+ "region_map_section": "MAPSEC_SOUTHERN_ISLAND",
+ "weather": "WEATHER_NONE",
+ "connections": null,
+ "npcs": [
+  {
+   "local_id": 1,
+   "x": 13,
+   "y": 23,
+   "gfx": "OBJ_EVENT_GFX_SAILOR",
+   "movement": "MOVEMENT_TYPE_FACE_UP",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "SouthernIsland_Exterior_EventScript_160AE0",
+   "texts": {
+    "SouthernIsland_Exterior_Text_1C5215": "Aye, mate, there's nothing here to\\nsee or do on this forgettable island.\\pWhat say we sail back to LILYCOVE?$",
+    "SouthernIsland_Exterior_Text_1C5281": "Aye, right, then!\\nSail home we will!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 2,
+   "x": 13,
+   "y": 25,
+   "gfx": "OBJ_EVENT_GFX_SS_TIDAL",
+   "movement": "MOVEMENT_TYPE_FACE_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "0x0",
+   "missing": true
+  }
+ ],
+ "signs": [
+  {
+   "x": 16,
+   "y": 7,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "SouthernIsland_Exterior_EventScript_160B4A",
+   "texts": {
+    "SouthernIsland_Exterior_Text_1C52FB": "“Those whose memories fade seek to\\ncarve them in their hearts...”$"
+   }
+  }
+ ],
+ "warps": [
+  {
+   "id": 0,
+   "x": 14,
+   "y": 5,
+   "dest_map": "MAP_SOUTHERN_ISLAND_INTERIOR",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 1,
+   "x": 15,
+   "y": 5,
+   "dest_map": "MAP_SOUTHERN_ISLAND_INTERIOR",
+   "dest_warp_id": "1"
+  }
+ ],
+ "coord_events": [],
+ "wild": {}
+}

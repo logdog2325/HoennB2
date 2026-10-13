@@ -1,0 +1,51 @@
+{
+ "map": "emerald/MagmaHideout_3F_1R",
+ "void": [
+  [
+   8,
+   0,
+   8,
+   0
+  ],
+  [
+   23,
+   2,
+   23,
+   2
+  ]
+ ],
+ "_doc": "emerald_caves 2026-10-12: Emerald's MagmaHideout_3F_1R (pokeemerald) read as Emerald's world reads it (models_cave 'emerald/<Map>'); void = walkable tiles no warp reaches, pools = its blocked water; its lava (blocked lava metatiles) drawn as Black 2's Reversal Mountain lava (Ruby's Cave of Origin recipe); emerald_polish_caves 2026-10-12: void also the top half of each door (MB_ANIMATED_DOOR 0x60 in Lavaridge's tileset is two tiles tall: Gen 3 marks the upper tile walkable but nobody reaches it; drawn as floor, the door's arch opened into a black floor square)",
+ "pools": [
+  [
+   0,
+   0,
+   27,
+   23,
+   {
+    "metatiles": [
+     "0x213",
+     "0x215",
+     "0x21c",
+     "0x2bd",
+     "0x32c",
+     "0x333",
+     "0x334",
+     "0x33a",
+     "0x33b",
+     "0x33c"
+    ]
+   }
+  ]
+ ],
+ "look_over": {
+  "water": "in81_magu00",
+  "water_top": "in81_magu01",
+  "water_top_size": 64,
+  "water_bank": "in81_mizuga1",
+  "tex_sets": {
+   "in81_magu00": 388,
+   "in81_magu01": 388,
+   "in81_mizuga1": 388
+  }
+ }
+}

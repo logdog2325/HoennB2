@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chunk Grid View</title>
+<style>
+  :root { --bg: #1d1f21; --fg: #e8e8e8; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 12px -apple-system, system-ui, sans-serif; }
+  #wrap { position: relative; width: 1024px; height: 1024px; }
+  canvas { position: absolute; left: 0; top: 0; }
+  #info { padding: 4px 8px; }
+</style>
+</head>
+<body>
+<div id="info">loading…</div>
+<div id="wrap"></div>
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+} }
+</script>
+<script type="module">
+// Exact top-down view of one map chunk (512x512 units, centred on 0) with the 32x32 tile grid.
+// ?model=path.glb[&grid=1][&crop=x0,z0,x1,z1 in tiles][&tilt=1 for the in-game-like angle]
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+const q = new URLSearchParams(location.search);
+const crop = (q.get('crop') || '0,0,32,32').split(',').map(Number);
+const [x0, z0, x1, z1] = crop;
+const S = 1024, aspect = (x1 - x0) / (z1 - z0);
+const W = aspect >= 1 ? S : Math.round(S * aspect), H = aspect >= 1 ? Math.round(S / aspect) : S;
+const wrap = document.getElementById('wrap'); wrap.style.width = W + 'px'; wrap.style.height = H + 'px';
+const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
+renderer.setSize(W, H); renderer.outputColorSpace = THREE.SRGBColorSpace; wrap.append(renderer.domElement);
+const scene = new THREE.Scene(); scene.background = new THREE.Color(0x202020);
+const toU = t => t * 16 - 256;
+let cam;
+if (q.get('tilt')) {
+  cam = new THREE.PerspectiveCamera(30, W / H, 1, 5000);
+  const cx = (toU(x0) + toU(x1)) / 2, cz = (toU(z0) + toU(z1)) / 2;
+  cam.position.set(cx, 420, cz + 330); cam.lookAt(cx, 0, cz);
+} else {
+  cam = new THREE.OrthographicCamera(toU(x0), toU(x1), -toU(z0), -toU(z1), -2000, 2000);
+  cam.position.set(0, 1000, 0); cam.up.set(0, 0, -1); cam.lookAt(0, 0, 0);
+}
+const g = await new GLTFLoader().loadAsync(q.get('model'));
+g.scene.traverse(o => { if (o.material) { o.material.side = THREE.DoubleSide; if (o.material.map) o.material.map.magFilter = THREE.NearestFilter; } });
+scene.add(g.scene);
+renderer.render(scene, cam);
+if (q.get('grid') && !q.get('tilt')) {
+  const c = document.createElement('canvas'); c.width = W; c.height = H; wrap.append(c);
+  const ctx = c.getContext('2d'); const px = W / (x1 - x0);
+  ctx.strokeStyle = 'rgba(0,0,0,0.35)'; ctx.fillStyle = 'rgba(255,255,255,0.9)'; ctx.font = '10px monospace';
+  for (let t = x0; t <= x1; t++) { const x = (t - x0) * px; ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke(); if (t < x1) ctx.fillText(t, x + 2, 10); }
+  for (let t = z0; t <= z1; t++) { const y = (t - z0) * px; ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke(); if (t < z1 && t > z0) ctx.fillText(t, 2, y + 10); }
+}
+document.getElementById('info').textContent = `${q.get('model')} tiles x ${x0}-${x1}, z ${z0}-${z1}`;
+document.body.dataset.done = '1';
+</script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+{
+ "_doc": "BattleTower_BattleRoom (zone 15), built by the specials agent (recipe data/interior_layouts/BattleTower_BattleRoom.json): Nimbasa Battle Test look, Black 2 interior area 306. A plain Sapphire room for now: the PWT link waits for the island and the story (notes/DECISIONS.md). Warps in Sapphire's order. People (battle_tower agent, 2026-10-08): Sapphire's two objects by their local ids as uids: the opponent (hidden until the script shows it; code 162 reads its sprite from work 0x4020) and the attendant (TEALA = Teala, code 79 (data/sprite_map.json OBJ_EVENT_GFX_TEALA: Sapphire's own Teala redrawn, as in the Pokémon Centers)). Both people run script 2 (a halt: Sapphire gives them no script); script 1 is the arrival from the Corridor.",
+ "zone": 15,
+ "room": "BattleTower_BattleRoom",
+ "area": 306,
+ "parent": 17,
+ "warps": [
+  {
+   "at": [
+    5,
+    8
+   ],
+   "tile_only": true,
+   "to": [
+    21,
+    2
+   ],
+   "what": "Sapphire warp 0 -> BattleTower_Lobby 2"
+  },
+  {
+   "at": [
+    6,
+    8
+   ],
+   "tile_only": true,
+   "to": [
+    21,
+    2
+   ],
+   "what": "Sapphire warp 1 -> BattleTower_Lobby 2"
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 1,
+   "model": 162,
+   "script": 2,
+   "dir": 1,
+   "at": [
+    5,
+    1
+   ],
+   "flag": 1094,
+   "what": "opponent (Sapphire VAR_0 = VAR_OBJ_GFX_ID_0, FACE_DOWN; FLAG_HIDE_BATTLE_TOWER_OPPONENT): placeholder code 162 = Black 2's WKOBJCODE00 (sprite from work 0x4020, as the Battle Subway train's opponent, zone 76)"
+  },
+  {
+   "uid": 2,
+   "model": 79,
+   "script": 2,
+   "dir": 3,
+   "at": [
+    1,
+    7
+   ],
+   "what": "attendant (Sapphire TEALA, FACE_RIGHT): Teala, code 79 (data/sprite_map.json: Sapphire's own Teala redrawn)"
+  }
+ ],
+ "signs": []
+}

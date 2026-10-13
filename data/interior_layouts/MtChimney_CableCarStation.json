@@ -1,0 +1,325 @@
+{
+ "_doc": "Mt. Chimney cable car station (Sapphire 13x12; zone 340, area 330 = Black 2's Gear Station). The platform behind the cable (row 2) with Sapphire's yellow lines (rows 2/4/7) = the Battle Subway's yellow tactile tiles bs_tenji; the cable's track (row 3) sunk 10 units like the Gear Station's tracks (fac_track); Sapphire's dark drops (0-5 / 7-12, rows 5-6) either side of the boarding walkway (6, 4-6) sunk 40 units (fac_drop) behind thin railings (fac_railing); white pillars (1/6/11) and windows (3-4, 8-9) painted on the back wall (gs_colum_b, in57_mado); the direction sign over the railing (2-3, 4) = the station sign picture bs_kanban; benches (0, 7-8) (0, 9-10) = Black 2's benches table03 turned along the wall (walkable as in Sapphire); vending machine (12, 7-8) = in_vender01; bin (12, 9) = dust01. The cable car (Sapphire object at (6,3)) and the attendant (6,6) run the ride: story, not placed. Sapphire's walkable tiles in the wall row 0 are blocked (camera box).",
+ "map": "MtChimney_CableCarStation",
+ "style": "fac_station",
+ "floor": [
+  [
+   0,
+   2,
+   12,
+   11
+  ]
+ ],
+ "block": [
+  [
+   0,
+   0
+  ],
+  [
+   2,
+   0
+  ],
+  [
+   5,
+   0
+  ],
+  [
+   7,
+   0
+  ],
+  [
+   10,
+   0
+  ],
+  [
+   12,
+   0
+  ]
+ ],
+ "floor_tex": [
+  {
+   "units": [
+    0,
+    2.65,
+    13,
+    2.95
+   ],
+   "tex": "bs_tenji",
+   "src": 330,
+   "size": 16,
+   "_what": "yellow line"
+  },
+  {
+   "units": [
+    0,
+    4.05,
+    13,
+    4.35
+   ],
+   "tex": "bs_tenji",
+   "src": 330,
+   "size": 16,
+   "_what": "yellow line"
+  },
+  {
+   "units": [
+    0,
+    7.25,
+    12,
+    7.55
+   ],
+   "tex": "bs_tenji",
+   "src": 330,
+   "size": 16,
+   "_what": "yellow line"
+  }
+ ],
+ "blocks": [
+  {
+   "use": "fac_track",
+   "rect": [
+    0,
+    3,
+    12,
+    3
+   ],
+   "_what": "the cable's track (row 3)"
+  },
+  {
+   "use": "fac_drop",
+   "rect": [
+    0,
+    5,
+    5,
+    6
+   ],
+   "_what": "drop west of the walkway"
+  },
+  {
+   "use": "fac_drop",
+   "rect": [
+    7,
+    5,
+    12,
+    6
+   ],
+   "_what": "drop east of the walkway"
+  },
+  {
+   "use": "fac_railing",
+   "units": [
+    0,
+    4.8,
+    6.0,
+    4.95
+   ],
+   "_what": "railing"
+  },
+  {
+   "use": "fac_railing",
+   "units": [
+    7.0,
+    4.8,
+    13,
+    4.95
+   ],
+   "_what": "railing"
+  },
+  {
+   "use": "fac_railing",
+   "units": [
+    0,
+    7.05,
+    6.0,
+    7.2
+   ],
+   "_what": "railing"
+  },
+  {
+   "use": "fac_railing",
+   "units": [
+    7.0,
+    7.05,
+    13,
+    7.2
+   ],
+   "_what": "railing"
+  },
+  {
+   "use": "fac_railing",
+   "units": [
+    6.0,
+    4.8,
+    6.15,
+    7.2
+   ],
+   "_what": "railing"
+  },
+  {
+   "use": "fac_railing",
+   "units": [
+    6.85,
+    4.8,
+    7.0,
+    7.2
+   ],
+   "_what": "railing"
+  }
+ ],
+ "decals": [
+  {
+   "tex": "gs_colum_b",
+   "src": 330,
+   "at": [
+    1.5
+   ],
+   "y": -2,
+   "w": 14,
+   "h": 50,
+   "gap": 1,
+   "_what": "pillar"
+  },
+  {
+   "tex": "gs_colum_b",
+   "src": 330,
+   "at": [
+    6.5
+   ],
+   "y": -2,
+   "w": 14,
+   "h": 50,
+   "gap": 1,
+   "_what": "pillar"
+  },
+  {
+   "tex": "gs_colum_b",
+   "src": 330,
+   "at": [
+    11.5
+   ],
+   "y": -2,
+   "w": 14,
+   "h": 50,
+   "gap": 1,
+   "_what": "pillar"
+  },
+  {
+   "tex": "in57_mado",
+   "src": 338,
+   "at": [
+    3.5
+   ],
+   "y": 22,
+   "w": 14,
+   "h": 12,
+   "gap": 1,
+   "_what": "window"
+  },
+  {
+   "tex": "in57_mado",
+   "src": 338,
+   "at": [
+    4.5
+   ],
+   "y": 22,
+   "w": 14,
+   "h": 12,
+   "gap": 1,
+   "_what": "window"
+  },
+  {
+   "tex": "in57_mado",
+   "src": 338,
+   "at": [
+    8.5
+   ],
+   "y": 22,
+   "w": 14,
+   "h": 12,
+   "gap": 1,
+   "_what": "window"
+  },
+  {
+   "tex": "in57_mado",
+   "src": 338,
+   "at": [
+    9.5
+   ],
+   "y": 22,
+   "w": 14,
+   "h": 12,
+   "gap": 1,
+   "_what": "window"
+  },
+  {
+   "tex": "bs_kanban",
+   "src": 330,
+   "at": [
+    3.0
+   ],
+   "z": 3,
+   "y": 16,
+   "w": 28,
+   "h": 12,
+   "gap": 53,
+   "_what": "direction sign over the railing (2-3, 4)"
+  }
+ ],
+ "mats": [
+  {
+   "tex": "chip_mat",
+   "src": 285,
+   "rect": [
+    6,
+    11,
+    7,
+    11
+   ],
+   "border": 0.25,
+   "border_units": 4,
+   "y": 0,
+   "_what": "door mat"
+  }
+ ],
+ "furniture": [
+  {
+   "m": "table03",
+   "rot": 90,
+   "at": [
+    0.5,
+    7.6
+   ],
+   "_what": "bench (0, 7-8) (walkable in Sapphire: sunk to a cushion-high bench)",
+   "y": -5,
+   "dx": 1.5
+  },
+  {
+   "m": "table03",
+   "rot": 90,
+   "at": [
+    0.5,
+    10.4
+   ],
+   "_what": "bench (0, 9-10) (walkable in Sapphire: sunk to a cushion-high bench)",
+   "y": -5,
+   "dx": 1.5
+  },
+  {
+   "m": "in_vender01",
+   "tile": [
+    12,
+    8
+   ],
+   "s_edge": 9,
+   "_what": "vending machine (12, 7-8)"
+  },
+  {
+   "m": "dust01",
+   "tile": [
+    12,
+    9
+   ],
+   "_what": "bin"
+  }
+ ]
+}

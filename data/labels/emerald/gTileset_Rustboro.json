@@ -1,0 +1,10 @@
+{
+ "_doc": "Emerald's gTileset_Rustboro metatiles labelled by eye (emerald_world 2026-10-12; sheets: work/agents/emerald_world/tools/label_sheets.py): the ones converter/emerald_labels.py cannot carry over from Sapphire. Wins over carry_gTileset_Rustboro.json.",
+ "gTileset_Rustboro": {
+  "213": "prop",
+  "2dc": "fence"
+ },
+ "_notes": {
+  "_notes": "0x213 a lamp's head over walkable ground (Sapphire's label: prop), 0x2DC fence"
+ }
+}

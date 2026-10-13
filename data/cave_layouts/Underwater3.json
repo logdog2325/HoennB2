@@ -1,0 +1,21 @@
+{
+ "map": "Underwater3",
+ "look": "uw",
+ "underwater": true,
+ "uw_effect": false,
+ "origin": [
+  0,
+  15
+ ],
+ "links": [
+  {
+   "side": "s",
+   "x": [
+    29,
+    36
+   ],
+   "to": "Underwater4"
+  }
+ ],
+ "_links_note": "(final_check 2026-10-08) Sapphire joins Underwater3's south edge (29-36,79) to Underwater4's north edge (29-36,0) (map connection down/up): one 8-wide warp each way on the row past the edge (b2tools/models_cave.py links); the origin leaves that row inside the matrix and puts the edge 16 units from the matrix's edge, so the trench fades into the dark there as Underwater4's did"
+}

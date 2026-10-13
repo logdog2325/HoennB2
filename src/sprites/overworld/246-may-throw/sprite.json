@@ -1,0 +1,22 @@
+{
+ "kind": "overworld",
+ "code": 246,
+ "sheet": 224,
+ "frames": 4,
+ "size": [
+  32,
+  32
+ ],
+ "controller": 11,
+ "textures": [
+  "t4x4x4.0",
+  "t4x4x4.1",
+  "t4x4x4.2",
+  "t4x4x4.3"
+ ],
+ "palette": "t4x4x4",
+ "name": "may-throw",
+ "note": "May (player), throw",
+ "source": "pokeruby graphics/object_events/pics/people/may/field_move",
+ "made_by": "b2tools/sprite_upgrade_players.py"
+}

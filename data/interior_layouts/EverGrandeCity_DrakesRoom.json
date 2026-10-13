@@ -1,0 +1,73 @@
+{
+ "_doc": "gyms_league: EverGrandeCity_DrakesRoom: Sapphire's room shape (pillars at the sides, battle square, entrance passage), door to the next corridor on the back wall.",
+ "map": "EverGrandeCity_DrakesRoom",
+ "style": "gl_drake",
+ "floor": [
+  [
+   0,
+   3,
+   12,
+   11
+  ],
+  [
+   5,
+   12,
+   7,
+   13
+  ]
+ ],
+ "floor_tex": [
+  {
+   "tex": "sw_gym08_02",
+   "src": 312,
+   "rect": [
+    4,
+    4,
+    8,
+    8
+   ],
+   "size": 64
+  },
+  {
+   "tex": "sw_gym08_zou",
+   "src": 312,
+   "rect": [
+    5,
+    5,
+    7,
+    7
+   ],
+   "stretch": true
+  }
+ ],
+ "blocks": [
+  {
+   "use": "gl_e4_pillar_drake",
+   "rect": [
+    0,
+    4,
+    1,
+    8
+   ]
+  },
+  {
+   "use": "gl_e4_pillar_drake",
+   "rect": [
+    11,
+    4,
+    12,
+    8
+   ]
+  }
+ ],
+ "furniture": [
+  {
+   "m": "door_h5_in",
+   "tile": [
+    6,
+    3
+   ],
+   "wall": "N"
+  }
+ ]
+}

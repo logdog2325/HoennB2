@@ -1,0 +1,38 @@
+{
+ "_doc": "Route116_TunnelersRestHouse: zone written by converter/gen_interior_recipes_houses.py (warps and parent from converter/gen_interiors.py); story people left for the story phase: person MAN_3 at (3,6) Route116_TunnelersRestHouse_EventScript_15C2FA (story/complex script)",
+ "zone": 560,
+ "room": "Route116_TunnelersRestHouse",
+ "area": 313,
+ "parent": 423,
+ "warps": [
+  {
+   "at": [4, 8],
+   "tile_only": true,
+   "to": [423, 2],
+   "what": "Sapphire warp 0 -> Route116 1"
+  },
+  {
+   "at": [5, 8],
+   "tile_only": true,
+   "to": [423, 2],
+   "what": "Sapphire warp 1 -> Route116 1"
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 1,
+   "model": 20,
+   "script": 1,
+   "dir": 3,
+   "at": [6, 5]
+  },
+  {
+   "uid": 3,
+   "model": 20,
+   "script": 2,
+   "dir": 0,
+   "at": [7, 2]
+  }
+ ],
+ "signs": []
+}

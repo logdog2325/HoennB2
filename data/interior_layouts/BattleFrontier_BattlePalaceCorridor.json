@@ -1,0 +1,1180 @@
+{
+ "_doc": "Battle Palace corridor (Emerald 17x14): the attendant walks the player up the carpet from the arrival (8,13) to the Lv. 50 door (6,3) or the Open Level door (10,3) (door_pwood01 on the back wall; no warps: scripted). The gardens either side (Emerald x 0-4 / 12-16, rows 5-12): lawn kusa01a, bushes in9kusa_2 on Emerald's tall-grass tiles, red flowers in82_flo1 on the others, the ponds (x 0-2 / 14-16, rows 6-12) Humilau Gym's water in82_sea1 with lily pads (blocked: Emerald's water), grey paving curbs in82_zimen3 round the beds. Red carpet runner (7..9, 5..13), coral rugs at the doors; red lacquer posts painted on the wall between the doors' bays.",
+ "map": "BattleFrontier_BattlePalaceCorridor",
+ "decomp": "pokeemerald",
+ "style": "pa_palace",
+ "origin": [
+  1,
+  -2
+ ],
+ "floor": [
+  [
+   0,
+   4,
+   16,
+   13
+  ]
+ ],
+ "exits": [],
+ "block": [
+  [
+   0,
+   6
+  ],
+  [
+   1,
+   6
+  ],
+  [
+   2,
+   6
+  ],
+  [
+   14,
+   6
+  ],
+  [
+   15,
+   6
+  ],
+  [
+   16,
+   6
+  ],
+  [
+   0,
+   7
+  ],
+  [
+   1,
+   7
+  ],
+  [
+   2,
+   7
+  ],
+  [
+   14,
+   7
+  ],
+  [
+   15,
+   7
+  ],
+  [
+   16,
+   7
+  ],
+  [
+   0,
+   8
+  ],
+  [
+   1,
+   8
+  ],
+  [
+   2,
+   8
+  ],
+  [
+   14,
+   8
+  ],
+  [
+   15,
+   8
+  ],
+  [
+   16,
+   8
+  ],
+  [
+   0,
+   9
+  ],
+  [
+   1,
+   9
+  ],
+  [
+   2,
+   9
+  ],
+  [
+   14,
+   9
+  ],
+  [
+   15,
+   9
+  ],
+  [
+   16,
+   9
+  ],
+  [
+   0,
+   10
+  ],
+  [
+   1,
+   10
+  ],
+  [
+   2,
+   10
+  ],
+  [
+   14,
+   10
+  ],
+  [
+   15,
+   10
+  ],
+  [
+   16,
+   10
+  ],
+  [
+   0,
+   11
+  ],
+  [
+   1,
+   11
+  ],
+  [
+   2,
+   11
+  ],
+  [
+   14,
+   11
+  ],
+  [
+   15,
+   11
+  ],
+  [
+   16,
+   11
+  ],
+  [
+   0,
+   12
+  ],
+  [
+   1,
+   12
+  ],
+  [
+   2,
+   12
+  ],
+  [
+   14,
+   12
+  ],
+  [
+   15,
+   12
+  ],
+  [
+   16,
+   12
+  ],
+  [
+   16,
+   0
+  ],
+  [
+   4,
+   1
+  ],
+  [
+   12,
+   1
+  ],
+  [
+   4,
+   2
+  ],
+  [
+   6,
+   2
+  ],
+  [
+   10,
+   2
+  ],
+  [
+   12,
+   2
+  ]
+ ],
+ "furniture": [
+  {
+   "m": "door_pwood01",
+   "tile": [
+    6,
+    4
+   ],
+   "wall": "N",
+   "gap": -1,
+   "doorway": true,
+   "y": -1,
+   "_what": "Lv. 50 battle room door (Emerald (6,3))"
+  },
+  {
+   "m": "door_pwood01",
+   "tile": [
+    10,
+    4
+   ],
+   "wall": "N",
+   "gap": -1,
+   "doorway": true,
+   "y": -1,
+   "_what": "Open Level battle room door (Emerald (10,3))"
+  }
+ ],
+ "floor_tex": [
+  {
+   "rect": [
+    0,
+    5,
+    4,
+    12
+   ],
+   "tex": "kusa01a",
+   "src": 290,
+   "size": 32
+  },
+  {
+   "rect": [
+    12,
+    5,
+    16,
+    12
+   ],
+   "tex": "kusa01a",
+   "src": 290,
+   "size": 32
+  },
+  {
+   "rect": [
+    0,
+    6,
+    2,
+    12
+   ],
+   "tex": "in82_sea1",
+   "src": 389,
+   "size": 32
+  },
+  {
+   "rect": [
+    14,
+    6,
+    16,
+    12
+   ],
+   "tex": "in82_sea1",
+   "src": 389,
+   "size": 32
+  },
+  {
+   "rect": [
+    7,
+    5,
+    9,
+    13
+   ],
+   "tex": "in76_carpet01",
+   "src": 378,
+   "size": 32,
+   "_what": "red carpet runner (Emerald pink carpet)"
+  },
+  {
+   "units": [
+    0,
+    5,
+    5,
+    5.3125
+   ],
+   "tex": "in82_zimen3",
+   "src": 389,
+   "size": 16
+  },
+  {
+   "units": [
+    4.6875,
+    5,
+    5,
+    13
+   ],
+   "tex": "in82_zimen3",
+   "src": 389,
+   "size": 16
+  },
+  {
+   "units": [
+    0,
+    13,
+    5,
+    13.3125
+   ],
+   "tex": "in82_zimen3",
+   "src": 389,
+   "size": 16
+  },
+  {
+   "units": [
+    12,
+    5,
+    17,
+    5.3125
+   ],
+   "tex": "in82_zimen3",
+   "src": 389,
+   "size": 16
+  },
+  {
+   "units": [
+    12,
+    5,
+    12.3125,
+    13
+   ],
+   "tex": "in82_zimen3",
+   "src": 389,
+   "size": 16
+  },
+  {
+   "units": [
+    12,
+    13,
+    17,
+    13.3125
+   ],
+   "tex": "in82_zimen3",
+   "src": 389,
+   "size": 16
+  }
+ ],
+ "mats": [
+  {
+   "tex": "in70_mat1",
+   "src": 351,
+   "rect": [
+    5,
+    4,
+    7,
+    4
+   ],
+   "border": 0.25,
+   "border_units": 4,
+   "_what": "rug at the Lv. 50 door"
+  },
+  {
+   "tex": "in70_mat1",
+   "src": 351,
+   "rect": [
+    9,
+    4,
+    11,
+    4
+   ],
+   "border": 0.25,
+   "border_units": 4,
+   "_what": "rug at the Open Level door"
+  },
+  {
+   "tex": "in70_mat1",
+   "src": 351,
+   "rect": [
+    8,
+    13,
+    9,
+    13
+   ],
+   "border": 0.25,
+   "border_units": 4,
+   "_what": "arrival mat (Emerald's mat and warps (8..9,13); no zone warp: the scripts bring the player here)"
+  },
+  {
+   "tex": "in9kusa_2",
+   "src": 290,
+   "rect": [
+    1,
+    5,
+    1,
+    5
+   ],
+   "uv": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "_what": "bush (Emerald tall grass)"
+  },
+  {
+   "tex": "in9kusa_2",
+   "src": 290,
+   "rect": [
+    3,
+    5,
+    3,
+    5
+   ],
+   "uv": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "_what": "bush (Emerald tall grass)"
+  },
+  {
+   "tex": "in9kusa_2",
+   "src": 290,
+   "rect": [
+    13,
+    5,
+    13,
+    5
+   ],
+   "uv": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "_what": "bush (Emerald tall grass)"
+  },
+  {
+   "tex": "in9kusa_2",
+   "src": 290,
+   "rect": [
+    15,
+    5,
+    15,
+    5
+   ],
+   "uv": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "_what": "bush (Emerald tall grass)"
+  },
+  {
+   "tex": "in9kusa_2",
+   "src": 290,
+   "rect": [
+    4,
+    6,
+    4,
+    6
+   ],
+   "uv": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "_what": "bush (Emerald tall grass)"
+  },
+  {
+   "tex": "in9kusa_2",
+   "src": 290,
+   "rect": [
+    12,
+    6,
+    12,
+    6
+   ],
+   "uv": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "_what": "bush (Emerald tall grass)"
+  },
+  {
+   "tex": "in9kusa_2",
+   "src": 290,
+   "rect": [
+    3,
+    7,
+    3,
+    7
+   ],
+   "uv": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "_what": "bush (Emerald tall grass)"
+  },
+  {
+   "tex": "in9kusa_2",
+   "src": 290,
+   "rect": [
+    12,
+    7,
+    12,
+    7
+   ],
+   "uv": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "_what": "bush (Emerald tall grass)"
+  },
+  {
+   "tex": "in9kusa_2",
+   "src": 290,
+   "rect": [
+    3,
+    8,
+    3,
+    8
+   ],
+   "uv": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "_what": "bush (Emerald tall grass)"
+  },
+  {
+   "tex": "in9kusa_2",
+   "src": 290,
+   "rect": [
+    13,
+    8,
+    13,
+    8
+   ],
+   "uv": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "_what": "bush (Emerald tall grass)"
+  },
+  {
+   "tex": "in9kusa_2",
+   "src": 290,
+   "rect": [
+    4,
+    9,
+    4,
+    9
+   ],
+   "uv": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "_what": "bush (Emerald tall grass)"
+  },
+  {
+   "tex": "in9kusa_2",
+   "src": 290,
+   "rect": [
+    12,
+    9,
+    12,
+    9
+   ],
+   "uv": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "_what": "bush (Emerald tall grass)"
+  },
+  {
+   "tex": "in9kusa_2",
+   "src": 290,
+   "rect": [
+    3,
+    10,
+    3,
+    10
+   ],
+   "uv": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "_what": "bush (Emerald tall grass)"
+  },
+  {
+   "tex": "in9kusa_2",
+   "src": 290,
+   "rect": [
+    13,
+    10,
+    13,
+    10
+   ],
+   "uv": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "_what": "bush (Emerald tall grass)"
+  },
+  {
+   "tex": "in9kusa_2",
+   "src": 290,
+   "rect": [
+    3,
+    11,
+    3,
+    11
+   ],
+   "uv": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "_what": "bush (Emerald tall grass)"
+  },
+  {
+   "tex": "in9kusa_2",
+   "src": 290,
+   "rect": [
+    12,
+    11,
+    12,
+    11
+   ],
+   "uv": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "_what": "bush (Emerald tall grass)"
+  },
+  {
+   "tex": "in9kusa_2",
+   "src": 290,
+   "rect": [
+    4,
+    12,
+    4,
+    12
+   ],
+   "uv": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "_what": "bush (Emerald tall grass)"
+  },
+  {
+   "tex": "in9kusa_2",
+   "src": 290,
+   "rect": [
+    12,
+    12,
+    12,
+    12
+   ],
+   "uv": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "_what": "bush (Emerald tall grass)"
+  },
+  {
+   "tex": "in82_flo1",
+   "src": 389,
+   "rect": [
+    0,
+    5,
+    0,
+    5
+   ],
+   "uv": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "_what": "flowers"
+  },
+  {
+   "tex": "in82_flo1",
+   "src": 389,
+   "rect": [
+    2,
+    5,
+    2,
+    5
+   ],
+   "uv": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "_what": "flowers"
+  },
+  {
+   "tex": "in82_flo1",
+   "src": 389,
+   "rect": [
+    4,
+    5,
+    4,
+    5
+   ],
+   "uv": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "_what": "flowers"
+  },
+  {
+   "tex": "in82_flo1",
+   "src": 389,
+   "rect": [
+    12,
+    5,
+    12,
+    5
+   ],
+   "uv": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "_what": "flowers"
+  },
+  {
+   "tex": "in82_flo1",
+   "src": 389,
+   "rect": [
+    14,
+    5,
+    14,
+    5
+   ],
+   "uv": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "_what": "flowers"
+  },
+  {
+   "tex": "in82_flo1",
+   "src": 389,
+   "rect": [
+    16,
+    5,
+    16,
+    5
+   ],
+   "uv": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "_what": "flowers"
+  },
+  {
+   "tex": "in82_flo1",
+   "src": 389,
+   "rect": [
+    3,
+    6,
+    3,
+    6
+   ],
+   "uv": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "_what": "flowers"
+  },
+  {
+   "tex": "in82_flo1",
+   "src": 389,
+   "rect": [
+    13,
+    6,
+    13,
+    6
+   ],
+   "uv": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "_what": "flowers"
+  },
+  {
+   "tex": "in82_flo1",
+   "src": 389,
+   "rect": [
+    4,
+    7,
+    4,
+    7
+   ],
+   "uv": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "_what": "flowers"
+  },
+  {
+   "tex": "in82_flo1",
+   "src": 389,
+   "rect": [
+    13,
+    7,
+    13,
+    7
+   ],
+   "uv": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "_what": "flowers"
+  },
+  {
+   "tex": "in82_flo1",
+   "src": 389,
+   "rect": [
+    4,
+    8,
+    4,
+    8
+   ],
+   "uv": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "_what": "flowers"
+  },
+  {
+   "tex": "in82_flo1",
+   "src": 389,
+   "rect": [
+    12,
+    8,
+    12,
+    8
+   ],
+   "uv": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "_what": "flowers"
+  },
+  {
+   "tex": "in82_flo1",
+   "src": 389,
+   "rect": [
+    3,
+    9,
+    3,
+    9
+   ],
+   "uv": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "_what": "flowers"
+  },
+  {
+   "tex": "in82_flo1",
+   "src": 389,
+   "rect": [
+    13,
+    9,
+    13,
+    9
+   ],
+   "uv": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "_what": "flowers"
+  },
+  {
+   "tex": "in82_flo1",
+   "src": 389,
+   "rect": [
+    4,
+    10,
+    4,
+    10
+   ],
+   "uv": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "_what": "flowers"
+  },
+  {
+   "tex": "in82_flo1",
+   "src": 389,
+   "rect": [
+    12,
+    10,
+    12,
+    10
+   ],
+   "uv": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "_what": "flowers"
+  },
+  {
+   "tex": "in82_flo1",
+   "src": 389,
+   "rect": [
+    4,
+    11,
+    4,
+    11
+   ],
+   "uv": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "_what": "flowers"
+  },
+  {
+   "tex": "in82_flo1",
+   "src": 389,
+   "rect": [
+    13,
+    11,
+    13,
+    11
+   ],
+   "uv": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "_what": "flowers"
+  },
+  {
+   "tex": "in82_flo1",
+   "src": 389,
+   "rect": [
+    3,
+    12,
+    3,
+    12
+   ],
+   "uv": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "_what": "flowers"
+  },
+  {
+   "tex": "in82_flo1",
+   "src": 389,
+   "rect": [
+    13,
+    12,
+    13,
+    12
+   ],
+   "uv": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "_what": "flowers"
+  },
+  {
+   "tex": "in82_grass1",
+   "src": 389,
+   "rect": [
+    1,
+    7,
+    1,
+    7
+   ],
+   "uv": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "_what": "lily pads"
+  },
+  {
+   "tex": "in82_grass1",
+   "src": 389,
+   "rect": [
+    0,
+    10,
+    0,
+    10
+   ],
+   "uv": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "_what": "lily pads"
+  },
+  {
+   "tex": "in82_grass1",
+   "src": 389,
+   "rect": [
+    2,
+    12,
+    2,
+    12
+   ],
+   "uv": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "_what": "lily pads"
+  },
+  {
+   "tex": "in82_grass1",
+   "src": 389,
+   "rect": [
+    15,
+    8,
+    15,
+    8
+   ],
+   "uv": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "_what": "lily pads"
+  },
+  {
+   "tex": "in82_grass1",
+   "src": 389,
+   "rect": [
+    16,
+    11,
+    16,
+    11
+   ],
+   "uv": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "_what": "lily pads"
+  },
+  {
+   "tex": "in82_grass1",
+   "src": 389,
+   "rect": [
+    14,
+    9,
+    14,
+    9
+   ],
+   "uv": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "_what": "lily pads"
+  }
+ ],
+ "decals": [
+  {
+   "tex": "m_h01_03",
+   "src": 282,
+   "at": [
+    4.5
+   ],
+   "y": 0,
+   "w": 10,
+   "h": 48,
+   "_what": "red lacquer post painted on the wall"
+  },
+  {
+   "tex": "m_h01_03",
+   "src": 282,
+   "at": [
+    12.5
+   ],
+   "y": 0,
+   "w": 10,
+   "h": 48,
+   "_what": "red lacquer post painted on the wall"
+  }
+ ]
+}

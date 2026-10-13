@@ -1,0 +1,40 @@
+{
+ "_doc": "Devon Corp 3F (zone 577; scripts src/field_scripts/1154_room_RustboroCity_DevonCorp_3F.s, text 0368). Area 289 = Black 2's Castelia office area (interior pack 7). Signs = Sapphire's two rare-rock displays. Mr. Stone (two objects: (17,5) and the invisible (15,5) behind the desk) and the employee (FLAG_HIDE_EMPLOYEE_DEVON_CORP_3F) are story: not placed yet.",
+ "zone": 577,
+ "room": "RustboroCity_DevonCorp_3F",
+ "area": 289,
+ "parent": 113,
+ "warps": [
+  {
+   "at": [
+    2,
+    1
+   ],
+   "tile_only": true,
+   "to": [
+    576,
+    1
+   ],
+   "what": "Sapphire warp 0 -> RustboroCity_DevonCorp_2F 1"
+  }
+ ],
+ "npcs": [],
+ "signs": [
+  {
+   "script": 1,
+   "at": [
+    1,
+    5
+   ],
+   "dir": 4
+  },
+  {
+   "script": 2,
+   "at": [
+    1,
+    7
+   ],
+   "dir": 4
+  }
+ ]
+}

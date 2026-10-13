@@ -1,0 +1,139 @@
+{
+ "zone": 170,
+ "room": "VictoryRoad_1F",
+ "cave": true,
+ "cave_auto": true,
+ "area": 332,
+ "dark": false,
+ "header": {
+  "map_type": 16,
+  "npc_cache": 24,
+  "weather_word": 64,
+  "flags": 23683,
+  "icon_word": 40975,
+  "place_display": 1,
+  "bgm0": 1076,
+  "bgm1": 1076,
+  "bgm2": 1076,
+  "bgm3": 1076,
+  "place": 73,
+  "encounters": 88,
+  "enc_slot": 2
+ },
+ "warps": [
+  {
+   "at": [
+    15,
+    40
+   ],
+   "to": [
+    412,
+    9
+   ],
+   "what": "Sapphire warp 0 (15,40) -> EverGrandeCity 2"
+  },
+  {
+   "at": [
+    39,
+    5
+   ],
+   "to": [
+    412,
+    10
+   ],
+   "what": "Sapphire warp 1 (39,5) -> EverGrandeCity 3"
+  },
+  {
+   "at": [
+    21,
+    32
+   ],
+   "to": [
+    171,
+    5
+   ],
+   "what": "Sapphire warp 2 (21,32) -> VictoryRoad_B1F 5"
+  },
+  {
+   "at": [
+    42,
+    38
+   ],
+   "to": [
+    171,
+    2
+   ],
+   "what": "Sapphire warp 3 (42,38) -> VictoryRoad_B1F 2"
+  },
+  {
+   "at": [
+    9,
+    14
+   ],
+   "to": [
+    171,
+    4
+   ],
+   "what": "Sapphire warp 4 (9,14) -> VictoryRoad_B1F 4"
+  }
+ ],
+ "triggers": [
+  {
+   "script": 1,
+   "var": 0,
+   "value": 0,
+   "at": [
+    21,
+    32
+   ]
+  },
+  {
+   "script": 2,
+   "var": 0,
+   "value": 0,
+   "at": [
+    42,
+    38
+   ],
+   "y": 16
+  },
+  {
+   "script": 3,
+   "var": 0,
+   "value": 0,
+   "at": [
+    9,
+    14
+   ],
+   "y": 16
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 5,
+   "model": 110,
+   "script": 7128,
+   "flag": 1228,
+   "dir": 1,
+   "at": [
+    40,
+    26
+   ],
+   "what": "item ball ITEM_MAX_ELIXIR"
+  },
+  {
+   "uid": 6,
+   "model": 110,
+   "script": 7129,
+   "flag": 1229,
+   "dir": 1,
+   "at": [
+    37,
+    39
+   ],
+   "what": "item ball ITEM_PP_UP"
+  }
+ ],
+ "signs": [],
+ "what": "VictoryRoad_1F: cave (converter/gen_caves.py, b2tools/models_cave.py); story objects: see notes/CAVES.md"
+}

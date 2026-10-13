@@ -1,0 +1,300 @@
+{
+ "_doc": "emerald_rooms (b2tools/emerald_rooms.py writes this file: edit the script and rerun). Emerald's Battle Tower lobby (pokeemerald BattleFrontier_BattleTowerLobby, 25x10) in the look of Sapphire's (BattleTower_Lobby.json, sp_battle): four reception booths along the back wall (counter arms on x 4/8/12/16/20 rows 2-5, fronts beside each receptionist's tile (6/10/14/18, 5)), Black 2's blue double door into the elevator behind each ((6,1) is the singles' warp, as Sapphire's), the PC (22,1), plants in the bottom corners, the exit mat (12-13, 9).",
+ "map": "pokeemerald/BattleFrontier_BattleTowerLobby",
+ "style": "sp_battle",
+ "origin": [
+  1,
+  1
+ ],
+ "floor": [
+  [
+   0,
+   1,
+   24,
+   9
+  ]
+ ],
+ "stairs": [
+  [
+   6,
+   1
+  ]
+ ],
+ "mats": [
+  {
+   "tex": "chip_mat",
+   "src": 306,
+   "rect": [
+    12,
+    9,
+    13,
+    9
+   ],
+   "border": 0.25,
+   "border_units": 4,
+   "y": 0,
+   "_what": "door mat"
+  }
+ ],
+ "furniture": [
+  {
+   "m": "door_h5_in",
+   "tile": [
+    6,
+    1
+   ],
+   "wall": "N",
+   "gap": -1,
+   "doorway": true,
+   "y": -1,
+   "_what": "door to the elevator (singles: Sapphire warp 2)"
+  },
+  {
+   "m": "door_h5_in",
+   "tile": [
+    10,
+    1
+   ],
+   "wall": "N",
+   "gap": -1,
+   "doorway": true,
+   "y": -1,
+   "_what": "door to the elevator (doubles)"
+  },
+  {
+   "m": "door_h5_in",
+   "tile": [
+    14,
+    1
+   ],
+   "wall": "N",
+   "gap": -1,
+   "doorway": true,
+   "y": -1,
+   "_what": "door to the elevator (multis)"
+  },
+  {
+   "m": "door_h5_in",
+   "tile": [
+    18,
+    1
+   ],
+   "wall": "N",
+   "gap": -1,
+   "doorway": true,
+   "y": -1,
+   "_what": "door to the elevator (link multis)"
+  },
+  {
+   "m": "pc01",
+   "tile": [
+    22,
+    1
+   ],
+   "wall": "N",
+   "_what": "PC"
+  },
+  {
+   "m": "shelf03",
+   "tiles": [
+    4,
+    2,
+    4,
+    3
+   ],
+   "rot": 90,
+   "_what": "counter arm"
+  },
+  {
+   "m": "shelf03",
+   "tiles": [
+    4,
+    4,
+    4,
+    5
+   ],
+   "rot": 90,
+   "_what": "counter arm"
+  },
+  {
+   "m": "shelf03",
+   "tiles": [
+    8,
+    2,
+    8,
+    3
+   ],
+   "rot": 90,
+   "_what": "counter arm"
+  },
+  {
+   "m": "shelf03",
+   "tiles": [
+    8,
+    4,
+    8,
+    5
+   ],
+   "rot": 90,
+   "_what": "counter arm"
+  },
+  {
+   "m": "shelf03",
+   "tiles": [
+    12,
+    2,
+    12,
+    3
+   ],
+   "rot": 90,
+   "_what": "counter arm"
+  },
+  {
+   "m": "shelf03",
+   "tiles": [
+    12,
+    4,
+    12,
+    5
+   ],
+   "rot": 90,
+   "_what": "counter arm"
+  },
+  {
+   "m": "shelf03",
+   "tiles": [
+    16,
+    2,
+    16,
+    3
+   ],
+   "rot": 90,
+   "_what": "counter arm"
+  },
+  {
+   "m": "shelf03",
+   "tiles": [
+    16,
+    4,
+    16,
+    5
+   ],
+   "rot": 90,
+   "_what": "counter arm"
+  },
+  {
+   "m": "shelf03",
+   "tiles": [
+    20,
+    2,
+    20,
+    3
+   ],
+   "rot": 90,
+   "_what": "counter arm"
+  },
+  {
+   "m": "shelf03",
+   "tiles": [
+    20,
+    4,
+    20,
+    5
+   ],
+   "rot": 90,
+   "_what": "counter arm"
+  },
+  {
+   "m": "desk02",
+   "tile": [
+    5,
+    5
+   ],
+   "_what": "counter front"
+  },
+  {
+   "m": "desk02",
+   "tile": [
+    7,
+    5
+   ],
+   "_what": "counter front"
+  },
+  {
+   "m": "desk02",
+   "tile": [
+    9,
+    5
+   ],
+   "_what": "counter front"
+  },
+  {
+   "m": "desk02",
+   "tile": [
+    11,
+    5
+   ],
+   "_what": "counter front"
+  },
+  {
+   "m": "desk02",
+   "tile": [
+    13,
+    5
+   ],
+   "_what": "counter front"
+  },
+  {
+   "m": "desk02",
+   "tile": [
+    15,
+    5
+   ],
+   "_what": "counter front"
+  },
+  {
+   "m": "desk02",
+   "tile": [
+    17,
+    5
+   ],
+   "_what": "counter front"
+  },
+  {
+   "m": "desk02",
+   "tile": [
+    19,
+    5
+   ],
+   "_what": "counter front"
+  },
+  {
+   "m": "plant01",
+   "tile": [
+    0,
+    9
+   ]
+  },
+  {
+   "m": "plant01",
+   "tile": [
+    1,
+    9
+   ]
+  },
+  {
+   "m": "plant01",
+   "tile": [
+    23,
+    9
+   ]
+  },
+  {
+   "m": "plant01",
+   "tile": [
+    24,
+    9
+   ]
+  }
+ ]
+}

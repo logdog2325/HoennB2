@@ -1,0 +1,184 @@
+{
+ "zone": 10,
+ "room": "AquaHideout_B2F",
+ "area": 379,
+ "header": {
+  "map_type": 16,
+  "npc_cache": 24,
+  "weather_word": 0,
+  "flags": 22817,
+  "icon_word": 32783,
+  "bgm0": 1194,
+  "bgm1": 1194,
+  "bgm2": 1194,
+  "bgm3": 1194,
+  "place": 69,
+  "place_display": 0,
+  "parent": 2,
+  "encounters": 8191,
+  "enc_slot": 6
+ },
+ "warps": [
+  {
+   "at": [
+    18,
+    1
+   ],
+   "tile_only": true,
+   "to": [
+    5,
+    1
+   ],
+   "what": "Sapphire warp 0 (18,1) -> AquaHideout_B1F 1"
+  },
+  {
+   "at": [
+    12,
+    1
+   ],
+   "tile_only": true,
+   "to": [
+    5,
+    2
+   ],
+   "what": "Sapphire warp 1 (12,1) -> AquaHideout_B1F 2"
+  },
+  {
+   "at": [
+    3,
+    3
+   ],
+   "tile_only": true,
+   "to": [
+    5,
+    3
+   ],
+   "what": "Sapphire warp 2 (3,3) -> AquaHideout_B1F 3"
+  },
+  {
+   "at": [
+    31,
+    8
+   ],
+   "tile_only": true,
+   "to": [
+    10,
+    5
+   ],
+   "what": "Sapphire warp 3 (31,8) -> AquaHideout_B2F 5",
+   "type": 5,
+   "dir": 0
+  },
+  {
+   "at": [
+    8,
+    8
+   ],
+   "tile_only": true,
+   "to": [
+    10,
+    8
+   ],
+   "what": "Sapphire warp 4 (8,8) -> AquaHideout_B2F 8",
+   "type": 5,
+   "dir": 0
+  },
+  {
+   "at": [
+    5,
+    8
+   ],
+   "tile_only": true,
+   "to": [
+    10,
+    3
+   ],
+   "what": "Sapphire warp 5 (5,8) -> AquaHideout_B2F 3",
+   "type": 5,
+   "dir": 0
+  },
+  {
+   "at": [
+    18,
+    13
+   ],
+   "tile_only": true,
+   "to": [
+    10,
+    7
+   ],
+   "what": "Sapphire warp 6 (18,13) -> AquaHideout_B2F 7",
+   "type": 5,
+   "dir": 0
+  },
+  {
+   "at": [
+    12,
+    13
+   ],
+   "tile_only": true,
+   "to": [
+    10,
+    6
+   ],
+   "what": "Sapphire warp 7 (12,13) -> AquaHideout_B2F 6",
+   "type": 5,
+   "dir": 0
+  },
+  {
+   "at": [
+    31,
+    17
+   ],
+   "tile_only": true,
+   "to": [
+    10,
+    4
+   ],
+   "what": "Sapphire warp 8 (31,17) -> AquaHideout_B2F 4",
+   "type": 5,
+   "dir": 0
+  },
+  {
+   "at": [
+    32,
+    20
+   ],
+   "tile_only": true,
+   "to": [
+    5,
+    4
+   ],
+   "what": "Sapphire warp 9 (32,20) -> AquaHideout_B1F 4",
+   "type": 5,
+   "dir": 0
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 3,
+   "model": 110,
+   "script": 7107,
+   "flag": 1207,
+   "dir": 1,
+   "at": [
+    3,
+    13
+   ],
+   "what": "item ball ITEM_NEST_BALL"
+  }
+ ],
+ "signs": [
+  {
+   "script": 1,
+   "at": [
+    13,
+    6
+   ],
+   "dir": 4,
+   "what": "trash can (Sapphire MB_TRASH_CAN, EventScript_EmptyTrashCan)"
+  }
+ ],
+ "triggers": [],
+ "what": "ship_hideouts: AquaHideout_B2F (b2tools/ship_hideouts_rooms.py); story: story object OBJ_EVENT_GFX_VAR_1 (23,19) AquaHideout_B2F_EventScript_15D8E1 hide flag FLAG_HIDE_GRUNTS_HIDEOUTS | trainer OBJ_EVENT_GFX_VAR_1 (23,10) AquaHideout_B2F_EventScript_15D962 | story object OBJ_EVENT_GFX_SUBMARINE_SHADOW (19,20) 0x0 hide flag FLAG_HIDE_SUBMARINE_SHADOW_HIDEOUT | trainer OBJ_EVENT_GFX_VAR_2 (10,6) AquaHideout_B2F_EventScript_15D987 | coord event (28,17) AquaHideout_B2F_EventScript_15D8BD var VAR_TEMP_1=0 | coord event (28,16) AquaHideout_B2F_EventScript_15D8BD var VAR_TEMP_1=0"
+}

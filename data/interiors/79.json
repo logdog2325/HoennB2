@@ -1,0 +1,42 @@
+{
+ "zone": 79,
+ "room": "EverGrandeCity_SidneysRoom",
+ "area": 333,
+ "bgm": 1072,
+ "what": "gyms_league: EverGrandeCity_SidneysRoom (b2tools/gyms_league_rooms.py); story phase: Sidney (6,5): Elite Four battle, then opens the door (6,2) and closes the entrance (setmetatile)",
+ "parent": 412,
+ "battle_bg": 13,
+ "warps": [
+  {
+   "at": [
+    6,
+    13
+   ],
+   "tile_only": true,
+   "to": [
+    47,
+    1
+   ],
+   "what": "Sapphire warp 0 -> EverGrandeCity_Corridor5 1",
+   "type": 2,
+   "dir": 0
+  },
+  {
+   "at": [
+    6,
+    2
+   ],
+   "tile_only": true,
+   "to": [
+    35,
+    0
+   ],
+   "what": "Sapphire warp 1 -> EverGrandeCity_Corridor1 0",
+   "type": 2,
+   "dir": 2
+  }
+ ],
+ "npcs": [],
+ "signs": [],
+ "triggers": []
+}

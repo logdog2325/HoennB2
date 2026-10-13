@@ -1,0 +1,26 @@
+Lava Cookies are Mt. Chimney’s local\nspecialty.{be01}\nTry one. It’s just $200.
+Thank you, dear!
+Oh, fine then.
+Oh, dear. You can’t buy a thing if\nyou’ve not got the money.
+Too bad!\nThe Bag is full...
+Darn... Team Magma outnumbers us!\nWe can’t keep up with them!
+If they expand the land, there’ll be\nless habitats for Water Pokémon!
+Team Magma wants to expand the\nlandmass... How’s that for insane?
+That annoying Team Aqua...\nThey always mess with our plans!
+Go! Stomp Team Aqua!\nAnd expand the land!
+Stay out of our way, okay?{be01}\nWe’re trying to enlarge the landmass\nfor the good of everybody!
+Yeah!\nDouse them in fire!
+Bufoh!
+Bushaa!
+A Meteorite is fitted on a mysterious\nmachine...{be01}\nDo you want to remove the Meteorite?
+{0100:0} removed the Meteorite from\nthe mysterious machine.
+{0100:0} left the Meteorite where\nit was.
+This mysterious machine...\nIt makes no response whatsoever.
+A Meteorite is fitted on a mysterious\nmachine...{be01}\nThe machine seems to be storing\nenergy in the Meteorite.
+Archie: Oh, {0100:0}!{be01}\nPlease, you must stop Team Magma\nfor me!{be01}\nThey’re trying to make this volcano\nerupt by using the stolen Meteorite’s{be00}\npower!{be01}\nIt’s all a part of their plans to\nexpand the world’s landmass!
+Archie: {0100:0}!{be01}\nPlease, you’ve got to stop Team Magma\nfor me!{be01}\nDealing with these three thugs is\na lot, even for me!
+The power contained in the Meteorite...{be01}\nBy amplifying its power with this\nmachine, Mt. Chimney’s volcanic activity{be00}\nwill instantly intensify...{be01}\nFufufu... The volcano will erupt, spewing\nlava that will cool and harden.{be00}\nIt will expand the landmass...
+Maxie: You again...{be01}\nNow listen.\nWe humans have grown on dry land.{be01}\nThe land is everything!\nIts importance is paramount!{be01}\nThat is why we of Team Magma are\ncommitted to expanding the landmass.{be01}\nIt will create space for new species\nof Pokémon to evolve.{be01}\nIt will give us humans more space to\nadvance.{be01}\nThat is Team Magma’s vision!{be01}\nI can’t allow an ignorant child like\nyou to get in our way.{be01}\nI, Maxie, will show you the\nconsequences of meddling!
+Maxie: Ah, whatever.\nI will give up our plans for Mt. Chimney{be00}\nfor the time being...{be01}\nBut no one can ever stop us!\nTeam Magma will prevail!{be01}\nDon’t you ever forget that!
+Archie: {0100:0}! Thank you!{be01}\nWith your help, we thwarted Team\nMagma’s destructive plan!{be01}\nBut... This victory doesn’t mean the\nend of their evil plans.{be01}\nWe will remain vigilant and keep up\nour pursuit of Team Magma.{be01}\n{0100:0}, we shall meet again!
+↓ Jagged Path\nLavaridge Town Ahead

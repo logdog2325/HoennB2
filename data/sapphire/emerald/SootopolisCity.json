@@ -1,0 +1,583 @@
+{
+ "map": "SootopolisCity",
+ "id": "MAP_SOOTOPOLIS_CITY",
+ "layout": "LAYOUT_SOOTOPOLIS_CITY",
+ "music": "MUS_SOOTOPOLIS",
+ "region_map_section": "MAPSEC_SOOTOPOLIS_CITY",
+ "weather": "WEATHER_SUNNY",
+ "connections": [],
+ "npcs": [
+  {
+   "local_id": 1,
+   "x": 31,
+   "y": 18,
+   "gfx": "OBJ_EVENT_GFX_EXPERT_M",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "SootopolisCity_EventScript_CaveOfOriginExpert",
+   "texts": {
+    "SootopolisCity_Text_CaveOfOriginPleaseLeave": "Who might you be?\\pThis is the CAVE OF ORIGIN.\\pThe spirits of POKéMON, becalmed at\\nMT. PYRE, are said to be revived here.\\pPlease leave.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 2,
+   "x": 47,
+   "y": 33,
+   "gfx": "OBJ_EVENT_GFX_WOMAN_4",
+   "movement": "MOVEMENT_TYPE_FACE_LEFT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_SOOTOPOLIS_CITY_RESIDENTS",
+   "script": "SootopolisCity_EventScript_Woman2",
+   "texts": {
+    "SootopolisCity_Text_WeatherWentWild": "The weather was clear this morning,\\nbut…\\pAll of a sudden, dark clouds brewed up,\\nrain started falling in sheets, and\\lthere was thunder and lightning, too.\\pThe weather just went completely\\nwild!\\pIs all of this because of those\\nPOKéMON?$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 3,
+   "x": 9,
+   "y": 43,
+   "gfx": "OBJ_EVENT_GFX_GIRL_2",
+   "movement": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
+   "range": [
+    1,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "SootopolisCity_EventScript_Kiri",
+   "texts": {
+    "SootopolisCity_Text_BigPokemonFighting": "A big POKéMON is fighting with\\nanother big POKéMON!\\pPlease, someone make them stop!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 4,
+   "x": 51,
+   "y": 14,
+   "gfx": "OBJ_EVENT_GFX_NINJA_BOY",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "SootopolisCity_EventScript_NinjaBoy",
+   "texts": {
+    "SootopolisCity_Text_ThisIsWicked": "Wow!\\nThis is wicked!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 5,
+   "x": 43,
+   "y": 26,
+   "gfx": "OBJ_EVENT_GFX_BOY_1",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "SootopolisCity_EventScript_Boy1",
+   "texts": {
+    "SootopolisCity_Text_GiantPokemonSuddenlyAppeared": "These giant POKéMON suddenly appeared\\nin the middle of the city!\\pAnd, I've never seen them before!\\pWhy are they smashing into each\\nother like that?\\pWhy can't they be friends, those\\nPOKéMON?$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 6,
+   "x": 26,
+   "y": 4,
+   "gfx": "OBJ_EVENT_GFX_MAN_1",
+   "movement": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
+   "range": [
+    1,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_SOOTOPOLIS_CITY_MAN_1",
+   "script": "SootopolisCity_EventScript_Man",
+   "texts": {
+    "SootopolisCity_Text_NoOrdinaryTourist": "Hm!\\nYou've come all the way to SOOTOPOLIS?\\lYou're no ordinary tourist.\\pBut I suppose that doesn't make you\\nan extraordinary tourist, either.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 7,
+   "x": 20,
+   "y": 36,
+   "gfx": "OBJ_EVENT_GFX_STEVEN",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_SOOTOPOLIS_CITY_STEVEN",
+   "script": "SootopolisCity_EventScript_Steven",
+   "texts": {
+    "SootopolisCity_Text_SoThatsRayquaza": "STEVEN: So that's RAYQUAZA…\\pIt's incredible how the two rampaging\\nPOKéMON would flee from it in fear…$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 8,
+   "x": 49,
+   "y": 34,
+   "gfx": "OBJ_EVENT_GFX_WOMAN_5",
+   "movement": "MOVEMENT_TYPE_WANDER_UP_AND_DOWN",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "SootopolisCity_EventScript_Woman1",
+   "texts": {
+    "SootopolisCity_Text_SootopolisSkyBeautiful": "SOOTOPOLIS sprang up as a town in\\nthe crater of a volcano.\\pIf you look up at the sky, the lip of\\nthe crater is also visible.\\lSo, all you see is the sky in a circle.\\pBut that's what makes the sky above\\nSOOTOPOLIS the most beautiful.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 9,
+   "x": 28,
+   "y": 44,
+   "gfx": "OBJ_EVENT_GFX_GROUDON_SIDE",
+   "movement": "MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_RIGHT",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_SOOTOPOLIS_CITY_GROUDON",
+   "script": "0x0",
+   "missing": true
+  },
+  {
+   "local_id": 10,
+   "x": 34,
+   "y": 44,
+   "gfx": "OBJ_EVENT_GFX_KYOGRE_SIDE",
+   "movement": "MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_LEFT",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_SOOTOPOLIS_CITY_KYOGRE",
+   "script": "0x0",
+   "missing": true
+  },
+  {
+   "local_id": 11,
+   "x": 31,
+   "y": 41,
+   "gfx": "OBJ_EVENT_GFX_RAYQUAZA",
+   "movement": "MOVEMENT_TYPE_FACE_RIGHT",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_SOOTOPOLIS_CITY_RAYQUAZA",
+   "script": "0x0",
+   "missing": true
+  },
+  {
+   "local_id": 12,
+   "x": 17,
+   "y": 44,
+   "gfx": "OBJ_EVENT_GFX_MANIAC",
+   "movement": "MOVEMENT_TYPE_FACE_RIGHT",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_SOOTOPOLIS_CITY_RESIDENTS",
+   "script": "SootopolisCity_EventScript_Maniac",
+   "texts": {
+    "SootopolisCity_Text_SeeingLegendWithOwnEyes": "There's an ancient legend that claims\\nthe land and sea were shaped by\\la colossal battle between POKéMON.\\pWell, I'm seeing that happen with\\nmy very own eyes!\\pWhoa! I never expected to be\\nwitness to something this huge!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 13,
+   "x": 14,
+   "y": 42,
+   "gfx": "OBJ_EVENT_GFX_GIRL_3",
+   "movement": "MOVEMENT_TYPE_FACE_RIGHT",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_SOOTOPOLIS_CITY_RESIDENTS",
+   "script": "SootopolisCity_EventScript_Girl",
+   "texts": {
+    "SootopolisCity_Text_SootopolisWillBeWrecked": "Oh, no!\\nSOOTOPOLIS CITY will get wrecked!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 14,
+   "x": 17,
+   "y": 40,
+   "gfx": "OBJ_EVENT_GFX_BLACK_BELT",
+   "movement": "MOVEMENT_TYPE_FACE_RIGHT",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_SOOTOPOLIS_CITY_RESIDENTS",
+   "script": "SootopolisCity_EventScript_BlackBelt",
+   "texts": {
+    "SootopolisCity_Text_GoRedAndBlueMon": "Go for it, red POKéMON!\\nDon't back off, blue POKéMON!$",
+    "SootopolisCity_Text_DoYouKnowMonNames": "… … … … … …\\pHi, do you know the names of those\\nPOKéMON fighting over there?$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 15,
+   "x": 19,
+   "y": 37,
+   "gfx": "OBJ_EVENT_GFX_BOY_2",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_SOOTOPOLIS_CITY_RESIDENTS",
+   "script": "SootopolisCity_EventScript_Boy2",
+   "texts": {
+    "SootopolisCity_Text_TwoPokemonArentAngry": "I just get this sense somehow that\\nthe two POKéMON aren't angry.\\pI think… They probably can't control\\ntheir own power…$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 16,
+   "x": 29,
+   "y": 33,
+   "gfx": "OBJ_EVENT_GFX_MAXIE",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_SOOTOPOLIS_CITY_MAXIE",
+   "script": "SootopolisCity_EventScript_Maxie",
+   "texts": {
+    "SootopolisCity_Text_GroudonPleaseStop": "MAXIE: G… GROUDON…\\nPlease! Stop what you're doing!\\pI know the extent of your power now!\\pIf you keep going, all HOENN, not just\\nSOOTOPOLIS, will be utterly ruined!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 17,
+   "x": 31,
+   "y": 33,
+   "gfx": "OBJ_EVENT_GFX_ARCHIE",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_SOOTOPOLIS_CITY_ARCHIE",
+   "script": "SootopolisCity_EventScript_Archie",
+   "texts": {
+    "SootopolisCity_Text_KyogreCalmDown": "ARCHIE: KYOGRE! What's wrong?!\\nLook over here! It's the RED ORB!\\lCalm down! KYOGRE!\\p… … … … … …\\n… … … … … …\\pIt's no good!\\nIt's not responding at all!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 18,
+   "x": 31,
+   "y": 18,
+   "gfx": "OBJ_EVENT_GFX_WALLACE",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_SOOTOPOLIS_CITY_WALLACE",
+   "script": "SootopolisCity_EventScript_Wallace",
+   "texts": {
+    "SootopolisCity_Text_AquaMagmaDidntMeanHarm": "WALLACE: {PLAYER}{KUN}…\\pThe leaders of TEAM MAGMA and AQUA,\\nI don't think they meant harm.\\pIt wouldn't hurt to hear what they\\nhave to say for themselves.$"
+   },
+   "complex": true
+  }
+ ],
+ "signs": [
+  {
+   "x": 33,
+   "y": 34,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "SootopolisCity_EventScript_GymSign",
+   "texts": {
+    "SootopolisCity_Text_GymSign": "SOOTOPOLIS CITY POKéMON GYM\\nLEADER: JUAN\\p“The GYM LEADER with the beauty\\nof pure water!”$"
+   }
+  },
+  {
+   "x": 19,
+   "y": 29,
+   "facing": "BG_EVENT_PLAYER_FACING_NORTH",
+   "script": "Common_EventScript_ShowPokemartSign",
+   "texts": {
+    "gText_PokemartSign": "“Selected items for your convenience!”\\nPOKéMON MART$"
+   }
+  },
+  {
+   "x": 44,
+   "y": 31,
+   "facing": "BG_EVENT_PLAYER_FACING_NORTH",
+   "script": "Common_EventScript_ShowPokemonCenterSign",
+   "texts": {
+    "gText_PokemonCenterSign": "“Rejuvenate your tired partners!”\\nPOKéMON CENTER$"
+   }
+  },
+  {
+   "x": 45,
+   "y": 31,
+   "facing": "BG_EVENT_PLAYER_FACING_NORTH",
+   "script": "Common_EventScript_ShowPokemonCenterSign",
+   "texts": {
+    "gText_PokemonCenterSign": "“Rejuvenate your tired partners!”\\nPOKéMON CENTER$"
+   }
+  },
+  {
+   "x": 18,
+   "y": 29,
+   "facing": "BG_EVENT_PLAYER_FACING_NORTH",
+   "script": "Common_EventScript_ShowPokemartSign",
+   "texts": {
+    "gText_PokemartSign": "“Selected items for your convenience!”\\nPOKéMON MART$"
+   }
+  },
+  {
+   "x": 41,
+   "y": 37,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "SootopolisCity_EventScript_CitySign",
+   "texts": {
+    "SootopolisCity_Text_CitySign": "SOOTOPOLIS CITY\\p“The mystical city where history\\nslumbers.”$"
+   }
+  }
+ ],
+ "warps": [
+  {
+   "id": 0,
+   "x": 43,
+   "y": 31,
+   "dest_map": "MAP_SOOTOPOLIS_CITY_POKEMON_CENTER_1F",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 1,
+   "x": 17,
+   "y": 29,
+   "dest_map": "MAP_SOOTOPOLIS_CITY_MART",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 2,
+   "x": 31,
+   "y": 32,
+   "dest_map": "MAP_SOOTOPOLIS_CITY_GYM_1F",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 3,
+   "x": 31,
+   "y": 16,
+   "dest_map": "MAP_CAVE_OF_ORIGIN_ENTRANCE",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 4,
+   "x": 9,
+   "y": 6,
+   "dest_map": "MAP_SOOTOPOLIS_CITY_HOUSE1",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 5,
+   "x": 45,
+   "y": 6,
+   "dest_map": "MAP_SOOTOPOLIS_CITY_HOUSE2",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 6,
+   "x": 9,
+   "y": 17,
+   "dest_map": "MAP_SOOTOPOLIS_CITY_HOUSE3",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 7,
+   "x": 44,
+   "y": 17,
+   "dest_map": "MAP_SOOTOPOLIS_CITY_HOUSE4",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 8,
+   "x": 9,
+   "y": 26,
+   "dest_map": "MAP_SOOTOPOLIS_CITY_HOUSE5",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 9,
+   "x": 53,
+   "y": 28,
+   "dest_map": "MAP_SOOTOPOLIS_CITY_HOUSE6",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 10,
+   "x": 8,
+   "y": 35,
+   "dest_map": "MAP_SOOTOPOLIS_CITY_HOUSE7",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 11,
+   "x": 48,
+   "y": 25,
+   "dest_map": "MAP_SOOTOPOLIS_CITY_LOTAD_AND_SEEDOT_HOUSE",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 12,
+   "x": 51,
+   "y": 36,
+   "dest_map": "MAP_SOOTOPOLIS_CITY_MYSTERY_EVENTS_HOUSE_1F",
+   "dest_warp_id": "0"
+  }
+ ],
+ "coord_events": [],
+ "wild": {
+  "water_mons": {
+   "encounter_rate": 1,
+   "slot_rates": [
+    60,
+    30,
+    5,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 5,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 15,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 25,
+     "max": 30
+    }
+   ]
+  },
+  "fishing_mons": {
+   "encounter_rate": 10,
+   "slot_rates": [
+    70,
+    30,
+    60,
+    20,
+    20,
+    40,
+    40,
+    15,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_GYARADOS",
+     "min": 35,
+     "max": 40
+    },
+    {
+     "species": "SPECIES_GYARADOS",
+     "min": 35,
+     "max": 45
+    },
+    {
+     "species": "SPECIES_GYARADOS",
+     "min": 5,
+     "max": 45
+    }
+   ]
+  }
+ }
+}

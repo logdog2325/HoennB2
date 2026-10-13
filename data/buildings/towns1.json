@@ -1,0 +1,143 @@
+{
+ "_doc": "Town buildings of group towns1 (Petalburg, Rustboro, Dewford) in exterior pack 0 (patches/area2_buildings.py; format as data/buildings/slice.json), res range 320-339. Res 320 = the generic Gym every Hoenn town uses (place with front 24). door 65535 = no door model. dx: door models 164/165/236/259-261 span x -18..2 around their origin, so dx = door tile centre - footprint centre + 8; door 93 (Pokemon Center sliding door) is centred (+0). Details per building: notes/TOWNS_TOWNS1.md. nsyane is ext54's blue version (ext01/ext59 have red ones under the same name: only one can be in pack 0's set). Door dz: the door model's glass (door 165/236 at z 0, 164 at -1) and plate (+2) must stay 1 unit or more off the wall and frame planes they overlap (melonDS flicker); dz was moved forward where b2tools/exterior_check.py found them closer (exterior sweep 2026-10-06).",
+ "models": [
+  {
+   "res": 320,
+   "model": "work/buildings/petalburg/gym.nsbmd",
+   "door": 93,
+   "dx": 8,
+   "dz": 20,
+   "what": "Gym (generic, every Hoenn town; place with front 24)"
+  },
+  {
+   "res": 321,
+   "model": "work/buildings/petalburg/wally.nsbmd",
+   "door": 260,
+   "dx": 8,
+   "dz": 21,
+   "what": "Wally's house, Petalburg (General-tileset house, 5 wide)"
+  },
+  {
+   "res": 322,
+   "model": "work/buildings/petalburg/house.nsbmd",
+   "door": 260,
+   "dx": 0,
+   "dz": 21,
+   "what": "General-tileset house, 4 wide (Petalburg houses)"
+  },
+  {
+   "res": 323,
+   "model": "work/buildings/rustboro/grey5.nsbmd",
+   "door": 261,
+   "dx": 8,
+   "dz": 20,
+   "what": "Rustboro grey house 5 wide (House 1, House 2)"
+  },
+  {
+   "res": 324,
+   "model": "work/buildings/rustboro/flat1.nsbmd",
+   "door": 261,
+   "dx": 8,
+   "dz": 20,
+   "what": "Rustboro Flat 1 (tan, 9 wide, two storeys)"
+  },
+  {
+   "res": 325,
+   "model": "work/buildings/rustboro/school.nsbmd",
+   "door": 261,
+   "dx": 8,
+   "dz": 20,
+   "what": "Rustboro Trainer's School (tan, 7 wide)"
+  },
+  {
+   "res": 326,
+   "model": "work/buildings/rustboro/cutter.nsbmd",
+   "door": 261,
+   "dx": 8,
+   "dz": 20,
+   "what": "Rustboro Cutter's house (tan, 5 wide)"
+  },
+  {
+   "res": 327,
+   "model": "work/buildings/rustboro/house3.nsbmd",
+   "door": 261,
+   "dx": 0,
+   "dz": 20,
+   "what": "Rustboro House 3 (tan, 6 wide)"
+  },
+  {
+   "res": 328,
+   "model": "work/buildings/rustboro/flat2.nsbmd",
+   "door": 261,
+   "dx": -8,
+   "dz": 20,
+   "what": "Rustboro Flat 2 (tall grey, 7 wide)"
+  },
+  {
+   "res": 329,
+   "model": "work/buildings/rustboro/devon.nsbmd",
+   "door": 93,
+   "dx": 0,
+   "dz": 0,
+   "what": "Devon Corporation (placed as a prop: no plan footprint)"
+  },
+  {
+   "res": 330,
+   "model": "work/buildings/dewford/hall.nsbmd",
+   "door": 236,
+   "dx": 8,
+   "dz": 22,
+   "what": "Dewford Hall (5 wide)"
+  },
+  {
+   "res": 331,
+   "model": "work/buildings/dewford/house.nsbmd",
+   "door": 236,
+   "dx": 0,
+   "dz": 22,
+   "what": "Dewford house (4 wide)"
+  },
+  {
+   "res": 332,
+   "model": "work/buildings/rustboro/annex.nsbmd",
+   "door": 65535,
+   "dx": 0,
+   "dz": 0,
+   "what": "Rustboro door-less grey block east of the fountain (prop)"
+  },
+  {
+   "res": 333,
+   "model": "work/buildings/rustboro/lamp.nsbmd",
+   "door": 65535,
+   "dx": 0,
+   "dz": 0,
+   "what": "Rustboro street lamp (prop)"
+  }
+ ],
+ "textures": [
+  [
+   "ext01",
+   "sand_tex001"
+  ],
+  [
+   "ext01",
+   "c1sch001"
+  ],
+  [
+   "ext09",
+   "bill_kabe"
+  ],
+  [
+   "ext12",
+   "c8w_001"
+  ],
+  [
+   "ext53",
+   "t06_h_01_a"
+  ],
+  [
+   "ext54",
+   "nsyane"
+  ]
+ ]
+}

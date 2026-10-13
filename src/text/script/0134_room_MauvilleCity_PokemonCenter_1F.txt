@@ -1,0 +1,15 @@
+Hello, and welcome to the Pokémon\nCenter.{be01}\nWe restore your tired Pokémon to\nfull health.{be01}\nWould you like to rest your Pokémon?
+Okay, I’ll take your Pokémon for a\nfew seconds.
+Thank you for waiting.{be01}\nWe’ve restored your Pokémon to\nfull health.
+We hope to see you again!
+Your Pokémon may be infected with\nPokérus.{be01}\nLittle is known about the Pokérus\nexcept that they are microscopic life-{be00}\nforms that attach to Pokémon.{be01}\nWhile infected, Pokémon are said to\ngrow exceptionally well.
+Hi, I’m the Bard.\nWould you like to hear my song?
+Hey, yo! They call me the Hipster.\nI’ll teach you what’s hip and happening.
+Hi, I’m the Trader.\nWant to trade decorations with me?
+I’m the Storyteller.\nI’ll tell you tales of legendary{be00}\nTrainers.{be01}\nWill you hear my tale?
+I’m Giddy!\nI have a scintillating story for you!{be01}\nWould you like to hear my story?
+That man over there, he says weird\nthings!{be01}\nHe’s funny in a weird way.\nI doubt I’ll forget about him!
+When I accessed the Record Corner,\nthe data for what’s hot in Dewford{be00}\ngot updated.{be01}\nNow that bit of data is the same\nas my friend’s!
+A Record Corner opened upstairs in\nthe Pokémon Center.{be01}\nI don’t know what it’s about, but it\nsounds fun. I’ll go check it out!
+Pokémon magazines!\nPokémon Pal...{be01}\nPokémon Handbook...\nAdorable Pokémon...
+{0100:0} took a closer look at the\nHoenn region map.

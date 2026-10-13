@@ -1,0 +1,24 @@
+{
+ "_doc": "Devon Corp 3F (Sapphire 19x9; zone 577, area 289), the president's office. Doorway (2,1) down to 2F = elevator01; windows at Sapphire's (5..17 step 2, 0); the sofa against the back wall (8-10) = Black 2's bench table03 (Black 2 has no sofa); the rare-rock display cases (1,4-5) and (1,6-7) = glass cabinets shelf02 turned to face east (their signs at (1,5) (1,7)); the meeting table (7-11, 4-6) = two octagonal tables table01 side by side (5.6 tiles: 0.3 past each end); Mr. Stone's desk (15-16, 4-6) = two long desks desk01; the armchair at (5,5) is walkable in Sapphire = floor cushion chushion02.",
+ "map": "RustboroCity_DevonCorp_3F",
+ "style": "fac_devon",
+ "floor": [[0, 2, 18, 8]],
+ "furniture": [
+  {"m": "elevator01", "at": [2.5, 2.5], "wall": "N", "gap": -23, "dx": 6, "_what": "doorway down to 2F (warp tile 2,1)"},
+  {"m": "win01", "at": [5.45, 2.5], "wall": "N", "gap": 4, "y": 8, "_what": "window"},
+  {"m": "win01", "at": [7.45, 2.5], "wall": "N", "gap": 4, "y": 8, "_what": "window"},
+  {"m": "win01", "at": [9.45, 2.5], "wall": "N", "gap": 4, "y": 8, "_what": "window"},
+  {"m": "win01", "at": [11.45, 2.5], "wall": "N", "gap": 4, "y": 8, "_what": "window"},
+  {"m": "win01", "at": [13.45, 2.5], "wall": "N", "gap": 4, "y": 8, "_what": "window"},
+  {"m": "win01", "at": [15.45, 2.5], "wall": "N", "gap": 4, "y": 8, "_what": "window"},
+  {"m": "win01", "at": [17.45, 2.5], "wall": "N", "gap": 4, "y": 8, "_what": "window"},
+  {"m": "table03", "at": [9.5, 2.5], "wall": "N", "_what": "sofa (8-10, back wall)"},
+  {"m": "shelf02_1", "rot": 90, "tiles": [1, 5, 1, 5], "_what": "rare rocks display case (Sapphire 1x1: shelf02 at half size)"},
+  {"m": "shelf02_1", "rot": 90, "tiles": [1, 7, 1, 7], "_what": "rare rocks display case (Sapphire 1x1: shelf02 at half size)"},
+  {"m": "table01", "at": [8.1, 5.5], "_what": "meeting table (7-11, 4-6), west half"},
+  {"m": "table01", "at": [10.9, 5.5], "_what": "meeting table, east half"},
+  {"m": "chushion02", "tile": [5, 5], "_what": "armchair (walkable in Sapphire)"},
+  {"m": "desk01", "tiles": [15, 4, 15, 6], "_what": "Mr. Stone's desk (15-16, 4-6)"},
+  {"m": "desk01", "tiles": [16, 4, 16, 6], "_what": "Mr. Stone's desk"}
+ ]
+}

@@ -1,0 +1,18 @@
+{
+ "map": "emerald/MagmaHideout_3F_2R",
+ "void": [
+  [
+   2,
+   5,
+   2,
+   5
+  ],
+  [
+   22,
+   16,
+   22,
+   16
+  ]
+ ],
+ "_doc": "emerald_caves 2026-10-12: Emerald's MagmaHideout_3F_2R (pokeemerald) read as Emerald's world reads it (models_cave 'emerald/<Map>'); void = walkable tiles no warp reaches, pools = its blocked water"
+}

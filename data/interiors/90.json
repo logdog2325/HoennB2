@@ -1,0 +1,114 @@
+{
+ "zone": 90,
+ "room": "AbandonedShip_Rooms2_B1F",
+ "area": 337,
+ "header": {
+  "map_type": 16,
+  "npc_cache": 24,
+  "weather_word": 0,
+  "flags": 22817,
+  "icon_word": 32783,
+  "bgm0": 1193,
+  "bgm1": 1193,
+  "bgm2": 1193,
+  "bgm3": 1193,
+  "place": 65,
+  "place_display": 0,
+  "parent": 74,
+  "encounters": 8191,
+  "enc_slot": 6
+ },
+ "warps": [
+  {
+   "at": [
+    4,
+    7
+   ],
+   "tile_only": true,
+   "to": [
+    73,
+    1
+   ],
+   "what": "Sapphire warp 0 (4,7) -> AbandonedShip_Corridors_B1F 1"
+  },
+  {
+   "at": [
+    5,
+    7
+   ],
+   "tile_only": true,
+   "to": [
+    73,
+    1
+   ],
+   "what": "Sapphire warp 1 (5,7) -> AbandonedShip_Corridors_B1F 1"
+  },
+  {
+   "at": [
+    13,
+    7
+   ],
+   "tile_only": true,
+   "to": [
+    73,
+    0
+   ],
+   "what": "Sapphire warp 2 (13,7) -> AbandonedShip_Corridors_B1F 0"
+  },
+  {
+   "at": [
+    14,
+    7
+   ],
+   "tile_only": true,
+   "to": [
+    73,
+    0
+   ],
+   "what": "Sapphire warp 3 (14,7) -> AbandonedShip_Corridors_B1F 0"
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 1,
+   "model": 21,
+   "script": 1,
+   "dir": 1,
+   "at": [
+    3,
+    4
+   ],
+   "what": "OBJ_EVENT_GFX_CAMPER AbandonedShip_Rooms2_B1F_EventScript_Camper",
+   "move": 3,
+   "range": [
+    1,
+    1
+   ]
+  },
+  {
+   "uid": 2,
+   "model": 110,
+   "script": 7086,
+   "flag": 1186,
+   "dir": 1,
+   "at": [
+    13,
+    3
+   ],
+   "what": "item ball ITEM_DIVE_BALL"
+  }
+ ],
+ "signs": [
+  {
+   "script": 2,
+   "at": [
+    7,
+    7
+   ],
+   "dir": 4,
+   "what": "trash can (Sapphire MB_TRASH_CAN, EventScript_EmptyTrashCan)"
+  }
+ ],
+ "triggers": [],
+ "what": "ship_hideouts: AbandonedShip_Rooms2_B1F (b2tools/ship_hideouts_rooms.py); story: "
+}

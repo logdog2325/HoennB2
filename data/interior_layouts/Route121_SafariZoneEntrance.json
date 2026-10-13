@@ -1,0 +1,39 @@
+{
+ "_doc": "LAYOUT_ROUTE121_SAFARI_ZONE_ENTRANCE (18x14): the hall (0-17, 1-5) with the clock (9,0), the PC (12,1), a notice (15,1), the counter (6,2), (7-10,3), (11,2) with two clerks (8,2), (10,2), planters (7-10, 5), a potted plant (0,5), cushions for the walkable chairs (14,3), (17,3), (17,4), the exit mat (2-3, 5) to the Safari Zone; the corridor (12-17, 6-13) down to Route 121 with the booth counter (16, 7-10) (clerk inside at (17,9)), plants (12,8), (12,13), (17,13) and the exit mat (14-15, 13). Orange floor as the Herb Shop (style \"shop_herb\"); counters shelf03 + cashier01, PC = pcdesk02 (the lab's PC desk), plants plant01, notice poster01, clock in69_clock01.",
+ "map": "Route121_SafariZoneEntrance",
+ "style": "shop_herb",
+ "floor": [[0, 1, 17, 5], [12, 6, 17, 13]],
+ "mats": [
+  {"tex": "in45_mat01", "src": 326, "rect": [2, 5, 3, 5], "border": 0.25, "border_units": 4, "y": 0, "_what": "entrance mat"},
+  {"tex": "in45_mat01", "src": 326, "rect": [14, 13, 15, 13], "border": 0.25, "border_units": 4, "y": 0, "_what": "entrance mat"}
+ ],
+ "decals": [
+  {"tex": "in69_clock01", "src": 350, "at": [9.5], "y": 18, "w": 11, "h": 22, "gap": 2, "_what": "wall clock (9,0)"}
+ ],
+ "furniture": [
+  {"m": "shelf03", "at": [6.75, 2.4475], "rot": 90, "dx": 3.0, "dz": -3.0, "_what": "counter end (6,2)"},
+  {"m": "shelf03", "at": [11.25, 2.4475], "rot": 90, "dx": 3.0, "dz": -3.0, "_what": "counter end (11,2)"},
+  {"m": "cashier01", "at": [6.5, 2.35], "rot": 90, "dx": -0.174, "y": 18.0, "_what": "register (6,2), keys toward the clerks"},
+  {"m": "cashier01", "at": [11.5, 2.35], "rot": 270, "dx": 0.174, "y": 18.0, "_what": "register (11,2), keys toward the clerks"},
+  {"m": "shelf03", "at": [8.25, 3.5], "dx": 3.0, "dz": 3.0, "_what": "counter run (7-10, 3) 1/2"},
+  {"m": "shelf03", "at": [9.75, 3.5], "dx": 3.0, "dz": 3.0, "_what": "counter run (7-10, 3) 2/2"},
+  {"m": "pcdesk02", "at": [12.5, 0.625], "rot": 90, "_what": "PC (12,1): Black 2 tile attribute 0xD6 = its own PC"},
+  {"m": "poster01", "at": [15.5, 1.25], "_what": "notice on the wall (15,1)"},
+  {"m": "plant01", "at": [7.5, 5.45], "dz": 0.945, "_what": "planter (7,5)"},
+  {"m": "plant01", "at": [8.5, 5.45], "dz": 0.945, "_what": "planter (8,5)"},
+  {"m": "plant01", "at": [9.5, 5.45], "dz": 0.945, "_what": "planter (9,5)"},
+  {"m": "plant01", "at": [10.5, 5.45], "dz": 0.945, "_what": "planter (10,5)"},
+  {"m": "plant01", "at": [0.5, 5.45], "dz": 0.945, "_what": "potted plant (0,5)"},
+  {"m": "plant01", "at": [12.5, 8.45], "dz": 0.945, "_what": "potted plant (12,8)"},
+  {"m": "plant01", "at": [12.5, 13.45], "dz": 0.945, "_what": "potted plant (12,13)"},
+  {"m": "plant01", "at": [17.5, 13.45], "dz": 0.945, "_what": "potted plant (17,13)"},
+  {"m": "chushion02", "at": [14.5, 3.5], "_what": "chair (14,3), walkable: a Black 2 floor cushion"},
+  {"m": "chushion02", "at": [17.5, 3.5], "_what": "chair (17,3), walkable: a Black 2 floor cushion"},
+  {"m": "chushion02", "at": [17.5, 4.5], "_what": "chair (17,4), walkable: a Black 2 floor cushion"},
+  {"m": "shelf03", "at": [16.5, 7.6667], "rot": 90, "dx": 3.0, "dz": -3.0, "_what": "booth counter (16, 7-10) 1/3"},
+  {"m": "shelf03", "at": [16.5, 9.0], "rot": 90, "dx": 1.0, "dz": -3.0, "y": -2, "_what": "booth counter (16, 7-10) 2/3"},
+  {"m": "shelf03", "at": [16.5, 10.3333], "rot": 90, "dx": 3.0, "dz": -3.0, "_what": "booth counter (16, 7-10) 3/3"},
+  {"m": "shelf03", "at": [17.5, 7.4], "dx": 3.0, "dz": 3.0, "_what": "booth end (17,7)"},
+  {"m": "shelf03", "at": [17.5, 11.4], "dx": 3.0, "dz": 3.0, "_what": "booth end (17,11)"}
+ ]
+}

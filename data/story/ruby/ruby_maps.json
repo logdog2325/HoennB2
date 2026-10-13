@@ -1,0 +1,133 @@
+{
+ "_doc": "ruby_maps (WP3, 2026-10-08) story objects that exist only in a Ruby build (data/story/ruby/ is read through b2tools/version.py overlay: a file name not in data/story/ is added in Ruby, never read by a Sapphire build): Magma Hideout 1F and B1F, pokeruby data/maps/MagmaHideout_1F/B1F/map.json tiles and objects (uid = pokeruby local id), as ch8b.json's Aqua Hideout objects. Scripts: src/field_scripts/ruby/0456_room_MagmaHideout_1F.s (2, 3) and 0462_room_MagmaHideout_B1F.s (3, 4); trainers are eye-contact scripts 3000 + Black 2 id (converter/gen_trainer_npcs.py moves). The item balls (B1F uids 4, 5, 7; B2F uid 5) are the room generator's (data/interiors/ruby/231.json, 234.json); B2F's objects are ruby_scenes.json's. Sprite codes 293/294 show Magma grunt art in a Ruby build (WP4's overlay).",
+ "objects": [
+  {
+   "kind": "npc",
+   "map": "MagmaHideout_1F",
+   "at": [
+    13,
+    19
+   ],
+   "uid": 1,
+   "model": 293,
+   "script": 2,
+   "dir": 1,
+   "move": 15,
+   "flag": "FLAG_HIDE_GRUNT_1_BLOCKING_HIDEOUT",
+   "what": "the grunt guarding the door (pokeruby object 1, VAR_1, FACE_DOWN, MagmaHideout_1F_EventScript_15D7CE)"
+  },
+  {
+   "kind": "npc",
+   "map": "MagmaHideout_1F",
+   "at": [
+    14,
+    19
+   ],
+   "uid": 2,
+   "model": 293,
+   "script": 3,
+   "dir": 1,
+   "move": 15,
+   "flag": "FLAG_HIDE_GRUNT_2_BLOCKING_HIDEOUT",
+   "what": "the grunt guarding the door (pokeruby object 2, VAR_1, FACE_DOWN, MagmaHideout_1F_EventScript_15D7ED)"
+  },
+  {
+   "kind": "npc",
+   "map": "MagmaHideout_1F",
+   "at": [
+    20,
+    3
+   ],
+   "uid": 3,
+   "model": 293,
+   "script": 3004,
+   "dir": 1,
+   "move": 42,
+   "what": "TRAINER_HIDEOUT_1F_GRUNT (Black 2 id of TRAINER_GRUNT_1, GRUNT_28 in Ruby): eye-contact trainer (pokeruby object 3, VAR_1, WALK_SEQUENCE_DOWN_LEFT_UP_RIGHT; no hide flag) (walks: Black 2 code 42, Sapphire range 14x6; v165_fixes)",
+   "evtype": 1,
+   "p0": 3,
+   "areaw": 14,
+   "areah": 6
+  },
+  {
+   "kind": "npc",
+   "map": "MagmaHideout_B1F",
+   "at": [
+    33,
+    3
+   ],
+   "uid": 1,
+   "model": 293,
+   "script": 3005,
+   "dir": 2,
+   "move": 16,
+   "what": "TRAINER_HIDEOUT_B1F_GRUNT_1 (Black 2 id of TRAINER_GRUNT_2, GRUNT_29 in Ruby): eye-contact trainer (pokeruby object 1, VAR_1, FACE_LEFT; no hide flag)",
+   "evtype": 1,
+   "p0": 5
+  },
+  {
+   "kind": "npc",
+   "map": "MagmaHideout_B1F",
+   "at": [
+    41,
+    17
+   ],
+   "uid": 2,
+   "model": 293,
+   "script": 3006,
+   "dir": 1,
+   "move": 18,
+   "what": "TRAINER_HIDEOUT_B1F_GRUNT_2 (Black 2 id of TRAINER_GRUNT_3, GRUNT_30 in Ruby): eye-contact trainer (pokeruby object 2, VAR_1, ROTATE_COUNTERCLOCKWISE; no hide flag)",
+   "evtype": 1,
+   "p0": 3
+  },
+  {
+   "kind": "npc",
+   "map": "MagmaHideout_B1F",
+   "at": [
+    33,
+    19
+   ],
+   "uid": 3,
+   "model": 294,
+   "script": 3042,
+   "dir": 2,
+   "move": 20,
+   "what": "TRAINER_HIDEOUT_B1F_GRUNT_3 (Black 2 id of TRAINER_GRUNT_26, GRUNT_53 in Ruby): eye-contact trainer (pokeruby object 3, VAR_2, WALK_LEFT_AND_RIGHT; no hide flag) (walks: Black 2 code 20, Sapphire range 4x1; v165_fixes)",
+   "evtype": 1,
+   "p0": 3,
+   "areaw": 4,
+   "areah": 1
+  },
+  {
+   "kind": "npc",
+   "map": "MagmaHideout_B1F",
+   "at": [
+    27,
+    10
+   ],
+   "uid": 6,
+   "model": 110,
+   "script": 3,
+   "dir": 1,
+   "move": 2,
+   "flag": "FLAG_HIDE_ELECTRODE_1_HIDEOUT",
+   "what": "Electrode as an item ball (pokeruby object 6, ITEM_BALL, LOOK_AROUND, Hideout_B1F_EventScript_Electrode1)"
+  },
+  {
+   "kind": "npc",
+   "map": "MagmaHideout_B1F",
+   "at": [
+    27,
+    11
+   ],
+   "uid": 8,
+   "model": 110,
+   "script": 4,
+   "dir": 1,
+   "move": 2,
+   "flag": "FLAG_HIDE_ELECTRODE_2_HIDEOUT",
+   "what": "Electrode as an item ball (pokeruby object 8, ITEM_BALL, LOOK_AROUND, Hideout_B1F_EventScript_Electrode2)"
+  }
+ ]
+}

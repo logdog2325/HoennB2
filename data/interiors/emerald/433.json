@@ -1,0 +1,101 @@
+{
+ "_doc": "frontier_palace_arena (pa_rooms, 2026-10-12): BattleFrontier_BattleArenaBattleRoom (Emerald's Battle Palace / Battle Arena, notes/FRONTIER.md), Emerald only (data/versions.json rooms: \"emerald\"; claimed in data/emerald/hoenn_interiors.json). People = Emerald's objects (uid = Emerald local id; script = the zone script's entry number), their sprites from data/sprite_map.json. Positions are Emerald tiles; room origin [1, -1] (zone tile = Emerald tile + origin). Map scripts: frontier_palace_arena's.",
+ "zone": 433,
+ "room": "BattleFrontier_BattleArenaBattleRoom",
+ "area": 349,
+ "parent": 17,
+ "warps": [],
+ "npcs": [
+  {
+   "uid": 1,
+   "model": 46,
+   "script": 2,
+   "dir": 1,
+   "at": [
+    5,
+    3
+   ],
+   "what": "Emerald object 1 BLACK_BELT (FACE_DOWN): 0x0; model 46"
+  },
+  {
+   "uid": 2,
+   "model": 46,
+   "script": 2,
+   "dir": 1,
+   "at": [
+    10,
+    3
+   ],
+   "what": "Emerald object 2 BLACK_BELT (FACE_DOWN): 0x0; model 46"
+  },
+  {
+   "uid": 3,
+   "model": 46,
+   "script": 2,
+   "dir": 0,
+   "at": [
+    5,
+    9
+   ],
+   "what": "Emerald object 3 BLACK_BELT (FACE_UP): 0x0; model 46"
+  },
+  {
+   "uid": 4,
+   "model": 46,
+   "script": 2,
+   "dir": 0,
+   "at": [
+    10,
+    9
+   ],
+   "what": "Emerald object 4 BLACK_BELT (FACE_UP): 0x0; model 46"
+  },
+  {
+   "uid": 5,
+   "model": 46,
+   "script": 2,
+   "dir": 3,
+   "at": [
+    4,
+    5
+   ],
+   "what": "Emerald object 5 BLACK_BELT (FACE_RIGHT): attendant; model 46"
+  },
+  {
+   "uid": 6,
+   "model": 46,
+   "script": 2,
+   "dir": 2,
+   "at": [
+    11,
+    5
+   ],
+   "what": "Emerald object 6 BLACK_BELT (FACE_LEFT): 0x0; model 46"
+  },
+  {
+   "uid": 7,
+   "model": 162,
+   "script": 2,
+   "dir": 2,
+   "at": [
+    15,
+    6
+   ],
+   "flag": 1094,
+   "what": "Emerald object 7 VAR_0 (FACE_LEFT): opponent: code 162 = work 0x4020 (as the Factory / Battle Tower), hidden by FLAG_HIDE_BATTLE_TOWER_OPPONENT (1094) until shown; model 162"
+  },
+  {
+   "uid": 9,
+   "model": 46,
+   "script": 2,
+   "dir": 1,
+   "at": [
+    7,
+    4
+   ],
+   "what": "Emerald object 9 BLACK_BELT (FACE_DOWN): announcer; model 46"
+  }
+ ],
+ "signs": [],
+ "triggers": []
+}

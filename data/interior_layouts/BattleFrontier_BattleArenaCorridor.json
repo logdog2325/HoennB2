@@ -1,0 +1,126 @@
+{
+ "_doc": "Battle Arena corridor (Emerald 18x14): a walkway round the battle hall. The attendant walks the player from the arrival (9,13) left along rows 12-13, up the left side (x 0-2) and along row 4 to the hall's door (5,3..4) (scripted, no warps); Emerald's mirror door (12,3..4) on the right. The hall (Emerald x 6-11 rows 0-4, x 3-14 rows 5-11) is left out of the floor: its walls stand round it, its inside is the dark; the doors are openings in its side walls (\"open\" (6,3..4), (11,3..4)). Pots in the four corners (blocked), a green mat at the arrival.",
+ "map": "BattleFrontier_BattleArenaCorridor",
+ "decomp": "pokeemerald",
+ "style": "pa_dojo",
+ "origin": [
+  1,
+  -1
+ ],
+ "floor": [
+  [
+   0,
+   3,
+   5,
+   4
+  ],
+  [
+   12,
+   3,
+   17,
+   4
+  ],
+  [
+   0,
+   5,
+   2,
+   13
+  ],
+  [
+   15,
+   5,
+   17,
+   13
+  ],
+  [
+   3,
+   12,
+   14,
+   13
+  ]
+ ],
+ "exits": [],
+ "open": [
+  [
+   6,
+   3,
+   6,
+   4
+  ],
+  [
+   11,
+   3,
+   11,
+   4
+  ]
+ ],
+ "block": [
+  [
+   0,
+   3
+  ],
+  [
+   17,
+   3
+  ],
+  [
+   0,
+   13
+  ],
+  [
+   17,
+   13
+  ]
+ ],
+ "furniture": [
+  {
+   "m": "plant01",
+   "tile": [
+    0,
+    3
+   ],
+   "wall": "N",
+   "_what": "pot"
+  },
+  {
+   "m": "plant01",
+   "tile": [
+    17,
+    3
+   ],
+   "wall": "N",
+   "_what": "pot"
+  },
+  {
+   "m": "plant01",
+   "tile": [
+    0,
+    13
+   ],
+   "_what": "pot"
+  },
+  {
+   "m": "plant01",
+   "tile": [
+    17,
+    13
+   ],
+   "_what": "pot"
+  }
+ ],
+ "mats": [
+  {
+   "tex": "m_b07_mat",
+   "src": 349,
+   "rect": [
+    8,
+    13,
+    10,
+    13
+   ],
+   "border": 0.25,
+   "border_units": 4,
+   "_what": "arrival mat (Emerald (8..10,13))"
+  }
+ ]
+}

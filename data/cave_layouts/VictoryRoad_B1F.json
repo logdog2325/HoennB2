@@ -1,0 +1,22 @@
+{
+ "map": "VictoryRoad_B1F",
+ "_doc": "caves_east: as VictoryRoad_1F (elevation 3 = 0, 4 = 16, plank bridges, walk-under crossings); origin (8,0) splits the cave over two chunks at Sapphire x 24 (a chunk file must stay under 110,600 bytes).",
+ "origin": [
+  8,
+  0
+ ],
+ "levels": {
+  "3": 0,
+  "4": 16
+ },
+ "bridges": true,
+ "void": [
+  [
+   45,
+   0,
+   45,
+   5
+  ]
+ ],
+ "seam_cover": false
+}

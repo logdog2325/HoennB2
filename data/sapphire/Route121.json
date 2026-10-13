@@ -1,0 +1,767 @@
+{
+ "map": "Route121",
+ "id": "MAP_ROUTE121",
+ "layout": "LAYOUT_ROUTE121",
+ "music": "MUS_ROUTE120",
+ "region_map_section": "MAPSEC_ROUTE_121",
+ "weather": "WEATHER_SUNNY",
+ "connections": [
+  {
+   "direction": "down",
+   "offset": 20,
+   "map": "MAP_ROUTE122"
+  },
+  {
+   "direction": "left",
+   "offset": -80,
+   "map": "MAP_ROUTE120"
+  },
+  {
+   "direction": "right",
+   "offset": -10,
+   "map": "MAP_LILYCOVE_CITY"
+  }
+ ],
+ "npcs": [
+  {
+   "local_id": 1,
+   "x": 29,
+   "y": 14,
+   "gfx": "OBJ_EVENT_GFX_WOMAN_4",
+   "movement": "MOVEMENT_TYPE_FACE_RIGHT",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "Route121_EventScript_151B0A",
+   "texts": {
+    "Route121_Text_171CB4": "Ahead looms MT. PYRE...\\pIt is a natural monument to the spirits \\nof departed POKéMON...$"
+   }
+  },
+  {
+   "local_id": 2,
+   "x": 14,
+   "y": 2,
+   "gfx": "OBJ_EVENT_GFX_BERRY_TREE",
+   "movement": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "S_BerryTree",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 3,
+   "x": 15,
+   "y": 2,
+   "gfx": "OBJ_EVENT_GFX_BERRY_TREE",
+   "movement": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "S_BerryTree",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 4,
+   "x": 16,
+   "y": 2,
+   "gfx": "OBJ_EVENT_GFX_BERRY_TREE",
+   "movement": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "S_BerryTree",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 5,
+   "x": 17,
+   "y": 2,
+   "gfx": "OBJ_EVENT_GFX_BERRY_TREE",
+   "movement": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "S_BerryTree",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 6,
+   "x": 64,
+   "y": 14,
+   "gfx": "OBJ_EVENT_GFX_BERRY_TREE",
+   "movement": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "S_BerryTree",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 7,
+   "x": 65,
+   "y": 14,
+   "gfx": "OBJ_EVENT_GFX_BERRY_TREE",
+   "movement": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "S_BerryTree",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 8,
+   "x": 66,
+   "y": 14,
+   "gfx": "OBJ_EVENT_GFX_BERRY_TREE",
+   "movement": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "S_BerryTree",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 9,
+   "x": 67,
+   "y": 14,
+   "gfx": "OBJ_EVENT_GFX_BERRY_TREE",
+   "movement": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "S_BerryTree",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 10,
+   "x": 39,
+   "y": 9,
+   "gfx": "OBJ_EVENT_GFX_LASS",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route121_EventScript_151BDE",
+   "texts": {
+    "Route121_Text_1BFC36": "KATE: Together, we're fearless!\\nWe'll demonstrate how tough we are!$",
+    "Route121_Text_1BFC7A": "KATE: I blew it in front of my junior\\nstudent partner...$",
+    "Route121_Text_1BFD08": "KATE: If you've only got one POKéMON,\\nwe can't battle with you.\\pThat would be bullying.$",
+    "Route121_Text_1BFCB3": "KATE: When someone's relying on me,\\nI get this urge to look cool in front\\lof them...$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 11,
+   "x": 40,
+   "y": 9,
+   "gfx": "OBJ_EVENT_GFX_LASS",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route121_EventScript_151BF9",
+   "texts": {
+    "Route121_Text_1BFD60": "JOY: Together, we're fearless!\\nWe'll demonstrate how tough we are!$",
+    "Route121_Text_1BFDA3": "JOY: Please forgive me, KATE!$",
+    "Route121_Text_1BFE0D": "JOY: You need at least two POKéMON\\nif you're going to challenge us!$",
+    "Route121_Text_1BFDC1": "JOY: Ehehe, I'll have to train with KATE,\\nmy senior student partner, again.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 12,
+   "x": 30,
+   "y": 8,
+   "gfx": "OBJ_EVENT_GFX_VAR_1",
+   "movement": "MOVEMENT_TYPE_FACE_UP",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_GRUNTS_ROUTE121",
+   "script": "0x0",
+   "missing": true
+  },
+  {
+   "local_id": 13,
+   "x": 30,
+   "y": 7,
+   "gfx": "OBJ_EVENT_GFX_VAR_1",
+   "movement": "MOVEMENT_TYPE_FACE_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_GRUNTS_ROUTE121",
+   "script": "0x0",
+   "missing": true
+  },
+  {
+   "local_id": 14,
+   "x": 31,
+   "y": 7,
+   "gfx": "OBJ_EVENT_GFX_VAR_1",
+   "movement": "MOVEMENT_TYPE_FACE_LEFT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_GRUNTS_ROUTE121",
+   "script": "0x0",
+   "missing": true
+  },
+  {
+   "local_id": 15,
+   "x": 32,
+   "y": 5,
+   "gfx": "OBJ_EVENT_GFX_CUTTABLE_TREE",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_TEMP_11",
+   "script": "S_CuttableTree",
+   "texts": {
+    "UseCutPromptText": "This tree looks like it can be CUT down.\\pWould you like to CUT it?$",
+    "UsedCutRockSmashText": "{STR_VAR_1} used {STR_VAR_2}.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 16,
+   "x": 65,
+   "y": 4,
+   "gfx": "OBJ_EVENT_GFX_CUTTABLE_TREE",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_TEMP_12",
+   "script": "S_CuttableTree",
+   "texts": {
+    "UseCutPromptText": "This tree looks like it can be CUT down.\\pWould you like to CUT it?$",
+    "UsedCutRockSmashText": "{STR_VAR_1} used {STR_VAR_2}.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 17,
+   "x": 63,
+   "y": 5,
+   "gfx": "OBJ_EVENT_GFX_WOMAN_2",
+   "movement": "MOVEMENT_TYPE_FACE_LEFT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route121_EventScript_151B72",
+   "texts": {
+    "Route121_Text_1BF96E": "Will you play with my delightfully\\npretty POKéMON?$",
+    "Route121_Text_1BF9A1": "This isn't what I meant!$",
+    "Route121_Text_1BF9BA": "I'm going to a CONTEST in LILYCOVE.\\pMy POKéMON should have no problem\\nsweeping the MASTER CLASS.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 18,
+   "x": 55,
+   "y": 8,
+   "gfx": "OBJ_EVENT_GFX_GENTLEMAN",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN_AND_LEFT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route121_EventScript_151B89",
+   "texts": {
+    "Route121_Text_1BFA1B": "With my POKéMON, I have traveled the\\nworld's four corners.\\pYou might say I have some confidence\\nin my abilities.$",
+    "Route121_Text_1BFA8C": "Ah, well played.$",
+    "Route121_Text_1BFA9D": "I would like to circle the globe once\\nagain with my POKéMON.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 19,
+   "x": 11,
+   "y": 10,
+   "gfx": "OBJ_EVENT_GFX_HEX_MANIAC",
+   "movement": "MOVEMENT_TYPE_FACE_UP_AND_LEFT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route121_EventScript_151BC7",
+   "texts": {
+    "Route121_Text_1BFBB4": "There are powers beyond our\\nunderstanding in the world...$",
+    "Route121_Text_1BFBEE": "I have lost...$",
+    "Route121_Text_1BFBFD": "MT. PYRE...\\nThere is a mysterious power\\lat work there...$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 20,
+   "x": 22,
+   "y": 5,
+   "gfx": "OBJ_EVENT_GFX_BEAUTY",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN_AND_LEFT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route121_EventScript_151C14",
+   "texts": {
+    "Route121_Text_1BFE51": "Stop! Have a good look at my precious\\nPOKéMON!$",
+    "Route121_Text_1BFE80": "Oh, how dare you!\\nDon't take it so seriously!$",
+    "Route121_Text_1BFEAE": "Maybe I'll go catch more POKéMON at\\nthe SAFARI.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 21,
+   "x": 55,
+   "y": 10,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_ROUTE121_1",
+   "script": "Route121_EventScript_1B164E",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 22,
+   "x": 26,
+   "y": 12,
+   "gfx": "OBJ_EVENT_GFX_CUTTABLE_TREE",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_TEMP_13",
+   "script": "S_CuttableTree",
+   "texts": {
+    "UseCutPromptText": "This tree looks like it can be CUT down.\\pWould you like to CUT it?$",
+    "UsedCutRockSmashText": "{STR_VAR_1} used {STR_VAR_2}.$"
+   },
+   "complex": true
+  }
+ ],
+ "signs": [
+  {
+   "x": 32,
+   "y": 14,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "Route121_EventScript_151B13",
+   "texts": {
+    "Route121_Text_171D0C": "MT. PYRE PIER\\p...The sign is old and worn out.\\nThe words are barely legible...$"
+   }
+  },
+  {
+   "x": 40,
+   "y": 11,
+   "type": "secret_base",
+   "raw": {
+    "type": "secret_base",
+    "x": 40,
+    "y": 11,
+    "elevation": 0,
+    "secret_base_id": "SECRET_BASE_RED_CAVE2_2"
+   }
+  },
+  {
+   "x": 18,
+   "y": 13,
+   "type": "secret_base",
+   "raw": {
+    "type": "secret_base",
+    "x": 18,
+    "y": 13,
+    "elevation": 0,
+    "secret_base_id": "SECRET_BASE_RED_CAVE3_2"
+   }
+  },
+  {
+   "x": 43,
+   "y": 7,
+   "type": "secret_base",
+   "raw": {
+    "type": "secret_base",
+    "x": 43,
+    "y": 7,
+    "elevation": 0,
+    "secret_base_id": "SECRET_BASE_TREE1_2"
+   }
+  },
+  {
+   "x": 42,
+   "y": 7,
+   "type": "secret_base",
+   "raw": {
+    "type": "secret_base",
+    "x": 42,
+    "y": 7,
+    "elevation": 0,
+    "secret_base_id": "SECRET_BASE_TREE2_2"
+   }
+  },
+  {
+   "x": 39,
+   "y": 6,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "Route121_EventScript_151B1C",
+   "texts": {
+    "Route121_Text_171D5B": "“Filled with rare POKéMON!”\\nSAFARI ZONE$"
+   }
+  },
+  {
+   "x": 23,
+   "y": 10,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 23,
+    "y": 10,
+    "elevation": 3,
+    "item": "ITEM_HP_UP",
+    "flag": "FLAG_HIDDEN_ITEM_27"
+   }
+  },
+  {
+   "x": 58,
+   "y": 3,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 58,
+    "y": 3,
+    "elevation": 3,
+    "item": "ITEM_NUGGET",
+    "flag": "FLAG_HIDDEN_ITEM_28"
+   }
+  },
+  {
+   "x": 72,
+   "y": 5,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 72,
+    "y": 5,
+    "elevation": 3,
+    "item": "ITEM_FULL_HEAL",
+    "flag": "FLAG_HIDDEN_ITEM_49"
+   }
+  }
+ ],
+ "warps": [
+  {
+   "id": 0,
+   "x": 37,
+   "y": 5,
+   "dest_map": "MAP_ROUTE121_SAFARI_ZONE_ENTRANCE",
+   "dest_warp_id": "2"
+  }
+ ],
+ "coord_events": [
+  {
+   "type": "trigger",
+   "x": 25,
+   "y": 5,
+   "elevation": 3,
+   "var": "VAR_ROUTE121_STATE",
+   "var_value": "0",
+   "script": "Route121_EventScript_151B25",
+   "texts": {
+    "Route121_Text_171C8F": "Okay!\\nWe're to move out to MT. PYRE!$"
+   },
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 25,
+   "y": 6,
+   "elevation": 3,
+   "var": "VAR_ROUTE121_STATE",
+   "var_value": "0",
+   "script": "Route121_EventScript_151B25",
+   "texts": {
+    "Route121_Text_171C8F": "Okay!\\nWe're to move out to MT. PYRE!$"
+   },
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 25,
+   "y": 7,
+   "elevation": 3,
+   "var": "VAR_ROUTE121_STATE",
+   "var_value": "0",
+   "script": "Route121_EventScript_151B25",
+   "texts": {
+    "Route121_Text_171C8F": "Okay!\\nWe're to move out to MT. PYRE!$"
+   },
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 25,
+   "y": 8,
+   "elevation": 3,
+   "var": "VAR_ROUTE121_STATE",
+   "var_value": "0",
+   "script": "Route121_EventScript_151B25",
+   "texts": {
+    "Route121_Text_171C8F": "Okay!\\nWe're to move out to MT. PYRE!$"
+   },
+   "complex": true
+  }
+ ],
+ "wild": {
+  "land_mons": {
+   "encounter_rate": 20,
+   "slot_rates": [
+    20,
+    20,
+    10,
+    10,
+    10,
+    10,
+    5,
+    5,
+    4,
+    4,
+    1,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_ZIGZAGOON",
+     "min": 26,
+     "max": 26
+    },
+    {
+     "species": "SPECIES_SHUPPET",
+     "min": 26,
+     "max": 26
+    },
+    {
+     "species": "SPECIES_LINOONE",
+     "min": 26,
+     "max": 26
+    },
+    {
+     "species": "SPECIES_SHUPPET",
+     "min": 28,
+     "max": 28
+    },
+    {
+     "species": "SPECIES_LINOONE",
+     "min": 28,
+     "max": 28
+    },
+    {
+     "species": "SPECIES_ODDISH",
+     "min": 26,
+     "max": 26
+    },
+    {
+     "species": "SPECIES_ODDISH",
+     "min": 28,
+     "max": 28
+    },
+    {
+     "species": "SPECIES_GLOOM",
+     "min": 28,
+     "max": 28
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 26,
+     "max": 26
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 27,
+     "max": 27
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 28,
+     "max": 28
+    },
+    {
+     "species": "SPECIES_KECLEON",
+     "min": 25,
+     "max": 25
+    }
+   ]
+  },
+  "water_mons": {
+   "encounter_rate": 4,
+   "slot_rates": [
+    60,
+    30,
+    5,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 5,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 15,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_PELIPPER",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_PELIPPER",
+     "min": 25,
+     "max": 30
+    }
+   ]
+  },
+  "fishing_mons": {
+   "encounter_rate": 30,
+   "slot_rates": [
+    70,
+    30,
+    60,
+    20,
+    20,
+    40,
+    40,
+    15,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 20,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 35,
+     "max": 40
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 40,
+     "max": 45
+    }
+   ]
+  }
+ }
+}

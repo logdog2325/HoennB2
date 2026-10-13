@@ -1,0 +1,77 @@
+{
+ "_doc": "Inside of the moving truck (zone 394; scripts src/field_scripts/0788_truck.s, text 0623_truck.txt). Room built by b2tools/models_truck.py (work/interiors/truck): Sapphire tile + (8, 8) = zone tile. No warps: the exit is the lead's trigger script 20 on Sapphire (3,1)-(3,3) while VAR_LITTLEROOT_INTRO_STATE (0x404E) == 0. Box signs on the tiles of models_truck.py's box models (its SIGNS list: Sapphire's box bg events and MOVING_BOX objects, as it placed them; (0,3)'s box has no sign: no floor tile touches it, script_check 2026-10-08).",
+ "zone": 394,
+ "room": "truck",
+ "npcs": [],
+ "signs": [
+  {
+   "script": 1,
+   "at": [
+    0,
+    1
+   ],
+   "dir": 4,
+   "what": "box"
+  },
+  {
+   "script": 1,
+   "at": [
+    0,
+    2
+   ],
+   "dir": 4,
+   "what": "box"
+  },
+  {
+   "script": 1,
+   "at": [
+    1,
+    3
+   ],
+   "dir": 4,
+   "what": "box"
+  },
+  {
+   "script": 1,
+   "at": [
+    2,
+    3
+   ],
+   "dir": 4,
+   "what": "box"
+  },
+  {
+   "script": 1,
+   "at": [
+    1,
+    0
+   ],
+   "dir": 4,
+   "what": "box"
+  },
+  {
+   "script": 1,
+   "at": [
+    3,
+    0
+   ],
+   "dir": 4,
+   "what": "box"
+  }
+ ],
+ "warps": [],
+ "triggers": [
+  {
+   "script": 20,
+   "var": 16462,
+   "value": 0,
+   "at": [
+    3,
+    1
+   ],
+   "w": 1,
+   "h": 3,
+   "what": "leaving the truck (lead's script 20)"
+  }
+ ]
+}

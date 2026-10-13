@@ -1,0 +1,57 @@
+{
+  "_doc": [
+    "Trade evolutions made in-game (trade_evos agent, 2026-10-07; installed by b2tools/patches/trade_evos.py).",
+    "evolutions: every species of Black 2's evolution table a/0/1/9 that had a trade method gets this full list of",
+    "  evolutions instead (names from the decomp: include/constants/pokemon.h EVO_METHOD_*, items.h, species.h).",
+    "  Methods as CheckEvolveSpecies (arm9 0x02020788) handles them: EVO_METHOD_TRADE 5 / TRADE_WITH_ITEM 6 /",
+    "  TRADE_WITH_SPECIES 7 are only checked in its trade mode (1); LEVEL 4 (level >= param) and SPECIES_IN_PARTY 22",
+    "  (CheckSpeciesInParty, no level needed) in its level-up mode (0); ITEM 8 (param == the item used) in its item",
+    "  modes (2, 3: the Bag's evolution items).",
+    "  Plain trade -> LEVEL at the previous stage's evolution level + 10 (Kadabra: 36, the user's choice). Trade holding an item -> ITEM: the item is",
+    "  used from the Bag like an evolution stone. Karrablast/Shelmet -> SPECIES_IN_PARTY (as Mantyke/Remoraid), with",
+    "  the partner's evolved form accepted too, so the second one can still evolve after the first.",
+    "  Branches keep their other evolution (Poliwhirl Water Stone, Slowpoke Lv 37, Feebas Beauty 170).",
+    "bag_items: every item an ITEM evolution above uses gets the Bag 'Use' of an evolution stone in its item data",
+    "  (a/0/2/4: +0xA field use 20, +0xC party use 1, +0x11 bit 3 = evolve), and stays holdable.",
+    "shop: items appended to a Hoenn shop list (b2tools/patches/shops.py ids): the items Hoenn has no other source for,",
+    "  and Metal Coat / Dragon Scale (otherwise only 5% wild held items; user's choice): Lilycove Dept. Store 3F, right",
+    "  clerk (id 15, X items). Black 2's own prices (item data). a/2/8/2 is then exactly its fixed 1300 bytes: no room left."
+  ],
+  "evolutions": {
+    "SPECIES_KADABRA":    [["EVO_METHOD_LEVEL", 36, "SPECIES_ALAKAZAM"]],
+    "SPECIES_MACHOKE":    [["EVO_METHOD_LEVEL", 38, "SPECIES_MACHAMP"]],
+    "SPECIES_GRAVELER":   [["EVO_METHOD_LEVEL", 35, "SPECIES_GOLEM"]],
+    "SPECIES_HAUNTER":    [["EVO_METHOD_LEVEL", 35, "SPECIES_GENGAR"]],
+    "SPECIES_BOLDORE":    [["EVO_METHOD_LEVEL", 35, "SPECIES_GIGALITH"]],
+    "SPECIES_GURDURR":    [["EVO_METHOD_LEVEL", 35, "SPECIES_CONKELDURR"]],
+
+    "SPECIES_POLIWHIRL":  [["EVO_METHOD_ITEM", "ITEM_WATER_STONE", "SPECIES_POLIWRATH"],
+                           ["EVO_METHOD_ITEM", "ITEM_KINGS_ROCK", "SPECIES_POLITOED"]],
+    "SPECIES_SLOWPOKE":   [["EVO_METHOD_LEVEL", 37, "SPECIES_SLOWBRO"],
+                           ["EVO_METHOD_ITEM", "ITEM_KINGS_ROCK", "SPECIES_SLOWKING"]],
+    "SPECIES_ONIX":       [["EVO_METHOD_ITEM", "ITEM_METAL_COAT", "SPECIES_STEELIX"]],
+    "SPECIES_SCYTHER":    [["EVO_METHOD_ITEM", "ITEM_METAL_COAT", "SPECIES_SCIZOR"]],
+    "SPECIES_SEADRA":     [["EVO_METHOD_ITEM", "ITEM_DRAGON_SCALE", "SPECIES_KINGDRA"]],
+    "SPECIES_PORYGON":    [["EVO_METHOD_ITEM", "ITEM_UP_GRADE", "SPECIES_PORYGON2"]],
+    "SPECIES_PORYGON2":   [["EVO_METHOD_ITEM", "ITEM_DUBIOUS_DISC", "SPECIES_PORYGON_Z"]],
+    "SPECIES_RHYDON":     [["EVO_METHOD_ITEM", "ITEM_PROTECTOR", "SPECIES_RHYPERIOR"]],
+    "SPECIES_ELECTABUZZ": [["EVO_METHOD_ITEM", "ITEM_ELECTIRIZER", "SPECIES_ELECTIVIRE"]],
+    "SPECIES_MAGMAR":     [["EVO_METHOD_ITEM", "ITEM_MAGMARIZER", "SPECIES_MAGMORTAR"]],
+    "SPECIES_DUSCLOPS":   [["EVO_METHOD_ITEM", "ITEM_REAPER_CLOTH", "SPECIES_DUSKNOIR"]],
+    "SPECIES_FEEBAS":     [["EVO_METHOD_BEAUTY", 170, "SPECIES_MILOTIC"],
+                           ["EVO_METHOD_ITEM", "ITEM_PRISM_SCALE", "SPECIES_MILOTIC"]],
+    "SPECIES_CLAMPERL":   [["EVO_METHOD_ITEM", "ITEM_DEEP_SEA_TOOTH", "SPECIES_HUNTAIL"],
+                           ["EVO_METHOD_ITEM", "ITEM_DEEP_SEA_SCALE", "SPECIES_GOREBYSS"]],
+
+    "SPECIES_KARRABLAST": [["EVO_METHOD_SPECIES_IN_PARTY", "SPECIES_SHELMET", "SPECIES_ESCAVALIER"],
+                           ["EVO_METHOD_SPECIES_IN_PARTY", "SPECIES_ACCELGOR", "SPECIES_ESCAVALIER"]],
+    "SPECIES_SHELMET":    [["EVO_METHOD_SPECIES_IN_PARTY", "SPECIES_KARRABLAST", "SPECIES_ACCELGOR"],
+                           ["EVO_METHOD_SPECIES_IN_PARTY", "SPECIES_ESCAVALIER", "SPECIES_ACCELGOR"]]
+  },
+  "shop": {
+    "id": 15,
+    "label": "LilycoveCity_DepartmentStore_3F_Pokemart_StatBoosters",
+    "add": ["ITEM_UP_GRADE", "ITEM_DUBIOUS_DISC", "ITEM_PROTECTOR", "ITEM_ELECTIRIZER", "ITEM_MAGMARIZER",
+            "ITEM_REAPER_CLOTH", "ITEM_PRISM_SCALE", "ITEM_METAL_COAT", "ITEM_DRAGON_SCALE"]
+  }
+}

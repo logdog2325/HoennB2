@@ -1,0 +1,64 @@
+{
+ "kind": "overworld",
+ "code": 235,
+ "sheet": 213,
+ "frames": 2,
+ "size": [
+  32,
+  32
+ ],
+ "controller": 9,
+ "textures": [
+  "t4x4x2.0",
+  "t4x4x2.1"
+ ],
+ "palette": "t4x4x2",
+ "name": "brendan-action2",
+ "note": "Brendan (player), action2",
+ "source": "community: brendan_sheet_hyo-oppa.png by hyo-oppa",
+ "colours": 14,
+ "merged_colours": [
+  [
+   [
+    3,
+    3,
+    5
+   ],
+   [
+    0,
+    0,
+    0
+   ]
+  ],
+  [
+   [
+    255,
+    214,
+    188
+   ],
+   [
+    248,
+    208,
+    184
+   ]
+  ],
+  [
+   [
+    215,
+    154,
+    111
+   ],
+   [
+    214,
+    153,
+    110
+   ],
+   [
+    216,
+    160,
+    120
+   ]
+  ]
+ ],
+ "made_by": "b2tools/sprite_community.py"
+}

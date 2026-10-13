@@ -1,0 +1,23 @@
+{
+ "_doc": "Route110_TrickHouseEnd: zone written by converter/gen_interior_recipes_houses.py (warps and parent from converter/gen_interiors.py); story people left for the story phase: story person MAN_1 at (4,5) Route110_TrickHouseEnd_EventScript_TrickMaster (hide flag FLAG_HIDE_TRICK_HOUSE_END_MAN); bg hidden_item at (4,5)",
+ "zone": 513,
+ "room": "Route110_TrickHouseEnd",
+ "area": 313,
+ "parent": 368,
+ "warps": [
+  {
+   "at": [10, 1],
+   "tile_only": true,
+   "to": [552, 2],
+   "what": "Sapphire warp 0 -> Route110_TrickHousePuzzle1 2"
+  },
+  {
+   "at": [2, 1],
+   "tile_only": true,
+   "to": [512, 0],
+   "what": "Sapphire warp 1 -> Route110_TrickHouseCorridor 0"
+  }
+ ],
+ "npcs": [],
+ "signs": []
+}

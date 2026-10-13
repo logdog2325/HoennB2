@@ -1,0 +1,8 @@
+…
+I’m the Game Designer.{be01}\nOh, is that right?\nYou’re working on a Pokédex?{be01}\nIt’s tough trying to complete it,\nbut don’t give up.{be01}\nIf you do complete it, please come\nshow me.
+Wow! That’s awesome!\nYep, it’s totally awesome!{be01}\nThis Pokédex is completely filled!\nYou really must love Pokémon!{be01}\nI’m so impressed!{be01}\nLet me give you something in\nrecognition of your feat!
+Me? You’re talking to me?\nI’m the Programmer.{be01}\nI wonder what the Slots are\nlike here.
+I’m the Graphic Artist! Aren’t the\nPokémon of Hoenn interesting?
+The girl Tubers, they’re cute, hey?\nTo battle against a cute Tuber...{be01}\nWhoop, it drives me wild!{be01}\nAnd the Twins! Aren’t they cute?\nA 2-on-2 battle with Twins...{be01}\nWhoop, it’s unbearably fun!
+The sea breeze tickles my heart.\nIt feels wonderful here!
+You never know when and where\npeople will challenge you.{be01}\nThat’s why I never leave home without\nmy Game Boy Advance.

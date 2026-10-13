@@ -1,0 +1,65 @@
+Where the strategies of Trainers\nare put to the test!{be01}\nWelcome to the Battle Dome!{be01}\nI am your guide to the Single Battle\nTournament.
+Would you like to challenge\nthe Single Battle Tournament?
+The Single Battle Tournament\nis exactly as the name suggests--{be00}\na tournament of Single Battles.{be01}\nAll participating Trainers must\nenter three Pokémon each.{be01}\nIn each battle, one of the three\nPokémon must be held in reserve.{be01}\nThe other two Pokémon can battle\none at a time.{be01}\nChoose the two battling Pokémon after\nexamining the opponent’s trio.{be01}\nYou win the tournament by defeating\nfour Trainers.{be01}\nBattle Points are awarded to\nthe tournament winner.{be01}\nIf you want to interrupt your\ntournament, please save the game.{be01}\nIf you don’t save before interrupting,\nyou will be disqualified.
+The tournament offers two levels\nof challenge, Level 50 and Open Level.{be00}\nWhich is your choice?
+Excuse me!{be01}\nYou don’t have three eligible Pokémon.{be01}\nYou must have three different Pokémon\nof Level 50 or less to enter.{be01}\nThey also must be holding different\nkinds of items.{be01}\nEggs{0100:1} ineligible.{be01}\nPlease come see me when you are ready.
+Excuse me!{be01}\nYou don’t have three eligible Pokémon.{be01}\nAlso, the Pokémon must be holding\ndifferent kinds of items.{be01}\nEggs{0100:1} ineligible.{be01}\nPlease come see me when you are ready.
+Now select the three Pokémon that\nyou wish to enter, please.
+Before I show you to the Battle Dome,\nI must save the data. Is that okay?
+I will now show you to\nthe Battle Dome.
+We hope to see you again.
+Excuse me!{be01}\nYou didn’t save before you quit your\nchallenge last time.{be01}\nBecause of that, your challenge so far\nhas been disqualified. Sorry!
+Congratulations for winning\nyour Battle Tournament!
+Congratulations!{be01}\nYou defeated the Dome Ace and won\nthe Battle Tournament!
+In recognition of your strategy--\na thing of beauty it was, too--{be00}\nwe award you these Battle Point(s)!
+Your record will be saved.\nPlease wait.
+Thank you for playing!
+We’ve been waiting for you!
+Challenge
+Info
+Exit
+Lv. 50
+Open Level
+{0100:0} obtained {0100:1} Battle Point(s).
+Did you see it?\nThe last Battle Tournament?{be01}\nThe winner, {0100:1}, was seriously\ntough.{be01}\nYou should check out the results\non the monitor beside the PC.
+When a Trainer chains tournament\nwins at the Battle Dome, he or she{be00}\ngains a reputation as a star.{be01}\nTough Trainers are drawn by that\nreputation to the Battle Dome.{be01}\nA true superstar is a Trainer who\ncan keep winning tournaments.
+I ran into one of the tournament\nfavorites in the very first round.{be01}\nOf course I got trashed…
+I would’ve won if I’d kept this Pokémon\nheld in reserve.{be01}\nYou need to check your opponent’s\nPokémon carefully before choosing{be00}\nyour battling Pokémon.
+They’re the results of the last\nLevel 50 Single Battle Tournament.
+They’re the results of the last\nOpen Level Single Battle Tournament.
+The Battle Tournament rules\nare listed.
+Which heading do you want to read?
+The tournament matchups are drawn up\nbased on the toughness of Pokémon{be00}\nheld by Trainers.{be01}\nThe matchups avoid having tough\nTrainers face each other right away.
+The tournament chart, or as we call it,\nthe “Tree,” is available for viewing{be00}\nin the Waiting Room from any guide.{be01}\nThe Tournament Tree will provide\nseveral kinds of data.{be01}\nThe data on view includes the previous\ntournament’s results, the Pokémon held{be00}\nby Trainers, and the battle styles of{be00}\nTrainers.
+If battling Pokémon faint at the same\ntime--a double KO--in a tournament{be00}\nmatch, the Referees will review{be00}\nthe match and declare the winner.
+Matchup
+Tourney Tree
+Double KO
+Exit
+{0100:0}’s Battle Dome results{be01}\nLv. 50: current streak {0100:1}, record {0100:2}\nOpen Level: current streak {0100:3}, record {0100:4}
+{0100:0}’s Double Battle Tournament results{be01}\nLv. 50: current streak {0100:1}, record {0100:2}\nOpen Level: current streak {0100:3}, record {0100:4}
+They’re the results of the last\nLevel 50 Double Battle Tournament.
+They’re the results of the last\nOpen Level Double Battle Tournament.
+Where the strategies of Trainers\nare put to the test!{be01}\nWelcome to the Battle Dome!{be01}\nI am your guide to the Double Battle\nTournament.
+Would you like to challenge\nthe Double Battle Tournament?
+The Double Battle Tournament\nis exactly as the name suggests--{be00}\na tournament of Double Battles.{be01}\nAll participating Trainers must\nenter three Pokémon each.{be01}\nIn each battle, one of the three\nPokémon must be held in reserve.{be01}\nThe remaining two Pokémon must take\npart in a Double Battle.{be01}\nChoose the two battling Pokémon after\nexamining the opponent’s trio.{be01}\nYou win the tournament by defeating\nfour Trainers.{be01}\nBattle Points are awarded to\nthe tournament winner.{be01}\nIf you want to interrupt your\ntournament, please save the game.{be01}\nIf you don’t save before interrupting,\nyou will be disqualified.
+The tournament offers two levels\nof challenge, Level 50 and Open Level.{be00}\nWhich is your choice?
+Excuse me!{be01}\nYou don’t have three eligible Pokémon.{be01}\nYou must have three different Pokémon\nof Level 50 or less to enter.{be01}\nThey also must be holding different\nkinds of items.{be01}\nEggs{0100:1} ineligible.{be01}\nPlease come see me when you are ready.
+Excuse me!{be01}\nYou don’t have three eligible Pokémon.{be01}\nAlso, the Pokémon must be holding\ndifferent kinds of items.{be01}\nEggs{0100:1} ineligible.{be01}\nPlease come see me when you are ready.
+Now select the three Pokémon that\nyou wish to enter, please.
+Before I show you to the Battle Dome,\nI must save the data. Is that okay?
+I will now show you to\nthe Battle Dome.
+We hope to see you again.
+Excuse me!{be01}\nYou didn’t save before you quit your\nchallenge last time.{be01}\nBecause of that, your challenge so far\nhas been disqualified. Sorry!
+Congratulations for winning\nyour Battle Tournament!
+Congratulations!{be01}\nYou defeated the Dome Ace and won\nthe Battle Tournament!
+In recognition of your strategy--\na thing of beauty it was, too--{be00}\nwe award you these Battle Point(s)!
+Your record will be saved.\nPlease wait.
+Thank you for playing!
+We’ve been waiting for you!
+Challenge
+Info
+Exit
+Lv. 50
+Open Level
+{0100:0} obtained {0100:1} Battle Point(s).

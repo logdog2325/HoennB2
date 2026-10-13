@@ -1,0 +1,14 @@
+{
+ "code": 112,
+ "name": "briney-boat-south",
+ "what": "OBJ_EVENT_GFX_MR_BRINEYS_BOAT facing down (Dewford): the same motorboat turned half round (rotate_bmd); a 3D actor never turns with its direction",
+ "record_from": 8201,
+ "record": {
+  "collWidth": 1,
+  "collHeight": 2,
+  "offX": 0,
+  "offY": 3,
+  "offZ": -12
+ },
+ "made_by": "b2tools/models_objects.py"
+}

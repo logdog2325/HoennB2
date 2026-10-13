@@ -1,0 +1,13 @@
+import sys; sys.path.insert(0, sys.path[0])
+from pt import *
+g = G('t_cmd.dst')
+T = os.path.join(HERE, 'tpl')
+g.bot().save(f'{T}/cmd.png')
+g.touch(128, 95, 4, 40); g.bot().save(f'{T}/moves.png')
+g.touch(214, 168, 4, 40); g.bot().save(f'{T}/after_cancel.png')
+g.touch(215, 168, 4, 60); g.bot().save(f'{T}/party.png'); g.S(True)
+g.touch(64, 40, 4, 60); g.bot().save(f'{T}/party_sel.png'); g.S(True)
+g.press('B', 4, 40); g.press('B', 4, 40); g.bot().save(f'{T}/back.png'); g.S(True)
+g.touch(40, 168, 4, 60); g.bot().save(f'{T}/bag.png'); g.S(True)
+g.press('B', 4, 60); g.S(True)
+g.sheet(os.path.join(PT, 'scratch.png'), cols=5)

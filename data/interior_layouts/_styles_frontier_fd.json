@@ -1,0 +1,81 @@
+{
+ "_doc": "frontier_factory_dome (2026-10-12): the Battle Factory in Black 2's P2 Laboratory (texture set 345, New Mauville's look: pale tile floor, beige lab wall, its machine textures as wall pictures), the Battle Dome in the PWT's own sets (lobby 352: pale blue tiles, the lobby's grey wall; the stadium 381: grey stadium floor, its green field, the crowd textures in79_fan1-3 on the back wall). black = wall caps (285).",
+ "fd_factory": {
+  "_doc": "Battle Factory rooms: P2 Lab floor in64_lab03_01 and wall in64_lab03_04 (345), its entrance gradient chip_ent (345).",
+  "floor": {
+   "tex": "in64_lab03_01",
+   "src": 345,
+   "size": 16
+  },
+  "wall": {
+   "tex": "in64_lab03_04",
+   "src": 345,
+   "u_size": 32,
+   "v": [
+    0,
+    1.5
+   ]
+  },
+  "genkan": {
+   "tex": "chip_ent",
+   "src": 345,
+   "stretch": true
+  },
+  "black": {
+   "tex": "black",
+   "src": 285
+  }
+ },
+ "fd_dome": {
+  "_doc": "Battle Dome lobby, corridor, pre-battle room: the PWT lobby's pale blue floor in71yuka01 and wall in71kabe01 (352), its entrance in71_g_ent.",
+  "floor": {
+   "tex": "in71yuka01",
+   "src": 352,
+   "size": 32
+  },
+  "wall": {
+   "tex": "in71kabe01",
+   "src": 352,
+   "u_size": 32,
+   "v": [
+    0,
+    1
+   ]
+  },
+  "genkan": {
+   "tex": "in71_g_ent",
+   "src": 352,
+   "stretch": true
+  },
+  "black": {
+   "tex": "black",
+   "src": 285
+  }
+ },
+ "fd_stadium": {
+  "_doc": "Battle Dome battle room: the PWT stadium's grey floor in79yuka01 and wall in79kabe02 (381).",
+  "floor": {
+   "tex": "in79yuka01",
+   "src": 381,
+   "size": 32
+  },
+  "wall": {
+   "tex": "in79ring01",
+   "src": 381,
+   "u_size": 32,
+   "v": [
+    0,
+    1
+   ]
+  },
+  "genkan": {
+   "tex": "chip_ent",
+   "src": 381,
+   "stretch": true
+  },
+  "black": {
+   "tex": "black",
+   "src": 285
+  }
+ }
+}

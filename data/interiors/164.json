@@ -1,0 +1,62 @@
+{
+ "zone": 164,
+ "room": "SkyPillar_1F",
+ "cave": true,
+ "cave_auto": true,
+ "area": 295,
+ "dark": false,
+ "header": {
+  "map_type": 16,
+  "npc_cache": 24,
+  "weather_word": 0,
+  "flags": 2337,
+  "icon_word": 40975,
+  "place_display": 0,
+  "bgm0": 1079,
+  "bgm1": 1079,
+  "bgm2": 1079,
+  "bgm3": 1079,
+  "place": 85,
+  "encounters": 85,
+  "enc_slot": 2
+ },
+ "warps": [
+  {
+   "at": [
+    6,
+    13
+   ],
+   "to": [
+    98,
+    2
+   ],
+   "what": "Sapphire warp 0 (6,13) -> SkyPillar_Outside 1"
+  },
+  {
+   "at": [
+    7,
+    13
+   ],
+   "to": [
+    98,
+    2
+   ],
+   "what": "Sapphire warp 1 (7,13) -> SkyPillar_Outside 1"
+  },
+  {
+   "at": [
+    10,
+    1
+   ],
+   "to": [
+    165,
+    0
+   ],
+   "what": "Sapphire warp 2 (10,1) -> SkyPillar_2F 0"
+  }
+ ],
+ "triggers": [],
+ "npcs": [],
+ "signs": [],
+ "what": "SkyPillar_1F: cave (converter/gen_caves.py, b2tools/models_cave.py); story objects: see notes/CAVES.md"
+}

@@ -1,0 +1,36 @@
+“Kanto Water Quality Sample,” the\nlabel says.{be01}\nThe sea is all connected, but the\nwater seems to differ by region.
+“Johto Water Quality Sample,” the\nlabel says.{be01}\nMaybe the water’s saltiness differs\nfrom one region to another...
+“Submersible Pod{be01}\n“A replica of a compact, unmanned\npod for seafloor exploration.”
+“Submersible Pod{be01}\n“A replica of a compact, unmanned\npod for seafloor exploration.”
+“Submarine Explorer 1{be01}\n“A replica of the high-performance\nocean floor exploration submarine.”
+“Submarine Explorer 1{be01}\n“A replica of the high-performance\nocean floor exploration submarine.”
+“Submarine Explorer 1{be01}\n“A replica of the high-performance\nocean floor exploration submarine.”
+“The Ferry S.S. Tidal{be01}\n“A scale replica of the ship under\nconstruction at Stern’s Shipyard.”
+“The Ferry S.S. Tidal{be01}\n“A scale replica of the ship under\nconstruction at Stern’s Shipyard.”
+“S.S. Anne{be01}\n“A replica of the luxury liner that\ncircles the globe.”
+“S.S. Anne{be01}\n“A replica of the luxury liner that\ncircles the globe.”
+It’s a display on the flow of\nseawater.{be01}\n“Toward the surface, seawater flows\nas currents driven by the winds.”
+It’s a display on the flow of\nseawater.{be01}\n“Toward the surface, seawater flows\nas currents driven by the winds.”
+It’s a display on the flow of seawater.{be01}\n“Near the bottom of the sea, water\nflows due to differences in such{be00}\nfactors as temperature and salinity.”
+It’s a display on the flow of seawater.{be01}\n“Near the bottom of the sea, water\nflows due to differences in such{be00}\nfactors as temperature and salinity.”
+“Model Of Hoenn Region”{be01}\nIt’s a miniature diorama of the\nHoenn region.{be01}\nWhere is Littleroot Town on this?
+“Model Of Hoenn Region”{be01}\nIt’s a miniature diorama of the\nHoenn region.{be01}\nWhere is Littleroot Town on this?
+A rubber ball is expanding and shrinking.{be01}\n“In the sea, the weight of water itself\nexerts pressure.{be01}\n“In shallow water, the pressure is not\nvery heavy.{be01}\n“However, in extremely deep water,\nthe pressure can reach even tens of{be00}\nthousands of tons on a small area.”
+A rubber ball is expanding and shrinking.{be01}\n“In the sea, the weight of water itself\nexerts pressure.{be01}\n“In shallow water, the pressure is not\nvery heavy.{be01}\n“However, in extremely deep water,\nthe pressure can reach even tens of{be00}\nthousands of tons on a small area.”
+“The Ferry S.S. Tidal{be01}\n“A scale replica of the ship under\nconstruction at Stern’s Shipyard.”
+“The Ferry S.S. Tidal{be01}\n“A scale replica of the ship under\nconstruction at Stern’s Shipyard.”
+Yes? If you’re looking for Stern,\nthat would be me.{be01}\nAh! That must be the part I\nordered from Mr. Stone of Devon.{be01}\nThank you! That’s great!\nWe can prepare for our expedition now.
+Hehehe, hold it!\nWe’ll take those parts!
+Capt. Stern: Wh-what?\nWho are you people?
+We’re Team Aqua!{be01}\nOur Boss wants those parts!\nShut your yap and fork them over!
+Oh, man, what a disaster...\nThe Boss is going to be furious...
+Humph, sniveling wimp!\nLet me take care of this!
+Now what? If we don’t get the parts,\nwe’re in for it!{be01}\nArrgh, I didn’t count on being meddled\nwith by some meddling kid!
+I came to see what was taking so\nlong to snatch some parts, and you{be00}\nsimps are held up by a mere child?
+I am Team Aqua’s Archie.{be01}\nTell me, why do you meddle in the\nnoble affairs of Team Aqua?{be01}\nPokémon, people, all life depends on\nthe sea.{be01}\nSo, Team Aqua is dedicated to the\nexpansion of the sea.{be01}\nDon’t you agree? What we are doing\nis a magnificent undertaking.{be01}\nAh, fine...\nYou’re still too young.{be01}\nIt can’t be helped that you do not\nunderstand our ideals.{be01}\nBut, if you ever oppose us again,\nthere will be consequences!{be01}\nHeed my warning!\nFarewell!
+Capt. Stern: You’re...\nAh, okay, you’re {0100:0}...{be01}\nAnyway, that was a tense situation!\nThank you for saving us!{be01}\nOh, yes, I almost forgot that you\neven brought the parts from Devon!
+{0100:0} handed over the\n{0100:1}.
+Capt. Stern: Whoops!\nThere’s no time to lose!{be01}\nWe have to set out on our ocean floor\nexpedition really soon.{be01}\nThanks, and excuse me!
+I saw a model of a ship here.{be01}\nIt reminded me of the Abandoned Ship\nnear Dewford Town...
+Don’t you dare run around inside\nthe Museum!
+Wow, the submarine’s awesome!\nI want to go for a ride!

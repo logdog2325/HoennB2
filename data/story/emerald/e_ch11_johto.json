@@ -1,0 +1,50 @@
+{
+ "_doc": "The three Poké Balls of Emerald's Johto starters on Prof. Birch's Lab table (emerald_ch11_gameclear, 2026-10-12). Switched on by emerald_rooms (2026-10-12): the Emerald Lab's table layout exists (LittlerootTown_ProfessorBirchsLab_Emerald_Table, an alt room of zone 396 whose three table tiles (8..10, 4) are solid with their collision height at the table top, solid_y 11, so the balls stand on it), EMJ_JOHTO_ON is 1 and this file was renamed from e_ch11_johto.json.off. The scene: scenes/emerald/BirchLab_JohtoStarters.inc. Test builds: HOENN_TEST_CHJOHTO=1 (state 4 forced).",
+ "objects": [
+  {
+   "kind": "npc",
+   "map": "LittlerootTown_ProfessorBirchsLab",
+   "at": [
+    8,
+    4
+   ],
+   "uid": 170,
+   "model": 110,
+   "script": 16,
+   "dir": 1,
+   "move": 15,
+   "flag": "FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_POKEBALL_CYNDAQUIL",
+   "what": "Poké Ball with Cyndaquil on Emerald's table (pokeemerald object CYNDAQUIL_BALL at (8,4); shown by EM_LabJohtoInit in states 4 and 5; scenes/emerald/BirchLab_JohtoStarters.inc)"
+  },
+  {
+   "kind": "npc",
+   "map": "LittlerootTown_ProfessorBirchsLab",
+   "at": [
+    9,
+    4
+   ],
+   "uid": 171,
+   "model": 110,
+   "script": 17,
+   "dir": 1,
+   "move": 15,
+   "flag": "FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_POKEBALL_TOTODILE",
+   "what": "Poké Ball with Totodile on Emerald's table (pokeemerald object TOTODILE_BALL at (9,4); shown by EM_LabJohtoInit in states 4 and 5; scenes/emerald/BirchLab_JohtoStarters.inc)"
+  },
+  {
+   "kind": "npc",
+   "map": "LittlerootTown_ProfessorBirchsLab",
+   "at": [
+    10,
+    4
+   ],
+   "uid": 172,
+   "model": 110,
+   "script": 18,
+   "dir": 1,
+   "move": 15,
+   "flag": "FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_POKEBALL_CHIKORITA",
+   "what": "Poké Ball with Chikorita on Emerald's table (pokeemerald object CHIKORITA_BALL at (10,4); shown by EM_LabJohtoInit in states 4 and 5; scenes/emerald/BirchLab_JohtoStarters.inc)"
+  }
+ ]
+}

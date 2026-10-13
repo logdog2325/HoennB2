@@ -1,0 +1,14 @@
+…
+Prof. Cozmo: Oh...\nI never should have let myself be{be00}\nconned into telling Team Magma where{be00}\nyou can find Meteorites...{be01}\nThat Meteorite from Meteor Falls...\nIt’s never going to be mine now...
+Prof. Cozmo went off to Meteor Falls\non Route 114 with some people from{be00}\nTeam Magma.
+Poor Prof. Cozmo...\nHe’s so depressed... I feel sorry for him.
+Look at Prof. Cozmo...\nHe’s so happy! I think it’s cute.
+Prof. Cozmo: Oh, I can’t believe it.\nThis is really, really great!{be01}\nThis is really going to help my research!
+Oh!\nHah?{be01}\nThat item...{be01}\nCould it be?{be01}\nIs it the Meteorite that Team Magma\ntook from Meteor Falls?{be01}\nPlease, may I have it?{be01}\nI’m not asking for it for free.\nHow about in exchange for this TM?
+Prof. Cozmo: Please, may I have that\nMeteorite?{be01}\nI’m not asking for it for free.\nHow about in exchange for this TM?
+Prof. Cozmo: This TM, it represents\nmy feeling of gratitude.{be00}\nPlease use it!
+Prof. Cozmo: Oh, but...\nI’m crushed with disappointment...
+{0100:0} handed over the\n{0100:1}.
+Too bad!\nThe Bag is full...
+Prof. Cozmo: Oh, {0100:0}! I heard\nyou became the Champion!{be01}\nA colleague of mine studies the places\nwhere meteorites fall.{be01}\nHe sent me this ticket for a ship to\nBirth Island, a faraway island where{be00}\nsomething fell from the sky long ago…{be01}\nI’m too old for sea voyages.\nPlease, go in my place!
+Prof. Cozmo: The ferry leaves from\nLilycove City’s harbor.

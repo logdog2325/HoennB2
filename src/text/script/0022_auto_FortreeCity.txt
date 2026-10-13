@@ -1,0 +1,14 @@
+I want to go to the Pokémon Gym, but\nsomething’s blocking the way.{be01}\nAfter all the bother I went through\ntraining on Route 120...
+I’ve got my pride-and-joy Pokémon\nwith me. This time, I’ll beat Winona.
+Something unseeable is in the way.
+Something unseeable is in the way.{be01}\nWant to use the Devon Scope?
+{0100:0} used the Devon Scope.{be01}\nAn invisible Pokémon became completely\nvisible!{be01}\nThe startled Pokémon fled!
+Fortree City\n“The treetop city that frolics with{be00}\nnature.”
+“Rejuvenate your tired partners!”\nPokémon Center
+“Selected items for your convenience!”\nPokémon Mart
+Fortree City Pokémon Gym\nLeader: Winona{be01}\n“The bird user taking flight into\nthe world.”
+Sniff...\nUm... You, uh...smell singed.{be01}\nWere you at a volcano or something?
+The ground absorbs rainwater, and\ntrees grow by drinking that water...{be01}\nOur Fortree City exists because\nthere’s both water and soil.
+Living on top of trees is okay.{be01}\nBut sometimes Bug Pokémon come in\nthrough windows.{be00}\nIt can be really startling.
+The City consists of homes built on\ntrees.{be01}\nPerhaps because of that lifestyle,\neveryone is healthy and lively.{be01}\nWhy, even myself - I feel as if I’ve\ngrown thirty years younger.
+Some Pokémon evolve when they go\nthrough a Game Link cable.

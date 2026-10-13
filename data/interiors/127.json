@@ -1,0 +1,62 @@
+{
+ "zone": 127,
+ "room": "IslandCave",
+ "cave": true,
+ "cave_auto": true,
+ "area": 332,
+ "dark": false,
+ "header": {
+  "map_type": 16,
+  "npc_cache": 24,
+  "weather_word": 64,
+  "flags": 23683,
+  "icon_word": 40975,
+  "place_display": 1,
+  "bgm0": 1076,
+  "bgm1": 1076,
+  "bgm2": 1076,
+  "bgm3": 1076,
+  "place": 81,
+  "encounters": 8191,
+  "enc_slot": 6
+ },
+ "warps": [
+  {
+   "at": [
+    8,
+    29
+   ],
+   "to": [
+    331,
+    3
+   ],
+   "what": "Sapphire warp 0 (8,29) -> Route105 0"
+  },
+  {
+   "at": [
+    8,
+    20
+   ],
+   "to": [
+    127,
+    2
+   ],
+   "what": "Sapphire warp 1 (8,20) -> IslandCave 2"
+  },
+  {
+   "at": [
+    8,
+    11
+   ],
+   "to": [
+    127,
+    1
+   ],
+   "what": "Sapphire warp 2 (8,11) -> IslandCave 1"
+  }
+ ],
+ "triggers": [],
+ "npcs": [],
+ "signs": [],
+ "what": "IslandCave: cave (converter/gen_caves.py, b2tools/models_cave.py); story objects: see notes/CAVES.md"
+}

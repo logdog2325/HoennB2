@@ -1,0 +1,61 @@
+{
+ "zone": 23,
+ "room": "SootopolisCity_Gym_1F",
+ "area": 292,
+ "bgm": 1062,
+ "what": "gyms_league: SootopolisCity_Gym_1F (b2tools/gyms_league_rooms.py); story phase: Wallace (8,2, FLAG_HIDE_WALLACE_SOOTOPOLIS_GYM), Gym guide (7,24), statue plaques (6,24)/(10,24) | the thin ice (MB_THIN_ICE -> MB_CRACKED_ICE -> hole: you fall to B1F) and the sliding ice ramps (MB_SLIDE_SOUTH) | the exit: Sootopolis City is not built yet (its warp points back at this room)",
+ "parent": 319,
+ "warps": [
+  {
+   "at": [
+    8,
+    25
+   ],
+   "tile_only": true,
+   "to": [
+    319,
+    3
+   ],
+   "what": "Sapphire warp 0 -> SootopolisCity 2"
+  },
+  {
+   "at": [
+    9,
+    25
+   ],
+   "tile_only": true,
+   "to": [
+    319,
+    3
+   ],
+   "what": "Sapphire warp 1 -> SootopolisCity 2"
+  },
+  {
+   "at": [
+    11,
+    22
+   ],
+   "tile_only": true,
+   "to": [
+    24,
+    0
+   ],
+   "what": "Sapphire warp 2 -> SootopolisCity_Gym_B1F 0",
+   "type": 2,
+   "dir": 0
+  }
+ ],
+ "npcs": [],
+ "signs": [],
+ "triggers": [
+  {
+   "script": 1,
+   "var": 0,
+   "value": 0,
+   "at": [
+    11,
+    22
+   ]
+  }
+ ]
+}

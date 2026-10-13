@@ -1,0 +1,418 @@
+{
+ "_doc": "Mossdeep Space Center 1F (Sapphire 16x10; zone 335, area 338 = Black 2's Medal Office / Castelia research office, interior pack 56). Row 1 is the furniture row along the back wall: consoles (0-2, 1) and (15, 1) = Black 2's lab cabinets machine02/machine01; the window band (3-11, row 1) = window pictures in57_mado; the doorway up (13,1) = elevator01 (pack 56 has it). Sapphire's rocket blueprint tables (2-3/4-5, 5-6) and (10-11/12-13, 7-8) = lab tables table02 (2.7 tiles: a quarter tile past the outer ends); desks with PCs (10-11, 5) (13-14, 5) = white counters shelf03 + monitor01; red stools = cushions chushion01. Sapphire's walkable tiles in the wall row 0 (1, 2, 15) are blocked (camera box).",
+ "map": "MossdeepCity_SpaceCenter_1F",
+ "style": "fac_space",
+ "floor": [
+  [
+   0,
+   1,
+   15,
+   9
+  ]
+ ],
+ "block": [
+  [
+   1,
+   0
+  ],
+  [
+   2,
+   0
+  ],
+  [
+   15,
+   0
+  ]
+ ],
+ "decals": [
+  {
+   "tex": "in57_mado",
+   "src": 338,
+   "at": [
+    3.5
+   ],
+   "y": 18,
+   "w": 14,
+   "h": 14,
+   "gap": 1,
+   "_what": "window band (Sapphire row 1)"
+  },
+  {
+   "tex": "in57_mado",
+   "src": 338,
+   "at": [
+    4.5
+   ],
+   "y": 18,
+   "w": 14,
+   "h": 14,
+   "gap": 1,
+   "_what": "window band (Sapphire row 1)"
+  },
+  {
+   "tex": "in57_mado",
+   "src": 338,
+   "at": [
+    5.5
+   ],
+   "y": 18,
+   "w": 14,
+   "h": 14,
+   "gap": 1,
+   "_what": "window band (Sapphire row 1)"
+  },
+  {
+   "tex": "in57_mado",
+   "src": 338,
+   "at": [
+    6.5
+   ],
+   "y": 18,
+   "w": 14,
+   "h": 14,
+   "gap": 1,
+   "_what": "window band (Sapphire row 1)"
+  },
+  {
+   "tex": "in57_mado",
+   "src": 338,
+   "at": [
+    7.5
+   ],
+   "y": 18,
+   "w": 14,
+   "h": 14,
+   "gap": 1,
+   "_what": "window band (Sapphire row 1)"
+  },
+  {
+   "tex": "in57_mado",
+   "src": 338,
+   "at": [
+    8.5
+   ],
+   "y": 18,
+   "w": 14,
+   "h": 14,
+   "gap": 1,
+   "_what": "window band (Sapphire row 1)"
+  },
+  {
+   "tex": "in57_mado",
+   "src": 338,
+   "at": [
+    9.5
+   ],
+   "y": 18,
+   "w": 14,
+   "h": 14,
+   "gap": 1,
+   "_what": "window band (Sapphire row 1)"
+  },
+  {
+   "tex": "in57_mado",
+   "src": 338,
+   "at": [
+    10.5
+   ],
+   "y": 18,
+   "w": 14,
+   "h": 14,
+   "gap": 1,
+   "_what": "window band (Sapphire row 1)"
+  },
+  {
+   "tex": "in57_mado",
+   "src": 338,
+   "at": [
+    11.5
+   ],
+   "y": 18,
+   "w": 14,
+   "h": 14,
+   "gap": 1,
+   "_what": "window band (Sapphire row 1)"
+  }
+ ],
+ "mats": [
+  {
+   "tex": "chip_mat",
+   "src": 285,
+   "rect": [
+    7,
+    9,
+    8,
+    9
+   ],
+   "border": 0.25,
+   "border_units": 4,
+   "y": 0,
+   "_what": "door mat"
+  }
+ ],
+ "furniture": [
+  {
+   "m": "machine02",
+   "tile": [
+    0,
+    1
+   ],
+   "wall": "N",
+   "_what": "console (0,1)"
+  },
+  {
+   "m": "machine01",
+   "tile": [
+    1,
+    1
+   ],
+   "wall": "N",
+   "_what": "console (1,1)"
+  },
+  {
+   "m": "machine02",
+   "tile": [
+    2,
+    1
+   ],
+   "wall": "N",
+   "_what": "console (2,1)"
+  },
+  {
+   "m": "machine01",
+   "tile": [
+    15,
+    1
+   ],
+   "wall": "N",
+   "_what": "console (15,1)"
+  },
+  {
+   "m": "elevator01",
+   "at": [
+    13.5,
+    1.5
+   ],
+   "wall": "N",
+   "gap": -23,
+   "dx": 6,
+   "_what": "doorway up to 2F (warp tile 13,1)"
+  },
+  {
+   "m": "table02_2w",
+   "tiles": [
+    2,
+    5,
+    3,
+    5
+   ],
+   "_what": "blueprint table (2-3, 5-6) (row 1/2: table02 at 2 tiles)"
+  },
+  {
+   "m": "table02_2w",
+   "tiles": [
+    2,
+    6,
+    3,
+    6
+   ],
+   "_what": "blueprint table (2-3, 5-6) (row 2/2: table02 at 2 tiles)"
+  },
+  {
+   "m": "table02_2w",
+   "tiles": [
+    4,
+    5,
+    5,
+    5
+   ],
+   "_what": "blueprint table (4-5, 5-6) (row 1/2: table02 at 2 tiles)"
+  },
+  {
+   "m": "table02_2w",
+   "tiles": [
+    4,
+    6,
+    5,
+    6
+   ],
+   "_what": "blueprint table (4-5, 5-6) (row 2/2: table02 at 2 tiles)"
+  },
+  {
+   "m": "table02_2w",
+   "tiles": [
+    10,
+    7,
+    11,
+    7
+   ],
+   "_what": "blueprint table (10-11, 7-8) (row 1/2: table02 at 2 tiles)"
+  },
+  {
+   "m": "table02_2w",
+   "tiles": [
+    10,
+    8,
+    11,
+    8
+   ],
+   "_what": "blueprint table (10-11, 7-8) (row 2/2: table02 at 2 tiles)"
+  },
+  {
+   "m": "table02_2w",
+   "tiles": [
+    12,
+    7,
+    13,
+    7
+   ],
+   "_what": "blueprint table (12-13, 7-8) (row 1/2: table02 at 2 tiles)"
+  },
+  {
+   "m": "table02_2w",
+   "tiles": [
+    12,
+    8,
+    13,
+    8
+   ],
+   "_what": "blueprint table (12-13, 7-8) (row 2/2: table02 at 2 tiles)"
+  },
+  {
+   "m": "shelf03",
+   "tiles": [
+    10,
+    5,
+    11,
+    5
+   ],
+   "_what": "desk (10-11, 5)"
+  },
+  {
+   "m": "monitor01",
+   "at": [
+    10.6,
+    5.5
+   ],
+   "y": 0,
+   "_what": "PC on the desk (2 units off the desk ends: their faces lay in one plane)",
+   "dx": -2
+  },
+  {
+   "m": "shelf03",
+   "tiles": [
+    13,
+    5,
+    14,
+    5
+   ],
+   "_what": "desk (13-14, 5)"
+  },
+  {
+   "m": "monitor01",
+   "at": [
+    13.6,
+    5.5
+   ],
+   "y": 0,
+   "_what": "PC on the desk (2 units off the desk ends: their faces lay in one plane)",
+   "dx": -2
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    2,
+    3
+   ],
+   "_what": "stool"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    5,
+    3
+   ],
+   "_what": "stool"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    8,
+    3
+   ],
+   "_what": "stool"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    11,
+    3
+   ],
+   "_what": "stool"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    1,
+    6
+   ],
+   "_what": "stool"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    10,
+    6
+   ],
+   "_what": "stool"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    13,
+    6
+   ],
+   "_what": "stool"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    2,
+    7
+   ],
+   "_what": "stool"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    4,
+    7
+   ],
+   "_what": "stool"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    14,
+    8
+   ],
+   "_what": "stool"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    11,
+    9
+   ],
+   "_what": "stool"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    13,
+    9
+   ],
+   "_what": "stool"
+  }
+ ]
+}

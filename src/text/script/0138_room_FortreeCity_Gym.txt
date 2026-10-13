@@ -1,0 +1,10 @@
+…
+{0100:0} received the Feather Badge\nfrom Winona.
+With the Feather Badge, all Pokémon up\nto Lv 70, even those received through{be00}\ntrades, will obey your every command.{be01}\nYou will also be able to use the\nHM move Fly outside of battle.{be01}\nAnd this...\nThis is a gift from me.
+TM40 contains Aerial Ace.{be01}\nIts speed...\nNo Pokémon should be able to avoid it.
+Though I fell to you, I will remain\ndevoted to Bird Pokémon.
+Yo, how’s it going, Champion-\nbound {0100:0}?{be01}\nFortree Gym Leader Winona is a\nmaster of Flying-type Pokémon.{be01}\nShe’s waiting at the back of this Gym,\nbehind the rotating doors.{be01}\nShe’s waiting for new challengers who\nare trying to take wing!{be01}\nOkay, go for it!
+You did it!\nYou’ve achieved liftoff!
+Fortree City Pokémon Gym
+Fortree City Pokémon Gym{be01}\nWinona’s Certified Trainers:\n{0100:0}
+Too bad!\nThe Bag is full...

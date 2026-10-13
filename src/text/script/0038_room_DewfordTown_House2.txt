@@ -1,0 +1,5 @@
+Wow, you bothered to cross the sea\nto visit Dewford?{be01}\nDid you maybe come here because you\nheard about Brawly?{be01}\nHe’s so cool...\nEveryone idolizes him.
+This vase looks expensive...\nPeered inside...{be01}\nBut, it was empty.
+Gorge your eyes on this!{be01}\nIt’s a Silk Scarf. It’s right at the\ncutting edge of fashion, yeah!{be01}\nOh, I can see your eyes twinkling!\nYou appreciate my dazzling style!{be01}\nOh, you’re a delight!\nHere you go. I want you to have it!
+Oh, you don’t have room?{be01}\nNow, listen tight, this Scarf is a must-\nhave! Why, I would sell all my items{be00}\nin order to get it!
+The Silk Scarf raises the power of\nNormal-type moves.{be01}\nIt’s a marvelous Scarf that will go\nwith almost all Pokémon!

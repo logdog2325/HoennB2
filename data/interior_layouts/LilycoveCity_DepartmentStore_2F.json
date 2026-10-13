@@ -1,0 +1,27 @@
+{
+ "_doc": "Lilycove Department Store floors (18x8): back wall rows 0-1 with the elevator (2,1) and the stairs (13,1) / (16,1) as Sapphire's warps say (up = stair_u01 in a wall recess, down = stair_d01 in a floor opening); counters, goods shelf blocks, coolers, windows, planters and plants at Sapphire's tiles (per floor below). Trainer's Zone. Windows (7,1), (10,1); shelf blocks (2-3, 4-6), (14-15, 4-6); counter open to the south (6-11, 5-7) with the register (6,6), clerks inside at (7,6) and (10,6); plants (17,4), (17,7).",
+ "map": "LilycoveCity_DepartmentStore_2F",
+ "style": "shop",
+ "floor": [[0, 1, 17, 7]],
+ "floor_extra": [[12.5, -0.5, 14.5, 1]],
+ "furniture": [
+  {"m": "elevator01", "at": [2.875, 0.6875], "_what": "elevator door (2,1) (Black 2 places its origin one tile north of the first walkable row, as chunks 836/1011)"},
+  {"m": "stair_u01", "stair": [13, 1], "dir": "N", "_what": "stairs up (13,1)"},
+  {"m": "stair_d01", "stair": [16, 1], "dir": "N", "_what": "stairs down (16,1)"},
+  {"m": "shelf03", "at": [6.5, 5.75], "rot": 90, "dx": 3.0, "dz": -3.0, "_what": "counter side (6, 5-7) 1/2"},
+  {"m": "shelf03", "at": [6.5, 7.25], "rot": 90, "dx": 3.0, "dz": -3.0, "_what": "counter side (6, 5-7) 2/2"},
+  {"m": "shelf03", "at": [11.5, 5.75], "rot": 90, "dx": 3.0, "dz": -3.0, "_what": "counter side (11, 5-7) 1/2"},
+  {"m": "shelf03", "at": [11.5, 7.25], "rot": 90, "dx": 3.0, "dz": -3.0, "_what": "counter side (11, 5-7) 2/2"},
+  {"m": "shelf03", "at": [8.125, 5.5], "dx": 3.0, "dz": 3.0, "_what": "glass counter run (7-10, 5) 1/2"},
+  {"m": "shelf03", "at": [9.875, 5.5], "dx": 3.0, "dz": 3.0, "_what": "glass counter run (7-10, 5) 2/2"},
+  {"m": "cashier01", "at": [6.5, 6.5], "rot": 90, "dx": -0.174, "y": 18.0, "_what": "register (6,6), keys toward the clerks"},
+  {"m": "win03", "at": [7.5, 0.3125], "y": 6, "_what": "window (7,1)"},
+  {"m": "win03", "at": [10.5, 0.3125], "y": 6, "_what": "window (10,1)"},
+  {"m": "pcshelf01", "at": [3, 5.0], "rot": 180, "dx": 4.0, "dz": -4.0, "_what": "goods shelf block (2-3, 4-6), north side"},
+  {"m": "pcshelf01", "at": [3, 6.0], "dx": -4.0, "dz": 4.0, "_what": "goods shelf block (2-3, 4-6), south side"},
+  {"m": "pcshelf01", "at": [15, 5.0], "rot": 180, "dx": 4.0, "dz": -4.0, "_what": "goods shelf block (14-15, 4-6), north side"},
+  {"m": "pcshelf01", "at": [15, 6.0], "dx": -4.0, "dz": 4.0, "_what": "goods shelf block (14-15, 4-6), south side"},
+  {"m": "plant01", "at": [17.5, 4.45], "dz": 0.945, "_what": "potted plant (17,4)"},
+  {"m": "plant01", "at": [17.5, 7.45], "dz": 0.945, "_what": "potted plant (17,7)"}
+ ]
+}

@@ -1,0 +1,249 @@
+{
+ "_doc": "emerald_caves (b2tools/emerald_caves_rooms.py writes this file: edit the script and rerun). Emerald's Route114_FossilManiacsTunnel with its north door to the Desert Underpass (warp 2, (6,2)) drawn open; closed by a rock object until the game is clear (data/interiors/emerald/558.json). Fossil Maniac's tunnel (Sapphire 13x26, zone 558): Clay Tunnel's brown cave (texture set 332: dirt floor d29_yuka1, rock d29cliff; area 332). The floor is Sapphire's reachable walkable path plus the tiles of Sapphire's pebbles beside it, so the cliffs follow its winding outline; the pebbles (solid) = Black 2's rocks drock02. The Fossil Maniac (5,3) has a multi-step script: story phase.",
+ "map": "pokeemerald/Route114_FossilManiacsTunnel",
+ "style": "sp_cave",
+ "floor": [
+  [
+   5,
+   3,
+   6,
+   3
+  ],
+  [
+   4,
+   4,
+   6,
+   4
+  ],
+  [
+   4,
+   5,
+   7,
+   5
+  ],
+  [
+   4,
+   6,
+   7,
+   6
+  ],
+  [
+   4,
+   7,
+   7,
+   7
+  ],
+  [
+   5,
+   8,
+   7,
+   8
+  ],
+  [
+   5,
+   9,
+   7,
+   9
+  ],
+  [
+   5,
+   10,
+   7,
+   10
+  ],
+  [
+   5,
+   11,
+   6,
+   11
+  ],
+  [
+   5,
+   12,
+   6,
+   12
+  ],
+  [
+   8,
+   12,
+   8,
+   12
+  ],
+  [
+   5,
+   13,
+   6,
+   13
+  ],
+  [
+   5,
+   14,
+   6,
+   14
+  ],
+  [
+   5,
+   15,
+   6,
+   15
+  ],
+  [
+   6,
+   16,
+   6,
+   16
+  ],
+  [
+   3,
+   17,
+   3,
+   17
+  ],
+  [
+   6,
+   17,
+   6,
+   17
+  ],
+  [
+   6,
+   18,
+   6,
+   18
+  ],
+  [
+   6,
+   19,
+   7,
+   19
+  ],
+  [
+   6,
+   20,
+   7,
+   20
+  ],
+  [
+   3,
+   21,
+   3,
+   21
+  ],
+  [
+   6,
+   21,
+   6,
+   21
+  ],
+  [
+   6,
+   22,
+   7,
+   22
+  ],
+  [
+   6,
+   23,
+   7,
+   23
+  ],
+  [
+   5,
+   24,
+   8,
+   24
+  ],
+  [
+   5,
+   25,
+   8,
+   25
+  ]
+ ],
+ "furniture": [
+  {
+   "m": "drock02",
+   "tile": [
+    4,
+    5
+   ],
+   "_what": "pebbles"
+  },
+  {
+   "m": "drock02",
+   "tile": [
+    7,
+    6
+   ],
+   "_what": "pebbles"
+  },
+  {
+   "m": "drock02",
+   "tile": [
+    7,
+    9
+   ],
+   "_what": "pebbles"
+  },
+  {
+   "m": "drock02",
+   "tile": [
+    5,
+    12
+   ],
+   "_what": "pebbles"
+  },
+  {
+   "m": "drock02",
+   "tile": [
+    8,
+    12
+   ],
+   "_what": "pebbles"
+  },
+  {
+   "m": "drock02",
+   "tile": [
+    3,
+    17
+   ],
+   "_what": "pebbles"
+  },
+  {
+   "m": "drock02",
+   "tile": [
+    3,
+    21
+   ],
+   "_what": "pebbles"
+  }
+ ],
+ "inner_walls": {
+  "tiles": [
+   [
+    7,
+    11
+   ],
+   [
+    7,
+    12
+   ],
+   [
+    7,
+    21
+   ]
+  ],
+  "top": {
+   "tex": "d29_yuka1",
+   "src": 332,
+   "size": 64
+  },
+  "_what": "(sweep_rooms 2026-10-11) Sapphire's one-tile rock ridges between two floors, (7,21) between the path's bends (7,20)/(7,22) and (7,11)-(7,12) between the path and the pebbles (8,12): low rock blocks (16 high next to a walkable tile north of them, models_interior inner_walls), not 48-unit cave walls with a black cap (one hid the player at (7,20) entirely: rooms_view m 136 px, rooms_check h)"
+ },
+ "block": [
+  [
+   6,
+   1
+  ]
+ ]
+}

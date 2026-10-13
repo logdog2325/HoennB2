@@ -1,0 +1,114 @@
+{
+ "corrections": [
+  {
+   "tileset": "gTileset_Mauville",
+   "id": "219",
+   "current": "grass",
+   "suggested": "path",
+   "map": "Route111",
+   "position": [
+    6,
+    86
+   ],
+   "why": "Pixel-identical to gTileset_General 1d1 (path). It is part of the pale path strip that runs down Route 111 south (x 5-9, y 73-95), where the neighbouring General 1d0-1e2 tiles are already labelled path. Its note calls it 'pale grass', but it is the path's grass-border edge piece."
+  },
+  {
+   "tileset": "gTileset_Mauville",
+   "id": "21a",
+   "current": "grass",
+   "suggested": "path",
+   "map": "Route111",
+   "position": [
+    8,
+    75
+   ],
+   "why": "Rounded corner piece of the same pale path strip on Route 111 south. It matches the General path corner tiles 1d0/1d2 (pixel distance 4.6, the same art family) and sits directly above General 1d9 path at (8,76)."
+  },
+  {
+   "tileset": "gTileset_Mauville",
+   "id": "221",
+   "current": "grass",
+   "suggested": "path",
+   "map": "Route111",
+   "position": [
+    6,
+    91
+   ],
+   "why": "Pixel-identical to gTileset_General 1d9 (path centre, 131 uses labelled path). It fills the pale path area on Route 111 south."
+  },
+  {
+   "tileset": "gTileset_Mauville",
+   "id": "222",
+   "current": "grass",
+   "suggested": "path",
+   "map": "Route111",
+   "position": [
+    9,
+    77
+   ],
+   "why": "Nearly identical to gTileset_General 1da (path edge, distance 1.5). It is the path's east edge on Route 111 south, continuing General 1d2 path at (9,76)."
+  },
+  {
+   "tileset": "gTileset_General",
+   "id": "1e8",
+   "current": "grass",
+   "suggested": "tree_tip",
+   "map": "LilycoveCity",
+   "position": [
+    39,
+    2
+   ],
+   "why": "The tile shows the left half of the tip of the 2x2 tree below, plus a rock lip on its N edge. It is the mirror of 1e9 (labelled tree_tip) and pixel-identical to gTileset_Petalburg 288 (labelled tree_tip), the same pattern as the tree_tip pair 1ce/1cf. LABELS.md says grass with a tree tip is tree_tip. Walkable in 5 of 7 uses."
+  },
+  {
+   "tileset": "gTileset_Dewford",
+   "id": "287",
+   "current": "cliff",
+   "suggested": "tree_tip",
+   "map": "Route106",
+   "position": [
+    74,
+    18
+   ],
+   "why": "The tile shows the crown of the 1-wide tree below on sand, with only a small rock corner at the top left. It is nearly identical to Dewford 28f at (75,18) and 239 (both tree_tip), and its collision is 0. The cliff-by-base convention (General 0ce) is for solid crowns over a cliff face, and this tile is neither solid nor over a cliff face."
+  },
+  {
+   "tileset": "gTileset_Lavaridge",
+   "id": "211",
+   "current": "tree_tip",
+   "suggested": "other:tree_top_1wide",
+   "map": "LavaridgeTown",
+   "position": [
+    18,
+    3
+   ],
+   "why": "Crown of the top tree of a 1-wide conifer column, drawn over rock ground. It is solid in all 47 uses (LavaridgeTown and Route 112, never walkable in any pokeruby layout). tree_tip is the walkable walk-behind class. Solid 1-wide crowns are labelled other:tree_top_1wide elsewhere (Mauville 21f, 37e). tree_bot would also work, since the column below is tree_bot."
+  },
+  {
+   "tileset": "gTileset_Lavaridge",
+   "id": "315",
+   "current": "tree_tip",
+   "suggested": "other:tree_top_1wide",
+   "map": "MtChimney",
+   "position": [
+    20,
+    43
+   ],
+   "why": "Ash-tree crown below the Mt Chimney exit stairs. It is solid in both uses and never walkable in any layout, so it is not a walk-behind tree_tip. Same reasoning as Lavaridge 211. This is low impact because the tile is beyond the warp."
+  },
+  {
+   "tileset": "gTileset_Lavaridge",
+   "id": "209",
+   "current": "grass",
+   "suggested": "other:forest_entrance",
+   "map": "Route112",
+   "position": [
+    6,
+    46
+   ],
+   "why": "Pixel-identical to gTileset_Rustboro 30f, which is labelled other:forest_entrance (the Petalburg Woods entrance on Route 104). It has the same behaviour (0x60 warp) and the same role: a dark opening in the tree line with the warp to Jagged Pass at (6-7,46). The two copies should share one class so the builder places an entrance at both."
+  }
+ ],
+ "unlabelled": [],
+ "notes": "Method: I rendered all 32 maps with converter/render_labels.py using every data/labels/gTileset_*.json. I reviewed them by eye in 146 crops of about 20x20 tiles each. I also made a second render for review only, with longer class codes, a red mark on map-collision tiles and the elevation digit, and zoomed 5x5 context sheets for anything doubtful. I cross-checked every label against: (1) the pokeruby behaviour byte, (2) map collision in these 32 maps and over every pokeruby layout, (3) warp and sign bg_event positions, (4) pixel-identical or mirrored metatiles across tilesets that carry different labels. Most of the 9 corrections came from check 4.\n\nUnlabelled: none. Every metatile on these 32 maps has a class.\n\nClean checks (no errors found): every jump tile (beh 0x38-0x3F) is a ledge with a matching direction. The diagonals 0x3E/0x3F use the main direction, as LABELS.md asks. Every beh 0x02 tile is tall_grass, every 0x24 tile is ash_grass, every 0x13 tile is waterfall, and every water/puddle label agrees with its behaviour. Every door label sits on a warp, and every sign bg_event sits on a sign, a building front (Center/Mart signs), or a prop/rock. No tree_top_l/r is swapped.\n\nNot listed as corrections, because the existing notes show they are deliberate choices. The orchestrator may want a policy decision on them:\n(a) Flat rock tops labelled cliff_top although they are never walkable in any pokeruby layout (cliff_top is defined as walkable). In these maps: Facility 342; Fallarbor 202, 221, 23b, 23d, 315, 317; General 0b4, 173, 17b; Lavaridge 214, 26c, 316. Outside these maps also Mossdeep 33c/33e and General 099/0b6/0df/157. Some are mostly but not always solid (General 069, 081, 0bf, 191). Against this convention, the pixel-identical Mauville 262 (= General 069) and the near-identical Mauville 21c (to 069/342) are labelled cliff. Visually they are rock tops. plan_map.py takes walkability from the map collision bits, so this only changes which piece is drawn. Either keep cliff_top everywhere, or move the always-solid ones to cliff/mountain. Whichever rule is picked, Mauville 21c/262 and these ids should match.\n(b) Dewford 219 (tree_tip) and Mauville 243 (other:tree_top_1wide) are both a 1-wide tree crown drawn over open sea: beh 0, col 0, elevation 1. Mauville 243's note says 'same class as Dewford 219', but the classes differ. Whether a surfing player can enter such a tile is unknown. Stepping onto Route105 (14,42) while surfing in melonDS/mGBA would settle it, and then both should take the same class.\n(c) Mauville 36d (tree_tip) and its mirror 37e (other:tree_top_1wide) sit at symmetric spots beside the Cycling Road rail on Route 110 ((29,13) and (25,13)). 36d is col 1 there and col 0 at its other use, so the right class is a judgment call. They should probably match.\n(d) Pier ends that are solid but drawn as planks are labelled bridge: Dewford 230/231 and the identical Route 104 dock tiles Rustboro 33d/345.\n(e) Mauville 2d4 'stairs' (Cycling Road ramp, Route110 (21-22,11-13)) is pixel-identical to Mauville 302 'bike_path'. Both have beh 0x70. Either class is defensible.\n(f) General 08e (ledge_s) and Petalburg 27b (ledge_e) are near-identical SE-diagonal jump tiles (beh 0x3E). Each picks the direction of the ledge run it ends, so this is consistent with LABELS.md.\n(g) Rock mounds and cliff pieces that share art (for example General 06b cliff = 093 rock, 172 cliff = 175 rock, 090 cliff = 0ab rock) are labelled by their usual use. Both classes are solid, so I left them.\n\nAbout the user's question (closing the laptop): this job runs locally on the Mac. When the Mac sleeps, Claude Code and its tool processes are suspended. Nothing advances while it is asleep, and work resumes only if the session survives the wake. Long jobs need the Mac kept awake (lid open, on power, sleep disabled) or the session moved to a cloud environment. This run finished while the machine was awake.\nScratch: renders and crops are in the session scratchpad under verify1/ (24 MB). No ROMs were created."
+}

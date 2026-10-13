@@ -1,0 +1,27 @@
+{
+ "kind": "mcss",
+ "archive": 168,
+ "files": {
+  "parts": 25,
+  "palette": 28,
+  "nmcr": 30
+ },
+ "keep_size": true,
+ "node_moves": [
+  {
+   "seq": 1,
+   "x": 7,
+   "y": -37
+  },
+  {
+   "seq": 15,
+   "x": 7,
+   "y": -30
+  }
+ ],
+ "name": "intro-professor-birch",
+ "donor": "Professor Juniper, intro (a/1/6/8 files 24-30)",
+ "note": "Prof. Birch in the new-game intro, from Sapphire's Birch picture",
+ "source": "pokeruby graphics/birch_speech/birch.png",
+ "made_by": "b2tools/sprite_upgrade_players.py"
+}

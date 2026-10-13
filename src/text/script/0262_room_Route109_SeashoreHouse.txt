@@ -1,0 +1,9 @@
+I’m the owner of the Seashore House.\nBut you can call me Mr. Sea!{be01}\nWhat I love above all is to see hot\nPokémon battles.{be01}\nLet me see that your heart burns hot!{be01}\nIf you can defeat all the Trainers\nhere, I’ll reward your efforts.
+Show me some hot matches!{be01}\nI run this Seashore House just for\nthat reason alone!
+You’re scorching hot!\nThose battles blazed!{be00}\nI’m more than just satisfied!{be01}\nAs thanks for showing me your hot\nstreak, I want you to take these.{be01}\nIt’s half a dozen bottles of Soda Pop!
+Oh, but hey, your Bag’s jammed full.\nI’ll hang on to these for you.
+Want to buy some Soda Pop?\nPokémon love it!{be01}\nJust $300 a bottle!\nBuy some!
+Here you go!
+You don’t have the money.
+No?\nThat’s too bad.
+Too bad!\nThe Bag is full...

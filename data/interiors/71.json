@@ -1,0 +1,101 @@
+{
+ "zone": 71,
+ "room": "AbandonedShip_CaptainsOffice",
+ "area": 337,
+ "header": {
+  "map_type": 16,
+  "npc_cache": 24,
+  "weather_word": 0,
+  "flags": 22817,
+  "icon_word": 32783,
+  "bgm0": 1193,
+  "bgm1": 1193,
+  "bgm2": 1193,
+  "bgm3": 1193,
+  "place": 65,
+  "place_display": 0,
+  "parent": 74,
+  "encounters": 8191,
+  "enc_slot": 6
+ },
+ "warps": [
+  {
+   "at": [
+    7,
+    6
+   ],
+   "tile_only": true,
+   "to": [
+    74,
+    4
+   ],
+   "what": "Sapphire warp 0 (7,6) -> AbandonedShip_Deck 4"
+  },
+  {
+   "at": [
+    8,
+    6
+   ],
+   "tile_only": true,
+   "to": [
+    74,
+    4
+   ],
+   "what": "Sapphire warp 1 (8,6) -> AbandonedShip_Deck 4"
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 2,
+   "model": 110,
+   "script": 7089,
+   "flag": 1189,
+   "dir": 1,
+   "at": [
+    0,
+    6
+   ],
+   "what": "item ball ITEM_STORAGE_KEY"
+  }
+ ],
+ "signs": [
+  {
+   "script": 1,
+   "at": [
+    3,
+    5
+   ],
+   "dir": 4,
+   "what": "blueprint (MB_BLUEPRINT, EventScript_Blueprint)"
+  },
+  {
+   "script": 1,
+   "at": [
+    4,
+    5
+   ],
+   "dir": 4,
+   "what": "blueprint (MB_BLUEPRINT, EventScript_Blueprint)"
+  },
+  {
+   "script": 1,
+   "at": [
+    3,
+    6
+   ],
+   "dir": 4,
+   "what": "blueprint (MB_BLUEPRINT, EventScript_Blueprint)"
+  },
+  {
+   "script": 1,
+   "at": [
+    4,
+    6
+   ],
+   "dir": 4,
+   "what": "blueprint (MB_BLUEPRINT, EventScript_Blueprint)"
+  }
+ ],
+ "triggers": [],
+ "what": "ship_hideouts: AbandonedShip_CaptainsOffice (b2tools/ship_hideouts_rooms.py); story: person OBJ_EVENT_GFX_SCIENTIST_1 (3,4) AbandonedShip_CaptainsOffice_EventScript_CaptSternAide: not one message / no sprite"
+}

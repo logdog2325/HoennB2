@@ -1,0 +1,111 @@
+{
+ "zone": 133,
+ "room": "NewMauville_Inside",
+ "cave": true,
+ "cave_auto": true,
+ "area": 345,
+ "dark": false,
+ "header": {
+  "map_type": 16,
+  "npc_cache": 24,
+  "weather_word": 0,
+  "flags": 18721,
+  "icon_word": 40975,
+  "place_display": 0,
+  "bgm0": 1077,
+  "bgm1": 1077,
+  "bgm2": 1077,
+  "bgm3": 1077,
+  "place": 66,
+  "encounters": 57,
+  "enc_slot": 2
+ },
+ "warps": [
+  {
+   "at": [
+    32,
+    33
+   ],
+   "to": [
+    132,
+    1
+   ],
+   "what": "Sapphire warp 0 (32,33) -> NewMauville_Entrance 1"
+  }
+ ],
+ "triggers": [],
+ "npcs": [
+  {
+   "uid": 1,
+   "model": 110,
+   "script": 7079,
+   "flag": 1179,
+   "dir": 1,
+   "at": [
+    32,
+    25
+   ],
+   "what": "item ball ITEM_ULTRA_BALL"
+  },
+  {
+   "uid": 2,
+   "model": 110,
+   "script": 7080,
+   "flag": 1180,
+   "dir": 1,
+   "at": [
+    16,
+    22
+   ],
+   "what": "item ball ITEM_ESCAPE_ROPE"
+  },
+  {
+   "uid": 3,
+   "model": 110,
+   "script": 7081,
+   "flag": 1181,
+   "dir": 1,
+   "at": [
+    39,
+    4
+   ],
+   "what": "item ball ITEM_THUNDERSTONE"
+  },
+  {
+   "uid": 4,
+   "model": 110,
+   "script": 7082,
+   "flag": 1182,
+   "dir": 1,
+   "at": [
+    17,
+    10
+   ],
+   "what": "item ball ITEM_FULL_HEAL"
+  },
+  {
+   "uid": 5,
+   "model": 110,
+   "script": 7083,
+   "flag": 1183,
+   "dir": 1,
+   "at": [
+    2,
+    11
+   ],
+   "what": "item ball ITEM_PARLYZ_HEAL"
+  }
+ ],
+ "signs": [],
+ "what": "NewMauville_Inside: cave (converter/gen_caves.py, b2tools/models_cave.py); story objects: see notes/CAVES.md",
+ "alt_rooms": [
+  {
+   "room": "NewMauville_Inside_BlueDown",
+   "event": 5
+  },
+  {
+   "room": "NewMauville_Inside_GreenDown",
+   "event": 6
+  }
+ ]
+}

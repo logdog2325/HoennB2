@@ -1,0 +1,261 @@
+{
+ "map": "Route131",
+ "id": "MAP_ROUTE131",
+ "layout": "LAYOUT_ROUTE131",
+ "music": "MUS_ROUTE119",
+ "region_map_section": "MAPSEC_ROUTE_131",
+ "weather": "WEATHER_SUNNY",
+ "connections": [
+  {
+   "direction": "left",
+   "offset": 0,
+   "map": "MAP_PACIFIDLOG_TOWN"
+  },
+  {
+   "direction": "right",
+   "offset": 0,
+   "map": "MAP_ROUTE130"
+  }
+ ],
+ "npcs": [
+  {
+   "local_id": 1,
+   "x": 17,
+   "y": 25,
+   "gfx": "OBJ_EVENT_GFX_SWIMMER_M",
+   "movement": "MOVEMENT_TYPE_WALK_SEQUENCE_UP_RIGHT_LEFT_DOWN",
+   "range": [
+    5,
+    7
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route131_EventScript_152452",
+   "texts": {
+    "Route131_Text_1C25B3": "The sea is teeming with POKéMON.\\nIt's not easy swimming, I tell you.$",
+    "Route131_Text_1C25F8": "POKéMON raised by TRAINERS are\\nseriously tough...$",
+    "Route131_Text_1C262A": "Gasp... Gasp... I'm wiped out...\\pThe going's easy. It's the leaving\\nthat's the hard part.\\pWill I have any energy left to make\\nthe return trip?$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 2,
+   "x": 36,
+   "y": 26,
+   "gfx": "OBJ_EVENT_GFX_SWIMMER_M",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route131_EventScript_152469",
+   "texts": {
+    "Route131_Text_1C26B9": "The sea... The sea... The sea...\\nThe sea as far as these eyes can see!\\lI'm sick and tired of the sea!$",
+    "Route131_Text_1C271F": "Bleah!$",
+    "Route131_Text_1C2726": "Bored I am by the sea, but swim I must.\\pI'm a born swimmer!\\nThat's what I am.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 3,
+   "x": 33,
+   "y": 28,
+   "gfx": "OBJ_EVENT_GFX_SWIMMER_F",
+   "movement": "MOVEMENT_TYPE_FACE_UP",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route131_EventScript_152480",
+   "texts": {
+    "Route131_Text_1C2774": "Hi, sweetie, wait!\\nWe should battle, you and I!$",
+    "Route131_Text_1C27A4": "You're tough in spite of the way\\nyou look!$",
+    "Route131_Text_1C27CF": "Did you see a guy over there who whines\\nthat he's bored of the sea?\\pThat's all talk.\\nHe's hopelessly in love with the sea!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 4,
+   "x": 45,
+   "y": 23,
+   "gfx": "OBJ_EVENT_GFX_SWIMMER_F",
+   "movement": "MOVEMENT_TYPE_WALK_SEQUENCE_LEFT_DOWN_RIGHT_UP",
+   "range": [
+    1,
+    4
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route131_EventScript_152497",
+   "texts": {
+    "Route131_Text_1C284A": "Why do men love bathing suits so much?\\pThey all ogle me!$",
+    "Route131_Text_1C2883": "I'm out of my depth!$",
+    "Route131_Text_1C2898": "Maybe it's not my bathing suit that\\nmakes men look. It must be my beauty!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 5,
+   "x": 9,
+   "y": 16,
+   "gfx": "OBJ_EVENT_GFX_SWIMMER_F",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route131_EventScript_1524AE",
+   "texts": {
+    "Route131_Text_1C28E2": "RELI: We'll work together as siblings\\nto take you on!$",
+    "Route131_Text_1C2918": "RELI: We couldn't win even though we\\nworked together...$",
+    "Route131_Text_1C29B2": "RELI: You don't have two POKéMON?\\nWe can't enjoy a battle, then.$",
+    "Route131_Text_1C2950": "RELI: The people of PACIFIDLOG are\\ntogether with the sea and POKéMON from\\lthe time they are born.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 6,
+   "x": 8,
+   "y": 16,
+   "gfx": "OBJ_EVENT_GFX_TUBER_M_SWIMMING",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route131_EventScript_1524C9",
+   "texts": {
+    "Route131_Text_1C29F3": "IAN: I'm doing my best together with\\nmy sis!$",
+    "Route131_Text_1C2A20": "IAN: I did my best with my sis, but\\nwe still couldn't win...$",
+    "Route131_Text_1C2ACA": "IAN: If you have two POKéMON, we'll\\ntake you on!$",
+    "Route131_Text_1C2A5D": "IAN: You know how PACIFIDLOG is\\na floating town?\\pSo, wherever there is the sea, that's\\na part of PACIFIDLOG!$"
+   },
+   "complex": true
+  }
+ ],
+ "signs": [],
+ "warps": [
+  {
+   "id": 0,
+   "x": 36,
+   "y": 6,
+   "dest_map": "MAP_SKY_PILLAR_ENTRANCE",
+   "dest_warp_id": "0"
+  }
+ ],
+ "coord_events": [],
+ "wild": {
+  "water_mons": {
+   "encounter_rate": 4,
+   "slot_rates": [
+    60,
+    30,
+    5,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 5,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 15,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_PELIPPER",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_PELIPPER",
+     "min": 25,
+     "max": 30
+    }
+   ]
+  },
+  "fishing_mons": {
+   "encounter_rate": 30,
+   "slot_rates": [
+    70,
+    30,
+    60,
+    20,
+    20,
+    40,
+    40,
+    15,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_SHARPEDO",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 35,
+     "max": 40
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 40,
+     "max": 45
+    }
+   ]
+  }
+ }
+}

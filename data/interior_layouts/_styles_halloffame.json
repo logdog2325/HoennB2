@@ -1,0 +1,51 @@
+{
+ "_doc": "halloffame agent (2026-10-07): the Hall of Fame in Black 2's own Hall of Fame look (zone 145's chunk 896: Iris's set 319, golden stone floor, gold panel walls, marble runway, the c09_dendo machine on a dais)",
+ "hof": {
+  "_doc": "Hall of Fame: Black 2's Hall of Fame (set 319): golden stone floor, gold panel wall",
+  "floor": {
+   "tex": "in38_tile03",
+   "src": 319,
+   "size": 64
+  },
+  "wall": {
+   "tex": "in38_kabe02",
+   "src": 319,
+   "u_size": 16
+  },
+  "genkan": {
+   "tex": "in38_tile05",
+   "src": 319,
+   "stretch": true
+  },
+  "black": {
+   "tex": "black",
+   "src": 285
+  }
+ },
+ "hof_dais": {
+  "h": 8,
+  "top": {
+   "tex": "in38_tile05",
+   "src": 319,
+   "size": 32
+  },
+  "side": {
+   "tex": "in38_sode01",
+   "src": 319,
+   "u_size": 32
+  }
+ },
+ "hof_pillar": {
+  "h": 56,
+  "top": {
+   "tex": "black",
+   "src": 285
+  },
+  "side": {
+   "tex": "in38_hasira05",
+   "src": 319,
+   "u_size": 16,
+   "v_size": 16
+  }
+ }
+}

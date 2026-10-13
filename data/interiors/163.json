@@ -1,0 +1,84 @@
+{
+ "zone": 163,
+ "room": "ShoalCave_LowTideStairsRoom",
+ "cave": true,
+ "cave_auto": true,
+ "area": 332,
+ "dark": false,
+ "header": {
+  "map_type": 16,
+  "npc_cache": 24,
+  "weather_word": 64,
+  "flags": 23683,
+  "icon_word": 40975,
+  "place_display": 1,
+  "bgm0": 1076,
+  "bgm1": 1076,
+  "bgm2": 1076,
+  "bgm3": 1076,
+  "place": 70,
+  "encounters": 84,
+  "enc_slot": 2
+ },
+ "warps": [
+  {
+   "at": [
+    3,
+    12
+   ],
+   "to": [
+    146,
+    1
+   ],
+   "what": "Sapphire warp 0 (3,12) -> ShoalCave_LowTideInnerRoom 1"
+  },
+  {
+   "at": [
+    7,
+    4
+   ],
+   "to": [
+    146,
+    2
+   ],
+   "what": "Sapphire warp 1 (7,4) -> ShoalCave_LowTideInnerRoom 2"
+  }
+ ],
+ "triggers": [
+  {
+   "script": 1,
+   "var": 0,
+   "value": 0,
+   "at": [
+    3,
+    12
+   ]
+  },
+  {
+   "script": 2,
+   "var": 0,
+   "value": 0,
+   "at": [
+    7,
+    4
+   ],
+   "y": 64
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 1,
+   "model": 110,
+   "script": 7114,
+   "flag": 1214,
+   "dir": 1,
+   "at": [
+    13,
+    12
+   ],
+   "what": "item ball ITEM_ICE_HEAL"
+  }
+ ],
+ "signs": [],
+ "what": "ShoalCave_LowTideStairsRoom: cave (converter/gen_caves.py, b2tools/models_cave.py); story objects: see notes/CAVES.md"
+}

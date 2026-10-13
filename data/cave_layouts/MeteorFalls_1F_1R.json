@@ -1,0 +1,60 @@
+{
+ "map": "MeteorFalls_1F_1R",
+ "_doc": "caves_east: Sapphire's terraces as heights (16 per stair tile): main floor (rows 20-24) 32 above the exit level (rows 25-40, the lower river); the elevation-4 platform/entrance/bridge 48; the right ledge (24-28,13-15) and the upper-left ledge 64; the top level around the upper pool 96 (heights in whole 16-unit levels: a ladder's MapChangeCore names the level). The log bridge (19-21,18-19) is a walk-under bridge over the upper river; the two waterfalls are Black 2 waterfalls (upper pool 88 -> middle pool 24, upper river 24 -> lower river -8). Origin (0,11): the cave is split over two chunks at Sapphire row 21 (a chunk file must stay under 110,600 bytes).",
+ "origin": [
+  0,
+  11
+ ],
+ "levels": {
+  "3": 0,
+  "4": 48
+ },
+ "heights": {
+  "8,21": 32,
+  "8,17": 32,
+  "2,17": 48,
+  "2,14": 64,
+  "25,14": 64,
+  "2,5": 96,
+  "10,4": 96,
+  "21,5": 96,
+  "27,6": 96,
+  "12,7": 96,
+  "20,16": 32,
+  "20,15": 32,
+  "19,23": 32,
+  "20,21": 32
+ },
+ "ramps": [
+  [
+   27,
+   10,
+   27,
+   12,
+   "n"
+  ],
+  [
+   2,
+   16,
+   2,
+   16,
+   "n"
+  ],
+  [
+   2,
+   18,
+   2,
+   18,
+   "n"
+  ],
+  [
+   6,
+   23,
+   6,
+   24,
+   "n"
+  ]
+ ],
+ "bridges": true,
+ "waterfalls": true
+}

@@ -1,0 +1,17 @@
+{
+ "kind": "trainer",
+ "side": "front",
+ "sprite": 0,
+ "archive": 71,
+ "files": {
+  "static": 0,
+  "parts": 1,
+  "palette": 7
+ },
+ "name": "brendan",
+ "note": "Brendan (rival battles, Hall of Fame)",
+ "source": "pokeruby graphics/trainers/brendan.png",
+ "layout": "parts and animations of Black 2 front sprite 108",
+ "made_by": "b2tools/sprite_upgrade.py",
+ "mcss_from": 108
+}

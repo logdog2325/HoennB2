@@ -1,0 +1,394 @@
+{
+ "map": "Route124",
+ "id": "MAP_ROUTE124",
+ "layout": "LAYOUT_ROUTE124",
+ "music": "MUS_ROUTE120",
+ "region_map_section": "MAPSEC_ROUTE_124",
+ "weather": "WEATHER_SUNNY",
+ "connections": [
+  {
+   "map": "MAP_ROUTE126",
+   "offset": 0,
+   "direction": "down"
+  },
+  {
+   "map": "MAP_LILYCOVE_CITY",
+   "offset": 10,
+   "direction": "left"
+  },
+  {
+   "map": "MAP_ROUTE125",
+   "offset": 0,
+   "direction": "right"
+  },
+  {
+   "map": "MAP_MOSSDEEP_CITY",
+   "offset": 40,
+   "direction": "right"
+  },
+  {
+   "map": "MAP_UNDERWATER_ROUTE124",
+   "offset": 0,
+   "direction": "dive"
+  }
+ ],
+ "npcs": [
+  {
+   "local_id": 1,
+   "x": 34,
+   "y": 25,
+   "gfx": "OBJ_EVENT_GFX_SWIMMER_M",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    5,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route124_EventScript_Spencer",
+   "texts": {
+    "Route124_Text_SpencerIntro": "Hey, are you lost at sea?\\pIf you can beat my POKéMON,\\nI can serve as your pilot.$",
+    "Route124_Text_SpencerDefeat": "I lost my bearings in battle!$",
+    "Route124_Text_SpencerPostBattle": "Many people lose their bearings at sea.\\pIf you're that sort, you should refer\\nto the POKéNAV's MAP.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 2,
+   "x": 61,
+   "y": 74,
+   "gfx": "OBJ_EVENT_GFX_SWIMMER_M",
+   "movement": "MOVEMENT_TYPE_WALK_IN_PLACE_RIGHT",
+   "range": [
+    5,
+    3
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route124_EventScript_Roland",
+   "texts": {
+    "Route124_Text_RolandIntro": "Hm! You're riding a POKéMON instead\\nof swimming yourself…\\pI am envious!$",
+    "Route124_Text_RolandDefeat": "Oh!\\nI can't…$",
+    "Route124_Text_RolandPostBattle": "I'm getting chilled…\\nI've been in the water too long…\\pI wish I could ride a POKéMON like you…$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 3,
+   "x": 49,
+   "y": 45,
+   "gfx": "OBJ_EVENT_GFX_SWIMMER_F",
+   "movement": "MOVEMENT_TYPE_ROTATE_CLOCKWISE",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route124_EventScript_Jenny",
+   "texts": {
+    "Route124_Text_JennyIntro": "If you just float in the sea like\\nthis, POKéMON come around to play.$",
+    "Route124_Text_JennyDefeat": "Oh, darn.\\nI've gone and lost.$",
+    "Route124_Text_JennyPostBattle": "While swimming, I noticed that some\\nPOKéMON attack, and some just watch.\\pI guess POKéMON have personalities\\nof their own.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 4,
+   "x": 7,
+   "y": 23,
+   "gfx": "OBJ_EVENT_GFX_SWIMMER_F",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN_AND_RIGHT",
+   "range": [
+    6,
+    8
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route124_EventScript_Grace",
+   "texts": {
+    "Route124_Text_GraceIntro": "I'm growing bored of swimming…\\nHow about a battle?$",
+    "Route124_Text_GraceDefeat": "I had no idea that you were\\nthis strong!$",
+    "Route124_Text_GracePostBattle": "All the effort you put in must have\\nmade you this strong.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 5,
+   "x": 58,
+   "y": 58,
+   "gfx": "OBJ_EVENT_GFX_SWIMMER_M",
+   "movement": "MOVEMENT_TYPE_WALK_RIGHT_AND_LEFT",
+   "range": [
+    7,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route124_EventScript_Chad",
+   "texts": {
+    "Route124_Text_ChadIntro": "Fufufufu… I dive deep underwater\\nto go deep under cover.\\lPlumbing the depths is where I excel!$",
+    "Route124_Text_ChadDefeat": "Glub, glub, glub…\\nI'm sinking…$",
+    "Route124_Text_ChadPostBattle": "I have it on good authority that\\nthere's a DIVE spot around here.\\pIt gives me the urge to go deep\\nagain…$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 6,
+   "x": 28,
+   "y": 12,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_ROUTE_124_RED_SHARD",
+   "script": "Route124_EventScript_ItemRedShard",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 7,
+   "x": 31,
+   "y": 53,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_ROUTE_124_BLUE_SHARD",
+   "script": "Route124_EventScript_ItemBlueShard",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 8,
+   "x": 58,
+   "y": 11,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_ROUTE_124_YELLOW_SHARD",
+   "script": "Route124_EventScript_ItemYellowShard",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 9,
+   "x": 18,
+   "y": 44,
+   "gfx": "OBJ_EVENT_GFX_SWIMMER_F",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route124_EventScript_Lila",
+   "texts": {
+    "Route124_Text_LilaIntro": "LILA: Sigh…\\pHere I am in the sea, but who's with me?\\nMy little brother!\\pLet's battle so I won't have to dwell\\non that!$",
+    "Route124_Text_LilaDefeat": "LILA: ROY! It's your fault we lost!\\nYou're in for it later!$",
+    "Route124_Text_LilaNotEnoughMons": "LILA: You're planning to battle us?\\nNot unless you have two POKéMON.$",
+    "Route124_Text_LilaPostBattle": "LILA: Sigh…\\pIf only it wasn't my little brother\\nnext to me, but a nice boyfriend…$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 10,
+   "x": 17,
+   "y": 44,
+   "gfx": "OBJ_EVENT_GFX_TUBER_M_SWIMMING",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route124_EventScript_Roy",
+   "texts": {
+    "Route124_Text_RoyIntro": "ROY: My big sister is tough at POKéMON!\\pDon't cry when you lose!$",
+    "Route124_Text_RoyDefeat": "ROY: Uh-oh…\\nMy big sister will chew me out…$",
+    "Route124_Text_RoyNotEnoughMons": "ROY: Did you want to battle us?\\nBring two POKéMON, then.$",
+    "Route124_Text_RoyPostBattle": "ROY: My big sister is really scary\\nwhen she gets angry.\\pThat's why she doesn't have a\\nboyfriend.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 11,
+   "x": 7,
+   "y": 29,
+   "gfx": "OBJ_EVENT_GFX_SWIMMER_M",
+   "movement": "MOVEMENT_TYPE_FACE_UP",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route124_EventScript_Declan",
+   "texts": {
+    "Route124_Text_DeclanIntro": "Here I am swimming by my lonesome\\non this wide, beautiful sea.\\pThere's no other word for it.\\nThis is pathetic!$",
+    "Route124_Text_DeclanDefeat": "I'm feeling blue.\\nBlue as the sky…$",
+    "Route124_Text_DeclanPostBattle": "I should chat up lady SWIMMERS\\nand invite them on a long swim.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 12,
+   "x": 69,
+   "y": 74,
+   "gfx": "OBJ_EVENT_GFX_SWIMMER_F",
+   "movement": "MOVEMENT_TYPE_WALK_IN_PLACE_LEFT",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route124_EventScript_Isabella",
+   "texts": {
+    "Route124_Text_IsabellaIntro": "I'm not going to lose to some\\nsurfer TRAINER.$",
+    "Route124_Text_IsabellaDefeat": "I've only got sweat in my eyes!\\nI am not crying!$",
+    "Route124_Text_IsabellaPostBattle": "You can find pretty colored shards\\nof things around here.$"
+   },
+   "complex": true
+  }
+ ],
+ "signs": [
+  {
+   "x": 73,
+   "y": 48,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "Route124_EventScript_HuntersHouseSign",
+   "texts": {
+    "Route124_Text_HuntersHouse": "HUNTER'S HOUSE$"
+   }
+  }
+ ],
+ "warps": [
+  {
+   "id": 0,
+   "x": 70,
+   "y": 48,
+   "dest_map": "MAP_ROUTE124_DIVING_TREASURE_HUNTERS_HOUSE",
+   "dest_warp_id": "0"
+  }
+ ],
+ "coord_events": [],
+ "wild": {
+  "water_mons": {
+   "encounter_rate": 4,
+   "slot_rates": [
+    60,
+    30,
+    5,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 5,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 15,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_PELIPPER",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_PELIPPER",
+     "min": 25,
+     "max": 30
+    }
+   ]
+  },
+  "fishing_mons": {
+   "encounter_rate": 30,
+   "slot_rates": [
+    70,
+    30,
+    60,
+    20,
+    20,
+    40,
+    40,
+    15,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_SHARPEDO",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 35,
+     "max": 40
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 40,
+     "max": 45
+    }
+   ]
+  }
+ }
+}

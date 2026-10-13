@@ -1,0 +1,61 @@
+{
+ "_doc": "SlateportCity_PokemonFanClub (zone 13), built by the specials agent (recipe data/interior_layouts/SlateportCity_PokemonFanClub.json): Icirrus Fan Club look, Black 2 interior area 307. Warps in Sapphire's order (one per Sapphire warp tile). People/signs: Sapphire's one-message ones as generated; story people are left for the story phase.",
+ "zone": 13,
+ "room": "SlateportCity_PokemonFanClub",
+ "area": 307,
+ "parent": 448,
+ "warps": [
+  {
+   "at": [
+    6,
+    10
+   ],
+   "tile_only": true,
+   "to": [
+    448,
+    12
+   ],
+   "what": "Sapphire warp 0 -> SlateportCity 4"
+  },
+  {
+   "at": [
+    7,
+    10
+   ],
+   "tile_only": true,
+   "to": [
+    448,
+    12
+   ],
+   "what": "Sapphire warp 1 -> SlateportCity 4"
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 1,
+   "model": 61,
+   "script": 1,
+   "dir": 1,
+   "at": [
+    11,
+    4
+   ]
+  },
+  {
+   "uid": 2,
+   "model": 9,
+   "script": 2,
+   "dir": 1,
+   "at": [
+    1,
+    5
+   ],
+   "move": 4,
+   "range": [
+    0,
+    1
+   ]
+  }
+ ],
+ "signs": []
+}

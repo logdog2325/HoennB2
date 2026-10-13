@@ -1,0 +1,67 @@
+{
+ "zone": 47,
+ "room": "EverGrandeCity_Corridor5",
+ "area": 334,
+ "bgm": 1072,
+ "what": "gyms_league: EverGrandeCity_Corridor5 (b2tools/gyms_league_rooms.py); story phase: ",
+ "parent": 412,
+ "warps": [
+  {
+   "at": [
+    5,
+    12
+   ],
+   "tile_only": true,
+   "to": [
+    77,
+    2
+   ],
+   "what": "Sapphire warp 0 -> EverGrandeCity_PokemonLeague 2",
+   "type": 2,
+   "dir": 0
+  },
+  {
+   "at": [
+    5,
+    2
+   ],
+   "tile_only": true,
+   "to": [
+    79,
+    0
+   ],
+   "what": "Sapphire warp 1 -> EverGrandeCity_SidneysRoom 0"
+  },
+  {
+   "at": [
+    4,
+    12
+   ],
+   "tile_only": true,
+   "to": [
+    77,
+    2
+   ],
+   "what": "Sapphire warp 2 -> EverGrandeCity_PokemonLeague 2",
+   "type": 2,
+   "dir": 0
+  },
+  {
+   "at": [
+    6,
+    12
+   ],
+   "tile_only": true,
+   "to": [
+    77,
+    2
+   ],
+   "what": "Sapphire warp 3 -> EverGrandeCity_PokemonLeague 2",
+   "type": 2,
+   "dir": 0
+  }
+ ],
+ "npcs": [],
+ "signs": [],
+ "triggers": []
+}

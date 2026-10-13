@@ -1,0 +1,3 @@
+Do you have any Antidotes with\nyou?{be01}\nIf you walk around with a poisoned\nPokémon, it will lose HP until it faints.{be00}\nTake some Antidotes with you.
+Do you use Repel?\nIt keeps Pokémon away, so it’s{be00}\nuseful when you’re in a hurry.
+Even if a Pokémon is weak now,\nit will grow stronger.{be01}\nThe most important thing is love!\nLove for your Pokémon!

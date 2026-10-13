@@ -1,0 +1,562 @@
+{
+ "_doc": "Mauville Game Corner (Sapphire 22x11, zone 237). Black 2 has no Game Corner: the Musical Theater's red carpet (in24_carpet, set 305) as the floor and the Battle Test room's teal wall (in25kabe_01, set 306) for Sapphire's sky wall. Slot machines (2-3 and 7-8, rows 6-9) = Black 2's terminal pc01, facing the seats (west column faces west, east column east, as the signs' facing); the seats (1, 4, 6, 9 at rows 6-9, walkable) = Pokéstar Studios' blue seat picture in76_sof01 on the floor; roulette tables (14-15, 18-19 at rows 6-8) = table01; the prize counter (9-15, 2-3) = white counters; vending machines (0-1, 2) = in_vender01; trash cans (2,2)/(21,4) = dust01; plants (5-7, 2). The back wall is one row further south over (18-21) as in Sapphire, with the yellow sofas (18-21, 3) = seat pictures (in01_isu, set 282).",
+ "map": "MauvilleCity_GameCorner",
+ "style": "sp_gamecorner",
+ "floor": [
+  [
+   0,
+   2,
+   17,
+   2
+  ],
+  [
+   0,
+   3,
+   21,
+   10
+  ]
+ ],
+ "mats": [
+  {
+   "tex": "in76_sof01",
+   "src": 378,
+   "rect": [
+    1,
+    6,
+    1,
+    6
+   ],
+   "border": 0.0,
+   "border_units": 0,
+   "y": 0,
+   "_what": "seat"
+  },
+  {
+   "tex": "in76_sof01",
+   "src": 378,
+   "rect": [
+    1,
+    7,
+    1,
+    7
+   ],
+   "border": 0.0,
+   "border_units": 0,
+   "y": 0,
+   "_what": "seat"
+  },
+  {
+   "tex": "in76_sof01",
+   "src": 378,
+   "rect": [
+    1,
+    8,
+    1,
+    8
+   ],
+   "border": 0.0,
+   "border_units": 0,
+   "y": 0,
+   "_what": "seat"
+  },
+  {
+   "tex": "in76_sof01",
+   "src": 378,
+   "rect": [
+    1,
+    9,
+    1,
+    9
+   ],
+   "border": 0.0,
+   "border_units": 0,
+   "y": 0,
+   "_what": "seat"
+  },
+  {
+   "tex": "in76_sof01",
+   "src": 378,
+   "rect": [
+    4,
+    6,
+    4,
+    6
+   ],
+   "border": 0.0,
+   "border_units": 0,
+   "y": 0,
+   "_what": "seat"
+  },
+  {
+   "tex": "in76_sof01",
+   "src": 378,
+   "rect": [
+    4,
+    7,
+    4,
+    7
+   ],
+   "border": 0.0,
+   "border_units": 0,
+   "y": 0,
+   "_what": "seat"
+  },
+  {
+   "tex": "in76_sof01",
+   "src": 378,
+   "rect": [
+    4,
+    8,
+    4,
+    8
+   ],
+   "border": 0.0,
+   "border_units": 0,
+   "y": 0,
+   "_what": "seat"
+  },
+  {
+   "tex": "in76_sof01",
+   "src": 378,
+   "rect": [
+    4,
+    9,
+    4,
+    9
+   ],
+   "border": 0.0,
+   "border_units": 0,
+   "y": 0,
+   "_what": "seat"
+  },
+  {
+   "tex": "in76_sof01",
+   "src": 378,
+   "rect": [
+    6,
+    6,
+    6,
+    6
+   ],
+   "border": 0.0,
+   "border_units": 0,
+   "y": 0,
+   "_what": "seat"
+  },
+  {
+   "tex": "in76_sof01",
+   "src": 378,
+   "rect": [
+    6,
+    7,
+    6,
+    7
+   ],
+   "border": 0.0,
+   "border_units": 0,
+   "y": 0,
+   "_what": "seat"
+  },
+  {
+   "tex": "in76_sof01",
+   "src": 378,
+   "rect": [
+    6,
+    8,
+    6,
+    8
+   ],
+   "border": 0.0,
+   "border_units": 0,
+   "y": 0,
+   "_what": "seat"
+  },
+  {
+   "tex": "in76_sof01",
+   "src": 378,
+   "rect": [
+    6,
+    9,
+    6,
+    9
+   ],
+   "border": 0.0,
+   "border_units": 0,
+   "y": 0,
+   "_what": "seat"
+  },
+  {
+   "tex": "in76_sof01",
+   "src": 378,
+   "rect": [
+    9,
+    6,
+    9,
+    6
+   ],
+   "border": 0.0,
+   "border_units": 0,
+   "y": 0,
+   "_what": "seat"
+  },
+  {
+   "tex": "in76_sof01",
+   "src": 378,
+   "rect": [
+    9,
+    7,
+    9,
+    7
+   ],
+   "border": 0.0,
+   "border_units": 0,
+   "y": 0,
+   "_what": "seat"
+  },
+  {
+   "tex": "in76_sof01",
+   "src": 378,
+   "rect": [
+    9,
+    8,
+    9,
+    8
+   ],
+   "border": 0.0,
+   "border_units": 0,
+   "y": 0,
+   "_what": "seat"
+  },
+  {
+   "tex": "in76_sof01",
+   "src": 378,
+   "rect": [
+    9,
+    9,
+    9,
+    9
+   ],
+   "border": 0.0,
+   "border_units": 0,
+   "y": 0,
+   "_what": "seat"
+  },
+  {
+   "tex": "in01_isu",
+   "src": 282,
+   "rect": [
+    18,
+    3,
+    19,
+    3
+   ],
+   "border": 0.0,
+   "border_units": 0,
+   "y": 0,
+   "_what": "sofa"
+  },
+  {
+   "tex": "in01_isu",
+   "src": 282,
+   "rect": [
+    20,
+    3,
+    21,
+    3
+   ],
+   "border": 0.0,
+   "border_units": 0,
+   "y": 0,
+   "_what": "sofa"
+  },
+  {
+   "tex": "rest_yuka03",
+   "src": 288,
+   "rect": [
+    11,
+    10,
+    12,
+    10
+   ],
+   "border": 0.25,
+   "border_units": 4,
+   "y": 0,
+   "_what": "door mat"
+  }
+ ],
+ "furniture": [
+  {
+   "m": "pc01_1",
+   "tile": [
+    2,
+    6
+   ],
+   "rot": 270,
+   "_what": "slot machine"
+  },
+  {
+   "m": "pc01_1",
+   "tile": [
+    2,
+    7
+   ],
+   "rot": 270,
+   "_what": "slot machine"
+  },
+  {
+   "m": "pc01_1",
+   "tile": [
+    2,
+    8
+   ],
+   "rot": 270,
+   "_what": "slot machine"
+  },
+  {
+   "m": "pc01_1",
+   "tile": [
+    2,
+    9
+   ],
+   "rot": 270,
+   "_what": "slot machine"
+  },
+  {
+   "m": "pc01_1",
+   "tile": [
+    3,
+    6
+   ],
+   "rot": 90,
+   "_what": "slot machine"
+  },
+  {
+   "m": "pc01_1",
+   "tile": [
+    3,
+    7
+   ],
+   "rot": 90,
+   "_what": "slot machine"
+  },
+  {
+   "m": "pc01_1",
+   "tile": [
+    3,
+    8
+   ],
+   "rot": 90,
+   "_what": "slot machine"
+  },
+  {
+   "m": "pc01_1",
+   "tile": [
+    3,
+    9
+   ],
+   "rot": 90,
+   "_what": "slot machine"
+  },
+  {
+   "m": "pc01_1",
+   "tile": [
+    7,
+    6
+   ],
+   "rot": 270,
+   "_what": "slot machine"
+  },
+  {
+   "m": "pc01_1",
+   "tile": [
+    7,
+    7
+   ],
+   "rot": 270,
+   "_what": "slot machine"
+  },
+  {
+   "m": "pc01_1",
+   "tile": [
+    7,
+    8
+   ],
+   "rot": 270,
+   "_what": "slot machine"
+  },
+  {
+   "m": "pc01_1",
+   "tile": [
+    7,
+    9
+   ],
+   "rot": 270,
+   "_what": "slot machine"
+  },
+  {
+   "m": "pc01_1",
+   "tile": [
+    8,
+    6
+   ],
+   "rot": 90,
+   "_what": "slot machine"
+  },
+  {
+   "m": "pc01_1",
+   "tile": [
+    8,
+    7
+   ],
+   "rot": 90,
+   "_what": "slot machine"
+  },
+  {
+   "m": "pc01_1",
+   "tile": [
+    8,
+    8
+   ],
+   "rot": 90,
+   "_what": "slot machine"
+  },
+  {
+   "m": "pc01_1",
+   "tile": [
+    8,
+    9
+   ],
+   "rot": 90,
+   "_what": "slot machine"
+  },
+  {
+   "m": "table01_2x2",
+   "tiles": [
+    14,
+    6,
+    15,
+    8
+   ],
+   "_what": "roulette"
+  },
+  {
+   "m": "table01_2x2",
+   "tiles": [
+    18,
+    6,
+    19,
+    8
+   ],
+   "_what": "roulette"
+  },
+  {
+   "m": "desk02",
+   "tile": [
+    9,
+    2
+   ],
+   "_what": "counter end"
+  },
+  {
+   "m": "shelf03",
+   "tiles": [
+    9,
+    3,
+    10,
+    3
+   ],
+   "_what": "prize counter"
+  },
+  {
+   "m": "shelf03",
+   "tiles": [
+    11,
+    3,
+    12,
+    3
+   ],
+   "_what": "prize counter"
+  },
+  {
+   "m": "shelf03",
+   "tiles": [
+    13,
+    3,
+    14,
+    3
+   ],
+   "_what": "prize counter"
+  },
+  {
+   "m": "desk02",
+   "tile": [
+    15,
+    3
+   ],
+   "_what": "counter end"
+  },
+  {
+   "m": "desk02",
+   "tile": [
+    15,
+    2
+   ],
+   "_what": "counter end"
+  },
+  {
+   "m": "in_vender01",
+   "tile": [
+    0,
+    2
+   ],
+   "wall": "N",
+   "_what": "vending machine"
+  },
+  {
+   "m": "in_vender01",
+   "tile": [
+    1,
+    2
+   ],
+   "wall": "N",
+   "_what": "vending machine"
+  },
+  {
+   "m": "dust01",
+   "tile": [
+    2,
+    2
+   ],
+   "_what": "trash can"
+  },
+  {
+   "m": "dust01",
+   "tile": [
+    21,
+    4
+   ],
+   "_what": "trash can"
+  },
+  {
+   "m": "plant01",
+   "tile": [
+    5,
+    2
+   ]
+  },
+  {
+   "m": "plant01",
+   "tile": [
+    6,
+    2
+   ]
+  },
+  {
+   "m": "plant01",
+   "tile": [
+    7,
+    2
+   ]
+  }
+ ]
+}

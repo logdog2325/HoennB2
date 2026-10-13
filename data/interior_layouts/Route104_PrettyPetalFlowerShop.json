@@ -1,0 +1,355 @@
+{
+ "_doc": "Pretty Petal Flower Shop (Sapphire 15x9, zone 505): wood wall, gray tiles. Black 2 has no flower planters: the flower beds (5-8, 5-7), (12-14, 5-7), (0, 7-8) and the planter tables (10-13, 2) are Black 2's flower pictures (in74_hana, Black Tower set 358) on the floor with flower vases (vase01) and potted plants (plant01) standing on them; the flower shelf (7-8, 2) = shop shelf pcshelf01; the L counter (0-1, 2-5) = white counters; Sapphire's stools (3,3)/(10,3) = cushions; picture (1,1) = art01, window (4,1) = win01.",
+ "map": "Route104_PrettyPetalFlowerShop",
+ "style": "sp_tiles",
+ "floor": [
+  [
+   0,
+   2,
+   14,
+   8
+  ]
+ ],
+ "mats": [
+  {
+   "tex": "in74_hana",
+   "src": 358,
+   "rect": [
+    5,
+    6,
+    8,
+    7
+   ],
+   "border": 0.0,
+   "border_units": 0,
+   "y": 0,
+   "_what": "flowers"
+  },
+  {
+   "tex": "in74_hana",
+   "src": 358,
+   "rect": [
+    6,
+    5,
+    7,
+    5
+   ],
+   "border": 0.0,
+   "border_units": 0,
+   "y": 0,
+   "_what": "flowers"
+  },
+  {
+   "tex": "in74_hana",
+   "src": 358,
+   "rect": [
+    12,
+    5,
+    14,
+    7
+   ],
+   "border": 0.0,
+   "border_units": 0,
+   "y": 0,
+   "_what": "flowers"
+  },
+  {
+   "tex": "in74_hana",
+   "src": 358,
+   "rect": [
+    0,
+    7,
+    0,
+    8
+   ],
+   "border": 0.0,
+   "border_units": 0,
+   "y": 0,
+   "_what": "flowers"
+  },
+  {
+   "tex": "in74_hana",
+   "src": 358,
+   "rect": [
+    10,
+    2,
+    13,
+    2
+   ],
+   "border": 0.0,
+   "border_units": 0,
+   "y": 0,
+   "_what": "flowers"
+  },
+  {
+   "tex": "in74_hana",
+   "src": 358,
+   "rect": [
+    11,
+    3,
+    12,
+    3
+   ],
+   "border": 0.0,
+   "border_units": 0,
+   "y": 0,
+   "_what": "flowers"
+  },
+  {
+   "tex": "b01_mat",
+   "src": 282,
+   "rect": [
+    2,
+    8,
+    3,
+    8
+   ],
+   "border": 0.25,
+   "border_units": 4,
+   "y": 0,
+   "_what": "door mat"
+  }
+ ],
+ "furniture": [
+  {
+   "m": "shelf03",
+   "rot": 270,
+   "tiles": [
+    1,
+    2,
+    1,
+    3
+   ],
+   "_what": "counter"
+  },
+  {
+   "m": "desk02",
+   "tile": [
+    1,
+    4
+   ],
+   "_what": "counter"
+  },
+  {
+   "m": "desk02",
+   "tile": [
+    0,
+    5
+   ],
+   "_what": "counter"
+  },
+  {
+   "m": "desk02",
+   "tile": [
+    1,
+    5
+   ],
+   "_what": "counter"
+  },
+  {
+   "m": "art01",
+   "at": [
+    1.5,
+    2.0
+   ],
+   "wall": "N",
+   "gap": 2,
+   "y": 16,
+   "_what": "picture"
+  },
+  {
+   "m": "vase01",
+   "tile": [
+    2,
+    2
+   ],
+   "_what": "flowers against the back wall ((2,2) is walkable)",
+   "wall": "N"
+  },
+  {
+   "m": "win01",
+   "at": [
+    4.5,
+    2.0
+   ],
+   "wall": "N",
+   "gap": 4,
+   "y": 10,
+   "_what": "window"
+  },
+  {
+   "m": "pcshelf01",
+   "tiles": [
+    7,
+    2,
+    8,
+    2
+   ],
+   "wall": "N",
+   "_what": "flower shelf"
+  },
+  {
+   "m": "vase01",
+   "tile": [
+    10,
+    2
+   ]
+  },
+  {
+   "m": "vase01",
+   "tile": [
+    11,
+    2
+   ]
+  },
+  {
+   "m": "plant01",
+   "tile": [
+    12,
+    2
+   ]
+  },
+  {
+   "m": "vase01",
+   "tile": [
+    13,
+    2
+   ]
+  },
+  {
+   "m": "vase01",
+   "tile": [
+    11,
+    3
+   ]
+  },
+  {
+   "m": "vase01",
+   "tile": [
+    12,
+    3
+   ]
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    3,
+    3
+   ],
+   "_what": "stool (walkable)"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    10,
+    3
+   ],
+   "_what": "stool (walkable)"
+  },
+  {
+   "m": "plant01",
+   "tile": [
+    6,
+    5
+   ]
+  },
+  {
+   "m": "vase01",
+   "tile": [
+    7,
+    5
+   ]
+  },
+  {
+   "m": "vase01",
+   "tile": [
+    5,
+    6
+   ]
+  },
+  {
+   "m": "plant01",
+   "tile": [
+    6,
+    6
+   ]
+  },
+  {
+   "m": "plant01",
+   "tile": [
+    7,
+    6
+   ]
+  },
+  {
+   "m": "vase01",
+   "tile": [
+    8,
+    6
+   ]
+  },
+  {
+   "m": "vase01",
+   "tile": [
+    5,
+    7
+   ]
+  },
+  {
+   "m": "vase01",
+   "tile": [
+    8,
+    7
+   ]
+  },
+  {
+   "m": "plant01",
+   "tile": [
+    12,
+    5
+   ]
+  },
+  {
+   "m": "vase01",
+   "tile": [
+    13,
+    5
+   ]
+  },
+  {
+   "m": "plant01",
+   "tile": [
+    14,
+    6
+   ]
+  },
+  {
+   "m": "vase01",
+   "tile": [
+    12,
+    7
+   ]
+  },
+  {
+   "m": "vase01",
+   "tile": [
+    14,
+    7
+   ]
+  },
+  {
+   "m": "vase01",
+   "tile": [
+    0,
+    7
+   ]
+  },
+  {
+   "m": "plant01",
+   "tile": [
+    0,
+    8
+   ]
+  }
+ ]
+}

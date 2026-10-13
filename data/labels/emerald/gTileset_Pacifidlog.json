@@ -1,0 +1,16 @@
+{
+ "_doc": "Emerald's gTileset_Pacifidlog metatiles labelled by eye (emerald_world 2026-10-12; sheets: work/agents/emerald_world/tools/label_sheets.py): the ones converter/emerald_labels.py cannot carry over from Sapphire. Wins over carry_gTileset_Pacifidlog.json.",
+ "gTileset_Pacifidlog": {
+  "207": "rock",
+  "217": "rock",
+  "236": "path",
+  "284": "current_e",
+  "2c1": "void",
+  "2c2": "building",
+  "2ca": "door"
+ },
+ "_notes": {
+  "_sky_pillar": "Sky Pillar: 0x2C1 the sky round its top (void, as Sapphire's retiled sky), 0x236 its cracked floor (path), the door (14,5) 0x2CA (MB_SKY_PILLAR_CLOSED_DOOR in Emerald) door, 0x2C2 above it building",
+  "_route132": "0x284: Route 132's eastward current: current_e"
+ }
+}

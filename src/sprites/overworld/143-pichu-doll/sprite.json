@@ -1,0 +1,20 @@
+{
+ "kind": "overworld",
+ "code": 143,
+ "sheet": 143,
+ "frames": 1,
+ "size": [
+  32,
+  32
+ ],
+ "controller": 4,
+ "textures": [
+  "t4x4x1.0"
+ ],
+ "palette": "t4x4x1",
+ "name": "pichu-doll",
+ "donor": "grey ball 143 (unused in Hoenn)",
+ "note": "OBJ_EVENT_GFX_PICHU_DOLL: the Pichu Doll in May's room",
+ "sapphire": "pokeruby graphics/object_events/pics/dolls/pichu_doll.png, palette 01",
+ "made_by": "b2tools/models_objects.py (Sapphire's pixels 1:1)"
+}

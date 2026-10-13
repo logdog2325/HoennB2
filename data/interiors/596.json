@@ -1,0 +1,59 @@
+{
+ "_doc": "Slateport Harbor (zone 596; scripts src/field_scripts/1192_room_SlateportCity_Harbor.s, text 0352). Area 351 = Black 2's Humilau (interior pack 69; texture animation 21 moves the pool's sea in70_sea1). Story, not placed yet: the ferry attendant, sailor, fat man (FLAG_HIDE_WORKERS_SLATEPORT_HARBOR), Capt. Stern (FLAG_HIDE_STERN_SLATEPORT_HARBOR), the S.S. Tidal, the submarine shadow and the two Aqua grunts, and Sapphire's four VAR_SLATEPORT_HARBOR_STATE triggers (8, 11-14). Warps 2-3 (Sapphire (19-20,15), off the map) are the ferry's boarding warps (scripted).",
+ "zone": 596,
+ "room": "SlateportCity_Harbor",
+ "area": 351,
+ "parent": 448,
+ "warps": [
+  {
+   "at": [
+    11,
+    14
+   ],
+   "tile_only": true,
+   "to": [
+    448,
+    16
+   ],
+   "what": "Sapphire warp 0 -> SlateportCity 8"
+  },
+  {
+   "at": [
+    12,
+    14
+   ],
+   "tile_only": true,
+   "to": [
+    448,
+    16
+   ],
+   "what": "Sapphire warp 1 -> SlateportCity 8"
+  },
+  {
+   "at": [
+    19,
+    15
+   ],
+   "tile_only": true,
+   "to": [
+    7,
+    1
+   ],
+   "what": "Sapphire warp 2 -> SlateportCity 9"
+  },
+  {
+   "at": [
+    20,
+    15
+   ],
+   "tile_only": true,
+   "to": [
+    7,
+    1
+   ],
+   "what": "Sapphire warp 3 -> SlateportCity 9"
+  }
+ ],
+ "npcs": [],
+ "signs": []
+}

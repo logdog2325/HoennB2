@@ -1,0 +1,21 @@
+{
+ "map": "AlteringCave",
+ "look": "d0",
+ "header_zone": 515,
+ "levels": {"3": 0, "4": 16},
+ "reach": 896,
+ "_doc_reach": "check_postgame 2026-10-07: the levels lattice counts every floor's capped profile over the whole map (b2tools/models_cave_levels.py 'reach', 16 x (32 + 24); default 112 for every other cave). With the default the rock at (31,3)-(31,5), out of reach of every level-0 floor, rose to the raised NE room's two tiers alone: a lone rock pillar floating in the black, seen from the NE room. Now black like the rest of that corner.",
+ "_doc": "postgame_maps (2026-10-07): Emerald's Altering Cave (pokeemerald via data/hoenn_event_maps.json; Route 103's door: data/hoenn_map_additions.json) in Black 2's Seaside Cave look (d0) and header (zone 515: Seaside Cave's music for MUS_RG_SEVII_CAVE, as Navel Rock). levels: the raised NE room (elevation 4) one tier over the floor, joined by Emerald's stairs (elevation 0 at (26,14)-(27,14)). void: Emerald's walkable filler no warp reaches (a 3x3 pocket inside the rock at (11-13, 9-11) and (1,17)). Wild Pokemon: Emerald's nine tables (gAlteringCave1-9; VAR_ALTERING_CAVE_WILD_SET picks one, Mystery Gift advances it): the zone has table 1 (Zubat, Emerald's own), 'variants' are copies of the zone (same room, matrix, entities, scripts, text: b2tools/patches/interiors.py) with tables 2-9; Route 103's door is Black 2's dynamic warp and its zone init sends the player to the zone of the day (src/field_scripts/scenes/Route103_AlteringCave.inc). encounter_files: fixed a/1/2/7 files (Unova files no zone header of the build names any more: their zones are Hoenn rooms without wild Pokemon), base table first.",
+ "void": [[11, 9, 13, 9], [11, 10, 13, 10], [11, 11, 13, 11], [1, 17, 1, 17]],
+ "encounter_files": [61, 62, 63, 64, 65, 66, 67, 68, 69],
+ "variants": [
+  {"zone": 272, "table": 2},
+  {"zone": 275, "table": 3},
+  {"zone": 276, "table": 4},
+  {"zone": 318, "table": 5},
+  {"zone": 320, "table": 6},
+  {"zone": 327, "table": 7},
+  {"zone": 328, "table": 8},
+  {"zone": 330, "table": 9}
+ ]
+}

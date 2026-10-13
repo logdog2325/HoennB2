@@ -1,0 +1,22 @@
+{
+ "kind": "overworld",
+ "code": 235,
+ "sheet": 213,
+ "frames": 2,
+ "size": [
+  32,
+  32
+ ],
+ "controller": 9,
+ "textures": [
+  "t4x4x2.0",
+  "t4x4x2.1"
+ ],
+ "palette": "t4x4x2",
+ "name": "brendan-action2",
+ "note": "Brendan (player, Emerald outfit), action2: action2: stand, hands in front",
+ "source": "community: src/sprites/community/incoming/emerald/brendan_emerald_hyo-oppa.png by hyo-oppa (cut, placed, palette-indexed; no colour merged)",
+ "colours": 13,
+ "merged_colours": [],
+ "made_by": "b2tools/sprite_community_emerald.py"
+}

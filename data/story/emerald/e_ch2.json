@@ -1,0 +1,46 @@
+{
+ "_doc": "Emerald Ch2 (emerald_ch0_3 2026-10-12): the rival's battle in Rustboro (one 1x8 trigger for pokeemerald's RivalTrigger0-7) and outside Mr. Briney's cottage on Route 104 (notes/EMERALD_STORY.md Ch2; scripts scenes/emerald/RustboroCity.inc, Route104.inc). Positions are pokeemerald's own tiles. The Rustboro rival object itself is Sapphire's (data/story/ch2.json uid 164, script 21 = RB_Rival, Emerald body).",
+ "objects": [
+  {
+   "kind": "trigger",
+   "map": "RustboroCity",
+   "at": [
+    12,
+    53
+   ],
+   "w": 8,
+   "h": 1,
+   "script": 25,
+   "var": "VAR_RUSTBORO_STATE",
+   "value": 7,
+   "what": "RivalTrigger0-7 (12-19, 53): script 25 reads the player's column"
+  },
+  {
+   "kind": "npc",
+   "map": "Route104",
+   "at": [
+    16,
+    52
+   ],
+   "uid": 150,
+   "model": 162,
+   "script": 10,
+   "dir": 3,
+   "move": 17,
+   "flag": "FLAG_HIDE_ROUTE_104_RIVAL",
+   "what": "the rival on Route 104 (LOCALID_ROUTE104_RIVAL): hidden until the trigger; stands at (16, 52) facing right where pokeemerald's copyobjectxytoperm leaves her/him; the scene starts her/him at the cottage door"
+  },
+  {
+   "kind": "trigger",
+   "map": "Route104",
+   "at": [
+    17,
+    51
+   ],
+   "script": 9,
+   "var": "VAR_ROUTE104_STATE",
+   "value": 1,
+   "what": "Route104_EventScript_RivalTrigger"
+  }
+ ]
+}

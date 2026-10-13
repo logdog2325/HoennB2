@@ -1,0 +1,11 @@
+…
+People... Pokémon...{be01}\nTheir hidden powers are aroused by\nliving in natural environments...
+Let this old woman see if your hidden\npower has awoken...{be01}\nI hold a coin in my hand.{be01}\nNow, tell me, have I palmed it in the\nright hand? Or in the left?
+Oh! Yes, correct!{be01}\nWe shall try again.{be01}\nIn which hand have I palmed the coin?\nThe right or left?
+Oh! Yes, correct again!{be01}\nWe shall try once more.{be01}\nIn which hand have I palmed the coin?\nThe right or left? Choose!
+Oh! Splendid!\nYour hidden power has awoken!{be01}\nHere, take this and awaken the hidden\npower of your Pokémon.
+Hidden Power is a move that changes\nwith the Pokémon.
+No, too bad.\nYou guessed wrong.
+Too bad!\nThe Bag is full...
+Right
+Left

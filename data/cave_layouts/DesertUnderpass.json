@@ -1,0 +1,60 @@
+{
+ "map": "emerald/DesertUnderpass",
+ "void": [
+  [
+   52,
+   0,
+   53,
+   0
+  ],
+  [
+   57,
+   0,
+   58,
+   0
+  ],
+  [
+   127,
+   3,
+   128,
+   3
+  ],
+  [
+   127,
+   4,
+   128,
+   4
+  ],
+  [
+   87,
+   5,
+   87,
+   5
+  ],
+  [
+   87,
+   6,
+   87,
+   6
+  ],
+  [
+   87,
+   7,
+   88,
+   7
+  ],
+  [
+   126,
+   17,
+   127,
+   17
+  ],
+  [
+   134,
+   17,
+   137,
+   17
+  ]
+ ],
+ "_doc": "emerald_caves 2026-10-12: Emerald's DesertUnderpass (pokeemerald) read as Emerald's world reads it (models_cave 'emerald/<Map>'); void = walkable tiles no warp reaches, pools = its blocked water"
+}

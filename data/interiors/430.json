@@ -1,0 +1,59 @@
+{
+ "_doc": "PacifidlogTown_House4: zone written by converter/gen_interior_recipes_houses.py (warps and parent from converter/gen_interiors.py); story people left for the story phase: person BOY_1 at (7,4) PacifidlogTown_House4_EventScript_Boy (story/complex script)",
+ "zone": 430,
+ "room": "PacifidlogTown_House4",
+ "area": 313,
+ "parent": 458,
+ "warps": [
+  {
+   "at": [4, 8],
+   "tile_only": true,
+   "to": [458, 7],
+   "what": "Sapphire warp 0 -> PacifidlogTown 4"
+  },
+  {
+   "at": [5, 8],
+   "tile_only": true,
+   "to": [458, 7],
+   "what": "Sapphire warp 1 -> PacifidlogTown 4"
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 1,
+   "model": 27,
+   "script": 1,
+   "dir": 1,
+   "at": [3, 4]
+  },
+  {
+   "uid": 2,
+   "model": 154,
+   "script": 2,
+   "dir": 1,
+   "at": [7, 5],
+   "move": 3,
+   "range": [1, 1]
+  }
+ ],
+ "signs": [
+  {
+   "script": 3,
+   "at": [8, 1],
+   "dir": 4,
+   "what": "PictureBookshelf"
+  },
+  {
+   "script": 4,
+   "at": [0, 3],
+   "dir": 4,
+   "what": "Vase"
+  },
+  {
+   "script": 4,
+   "at": [0, 4],
+   "dir": 4,
+   "what": "Vase"
+  }
+ ]
+}

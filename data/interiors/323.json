@@ -1,0 +1,23 @@
+{
+ "_doc": "MossdeepCity_House1: zone written by converter/gen_interior_recipes_houses.py (warps and parent from converter/gen_interiors.py); story people left for the story phase: person BLACK_BELT at (3,3) MossdeepCity_House1_EventScript_BlackBelt (story/complex script); person WOMAN_3 at (7,4) MossdeepCity_House1_EventScript_Woman (story/complex script)",
+ "zone": 323,
+ "room": "MossdeepCity_House1",
+ "area": 313,
+ "parent": 107,
+ "warps": [
+  {
+   "at": [3, 7],
+   "tile_only": true,
+   "to": [107, 6],
+   "what": "Sapphire warp 0 -> MossdeepCity 0"
+  },
+  {
+   "at": [4, 7],
+   "tile_only": true,
+   "to": [107, 6],
+   "what": "Sapphire warp 1 -> MossdeepCity 0"
+  }
+ ],
+ "npcs": [],
+ "signs": []
+}

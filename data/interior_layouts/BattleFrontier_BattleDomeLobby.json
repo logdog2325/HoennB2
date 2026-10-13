@@ -1,0 +1,251 @@
+{
+ "_doc": "Battle Dome lobby (Emerald 23x17). Row 4 = the wall foot with the two glass doors (Emerald (5,4) singles, (17,4) doubles: door_h5_in). Counters on Emerald's desk tiles (rows 7-10), the results terminals (4,10), (18,10), the last tournament's monitor (7,10), the rules board (15,10); potted plants on Emerald's plant tiles (rows 14, 16).",
+ "map": "BattleFrontier_BattleDomeLobby",
+ "decomp": "pokeemerald",
+ "style": "fd_dome",
+ "origin": [
+  1,
+  -2
+ ],
+ "floor": [
+  [
+   0,
+   4,
+   22,
+   16
+  ]
+ ],
+ "furniture": [
+  {
+   "m": "door_h5_in",
+   "tile": [
+    5,
+    4
+   ],
+   "wall": "N",
+   "gap": -1,
+   "doorway": true,
+   "y": -1,
+   "_what": "singles door"
+  },
+  {
+   "m": "door_h5_in",
+   "tile": [
+    17,
+    4
+   ],
+   "wall": "N",
+   "gap": -1,
+   "doorway": true,
+   "y": -1,
+   "_what": "doubles door (closed)"
+  },
+  {
+   "m": "shelf03",
+   "tiles": [
+    2,
+    7,
+    3,
+    7
+   ]
+  },
+  {
+   "m": "shelf03",
+   "tiles": [
+    2,
+    8,
+    3,
+    8
+   ]
+  },
+  {
+   "m": "shelf03",
+   "tiles": [
+    2,
+    9,
+    4,
+    9
+   ]
+  },
+  {
+   "m": "shelf03",
+   "tiles": [
+    0,
+    10,
+    4,
+    10
+   ]
+  },
+  {
+   "m": "shelf03",
+   "tiles": [
+    6,
+    9,
+    8,
+    9
+   ]
+  },
+  {
+   "m": "shelf03",
+   "tiles": [
+    6,
+    10,
+    10,
+    10
+   ]
+  },
+  {
+   "m": "shelf03",
+   "tile": [
+    11,
+    9
+   ]
+  },
+  {
+   "m": "shelf03",
+   "tiles": [
+    14,
+    9,
+    16,
+    9
+   ]
+  },
+  {
+   "m": "shelf03",
+   "tiles": [
+    12,
+    10,
+    16,
+    10
+   ]
+  },
+  {
+   "m": "shelf03",
+   "tiles": [
+    18,
+    9,
+    20,
+    9
+   ]
+  },
+  {
+   "m": "shelf03",
+   "tiles": [
+    19,
+    7,
+    20,
+    7
+   ]
+  },
+  {
+   "m": "shelf03",
+   "tiles": [
+    19,
+    8,
+    20,
+    8
+   ]
+  },
+  {
+   "m": "shelf03",
+   "tiles": [
+    18,
+    10,
+    22,
+    10
+   ]
+  },
+  {
+   "m": "shelf03",
+   "tiles": [
+    9,
+    8,
+    13,
+    8
+   ]
+  },
+  {
+   "m": "monitor01",
+   "tile": [
+    4,
+    10
+   ],
+   "y": 14
+  },
+  {
+   "m": "monitor01",
+   "tile": [
+    18,
+    10
+   ],
+   "y": 14
+  },
+  {
+   "m": "pc01",
+   "tile": [
+    7,
+    10
+   ],
+   "y": 14
+  },
+  {
+   "m": "poster01",
+   "tile": [
+    15,
+    10
+   ],
+   "y": 14
+  },
+  {
+   "m": "plant01",
+   "tiles": [
+    0,
+    14,
+    4,
+    14
+   ]
+  },
+  {
+   "m": "plant01",
+   "tiles": [
+    19,
+    14,
+    22,
+    14
+   ]
+  },
+  {
+   "m": "plant01",
+   "tiles": [
+    0,
+    16,
+    2,
+    16
+   ]
+  },
+  {
+   "m": "plant01",
+   "tiles": [
+    17,
+    16,
+    22,
+    16
+   ]
+  }
+ ],
+ "mats": [
+  {
+   "tex": "chip_mat",
+   "src": 352,
+   "rect": [
+    4,
+    11,
+    6,
+    11
+   ],
+   "border": 0.25,
+   "border_units": 4,
+   "_what": "attendant's mat"
+  }
+ ]
+}

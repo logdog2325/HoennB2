@@ -1,0 +1,78 @@
+{
+ "_doc": "VerdanturfTown_ContestLobby (zone 60), built by the specials agent (recipe data/interior_layouts/VerdanturfTown_ContestLobby.json): Musical Theater look, Black 2 interior area 305. Warps in Sapphire's order (one per Sapphire warp tile). People/signs: Sapphire's one-message ones as generated; story people are left for the story phase.",
+ "zone": 60,
+ "room": "VerdanturfTown_ContestLobby",
+ "area": 305,
+ "parent": 120,
+ "warps": [
+  {
+   "at": [
+    5,
+    6
+   ],
+   "tile_only": true,
+   "to": [
+    120,
+    9
+   ],
+   "what": "Sapphire warp 0 -> VerdanturfTown 0"
+  },
+  {
+   "at": [
+    6,
+    6
+   ],
+   "tile_only": true,
+   "to": [
+    120,
+    9
+   ],
+   "what": "Sapphire warp 1 -> VerdanturfTown 0"
+  },
+  {
+   "at": [
+    1,
+    1
+   ],
+   "tile_only": true,
+   "to": [
+    59,
+    1
+   ],
+   "what": "Sapphire warp 2 -> VerdanturfTown_ContestHall 1"
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 4,
+   "model": 21,
+   "script": 1,
+   "dir": 1,
+   "at": [
+    1,
+    6
+   ],
+   "move": 3,
+   "range": [
+    1,
+    1
+   ]
+  },
+  {
+   "uid": 6,
+   "model": 14,
+   "script": 2,
+   "dir": 1,
+   "at": [
+    0,
+    3
+   ],
+   "move": 4,
+   "range": [
+    0,
+    1
+   ]
+  }
+ ],
+ "signs": []
+}

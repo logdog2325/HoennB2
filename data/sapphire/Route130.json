@@ -1,0 +1,266 @@
+{
+ "map": "Route130",
+ "id": "MAP_ROUTE130",
+ "layout": "LAYOUT_ROUTE130",
+ "music": "MUS_ROUTE119",
+ "region_map_section": "MAPSEC_ROUTE_130",
+ "weather": "WEATHER_SUNNY",
+ "connections": [
+  {
+   "direction": "left",
+   "offset": 0,
+   "map": "MAP_ROUTE131"
+  },
+  {
+   "direction": "right",
+   "offset": 0,
+   "map": "MAP_ROUTE129"
+  }
+ ],
+ "npcs": [
+  {
+   "local_id": 1,
+   "x": 7,
+   "y": 26,
+   "gfx": "OBJ_EVENT_GFX_SWIMMER_M",
+   "movement": "MOVEMENT_TYPE_WALK_SEQUENCE_UP_RIGHT_LEFT_DOWN",
+   "range": [
+    3,
+    6
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route130_EventScript_152410",
+   "texts": {
+    "Route130_Text_1C2401": "What a surprise! I didn't expect to\\nsee a TRAINER out in the sea.\\pI think we should battle!$",
+    "Route130_Text_1C245D": "This kid's awfully tough...$",
+    "Route130_Text_1C2479": "Your eyes have that look of someone\\nwho's experienced harsh challenges\\land won. It suits you well!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 2,
+   "x": 68,
+   "y": 22,
+   "gfx": "OBJ_EVENT_GFX_SWIMMER_F",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN_AND_UP",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route130_EventScript_152427",
+   "texts": {
+    "Route130_Text_1C24DC": "In the deep blue sea,\\nmy shattered blue heart finds\\lcomfort among waves.$",
+    "Route130_Text_1C2525": "Like the vast blue sea,\\nthe world of POKéMON spans\\ldepths beyond belief.$",
+    "Route130_Text_1C256E": "The world's children dream\\nof one day becoming the\\lPOKéMON CHAMPION.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 3,
+   "x": 52,
+   "y": 9,
+   "gfx": "OBJ_EVENT_GFX_BERRY_TREE",
+   "movement": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_TEMP_11",
+   "script": "S_BerryTree",
+   "texts": {},
+   "complex": true
+  }
+ ],
+ "signs": [],
+ "warps": [],
+ "coord_events": [],
+ "wild": {
+  "land_mons": {
+   "encounter_rate": 20,
+   "slot_rates": [
+    20,
+    20,
+    10,
+    10,
+    10,
+    10,
+    5,
+    5,
+    4,
+    4,
+    1,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_WYNAUT",
+     "min": 30,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WYNAUT",
+     "min": 35,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WYNAUT",
+     "min": 25,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_WYNAUT",
+     "min": 40,
+     "max": 40
+    },
+    {
+     "species": "SPECIES_WYNAUT",
+     "min": 20,
+     "max": 20
+    },
+    {
+     "species": "SPECIES_WYNAUT",
+     "min": 45,
+     "max": 45
+    },
+    {
+     "species": "SPECIES_WYNAUT",
+     "min": 15,
+     "max": 15
+    },
+    {
+     "species": "SPECIES_WYNAUT",
+     "min": 50,
+     "max": 50
+    },
+    {
+     "species": "SPECIES_WYNAUT",
+     "min": 10,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_WYNAUT",
+     "min": 5,
+     "max": 5
+    },
+    {
+     "species": "SPECIES_WYNAUT",
+     "min": 10,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_WYNAUT",
+     "min": 5,
+     "max": 5
+    }
+   ]
+  },
+  "water_mons": {
+   "encounter_rate": 4,
+   "slot_rates": [
+    60,
+    30,
+    5,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 5,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 15,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_PELIPPER",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_PELIPPER",
+     "min": 25,
+     "max": 30
+    }
+   ]
+  },
+  "fishing_mons": {
+   "encounter_rate": 30,
+   "slot_rates": [
+    70,
+    30,
+    60,
+    20,
+    20,
+    40,
+    40,
+    15,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_SHARPEDO",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 35,
+     "max": 40
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 40,
+     "max": 45
+    }
+   ]
+  }
+ }
+}

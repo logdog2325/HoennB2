@@ -1,0 +1,5 @@
+…
+What? What? What do you want with \nTeam Aqua?{be01}\nOur Boss isn’t here! He’s gone off to\nsnatch something important!{be01}\n... ...\nWhere did he go?{be01}\nWahaha! Do you really think I’d tell\nyou something that crucial?
+What? What? What do you want with \nTeam Aqua?{be01}\nOur Boss isn’t here!\nHe’s gone off to jack a submarine!{be01}\n... ...\nWhere did he go?{be01}\nWahaha! Do you really think I’d tell\nyou something that crucial?
+What? What? What do you want with \nTeam Aqua?{be01}\nOur Boss isn’t here! He’s on his way to\nMt. Pyre on Route 122!{be01}\n... ...\nWhy did he go?{be01}\nWahaha! Do you really think I’d tell\nyou something that crucial?
+What? What? What do you want with\nTeam Aqua?{be01}\nOur Boss isn’t here!\nHe’s on his way to Slateport City!{be01}\n... ...\nWhy did he go?{be01}\nWahaha! Do you really think I’d tell\nyou something that crucial?

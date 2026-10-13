@@ -1,0 +1,239 @@
+{
+ "_doc": "Emerald's overlay of data/towns/BattleTower_Outside.json (emerald_world 2026-10-12; b2tools/world.py load, deep-merged): the Battle Frontier's west half (Emerald's BattleFrontier_OutsideWest). Its buildings are stand-ins from HoennB2's own models until Frontier models are made (notes/EMERALD.md work list): the Battle Dome the Pokemon League building (res 409, 11 wide), the Battle Factory the Weather Institute (res 407, 11 wide), Scott's house and the small lounges a Sootopolis block house (res 471, 3 wide), Lounge 2 the Cove Lily Motel (res 385, 6 wide), the Mart Black 2's (res 3). The six facilities here and on the east half are closed (decision 1A; the PWT's door is the Ranking Hall's, east half): no room behind its door yet (data/emerald/hoenn_interiors.json status todo). The Battle Pike (the Pokemon Fan Club, res 342) and the Reception Gate (Slateport's Harbor, res 345) have no plan footprint (their door tiles are walkable in Emerald): placed as props. The Artisan Cave mouth (39,55) is Emerald's own rock. 'retile' (world.py retile_map): the Factory's outer edges as wall blocks, single posts as props.",
+ "buildings": {
+  "MAP_BATTLE_FRONTIER_BATTLE_DOME_LOBBY": {
+   "res": 409,
+   "front": 20
+  },
+  "MAP_BATTLE_FRONTIER_BATTLE_FACTORY_LOBBY": {
+   "res": 407,
+   "front": 20
+  },
+  "MAP_BATTLE_FRONTIER_SCOTTS_HOUSE": {
+   "res": 471,
+   "front": 20
+  },
+  "MAP_BATTLE_FRONTIER_LOUNGE7": {
+   "res": 471,
+   "front": 20
+  },
+  "MAP_BATTLE_FRONTIER_LOUNGE2": {
+   "res": 385,
+   "front": 20
+  },
+  "MAP_BATTLE_FRONTIER_LOUNGE4": {
+   "res": 471,
+   "front": 20
+  },
+  "MAP_BATTLE_FRONTIER_MART": {
+   "res": 3,
+   "front": 20
+  }
+ },
+ "props": [
+  {
+   "res": 342,
+   "x": 42.5,
+   "z": 26.0,
+   "what": "Battle Pike (x 40-44, rows 21-28, door 42,27): stand-in, the Pokemon Fan Club (5 wide)",
+   "covers": [
+    [
+     40,
+     21,
+     44,
+     28
+    ]
+   ]
+  },
+  {
+   "res": 345,
+   "x": 26.5,
+   "z": 64.0,
+   "what": "Reception Gate (x 23-29, rows 62-65, doors 26,65 south and 26,61 north): stand-in, Slateport's Harbor (7 wide)",
+   "covers": [
+    [
+     23,
+     62,
+     29,
+     65
+    ]
+   ]
+  }
+ ],
+ "retile": [
+  {
+   "tiles": [
+    [
+     4,
+     33
+    ],
+    [
+     4,
+     34
+    ],
+    [
+     4,
+     35
+    ],
+    [
+     4,
+     36
+    ],
+    [
+     18,
+     33
+    ],
+    [
+     18,
+     34
+    ],
+    [
+     18,
+     35
+    ],
+    [
+     18,
+     36
+    ],
+    [
+     5,
+     37
+    ],
+    [
+     17,
+     37
+    ],
+    [
+     40,
+     22
+    ],
+    [
+     41,
+     21
+    ],
+    [
+     42,
+     21
+    ],
+    [
+     44,
+     22
+    ]
+   ],
+   "from": [
+    "building",
+    "building_roof"
+   ],
+   "to": "wall",
+   "_what": "the Battle Factory's outer edges (15 wide; its stand-in model 11); the Battle Pike's front posts (a paved map paves its props over: a model is expected)"
+  },
+  {
+   "tiles": [
+    [
+     41,
+     28
+    ],
+    [
+     43,
+     28
+    ],
+    [
+     8,
+     43
+    ],
+    [
+     15,
+     43
+    ],
+    [
+     21,
+     47
+    ],
+    [
+     40,
+     47
+    ]
+   ],
+   "from": [
+    "building",
+    "building_roof"
+   ],
+   "to": "prop",
+   "_what": "single posts and planters beside the Battle Pike and on the plaza"
+  },
+  {
+   "tiles": [
+    [
+     13,
+     9
+    ],
+    [
+     13,
+     10
+    ],
+    [
+     13,
+     11
+    ],
+    [
+     13,
+     12
+    ],
+    [
+     13,
+     13
+    ],
+    [
+     13,
+     14
+    ],
+    [
+     13,
+     15
+    ],
+    [
+     25,
+     9
+    ],
+    [
+     25,
+     10
+    ],
+    [
+     25,
+     11
+    ],
+    [
+     25,
+     12
+    ],
+    [
+     25,
+     13
+    ],
+    [
+     25,
+     14
+    ],
+    [
+     25,
+     15
+    ],
+    [
+     14,
+     9
+    ],
+    [
+     24,
+     9
+    ]
+   ],
+   "from": [
+    "building",
+    "building_roof"
+   ],
+   "to": "wall",
+   "_what": "the Battle Dome's outer ring (13 wide; its stand-in model 11)"
+  }
+ ]
+}

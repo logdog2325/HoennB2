@@ -1,0 +1,100 @@
+{
+ "_doc": "Emerald's overlay of data/towns/Route111.json (emerald_world 2026-10-12; b2tools/world.py load, deep-merged; 'retile' = world.py retile_map). Emerald's two new structures on Route 111, until their models are made (notes/EMERALD.md work list): the Mirage Tower (x 18-20, rows 53-58; its upper rows are walkable sand the GBA draws it over) stands as a rock mound with a cave mouth at its door (19,58); Trainer Hill's building on the plateau (x 29-33, rows 105-110) is a door-less stand-in (res 332, Rustboro's grey block, 4 wide), its entrance at the foot of the rock (31,113) a cave mouth in the rock band (x 30-32, rows 112-113). Both doors stay closed (no rooms yet: data/emerald/hoenn_interiors.json; Trainer Hill closed by decision 2). The Mirage Tower's collapse (LAYOUT_ROUTE111_NO_MIRAGE_TOWER) is phase 4's. emerald_polish_outdoor (2026-10-12): Trainer Hill's footprint is drawn as the hill (rock) under its stand-in; the Mirage Tower's base is a two-tier block with a doorway (terrain/cave_mouth.py pillar mouths).",
+ "group": "towns5",
+ "retile": [
+  {
+   "box": [
+    18,
+    57,
+    20,
+    58
+   ],
+   "from": [
+    "building"
+   ],
+   "to": "mountain",
+   "_what": "the Mirage Tower's base"
+  },
+  {
+   "tiles": [
+    [
+     19,
+     57
+    ],
+    [
+     19,
+     58
+    ]
+   ],
+   "from": [
+    "building",
+    "door",
+    "mountain"
+   ],
+   "to": "cave_entrance",
+   "_what": "its mouth column (door 19,58)"
+  },
+  {
+   "box": [
+    30,
+    112,
+    32,
+    113
+   ],
+   "from": [
+    "building"
+   ],
+   "to": "cliff",
+   "_what": "Trainer Hill's entrance block in the rock band"
+  },
+  {
+   "tiles": [
+    [
+     31,
+     112
+    ],
+    [
+     31,
+     113
+    ]
+   ],
+   "from": [
+    "building",
+    "door",
+    "cliff"
+   ],
+   "to": "cave_entrance",
+   "_what": "its entrance (door 31,113)"
+  },
+  {
+   "box": [
+    29,
+    105,
+    33,
+    110
+   ],
+   "from": [
+    "building"
+   ],
+   "to": "mountain",
+   "walkable": false,
+   "_what": "Trainer Hill's footprint is the hill its stand-in stands on (emerald_polish_outdoor 2026-10-12): as 'building' tiles it stayed at the desert floor's height while the rock round it is drawn a level up (terrain/heights.py 9d), so the stand-in stood in a pit with sand strips beside it; as rock it rises with the hill and the model (props, placed at the ground's drawn height) stands on the hilltop, as Emerald draws it. Its three walkable building tiles (33,108), (31,110), (32,110) are enclosed (no way in): solid"
+  }
+ ],
+ "props": [
+  {
+   "res": 332,
+   "x": 31.5,
+   "z": 109.0,
+   "what": "Trainer Hill (Emerald, x 29-33, rows 105-110): stand-in, Rustboro's door-less grey block",
+   "covers": [
+    [
+     29,
+     105,
+     33,
+     110
+    ]
+   ]
+  }
+ ]
+}

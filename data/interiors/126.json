@@ -1,0 +1,40 @@
+{
+ "zone": 126,
+ "room": "GraniteCave_StevensRoom",
+ "cave": true,
+ "cave_auto": true,
+ "area": 332,
+ "dark": false,
+ "header": {
+  "map_type": 16,
+  "npc_cache": 24,
+  "weather_word": 64,
+  "flags": 23683,
+  "icon_word": 40975,
+  "place_display": 1,
+  "bgm0": 1076,
+  "bgm1": 1076,
+  "bgm2": 1076,
+  "bgm3": 1076,
+  "place": 59,
+  "encounters": 38,
+  "enc_slot": 2
+ },
+ "warps": [
+  {
+   "at": [
+    7,
+    3
+   ],
+   "to": [
+    118,
+    3
+   ],
+   "what": "Sapphire warp 0 (7,3) -> GraniteCave_1F 3"
+  }
+ ],
+ "triggers": [],
+ "npcs": [],
+ "signs": [],
+ "what": "GraniteCave_StevensRoom: cave (converter/gen_caves.py, b2tools/models_cave.py); story objects: see notes/CAVES.md"
+}

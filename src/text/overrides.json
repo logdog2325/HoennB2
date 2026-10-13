@@ -1,0 +1,28 @@
+{
+ "_doc": "Line overrides for the decomp text files (data/text/<kind>/<file>), applied by b2tools/patches/text.py",
+ "system/0109_place_names.txt": {
+  "4": "Littleroot Town",
+  "14": "Route 101",
+  "5": "Oldale Town"
+ },
+ "script/0479.txt": {
+  "3": "Lanette's PC",
+  "5": "Prof. Birch's PC",
+  "39": "Accessed Prof. Birch's PC.{be01}"
+ },
+ "system/0441_btl_server_flow_title.txt": {
+  "178": "{0102:0} was transferred to\\n{010b:1} in Lanette's PC!"
+ },
+ "system/0023_btlv_core.txt": {
+  "0": "You throw a Ball now, right?\\nI... I’ll do my best!",
+  "1": "Wally used\\nPoké Ball!"
+ },
+ "system/0037_field_trade_input_load_name.txt": {
+  "48": "Makit",
+  "49": "Elyssa",
+  "50": "Skitit",
+  "51": "Darrell",
+  "52": "Coroso",
+  "53": "Lane"
+ }
+}

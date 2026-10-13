@@ -1,0 +1,6 @@
+Oh!\nHah?{be01}\nThat item...{be01}\nCould it be?{be01}\nIs it the Meteorite that Team Aqua\ntook from Meteor Falls?{be01}\nPlease, may I have it?{be01}\nI’m not asking for it for free.\nHow about in exchange for this TM?
+Prof. Cozmo: Please, may I have that\nMeteorite?{be01}\nI’m not asking for it for free.\nHow about in exchange for this TM?
+Prof. Cozmo: This TM, it represents\nmy feeling of gratitude.{be00}\nPlease use it!
+Prof. Cozmo: Oh, but...\nI’m crushed with disappointment...
+{0100:0} handed over the\n{0100:1}.
+Too bad!\nThe Bag is full...

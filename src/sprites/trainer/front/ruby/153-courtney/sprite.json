@@ -1,0 +1,17 @@
+{
+ "kind": "trainer",
+ "side": "front",
+ "sprite": 153,
+ "archive": 71,
+ "files": {
+  "static": 1224,
+  "parts": 1225,
+  "palette": 1231
+ },
+ "name": "courtney",
+ "note": "Courtney (Team Magma admin)",
+ "source": "pokeruby graphics/trainers/magma_admin_f.png",
+ "layout": "parts and animations of Black 2 front sprite 153",
+ "made_by": "b2tools/sprite_upgrade.py",
+ "static_intro": true
+}

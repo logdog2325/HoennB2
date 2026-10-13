@@ -1,0 +1,56 @@
+{
+ "zone": 99,
+ "room": "LavaridgeTown_PokemonCenter_1F",
+ "area": 283,
+ "what": "LavaridgeTown_PokemonCenter_1F: centers agent (b2tools/centers_rooms.py); recipe data/interior_layouts/LavaridgeTown_PokemonCenter_1F.json",
+ "header": {"parent": 62, "place": 7},
+ "warps": [
+  {"at": [7, 8], "tile_only": true, "to": [62, 15], "what": "Sapphire warp 0 -> LavaridgeTown 3"},
+  {"at": [6, 8], "tile_only": true, "to": [62, 15], "what": "Sapphire warp 1 -> LavaridgeTown 3"},
+  {
+   "at": [1, 6],
+   "tile_only": true,
+   "to": [156, 0],
+   "what": "Sapphire warp 2 -> LavaridgeTown_PokemonCenter_2F 0 (escalator, entered walking west)",
+   "type": 2,
+   "dir": 4
+  },
+  {"at": [2, 1], "tile_only": true, "to": [62, 17], "what": "Sapphire warp 3 -> LavaridgeTown 5"}
+ ],
+ "npcs": [
+  {
+   "uid": 1,
+   "model": 78,
+   "script": 1,
+   "dir": 1,
+   "at": [7, 2],
+   "move": 15,
+   "_what": "nurse (7,2), Sapphire LavaridgeTown_PokemonCenter_1F_EventScript_Nurse"
+  },
+  {
+   "uid": 2,
+   "model": 11,
+   "script": 2,
+   "dir": 0,
+   "at": [11, 8],
+   "_what": "youngster (11,8), Sapphire LavaridgeTown_PokemonCenter_1F_EventScript_Youngster"
+  },
+  {
+   "uid": 3,
+   "model": 26,
+   "script": 3,
+   "dir": 2,
+   "at": [10, 6],
+   "_what": "woman_4 (10,6), Sapphire LavaridgeTown_PokemonCenter_1F_EventScript_Woman"
+  },
+  {
+   "uid": 4,
+   "model": 44,
+   "script": 4,
+   "dir": 3,
+   "at": [1, 3],
+   "_what": "gentleman (1,3), Sapphire LavaridgeTown_PokemonCenter_1F_EventScript_Gentleman"
+  }
+ ],
+ "signs": [{"script": 5, "at": [11, 1], "dir": 0}, {"script": 5, "at": [12, 1], "dir": 0}]
+}

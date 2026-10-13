@@ -1,0 +1,870 @@
+{
+ "_doc": "Chapter 6 (ch6 agent, 2026-10-07) story objects (b2tools/patches/story.py): the Petalburg Gym's trainers, guide, statues, door signs and back-exit triggers (scenes/PetalburgCity_Gym_ch6.inc), Wally's parents, and the Surf side areas' story people/signs/triggers (scripts in the rooms' own files after '// ---- story'). Sapphire tiles ('at') of the named map; uid = 100 + Sapphire local id outdoors, the local id in rooms. Written by work/agents/ch6/tools/gen_objects.py.",
+ "objects": [
+  {
+   "kind": "npc",
+   "map": "PetalburgCity_Gym",
+   "at": [
+    4,
+    94
+   ],
+   "uid": 2,
+   "model": 43,
+   "script": 4,
+   "dir": 1,
+   "what": "Mary (Sapphire object 2, WOMAN_7, FACE_DOWN)"
+  },
+  {
+   "kind": "npc",
+   "map": "PetalburgCity_Gym",
+   "at": [
+    4,
+    81
+   ],
+   "uid": 3,
+   "model": 19,
+   "script": 5,
+   "dir": 1,
+   "what": "Randall (Sapphire object 3, MAN_4, FACE_DOWN)"
+  },
+  {
+   "kind": "npc",
+   "map": "PetalburgCity_Gym",
+   "at": [
+    4,
+    42
+   ],
+   "uid": 4,
+   "model": 19,
+   "script": 6,
+   "dir": 1,
+   "what": "Parker (Sapphire object 4, MAN_4, FACE_DOWN)"
+  },
+  {
+   "kind": "npc",
+   "map": "PetalburgCity_Gym",
+   "at": [
+    4,
+    55
+   ],
+   "uid": 5,
+   "model": 43,
+   "script": 7,
+   "dir": 1,
+   "what": "Lori (Sapphire object 5, WOMAN_7, FACE_DOWN)"
+  },
+  {
+   "kind": "npc",
+   "map": "PetalburgCity_Gym",
+   "at": [
+    4,
+    68
+   ],
+   "uid": 6,
+   "model": 19,
+   "script": 8,
+   "dir": 1,
+   "what": "George (Sapphire object 6, MAN_4, FACE_DOWN)"
+  },
+  {
+   "kind": "npc",
+   "map": "PetalburgCity_Gym",
+   "at": [
+    4,
+    16
+   ],
+   "uid": 7,
+   "model": 43,
+   "script": 9,
+   "dir": 1,
+   "what": "Jody (Sapphire object 7, WOMAN_7, FACE_DOWN)"
+  },
+  {
+   "kind": "npc",
+   "map": "PetalburgCity_Gym",
+   "at": [
+    4,
+    29
+   ],
+   "uid": 8,
+   "model": 19,
+   "script": 10,
+   "dir": 1,
+   "what": "Berke (Sapphire object 8, MAN_4, FACE_DOWN)"
+  },
+  {
+   "kind": "npc",
+   "map": "PetalburgCity_Gym",
+   "at": [
+    3,
+    109
+   ],
+   "uid": 9,
+   "model": 24,
+   "script": 11,
+   "flag": "FLAG_HIDE_PETALBURG_GYM_GUIDE",
+   "dir": 1,
+   "what": "GymGuide (Sapphire object 9, MAN_2, FACE_DOWN)"
+  },
+  {
+   "kind": "sign",
+   "map": "PetalburgCity_Gym",
+   "at": [
+    1,
+    110
+   ],
+   "script": 12,
+   "what": "left statue",
+   "dir": 0
+  },
+  {
+   "kind": "sign",
+   "map": "PetalburgCity_Gym",
+   "at": [
+    7,
+    110
+   ],
+   "script": 12,
+   "what": "right statue",
+   "dir": 0
+  },
+  {
+   "kind": "sign",
+   "map": "PetalburgCity_Gym",
+   "at": [
+    1,
+    105
+   ],
+   "script": 13,
+   "what": "door sign SpeedRoomDoor",
+   "dir": 4
+  },
+  {
+   "kind": "sign",
+   "map": "PetalburgCity_Gym",
+   "at": [
+    7,
+    105
+   ],
+   "script": 14,
+   "what": "door sign AccuracyRoomDoor",
+   "dir": 4
+  },
+  {
+   "kind": "sign",
+   "map": "PetalburgCity_Gym",
+   "at": [
+    1,
+    79
+   ],
+   "script": 15,
+   "what": "door sign ZeroReductionRoomDoor",
+   "dir": 4
+  },
+  {
+   "kind": "sign",
+   "map": "PetalburgCity_Gym",
+   "at": [
+    7,
+    79
+   ],
+   "script": 16,
+   "what": "door sign LeftDefenseRoomDoor",
+   "dir": 4
+  },
+  {
+   "kind": "sign",
+   "map": "PetalburgCity_Gym",
+   "at": [
+    1,
+    92
+   ],
+   "script": 17,
+   "what": "door sign RightDefenseRoomDoor",
+   "dir": 4
+  },
+  {
+   "kind": "sign",
+   "map": "PetalburgCity_Gym",
+   "at": [
+    7,
+    92
+   ],
+   "script": 18,
+   "what": "door sign RecoveryRoomDoor",
+   "dir": 4
+  },
+  {
+   "kind": "sign",
+   "map": "PetalburgCity_Gym",
+   "at": [
+    7,
+    40
+   ],
+   "script": 19,
+   "what": "door sign LeftStrengthRoomDoor",
+   "dir": 4
+  },
+  {
+   "kind": "sign",
+   "map": "PetalburgCity_Gym",
+   "at": [
+    1,
+    53
+   ],
+   "script": 20,
+   "what": "door sign RightStrengthRoomDoor",
+   "dir": 4
+  },
+  {
+   "kind": "sign",
+   "map": "PetalburgCity_Gym",
+   "at": [
+    7,
+    53
+   ],
+   "script": 21,
+   "what": "door sign LeftOHKORoomDoor",
+   "dir": 4
+  },
+  {
+   "kind": "sign",
+   "map": "PetalburgCity_Gym",
+   "at": [
+    1,
+    66
+   ],
+   "script": 22,
+   "what": "door sign RightOHKORoomDoor",
+   "dir": 4
+  },
+  {
+   "kind": "sign",
+   "map": "PetalburgCity_Gym",
+   "at": [
+    7,
+    14
+   ],
+   "script": 23,
+   "what": "door sign LeftGymLeadersRoomDoor",
+   "dir": 4
+  },
+  {
+   "kind": "sign",
+   "map": "PetalburgCity_Gym",
+   "at": [
+    1,
+    27
+   ],
+   "script": 24,
+   "what": "door sign RightGymLeadersRoomDoor",
+   "dir": 4
+  },
+  {
+   "kind": "trigger",
+   "map": "PetalburgCity_Gym",
+   "at": [
+    6,
+    85
+   ],
+   "script": 25,
+   "var": 0,
+   "value": 0,
+   "what": "back exit (Sapphire RoomEntrance tiles, south arrow warps when open)",
+   "w": 2
+  },
+  {
+   "kind": "trigger",
+   "map": "PetalburgCity_Gym",
+   "at": [
+    1,
+    98
+   ],
+   "script": 26,
+   "var": 0,
+   "value": 0,
+   "what": "back exit (Sapphire RoomEntrance tiles, south arrow warps when open)",
+   "w": 2
+  },
+  {
+   "kind": "trigger",
+   "map": "PetalburgCity_Gym",
+   "at": [
+    6,
+    46
+   ],
+   "script": 27,
+   "var": 0,
+   "value": 0,
+   "what": "back exit (Sapphire RoomEntrance tiles, south arrow warps when open)",
+   "w": 2
+  },
+  {
+   "kind": "trigger",
+   "map": "PetalburgCity_Gym",
+   "at": [
+    1,
+    59
+   ],
+   "script": 28,
+   "var": 0,
+   "value": 0,
+   "what": "back exit (Sapphire RoomEntrance tiles, south arrow warps when open)",
+   "w": 2
+  },
+  {
+   "kind": "trigger",
+   "map": "PetalburgCity_Gym",
+   "at": [
+    6,
+    59
+   ],
+   "script": 29,
+   "var": 0,
+   "value": 0,
+   "what": "back exit (Sapphire RoomEntrance tiles, south arrow warps when open)",
+   "w": 2
+  },
+  {
+   "kind": "trigger",
+   "map": "PetalburgCity_Gym",
+   "at": [
+    1,
+    72
+   ],
+   "script": 30,
+   "var": 0,
+   "value": 0,
+   "what": "back exit (Sapphire RoomEntrance tiles, south arrow warps when open)",
+   "w": 2
+  },
+  {
+   "kind": "trigger",
+   "map": "PetalburgCity_Gym",
+   "at": [
+    1,
+    20
+   ],
+   "script": 31,
+   "var": 0,
+   "value": 0,
+   "what": "back exit (Sapphire RoomEntrance tiles, south arrow warps when open)",
+   "w": 2
+  },
+  {
+   "kind": "trigger",
+   "map": "PetalburgCity_Gym",
+   "at": [
+    6,
+    20
+   ],
+   "script": 32,
+   "var": 0,
+   "value": 0,
+   "what": "back exit (Sapphire RoomEntrance tiles, south arrow warps when open)",
+   "w": 2
+  },
+  {
+   "kind": "trigger",
+   "map": "PetalburgCity_Gym",
+   "at": [
+    1,
+    33
+   ],
+   "script": 33,
+   "var": 0,
+   "value": 0,
+   "what": "back exit (Sapphire RoomEntrance tiles, south arrow warps when open)",
+   "w": 2
+  },
+  {
+   "kind": "trigger",
+   "map": "PetalburgCity_Gym",
+   "at": [
+    6,
+    33
+   ],
+   "script": 34,
+   "var": 0,
+   "value": 0,
+   "what": "back exit (Sapphire RoomEntrance tiles, south arrow warps when open)",
+   "w": 2
+  },
+  {
+   "kind": "trigger",
+   "map": "PetalburgCity_Gym",
+   "at": [
+    1,
+    7
+   ],
+   "script": 35,
+   "var": 0,
+   "value": 0,
+   "what": "back exit (Sapphire RoomEntrance tiles, south arrow warps when open)",
+   "w": 2
+  },
+  {
+   "kind": "trigger",
+   "map": "PetalburgCity_Gym",
+   "at": [
+    6,
+    7
+   ],
+   "script": 36,
+   "var": 0,
+   "value": 0,
+   "what": "back exit (Sapphire RoomEntrance tiles, south arrow warps when open)",
+   "w": 2
+  },
+  {
+   "kind": "npc",
+   "map": "PetalburgCity_WallysHouse",
+   "at": [
+    3,
+    4
+   ],
+   "uid": 1,
+   "model": 20,
+   "script": 2,
+   "dir": 3,
+   "what": "WallysDad (Sapphire object 1, MAN_3, FACE_RIGHT)"
+  },
+  {
+   "kind": "npc",
+   "map": "PetalburgCity_WallysHouse",
+   "at": [
+    7,
+    5
+   ],
+   "uid": 2,
+   "model": 22,
+   "script": 3,
+   "dir": 2,
+   "what": "WallysMom (Sapphire object 2, WOMAN_5, FACE_LEFT)"
+  },
+  {
+   "kind": "npc",
+   "map": "AbandonedShip_CaptainsOffice",
+   "at": [
+    3,
+    4
+   ],
+   "uid": 1,
+   "model": 73,
+   "script": 2,
+   "dir": 1,
+   "what": "Capt. Stern's aide (Sapphire object 1, SCIENTIST_1, FACE_DOWN)"
+  },
+  {
+   "kind": "npc",
+   "map": "AbandonedShip_Corridors_1F",
+   "at": [
+    5,
+    10
+   ],
+   "uid": 2,
+   "model": 153,
+   "script": 3164,
+   "evtype": 1,
+   "p0": 3,
+   "move": 37,
+   "dir": 0,
+   "what": "TRAINER_CHARLIE: eye-contact trainer (Sapphire object 2, TUBER_M, WALK_SEQUENCE_UP_LEFT_DOWN_RIGHT) (walks: Black 2 code 37, Sapphire range 4x7; v165_fixes)",
+   "areaw": 4,
+   "areah": 7
+  },
+  {
+   "kind": "npc",
+   "map": "AbandonedShip_Corridors_B1F",
+   "at": [
+    9,
+    6
+   ],
+   "uid": 2,
+   "model": 359,
+   "script": 3634,
+   "evtype": 1,
+   "p0": 4,
+   "move": 46,
+   "dir": 2,
+   "what": "TRAINER_DUNCAN: eye-contact trainer (Sapphire object 2, SAILOR, FACE_LEFT_AND_RIGHT)"
+  },
+  {
+   "kind": "sign",
+   "map": "AbandonedShip_Corridors_B1F",
+   "at": [
+    11,
+    4
+   ],
+   "script": 2,
+   "what": "Storage Room door (StorageRoomDoor)",
+   "dir": 4
+  },
+  {
+   "kind": "npc",
+   "map": "AbandonedShip_Rooms2_1F",
+   "at": [
+    7,
+    13
+   ],
+   "uid": 1,
+   "model": 42,
+   "script": 3727,
+   "evtype": 1,
+   "p0": 0,
+   "move": 15,
+   "dir": 1,
+   "what": "TRAINER_LOIS_AND_HAL_1: eye-contact trainer (Sapphire object 1, MAN_5, FACE_DOWN)"
+  },
+  {
+   "kind": "npc",
+   "map": "AbandonedShip_Rooms2_1F",
+   "at": [
+    6,
+    13
+   ],
+   "uid": 2,
+   "model": 22,
+   "script": 5727,
+   "evtype": 1,
+   "p0": 0,
+   "move": 15,
+   "dir": 1,
+   "what": "TRAINER_LOIS_AND_HAL_1: eye-contact trainer (Sapphire object 2, WOMAN_5, FACE_DOWN)"
+  },
+  {
+   "kind": "sign",
+   "map": "AbandonedShip_HiddenFloorCorridors",
+   "at": [
+    3,
+    8
+   ],
+   "script": 2,
+   "what": "Rm. 1 door",
+   "dir": 4
+  },
+  {
+   "kind": "sign",
+   "map": "AbandonedShip_HiddenFloorCorridors",
+   "at": [
+    6,
+    8
+   ],
+   "script": 3,
+   "what": "Rm. 2 door",
+   "dir": 4
+  },
+  {
+   "kind": "sign",
+   "map": "AbandonedShip_HiddenFloorCorridors",
+   "at": [
+    3,
+    4
+   ],
+   "script": 4,
+   "what": "Rm. 4 door",
+   "dir": 4
+  },
+  {
+   "kind": "sign",
+   "map": "AbandonedShip_HiddenFloorCorridors",
+   "at": [
+    9,
+    4
+   ],
+   "script": 5,
+   "what": "Rm. 6 door",
+   "dir": 4
+  },
+  {
+   "kind": "npc",
+   "map": "AbandonedShip_HiddenFloorRooms",
+   "at": [
+    16,
+    10
+   ],
+   "uid": 2,
+   "model": 110,
+   "script": 8,
+   "flag": "FLAG_ITEM_ABANDONED_SHIP_HIDDEN_FLOOR_ROOM_2_SCANNER",
+   "dir": 1,
+   "what": "item ball: the Scanner (story script 8)"
+  },
+  {
+   "kind": "trigger",
+   "map": "NewMauville_Entrance",
+   "at": [
+    4,
+    2
+   ],
+   "script": 2,
+   "var": "VAR_NEW_MAUVILLE_STATE",
+   "value": 0,
+   "what": "the closed door (Basement Key)"
+  },
+  {
+   "kind": "trigger",
+   "map": "NewMauville_Inside",
+   "at": [
+    30,
+    38
+   ],
+   "script": 2,
+   "var": "0x4036",
+   "value": 0,
+   "what": "blue switch (blue not down: work 0x4036 == 0)"
+  },
+  {
+   "kind": "trigger",
+   "map": "NewMauville_Inside",
+   "at": [
+    4,
+    26
+   ],
+   "script": 2,
+   "var": "0x4036",
+   "value": 0,
+   "what": "blue switch (blue not down: work 0x4036 == 0)"
+  },
+  {
+   "kind": "trigger",
+   "map": "NewMauville_Inside",
+   "at": [
+    16,
+    22
+   ],
+   "script": 2,
+   "var": "0x4036",
+   "value": 0,
+   "what": "blue switch (blue not down: work 0x4036 == 0)"
+  },
+  {
+   "kind": "trigger",
+   "map": "NewMauville_Inside",
+   "at": [
+    6,
+    11
+   ],
+   "script": 2,
+   "var": "0x4036",
+   "value": 0,
+   "what": "blue switch (blue not down: work 0x4036 == 0)"
+  },
+  {
+   "kind": "trigger",
+   "map": "NewMauville_Inside",
+   "at": [
+    13,
+    10
+   ],
+   "script": 2,
+   "var": "0x4036",
+   "value": 0,
+   "what": "blue switch (blue not down: work 0x4036 == 0)"
+  },
+  {
+   "kind": "trigger",
+   "map": "NewMauville_Inside",
+   "at": [
+    18,
+    36
+   ],
+   "script": 3,
+   "var": "0x4037",
+   "value": 0,
+   "what": "green switch (green not down: work 0x4037 == 0)"
+  },
+  {
+   "kind": "trigger",
+   "map": "NewMauville_Inside",
+   "at": [
+    25,
+    18
+   ],
+   "script": 3,
+   "var": "0x4037",
+   "value": 0,
+   "what": "green switch (green not down: work 0x4037 == 0)"
+  },
+  {
+   "kind": "trigger",
+   "map": "NewMauville_Inside",
+   "at": [
+    2,
+    11
+   ],
+   "script": 3,
+   "var": "0x4037",
+   "value": 0,
+   "what": "green switch (green not down: work 0x4037 == 0)"
+  },
+  {
+   "kind": "trigger",
+   "map": "NewMauville_Inside",
+   "at": [
+    17,
+    10
+   ],
+   "script": 3,
+   "var": "0x4037",
+   "value": 0,
+   "what": "green switch (green not down: work 0x4037 == 0)"
+  },
+  {
+   "kind": "trigger",
+   "map": "NewMauville_Inside",
+   "at": [
+    33,
+    6
+   ],
+   "script": 4,
+   "var": "VAR_NEW_MAUVILLE_STATE",
+   "value": 1,
+   "what": "the generator switch"
+  },
+  {
+   "kind": "sign",
+   "map": "NewMauville_Inside",
+   "at": [
+    32,
+    4
+   ],
+   "script": 5,
+   "what": "the generator",
+   "dir": 4
+  },
+  {
+   "kind": "sign",
+   "map": "NewMauville_Inside",
+   "at": [
+    32,
+    3
+   ],
+   "script": 5,
+   "what": "the generator",
+   "dir": 4
+  },
+  {
+   "kind": "sign",
+   "map": "NewMauville_Inside",
+   "at": [
+    32,
+    2
+   ],
+   "script": 5,
+   "what": "the generator",
+   "dir": 4
+  },
+  {
+   "kind": "sign",
+   "map": "NewMauville_Inside",
+   "at": [
+    33,
+    4
+   ],
+   "script": 5,
+   "what": "the generator",
+   "dir": 4
+  },
+  {
+   "kind": "sign",
+   "map": "NewMauville_Inside",
+   "at": [
+    34,
+    4
+   ],
+   "script": 5,
+   "what": "the generator",
+   "dir": 4
+  },
+  {
+   "kind": "sign",
+   "map": "NewMauville_Inside",
+   "at": [
+    35,
+    4
+   ],
+   "script": 5,
+   "what": "the generator",
+   "dir": 4
+  },
+  {
+   "kind": "sign",
+   "map": "NewMauville_Inside",
+   "at": [
+    35,
+    3
+   ],
+   "script": 5,
+   "what": "the generator",
+   "dir": 4
+  },
+  {
+   "kind": "sign",
+   "map": "NewMauville_Inside",
+   "at": [
+    35,
+    2
+   ],
+   "script": 5,
+   "what": "the generator",
+   "dir": 4
+  },
+  {
+   "kind": "npc",
+   "map": "NewMauville_Inside",
+   "at": [
+    25,
+    18
+   ],
+   "uid": 6,
+   "model": 110,
+   "script": 6,
+   "flag": "FLAG_HIDE_VOLTORB_1_NEW_MAUVILLE",
+   "dir": 1,
+   "what": "Voltorb 1 (Sapphire draws it as an item ball)"
+  },
+  {
+   "kind": "npc",
+   "map": "NewMauville_Inside",
+   "at": [
+    6,
+    11
+   ],
+   "uid": 7,
+   "model": 110,
+   "script": 7,
+   "flag": "FLAG_HIDE_VOLTORB_2_NEW_MAUVILLE",
+   "dir": 1,
+   "what": "Voltorb 2 (Sapphire draws it as an item ball)"
+  },
+  {
+   "kind": "npc",
+   "map": "NewMauville_Inside",
+   "at": [
+    13,
+    10
+   ],
+   "uid": 8,
+   "model": 110,
+   "script": 8,
+   "flag": "FLAG_HIDE_VOLTORB_3_NEW_MAUVILLE",
+   "dir": 1,
+   "what": "Voltorb 3 (Sapphire draws it as an item ball)"
+  },
+  {
+   "kind": "npc",
+   "map": "Route105",
+   "at": [
+    9,
+    20
+   ],
+   "uid": 150,
+   "model": 206,
+   "script": 2,
+   "flag": "FLAG_REGI_DOORS_OPENED",
+   "dir": 1,
+   "what": "Island Cave sealed (Sapphire: rock wall metatiles until FLAG_REGI_DOORS_OPENED): Black 2 blocker rock 206"
+  }
+ ]
+}

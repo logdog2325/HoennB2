@@ -1,0 +1,3 @@
+My Pokémon has a Hasty nature.{be01}\nIt has higher Speed compared to\nmy other Pokémon.{be01}\nMaybe their nature has something to\ndo with the stat gains of Pokémon.
+You need a Contest Pass to enter a\nContest.{be01}\nIt’s easy to get. They give it to\nanyone who has Pokémon.
+Oh, a Contest Pass!\nYou’re going to be a contestant?

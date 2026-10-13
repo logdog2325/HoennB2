@@ -1,0 +1,37 @@
+Please enjoy yourself.
+Please enjoy yourself.
+A blue fluid is spiraling inside\na glass vessel.{be01}\n“This is an experiment to create a\nWhirlpool artificially using wind.”
+A red ball is bobbing up and down\ninside a glass vessel.{be01}\n“This is an experiment simulating a\nWaterfall using the ball’s buoyancy.”
+It’s a sample of soil from the ocean\nfloor.{be01}\n“Over many years, the remains of\nlife-forms settle at the bottom of{be00}\nthe sea, making sedimentary layers.{be01}\n“By analyzing these layers, the\nancient past is revealed.”
+It’s a sample of beach sand.{be01}\n“Stones from mountains are washed\ndown by rivers where they are{be00}\nchipped and ground down.{be01}\n“They are reduced to grains and end\nup as sand on beaches.”
+It’s a sample of soil from the ocean\nfloor.{be01}\n“Over many years, the remains of\nlife-forms settle at the bottom of{be00}\nthe sea, making sedimentary layers.{be01}\n“By analyzing these layers, the\nancient past is revealed.”
+It’s a sample of beach sand.{be01}\n“Stones from mountains are washed\ndown by rivers where they are{be00}\nchipped and ground down.{be01}\n“They are reduced to grains and end\nup as sand on beaches.”
+“Oceanic Minifact 1\nWhy is seawater blue?{be01}\n“Light is composed of many colors.{be01}\n“When light passes through water,\nmost kinds of light lose color.{be01}\n“However, blue light retains its\ncolor, making the sea appear blue.”
+“Oceanic Minifact 2\nWhy is the sea salty?{be01}\n“Seawater contains dissolved salt in\nthe form of sodium and chlorine ions.{be01}\n“These ions leech out of rocks\nand are carried out to sea by rain.{be01}\n“The concentration of dissolved salt\nmakes the sea salty.”
+“Oceanic Minifact 3\nWhich is bigger? The sea or land?{be01}\n“The sea covers about 70% of\nthe planet, and the rest is land.{be01}\n“The sea is therefore more than twice\nthe size of land.”
+It’s a fossil with wavy ridges on it.{be01}\n“Soil on the ocean floor gets scoured\nby the tide.{be01}\n“The flowing seawater marks the soil\nwith small ridges and valleys.{be01}\n“If this soil becomes fossilized, it is\ncalled a ripple mark.”
+It’s a fossil with wavy ridges on it.{be01}\n“Soil on the ocean floor gets scoured\nby the tide.{be01}\n“The flowing seawater marks the soil\nwith small ridges and valleys.{be01}\n“If this soil becomes fossilized, it is\ncalled a ripple mark.”
+A strange machine is rotating under\na glass dome.{be01}\nMaybe it’s for measuring the depth\nof something...
+A strange machine is rotating under\na glass dome.{be01}\nMaybe it’s for measuring the depth\nof something...
+Welcome to the Oceanic Museum.{be01}\nThe entrance fee is $50.\nWould you like to enter?
+Oh? I’m sorry, but you don’t seem to\nhave enough money.
+Oh? You’re with that group that\nwent in earlier?{be01}\nYou’re the only one who’s late.\nYou’d better go catch up to them!
+We, Team Aqua, exist for the good\nof all!
+We were told to assemble here,\nso we did, but…{be01}\nOur Boss, the linchpin, isn’t here.
+If I ripped off the stuff here,\nwould it make me rich?
+What I learn here, I can put to use on\nnefarious deeds...
+If our goons didn’t bungle things\nin Rustboro, we wouldn’t be here!
+I didn’t have $50, so it took a long\ntime getting by the receptionist.
+I want to learn about the sea and\nuse that knowledge for battling.
+I get all giddy and gooey when\nI see the sea!{be01}\nFor me, Capt. Stern is the number\none role model!
+The sea is vast without end, and\ninfinitely deep…{be01}\nThere must be many Pokémon that\nwe don’t know about.
+I want a sea Pokémon.{be01}\nI think it would feel cool and nice\nto hug.
+Aiyeeeh!\nWhat are you doing here?{be01}\nMe? I’m the Team Aqua member\nyou thumped before, remember?{be00}\nBack in Rusturf Tunnel?{be01}\nHere, take this!\nYou have to forgive me!
+Aww, darn it!\nYou so screwed up our plans!{be01}\nI was going to rip off something\nto make up for it, but...{be01}\nJust you wait!\nYou’ll get yours one day!
+Awww, come on!\nYou have to take this and let me go!
+Oh?\nDo you perhaps like Pokémon?{be01}\nI’m on assignment with the TV network.{be01}\nI’m gathering stories on Pokémon and\nTrainers that occurred recently.{be01}\nIf you don’t mind, could you tell me\nsomething about yourself?
+I’m gathering stories on Pokémon and\nTrainers that occurred recently.{be01}\nIf you don’t mind, could you tell me\nsomething about yourself?
+Oh, you will?\nThank you!{be01}\nThen, please, tell me anything of\ninterest that you experienced recently{be00}\ninvolving Pokémon.
+Oh, I see...{be01}\nWell, if you do have an interesting\nstory to tell, please let me know.
+Oh, what an uplifting story!{be01}\nI’ll be sure to get your story told\non television.{be01}\nIt should be aired sometime, I think,\nso please look forward to it.
+Hmmm...\nI’ve got a good story for a TV program.{be01}\nI’d better write it up in a hurry!

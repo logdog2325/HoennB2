@@ -1,0 +1,8 @@
+Are you planning on going deep in\nthere?{be01}\nHow about bringing me back some\nShoal Salt and Shoal Shells?{be01}\nI can make you something good if\nyou bring me the ingredients.
+If you bring me four each of the\nShoal Salt and Shoal Shells,{be00}\nI can make you a Shell Bell...{be01}\nYou can get those ingredients\nevery day.
+Oh, hey! Shoal Salt and Shoal\nShells! And enough of them, too!{be01}\nWould you like me to make you a\nShell Bell with them?
+All righty, then! I’ll make you a\nShell Bell right away.{be01}\n... ... ... ... ... ... ... ...\n... ... ... ... ... ... ... ...{be01}\nThere! Done!
+Have a Pokémon hold on to that.\nIt’ll love it, that’s for certain.{be01}\nWhy, the Shell Bell’s chime...\nIt’s simply sublime!{be01}\nYou can get its ingredients every\nday, so I can make you more.
+Oh... Is that so...\nI wanted to make a Shell Bell...
+You don’t have space in your Bag\nif I were to make it for you.{be01}\nYou should make room and come back\nfor a Shell Bell.
+Too bad!\nThe Bag is full...

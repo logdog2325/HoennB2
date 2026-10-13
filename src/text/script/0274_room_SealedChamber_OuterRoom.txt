@@ -1,0 +1,13 @@
+ABC
+DEF
+GHI
+JKL
+MNO
+PQRS
+TUV
+WXYZ
+.
+,
+Dig here.
+There is a big hole in the wall.
+{0102:0} used Dig!

@@ -1,0 +1,23 @@
+{
+ "_doc": "LilycoveCity_House2: zone written by converter/gen_interior_recipes_houses.py (warps and parent from converter/gen_interiors.py); story people left for the story phase: person FAT_MAN at (0,4) LilycoveCity_House2_EventScript_FatMan (story/complex script)",
+ "zone": 207,
+ "room": "LilycoveCity_House2",
+ "area": 313,
+ "parent": 96,
+ "warps": [
+  {
+   "at": [2, 7],
+   "tile_only": true,
+   "to": [96, 22],
+   "what": "Sapphire warp 0 -> LilycoveCity 9"
+  },
+  {
+   "at": [3, 7],
+   "tile_only": true,
+   "to": [96, 22],
+   "what": "Sapphire warp 1 -> LilycoveCity 9"
+  }
+ ],
+ "npcs": [],
+ "signs": []
+}

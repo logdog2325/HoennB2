@@ -1,0 +1,101 @@
+{
+ "_doc": "May's house 2F (zone 393; scripts 0786_mays_house_2f.s, text 0622_mays_house_2f.txt). Sapphire tile + (1, 1) = zone tile. Sapphire's Pichu doll (local id 15) is left out: Black 2 has no doll sprite.",
+ "zone": 393,
+ "room": "LittlerootTown_MaysHouse_2F",
+ "npcs": [
+  {
+   "uid": 1,
+   "model": 4,
+   "script": 21,
+   "dir": 0,
+   "at": [
+    8,
+    2
+   ],
+   "flag": 2057,
+   "what": "rival May (FLAG_HIDE_MAY_UPSTAIRS)"
+  },
+  {
+   "uid": 14,
+   "model": 251,
+   "script": 2,
+   "dir": 1,
+   "at": [
+    1,
+    1
+   ],
+   "flag": 2063,
+   "what": "Mom upstairs, on the stairs (FLAG_HIDE_MOM_UPSTAIRS)"
+  }
+ ],
+ "signs": [
+  {
+   "script": 5,
+   "at": [
+    5,
+    1
+   ],
+   "dir": 4,
+   "what": "GameCube"
+  },
+  {
+   "script": 4,
+   "at": [
+    7,
+    1
+   ],
+   "dir": 4,
+   "what": "notebook"
+  },
+  {
+   "script": 20,
+   "at": [
+    3,
+    1
+   ],
+   "dir": 0,
+   "what": "wall clock (lead script 20), facing north"
+  },
+  {
+   "script": 3,
+   "at": [
+    8,
+    1
+   ],
+   "dir": 4,
+   "what": "PC"
+  },
+  {
+   "script": 7,
+   "at": [
+    6,
+    1
+   ],
+   "dir": 4,
+   "what": "Hoenn region map"
+  },
+  {
+   "script": 8,
+   "at": [
+    4,
+    1
+   ],
+   "dir": 0,
+   "what": "TV (facing north)"
+  }
+ ],
+ "warps": [
+  {
+   "at": [
+    1,
+    1
+   ],
+   "to": [
+    392,
+    1
+   ],
+   "what": "stairs down -> 1F warp 1"
+  }
+ ],
+ "triggers": []
+}

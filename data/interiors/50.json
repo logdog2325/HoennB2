@@ -1,0 +1,40 @@
+{
+ "_doc": "SootopolisCity_House7: zone written by converter/gen_interior_recipes_houses.py (warps and parent from converter/gen_interiors.py); story people left for the story phase: none",
+ "zone": 50,
+ "room": "SootopolisCity_House7",
+ "area": 313,
+ "parent": 389,
+ "warps": [
+  {
+   "at": [3, 6],
+   "tile_only": true,
+   "to": [319, 11],
+   "what": "Sapphire warp 0 -> SootopolisCity 10"
+  },
+  {
+   "at": [4, 6],
+   "tile_only": true,
+   "to": [319, 11],
+   "what": "Sapphire warp 1 -> SootopolisCity 10"
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 1,
+   "model": 187,
+   "script": 1,
+   "dir": 2,
+   "at": [5, 3]
+  },
+  {
+   "uid": 2,
+   "model": 53,
+   "script": 2,
+   "dir": 1,
+   "at": [1, 4],
+   "move": 3,
+   "range": [1, 1]
+  }
+ ],
+ "signs": []
+}

@@ -1,0 +1,23 @@
+{
+ "_doc": "SafariZone_RestHouse: zone written by converter/gen_interior_recipes_houses.py (warps and parent from converter/gen_interiors.py); story people left for the story phase: person YOUNGSTER at (7,4) SafariZone_RestHouse_EventScript_160C2F (story/complex script); person PSYCHIC_M at (8,4) SafariZone_RestHouse_EventScript_160C38 (story/complex script); person FAT_MAN at (2,5) SafariZone_RestHouse_EventScript_160C41 (story/complex script)",
+ "zone": 592,
+ "room": "SafariZone_RestHouse",
+ "area": 313,
+ "parent": 389,
+ "warps": [
+  {
+   "at": [3, 8],
+   "tile_only": true,
+   "to": [64, 3],
+   "what": "Sapphire warp 0 -> SafariZone_Southwest 0"
+  },
+  {
+   "at": [4, 8],
+   "tile_only": true,
+   "to": [64, 3],
+   "what": "Sapphire warp 1 -> SafariZone_Southwest 0"
+  }
+ ],
+ "npcs": [],
+ "signs": []
+}

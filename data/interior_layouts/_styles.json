@@ -1,0 +1,17 @@
+{
+ "_doc": "Texture styles for b2tools/models_interior.py: Black 2 map textures (tex = texture name, src = map texture set a/0/1/4 entry it is copied from; the installer merges them into the zone's area texture set losslessly). size = units per floor repeat, u_size = units per wall repeat (the wall texture spans the whole wall height once), stretch = one genkan texture per exit notch. black = the wall caps, cut faces and lips (Black 2 draws them black).",
+ "house": {
+  "_doc": "Floccesy/Aspertia houses (texture set 349): striped wallpaper with a wood wainscot (m_h05_kabe, chunk 977), honey wood planks (m_b08_yuka, chunk 1049), stone entrance (m_b08_genkan)",
+  "floor": {"tex": "m_b08_yuka", "src": 349, "size": 32},
+  "wall": {"tex": "m_h05_kabe", "src": 349, "u_size": 64},
+  "genkan": {"tex": "m_b08_genkan", "src": 349, "size": 16},
+  "black": {"tex": "black", "src": 285}
+ },
+ "lab": {
+  "_doc": "Juniper's lab (texture set 285, chunk 844): white tile floor, mint lab wall, round entrance mat",
+  "floor": {"tex": "m_lab01_01", "src": 285, "size": 11},
+  "wall": {"tex": "m_lab01_04", "src": 285, "u_size": 58},
+  "genkan": {"tex": "m_lab01_08", "src": 285, "stretch": true},
+  "black": {"tex": "black", "src": 285}
+ }
+}

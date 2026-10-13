@@ -1,0 +1,10 @@
+{
+ "_doc": "Post-game additions (postgame_scripts, 2026-10-07; notes/POSTGAME.md): Emerald's National Dex scene people in Littleroot (scenes/LittlerootTown_Postgame.inc: Prof. Birch and the rival outside the player's door while VAR_DEX_UPGRADE_JOHTO_STARTER_STATE is 1, two per door, the player's gender's pair shown by PG_LittlerootInit) and Celebi in Petalburg Woods (scenes/PetalburgWoods_Postgame.inc, script 5).",
+ "objects": [
+  {"kind": "npc", "map": "LittlerootTown", "at": [5, 10], "uid": 160, "model": 104, "script": 0, "flag": "FLAG_HIDE_DEX_UPGRADE_BRENDANS_DOOR", "dir": 0, "move": 14, "what": "Prof. Birch below Brendan's house door (Emerald LOCALID_LITTLEROOT_BIRCH, FACE_UP, setobjectxy 5,10 for a boy)"},
+  {"kind": "npc", "map": "LittlerootTown", "at": [6, 10], "uid": 161, "model": 162, "script": 0, "flag": "FLAG_HIDE_DEX_UPGRADE_BRENDANS_DOOR", "dir": 0, "move": 14, "what": "the rival (May) beside him (Emerald LOCALID_LITTLEROOT_RIVAL, 6,10)"},
+  {"kind": "npc", "map": "LittlerootTown", "at": [14, 10], "uid": 162, "model": 104, "script": 0, "flag": "FLAG_HIDE_DEX_UPGRADE_MAYS_DOOR", "dir": 0, "move": 14, "what": "Prof. Birch below May's house door (Emerald 14,10 for a girl)"},
+  {"kind": "npc", "map": "LittlerootTown", "at": [13, 10], "uid": 163, "model": 162, "script": 0, "flag": "FLAG_HIDE_DEX_UPGRADE_MAYS_DOOR", "dir": 0, "move": 14, "what": "the rival (Brendan) beside him (Emerald 13,10)"},
+  {"kind": "npc", "map": "PetalburgWoods", "at": [36, 4], "uid": 150, "model": 4380, "script": 5, "flag": "FLAG_HIDE_CELEBI", "dir": 1, "move": 15, "what": "Celebi (post-game; Black 2's Celebi overworld sprite 4380), in the north-east clearing behind the Miracle Seed girl"}
+ ]
+}

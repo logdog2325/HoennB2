@@ -1,0 +1,231 @@
+{
+ "map": "Route134",
+ "id": "MAP_ROUTE134",
+ "layout": "LAYOUT_ROUTE134",
+ "music": "MUS_ROUTE119",
+ "region_map_section": "MAPSEC_ROUTE_134",
+ "weather": "WEATHER_SUNNY",
+ "connections": [
+  {
+   "direction": "left",
+   "offset": 0,
+   "map": "MAP_SLATEPORT_CITY"
+  },
+  {
+   "direction": "right",
+   "offset": 0,
+   "map": "MAP_ROUTE133"
+  }
+ ],
+ "npcs": [
+  {
+   "local_id": 1,
+   "x": 52,
+   "y": 9,
+   "gfx": "OBJ_EVENT_GFX_SWIMMER_M",
+   "movement": "MOVEMENT_TYPE_WALK_SEQUENCE_UP_RIGHT_DOWN_LEFT",
+   "range": [
+    3,
+    5
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route134_EventScript_1525C4",
+   "texts": {
+    "Route134_Text_1C30C6": "Even those POKéMON that can swim are\\ncarried along by the rapid currents.$",
+    "Route134_Text_1C3110": "Aiyeeeeh!$",
+    "Route134_Text_1C311A": "I think POKéMON enjoy the fast-running\\ncurrents around these parts.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 2,
+   "x": 45,
+   "y": 5,
+   "gfx": "OBJ_EVENT_GFX_SWIMMER_F",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route134_EventScript_1525DB",
+   "texts": {
+    "Route134_Text_1C315E": "My LUVDISC are looking for a fun\\nmatch. Will you join us?$",
+    "Route134_Text_1C3198": "Oopsie!$",
+    "Route134_Text_1C31A0": "There's a collector who's after the\\nSCALES of LUVDISC.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 3,
+   "x": 41,
+   "y": 23,
+   "gfx": "OBJ_EVENT_GFX_MAN_4",
+   "movement": "MOVEMENT_TYPE_FACE_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route134_EventScript_152609",
+   "texts": {
+    "Route134_Text_1C3319": "The savage tide in this area serves to\\nmake us stronger than ever.$",
+    "Route134_Text_1C335C": "I concede defeat.$",
+    "Route134_Text_1C336E": "We will return for more training at\\nMETEOR FALLS.\\pIf you'd like, you should go, too.\\nIt will definitely toughen you up!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 4,
+   "x": 65,
+   "y": 14,
+   "gfx": "OBJ_EVENT_GFX_MAN_6",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN_AND_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route134_EventScript_1525F2",
+   "texts": {
+    "Route134_Text_1C31D7": "Okeydokey! That's enough rest, gang!\\nIt's time for a match!$",
+    "Route134_Text_1C3213": "Tuckered out again...$",
+    "Route134_Text_1C3229": "My BIRD POKéMON get tired quickly after\\na long flight...$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 5,
+   "x": 56,
+   "y": 16,
+   "gfx": "OBJ_EVENT_GFX_BLACK_BELT",
+   "movement": "MOVEMENT_TYPE_WALK_LEFT_AND_RIGHT",
+   "range": [
+    10,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route134_EventScript_152620",
+   "texts": {
+    "Route134_Text_1C3262": "You're a POKéMON TRAINER.\\nNo need for words. We battle now.$",
+    "Route134_Text_1C329E": "... ... ... ... ... ... ...\\n... ... ... ... ... ... ...$",
+    "Route134_Text_1C32D6": "It was I who challenged you, and yet\\nI lost. I am deeply shamed...$"
+   },
+   "complex": true
+  }
+ ],
+ "signs": [],
+ "warps": [],
+ "coord_events": [],
+ "wild": {
+  "water_mons": {
+   "encounter_rate": 4,
+   "slot_rates": [
+    60,
+    30,
+    5,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 5,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 15,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_PELIPPER",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_PELIPPER",
+     "min": 25,
+     "max": 30
+    }
+   ]
+  },
+  "fishing_mons": {
+   "encounter_rate": 30,
+   "slot_rates": [
+    70,
+    30,
+    60,
+    20,
+    20,
+    40,
+    40,
+    15,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_SHARPEDO",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_HORSEA",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 35,
+     "max": 40
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 40,
+     "max": 45
+    }
+   ]
+  }
+ }
+}

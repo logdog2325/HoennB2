@@ -1,0 +1,79 @@
+{
+ "_doc": "Fairy type and split toggle text (fairy_core 2026-10-08; b2tools/patches/fairy.py, notes/FAIRY.md). Lines past a file's end are appended (text.py). 0054: Birch's four questions (26 Fairy, 27 split, 28 music with the answers 29/30: music_check's, notes/MUSIC.md; 31 sprite style with the answers 32 CLASSIC / 33 NEW: sprite_switch's, b2tools/patches/sprite_switch.py; the intro script is fairy.py's intro_script); 29 and 31 were blank, 30, 32, 33 the dead rival/Juniper lines (the rival naming and Farewell scripts are gone); 0, 34 and 36 are Black 2's unused space-filled placeholders (only lines 5-33 are read: ov294's scripts, ov162 line 25), shortened like 32/33 were for room in the fixed text slot (the 4th question needed 152 B more).",
+ "system/0054_game_start.txt": {
+  "26": "Before you go, I have four quick\\nquestions for you.{be01}\\nYou can't change your answers\\nonce your adventure begins,{be00}\\nso think them over carefully.{be01}\\nFirst: some researchers now say\\nPokémon like Ralts and Marill{be00}\\nbelong to a brand-new type:\\nthe Fairy type!{be01}\\nWould you like to meet the\\nFairy type on your adventure?{be01}",
+  "27": "Second, about moves...{be01}\\nNowadays, every move is either\\nphysical or special on its own.{be01}\\nBut some old-school Trainers say a\\nmove's type decides that:{be00}\\nFire, Water, Grass, Electric, Ice,{be00}\\nPsychic, Dragon and Dark moves are{be00}\\nspecial, and the others physical.{be01}\\nShould each move keep its own\\nphysical or special nature?{be01}",
+  "29": "HOENN",
+  "32": "CLASSIC",
+  "33": "NEW",
+  "28": "Third... the music!\\nEvery region has its own songs.{be01}\\nWould you like to hear Hoenn's\\nmusic on your journey, or Unova's?{be01}",
+  "30": "UNOVA",
+  "31": "And last... how everyone looks!{be01}\\nWould you like to see people the way\\nthey looked in Hoenn long ago,{be00}\\nor in Unova's newer style?{be01}",
+  "0": "    \\x{ffff}",
+  "34": "    \\x{ffff}",
+  "36": "    \\x{ffff}"
+ },
+ "system/0398_type_names.txt": {
+  "17": "Fairy"
+ },
+ "system/0403_move_names.txt": {
+  "560": "Fairy Wind",
+  "561": "Disarming Voice",
+  "562": "Draining Kiss",
+  "563": "Dazzling Gleam",
+  "564": "Play Rough",
+  "565": "Moonblast"
+ },
+ "system/0488_move_names_upper.txt": {
+  "560": "FAIRY WIND",
+  "561": "DISARMING VOICE",
+  "562": "DRAINING KISS",
+  "563": "DAZZLING GLEAM",
+  "564": "PLAY ROUGH",
+  "565": "MOONBLAST"
+ },
+ "system/0402_btl_main.txt": {
+  "560": "The user stirs up a fairy wind and\\nstrikes the target with it.",
+  "561": "Letting out a charming cry, the user does\\nemotional damage to opposing Pokémon.\\nThis attack never misses.",
+  "562": "The user steals the target's HP with a\\nkiss. The user's HP is restored by over\\nhalf of the damage taken by the target.",
+  "563": "The user damages opposing Pokémon by\\nemitting a powerful flash.",
+  "564": "The user plays rough with the target\\nand attacks it. This may also lower the\\ntarget's Attack stat.",
+  "565": "Borrowing the power of the moon, the user\\nattacks the target. This may also lower\\nthe target's Sp. Atk stat."
+ },
+ "system/0016.txt": {
+  "1680": "{0102:0} used\\nFairy Wind!",
+  "1681": "The wild {0102:0} used\\nFairy Wind!",
+  "1682": "The foe's {0102:0} used\\nFairy Wind!",
+  "1683": "{0102:0} used\\nDisarming Voice!",
+  "1684": "The wild {0102:0} used\\nDisarming Voice!",
+  "1685": "The foe's {0102:0} used\\nDisarming Voice!",
+  "1686": "{0102:0} used\\nDraining Kiss!",
+  "1687": "The wild {0102:0} used\\nDraining Kiss!",
+  "1688": "The foe's {0102:0} used\\nDraining Kiss!",
+  "1689": "{0102:0} used\\nDazzling Gleam!",
+  "1690": "The wild {0102:0} used\\nDazzling Gleam!",
+  "1691": "The foe's {0102:0} used\\nDazzling Gleam!",
+  "1692": "{0102:0} used\\nPlay Rough!",
+  "1693": "The wild {0102:0} used\\nPlay Rough!",
+  "1694": "The foe's {0102:0} used\\nPlay Rough!",
+  "1695": "{0102:0} used\\nMoonblast!",
+  "1696": "The wild {0102:0} used\\nMoonblast!",
+  "1697": "The foe's {0102:0} used\\nMoonblast!"
+ },
+ "system/0064_item_names.txt": {
+  "113": "Pixie Plate",
+  "114": "Fairy Gem"
+ },
+ "system/0481_item_names_with_article.txt": {
+  "113": "{bd01}a {ff00:255}Pixie Plate",
+  "114": "{bd01}a {ff00:255}Fairy Gem"
+ },
+ "system/0482_item_names_plural.txt": {
+  "113": "Pixie Plates",
+  "114": "Fairy Gems"
+ },
+ "system/0063_scrcmd_resort_shop_scrcmd_bsubway.txt": {
+  "113": "An item to be held by a Pokémon.\\nIt is a stone tablet that boosts the\\npower of Fairy-type moves.",
+  "114": "A gem with an essence of the fey. When\\nheld, it strengthens the power of a\\nFairy-type move only once."
+ }
+}

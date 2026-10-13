@@ -1,0 +1,153 @@
+{
+ "_doc": "Slateport City buildings (group towns2, notes/TOWNS_TOWNS2.md). 'buildings' are placed by world.py from the plan's footprints; 'props' (map tile coords of the model origin) are buildings whose plan footprint is merged with a neighbour or not found (door tile walkable in Sapphire), plus door-less structures (market canopies and stalls).",
+ "group": "towns2",
+ "buildings": {
+  "MAP_SLATEPORT_CITY_CONTEST_LOBBY": {
+   "res": 362,
+   "front": 20
+  },
+  "MAP_SLATEPORT_CITY_HOUSE1": {
+   "res": 340,
+   "front": 20
+  },
+  "MAP_SLATEPORT_CITY_POKEMON_CENTER_1F": {
+   "res": 0,
+   "front": 20
+  },
+  "MAP_SLATEPORT_CITY_MART": {
+   "res": 3,
+   "front": 20
+  }
+ },
+ "props": [
+  {
+   "res": 340,
+   "x": 22.0,
+   "z": 43.0,
+   "what": "house 2 (door 21,44)"
+  },
+  {
+   "res": 341,
+   "x": 27.0,
+   "z": 43.0,
+   "what": "house 2, right half"
+  },
+  {
+   "res": 342,
+   "x": 4.5,
+   "z": 25.0,
+   "what": "Pokemon Fan Club (door 4,26)"
+  },
+  {
+   "res": 343,
+   "x": 31.0,
+   "z": 25.0,
+   "what": "Oceanic Museum (doors 30-31,26)"
+  },
+  {
+   "res": 344,
+   "x": 28.0,
+   "z": 37.0,
+   "what": "Stern's Shipyard (door 26,38)",
+   "covers": [
+    [
+     32,
+     34,
+     33,
+     38
+    ]
+   ]
+  },
+  {
+   "res": 345,
+   "x": 28.5,
+   "z": 11.0,
+   "what": "Harbor (door 28,12)"
+  },
+  {
+   "res": 346,
+   "x": 18.5,
+   "z": 9.0,
+   "what": "market canopy north (posts 16,9 / 20,9)",
+   "covers": [
+    [
+     16,
+     7,
+     20,
+     9
+    ]
+   ]
+  },
+  {
+   "res": 346,
+   "x": 10.5,
+   "z": 32.0,
+   "what": "market canopy (posts 8,32 / 12,32)",
+   "covers": [
+    [
+     8,
+     30,
+     12,
+     32
+    ]
+   ]
+  },
+  {
+   "res": 347,
+   "x": 4.5,
+   "z": 43.0,
+   "what": "market stall",
+   "covers": [[2, 41, 6, 42]]
+  },
+  {
+   "res": 347,
+   "x": 12.0,
+   "z": 43.0,
+   "what": "market stall",
+   "covers": [[10, 41, 13, 42]]
+  },
+  {
+   "res": 347,
+   "x": 4.5,
+   "z": 47.0,
+   "what": "market stall",
+   "covers": [[2, 45, 6, 46]]
+  },
+  {
+   "res": 347,
+   "x": 12.0,
+   "z": 47.0,
+   "what": "market stall",
+   "covers": [[10, 45, 13, 46]]
+  },
+  {
+   "res": 347,
+   "x": 4.5,
+   "z": 51.0,
+   "what": "market stall",
+   "covers": [[2, 49, 6, 50]]
+  },
+  {
+   "res": 347,
+   "x": 12.0,
+   "z": 51.0,
+   "what": "market stall",
+   "covers": [[10, 49, 13, 50]]
+  },
+  {
+   "res": 354,
+   "x": 33.0,
+   "z": 54.0,
+   "what": "white stone monument in the south plaza (prop tiles x 32-33, rows 52-54; buildings_audit)",
+   "covers": [
+    [
+     32,
+     52,
+     33,
+     54
+    ]
+   ]
+  }
+ ],
+ "_covers_doc": "props 'covers': map tile rects [x0, z0, x1, z1] the model stands on; world.py drops the ground module's plinths and plank canopies there (they stood around the stalls, canopies and shipyard frames; exterior sweep 2026-10-06). The stalls cover their two awning rows only: the row in front (Sapphire's posts and wares, solid, the seller between them) gets the ground module's counter plinths (walkability 2026-10-11: it was bare paving you could not walk on)."
+}

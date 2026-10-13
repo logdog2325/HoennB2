@@ -1,0 +1,110 @@
+{
+ "_doc": "gyms_league: Ever Grande corridor (EverGrandeCity_Corridor1): landing along the back wall with the door (5,2) to the next room, the staircase x 4-6 between rails (x 3 and 7) floating in the dark (Sapphire: dark void with lamps), arrival at its foot (row 12).",
+ "map": "EverGrandeCity_Corridor1",
+ "style": "gl_league",
+ "floor": [
+  [
+   0,
+   3,
+   10,
+   4
+  ],
+  [
+   3,
+   5,
+   7,
+   12
+  ]
+ ],
+ "open": [
+  [
+   0,
+   5,
+   2,
+   12
+  ],
+  [
+   8,
+   5,
+   10,
+   12
+  ]
+ ],
+ "floor_tex": [
+  {
+   "tex": "gra_stage04",
+   "src": 334,
+   "rect": [
+    0,
+    3,
+    10,
+    4
+   ],
+   "size": 16
+  },
+  {
+   "tex": "c4g_kaidan1",
+   "src": 304,
+   "rect": [
+    4,
+    5,
+    6,
+    12
+   ],
+   "size": 32,
+   "size_v": 16
+  },
+  {
+   "tex": "gra_stage01",
+   "src": 334,
+   "rect": [
+    3,
+    5,
+    3,
+    12
+   ],
+   "size": 32
+  },
+  {
+   "tex": "gra_stage01",
+   "src": 334,
+   "rect": [
+    7,
+    5,
+    7,
+    12
+   ],
+   "size": 32
+  }
+ ],
+ "blocks": [
+  {
+   "use": "gl_rail",
+   "units": [
+    3.35,
+    5.0,
+    3.85,
+    13.0
+   ]
+  },
+  {
+   "use": "gl_rail",
+   "units": [
+    7.15,
+    5.0,
+    7.65,
+    13.0
+   ]
+  }
+ ],
+ "furniture": [
+  {
+   "m": "door_h5_in",
+   "tile": [
+    5,
+    3
+   ],
+   "wall": "N"
+  }
+ ]
+}

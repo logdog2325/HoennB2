@@ -1,0 +1,24 @@
+This Flower Shop started selling\nsaplings recently.{be01}\nIt made me so happy, I went overboard\nshopping.{be01}\nI don’t need this White Herb anymore.\nWould you take it, please?
+This Flower Shop started selling\nsaplings recently.{be01}\nIt made me so happy, I went overboard\nshopping. Where should I put them?
+I like filling my mouth with seeds,\nthen spitting them out fast!{be01}\nYou can have this, so you try it out!{be01}\nUse it on a Pokémon, and it will learn\na move for firing seeds rapidly.
+A word of advice!{be01}\nA TM, Technical Machine, is good only\nfor one-time use.{be01}\nOnce you use it, it’s gone.\nThink twice before using it!
+Gina: You are strong!\nWe have to train lots more!
+Gina: You are strong!\nWe have to train lots more!
+If you see Berries growing in loamy\nsoil, feel free to take them.{be01}\nBut make sure you plant a Berry in the\nsame spot. That’s common courtesy.{be01}\nHere, I’ll share this with you.
+The way you look, you must be a\nTrainer, no?{be01}\nTrainers often make Pokémon hold\nBerries.{be01}\nIt’s up to you whether to grow Berries\nor use them.
+May: Oh, hi, {0100:0}!{be01}\nDevon upgraded your PokéNav with\nthe Match Call system, huh?{be01}\nWe should register each other so we\ncan get in contact anytime.
+Brendan: Oh, hey, {0100:0}!{be01}\nCool, you had Devon install the Match\nCall system on your PokéNav!{be01}\nLet’s register each other in our\nPokéNavs so we can keep in touch.
+{0100:0} registered May\nin the PokéNav.
+{0100:0} registered Brendan\nin the PokéNav.
+May: Oh, by the way, {0100:0},\nhow’s your Pokédex coming along?
+Brendan: {0100:0}, how’s your Pokédex?\nHave you filled in any pages yet?
+Mine’s looking pretty decent.\nSo…{be00}\nHow about a little battle?
+Me, I’m doing great!{be01}\nWant to check out how good I am with\na battle?
+May: Oh, what’s the matter?{be01}\nHaven’t you caught or raised your\nPokémon very much?{be01}\nThat’s not very good for a Trainer!
+Brendan: What’s the matter? Don’t have\nany confidence in your Pokémon?
+May: So, what do you think?\nHow about a little battle here?
+Brendan: What’s up?\nWant to have a battle with me?
+May: You just became a Trainer,\n{0100:0}. I’m not going to lose!
+Brendan: I know you just became\na Trainer, but I won’t go easy!
+May: I can tell you’ve gotten pretty\ngood with the way you handle Pokémon.{be01}\nBut instead of only making them\nbattle, you should be like Mr. Briney.{be01}\nIt’s important to become friends with\nPokémon, too.
+Brendan: You’ve gotten pretty decent\nat handling Pokémon.{be01}\nBut, you know, you shouldn’t just be\nmaking Pokémon battle.{be01}\nLike Mr. Briney, it’s important to\nbecome friends with your Pokémon.

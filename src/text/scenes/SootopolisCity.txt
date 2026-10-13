@@ -1,0 +1,30 @@
+Who might you be?{be01}\nThis is the Cave Of Origin.{be01}\nThe spirits of Pokémon, becalmed at\nMt. Pyre, are said to be revived here.{be01}\nPlease leave.
+All life starts at the Cave Of Origin,\nand it all ends on Mt. Pyre...{be01}\nWhere do people and Pokémon come\nfrom? Where are we bound?
+The legend told by the old man on\nMt. Pyre... It wasn’t a made-up story.
+The natural balance of Hoenn is going\nthrough a wrenching shift...
+Hi, what’s your name?{be01}\n... ... ...  ... ... ...  ... ... ...\nOkay. That’s nice!{be01}\nMy name is Kiri.{be01}\nMy mommy and daddy named me that so\nI would grow healthy and warmhearted.{be00}\nThat’s what they wished.{be01}\nYou can have one of these.
+Kiri will give you this Berry, too!\nI really like it lots!
+I wonder what kind of wish is included\nin your name.
+Spring, summer, autumn, and winter.{be01}\nIf you’re born in springtime, do you like\nthe spring, and if you’re born in the{be00}\nsummer, do you like the summer?
+Then Kiri was born in the autumn,\nso I love the autumn!{be01}\nWhich season do you like?
+Oh...\nIt doesn’t matter...{be01}\nThere’s so much that I want to know...
+Let me guess, you’re going to challenge\nWallace?{be01}\nOh, you are really?\nYou’re awfully brave!
+Let me guess, you’ve beaten Wallace!\nOh, you did, really?{be01}\nMaybe I’ll become your fan!
+Hm!\nYou’ve come all the way to Sootopolis?{be00}\nYou’re no ordinary tourist.{be01}\nBut I suppose that doesn’t make you an\nextraordinary tourist, either.
+Hm!\nYou’ve come all the way to Sootopolis?{be00}\nYou’re no ordinary tourist.{be01}\nBut I suppose that doesn’t make you an\nextraordinary tourist, either.
+Sootopolis sprang up as a town in the\ncrater of a volcano.{be01}\nIf you look up at the sky, the lip of\nthe crater is also visible.{be00}\nSo, all you see is the sky in a circle.{be01}\nBut that’s what makes the sky above\nSootopolis the most beautiful.
+A circle of a night sky framed by the\ncrater of a volcano...{be01}\nAnd in that ring, stars flicker and\nblink as if they were alive...{be00}\nIt’s my favorite scenery.
+I... I’ve never been out of this city.{be01}\nI wonder what the world is like on the\nother side of this round sky?
+Hunh? Where is my house?
+Diving in the sea. Climbing up and\ndown stairs all the time...{be01}\nIf you live in this town, you end up\ngetting physically fit.
+Steven: {0100:0}, you came, too?\nIn this terrible rainstorm, yet...{be01}\nOh, yes, can you hear out what my\nfriend has to say?
+My name is Wallace.\nI’m this town’s Gym Leader.{be01}\nI’ve also been entrusted with the\nprotection of the Cave Of Origin.{be01}\nThis downpour is caused by a power\nemanating from the Cave Of Origin.
+That... That is the Blue Orb.{be01}\nI see.\nFollow me.
+Steven: This rain...{be01}\nPeople and Pokémon need water to live...{be01}\nBut why does this rain fill us with\nso much dread?{be01}\nThe rain clouds over Sootopolis will\nkeep building and soon extend all{be00}\nover Hoenn...{be01}\nIf that were to happen...
+Wallace: The Cave Of Origin is ahead.{be01}\nNo one from Sootopolis is permitted\nto enter the Cave Of Origin.{be01}\nBut you must go.\nTogether with your Blue Orb.{be01}\nYou must go regardless of what awaits\nyou inside the Cave...
+Steven: {0100:0}, I never expected you\nto be holding the Blue Orb.{be01}\nYou’ll be okay. With your Pokémon,\nyou’ll get things done no matter what.{be01}\nI’m convinced of it!
+Wallace: You must go together with\nyour Blue Orb.{be01}\nYou must go regardless of what awaits\nyou inside the Cave...
+Steven: You’ll be okay. With your\nPokémon, you’ll get things done{be00}\nwhatever happens.{be01}\nI’m convinced of it!
+Steven: {0100:0}, we owe it all to you.{be01}\nThe sky above Sootopolis has returned\nto normal. For that, Wallace sends his{be00}\nthanks, too.{be01}\nAnd, that same Wallace is waiting for\nyou inside.{be01}\nHe’s strong.\nBut the way you are now, you should be{be00}\non equal footing with him.{be01}\nGive it your best shot.
+The door is closed.
+Too bad!\nThe Bag is full...

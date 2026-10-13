@@ -1,0 +1,27 @@
+# Hoenn Mom on code 357 (Black 2's Mom with phone frames, used by Aspertia's opening only): the same drawing as
+# mom.txt for frames 0-6; the phone frames hold a phone at her ear, the "look" frames reuse her side and front views.
+# No Hoenn script uses 357; it is redrawn so that no Unova Mom is left.
+include: mom
+name: hoenn-mom-phone
+code: 357
+sapphire: mom 3
+standin: 357
+note: Hoenn Mom with a phone (code 357), drawn from Sapphire's Mom
+outlines: Ssa>a hHLl>h<24
+
+part phone
+kNNk
+kBNk
+kNNSk
+.kSSk
+..kk
+part arm_up
+_k.
+__k
+___
+frame phone0 = stack 0:down 13:phone:5 23:arm_up:9
+frame phone1 = same phone0
+frame look0 = same left
+frame look1 = same left
+frame look2 = mirror left
+frame look3 = same down

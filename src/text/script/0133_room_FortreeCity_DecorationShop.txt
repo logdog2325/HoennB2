@@ -1,0 +1,4 @@
+Merchandise you buy here is sent to\nyour own PC.{be01}\nThat’s fantastic! I wish they could\nalso deliver me home like that.
+I’m buying a pretty desk and I’m\nputting my cute Dolls on it.{be01}\nIf I don’t, when I decorate my\nSecret Base, my Dolls will get{be00}\ndirty or poked with splinters.
+Welcome!{be01}\nHow may I serve you?
+Please come again!

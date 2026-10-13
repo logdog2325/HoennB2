@@ -1,0 +1,38 @@
+{
+ "_doc": "Emerald's gTileset_Fallarbor metatiles labelled by eye (emerald_world 2026-10-12; sheets: work/agents/emerald_world/tools/label_sheets.py): the ones converter/emerald_labels.py cannot carry over from Sapphire. Wins over carry_gTileset_Fallarbor.json.",
+ "gTileset_Fallarbor": {
+  "2ec": "path",
+  "2fc": "path",
+  "347": "cave_entrance",
+  "34a": "building",
+  "34b": "building",
+  "34c": "building",
+  "34d": "building",
+  "34e": "building",
+  "34f": "cave_entrance",
+  "352": "building",
+  "353": "building",
+  "354": "building",
+  "355": "building",
+  "356": "building",
+  "35a": "building",
+  "35b": "building",
+  "35c": "building",
+  "35d": "building",
+  "35e": "building",
+  "362": "building",
+  "363": "building",
+  "364": "building",
+  "365": "building",
+  "366": "building",
+  "36a": "building",
+  "36b": "building",
+  "36c": "door",
+  "36d": "building",
+  "36e": "building"
+ },
+ "_notes": {
+  "_battle_tent": "Fallarbor's Battle Tent (x 6-10, rows 3-7, door (8,7) 0x36C): building",
+  "_terra_cave_red": "0x347 / 0x34F (pokeemerald METATILE_Fallarbor_RedCaveEntrance_Top / _Bottom): no main layout has them; Emerald's abnormal weather sets them on Route 114 (7,3)/(7,4) for Terra Cave (data/emerald/hoenn_map_additions.json LAYOUT_ROUTE114_AW_1, emerald_ch12_13): cave_entrance, as the brown 0x259 / 0x261 the carry-over gives"
+ }
+}

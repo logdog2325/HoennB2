@@ -1,0 +1,2 @@
+Use X Speed to add to a Pokémon’s\nSpeed in battle.{be01}\nThat will help it get in the first\nstrike - a decided advantage!
+On Mt. Chimney’s peak, there’s a local\nspecialty that you can buy only there.{be01}\nGive it to a Pokémon - it will be elated.

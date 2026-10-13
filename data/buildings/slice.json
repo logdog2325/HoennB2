@@ -1,0 +1,124 @@
+{
+ "_doc": "Building models of the Littleroot/Route 101/Oldale slice in exterior pack 0 (patches/area2_buildings.py). models: res id (an existing pack-0 id is replaced, a new one appended), model file, door res and door offset (the game draws the door model at the building origin + (dx, dz); 65535 = no door), optional type (info record type, default 0; 11 = event prop that scripts hide with BMSetVisible 8, x, z, 0). textures: [building texture set file in work/tex, texture name] pairs merged losslessly into pack 0's texture set. Door dx = door tile centre - footprint centre + 8 for doors 164/165/236/259-261 (their models span x -18..2 around the door origin) and + 0 for door_pc 93 (centred); measured in the built world by b2tools/exterior_check.py buildings (2026-10-06: Littleroot's houses/lab and Oldale's houses were 8 units left). Door dz: the door model's glass (door 165/236 at z 0, 164 at -1) and plate (+2) must stay 1 unit or more off the wall and frame planes they overlap (melonDS flicker); dz was moved forward where b2tools/exterior_check.py found them closer (exterior sweep 2026-10-06). door_pc (93): dz = the front wall's z - 4, so its curved arc's ends stand on the wall under the canopy the models build over it (buildings.pc_door_hood); walls over the other doors are buildings.DOOR_WALL (38) high: b2tools/door_check.py (door_fix 2026-10-11).",
+ "models": [
+  {
+   "res": 0,
+   "model": "work/buildings/oldale/center.nsbmd",
+   "door": 93,
+   "dx": -8,
+   "dz": 16,
+   "what": "Gen 3 Pokemon Center (replaces pc_01)"
+  },
+  {
+   "res": 2,
+   "model": "work/buildings/oldale/house.nsbmd",
+   "door": 236,
+   "dx": 0,
+   "dz": 21,
+   "what": "Oldale house (replaces t2_house01)"
+  },
+  {
+   "res": 3,
+   "model": "work/buildings/oldale/mart.nsbmd",
+   "door": 93,
+   "dx": -8,
+   "dz": 16,
+   "what": "Gen 3 Poke Mart (replaces t2_build01)"
+  },
+  {
+   "res": 4,
+   "model": "work/buildings/littleroot/house_l.nsbmd",
+   "door": 164,
+   "dx": 24,
+   "dz": 26,
+   "what": "Brendan's house"
+  },
+  {
+   "res": 5,
+   "model": "work/buildings/littleroot/house_r.nsbmd",
+   "door": 164,
+   "dx": -8,
+   "dz": 26,
+   "what": "May's house"
+  },
+  {
+   "res": 6,
+   "model": "work/buildings/littleroot/lab.nsbmd",
+   "door": 165,
+   "dx": 24,
+   "dz": 28,
+   "what": "Birch's lab"
+  }
+ ],
+ "textures": [
+  [
+   "ext02",
+   "c4m_yane_001"
+  ],
+  [
+   "ext05",
+   "r4_b03_yane01"
+  ],
+  [
+   "ext53",
+   "t06_h_03_a"
+  ],
+  [
+   "ext57",
+   "c14_h1_body"
+  ],
+  [
+   "ext57",
+   "c14_h2_yane"
+  ],
+  [
+   "ext08",
+   "d5_conte02a"
+  ],
+  [
+   "ext08",
+   "d5_conte02b"
+  ],
+  [
+   "ext33",
+   "lb_body_a2"
+  ],
+  [
+   "ext33",
+   "lb_win_c.1"
+  ],
+  [
+   "ext33",
+   "lb_tire"
+  ]
+ ],
+ "drop": [
+  301,
+  302,
+  297,
+  295,
+  299,
+  300,
+  298,
+  296,
+  191,
+  190,
+  1,
+  112,
+  156,
+  134,
+  155,
+  27,
+  69,
+  25,
+  153,
+  193,
+  235,
+  258,
+  103,
+  55,
+  54,
+  192
+ ],
+ "_drop_doc": "Black 2 models no Hoenn registry, town, sign or door uses (Route 1 seasonal trees, outwarp, gate_01, Unova props): 69,880 B. Keep rock_01 (21): the default model."
+}

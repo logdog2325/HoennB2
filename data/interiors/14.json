@@ -1,0 +1,73 @@
+{
+ "_doc": "Stern's Shipyard 1F (zone 14; scripts src/field_scripts/0028_room_SlateportCity_SternsShipyard_1F.s, text 0020). Area 289 = Black 2's Castelia office area (interior pack 7). Sapphire's dock worker (5,5) (multi-step script) and Mr. Briney (FLAG_HIDE_BRINEY_SLATEPORT_SHIPYARD) are story: not placed yet.",
+ "zone": 14,
+ "room": "SlateportCity_SternsShipyard_1F",
+ "area": 289,
+ "parent": 448,
+ "warps": [
+  {
+   "at": [
+    2,
+    14
+   ],
+   "tile_only": true,
+   "to": [
+    448,
+    10
+   ],
+   "what": "Sapphire warp 0 -> SlateportCity 2"
+  },
+  {
+   "at": [
+    3,
+    14
+   ],
+   "tile_only": true,
+   "to": [
+    448,
+    10
+   ],
+   "what": "Sapphire warp 1 -> SlateportCity 2"
+  },
+  {
+   "at": [
+    3,
+    1
+   ],
+   "tile_only": true,
+   "to": [
+    22,
+    0
+   ],
+   "what": "Sapphire warp 2 -> SlateportCity_SternsShipyard_2F 0"
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 2,
+   "model": 73,
+   "script": 1,
+   "dir": 0,
+   "at": [
+    10,
+    7
+   ]
+  },
+  {
+   "uid": 3,
+   "model": 73,
+   "script": 2,
+   "dir": 1,
+   "at": [
+    18,
+    8
+   ],
+   "move": 5,
+   "range": [
+    1,
+    0
+   ]
+  }
+ ],
+ "signs": []
+}

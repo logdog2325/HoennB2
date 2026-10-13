@@ -1,0 +1,816 @@
+{
+ "_doc": "Chapter 8 part 8b (ch8b agent, 2026-10-07) story objects (b2tools/patches/story.py): Route 121 (the Aqua grunts and the four step triggers), Route 123 (the Grass-type girl), Mt. Pyre (1F Cleanse Tag woman, the floors' eye-contact trainers, the summit), the Aqua Hideout, the Berry Master's house and the Safari Zone. Sapphire tiles ('at') of the named map; outdoor uid = 100 + Sapphire local id, rooms the local id. Written by work/agents/ch8b/gen_objects.py.",
+ "objects": [
+  {
+   "kind": "npc",
+   "map": "Route121",
+   "at": [
+    30,
+    8
+   ],
+   "uid": 112,
+   "model": 293,
+   "script": 0,
+   "dir": 0,
+   "move": 14,
+   "flag": "FLAG_HIDE_GRUNTS_ROUTE121",
+   "what": "Aqua grunt (VAR_1) (Sapphire object 12, VAR_1, FACE_UP)"
+  },
+  {
+   "kind": "npc",
+   "map": "Route121",
+   "at": [
+    30,
+    7
+   ],
+   "uid": 113,
+   "model": 293,
+   "script": 0,
+   "dir": 3,
+   "move": 17,
+   "flag": "FLAG_HIDE_GRUNTS_ROUTE121",
+   "what": "Aqua grunt (VAR_1) (Sapphire object 13, VAR_1, FACE_RIGHT)"
+  },
+  {
+   "kind": "npc",
+   "map": "Route121",
+   "at": [
+    31,
+    7
+   ],
+   "uid": 114,
+   "model": 293,
+   "script": 0,
+   "dir": 2,
+   "move": 16,
+   "flag": "FLAG_HIDE_GRUNTS_ROUTE121",
+   "what": "Aqua grunt (VAR_1) (Sapphire object 14, VAR_1, FACE_LEFT)"
+  },
+  {
+   "kind": "trigger",
+   "map": "Route121",
+   "at": [
+    25,
+    5
+   ],
+   "script": 2,
+   "var": "VAR_ROUTE121_STATE",
+   "value": 0,
+   "what": "Route121_EventScript_151B25"
+  },
+  {
+   "kind": "trigger",
+   "map": "Route121",
+   "at": [
+    25,
+    6
+   ],
+   "script": 2,
+   "var": "VAR_ROUTE121_STATE",
+   "value": 0,
+   "what": "Route121_EventScript_151B25"
+  },
+  {
+   "kind": "trigger",
+   "map": "Route121",
+   "at": [
+    25,
+    7
+   ],
+   "script": 2,
+   "var": "VAR_ROUTE121_STATE",
+   "value": 0,
+   "what": "Route121_EventScript_151B25"
+  },
+  {
+   "kind": "trigger",
+   "map": "Route121",
+   "at": [
+    25,
+    8
+   ],
+   "script": 2,
+   "var": "VAR_ROUTE121_STATE",
+   "value": 0,
+   "what": "Route121_EventScript_151B25"
+  },
+  {
+   "kind": "npc",
+   "map": "Route123",
+   "at": [
+    108,
+    13
+   ],
+   "uid": 123,
+   "model": 15,
+   "script": 1,
+   "dir": 0,
+   "move": 6,
+   "what": "the Grass-type girl (TM19) (Sapphire object 23, GIRL_3, FACE_UP_AND_LEFT)"
+  },
+  {
+   "kind": "npc",
+   "map": "MtPyre_1F",
+   "at": [
+    21,
+    2
+   ],
+   "uid": 1,
+   "model": 45,
+   "script": 3,
+   "dir": 1,
+   "move": 15,
+   "what": "the Cleanse Tag woman (Sapphire object 1, OLD_WOMAN_2, FACE_DOWN)"
+  },
+  {
+   "kind": "npc",
+   "map": "MtPyre_2F",
+   "at": [
+    6,
+    6
+   ],
+   "uid": 1,
+   "model": 24,
+   "script": 3269,
+   "dir": 1,
+   "move": 8,
+   "what": "TRAINER_MARK: eye-contact trainer (Sapphire object 1, MANIAC, FACE_DOWN_AND_LEFT)",
+   "evtype": 1,
+   "p0": 2
+  },
+  {
+   "kind": "npc",
+   "map": "MtPyre_2F",
+   "at": [
+    3,
+    8
+   ],
+   "uid": 6,
+   "model": 42,
+   "script": 3725,
+   "dir": 1,
+   "move": 15,
+   "what": "TRAINER_DEZ_AND_LUKE: eye-contact trainer (Sapphire object 6, MAN_5, FACE_DOWN)",
+   "evtype": 1,
+   "p0": 0,
+   "at_emerald": [
+    3,
+    9
+   ]
+  },
+  {
+   "kind": "npc",
+   "map": "MtPyre_2F",
+   "at": [
+    2,
+    8
+   ],
+   "uid": 5,
+   "model": 22,
+   "script": 5725,
+   "dir": 1,
+   "move": 15,
+   "what": "TRAINER_DEZ_AND_LUKE: eye-contact trainer (Sapphire object 5, WOMAN_5, FACE_DOWN)",
+   "evtype": 1,
+   "p0": 0,
+   "at_emerald": [
+    2,
+    9
+   ]
+  },
+  {
+   "kind": "npc",
+   "map": "MtPyre_3F",
+   "at": [
+    1,
+    4
+   ],
+   "uid": 1,
+   "model": 183,
+   "script": 3355,
+   "dir": 1,
+   "move": 9,
+   "what": "TRAINER_WILLIAM: eye-contact trainer (Sapphire object 1, PSYCHIC_M, FACE_DOWN_AND_RIGHT)",
+   "evtype": 1,
+   "p0": 3
+  },
+  {
+   "kind": "npc",
+   "map": "MtPyre_3F",
+   "at": [
+    12,
+    7
+   ],
+   "uid": 2,
+   "model": 15,
+   "script": 3366,
+   "dir": 1,
+   "move": 8,
+   "what": "TRAINER_KAYLA: eye-contact trainer (Sapphire object 2, LASS, FACE_DOWN_AND_LEFT)",
+   "evtype": 1,
+   "p0": 3
+  },
+  {
+   "kind": "npc",
+   "map": "MtPyre_4F",
+   "at": [
+    11,
+    7
+   ],
+   "uid": 1,
+   "model": 46,
+   "script": 3314,
+   "dir": 1,
+   "move": 19,
+   "what": "TRAINER_ATSUSHI: eye-contact trainer (Sapphire object 1, BLACK_BELT, ROTATE_CLOCKWISE)",
+   "evtype": 1,
+   "p0": 2
+  },
+  {
+   "kind": "npc",
+   "map": "MtPyre_5F",
+   "at": [
+    3,
+    7
+   ],
+   "uid": 1,
+   "model": 184,
+   "script": 3211,
+   "dir": 1,
+   "move": 8,
+   "what": "TRAINER_TASHA: eye-contact trainer (Sapphire object 1, HEX_MANIAC, FACE_DOWN_AND_LEFT)",
+   "evtype": 1,
+   "p0": 2
+  },
+  {
+   "kind": "npc",
+   "map": "MtPyre_6F",
+   "at": [
+    6,
+    3
+   ],
+   "uid": 1,
+   "model": 184,
+   "script": 3210,
+   "dir": 1,
+   "move": 18,
+   "what": "TRAINER_VALERIE_1: eye-contact trainer (Sapphire object 1, HEX_MANIAC, ROTATE_COUNTERCLOCKWISE)",
+   "evtype": 1,
+   "p0": 2
+  },
+  {
+   "kind": "npc",
+   "map": "MtPyre_Summit",
+   "at": [
+    22,
+    5
+   ],
+   "uid": 101,
+   "model": 187,
+   "script": 1,
+   "dir": 1,
+   "move": 15,
+   "what": "the old man (the tale of the Orbs) (Sapphire object 1, OLD_MAN_2, FACE_DOWN)"
+  },
+  {
+   "kind": "npc",
+   "map": "MtPyre_Summit",
+   "at": [
+    23,
+    6
+   ],
+   "uid": 102,
+   "model": 353,
+   "script": 0,
+   "dir": 0,
+   "move": 14,
+   "flag": "FLAG_HIDE_LEADER_MT_PYRE_SUMMIT",
+   "what": "Archie (VAR_6) (Sapphire object 2, VAR_6, FACE_UP)"
+  },
+  {
+   "kind": "npc",
+   "map": "MtPyre_Summit",
+   "at": [
+    23,
+    5
+   ],
+   "uid": 103,
+   "model": 29,
+   "script": 2,
+   "dir": 1,
+   "move": 15,
+   "what": "the old woman (the Blue Orb) (Sapphire object 3, OLD_WOMAN_1, FACE_DOWN)"
+  },
+  {
+   "kind": "npc",
+   "map": "MtPyre_Summit",
+   "at": [
+    21,
+    18
+   ],
+   "uid": 104,
+   "model": 293,
+   "script": 3038,
+   "dir": 3,
+   "move": 17,
+   "flag": "FLAG_HIDE_GRUNTS_MT_PYRE_SUMMIT",
+   "what": "TRAINER_GRUNT_22: eye-contact trainer (Sapphire object 4, VAR_1, FACE_RIGHT)",
+   "evtype": 1,
+   "p0": 3,
+   "at_emerald": [
+    21,
+    15
+   ]
+  },
+  {
+   "kind": "npc",
+   "map": "MtPyre_Summit",
+   "at": [
+    25,
+    15
+   ],
+   "uid": 105,
+   "model": 293,
+   "script": 3039,
+   "dir": 2,
+   "move": 16,
+   "flag": "FLAG_HIDE_GRUNTS_MT_PYRE_SUMMIT",
+   "what": "TRAINER_GRUNT_23: eye-contact trainer (Sapphire object 5, VAR_1, FACE_LEFT)",
+   "evtype": 1,
+   "p0": 3,
+   "at_emerald": [
+    25,
+    18
+   ]
+  },
+  {
+   "kind": "npc",
+   "map": "MtPyre_Summit",
+   "at": [
+    21,
+    11
+   ],
+   "uid": 106,
+   "model": 293,
+   "script": 3040,
+   "dir": 3,
+   "move": 17,
+   "flag": "FLAG_HIDE_GRUNTS_MT_PYRE_SUMMIT",
+   "what": "TRAINER_GRUNT_24: eye-contact trainer (Sapphire object 6, VAR_1, FACE_RIGHT)",
+   "evtype": 1,
+   "p0": 3
+  },
+  {
+   "kind": "trigger",
+   "map": "MtPyre_Summit",
+   "at": [
+    22,
+    7
+   ],
+   "script": 3,
+   "var": "VAR_MT_PYRE_STATE",
+   "value": 0,
+   "what": "trigger (22,7) VAR_MT_PYRE_STATE 0"
+  },
+  {
+   "kind": "trigger",
+   "map": "MtPyre_Summit",
+   "at": [
+    23,
+    7
+   ],
+   "script": 4,
+   "var": "VAR_MT_PYRE_STATE",
+   "value": 0,
+   "what": "trigger (23,7) VAR_MT_PYRE_STATE 0"
+  },
+  {
+   "kind": "trigger",
+   "map": "MtPyre_Summit",
+   "at": [
+    24,
+    7
+   ],
+   "script": 5,
+   "var": "VAR_MT_PYRE_STATE",
+   "value": 0,
+   "what": "trigger (24,7) VAR_MT_PYRE_STATE 0"
+  },
+  {
+   "kind": "trigger",
+   "map": "MtPyre_Summit",
+   "at": [
+    22,
+    7
+   ],
+   "script": 6,
+   "var": "VAR_MT_PYRE_STATE",
+   "value": 2,
+   "what": "trigger (22,7) VAR_MT_PYRE_STATE 2",
+   "skip_emerald": true
+  },
+  {
+   "kind": "trigger",
+   "map": "MtPyre_Summit",
+   "at": [
+    23,
+    7
+   ],
+   "script": 7,
+   "var": "VAR_MT_PYRE_STATE",
+   "value": 2,
+   "what": "trigger (23,7) VAR_MT_PYRE_STATE 2",
+   "skip_emerald": true
+  },
+  {
+   "kind": "trigger",
+   "map": "MtPyre_Summit",
+   "at": [
+    24,
+    7
+   ],
+   "script": 8,
+   "var": "VAR_MT_PYRE_STATE",
+   "value": 2,
+   "what": "trigger (24,7) VAR_MT_PYRE_STATE 2",
+   "skip_emerald": true
+  },
+  {
+   "kind": "npc",
+   "map": "AquaHideout_1F",
+   "at": [
+    13,
+    11
+   ],
+   "uid": 1,
+   "model": 293,
+   "script": 2,
+   "dir": 1,
+   "move": 15,
+   "flag": "FLAG_HIDE_GRUNT_1_BLOCKING_HIDEOUT",
+   "what": "the grunt guarding the door (VAR_1) (Sapphire object 1, VAR_1, FACE_DOWN)"
+  },
+  {
+   "kind": "npc",
+   "map": "AquaHideout_1F",
+   "at": [
+    14,
+    11
+   ],
+   "uid": 2,
+   "model": 293,
+   "script": 3,
+   "dir": 1,
+   "move": 15,
+   "flag": "FLAG_HIDE_GRUNT_2_BLOCKING_HIDEOUT",
+   "what": "the grunt guarding the door (VAR_1) (Sapphire object 2, VAR_1, FACE_DOWN)"
+  },
+  {
+   "kind": "npc",
+   "map": "AquaHideout_1F",
+   "at": [
+    20,
+    4
+   ],
+   "uid": 3,
+   "model": 293,
+   "script": 3004,
+   "dir": 1,
+   "move": 42,
+   "flag": "FLAG_HIDE_GRUNTS_HIDEOUTS",
+   "what": "TRAINER_GRUNT_1: eye-contact trainer (Sapphire object 3, VAR_1, WALK_SEQUENCE_DOWN_LEFT_UP_RIGHT) (walks: Black 2 code 42, Sapphire range 13x5; v165_fixes)",
+   "evtype": 1,
+   "p0": 3,
+   "areaw": 13,
+   "areah": 5
+  },
+  {
+   "kind": "npc",
+   "map": "AquaHideout_B1F",
+   "at": [
+    27,
+    18
+   ],
+   "uid": 1,
+   "model": 293,
+   "script": 3005,
+   "dir": 1,
+   "move": 19,
+   "flag": "FLAG_HIDE_GRUNTS_HIDEOUTS",
+   "what": "TRAINER_GRUNT_2: eye-contact trainer (Sapphire object 1, VAR_1, ROTATE_CLOCKWISE)",
+   "evtype": 1,
+   "p0": 3
+  },
+  {
+   "kind": "npc",
+   "map": "AquaHideout_B1F",
+   "at": [
+    6,
+    6
+   ],
+   "uid": 2,
+   "model": 293,
+   "script": 3006,
+   "dir": 2,
+   "move": 16,
+   "flag": "FLAG_HIDE_GRUNTS_HIDEOUTS",
+   "what": "TRAINER_GRUNT_3: eye-contact trainer (Sapphire object 2, VAR_1, FACE_LEFT)",
+   "evtype": 1,
+   "p0": 5
+  },
+  {
+   "kind": "npc",
+   "map": "AquaHideout_B1F",
+   "at": [
+    20,
+    18
+   ],
+   "uid": 4,
+   "model": 294,
+   "script": 3042,
+   "dir": 2,
+   "move": 20,
+   "flag": "FLAG_HIDE_GRUNTS_HIDEOUTS",
+   "what": "TRAINER_GRUNT_26: eye-contact trainer (Sapphire object 4, VAR_2, WALK_LEFT_AND_RIGHT) (walks: Black 2 code 20, Sapphire range 4x0; v165_fixes)",
+   "evtype": 1,
+   "p0": 4,
+   "areaw": 4,
+   "areah": 0
+  },
+  {
+   "kind": "npc",
+   "map": "AquaHideout_B1F",
+   "at": [
+    16,
+    9
+   ],
+   "uid": 6,
+   "model": 110,
+   "script": 3,
+   "dir": 1,
+   "move": 2,
+   "flag": "FLAG_HIDE_ELECTRODE_1_HIDEOUT",
+   "what": "Electrode as an item ball (Sapphire object 6, ITEM_BALL, LOOK_AROUND)"
+  },
+  {
+   "kind": "npc",
+   "map": "AquaHideout_B1F",
+   "at": [
+    16,
+    10
+   ],
+   "uid": 8,
+   "model": 110,
+   "script": 4,
+   "dir": 1,
+   "move": 2,
+   "flag": "FLAG_HIDE_ELECTRODE_2_HIDEOUT",
+   "what": "Electrode as an item ball (Sapphire object 8, ITEM_BALL, LOOK_AROUND)"
+  },
+  {
+   "kind": "npc",
+   "map": "AquaHideout_B2F",
+   "at": [
+    23,
+    19
+   ],
+   "uid": 1,
+   "model": 88,
+   "script": 3,
+   "dir": 2,
+   "move": 16,
+   "flag": "FLAG_HIDE_GRUNTS_HIDEOUTS",
+   "what": "Matt (VAR_1) (Sapphire object 1, VAR_1, FACE_LEFT)"
+  },
+  {
+   "kind": "npc",
+   "map": "AquaHideout_B2F",
+   "at": [
+    23,
+    10
+   ],
+   "uid": 2,
+   "model": 293,
+   "script": 3010,
+   "dir": 0,
+   "move": 37,
+   "flag": "FLAG_HIDE_GRUNTS_HIDEOUTS",
+   "what": "TRAINER_GRUNT_4: eye-contact trainer (Sapphire object 2, VAR_1, WALK_SEQUENCE_UP_LEFT_DOWN_RIGHT) (walks: Black 2 code 37, Sapphire range 4x3; v165_fixes)",
+   "evtype": 1,
+   "p0": 3,
+   "areaw": 4,
+   "areah": 3
+  },
+  {
+   "kind": "npc",
+   "map": "AquaHideout_B2F",
+   "at": [
+    10,
+    6
+   ],
+   "uid": 5,
+   "model": 294,
+   "script": 3043,
+   "dir": 0,
+   "move": 14,
+   "flag": "FLAG_HIDE_GRUNTS_HIDEOUTS",
+   "what": "TRAINER_GRUNT_27: eye-contact trainer (Sapphire object 5, VAR_2, FACE_UP)",
+   "evtype": 1,
+   "p0": 4
+  },
+  {
+   "kind": "trigger",
+   "map": "AquaHideout_B2F",
+   "at": [
+    28,
+    16
+   ],
+   "script": 2,
+   "var": "0x4001",
+   "value": 0,
+   "what": "AquaHideout_B2F_EventScript_15D8BD"
+  },
+  {
+   "kind": "trigger",
+   "map": "AquaHideout_B2F",
+   "at": [
+    28,
+    17
+   ],
+   "script": 2,
+   "var": "0x4001",
+   "value": 0,
+   "what": "AquaHideout_B2F_EventScript_15D8BD"
+  },
+  {
+   "kind": "npc",
+   "map": "Route123_BerryMastersHouse",
+   "at": [
+    4,
+    4
+   ],
+   "uid": 1,
+   "model": 28,
+   "script": 2,
+   "dir": 1,
+   "move": 15,
+   "what": "the Berry Master (Sapphire object 1, OLD_MAN_1, FACE_DOWN)"
+  },
+  {
+   "kind": "npc",
+   "map": "Route123_BerryMastersHouse",
+   "at": [
+    7,
+    4
+   ],
+   "uid": 2,
+   "model": 45,
+   "script": 3,
+   "dir": 1,
+   "move": 15,
+   "what": "the Berry Master's wife (Sapphire object 2, OLD_WOMAN_2, FACE_DOWN)"
+  },
+  {
+   "kind": "npc",
+   "map": "Route121_SafariZoneEntrance",
+   "at": [
+    10,
+    2
+   ],
+   "uid": 2,
+   "model": 21,
+   "script": 3,
+   "dir": 1,
+   "move": 15,
+   "what": "the camper who explains the Safari Game (Sapphire object 2, CAMPER, FACE_DOWN)"
+  },
+  {
+   "kind": "npc",
+   "map": "Route121_SafariZoneEntrance",
+   "at": [
+    8,
+    2
+   ],
+   "uid": 3,
+   "model": 21,
+   "script": 0,
+   "dir": 1,
+   "move": 15,
+   "what": "the attendant (no script of its own) (Sapphire object 3, CAMPER, FACE_DOWN)"
+  },
+  {
+   "kind": "trigger",
+   "map": "Route121_SafariZoneEntrance",
+   "at": [
+    8,
+    4
+   ],
+   "script": 4,
+   "var": "0x4001",
+   "value": 0,
+   "what": "Route121_SafariZoneEntrance_EventScript_15C383"
+  },
+  {
+   "kind": "npc",
+   "map": "SafariZone_Southeast",
+   "at": [
+    32,
+    34
+   ],
+   "uid": 101,
+   "model": 21,
+   "script": 3,
+   "dir": 1,
+   "move": 15,
+   "what": "the camper at the exit (Sapphire object 1, CAMPER, FACE_DOWN)"
+  },
+  {
+   "kind": "npc",
+   "map": "SafariZone_Southeast",
+   "at": [
+    26,
+    28
+   ],
+   "uid": 102,
+   "model": 10,
+   "script": 4,
+   "dir": 1,
+   "move": 3,
+   "areaw": 1,
+   "areah": 1,
+   "what": "SafariZone_Southeast_EventScript_16008C (Sapphire object 2, BOY_1, WANDER_AROUND)"
+  },
+  {
+   "kind": "npc",
+   "map": "SafariZone_Southeast",
+   "at": [
+    15,
+    31
+   ],
+   "uid": 104,
+   "model": 11,
+   "script": 5,
+   "dir": 1,
+   "move": 3,
+   "areaw": 1,
+   "areah": 1,
+   "what": "SafariZone_Southeast_EventScript_16009E (Sapphire object 4, YOUNGSTER, WANDER_AROUND)"
+  },
+  {
+   "kind": "npc",
+   "map": "SafariZone_Southwest",
+   "at": [
+    22,
+    9
+   ],
+   "uid": 101,
+   "model": 27,
+   "script": 1,
+   "dir": 1,
+   "move": 15,
+   "what": "SafariZone_Southwest_EventScript_160024 (Sapphire object 1, WOMAN_3, FACE_DOWN)"
+  },
+  {
+   "kind": "npc",
+   "map": "SafariZone_RestHouse",
+   "at": [
+    7,
+    4
+   ],
+   "uid": 1,
+   "model": 11,
+   "script": 2,
+   "dir": 3,
+   "move": 17,
+   "what": "SafariZone_RestHouse_EventScript_160C2F (Sapphire object 1, YOUNGSTER, FACE_RIGHT)"
+  },
+  {
+   "kind": "npc",
+   "map": "SafariZone_RestHouse",
+   "at": [
+    8,
+    4
+   ],
+   "uid": 2,
+   "model": 183,
+   "script": 3,
+   "dir": 2,
+   "move": 16,
+   "what": "SafariZone_RestHouse_EventScript_160C38 (Sapphire object 2, PSYCHIC_M, FACE_LEFT)"
+  },
+  {
+   "kind": "npc",
+   "map": "SafariZone_RestHouse",
+   "at": [
+    2,
+    5
+   ],
+   "uid": 3,
+   "model": 25,
+   "script": 4,
+   "dir": 3,
+   "move": 17,
+   "what": "SafariZone_RestHouse_EventScript_160C41 (Sapphire object 3, FAT_MAN, FACE_RIGHT)"
+  }
+ ]
+}

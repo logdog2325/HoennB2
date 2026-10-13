@@ -1,0 +1,111 @@
+{
+ "zone": 134,
+ "room": "RusturfTunnel",
+ "cave": true,
+ "cave_auto": true,
+ "area": 332,
+ "dark": false,
+ "header": {
+  "map_type": 16,
+  "npc_cache": 24,
+  "weather_word": 64,
+  "flags": 23683,
+  "icon_word": 40975,
+  "place_display": 1,
+  "bgm0": 1076,
+  "bgm1": 1076,
+  "bgm2": 1076,
+  "bgm3": 1076,
+  "place": 64,
+  "encounters": 39,
+  "enc_slot": 2
+ },
+ "warps": [
+  {
+   "at": [
+    4,
+    10
+   ],
+   "to": [
+    423,
+    1
+   ],
+   "what": "Sapphire warp 0 (4,10) -> Route116 0"
+  },
+  {
+   "at": [
+    29,
+    16
+   ],
+   "to": [
+    120,
+    13
+   ],
+   "what": "Sapphire warp 1 (29,16) -> VerdanturfTown 4"
+  },
+  {
+   "at": [
+    18,
+    20
+   ],
+   "to": [
+    423,
+    3
+   ],
+   "what": "Sapphire warp 2 (18,20) -> Route116 2"
+  }
+ ],
+ "triggers": [],
+ "npcs": [
+  {
+   "uid": 2,
+   "model": 206,
+   "script": 10016,
+   "flag": 287,
+   "dir": 1,
+   "at": [
+    24,
+    5
+   ],
+   "what": "breakable rock (FLAG_HIDE_RUSTURF_TUNNEL_ROCK_1)"
+  },
+  {
+   "uid": 3,
+   "model": 110,
+   "script": 7065,
+   "flag": 1165,
+   "dir": 1,
+   "at": [
+    3,
+    1
+   ],
+   "what": "item ball ITEM_POKE_BALL"
+  },
+  {
+   "uid": 4,
+   "model": 110,
+   "script": 7066,
+   "flag": 1166,
+   "dir": 1,
+   "at": [
+    30,
+    2
+   ],
+   "what": "item ball ITEM_MAX_ETHER"
+  },
+  {
+   "uid": 8,
+   "model": 206,
+   "script": 10016,
+   "flag": 288,
+   "dir": 1,
+   "at": [
+    24,
+    4
+   ],
+   "what": "breakable rock (FLAG_HIDE_RUSTURF_TUNNEL_ROCK_2)"
+  }
+ ],
+ "signs": [],
+ "what": "RusturfTunnel: cave (converter/gen_caves.py, b2tools/models_cave.py); story objects: see notes/CAVES.md"
+}

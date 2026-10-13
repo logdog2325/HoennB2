@@ -1,0 +1,50 @@
+{
+ "zone": 103,
+ "room": "CaveOfOrigin_B4F",
+ "cave": true,
+ "cave_auto": true,
+ "area": 332,
+ "dark": false,
+ "header": {
+  "map_type": 16,
+  "npc_cache": 24,
+  "weather_word": 64,
+  "flags": 23683,
+  "icon_word": 40975,
+  "place_display": 1,
+  "bgm0": 1076,
+  "bgm1": 1076,
+  "bgm2": 1076,
+  "bgm3": 1076,
+  "place": 74,
+  "encounters": 8191,
+  "enc_slot": 6
+ },
+ "warps": [
+  {
+   "at": [
+    9,
+    3
+   ],
+   "to": [
+    95,
+    1
+   ],
+   "what": "Emerald warp 0 (9,3) -> CaveOfOrigin_1F 1"
+  }
+ ],
+ "triggers": [
+  {
+   "script": 1,
+   "var": 0,
+   "value": 0,
+   "at": [
+    9,
+    3
+   ]
+  }
+ ],
+ "npcs": [],
+ "signs": [],
+ "what": "CaveOfOrigin_B4F: Emerald's cave (converter/gen_caves_emerald.py from emerald/CaveOfOrigin_B4F, b2tools/models_cave.py, room CaveOfOrigin_B4F_Emerald); story objects: see notes/EMERALD.md"
+}

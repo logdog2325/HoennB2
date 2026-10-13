@@ -1,0 +1,401 @@
+{
+ "_doc": "Chapter 11 (ch11 agent, 2026-10-07) story objects (b2tools/patches/story.py): Ever Grande City's step trigger, Victory Road's trainers and Wally, the Pokemon League lobby people, the Elite Four, Steven, the rival and Prof. Birch in the Champion's room (scripts: scenes/EverGrandeCity.inc and the rooms' own files after '// ---- story'; the trainers' scripts are Black 2's global 3000 + id). Sapphire tiles ('at') of the named map; uid = Sapphire local id (outdoor trigger: none). Written by work/agents/ch11/tools/gen_objects.py.",
+ "objects": [
+  {
+   "kind": "trigger",
+   "map": "EverGrandeCity",
+   "at": [
+    16,
+    58
+   ],
+   "script": 1,
+   "var": "0x4001",
+   "value": 0,
+   "what": "SetVisitedEverGrande (11 coord events (16-26,58), VAR_TEMP_1 0)",
+   "w": 11
+  },
+  {
+   "kind": "npc",
+   "map": "VictoryRoad_1F",
+   "at": [
+    33,
+    22
+   ],
+   "uid": 1,
+   "model": 19,
+   "script": 3177,
+   "evtype": 1,
+   "p0": 3,
+   "move": 15,
+   "dir": 1,
+   "what": "TRAINER_EDGAR: eye-contact trainer (Sapphire object 1, MAN_4, FACE_DOWN)"
+  },
+  {
+   "kind": "npc",
+   "map": "VictoryRoad_1F",
+   "at": [
+    6,
+    15
+   ],
+   "uid": 2,
+   "model": 43,
+   "script": 3198,
+   "evtype": 1,
+   "p0": 4,
+   "move": 16,
+   "dir": 2,
+   "what": "TRAINER_HOPE: eye-contact trainer (Sapphire object 2, WOMAN_7, FACE_LEFT)"
+  },
+  {
+   "kind": "npc",
+   "map": "VictoryRoad_1F",
+   "at": [
+    27,
+    34
+   ],
+   "uid": 3,
+   "model": 19,
+   "script": 3178,
+   "evtype": 1,
+   "p0": 3,
+   "move": 9,
+   "dir": 1,
+   "what": "TRAINER_ALBERT: eye-contact trainer (Sapphire object 3, MAN_4, FACE_DOWN_AND_RIGHT)"
+  },
+  {
+   "kind": "npc",
+   "map": "VictoryRoad_1F",
+   "at": [
+    31,
+    12
+   ],
+   "uid": 4,
+   "model": 87,
+   "script": 7,
+   "dir": 0,
+   "move": 14,
+   "flag": "FLAG_HIDE_WALLY_BATTLE_VICTORY_ROAD",
+   "what": "Wally at the entrance (WallyRematchPostBattle; appears at the step triggers) (Sapphire object 4, WALLY, FACE_UP)"
+  },
+  {
+   "kind": "npc",
+   "map": "VictoryRoad_1F",
+   "at": [
+    31,
+    9
+   ],
+   "uid": 7,
+   "model": 87,
+   "script": 8,
+   "dir": 1,
+   "move": 2,
+   "flag": "FLAG_HIDE_WALLY_DEFEATED_VICTORY_ROAD",
+   "what": "Wally inside (after the Hall of Fame: TRAINER_WALLY_3) (Sapphire object 7, WALLY, LOOK_AROUND)"
+  },
+  {
+   "kind": "trigger",
+   "map": "VictoryRoad_1F",
+   "at": [
+    34,
+    3
+   ],
+   "script": 4,
+   "var": "VAR_VICTORY_ROAD_1F_STATE",
+   "value": 0,
+   "what": "WallyTrigger0"
+  },
+  {
+   "kind": "trigger",
+   "map": "VictoryRoad_1F",
+   "at": [
+    34,
+    4
+   ],
+   "script": 5,
+   "var": "VAR_VICTORY_ROAD_1F_STATE",
+   "value": 0,
+   "what": "WallyTrigger1"
+  },
+  {
+   "kind": "trigger",
+   "map": "VictoryRoad_1F",
+   "at": [
+    34,
+    5
+   ],
+   "script": 6,
+   "var": "VAR_VICTORY_ROAD_1F_STATE",
+   "value": 0,
+   "what": "WallyTrigger2"
+  },
+  {
+   "kind": "npc",
+   "map": "VictoryRoad_B1F",
+   "at": [
+    37,
+    12
+   ],
+   "uid": 14,
+   "model": 19,
+   "script": 3179,
+   "evtype": 1,
+   "p0": 3,
+   "move": 16,
+   "dir": 2,
+   "what": "TRAINER_SAMUEL: eye-contact trainer (Sapphire object 14, MAN_4, FACE_LEFT)"
+  },
+  {
+   "kind": "npc",
+   "map": "VictoryRoad_B1F",
+   "at": [
+    26,
+    16
+   ],
+   "uid": 15,
+   "model": 43,
+   "script": 3199,
+   "evtype": 1,
+   "p0": 4,
+   "move": 14,
+   "dir": 0,
+   "what": "TRAINER_SHANNON: eye-contact trainer (Sapphire object 15, WOMAN_7, FACE_UP)"
+  },
+  {
+   "kind": "npc",
+   "map": "VictoryRoad_B1F",
+   "at": [
+    5,
+    21
+   ],
+   "uid": 16,
+   "model": 43,
+   "script": 3200,
+   "evtype": 1,
+   "p0": 2,
+   "move": 16,
+   "dir": 2,
+   "what": "TRAINER_MICHELLE: eye-contact trainer (Sapphire object 16, WOMAN_7, FACE_LEFT)"
+  },
+  {
+   "kind": "npc",
+   "map": "VictoryRoad_B2F",
+   "at": [
+    15,
+    6
+   ],
+   "uid": 1,
+   "model": 19,
+   "script": 3180,
+   "evtype": 1,
+   "p0": 2,
+   "move": 15,
+   "dir": 1,
+   "what": "TRAINER_VITO: eye-contact trainer (Sapphire object 1, MAN_4, FACE_DOWN)"
+  },
+  {
+   "kind": "npc",
+   "map": "VictoryRoad_B2F",
+   "at": [
+    43,
+    14
+   ],
+   "uid": 2,
+   "model": 19,
+   "script": 3181,
+   "evtype": 1,
+   "p0": 4,
+   "move": 14,
+   "dir": 0,
+   "what": "TRAINER_OWEN: eye-contact trainer (Sapphire object 2, MAN_4, FACE_UP)"
+  },
+  {
+   "kind": "npc",
+   "map": "VictoryRoad_B2F",
+   "at": [
+    2,
+    17
+   ],
+   "uid": 3,
+   "model": 43,
+   "script": 3201,
+   "evtype": 1,
+   "p0": 2,
+   "move": 15,
+   "dir": 1,
+   "what": "TRAINER_CAROLINE: eye-contact trainer (Sapphire object 3, WOMAN_7, FACE_DOWN)"
+  },
+  {
+   "kind": "npc",
+   "map": "VictoryRoad_B2F",
+   "at": [
+    35,
+    22
+   ],
+   "uid": 4,
+   "model": 43,
+   "script": 3202,
+   "evtype": 1,
+   "p0": 2,
+   "move": 16,
+   "dir": 2,
+   "what": "TRAINER_JULIE: eye-contact trainer (Sapphire object 4, WOMAN_7, FACE_LEFT)"
+  },
+  {
+   "kind": "npc",
+   "map": "EverGrandeCity_PokemonLeague",
+   "at": [
+    3,
+    2
+   ],
+   "uid": 1,
+   "model": 78,
+   "script": 2,
+   "dir": 1,
+   "move": 15,
+   "what": "nurse (Sapphire object 1, NURSE, FACE_DOWN)"
+  },
+  {
+   "kind": "npc",
+   "map": "EverGrandeCity_PokemonLeague",
+   "at": [
+    16,
+    2
+   ],
+   "uid": 2,
+   "model": 77,
+   "script": 3,
+   "dir": 1,
+   "move": 15,
+   "what": "clerk (Sapphire object 2, MART_EMPLOYEE, FACE_DOWN)"
+  },
+  {
+   "kind": "npc",
+   "map": "EverGrandeCity_PokemonLeague",
+   "at": [
+    8,
+    2
+   ],
+   "uid": 3,
+   "model": 19,
+   "script": 4,
+   "dir": 1,
+   "move": 15,
+   "what": "door guard (left) (Sapphire object 3, MAN_4, FACE_DOWN)"
+  },
+  {
+   "kind": "npc",
+   "map": "EverGrandeCity_PokemonLeague",
+   "at": [
+    11,
+    2
+   ],
+   "uid": 4,
+   "model": 19,
+   "script": 4,
+   "dir": 1,
+   "move": 15,
+   "what": "door guard (right) (Sapphire object 4, MAN_4, FACE_DOWN)"
+  },
+  {
+   "kind": "npc",
+   "map": "EverGrandeCity_SidneysRoom",
+   "at": [
+    6,
+    5
+   ],
+   "uid": 1,
+   "model": 94,
+   "script": 2,
+   "dir": 1,
+   "move": 15,
+   "what": "Sidney (Sapphire object 1, SIDNEY, FACE_DOWN)"
+  },
+  {
+   "kind": "npc",
+   "map": "EverGrandeCity_PhoebesRoom",
+   "at": [
+    6,
+    5
+   ],
+   "uid": 1,
+   "model": 93,
+   "script": 2,
+   "dir": 1,
+   "move": 15,
+   "what": "Phoebe (Sapphire object 1, PHOEBE, FACE_DOWN)"
+  },
+  {
+   "kind": "npc",
+   "map": "EverGrandeCity_GlaciasRoom",
+   "at": [
+    6,
+    5
+   ],
+   "uid": 1,
+   "model": 96,
+   "script": 2,
+   "dir": 1,
+   "move": 15,
+   "what": "Glacia (Sapphire object 1, GLACIA, FACE_DOWN)"
+  },
+  {
+   "kind": "npc",
+   "map": "EverGrandeCity_DrakesRoom",
+   "at": [
+    6,
+    5
+   ],
+   "uid": 1,
+   "model": 89,
+   "script": 2,
+   "dir": 1,
+   "move": 15,
+   "what": "Drake (Sapphire object 1, DRAKE, FACE_DOWN)"
+  },
+  {
+   "kind": "npc",
+   "map": "EverGrandeCity_ChampionsRoom",
+   "at": [
+    6,
+    5
+   ],
+   "uid": 1,
+   "model": 287,
+   "model_emerald": 288,
+   "script": 1,
+   "dir": 1,
+   "move": 15,
+   "what": "Steven (no script: the scene runs from the OnFrame table) (Sapphire object 1, STEVEN, FACE_DOWN); Emerald: Champion Wallace (model_emerald 288, Black 2's Wallace)"
+  },
+  {
+   "kind": "npc",
+   "map": "EverGrandeCity_ChampionsRoom",
+   "at": [
+    6,
+    12
+   ],
+   "uid": 2,
+   "model": 162,
+   "script": 1,
+   "dir": 0,
+   "move": 14,
+   "flag": "FLAG_HIDE_RIVAL_CHAMPIONS_ROOM",
+   "what": "the rival (model 162: Brendan/May by the zone init) (Sapphire object 2, VAR_0, FACE_UP)"
+  },
+  {
+   "kind": "npc",
+   "map": "EverGrandeCity_ChampionsRoom",
+   "at": [
+    6,
+    12
+   ],
+   "uid": 3,
+   "model": 104,
+   "script": 1,
+   "dir": 0,
+   "move": 14,
+   "flag": "FLAG_HIDE_BIRCH_CHAMPIONS_ROOM",
+   "what": "Prof. Birch (Sapphire object 3, PROF_BIRCH, FACE_UP)"
+  }
+ ]
+}

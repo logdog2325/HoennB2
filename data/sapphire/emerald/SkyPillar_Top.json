@@ -1,0 +1,68 @@
+{
+ "map": "SkyPillar_Top",
+ "id": "MAP_SKY_PILLAR_TOP",
+ "layout": "LAYOUT_SKY_PILLAR_TOP",
+ "music": "MUS_MT_CHIMNEY",
+ "region_map_section": "MAPSEC_SKY_PILLAR",
+ "weather": "WEATHER_NONE",
+ "connections": null,
+ "npcs": [
+  {
+   "local_id": 1,
+   "x": 14,
+   "y": 7,
+   "gfx": "OBJ_EVENT_GFX_RAYQUAZA",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_SKY_PILLAR_TOP_RAYQUAZA",
+   "script": "0x0",
+   "missing": true
+  },
+  {
+   "local_id": 2,
+   "x": 14,
+   "y": 6,
+   "gfx": "OBJ_EVENT_GFX_RAYQUAZA_STILL",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_SKY_PILLAR_TOP_RAYQUAZA_STILL",
+   "script": "SkyPillar_Top_EventScript_Rayquaza",
+   "texts": {},
+   "complex": true
+  }
+ ],
+ "signs": [],
+ "warps": [
+  {
+   "id": 0,
+   "x": 16,
+   "y": 14,
+   "dest_map": "MAP_SKY_PILLAR_5F",
+   "dest_warp_id": "1"
+  }
+ ],
+ "coord_events": [
+  {
+   "type": "trigger",
+   "x": 14,
+   "y": 9,
+   "elevation": 3,
+   "var": "VAR_SKY_PILLAR_RAYQUAZA_CRY_DONE",
+   "var_value": "0",
+   "script": "SkyPillar_Top_EventScript_AwakenRayquaza",
+   "texts": {
+    "SkyPillar_Top_Text_RayquazaFlewOff": "The awakened RAYQUAZA flew off…$"
+   },
+   "complex": true
+  }
+ ],
+ "wild": {}
+}

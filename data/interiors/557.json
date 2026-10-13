@@ -1,0 +1,50 @@
+{
+ "_doc": "Route114_FossilManiacsHouse: zone written by converter/gen_interior_recipes_houses.py (warps and parent from converter/gen_interiors.py); story people left for the story phase: person LITTLE_BOY_1 at (3,2) Route114_FossilManiacsHouse_EventScript_15C1C3 (story/complex script)",
+ "zone": 557,
+ "room": "Route114_FossilManiacsHouse",
+ "area": 313,
+ "parent": 383,
+ "warps": [
+  {
+   "at": [4, 7],
+   "tile_only": true,
+   "to": [383, 4],
+   "what": "Sapphire warp 0 -> Route114 1"
+  },
+  {
+   "at": [5, 7],
+   "tile_only": true,
+   "to": [383, 4],
+   "what": "Sapphire warp 1 -> Route114 1"
+  },
+  {
+   "at": [4, 1],
+   "tile_only": true,
+   "to": [558, 0],
+   "what": "Sapphire warp 2 -> Route114_FossilManiacsTunnel 0"
+  }
+ ],
+ "npcs": [],
+ "signs": [
+  {
+   "script": 1,
+   "at": [5, 3],
+   "dir": 0
+  },
+  {
+   "script": 2,
+   "at": [6, 3],
+   "dir": 0
+  },
+  {
+   "script": 3,
+   "at": [7, 2],
+   "dir": 0
+  },
+  {
+   "script": 4,
+   "at": [8, 2],
+   "dir": 0
+  }
+ ]
+}

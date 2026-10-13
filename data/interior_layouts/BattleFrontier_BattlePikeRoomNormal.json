@@ -1,0 +1,186 @@
+{
+ "_doc": "Battle Pike room (Emerald 9x8, the normal room: trainer / healer / status Pokemon by script). Floor rows 4-7; the curtain doorway (4,3) (walkable, 0x69) opens into the dark (\"open\" (3..5,2..3)), a valance over it, red drapes at its sides. Blue-grey pedestals (2,4), (6,4), (2,7), (6,7) (blocks). Red rug (3..5,4..7). Arrival (4,7) by script.",
+ "map": "BattleFrontier_BattlePikeRoomNormal",
+ "decomp": "pokeemerald",
+ "style": "pike_room",
+ "floor": [
+  [
+   0,
+   4,
+   8,
+   7
+  ],
+  [
+   4,
+   3,
+   4,
+   3
+  ]
+ ],
+ "open": [
+  [
+   3,
+   2,
+   5,
+   3
+  ]
+ ],
+ "mats": [
+  {
+   "tex": "in24_carpet",
+   "src": 305,
+   "rect": [
+    3,
+    4,
+    5,
+    7
+   ],
+   "border": 0.25,
+   "border_units": 4,
+   "_what": "red rug"
+  }
+ ],
+ "blocks": [
+  {
+   "units": [
+    2.125,
+    4.125,
+    2.875,
+    4.625
+   ],
+   "use": "pike_pillar_grey",
+   "_what": "grey pedestal (2,4)"
+  },
+  {
+   "units": [
+    2.3125,
+    4.1875,
+    2.6875,
+    4.5
+   ],
+   "use": "pike_knob",
+   "_what": "its gold orb"
+  },
+  {
+   "units": [
+    6.125,
+    4.125,
+    6.875,
+    4.625
+   ],
+   "use": "pike_pillar_grey",
+   "_what": "grey pedestal (6,4)"
+  },
+  {
+   "units": [
+    6.3125,
+    4.1875,
+    6.6875,
+    4.5
+   ],
+   "use": "pike_knob",
+   "_what": "its gold orb"
+  },
+  {
+   "units": [
+    2.125,
+    7.125,
+    2.875,
+    7.625
+   ],
+   "use": "pike_pillar_grey",
+   "_what": "grey pedestal (2,7)"
+  },
+  {
+   "units": [
+    2.3125,
+    7.1875,
+    2.6875,
+    7.5
+   ],
+   "use": "pike_knob",
+   "_what": "its gold orb"
+  },
+  {
+   "units": [
+    6.125,
+    7.125,
+    6.875,
+    7.625
+   ],
+   "use": "pike_pillar_grey",
+   "_what": "grey pedestal (6,7)"
+  },
+  {
+   "units": [
+    6.3125,
+    7.1875,
+    6.6875,
+    7.5
+   ],
+   "use": "pike_knob",
+   "_what": "its gold orb"
+  }
+ ],
+ "decals": [
+  {
+   "tex": "in76_caten1",
+   "src": 378,
+   "at": [
+    3.65
+   ],
+   "y": 4,
+   "w": 24,
+   "h": 42,
+   "_what": "drape at the left of the doorway (4,3)"
+  },
+  {
+   "tex": "in76_caten1",
+   "src": 378,
+   "at": [
+    5.35
+   ],
+   "y": 4,
+   "w": 24,
+   "h": 42,
+   "uv": [
+    1,
+    0,
+    0,
+    1
+   ],
+   "_what": "drape at the right of the doorway (4,3) (mirrored)"
+  },
+  {
+   "tex": "in01_butai",
+   "src": 282,
+   "at": [
+    4.5
+   ],
+   "face_z": 3.25,
+   "gap": 4,
+   "y": 34,
+   "w": 48,
+   "h": 14,
+   "uv": [
+    0,
+    0.07,
+    3,
+    0.75
+   ],
+   "_what": "valance over the doorway (4,3): the curtain texture, its gold fringe at the bottom, on the wall line, in front of the drapes"
+  },
+  {
+   "tex": "black",
+   "src": 285,
+   "at": [
+    4.5
+   ],
+   "face_z": 2.125,
+   "y": -40,
+   "h": 88,
+   "w": 96,
+   "_what": "black backdrop 16 units behind the doorway (4,3): the dark beyond it is drawn (as the black recess of Black 2's doorways), not the bare void (rooms_view kind p)"
+  }
+ ]
+}

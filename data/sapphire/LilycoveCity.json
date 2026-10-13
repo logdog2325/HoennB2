@@ -1,0 +1,664 @@
+{
+ "map": "LilycoveCity",
+ "id": "MAP_LILYCOVE_CITY",
+ "layout": "LAYOUT_LILYCOVE_CITY",
+ "music": "MUS_LILYCOVE",
+ "region_map_section": "MAPSEC_LILYCOVE_CITY",
+ "weather": "WEATHER_SUNNY",
+ "connections": [
+  {
+   "direction": "left",
+   "offset": 10,
+   "map": "MAP_ROUTE121"
+  },
+  {
+   "direction": "right",
+   "offset": -10,
+   "map": "MAP_ROUTE124"
+  }
+ ],
+ "npcs": [
+  {
+   "local_id": 1,
+   "x": 32,
+   "y": 20,
+   "gfx": "OBJ_EVENT_GFX_SAILOR",
+   "movement": "MOVEMENT_TYPE_WANDER_UP_AND_DOWN",
+   "range": [
+    0,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "LilycoveCity_EventScript_Sailor2",
+   "texts": {
+    "LilycoveCity_Text_EvilTeamBeenTrainingWailmer": "TEAM {EVIL_TEAM}'s been training their\\nWAILMER in the cove.\\pWe SAILORS can't get our boats out\\nto sea with them in the way!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 2,
+   "x": 15,
+   "y": 18,
+   "gfx": "OBJ_EVENT_GFX_GIRL_1",
+   "movement": "MOVEMENT_TYPE_WANDER_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "LilycoveCity_EventScript_Girl",
+   "texts": {
+    "LilycoveCity_Text_StrangeCaveInCove": "Have you seen that strange cave in\\nthe cove at the edge of town?$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 3,
+   "x": 28,
+   "y": 28,
+   "gfx": "OBJ_EVENT_GFX_MAN_1",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "LilycoveCity_EventScript_Man3",
+   "texts": {
+    "LilycoveCity_Text_ContestHallInTown": "The POKéMON that come to this CONTEST\\nHALL are all prizewinners.\\lThey come from all over the country.\\pMy heart swells with excitement!$"
+   }
+  },
+  {
+   "local_id": 4,
+   "x": 21,
+   "y": 15,
+   "gfx": "OBJ_EVENT_GFX_BOY_4",
+   "movement": "MOVEMENT_TYPE_WANDER_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "LilycoveCity_EventScript_RichBoy",
+   "texts": {
+    "LilycoveCity_Text_ImFromKanto": "I came from KANTO.\\pThe HOENN region is beautiful with\\nall its water and verdant nature.\\pHunh? Wait a second...\\pCould there be rare POKéMON that live\\nonly in this area?$"
+   }
+  },
+  {
+   "local_id": 5,
+   "x": 16,
+   "y": 9,
+   "gfx": "OBJ_EVENT_GFX_MAN_2",
+   "movement": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
+   "range": [
+    1,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "LilycoveCity_EventScript_Man2",
+   "texts": {
+    "LilycoveCity_Text_ImArtDealer": "I'm an ART DEALER.\\pI am a buyer and seller of fine art,\\nespecially paintings.\\pI've heard that the MUSEUM here has\\nmagnificent works on exhibit...$"
+   }
+  },
+  {
+   "local_id": 6,
+   "x": 35,
+   "y": 27,
+   "gfx": "OBJ_EVENT_GFX_WOMAN_3",
+   "movement": "MOVEMENT_TYPE_WANDER_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "LilycoveCity_EventScript_Woman2",
+   "texts": {
+    "LilycoveCity_Text_SomeoneStoleMyPokemon": "I was taking a relaxing snooze at the\\nseaside inn to the sound of waves...\\pWhen someone stole my POKéMON!\\pWho's the abductor?\\nTEAM {EVIL_TEAM}? Is it TEAM {EVIL_TEAM}?$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 7,
+   "x": 35,
+   "y": 37,
+   "gfx": "OBJ_EVENT_GFX_OLD_MAN_1",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "LilycoveCity_EventScript_ExpertM1",
+   "texts": {
+    "LilycoveCity_Text_SeaRemainsForeverYoung": "Even as we grow old and wrinkled, the\\nsea remains forever young with the\\lvivid brilliance of life...\\pFwohoho fwohohohoho...$"
+   }
+  },
+  {
+   "local_id": 8,
+   "x": 34,
+   "y": 37,
+   "gfx": "OBJ_EVENT_GFX_OLD_WOMAN_1",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "LilycoveCity_EventScript_ExpertF",
+   "texts": {
+    "LilycoveCity_Text_SixtyYearsAgoHusbandProposed": "It was sixty years ago that my husband\\nproposed to me here.\\lThe sea remains as beautiful as ever.\\pMufufufu mufufufufufu...$"
+   }
+  },
+  {
+   "local_id": 9,
+   "x": 57,
+   "y": 17,
+   "gfx": "OBJ_EVENT_GFX_OLD_MAN_1",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "LilycoveCity_EventScript_ExpertM2",
+   "texts": {
+    "LilycoveCity_Text_EvilTeamRenovatedCavern": "Hm, you know of the peculiar cavern\\nin this cove?\\pThat had been a natural formation, but\\nthen that TEAM {EVIL_TEAM} lot came along\\land made their renovations.\\pThey call themselves the “nature-loving\\nTEAM {EVIL_TEAM}”!\\pBut what they do and what they say\\ndon't match at all!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 10,
+   "x": 73,
+   "y": 15,
+   "gfx": "OBJ_EVENT_GFX_VAR_1",
+   "movement": "MOVEMENT_TYPE_FACE_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_GRUNTS_LILYCOVE",
+   "script": "LilycoveCity_EventScript_WailmerTrainerGrunt",
+   "texts": {
+    "LilycoveCity_Text_WailmerLeapOutOfWater": "There! WAILMER!\\nLeap out of the water now!$",
+    "LilycoveCity_Text_GetLostMessingUpTraining": "Hunh? What do you want?\\pYou're messing up our training, so can\\nyou, like, get lost?$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 11,
+   "x": 61,
+   "y": 36,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_LILYCOVE_1",
+   "script": "LilycoveCity_EventScript_1B1738",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 12,
+   "x": 43,
+   "y": 18,
+   "gfx": "OBJ_EVENT_GFX_VAR_1",
+   "movement": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
+   "range": [
+    1,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_GRUNTS_LILYCOVE",
+   "script": "LilycoveCity_EventScript_EvilTeamGrunt4",
+   "texts": {
+    "LilycoveCity_Text_IfWorldBecomesOurs": "If this whole wide world becomes ours,\\nTEAM {EVIL_TEAM}'s, it will be a happier\\lplace for POKéMON, too.$"
+   }
+  },
+  {
+   "local_id": 13,
+   "x": 46,
+   "y": 12,
+   "gfx": "OBJ_EVENT_GFX_VAR_1",
+   "movement": "MOVEMENT_TYPE_FACE_LEFT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_GRUNTS_LILYCOVE",
+   "script": "LilycoveCity_EventScript_EvilTeamGrunt1",
+   "texts": {
+    "LilycoveCity_Text_MovedLootIntoHideoutToday": "Fufufu...\\pWe moved more loot into our secret\\nHIDEOUT today...\\pWh-who are you?!\\nI was just talking to myself!$"
+   }
+  },
+  {
+   "local_id": 14,
+   "x": 45,
+   "y": 12,
+   "gfx": "OBJ_EVENT_GFX_VAR_1",
+   "movement": "MOVEMENT_TYPE_FACE_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_GRUNTS_LILYCOVE",
+   "script": "LilycoveCity_EventScript_EvilTeamGrunt2",
+   "texts": {
+    "LilycoveCity_Text_ChanceToDoBigThings": "I'm just a GRUNT, so I don't know what\\nthe BOSS is thinking...\\pBut being on TEAM {EVIL_TEAM}, I know I'll get\\nthe chance to do big things!\\pWh-who are you?!\\nI was just talking to myself!$"
+   }
+  },
+  {
+   "local_id": 15,
+   "x": 38,
+   "y": 9,
+   "gfx": "OBJ_EVENT_GFX_VAR_1",
+   "movement": "MOVEMENT_TYPE_FACE_LEFT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_GRUNTS_LILYCOVE",
+   "script": "LilycoveCity_EventScript_EvilTeamGrunt3",
+   "texts": {
+    "LilycoveCity_Text_DontGoNearCaveInCove": "Hey, you!\\pDon't go near the cave in the cove!\\pWhy? You don't need a reason why!\\nI'm an adult, so you just listen to me!$"
+   }
+  },
+  {
+   "local_id": 16,
+   "x": 50,
+   "y": 7,
+   "gfx": "OBJ_EVENT_GFX_GENTLEMAN",
+   "movement": "MOVEMENT_TYPE_WANDER_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "LilycoveCity_EventScript_BerryGentleman",
+   "texts": {
+    "LilycoveCity_Text_BerrySuitsYou": "When it gets right down to it...\\pThe same way suits suit me perfectly,\\na crisp breeze suits the sea.\\pAnd you, a BERRY suits you to a “T”...\\pWhy should that be so?$",
+    "LilycoveCity_Text_BecauseYoureTrainer": "When it gets right down to it...\\pIt's because you're a TRAINER!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 17,
+   "x": 27,
+   "y": 7,
+   "gfx": "OBJ_EVENT_GFX_VAR_0",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_RIVAL_LILYCOVE_MART",
+   "script": "LilycoveCity_EventScript_Rival",
+   "texts": {},
+   "complex": true
+  }
+ ],
+ "signs": [
+  {
+   "x": 19,
+   "y": 7,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "LilycoveCity_EventScript_MuseumSign",
+   "texts": {
+    "LilycoveCity_Text_MuseumSignPlayersExhibit": "LILYCOVE MUSEUM\\p“{PLAYER}'s POKéMON Collection\\non exhibit!”$"
+   },
+   "complex": true
+  },
+  {
+   "x": 25,
+   "y": 14,
+   "facing": "BG_EVENT_PLAYER_FACING_NORTH",
+   "script": "Common_EventScript_PokemonCenterSign",
+   "texts": {
+    "Text_PokemonCenterSign": "“Rejuvenate your tired partners!”\\nPOKéMON CENTER$"
+   }
+  },
+  {
+   "x": 29,
+   "y": 7,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "LilycoveCity_EventScript_DepartmentStoreSign",
+   "texts": {
+    "LilycoveCity_Text_DepartmentStoreSign": "LILYCOVE DEPARTMENT STORE\\p“Overflowing with great merchandise\\nand excitement!\\p“A great place to find that something\\nyou need!”$"
+   }
+  },
+  {
+   "x": 26,
+   "y": 14,
+   "facing": "BG_EVENT_PLAYER_FACING_NORTH",
+   "script": "Common_EventScript_PokemonCenterSign",
+   "texts": {
+    "Text_PokemonCenterSign": "“Rejuvenate your tired partners!”\\nPOKéMON CENTER$"
+   }
+  },
+  {
+   "x": 6,
+   "y": 15,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "LilycoveCity_EventScript_CitySign",
+   "texts": {
+    "LilycoveCity_Text_CitySign": "LILYCOVE CITY\\p“Where the land ends and the\\nsea begins.”$"
+   }
+  },
+  {
+   "x": 29,
+   "y": 24,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "LilycoveCity_EventScript_ContestHallSign",
+   "texts": {
+    "LilycoveCity_Text_ContestHallSign": "POKéMON CONTESTS\\nMASTER RANK REGISTRATION\\p“Enter CONTESTS with your friends!”$"
+   }
+  },
+  {
+   "x": 35,
+   "y": 24,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "LilycoveCity_EventScript_MotelSign",
+   "texts": {
+    "LilycoveCity_Text_MotelSign": "COVE LILY MOTEL\\p“Remember us as COVE LILY of\\nLILYCOVE.”$"
+   }
+  },
+  {
+   "x": 6,
+   "y": 30,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "LilycoveCity_EventScript_HarborSign",
+   "texts": {
+    "LilycoveCity_Text_HarborSignUnderConstruction": "LILYCOVE CITY HARBOR\\p“The ferry S.S. TIDAL is under\\nconstruction in SLATEPORT CITY.\\p“Service is scheduled to begin\\nshortly.”$"
+   },
+   "complex": true
+  },
+  {
+   "x": 36,
+   "y": 14,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "LilycoveCity_EventScript_TrainerFanClubSign",
+   "texts": {
+    "LilycoveCity_Text_TrainerFanClubSign": "POKéMON TRAINER FAN CLUB\\pThe names of TRAINERS are scribbled\\nall over the sign...$"
+   }
+  },
+  {
+   "x": 34,
+   "y": 6,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "LilycoveCity_EventScript_MoveDeletersHouseSign",
+   "texts": {
+    "LilycoveCity_Text_MoveDeletersHouseSign": "MOVE DELETER'S HOUSE\\p“Unwanted POKéMON moves deleted.”$"
+   }
+  },
+  {
+   "x": 36,
+   "y": 31,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 36,
+    "y": 31,
+    "elevation": 3,
+    "item": "ITEM_HEART_SCALE",
+    "flag": "FLAG_HIDDEN_ITEM_1B"
+   }
+  },
+  {
+   "x": 61,
+   "y": 7,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 61,
+    "y": 7,
+    "elevation": 0,
+    "item": "ITEM_PP_UP",
+    "flag": "FLAG_HIDDEN_ITEM_LILYCOVE_CITY_PP_UP"
+   }
+  },
+  {
+   "x": 64,
+   "y": 31,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 64,
+    "y": 31,
+    "elevation": 0,
+    "item": "ITEM_POKE_BALL",
+    "flag": "FLAG_HIDDEN_ITEM_LILYCOVE_CITY_POKE_BALL"
+   }
+  }
+ ],
+ "warps": [
+  {
+   "id": 0,
+   "x": 27,
+   "y": 6,
+   "dest_map": "MAP_LILYCOVE_CITY_DEPARTMENT_STORE_1F",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 1,
+   "x": 37,
+   "y": 24,
+   "dest_map": "MAP_LILYCOVE_CITY_COVE_LILY_MOTEL_1F",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 2,
+   "x": 24,
+   "y": 14,
+   "dest_map": "MAP_LILYCOVE_CITY_POKEMON_CENTER_1F",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 3,
+   "x": 11,
+   "y": 5,
+   "dest_map": "MAP_LILYCOVE_CITY_LILYCOVE_MUSEUM_1F",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 4,
+   "x": 23,
+   "y": 24,
+   "dest_map": "MAP_LILYCOVE_CITY_CONTEST_LOBBY",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 5,
+   "x": 39,
+   "y": 14,
+   "dest_map": "MAP_LILYCOVE_CITY_POKEMON_TRAINER_FAN_CLUB",
+   "dest_warp_id": "1"
+  },
+  {
+   "id": 6,
+   "x": 70,
+   "y": 5,
+   "dest_map": "MAP_AQUA_HIDEOUT_1F",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 7,
+   "x": 36,
+   "y": 6,
+   "dest_map": "MAP_LILYCOVE_CITY_MOVE_DELETERS_HOUSE",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 8,
+   "x": 42,
+   "y": 6,
+   "dest_map": "MAP_LILYCOVE_CITY_HOUSE1",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 9,
+   "x": 55,
+   "y": 15,
+   "dest_map": "MAP_LILYCOVE_CITY_HOUSE2",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 10,
+   "x": 11,
+   "y": 22,
+   "dest_map": "MAP_LILYCOVE_CITY_HOUSE3",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 11,
+   "x": 12,
+   "y": 14,
+   "dest_map": "MAP_LILYCOVE_CITY_HOUSE4",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 12,
+   "x": 12,
+   "y": 32,
+   "dest_map": "MAP_LILYCOVE_CITY_HARBOR",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 13,
+   "x": 12,
+   "y": 5,
+   "dest_map": "MAP_LILYCOVE_CITY_LILYCOVE_MUSEUM_1F",
+   "dest_warp_id": "1"
+  },
+  {
+   "id": 14,
+   "x": 71,
+   "y": 5,
+   "dest_map": "MAP_MAGMA_HIDEOUT_1F",
+   "dest_warp_id": "0"
+  }
+ ],
+ "coord_events": [],
+ "wild": {
+  "water_mons": {
+   "encounter_rate": 4,
+   "slot_rates": [
+    60,
+    30,
+    5,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 5,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 15,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_PELIPPER",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_PELIPPER",
+     "min": 25,
+     "max": 30
+    }
+   ]
+  },
+  "fishing_mons": {
+   "encounter_rate": 10,
+   "slot_rates": [
+    70,
+    30,
+    60,
+    20,
+    20,
+    40,
+    40,
+    15,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_STARYU",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 35,
+     "max": 40
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 40,
+     "max": 45
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,6 @@
+Route 113\n→ Route 111
+Route 113\n← Fallarbor Town
+Trainer Tips{be01}\nYou may register one of the Key Items\nin your Bag as Select.{be01}\nSimply press Select to use\nthe registered item conveniently.
+Glass Workshop\n“Turning Volcanic Ash into Glass Items”
+It’s fun walking through the volcano’s\nashes on the ground and grass.{be01}\nYou can see where you walked--it’s\nreally neat!
+Wahahaha! Today’s technology is a\nwondrous thing!{be01}\nTake this volcanic ash here.\nIt can be fashioned into glass.

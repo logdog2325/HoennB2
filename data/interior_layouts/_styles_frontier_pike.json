@@ -1,0 +1,136 @@
+{
+ "_doc": "pike_rooms (helper of frontier_pike, 2026-10-12): the Battle Pike (Emerald's theatre) in Black 2's own art (searched: the map texture sets of the Musical Theater 305, Pokestar Studios 378, the PWT 352/381, the Black Tower 358 and every interior set by colour; every interior model, packs 0-92). Walls: Black 2's red pleated stage curtain in01_butai (texture set 282; the band stage's curtains in Virbank's complex, chunk 1022, zone 450): red pleats with a gold fringe at the bottom, once over the 50-unit wall (v 0.07..1: its two bottom texel rows are transparent and left out), 16 units a pleat repeat (the Musical's in24_carten is purple). Rooms: the pink patterned floor of Nimbasa's Musical Theater lobby in24_yuka (set 305, chunk 859) for Emerald's pink diamond floor. Lobby: the gold octagon floor of Iris's Champion room in38_yuka2 (set 319, chunks 895/1027) for Emerald's gold-brown diamond carpet. Red rugs: the Musical Theater's red carpet in24_carpet (305) and red mat in24_mat (305). Exit notch: the Musical Theater's pink-to-black entrance gradient in24_in (305). Doorways (Emerald's curtain arch, the three behaviour-0x69 tiles): no wall over the arch (recipe \"open\": the black void), a valance of in01_butai over it and Pokestar Studios' tied-back red stage drape in76_caten1 (set 378, chunk 1040, zone 586, where two of them frame its back wall) at each side, the right one mirrored (decal uv); Black 2 has no pink curtain doorway (the Musical's stage doorway in24_maku is blue). Pedestals (Emerald's columns with a gold orb, red / blue-grey / gold): blocks, as no Black 2 model is such a column (its statues object01/02/03 are Pokemon figures, and the wild-Pokemon room's 54 would pass Black 2's 32 models a chunk): pike_pillar_red = the curtain's red pleats as a fluted shaft with the gold fringe at the top, pike_pillar_grey = the PWT lobby's grey marble pillar texture with its gold band in71hashira1 (set 352, chunk 981, zone 192), pike_pillar_gold = the gold rod texture in33b_tama (set 314), each with a pike_knob in in33b_tama. A shaft is 12 x 8 units, its front 6 units back from its tile's south edge, 20 high, the knob 24: a taller block nearer the edge is drawn across the head of a player standing south of it (b2tools/rooms_view.py kind m, the FRONT_H rule). black = wall caps (285).",
+ "pike_lobby": {
+  "_doc": "Battle Pike lobby: gold octagon floor in38_yuka2 (319), red stage-curtain wall in01_butai (282), the Musical Theater's entrance gradient in24_in (305) below the exit mat.",
+  "floor": {
+   "tex": "in38_yuka2",
+   "src": 319,
+   "size": 32
+  },
+  "wall": {
+   "tex": "in01_butai",
+   "src": 282,
+   "u_size": 16,
+   "v": [
+    0.07,
+    1.0
+   ]
+  },
+  "genkan": {
+   "tex": "in24_in",
+   "src": 305,
+   "stretch": true
+  },
+  "black": {
+   "tex": "black",
+   "src": 285
+  }
+ },
+ "pike_room": {
+  "_doc": "Battle Pike rooms: the Musical Theater's pink floor in24_yuka (305), red stage-curtain wall in01_butai (282).",
+  "floor": {
+   "tex": "in24_yuka",
+   "src": 305,
+   "size": 32
+  },
+  "wall": {
+   "tex": "in01_butai",
+   "src": 282,
+   "u_size": 16,
+   "v": [
+    0.07,
+    1.0
+   ]
+  },
+  "genkan": {
+   "tex": "in24_in",
+   "src": 305,
+   "stretch": true
+  },
+  "black": {
+   "tex": "black",
+   "src": 285
+  }
+ },
+ "pike_pillar_red": {
+  "_doc": "Block style: Emerald's red pedestal (lobby, corridor): a shaft of the curtain's red pleats in01_butai (282), its gold fringe at the top (v 1 -> 0.07), the gold rod texture in33b_tama (314) on top; a pike_knob stands in it.",
+  "h": 20,
+  "top": {
+   "tex": "in33b_tama",
+   "src": 314,
+   "stretch": true
+  },
+  "side": {
+   "tex": "in01_butai",
+   "src": 282,
+   "u_size": 16,
+   "v": [
+    1.0,
+    0.07
+   ]
+  },
+  "shade_top": 1.0,
+  "shade_s": 0.9,
+  "shade_we": 0.6
+ },
+ "pike_pillar_grey": {
+  "_doc": "Block style: Emerald's blue-grey pedestal (corridor, rooms): the PWT lobby's grey marble pillar texture in71hashira1 (352) with its gold band at the top, in33b_tama (314) on top.",
+  "h": 20,
+  "top": {
+   "tex": "in33b_tama",
+   "src": 314,
+   "stretch": true
+  },
+  "side": {
+   "tex": "in71hashira1",
+   "src": 352,
+   "u_size": 16,
+   "v": [
+    0.0,
+    1.0
+   ]
+  },
+  "shade_top": 1.0,
+  "shade_s": 0.9,
+  "shade_we": 0.6
+ },
+ "pike_pillar_gold": {
+  "_doc": "Block style: Emerald's gold pedestal (the wild-Pokemon room's rows, the final room): the gold rod texture in33b_tama (314) on every face (a white highlight down each side, gold bands every 10 units).",
+  "h": 20,
+  "top": {
+   "tex": "in33b_tama",
+   "src": 314,
+   "stretch": true
+  },
+  "side": {
+   "tex": "in33b_tama",
+   "src": 314,
+   "u_size": 12,
+   "v_size": 10
+  },
+  "shade_top": 1.0,
+  "shade_s": 0.9,
+  "shade_we": 0.6
+ },
+ "pike_knob": {
+  "_doc": "Block style: the gold orb on a pike pedestal: a 6 x 5-unit block of the gold rod texture in33b_tama (314), 4 units above the shaft, its front 2 units behind the shaft's (no layered faces).",
+  "h": 24,
+  "top": {
+   "tex": "in33b_tama",
+   "src": 314,
+   "stretch": true
+  },
+  "side": {
+   "tex": "in33b_tama",
+   "src": 314,
+   "u_size": 6,
+   "v": [
+    0.0,
+    1.0
+   ]
+  },
+  "shade_top": 1.0,
+  "shade_s": 0.95,
+  "shade_we": 0.7
+ }
+}

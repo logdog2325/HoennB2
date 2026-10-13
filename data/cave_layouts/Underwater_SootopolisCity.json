@@ -1,0 +1,10 @@
+{
+ "map": "Underwater_SootopolisCity",
+ "look": "uw",
+ "underwater": true,
+ "origin": [
+  6,
+  11
+ ],
+ "tiers": 2
+}

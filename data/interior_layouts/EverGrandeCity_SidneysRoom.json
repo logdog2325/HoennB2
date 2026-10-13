@@ -1,0 +1,73 @@
+{
+ "_doc": "gyms_league: EverGrandeCity_SidneysRoom: Sapphire's room shape (pillars at the sides, battle square, entrance passage), door to the next corridor on the back wall.",
+ "map": "EverGrandeCity_SidneysRoom",
+ "style": "gl_sidney",
+ "floor": [
+  [
+   0,
+   3,
+   12,
+   11
+  ],
+  [
+   5,
+   12,
+   7,
+   13
+  ]
+ ],
+ "floor_tex": [
+  {
+   "tex": "c09_04_2",
+   "src": 333,
+   "rect": [
+    4,
+    4,
+    8,
+    8
+   ],
+   "size": 32
+  },
+  {
+   "tex": "c09_04_13",
+   "src": 333,
+   "rect": [
+    5,
+    5,
+    7,
+    7
+   ],
+   "size": 32
+  }
+ ],
+ "blocks": [
+  {
+   "use": "gl_e4_pillar_sidney",
+   "rect": [
+    0,
+    4,
+    1,
+    8
+   ]
+  },
+  {
+   "use": "gl_e4_pillar_sidney",
+   "rect": [
+    11,
+    4,
+    12,
+    8
+   ]
+  }
+ ],
+ "furniture": [
+  {
+   "m": "door_h5_in",
+   "tile": [
+    6,
+    3
+   ],
+   "wall": "N"
+  }
+ ]
+}

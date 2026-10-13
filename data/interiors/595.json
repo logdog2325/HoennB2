@@ -1,0 +1,73 @@
+{
+ "_doc": "SlateportCity_ContestLobby (zone 595), built by the specials agent (recipe data/interior_layouts/SlateportCity_ContestLobby.json): Musical Theater look, Black 2 interior area 305. Warps in Sapphire's order (one per Sapphire warp tile). People/signs: Sapphire's one-message ones as generated; story people are left for the story phase.",
+ "zone": 595,
+ "room": "SlateportCity_ContestLobby",
+ "area": 305,
+ "parent": 448,
+ "warps": [
+  {
+   "at": [
+    5,
+    6
+   ],
+   "tile_only": true,
+   "to": [
+    448,
+    11
+   ],
+   "what": "Sapphire warp 0 -> SlateportCity 3"
+  },
+  {
+   "at": [
+    6,
+    6
+   ],
+   "tile_only": true,
+   "to": [
+    448,
+    11
+   ],
+   "what": "Sapphire warp 1 -> SlateportCity 3"
+  },
+  {
+   "at": [
+    1,
+    1
+   ],
+   "tile_only": true,
+   "to": [
+    594,
+    0
+   ],
+   "what": "Sapphire warp 2 -> SlateportCity_ContestHall 0"
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 3,
+   "model": 19,
+   "script": 1,
+   "dir": 1,
+   "at": [
+    0,
+    3
+   ],
+   "move": 4,
+   "range": [
+    0,
+    1
+   ]
+  },
+  {
+   "uid": 8,
+   "model": 27,
+   "script": 2,
+   "dir": 1,
+   "at": [
+    12,
+    2
+   ]
+  }
+ ],
+ "signs": []
+}

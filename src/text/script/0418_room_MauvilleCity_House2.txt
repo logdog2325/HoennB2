@@ -1,0 +1,6 @@
+…
+If I had a Bike, it’d be easy to cycle to\nSlateport for some shopping.{be01}\nI’d be able to buy Harbor Mail at the\nPokémon Mart in Slateport...
+Oh! You have Harbor Mail?\nWill you trade it for a Coin Case?
+Oh, I’m so happy!\nOkay, I’ll trade you a Coin Case!
+That Coin Case can be used at the\nGame Corner.
+Oh, that’s disappointing.{be01}\nA Coin Case is needed for the\nGame Corner.

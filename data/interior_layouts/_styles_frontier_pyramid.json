@@ -1,0 +1,29 @@
+{
+ "_doc": "frontier_pyramid (2026-10-12): the Battle Pyramid in Black 2's Relic Castle (the Desert Resort's buried castle, map texture set 291): its grey-beige stone floor tiles in10_tile04 for Emerald's grey floor, its sandstone brick wall in10_kabe01 for Emerald's sand-coloured walls; black = wall caps (285).",
+ "pyr_room": {
+  "_doc": "Pyramid lobby and top: Relic Castle stone floor in10_tile04, sandstone wall in10_kabe01 (291), its stone slab as the entrance in10_tile05.",
+  "floor": {
+   "tex": "in10_tile04",
+   "src": 291,
+   "size": 32
+  },
+  "wall": {
+   "tex": "in10_kabe01",
+   "src": 291,
+   "u_size": 32,
+   "v": [
+    0,
+    1.5
+   ]
+  },
+  "genkan": {
+   "tex": "in10_tile05",
+   "src": 291,
+   "stretch": true
+  },
+  "black": {
+   "tex": "black",
+   "src": 285
+  }
+ }
+}

@@ -1,0 +1,47 @@
+{
+ "_doc": "Devon Corp 1F (zone 575; scripts src/field_scripts/1150_room_RustboroCity_DevonCorp_1F.s, text 0366). Area 289 = Black 2's Castelia office area (interior pack 7). Sapphire's three people (employee, stair guard, greeter) depend on the Devon Goods flags: story, not placed yet.",
+ "zone": 575,
+ "room": "RustboroCity_DevonCorp_1F",
+ "area": 289,
+ "parent": 113,
+ "warps": [
+  {
+   "at": [
+    5,
+    8
+   ],
+   "tile_only": true,
+   "to": [
+    113,
+    12
+   ],
+   "what": "Sapphire warp 0 -> RustboroCity 5"
+  },
+  {
+   "at": [
+    6,
+    8
+   ],
+   "tile_only": true,
+   "to": [
+    113,
+    13
+   ],
+   "what": "Sapphire warp 1 -> RustboroCity 6"
+  },
+  {
+   "at": [
+    14,
+    1
+   ],
+   "tile_only": true,
+   "to": [
+    576,
+    0
+   ],
+   "what": "Sapphire warp 2 -> RustboroCity_DevonCorp_2F 0"
+  }
+ ],
+ "npcs": [],
+ "signs": []
+}

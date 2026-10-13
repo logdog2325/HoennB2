@@ -1,0 +1,52 @@
+{
+ "zone": 435,
+ "room": "SlateportCity_PokemonCenter_1F",
+ "area": 283,
+ "what": "SlateportCity_PokemonCenter_1F: centers agent (b2tools/centers_rooms.py); recipe data/interior_layouts/SlateportCity_PokemonCenter_1F.json",
+ "header": {"parent": 448, "place": 12},
+ "warps": [
+  {"at": [7, 8], "tile_only": true, "to": [448, 8], "what": "Sapphire warp 0 -> SlateportCity 0"},
+  {"at": [6, 8], "tile_only": true, "to": [448, 8], "what": "Sapphire warp 1 -> SlateportCity 0"},
+  {
+   "at": [1, 6],
+   "tile_only": true,
+   "to": [12, 0],
+   "what": "Sapphire warp 2 -> SlateportCity_PokemonCenter_2F 0 (escalator, entered walking west)",
+   "type": 2,
+   "dir": 4
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 1,
+   "model": 78,
+   "script": 1,
+   "dir": 1,
+   "at": [7, 2],
+   "move": 15,
+   "_what": "nurse (7,2), Sapphire SlateportCity_PokemonCenter_1F_EventScript_Nurse"
+  },
+  {
+   "uid": 2,
+   "model": 359,
+   "script": 2,
+   "dir": 1,
+   "at": [2, 3],
+   "_what": "sailor (2,3), Sapphire SlateportCity_PokemonCenter_1F_EventScript_Sailor"
+  },
+  {
+   "uid": 3,
+   "model": 43,
+   "script": 3,
+   "dir": 3,
+   "at": [10, 7],
+   "_what": "woman_7 (10,7), Sapphire SlateportCity_PokemonCenter_1F_EventScript_Woman"
+  }
+ ],
+ "signs": [
+  {"script": 4, "at": [2, 1], "dir": 0},
+  {"script": 4, "at": [3, 1], "dir": 0},
+  {"script": 5, "at": [11, 1], "dir": 0},
+  {"script": 5, "at": [12, 1], "dir": 0}
+ ]
+}

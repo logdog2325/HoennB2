@@ -1,0 +1,5 @@
+You found the Root Fossil.{be01}\nIf this Fossil is taken, the ground\naround it will likely crumble away…{be01}\nTake the Root Fossil anyway?
+{0100:0} left the Root Fossil alone.
+You found the Claw Fossil.{be01}\nIf this Fossil is taken, the ground\naround it will likely crumble away…{be01}\nTake the Claw Fossil anyway?
+{0100:0} left the Claw Fossil alone.
+Too bad!\nThe Bag is full...

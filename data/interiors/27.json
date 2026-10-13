@@ -1,0 +1,23 @@
+{
+ "_doc": "SootopolisCity_House1: zone written by converter/gen_interior_recipes_houses.py (warps and parent from converter/gen_interiors.py); story people left for the story phase: person BLACK_BELT at (2,4) SootopolisCity_House1_EventScript_BrickBreakBlackBelt (story/complex script); person KECLEON_1 at (2,3) SootopolisCity_House1_EventScript_Kecleon (story/complex script)",
+ "zone": 27,
+ "room": "SootopolisCity_House1",
+ "area": 313,
+ "parent": 389,
+ "warps": [
+  {
+   "at": [3, 6],
+   "tile_only": true,
+   "to": [319, 5],
+   "what": "Sapphire warp 0 -> SootopolisCity 4"
+  },
+  {
+   "at": [4, 6],
+   "tile_only": true,
+   "to": [319, 5],
+   "what": "Sapphire warp 1 -> SootopolisCity 4"
+  }
+ ],
+ "npcs": [],
+ "signs": []
+}

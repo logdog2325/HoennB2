@@ -1,0 +1,11 @@
+May: {0100:0}! Long time no see!{be01}\nOh? While I was visiting the hot springs,\nyou got the Lavaridge Gym Badge.{be01}\nYou must have caught good Pokémon...\nNo, I guess you raised some.{be01}\nI guess it would be okay for you to\nhave this.
+Brendan: {0100:0}, hey, it’s been a while.\nHow’s it going?{be01}\nHmm...\nThat’s a decent collection of Badges.{be01}\nAll right, then.\nYou may as well have this.
+May: With those Go-Goggles, you’ll\nhave no trouble getting through the{be00}\ndesert near Route 111.{be01}\nBut, wow, {0100:0}...\nChallenging Gyms...{be01}\nYou’re trying hard because you don’t\nwant to lose to me, I bet!{be01}\n{0100:0}, I think I should challenge\nyour dad in Petalburg Gym.{be01}\n{0100:0}, see you again!
+Brendan: Keep those with you if you’re\nplanning on going into that desert near{be00}\nRoute 111.{be01}\nThere should be some Pokémon that\nare exclusively desert-dwellers.{be00}\nYou might look around for those.{be01}\nAs for me...\nI’m considering challenging Norman,{be00}\nthe Gym Leader of Petalburg.{be01}\nUnlike you, {0100:0}, your dad looks like\nhe really is tough.{be01}\nSee you around!
+I have here an Egg.{be01}\nI’d hoped to hatch it by covering it in\nhot sand by the hot springs.{be00}\nBut that doesn’t seem to be enough...{be01}\nI’ve heard it would be best if it were\nkept together with Pokémon and{be00}\ncarried about.{be01}\nYou are a Trainer, yes?\nAnd your Pokémon radiate vitality.{be01}\nSo, what say you?\nWill you take this Egg to hatch?
+Good! I hope you’ll walk plenty with\nthis here Egg!
+{0100:0} received the Egg.
+Oh? You’ve too many Pokémon.\nThere’s no room for this Egg...
+As you wish, then...{be01}\nIf you have a change of heart about\nhatching this Egg, I will be here.
+Every so often, an Egg will be found at\nthe Pokémon Day Care.{be01}\nOr at least that’s how the rumor goes.
+Lavaridge Town Pokémon Gym\nLeader: Flannery{be00}\n“One with a fiery passion that burns!”

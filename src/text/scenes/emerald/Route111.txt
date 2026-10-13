@@ -1,0 +1,39 @@
+You found the Root Fossil.{be01}\nIf this Fossil is taken, the other\none will sink into the sand...{be01}\nTake the Root Fossil anyway?
+{0100:0} left the Root Fossil alone.
+You found the Claw Fossil.{be01}\nIf this Fossil is taken, the other\none will sink into the sand...{be01}\nTake the Claw Fossil anyway?
+{0100:0} left the Claw Fossil alone.
+I watered my plants lots and lots!\nA whole bunch of flowers bloomed!{be01}\nAnd then a whole bunch of Berries\nappeared!{be01}\nHere you go!\nYou can have this!
+I’m going to try really hard and make\nsome Red Pokéblocks!{be01}\nI hope you try hard, too!
+I wonder what color Berries I’ll look\nfor today?
+The sandstorm is vicious.\nIt’s impossible to keep going.
+Hello! I take it you’re a traveler.{be01}\nHow’s this? What do you say to taking\non our family of four in a series of{be00}\nPokémon battles?
+Is that so?\nDrop in, if you change your mind!
+That’s the spirit! I like you!
+Hey, all!\nI’ve found a pretty strong Trainer!
+Oh, my goodness! Aren’t you young?{be01}\nYou must be quite the Trainer to beat\nmy husband, though.{be01}\nIt’s my turn to battle now!
+There’s a strong Trainer here!\nThis one’s really strong!
+You’re stronger than Mommy? Wow!{be01}\nBut I’m strong, too!\nReally! Honestly!
+This stinks...{be01}\n...Snivel... Grandma!
+How dare you make my granddaughter\ncry!{be01}\nFor that, I’m going to smack you!\nPrepare to lose!
+If you’re not in any hurry, visit with\nus awhile.
+What’s that?\nWhat am I doing?{be01}\nI’m thinking about making my own room\nhere using a Pokémon move.{be01}\nI know! I’ll give you this TM.\nWill you use it to make your own room?
+Oh, you don’t want this?\nIf you change your mind, tell me, okay?
+Find a big tree that looks like it might\ndrop some vines.{be01}\nUse Flame Charge in front of the tree.\nSome vines should get free and drop{be00}\ndown, so you can climb the tree.{be01}\nYou’ll find a lot of space for putting\nyour favorite things.{be01}\nIt’ll be your own secret room...\nA Secret Base!{be01}\nYou should make one, too.{be01}\nAnother thing, you don’t always have\nto make your Secret Base in a tree.{be01}\nTry using Flame Charge on rock walls\nthat have small indents in them.{be01}\nI’m going to look for other places, too.\nOkay, bye!
+Oh, you don’t have any room for this.{be01}\nI’ll hold on to it, so come back for it\nanother time, okay?
+Too bad!\nThe Bag is full...
+Gabby: We’ll be keeping an eye out\nfor you!
+Ty: You’re a natural!\nGot me some prime footage right here!
+Gabby: Oh! We’ve just spotted a tough-\nlooking Trainer here of all places!{be01}\nOkay, roll camera!\nLet’s get this interview.
+Ty: Hey, lookie here! A tough-looking\nTrainer here, of all places!{be00}\nCamera’s rolling!
+Gabby: Is there a strong Trainer\nanywhere with a lot of Pokémon?
+Ty: Do you only have the one Pokémon\nand that’s it?{be01}\nIf you had more Pokémon, it’d make for\nbetter footage, but...
+Gabby: Oh! You’re {0100:0}! Hi!\nDo you remember us from last time?{be01}\nCan you show us how much stronger\nyou’ve become? Okay, cue interview!
+Ty: Hey, lookie here!\nI remember you!{be01}\nI’ll get this battle all on this\nhere camera!
+Gabby: Awesome! Awesome!\nWho are you?!{be01}\nI knew we were onto something wild\nwhen we spotted you!{be01}\nOh, please let me explain. We travel\naround everywhere interviewing all{be00}\nsorts of Trainers.{be01}\nSo, would you give us a bit of your time\nfor an interview?
+Gabby: Wow, you are something!{be01}\nYou’ve gotten a lot stronger - a lot -\nsince we last battled.{be01}\nWe were right about you when we\nspotted you as a hot Trainer.{be01}\nSo, anyway, what do you think?\nAre you willing to give us an interview{be00}\nthis time?
+Anyway, what do you think?\nDo you want to be interviewed again?
+You will?\nThank you!{be01}\nOkay, I need you to describe your\nfeelings about our battle, but it{be00}\nhas to be short and sweet. Go!
+Gabby: Mmm, yeah!\nThat’s the perfect clincher!{be01}\nI get the feeling that this will make\na great TV show.{be01}\nThere’s a chance that they’ll air this\non TV, so make sure to look for us!{be01}\nOkay!\nWe’ll be seeing you!
+Gabby: Oh...{be01}\nOkay, but don’t give up!\nWe’ll be keeping an eye out for you!
+The Claw Fossil disappeared into\nthe sand…
+The Root Fossil disappeared into\nthe sand…

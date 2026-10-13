@@ -1,0 +1,16 @@
+It’s a collection of rare rocks and\nstones assembled by Steven.
+It’s a collection of rare rocks and\nstones assembled by Steven.
+It’s a collection of rare rocks and\nstones assembled by Steven.
+It’s a collection of rare rocks and\nstones assembled by Steven.
+There’s a set of Pokémon picture books.
+Steven: Apparently, there’s an\nunderwater cavern between{be00}\nMossdeep and Sootopolis.{be01}\nYou know, the one that Capt. Stern\nfound in his submarine.{be01}\nAn underwater cavern...{be01}\nThere might be some rare stones down\nthere... I should go for a Dive...
+Steven: {0100:0}?{be01}\nYes, this is my place. It’s a little\nembarrassing how empty it is here.{be01}\nOh, here, you should take this HM.{be01}\nIt contains Dive.\nI’ve already taught my Pokémon.
+Steven: While you’re using Surf, you\nshould notice dark patches of water.{be01}\nUse Dive if you come to deep water\nlike it. You’ll drop to the seafloor.{be01}\nWhen you want to come back up, use\nDive again.{be01}\nIn some places, it won’t be possible\nfor you to surface, though.
+{0100:0} checked the Poké Ball.{be01}\nIt contained the Pokémon\nBeldum.{be01}\nTake the Poké Ball?
+{0100:0} obtained a Beldum.
+There is no space for another Pokémon.
+{0100:0} left the Poké Ball where\nit was.
+It’s a letter.{be01}\n... ... ... ... ... ...{be01}\nTo {0100:0}...{be01}\nI’ve decided to do a little soul-\nsearching and train on the road.{be01}\nI don’t plan to return home for some\ntime.{be01}\nI have a favor to ask of you.{be01}\nI want you to take the Poké Ball on\nthe desk.{be01}\nInside it is a Beldum, my favorite\nPokémon.{be01}\nI’m counting on you.{be01}\nIf you’d like, you should also take\nthe HM Dive.{be01}\nMay our paths cross some day.{be01}\nSteven Stone
+It’s a letter.{be01}\n... ... ... ... ... ...{be01}\nTo {0100:0}...{be01}\nI’ve decided to do a little soul-\nsearching and train on the road.{be01}\nI don’t plan to return home for some\ntime.{be01}\nI have a favor to ask of you.{be01}\nI want you to take the Poké Ball on\nthe desk.{be01}\nInside it is a Beldum, my favorite\nPokémon.{be01}\nI’m counting on you.{be01}\nMay our paths cross some day.{be01}\nSteven Stone
+Want to give a nickname to the\n{0100:2} you received?
+Too bad!\nThe Bag is full...

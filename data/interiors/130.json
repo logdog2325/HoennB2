@@ -1,0 +1,136 @@
+{
+ "zone": 130,
+ "room": "MeteorFalls_B1F_1R",
+ "cave": true,
+ "cave_auto": true,
+ "area": 332,
+ "dark": false,
+ "header": {
+  "map_type": 16,
+  "npc_cache": 24,
+  "weather_word": 64,
+  "flags": 23683,
+  "icon_word": 40975,
+  "place_display": 1,
+  "bgm0": 1076,
+  "bgm1": 1076,
+  "bgm2": 1076,
+  "bgm3": 1076,
+  "place": 67,
+  "encounters": 54,
+  "enc_slot": 2
+ },
+ "warps": [
+  {
+   "at": [
+    5,
+    6
+   ],
+   "to": [
+    129,
+    1
+   ],
+   "what": "Sapphire warp 0 (5,6) -> MeteorFalls_1F_2R 1"
+  },
+  {
+   "at": [
+    7,
+    11
+   ],
+   "to": [
+    129,
+    2
+   ],
+   "what": "Sapphire warp 1 (7,11) -> MeteorFalls_1F_2R 2"
+  },
+  {
+   "at": [
+    18,
+    15
+   ],
+   "to": [
+    129,
+    3
+   ],
+   "what": "Sapphire warp 2 (18,15) -> MeteorFalls_1F_2R 3"
+  },
+  {
+   "at": [
+    17,
+    3
+   ],
+   "to": [
+    131,
+    0
+   ],
+   "what": "Sapphire warp 3 (17,3) -> MeteorFalls_B1F_2R 0"
+  },
+  {
+   "at": [
+    3,
+    23
+   ],
+   "to": [
+    128,
+    3
+   ],
+   "what": "Sapphire warp 4 (3,23) -> MeteorFalls_1F_1R 3"
+  },
+  {
+   "at": [
+    20,
+    36
+   ],
+   "to": [
+    128,
+    4
+   ],
+   "what": "Sapphire warp 5 (20,36) -> MeteorFalls_1F_1R 4"
+  }
+ ],
+ "triggers": [
+  {
+   "script": 1,
+   "var": 0,
+   "value": 0,
+   "at": [
+    5,
+    6
+   ],
+   "y": 16
+  },
+  {
+   "script": 2,
+   "var": 0,
+   "value": 0,
+   "at": [
+    7,
+    11
+   ],
+   "y": 32
+  },
+  {
+   "script": 3,
+   "var": 0,
+   "value": 0,
+   "at": [
+    18,
+    15
+   ],
+   "y": 16
+  },
+  {
+   "script": 4,
+   "var": 0,
+   "value": 0,
+   "at": [
+    3,
+    23
+   ],
+   "y": 32
+  }
+ ],
+ "npcs": [],
+ "signs": [],
+ "what": "MeteorFalls_B1F_1R: cave (converter/gen_caves.py, b2tools/models_cave.py); story objects: see notes/CAVES.md"
+}

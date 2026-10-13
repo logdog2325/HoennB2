@@ -1,0 +1,79 @@
+{
+ "_doc": "Sapphire's fixed weather in Black 2 (user decision 2026-10-07; weather agent). Black 2 has one weather per zone (zone header 0x1C bits 0-5, read by GetZoneEnvFlagsWeather through GetWeatherAll, arm9 0x02032e94; the calendar only for zones in a/0/9/6 file 1, none of ours) and changes it when the player walks into another zone (ov036 Field_SwapZoneByMatrix -> Field_SwapWeather -> ResetWeather). 'parts': a part of a map gets a zone of its own: a copy of the map zone's header (same scripts, text, entities, encounters, camera, place name: the same file numbers, so its people, triggers and doors are the map's) with its own weather and, with 'bgm_zone', that Black 2 zone's music; 'rects' are Sapphire map tiles [x0, y0, x1, y1] (inclusive). patches/hoenn_world.py writes the zone headers and adds the rectangles to its ITCM zone lookup (world tiles on the Hoenn matrix, group tiles on a warp-only map's own matrix); patches/fixed_weather.py points the doors that arrive inside a part (rooms' exits) at the part's zone. 'maps': a whole outdoor map's zone gets the weather. 'rooms': a room or cave zone (data/hoenn_interiors.json), set by patches/fixed_weather.py after the interiors patch. 'cycles': a map whose weather changes day by day (Sapphire's WEATHER_ROUTE119_CYCLE / ROUTE123_CYCLE): patches/weather.py's GetWeatherAll hook gives the map's zone the cycle's Black 2 weather of the day; the map's ends that Sapphire keeps sunny (beyond its cycle trigger lines) are 'parts' with weather 0 (v166_fixes 2026-10-12).",
+ "_weathers_doc": "Black 2 field weather ids (ov036 WEATHER_OVERLAYS 0x021cfb6c, 15 entries; names: system text 43 lines 181-191 as ov104 field_gimmick_gate.c sWeatherMessages maps them; battle weather: ov036 ConvFieldWeatherToBtl 0x021a1e94). Used by Black 2's own headers: 3 Desert Resort entrance (157) and Route 4 (551), 12 Desert Resort (158), 9 Giant Chasm (230, 232).",
+ "weathers": {
+  "0": "sunny (no weather)",
+  "1": "snow, 'Snowy' (battle: none)",
+  "2": "rain (battle: rain)",
+  "3": "sandstorm (battle: sandstorm)",
+  "4": "blizzard (battle: hail)",
+  "5": "hail (battle: hail)",
+  "6": "thunderstorm (battle: rain)",
+  "7": "heavy rain, 'strong storm' (battle: rain)",
+  "8": "diamond dust (battle: none; gives the Diamond Dust medal, Field_CheckGiveDiamondDustMedal)",
+  "9": "mist, 'Misty' (battle: none; Giant Chasm)",
+  "10": "mist kind (battle: none)", "11": "mist kind (battle: none)", "13": "mist kind (battle: none)", "14": "mist kind (battle: none)",
+  "12": "sandstorm, Desert Resort's (battle: sandstorm)"
+ },
+ "parts": {
+  "Route111_Desert": {
+   "map": "Route111", "zone": 610, "weather": 12, "bgm_zone": 157,
+   "_sapphire": "Route 111's desert: setweather WEATHER_SANDSTORM + fadenewbgm MUS_ROUTE111 on the triggers (10,61) (11-14,62) (south) and (17,38)-(11,44) (north diagonal), WEATHER_SUNNY + MUS_ROUTE110 on (7,63)-(14,69) and (17,31) (18,32) (9,37) (10,36); OnTransition: sandstorm inside the desert. The part = every tile reachable from inside the desert without crossing the sandstorm triggers (they are in it), so the weather and music change where Sapphire's sandstorm starts. Black 2: Desert Resort's sandstorm (12); music: the Route 4 / Desert Resort entrance theme (zone 157's four seasonal SEQ_BGM_R_C_*; user choice 2026-10-07: Desert Resort's own SEQ_BGM_D_02 is Black 2's cave theme). Sandstorm also in battle, as in Sapphire's desert.",
+   "rects": [[21, 33, 37, 100], [17, 38, 20, 93], [16, 39, 16, 93], [15, 40, 15, 68], [14, 41, 14, 62], [13, 42, 13, 62], [12, 43, 12, 62], [11, 44, 11, 62], [10, 46, 10, 61], [30, 33, 33, 127]]
+  },
+  "Route113_Ash": {
+   "map": "Route113", "zone": 611, "weather": 1,
+   "_sapphire": "Route 113's falling ash: setweather WEATHER_ASH on the triggers x 19 (y 10-14) and (86,10) (86,11) (87,9) (88,6-8), sunny on x 14 and x 94; OnTransition: ash for 19 <= x <= 84. Black 2 has no ash: its light snow (1) is the closest (small pale flakes falling; no battle weather, unlike hail and blizzard; diamond dust would give the Diamond Dust medal) and matches the snowy winter trees that stand in for Sapphire's ash-covered trees.",
+   "rects": [[19, 0, 86, 19], [87, 0, 87, 9], [88, 0, 88, 8]]
+  },
+  "JaggedPass_Ash": {
+   "map": "JaggedPass", "zone": 612, "weather": 1,
+   "_sapphire": "Jagged Pass: ash on transition once VAR_JAGGED_PASS_ASH_WEATHER is 1 (Mt. Chimney sets it on every visit, and Jagged Pass is reached only after it), sunny on the triggers (13,15) (14,15) (18,17) (22,19), ash again on (21,12): the ash covers the pass above them (where its ash-covered trees are). The part = rows 0-13 and the east path down to the triggers (x 19-22, rows 14-18). Snow (1) as on Route 113.",
+   "rects": [[0, 0, 29, 13], [19, 14, 22, 18]]
+  },
+  "MtPyre_Exterior_Fog": {
+   "map": "MtPyre_Exterior", "zone": 613, "weather": 9,
+   "_sapphire": "Mt. Pyre's outside: setweather WEATHER_FOG_1 on the top of the stairs (24-26,21), sunny on (22,27) (23,28); OnTransition: fog for y < 12 (the summit's door). The part = the upper terraces (rows 0-21) and their dead-end nook (6-17, 22-23). Black 2's mist (9, Giant Chasm's).",
+   "rects": [[0, 0, 37, 21], [6, 22, 17, 23]]
+  },
+  "Route119_North": {
+   "map": "Route119", "zone": 609, "weather": 0,
+   "_sapphire": "Route 119's ends that Sapphire keeps sunny: its triggers set WEATHER_ROUTE119_CYCLE on (28-33,13) and the V (15,133)-(18,130)-(21,133), WEATHER_SUNNY on (34-36,6-10) by Fortree and (16-20,137) by Route 118. The part = every tile reachable from the map's edge (Fortree's side / Route 118's) without stepping on a cycle trigger (work/agents/v166_fixes/tools/cycle_parts.py; rectangles may also cover trees and rock), so the cycle's weather starts where Sapphire's does when walking in. The rest of the map (with the Weather Institute's and the house's doors) is the map's zone, which cycles (Sapphire sets the cycle on leaving a building there: special SetRoute119Weather).",
+   "rects": [[23, 0, 39, 12]]
+  },
+  "Route119_South": {
+   "map": "Route119", "zone": 608, "weather": 0,
+   "_sapphire": "As Route119_North: the south end, by Route 118.",
+   "rects": [[16, 133, 20, 139], [17, 132, 19, 139], [15, 134, 21, 139], [18, 131, 18, 139]]
+  },
+  "Route123_West": {
+   "map": "Route123", "zone": 586, "weather": 0,
+   "_sapphire": "Route 123's ends that Sapphire keeps sunny: cycle triggers (19,12-16), (34,13), (90-94,9-16); sunny triggers (9,12-16) by Route 118 and (108-112,14-18) below Route 122. The part = every tile reachable from that edge without stepping on a cycle trigger (cycle_parts.py). The Berry Master's house is in the map's zone (cycles).",
+   "rects": [[0, 11, 18, 19], [0, 0, 8, 19], [19, 17, 23, 19]]
+  },
+  "Route123_East": {
+   "map": "Route123", "zone": 550, "weather": 0,
+   "_sapphire": "As Route123_West: the east end, below Route 122.",
+   "rects": [[95, 0, 139, 19], [92, 14, 94, 19], [93, 13, 94, 19], [91, 15, 91, 19], [94, 11, 94, 19]]
+  }
+ },
+ "maps": {
+  "MtPyre_Summit": {"weather": 9, "_sapphire": "header WEATHER_FOG_1"},
+  "MtChimney": {"weather": 1, "_sapphire": "header WEATHER_ASH (snow as on Route 113)"}
+ },
+ "rooms": {
+  "RusturfTunnel": {"weather": 9, "_sapphire": "header WEATHER_FOG_1"},
+  "LavaridgeTown_Gym_1F": {"weather": 9, "_sapphire": "header WEATHER_FOG_1 (the hot spring steam)"},
+  "LavaridgeTown_Gym_B1F": {"weather": 9, "_sapphire": "header WEATHER_FOG_1"},
+  "CaveOfOrigin_B2F": {"weather": 9, "_sapphire": "header WEATHER_FOG_1"},
+  "CaveOfOrigin_B3F": {"weather": 9, "_sapphire": "header WEATHER_FOG_1"},
+  "CaveOfOrigin_B4F": {"weather": 9, "_sapphire": "header WEATHER_FOG_1"},
+  "SeafloorCavern_Room9": {"weather": 9, "_sapphire": "header WEATHER_FOG_1"}
+ },
+ "cycles": {
+  "_doc": "Sapphire's day-by-day weather (pokeruby field_weather_effects.c TranslateWeatherNum: sWeatherCycleRoute119 = sunny, light rain, medium rain (rain with thunder), light rain; sWeatherCycleRoute123 = sunny, sunny, light rain, sunny; the step is gSaveBlock1.weatherCycleStage, advanced by the days passed: clock.c UpdatePerDay -> UpdateWeatherPerDay, mod 4). Black 2: light rain = rain 2, medium rain = thunderstorm 6 (both rain in battle, as in Sapphire), sunny = 0. The step = the DS clock's day (days since 2000) mod 4: one step a day as in Sapphire (only the day of the 4 a save starts on differs). Black 2 sets a zone's weather when the player enters it (ResetWeather on a zone change, a warp, Continue), as Sapphire's triggers and map scripts do.",
+  "Route119": {"weathers": [0, 2, 6, 2], "_sapphire": "sunny, light rain, medium rain, light rain"},
+  "Route123": {"weathers": [0, 0, 2, 0], "_sapphire": "sunny, sunny, light rain, sunny"}
+ },
+ "_not_done": "Sapphire's other header weathers have no Black 2 equivalent: WEATHER_SHADE (Petalburg Woods, the Abandoned Ship's rooms, Southern Island's interior: a darker palette, not a weather in Black 2) and WEATHER_BUBBLES (the underwater maps: the dive patch's haze). Changing weather skipped: Route 120's clouds/rain triggers. Done elsewhere: Kyogre's rain (patches/weather.py, ch10); Route 119's and Route 123's day-by-day cycles ('cycles' above, v166_fixes)."
+}

@@ -1,0 +1,486 @@
+{
+ "zone": 148,
+ "room": "LavaridgeTown_Gym_B1F",
+ "area": 388,
+ "bgm": 1062,
+ "what": "gyms_league: LavaridgeTown_Gym_B1F (b2tools/gyms_league_rooms.py); story phase: the steam jets that throw you up to 1F (Sapphire: jet animation; here plain warps on the vent tiles)",
+ "parent": 62,
+ "warps": [
+  {
+   "at": [
+    10,
+    18
+   ],
+   "tile_only": true,
+   "to": [
+    145,
+    2
+   ],
+   "type": 2,
+   "dir": 0,
+   "what": "Emerald warp 0 -> LavaridgeTown_Gym_1F 2"
+  },
+  {
+   "at": [
+    0,
+    17
+   ],
+   "tile_only": true,
+   "to": [
+    145,
+    6
+   ],
+   "type": 2,
+   "dir": 0,
+   "what": "Emerald warp 1 -> LavaridgeTown_Gym_1F 6"
+  },
+  {
+   "at": [
+    8,
+    9
+   ],
+   "tile_only": true,
+   "to": [
+    145,
+    3
+   ],
+   "type": 2,
+   "dir": 0,
+   "what": "Emerald warp 2 -> LavaridgeTown_Gym_1F 3"
+  },
+  {
+   "at": [
+    5,
+    14
+   ],
+   "tile_only": true,
+   "to": [
+    145,
+    5
+   ],
+   "type": 2,
+   "dir": 0,
+   "what": "Emerald warp 3 -> LavaridgeTown_Gym_1F 5"
+  },
+  {
+   "at": [
+    4,
+    18
+   ],
+   "tile_only": true,
+   "to": [
+    145,
+    4
+   ],
+   "type": 2,
+   "dir": 0,
+   "what": "Emerald warp 4 -> LavaridgeTown_Gym_1F 4"
+  },
+  {
+   "at": [
+    5,
+    9
+   ],
+   "tile_only": true,
+   "to": [
+    145,
+    7
+   ],
+   "type": 2,
+   "dir": 0,
+   "what": "Emerald warp 5 -> LavaridgeTown_Gym_1F 7"
+  },
+  {
+   "at": [
+    2,
+    15
+   ],
+   "tile_only": true,
+   "to": [
+    145,
+    8
+   ],
+   "type": 2,
+   "dir": 0,
+   "what": "Emerald warp 6 -> LavaridgeTown_Gym_1F 8"
+  },
+  {
+   "at": [
+    3,
+    14
+   ],
+   "tile_only": true,
+   "to": [
+    145,
+    9
+   ],
+   "type": 2,
+   "dir": 0,
+   "what": "Emerald warp 7 -> LavaridgeTown_Gym_1F 9"
+  },
+  {
+   "at": [
+    1,
+    14
+   ],
+   "tile_only": true,
+   "to": [
+    145,
+    10
+   ],
+   "type": 2,
+   "dir": 0,
+   "what": "Emerald warp 8 -> LavaridgeTown_Gym_1F 10"
+  },
+  {
+   "at": [
+    0,
+    10
+   ],
+   "tile_only": true,
+   "to": [
+    145,
+    11
+   ],
+   "type": 2,
+   "dir": 0,
+   "what": "Emerald warp 9 -> LavaridgeTown_Gym_1F 11"
+  },
+  {
+   "at": [
+    3,
+    10
+   ],
+   "tile_only": true,
+   "to": [
+    145,
+    12
+   ],
+   "type": 2,
+   "dir": 0,
+   "what": "Emerald warp 10 -> LavaridgeTown_Gym_1F 12"
+  },
+  {
+   "at": [
+    0,
+    6
+   ],
+   "tile_only": true,
+   "to": [
+    145,
+    13
+   ],
+   "type": 2,
+   "dir": 0,
+   "what": "Emerald warp 11 -> LavaridgeTown_Gym_1F 13"
+  },
+  {
+   "at": [
+    3,
+    6
+   ],
+   "tile_only": true,
+   "to": [
+    145,
+    14
+   ],
+   "type": 2,
+   "dir": 0,
+   "what": "Emerald warp 12 -> LavaridgeTown_Gym_1F 14"
+  },
+  {
+   "at": [
+    5,
+    6
+   ],
+   "tile_only": true,
+   "to": [
+    145,
+    15
+   ],
+   "type": 2,
+   "dir": 0,
+   "what": "Emerald warp 13 -> LavaridgeTown_Gym_1F 15"
+  },
+  {
+   "at": [
+    2,
+    3
+   ],
+   "tile_only": true,
+   "to": [
+    145,
+    16
+   ],
+   "type": 2,
+   "dir": 0,
+   "what": "Emerald warp 14 -> LavaridgeTown_Gym_1F 16"
+  },
+  {
+   "at": [
+    5,
+    2
+   ],
+   "tile_only": true,
+   "to": [
+    145,
+    17
+   ],
+   "type": 2,
+   "dir": 0,
+   "what": "Emerald warp 15 -> LavaridgeTown_Gym_1F 17"
+  },
+  {
+   "at": [
+    7,
+    2
+   ],
+   "tile_only": true,
+   "to": [
+    145,
+    18
+   ],
+   "type": 2,
+   "dir": 0,
+   "what": "Emerald warp 16 -> LavaridgeTown_Gym_1F 18"
+  },
+  {
+   "at": [
+    8,
+    6
+   ],
+   "tile_only": true,
+   "to": [
+    145,
+    19
+   ],
+   "type": 2,
+   "dir": 0,
+   "what": "Emerald warp 17 -> LavaridgeTown_Gym_1F 19"
+  },
+  {
+   "at": [
+    10,
+    6
+   ],
+   "tile_only": true,
+   "to": [
+    145,
+    20
+   ],
+   "type": 2,
+   "dir": 0,
+   "what": "Emerald warp 18 -> LavaridgeTown_Gym_1F 20"
+  },
+  {
+   "at": [
+    12,
+    3
+   ],
+   "tile_only": true,
+   "to": [
+    145,
+    22
+   ],
+   "type": 2,
+   "dir": 0,
+   "what": "Emerald warp 19 -> LavaridgeTown_Gym_1F 22"
+  },
+  {
+   "at": [
+    4,
+    16
+   ],
+   "tile_only": true,
+   "to": [
+    145,
+    21
+   ],
+   "type": 2,
+   "dir": 0,
+   "what": "Emerald warp 20 -> LavaridgeTown_Gym_1F 21"
+  },
+  {
+   "at": [
+    14,
+    6
+   ],
+   "tile_only": true,
+   "to": [
+    145,
+    23
+   ],
+   "type": 2,
+   "dir": 0,
+   "what": "Emerald warp 21 -> LavaridgeTown_Gym_1F 23"
+  },
+  {
+   "at": [
+    13,
+    17
+   ],
+   "tile_only": true,
+   "to": [
+    145,
+    24
+   ],
+   "type": 2,
+   "dir": 0,
+   "what": "Emerald warp 22 -> LavaridgeTown_Gym_1F 24"
+  },
+  {
+   "at": [
+    12,
+    12
+   ],
+   "tile_only": true,
+   "to": [
+    145,
+    25
+   ],
+   "type": 2,
+   "dir": 0,
+   "what": "Emerald warp 23 -> LavaridgeTown_Gym_1F 25"
+  }
+ ],
+ "npcs": [],
+ "signs": [],
+ "triggers": [
+  {
+   "script": 7,
+   "var": 0,
+   "value": 0,
+   "at": [
+    10,
+    18
+   ]
+  },
+  {
+   "script": 8,
+   "var": 0,
+   "value": 0,
+   "at": [
+    0,
+    17
+   ]
+  },
+  {
+   "script": 9,
+   "var": 0,
+   "value": 0,
+   "at": [
+    8,
+    9
+   ]
+  },
+  {
+   "script": 10,
+   "var": 0,
+   "value": 0,
+   "at": [
+    5,
+    14
+   ]
+  },
+  {
+   "script": 11,
+   "var": 0,
+   "value": 0,
+   "at": [
+    4,
+    18
+   ]
+  },
+  {
+   "script": 12,
+   "var": 0,
+   "value": 0,
+   "at": [
+    1,
+    14
+   ]
+  },
+  {
+   "script": 13,
+   "var": 0,
+   "value": 0,
+   "at": [
+    0,
+    10
+   ]
+  },
+  {
+   "script": 14,
+   "var": 0,
+   "value": 0,
+   "at": [
+    0,
+    6
+   ]
+  },
+  {
+   "script": 15,
+   "var": 0,
+   "value": 0,
+   "at": [
+    3,
+    6
+   ]
+  },
+  {
+   "script": 16,
+   "var": 0,
+   "value": 0,
+   "at": [
+    2,
+    3
+   ]
+  },
+  {
+   "script": 17,
+   "var": 0,
+   "value": 0,
+   "at": [
+    7,
+    2
+   ]
+  },
+  {
+   "script": 18,
+   "var": 0,
+   "value": 0,
+   "at": [
+    12,
+    3
+   ]
+  },
+  {
+   "script": 19,
+   "var": 0,
+   "value": 0,
+   "at": [
+    4,
+    16
+   ]
+  },
+  {
+   "script": 20,
+   "var": 0,
+   "value": 0,
+   "at": [
+    13,
+    17
+   ]
+  },
+  {
+   "script": 21,
+   "var": 0,
+   "value": 0,
+   "at": [
+    12,
+    12
+   ]
+  }
+ ],
+ "_doc": "emerald_rooms (b2tools/emerald_rooms.py writes this file: edit the script and rerun). Emerald's overlay of 148.json: pokeemerald's warps in its order (tiles of LavaridgeTown_Gym_B1F_Emerald), the vents as step triggers running the Emerald scripts (#ifdef HOENN_EMERALD entries of the room's script file). gyms_league: LavaridgeTown_Gym_B1F (b2tools/gyms_league_rooms.py); story phase: the steam jets that throw you up to 1F (Sapphire: jet animation; here plain warps on the vent tiles)"
+}

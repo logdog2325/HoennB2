@@ -1,0 +1,222 @@
+{
+ "map": "OldaleTown",
+ "id": "MAP_OLDALE_TOWN",
+ "layout": "LAYOUT_OLDALE_TOWN",
+ "music": "MUS_OLDALE",
+ "region_map_section": "MAPSEC_OLDALE_TOWN",
+ "weather": "WEATHER_SUNNY",
+ "connections": [
+  {
+   "direction": "up",
+   "offset": 0,
+   "map": "MAP_ROUTE103"
+  },
+  {
+   "direction": "down",
+   "offset": 0,
+   "map": "MAP_ROUTE101"
+  },
+  {
+   "direction": "left",
+   "offset": 0,
+   "map": "MAP_ROUTE102"
+  }
+ ],
+ "npcs": [
+  {
+   "local_id": 1,
+   "x": 16,
+   "y": 11,
+   "gfx": "OBJ_EVENT_GFX_GIRL_3",
+   "movement": "MOVEMENT_TYPE_FACE_LEFT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "OldaleTown_EventScript_Girl",
+   "texts": {
+    "OldaleTown_Text_SavingMyProgress": "I want to take a rest, so I'm saving my\\nprogress.$"
+   }
+  },
+  {
+   "local_id": 2,
+   "x": 13,
+   "y": 7,
+   "gfx": "OBJ_EVENT_GFX_MART_EMPLOYEE",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "OldaleTown_EventScript_MartEmployee",
+   "texts": {
+    "OldaleTown_Text_IWorkAtPokemonMart": "Hi!\\nI work at a POKéMON MART.\\pCan I get you to come with me?$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 3,
+   "x": 8,
+   "y": 9,
+   "gfx": "OBJ_EVENT_GFX_MANIAC",
+   "movement": "MOVEMENT_TYPE_FACE_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "OldaleTown_EventScript_FootprintsMan",
+   "texts": {
+    "OldaleTown_Text_DiscoveredFootprints": "I just discovered the footprints of\\na rare POKéMON!\\pWait until I finish sketching\\nthem, okay?$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 4,
+   "x": 11,
+   "y": 19,
+   "gfx": "OBJ_EVENT_GFX_VAR_0",
+   "movement": "MOVEMENT_TYPE_FACE_UP",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_RIVAL_OLDALE_TOWN",
+   "script": "OldaleTown_EventScript_Rival",
+   "texts": {},
+   "complex": true
+  }
+ ],
+ "signs": [
+  {
+   "x": 11,
+   "y": 9,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "OldaleTown_EventScript_TownSign",
+   "texts": {
+    "OldaleTown_Text_TownSign": "OLDALE TOWN\\n“Where things start off scarce.”$"
+   }
+  },
+  {
+   "x": 7,
+   "y": 16,
+   "facing": "BG_EVENT_PLAYER_FACING_NORTH",
+   "script": "Common_EventScript_PokemonCenterSign",
+   "texts": {
+    "Text_PokemonCenterSign": "“Rejuvenate your tired partners!”\\nPOKéMON CENTER$"
+   }
+  },
+  {
+   "x": 15,
+   "y": 6,
+   "facing": "BG_EVENT_PLAYER_FACING_NORTH",
+   "script": "Common_EventScript_PokemartSign",
+   "texts": {
+    "Text_PokemartSign": "“Selected items for your convenience!”\\nPOKéMON MART$"
+   }
+  },
+  {
+   "x": 8,
+   "y": 16,
+   "facing": "BG_EVENT_PLAYER_FACING_NORTH",
+   "script": "Common_EventScript_PokemonCenterSign",
+   "texts": {
+    "Text_PokemonCenterSign": "“Rejuvenate your tired partners!”\\nPOKéMON CENTER$"
+   }
+  },
+  {
+   "x": 16,
+   "y": 6,
+   "facing": "BG_EVENT_PLAYER_FACING_NORTH",
+   "script": "Common_EventScript_PokemartSign",
+   "texts": {
+    "Text_PokemartSign": "“Selected items for your convenience!”\\nPOKéMON MART$"
+   }
+  }
+ ],
+ "warps": [
+  {
+   "id": 0,
+   "x": 5,
+   "y": 7,
+   "dest_map": "MAP_OLDALE_TOWN_HOUSE1",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 1,
+   "x": 15,
+   "y": 16,
+   "dest_map": "MAP_OLDALE_TOWN_HOUSE2",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 2,
+   "x": 6,
+   "y": 16,
+   "dest_map": "MAP_OLDALE_TOWN_POKEMON_CENTER_1F",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 3,
+   "x": 14,
+   "y": 6,
+   "dest_map": "MAP_OLDALE_TOWN_MART",
+   "dest_warp_id": "0"
+  }
+ ],
+ "coord_events": [
+  {
+   "type": "trigger",
+   "x": 0,
+   "y": 10,
+   "elevation": 3,
+   "var": "VAR_ROUTE102_ACCESSIBLE",
+   "var_value": "0",
+   "script": "OldaleTown_EventScript_BlockedPath",
+   "texts": {
+    "OldaleTown_Text_WaitDontComeInHere": "Aaaaah! Wait!\\nPlease don't come in here.\\pI just discovered the footprints of\\na rare POKéMON!\\pWait until I finish sketching\\nthem, okay?$"
+   },
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 8,
+   "y": 19,
+   "elevation": 3,
+   "var": "VAR_OLDALE_STATE",
+   "var_value": "1",
+   "script": "OldaleTown_EventScript_RivalTrigger1",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 9,
+   "y": 19,
+   "elevation": 3,
+   "var": "VAR_OLDALE_STATE",
+   "var_value": "1",
+   "script": "OldaleTown_EventScript_RivalTrigger2",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 10,
+   "y": 19,
+   "elevation": 3,
+   "var": "VAR_OLDALE_STATE",
+   "var_value": "1",
+   "script": "OldaleTown_EventScript_RivalTrigger3",
+   "texts": {},
+   "complex": true
+  }
+ ],
+ "wild": {}
+}

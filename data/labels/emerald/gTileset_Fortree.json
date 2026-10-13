@@ -1,0 +1,16 @@
+{
+ "_doc": "Emerald's gTileset_Fortree metatiles labelled by eye (emerald_world 2026-10-12; sheets: work/agents/emerald_world/tools/label_sheets.py): the ones converter/emerald_labels.py cannot carry over from Sapphire. Wins over carry_gTileset_Fortree.json.",
+ "gTileset_Fortree": {
+  "2fb": "bridge",
+  "2fc": "bridge",
+  "303": "bridge",
+  "304": "bridge",
+  "30b": "bridge",
+  "30c": "bridge",
+  "313": "bridge",
+  "314": "bridge"
+ },
+ "_notes": {
+  "_route120": "Route 120's log bridges (MB_ROUTE120_*_BRIDGE): bridge"
+ }
+}

@@ -1,0 +1,10 @@
+…
+Ahahahaha!\nWe got meddled with unexpectedly!{be01}\nWe’re out of options.\nWe’ll have to pull out.{be01}\nBut this isn’t the last you’ll see of\nTeam Aqua! We have other plans!{be00}\nDon’t you forget it!
+Thanks!\nThanks to you, we’re safe!{be01}\nIt might be an odd way of thanking you,\nbut take this Pokémon.
+{0100:0} received Castform!
+That Pokémon changes shape according\nto the weather conditions.{be01}\nThere’re plenty of them in the\nInstitute--go ahead and take it.
+Hm? You don’t seem to have any room\nfor this Pokémon.
+I’ve been researching rain for many\nyears, but it’s ridiculous to think that{be00}\nhumans can freely change the weather.
+I track weather patterns over\nthe Hoenn region.{be01}\nPresently, a drought has been recorded\nin {0100:1}.{be01}\nCould that mean, somewhere near\n{0100:1}…
+I track weather patterns over\nthe Hoenn region.{be01}\nPresently, heavy rainfall has been\nrecorded over {0100:1}.{be01}\nCould that mean, somewhere near\n{0100:1}…
+Abnormal weather conditions are\nno longer being reported.{be01}\nThe occasional rainfall is a blessing,\nreally.

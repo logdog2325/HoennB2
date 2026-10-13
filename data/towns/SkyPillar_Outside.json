@@ -1,0 +1,13 @@
+{
+ "_doc": "Sky Pillar Outside's tower foot (warp-only map: group 'standalone', its own exterior pack, data/buildings/standalone.json, b2tools/models_standalone.py pillar): Sapphire's tower tiles x 12-16, rows 0-5, door (14,5) leading into the cave-built Sky Pillar 1F. props: model origin in Sapphire map tile coordinates (footprint centre x, door row + (4 - 20)/16).",
+ "group": "standalone",
+ "buildings": {},
+ "props": [
+  {
+   "res": 477,
+   "x": 14.5,
+   "z": 4.0,
+   "what": "Sky Pillar, the tower's foot (12-16, 0-5), dark doorway on (14,5)"
+  }
+ ]
+}

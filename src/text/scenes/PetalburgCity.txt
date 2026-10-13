@@ -1,0 +1,8 @@
+Hiya! Are you maybe...\nA rookie Trainer?{be01}\nDo you know what Pokémon Trainers\ndo when they reach a new town?{be01}\nThey first check what kind of Gym\nis in the town.
+See? This is Petalburg City’s Gym.
+This is the Gym’s sign. Look for it\nwhenever you’re looking for a Gym.
+My face is reflected in the water.{be01}\nIt’s a shining grin full of hope...{be01}\nOr it could be a look of somber silence\nstruggling with fear...{be01}\nWhat do you see reflected in your face?
+Where has our Wally gone?{be01}\nWe have to leave for Verdanturf Town\nvery soon...
+Wally: {0100:0}...\nPokémon hide in tall grass like this,{be00}\ndon’t they?{be01}\nPlease watch me and see if I can\ncatch one properly.{be01}\n...Whoa!
+Wally: I did it... It’s my...\nMy Pokémon!
+{0100:0}, thank you!\nLet’s go back to the Gym!

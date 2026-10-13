@@ -1,0 +1,70 @@
+{
+ "zone": 260,
+ "room": "NavelRock_Down08",
+ "cave": true,
+ "cave_auto": true,
+ "area": 332,
+ "dark": false,
+ "header": {
+  "map_type": 16,
+  "npc_cache": 24,
+  "weather_word": 0,
+  "flags": 23683,
+  "icon_word": 32783,
+  "place_display": 1,
+  "bgm0": 1076,
+  "bgm1": 1076,
+  "bgm2": 1076,
+  "bgm3": 1076,
+  "place": 89,
+  "encounters": 8191,
+  "enc_slot": 6
+ },
+ "warps": [
+  {
+   "at": [
+    5,
+    5
+   ],
+   "to": [
+    259,
+    1
+   ],
+   "what": "Sapphire warp 0 (5,5) -> NavelRock_Down07 1"
+  },
+  {
+   "at": [
+    3,
+    3
+   ],
+   "to": [
+    261,
+    0
+   ],
+   "what": "Sapphire warp 1 (3,3) -> NavelRock_Down09 0"
+  }
+ ],
+ "triggers": [
+  {
+   "script": 1,
+   "var": 0,
+   "value": 0,
+   "at": [
+    5,
+    5
+   ]
+  },
+  {
+   "script": 2,
+   "var": 0,
+   "value": 0,
+   "at": [
+    3,
+    3
+   ]
+  }
+ ],
+ "npcs": [],
+ "signs": [],
+ "what": "NavelRock_Down08: cave (converter/gen_caves.py, b2tools/models_cave.py); story objects: see notes/CAVES.md"
+}

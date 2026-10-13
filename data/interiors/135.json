@@ -1,0 +1,53 @@
+{
+ "zone": 135,
+ "room": "ScorchedSlab",
+ "cave": true,
+ "cave_auto": true,
+ "area": 332,
+ "dark": false,
+ "header": {
+  "map_type": 16,
+  "npc_cache": 24,
+  "weather_word": 64,
+  "flags": 23683,
+  "icon_word": 40975,
+  "place_display": 1,
+  "bgm0": 1076,
+  "bgm1": 1076,
+  "bgm2": 1076,
+  "bgm3": 1076,
+  "place": 80,
+  "encounters": 8191,
+  "enc_slot": 6
+ },
+ "warps": [
+  {
+   "at": [
+    7,
+    16
+   ],
+   "to": [
+    474,
+    2
+   ],
+   "what": "Sapphire warp 0 (7,16) -> Route120 1"
+  }
+ ],
+ "triggers": [],
+ "npcs": [
+  {
+   "uid": 1,
+   "model": 110,
+   "script": 7093,
+   "flag": 1193,
+   "dir": 1,
+   "at": [
+    7,
+    5
+   ],
+   "what": "item ball ITEM_TM11"
+  }
+ ],
+ "signs": [],
+ "what": "ScorchedSlab: cave (converter/gen_caves.py, b2tools/models_cave.py); story objects: see notes/CAVES.md"
+}

@@ -1,0 +1,154 @@
+{
+ "_doc": "frontier_pyramid (2026-10-12): a Battle Pyramid floor (notes/FRONTIER_PYRAMID.md), Emerald only. No room: the floor's chunk (an RD container: b2tools/pyramid_models.py's models, the squares placed by b2tools/patches/frontier_pyramid.c) is installed by the frontier_pyramid patch, with the zone's header (matrix, area 291, own script/text numbers). NPCs 0-15 = Emerald's objects of the floor (trainers first, then item balls): the zone init (frontier_pyramid.c setup_people) sets their places, sprites, scripts (1-16) and map-local hide flags 0x40-0x4F.",
+ "zone": 388,
+ "parent": 17,
+ "npcs": [
+  {
+   "uid": 1,
+   "model": 110,
+   "script": 1,
+   "dir": 1,
+   "x": 0,
+   "z": 0,
+   "flag": 64
+  },
+  {
+   "uid": 2,
+   "model": 110,
+   "script": 2,
+   "dir": 1,
+   "x": 1,
+   "z": 0,
+   "flag": 65
+  },
+  {
+   "uid": 3,
+   "model": 110,
+   "script": 3,
+   "dir": 1,
+   "x": 2,
+   "z": 0,
+   "flag": 66
+  },
+  {
+   "uid": 4,
+   "model": 110,
+   "script": 4,
+   "dir": 1,
+   "x": 3,
+   "z": 0,
+   "flag": 67
+  },
+  {
+   "uid": 5,
+   "model": 110,
+   "script": 5,
+   "dir": 1,
+   "x": 4,
+   "z": 0,
+   "flag": 68
+  },
+  {
+   "uid": 6,
+   "model": 110,
+   "script": 6,
+   "dir": 1,
+   "x": 5,
+   "z": 0,
+   "flag": 69
+  },
+  {
+   "uid": 7,
+   "model": 110,
+   "script": 7,
+   "dir": 1,
+   "x": 6,
+   "z": 0,
+   "flag": 70
+  },
+  {
+   "uid": 8,
+   "model": 110,
+   "script": 8,
+   "dir": 1,
+   "x": 7,
+   "z": 0,
+   "flag": 71
+  },
+  {
+   "uid": 9,
+   "model": 110,
+   "script": 9,
+   "dir": 1,
+   "x": 8,
+   "z": 0,
+   "flag": 72
+  },
+  {
+   "uid": 10,
+   "model": 110,
+   "script": 10,
+   "dir": 1,
+   "x": 9,
+   "z": 0,
+   "flag": 73
+  },
+  {
+   "uid": 11,
+   "model": 110,
+   "script": 11,
+   "dir": 1,
+   "x": 10,
+   "z": 0,
+   "flag": 74
+  },
+  {
+   "uid": 12,
+   "model": 110,
+   "script": 12,
+   "dir": 1,
+   "x": 11,
+   "z": 0,
+   "flag": 75
+  },
+  {
+   "uid": 13,
+   "model": 110,
+   "script": 13,
+   "dir": 1,
+   "x": 12,
+   "z": 0,
+   "flag": 76
+  },
+  {
+   "uid": 14,
+   "model": 110,
+   "script": 14,
+   "dir": 1,
+   "x": 13,
+   "z": 0,
+   "flag": 77
+  },
+  {
+   "uid": 15,
+   "model": 110,
+   "script": 15,
+   "dir": 1,
+   "x": 14,
+   "z": 0,
+   "flag": 78
+  },
+  {
+   "uid": 16,
+   "model": 110,
+   "script": 16,
+   "dir": 1,
+   "x": 15,
+   "z": 0,
+   "flag": 79
+  }
+ ],
+ "warps": [],
+ "signs": [],
+ "triggers": []
+}

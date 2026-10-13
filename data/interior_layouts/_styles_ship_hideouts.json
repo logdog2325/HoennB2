@@ -1,0 +1,315 @@
+{
+ "_doc": "ship_hideouts agent (b2tools/ship_hideouts_rooms.py writes this file): the Abandoned Ship in Black 2's Royal Unova cruise ship (texture set 337), the Aqua and Magma Hideouts in the Plasma Frigate (set 379); block styles for the ship's deck.",
+ "sh_corridor": {
+  "_doc": "Royal Unova corridor (chunk 931): dark wood planks, white wall with blue stripes",
+  "floor": {
+   "tex": "maq_rm03",
+   "src": 337,
+   "size": 32
+  },
+  "wall": {
+   "tex": "maq_rm05",
+   "src": 337,
+   "u_size": 32
+  },
+  "genkan": {
+   "tex": "maq_rm04",
+   "src": 337,
+   "size": 32
+  },
+  "black": {
+   "tex": "black",
+   "src": 285
+  }
+ },
+ "sh_cabin": {
+  "_doc": "Royal Unova cabin (chunks 948-950): red patterned carpet, the corridor's white wall (maq_rs01a, Royal Unova's cabin wall, is an atlas)",
+  "floor": {
+   "tex": "maq_rs05",
+   "src": 337,
+   "size": 16
+  },
+  "wall": {
+   "tex": "maq_rm05",
+   "src": 337,
+   "u_size": 32
+  },
+  "genkan": {
+   "tex": "maq_rm04",
+   "src": 337,
+   "size": 32
+  },
+  "black": {
+   "tex": "black",
+   "src": 285
+  }
+ },
+ "sh_office": {
+  "_doc": "the captain's office: Royal Unova blue cabin carpet, white wall with windows (maq_rm08)",
+  "floor": {
+   "tex": "maq_rs06",
+   "src": 337,
+   "size": 16
+  },
+  "wall": {
+   "tex": "maq_rm08",
+   "src": 337,
+   "u_size": 32
+  },
+  "genkan": {
+   "tex": "maq_rm04",
+   "src": 337,
+   "size": 32
+  },
+  "black": {
+   "tex": "black",
+   "src": 285
+  }
+ },
+ "sh_deck": {
+  "_doc": "the deck: wood planks (the floor under the holes), sea = Royal Unova's set's water",
+  "floor": {
+   "tex": "maq_rm03",
+   "src": 337,
+   "size": 32
+  },
+  "wall": {
+   "tex": "maq_rm05",
+   "src": 337,
+   "u_size": 32
+  },
+  "genkan": {
+   "tex": "d0_miz",
+   "src": 337,
+   "size": 16
+  },
+  "black": {
+   "tex": "black",
+   "src": 285
+  }
+ },
+ "hd_metal": {
+  "_doc": "Plasma Frigate corridor (chunks 696/697): riveted metal floor, grey panel wall",
+  "floor": {
+   "tex": "in77k_yuka1",
+   "src": 379,
+   "size": 32
+  },
+  "wall": {
+   "tex": "in77k_kabe1",
+   "src": 379,
+   "u_size": 16
+  },
+  "genkan": {
+   "tex": "in77k_yuka2",
+   "src": 379,
+   "size": 16
+  },
+  "black": {
+   "tex": "black",
+   "src": 285
+  }
+ },
+ "sh_hull": {
+  "top": {
+   "tex": "maq_rm03",
+   "src": 337,
+   "size": 32
+  },
+  "side": {
+   "tex": "maq_rm05",
+   "src": 337,
+   "u_size": 32,
+   "v": [
+    0,
+    1
+   ],
+   "v_size": 48
+  },
+  "shade_top": 1.0,
+  "shade_s": 0.85,
+  "shade_we": 0.6
+ },
+ "sh_house": {
+  "top": {
+   "tex": "black",
+   "src": 285
+  },
+  "side": {
+   "tex": "maq_rm05",
+   "src": 337,
+   "u_size": 32,
+   "v": [
+    0,
+    1
+   ],
+   "v_size": 48
+  },
+  "shade_top": 0.0,
+  "shade_s": 0.9,
+  "shade_we": 0.6
+ },
+ "sh_rail": {
+  "top": {
+   "tex": "maq_rm10",
+   "src": 337,
+   "size": 8
+  },
+  "side": {
+   "tex": "maq_rm10",
+   "src": 337,
+   "u_size": 8,
+   "v": [
+    0,
+    1
+   ],
+   "v_size": 8
+  },
+  "shade_top": 0.9,
+  "shade_s": 0.9,
+  "shade_we": 0.7
+ },
+ "sh_funnel": {
+  "top": {
+   "tex": "black",
+   "src": 285
+  },
+  "side": {
+   "tex": "fs_room7",
+   "src": 337,
+   "u_size": 8,
+   "v": [
+    0,
+    1
+   ],
+   "v_size": 8
+  },
+  "shade_top": 0.0,
+  "shade_s": 1.0,
+  "shade_we": 0.7
+ },
+ "sh_pipe": {
+  "top": {
+   "tex": "fs_room8",
+   "src": 337,
+   "size": 8
+  },
+  "side": {
+   "tex": "fs_room8",
+   "src": 337,
+   "u_size": 8,
+   "v": [
+    0,
+    1
+   ],
+   "v_size": 8
+  },
+  "shade_top": 0.8,
+  "shade_s": 0.75,
+  "shade_we": 0.55
+ },
+ "hd_aqua": {
+  "_doc": "Aqua Hideout in the Plasma Frigate (set 379): blue-grey deck plates, blue pipe wall",
+  "floor": {
+   "tex": "in77s_yuka1",
+   "src": 379,
+   "size": 32
+  },
+  "wall": {
+   "tex": "in77p_kabe1",
+   "src": 379,
+   "u_size": 32
+  },
+  "genkan": {
+   "tex": "in77k_yuka2",
+   "src": 379,
+   "size": 16
+  },
+  "black": {
+   "tex": "black",
+   "src": 285
+  }
+ },
+ "hd_magma": {
+  "_doc": "Magma Hideout in the Plasma Frigate (set 379): riveted brown-grey plates, white panel wall",
+  "floor": {
+   "tex": "in77k_yuka1",
+   "src": 379,
+   "size": 32
+  },
+  "wall": {
+   "tex": "in77room_02",
+   "src": 379,
+   "u_size": 64
+  },
+  "genkan": {
+   "tex": "in77k_yuka2",
+   "src": 379,
+   "size": 16
+  },
+  "black": {
+   "tex": "black",
+   "src": 285
+  }
+ },
+ "hd_rail": {
+  "top": {
+   "tex": "in77p_pa2",
+   "src": 379,
+   "size": 16
+  },
+  "side": {
+   "tex": "in77q_ami1",
+   "src": 379,
+   "u_size": 16,
+   "v": [
+    0,
+    1
+   ],
+   "v_size": 16
+  },
+  "shade_top": 0.9,
+  "shade_s": 0.9,
+  "shade_we": 0.7
+ },
+ "hd_rim": {
+  "top": {
+   "tex": "in77p_pa2",
+   "src": 379,
+   "size": 16
+  },
+  "side": {
+   "tex": "in77p_pa2",
+   "src": 379,
+   "u_size": 16,
+   "v": [
+    0,
+    1
+   ],
+   "v_size": 16
+  },
+  "shade_top": 0.8,
+  "shade_s": 0.7,
+  "shade_we": 0.6
+ },
+ "hd_band": {
+  "top": {
+   "tex": "in77p_pa2",
+   "src": 379,
+   "size": 16
+  },
+  "side": {
+   "tex": "in77i_kabe1",
+   "src": 379,
+   "u_size": 16,
+   "v": [
+    0,
+    1
+   ],
+   "v_size": 32
+  },
+  "shade_top": 0.9,
+  "shade_s": 0.85,
+  "shade_we": 0.6
+ }
+}

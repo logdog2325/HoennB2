@@ -1,0 +1,211 @@
+{
+ "map": "Route129",
+ "id": "MAP_ROUTE129",
+ "layout": "LAYOUT_ROUTE129",
+ "music": "MUS_ROUTE119",
+ "region_map_section": "MAPSEC_ROUTE_129",
+ "weather": "WEATHER_SUNNY",
+ "connections": [
+  {
+   "direction": "up",
+   "offset": 0,
+   "map": "MAP_ROUTE128"
+  },
+  {
+   "direction": "left",
+   "offset": 0,
+   "map": "MAP_ROUTE130"
+  }
+ ],
+ "npcs": [
+  {
+   "local_id": 1,
+   "x": 15,
+   "y": 23,
+   "gfx": "OBJ_EVENT_GFX_SWIMMER_M",
+   "movement": "MOVEMENT_TYPE_WALK_SEQUENCE_DOWN_LEFT_UP_RIGHT",
+   "range": [
+    3,
+    4
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route129_EventScript_152366",
+   "texts": {
+    "Route129_Text_1C2161": "This is my first triathlon.\\nI'm all tense and nervous!$",
+    "Route129_Text_1C2198": "Wroooaaar!\\nI failed to win!$",
+    "Route129_Text_1C21B4": "If I'm all tensed up, I won't be able to\\ngive it my all.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 2,
+   "x": 35,
+   "y": 9,
+   "gfx": "OBJ_EVENT_GFX_SWIMMER_F",
+   "movement": "MOVEMENT_TYPE_WALK_SEQUENCE_RIGHT_DOWN_LEFT_UP",
+   "range": [
+    5,
+    2
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route129_EventScript_15237D",
+   "texts": {
+    "Route129_Text_1C21ED": "I'm in the middle of a triathlon, but,\\nsure, why don't we battle?$",
+    "Route129_Text_1C222F": "I was sure I'd win!$",
+    "Route129_Text_1C2243": "Do you know what's the greatest thing\\nabout triathlons?\\pTesting the limits of your own\\nstrength and endurance against\\lMother Nature!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 3,
+   "x": 9,
+   "y": 14,
+   "gfx": "OBJ_EVENT_GFX_SWIMMER_F",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route129_EventScript_1523AB",
+   "texts": {
+    "Route129_Text_1C2349": "What's the hurry?\\nLet's take it slow and easy.$",
+    "Route129_Text_1C2378": "Oh, my.\\nI wanted to relax a little more...$",
+    "Route129_Text_1C23A3": "Don't you hate making mistakes when\\nyou're in a rush?\\pThat's why I try to take things\\nslowly.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 4,
+   "x": 28,
+   "y": 16,
+   "gfx": "OBJ_EVENT_GFX_SWIMMER_M",
+   "movement": "MOVEMENT_TYPE_ROTATE_CLOCKWISE",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route129_EventScript_152394",
+   "texts": {
+    "Route129_Text_1C22C8": "Say hey, hey!\\nLet's get on with it!$",
+    "Route129_Text_1C22EC": "Beat, I'm beaten.\\nThat's it, done!$",
+    "Route129_Text_1C230F": "There's nothing for a loser.\\nTime for me to beat it home.$"
+   },
+   "complex": true
+  }
+ ],
+ "signs": [],
+ "warps": [],
+ "coord_events": [],
+ "wild": {
+  "water_mons": {
+   "encounter_rate": 4,
+   "slot_rates": [
+    60,
+    30,
+    5,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 5,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 15,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_PELIPPER",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILORD",
+     "min": 25,
+     "max": 30
+    }
+   ]
+  },
+  "fishing_mons": {
+   "encounter_rate": 30,
+   "slot_rates": [
+    70,
+    30,
+    60,
+    20,
+    20,
+    40,
+    40,
+    15,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_SHARPEDO",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 35,
+     "max": 40
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 40,
+     "max": 45
+    }
+   ]
+  }
+ }
+}

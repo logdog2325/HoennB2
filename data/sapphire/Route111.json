@@ -1,0 +1,1482 @@
+{
+ "map": "Route111",
+ "id": "MAP_ROUTE111",
+ "layout": "LAYOUT_ROUTE111",
+ "music": "MUS_ROUTE110",
+ "region_map_section": "MAPSEC_ROUTE_111",
+ "weather": "WEATHER_SUNNY",
+ "connections": [
+  {
+   "direction": "down",
+   "offset": 0,
+   "map": "MAP_MAUVILLE_CITY"
+  },
+  {
+   "direction": "left",
+   "offset": 0,
+   "map": "MAP_ROUTE113"
+  },
+  {
+   "direction": "left",
+   "offset": 20,
+   "map": "MAP_ROUTE112"
+  }
+ ],
+ "npcs": [
+  {
+   "local_id": 1,
+   "x": 13,
+   "y": 114,
+   "gfx": "OBJ_EVENT_GFX_MAN_1",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_VICTOR_WINSTRATE",
+   "script": "Route111_EventScript_1501D1",
+   "texts": {
+    "Route111_Text_16F705": "Hello! I take it you're a traveler.\\pHow's this? What do you say to taking\\non our family of four in a series of\\lPOKéMON battles?$",
+    "Route111_Text_16F785": "Is that so?\\nDrop in, if you change your mind!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 2,
+   "x": 13,
+   "y": 113,
+   "gfx": "OBJ_EVENT_GFX_WOMAN_2",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_VICTORIA_WINSTRATE",
+   "script": "0x0",
+   "missing": true
+  },
+  {
+   "local_id": 3,
+   "x": 13,
+   "y": 113,
+   "gfx": "OBJ_EVENT_GFX_LASS",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    1,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_VIVI_WINSTRATE",
+   "script": "0x0",
+   "missing": true
+  },
+  {
+   "local_id": 4,
+   "x": 13,
+   "y": 113,
+   "gfx": "OBJ_EVENT_GFX_OLD_WOMAN_1",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_VICKI_WINSTRATE",
+   "script": "0x0",
+   "missing": true
+  },
+  {
+   "local_id": 5,
+   "x": 28,
+   "y": 51,
+   "gfx": "OBJ_EVENT_GFX_PICNICKER",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN_AND_LEFT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route111_EventScript_1503BE",
+   "texts": {
+    "Route111_Text_1BAC60": "I'm having a picnic in the desert.\\pYou can always find a TRAINER, so\\nI can enjoy a battle here, too!$",
+    "Route111_Text_1BACC5": "Ohhh! You're mean!$",
+    "Route111_Text_1BACD8": "When you're battling in a sandstorm,\\nwatch out for your POKéMON's HP.\\pIt can faint if you don't keep an eye\\non it!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 6,
+   "x": 22,
+   "y": 5,
+   "gfx": "OBJ_EVENT_GFX_BERRY_TREE",
+   "movement": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "S_BerryTree",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 7,
+   "x": 23,
+   "y": 5,
+   "gfx": "OBJ_EVENT_GFX_BERRY_TREE",
+   "movement": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "S_BerryTree",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 8,
+   "x": 8,
+   "y": 91,
+   "gfx": "OBJ_EVENT_GFX_MAN_4",
+   "movement": "MOVEMENT_TYPE_WANDER_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "Route111_EventScript_150395",
+   "texts": {
+    "Route111_Text_16FB86": "If you don't raise your POKéMON some\\nmore, it could be tough to keep winning\\lup through the ranks.\\pI've heard the POKéMON LEAGUE's\\nELITE FOUR are far stronger than\\lany GYM LEADER.$"
+   }
+  },
+  {
+   "local_id": 9,
+   "x": 24,
+   "y": 60,
+   "gfx": "OBJ_EVENT_GFX_CAMPER",
+   "movement": "MOVEMENT_TYPE_FACE_UP_LEFT_AND_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route111_EventScript_1503A7",
+   "texts": {
+    "Route111_Text_1BAB4B": "Oh, hey! Those GO-GOGGLES suit you.\\nBut I think they look better on me.\\pLet's decide who they look better on\\nwith a battle!$",
+    "Route111_Text_1BABC7": "I couldn't see what was happening at my\\nsides because of the GO-GOGGLES.$",
+    "Route111_Text_1BAC10": "The GO-GOGGLES make it possible to\\nget through sandstorms.\\lThat makes me happy!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 10,
+   "x": 27,
+   "y": 69,
+   "gfx": "OBJ_EVENT_GFX_HIKER",
+   "movement": "MOVEMENT_TYPE_WALK_SEQUENCE_DOWN_LEFT_UP_RIGHT",
+   "range": [
+    2,
+    2
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route111_EventScript_150403",
+   "texts": {
+    "Route111_Text_1BAEC9": "For thirty years I have searched for\\nancient ruins!\\lI am to be challenged?$",
+    "Route111_Text_1BAF14": "While I have searched for ruins, I've\\nnot searched for strong POKéMON.$",
+    "Route111_Text_1BAF5B": "For thirty years I have searched for\\nancient ruins!\\pNo, wait, was that forty years?\\nWhich was it now?$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 11,
+   "x": 21,
+   "y": 47,
+   "gfx": "OBJ_EVENT_GFX_CAMPER",
+   "movement": "MOVEMENT_TYPE_FACE_LEFT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route111_EventScript_1503D5",
+   "texts": {
+    "Route111_Text_1BAD4B": "Wearing these GO-GOGGLES makes me\\nfeel like a superhero.\\lRight now, nobody can beat me!$",
+    "Route111_Text_1BADA3": "I can't win on spirit alone...$",
+    "Route111_Text_1BADC2": "I'm going to be a real hero one day.\\nI'm going to work harder to make me\\land my POKéMON stronger.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 12,
+   "x": 32,
+   "y": 72,
+   "gfx": "OBJ_EVENT_GFX_PICNICKER",
+   "movement": "MOVEMENT_TYPE_ROTATE_CLOCKWISE",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route111_EventScript_1503EC",
+   "texts": {
+    "Route111_Text_1BAE24": "I heard there are fossils to be found\\nin the desert. Where could they be?$",
+    "Route111_Text_1BAE6E": "I came up short...$",
+    "Route111_Text_1BAE81": "If they can find fossils in the desert,\\nit must have been a sea before.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 13,
+   "x": 14,
+   "y": 86,
+   "gfx": "OBJ_EVENT_GFX_CAMERAMAN",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_GABBY_AND_TY_ROUTE111_1",
+   "script": "Route111_EventScript_1AE442",
+   "texts": {
+    "Route111_Text_1AC73B": "TY: Hey, lookie here! A tough-looking\\nTRAINER here, of all places!\\lCamera's rolling!$",
+    "Route111_Text_1AC892": "TY: Yep, we sure spotted a hot TRAINER.\\nThis is a huge scoop for us!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 14,
+   "x": 13,
+   "y": 86,
+   "gfx": "OBJ_EVENT_GFX_REPORTER_F",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_GABBY_AND_TY_ROUTE111_1",
+   "script": "Route111_EventScript_1AE422",
+   "texts": {
+    "Route111_Text_1ABED8": "GABBY: Oh! We've just spotted a tough-\\nlooking TRAINER here of all places!\\pOkay, roll camera!\\nLet's get this interview.$",
+    "Route111_Text_1ABFD3": "GABBY: My eyes didn't lie!\\nI did discover an astonishing TRAINER!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 15,
+   "x": 18,
+   "y": 101,
+   "gfx": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_TEMP_11",
+   "script": "S_BreakableRock",
+   "texts": {
+    "UseRockSmashPromptText": "This rock appears to be breakable.\\nWould you like to use ROCK SMASH?$",
+    "UsedCutRockSmashText": "{STR_VAR_1} used {STR_VAR_2}.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 16,
+   "x": 19,
+   "y": 100,
+   "gfx": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_TEMP_12",
+   "script": "S_BreakableRock",
+   "texts": {
+    "UseRockSmashPromptText": "This rock appears to be breakable.\\nWould you like to use ROCK SMASH?$",
+    "UsedCutRockSmashText": "{STR_VAR_1} used {STR_VAR_2}.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 17,
+   "x": 23,
+   "y": 8,
+   "gfx": "OBJ_EVENT_GFX_GIRL_1",
+   "movement": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
+   "range": [
+    1,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "Route111_EventScript_1500C5",
+   "texts": {
+    "Route111_Text_1C56F0": "I watered my plants lots and lots!\\nA whole bunch of flowers bloomed!\\pAnd then a whole bunch of BERRIES\\nappeared!\\pHere you go!\\nYou can have this!$",
+    "Route111_Text_1C5781": "I'm going to try really hard and make\\nsome RED {POKEBLOCK}S!\\pI hope you try hard, too!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 18,
+   "x": 32,
+   "y": 105,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_ROUTE111_1",
+   "script": "Route111_EventScript_1B14C8",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 19,
+   "x": 18,
+   "y": 5,
+   "gfx": "OBJ_EVENT_GFX_BERRY_TREE",
+   "movement": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "S_BerryTree",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 20,
+   "x": 19,
+   "y": 5,
+   "gfx": "OBJ_EVENT_GFX_BERRY_TREE",
+   "movement": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "S_BerryTree",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 21,
+   "x": 13,
+   "y": 86,
+   "gfx": "OBJ_EVENT_GFX_REPORTER_F",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_GABBY_AND_TY_ROUTE111_2",
+   "script": "Route111_EventScript_1AE4E2",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 22,
+   "x": 14,
+   "y": 86,
+   "gfx": "OBJ_EVENT_GFX_CAMERAMAN",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_GABBY_AND_TY_ROUTE111_2",
+   "script": "Route111_EventScript_1AE502",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 23,
+   "x": 13,
+   "y": 86,
+   "gfx": "OBJ_EVENT_GFX_REPORTER_F",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_GABBY_AND_TY_ROUTE111_3",
+   "script": "Route111_EventScript_1AE562",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 24,
+   "x": 14,
+   "y": 86,
+   "gfx": "OBJ_EVENT_GFX_CAMERAMAN",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_GABBY_AND_TY_ROUTE111_3",
+   "script": "Route111_EventScript_1AE582",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 25,
+   "x": 12,
+   "y": 54,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_ROUTE111_2",
+   "script": "Route111_EventScript_1B14D5",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 26,
+   "x": 3,
+   "y": 114,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_ROUTE111_3",
+   "script": "Route111_EventScript_1B14E2",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 27,
+   "x": 22,
+   "y": 21,
+   "gfx": "OBJ_EVENT_GFX_CUTTABLE_TREE",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_TEMP_13",
+   "script": "S_CuttableTree",
+   "texts": {
+    "UseCutPromptText": "This tree looks like it can be CUT down.\\pWould you like to CUT it?$",
+    "UsedCutRockSmashText": "{STR_VAR_1} used {STR_VAR_2}.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 28,
+   "x": 10,
+   "y": 82,
+   "gfx": "OBJ_EVENT_GFX_PICNICKER",
+   "movement": "MOVEMENT_TYPE_FACE_LEFT_AND_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route111_EventScript_150458",
+   "texts": {
+    "Route111_Text_1BB199": "I don't know where you're going, but\\nwould you like to battle?$",
+    "Route111_Text_1BB1D8": "Oh, you're disgustingly good!$",
+    "Route111_Text_1BB1F6": "I'm thinking that I should go to\\nMT. CHIMNEY, but the view around\\lhere is very nice, too.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 29,
+   "x": 11,
+   "y": 71,
+   "gfx": "OBJ_EVENT_GFX_CAMPER",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN_LEFT_AND_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route111_EventScript_150441",
+   "texts": {
+    "Route111_Text_1BB111": "I'm full of pep!\\nAnd my POKéMON is peppy, too!$",
+    "Route111_Text_1BB140": "My POKéMON lost its pep...$",
+    "Route111_Text_1BB15B": "When I see a TRAINER with a lot of pep,\\nI can't help looking.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 30,
+   "x": 32,
+   "y": 29,
+   "gfx": "OBJ_EVENT_GFX_BLACK_BELT",
+   "movement": "MOVEMENT_TYPE_WALK_RIGHT_AND_LEFT",
+   "range": [
+    1,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route111_EventScript_15046F",
+   "texts": {
+    "Route111_Text_1BB250": "To train myself, I challenge all\\nwhom I meet!$",
+    "Route111_Text_1BB27E": "Uncle! I give up!$",
+    "Route111_Text_1BB290": "All I can do is keep training until\\nI can defeat strong TRAINERS such\\las yourself.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 31,
+   "x": 11,
+   "y": 12,
+   "gfx": "OBJ_EVENT_GFX_WOMAN_7",
+   "movement": "MOVEMENT_TYPE_FACE_UP",
+   "range": [
+    4,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route111_EventScript_1504C4",
+   "texts": {
+    "Route111_Text_1BB44F": "Oh, your POKéMON look like serious\\nactors.\\lI have to ask you for an engagement.$",
+    "Route111_Text_1BB49F": "They didn't just look strong, they\\nare strong!$",
+    "Route111_Text_1BB4CE": "I thought I was raising my POKéMON\\ndiligently, but, oh no, there is still\\lmuch to be done.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 32,
+   "x": 9,
+   "y": 27,
+   "gfx": "OBJ_EVENT_GFX_MAN_4",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN_AND_LEFT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route111_EventScript_150486",
+   "texts": {
+    "Route111_Text_1BB2E3": "Show me how much you've toughened\\nyour POKéMON.$",
+    "Route111_Text_1BB313": "I see, you've toughened them\\nconsiderably.$",
+    "Route111_Text_1BB33E": "POKéMON and TRAINERS learn much\\nthrough battling.\\pWhat's important is to never give up\\neven if you lose.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 33,
+   "x": 13,
+   "y": 20,
+   "gfx": "OBJ_EVENT_GFX_BOY_1",
+   "movement": "MOVEMENT_TYPE_FACE_UP",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_SECRET_POWER_MAN",
+   "script": "Route111_EventScript_1A3858",
+   "texts": {
+    "Route111_Text_1A3520": "What's that?\\nWhat am I doing?\\pI'm thinking about making my own room\\nhere using a POKéMON move.\\pI know! I'll give you this TM.\\nWill you use it to make your own room?$",
+    "Route111_Text_1A37B5": "Oh, you don't want this?\\nIf you change your mind, tell me, okay?$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 34,
+   "x": 32,
+   "y": 38,
+   "gfx": "OBJ_EVENT_GFX_FOSSIL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_ROOT_FOSSIL",
+   "script": "Route111_EventScript_150023",
+   "texts": {
+    "Route111_Text_16FA54": "You found the ROOT FOSSIL.\\pIf this FOSSIL is taken, the other\\none will sink into the sand...\\pTake the ROOT FOSSIL anyway?$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 35,
+   "x": 33,
+   "y": 38,
+   "gfx": "OBJ_EVENT_GFX_FOSSIL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_CLAW_FOSSIL",
+   "script": "Route111_EventScript_150069",
+   "texts": {
+    "Route111_Text_16FAED": "You found the CLAW FOSSIL.\\pIf this FOSSIL is taken, the other\\none will sink into the sand...\\pTake the CLAW FOSSIL anyway?$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 36,
+   "x": 20,
+   "y": 114,
+   "gfx": "OBJ_EVENT_GFX_MAN_5",
+   "movement": "MOVEMENT_TYPE_WANDER_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "Route111_EventScript_15039E",
+   "texts": {
+    "Route111_Text_16FC3A": "I challenged the WINSTRATE family,\\nbut four matches in a row is tough\\lgoing... They destroyed me.$"
+   }
+  }
+ ],
+ "signs": [
+  {
+   "x": 16,
+   "y": 114,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "Route111_EventScript_150368",
+   "texts": {
+    "Route111_Text_16FCB6": "“Our family's hearts beat as one!”\\nTHE WINSTRATE'S HOUSE$"
+   }
+  },
+  {
+   "x": 24,
+   "y": 126,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "Route111_EventScript_15035F",
+   "texts": {
+    "Route111_Text_16FC9C": "ROUTE 111\\n{0x7A} MAUVILLE CITY$"
+   }
+  },
+  {
+   "x": 7,
+   "y": 66,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "Route111_EventScript_150371",
+   "texts": {
+    "Route111_Text_16FCEF": "ROUTE 111\\n{0x7B} ROUTE 112$"
+   }
+  },
+  {
+   "x": 13,
+   "y": 6,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "Route111_EventScript_15037A",
+   "texts": {
+    "Route111_Text_16FD05": "ROUTE 111\\n{0x7B} ROUTE 113$"
+   }
+  },
+  {
+   "x": 24,
+   "y": 36,
+   "type": "secret_base",
+   "raw": {
+    "type": "secret_base",
+    "x": 24,
+    "y": 36,
+    "elevation": 0,
+    "secret_base_id": "SECRET_BASE_YELLOW_CAVE2_1"
+   }
+  },
+  {
+   "x": 34,
+   "y": 50,
+   "type": "secret_base",
+   "raw": {
+    "type": "secret_base",
+    "x": 34,
+    "y": 50,
+    "elevation": 0,
+    "secret_base_id": "SECRET_BASE_YELLOW_CAVE3_1"
+   }
+  },
+  {
+   "x": 33,
+   "y": 34,
+   "type": "secret_base",
+   "raw": {
+    "type": "secret_base",
+    "x": 33,
+    "y": 34,
+    "elevation": 0,
+    "secret_base_id": "SECRET_BASE_YELLOW_CAVE1_1"
+   }
+  },
+  {
+   "x": 25,
+   "y": 19,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "Route111_EventScript_150383",
+   "texts": {
+    "Route111_Text_16FD1B": "OLD LADY'S REST STOP\\n“Come in and rest your tired bones.”$"
+   }
+  },
+  {
+   "x": 35,
+   "y": 1,
+   "type": "secret_base",
+   "raw": {
+    "type": "secret_base",
+    "x": 35,
+    "y": 1,
+    "elevation": 0,
+    "secret_base_id": "SECRET_BASE_RED_CAVE2_3"
+   }
+  },
+  {
+   "x": 35,
+   "y": 31,
+   "type": "secret_base",
+   "raw": {
+    "type": "secret_base",
+    "x": 35,
+    "y": 31,
+    "elevation": 0,
+    "secret_base_id": "SECRET_BASE_YELLOW_CAVE4_3"
+   }
+  },
+  {
+   "x": 26,
+   "y": 70,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 26,
+    "y": 70,
+    "elevation": 0,
+    "item": "ITEM_STARDUST",
+    "flag": "FLAG_HIDDEN_ITEM_2"
+   }
+  },
+  {
+   "x": 27,
+   "y": 27,
+   "type": "secret_base",
+   "raw": {
+    "type": "secret_base",
+    "x": 27,
+    "y": 27,
+    "elevation": 3,
+    "secret_base_id": "SECRET_BASE_RED_CAVE4_3"
+   }
+  },
+  {
+   "x": 7,
+   "y": 84,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "Route111_EventScript_15038C",
+   "texts": {
+    "Route111_Text_16FD55": "TRAINER TIPS\\pOne of the indicators of a POKéMON's\\npowerfulness is SP. ATK. It stands for\\l“SPECIAL ATTACK.”\\pLikewise, SP. DEF stands for “SPECIAL\\nDEFENSE.”$"
+   }
+  },
+  {
+   "x": 14,
+   "y": 19,
+   "type": "secret_base",
+   "raw": {
+    "type": "secret_base",
+    "x": 14,
+    "y": 19,
+    "elevation": 0,
+    "secret_base_id": "SECRET_BASE_TREE1_4"
+   }
+  },
+  {
+   "x": 13,
+   "y": 19,
+   "type": "secret_base",
+   "raw": {
+    "type": "secret_base",
+    "x": 13,
+    "y": 19,
+    "elevation": 0,
+    "secret_base_id": "SECRET_BASE_TREE1_1"
+   }
+  },
+  {
+   "x": 19,
+   "y": 55,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 19,
+    "y": 55,
+    "elevation": 0,
+    "item": "ITEM_PROTEIN",
+    "flag": "FLAG_HIDDEN_ITEM_38"
+   }
+  },
+  {
+   "x": 35,
+   "y": 66,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 35,
+    "y": 66,
+    "elevation": 0,
+    "item": "ITEM_RARE_CANDY",
+    "flag": "FLAG_HIDDEN_ITEM_39"
+   }
+  }
+ ],
+ "warps": [
+  {
+   "id": 0,
+   "x": 13,
+   "y": 113,
+   "dest_map": "MAP_ROUTE111_WINSTRATE_FAMILYS_HOUSE",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 1,
+   "x": 29,
+   "y": 87,
+   "dest_map": "MAP_DESERT_RUINS",
+   "dest_warp_id": "0"
+  },
+  {
+   "id": 2,
+   "x": 26,
+   "y": 18,
+   "dest_map": "MAP_ROUTE111_OLD_LADYS_REST_STOP",
+   "dest_warp_id": "0"
+  }
+ ],
+ "coord_events": [
+  {
+   "type": "trigger",
+   "x": 12,
+   "y": 62,
+   "elevation": 3,
+   "var": "0",
+   "var_value": "0",
+   "script": "Route111_EventScript_1501C9",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 11,
+   "y": 61,
+   "elevation": 3,
+   "var": "VAR_TEMP_3",
+   "var_value": "0",
+   "script": "Route111_EventScript_150116",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 12,
+   "y": 61,
+   "elevation": 3,
+   "var": "VAR_TEMP_3",
+   "var_value": "0",
+   "script": "Route111_EventScript_150116",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 13,
+   "y": 61,
+   "elevation": 3,
+   "var": "VAR_TEMP_3",
+   "var_value": "0",
+   "script": "Route111_EventScript_150116",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 7,
+   "y": 63,
+   "elevation": 3,
+   "var": "0",
+   "var_value": "0",
+   "script": "Route111_EventScript_1501BC",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 12,
+   "y": 44,
+   "elevation": 3,
+   "var": "VAR_TEMP_3",
+   "var_value": "0",
+   "script": "Route111_EventScript_150122",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 13,
+   "y": 43,
+   "elevation": 3,
+   "var": "VAR_TEMP_3",
+   "var_value": "0",
+   "script": "Route111_EventScript_150122",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 14,
+   "y": 42,
+   "elevation": 3,
+   "var": "VAR_TEMP_3",
+   "var_value": "0",
+   "script": "Route111_EventScript_150122",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 16,
+   "y": 40,
+   "elevation": 3,
+   "var": "VAR_TEMP_3",
+   "var_value": "0",
+   "script": "Route111_EventScript_150122",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 14,
+   "y": 61,
+   "elevation": 3,
+   "var": "VAR_TEMP_3",
+   "var_value": "0",
+   "script": "Route111_EventScript_150116",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 18,
+   "y": 32,
+   "elevation": 3,
+   "var": "0",
+   "var_value": "0",
+   "script": "Route111_EventScript_1501BC",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 17,
+   "y": 31,
+   "elevation": 3,
+   "var": "0",
+   "var_value": "0",
+   "script": "Route111_EventScript_1501BC",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 9,
+   "y": 37,
+   "elevation": 3,
+   "var": "0",
+   "var_value": "0",
+   "script": "Route111_EventScript_1501BC",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 10,
+   "y": 36,
+   "elevation": 3,
+   "var": "0",
+   "var_value": "0",
+   "script": "Route111_EventScript_1501BC",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 17,
+   "y": 39,
+   "elevation": 3,
+   "var": "VAR_TEMP_3",
+   "var_value": "0",
+   "script": "Route111_EventScript_150122",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 18,
+   "y": 38,
+   "elevation": 3,
+   "var": "VAR_TEMP_3",
+   "var_value": "0",
+   "script": "Route111_EventScript_150122",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 8,
+   "y": 64,
+   "elevation": 3,
+   "var": "0",
+   "var_value": "0",
+   "script": "Route111_EventScript_1501BC",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 9,
+   "y": 65,
+   "elevation": 3,
+   "var": "0",
+   "var_value": "0",
+   "script": "Route111_EventScript_1501BC",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 10,
+   "y": 65,
+   "elevation": 3,
+   "var": "0",
+   "var_value": "0",
+   "script": "Route111_EventScript_1501BC",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 11,
+   "y": 66,
+   "elevation": 3,
+   "var": "0",
+   "var_value": "0",
+   "script": "Route111_EventScript_1501BC",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 12,
+   "y": 67,
+   "elevation": 3,
+   "var": "0",
+   "var_value": "0",
+   "script": "Route111_EventScript_1501BC",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 13,
+   "y": 68,
+   "elevation": 3,
+   "var": "0",
+   "var_value": "0",
+   "script": "Route111_EventScript_1501BC",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 14,
+   "y": 69,
+   "elevation": 3,
+   "var": "0",
+   "var_value": "0",
+   "script": "Route111_EventScript_1501BC",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 10,
+   "y": 61,
+   "elevation": 3,
+   "var": "0",
+   "var_value": "0",
+   "script": "Route111_EventScript_1501C9",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 11,
+   "y": 62,
+   "elevation": 3,
+   "var": "0",
+   "var_value": "0",
+   "script": "Route111_EventScript_1501C9",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 13,
+   "y": 62,
+   "elevation": 3,
+   "var": "0",
+   "var_value": "0",
+   "script": "Route111_EventScript_1501C9",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 14,
+   "y": 62,
+   "elevation": 3,
+   "var": "0",
+   "var_value": "0",
+   "script": "Route111_EventScript_1501C9",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 17,
+   "y": 38,
+   "elevation": 3,
+   "var": "0",
+   "var_value": "0",
+   "script": "Route111_EventScript_1501C9",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 16,
+   "y": 39,
+   "elevation": 3,
+   "var": "0",
+   "var_value": "0",
+   "script": "Route111_EventScript_1501C9",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 15,
+   "y": 40,
+   "elevation": 3,
+   "var": "0",
+   "var_value": "0",
+   "script": "Route111_EventScript_1501C9",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 14,
+   "y": 41,
+   "elevation": 3,
+   "var": "0",
+   "var_value": "0",
+   "script": "Route111_EventScript_1501C9",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 13,
+   "y": 42,
+   "elevation": 3,
+   "var": "0",
+   "var_value": "0",
+   "script": "Route111_EventScript_1501C9",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 12,
+   "y": 43,
+   "elevation": 3,
+   "var": "0",
+   "var_value": "0",
+   "script": "Route111_EventScript_1501C9",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 11,
+   "y": 44,
+   "elevation": 3,
+   "var": "0",
+   "var_value": "0",
+   "script": "Route111_EventScript_1501C9",
+   "texts": {},
+   "complex": true
+  }
+ ],
+ "wild": {
+  "land_mons": {
+   "encounter_rate": 10,
+   "slot_rates": [
+    20,
+    20,
+    10,
+    10,
+    10,
+    10,
+    5,
+    5,
+    4,
+    4,
+    1,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_SANDSHREW",
+     "min": 20,
+     "max": 20
+    },
+    {
+     "species": "SPECIES_TRAPINCH",
+     "min": 20,
+     "max": 20
+    },
+    {
+     "species": "SPECIES_SANDSHREW",
+     "min": 21,
+     "max": 21
+    },
+    {
+     "species": "SPECIES_TRAPINCH",
+     "min": 21,
+     "max": 21
+    },
+    {
+     "species": "SPECIES_CACNEA",
+     "min": 19,
+     "max": 19
+    },
+    {
+     "species": "SPECIES_CACNEA",
+     "min": 21,
+     "max": 21
+    },
+    {
+     "species": "SPECIES_SANDSHREW",
+     "min": 19,
+     "max": 19
+    },
+    {
+     "species": "SPECIES_TRAPINCH",
+     "min": 19,
+     "max": 19
+    },
+    {
+     "species": "SPECIES_BALTOY",
+     "min": 20,
+     "max": 20
+    },
+    {
+     "species": "SPECIES_BALTOY",
+     "min": 20,
+     "max": 20
+    },
+    {
+     "species": "SPECIES_BALTOY",
+     "min": 22,
+     "max": 22
+    },
+    {
+     "species": "SPECIES_BALTOY",
+     "min": 22,
+     "max": 22
+    }
+   ]
+  },
+  "water_mons": {
+   "encounter_rate": 4,
+   "slot_rates": [
+    60,
+    30,
+    5,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_MARILL",
+     "min": 20,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_MARILL",
+     "min": 10,
+     "max": 20
+    },
+    {
+     "species": "SPECIES_MARILL",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_MARILL",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_SURSKIT",
+     "min": 20,
+     "max": 30
+    }
+   ]
+  },
+  "rock_smash_mons": {
+   "encounter_rate": 20,
+   "slot_rates": [
+    60,
+    30,
+    5,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_GEODUDE",
+     "min": 10,
+     "max": 15
+    },
+    {
+     "species": "SPECIES_GEODUDE",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_GEODUDE",
+     "min": 15,
+     "max": 20
+    },
+    {
+     "species": "SPECIES_GEODUDE",
+     "min": 15,
+     "max": 20
+    },
+    {
+     "species": "SPECIES_GEODUDE",
+     "min": 15,
+     "max": 20
+    }
+   ]
+  },
+  "fishing_mons": {
+   "encounter_rate": 30,
+   "slot_rates": [
+    70,
+    30,
+    60,
+    20,
+    20,
+    40,
+    40,
+    15,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_GOLDEEN",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_GOLDEEN",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_BARBOACH",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_BARBOACH",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_BARBOACH",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_BARBOACH",
+     "min": 20,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_BARBOACH",
+     "min": 35,
+     "max": 40
+    },
+    {
+     "species": "SPECIES_BARBOACH",
+     "min": 40,
+     "max": 45
+    }
+   ]
+  }
+ }
+}

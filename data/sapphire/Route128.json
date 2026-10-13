@@ -1,0 +1,326 @@
+{
+ "map": "Route128",
+ "id": "MAP_ROUTE128",
+ "layout": "LAYOUT_ROUTE128",
+ "music": "MUS_ROUTE120",
+ "region_map_section": "MAPSEC_ROUTE_128",
+ "weather": "WEATHER_SUNNY",
+ "connections": [
+  {
+   "direction": "up",
+   "offset": 0,
+   "map": "MAP_ROUTE127"
+  },
+  {
+   "direction": "down",
+   "offset": 0,
+   "map": "MAP_ROUTE129"
+  },
+  {
+   "direction": "right",
+   "offset": -40,
+   "map": "MAP_EVER_GRANDE_CITY"
+  },
+  {
+   "direction": "dive",
+   "offset": 0,
+   "map": "MAP_UNDERWATER4"
+  }
+ ],
+ "npcs": [
+  {
+   "local_id": 1,
+   "x": 77,
+   "y": 24,
+   "gfx": "OBJ_EVENT_GFX_SWIMMER_M",
+   "movement": "MOVEMENT_TYPE_WALK_SEQUENCE_RIGHT_UP_LEFT_DOWN",
+   "range": [
+    5,
+    5
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route128_EventScript_1522A4",
+   "texts": {
+    "Route128_Text_1C1C67": "EVER GRANDE CITY is still a long ways\\naway...$",
+    "Route128_Text_1C1C95": "My first victory seems to be far\\naway, too...$",
+    "Route128_Text_1C1CC3": "My whole life has been about losing,\\nbut I will never give up!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 2,
+   "x": 35,
+   "y": 34,
+   "gfx": "OBJ_EVENT_GFX_SWIMMER_F",
+   "movement": "MOVEMENT_TYPE_WALK_RIGHT_AND_LEFT",
+   "range": [
+    5,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route128_EventScript_1522E2",
+   "texts": {
+    "Route128_Text_1C1DB0": "You have to swim, cycle, and then run\\na marathon in a triathlon.\\pIt's a grueling race that consists\\nof three events.$",
+    "Route128_Text_1C1E25": "A POKéMON battle is grueling, too...$",
+    "Route128_Text_1C1E4A": "I have to ride a BIKE next, but...\\nI'm about to throw in the towel...$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 3,
+   "x": 40,
+   "y": 22,
+   "gfx": "OBJ_EVENT_GFX_STEVEN",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_STEVEN_ROUTE128",
+   "script": "0x0",
+   "missing": true
+  },
+  {
+   "local_id": 4,
+   "x": 37,
+   "y": 22,
+   "gfx": "OBJ_EVENT_GFX_VAR_6",
+   "movement": "MOVEMENT_TYPE_FACE_LEFT",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_EVIL_LEADER_ROUTE128",
+   "script": "0x0",
+   "missing": true
+  },
+  {
+   "local_id": 5,
+   "x": 38,
+   "y": 21,
+   "gfx": "OBJ_EVENT_GFX_VAR_7",
+   "movement": "MOVEMENT_TYPE_FACE_UP",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_OTHER_LEADER_ROUTE128",
+   "script": "0x0",
+   "missing": true
+  },
+  {
+   "local_id": 6,
+   "x": 63,
+   "y": 28,
+   "gfx": "OBJ_EVENT_GFX_FISHERMAN",
+   "movement": "MOVEMENT_TYPE_FACE_UP",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route128_EventScript_15234E",
+   "texts": {
+    "Route128_Text_1C2090": "I want to visit EVER GRANDE, so I\\ncaught myself a POKéMON that knows\\lthe move WATERFALL to crest the falls.$",
+    "Route128_Text_1C20FC": "I'm crestfallen!$",
+    "Route128_Text_1C210D": "Awww, phooey!\\pMy POKéMON know WATERFALL, but\\nI don't have the SOOTOPOLIS GYM BADGE!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 7,
+   "x": 24,
+   "y": 8,
+   "gfx": "OBJ_EVENT_GFX_MAN_4",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN_AND_LEFT",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route128_EventScript_152337",
+   "texts": {
+    "Route128_Text_1C202C": "There is no stronger TRAINER than I!$",
+    "Route128_Text_1C2051": "This can't be!$",
+    "Route128_Text_1C2060": "There probably is no stronger TRAINER\\nthan you!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 8,
+   "x": 47,
+   "y": 9,
+   "gfx": "OBJ_EVENT_GFX_WOMAN_7",
+   "movement": "MOVEMENT_TYPE_FACE_RIGHT",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "Route128_EventScript_152320",
+   "texts": {
+    "Route128_Text_1C1F6D": "We've been working so hard to mount\\na POKéMON LEAGUE challenge...\\pWe can't afford to lose now!$",
+    "Route128_Text_1C1FCC": "Oh!\\nHow could this happen?!$",
+    "Route128_Text_1C1FE8": "After all I've done to get here, I won't\\ngive up after one setback.$"
+   },
+   "complex": true
+  }
+ ],
+ "signs": [
+  {
+   "x": 49,
+   "y": 9,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 49,
+    "y": 9,
+    "elevation": 3,
+    "item": "ITEM_HEART_SCALE",
+    "flag": "FLAG_HIDDEN_ITEM_5C"
+   }
+  },
+  {
+   "x": 57,
+   "y": 21,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 57,
+    "y": 21,
+    "elevation": 3,
+    "item": "ITEM_HEART_SCALE",
+    "flag": "FLAG_HIDDEN_ITEM_5D"
+   }
+  },
+  {
+   "x": 31,
+   "y": 33,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 31,
+    "y": 33,
+    "elevation": 3,
+    "item": "ITEM_HEART_SCALE",
+    "flag": "FLAG_HIDDEN_ITEM_5E"
+   }
+  }
+ ],
+ "warps": [],
+ "coord_events": [],
+ "wild": {
+  "water_mons": {
+   "encounter_rate": 4,
+   "slot_rates": [
+    60,
+    30,
+    5,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 5,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WINGULL",
+     "min": 15,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_PELIPPER",
+     "min": 25,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_PELIPPER",
+     "min": 25,
+     "max": 30
+    }
+   ]
+  },
+  "fishing_mons": {
+   "encounter_rate": 30,
+   "slot_rates": [
+    70,
+    30,
+    60,
+    20,
+    20,
+    40,
+    40,
+    15,
+    4,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_TENTACOOL",
+     "min": 5,
+     "max": 10
+    },
+    {
+     "species": "SPECIES_MAGIKARP",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_LUVDISC",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 10,
+     "max": 30
+    },
+    {
+     "species": "SPECIES_LUVDISC",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_CORSOLA",
+     "min": 30,
+     "max": 35
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 35,
+     "max": 40
+    },
+    {
+     "species": "SPECIES_WAILMER",
+     "min": 40,
+     "max": 45
+    }
+   ]
+  }
+ }
+}

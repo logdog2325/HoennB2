@@ -1,0 +1,36 @@
+{
+ "_doc": "Verdanturf Town buildings (group towns2, notes/TOWNS_TOWNS2.md). The Mart and Pokemon Center share one plan footprint, so they are props (map tile coords of the model origin).",
+ "group": "towns2",
+ "buildings": {
+  "MAP_VERDANTURF_TOWN_CONTEST_LOBBY": {
+   "res": 362,
+   "front": 20
+  },
+  "MAP_VERDANTURF_TOWN_FRIENDSHIP_RATERS_HOUSE": {
+   "res": 352,
+   "front": 20
+  },
+  "MAP_VERDANTURF_TOWN_WANDAS_HOUSE": {
+   "res": 353,
+   "front": 20
+  },
+  "MAP_VERDANTURF_TOWN_HOUSE": {
+   "res": 352,
+   "front": 20
+  }
+ },
+ "props": [
+  {
+   "res": 3,
+   "x": 13.0,
+   "z": 2.0,
+   "what": "Mart (door 12,3)"
+  },
+  {
+   "res": 0,
+   "x": 17.0,
+   "z": 2.0,
+   "what": "Pokemon Center (door 16,3)"
+  }
+ ]
+}

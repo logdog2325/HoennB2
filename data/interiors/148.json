@@ -1,0 +1,348 @@
+{
+ "zone": 148,
+ "room": "LavaridgeTown_Gym_B1F",
+ "area": 388,
+ "bgm": 1062,
+ "what": "gyms_league: LavaridgeTown_Gym_B1F (b2tools/gyms_league_rooms.py); story phase: the steam jets that throw you up to 1F (Sapphire: jet animation; here plain warps on the vent tiles)",
+ "parent": 62,
+ "warps": [
+  {
+   "at": [
+    3,
+    21
+   ],
+   "tile_only": true,
+   "to": [
+    145,
+    2
+   ],
+   "what": "Sapphire warp 0 -> LavaridgeTown_Gym_1F 2",
+   "type": 2,
+   "dir": 0
+  },
+  {
+   "at": [
+    9,
+    2
+   ],
+   "tile_only": true,
+   "to": [
+    145,
+    6
+   ],
+   "what": "Sapphire warp 1 -> LavaridgeTown_Gym_1F 6",
+   "type": 2,
+   "dir": 0
+  },
+  {
+   "at": [
+    1,
+    14
+   ],
+   "tile_only": true,
+   "to": [
+    145,
+    3
+   ],
+   "what": "Sapphire warp 2 -> LavaridgeTown_Gym_1F 3",
+   "type": 2,
+   "dir": 0
+  },
+  {
+   "at": [
+    1,
+    6
+   ],
+   "tile_only": true,
+   "to": [
+    145,
+    5
+   ],
+   "what": "Sapphire warp 3 -> LavaridgeTown_Gym_1F 5",
+   "type": 2,
+   "dir": 0
+  },
+  {
+   "at": [
+    6,
+    14
+   ],
+   "tile_only": true,
+   "to": [
+    145,
+    4
+   ],
+   "what": "Sapphire warp 4 -> LavaridgeTown_Gym_1F 4",
+   "type": 2,
+   "dir": 0
+  },
+  {
+   "at": [
+    6,
+    20
+   ],
+   "tile_only": true,
+   "to": [
+    145,
+    7
+   ],
+   "what": "Sapphire warp 5 -> LavaridgeTown_Gym_1F 7",
+   "type": 2,
+   "dir": 0
+  },
+  {
+   "at": [
+    0,
+    23
+   ],
+   "tile_only": true,
+   "to": [
+    145,
+    8
+   ],
+   "what": "Sapphire warp 6 -> LavaridgeTown_Gym_1F 8",
+   "type": 2,
+   "dir": 0
+  },
+  {
+   "at": [
+    0,
+    17
+   ],
+   "tile_only": true,
+   "to": [
+    145,
+    9
+   ],
+   "what": "Sapphire warp 7 -> LavaridgeTown_Gym_1F 9",
+   "type": 2,
+   "dir": 0
+  },
+  {
+   "at": [
+    4,
+    17
+   ],
+   "tile_only": true,
+   "to": [
+    145,
+    10
+   ],
+   "what": "Sapphire warp 8 -> LavaridgeTown_Gym_1F 10",
+   "type": 2,
+   "dir": 0
+  },
+  {
+   "at": [
+    0,
+    11
+   ],
+   "tile_only": true,
+   "to": [
+    145,
+    11
+   ],
+   "what": "Sapphire warp 9 -> LavaridgeTown_Gym_1F 11",
+   "type": 2,
+   "dir": 0
+  },
+  {
+   "at": [
+    4,
+    12
+   ],
+   "tile_only": true,
+   "to": [
+    145,
+    12
+   ],
+   "what": "Sapphire warp 10 -> LavaridgeTown_Gym_1F 12",
+   "type": 2,
+   "dir": 0
+  },
+  {
+   "at": [
+    4,
+    9
+   ],
+   "tile_only": true,
+   "to": [
+    145,
+    13
+   ],
+   "what": "Sapphire warp 11 -> LavaridgeTown_Gym_1F 13",
+   "type": 2,
+   "dir": 0
+  },
+  {
+   "at": [
+    0,
+    2
+   ],
+   "tile_only": true,
+   "to": [
+    145,
+    14
+   ],
+   "what": "Sapphire warp 12 -> LavaridgeTown_Gym_1F 14",
+   "type": 2,
+   "dir": 0
+  },
+  {
+   "at": [
+    4,
+    6
+   ],
+   "tile_only": true,
+   "to": [
+    145,
+    15
+   ],
+   "what": "Sapphire warp 13 -> LavaridgeTown_Gym_1F 15",
+   "type": 2,
+   "dir": 0
+  },
+  {
+   "at": [
+    4,
+    2
+   ],
+   "tile_only": true,
+   "to": [
+    145,
+    16
+   ],
+   "what": "Sapphire warp 14 -> LavaridgeTown_Gym_1F 16",
+   "type": 2,
+   "dir": 0
+  },
+  {
+   "at": [
+    10,
+    18
+   ],
+   "tile_only": true,
+   "to": [
+    145,
+    17
+   ],
+   "what": "Sapphire warp 15 -> LavaridgeTown_Gym_1F 17",
+   "type": 2,
+   "dir": 0
+  },
+  {
+   "at": [
+    10,
+    14
+   ],
+   "tile_only": true,
+   "to": [
+    145,
+    18
+   ],
+   "what": "Sapphire warp 16 -> LavaridgeTown_Gym_1F 18",
+   "type": 2,
+   "dir": 0
+  },
+  {
+   "at": [
+    6,
+    6
+   ],
+   "tile_only": true,
+   "to": [
+    145,
+    19
+   ],
+   "what": "Sapphire warp 17 -> LavaridgeTown_Gym_1F 19",
+   "type": 2,
+   "dir": 0
+  },
+  {
+   "at": [
+    6,
+    2
+   ],
+   "tile_only": true,
+   "to": [
+    145,
+    20
+   ],
+   "what": "Sapphire warp 18 -> LavaridgeTown_Gym_1F 20",
+   "type": 2,
+   "dir": 0
+  },
+  {
+   "at": [
+    10,
+    6
+   ],
+   "tile_only": true,
+   "to": [
+    145,
+    21
+   ],
+   "what": "Sapphire warp 19 -> LavaridgeTown_Gym_1F 21",
+   "type": 2,
+   "dir": 0
+  }
+ ],
+ "npcs": [],
+ "signs": [],
+ "triggers": [
+  {
+   "script": 1,
+   "var": 0,
+   "value": 0,
+   "at": [
+    3,
+    21
+   ]
+  },
+  {
+   "script": 2,
+   "var": 0,
+   "value": 0,
+   "at": [
+    9,
+    2
+   ]
+  },
+  {
+   "script": 3,
+   "var": 0,
+   "value": 0,
+   "at": [
+    1,
+    14
+   ]
+  },
+  {
+   "script": 4,
+   "var": 0,
+   "value": 0,
+   "at": [
+    1,
+    6
+   ]
+  },
+  {
+   "script": 5,
+   "var": 0,
+   "value": 0,
+   "at": [
+    6,
+    14
+   ]
+  },
+  {
+   "script": 6,
+   "var": 0,
+   "value": 0,
+   "at": [
+    6,
+    20
+   ]
+  }
+ ]
+}

@@ -1,0 +1,10 @@
+…
+Let me see your Pokémon.\nI’ll check to see how much it likes you.{be01}\nOh.\nYour Pokémon...
+It adores you.\nIt can’t possibly love you any more.{be00}\nI even feel happy seeing it.
+It seems to be very happy.\nIt obviously likes you a whole lot.
+It likes you quite a lot.\nIt seems to want to be babied a little.
+It’s getting used to you.\nIt seems to believe in you.
+It’s not very used to you yet.\nIt neither loves nor hates you.
+It’s very wary.\nIt has scary viciousness in its eyes.{be00}\nIt doesn’t like you much at all.
+This is a little hard for me to say...{be01}\nYour Pokémon simply detests you.\nDoesn’t that make you uncomfortable?
+Pikachu: Pika pika!

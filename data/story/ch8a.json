@@ -1,0 +1,1137 @@
+{
+ "_doc": "Chapter 8 part 8a (ch8a agent, 2026-10-07) story objects (b2tools/patches/story.py): Lilycove City (scenes/LilycoveCity.inc scripts 1-14: the rival, the Aqua grunts, the Wailmer, townspeople) and the Lilycove rooms' story people, signs and triggers (scripts in the rooms' own files after '// ---- story'). Sapphire tiles ('at') of the named map; outdoor uid = 100 + Sapphire local id, rooms the local id. Written by work/agents/ch8a/gen_objects.py.",
+ "objects": [
+  {
+   "kind": "npc",
+   "map": "LilycoveCity",
+   "at": [
+    27,
+    7
+   ],
+   "uid": 117,
+   "model": 162,
+   "script": 2,
+   "dir": 1,
+   "move": 15,
+   "flag": "FLAG_HIDE_RIVAL_LILYCOVE_MART",
+   "what": "the rival outside the Department Store (dynamic gfx: May/Brendan) (Sapphire object 17, VAR_0, FACE_DOWN)"
+  },
+  {
+   "kind": "npc",
+   "map": "LilycoveCity",
+   "at": [
+    73,
+    15
+   ],
+   "uid": 110,
+   "model": 293,
+   "script": 3,
+   "dir": 3,
+   "move": 17,
+   "flag": "FLAG_HIDE_GRUNTS_LILYCOVE",
+   "what": "Aqua grunt training the Wailmer (VAR_1: Aqua M) (Sapphire object 10, VAR_1, FACE_RIGHT)"
+  },
+  {
+   "kind": "npc",
+   "map": "LilycoveCity",
+   "at": [
+    46,
+    12
+   ],
+   "uid": 113,
+   "model": 293,
+   "script": 4,
+   "dir": 2,
+   "move": 16,
+   "flag": "FLAG_HIDE_GRUNTS_LILYCOVE",
+   "what": "Aqua grunt 1 by the cave (VAR_1) (Sapphire object 13, VAR_1, FACE_LEFT)"
+  },
+  {
+   "kind": "npc",
+   "map": "LilycoveCity",
+   "at": [
+    45,
+    12
+   ],
+   "uid": 114,
+   "model": 293,
+   "script": 5,
+   "dir": 3,
+   "move": 17,
+   "flag": "FLAG_HIDE_GRUNTS_LILYCOVE",
+   "what": "Aqua grunt 2 by the cave (VAR_1) (Sapphire object 14, VAR_1, FACE_RIGHT)"
+  },
+  {
+   "kind": "npc",
+   "map": "LilycoveCity",
+   "at": [
+    38,
+    9
+   ],
+   "uid": 115,
+   "model": 293,
+   "script": 6,
+   "dir": 2,
+   "move": 16,
+   "flag": "FLAG_HIDE_GRUNTS_LILYCOVE",
+   "what": "Aqua grunt 3 (VAR_1) (Sapphire object 15, VAR_1, FACE_LEFT)"
+  },
+  {
+   "kind": "npc",
+   "map": "LilycoveCity",
+   "at": [
+    43,
+    18
+   ],
+   "uid": 112,
+   "model": 293,
+   "script": 7,
+   "dir": 2,
+   "move": 5,
+   "flag": "FLAG_HIDE_GRUNTS_LILYCOVE",
+   "what": "Aqua grunt 4 (VAR_1) (Sapphire object 12, VAR_1, WANDER_LEFT_AND_RIGHT) (move 5 area 1x0: v165_fixes)",
+   "areaw": 1,
+   "areah": 0
+  },
+  {
+   "kind": "npc",
+   "map": "LilycoveCity",
+   "at": [
+    32,
+    20
+   ],
+   "uid": 101,
+   "model": 359,
+   "script": 8,
+   "dir": 1,
+   "move": 4,
+   "what": "LilycoveCity_EventScript_Sailor2 (Sapphire object 1, SAILOR, WANDER_UP_AND_DOWN) (move 4 area 0x1: v165_fixes)",
+   "areaw": 0,
+   "areah": 1
+  },
+  {
+   "kind": "npc",
+   "map": "LilycoveCity",
+   "at": [
+    15,
+    18
+   ],
+   "uid": 102,
+   "model": 16,
+   "script": 9,
+   "dir": 1,
+   "move": 3,
+   "areaw": 1,
+   "areah": 1,
+   "what": "LilycoveCity_EventScript_Girl (Sapphire object 2, GIRL_1, WANDER_AROUND)"
+  },
+  {
+   "kind": "npc",
+   "map": "LilycoveCity",
+   "at": [
+    35,
+    27
+   ],
+   "uid": 106,
+   "model": 27,
+   "script": 10,
+   "dir": 1,
+   "move": 3,
+   "areaw": 1,
+   "areah": 1,
+   "what": "LilycoveCity_EventScript_Woman2 (Sapphire object 6, WOMAN_3, WANDER_AROUND)"
+  },
+  {
+   "kind": "npc",
+   "map": "LilycoveCity",
+   "at": [
+    57,
+    17
+   ],
+   "uid": 109,
+   "model": 28,
+   "script": 11,
+   "dir": 1,
+   "move": 2,
+   "what": "LilycoveCity_EventScript_ExpertM2 (Sapphire object 9, OLD_MAN_1, LOOK_AROUND)"
+  },
+  {
+   "kind": "npc",
+   "map": "LilycoveCity",
+   "at": [
+    50,
+    7
+   ],
+   "uid": 116,
+   "model": 44,
+   "script": 12,
+   "dir": 1,
+   "move": 3,
+   "areaw": 1,
+   "areah": 1,
+   "what": "LilycoveCity_EventScript_BerryGentleman (Sapphire object 16, GENTLEMAN, WANDER_AROUND)"
+  },
+  {
+   "kind": "npc",
+   "map": "LilycoveCity",
+   "at": [
+    77,
+    13
+   ],
+   "uid": 140,
+   "model": 4449,
+   "script": 0,
+   "dir": 1,
+   "move": 0,
+   "flag": "FLAG_EVIL_TEAM_ESCAPED_IN_SUBMARINE",
+   "what": "Wailmer in the cove (SetWailmerMetatiles)"
+  },
+  {
+   "kind": "npc",
+   "map": "LilycoveCity",
+   "at": [
+    77,
+    15
+   ],
+   "uid": 141,
+   "model": 4449,
+   "script": 0,
+   "dir": 1,
+   "move": 0,
+   "flag": "FLAG_EVIL_TEAM_ESCAPED_IN_SUBMARINE",
+   "what": "Wailmer in the cove (SetWailmerMetatiles)"
+  },
+  {
+   "kind": "npc",
+   "map": "LilycoveCity",
+   "at": [
+    78,
+    17
+   ],
+   "uid": 142,
+   "model": 4449,
+   "script": 0,
+   "dir": 1,
+   "move": 0,
+   "flag": "FLAG_EVIL_TEAM_ESCAPED_IN_SUBMARINE",
+   "what": "Wailmer in the cove (SetWailmerMetatiles)"
+  },
+  {
+   "kind": "npc",
+   "map": "LilycoveCity_DepartmentStore_1F",
+   "at": [
+    10,
+    2
+   ],
+   "uid": 2,
+   "model": 17,
+   "script": 6,
+   "dir": 1,
+   "move": 15,
+   "what": "LilycoveCity_DepartmentStore_1F_EventScript_LotteryClerk (Sapphire object 2, BEAUTY, FACE_DOWN)"
+  },
+  {
+   "kind": "npc",
+   "map": "LilycoveCity_DepartmentStore_1F",
+   "at": [
+    2,
+    6
+   ],
+   "uid": 6,
+   "model": 4283,
+   "script": 7,
+   "dir": 1,
+   "move": 2,
+   "what": "LilycoveCity_DepartmentStore_1F_EventScript_Azumarill (Sapphire object 6, AZUMARILL, LOOK_AROUND)"
+  },
+  {
+   "kind": "npc",
+   "map": "LilycoveCity_DepartmentStore_5F",
+   "at": [
+    7,
+    2
+   ],
+   "uid": 3,
+   "model": 26,
+   "script": 4,
+   "dir": 1,
+   "move": 15,
+   "what": "LilycoveCity_DepartmentStore_5F_EventScript_ClerkFarLeft (Sapphire object 3, WOMAN_4, FACE_DOWN)"
+  },
+  {
+   "kind": "npc",
+   "map": "LilycoveCity_DepartmentStore_5F",
+   "at": [
+    9,
+    2
+   ],
+   "uid": 4,
+   "model": 26,
+   "script": 4,
+   "dir": 1,
+   "move": 15,
+   "what": "LilycoveCity_DepartmentStore_5F_EventScript_ClerkMidLeft (Sapphire object 4, WOMAN_4, FACE_DOWN)"
+  },
+  {
+   "kind": "npc",
+   "map": "LilycoveCity_DepartmentStore_5F",
+   "at": [
+    15,
+    6
+   ],
+   "uid": 5,
+   "model": 26,
+   "script": 4,
+   "dir": 2,
+   "move": 16,
+   "what": "LilycoveCity_DepartmentStore_5F_EventScript_ClerkMidRight (Sapphire object 5, WOMAN_4, FACE_LEFT)"
+  },
+  {
+   "kind": "npc",
+   "map": "LilycoveCity_DepartmentStore_5F",
+   "at": [
+    17,
+    6
+   ],
+   "uid": 6,
+   "model": 26,
+   "script": 4,
+   "dir": 0,
+   "move": 14,
+   "what": "LilycoveCity_DepartmentStore_5F_EventScript_ClerkFarRight (Sapphire object 6, WOMAN_4, FACE_UP)"
+  },
+  {
+   "kind": "npc",
+   "map": "LilycoveCity_DepartmentStoreElevator",
+   "at": [
+    0,
+    5
+   ],
+   "uid": 1,
+   "model": 79,
+   "script": 2,
+   "dir": 1,
+   "move": 15,
+   "what": "LilycoveCity_DepartmentStoreElevator_EventScript_Attendant (Sapphire object 1, TEALA, FACE_DOWN)"
+  },
+  {
+   "kind": "npc",
+   "map": "LilycoveCity_DepartmentStoreRooftop",
+   "at": [
+    4,
+    4
+   ],
+   "uid": 1,
+   "model": 24,
+   "script": 2,
+   "dir": 0,
+   "move": 14,
+   "what": "LilycoveCity_DepartmentStoreRooftop_EventScript_Man (Sapphire object 1, MAN_2, FACE_UP)"
+  },
+  {
+   "kind": "npc",
+   "map": "LilycoveCity_DepartmentStoreRooftop",
+   "at": [
+    6,
+    1
+   ],
+   "uid": 3,
+   "model": 339,
+   "script": 3,
+   "dir": 1,
+   "move": 15,
+   "flag": "FLAG_HIDE_ROOFTOP_LADY_LILYCOVE_MART",
+   "what": "LilycoveCity_DepartmentStoreRooftop_EventScript_SaleWoman (Sapphire object 3, ROOFTOP_SALE_WOMAN, FACE_DOWN)"
+  },
+  {
+   "kind": "sign",
+   "map": "LilycoveCity_DepartmentStoreRooftop",
+   "at": [
+    9,
+    1
+   ],
+   "script": 4,
+   "dir": 4,
+   "what": "Vending Machine"
+  },
+  {
+   "kind": "sign",
+   "map": "LilycoveCity_DepartmentStoreRooftop",
+   "at": [
+    10,
+    1
+   ],
+   "script": 4,
+   "dir": 4,
+   "what": "Vending Machine"
+  },
+  {
+   "kind": "npc",
+   "map": "LilycoveCity_CoveLilyMotel_1F",
+   "at": [
+    10,
+    3
+   ],
+   "uid": 1,
+   "model": 61,
+   "script": 2,
+   "dir": 0,
+   "move": 14,
+   "what": "LilycoveCity_CoveLilyMotel_1F_EventScript_MotelOwner (Sapphire object 1, MAN_1, FACE_UP)"
+  },
+  {
+   "kind": "trigger",
+   "map": "LilycoveCity_CoveLilyMotel_1F",
+   "at": [
+    10,
+    2
+   ],
+   "script": 3,
+   "var": "0x4000",
+   "value": 0,
+   "what": "in front of the TV (Sapphire VAR_TEMP_1 = 0: the map-local work 0x4000)"
+  },
+  {
+   "kind": "npc",
+   "map": "LilycoveCity_CoveLilyMotel_2F",
+   "at": [
+    4,
+    6
+   ],
+   "uid": 1,
+   "model": 19,
+   "script": 2,
+   "dir": 2,
+   "move": 16,
+   "flag": "FLAG_HIDE_LILYCOVE_MOTEL_PEOPLE",
+   "what": "LilycoveCity_CoveLilyMotel_2F_EventScript_GameDesigner (Sapphire object 1, MAN_4, FACE_LEFT)"
+  },
+  {
+   "kind": "npc",
+   "map": "LilycoveCity_CoveLilyMotel_2F",
+   "at": [
+    1,
+    4
+   ],
+   "uid": 2,
+   "model": 73,
+   "script": 3,
+   "dir": 3,
+   "move": 17,
+   "flag": "FLAG_HIDE_LILYCOVE_MOTEL_PEOPLE",
+   "what": "LilycoveCity_CoveLilyMotel_2F_EventScript_GraphicArtist (Sapphire object 2, SCIENTIST_1, FACE_RIGHT)"
+  },
+  {
+   "kind": "npc",
+   "map": "LilycoveCity_CoveLilyMotel_2F",
+   "at": [
+    7,
+    7
+   ],
+   "uid": 3,
+   "model": 25,
+   "script": 4,
+   "dir": 3,
+   "move": 17,
+   "flag": "FLAG_HIDE_LILYCOVE_MOTEL_PEOPLE",
+   "what": "LilycoveCity_CoveLilyMotel_2F_EventScript_FatMan (Sapphire object 3, FAT_MAN, FACE_RIGHT)"
+  },
+  {
+   "kind": "npc",
+   "map": "LilycoveCity_CoveLilyMotel_2F",
+   "at": [
+    10,
+    3
+   ],
+   "uid": 4,
+   "model": 42,
+   "script": 5,
+   "dir": 2,
+   "move": 16,
+   "flag": "FLAG_HIDE_LILYCOVE_MOTEL_PEOPLE",
+   "what": "LilycoveCity_CoveLilyMotel_2F_EventScript_Programmer (Sapphire object 4, MAN_5, FACE_LEFT)"
+  },
+  {
+   "kind": "npc",
+   "map": "LilycoveCity_CoveLilyMotel_2F",
+   "at": [
+    7,
+    3
+   ],
+   "uid": 5,
+   "model": 13,
+   "script": 6,
+   "dir": 1,
+   "move": 15,
+   "flag": "FLAG_HIDE_LILYCOVE_MOTEL_PEOPLE",
+   "what": "LilycoveCity_CoveLilyMotel_2F_EventScript_GameBoyKid (Sapphire object 5, BOY_5, FACE_DOWN)"
+  },
+  {
+   "kind": "npc",
+   "map": "LilycoveCity_CoveLilyMotel_2F",
+   "at": [
+    4,
+    4
+   ],
+   "uid": 6,
+   "model": 27,
+   "script": 7,
+   "dir": 2,
+   "move": 16,
+   "flag": "FLAG_HIDE_LILYCOVE_MOTEL_PEOPLE",
+   "what": "LilycoveCity_CoveLilyMotel_2F_EventScript_Woman (Sapphire object 6, WOMAN_3, FACE_LEFT)"
+  },
+  {
+   "kind": "npc",
+   "map": "LilycoveCity_MoveDeletersHouse",
+   "at": [
+    4,
+    4
+   ],
+   "uid": 1,
+   "model": 28,
+   "script": 2,
+   "dir": 1,
+   "move": 15,
+   "what": "LilycoveCity_MoveDeletersHouse_EventScript_MoveDeleter (Sapphire object 1, OLD_MAN_1, FACE_DOWN)"
+  },
+  {
+   "kind": "npc",
+   "map": "LilycoveCity_House1",
+   "at": [
+    4,
+    4
+   ],
+   "uid": 2,
+   "model": 4481,
+   "script": 2,
+   "dir": 1,
+   "move": 15,
+   "what": "LilycoveCity_House1_EventScript_Kecleon (Sapphire object 2, KECLEON_1, FACE_DOWN)"
+  },
+  {
+   "kind": "npc",
+   "map": "LilycoveCity_House2",
+   "at": [
+    0,
+    4
+   ],
+   "uid": 1,
+   "model": 25,
+   "script": 2,
+   "dir": 1,
+   "move": 15,
+   "what": "LilycoveCity_House2_EventScript_FatMan (Sapphire object 1, FAT_MAN, FACE_DOWN)"
+  },
+  {
+   "kind": "npc",
+   "map": "LilycoveCity_House3",
+   "at": [
+    3,
+    4
+   ],
+   "uid": 1,
+   "model": 13,
+   "script": 7,
+   "dir": 1,
+   "move": 15,
+   "what": "LilycoveCity_House3_EventScript_GameBoyKid4 (Sapphire object 1, BOY_5, FACE_DOWN)"
+  },
+  {
+   "kind": "npc",
+   "map": "LilycoveCity_House3",
+   "at": [
+    7,
+    4
+   ],
+   "uid": 2,
+   "model": 53,
+   "script": 2,
+   "dir": 2,
+   "move": 16,
+   "what": "LilycoveCity_House3_EventScript_PokefanF (Sapphire object 2, WOMAN_2, FACE_LEFT)"
+  },
+  {
+   "kind": "npc",
+   "map": "LilycoveCity_House3",
+   "at": [
+    1,
+    4
+   ],
+   "uid": 3,
+   "model": 13,
+   "script": 5,
+   "dir": 1,
+   "move": 15,
+   "what": "LilycoveCity_House3_EventScript_GameBoyKid2 (Sapphire object 3, BOY_5, FACE_DOWN)"
+  },
+  {
+   "kind": "npc",
+   "map": "LilycoveCity_House3",
+   "at": [
+    2,
+    5
+   ],
+   "uid": 4,
+   "model": 13,
+   "script": 6,
+   "dir": 0,
+   "move": 14,
+   "what": "LilycoveCity_House3_EventScript_GameBoyKid3 (Sapphire object 4, BOY_5, FACE_UP)"
+  },
+  {
+   "kind": "npc",
+   "map": "LilycoveCity_House3",
+   "at": [
+    2,
+    3
+   ],
+   "uid": 5,
+   "model": 13,
+   "script": 4,
+   "dir": 1,
+   "move": 15,
+   "what": "LilycoveCity_House3_EventScript_GameBoyKid1 (Sapphire object 5, BOY_5, FACE_DOWN)"
+  },
+  {
+   "kind": "npc",
+   "map": "LilycoveCity_House3",
+   "at": [
+    7,
+    5
+   ],
+   "uid": 6,
+   "model": 61,
+   "script": 3,
+   "dir": 2,
+   "move": 16,
+   "what": "LilycoveCity_House3_EventScript_Man (Sapphire object 6, MAN_1, FACE_LEFT)"
+  },
+  {
+   "kind": "npc",
+   "map": "LilycoveCity_LilycoveMuseum_1F",
+   "at": [
+    16,
+    2
+   ],
+   "uid": 2,
+   "model": 44,
+   "script": 22,
+   "dir": 1,
+   "move": 15,
+   "flag": "FLAG_HIDE_LILYCOVE_MUSEUM_CURATOR",
+   "what": "LilycoveCity_LilycoveMuseum_1F_EventScript_Curator (Sapphire object 2, GENTLEMAN, FACE_DOWN)"
+  },
+  {
+   "kind": "npc",
+   "map": "LilycoveCity_LilycoveMuseum_1F",
+   "at": [
+    11,
+    3
+   ],
+   "uid": 7,
+   "model": 27,
+   "script": 23,
+   "dir": 1,
+   "move": 3,
+   "flag": "FLAG_HIDE_LILYCOVE_MUSEUM_PATRON_1",
+   "areaw": 1,
+   "areah": 1,
+   "what": "LilycoveCity_LilycoveMuseum_1F_EventScript_Woman2 (Sapphire object 7, WOMAN_3, WANDER_AROUND)"
+  },
+  {
+   "kind": "npc",
+   "map": "LilycoveCity_LilycoveMuseum_1F",
+   "at": [
+    19,
+    3
+   ],
+   "uid": 8,
+   "model": 28,
+   "script": 24,
+   "dir": 0,
+   "move": 14,
+   "flag": "FLAG_HIDE_LILYCOVE_MUSEUM_PATRON_4",
+   "what": "LilycoveCity_LilycoveMuseum_1F_EventScript_Artist2 (Sapphire object 8, ARTIST, FACE_UP)"
+  },
+  {
+   "kind": "npc",
+   "map": "LilycoveCity_LilycoveMuseum_1F",
+   "at": [
+    2,
+    2
+   ],
+   "uid": 9,
+   "model": 25,
+   "script": 25,
+   "dir": 1,
+   "move": 3,
+   "flag": "FLAG_HIDE_LILYCOVE_MUSEUM_TOURISTS",
+   "areaw": 2,
+   "areah": 2,
+   "what": "LilycoveCity_LilycoveMuseum_1F_EventScript_FatMan (Sapphire object 9, FAT_MAN, WANDER_AROUND)"
+  },
+  {
+   "kind": "npc",
+   "map": "LilycoveCity_LilycoveMuseum_1F",
+   "at": [
+    6,
+    2
+   ],
+   "uid": 10,
+   "model": 183,
+   "script": 26,
+   "dir": 1,
+   "move": 3,
+   "flag": "FLAG_HIDE_LILYCOVE_MUSEUM_PATRON_3",
+   "areaw": 1,
+   "areah": 1,
+   "what": "LilycoveCity_LilycoveMuseum_1F_EventScript_PsychicM (Sapphire object 10, PSYCHIC_M, WANDER_AROUND)"
+  },
+  {
+   "kind": "npc",
+   "map": "LilycoveCity_LilycoveMuseum_2F",
+   "at": [
+    10,
+    8
+   ],
+   "uid": 1,
+   "model": 44,
+   "script": 4,
+   "dir": 0,
+   "move": 14,
+   "what": "LilycoveCity_LilycoveMuseum_2F_EventScript_Curator (Sapphire object 1, GENTLEMAN, FACE_UP)"
+  },
+  {
+   "kind": "npc",
+   "map": "LilycoveCity_LilycoveMuseum_2F",
+   "at": [
+    19,
+    10
+   ],
+   "uid": 2,
+   "model": 17,
+   "script": 10,
+   "dir": 1,
+   "move": 3,
+   "flag": "FLAG_HIDE_LILYCOVE_MUSEUM_PATRON_2",
+   "areaw": 1,
+   "areah": 1,
+   "what": "LilycoveCity_LilycoveMuseum_2F_EventScript_Girl (Sapphire object 2, GIRL_2, WANDER_AROUND)"
+  },
+  {
+   "kind": "npc",
+   "map": "LilycoveCity_LilycoveMuseum_2F",
+   "at": [
+    7,
+    3
+   ],
+   "uid": 3,
+   "model": 28,
+   "script": 11,
+   "dir": 1,
+   "move": 3,
+   "flag": "FLAG_HIDE_LILYCOVE_MUSEUM_TOURISTS",
+   "areaw": 1,
+   "areah": 1,
+   "what": "LilycoveCity_LilycoveMuseum_2F_EventScript_ExpertM (Sapphire object 3, OLD_MAN_1, WANDER_AROUND)"
+  },
+  {
+   "kind": "npc",
+   "map": "LilycoveCity_LilycoveMuseum_2F",
+   "at": [
+    14,
+    6
+   ],
+   "uid": 4,
+   "model": 18,
+   "script": 12,
+   "dir": 1,
+   "move": 3,
+   "flag": "FLAG_HIDE_LILYCOVE_MUSEUM_TOURISTS",
+   "areaw": 1,
+   "areah": 1,
+   "what": "LilycoveCity_LilycoveMuseum_2F_EventScript_RichBoy (Sapphire object 4, BOY_4, WANDER_AROUND)"
+  },
+  {
+   "kind": "sign",
+   "map": "LilycoveCity_LilycoveMuseum_2F",
+   "at": [
+    14,
+    10
+   ],
+   "script": 5,
+   "dir": 4,
+   "what": "Cute painting frame"
+  },
+  {
+   "kind": "sign",
+   "map": "LilycoveCity_LilycoveMuseum_2F",
+   "at": [
+    15,
+    10
+   ],
+   "script": 5,
+   "dir": 4,
+   "what": "Cute painting frame"
+  },
+  {
+   "kind": "sign",
+   "map": "LilycoveCity_LilycoveMuseum_2F",
+   "at": [
+    3,
+    6
+   ],
+   "script": 6,
+   "dir": 4,
+   "what": "Tough painting frame"
+  },
+  {
+   "kind": "sign",
+   "map": "LilycoveCity_LilycoveMuseum_2F",
+   "at": [
+    2,
+    6
+   ],
+   "script": 6,
+   "dir": 4,
+   "what": "Tough painting frame"
+  },
+  {
+   "kind": "sign",
+   "map": "LilycoveCity_LilycoveMuseum_2F",
+   "at": [
+    10,
+    6
+   ],
+   "script": 7,
+   "dir": 4,
+   "what": "Cool painting frame"
+  },
+  {
+   "kind": "sign",
+   "map": "LilycoveCity_LilycoveMuseum_2F",
+   "at": [
+    11,
+    6
+   ],
+   "script": 7,
+   "dir": 4,
+   "what": "Cool painting frame"
+  },
+  {
+   "kind": "sign",
+   "map": "LilycoveCity_LilycoveMuseum_2F",
+   "at": [
+    19,
+    6
+   ],
+   "script": 8,
+   "dir": 4,
+   "what": "Beauty painting frame"
+  },
+  {
+   "kind": "sign",
+   "map": "LilycoveCity_LilycoveMuseum_2F",
+   "at": [
+    18,
+    6
+   ],
+   "script": 8,
+   "dir": 4,
+   "what": "Beauty painting frame"
+  },
+  {
+   "kind": "sign",
+   "map": "LilycoveCity_LilycoveMuseum_2F",
+   "at": [
+    6,
+    10
+   ],
+   "script": 9,
+   "dir": 4,
+   "what": "Smart painting frame"
+  },
+  {
+   "kind": "sign",
+   "map": "LilycoveCity_LilycoveMuseum_2F",
+   "at": [
+    7,
+    10
+   ],
+   "script": 9,
+   "dir": 4,
+   "what": "Smart painting frame"
+  },
+  {
+   "kind": "npc",
+   "map": "LilycoveCity_Harbor",
+   "at": [
+    8,
+    10
+   ],
+   "uid": 1,
+   "model": 17,
+   "script": 2,
+   "dir": 1,
+   "move": 15,
+   "flag": "FLAG_HIDE_FERRY_ATTENDANT_LILYCOVE",
+   "what": "FerryAttendant (Ch13) (Sapphire object 1, BEAUTY, FACE_DOWN)"
+  },
+  {
+   "kind": "npc",
+   "map": "LilycoveCity_Harbor",
+   "at": [
+    3,
+    13
+   ],
+   "uid": 3,
+   "model": 359,
+   "script": 3,
+   "dir": 1,
+   "move": 3,
+   "areaw": 1,
+   "areah": 1,
+   "what": "LilycoveCity_Harbor_EventScript_Sailor (Sapphire object 3, SAILOR, WANDER_AROUND)"
+  },
+  {
+   "kind": "npc",
+   "map": "LilycoveCity_Harbor",
+   "at": [
+    8,
+    10
+   ],
+   "uid": 4,
+   "model": 359,
+   "script": 0,
+   "dir": 1,
+   "move": 15,
+   "flag": "FLAG_HIDE_FERRY_SAILOR_LILYCOVE",
+   "what": "ferry sailor of the Eon Ticket scene (Ch13; no script yet) (Sapphire object 4, SAILOR, FACE_DOWN)"
+  },
+  {
+   "kind": "npc",
+   "map": "LilycoveCity_PokemonTrainerFanClub",
+   "at": [
+    3,
+    11
+   ],
+   "uid": 1,
+   "model": 15,
+   "script": 5,
+   "dir": 0,
+   "move": 14,
+   "what": "LilycoveCity_PokemonTrainerFanClub_EventScript_Lass (Sapphire object 1, LASS, FACE_UP)"
+  },
+  {
+   "kind": "npc",
+   "map": "LilycoveCity_PokemonTrainerFanClub",
+   "at": [
+    8,
+    10
+   ],
+   "uid": 2,
+   "model": 42,
+   "script": 6,
+   "dir": 2,
+   "move": 16,
+   "what": "LilycoveCity_PokemonTrainerFanClub_EventScript_Man (Sapphire object 2, MAN_5, FACE_LEFT)"
+  },
+  {
+   "kind": "npc",
+   "map": "LilycoveCity_PokemonTrainerFanClub",
+   "at": [
+    6,
+    11
+   ],
+   "uid": 3,
+   "model": 20,
+   "script": 7,
+   "dir": 0,
+   "move": 14,
+   "what": "LilycoveCity_PokemonTrainerFanClub_EventScript_PokefanM (Sapphire object 3, MAN_3, FACE_UP)"
+  },
+  {
+   "kind": "npc",
+   "map": "LilycoveCity_PokemonTrainerFanClub",
+   "at": [
+    5,
+    8
+   ],
+   "uid": 4,
+   "model": 154,
+   "script": 8,
+   "dir": 1,
+   "move": 15,
+   "what": "LilycoveCity_PokemonTrainerFanClub_EventScript_LittleGirl (Sapphire object 4, LITTLE_GIRL_2, FACE_DOWN)"
+  },
+  {
+   "kind": "npc",
+   "map": "LilycoveCity_PokemonTrainerFanClub",
+   "at": [
+    7,
+    11
+   ],
+   "uid": 5,
+   "model": 8,
+   "script": 9,
+   "dir": 0,
+   "move": 14,
+   "flag": "FLAG_HIDE_FANCLUB_LITTLE_BOY",
+   "what": "LilycoveCity_PokemonTrainerFanClub_EventScript_NinjaBoy (Sapphire object 5, LITTLE_BOY_1, FACE_UP)"
+  },
+  {
+   "kind": "npc",
+   "map": "LilycoveCity_PokemonTrainerFanClub",
+   "at": [
+    1,
+    9
+   ],
+   "uid": 6,
+   "model": 21,
+   "script": 10,
+   "dir": 1,
+   "move": 15,
+   "flag": "FLAG_HIDE_FANCLUB_BOY",
+   "what": "LilycoveCity_PokemonTrainerFanClub_EventScript_Boy (Sapphire object 6, BOY_2, FACE_DOWN)"
+  },
+  {
+   "kind": "npc",
+   "map": "LilycoveCity_PokemonTrainerFanClub",
+   "at": [
+    3,
+    10
+   ],
+   "uid": 7,
+   "model": 26,
+   "script": 11,
+   "dir": 3,
+   "move": 17,
+   "flag": "FLAG_HIDE_FANCLUB_LADY",
+   "what": "LilycoveCity_PokemonTrainerFanClub_EventScript_Woman (Sapphire object 7, WOMAN_4, FACE_RIGHT)"
+  },
+  {
+   "kind": "npc",
+   "map": "LilycoveCity_PokemonTrainerFanClub",
+   "at": [
+    10,
+    10
+   ],
+   "uid": 8,
+   "model": 29,
+   "script": 12,
+   "dir": 2,
+   "move": 16,
+   "flag": "FLAG_HIDE_FANCLUB_OLD_LADY",
+   "what": "LilycoveCity_PokemonTrainerFanClub_EventScript_ExpertF (Sapphire object 8, OLD_WOMAN_1, FACE_LEFT)"
+  },
+  {
+   "kind": "npc",
+   "map": "LilycoveCity_ContestLobby",
+   "at": [
+    6,
+    2
+   ],
+   "uid": 1,
+   "model": 79,
+   "script": 6,
+   "dir": 1,
+   "move": 15,
+   "what": "LilycoveCity_ContestLobby_EventScript_ContestReceptionist (Sapphire object 1, TEALA, FACE_DOWN)",
+   "at_emerald": [
+    14,
+    2
+   ]
+  },
+  {
+   "kind": "npc",
+   "map": "LilycoveCity_ContestLobby",
+   "at": [
+    7,
+    2
+   ],
+   "uid": 2,
+   "model": 79,
+   "script": 7,
+   "dir": 1,
+   "move": 15,
+   "what": "LilycoveCity_ContestLobby_EventScript_LinkContestReceptionist (Sapphire object 2, TEALA, FACE_DOWN)",
+   "at_emerald": [
+    15,
+    2
+   ]
+  },
+  {
+   "kind": "npc",
+   "map": "LilycoveCity_ContestLobby",
+   "at": [
+    3,
+    10
+   ],
+   "uid": 6,
+   "model": 17,
+   "script": 8,
+   "dir": 1,
+   "move": 3,
+   "areaw": 2,
+   "areah": 2,
+   "what": "LilycoveCity_ContestLobby_EventScript_Girl (Sapphire object 6, GIRL_2, WANDER_AROUND)",
+   "at_emerald": [
+    4,
+    9
+   ]
+  },
+  {
+   "kind": "npc",
+   "map": "LilycoveCity_ContestLobby",
+   "at": [
+    19,
+    9
+   ],
+   "uid": 10,
+   "model": 16,
+   "script": 9,
+   "dir": 2,
+   "move": 16,
+   "what": "LilycoveCity_ContestLobby_EventScript_Blender2Girl (Sapphire object 10, GIRL_1, FACE_LEFT)",
+   "at_emerald": [
+    28,
+    9
+   ]
+  },
+  {
+   "kind": "npc",
+   "map": "LilycoveCity_ContestLobby",
+   "at": [
+    7,
+    7
+   ],
+   "uid": 14,
+   "model": 8,
+   "script": 10,
+   "dir": 1,
+   "move": 4,
+   "what": "LilycoveCity_ContestLobby_EventScript_NinjaBoy (Sapphire object 14, LITTLE_BOY_1, WANDER_UP_AND_DOWN) (move 4 area 0x1: v165_fixes)",
+   "areaw": 0,
+   "areah": 1,
+   "at_emerald": [
+    8,
+    7
+   ]
+  },
+  {
+   "kind": "npc",
+   "map": "LilycoveCity_ContestHall",
+   "at": [
+    32,
+    23
+   ],
+   "uid": 29,
+   "model": 27,
+   "script": 37,
+   "dir": 3,
+   "move": 17,
+   "what": "LilycoveCity_ContestHall_EventScript_1592C0 (Sapphire object 29, WOMAN_3, FACE_RIGHT)"
+  }
+ ]
+}

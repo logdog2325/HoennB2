@@ -1,0 +1,48 @@
+{
+ "_doc": "Battle Factory battle room (Emerald 13x12, no walls in its collision: the player is always under script). Floor rows 2-11; the battle field = the Battle Subway's field b03_yuka_c (330) as the Battle Tower's battle room; lamp pillars (machine02) at the back corners. The six scientists stand at x 0 / 12.",
+ "map": "BattleFrontier_BattleFactoryBattleRoom",
+ "decomp": "pokeemerald",
+ "style": "fd_factory",
+ "origin": [
+  1,
+  0
+ ],
+ "floor": [
+  [
+   0,
+   2,
+   12,
+   11
+  ]
+ ],
+ "exits": [],
+ "floor_tex": [
+  {
+   "rect": [
+    3,
+    4,
+    9,
+    8
+   ],
+   "tex": "b03_yuka_c",
+   "src": 330,
+   "stretch": true
+  }
+ ],
+ "furniture": [
+  {
+   "m": "machine02",
+   "tile": [
+    1,
+    2
+   ]
+  },
+  {
+   "m": "machine02",
+   "tile": [
+    11,
+    2
+   ]
+  }
+ ]
+}

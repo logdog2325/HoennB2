@@ -1,0 +1,147 @@
+{
+ "zone": 91,
+ "room": "AbandonedShip_Rooms_1F",
+ "area": 337,
+ "header": {
+  "map_type": 16,
+  "npc_cache": 24,
+  "weather_word": 0,
+  "flags": 22817,
+  "icon_word": 32783,
+  "bgm0": 1193,
+  "bgm1": 1193,
+  "bgm2": 1193,
+  "bgm3": 1193,
+  "place": 65,
+  "place_display": 0,
+  "parent": 74,
+  "encounters": 8191,
+  "enc_slot": 6
+ },
+ "warps": [
+  {
+   "at": [
+    4,
+    16
+   ],
+   "tile_only": true,
+   "to": [
+    72,
+    4
+   ],
+   "what": "Sapphire warp 0 (4,16) -> AbandonedShip_Corridors_1F 4"
+  },
+  {
+   "at": [
+    5,
+    16
+   ],
+   "tile_only": true,
+   "to": [
+    72,
+    4
+   ],
+   "what": "Sapphire warp 1 (5,16) -> AbandonedShip_Corridors_1F 4"
+  },
+  {
+   "at": [
+    4,
+    1
+   ],
+   "tile_only": true,
+   "to": [
+    72,
+    6
+   ],
+   "what": "Sapphire warp 2 (4,1) -> AbandonedShip_Corridors_1F 6"
+  },
+  {
+   "at": [
+    13,
+    16
+   ],
+   "tile_only": true,
+   "to": [
+    72,
+    5
+   ],
+   "what": "Sapphire warp 3 (13,16) -> AbandonedShip_Corridors_1F 5"
+  },
+  {
+   "at": [
+    13,
+    1
+   ],
+   "tile_only": true,
+   "to": [
+    72,
+    7
+   ],
+   "what": "Sapphire warp 4 (13,1) -> AbandonedShip_Corridors_1F 7"
+  },
+  {
+   "at": [
+    14,
+    16
+   ],
+   "tile_only": true,
+   "to": [
+    72,
+    5
+   ],
+   "what": "Sapphire warp 5 (14,16) -> AbandonedShip_Corridors_1F 5"
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 1,
+   "model": 44,
+   "script": 1,
+   "dir": 1,
+   "at": [
+    11,
+    6
+   ],
+   "what": "OBJ_EVENT_GFX_GENTLEMAN AbandonedShip_Rooms_1F_EventScript_Gentleman",
+   "move": 3,
+   "range": [
+    1,
+    1
+   ]
+  },
+  {
+   "uid": 2,
+   "model": 110,
+   "script": 7084,
+   "flag": 1184,
+   "dir": 1,
+   "at": [
+    4,
+    5
+   ],
+   "what": "item ball ITEM_GREET_MAIL"
+  }
+ ],
+ "signs": [
+  {
+   "script": 2,
+   "at": [
+    2,
+    6
+   ],
+   "dir": 4,
+   "what": "trash can (Sapphire MB_TRASH_CAN, EventScript_EmptyTrashCan)"
+  },
+  {
+   "script": 2,
+   "at": [
+    4,
+    13
+   ],
+   "dir": 4,
+   "what": "trash can (Sapphire MB_TRASH_CAN, EventScript_EmptyTrashCan)"
+  }
+ ],
+ "triggers": [],
+ "what": "ship_hideouts: AbandonedShip_Rooms_1F (b2tools/ship_hideouts_rooms.py); story: "
+}

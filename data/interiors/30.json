@@ -1,0 +1,57 @@
+{
+ "_doc": "DewfordTown_House1: zone written by converter/gen_interior_recipes_houses.py (warps and parent from converter/gen_interiors.py); story people left for the story phase: person ZIGZAGOON at (4,2) DewfordTown_House1_EventScript_Zigzagoon (story/complex script)",
+ "zone": 30,
+ "room": "DewfordTown_House1",
+ "area": 313,
+ "parent": 465,
+ "warps": [
+  {
+   "at": [3, 7],
+   "tile_only": true,
+   "to": [465, 11],
+   "what": "Sapphire warp 0 -> DewfordTown 3"
+  },
+  {
+   "at": [4, 7],
+   "tile_only": true,
+   "to": [465, 11],
+   "what": "Sapphire warp 1 -> DewfordTown 3"
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 1,
+   "model": 26,
+   "script": 1,
+   "dir": 2,
+   "at": [6, 3]
+  },
+  {
+   "uid": 2,
+   "model": 61,
+   "script": 2,
+   "dir": 3,
+   "at": [3, 3]
+  }
+ ],
+ "signs": [
+  {
+   "script": 3,
+   "at": [6, 1],
+   "dir": 4,
+   "what": "Bookshelf"
+  },
+  {
+   "script": 3,
+   "at": [7, 1],
+   "dir": 4,
+   "what": "Bookshelf"
+  },
+  {
+   "script": 4,
+   "at": [8, 1],
+   "dir": 4,
+   "what": "PictureBookshelf"
+  }
+ ]
+}

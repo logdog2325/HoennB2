@@ -1,0 +1,470 @@
+{
+ "map": "PetalburgWoods",
+ "id": "MAP_PETALBURG_WOODS",
+ "layout": "LAYOUT_PETALBURG_WOODS",
+ "music": "MUS_PETALBURG_WOODS",
+ "region_map_section": "MAPSEC_PETALBURG_WOODS",
+ "weather": "WEATHER_SHADE",
+ "connections": null,
+ "npcs": [
+  {
+   "local_id": 1,
+   "x": 19,
+   "y": 10,
+   "gfx": "OBJ_EVENT_GFX_CUTTABLE_TREE",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_TEMP_11",
+   "script": "S_CuttableTree",
+   "texts": {
+    "UseCutPromptText": "This tree looks like it can be CUT down.\\pWould you like to CUT it?$",
+    "UsedCutRockSmashText": "{STR_VAR_1} used {STR_VAR_2}.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 2,
+   "x": 19,
+   "y": 11,
+   "gfx": "OBJ_EVENT_GFX_CUTTABLE_TREE",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_TEMP_12",
+   "script": "S_CuttableTree",
+   "texts": {
+    "UseCutPromptText": "This tree looks like it can be CUT down.\\pWould you like to CUT it?$",
+    "UsedCutRockSmashText": "{STR_VAR_1} used {STR_VAR_2}.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 3,
+   "x": 26,
+   "y": 17,
+   "gfx": "OBJ_EVENT_GFX_VAR_1",
+   "movement": "MOVEMENT_TYPE_FACE_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_EVIL_TEAM_PETALBURG_WOODS",
+   "script": "0x0",
+   "missing": true
+  },
+  {
+   "local_id": 4,
+   "x": 26,
+   "y": 20,
+   "gfx": "OBJ_EVENT_GFX_MAN_2",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_DEVON_PETALBURG_WOODS",
+   "script": "0x0",
+   "missing": true
+  },
+  {
+   "local_id": 5,
+   "x": 45,
+   "y": 7,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_PETALBURG_WOODS_2",
+   "script": "PetalburgWoods_EventScript_1B175F",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 6,
+   "x": 35,
+   "y": 20,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_PETALBURG_WOODS_1",
+   "script": "PetalburgWoods_EventScript_1B1752",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 7,
+   "x": 4,
+   "y": 8,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_PETALBURG_WOODS_3",
+   "script": "PetalburgWoods_EventScript_1B176C",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 8,
+   "x": 15,
+   "y": 19,
+   "gfx": "OBJ_EVENT_GFX_BOY_2",
+   "movement": "MOVEMENT_TYPE_WANDER_UP_AND_DOWN",
+   "range": [
+    1,
+    2
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "PetalburgWoods_EventScript_15CECA",
+   "texts": {
+    "PetalburgWoods_Text_1953AC": "Yo, there!\\nYour POKéMON doing okay?\\pIf your POKéMON are weak and you want\\nto avoid battles, you should stay out\\lof tall grass.$"
+   }
+  },
+  {
+   "local_id": 9,
+   "x": 7,
+   "y": 32,
+   "gfx": "OBJ_EVENT_GFX_BUG_CATCHER",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN_LEFT_AND_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "PetalburgWoods_EventScript_15CF27",
+   "texts": {
+    "PetalburgWoods_Text_1951BE": "I caught a whole bunch of POKéMON!\\pGo, go, go!\\nMy BUG POKéMON team!$",
+    "PetalburgWoods_Text_195202": "I have all these POKéMON, but I\\ncouldn't win...$",
+    "PetalburgWoods_Text_195232": "I caught a bunch of POKéMON.\\nNow I'm out of POKé BALLS.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 10,
+   "x": 4,
+   "y": 14,
+   "gfx": "OBJ_EVENT_GFX_BUG_CATCHER",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN_UP_AND_RIGHT",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NORMAL",
+   "hide_flag": "0",
+   "script": "PetalburgWoods_EventScript_15CF3E",
+   "texts": {
+    "PetalburgWoods_Text_19526A": "If you take BUG POKéMON to school,\\nyou get to be instantly popular!$",
+    "PetalburgWoods_Text_1952AE": "I can't be popular if I lose.$",
+    "PetalburgWoods_Text_1952CC": "If you have a big BUG POKéMON, people\\nrespect you for it.$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 11,
+   "x": 30,
+   "y": 34,
+   "gfx": "OBJ_EVENT_GFX_BOY_3",
+   "movement": "MOVEMENT_TYPE_WANDER_AROUND",
+   "range": [
+    2,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "PetalburgWoods_EventScript_15CED3",
+   "texts": {
+    "PetalburgWoods_Text_19542B": "Sometimes, there are things on the\\nground even if you can't see them.\\pThat's why I always check where I'm\\nwalking.$"
+   }
+  },
+  {
+   "local_id": 12,
+   "x": 4,
+   "y": 26,
+   "gfx": "OBJ_EVENT_GFX_ITEM_BALL",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_ITEM_PETALBURG_WOODS_4",
+   "script": "PetalburgWoods_EventScript_1B1779",
+   "texts": {},
+   "complex": true
+  },
+  {
+   "local_id": 13,
+   "x": 33,
+   "y": 5,
+   "gfx": "OBJ_EVENT_GFX_GIRL_2",
+   "movement": "MOVEMENT_TYPE_LOOK_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "PetalburgWoods_EventScript_15CEDC",
+   "texts": {
+    "PetalburgWoods_Text_19549E": "Oh, neat!\\nThat's the BADGE from RUSTBORO GYM!\\pYou must be a TRAINER.\\nYou should try using this item.$"
+   },
+   "complex": true
+  }
+ ],
+ "signs": [
+  {
+   "x": 14,
+   "y": 32,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "PetalburgWoods_EventScript_15CF15",
+   "texts": {
+    "PetalburgWoods_Text_1955B0": "TRAINER TIPS\\pAny POKéMON that appears even once\\nin a battle is awarded EXP Points.\\pTo raise a weak POKéMON, put it at the\\ntop of the team list.\\pAs soon as a battle starts, switch it\\nout. It will earn EXP Points without\\lbeing exposed to any harm.$"
+   }
+  },
+  {
+   "x": 39,
+   "y": 35,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 39,
+    "y": 35,
+    "elevation": 3,
+    "item": "ITEM_POTION",
+    "flag": "FLAG_HIDDEN_ITEM_3A"
+   }
+  },
+  {
+   "x": 26,
+   "y": 6,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 26,
+    "y": 6,
+    "elevation": 3,
+    "item": "ITEM_TINY_MUSHROOM",
+    "flag": "FLAG_HIDDEN_ITEM_3B"
+   }
+  },
+  {
+   "x": 40,
+   "y": 29,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 40,
+    "y": 29,
+    "elevation": 3,
+    "item": "ITEM_TINY_MUSHROOM",
+    "flag": "FLAG_HIDDEN_ITEM_3C"
+   }
+  },
+  {
+   "x": 4,
+   "y": 19,
+   "type": "hidden_item",
+   "raw": {
+    "type": "hidden_item",
+    "x": 4,
+    "y": 19,
+    "elevation": 3,
+    "item": "ITEM_POKE_BALL",
+    "flag": "FLAG_HIDDEN_ITEM_3D"
+   }
+  },
+  {
+   "x": 11,
+   "y": 8,
+   "facing": "BG_EVENT_PLAYER_FACING_ANY",
+   "script": "PetalburgWoods_EventScript_15CF1E",
+   "texts": {
+    "PetalburgWoods_Text_1956A6": "TRAINER TIPS\\pIn addition to Hit Points (HP), POKéMON\\nhave Power Points (PP) that are used to\\lmake moves during battle.\\pIf a POKéMON runs out of PP, it must be\\ntaken to a POKéMON CENTER.$"
+   }
+  }
+ ],
+ "warps": [
+  {
+   "id": 0,
+   "x": 14,
+   "y": 5,
+   "dest_map": "MAP_ROUTE104",
+   "dest_warp_id": "2"
+  },
+  {
+   "id": 1,
+   "x": 15,
+   "y": 5,
+   "dest_map": "MAP_ROUTE104",
+   "dest_warp_id": "3"
+  },
+  {
+   "id": 2,
+   "x": 16,
+   "y": 38,
+   "dest_map": "MAP_ROUTE104",
+   "dest_warp_id": "4"
+  },
+  {
+   "id": 3,
+   "x": 17,
+   "y": 38,
+   "dest_map": "MAP_ROUTE104",
+   "dest_warp_id": "5"
+  },
+  {
+   "id": 4,
+   "x": 36,
+   "y": 38,
+   "dest_map": "MAP_ROUTE104",
+   "dest_warp_id": "6"
+  },
+  {
+   "id": 5,
+   "x": 37,
+   "y": 38,
+   "dest_map": "MAP_ROUTE104",
+   "dest_warp_id": "7"
+  }
+ ],
+ "coord_events": [
+  {
+   "type": "trigger",
+   "x": 26,
+   "y": 23,
+   "elevation": 3,
+   "var": "VAR_PETALBURG_WOODS_STATE",
+   "var_value": "0",
+   "script": "PetalburgWoods_EventScript_15CCA8",
+   "texts": {
+    "PetalburgWoods_Text_194D92": "Hello, have you seen any POKéMON\\ncalled SHROOMISH around here?\\pI really love that POKéMON.$",
+    "PetalburgWoods_Text_194DED": "I was going to ambush you, but you\\nhad to dawdle in PETALBURG WOODS\\lforever, didn't you?\\pI got sick of waiting, so here I am!$",
+    "PetalburgWoods_Text_194E6B": "You! DEVON RESEARCHER!\\pHand over those papers!$",
+    "PetalburgWoods_Text_194E9A": "Aiyeeeh!\\pYou're a POKéMON TRAINER, aren't you?\\nYou've got to help me, please!$",
+    "PetalburgWoods_Text_194EE8": "Hunh? What do you think you're doing?\\nWhat, you're going to protect him?\\pNo one who crosses TEAM {EVIL_TEAM}\\ngets any mercy, not even a kid!\\pCome on and battle me!$",
+    "PetalburgWoods_Text_194F83": "You're kidding me! You're tough!$"
+   },
+   "complex": true
+  },
+  {
+   "type": "trigger",
+   "x": 27,
+   "y": 23,
+   "elevation": 3,
+   "var": "VAR_PETALBURG_WOODS_STATE",
+   "var_value": "0",
+   "script": "PetalburgWoods_EventScript_15CD42",
+   "texts": {
+    "PetalburgWoods_Text_194D92": "Hello, have you seen any POKéMON\\ncalled SHROOMISH around here?\\pI really love that POKéMON.$",
+    "PetalburgWoods_Text_194DED": "I was going to ambush you, but you\\nhad to dawdle in PETALBURG WOODS\\lforever, didn't you?\\pI got sick of waiting, so here I am!$",
+    "PetalburgWoods_Text_194E6B": "You! DEVON RESEARCHER!\\pHand over those papers!$",
+    "PetalburgWoods_Text_194E9A": "Aiyeeeh!\\pYou're a POKéMON TRAINER, aren't you?\\nYou've got to help me, please!$",
+    "PetalburgWoods_Text_194EE8": "Hunh? What do you think you're doing?\\nWhat, you're going to protect him?\\pNo one who crosses TEAM {EVIL_TEAM}\\ngets any mercy, not even a kid!\\pCome on and battle me!$",
+    "PetalburgWoods_Text_194F83": "You're kidding me! You're tough!$"
+   },
+   "complex": true
+  }
+ ],
+ "wild": {
+  "land_mons": {
+   "encounter_rate": 20,
+   "slot_rates": [
+    20,
+    20,
+    10,
+    10,
+    10,
+    10,
+    5,
+    5,
+    4,
+    4,
+    1,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_ZIGZAGOON",
+     "min": 5,
+     "max": 5
+    },
+    {
+     "species": "SPECIES_WURMPLE",
+     "min": 5,
+     "max": 5
+    },
+    {
+     "species": "SPECIES_SHROOMISH",
+     "min": 5,
+     "max": 5
+    },
+    {
+     "species": "SPECIES_ZIGZAGOON",
+     "min": 6,
+     "max": 6
+    },
+    {
+     "species": "SPECIES_SILCOON",
+     "min": 5,
+     "max": 5
+    },
+    {
+     "species": "SPECIES_CASCOON",
+     "min": 5,
+     "max": 5
+    },
+    {
+     "species": "SPECIES_WURMPLE",
+     "min": 6,
+     "max": 6
+    },
+    {
+     "species": "SPECIES_SHROOMISH",
+     "min": 6,
+     "max": 6
+    },
+    {
+     "species": "SPECIES_TAILLOW",
+     "min": 5,
+     "max": 5
+    },
+    {
+     "species": "SPECIES_SLAKOTH",
+     "min": 5,
+     "max": 5
+    },
+    {
+     "species": "SPECIES_TAILLOW",
+     "min": 6,
+     "max": 6
+    },
+    {
+     "species": "SPECIES_SLAKOTH",
+     "min": 6,
+     "max": 6
+    }
+   ]
+  }
+ }
+}

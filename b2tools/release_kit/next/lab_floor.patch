@@ -1,0 +1,65 @@
+diff --git a/b2tools/models_interior.py b/b2tools/models_interior.py
+index ef3e5d9..ff87108 100644
+--- a/b2tools/models_interior.py
++++ b/b2tools/models_interior.py
+@@ -96,6 +96,19 @@ MB_SOUTH_ARROW_WARP, MB_NON_ANIMATED_DOOR = 0x65, 0x60
+ # above that surface, and moves a floor cushion sideways off a neighbour's shadow (rooms_cleanup agent, 2026-10-06;
+ # recipes may still give larger y/gap values)
+ LAYER = 2
++# Seams (small_fixes 2026-10-13, player report from a 3DS: a thin dashed diagonal line across Birch's lab floor, from
++# the bottom-left to near the top-right). dae.Model.quad splits a quad into two triangles along its first-to-third-corner
++# diagonal, and a room's floor is a few big quads (rects), so one long diagonal crosses the room. Real DS hardware (as
++# melonDS) leaves 1-pixel gaps along such long, shallow shared edges, and the background showed through; DeSmuME's
++# renderer closes them. Every flat surface of a room (floor, floor_tex regions, genkan, block tops: floor_quad) has a
++# twin UNDER units below it, same texture and shade, split along the other diagonal: through a gap the camera sees the
++# twin, whose own diagonal crosses the surface's at a single point. UNDER is 4 (the mist caves' crack cover): 2 put the
++# twin level with the Pokémon Centers' stools and the Battle Tower's sofas, sunk 2 into the floor (rooms_check f). Only
++# quads at least SEAM_W units wide get one: a narrower quad's diagonal is short or steep on screen (a few pixels at
++# most), and the small pieces (Mt. Pyre's graves, Mossdeep Gym's tiles) would have added hundreds of triangles.
++# (Outdoors the same family of cracks was fixed by an under-floor too: build_chunk.path_cover, purple_lines
++# 2026-10-13; caves: models_cave seam_cover.)
++UNDER, SEAM_W = 2 * LAYER, 2 * 16
+ # Stairs the way Black 2's houses build them (Nuvema 390/391, Aspertia 429/430, Striaton 828/829; rooms_cleanup agent):
+ # the warp tile is the first tile of the flight, the model's foot (stair_u01, rising toward its -x: foot x = +16) or the
+ # top edge of its steps (stair_d01, descending toward its +x: x = -16; its plate x < -16 lies hidden under the floor of
+@@ -730,8 +743,8 @@ class Room:
+             fi = int(k // 4); s = k - fi * 4
+             col = (s, s, s)
+             if fi == 0:
+-                m.quad(mat('floor'), [(C(x0), Y0, C(z1), x0 / fs, -z1 / fs, col), (C(x1), Y0, C(z1), x1 / fs, -z1 / fs, col),
+-                                      (C(x1), Y0, C(z0), x1 / fs, -z0 / fs, col), (C(x0), Y0, C(z0), x0 / fs, -z0 / fs, col)])
++                self.floor_quad(m, mat('floor'), [(C(x0), Y0, C(z1), x0 / fs, -z1 / fs, col), (C(x1), Y0, C(z1), x1 / fs, -z1 / fs, col),
++                                                  (C(x1), Y0, C(z0), x1 / fs, -z0 / fs, col), (C(x0), Y0, C(z0), x0 / fs, -z0 / fs, col)])
+             else:
+                 self.tex_quad_flat(m, fts[fi - 1], x0, z0, x1, z1, Y0, col)
+         gs = st['genkan'].get('size', 16)
+@@ -740,8 +753,8 @@ class Room:
+             top, bot = (1.0, 1.0, 1.0), (0.0, 0.0, 0.0)
+             if st['genkan'].get('stretch'): u = lambda x: (x - x0) / (x1 - x0); v = lambda z: (z1 - z) / (z1 - z0)
+             else: u = lambda x: x / gs; v = lambda z: -z / gs
+-            m.quad(mat('genkan'), [(C(x0), Y0, C(z1), u(x0), v(z1), bot), (C(x1), Y0, C(z1), u(x1), v(z1), bot),
+-                                   (C(x1), Y0, C(z0), u(x1), v(z0), top), (C(x0), Y0, C(z0), u(x0), v(z0), top)])
++            self.floor_quad(m, mat('genkan'), [(C(x0), Y0, C(z1), u(x0), v(z1), bot), (C(x1), Y0, C(z1), u(x1), v(z1), bot),
++                                               (C(x1), Y0, C(z0), u(x1), v(z0), top), (C(x0), Y0, C(z0), u(x0), v(z0), top)])
+         # walls (around floor + genkan; the genkan's sides are only lips)
+         room = self.kind > 0                                  # floor, genkan and holes (no walls around a hole)
+         e = self.edges(room)
+@@ -985,8 +998,16 @@ class Room:
+         C = lambda v: v - 256
+         rect = self.unit_rect(ft) if ('rect' in ft or 'units' in ft) else (x0, z0, x1, z1)
+         uv = lambda x, z: self.tex_uv(ft, x, z, rect)
+-        m.quad(ft['tex'], [(C(x0), y, C(z1)) + uv(x0, z1) + (col,), (C(x1), y, C(z1)) + uv(x1, z1) + (col,),
+-                           (C(x1), y, C(z0)) + uv(x1, z0) + (col,), (C(x0), y, C(z0)) + uv(x0, z0) + (col,)])
++        self.floor_quad(m, ft['tex'], [(C(x0), y, C(z1)) + uv(x0, z1) + (col,), (C(x1), y, C(z1)) + uv(x1, z1) + (col,),
++                                       (C(x1), y, C(z0)) + uv(x1, z0) + (col,), (C(x0), y, C(z0)) + uv(x0, z0) + (col,)])
++
++    def floor_quad(self, m, mat, verts):
++        """A flat quad facing up (verts as dae.Model.quad, each with its colour) and its seam twin UNDER units below,
++        split along the other diagonal (UNDER above; quads at least SEAM_W wide)."""
++        m.quad(mat, verts)
++        if max(v[0] for v in verts) - min(v[0] for v in verts) < SEAM_W: return
++        a, b, c, d = [(v[0], v[1] - UNDER) + tuple(v[2:]) for v in verts]
++        m.quad(mat, [b, c, d, a])
+ 
+     def block_style(self, b):
+         base = dict(self.styles.get(b['use'], {})) if 'use' in b else {}

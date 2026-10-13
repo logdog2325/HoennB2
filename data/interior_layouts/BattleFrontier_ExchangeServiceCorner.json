@@ -1,0 +1,249 @@
+{
+ "_doc": "Battle Frontier Exchange Service Corner (Emerald only: pokeemerald BattleFrontier_ExchangeServiceCorner, 15x11, LAYOUT_BATTLE_FRONTIER_EXCHANGE_SERVICE_CORNER, gTileset_Building + gTileset_BattleFrontier; frontier_core_room 2026-10-12, written by work/agents/frontier_core/room/tools/exchange_room.py; zone 419, data/interiors/emerald/419.json). The Battle Tower lobby's look (style sp_battle: Nimbasa's Battle Test room, area 306) for Emerald's blue Frontier floor. Counter: Emerald's U (arms (3, 2-5) and (11, 2-5), front (3-11, 6)) = white counters shelf03, the four clerks inside at Emerald's tiles; behind them Emerald's goods shelves = pcshelf01 (side units reaching row 3 as Emerald's 2x2 shelves, the middle one against the back wall); PC (14,1) = pc01 in the corner (Emerald MB_PC: Black 2's PC tile); benches (0, 3-5) and (0, 7-8) = rows of Black 2's orange floor cushions chushion01; red carpet and exit mats (6-8, 9-10) = the lobby's door mat chip_mat. The back wall stands 12 units north of row 2 (Emerald draws rows 0-1 as wall); the PC stands in front of it, its tile (14,1) keeps Emerald's PC cell.",
+ "map": "BattleFrontier_ExchangeServiceCorner",
+ "decomp": "pokeemerald",
+ "style": "sp_battle",
+ "floor": [
+  [
+   0,
+   2,
+   14,
+   8
+  ],
+  [
+   1,
+   9,
+   13,
+   9
+  ],
+  [
+   2,
+   10,
+   12,
+   10
+  ]
+ ],
+ "mats": [
+  {
+   "tex": "chip_mat",
+   "src": 306,
+   "rect": [
+    6,
+    9,
+    8,
+    10
+   ],
+   "border": 0.25,
+   "border_units": 4,
+   "y": 0,
+   "_what": "red carpet and exit mats (6-8, 9-10)"
+  }
+ ],
+ "furniture": [
+  {
+   "m": "shelf03",
+   "at": [
+    3.75,
+    6.5
+   ],
+   "dx": 3.0,
+   "dz": 3.0,
+   "_what": "counter, front (3-11, 6) 1/6"
+  },
+  {
+   "m": "shelf03",
+   "at": [
+    5.25,
+    6.5
+   ],
+   "dx": 3.0,
+   "dz": 3.0,
+   "_what": "counter, front (3-11, 6) 2/6"
+  },
+  {
+   "m": "shelf03",
+   "at": [
+    6.75,
+    6.5
+   ],
+   "dx": 3.0,
+   "dz": 3.0,
+   "_what": "counter, front (3-11, 6) 3/6"
+  },
+  {
+   "m": "shelf03",
+   "at": [
+    8.25,
+    6.5
+   ],
+   "dx": 3.0,
+   "dz": 3.0,
+   "_what": "counter, front (3-11, 6) 4/6"
+  },
+  {
+   "m": "shelf03",
+   "at": [
+    9.75,
+    6.5
+   ],
+   "dx": 3.0,
+   "dz": 3.0,
+   "_what": "counter, front (3-11, 6) 5/6"
+  },
+  {
+   "m": "shelf03",
+   "at": [
+    11.25,
+    6.5
+   ],
+   "dx": 3.0,
+   "dz": 3.0,
+   "_what": "counter, front (3-11, 6) 6/6"
+  },
+  {
+   "m": "shelf03",
+   "at": [
+    3.5,
+    5.4375
+   ],
+   "rot": 270,
+   "dx": -3.0,
+   "dz": 3.0,
+   "_what": "counter, west arm (3, 2-5) 3/3, display toward the customers (west)"
+  },
+  {
+   "m": "shelf03",
+   "at": [
+    11.5,
+    5.4375
+   ],
+   "rot": 90,
+   "dx": 3.0,
+   "dz": -3.0,
+   "_what": "counter, east arm (11, 2-5) 3/3, display toward the customers (east)"
+  },
+  {
+   "m": "shelf03",
+   "at": [
+    3.5,
+    3.9375
+   ],
+   "rot": 270,
+   "dx": -3.0,
+   "dz": 3.0,
+   "_what": "counter, west arm (3, 2-5) 2/3, display toward the customers (west)"
+  },
+  {
+   "m": "shelf03",
+   "at": [
+    11.5,
+    3.9375
+   ],
+   "rot": 90,
+   "dx": 3.0,
+   "dz": -3.0,
+   "_what": "counter, east arm (11, 2-5) 2/3, display toward the customers (east)"
+  },
+  {
+   "m": "shelf03",
+   "at": [
+    3.5,
+    2.4375
+   ],
+   "rot": 270,
+   "dx": -3.0,
+   "dz": 3.0,
+   "_what": "counter, west arm (3, 2-5) 1/3, display toward the customers (west)"
+  },
+  {
+   "m": "shelf03",
+   "at": [
+    11.5,
+    2.4375
+   ],
+   "rot": 90,
+   "dx": 3.0,
+   "dz": -3.0,
+   "_what": "counter, east arm (11, 2-5) 1/3, display toward the customers (east)"
+  },
+  {
+   "m": "pcshelf01",
+   "at": [
+    5.0,
+    2.75
+   ],
+   "dx": -4.0,
+   "dz": 4.0,
+   "_what": "goods shelf (4-5, 2-3): vitamins and held items"
+  },
+  {
+   "m": "pcshelf01",
+   "at": [
+    7.5,
+    1.75
+   ],
+   "dx": -4.0,
+   "dz": 4.0,
+   "_what": "goods shelf (6-8, 2) against the back wall"
+  },
+  {
+   "m": "pcshelf01",
+   "at": [
+    10.0,
+    2.75
+   ],
+   "dx": -4.0,
+   "dz": 4.0,
+   "_what": "goods shelf (9-10, 2-3): decorations"
+  },
+  {
+   "m": "pc01",
+   "at": [
+    14.4552,
+    1.6453
+   ],
+   "dz": 1.089,
+   "_what": "PC (14,1) (Emerald MB_PC)"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    0,
+    3
+   ],
+   "_what": "bench seat (0,3) (Emerald's orange bench, walkable)"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    0,
+    4
+   ],
+   "_what": "bench seat (0,4) (Emerald's orange bench, walkable)"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    0,
+    5
+   ],
+   "_what": "bench seat (0,5) (Emerald's orange bench, walkable)"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    0,
+    7
+   ],
+   "_what": "bench seat (0,7) (Emerald's orange bench, walkable)"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    0,
+    8
+   ],
+   "_what": "bench seat (0,8) (Emerald's orange bench, walkable)"
+  }
+ ]
+}

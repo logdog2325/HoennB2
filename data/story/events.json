@@ -1,0 +1,175 @@
+{
+ "_doc": "The in-game event islands' story objects (events agent, 2026-10-07; notes/EVENTS.md; format: b2tools/patches/story.py). Emerald tiles ('at') of the named map (pokeemerald, data/hoenn_event_maps.json); uid = 100 + local id outdoors, the local id in rooms. Every object is \"optional\": the islands are warp-only groups and the Navel Rock caves rooms that a build may leave out (data/hoenn_standalone.json \"build\", RESERVE[8]); their objects are then skipped, not an error.",
+ "objects": [
+  {
+   "kind": "npc",
+   "map": "FarawayIsland_Entrance",
+   "at": [
+    13,
+    39
+   ],
+   "uid": 101,
+   "model": 359,
+   "script": 3,
+   "dir": 0,
+   "move": 14,
+   "what": "the ferry sailor (Emerald object 1, SAILOR, FACE_UP; scenes/FarawayIsland_Entrance.inc script 3)",
+   "optional": true
+  },
+  {
+   "kind": "npc",
+   "map": "FarawayIsland_Interior",
+   "at": [
+    13,
+    17
+   ],
+   "uid": 101,
+   "model": 4248,
+   "script": 3,
+   "dir": 1,
+   "move": 3,
+   "areaw": 6,
+   "areah": 6,
+   "flag": "FLAG_HIDE_MEW",
+   "what": "Mew (Emerald object 1, MEW, COPY_PLAYER_OPPOSITE_IN_GRASS: Black 2's wander in a 6x6 area; Black 2's Mew overworld sprite 4248)",
+   "optional": true
+  },
+  {
+   "kind": "npc",
+   "map": "BirthIsland_Exterior",
+   "at": [
+    15,
+    12
+   ],
+   "uid": 101,
+   "model": 144,
+   "script": 3,
+   "dir": 1,
+   "move": 15,
+   "flag": "FLAG_HIDE_BIRTH_ISLAND_DEOXYS_TRIANGLE",
+   "what": "the triangle (Emerald object 1, DEOXYS_TRIANGLE: Black 2's white stone sphere 144 stands in)",
+   "optional": true
+  },
+  {
+   "kind": "npc",
+   "map": "BirthIsland_Exterior",
+   "at": [
+    15,
+    6
+   ],
+   "uid": 102,
+   "model": 4515,
+   "script": 0,
+   "dir": 1,
+   "move": 15,
+   "flag": "FLAG_HIDE_DEOXYS",
+   "what": "Deoxys (Emerald object 2 at (15,3), inside the top tree: here (15,6); Black 2's Deoxys overworld sprite 4515)",
+   "optional": true
+  },
+  {
+   "kind": "npc",
+   "map": "BirthIsland_Exterior",
+   "at": [
+    15,
+    24
+   ],
+   "uid": 103,
+   "model": 359,
+   "script": 4,
+   "dir": 0,
+   "move": 14,
+   "what": "the ferry sailor (BirthIsland_Harbor's object 1, at the dock's end where the harbour door is; scenes/BirthIsland_Exterior.inc script 4)",
+   "optional": true
+  },
+  {
+   "kind": "npc",
+   "map": "NavelRock_Exterior",
+   "at": [
+    10,
+    18
+   ],
+   "uid": 101,
+   "model": 359,
+   "script": 2,
+   "dir": 0,
+   "move": 14,
+   "what": "the ferry sailor (NavelRock_Harbor's object 1, at the dock's end; scenes/NavelRock_Exterior.inc script 2)",
+   "optional": true
+  },
+  {
+   "kind": "npc",
+   "map": "NavelRock_Top",
+   "at": [
+    12,
+    4
+   ],
+   "uid": 101,
+   "model": 4379,
+   "script": 0,
+   "dir": 1,
+   "move": 15,
+   "flag": "FLAG_HIDE_HO_OH",
+   "what": "Ho-Oh (Emerald object 1, HOOH, FACE_DOWN; Black 2's Ho-Oh overworld sprite 4379)",
+   "optional": true
+  },
+  {
+   "kind": "trigger",
+   "map": "NavelRock_Top",
+   "at": [
+    12,
+    10
+   ],
+   "script": 2,
+   "var": "0x4001",
+   "value": 0,
+   "y": 0,
+   "what": "NavelRock_Top_EventScript_HoOh (Emerald coord event, VAR_TEMP_1 0)",
+   "optional": true
+  },
+  {
+   "kind": "npc",
+   "map": "NavelRock_Bottom",
+   "at": [
+    11,
+    13
+   ],
+   "uid": 1,
+   "model": 4378,
+   "script": 2,
+   "dir": 1,
+   "move": 15,
+   "flag": "FLAG_HIDE_LUGIA",
+   "what": "Lugia (Emerald object 1, LUGIA, FACE_DOWN; Black 2's Lugia overworld sprite 4378; script 2 of 0450_room_NavelRock_Bottom.s)",
+   "optional": true
+  },
+  {
+   "kind": "trigger",
+   "map": "NavelRock_Up4",
+   "at": [
+    5,
+    5
+   ],
+   "script": 2,
+   "var": 0,
+   "value": 0,
+   "what": "the ladder up to the summit (NavelRock_Top is a warp-only outdoor map: gen_caves makes no trigger; script 2 of 0540_room_NavelRock_Up4.s)",
+   "optional": true
+  },
+  {
+   "kind": "npc",
+   "map": "LilycoveCity_Harbor",
+   "at": [
+    8,
+    10
+   ],
+   "uid": 5,
+   "model": 28,
+   "script": 0,
+   "dir": 1,
+   "move": 15,
+   "flag": "FLAG_HIDE_LILYCOVE_HARBOR_EVENT_TICKET_TAKER",
+   "what": "Mr. Briney of the Old Sea Map scene (Emerald object 5; ch2's Briney sprite 28; scenes/LilycoveCity_Harbor_Events.inc)",
+   "optional": true
+  }
+ ]
+}

@@ -1,0 +1,272 @@
+{
+ "_doc": "Seashore House (Sapphire 15x10, zone 509): Black 2's Day Care wood look (set 282). The long wooden benches (rows 4, 6, 8) = Black 2's narrow wooden desk desk01 (3 tiles) and small tables desk02 (2-tile ends); the two food cases (1-2, 2)/(12-13, 2) = glass cabinets shelf02, the drink machine (7,2) = vending machine in_vender01; Sapphire's balloons on the back wall = Black 2's balloon pictures (m_nsch01_17/18/19, set 282).",
+ "map": "Route109_SeashoreHouse",
+ "style": "sp_wood",
+ "floor": [
+  [
+   0,
+   2,
+   14,
+   9
+  ]
+ ],
+ "mats": [
+  {
+   "tex": "b01_mat",
+   "src": 282,
+   "rect": [
+    6,
+    9,
+    7,
+    9
+   ],
+   "border": 0.25,
+   "border_units": 4,
+   "y": 0,
+   "_what": "door mat"
+  }
+ ],
+ "decals": [
+  {
+   "tex": "m_nsch01_17",
+   "src": 282,
+   "at": [
+    3.3
+   ],
+   "y": 22,
+   "w": 14,
+   "h": 20,
+   "gap": 2,
+   "_what": "balloon"
+  },
+  {
+   "tex": "m_nsch01_19",
+   "src": 282,
+   "at": [
+    4.2
+   ],
+   "y": 22,
+   "w": 14,
+   "h": 20,
+   "gap": 2,
+   "_what": "balloon"
+  },
+  {
+   "tex": "m_nsch01_18",
+   "src": 282,
+   "at": [
+    5.1
+   ],
+   "y": 22,
+   "w": 14,
+   "h": 20,
+   "gap": 2,
+   "_what": "balloon"
+  },
+  {
+   "tex": "m_nsch01_17",
+   "src": 282,
+   "at": [
+    9.9
+   ],
+   "y": 22,
+   "w": 14,
+   "h": 20,
+   "gap": 2,
+   "_what": "balloon"
+  },
+  {
+   "tex": "m_nsch01_18",
+   "src": 282,
+   "at": [
+    10.8
+   ],
+   "y": 22,
+   "w": 14,
+   "h": 20,
+   "gap": 2,
+   "_what": "balloon"
+  },
+  {
+   "tex": "m_nsch01_19",
+   "src": 282,
+   "at": [
+    11.7
+   ],
+   "y": 22,
+   "w": 14,
+   "h": 20,
+   "gap": 2,
+   "_what": "balloon"
+  }
+ ],
+ "furniture": [
+  {
+   "m": "shelf02",
+   "tiles": [
+    1,
+    2,
+    2,
+    2
+   ],
+   "wall": "N",
+   "_what": "food case"
+  },
+  {
+   "m": "in_vender01",
+   "tile": [
+    7,
+    2
+   ],
+   "wall": "N",
+   "_what": "drink machine"
+  },
+  {
+   "m": "shelf02",
+   "tiles": [
+    12,
+    2,
+    13,
+    2
+   ],
+   "wall": "N",
+   "_what": "food case"
+  },
+  {
+   "m": "desk02",
+   "tile": [
+    0,
+    4
+   ],
+   "_what": "bench"
+  },
+  {
+   "m": "desk02",
+   "tile": [
+    1,
+    4
+   ],
+   "_what": "bench"
+  },
+  {
+   "m": "desk01",
+   "rot": 90,
+   "tiles": [
+    3,
+    4,
+    5,
+    4
+   ],
+   "_what": "bench"
+  },
+  {
+   "m": "desk01",
+   "rot": 90,
+   "tiles": [
+    8,
+    4,
+    10,
+    4
+   ],
+   "_what": "bench"
+  },
+  {
+   "m": "desk02",
+   "tile": [
+    13,
+    4
+   ],
+   "_what": "bench"
+  },
+  {
+   "m": "desk02",
+   "tile": [
+    14,
+    4
+   ],
+   "_what": "bench"
+  },
+  {
+   "m": "desk02",
+   "tile": [
+    0,
+    6
+   ],
+   "_what": "bench"
+  },
+  {
+   "m": "desk02",
+   "tile": [
+    1,
+    6
+   ],
+   "_what": "bench"
+  },
+  {
+   "m": "desk01",
+   "rot": 90,
+   "tiles": [
+    3,
+    6,
+    5,
+    6
+   ],
+   "_what": "bench"
+  },
+  {
+   "m": "desk01",
+   "rot": 90,
+   "tiles": [
+    8,
+    6,
+    10,
+    6
+   ],
+   "_what": "bench"
+  },
+  {
+   "m": "desk02",
+   "tile": [
+    13,
+    6
+   ],
+   "_what": "bench"
+  },
+  {
+   "m": "desk02",
+   "tile": [
+    14,
+    6
+   ],
+   "_what": "bench"
+  },
+  {
+   "m": "desk02",
+   "tile": [
+    0,
+    8
+   ]
+  },
+  {
+   "m": "desk02",
+   "tile": [
+    1,
+    8
+   ]
+  },
+  {
+   "m": "desk02",
+   "tile": [
+    13,
+    8
+   ]
+  },
+  {
+   "m": "desk02",
+   "tile": [
+    14,
+    8
+   ]
+  }
+ ]
+}

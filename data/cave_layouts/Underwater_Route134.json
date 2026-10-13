@@ -1,0 +1,10 @@
+{
+ "map": "Underwater_Route134",
+ "look": "uw",
+ "underwater": true,
+ "origin": [
+  7,
+  11
+ ],
+ "tiers": 2
+}

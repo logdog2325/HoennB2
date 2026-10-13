@@ -1,0 +1,22 @@
+{
+ "kind": "overworld",
+ "code": 234,
+ "sheet": 212,
+ "frames": 2,
+ "size": [
+  32,
+  32
+ ],
+ "controller": 7,
+ "textures": [
+  "t4x4x2.0",
+  "t4x4x2.1"
+ ],
+ "palette": "t4x4x2",
+ "name": "brendan-item",
+ "note": "Brendan (player, Emerald outfit), item: item: stand, ball raised",
+ "source": "community: src/sprites/community/incoming/emerald/brendan_emerald_hyo-oppa.png by hyo-oppa (cut, placed, palette-indexed; no colour merged)",
+ "colours": 13,
+ "merged_colours": [],
+ "made_by": "b2tools/sprite_community_emerald.py"
+}

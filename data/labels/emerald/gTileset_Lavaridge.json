@@ -1,0 +1,13 @@
+{
+ "_doc": "Emerald's gTileset_Lavaridge metatiles labelled by eye (emerald_world 2026-10-12; sheets: work/agents/emerald_world/tools/label_sheets.py): the ones converter/emerald_labels.py cannot carry over from Sapphire. Wins over carry_gTileset_Lavaridge.json.",
+ "gTileset_Lavaridge": {
+  "30d": "rock",
+  "355": "prop",
+  "3a3": "rock",
+  "3b1": "tree_bot",
+  "3b8": "tree_bot"
+ },
+ "_notes": {
+  "_notes": "0x30D Jagged Pass rock, 0x355 Mt. Chimney's meteorite machine (prop), 0x3A3 crater rock, 0x3B1/0x3B8 Route 112's trees"
+ }
+}

@@ -1,0 +1,90 @@
+{
+ "zone": 266,
+ "room": "NavelRock_Fork",
+ "cave": true,
+ "cave_auto": true,
+ "area": 332,
+ "dark": false,
+ "header": {
+  "map_type": 16,
+  "npc_cache": 24,
+  "weather_word": 0,
+  "flags": 23683,
+  "icon_word": 32783,
+  "place_display": 1,
+  "bgm0": 1076,
+  "bgm1": 1076,
+  "bgm2": 1076,
+  "bgm3": 1076,
+  "place": 89,
+  "encounters": 8191,
+  "enc_slot": 6
+ },
+ "warps": [
+  {
+   "at": [
+    4,
+    6
+   ],
+   "to": [
+    267,
+    0
+   ],
+   "what": "Sapphire warp 0 (4,6) -> NavelRock_Up1 0"
+  },
+  {
+   "at": [
+    11,
+    79
+   ],
+   "to": [
+    224,
+    1
+   ],
+   "what": "Sapphire warp 1 (11,79) -> NavelRock_B1F 1"
+  },
+  {
+   "at": [
+    22,
+    6
+   ],
+   "to": [
+    226,
+    0
+   ],
+   "what": "Sapphire warp 2 (22,6) -> NavelRock_Down01 0"
+  }
+ ],
+ "triggers": [
+  {
+   "script": 1,
+   "var": 0,
+   "value": 0,
+   "at": [
+    4,
+    6
+   ]
+  },
+  {
+   "script": 2,
+   "var": 0,
+   "value": 0,
+   "at": [
+    11,
+    79
+   ]
+  },
+  {
+   "script": 3,
+   "var": 0,
+   "value": 0,
+   "at": [
+    22,
+    6
+   ]
+  }
+ ],
+ "npcs": [],
+ "signs": [],
+ "what": "NavelRock_Fork: cave (converter/gen_caves.py, b2tools/models_cave.py); story objects: see notes/CAVES.md"
+}

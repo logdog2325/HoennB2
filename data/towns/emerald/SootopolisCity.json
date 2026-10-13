@@ -1,0 +1,7 @@
+{
+ "_doc": "Emerald's overlay of data/towns/SootopolisCity.json (emerald_world 2026-10-12; b2tools/world.py load, then 'prop_moves'): Emerald's Mystery Events House is Sapphire's two door-less houses north-east of the Gym, the block house one row north (x 50-52, rows 33-36, its door (51,36) leads to SootopolisCity_MysteryEventsHouse_1F) and the dome house one row south (x 53-55, rows 33-37). The house stays shut (the Mystery Events House is left out: decision 5, notes/EMERALD_PLAN.md 4), so the props stay door-less.",
+ "prop_moves": [
+  {"res": 471, "at": [51.5, 36.0], "by": [0, -1]},
+  {"res": 470, "at": [54.5, 35.0], "by": [0, 1]}
+ ]
+}

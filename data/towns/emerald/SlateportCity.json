@@ -1,0 +1,4 @@
+{
+ "_doc": "Emerald's overlay of data/towns/SlateportCity.json (emerald_world 2026-10-12; b2tools/world.py load, deep-merged): Emerald's Battle Tent stands where Sapphire's Contest Hall stood (same footprint and door row; Emerald's door MAP_SLATEPORT_CITY_BATTLE_TENT_LOBBY). Its building is the Contest Hall's model (res 362) as a stand-in until a tent model is made; the tent is closed (decision 2, notes/EMERALD_PLAN.md 4): no room behind the door yet (data/emerald/hoenn_interiors.json status todo).",
+ "buildings": {"MAP_SLATEPORT_CITY_BATTLE_TENT_LOBBY": {"res": 362, "front": 20}}
+}

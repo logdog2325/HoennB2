@@ -1,0 +1,9 @@
+{0100:0} received the Mind Badge\nfrom Liza and Tate.
+Tate: The Mind Badge enhances the\nSp. Atk and Sp. Def of Pokémon.{be01}\nLiza: It also lets you use the HM move\nDive outside of battle.{be01}\nTate: You should also take this, too.
+Tate: That TM04 contains...\nLiza: Calm Mind!{be01}\nTate: It raises Sp. Atk and...\nLiza: It raises Sp. Def!{be01}\nTate: It’s a move that’s perfect...\nLiza: For Psychic Pokémon!
+Yo, how’s it going, Champion-bound\n{0100:0}?{be01}\nThe Gym Leaders here use Psychic-type\nPokémon.{be01}\nIf you go up against them with\nFighting- or Poison-type Pokémon,{be00}\nthey’ll inflict horrible damage!{be01}\nPlus, they’ll come at you with\noutstanding combination attacks.{be01}\nIf you want to win, you’ll need to show\nthem how tight you are with your{be00}\nPokémon. Go for it!
+Wow, you’re astounding!\nYou’re one great Trainer!
+Mossdeep City Pokémon Gym
+Mossdeep City Pokémon Gym{be01}\nLiza And Tate’s Certified Trainers:\n{0100:0}
+Too bad!\nThe Bag is full...
+Tate: Looks like the bond between you\nand your Pokémon is far stronger than{be00}\nthe bond that we share as twins.{be01}\nLiza: You will become even stronger!\nWe’ve battled you, so we know.

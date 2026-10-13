@@ -1,0 +1,29 @@
+I want to get going to Slateport and\nkick up a ruckus!
+This is my first job after joining\nTeam Aqua. I’ve got the shakes!
+Team Aqua’s actions will put a smile\non everyone’s face!
+This is Cycling Road.{be01}\nIf you were to ride from Mauville to\nSlateport on a Mach Bike, you would{be00}\nbe rated for the number of collisions{be00}\nand your total time.
+May: Hi, {0100:0}, long time no see!{be01}\nWhile I was searching for other\nPokémon, my Pokémon grew stronger.{be01}\nSo...\nHow about a little battle?
+May: {0100:0}, you’ve been busy\ntraining, too, haven’t you?{be01}\nI think you deserve a reward!\nThis is from me!
+May: That’s an Itemfinder.{be01}\nTry it out. If there is an item that’s\nnot visible, it emits a sound.{be01}\nOkay, {0100:0}, let’s meet again!{be01}\nI know it’s a little silly coming from\nme, but I think you should train a lot{be00}\nharder for the next time.
+Brendan: Hey, {0100:0}.\nSo this is where you were.{be00}\nHow’s it going?{be01}\nHave you been raising your Pokémon?\nI’ll check for you.
+Brendan: {0100:0}, you’ve trained\nwithout me noticing...{be01}\nGood enough!\nHere, take this.
+Brendan: That’s an Itemfinder.{be01}\nUse it to root around for items that\naren’t visible.{be01}\nIf it senses something, it emits a\nsound.{be01}\nAnyway, I’m off to look for new\nPokémon.
+“Team Aqua Rulez!”{be01}\nSomebody scribbled that on the sign...
+The Best Record To Date...{be01}\nNo one seems to have taken the\nchallenge. There is no record...
+Team Aqua’s activities must be kept\nsecret for now.
+“Team Aqua was here!”{be01}\nSomeone painted that onto this sign,\nbut then someone else painted over it.{be01}\n“Team Magma rules!” is what it\nsays now.
+Seaside Parking
+Seaside Cycling Road
+Route 110\n↓ Slateport City
+Route 110\n← Route 103
+Route 110\n↑ Mauville City
+Trainer Tips{be01}\nThe foe can be made helpless by\nparalyzing it or causing it to sleep.{be01}\nIt is an important technique for\nPokémon battles.
+Trainer Tips{be01}\nThe items in the Bag can be reorganized\nby pressing Select.
+“Three steps → and two steps ↑\nto reach the wondrous Trick House.”
+Which should I choose?{be01}\nMake a beeline for Mauville on\nCycling Road, or take the low road{be00}\nand look for Pokémon?
+Learning techniques will make Bike\nriding even more fun.{be01}\nThere are some places that you can\nreach only by using a Bike technique.
+I don’t have a Bike, so I’ll take\na leisurely walk on the low road.
+Oh, hey, you got that Bike from Rydel!{be01}\nOh, it’s glaringly obvious.\nIt says right on your bike…{be01}\nRydel, Rydel, Rydel, Rydel, Rydel,\nRydel, Rydel, Rydel, Rydel, Rydel,{be01}\nRydel, Rydel, Rydel, Rydel, Rydel,\nRydel, Rydel, Rydel, Rydel, Rydel,{be01}\nRydel, Rydel, Rydel, Rydel, Rydel,\nRydel, Rydel, Rydel, Rydel, Rydel,{be01}\nRydel, Rydel, Rydel, Rydel, Rydel,\nRydel, Rydel, Rydel, Rydel, Rydel,{be01}\nRydel, Rydel, Rydel, Rydel, Rydel…\nThat name’s everywhere.{be01}\nYou should ride it around all over\nthe place--it’s good advertising!
+The two roads, one above, one below…{be01}\nA road each for people and Pokémon.\nPerhaps that is right and fair.
+How do you like the way my raven-\ncolored hair streams behind me?{be01}\nI grew my hair out just for that.
+Wouldn’t it be great to ride a Bike\nat full speed on Cycling Road?

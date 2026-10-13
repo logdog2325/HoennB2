@@ -1,0 +1,563 @@
+{
+ "_doc": "Battle Palace lobby (Emerald 25x12). Row 4 is Emerald's wall foot, kept as a solid floor strip (wall_rows keep) with the two doors the attendants lead the player through (Emerald (5,4) singles, (19,4) doubles: door_pwood01 in a dark doorway), the rules board (10,4) = poster01, the PC (14,4) = pc01 (Emerald's MB_PC: Black 2's PC tile) and red lacquer posts where Emerald has its gold pillars (x 0, 3, 7, 12, 17, 21, 24). The reception counters around each attendant (Emerald's white counters, rows 5-6) are wooden blocks; the results terminals (2,7), (16,7) = monitor01; coral rugs in70_mat1 at the attendants (4..6,7), (18..20,7) and the exit (12..13,11).",
+ "map": "BattleFrontier_BattlePalaceLobby",
+ "decomp": "pokeemerald",
+ "style": "pa_palace",
+ "origin": [
+  1,
+  -2
+ ],
+ "wall_rows": "keep",
+ "floor": [
+  [
+   0,
+   4,
+   24,
+   11
+  ]
+ ],
+ "block": [
+  [
+   0,
+   0
+  ],
+  [
+   1,
+   0
+  ],
+  [
+   2,
+   0
+  ],
+  [
+   3,
+   0
+  ],
+  [
+   4,
+   0
+  ],
+  [
+   5,
+   0
+  ],
+  [
+   6,
+   0
+  ],
+  [
+   7,
+   0
+  ],
+  [
+   8,
+   0
+  ],
+  [
+   9,
+   0
+  ],
+  [
+   10,
+   0
+  ],
+  [
+   11,
+   0
+  ],
+  [
+   12,
+   0
+  ],
+  [
+   13,
+   0
+  ],
+  [
+   14,
+   0
+  ],
+  [
+   15,
+   0
+  ],
+  [
+   16,
+   0
+  ],
+  [
+   17,
+   0
+  ],
+  [
+   18,
+   0
+  ],
+  [
+   19,
+   0
+  ],
+  [
+   20,
+   0
+  ],
+  [
+   21,
+   0
+  ],
+  [
+   22,
+   0
+  ],
+  [
+   23,
+   0
+  ],
+  [
+   24,
+   0
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   2,
+   1
+  ],
+  [
+   4,
+   1
+  ],
+  [
+   5,
+   1
+  ],
+  [
+   6,
+   1
+  ],
+  [
+   8,
+   1
+  ],
+  [
+   9,
+   1
+  ],
+  [
+   10,
+   1
+  ],
+  [
+   11,
+   1
+  ],
+  [
+   13,
+   1
+  ],
+  [
+   14,
+   1
+  ],
+  [
+   15,
+   1
+  ],
+  [
+   16,
+   1
+  ],
+  [
+   18,
+   1
+  ],
+  [
+   19,
+   1
+  ],
+  [
+   20,
+   1
+  ],
+  [
+   22,
+   1
+  ],
+  [
+   23,
+   1
+  ],
+  [
+   1,
+   2
+  ],
+  [
+   2,
+   2
+  ],
+  [
+   4,
+   2
+  ],
+  [
+   5,
+   2
+  ],
+  [
+   6,
+   2
+  ],
+  [
+   8,
+   2
+  ],
+  [
+   9,
+   2
+  ],
+  [
+   10,
+   2
+  ],
+  [
+   11,
+   2
+  ],
+  [
+   16,
+   2
+  ],
+  [
+   18,
+   2
+  ],
+  [
+   19,
+   2
+  ],
+  [
+   20,
+   2
+  ],
+  [
+   22,
+   2
+  ],
+  [
+   23,
+   2
+  ],
+  [
+   1,
+   3
+  ],
+  [
+   2,
+   3
+  ],
+  [
+   5,
+   3
+  ],
+  [
+   8,
+   3
+  ],
+  [
+   16,
+   3
+  ],
+  [
+   19,
+   3
+  ],
+  [
+   22,
+   3
+  ],
+  [
+   23,
+   3
+  ]
+ ],
+ "furniture": [
+  {
+   "m": "door_pwood01",
+   "tile": [
+    5,
+    4
+   ],
+   "wall": "N",
+   "gap": -1,
+   "doorway": true,
+   "y": -1,
+   "_what": "singles door (Emerald (5,4))"
+  },
+  {
+   "m": "door_pwood01",
+   "tile": [
+    19,
+    4
+   ],
+   "wall": "N",
+   "gap": -1,
+   "doorway": true,
+   "y": -1,
+   "_what": "doubles door (Emerald (19,4))"
+  },
+  {
+   "m": "poster01",
+   "tile": [
+    10,
+    4
+   ],
+   "wall": "N",
+   "gap": 2,
+   "_what": "rules board (Emerald sign (10,4))"
+  },
+  {
+   "m": "pc01",
+   "tile": [
+    14,
+    4
+   ],
+   "wall": "N",
+   "_what": "PC (Emerald (14,4), MB_PC)"
+  },
+  {
+   "m": "monitor01",
+   "tile": [
+    2,
+    7
+   ],
+   "_what": "singles results (Emerald sign (2,7))"
+  },
+  {
+   "m": "monitor01",
+   "tile": [
+    16,
+    7
+   ],
+   "_what": "doubles results (Emerald sign (16,7))"
+  }
+ ],
+ "blocks": [
+  {
+   "units": [
+    0.25,
+    3.25,
+    0.75,
+    4.25
+   ],
+   "use": "pa_post",
+   "_what": "post (0,4)"
+  },
+  {
+   "units": [
+    3.25,
+    3.25,
+    3.75,
+    4.25
+   ],
+   "use": "pa_post",
+   "_what": "post (3,4)"
+  },
+  {
+   "units": [
+    7.25,
+    3.25,
+    7.75,
+    4.25
+   ],
+   "use": "pa_post",
+   "_what": "post (7,4)"
+  },
+  {
+   "units": [
+    12.25,
+    3.25,
+    12.75,
+    4.25
+   ],
+   "use": "pa_post",
+   "_what": "post (12,4)"
+  },
+  {
+   "units": [
+    17.25,
+    3.25,
+    17.75,
+    4.25
+   ],
+   "use": "pa_post",
+   "_what": "post (17,4)"
+  },
+  {
+   "units": [
+    21.25,
+    3.25,
+    21.75,
+    4.25
+   ],
+   "use": "pa_post",
+   "_what": "post (21,4)"
+  },
+  {
+   "units": [
+    24.25,
+    3.25,
+    24.75,
+    4.25
+   ],
+   "use": "pa_post",
+   "_what": "post (24,4)"
+  },
+  {
+   "tiles": [
+    [
+     2,
+     5
+    ],
+    [
+     3,
+     5
+    ],
+    [
+     2,
+     6
+    ],
+    [
+     3,
+     6
+    ],
+    [
+     4,
+     6
+    ]
+   ],
+   "use": "pa_counter",
+   "_what": "singles counter, left"
+  },
+  {
+   "tiles": [
+    [
+     7,
+     5
+    ],
+    [
+     8,
+     5
+    ],
+    [
+     6,
+     6
+    ],
+    [
+     7,
+     6
+    ],
+    [
+     8,
+     6
+    ]
+   ],
+   "use": "pa_counter",
+   "_what": "singles counter, right"
+  },
+  {
+   "tiles": [
+    [
+     16,
+     5
+    ],
+    [
+     17,
+     5
+    ],
+    [
+     16,
+     6
+    ],
+    [
+     17,
+     6
+    ],
+    [
+     18,
+     6
+    ]
+   ],
+   "use": "pa_counter",
+   "_what": "doubles counter, left"
+  },
+  {
+   "tiles": [
+    [
+     21,
+     5
+    ],
+    [
+     22,
+     5
+    ],
+    [
+     20,
+     6
+    ],
+    [
+     21,
+     6
+    ],
+    [
+     22,
+     6
+    ]
+   ],
+   "use": "pa_counter",
+   "_what": "doubles counter, right"
+  }
+ ],
+ "mats": [
+  {
+   "tex": "in70_mat1",
+   "src": 351,
+   "rect": [
+    4,
+    7,
+    6,
+    7
+   ],
+   "border": 0.25,
+   "border_units": 4,
+   "_what": "the singles attendant's mat"
+  },
+  {
+   "tex": "in70_mat1",
+   "src": 351,
+   "rect": [
+    18,
+    7,
+    20,
+    7
+   ],
+   "border": 0.25,
+   "border_units": 4,
+   "_what": "the doubles attendant's mat"
+  },
+  {
+   "tex": "in70_mat1",
+   "src": 351,
+   "rect": [
+    12,
+    11,
+    13,
+    11
+   ],
+   "border": 0.25,
+   "border_units": 4,
+   "_what": "exit rug over the exit mat (Emerald warps (12,11), (13,11))"
+  }
+ ]
+}

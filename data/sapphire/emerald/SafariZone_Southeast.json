@@ -1,0 +1,223 @@
+{
+ "map": "SafariZone_Southeast",
+ "id": "MAP_SAFARI_ZONE_SOUTH",
+ "layout": "LAYOUT_SAFARI_ZONE_SOUTH",
+ "music": "MUS_SAFARI_ZONE",
+ "region_map_section": "MAPSEC_SAFARI_ZONE",
+ "weather": "WEATHER_NONE",
+ "connections": [
+  {
+   "map": "MAP_SAFARI_ZONE_NORTH",
+   "offset": 0,
+   "direction": "up"
+  },
+  {
+   "map": "MAP_SAFARI_ZONE_SOUTHWEST",
+   "offset": 0,
+   "direction": "left"
+  },
+  {
+   "map": "MAP_SAFARI_ZONE_SOUTHEAST",
+   "offset": 0,
+   "direction": "right"
+  }
+ ],
+ "npcs": [
+  {
+   "local_id": 1,
+   "x": 32,
+   "y": 34,
+   "gfx": "OBJ_EVENT_GFX_CAMPER",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "SafariZone_South_EventScript_ExitAttendant",
+   "texts": {
+    "SafariZone_South_Text_StillHaveTimeExit": "You still have time left. Would you like\\nto exit the SAFARI ZONE now?$",
+    "SafariZone_South_Text_EnjoyTheRestOfYourAdventure": "Please enjoy the rest of your wild\\nadventure!$"
+   },
+   "complex": true
+  },
+  {
+   "local_id": 2,
+   "x": 26,
+   "y": 28,
+   "gfx": "OBJ_EVENT_GFX_BOY_1",
+   "movement": "MOVEMENT_TYPE_WANDER_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "SafariZone_South_EventScript_Boy",
+   "texts": {
+    "SafariZone_South_Text_Boy": "Did you know?\\pIf you put a {POKEBLOCK} in that square box,\\nPOKéMON gather around.$"
+   }
+  },
+  {
+   "local_id": 3,
+   "x": 16,
+   "y": 6,
+   "gfx": "OBJ_EVENT_GFX_MAN_4",
+   "movement": "MOVEMENT_TYPE_FACE_DOWN",
+   "range": [
+    0,
+    0
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "SafariZone_South_EventScript_Man",
+   "texts": {
+    "SafariZone_South_Text_Man": "I want to keep going deeper, but I\\nforgot to bring a BIKE.\\pSomething tells me that rare POKéMON\\nlive in the outlying areas.$"
+   }
+  },
+  {
+   "local_id": 4,
+   "x": 15,
+   "y": 31,
+   "gfx": "OBJ_EVENT_GFX_YOUNGSTER",
+   "movement": "MOVEMENT_TYPE_WANDER_AROUND",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "0",
+   "script": "SafariZone_South_EventScript_Youngster",
+   "texts": {
+    "SafariZone_South_Text_Youngster": "I put a {POKEBLOCK} on the {POKEBLOCK} FEEDER.\\nBut it seems to have disappeared.\\pI guess POKéMON must have eaten it\\nwithout me noticing.$"
+   }
+  },
+  {
+   "local_id": 5,
+   "x": 36,
+   "y": 16,
+   "gfx": "OBJ_EVENT_GFX_CAMPER",
+   "movement": "MOVEMENT_TYPE_FACE_LEFT",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_SAFARI_ZONE_SOUTH_CONSTRUCTION_WORKERS",
+   "script": "SafariZone_South_EventScript_ConstructionWorker1",
+   "texts": {
+    "SafariZone_South_Text_AreaOffLimits1": "This area is still under construction.\\nIt's off-limits, sorry!$"
+   }
+  },
+  {
+   "local_id": 6,
+   "x": 36,
+   "y": 17,
+   "gfx": "OBJ_EVENT_GFX_CAMPER",
+   "movement": "MOVEMENT_TYPE_FACE_LEFT",
+   "range": [
+    1,
+    1
+   ],
+   "trainer_type": "TRAINER_TYPE_NONE",
+   "hide_flag": "FLAG_HIDE_SAFARI_ZONE_SOUTH_CONSTRUCTION_WORKERS",
+   "script": "SafariZone_South_EventScript_ConstructionWorker2",
+   "texts": {
+    "SafariZone_South_Text_AreaOffLimits2": "This area is still under construction.\\nIt's off-limits, sorry!$"
+   }
+  }
+ ],
+ "signs": [],
+ "warps": [
+  {
+   "id": 0,
+   "x": 32,
+   "y": 33,
+   "dest_map": "MAP_ROUTE121_SAFARI_ZONE_ENTRANCE",
+   "dest_warp_id": "0"
+  }
+ ],
+ "coord_events": [],
+ "wild": {
+  "land_mons": {
+   "encounter_rate": 25,
+   "slot_rates": [
+    20,
+    20,
+    10,
+    10,
+    10,
+    10,
+    5,
+    5,
+    4,
+    4,
+    1,
+    1
+   ],
+   "mons": [
+    {
+     "species": "SPECIES_ODDISH",
+     "min": 25,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_ODDISH",
+     "min": 27,
+     "max": 27
+    },
+    {
+     "species": "SPECIES_GIRAFARIG",
+     "min": 25,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_GIRAFARIG",
+     "min": 27,
+     "max": 27
+    },
+    {
+     "species": "SPECIES_NATU",
+     "min": 25,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_DODUO",
+     "min": 25,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_GLOOM",
+     "min": 25,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_WOBBUFFET",
+     "min": 27,
+     "max": 27
+    },
+    {
+     "species": "SPECIES_PIKACHU",
+     "min": 25,
+     "max": 25
+    },
+    {
+     "species": "SPECIES_WOBBUFFET",
+     "min": 27,
+     "max": 27
+    },
+    {
+     "species": "SPECIES_PIKACHU",
+     "min": 27,
+     "max": 27
+    },
+    {
+     "species": "SPECIES_WOBBUFFET",
+     "min": 29,
+     "max": 29
+    }
+   ]
+  }
+ }
+}

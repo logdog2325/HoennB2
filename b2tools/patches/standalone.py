@@ -16,6 +16,13 @@
    these maps had doors): it gets its map's zone as parent, place name and music.
 3. Their area's own map texture set (map_textures): Hoenn's set 3 plus the stand-in ground textures the groups' look
    options name (world.json group 'textures'), at a/0/1/4 entry <area>, the area record pointed at it.
+4. Seasons (seasonal_areas, Birch's seasons question 2026-10-18, notes/SEASONS.md): their areas (407, 408: fixed,
+   summer) are not seasonal, so their zones move to two seasonal area groups of Black 2's that no zone uses
+   (records b..b+3 = spring..winter, AreaData_HasSeasons: 2 <= id < 0x11a), each record a copy of its area's with the
+   season's lights and texture set: Hoenn's set for that season (hoenn_textures' sets 2-5) plus the same stand-in
+   textures (each from its Black 2 area's set for that season when it has the same texture, as hoenn_textures does).
+   The four sets are shared by both groups (written to the first group's entries b..b+3). Summer is the same bytes
+   as before, so with the summer lock (Birch's answer NO, older saves) nothing changes.
 Apply it last (after centers); patches/hoenn_world.py has already put the groups' chunks, matrices and zones in."""
 import os, sys, json, struct, glob
 import narcio, zoneheaders
@@ -115,6 +122,64 @@ def map_textures(files, world, raw):
     narcio.save(files, 14, sets)
     return 'map textures: ' + ', '.join(out)
 
+HOENN_AREA = 2                       # the overworld's seasonal area (records 2-5: lights 140-143, sets 2-5)
+
+def seasonal_areas(files, world, raw):
+    """Point 4 of the module doc. raw = a/0/1/3 (edited in place). The groups: the first free ones (no zone header
+    names any of their four ids, no used area's record names their texture sets), 6 and 10 in all three versions."""
+    import nsbtx
+    from hoenn_textures import season_source
+    areas = sorted({g['area'] for g in world['standalone']})
+    headers, hentries = zoneheaders.load(files)
+    n = len(raw) // 10
+    rec = lambda a: struct.unpack_from('<HH', raw, a * 10)           # (building pack, texture set)
+    seasonal = lambda a: 2 <= a < 0x11a
+    used = set()
+    for h in headers:
+        if h['area'] in areas: continue
+        used |= set(range(h['area'], h['area'] + 4)) if seasonal(h['area']) else {h['area']}
+    used_sets = {rec(a)[1] for a in used if a < n}
+    free = [b for b in range(2, 0x11a, 4) if not (set(range(b, b + 4)) & (used | used_sets | set(areas)))]
+    assert len(free) >= len(areas), f'only {len(free)} free seasonal area groups: {free}'
+    groups = dict(zip(areas, free))
+    # the four texture sets: Hoenn's for the season (hoenn_textures) + the stand-in textures for the season
+    extra = {}
+    for g in world['standalone']: extra.update(g.get('textures', {}))
+    sets = narcio.load(files, 14)
+    vraw = open(os.path.join(SRC, 'a', '0', '1', '3'), 'rb').read()
+    vsets = narcio.load(SRC, 14)
+    vload = lambda i: vsets[i]
+    first = groups[areas[0]]
+    tex_of, sizes = [], []
+    for season in range(4):
+        base = struct.unpack_from('<H', raw, (HOENN_AREA + season) * 10 + 2)[0]
+        if not extra:                                                  # (map_textures: no stand-ins, set 3 itself)
+            tex_of.append(base); continue
+        adds = []
+        for name, ts in sorted(extra.items()):
+            pal = name + '_pl' if name + '_pl' in {p for p, _ in nsbtx._parse(vload(int(ts)))['pals']} else None
+            alt = int(ts) if season == 1 else season_source(vraw, vload, int(ts), name, pal, season)
+            adds.append((vload(alt), name, pal))                       # (summer: map_textures' own source)
+        sets[first + season] = nsbtx.merge(sets[base], adds)
+        tex_of.append(first + season); sizes.append(len(sets[first + season]))
+    if extra:
+        assert sets[first + 1] == sets[areas[0]], 'the summer set differs from map_textures\' (it must stay the same)'
+        narcio.save(files, 14, sets)
+    for a, b in groups.items():
+        for season in range(4):
+            r = bytearray(raw[a * 10:a * 10 + 10])                     # pack, srt anim, flags: the area's own
+            struct.pack_into('<H', r, 2, tex_of[season])
+            r[7] = raw[(HOENN_AREA + season) * 10 + 7]                  # the season's lights (140-143)
+            raw[(b + season) * 10:(b + season) * 10 + 10] = r
+    moved = {}
+    for z, h in enumerate(headers):
+        if h['area'] in groups:
+            moved.setdefault(h['area'], []).append(z); h['area'] = groups[h['area']]
+    zoneheaders.save(files, headers, hentries)
+    sizes = ', '.join(map(str, sizes)) or "area 2's"
+    return 'seasons: ' + ', '.join(f'area {a} -> {b}-{b + 3} ({len(moved.get(a, []))} zones)' for a, b in groups.items()) + \
+        f'; texture sets {tex_of} ({sizes} B)'
+
 def fix_room_exits(files, world):
     import version                  # (data/versions.json door aliases: version.door_alias)
     """Point rooms' exits at the warp-only maps' doors (see module doc)."""
@@ -177,6 +242,7 @@ def apply(files):
     for g in world['standalone']:   # a group's own terrain SRT animation (u8 at +4, a/0/6/8 entry; AreaData_GetSRTAnmID,
         if g.get('srt_anim') is not None:      # ov036 fieldmap.c:1509): Mt. Chimney's area 407 takes Reversal
             raw[g['area'] * 10 + 4] = g['srt_anim']    # Mountain's (29: its lava scrolls; buildings_audit 2026-10-08)
+    tex_msg += '; ' + seasonal_areas(files, world, raw)
     if os.path.islink(a13): os.unlink(a13)
     open(a13, 'wb').write(raw)
     msg += '; ' + tex_msg + '; ' + fix_room_exits(files, world)

@@ -25,7 +25,7 @@
  "palette": "t4x4x12",
  "name": "wally",
  "note": "Wally",
- "source": "community: src/sprites/community/incoming/wally_sheet_CalculusNova.png by CalculusNova (walking frames without the backpack; right = left mirrored)",
+ "source": "community: src/sprites/community/incoming/wally_sheet_Kymotonian_KleinStudio.png by Kymotonian and Klein Studio (8 colour pairs merged: EXTRA_MERGES[87])",
  "colours": 14,
  "merged_colours": [],
  "made_by": "b2tools/sprite_community.py"

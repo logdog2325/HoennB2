@@ -43,7 +43,7 @@ If there’s something we need in the\nMuseum, we should take it all!
 Hey, you there!\nDon’t butt in!
 A long line, huh?{be01}\nIt reminds me of the times I lined up to\nbuy smash-hit games...
 Why are we even lining up and paying?\nWe should just march in!
-Do you know the TM Flame Charge?{be01}\nOur group, we love the TM Flame\nCharge.{be01}\nOne of our members will give it to you.\nCome back and show me if you get it.{be01}\nWe’ll accept you as a member and sell\nyou good stuff in secrecy.
+Do you know the TM Secret Power?{be01}\nOur group, we love the TM\nSecret Power.{be01}\nOne of our members will give it to you.\nCome back and show me if you get it.{be01}\nWe’ll accept you as a member and sell\nyou good stuff in secrecy.
 Ty: Okay, Capt. Stern, a big smile\nfor the camera!
 Gabby: I see, I see. You’ve had a most\ninvaluable experience...
 Capt. Stern: Yes, indeed. We intend to\nmove ahead with our exploration.

@@ -1,0 +1,44 @@
+I welcome you to the Battle Tent\nVerdanturf Site!{be01}\nHere, the Trainer’s trust toward\nPokémon is tested.
+Do you wish to take the Verdanturf\nBattle Tent challenge?
+In the Verdanturf Battle Tent,\nthere is one crucial rule that must{be00}\nbe obeyed.{be01}\nTrainers are permitted only to switch\ntheir Pokémon in and out.{be01}\nTrainers are otherwise forbidden to\ncommand their Pokémon.{be01}\nThe Pokémon are to behave according\nto their nature and battle on their own.{be01}\nYou must put your trust in your\nPokémon and watch over them.{be01}\nIf you achieve the honor of beating\nthree Trainers in succession,{be00}\nwe will present you with a prize.{be01}\nIf you want to interrupt your\nchallenge, please save the game.{be01}\nIf you don’t save before interrupting,\nyou will be disqualified.
+Sigh…{be01}\nYou do not have the three Pokémon\nrequired for the challenge.{be01}\nTo enter, you must provide three\ndifferent kinds of Pokémon.{be01}\nThey also must not be holding\nthe same kinds of items.{be01}\nEggs{0100:1} ineligible.{be01}\nCome back when you have made\nyour preparations.
+Good. Now, you must select your\nthree Pokémon.
+I must save before I show you to\nthe Battle Tent. Is that okay?
+Good.\nNow, follow me.
+When you have fortified your heart\nand Pokémon, you must return.
+Sigh…{be01}\nYou failed to save before you ended\nyour challenge the last time.{be01}\nAs a result, your challenge has been\ndisqualified. It is most unfortunate.
+To achieve a 3-win streak…{be01}\nThe bonds that bind your heart with\nyour Pokémon seem firm and true.
+Your feat will be recorded.\nI must ask you to briefly wait.
+For the feat of your 3-win streak,\nwe present you with this prize.
+{0100:0} received the prize\n{0100:1}.
+You seem to have no space for\nour prize.{be01}\nYou should return when you have\norganized your Bag.
+I feel privileged for having seen\nyour Pokémon’s exploits.{be01}\nThe results will be recorded.\nI must ask you to briefly wait.
+We have been waiting for you…
+I must save before I show you to\nthe Battle Hall. Is that okay?
+When you have fortified your heart\nand Pokémon, you must return.
+Challenge
+Info
+Exit
+My feelings toward my Pokémon…\nThe attraction runs deep…{be01}\nOh, hi, you didn’t see that, did you?\nWell, it doesn’t matter.{be01}\nHow would you like this TM for\nyour Pokémon?
+My feelings toward my Pokémon…\nI’m sure the attraction is mutual!{be01}\nThey battle exactly the way I want\nthem to!
+What kind of moves have you taught\nyour Pokémon?{be01}\nI think you would give yourself\nan advantage if they knew how to{be00}\nheal or protect themselves.
+If it doesn’t like a certain move,\na Pokémon will be reluctant to use it.{be01}\nIt doesn’t matter how strong it is,\neither.{be01}\nFor example, a Pokémon with a Gentle\nnature probably won’t enjoy hurting{be00}\nits opponents.{be01}\nIf it can’t seem to live up to its\npotential, it’s probably failing at{be00}\nusing a disliked move against its will.
+My big sister is gentle usually.\nBut when she gets angry,{be00}\nshe’s really, really scary!{be01}\nI bet a gentle Pokémon will be scary\nif it gets angry!
+Scott: Hey there, {0100:0}!\nI thought I might see you here.{be01}\nA Battle Tent’s a place where\nyou can meet tough Trainers.{be01}\nIt doesn’t matter what the rules are,\nor how battles are waged, either.{be01}\n{0100:0}, I expect you to do\nthe best you can!
+Scott: I visit here regularly in hopes\nof seeing tough Trainers in action{be00}\nin whatever the situation.
+Too bad!\nThe Bag is full…
+The Verdanturf Battle Tent\nrules are listed.
+Which heading do you want to read?
+At this Battle Tent, the levels of\nyour opponents will be adjusted to{be00}\nmatch the levels of your Pokémon.{be01}\nHowever, no Trainer you face will\nhave any Pokémon below Level 30.
+Here, Pokémon are required to think\nand battle by themselves.{be01}\nUnlike in the wild, Pokémon that live\nwith people behave differently{be00}\ndepending on their nature.
+Depending on its nature, a Pokémon\nmay prefer to attack no matter what.{be01}\nAnother Pokémon may prefer to protect\nitself from any harm.{be01}\nYet another may enjoy vexing or\nconfounding its foes.{be01}\nDue to its nature, a Pokémon\nwill have favorite moves that it is good{be00}\nat using.{be01}\nIt may also dislike certain moves that\nit has trouble using.
+There are offensive moves that inflict\ndirect damage on the foe.{be01}\nThere are defensive moves that are\nused to prepare for enemy attacks or{be00}\nused to heal HP and so on.{be01}\nThere are also other somewhat-odd\nmoves that may enfeeble the foes with{be00}\nstat problems including poison and {be00}\nparalysis.{be01}\nPokémon will consider using moves in\nthese three categories.
+When not under command by its Trainer,\na Pokémon may be unable to effectively{be00}\nuse certain moves.{be01}\nA Pokémon is not good at using any\nmove that it dislikes.{be01}\nIf a Pokémon only knows moves that\ndo not match its nature, it will often{be00}\nbe unable to live up to its potential.
+Depending on its nature, a Pokémon may\nstart using moves that don’t match its{be00}\nnature when it is in trouble.{be01}\nIf a Pokémon begins behaving oddly\nin a pinch, watch it carefully.
+Battle Trainers
+Battle Basics
+Pokémon Nature
+Pokémon Moves
+Underpowered
+When In Danger
+Exit

@@ -54,6 +54,8 @@ def ground_y(world_dir, wx, wz, prefix=''):
     from terrain.heights import NORMALS, OFFS
     path = os.path.join(world_dir, 'cells', f'{prefix}{wx // 32:02d}_{wz // 32:02d}', 'collision.per')
     if not os.path.exists(path): return 0
+    dy = deck_y(world_dir, wx, wz, prefix)       # (a walk-under bridge: its deck, not the water under it)
+    if dy is not None: return dy
     d = open(path, 'rb').read()
     a, b, _, _ = struct.unpack_from('<HHHH', d, 4 + 8 * ((wz % 32) * 32 + wx % 32))
     nx, ny, nz = NORMALS[a >> 2]
@@ -61,6 +63,23 @@ def ground_y(world_dir, wx, wz, prefix=''):
     return round(-(nx * x - nz * z + OFFS[b]) / ny)
 
 SURF_CLASSES = {0x3d, 0x3e, 0x3f, 0x40, 0x42, 0x43, 0x94, 0x95, 0x96, 0x97}   # (outdoor_check.py's surf collision classes)
+
+def deck_y(world_dir, wx, wz, prefix=''):
+    """Height (units) of the ground layer of an outdoor tile with two collision layers (b2tools/world.py bridge_layers:
+    a walk-under bridge's deck or the land at its ends, collision1.per), None elsewhere. Black 2 takes the layer nearest
+    an actor's height: a person (entity y 0) or a trigger on a deck over water nearer 0 than the deck needs the deck's
+    height (Route 110's Cycling Road is at 0 itself; world.py bridge_layers)."""
+    import struct
+    sys.path.insert(0, os.path.join(ROOT, 'b2tools'))
+    from terrain.heights import NORMALS, OFFS
+    d = os.path.join(world_dir, 'cells', f'{prefix}{wx // 32:02d}_{wz // 32:02d}')
+    if not os.path.exists(os.path.join(d, 'collision1.per')): return None
+    o = 4 + 8 * ((wz % 32) * 32 + wx % 32)
+    r0, r1 = (struct.unpack_from('<HHHH', open(os.path.join(d, f), 'rb').read(), o) for f in ('collision.per', 'collision1.per'))
+    if r0 == r1 or r1[3] & 1: return None
+    nx, ny, nz = NORMALS[r1[0] >> 2]
+    x, z = (wx % 32) * 16 + 8 - 256, (wz % 32) * 16 + 8 - 256
+    return round(-(nx * x - nz * z + OFFS[r1[1]]) / ny)
 
 def sign_y(world_dir, wx, wz, prefix='', dir_=4):
     """y of an outdoor sign / hidden item (BG event): the game reads one when the tile in front of the player is its
@@ -159,6 +178,9 @@ def version_keys(o):
 
 def apply(files):
     paths = version.overlay(os.path.join(ROOT, 'data', 'story'), '*.json')
+    if os.environ.get('HOENN_BERRY_PLANTING', '1') != '0':      # berry planting (notes/BERRY_PLANTING.md): Gen 3's tree actors
+        paths = [p for p in paths if os.path.basename(p) != 'berry_spots.json'] + \
+            version.overlay(os.path.join(ROOT, 'data', 'story', 'berries'), 'berry_trees.json')   # (Emerald: emerald/)
     paths += [p for p in os.environ.get('HOENN_EXTRA_STORY', '').split(':') if p]   # test builds: more object files
     objs = [(os.path.basename(p), version_keys(o)) for p in paths for o in json.load(open(p)).get('objects', [])]
     if not objs: return 'no story objects (data/story/*.json)'
@@ -233,6 +255,8 @@ def apply(files):
                        flag=_num(o.get('flag', 0), names), script=o['script'], dir=o.get('dir', 1), p0=o.get('p0', 0),
                        p1=o.get('p1', 0), p2=o.get('p2', 0), areaw=o.get('areaw', 0), areah=o.get('areah', 0),
                        rail=0, x=x, z=z, y=0)
+            if o.get('_main'):         # (on a walk-under bridge's deck: its height; a person's y is fx32 (Black 2's own
+                npc['y'] = (deck_y(world_dir, x, z) or 0) * 4096    # people: 65536 = 16 units), triggers' and signs' units)
             assert npc['uid'] not in {n['uid'] for n in e['npcs']}, f'{src}: uid {npc["uid"]} already in zone {zone}'
             e['npcs'].append(npc)
         elif kind == 'trigger':

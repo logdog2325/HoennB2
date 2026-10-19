@@ -70,6 +70,10 @@ WALK = [
     ('interior', 'THROUGH', r'back-wall strip', "the user's option C (2026-10-11): where a bare stretch of the back wall's "
      "lower row lies between pieces, the wall stays flat and the strip in front of it is walkable, one row more than "
      "Sapphire (models_interior.bare_wall_tiles, room.json 'walk_up')"),
+    ('interior', 'THROUGH', r'^BattleTower_BattleRoom \(4, 1\): THROUGH move \(4, 1\) -> \(5, 1\)',
+     "the Battle Tower's Battle Room is played by script only (src/field_scripts/0030_room_BattleTower_BattleRoom.s: "
+     "the player is paused from the arrival to the warp or reset): (4,1) is the opponent's door (Sapphire "
+     "MB_ANIMATED_DOOR, no warp) and (5,1) the opponent's own tile; nobody free walks there (Emerald v1.1 list)"),
 ]
 
 
@@ -285,12 +289,12 @@ def outdoor(wd, report, people, only_maps=None, families=None):
         doors = {((d['x'] - 8) // 16, (d['z'] - 8) // 16) for d, z in oc._doors(f)}
         cand = defaultdict(list)
         for k in reach_b:
-            r = f.rec(*k)
+            r = f.land(*k)                     # (a two-layer tile: its land layer; outdoor_check Frame.rec / land)
             if not oc.b2_land(r): continue
-            y = f.y(*k)
+            y = f.y(*k, r)
             for d in oc.DIRS:
                 n = (k[0] + d[0], k[1] + d[1])
-                rn = f.rec(*n)
+                rn = f.rec(*n, y)
                 if rn is None or not oc.in_only(f, *n) or oc.b2_land(rn) or oc.b2_surf(rn) or rn[2] in oc.LEDGE: continue
                 if n in warps or n in doors: continue
                 cand[n].append((k, y))

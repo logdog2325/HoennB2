@@ -6,6 +6,8 @@ next to the registry's .nsbmd files, Black 2's own pack-0 models converted once 
     python3 exterior_check.py holes   [WORLD]        spots the game camera sees through (nothing drawn: black)
     python3 exterior_check.py render  MAP [OUT.png] [WORLD]   camera-angle render of one map, terrain + buildings
     python3 exterior_check.py buildings [WORLD]      building models vs the ground and their door tiles
+    python3 exterior_check.py doors [MODEL ...]      dark doorways (buildings.door_recess): darkness round a CLOSED door
+                                                     from any camera angle (must be none), and how dark the open doorway is
 
 WORLD defaults to $HOENN_WORLD_DIR or work/agents/exterior/world.
 
@@ -118,7 +120,8 @@ def _retail_dae(res, bmd):
     open(os.path.join(d, 'm.nsbmd'), 'wb').write(bmd)
     open(os.path.join(d, 't.nsbtx'), 'wb').write(b2files.building_textures(FILES, 0))
     subprocess.run([APICULA, 'convert', os.path.join(d, 'm.nsbmd'), os.path.join(d, 't.nsbtx'), '-o',
-                    os.path.join(d, 'dae'), '-f', 'dae'], capture_output=True)
+                    os.path.join(d, 'dae'), '-f', 'dae', '--overwrite'], capture_output=True)   # (an emptied cache dir: apicula
+                                                                                   # refuses to write into it otherwise)
     dae = [os.path.join(d, 'dae', f) for f in os.listdir(os.path.join(d, 'dae')) if f.endswith('.dae')]
     return dae[0] if dae else None
 
@@ -472,6 +475,51 @@ def buildings(wd):
                             door_centre_x=round(door_x, 1), door_tile=near, dx_off=round(off, 1) if off is not None else None))
     return out
 
+def doors(only=(), pitches=(30, 37, 45, 52, 58), yaws=(-30, -15, 0, 15, 30)):
+    """Dark doorways (buildings.door_recess, dark doorways 2026-10-18): every door building of the enabled registries and
+    data/buildings/standalone.json (our models: work/buildings or HOENN_BUILDINGS_DIR) with its door model CLOSED, seen
+    from the field camera's angles (pitch 30-58 = sy 0.58-1.6 head on, more to the side; yaw +-30), rendered with and
+    without the dark quad (its triangles have one uv for all three corners: nothing else does); a pixel that differs is
+    darkness showing round a closed door. Also the share of the door's own silhouette that is dark with the door left
+    out (pitch 45, head on). Returns [(model, door, rim pixels at 3 px a unit, dark share, worst (pitch, yaw))]."""
+    import buildings as B
+    regs = []
+    sys.path.insert(0, os.path.join(HERE, 'patches'))
+    from area2_buildings import groups
+    for g in list(groups()) + ['standalone']:
+        for m in json.load(open(os.path.join(ROOT, 'data', 'buildings', f'{g}.json')))['models']:
+            if m['door'] in B.DOOR_SHAPE: regs.append(m)
+    out = []
+    for r in regs:
+        key = '/'.join(r['model'][:-6].split('/')[-2:])
+        if only and key not in only: continue
+        path = os.path.join(ROOT, r['model'][:-5] + 'dae')
+        if os.environ.get('HOENN_BUILDINGS_DIR'): path = os.path.join(os.environ['HOENN_BUILDINGS_DIR'], key + '.dae')
+        full, nodark = [], []
+        for n, img, P, UV, A in load_dae(path):
+            const = np.abs(UV - UV[:, :1]).max(axis=(1, 2)) < 1e-6
+            full.append((n, img, P, UV, A, 'm'))
+            if (~const).any(): nodark.append((n, img, P[~const], UV[~const], A[~const], 'm'))
+        door = [(n, img, P + np.array([r['dx'], 0, r['dz']]), UV, A, 'door') for n, img, P, UV, A in model_parts(r['door'])]
+        o = np.array([r['dx'] + {93: 0, 101: -10}.get(r['door'], -8), 0, r['dz']])
+        worst, at = 0, None
+        for pitch in pitches:
+            for yaw in yaws:
+                c, s_ = math.cos(math.radians(yaw)), math.sin(math.radians(yaw))
+                R = np.array([[c, 0, s_], [0, 1, 0], [-s_, 0, c]])
+                tr = lambda ps: [(n, img, (P - o) @ R.T, UV, A, src) for n, img, P, UV, A, src in ps]
+                a = np.asarray(render(tr(full + door), (-20, -12, 20, 12), 3.0, pitch), int)
+                b = np.asarray(render(tr(nodark + door), (-20, -12, 20, 12), 3.0, pitch), int)
+                d = int((np.abs(a - b).sum(-1) > 0).sum())
+                if d > worst: worst, at = d, (pitch, yaw)
+        tr0 = lambda ps: [(n, img, P - o, UV, A, src) for n, img, P, UV, A, src in ps]
+        shut = np.asarray(render(tr0(full + door), (-20, -12, 20, 12), 3.0, 45), int)
+        opened = np.asarray(render(tr0(full), (-20, -12, 20, 12), 3.0, 45), int)
+        sil = np.abs(shut - opened).sum(-1) > 0
+        share = float((sil & (opened.max(-1) < 70)).sum() / max(sil.sum(), 1))
+        out.append((key, r['door'], worst, share, at))
+    return out
+
 def probe(wd, tx, tz, r=0):
     """Triangles (terrain + buildings) over world tile (tx, tz) (+- r tiles): material, source, y range, normal."""
     cx, cz = tx // 32, tz // 32
@@ -551,6 +599,12 @@ if __name__ == '__main__':
     elif cmd == 'probe':
         for row in probe(world_dir(), int(sys.argv[2]), int(sys.argv[3]), int(sys.argv[4]) if len(sys.argv) > 4 else 0):
             print(*row)
+    elif cmd == 'doors':
+        res = doors(sys.argv[2:])
+        for key, door, rim, share, at in res:
+            print(f'{key:24s} door {door:3d}  closed: {rim} px of darkness round it' + (f' (worst at pitch/yaw {at})' if rim else '')
+                  + f';  open: {share:.0%} of the doorway dark')
+        print(f'{sum(1 for r in res if r[2])} of {len(res)} doors show darkness round the closed door')
     elif cmd == 'buildings':
         for b in buildings(world_dir(sys.argv[2] if len(sys.argv) > 2 else None)):
             print(b)

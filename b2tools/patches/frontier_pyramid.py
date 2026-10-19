@@ -28,7 +28,9 @@ apply_code(code):
      0x02018190 (PK_LoadPlayerParty) -> PY_I_LoadParty; arm9 0x020182b8 / 0x02018388 / 0x020183a0 (PK_LoadTrainer) ->
      PY_I_LoadTrainer; ov167 0x021b3b28 (PK_TrainerMsgExists) and the battle's trainer-line call (PK_TrainerMsgLoad) ->
      PY_I_MsgExists / PY_I_MsgLoad; script command 530 (Cmd_0212, unused) -> PY_O_Cmd, EVCMD_PERM_TABLE[530] 1 -> 7
-     (allowed in zone inits and field loads too);
+     (allowed in zone inits and field loads too); ov012 0x0215bd8a / 0x0215bdc6 (the field Bag's launcher: its start
+     data) -> PY_I_BagNew and 0x0215bd9c (its pocket after the party screen) -> PY_I_BagPocket: in the Pyramid the
+     Battle Bag opens on its first pocket with items, never an empty one (2026-10-18; frontier_pyramid.c bag_pocket);
   7. save block 0x3e (Black 2's Unity Tower block: 16 bytes, unused in Hoenn): size 16 -> 16 + the Pyramid's state
      (frontier_pyramid.c PySave); its 256-byte slot keeps every other block where it was.
 Savestates made on other ROMs lack all this (ITCM, ov036): test from cold-boot states of this ROM."""
@@ -53,6 +55,8 @@ BLOCK3E_SIZE_FN = 0x0200F128                                         # UnityTowe
 STEP_CALLS, ENC_CALL = (0x021815E6, 0x02181AFE), 0x021A196E
 PARTY_CALLS, TRAINER_CALLS = (0x02018082, 0x02018190), (0x020182B8, 0x02018388, 0x020183A0)
 MSGEX_CALL = 0x021B3B28
+BAG_NEW_CALLS, BAG_NEW = (0x0215BD8A, 0x0215BDC6), 0x02034AD0       # ov012 func_ov012_0215bd48 (the field Bag's launcher)
+BAG_POCKET_CALL, BAG_SET_POCKET = 0x0215BD9C, 0x020088A4             #   -> func_02034ad0, func_020088a4 (2026-10-18)
 BTL_TRAINER_MSG, BTL_TRAINER_MSG_END = 0x021D0288, 0x021D0288 + 68
 ZONE_LOBBY, ZONE_FLOOR, ZONE_TOP = 347, 388, 420
 TR, TR_BRAIN, BRAIN_CLASS = 532, 533, 30
@@ -156,7 +160,7 @@ CFLAGS = ['--target=thumbv5te-none-eabi', '-mthumb', '-march=armv5te', '-Os', '-
           '-fno-jump-tables', '-fno-unwind-tables', '-fno-asynchronous-unwind-tables', '-fno-exceptions', '-fno-common',
           '-mno-unaligned-access', '-Wall', '-Werror', '-Wno-unused-function']
 ENTRIES = ['PY_Cmd', 'PY_RDHook', 'PY_Step', 'PY_EncSetup', 'PY_SaveMenu', 'PY_LoadParty', 'PY_LoadTrainer',
-           'PY_MsgExists', 'PY_MsgLoad']
+           'PY_MsgExists', 'PY_MsgLoad', 'PY_BagOpen']
 HDR = 64
 
 def check_ops():
@@ -172,11 +176,12 @@ def build_engine(d, workdir):
     open(os.path.join(workdir, 'frontier_pyramid_data.h'), 'w').write(data_header(d))
     obj = os.path.join(workdir, 'frontier_pyramid.o')
     check_ops()
-    subprocess.run([f'{LLVM}/clang', *CFLAGS, '-fropi', '-I', workdir, '-c', os.path.join(HERE, 'frontier_pyramid.c'),
+    compat = _mod('save_compat_py', 'save_compat.py').cflags()   # HOENN_SAVE_COMPAT=1: the save offsets (notes/SAVE_PKHEX.md)
+    subprocess.run([f'{LLVM}/clang', *CFLAGS, '-fropi', *compat, '-I', workdir, '-c', os.path.join(HERE, 'frontier_pyramid.c'),
                     '-o', obj], check=True)
     fd = _mod('frontier_fd_py', 'frontier_factory_dome.py')
     blob, sym = fd.link_pic(obj)
-    state = 0x9EC + 4 + 10 + 5 + 16 + 16 * 4 + 4 + 128 + 64            # sizeof(State) (frontier_pyramid.c), rounded up
+    state = 0x9EC + 4 + 10 + 5 + 16 + 16 * 4 + 4 + 128 + 0x1A + 64     # sizeof(State) (frontier_pyramid.c), rounded up
     size = HDR + len(blob)
     ents = [HDR + (sym[e] & ~1) for e in ENTRIES]
     head = struct.pack('<4sIII', b'PYRM', size, ((size + 3) & ~3) + state, len(ents)) + struct.pack(f'<{len(ents)}I', *ents)
@@ -332,7 +337,8 @@ def apply_code(code):
     pi, itcm = _load(code, 'itcm.bin'); assert len(itcm) == size
     _save(pi, itcm + bytes(end - base))
     open(yml, 'w').write(re.sub(r'^code_size: \d+$', f'code_size: {end - ITCM_BASE}', text, flags=re.M))
-    defs = dict(PY_ENG_ADDR=base, PY_TR=TR, PY_TR_BRAIN=TR_BRAIN, **nxt)
+    assert all(_target(ov12, OV012, a) == BAG_NEW for a in BAG_NEW_CALLS) and _target(ov12, OV012, BAG_POCKET_CALL) == BAG_SET_POCKET
+    defs = dict(PY_ENG_ADDR=base, PY_TR=TR, PY_TR_BRAIN=TR_BRAIN, BAG_NEW=BAG_NEW, BAG_SET_POCKET=BAG_SET_POCKET, **nxt)
     # 5b. ov012's dead command handlers (530, 531): the hooks that run in battles (ov036 is unloaded then)
     e530, e531 = EVCMD_TABLE - OV012 + 4 * PY_COMMAND, EVCMD_TABLE - OV012 + 4 * (PY_COMMAND + 1)
     assert struct.unpack_from('<II', ov12, e530) == (CMD_OLD, CMD531_OLD), 'EVCMD_TABLE[530/531] are not Black 2\'s'
@@ -359,21 +365,26 @@ def apply_code(code):
     for s in TRAINER_CALLS: redirect(arm9, ARM9, s, isym['PY_I_LoadTrainer'])
     redirect(ov167, OV167, MSGEX_CALL, isym['PY_I_MsgExists'])
     redirect(ov167, OV167, ld[0], isym['PY_I_MsgLoad'])
+    for s in BAG_NEW_CALLS: redirect(ov12, OV012, s, isym['PY_I_BagNew'])     # the Battle Bag's first pocket with items
+    redirect(ov12, OV012, BAG_POCKET_CALL, isym['PY_I_BagPocket'])
     struct.pack_into('<II', ov12, e530, osym['PY_O_Cmd'] | 1, osym['PY_O_Cmd'] | 1)   # (531: no script uses it)
     # EVCMD_PERM_TABLE[530] 1 -> 7: the floor's and the top's zone init (MapScript 2) and field loads (3/4) run
     # EmPyr; with Black 2's 1 the guard (FieldScript_OpcodeGuard) stops the VM there (tested: black screen on the floor)
     assert ov12[EVCMD_PERM_TABLE - OV012 + PY_COMMAND] == 1
     ov12[EVCMD_PERM_TABLE - OV012 + PY_COMMAND] = 7
-    # 7. save block 0x3e: 16 -> 16 + the Pyramid's state
+    # 7. save block 0x3e: 16 -> 16 + the Pyramid's state. HOENN_SAVE_COMPAT=1 (save_compat.py, notes/SAVE_PKHEX.md):
+    # it keeps Black 2's 16, the state after its footer (save_compat's hooks)
+    compat = _mod('save_compat_py2', 'save_compat.py').enabled()
     o = BLOCK3E_SIZE_FN - ARM9
     assert struct.unpack_from('<HH', arm9, o) == (0x2010, 0x4770), 'save block 0x3e\'s size function is not Black 2\'s'
     assert 16 + SAVE_STATE + 4 <= 256
-    struct.pack_into('<H', arm9, o, 0x2000 | (16 + SAVE_STATE))
+    if not compat:
+        struct.pack_into('<H', arm9, o, 0x2000 | (16 + SAVE_STATE))
     for p, dd in ((p9, arm9), (p36, ov36), (p12, ov12), (p167, ov167)): _save(p, dd)
     return (f'frontier_pyramid: ITCM 4 B at {base:#x} (arena from {end:#x}, {0x02000000 - end} B left); ov012 {len(iblob)} of '
             f'{OV012_HI - OV012_LO} B at {OV012_LO:#x}; ov036 {len(oblob)} of {OV036_HI - OV036_LO} B at {OV036_LO:#x}; '
             f'command {PY_COMMAND} EmPyr; '
-            f'{2 + len(STEP_CALLS) + len(PARTY_CALLS) + len(TRAINER_CALLS) + 3} calls redirected; save block 0x3e 16 -> {16 + SAVE_STATE} B')
+            f'{2 + len(STEP_CALLS) + len(PARTY_CALLS) + len(TRAINER_CALLS) + 3 + len(BAG_NEW_CALLS) + 1} calls redirected; save block 0x3e ' + ('16 B, state after its footer (HOENN_SAVE_COMPAT=1)' if compat else f'16 -> {16 + SAVE_STATE} B'))
 
 if __name__ == '__main__':          # python3 frontier_pyramid.py: the sizes (dummy data members)
     os.environ.setdefault('HOENN_VERSION', 'emerald')
@@ -386,7 +397,7 @@ if __name__ == '__main__':          # python3 frontier_pyramid.py: the sizes (du
         engine, size, state = build_engine(d, tmp)
         nxt = dict(NEXT_PARTY=0x01FFF001, NEXT_TRAINER=0x01FFF101, NEXT_MSGEX=0x01FFF201, NEXT_STEP=0x01FFF301,
                    NEXT_ENC=0x01FFF401, NEXT_MSGLD=0x01FFF501)
-        defs = dict(PY_ENG_ADDR=0x01FFFE00, PY_TR=TR, PY_TR_BRAIN=TR_BRAIN, **nxt)
+        defs = dict(PY_ENG_ADDR=0x01FFFE00, PY_TR=TR, PY_TR_BRAIN=TR_BRAIN, BAG_NEW=BAG_NEW, BAG_SET_POCKET=BAG_SET_POCKET, **nxt)
         ib, _ = build_stub('OV012', OV012_LO, tmp, defs)
         defs.update(PY_ENGINE_FILE=9999, PY_FLOOR_CHUNK=9999, PY_ZONE_FLOOR=ZONE_FLOOR, PY_ZONE_TOP=ZONE_TOP)
         ob, _ = build_stub('OV036', OV036_LO, tmp, defs)

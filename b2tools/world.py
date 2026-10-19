@@ -336,6 +336,13 @@ def build_cell(m_name, cx, cz, world, trees, cfg_maps):
             gm, mat0 = GROUP['ground'], mat
             mat = lambda tx, tz: None if mat0(tx, tz) is None else gm.get((get(tx, tz) or (0, ''))[1], gm.get('default', mat0(tx, tz)))
         bc.ground_heights(m, hy, lambda tx, tz: None if (tx, tz) in cover else mat(tx, tz))
+        # the same ground again 4 units lower (under path_cover's floor at 2), in each tile's own texture: the DS (and
+        # melonDS) can open 1-pixel cracks even where two ground polygons share both corners, and through them the
+        # sea or the background showed as purple/blue lines (Discord 2026-10-18, Slateport); now they show ground
+        # (not in a two-layer cell that chunk_fit found over the chunk buffer: UNDERFLOOR)
+        if UNDERFLOOR[0]:
+            bc.ground_heights(m, lambda tx, tz: None if hy(tx, tz) is None else hy(tx, tz) - 4,
+                              lambda tx, tz: None if (tx, tz) in cover else mat(tx, tz))
     # a path-coloured floor 2 under the path (and 4 units under the ground beside it): melonDS showed the background
     # through 1-pixel cracks at the path's T-junctions (purple_lines 2026-10-13, build_chunk.path_cover)
     if not GROUP.get('path_as_ground'):
@@ -963,11 +970,308 @@ def make_put(placements):
                                          round(rot % 360 * 0x10000 / 360) & 0xFFFF) + bytes([res >> 8, res & 0xFF]))
     return put
 
+# ---- walk-under bridges (surf_under 2026-10-17) -------------------------------------------------------------------------
+_BRIDGES = {}
+def bridge_layers(world):
+    """Sapphire's walk-under bridges outdoors: Black 2's second collision layer ('GC' chunks), the caves' rule
+    (notes/CAVES.md "Walk-under bridges", b2tools/models_cave_levels.py). Gen 3: a walkable tile of elevation 15 is
+    passable at any elevation and keeps the mover's own (pokeruby ObjectEventUpdateZCoord; IsZCoordMismatchAt never
+    refuses 0 or 15), so a surfer (elevation 1) passes under a deck and its railings (walkable elevation-1 tiles beside
+    it) while a walker or cyclist (elevation 3/4) stays on the deck: the railings and the water beside it are at another
+    elevation, and the land at the deck's ends is at another elevation than the surfer's 1. That is how Sapphire reaches
+    New Mauville's entrance: under Route 110's Seaside Cycling Road. Black 2 (FieldG3DMapper_GetTerrain) takes of a
+    GC chunk's two layers the one whose height is nearest the actor's (ties: layer 0) - but at two different heights
+    (surf_under2 2026-10-18): a step at the actor's own height, the tile in front of the player (surf landing, surfing
+    off land) at its grid height x 16, truncated toward 0 (_b2_front_y: water at -8 looks ahead at 0).
+    Each connected group of walkable elevation-15 tiles with a walkable elevation-1 tile beside it (a deck over water):
+      deck     layer 0 = surf water at U, layer 1 = the deck as built
+      railing  (Sapphire's railings beside the deck: walkable elevation-1 tiles that are no water class, Route 110's
+               fences, solid here before) layer 0 = surf water at U, layer 1 = solid at the deck's height + dS:
+               cyclists stay on the road, surfers pass under
+      end      (other walkable tiles beside the deck: the land it starts from) layer 0 = solid at U or a little under
+               it, layer 1 = as built: the surfer under the deck meets the solid layer, a walker the land
+    Water heights (_bridge_ok, _bridge_end_ok, every case): the railings' 20 under the open water (the deepest step
+    in), the road's 23 under it, railings solid dS = 16 over the deck, when the deck stands BRIDGE_CLEAR over its water.
+    Route 110's Cycling Road (deck 0, water -8): -27.8 under the railings, -31.4 under the road, railings solid at 16,
+    ends solid at -31.4 (the first try had the water at -8: looked up from -8 at 0, the road was nearer, and the surfer
+    jumped onto it, standing on its water layer; at -24 the tip of the hat showed through the road). Its
+    support tiles (open water in the model, where a surfer under the surface would show sunk) stay solid. Routes
+    119/120's plank bridges (bridges 2026-10-18) stood 8 over water with open water beside them, where no water layer
+    both passes a surfer and hides it: terrain/heights.py raise_bridges lifts them RAISE_CLEAR (32) or more over their
+    water, and they take the first choice below - the water layer at the open water's own height (the surfer goes
+    under with no dip), their dry end tiles solid under the walker's layer. A deck that fails every choice keeps one
+    layer (logged). Every other tile of a two-layer chunk has the same record in both layers. Returns {world tile:
+    (kind, deck height, water record, solid height)}; {} without the height field.
+    Elevation-15 tiles over land (Fortree's walkways, Route 110's road south of the sea, Littleroot's two) keep one
+    layer. People standing on a deck need its height as their y (patches/story.py npc y: y 0 would put them on the
+    water when it is nearer 0 than the deck; Route 110's deck is at 0)."""
+    key = (id(world), id(HF))
+    if key in _BRIDGES: return _BRIDGES[key]
+    _BRIDGES.clear(); out = _BRIDGES.setdefault(key, {})
+    elev = getattr(HF, 'elev', None) if HF else None
+    if not elev or WATER_MOD is None: return out
+    from terrain import heights as H_
+    nb = lambda k: [(k[0] + 1, k[1]), (k[0] - 1, k[1]), (k[0], k[1] + 1), (k[0], k[1] - 1)]
+    walk = lambda k: k in world and world[k][2]
+    deckable = lambda k: walk(k) and elev.get(k) == 15 and world[k][1] not in WATER
+    low = lambda k: walk(k) and (elev.get(k) == 1 or world[k][1] in WATER)       # (the water level: railings, water)
+    height = lambda k: HF.coll_h.get(k, HF.y(*k))                                   # (a record's height, Field.record)
+    seen = set()
+    for k0 in sorted(k for k in world if deckable(k)):
+        if k0 in seen: continue
+        comp, stack = {k0}, [k0]
+        while stack:
+            for n in nb(stack.pop()):
+                if n not in comp and deckable(n): comp.add(n); stack.append(n)
+        seen |= comp
+        if not any(low(n) for k in comp for n in nb(k) if n not in comp): continue      # (over land)
+        rails = {n for k in comp for n in nb(k) if n not in comp and low(n) and world[n][1] not in WATER}
+        ends = {n for k in comp for n in nb(k) if n not in comp and walk(n) and not low(n)}
+        # the water: the surf water beside the deck or its railings (the lowest, as the caves take)
+        wet = sorted({n for k in comp | rails for n in set(nb(k)) | {k} if walk(n) and world[n][1] in ('water', 'deep_water')
+                      and n not in comp}, key=lambda n: (n[1], n[0]))
+        recs = []
+        for n in wet:
+            r = WATER_MOD.collision(world[n][1], world[n], Cell(n[0] // 32, n[1] // 32, world))
+            if r and r[0][2] in (0x3F, 0x3D) and not r[0][3] & 1: recs.append((height(n) + WATER_MOD.Y_WATER, r[0]))
+        if not recs: continue
+        wy, wrec = min(recs, key=lambda t: t[0])
+        # (surf_under2 2026-10-18) the heights of the layers. Black 2 picks a layer by two different heights: a step
+        # (ActorRouteCollCheck) by the actor's own height, the tile in front of the player (FieldPlayer_GetWPosInDir:
+        # the surf landing test CheckSurfExitEvent, surfing off land, the bike's tile tests) by its grid height x 16,
+        # truncated toward 0 (_b2_front_y). Route 110's water is at -8, so a surfer looks ahead at 0: with water at -8
+        # under a deck at 0 the deck was nearer, and the surfer jumped onto the road (the first try, 8502244, in the
+        # user's melonDS test). The water under the deck is lowered (U) so that every case passes (_bridge_ok, with
+        # the records' real heights) and the deck stands at least CLEAR over it: Black 2 draws the surfer through the
+        # deck by what of its sprite stands above it (clearance 16: head and body over the road in DeSmuME). Route 110:
+        # water at -24 under the road at 0, railings solid at 12, the ends solid at -24. Plank bridges with open water
+        # beside them (Routes 119/120: decks 8 over the water) passed only with the water at most 8 under the open
+        # water (a deeper step in loses to the deck), their decks 8-16 over a surfer: heights.py raise_bridges now
+        # lifts them (bridges 2026-10-18), and the water under them stays at the open water's height
+        ry = lambda y: -H_.OFFS[H_.flat_index(y)] / H_.NORMALS[0][1]               # (a flat record's real height)
+        W = -H_.OFFS[wrec[1]] / H_.NORMALS[0][1]
+        assert wrec[0] == 0, wrec                                                     # (a flat water record)
+        rail_d = {n: max(height(k) for k in nb(n) if k in comp) for n in rails}
+        open_deck = {k for k in comp if any(walk(n) and world[n][1] in WATER and n not in rails for n in nb(k))}
+        end_d = {n: [ry(height(k)) for k in nb(n) if k in comp] for n in ends}
+        # (bridges 2026-10-18) ...and a walker stepping onto an end from its other walkable neighbours (the bank, a
+        # raised bridge's lower step: 16 under its end, nearer a solid layer 16 under the end than the end itself)
+        end_d = {n: v + [ry(height(q)) for q in nb(n) if walk(q) and q not in comp and not low(q)] for n, v in end_d.items()}
+        # (water under the road lower than the open water: only railings the road's deck covers - ground.py
+        # _road_edge, fences - pass surfers; a support tile is open water in the model, where a surfer under its
+        # surface would show sunk: those stay solid, as before; Route 110's (8,30), (31,30), (13,77)...)
+        rails = {n for n in rails if world[n][1] == 'fence'}
+        # (surf_under_hat 2026-10-18) two depths: the railings - the first tile under the road from the open water -
+        # as deep as Black 2's 20-unit step allows (W - 20 + a hair: -27.8 under water at -8), the road's own tiles
+        # deeper still, as deep as a surfer coming off a railing still looks ahead onto water (front height -16 from
+        # -27.8: water nearer than the road at 0 down to -31.9: -31.4). At -24 under the road the tip of the hat showed
+        # through it (user's melonDS test); the deck now stands 31 over the surfer, its railings 28.
+        pick = None
+        # (bridges 2026-10-18) a raised plank bridge (terrain/heights.py raise_bridges: its deck RAISE_CLEAR over its
+        # water) keeps the surfer at the open water's height under it (no dip): first choice when the deck is that high
+        raised = min(height(k) for k in comp) - wy >= getattr(H_, 'RAISE_CLEAR', 1e9)
+        for Ur, Ud, dS in ((wy, wy, 16),) * raised + ((wy - 20, wy - 23, 16), (wy - 16, wy - 16, 12), (wy - 16, wy - 16, 8)):
+            if min(height(k) for k in comp) - Ud < BRIDGE_CLEAR: break
+            # (an end's solid layer: as low as the surfer's water or under it, far enough under the land that a walker
+            # stepping off the deck still meets the land)
+            E0 = {n: next((e for e in [Ud - 4 * i for i in range(7)]
+                           if _bridge_end_ok((ry(Ud), ry(Ur)), ry(height(n)), ry(e), end_d[n])), None) for n in ends}
+            if all(_bridge_ok(W, ry(height(k)), ry(Ud), ry(Ur), None, k in open_deck) for k in comp) and \
+               all(_bridge_ok(W, ry(rail_d[n]), ry(Ud), ry(Ur), ry(rail_d[n] + dS), False) for n in rails) and \
+               all(e is not None for e in E0.values()):
+                pick = (Ur, Ud, dS, E0); break
+        if pick is None:
+            print(f'bridge at {min(comp)}: one layer (deck {min(height(k) for k in comp)} over water {wy}: no water '
+                  f'{BRIDGE_CLEAR} under the deck passes every case)', file=sys.stderr)
+            continue
+        Ur, Ud, dS, E0 = pick
+        rec_at = lambda U: (0, H_.flat_index(U), wrec[2], wrec[3])
+        for k in comp: out[k] = ('deck', height(k), rec_at(Ud), None)
+        for n in rails: out[n] = ('rail', rail_d[n] + dS, rec_at(Ur), None)
+        for n in ends: out[n] = ('end', None, rec_at(Ud), E0[n])
+    return out
+
+BRIDGE_CLEAR = 24      # (units a walk-under deck stands over the water under it, at least: bridge_layers)
+
+def _b2_pick(hs, y):
+    """Black 2's FieldG3DMapper_GetTerrain (src/ov036/field_g3d_mapper.c) on one tile: of its layers' heights hs the
+    index of the one nearest y, ties to the first (layer 0); None when the two are within half a unit of a tie (the
+    records' heights are rounded: bridge_layers counts on no such near thing)."""
+    d = [abs(h - y) for h in hs]
+    if len(d) == 2 and abs(d[0] - d[1]) < 0.5: return None
+    return min(range(len(d)), key=lambda i: (d[i], i))
+
+def _b2_front_y(y):
+    """The height at which Black 2 looks up the tile in front of the player (FieldPlayer_GetWPosInDir, ov036
+    0x0219a9ce: the player's grid height << 16, i.e. HEIGHT_TO_GRID(y) * 16; HEIGHT_TO_GRID truncates toward 0,
+    ov012 field_actor_tool.c:14): -8 -> 0, 8 -> 0, 24 -> 16, -24 -> -16."""
+    return 16 * int(y / 16)
+
+def _bridge_ok(W, D, Ud, Ur, S, open_side):
+    """A deck tile (S None: layer 0 water at Ud, layer 1 the deck at D) or a railing (layer 0 water at Ur, layer 1
+    solid at S, beside a deck at D) over open water at W: a surfer stays on the water - coming in from the open water
+    (onto a railing, or a deck tile with open water beside it), from a railing (at Ur) or from under the deck (at Ud) -
+    and a walker or cyclist on the deck stays on it (no step onto a railing, no surfing off). A step is checked at the
+    surfer's own height (its layer, under 20 units: ActorRouteCollCheckCore), the tile in front at its grid height
+    (no landing: CheckSurfExitEvent via FieldPlayer_GetWPosInDir)."""
+    f, P = _b2_front_y, _b2_pick
+    U = Ud if S is None else Ur
+    hs = [U, D if S is None else S]
+    def step_in(y):                                         # (a surfer at height y moves onto this tile)
+        return abs(U - y) < 20 and P(hs, y) == 0 and (S is not None or P(hs, f(y)) == 0)
+    if (S is not None or open_side) and not step_in(W): return False      # from the open water
+    if not step_in(Ur) or not step_in(Ud): return False      # from a railing, from under the deck
+    return P(hs, D) == 1 and P(hs, f(D)) == 1                # on the deck: the deck; beside it: the railing
+
+def _bridge_end_ok(Us, L, E0, decks):
+    """The land at a deck's end (layer 0 solid at E0, layer 1 the land at L): a surfer under the deck (at the heights
+    Us) meets the solid layer, a walker on the land or stepping off the deck (at the heights decks) the land."""
+    f, P = _b2_front_y, _b2_pick
+    return all(P([E0, L], U) == 0 and P([E0, L], f(U)) == 0 for U in Us) and \
+        all(P([E0, L], y) == 1 and P([E0, L], f(y)) == 1 for y in [L] + list(decks))
+
+def bridge_split(per, c, world):
+    """The cell's collision as two layers where it holds a walk-under bridge (bridge_layers): (layer 0, layer 1 or None)."""
+    br = bridge_layers(world)
+    X, Z = c[0] * 32, c[1] * 32
+    mine = [(tx, tz) for tz in range(32) for tx in range(32) if (X + tx, Z + tz) in br]
+    if not mine: return per, None
+    from terrain import heights as H_
+    l0, l1 = bytearray(per), bytearray(per)
+    for tx, tz in mine:
+        kind, deck_y, wrec, solid_y = br[(X + tx, Z + tz)]
+        o = 4 + 8 * (tz * 32 + tx)
+        rec = struct.unpack_from('<HHHH', per, o)
+        surf = rec[2] in (0x3F, 0x3D) and not rec[3] & 1
+        if kind == 'deck': a, b = wrec, rec
+        elif kind == 'rail': a, b = (rec if surf and rec[1] == wrec[1] else wrec), (0, H_.flat_index(deck_y), 0x01, 0x81)
+        else: a, b = (0, H_.flat_index(solid_y), 0x01, 0x81), rec
+        struct.pack_into('<HHHH', l0, o, *a); struct.pack_into('<HHHH', l1, o, *b)
+    return bytes(l0), bytes(l1)
+
+CLIFF_MATS = {'gake01a', 'yamagake01', 'gake1_0', 'gake1_1', 'out57_gake01a', 'out57_gake1_0'}   # (heights.py faces)
+UNDERFLOOR = [True]    # (build_cell: the cracks fix's ground under-floor; write_cell's chunk_fit turns it off for a cell)
+CHUNK_LIMIT = 110600   # Black 2's chunk buffer for map type 0 (0x1b008, ov036 MAP_CONFIGS[0]; outdoor_check.py size)
+
+def chunk_bytes(d):
+    """(bridges 2026-10-18) The size of cell directory d's chunk as patches/hoenn_world.py packs it ('WB'/'GC' container:
+    20 + model + collision layers + placements, as outdoor_check.py check_size), its model converted here with ToNsbmd
+    (rebuild_slice.sh converts every cell again later: the same bytes). None when Java or ToNsbmd is not there."""
+    import subprocess
+    dae, out = os.path.join(d, 'terrain.dae'), os.path.join(d, 'terrain.nsbmd')
+    pal = os.path.join(OUT, 'palettes.txt')
+    write_palettes(pal)
+    cp = ':'.join(os.path.join(ROOT, p) for p in ('work/java', 'tools/CTRMap.jar', 'tools/ctrmap-plugins/CTRMapV-1.4.1.jar'))
+    try:
+        r = subprocess.run(['java', '-Djava.awt.headless=true', '-cp', cp, 'ToNsbmd', dae, out, pal], capture_output=True)
+    except OSError:
+        return None
+    if r.returncode or not os.path.exists(out): return None
+    n = 20 + sum(os.path.getsize(os.path.join(d, f)) for f in ('terrain.nsbmd', 'collision.per', 'placements.bin'))
+    if os.path.exists(os.path.join(d, 'collision1.per')): n += 4 + os.path.getsize(os.path.join(d, 'collision1.per'))
+    return n
+
+def clear_tree_layers(m, gap=2.0, most=4.0):
+    """(bridges 2026-10-18) Black 2 keeps its layered surfaces 2 units apart (exterior_check.py layers; closer ones
+    depth-fight in melonDS): a tree part that stands less than `gap` in front of a same-facing surface it overlaps -
+    a rock face (CLIFF_MATS) or another tree's part - moves forward (along its normal's main axis, toward the camera
+    side it faces) until it is `gap` clear. Cases: the south card (ki03ax) of a tree on a tile's back edge in front of
+    a leaning cliff face (z -152 at its foot, -144 at its top: the gap fell under 2 near the treetop; Routes 119/120,
+    10 tiles), and the top fan (ki04dx) of Black 2's Humilau palm 1.1 over its second crown fan (ki04bx) at the
+    middle (0.56 on Mossdeep's one-tile palms, scaled 0.5): it rises 0.9 (1.4). A part moves whole (a card, a fan:
+    tree triangles of one material joined by shared corners), by at most `most`; the part behind never moves; the
+    trees' collision is the tiles' (unchanged). Returns the number of parts moved."""
+    import numpy as np
+    from nsbmd_fix import TREE_MATS
+    tree_mats = [t for t in m.tris if t in TREE_MATS]
+    if not tree_mats: return 0
+    src, P, piece = [], [], []                   # (material, index), corners, piece id (-1: rock face)
+    pid = 0
+    for mat in tree_mats:
+        tris = m.tris[mat]
+        parent = list(range(len(tris)))
+        def find(i):
+            while parent[i] != i: parent[i] = parent[parent[i]]; i = parent[i]
+            return i
+        seen = {}
+        for i, t in enumerate(tris):
+            for v in t:
+                key = (round(v[0], 3), round(v[1], 3), round(v[2], 3))
+                if key in seen: parent[find(i)] = find(seen[key])
+                else: seen[key] = i
+        roots = {}
+        for i, t in enumerate(tris):
+            r = find(i)
+            if r not in roots: roots[r] = pid; pid += 1
+            src.append((mat, i)); P.append([v[:3] for v in t]); piece.append(roots[r])
+    nt = len(P)
+    for mat in m.tris:
+        if mat in CLIFF_MATS:
+            for i, t in enumerate(m.tris[mat]): src.append((mat, i)); P.append([v[:3] for v in t]); piece.append(-1)
+    P, piece = np.array(P, float), np.array(piece)
+    N = np.cross(P[:, 1] - P[:, 0], P[:, 2] - P[:, 0])
+    L = np.linalg.norm(N, axis=1); ok = L > 1e-6
+    N[ok] /= L[ok][:, None]
+    dom = np.argmax(np.abs(N), axis=1)
+    lo, hi = P.min(1), P.max(1)
+    AX = {1: (0, 2), 2: (0, 1), 0: (2, 1)}
+    def clip(poly, a, b):                         # convex polygon poly clipped by the triangle (a, b, c) half-planes
+        for e0, e1, opp in ((a[0], a[1], a[2]), (a[1], a[2], a[0]), (a[2], a[0], a[1])):
+            side = lambda p: (e1[0] - e0[0]) * (p[1] - e0[1]) - (e1[1] - e0[1]) * (p[0] - e0[0])
+            s_opp = side(opp)
+            if abs(s_opp) < 1e-9: return []
+            out = []
+            for k in range(len(poly)):
+                p, q = poly[k], poly[(k + 1) % len(poly)]
+                sp, sq = side(p) * s_opp, side(q) * s_opp
+                if sp >= 0: out.append(p)
+                if (sp >= 0) != (sq >= 0):
+                    t = sp / (sp - sq); out.append((p[0] + t * (q[0] - p[0]), p[1] + t * (q[1] - p[1])))
+            poly = out
+            if len(poly) < 3: return []
+        return poly
+    def value(T, ax, a_, b_, pts):                # the plane of triangle T along axis ax at points (a_, b_)
+        n = N[T]; p0 = P[T, 0]
+        return [p0[ax] - (n[a_] * (p[0] - p0[a_]) + n[b_] * (p[1] - p0[b_])) / n[ax] for p in pts]
+    moved = {}
+    for _ in range(3):                            # (a moved part may come close to the next one in front)
+        need = {}
+        for i in range(nt):
+            if not ok[i]: continue
+            ax = dom[i]; a_, b_ = AX[ax]
+            cand = np.nonzero(ok & (dom == ax) & (piece != piece[i]) & ((N @ N[i]) > 0.98)
+                              & (lo[:, a_] < hi[i, a_]) & (hi[:, a_] > lo[i, a_])
+                              & (lo[:, b_] < hi[i, b_]) & (hi[:, b_] > lo[i, b_])
+                              & (np.abs(P[:, :, ax].mean(1) - P[i, :, ax].mean()) < 64))[0]
+            for j in cand:
+                poly = clip([tuple(p[[a_, b_]]) for p in P[i]], [tuple(p[[a_, b_]]) for p in P[j]], None)
+                if len(poly) < 3: continue
+                area = 0.5 * abs(sum(poly[k][0] * poly[k - 1][1] - poly[k - 1][0] * poly[k][1] for k in range(len(poly))))
+                if area < 0.5: continue
+                s = 1 if N[i, ax] > 0 else -1          # (forward: along the part's normal)
+                g = [(vi - vj) * s for vi, vj in zip(value(i, ax, a_, b_, poly), value(j, ax, a_, b_, poly))]
+                mn = min(abs(N[i, ax]), abs(N[j, ax]))
+                if sum(g) / len(g) < 0 or min(g) * mn >= gap - 0.01: continue     # (behind it, or clear)
+                d = (gap + 0.05) / mn - min(g)
+                if d <= most: need[piece[i]] = max(need.get(piece[i], 0), d)
+        if not need: break
+        for p_, d in need.items():
+            idx = np.nonzero(piece == p_)[0]
+            ax = dom[idx[0]]; s = 1 if N[idx[0], ax] > 0 else -1
+            P[idx, :, ax] += s * d; lo[idx] = P[idx].min(1); hi[idx] = P[idx].max(1)
+            moved[p_] = moved.get(p_, 0) + d
+    for i in range(nt):
+        if piece[i] in moved:
+            mat, k = src[i]
+            m.tris[mat][k] = [(P[i, j, 0], P[i, j, 1], P[i, j, 2]) + tuple(v[3:]) for j, v in enumerate(m.tris[mat][k])]
+    return len(moved)
+
 def write_cell(d, m_name, c, world, trees, cfg_maps, placements, extra):
     """Build one cell into directory d: terrain.dae (+ texture images), collision.per, placements.bin, chunk.json."""
     texdir = os.path.join(ROOT, 'work', 'tex', 'area2')
     os.makedirs(d)
     m, per, grid = build_cell(m_name, c[0], c[1], world, trees, cfg_maps)
+    per, per1 = bridge_split(per, c, world)               # walk-under bridges: a second collision layer (bridge_layers)
     for mat in m.tris:
         src = os.path.join(texdir, mat.replace('.', '_') + '.png')
         if os.path.exists(src): shutil.copy(src, os.path.join(d, mat + '.png'))
@@ -981,12 +1285,45 @@ def write_cell(d, m_name, c, world, trees, cfg_maps, placements, extra):
         if src in wraps: wraps[new] = wraps[src]
         elif src in ('kusa_ec1', 'kusa_ec2', 'kusa_ec3'): wraps[new] = ('WRAP', 'CLAMP')
     from nsbmd_fix import TREE_MATS                     # Black 2 lights every round-tree polygon as facing up
-    m.normals = {t: (0, 1, 0) for t in TREE_MATS}       # (normal (0, 1, 0) in all its chunks), the cards too
-    ntri = m.write(os.path.join(d, 'terrain.dae'), wrap=wraps | {t: ('WRAP', 'CLAMP') for t in m.tris if t in (
-        'ki02ax', 'ki03ax', 'ki02c', 'ki03bx', 'ki03dx', 'michi01a', 'dansa01a', 'kusa_ec1', 'kusa_ec2', 'kusa_ec3')}
-        | {'michi_hage': ('CLAMP', 'CLAMP')})
+    def finish(m):
+        m.normals = {t: (0, 1, 0) for t in TREE_MATS}   # (normal (0, 1, 0) in all its chunks), the cards too
+        clear_tree_layers(m)                            # (tree parts 2 clear of rock faces and each other: flicker)
+        return m
+    def write_dae(m):
+        return m.write(os.path.join(d, 'terrain.dae'), wrap=wraps | {t: ('WRAP', 'CLAMP') for t in m.tris if t in (
+            'ki02ax', 'ki03ax', 'ki02c', 'ki03bx', 'ki03dx', 'michi01a', 'dansa01a', 'kusa_ec1', 'kusa_ec2', 'kusa_ec3')}
+            | {'michi_hage': ('CLAMP', 'CLAMP')})
+    finish(m)
+    pre = {k: [list(t) for t in v] for k, v in m.tris.items()}       # (chunk_fit: before the splits)
+    # the ground's T-junctions split: melonDS and the hardware open 1-pixel cracks there that show the background
+    # (purple/blue lines across Slateport and elsewhere, Discord 2026-10-18; terrain/tjunction.py)
+    from terrain import tjunction
+    tjunction.fix(m, skip={t for t in m.tris if t in TREE_MATS or t.startswith(('kusa', 'hana')) or 'kage' in t})
+    ntri = write_dae(m)
     open(os.path.join(d, 'collision.per'), 'wb').write(per)
+    if per1: open(os.path.join(d, 'collision1.per'), 'wb').write(per1)   # (patches/hoenn_world.py: a 'GC' chunk)
     open(os.path.join(d, 'placements.bin'), 'wb').write(struct.pack('<I', len(placements[c])) + b''.join(placements[c]))
+    # (chunk_fit_all) every cell that may be over the buffer too: 40 B a triangle bounds the model (measured 26-37)
+    heavy = 20 + len(per) + (4 + len(per1) if per1 else 0) + 4 + 16 * len(placements[c]) + 40 * ntri > CHUNK_LIMIT
+    if per1 or heavy:
+        # (bridges 2026-10-18) a two-layer chunk (a walk-under bridge's cell) carries a second collision layer, 8,200 B,
+        # and Black 2 loads a chunk into a fixed 110,600-byte buffer with no length check (notes/RESEARCH_WORLD.md):
+        # over it, the bytes run into the next heap block. When the cell comes out over (measured: its model through
+        # ToNsbmd), the cracks fix (purple lines) is given back in this cell only: first the T-junction splits, then
+        # also the ground's under-floor (Route 119's bridge cell (10, 2): 123,444 B with both, 112,052 without the
+        # splits, ~105,500 without either)
+        n, what = chunk_bytes(d), 'full'
+        if n is not None and n > CHUNK_LIMIT:
+            m.tris = pre; ntri = write_dae(m); n, what = chunk_bytes(d), 'no T-junction splits'
+        if n is not None and n > CHUNK_LIMIT:
+            UNDERFLOOR[0] = False
+            try: m = finish(build_cell(m_name, c[0], c[1], world, trees, cfg_maps)[0])
+            finally: UNDERFLOOR[0] = True
+            ntri = write_dae(m); n, what = chunk_bytes(d), 'no T-junction splits, no under-floor'
+        if n is None: print(f'warning: chunk_fit: cell {c}: no ToNsbmd here, chunk size not checked')
+        elif what != 'full': print(f'chunk_fit: cell {c}: {what} ({n} B, limit {CHUNK_LIMIT})')
+        if n is not None and n > CHUNK_LIMIT:
+            print(f'warning: chunk_fit: cell {c}: {n} B, over the chunk buffer ({CHUNK_LIMIT}) even without the cracks fix')
     json.dump(dict(cell=list(c), **extra, collision=grid, triangles=ntri), open(os.path.join(d, 'chunk.json'), 'w'), indent=1)
     return ntri
 
@@ -1142,8 +1479,9 @@ def build_alts(cfg, lay, world0, cells, chunk_id, rects=()):
                 d = os.path.join(OUT, 'cells', f'alt_{key}_{c[0]:02d}_{c[1]:02d}')
                 write_cell(d, m_name, c, world, trees, cfg['maps'], placements, dict(alt_of=chunk_id[c], zone=cells[c]))
                 base = os.path.join(OUT, 'cells', f'{c[0]:02d}_{c[1]:02d}')
-                if all(open(os.path.join(d, f), 'rb').read() == open(os.path.join(base, f), 'rb').read()
-                       for f in ('terrain.dae', 'collision.per', 'placements.bin')):
+                rd = lambda p: open(p, 'rb').read() if os.path.exists(p) else None
+                if all(rd(os.path.join(d, f)) == rd(os.path.join(base, f))
+                       for f in ('terrain.dae', 'collision.per', 'collision1.per', 'placements.bin')):
                     shutil.rmtree(d); continue                         # (this cell is the same in both layouts)
                 out.append(dict(map=name, layout=a['layout'], event=a.get('event'), cx=c[0], cz=c[1],
                                 base_chunk=chunk_id[c], dir=os.path.basename(d), **({'cond': a['cond']} if 'cond' in a else {})))
@@ -1405,7 +1743,8 @@ def build_standalone(cfg, first_chunk, main_zones):
             open(dae, 'w').write(text)
             import hashlib
             key = hashlib.sha1(b''.join(open(os.path.join(d, f), 'rb').read() for f in ('terrain.dae', 'collision.per',
-                                                                                    'placements.bin'))).hexdigest()
+                                                                                    'placements.bin', 'collision1.per')
+                                        if os.path.exists(os.path.join(d, f)))).hexdigest()
             if key in seen:
                 shutil.rmtree(d); cid, dname = seen[key]
             else:
@@ -1499,8 +1838,9 @@ def group_alts(gname, g, sa, cfg, gcells):
                 open(dae, 'w').write(text)
                 if WATER_MOD: getattr(WATER_MOD, '_HOLES', {}).pop(m_name, None)
                 bd = os.path.join(OUT, 'cells', base[c]['dir'])
-                if all(open(os.path.join(d, f), 'rb').read() == open(os.path.join(bd, f), 'rb').read()
-                       for f in ('terrain.dae', 'collision.per', 'placements.bin')):
+                rd = lambda p: open(p, 'rb').read() if os.path.exists(p) else None     # (collision1.per: bridge_layers)
+                if all(rd(os.path.join(d, f)) == rd(os.path.join(bd, f))
+                       for f in ('terrain.dae', 'collision.per', 'collision1.per', 'placements.bin')):
                     shutil.rmtree(d); continue                   # (this cell is the same in both layouts)
                 assert uses[base[c]['chunk']] == 1, (f'{gname} cell {c}: its chunk {base[c]["chunk"]} is shared by '
                                                      f'{uses[base[c]["chunk"]]} cells, a map replacement would swap them all')

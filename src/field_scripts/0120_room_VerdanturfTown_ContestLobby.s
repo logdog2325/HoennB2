@@ -53,11 +53,14 @@ Script_2:
 #define T_AttractAfter 5
 #define T_BagFull 6
 
-VC_Receptionist:                    // (stand-in)
+// Pokémon Contests can't run on Black 2: the receptionist offers Black 2's Pokémon Musical instead (musical agent
+// 2026-10-18; common/musical.inc, b2tools/patches/musical.py). Text lines 7-20 (T_RecAccepting /
+// T_RecAnotherTime stay in the file, unused).
+#include "common/musical.inc"
+#define T_Musical 7
+VC_Receptionist:                    // the Musical's reception (Sapphire's contest receptionist's place)
     c3_talk
-    h_msgbox T_RecAccepting
-    h_msgbox T_RecAnotherTime
-    h_release
+    musical_reception T_Musical
 
 VC_AttractGirl:                     // VerdanturfTown_ContestLobby_EventScript_153E47
     c3_talk

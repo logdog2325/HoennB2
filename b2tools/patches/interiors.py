@@ -135,6 +135,11 @@ def apply(files):
         map_adds, pack_adds = {}, {}                       # texset -> [(src, tex, pal)], pack -> {res: (info, bmd, adds)}
         replaces = []                                      # a/0/1/0 entries for zones' other layouts (alt_rooms)
         src_maps, src_btex = {}, {}
+        def tex_source(src, rdir, tex):          # a Black 2 set, or ["gen3", map, x, z]: the room's own PNG of Gen 3 art
+            if isinstance(src, list):
+                from PIL import Image
+                return nsbtx.image_source(tex, Image.open(os.path.join(rdir, tex + '.png')))
+            return map_set(src)
         def map_set(i):
             if i not in src_maps: src_maps[i] = b2files.map_textures(src_files, i)
             return src_maps[i]
@@ -146,6 +151,12 @@ def apply(files):
         users = {}                                         # camera box -> number of zone headers naming it
         for h_ in headers: users[h_['cam_bound']] = users.get(h_['cam_bound'], 0) + 1
         free_cams = [k for k in range(len(cams)) if not users.get(k) and len(cams[k]) == 28]
+        # (Emerald v1.1) Emerald's ~190 room zones that need a box of their own outrun the free entries: the last 10 (the
+        # Abandoned Ship rooms, the Oceanic Museum 1F, the Ancient Tomb, Cave of Origin 1F, a Fallarbor house, the
+        # Lavaridge Center) kept another zone's box or none. An Emerald zone whose box is already in an entry this patch
+        # wrote names that entry instead (same bytes: nothing else rewrites it), so the free entries go further.
+        # Sapphire/Ruby: unchanged (no shared entries; their builds don't run out).
+        written = {}                                       # box bytes -> the a/1/0/9 entry that holds them (Emerald)
         for cfg in rooms:
             zone = cfg['zone']; hd = headers[zone]
             d = os.path.join(ROOMS, cfg['room'])
@@ -201,7 +212,7 @@ def apply(files):
             assert ext == 0, f'zone {zone}: area {hd["area"]} is an exterior area'
             for ts in sets:
                 for tex, src in meta['map_textures'].items():
-                    map_adds.setdefault(ts, []).append((map_set(src), tex, tex + '_pl'))
+                    map_adds.setdefault(ts, []).append((tex_source(src, d, tex), tex, tex + '_pl'))
             # other layouts of this zone ("alt_rooms", caves_misc: Shoal Cave's high tide): their chunks, a matrix of their
             # own and an a/0/1/0 map replacement of kind 1 (the whole matrix: MapReplace_Patch, ov012 map_matrix.c) that
             # loads it instead of the zone's while EVENT_MAP_REPLACE_TABLE's event uid alt['event'] is set (condition =
@@ -223,7 +234,7 @@ def apply(files):
                 replaces.append(struct.pack('<HBB6H', m, 1, alt['event'] + 3, m, m2, 0, 0, 0, 0xFFFF))
                 for ts in sets:
                     for tex, src in am['map_textures'].items():
-                        map_adds.setdefault(ts, []).append((map_set(src), tex, tex + '_pl'))
+                        map_adds.setdefault(ts, []).append((tex_source(src, ad, tex), tex, tex + '_pl'))
                 alt_metas.append(am)
                 done.append(f"zone {zone}: {alt['room']} = chunks {ids2} (matrix {m2}, loaded instead of {m} while map replace event {alt['event']} is set)")
             have = {struct.unpack_from('<H', info, 0)[0] for info in _pack_sections(packs[pack])[0]}
@@ -249,13 +260,21 @@ def apply(files):
                 pack_adds.setdefault(pack, {})[mdl['res']] = (info, bmd, adds)
             # camera box: Black 2's format (u32 count 1; u32 1, 0; s32 xmin, xmax, zmin, zmax), rewritten in place
             cam = hd['cam_bound']
+            box = struct.pack('<7i', 1, 1, 0, *meta['camera'])
             if cam != 0xFFFF and cam < len(cams) and len(cams[cam]) == 28 and users.get(cam) == 1:
-                cams[cam] = struct.pack('<7i', 1, 1, 0, *meta['camera'])          # the zone's own box
+                cams[cam] = box                                                   # the zone's own box
+                written.setdefault(box, cam)
+            elif version.is_emerald() and box in written:   # (Emerald v1.1) the same box, already in an entry
+                same = written[box]
+                users[cam] = users.get(cam, 1) - 1; users[same] = users.get(same, 0) + 1
+                hd['cam_bound'] = same
+                done.append(f'zone {zone}: camera box {cam} shared or unusual -> the same box as {same}')
             elif free_cams:                                 # a/1/0/9 has no reserve: take an entry no zone names
                 own = free_cams.pop()
                 users[cam] = users.get(cam, 1) - 1; users[own] = 1
                 hd['cam_bound'] = own
-                cams[own] = struct.pack('<7i', 1, 1, 0, *meta['camera'])
+                cams[own] = box
+                written.setdefault(box, own)
                 done.append(f'zone {zone}: camera box {cam} shared or unusual -> own box {own}')
             else:
                 done.append(f'zone {zone}: camera box {cam} shared or unusual, left as it is (no free a/1/0/9 entry)')

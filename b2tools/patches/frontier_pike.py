@@ -140,7 +140,9 @@ def build(base, workdir, lines=False):
     """frontier_pike.c linked at base: the Frontier code area's part (lines=False, frontier_area.link) or the battle's
     trainer-line hooks for ITCM (lines=True: -DPK_PART_LINES, roamers.link: code only, no RAM of its own)."""
     open(os.path.join(workdir, 'frontier_pike_data.h'), 'w').write(data_header())
-    obj = frontier_area.compile(os.path.join(HERE, 'frontier_pike.c'), workdir, ['-DPK_PART_LINES'] if lines else [])
+    import save_compat                                   # HOENN_SAVE_COMPAT=1: the records' offset (notes/SAVE_PKHEX.md)
+    obj = frontier_area.compile(os.path.join(HERE, 'frontier_pike.c'), workdir,
+                                (['-DPK_PART_LINES'] if lines else []) + save_compat.cflags())
     return _roamers().link(obj, base) if lines else frontier_area.link(obj, base)
 
 ITCM_SYMS = ('PK_TrainerMsgExists', 'PK_TrainerMsgLoad')     # (the rest are the Frontier code area's)

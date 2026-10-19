@@ -315,7 +315,13 @@
    "move": 54,
    "evtype": 1,
    "p0": 2,
-   "what": "Yasu (Sapphire hides under a tree disguise; Black 2: hides, jumps out) (Sapphire object 12, LITTLE_BOY_1, TREE_DISGUISE) (move 54: v165_fixes)"
+   "what": "Yasu (Sapphire hides under a tree disguise; Black 2: hides, jumps out) (Sapphire object 12, LITTLE_BOY_1, TREE_DISGUISE) (move 54: v165_fixes)",
+   "at_emerald": [
+    28,
+    14
+   ],
+   "p0_emerald": 1,
+   "what_emerald": "Yasu (Sapphire hides under a tree disguise; Black 2: hides, jumps out) (Sapphire object 12, LITTLE_BOY_1, TREE_DISGUISE) (move 54: v165_fixes) | Emerald (2026-10-18, pokeemerald's object): at [28, 14], p0 1"
   },
   {
    "kind": "npc",

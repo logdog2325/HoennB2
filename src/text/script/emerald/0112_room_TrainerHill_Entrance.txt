@@ -1,0 +1,29 @@
+Hello, and welcome to\nthe Pokémon Center.{be01}\nWe restore your tired Pokémon\nto full health.{be01}\nWould you like to rest your Pokémon?
+Okay, I’ll take your Pokémon\nfor a few seconds.
+Thank you for waiting.{be01}\nWe’ve restored your Pokémon\nto full health.
+We hope to see you again!
+Your Pokémon may be infected with\nPokérus.{be01}\nLittle is known about the Pokérus\nexcept that they are microscopic life-{be00}\nforms that attach to Pokémon.{be01}\nWhile infected, Pokémon are said to\ngrow exceptionally well.
+This is the Trainer Hill where\nyou may enjoy tag battles with many{be00}\nTrainers.{be01}\nUnfortunately, we’re still getting\nthings ready. Please come back later!
+Welcome!{be01}\nThis is the Trainer Hill where\nyou may enjoy tag battles with many{be00}\nTrainers!
+Is this your first visit here?{be01}\nBefore you enter, please save\nyour game.
+Let’s see…\nThe Trainers here now are…{be01}\nThere appear to be Trainers gathered\nin every room.
+Would you like to challenge the\nwaiting Trainers?
+I will time your progress.\nBest of luck!{be01}\nOn your marks…{be01}\nGet set…{be01}\nGo!
+Please do visit us again!
+That was too bad.{be01}\nI think you put in a tremendous\neffort in your battling.{be01}\nPlease come back and try again!
+I hope you give it your best.
+Thank you for playing!
+Here at the Trainer Hill, we conduct\nan event called the Time Attack.{be01}\nIt is a race that measures how long\nyou take to reach our owner on{be00}\nthe rooftop from this counter.{be01}\nThe fastest times are posted on\nthe Time Board--try competing with{be00}\nyour friends.{be01}\nIn Trainer battles along the way,\nneither Exp. Points nor money will{be00}\nbe awarded.
+Who knows what sort of Trainers\nand Pokémon combos are ahead?{be01}\nAll I know is that I’ll knock aside\nanyone that stands in my way!
+I heard tough Trainers come to this\nTrainer Hill from all over.{be01}\nI can’t wait to test the waters!{be01}\nI’ll knock aside anyone that stands\nin my way!
+Do you see the Time Board over there?{be01}\nMy friends and I are trying to see who\ncan reach the top in the least time.
+Do you know when they’re opening\nthis place up?{be01}\nI’m waiting here to be the first\nchallenger ever!
+Yes
+No
+Info
+Normal Tag Match
+Variety Tag Match
+Unique Tag Match
+Expert Tag Match
+Exit
+Time Board{be01}\nNormal Tag Match\nTime Cleared {0100:1} min. {0100:2}.{0100:3} sec.{be01}\nVariety Tag Match\nTime Cleared {0100:4} min. {0100:5}.{0100:6} sec.{be01}\nUnique Tag Match\nTime Cleared {0100:7} min. {0100:8}.{0100:9} sec.{be01}\nExpert Tag Match\nTime Cleared {0100:10} min. {0100:11}.{0100:12} sec.

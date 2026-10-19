@@ -1,0 +1,76 @@
+{
+ "_doc": "battle_tents (rooms_tents helper, 2026-10-18): Emerald's Battle Tents (Verdanturf, Fallarbor, Slateport) as a circus tent in Black 2's art: the Musical Theater's pink-and-cream striped panels in24_tukue (set 305) as the canvas, the nursery-school room's lavender diamond floor m_nsch01_03 (set 282), the Musical's entrance gradient in24_in (305). Blocks: the orange reception counter (m_nsch01_05 top, Pokestar's in76en_kabe1 front). black = wall caps (285). Generator: work/agents/battle_tents/tools/rooms_tents.py.",
+ "bt_tent": {
+  "_doc": "Battle Tent lobby, corridor and Fallarbor / Slateport battle room: lavender diamond floor m_nsch01_03 (282, 16 px a tile), striped canvas wall in24_tukue (305), entrance in24_in (305).",
+  "floor": {
+   "tex": "m_nsch01_03",
+   "src": 282,
+   "size": 16
+  },
+  "wall": {
+   "tex": "in24_tukue",
+   "src": 305,
+   "u_size": 32,
+   "v": [
+    0,
+    1.5
+   ]
+  },
+  "genkan": {
+   "tex": "in24_in",
+   "src": 305,
+   "stretch": true
+  },
+  "black": {
+   "tex": "black",
+   "src": 285
+  }
+ },
+ "bt_garden": {
+  "_doc": "Verdanturf's battle room (Emerald: a lawn under the tent): the lawn kusa01a (290), the striped canvas wall in24_tukue (305).",
+  "floor": {
+   "tex": "kusa01a",
+   "src": 290,
+   "size": 16
+  },
+  "wall": {
+   "tex": "in24_tukue",
+   "src": 305,
+   "u_size": 32,
+   "v": [
+    0,
+    1.5
+   ]
+  },
+  "genkan": {
+   "tex": "in24_in",
+   "src": 305,
+   "stretch": true
+  },
+  "black": {
+   "tex": "black",
+   "src": 285
+  }
+ },
+ "bt_counter": {
+  "_doc": "Block style: the tents' orange reception counter (Emerald's orange counter with a red edge): orange panels m_nsch01_05 (282) on top, Pokestar's orange panel with a red band in76en_kabe1 (378) on the faces, 14 high (shelf03's height).",
+  "h": 14,
+  "top": {
+   "tex": "m_nsch01_05",
+   "src": 282,
+   "size": 32
+  },
+  "side": {
+   "tex": "in76en_kabe1",
+   "src": 378,
+   "u_size": 16,
+   "v": [
+    0,
+    0.5
+   ]
+  },
+  "shade_top": 1.0,
+  "shade_s": 0.9,
+  "shade_we": 0.65
+ }
+}

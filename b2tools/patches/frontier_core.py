@@ -62,6 +62,11 @@ def _battle_tower():
     mod = importlib.util.module_from_spec(spec); spec.loader.exec_module(mod)
     return mod
 
+def _save_compat():
+    spec = importlib.util.spec_from_file_location('save_compat_', os.path.join(HERE, 'save_compat.py'))
+    mod = importlib.util.module_from_spec(spec); spec.loader.exec_module(mod)
+    return mod
+
 def _roamers():
     spec = importlib.util.spec_from_file_location('roamers_', os.path.join(HERE, 'roamers.py'))
     mod = importlib.util.module_from_spec(spec); spec.loader.exec_module(mod)
@@ -188,7 +193,7 @@ def build(base, workdir):
     obj = os.path.join(workdir, 'frontier_core.o')
     subprocess.run([f'{LLVM}/clang', '--target=thumbv5te-none-eabi', '-mthumb', '-march=armv5te', '-Os', '-ffreestanding',
                     '-fno-builtin', '-fno-jump-tables', '-fno-pic', '-fno-unwind-tables', '-fno-asynchronous-unwind-tables',
-                    '-fno-exceptions', '-fno-common', '-mno-unaligned-access', '-Wall', '-Werror',
+                    '-fno-exceptions', '-fno-common', '-mno-unaligned-access', '-Wall', '-Werror', *_save_compat().cflags(),
                     '-I', workdir, '-c', os.path.join(HERE, 'frontier_core.c'), '-o', obj], check=True)
     und = subprocess.run([f'{LLVM}/llvm-nm', '--undefined-only', obj], capture_output=True, text=True, check=True).stdout.split()
     assert not und, f'frontier_core.c needs {und}: call Black 2 functions by address only'
@@ -218,10 +223,13 @@ def apply_code(code):
     end = (base + len(blob) + 31) & ~31
     assert end <= 0x02000000, f'ITCM full: {end:#x}'
     struct.pack_into('<I', arm9, lit, end)
-    # block 0x38: 252 bytes (movs r0, #60 -> #252), its new-game initializer FR_PlayInit
+    # block 0x38: 252 bytes (movs r0, #60 -> #252), its new-game initializer FR_PlayInit. HOENN_SAVE_COMPAT=1
+    # (save_compat.py, notes/SAVE_PKHEX.md): it keeps Black 2's 60 (the records after its footer, save_compat's hooks)
+    compat = _save_compat().enabled()
     o = PLAY_SIZE_FN - ARM9
     assert struct.unpack_from('<HH', arm9, o) == (0x2000 | PLAY_B2_SIZE, 0x4770), 'block 0x38 size function is not Black 2\'s'
-    struct.pack_into('<H', arm9, o, 0x2000 | PLAY_SIZE)
+    if not compat:
+        struct.pack_into('<H', arm9, o, 0x2000 | PLAY_SIZE)
     o = PLAY_INIT_LIT - ARM9
     assert struct.unpack_from('<I', arm9, o)[0] == 0x0200E0F5 and struct.unpack_from('<I', arm9, o - 4)[0] == PLAY_SIZE_FN | 1
     struct.pack_into('<I', arm9, o, sym['FR_PlayInit'] | 1)
@@ -250,7 +258,8 @@ def apply_code(code):
     tut = '; '.join(f'tutor {s}: ' + ', '.join(f'{n.lower()} {c}' for _, _, c, n in r) for s, r in info['tutors'])
     return (f'frontier_core: {len(blob)} B of ITCM at {base:#x} (arena from {end:#x}); commands 230 FrGet, 232 FrOp; '
             f'Battle Tower Open Level (mode 5): opponents at the highest level of the three entered, at least 60; '
-            f'save block 0x38 {PLAY_B2_SIZE} -> {PLAY_SIZE} B (records {(PLAY_SIZE - PLAY_B2_SIZE) // 2} keys); '
+            + (f'save block 0x38 {PLAY_B2_SIZE} B, records after its footer (HOENN_SAVE_COMPAT=1); ' if compat else
+               f'save block 0x38 {PLAY_B2_SIZE} -> {PLAY_SIZE} B (records {(PLAY_SIZE - PLAY_B2_SIZE) // 2} keys); ') +
             f'BP awards {info["rows"]} rows, divisors {info["div"]}; banned {len(info["banned"])}; {shops}; {tut}')
 
 if __name__ == '__main__':          # python3 frontier_core.py: the data and the code size at a dummy base

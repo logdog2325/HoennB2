@@ -146,6 +146,7 @@
   "OBJ_EVENT_GFX_LITTLE_BOY": "OBJ_EVENT_GFX_LITTLE_BOY_2",
   "OBJ_EVENT_GFX_DEVON_EMPLOYEE": "OBJ_EVENT_GFX_MAN_7"
  },
+ "_renumbered_doc": "(emerald fidelity helper 2026-10-18) pokeemerald renumbered seven townsperson ids that pokeruby also has, so the name alone picks the wrong person: pokeemerald's OBJ_EVENT_GFX_MAN_3 (id 33, the Cool Trainer M) is pokeruby's MAN_4 (id 33), and so on (include/constants/event_objects.h of both; the sprites compared: graphics/object_events/pics/people/, Emerald man_3 = Ruby man_4, man_4 = man_5, man_5 = man_6, woman_2 = woman_3, woman_4 = woman_5; woman_5 = woman_7 retouched). The rows below give each pokeemerald name the code of pokeruby's same person, over Sapphire's row of the name (Emerald builds only). _gfx_alias only covers names pokeruby has not got; these it has, with another person. _gfx_alias's POKEFAN_M -> MAN_3 and POKEFAN_F -> WOMAN_2 point at pokeruby names these rows take over, so those two have rows of their own (Sapphire's MAN_3 / WOMAN_2).",
  "_trainer_front_emerald_doc": "Emerald-only rows of data/sprite_map.json \"_trainer_front\" (deep-merged): the Frontier Brains' battle pictures (frontier_core_sprites 2026-10-12, b2tools/sprite_emerald_frontier.py).",
  "_trainer_front": {
   "TRAINER_PIC_SALON_MAIDEN_ANABEL": {
@@ -190,5 +191,68 @@
    "art": "emerald/030-brandon",
    "note": "Frontier Brain Brandon (Pyramid King, Battle Pyramid): Emerald's own picture on front 108's parts (its intro gesture), Emerald builds only"
   }
+ },
+ "OBJ_EVENT_GFX_WOMAN_2": {
+  "code": 27,
+  "b2": "Woman",
+  "note": "Emerald: pokeemerald's WOMAN_2 = pokeruby's WOMAN_3 (same id number and drawing): Sapphire's WOMAN_3 row. generic townsperson; nearest Black 2 look (brown hair, green dress)",
+  "stand_in": false,
+  "count": 40
+ },
+ "OBJ_EVENT_GFX_WOMAN_3": {
+  "code": 26,
+  "b2": "Woman (Pokefan F)",
+  "note": "Emerald: pokeemerald's WOMAN_3 = pokeruby's WOMAN_4 (same id number and drawing): Sapphire's WOMAN_4 row. generic townsperson; nearest Black 2 look; trainer class POKEFAN_F",
+  "stand_in": false,
+  "count": 21
+ },
+ "OBJ_EVENT_GFX_WOMAN_4": {
+  "code": 22,
+  "b2": "Young woman (Backers F)",
+  "note": "Emerald: pokeemerald's WOMAN_4 = pokeruby's WOMAN_5 (same id number and drawing): Sapphire's WOMAN_5 row. generic townsperson; nearest Black 2 look (light hair, pink)",
+  "stand_in": false,
+  "count": 22
+ },
+ "OBJ_EVENT_GFX_WOMAN_5": {
+  "code": 43,
+  "b2": "Waitress",
+  "note": "Emerald: pokeemerald's WOMAN_5 = pokeruby's WOMAN_7 (same id number and drawing): Sapphire's WOMAN_7 row. generic townsperson; nearest Black 2 look (white headband); trainer class WAITRESS",
+  "stand_in": false,
+  "count": 39
+ },
+ "OBJ_EVENT_GFX_MAN_3": {
+  "code": 19,
+  "b2": "Young man",
+  "note": "Emerald: pokeemerald's MAN_3 = pokeruby's MAN_4 (same id number and drawing): Sapphire's MAN_4 row. generic townsperson; nearest Black 2 look",
+  "stand_in": false,
+  "count": 34
+ },
+ "OBJ_EVENT_GFX_MAN_4": {
+  "code": 42,
+  "b2": "Waiter",
+  "note": "Emerald: pokeemerald's MAN_4 = pokeruby's MAN_5 (same id number and drawing): Sapphire's MAN_5 row. generic townsperson; nearest Black 2 look (white shirt, dark vest); trainer class WAITER",
+  "stand_in": false,
+  "count": 21
+ },
+ "OBJ_EVENT_GFX_MAN_5": {
+  "code": 358,
+  "b2": "Blond man",
+  "note": "Emerald: pokeemerald's MAN_5 = pokeruby's MAN_6 (same id number and drawing): Sapphire's MAN_6 row. generic townsperson; nearest Black 2 look (Virbank/Pokestar townsperson)",
+  "stand_in": false,
+  "count": 23
+ },
+ "OBJ_EVENT_GFX_POKEFAN_M": {
+  "code": 20,
+  "b2": "Man (Backers M)",
+  "note": "Emerald: pokeemerald's POKEFAN_M = pokeruby's MAN_3 (_gfx_alias); its own row because the Emerald rows of the renumbered ids (above) take the name MAN_3 over in an Emerald build: Sapphire's MAN_3 row. generic townsperson; nearest Black 2 look (orange/red shirt)",
+  "stand_in": false,
+  "count": 21
+ },
+ "OBJ_EVENT_GFX_POKEFAN_F": {
+  "code": 53,
+  "b2": "Clerk (F)",
+  "note": "Emerald: pokeemerald's POKEFAN_F = pokeruby's WOMAN_2 (_gfx_alias); its own row because the Emerald rows of the renumbered ids (above) take the name WOMAN_2 over in an Emerald build: Sapphire's WOMAN_2 row. generic townsperson; nearest Black 2 look; trainer class CLERK_F",
+  "stand_in": false,
+  "count": 25
  }
 }

@@ -8,8 +8,10 @@
 // script 8). Room origin (1,0): zone tile = Sapphire tile + (1,0).
 #include "asm/field_script.inc"
 #include "hoenn.h"  // ch3b
+#include "hoenn_tms.h"  // new_tms: ITEM_TM96 ...
 #include "hoenn_trainers.h"  // ch3b
 #include "hoenn_story.inc"  // ch3b
+#include "hoenn_rematch.inc"    // Emerald's rematches (em_gym_rematch: nothing in Sapphire / Ruby)
 #include "scenes/ch3b_lib.inc"  // ch3b
 
     ScriptEntry Script_None
@@ -65,7 +67,9 @@ Script_None:
 
     .macro MG_SHOW_LAYOUT reload        // the layout for the current state (zone init: reload 0; a switch: 1)
 #if defined(MG_EVENT_ALT) && defined(MG_EVENT_OFF)
-    h_goto_if_set FLAG_DEFEATED_MAUVILLE_GYM, .Lmg_off\@
+#if 0                                   // hotfix (Emerald v1.0.4 2026-10-14, all versions v17.0.1 2026-10-15; Discord: black screen
+    h_goto_if_set FLAG_DEFEATED_MAUVILLE_GYM, .Lmg_off\@   // after Wattson's TM on melonDS/Delta): the all-beams-off layout is never used;
+#endif                                  // the beams stay as they were
     MapReplaceSetEvent MG_EVENT_OFF, 0, 0
     h_goto_if_set FLAG_MAUVILLE_GYM_BARRIERS_STATE, .Lmg_alt\@
     MapReplaceSetEvent MG_EVENT_ALT, 0, \reload
@@ -120,20 +124,23 @@ L_MG_SetGymTrainers:
     h_playse SE_UNLOCK              // Sub_MG_Redraw)
     WorkSetConst MG_REDRAW, 1
 L_MG_GiveShockWave:                 // MauvilleCity_Gym_EventScript_GiveShockWave
-    h_giveitem ITEM_TM34            // ITEM_TM34_SHOCK_WAVE: Shock Wave is no Gen 5 TM, so TM34 keeps its number as
-    h_goto_if_eq HLIB_RESULT, 0, L_MG_BagFull   // every converter does (converter/gen_items.py: a stand-in, Sludge Wave)
+    h_giveitem ITEM_TM101           // Gen 3 TM34 Shock Wave: the new TM101 (b2tools/patches/new_tms.py)
+    h_goto_if_eq HLIB_RESULT, 0, L_MG_BagFull
     h_msgbox_actor T_ExplainShockWave, MG_WATTSON       // That TM34 there contains Shock Wave. ...
     h_setflag FLAG_RECEIVED_TM_SHOCK_WAVE
     VMJump L_MG_WattsonEnd
 L_MG_BagFull:                       // Common_EventScript_ShowBagIsFull
     h_bag_is_full T_BagFull
 L_MG_WattsonEnd:
+#if 0                                // hotfix: no fade-out + map-change redraw after the win (its fade-in never came on melonDS)
     h_goto_if_ne MG_REDRAW, 1, L_MG_WattsonRelease
     VMCall Sub_MG_Redraw            // the beams off now (story_fixups)
+#endif
 L_MG_WattsonRelease:
     h_release
 L_MG_WattsonAgain:
     WorkSetConst MG_REDRAW, 0
+    em_gym_rematch TRAINER_WATTSON, MG_WATTSON   // Emerald: after the Hall of Fame, a rematch (hoenn_rematch.inc)
     h_goto_if_unset FLAG_RECEIVED_TM_SHOCK_WAVE, L_MG_GiveShockWave
     h_goto_if_eq VAR_NEW_MAUVILLE_STATE, 2, L_MG_CompletedNewMauville
     h_msgbox T_WattsonPostBattle    // I swell with optimism, seeing a promising young Trainer like you!

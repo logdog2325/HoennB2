@@ -4,7 +4,8 @@ notes/FAIRY_SCOPE.md). Code: b2tools/patches/fairy.c, compiled with clang and li
 Runs last (after roamers): it appends to ITCM and rewrites the intro script hoenn_intro left.
 
 Toggles (fairy.c has the readers): the options u16 at the start of the trainer-data save block, bit 11 = Fairy on,
-bit 12 = classic (Gen 3) split. Birch asks after the player's name (ov294 intro script ASK_RIVAL_NAME, which
+bit 12 = classic (Gen 3) split, bit 15 = real seasons (Birch's fifth question, 2026-10-18: Black 2's seasons by the DS
+clock's month; 0 = hoenn_season's summer all year, which every older save keeps). Birch asks after the player's name (ov294 intro script ASK_RIVAL_NAME, which
 hoenn_intro made the last one; the rival scripts after it are dead and give it room); the new intro command 31
 (INTRO_CMD_SET_MSG_LANGUAGE, unused by the US scripts) sets a bit in the new game's Config and in the save's.
 
@@ -20,6 +21,10 @@ Code (apply_code), every site checked against Black 2's bytes:
   arm9   PML_MoveGetParam (type and category of every move read: UI, AI, battle), PML_PersonalFetchBW2 /
          PML_PersonalLoadBW2 (species types; the one-record cache keyed by the toggle), item icons
   ov294  intro command 31 and Birch's questions
+  ov167  link battles (link, 2026-10-18; notes/LINK.md): the battle's server machine sends its bits 11-12 in the spare
+         nibble of the pre-battle sync (func_ov167_0219ada0) and every machine battles with them (fairy.c gLinkRules)
+  arm9   Season_GetRealTime / GameData_GetSeason: hoenn_season's summer lock -> Season_FromMonth / Season_Kept (summer
+         unless bit 15 is set; SEASON_SITES)
 Not changed, on purpose: arm9 func_0201f14c and ov055 (PWT) use 17 as "any type" in their own entry-rule data (a
 Fairy rule never exists); ov055's simulated-match chart treats 17 as neutral; Hidden Power stays 1-16 (Gen 6: never
 Fairy); Arceus keeps its Normal form with the Pixie Plate (no Fairy form art; Arceus isn't in Hoenn).
@@ -175,6 +180,11 @@ CALLS = [   # (module, site, old target, new symbol, what)
     ('ov167', 0x021aaf9a, 0x02021740, 'Split_CatShimR6', 'ServerEvent_GetTargetDefenses: Defense or Sp. Def'),
     ('ov167', 0x021cfc9c, 0x021d3094, 'Fairy_AnimShim', 'func_ov167_021cfc60: new moves play a donor animation'),
     ('ov036', 0x021ac77c, 0x0204a934, 'Fairy_ShopShim', 'ShopUI_LoadPokeMartItems: the Fairy items\' list while Fairy is on'),
+    # link battles: one rule set for both machines (fairy.c "Link battles"; link, 2026-10-18, notes/LINK.md)
+    ('ov167', 0x0219aeac, 0x021b9bb8, 'Link_SyncSend', 'func_ov167_0219ada0: the server sends the sync (+ its rules)'),
+    ('ov167', 0x0219aeba, 0x021b9c0c, 'Link_SyncRecv', 'func_ov167_0219ada0: every machine receives it (the rules)'),
+    ('ov167', 0x02199920, 0x021ce10c, 'Link_BattleInit', 'battle proc init: no link rules'),
+    ('ov167', 0x02199ea8, 0x021ce138, 'Link_BattleExit', 'battle proc end: no link rules'),
 ]
 
 def _bl(src, dst):
@@ -394,14 +404,28 @@ RIVAL_NAMED, RIVAL_NAMED_SCRIPT = 0x021a47c4, 10                 # script 10 (de
 MSG_YES, MSG_NO, MSG_FAIRY_Q, MSG_SPLIT_Q = 19, 20, 26, 27       # text 0054 (src/text/overrides_fairy.json)
 MSG_MUSIC_Q, MSG_HOENN, MSG_UNOVA = 28, 29, 30                   # the music question and its two answers (music_check)
 MSG_SPRITES_Q, MSG_CLASSIC, MSG_NEW = 31, 32, 33                 # the sprite style question and its answers (sprite_switch)
-CFG_FAIRY_BIT, CFG_CLASSIC_BIT, CFG_MUSIC_BIT, CFG_SPRITES_BIT = 11, 12, 13, 14
+MSG_SEASONS_Q = 34                                               # the seasons question (Black 2's unused line 34)
+CFG_FAIRY_BIT, CFG_CLASSIC_BIT, CFG_MUSIC_BIT, CFG_SPRITES_BIT, CFG_SEASONS_BIT = 11, 12, 13, 14, 15
+
+def _hoenn_season():
+    spec = importlib.util.spec_from_file_location('hoenn_season_sites', os.path.join(HERE, 'hoenn_season.py'))
+    m = importlib.util.module_from_spec(spec); spec.loader.exec_module(m)
+    return m
+
+def season_sites():
+    """[(arm9 address, Black 2's bytes, hoenn_season's summer lock, fairy symbol, how)]: the two season readers.
+    Season_GetRealTime keeps its "ldr r0, [sp, #4]" (the month) and calls Season_FromMonth where it computed
+    (month - 1) & 3 (bl + nop: 8 bytes); GameData_GetSeason (8 bytes, 4-aligned) becomes a long jump to Season_Kept."""
+    hs = _hoenn_season()
+    return [(ARM9 + hs.AT, hs.OLD, hs.NEW, 'Season_FromMonth', 'call'),
+            (ARM9 + hs.AT_GET, hs.OLD_GET, hs.NEW_GET, 'Season_Kept', 'jump')]
 
 def intro_script(ov294):
-    """Script 9 (after the name is confirmed): Birch's four questions (Fairy, split, music, sprite style) between his
-    "You're X who's moving to my hometown" and "All right, are you ready?". Script 9 asks the first three and runs on
-    into the dead FAREWELL script's room (they are contiguous); then it jumps (INTRO_CMD_GOTO) to script 10, the dead
-    RIVAL_NAMED (its own 14 entries), which asks the fourth and ends as hoenn_intro's script did. Returns
-    [(file offset, bytes)] for the two places."""
+    """Script 9 (after the name is confirmed): Birch's five questions (Fairy, split, music, sprite style, seasons)
+    between his "You're X who's moving to my hometown" and "All right, are you ready?". Script 9 asks the first three
+    and runs on into the dead FAREWELL script's room (they are contiguous); then it jumps (INTRO_CMD_GOTO) to script
+    10, the dead RIVAL_NAMED (its own 14 entries, all used now), which asks the fourth and fifth and ends as
+    hoenn_intro's script did. Returns [(file offset, bytes)] for the two places."""
     def entry(off):
         return bytes(ov294[off:off + 24])
     def e(cmd, *args, run=0):
@@ -426,6 +450,9 @@ def intro_script(ov294):
     # first answer (mashing A, and every older save, keep the classic set)
     second = [e('TALK', MSG_SPRITES_Q, 0, 1), e('YES_NO', MSG_CLASSIC, MSG_NEW, 1),
               e('SET_CONFIG_BIT', CFG_SPRITES_BIT, 0), e('SET_CONFIG_BIT', CFG_SPRITES_BIT, 1),
+              # the fifth (2026-10-18): bit 15 = Black 2's real seasons (YES), summer all year (NO, as every older save)
+              e('TALK', MSG_SEASONS_Q, 0, 1), e('YES_NO', MSG_YES, MSG_NO, 1),
+              e('SET_CONFIG_BIT', CFG_SEASONS_BIT, 1), e('SET_CONFIG_BIT', CFG_SEASONS_BIT, 0),
               old[2], old[5], old[6], old[7], old[8], old[9]]
     room = (FAREWELL - ASK_RIVAL_NAME) // 24 + 11                    # script 9's 10 entries + FAREWELL's 11
     assert FAREWELL - ASK_RIVAL_NAME == 240 and len(first) <= room, (len(first), room)
@@ -510,6 +537,15 @@ def apply_code(code):
     # item icons
     for it, (ch, pal) in ITEM_ICONS.items():
         _put(arm9, ARM9, ITEM_ICON_TABLE + 4 * it, struct.pack('<HH', 1021, 1022), struct.pack('<HH', ch, pal), f'icon of item {it}')
+    # arm9: the season readers (hoenn_season's summer lock, or Black 2's own code in a build without hoenn_season)
+    for at, old, lock, name, how in season_sites():
+        o = at - ARM9
+        cur = bytes(arm9[o:o + 8])
+        assert cur in (old, lock), f'{name} site {at:#x}: {cur.hex()} (expected Black 2\'s or hoenn_season\'s bytes)'
+        if how == 'call':                                          # ldr r0, [sp, #4]; bl Season_FromMonth; nop
+            arm9[o:o + 8] = old[:2] + _bl(at + 2, sym[name] & ~1) + bytes.fromhex('c046')
+        else:
+            arm9[o:o + 8] = _long_jump(at, sym[name] & ~1)
     # ov294: intro command 31 and the script
     o = INTRO_COMMANDS - OV294 + 4 * INTRO_CMD['SET_CONFIG_BIT']
     assert struct.unpack_from('<I', ov294, o)[0] == 0x021a2845, 'sCommands[31] is not IntroCmd_SetMsgLanguage'
@@ -523,7 +559,8 @@ def apply_code(code):
     open(os.path.join(code, 'fairy_symbols.json'), 'w').write(json.dumps(exports, indent=1))
     return (f'fairy: {len(blob)} B of ITCM at {base:#x} (arena from {end:#x}); Fairy_IsOn {sym["Fairy_IsOn"] | 1:#x}, '
             f'Split_IsClassic {sym["Split_IsClassic"] | 1:#x}; {len(SENTINELS)} sentinels, {len(CALLS)} calls, '
-            f'intro {"+".join(str(len(x) // 24) for _, x in parts)} entries' + (f'; SELFTEST buffer {st_addr:#x}' if selftest else ''))
+            f'intro {"+".join(str(len(x) // 24) for _, x in parts)} entries; seasons: options bit {CFG_SEASONS_BIT} '
+            f'(Season_FromMonth {sym["Season_FromMonth"] | 1:#x}, Season_Kept {sym["Season_Kept"] | 1:#x})' + (f'; SELFTEST buffer {st_addr:#x}' if selftest else ''))
 
 if __name__ == '__main__':      # python3 fairy.py: compile and link at a dummy base, show the symbols
     with tempfile.TemporaryDirectory() as tmp:

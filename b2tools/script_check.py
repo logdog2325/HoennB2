@@ -164,7 +164,8 @@ def labels_for(file_no):
     with tempfile.TemporaryDirectory() as t:
         o = os.path.join(t, 'x.o')
         r = subprocess.run([f'{LLVM}/clang', '--target=armv5te-none-eabi', '-x', 'assembler-with-cpp', '-c', *version.ASM_DEFINES,
-                            '-I', f'{SP.DECOMP}/include', '-I', f'{SP.DECOMP}/lib/nitro/include', '-I', os.path.join(ROOT, 'src', 'include'),
+                            '-I', f'{SP.DECOMP}/include', '-I', f'{SP.DECOMP}/lib/nitro/include', '-I', f'{SP.DECOMP}/build/include/generated',
+                            '-I', os.path.join(ROOT, 'src', 'include'),
                             '-I', os.path.join(ROOT, 'src', 'field_scripts'), '-D', 'BLACK2', '-o', o, os.path.abspath(src)],
                            capture_output=True, cwd=SP.DECOMP)
         if r.returncode: return {}, src
@@ -274,13 +275,15 @@ class World:
             key = grp or 'main'
             if key not in self._geo:
                 cache = {}
-                def layer(t, cells=cells, cache=cache):
+                def layer(t, cells=cells, cache=cache, f='collision.per'):
                     c = (t[0] // 32, t[1] // 32)
                     if c not in cache:
-                        p = os.path.join(cells[c], 'collision.per') if c in cells else None
+                        p = os.path.join(cells[c], f) if c in cells else None
                         cache[c] = _per_reader(p) if p and os.path.exists(p) else None
                     r = cache[c]
                     return r(t[0] % 32, t[1] % 32) if r and t[0] >= 0 and t[1] >= 0 else None
+                # (surf_under 2026-10-17) the second layer of a walk-under bridge's cells (world.py bridge_layers)
+                layer1 = lambda t, cells=cells, cache1={}: layer(t, cells, cache1, 'collision1.per')
                 zone_at = lambda t, owner=owner, rects=rects: next((zz for x0, z0, x1, z1, zz in rects if x0 <= t[0] <= x1 and z0 <= t[1] <= z1), owner.get((t[0] // 32, t[1] // 32)))
                 alts = []
                 if not grp:
@@ -294,7 +297,7 @@ class World:
                             if c not in acache: acache[c] = _per_reader(os.path.join(cs[c], 'collision.per'))
                             return acache[c](t[0] % 32, t[1] % 32)
                         alts.append((m, Geo(f'alt_{m}', [alayer], zone_at)))
-                self._geo[key] = Geo(key, [layer], zone_at, alts)
+                self._geo[key] = Geo(key, [layer, layer1], zone_at, alts)
             g = self._geo[key]
         elif z in self.zone_room:
             room, built, cfg = self.zone_room[z]
@@ -818,6 +821,8 @@ V151_SCENES = ("a scene of v15.1 played through by its chapter (people leave thr
 ACCEPT = [   # (zone name regex, kind regex, message regex, why); checked on the v15.2 build (script_check 2026-10-08)
     ('Route1(0[2-4]|1[0-9]|2[0-3])', 'ent', r'uid 4\d\d \(sprite (90|102|106|111|113|114|180), script 82\d\d, .*on a solid tile',
      'berry trees (data/story/berry_spots.json) stand on their soft-soil tile, which the world makes solid'),
+    ('Route1(0[2-4]|1[0-9]|2[0-3]|30)', 'ent', r'uid 2(3[3-9]|4\d|50) \(sprite (38[4-9]\d|39[0-6]\d), script 8299, .*on a solid tile',
+     'berry planting\'s trees (HOENN_BERRY_PLANTING, data/story/berries/berry_trees.json) stand on their soft-soil tile'),
     ('.*', 'ent', r'\(sprite (4509|4510|4511|4512|4379|356|206|251), script \d+, ',
      'legendaries in their pools / on their perch (Kyogre, Lati@s, Ho-Oh), the cable car at its station, the Regi '
      'caves\' sealing rocks on the cave mouths, the bedroom clock: talked to or watched, never walked to'),

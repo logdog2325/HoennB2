@@ -217,7 +217,17 @@ Sub_BTL_SaveRecord:                     // SaveBattleTowerProgress: VAR_TEMP_0 =
     VMReturn
 
 L_BTL_Won:                              // 160342 (also the receptionist with a prize still to give)
+#ifdef HOENN_EMERALD
+    fr_get FR_BRAIN_BEATEN, BT_T1       // the set ended with the Salon Maiden (0030_room_BattleTower_BattleRoom.s):
+    h_goto_if_eq BT_T1, 0, L_BTL_WonTrainers    // Emerald's frontier_isbrain -> DefeatedMaiden
+    bt_print BTL_FR_TB + FRT_WON_BRAIN  // Congratulations! You have defeated the Salon Maiden and swept seven Trainers!
+    VMJump L_BTL_WonSaid
+L_BTL_WonTrainers:
+#endif
     bt_print 13                         // Congratulations! You've beaten all seven Trainers!
+#ifdef HOENN_EMERALD
+L_BTL_WonSaid:
+#endif
     bt_get_status BT_T1
     h_goto_if_eq BT_T1, BT_ST_PRIZE, L_BTL_Record
     VMCall Sub_BTL_Ribbons              // AwardBattleTowerRibbons
@@ -235,7 +245,14 @@ L_BTL_Record:                           // 16037D
     bt_say BTL_FR_TB + FRT_AWARD        // In recognition of your infinite talent, we award you these Battle Point(s).
     bt_mode BT_T1
     BSubwayCmd_Tool 6, BT_T1, 0, BT_T2
+    fr_get FR_BRAIN_BEATEN, BT_T1
+    h_goto_if_ne BT_T1, 0, L_BTL_FrBrainBP
     fr_give_points_for BT_T2, 0
+    VMJump L_BTL_FrGotBP
+L_BTL_FrBrainBP:                        // +10 after the Brain (GiveBattlePoints: TRAINER_FRONTIER_BRAIN)
+    fr_give_points_for BT_T2, 1
+    fr_set FR_BRAIN_BEATEN, 0
+L_BTL_FrGotBP:
     h_buffer_player
     MEPlay FR_ME_OBTAIN_BP              // Emerald's mus_obtain_b_points (MSGBOX_GETPOINTS)
     bt_say BTL_FR_TB + FRT_OBTAINED_BP  // <player> obtained N Battle Point(s).

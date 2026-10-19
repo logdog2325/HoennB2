@@ -80,6 +80,10 @@ L_MI_Checked:
     // island: hidden while the island is away, shown again when it is here unless picked today (VAR_BERRY_PICKED_5 bit 2)
     h_setflag FLAG_BERRY_TREE_PICKED_73
     h_goto_if_eq MI_P, 0, L_MI_TreeDone
+#ifdef HOENN_BERRY_PLANTING
+    h_clearflag FLAG_BERRY_TREE_PICKED_73       // (berry planting: tree 82 shows its own stage, picked or not)
+    VMJump L_MI_TreeDone
+#endif
     WorkSet MI_A, VAR_BERRY_PICKED_5
     WorkAnd MI_A, 4
     h_goto_if_ne MI_A, 0, L_MI_TreeDone

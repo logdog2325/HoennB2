@@ -150,7 +150,11 @@ typedef unsigned long long u64;
 
 /* frontier_core's record keys (notes/FRONTIER.md 2.2): u16[96] after Black 2's 60 bytes of save block 0x38 */
 #define FR_PLAY_BLOCK 0x38
+#ifdef FR_REC_OFF                              /* HOENN_SAVE_COMPAT=1 (save_compat.py, notes/SAVE_PKHEX.md): 64 */
+#define FR_AREA_OFF FR_REC_OFF
+#else
 #define FR_AREA_OFF 60
+#endif
 #define K_STATUS 0
 #define K_FACILITY 1
 #define K_BATTLE_MODE 2
@@ -160,8 +164,13 @@ typedef unsigned long long u64;
 #define K_SYMBOLS 6
 #define K_STREAK(f, m, l) (16 + 8 * (f) + 4 * (m) + 2 * (l))
 #define K_PA_OPP 9                             /* ours (notes/FRONTIER.md 6): bits 0-9 the opponent (PA_BRAIN = the Brain),
-                                                  bit 14 Spenser's first speech heard, bit 15 Greta's */
+                                                  bit 14 Spenser's first speech heard, bit 15 Greta's; bits 12 / 13
+                                                  Anabel's (the Battle Tower, below: her first / her Gold intro) */
 #define K_PA_MET 11                            /* 11-14: the trainers met in this challenge, 6 x 9 bits */
+#define K_TENT_OPP 44                          /* battle_tents (notes/FRONTIER.md 6): bits 0-4 the tent's opponent (0-29),
+                                                  5-9 / 10-14 the trainers of the challenge's 1st / 2nd battle */
+#define FAC_TENT 0x10                          /* FrontierPA's facility | FAC_TENT: the Verdanturf (Palace rules) or the
+                                                  Fallarbor (Arena rules) Battle Tent (battle_tents 2026-10-18) */
 #define FAC_PALACE 2
 #define FAC_ARENA 3
 #define PA_BRAIN 1023
@@ -679,6 +688,52 @@ static void brain_party(void *party, u32 fac, u32 gold, u32 level) {   /* Create
         make_mon(party, b->species, level, b->iv, b->nature, b->moves, b->item, b->evs);
     }
 }
+/* ---- the Battle Tents (pokeemerald src/battle_tower.c SetTentPtrsGetLevel, SetNextBattleTentOpponent,
+ * FillTentTrainerParty_): the tent's own 30 trainers and their sets (arc 211 TENT_FILE, frontier_factory_dome.py
+ * tent_file), never a trainer twice in a challenge, at the level of the three's highest (at least TENT_MIN_LEVEL, 30),
+ * IVs 0, friendship 255 (0 with Frustration), no set, species or held item twice */
+typedef struct { u16 tr, sets, n_sets, n_tr; } TentHead;
+typedef struct { u16 cls, sprite, list, n; } TentTr;
+static void tent_head(u32 tent, TentHead *h) { GFL_ArcSysReadRange(h, ARC_SETS, TENT_FILE, 8 + 8 * tent, 8); }
+static void tent_tr(const TentHead *h, u32 t, TentTr *o) { GFL_ArcSysReadRange(o, ARC_SETS, TENT_FILE, h->tr + 8 * t, 8); }
+static u32 tent_list(const TentTr *t, u32 k) { u16 v; GFL_ArcSysReadRange(&v, ARC_SETS, TENT_FILE, t->list + 2 * k, 2); return v; }
+static void tent_set(const TentHead *h, u32 id, SetRec *s) { GFL_ArcSysReadRange(s, ARC_SETS, TENT_FILE, h->sets + 16 * id, 16); }
+static u32 tent_of(u32 fac) { return fac == FAC_ARENA ? 1 : 0; }
+static u32 tent_text(u32 fac) { return fac == FAC_ARENA ? TENT_TEXT_FALLARBOR : TENT_TEXT_VERDANTURF; }
+static u32 tent_met(const u16 *k, u32 i) { return (k[K_TENT_OPP] >> (5 + 5 * i)) & 31; }
+static void tent_fill(void *party, u32 fac, u32 t, u32 level) {
+    TentHead h; TentTr tr; SetRec s; u16 sp[3], it[3], ids[3]; u32 i = 0, j, tries = 0, c, e; u8 evs[6];
+    tent_head(tent_of(fac), &h);
+    tent_tr(&h, t, &tr);
+    while (i < 3 && tries++ < 3000) {
+        u32 id = tent_list(&tr, rnd(tr.n));
+        tent_set(&h, id, &s);
+        for (j = 0; j < i && sp[j] != s.species; j++) continue;
+        if (j != i) continue;
+        for (j = 0; j < i && !(it[j] && it[j] == s.item); j++) continue;
+        if (j != i) continue;
+        for (j = 0; j < i && ids[j] != id; j++) continue;
+        if (j != i) continue;
+        ids[i] = (u16)id; sp[i] = s.species; it[i] = s.item;
+        for (c = 0, j = 0; j < 6; j++) c += (s.ev >> j) & 1;
+        e = c ? (510 / c) & 0xFF : 0;
+        for (j = 0; j < 6; j++) evs[j] = (u8)(((s.ev >> j) & 1) ? e : 0);
+        make_mon(party, s.species, level, 0, s.nature, s.moves, s.item, evs);
+        i++;
+    }
+}
+static u32 three_highest(void *gd) {
+    u16 *k = rec(gd);
+    void *party = GameData_GetParty(gd);
+    u32 i, lv = 0;
+    for (i = 0; i < 3; i++) {
+        u32 slot = ((k[K_PARTY] >> (4 * i)) & 15) - 1;
+        if (slot < PokeParty_GetPkmCount(party)) { u32 l = PokeParty_GetParam(PokeParty_GetPkm(party, slot), P_LEVEL, 0); if (l > lv) lv = l; }
+    }
+    return lv;
+}
+static u32 tent_level(void *gd) { u32 l = three_highest(gd); return l < TENT_LEVEL ? TENT_LEVEL : l; }
+
 static u32 enemy_level(void *gd) {                      /* GetFrontierEnemyMonLevel: 50, or the three's highest (>= 60) */
     u16 *k = rec(gd);
     void *party = GameData_GetParty(gd);
@@ -730,13 +785,14 @@ u32 PA_BattleEvent(void *event, u32 *state, void *data) {
         return 1;
     }
 }
-static u32 start_battle(void *env, u16 *var, u32 fac) {
+static u32 start_battle(void *env, u16 *var, u32 fac, u32 tent) {
     void *gd = FieldScriptEnv_GetGameData(env), *gsys = FieldScriptEnv_GetGameSystem(env);
     u16 *k = rec(gd);
     void *party = GameData_GetParty(gd), *pl, *op, *setup, *event;
     u8 *tr;
     u16 ids[3] = {0, 1, 2};
-    u32 i, t = k[K_PA_OPP] & 1023, level = enemy_level(gd), doubles = fac == FAC_PALACE && (k[K_BATTLE_MODE] & 1), cls;
+    u32 i, t = tent ? k[K_TENT_OPP] & 31 : k[K_PA_OPP] & 1023, level = tent ? tent_level(gd) : enemy_level(gd), cls;
+    u32 doubles = !tent && fac == FAC_PALACE && (k[K_BATTLE_MODE] & 1);
     BattleWork *w;
     pl = PokeParty_Create(HEAP_TAIL);
     PokeParty_InitCore(pl, 6);
@@ -746,14 +802,15 @@ static u32 start_battle(void *env, u16 *var, u32 fac) {
     }
     op = PokeParty_Create(HEAP_TAIL);
     PokeParty_InitCore(op, 6);
-    if (t == PA_BRAIN) { brain_party(op, fac, brain_status(k, fac) == 2 || brain_status(k, fac) == 4, level); cls = fac == FAC_ARENA ? PA_GRETA_CLASS : PA_SPENSER_CLASS; }
+    if (tent) { TentHead h; TentTr r; tent_fill(op, fac, t, level); tent_head(tent_of(fac), &h); tent_tr(&h, t, &r); cls = r.cls; }
+    else if (t == PA_BRAIN) { brain_party(op, fac, brain_status(k, fac) == 2 || brain_status(k, fac) == 4, level); cls = fac == FAC_ARENA ? PA_GRETA_CLASS : PA_SPENSER_CLASS; }
     else { TrRec r; fill_party(op, t, level, ids); tr_rec(t, &r); cls = r.cls; }
     /* the Subway trainer record (func_ov012_021628c0's layout): +0 id + 1, +4 class, +8 name, +24/+26 lines (none), +48
        the Pokémon (any valid sets: the party built above replaces them) */
     tr = GFL_HeapAllocate(HEAP_TAIL, 0x30 + 4 * PKM_SIZE, 1, 0, 0);
     *(u32 *)tr = 1;
     *(u16 *)(tr + 4) = (u16)cls;
-    { void *sb = GFL_StrBufCreate(32, HEAP_TAIL); u32 file, line = opp_name_line(fac, t, &file);
+    { void *sb = GFL_StrBufCreate(32, HEAP_TAIL); u32 file, line = tent ? (file = tent_text(fac), TENT_NAME_BASE + t) : opp_name_line(fac, t, &file);
       load_line(file, line, sb); GFL_StrBufStoreString(sb, (u16 *)(tr + 8), 8); GFL_StrBufFree(sb); }
     *(u16 *)(tr + 24) = 0xFFFF;
     *(u16 *)(tr + 26) = 0xFFFF;
@@ -776,9 +833,85 @@ static u32 start_battle(void *env, u16 *var, u32 fac) {
     return 1;
 }
 
+/* ---- the Battle Tower's Salon Maiden Anabel (Emerald v1.1, 2026-10-18; src/field_scripts/0030_room_BattleTower_
+ * BattleRoom.s, #ifdef HOENN_EMERALD). The tower is Sapphire's on Black 2's Battle Subway (battle_tower.py): its streak
+ * is the Subway's (the script passes it: command 358), its three are the Subway work's members, its Lv. 50 / Open Level
+ * rooms are play modes 0 / 5. pokeemerald frontier_util.c GetFrontierBrainStatus, GetFrontierBrainSymbol,
+ * CreateFrontierBrainPokemon (sFrontierBrainStreakAppearances[TOWER], sFrontierBrainsMons[TOWER]: kTowerStreak,
+ * kTowerBrainMons) and GetFrontierEnemyMonLevel; the battle is the Brains' battle above (start_battle) without a rule. */
+#define BSubway_GetWork  FN(u8 *(*)(void *), 0x0201794c)
+#define BSW_MEMBER_COUNT 8                     /* BSubwayScrWork (include/field/bsubway_scr.h): memberCount, playMode, */
+#define BSW_PLAY_MODE 9                        /* memberSlots[4] (party slots) */
+#define BSW_MEMBER_SLOTS 30
+#define TOWER_MODE_OPEN 5                      /* the Lv. 100 room's play mode = Emerald's Open Level (frontier_core) */
+#define TOWER_HEARD 0x1000                     /* K_PA_OPP bit 12 / 13: sBattledBrainBitFlags[TOWER][0 / 1] */
+static u32 tower_status(const u16 *k, u32 wins) {        /* GetFrontierBrainStatus (singles: the tower's only mode) */
+    const u8 *a = kTowerStreak;
+    s32 ws = (s32)wins + a[3];
+    u32 sym = k[K_SYMBOLS] & 3, n = (sym & 1) + ((sym >> 1) & 1);   /* FR_SYMBOLS bits 0 / 1: facility 0 */
+    if (n < 2) return ws == a[n] ? n + 1 : 0;           /* FRONTIER_BRAIN_SILVER / _GOLD */
+    if (ws == a[0]) return 3;                           /* FRONTIER_BRAIN_STREAK */
+    if (ws == a[1]) return 4;                           /* FRONTIER_BRAIN_STREAK_LONG */
+    if (ws > a[1] && (ws - a[1]) % a[2] == 0) return 4;
+    return 0;
+}
+static u32 tower_battle(void *env, u16 *var, u32 status) {
+    void *gd = FieldScriptEnv_GetGameData(env), *gsys = FieldScriptEnv_GetGameSystem(env);
+    u8 *bsw = BSubway_GetWork(gd), *tr;
+    void *party = GameData_GetParty(gd), *pl, *op, *setup, *event;
+    u32 i, n = bsw[BSW_MEMBER_COUNT] < 3 ? bsw[BSW_MEMBER_COUNT] : 3, lv = 0, level;
+    u32 gold = status == 2 || status == 4;              /* GetFrontierBrainSymbol: her Gold Symbol party */
+    BattleWork *w;
+    pl = PokeParty_Create(HEAP_TAIL);
+    PokeParty_InitCore(pl, 6);
+    for (i = 0; i < n; i++) {                           /* the three entered, in their order (as BSubway_BuildSetup) */
+        u32 slot = bsw[BSW_MEMBER_SLOTS + i];
+        if (slot < PokeParty_GetPkmCount(party)) {
+            void *pkm = PokeParty_GetPkm(party, slot);
+            u32 l = PokeParty_GetParam(pkm, P_LEVEL, 0);
+            PokeParty_AddPkm(pl, pkm);
+            if (l > lv) lv = l;
+        }
+    }
+    /* GetFrontierEnemyMonLevel: 50, or at Open Level the three's highest (at least 60), as the tower's trainers
+       (frontier_core.c FR_TowerLevel) */
+    level = bsw[BSW_PLAY_MODE] != TOWER_MODE_OPEN ? 50 : lv < 60 ? 60 : lv;
+    op = PokeParty_Create(HEAP_TAIL);
+    PokeParty_InitCore(op, 6);
+    for (i = 0; i < 3; i++) {                           /* CreateFrontierBrainPokemon */
+        const BrainMon *b = &kTowerBrainMons[gold][i];
+        make_mon(op, b->species, level, b->iv, b->nature, b->moves, b->item, b->evs);
+    }
+    /* the Subway trainer record as start_battle's: Salon Maiden (class 9: her battle picture) Anabel */
+    tr = GFL_HeapAllocate(HEAP_TAIL, 0x30 + 4 * PKM_SIZE, 1, 0, 0);
+    *(u32 *)tr = 1;
+    *(u16 *)(tr + 4) = PA_ANABEL_CLASS;
+    { void *sb = GFL_StrBufCreate(32, HEAP_TAIL);
+      load_line(PA_TOWER_TEXT, BTB_L_ANABEL_NAME, sb); GFL_StrBufStoreString(sb, (u16 *)(tr + 8), 8); GFL_StrBufFree(sb); }
+    *(u16 *)(tr + 24) = 0xFFFF;
+    *(u16 *)(tr + 26) = 0xFFFF;
+    for (i = 0; i < 3; i++)
+        SubwayPkm_FromSet(tr + TRAINER_PKM + i * PKM_SIZE, ARC_SETS, PA_SET_BASE + i, 0, 0x77 + i, 0, i, 0, HEAP_TAIL);
+    VSPlayerBlk_Alloc(4);
+    setup = SetupTrialHouseBattle(gsys, pl, 0, tr, 0, 3);
+    PokeParty_Copy(pl, *(void **)((u8 *)setup + SETUP_PARTY0));    /* the three as they are */
+    PokeParty_Copy(op, *(void **)((u8 *)setup + SETUP_PARTY1));
+    GFL_HeapFree(tr);
+    GFL_HeapFree(pl);
+    GFL_HeapFree(op);
+    event = GameEvent_Create(gsys, 0, (void *)PA_BattleEvent, sizeof(BattleWork));
+    w = GameEvent_GetData(event);
+    w->gsys = gsys; w->setup = setup; w->out = var;
+    w->rule = RULE_NONE;
+    w->doubles = 0;
+    *var = 0;
+    ScriptWork_CallEvent(FieldScriptEnv_GetScriptWork(env), event);
+    return 1;
+}
+
 /* ---- script command 291: FrontierPA var, sub, a, b (+ five unused) */
 enum { PA_NEXT_OPPONENT = 11, PA_BRAIN_STATUS = 12, PA_GREETING = 13, PA_NAME = 14, PA_BATTLE = 15, PA_HEARD = 16,
-       PA_INIT = 10, PA_RANDOM = 1 };
+       PA_INIT = 10, PA_RANDOM = 1, PA_TOWER_STATUS = 20, PA_TOWER_BATTLE = 21, PA_TOWER_HEARD = 22 };
 u32 PA_Cmd(void *vm, void *env) {
     u16 *var = ScriptReadVar(vm, env);
     u32 args[8], i, fac;
@@ -787,7 +920,41 @@ u32 PA_Cmd(void *vm, void *env) {
     for (i = 0; i < 8; i++) args[i] = ScriptReadAny(vm, env);
     gd = FieldScriptEnv_GetGameData(env);
     k = rec(gd);
-    fac = args[1] == FAC_ARENA ? FAC_ARENA : FAC_PALACE;
+    switch (args[0]) {                                  /* the Battle Tower's Anabel (no facility argument) */
+    case PA_TOWER_STATUS: *var = (u16)tower_status(k, args[1]); return 0;       /* a = the Subway streak */
+    case PA_TOWER_BATTLE: return tower_battle(env, var, args[1]);               /* a = her status */
+    case PA_TOWER_HEARD: {                              /* a = 0 / 1 (no symbol / Silver held), b = 1 marks it heard */
+        u32 bit = args[1] ? TOWER_HEARD << 1 : TOWER_HEARD;
+        *var = (k[K_PA_OPP] & bit) != 0;
+        if (args[2]) k[K_PA_OPP] |= bit;
+        return 0;
+    }
+    }
+    fac = (args[1] & 15) == FAC_ARENA ? FAC_ARENA : FAC_PALACE;
+    if (args[1] & FAC_TENT) {                           /* a Battle Tent (battle_tents): its own trainers, no Brain */
+        switch (args[0]) {
+        case PA_INIT: k[K_TENT_OPP] = 0; return 0;
+        case PA_NEXT_OPPONENT: {                        /* SetNextBattleTentOpponent; var = the walking sprite */
+            u32 bn = k[K_BATTLE_NUM], t, j;
+            TentHead h; TentTr r;
+            tent_head(tent_of(fac), &h);
+            do {
+                t = rnd(h.n_tr);
+                for (j = 0; j < bn && j < 2 && tent_met(k, j) != t; j++) continue;
+            } while (j < bn && j < 2);
+            if (bn < 2) k[K_TENT_OPP] = (u16)((k[K_TENT_OPP] & ~(31u << (5 + 5 * bn))) | t << (5 + 5 * bn));
+            k[K_TENT_OPP] = (u16)((k[K_TENT_OPP] & ~31u) | t);
+            tent_tr(&h, t, &r);
+            *var = r.sprite;
+            return 0;
+        }
+        case PA_BRAIN_STATUS: *var = 0; return 0;
+        case PA_GREETING: *var = (u16)(TENT_SPEECH_BASE + (k[K_TENT_OPP] & 31)); return 0;
+        case PA_NAME: word_line(env, args[2], tent_text(fac), TENT_NAME_BASE + (k[K_TENT_OPP] & 31)); return 0;
+        case PA_BATTLE: return start_battle(env, var, fac, 1);
+        case PA_HEARD: *var = 1; return 0;
+        }
+    }
     switch (args[0]) {
     case PA_RANDOM: *var = (u16)rnd(args[1]); return 0;
     case PA_INIT:                                       /* a new challenge: nobody met yet */
@@ -818,7 +985,7 @@ u32 PA_Cmd(void *vm, void *env) {
         return 0;
     }
     case PA_NAME: { u32 file, line = opp_name_line(fac, k[K_PA_OPP] & 1023, &file); word_line(env, args[2], file, line); return 0; }
-    case PA_BATTLE: return start_battle(env, var, fac);
+    case PA_BATTLE: return start_battle(env, var, fac, 0);
     case PA_HEARD: {                                    /* the Brain's first speech: var = heard; b = 1 marks it heard */
         u32 bit = fac == FAC_ARENA ? 0x8000 : 0x4000;
         *var = (k[K_PA_OPP] & bit) != 0;

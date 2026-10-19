@@ -15,6 +15,7 @@
 #include "hoenn_trainers.h"
 #include "hoenn_key_items.h"
 #include "hoenn_story.inc"
+#include "hoenn_rematch.inc"    // Emerald's rematches (em_gym_rematch: nothing in Sapphire / Ruby)
 
     ScriptEntry DG_Brawly           // 1: DewfordTown_Gym_EventScript_Brawly
     ScriptEntry DG_GymGuide         // 2: DewfordTown_Gym_EventScript_GymGuide
@@ -57,6 +58,7 @@ L_DG_BagFull:                       // Common_EventScript_ShowBagIsFull
     h_msgbox_actor 8, DG_BRAWLY     // Too bad! The Bag is full...
     h_release
 L_DG_BrawlyAgain:
+    em_gym_rematch TRAINER_BRAWLY, DG_BRAWLY     // Emerald: after the Hall of Fame, a rematch (hoenn_rematch.inc)
     h_goto_if_unset FLAG_RECEIVED_TM_BULK_UP, L_DG_GiveBulkUp
     h_msgbox 3                      // I can see your talent becoming a giant wave...
     h_release

@@ -3,7 +3,7 @@
  "outdoor": [
   {
    "trainer": "TRAINER_DAISY",
-   "model": 53,
+   "model": 27,
    "move": 9,
    "dir": 1,
    "evtype": 1,
@@ -25,7 +25,7 @@
   },
   {
    "trainer": "TRAINER_ROSE_1",
-   "model": 53,
+   "model": 27,
    "move": 14,
    "dir": 0,
    "evtype": 1,
@@ -47,7 +47,7 @@
   },
   {
    "trainer": "TRAINER_VIOLET",
-   "model": 53,
+   "model": 27,
    "move": 18,
    "dir": 1,
    "evtype": 1,
@@ -69,7 +69,7 @@
   },
   {
    "trainer": "TRAINER_MARCEL",
-   "model": 20,
+   "model": 19,
    "move": 9,
    "dir": 1,
    "evtype": 1,
@@ -91,7 +91,7 @@
   },
   {
    "trainer": "TRAINER_ALBERTO",
-   "model": 42,
+   "model": 358,
    "move": 14,
    "dir": 0,
    "evtype": 1,
@@ -407,7 +407,7 @@
   },
   {
    "trainer": "TRAINER_BRAXTON",
-   "model": 20,
+   "model": 19,
    "move": 8,
    "dir": 1,
    "evtype": 1,
@@ -429,7 +429,7 @@
   },
   {
    "trainer": "TRAINER_WILTON_1",
-   "model": 20,
+   "model": 19,
    "move": 8,
    "dir": 1,
    "evtype": 1,
@@ -451,7 +451,7 @@
   },
   {
    "trainer": "TRAINER_FERNANDO_1",
-   "model": 42,
+   "model": 358,
    "move": 15,
    "dir": 1,
    "evtype": 1,
@@ -473,7 +473,7 @@
   },
   {
    "trainer": "TRAINER_WARREN",
-   "model": 20,
+   "model": 19,
    "move": 9,
    "dir": 1,
    "evtype": 1,
@@ -495,7 +495,7 @@
   },
   {
    "trainer": "TRAINER_WENDY",
-   "model": 22,
+   "model": 43,
    "move": 19,
    "dir": 1,
    "evtype": 1,
@@ -517,7 +517,7 @@
   },
   {
    "trainer": "TRAINER_BROOKE_1",
-   "model": 22,
+   "model": 43,
    "move": 14,
    "dir": 0,
    "evtype": 1,
@@ -539,7 +539,7 @@
   },
   {
    "trainer": "TRAINER_JENNIFER",
-   "model": 22,
+   "model": 43,
    "move": 6,
    "dir": 0,
    "evtype": 1,
@@ -695,7 +695,7 @@
   },
   {
    "trainer": "TRAINER_CINDY_1",
-   "model": 53,
+   "model": 27,
    "move": 7,
    "dir": 0,
    "evtype": 1,
@@ -717,7 +717,7 @@
   },
   {
    "trainer": "TRAINER_PRESLEY",
-   "model": 42,
+   "model": 358,
    "move": 20,
    "dir": 3,
    "evtype": 1,
@@ -831,7 +831,7 @@
   },
   {
    "trainer": "TRAINER_JAZMYN",
-   "model": 22,
+   "model": 43,
    "move": 14,
    "dir": 0,
    "evtype": 1,
@@ -853,7 +853,7 @@
   },
   {
    "trainer": "TRAINER_KAYLEY",
-   "model": 53,
+   "model": 27,
    "move": 14,
    "dir": 0,
    "evtype": 1,
@@ -945,7 +945,7 @@
   },
   {
    "trainer": "TRAINER_MARLEY",
-   "model": 22,
+   "model": 43,
    "move": 16,
    "dir": 2,
    "evtype": 1,
@@ -1683,7 +1683,7 @@
   },
   {
    "trainer": "TRAINER_DALTON_1",
-   "model": 42,
+   "model": 358,
    "move": 6,
    "dir": 0,
    "evtype": 1,
@@ -1705,7 +1705,7 @@
   },
   {
    "trainer": "TRAINER_BERNIE_1",
-   "model": 42,
+   "model": 358,
    "move": 18,
    "dir": 1,
    "evtype": 1,
@@ -1881,7 +1881,7 @@
   },
   {
    "trainer": "TRAINER_ATHENA",
-   "model": 22,
+   "model": 43,
    "move": 17,
    "dir": 3,
    "evtype": 1,
@@ -2169,7 +2169,7 @@
   },
   {
    "trainer": "TRAINER_JONATHAN",
-   "model": 20,
+   "model": 19,
    "move": 20,
    "dir": 1,
    "evtype": 1,
@@ -2237,7 +2237,7 @@
   },
   {
    "trainer": "TRAINER_SARAH",
-   "model": 53,
+   "model": 27,
    "move": 14,
    "dir": 0,
    "evtype": 1,
@@ -2435,7 +2435,7 @@
   },
   {
    "trainer": "TRAINER_JOSEPH",
-   "model": 42,
+   "model": 358,
    "move": 16,
    "dir": 2,
    "evtype": 1,
@@ -2501,7 +2501,7 @@
   },
   {
    "trainer": "TRAINER_MARCOS",
-   "model": 42,
+   "model": 358,
    "move": 14,
    "dir": 0,
    "evtype": 1,
@@ -2611,7 +2611,7 @@
   },
   {
    "trainer": "TRAINER_CELINA",
-   "model": 53,
+   "model": 27,
    "move": 17,
    "dir": 3,
    "evtype": 1,
@@ -2655,7 +2655,7 @@
   },
   {
    "trainer": "TRAINER_HAYDEN",
-   "model": 42,
+   "model": 358,
    "move": 17,
    "dir": 3,
    "evtype": 1,
@@ -2723,7 +2723,7 @@
   },
   {
    "trainer": "TRAINER_COBY",
-   "model": 42,
+   "model": 358,
    "move": 20,
    "dir": 0,
    "evtype": 1,
@@ -3421,7 +3421,7 @@
   },
   {
    "trainer": "TRAINER_DARCY",
-   "model": 22,
+   "model": 43,
    "move": 20,
    "dir": 0,
    "evtype": 1,
@@ -3539,7 +3539,7 @@
   },
   {
    "trainer": "TRAINER_JOSUE",
-   "model": 42,
+   "model": 358,
    "move": 15,
    "dir": 1,
    "evtype": 1,
@@ -3675,7 +3675,7 @@
   },
   {
    "trainer": "TRAINER_CAROLINA",
-   "model": 22,
+   "model": 43,
    "move": 17,
    "dir": 3,
    "evtype": 1,
@@ -3697,7 +3697,7 @@
   },
   {
    "trainer": "TRAINER_ELIJAH",
-   "model": 42,
+   "model": 358,
    "move": 17,
    "dir": 3,
    "evtype": 1,
@@ -3855,7 +3855,7 @@
   },
   {
    "trainer": "TRAINER_BRYANT",
-   "model": 42,
+   "model": 358,
    "move": 9,
    "dir": 1,
    "evtype": 1,
@@ -3877,7 +3877,7 @@
   },
   {
    "trainer": "TRAINER_SHAYLA",
-   "model": 53,
+   "model": 27,
    "move": 6,
    "dir": 0,
    "evtype": 1,
@@ -3989,7 +3989,7 @@
   },
   {
    "trainer": "TRAINER_AARON",
-   "model": 20,
+   "model": 19,
    "move": 17,
    "dir": 3,
    "evtype": 1,
@@ -4011,7 +4011,7 @@
   },
   {
    "trainer": "TRAINER_PERRY",
-   "model": 42,
+   "model": 358,
    "move": 15,
    "dir": 1,
    "evtype": 1,
@@ -4033,7 +4033,7 @@
   },
   {
    "trainer": "TRAINER_HUGH",
-   "model": 42,
+   "model": 358,
    "move": 17,
    "dir": 3,
    "evtype": 1,
@@ -4055,7 +4055,7 @@
   },
   {
    "trainer": "TRAINER_PHIL",
-   "model": 42,
+   "model": 358,
    "move": 15,
    "dir": 1,
    "evtype": 1,
@@ -4077,7 +4077,7 @@
   },
   {
    "trainer": "TRAINER_COLIN",
-   "model": 42,
+   "model": 358,
    "move": 46,
    "dir": 2,
    "evtype": 1,
@@ -4099,7 +4099,7 @@
   },
   {
    "trainer": "TRAINER_ROBERT_1",
-   "model": 42,
+   "model": 358,
    "move": 17,
    "dir": 3,
    "evtype": 1,
@@ -4121,7 +4121,7 @@
   },
   {
    "trainer": "TRAINER_CHESTER",
-   "model": 42,
+   "model": 358,
    "move": 7,
    "dir": 0,
    "evtype": 1,
@@ -4233,7 +4233,7 @@
   },
   {
    "trainer": "TRAINER_ALEX",
-   "model": 42,
+   "model": 358,
    "move": 20,
    "dir": 1,
    "evtype": 1,
@@ -4257,7 +4257,7 @@
   },
   {
    "trainer": "TRAINER_BECK",
-   "model": 42,
+   "model": 358,
    "move": 9,
    "dir": 1,
    "evtype": 1,
@@ -4323,7 +4323,7 @@
   },
   {
    "trainer": "TRAINER_FABIAN",
-   "model": 42,
+   "model": 358,
    "move": 16,
    "dir": 2,
    "evtype": 1,
@@ -4345,7 +4345,7 @@
   },
   {
    "trainer": "TRAINER_DAYTON",
-   "model": 42,
+   "model": 358,
    "move": 17,
    "dir": 3,
    "evtype": 1,
@@ -4389,7 +4389,7 @@
   },
   {
    "trainer": "TRAINER_RACHEL",
-   "model": 53,
+   "model": 27,
    "move": 14,
    "dir": 0,
    "evtype": 1,
@@ -4411,7 +4411,7 @@
   },
   {
    "trainer": "TRAINER_LEONEL",
-   "model": 20,
+   "model": 19,
    "move": 17,
    "dir": 3,
    "evtype": 1,
@@ -4479,7 +4479,7 @@
   },
   {
    "trainer": "TRAINER_MADELINE_1",
-   "model": 22,
+   "model": 43,
    "move": 18,
    "dir": 1,
    "evtype": 1,
@@ -4501,7 +4501,7 @@
   },
   {
    "trainer": "TRAINER_CLARISSA",
-   "model": 22,
+   "model": 43,
    "move": 18,
    "dir": 1,
    "evtype": 1,
@@ -4523,7 +4523,7 @@
   },
   {
    "trainer": "TRAINER_ANGELICA",
-   "model": 22,
+   "model": 43,
    "move": 16,
    "dir": 2,
    "evtype": 1,
@@ -4545,7 +4545,7 @@
   },
   {
    "trainer": "TRAINER_MYLES",
-   "model": 19,
+   "model": 42,
    "move": 15,
    "dir": 1,
    "evtype": 1,
@@ -4567,7 +4567,7 @@
   },
   {
    "trainer": "TRAINER_PAT",
-   "model": 53,
+   "model": 27,
    "move": 14,
    "dir": 0,
    "evtype": 1,
@@ -4589,7 +4589,7 @@
   },
   {
    "trainer": "TRAINER_CRISTIN_1",
-   "model": 22,
+   "model": 43,
    "move": 8,
    "dir": 1,
    "evtype": 1,
@@ -5417,7 +5417,7 @@
   },
   {
    "trainer": "TRAINER_ISAAC_1",
-   "model": 19,
+   "model": 42,
    "move": 7,
    "dir": 0,
    "evtype": 1,
@@ -5439,7 +5439,7 @@
   },
   {
    "trainer": "TRAINER_LYDIA_1",
-   "model": 53,
+   "model": 27,
    "move": 18,
    "dir": 1,
    "evtype": 1,
@@ -5901,7 +5901,7 @@
   },
   {
    "trainer": "TRAINER_ALEXA",
-   "model": 22,
+   "model": 43,
    "move": 8,
    "dir": 1,
    "evtype": 1,
@@ -5923,7 +5923,7 @@
   },
   {
    "trainer": "TRAINER_RUBEN",
-   "model": 20,
+   "model": 19,
    "move": 17,
    "dir": 3,
    "evtype": 1,
@@ -5989,7 +5989,7 @@
   },
   {
    "trainer": "TRAINER_AIDAN",
-   "model": 42,
+   "model": 358,
    "move": 16,
    "dir": 2,
    "evtype": 1,
@@ -6187,7 +6187,7 @@
   },
   {
    "trainer": "TRAINER_MEL_AND_PAUL",
-   "model": 19,
+   "model": 42,
    "move": 15,
    "dir": 1,
    "evtype": 1,
@@ -6209,7 +6209,7 @@
   },
   {
    "trainer": "TRAINER_MEL_AND_PAUL",
-   "model": 26,
+   "model": 22,
    "move": 15,
    "dir": 1,
    "evtype": 1,

@@ -373,6 +373,8 @@ def mauville(ER):
         r.update(map=n, blocks=[dict(use='gl_mauville_pole', units=[x + 0.25, z + 0.3, x + 0.75, z + 0.8]) for x, z in poles] +
                  [dict(use='gl_mauville_wall', tiles=walls)],
                  furniture=[dict(m='d6_yuka_biri02_1', tile=t) for t in beams] + statues(n))
+        r['floor_tex'] = [dict(tex=f'g3sw_{x}_{z}', gen3=[x, z], rect=[x, z, x, z], stretch=True)    # Emerald's four
+                          for x, z in ((0, 15), (4, 12), (3, 9), (8, 9))]                            # switches, its art
         for k in ('alt_of', 'block', 'unblock'): r.pop(k, None)
         if state != 'normal':
             r['alt_of'] = g

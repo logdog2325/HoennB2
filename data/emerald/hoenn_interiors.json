@@ -738,7 +738,7 @@
    "emerald": "BirthIsland_Harbor"
   },
   "FallarborTown_BattleTentLobby": {
-   "status": "todo",
+   "status": "auto",
    "map_id": "MAP_FALLARBOR_TOWN_BATTLE_TENT_LOBBY",
    "map_type": "MAP_TYPE_INDOOR",
    "entered_from": "FallarborTown",
@@ -764,7 +764,18 @@
      "dest_warp": 1
     }
    ],
-   "emerald": "FallarborTown_BattleTentLobby"
+   "emerald": "FallarborTown_BattleTentLobby",
+   "zone": 520,
+   "scripts": 1040,
+   "init_scripts": 1041,
+   "text": 529,
+   "entities": 486,
+   "area": 282,
+   "own_matrix": false,
+   "own_scripts": 2048,
+   "own_init": 2049,
+   "own_text": 1039,
+   "claimed": "battle_tents (2026-10-18): Emerald's Battle Tents / Trainer Hill, notes/BATTLE_TENTS.md; zone, own script/init/text numbers and the room are this agent's"
   },
   "MagmaHideout_1F_Emerald": {
    "status": "cave",
@@ -882,7 +893,7 @@
    "claimed_by": "emerald_caves"
   },
   "TrainerHill_Entrance": {
-   "status": "todo",
+   "status": "auto",
    "map_id": "MAP_TRAINER_HILL_ENTRANCE",
    "map_type": "MAP_TYPE_INDOOR",
    "entered_from": "Route111",
@@ -914,7 +925,18 @@
      "dest_warp": 0
     }
    ],
-   "emerald": "TrainerHill_Entrance"
+   "emerald": "TrainerHill_Entrance",
+   "zone": 543,
+   "scripts": 1086,
+   "init_scripts": 1087,
+   "text": 112,
+   "entities": 106,
+   "area": 329,
+   "own_matrix": false,
+   "own_scripts": 2064,
+   "own_init": 2065,
+   "own_text": 1047,
+   "claimed": "battle_tents (2026-10-18): Emerald's Battle Tents / Trainer Hill, notes/BATTLE_TENTS.md; zone, own script/init/text numbers and the room are this agent's"
   },
   "TerraCave_Entrance": {
    "status": "cave",
@@ -959,7 +981,7 @@
    "_doors_parked": "Emerald's eight Terra Cave mouths (Routes 114 x2, 115 x2, 116 x2, 118 x2; pokeemerald data/scripts/abnormal_weather.inc) open one at a time with the abnormal weather (post-game, Phase 4): b2tools/world.py gives each its door into the cave and patches/hoenn_world.py parks it off the map; the weather's zone init moves the open one in (ObjInitWarpGPos)"
   },
   "SlateportCity_BattleTentLobby": {
-   "status": "todo",
+   "status": "auto",
    "map_id": "MAP_SLATEPORT_CITY_BATTLE_TENT_LOBBY",
    "map_type": "MAP_TYPE_INDOOR",
    "entered_from": "SlateportCity",
@@ -985,7 +1007,18 @@
      "dest_warp": 3
     }
    ],
-   "emerald": "SlateportCity_BattleTentLobby"
+   "emerald": "SlateportCity_BattleTentLobby",
+   "zone": 521,
+   "scripts": 1042,
+   "init_scripts": 1043,
+   "text": 530,
+   "entities": 487,
+   "area": 282,
+   "own_matrix": false,
+   "own_scripts": 2050,
+   "own_init": 2051,
+   "own_text": 1040,
+   "claimed": "battle_tents (2026-10-18): Emerald's Battle Tents / Trainer Hill, notes/BATTLE_TENTS.md; zone, own script/init/text numbers and the room are this agent's"
   },
   "SootopolisCity_MysteryEventsHouse_1F": {
    "status": "todo",
@@ -1023,7 +1056,7 @@
    "emerald": "SootopolisCity_MysteryEventsHouse_1F"
   },
   "VerdanturfTown_BattleTentLobby": {
-   "status": "todo",
+   "status": "auto",
    "map_id": "MAP_VERDANTURF_TOWN_BATTLE_TENT_LOBBY",
    "map_type": "MAP_TYPE_INDOOR",
    "entered_from": "VerdanturfTown",
@@ -1049,7 +1082,18 @@
      "dest_warp": 0
     }
    ],
-   "emerald": "VerdanturfTown_BattleTentLobby"
+   "emerald": "VerdanturfTown_BattleTentLobby",
+   "zone": 519,
+   "scripts": 1038,
+   "init_scripts": 1039,
+   "text": 527,
+   "entities": 484,
+   "area": 282,
+   "own_matrix": false,
+   "own_scripts": 2046,
+   "own_init": 2047,
+   "own_text": 1038,
+   "claimed": "battle_tents (2026-10-18): Emerald's Battle Tents / Trainer Hill, notes/BATTLE_TENTS.md; zone, own script/init/text numbers and the room are this agent's"
   },
   "BattleFrontier_BattlePalaceCorridor": {
    "status": "auto",
@@ -1305,7 +1349,7 @@
    "claimed_by": "emerald_caves"
   },
   "TrainerHill_1F": {
-   "status": "todo",
+   "status": "auto",
    "map_id": "MAP_TRAINER_HILL_1F",
    "map_type": "MAP_TYPE_INDOOR",
    "entered_from": "TrainerHill_Entrance",
@@ -1331,7 +1375,18 @@
      "dest_warp": 0
     }
    ],
-   "emerald": "TrainerHill_1F"
+   "emerald": "TrainerHill_1F",
+   "zone": 544,
+   "scripts": 1088,
+   "init_scripts": 1089,
+   "text": 113,
+   "entities": 107,
+   "area": 329,
+   "own_matrix": false,
+   "own_scripts": 2066,
+   "own_init": 2067,
+   "own_text": 1048,
+   "claimed": "battle_tents (2026-10-18): Emerald's Battle Tents / Trainer Hill, notes/BATTLE_TENTS.md; zone, own script/init/text numbers and the room are this agent's"
   },
   "TerraCave_End": {
    "status": "cave",
@@ -1586,7 +1641,7 @@
    "claimed_by": "emerald_caves"
   },
   "TrainerHill_2F": {
-   "status": "todo",
+   "status": "auto",
    "map_id": "MAP_TRAINER_HILL_2F",
    "map_type": "MAP_TYPE_INDOOR",
    "entered_from": "TrainerHill_1F",
@@ -1612,7 +1667,18 @@
      "dest_warp": 0
     }
    ],
-   "emerald": "TrainerHill_2F"
+   "emerald": "TrainerHill_2F",
+   "zone": 545,
+   "scripts": 1090,
+   "init_scripts": 1091,
+   "text": 115,
+   "entities": 109,
+   "area": 329,
+   "own_matrix": false,
+   "own_scripts": 2068,
+   "own_init": 2069,
+   "own_text": 1049,
+   "claimed": "battle_tents (2026-10-18): Emerald's Battle Tents / Trainer Hill, notes/BATTLE_TENTS.md; zone, own script/init/text numbers and the room are this agent's"
   },
   "MagmaHideout_4F": {
    "status": "cave",
@@ -1723,7 +1789,7 @@
    "claimed_by": "emerald_caves"
   },
   "TrainerHill_3F": {
-   "status": "todo",
+   "status": "auto",
    "map_id": "MAP_TRAINER_HILL_3F",
    "map_type": "MAP_TYPE_INDOOR",
    "entered_from": "TrainerHill_2F",
@@ -1749,10 +1815,21 @@
      "dest_warp": 0
     }
    ],
-   "emerald": "TrainerHill_3F"
+   "emerald": "TrainerHill_3F",
+   "zone": 546,
+   "scripts": 1092,
+   "init_scripts": 1093,
+   "text": 116,
+   "entities": 110,
+   "area": 329,
+   "own_matrix": false,
+   "own_scripts": 2070,
+   "own_init": 2071,
+   "own_text": 1050,
+   "claimed": "battle_tents (2026-10-18): Emerald's Battle Tents / Trainer Hill, notes/BATTLE_TENTS.md; zone, own script/init/text numbers and the room are this agent's"
   },
   "TrainerHill_4F": {
-   "status": "todo",
+   "status": "auto",
    "map_id": "MAP_TRAINER_HILL_4F",
    "map_type": "MAP_TYPE_INDOOR",
    "entered_from": "TrainerHill_3F",
@@ -1778,10 +1855,21 @@
      "dest_warp": 0
     }
    ],
-   "emerald": "TrainerHill_4F"
+   "emerald": "TrainerHill_4F",
+   "zone": 547,
+   "scripts": 1094,
+   "init_scripts": 1095,
+   "text": 118,
+   "entities": 112,
+   "area": 329,
+   "own_matrix": false,
+   "own_scripts": 2072,
+   "own_init": 2073,
+   "own_text": 1051,
+   "claimed": "battle_tents (2026-10-18): Emerald's Battle Tents / Trainer Hill, notes/BATTLE_TENTS.md; zone, own script/init/text numbers and the room are this agent's"
   },
   "TrainerHill_Roof": {
-   "status": "todo",
+   "status": "auto",
    "map_id": "MAP_TRAINER_HILL_ROOF",
    "map_type": "MAP_TYPE_INDOOR",
    "entered_from": "TrainerHill_4F",
@@ -1807,10 +1895,21 @@
      "dest_warp": 1
     }
    ],
-   "emerald": "TrainerHill_Roof"
+   "emerald": "TrainerHill_Roof",
+   "zone": 548,
+   "scripts": 1096,
+   "init_scripts": 1097,
+   "text": 119,
+   "entities": 113,
+   "area": 329,
+   "own_matrix": false,
+   "own_scripts": 2074,
+   "own_init": 2075,
+   "own_text": 1052,
+   "claimed": "battle_tents (2026-10-18): Emerald's Battle Tents / Trainer Hill, notes/BATTLE_TENTS.md; zone, own script/init/text numbers and the room are this agent's"
   },
   "TrainerHill_Elevator": {
-   "status": "todo",
+   "status": "auto",
    "map_id": "MAP_TRAINER_HILL_ELEVATOR",
    "map_type": "MAP_TYPE_INDOOR",
    "entered_from": "TrainerHill_Roof",
@@ -1836,7 +1935,18 @@
      "dest_warp": 1
     }
    ],
-   "emerald": "TrainerHill_Elevator"
+   "emerald": "TrainerHill_Elevator",
+   "zone": 549,
+   "scripts": 1098,
+   "init_scripts": 1099,
+   "text": 121,
+   "entities": 115,
+   "area": 329,
+   "own_matrix": false,
+   "own_scripts": 2076,
+   "own_init": 2077,
+   "own_text": 1053,
+   "claimed": "battle_tents (2026-10-18): Emerald's Battle Tents / Trainer Hill, notes/BATTLE_TENTS.md; zone, own script/init/text numbers and the room are this agent's"
   },
   "EverGrandeCity_PokemonLeague_2F": {
    "status": "auto",
@@ -2552,6 +2662,168 @@
    "own_init": 2045,
    "own_text": 1037,
    "claimed": "frontier_pyramid (2026-10-12): the Battle Pyramid, notes/FRONTIER_PYRAMID.md; zone, own script/init/text numbers and the room are this agent's"
+  },
+  "VerdanturfTown_BattleTentCorridor": {
+   "map_id": "MAP_VERDANTURF_TOWN_BATTLE_TENT_CORRIDOR",
+   "map_type": "MAP_TYPE_INDOOR",
+   "entered_from": "VerdanturfTown_BattleTentLobby",
+   "tilesets": [
+    "gTileset_Building",
+    "gTileset_BattleTent"
+   ],
+   "size": [
+    5,
+    8
+   ],
+   "warps": [],
+   "emerald": "VerdanturfTown_BattleTentCorridor",
+   "status": "auto",
+   "zone": 522,
+   "scripts": 1044,
+   "init_scripts": 1045,
+   "text": 531,
+   "entities": 488,
+   "area": 282,
+   "own_matrix": false,
+   "own_scripts": 2052,
+   "own_init": 2053,
+   "own_text": 1041,
+   "claimed": "battle_tents (2026-10-18): Emerald's Battle Tents / Trainer Hill, notes/BATTLE_TENTS.md; zone, own script/init/text numbers and the room are this agent's"
+  },
+  "FallarborTown_BattleTentCorridor": {
+   "map_id": "MAP_FALLARBOR_TOWN_BATTLE_TENT_CORRIDOR",
+   "map_type": "MAP_TYPE_INDOOR",
+   "entered_from": "FallarborTown_BattleTentLobby",
+   "tilesets": [
+    "gTileset_Building",
+    "gTileset_BattleTent"
+   ],
+   "size": [
+    5,
+    8
+   ],
+   "warps": [],
+   "emerald": "FallarborTown_BattleTentCorridor",
+   "status": "auto",
+   "zone": 523,
+   "scripts": 1046,
+   "init_scripts": 1047,
+   "text": 532,
+   "entities": 489,
+   "area": 282,
+   "own_matrix": false,
+   "own_scripts": 2054,
+   "own_init": 2055,
+   "own_text": 1042,
+   "claimed": "battle_tents (2026-10-18): Emerald's Battle Tents / Trainer Hill, notes/BATTLE_TENTS.md; zone, own script/init/text numbers and the room are this agent's"
+  },
+  "SlateportCity_BattleTentCorridor": {
+   "map_id": "MAP_SLATEPORT_CITY_BATTLE_TENT_CORRIDOR",
+   "map_type": "MAP_TYPE_INDOOR",
+   "entered_from": "SlateportCity_BattleTentLobby",
+   "tilesets": [
+    "gTileset_Building",
+    "gTileset_BattleTent"
+   ],
+   "size": [
+    5,
+    8
+   ],
+   "warps": [],
+   "emerald": "SlateportCity_BattleTentCorridor",
+   "status": "auto",
+   "zone": 524,
+   "scripts": 1048,
+   "init_scripts": 1049,
+   "text": 533,
+   "entities": 490,
+   "area": 282,
+   "own_matrix": false,
+   "own_scripts": 2056,
+   "own_init": 2057,
+   "own_text": 1043,
+   "claimed": "battle_tents (2026-10-18): Emerald's Battle Tents / Trainer Hill, notes/BATTLE_TENTS.md; zone, own script/init/text numbers and the room are this agent's"
+  },
+  "VerdanturfTown_BattleTentBattleRoom": {
+   "map_id": "MAP_VERDANTURF_TOWN_BATTLE_TENT_BATTLE_ROOM",
+   "map_type": "MAP_TYPE_INDOOR",
+   "entered_from": "VerdanturfTown_BattleTentCorridor",
+   "tilesets": [
+    "gTileset_General",
+    "gTileset_BattleTent"
+   ],
+   "size": [
+    13,
+    9
+   ],
+   "warps": [],
+   "emerald": "VerdanturfTown_BattleTentBattleRoom",
+   "status": "auto",
+   "zone": 525,
+   "scripts": 1050,
+   "init_scripts": 1051,
+   "text": 534,
+   "entities": 491,
+   "area": 282,
+   "own_matrix": false,
+   "own_scripts": 2058,
+   "own_init": 2059,
+   "own_text": 1044,
+   "claimed": "battle_tents (2026-10-18): Emerald's Battle Tents / Trainer Hill, notes/BATTLE_TENTS.md; zone, own script/init/text numbers and the room are this agent's"
+  },
+  "FallarborTown_BattleTentBattleRoom": {
+   "map_id": "MAP_FALLARBOR_TOWN_BATTLE_TENT_BATTLE_ROOM",
+   "map_type": "MAP_TYPE_INDOOR",
+   "entered_from": "FallarborTown_BattleTentCorridor",
+   "tilesets": [
+    "gTileset_Building",
+    "gTileset_BattleTent"
+   ],
+   "size": [
+    10,
+    9
+   ],
+   "warps": [],
+   "emerald": "FallarborTown_BattleTentBattleRoom",
+   "status": "auto",
+   "zone": 526,
+   "scripts": 1052,
+   "init_scripts": 1053,
+   "text": 535,
+   "entities": 492,
+   "area": 291,
+   "own_matrix": false,
+   "own_scripts": 2060,
+   "own_init": 2061,
+   "own_text": 1045,
+   "claimed": "battle_tents (2026-10-18): Emerald's Battle Tents / Trainer Hill, notes/BATTLE_TENTS.md; zone, own script/init/text numbers and the room are this agent's"
+  },
+  "SlateportCity_BattleTentBattleRoom": {
+   "map_id": "MAP_SLATEPORT_CITY_BATTLE_TENT_BATTLE_ROOM",
+   "map_type": "MAP_TYPE_INDOOR",
+   "entered_from": "SlateportCity_BattleTentCorridor",
+   "tilesets": [
+    "gTileset_Building",
+    "gTileset_BattleTent"
+   ],
+   "size": [
+    10,
+    9
+   ],
+   "warps": [],
+   "emerald": "SlateportCity_BattleTentBattleRoom",
+   "status": "auto",
+   "zone": 527,
+   "scripts": 1054,
+   "init_scripts": 1055,
+   "text": 536,
+   "entities": 493,
+   "area": 291,
+   "own_matrix": false,
+   "own_scripts": 2062,
+   "own_init": 2063,
+   "own_text": 1046,
+   "claimed": "battle_tents (2026-10-18): Emerald's Battle Tents / Trainer Hill, notes/BATTLE_TENTS.md; zone, own script/init/text numbers and the room are this agent's"
   }
  }
 }

@@ -254,6 +254,14 @@ def src_text(kind, num):
     assert len(found) == 1, (kind, num, found)
     text = open(found[0], encoding='utf-8').read().split('\n')
     over = json.load(open(os.path.join(ROOT, 'src', 'text', 'overrides.json'))).get(f'{kind}/{os.path.basename(found[0])}', {})
+    sys.path.insert(0, os.path.join(ROOT, 'b2tools'))
+    import version
+    # the other line sets too, in patches/text.py's order (src/text/overrides_*.json, then the version's own
+    # overrides*.json), else this repack undid them (overrides_battle_you.json: "You defeated" in files 17/19)
+    extras = sorted(glob.glob(os.path.join(ROOT, 'src', 'text', 'overrides_*.json')))
+    if version.OVERLAY: extras += sorted(glob.glob(os.path.join(ROOT, 'src', 'text', version.OVERLAY, 'overrides*.json')))
+    for extra in extras:
+        over = dict(over, **json.load(open(extra, encoding='utf-8')).get(f'{kind}/{os.path.basename(found[0])}', {}))
     for i, v in over.items(): text[int(i)] = v                  # as patches/text.py does
     return found[0], [l for l in text if l and not l.startswith('\\pad{')], '\n'.join(text)
 
@@ -341,7 +349,7 @@ def _test_party(files):
         src, o, b = os.path.join(t, 'x.s'), os.path.join(t, 'x.o'), os.path.join(t, 'x.bin')
         open(src, 'w').write(TEST_SCRIPT)
         subprocess.run([f'{LLVM}/clang', '--target=armv5te-none-eabi', '-x', 'assembler-with-cpp', '-c',
-                        '-I', f'{DECOMP}/include', '-I', f'{DECOMP}/lib/nitro/include',
+                        '-I', f'{DECOMP}/include', '-I', f'{DECOMP}/lib/nitro/include', '-I', f'{DECOMP}/build/include/generated',
                         '-I', os.path.join(ROOT, 'src', 'include'), '-D', 'BLACK2', '-o', o, src], check=True, cwd=DECOMP)
         subprocess.run([f'{LLVM}/llvm-objcopy', '-O', 'binary', o, b], check=True)
         entries = narcio.load(files, 56)

@@ -593,6 +593,14 @@ culled; magenta = nothing drawn) and a 4-view emulator tour of every map (269 vi
 - **Fortree [code]** (world.py forest_fill): blocked tree tiles round the tree houses get one-tile trees (the houses
   are on stilts since map_glitch_fix and hold no trees), except beside a house's side wall (the model is wider than
   Sapphire's footprint: a tree card there lay 1 unit from the wall) and by the big trees.
+- **Trees 2 units clear [code]** (bridges 2026-10-18, world.py clear_tree_layers, in write_cell before tjunction.fix):
+  a tree part (tree triangles of one material joined by shared corners: a card, a canopy, a palm fan) that stands less
+  than 2 units in front of a same-facing rock face (heights.py faces) or another tree part it overlaps moves forward
+  along its normal until it is 2 clear (at most 4; the part behind never moves). It fixed exterior_check layers'
+  ki03ax / yamagake01 (gap 0.01, Routes 119/120: a south card at a tile's back edge in front of a leaning face, -152 at
+  its foot, -144 at its top; the card moves 1.5 south) and ki04bx / ki04dx (0.66: not two trees - Black 2's Humilau
+  palm itself has its top fan 1.1 over its second crown fan at the middle, 0.56 on Mossdeep's half-size palms; the top
+  fan rises 0.9 / 1.4). Collision is the tiles' (unchanged).
 - Checks (HEAD 9b691e0 -> after, Sapphire; Ruby the same): walk_diff OPEN town 19 -> 15, route 9 -> 9, other outdoor
   9 -> 9, cave 84 -> 0 (notes/CAVES.md), dive 0; outdoor_check layer 39 -> 36 (the 5 grave/carved-house pairs gone; new:
   a sea rock card 0.66 from a skirt on Route 103), hole 24 -> 21 (Mt. Chimney 4 cells / 170 px -> 2 / 19 px, Jagged

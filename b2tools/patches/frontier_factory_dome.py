@@ -12,6 +12,9 @@ apply(files): Black 2's Battle Subway set archive (arc 211, 1000 files: HoennB2'
                    the Dome's NPC-vs-NPC points and its opponents' choice of two, the seeding)
   file 1889        the 300 Frontier trainers: {u16 Black 2 class, u16 overworld sprite, u16 set-list offset, u16 count}
                    then the set lists (u16 set ids)
+  file 1891        the Battle Tents' data (battle_tents 2026-10-18, data/emerald/battle_tents.json, converter/
+                   gen_battle_tents.py; tent_file below): their sets, trainers and set lists, read by this engine (the
+                   Slateport tent) and frontier_palace_arena.c (Verdanturf, Fallarbor)
   file 1890        the engine: frontier_factory_dome.c built position-independent (clang -fropi, linked here at 0) after
                    a 16-byte header ('FRFD', size, FR_Cmd offset, FR_BuildSetup offset). It does not fit the ITCM the
                    other patches leave (~11 KB; ~2 KB were free after frontier_core), so frontier_fd_stub.c loads it into the
@@ -38,6 +41,9 @@ HOOK_AT, HOOK_OLD = 0x02166082, 0x0217C094      # ov012: bl func_ov033_0217c094
 SET_BASE, ARC_SETS = 1000, 211
 N_SETS, TUCKER = 882, 882
 FACTS_FILE, TRAINERS_FILE, BLOB_FILE = 1888, 1889, 1890
+TENT_FILE = 1891                                # the Battle Tents' data (battle_tents; notes/BATTLE_TENTS.md)
+TENTS = ['verdanturf', 'fallarbor', 'slateport']  # the tent file's order (tent 0, 1, 2)
+TENT_NAME_BASE, TENT_SPEECH_BASE = 100, 200     # lines of each tent battle room's text (b2tools/battle_tents_text.py)
 NAME_BASE, SPEECH_BASE = 100, 500               # lines of the Factory battle room's text (FR_TEXT_FILE)
 NAME_NOLAND, NAME_TUCKER = 400, 401
 LINE_TOURNAMENT, LINE_YOUR_BLOCK, LINE_OTHER_BLOCK = 90, 91, 92
@@ -57,6 +63,41 @@ NATURES = ['NATURE_HARDY', 'NATURE_LONELY', 'NATURE_BRAVE', 'NATURE_ADAMANT', 'N
 
 def data():
     return json.load(open(os.path.join(ROOT, 'data', 'emerald', 'frontier.json'), encoding='utf-8'))
+
+def tent_data():
+    return json.load(open(os.path.join(ROOT, 'data', 'emerald', 'battle_tents.json'), encoding='utf-8'))
+
+def tent_text_files():
+    """The script text numbers of the three tents' battle rooms (their own texts hold the trainers' names and greetings)."""
+    rooms = version.load_json(os.path.join(ROOT, 'data', 'hoenn_interiors.json'))['rooms']
+    return {t: rooms[f'{n}_BattleTentBattleRoom']['own_text'] for t, n in
+            (('verdanturf', 'VerdanturfTown'), ('fallarbor', 'FallarborTown'), ('slateport', 'SlateportCity'))}
+
+def tent_file():
+    """arc 211 TENT_FILE: 'TENT', size; for tents 0-2 (TENTS) {u16 trainers, u16 sets, u16 set count, u16 trainer count}
+    (byte offsets); the trainers {u16 Black 2 class, u16 walking sprite, u16 set list (byte offset), u16 count}; the set
+    lists (u16 tent set indices); the sets (16 bytes, Black 2's set format: set_record)."""
+    d = tent_data()['tents']
+    head = 8 + 8 * len(TENTS)
+    parts, heads, off = [], [], head
+    for t in TENTS:
+        tent = d[t]
+        tr_off = off
+        list_off = tr_off + 8 * len(tent['trainers'])
+        recs, lists = b'', []
+        for tr in tent['trainers']:
+            recs += struct.pack('<HHHH', tr['b2_class'], tr['sprite'], list_off + 2 * len(lists), len(tr['mon_set']))
+            lists += tr['mon_set']
+        blk = recs + struct.pack(f'<{len(lists)}H', *lists)
+        set_off = off + len(blk)
+        sets = b''.join(set_record(m) for m in tent['sets'])
+        heads.append(struct.pack('<HHHH', tr_off, set_off, len(tent['sets']), len(tent['trainers'])))
+        parts.append(blk + sets)
+        off = set_off + len(sets)
+    body = b''.join(heads) + b''.join(parts)
+    out = struct.pack('<4sI', b'TENT', 8 + len(body)) + body
+    assert len(out) == off and off < 0x10000, (len(out), off)
+    return out
 
 def text_file():
     """The script text number that holds the trainers' names (the Factory battle room's own text)."""
@@ -105,11 +146,13 @@ def apply(files):
     sets, facts, trainers = files_blob()
     with tempfile.TemporaryDirectory() as tmp:
         engine = build_engine(tmp)
-    entries += sets + [facts, trainers, engine]
-    assert len(entries) == BLOB_FILE + 1, len(entries)
+    tents = tent_file()
+    entries += sets + [facts, trainers, engine, tents]
+    assert len(entries) == TENT_FILE + 1, len(entries)
     narcio.save(files, ARC_SETS, entries)
     return (f'arc {ARC_SETS}: {len(sets)} Emerald Frontier sets at {SET_BASE}-{SET_BASE + len(sets) - 1}, facts {FACTS_FILE} '
-            f'({len(facts)} B), trainers {TRAINERS_FILE} ({len(trainers)} B), engine {BLOB_FILE} ({len(engine)} B)')
+            f'({len(facts)} B), trainers {TRAINERS_FILE} ({len(trainers)} B), engine {BLOB_FILE} ({len(engine)} B), '
+            f'Battle Tents {TENT_FILE} ({len(tents)} B)')
 
 def c_table(name, ctype, rows):
     if rows and isinstance(rows[0], (list, tuple)):
@@ -127,6 +170,9 @@ def data_header():
              f'#define FR_SET_BASE {SET_BASE}', f'#define FR_FACTS_FILE {FACTS_FILE}', f'#define FR_TRAINERS_FILE {TRAINERS_FILE}',
              f'#define FR_TEXT_FILE {text_file()}', f'#define FR_NAME_BASE {NAME_BASE}', f'#define FR_SPEECH_BASE {SPEECH_BASE}',
              f'#define kNameNoland {NAME_NOLAND}', f'#define kNameTucker {NAME_TUCKER}', f'#define kNameBrain {NAME_NOLAND}',
+             f'#define TENT_FILE {TENT_FILE}', f'#define TENT_TEXT_SLATEPORT {tent_text_files()["slateport"]}',
+             f'#define TENT_NAME_BASE {TENT_NAME_BASE}', f'#define TENT_SPEECH_BASE {TENT_SPEECH_BASE}',
+             f'#define TENT_LEVEL {tent_data()["min_level"]}',
              f'#define kLineTournamentName {LINE_TOURNAMENT}', f'#define kLineYourBlock {LINE_YOUR_BLOCK}',
              f'#define kLineOtherBlock {LINE_OTHER_BLOCK}',
              f'#define kSpeciesUnown {b2_species["UNOWN"]}', f'#define kHighTier {d["high_tier"]}',
@@ -220,7 +266,10 @@ def build_engine(workdir):
     """The engine (frontier_factory_dome.c, -fropi) with its 16-byte header: 'FRFD', size, FR_Cmd, FR_BuildSetup."""
     open(os.path.join(workdir, 'frontier_fd_data.h'), 'w').write(data_header())
     test = ['-DHOENN_TEST_FD_WEAK'] if os.environ.get('HOENN_TEST_FD_WEAK') else []   # test builds only: Lv. 5 opponents
-    obj = _compile(os.path.join(HERE, 'frontier_factory_dome.c'), workdir, ['-fropi'] + test)
+    spec = importlib.util.spec_from_file_location('save_compat_fd', os.path.join(HERE, 'save_compat.py'))
+    sc = importlib.util.module_from_spec(spec); spec.loader.exec_module(sc)
+    compat = sc.cflags()                                 # HOENN_SAVE_COMPAT=1: the records' offset (notes/SAVE_PKHEX.md)
+    obj = _compile(os.path.join(HERE, 'frontier_factory_dome.c'), workdir, ['-fropi'] + test + compat)
     blob, sym = link_pic(obj)
     head = 16
     out = struct.pack('<4sIII', b'FRFD', head + len(blob), head + (sym['FR_Cmd'] & ~1), head + (sym['FR_BuildSetup'] & ~1))

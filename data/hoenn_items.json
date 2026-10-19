@@ -164,7 +164,7 @@
   "Route115_EventScript_1B153D": {
    "n": 21,
    "sapphire": "ITEM_TM01_FOCUS_PUNCH",
-   "item": "ITEM_TM01",
+   "item": "ITEM_TM96",
    "count": 1,
    "script": 7020,
    "flag": 1120
@@ -596,7 +596,7 @@
   "MeteorFalls_1F_1R_EventScript_1B17FB": {
    "n": 75,
    "sapphire": "ITEM_TM23_IRON_TAIL",
-   "item": "ITEM_TM23",
+   "item": "ITEM_TM100",
    "count": 1,
    "script": 7074,
    "flag": 1174
@@ -828,7 +828,7 @@
   "MtPyre_Exterior_EventScript_1B1981": {
    "n": 104,
    "sapphire": "ITEM_TM48_SKILL_SWAP",
-   "item": "ITEM_TM48",
+   "item": "ITEM_TM104",
    "count": 1,
    "script": 7103,
    "flag": 1203
@@ -1067,11 +1067,11 @@
   }
  },
  "notes": [
-  "ITEM_TM01_FOCUS_PUNCH: MOVE_FOCUS_PUNCH is no Gen 5 TM/HM; stand-in ITEM_TM01",
-  "ITEM_TM23_IRON_TAIL: MOVE_IRON_TAIL is no Gen 5 TM/HM; stand-in ITEM_TM23",
+  "ITEM_TM01_FOCUS_PUNCH: MOVE_FOCUS_PUNCH is no Black 2 TM/HM; the new ITEM_TM96",
+  "ITEM_TM23_IRON_TAIL: MOVE_IRON_TAIL is no Black 2 TM/HM; the new ITEM_TM100",
   "ITEM_HARBOR_MAIL: Gen 3 mail; stand-in ITEM_GREET_MAIL",
   "ITEM_SCANNER: not in Black 2 (key item?) - skipped",
-  "ITEM_TM48_SKILL_SWAP: MOVE_SKILL_SWAP is no Gen 5 TM/HM; stand-in ITEM_TM48",
+  "ITEM_TM48_SKILL_SWAP: MOVE_SKILL_SWAP is no Black 2 TM/HM; the new ITEM_TM104",
   "ITEM_ORANGE_MAIL: Gen 3 mail; stand-in ITEM_FAVORED_MAIL",
   "ITEM_WAVE_MAIL: Gen 3 mail; stand-in ITEM_RSVP_MAIL",
   "ITEM_SHADOW_MAIL: Gen 3 mail; stand-in ITEM_THANKS_MAIL",

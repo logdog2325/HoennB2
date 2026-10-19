@@ -1,0 +1,365 @@
+{
+ "_doc": "Verdanturf's Battle Tent battle room (Emerald 13x9, LAYOUT_VERDANTURF_TOWN_BATTLE_TENT_BATTLE_ROOM: a lawn; everything walkable, the player always under script). Floor rows 2-8 = the lawn kusa01a; Emerald's battle court (x 4-9, rows 3-7) = the Musical's red logo carpet in24_logo in Humilau's water in82_sea1 (Emerald's blue rim, x 3-10); bushes in9kusa_2 on Emerald's tall-grass tiles, red flowers in82_flo1 on its flower tiles (decoration, walkable as in Emerald). The opponent's door (Emerald's doorway (10..12,0..1), the opponent at (11,1)) = door_h5_in on the back wall over (11,2); arrival mat (1..2,8) = in24_mat (Emerald's arrow mat, no warp).",
+ "map": "VerdanturfTown_BattleTentBattleRoom",
+ "decomp": "pokeemerald",
+ "style": "bt_garden",
+ "origin": [
+  1,
+  0
+ ],
+ "wall_rows": "keep",
+ "exits": [],
+ "floor": [
+  [
+   0,
+   2,
+   12,
+   8
+  ]
+ ],
+ "block": [
+  [
+   0,
+   0
+  ],
+  [
+   1,
+   0
+  ],
+  [
+   2,
+   0
+  ],
+  [
+   3,
+   0
+  ],
+  [
+   4,
+   0
+  ],
+  [
+   5,
+   0
+  ],
+  [
+   6,
+   0
+  ],
+  [
+   7,
+   0
+  ],
+  [
+   8,
+   0
+  ],
+  [
+   9,
+   0
+  ],
+  [
+   10,
+   0
+  ],
+  [
+   11,
+   0
+  ],
+  [
+   12,
+   0
+  ],
+  [
+   0,
+   1
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   2,
+   1
+  ],
+  [
+   3,
+   1
+  ],
+  [
+   4,
+   1
+  ],
+  [
+   5,
+   1
+  ],
+  [
+   6,
+   1
+  ],
+  [
+   7,
+   1
+  ],
+  [
+   8,
+   1
+  ],
+  [
+   9,
+   1
+  ],
+  [
+   10,
+   1
+  ],
+  [
+   12,
+   1
+  ]
+ ],
+ "furniture": [
+  {
+   "m": "door_h5_in",
+   "tile": [
+    11,
+    2
+   ],
+   "wall": "N",
+   "gap": -1,
+   "doorway": true,
+   "y": -1,
+   "_what": "the opponent's door (Emerald (11,1))"
+  }
+ ],
+ "floor_tex": [
+  {
+   "units": [
+    3.25,
+    3.0,
+    10.75,
+    8.0
+   ],
+   "tex": "in82_sea1",
+   "src": 389,
+   "size": 32,
+   "_what": "Emerald's blue rim round the court"
+  },
+  {
+   "units": [
+    4.0,
+    3.375,
+    10.0,
+    7.625
+   ],
+   "tex": "in24_logo",
+   "src": 305,
+   "stretch": true,
+   "_what": "the battle court"
+  }
+ ],
+ "mats": [
+  {
+   "tex": "in24_mat",
+   "src": 305,
+   "rect": [
+    1,
+    8,
+    2,
+    8
+   ],
+   "border": 0.25,
+   "border_units": 4,
+   "_what": "arrival mat (Emerald's arrow mat (1..2,8))"
+  },
+  {
+   "tex": "in9kusa_2",
+   "src": 290,
+   "rect": [
+    0,
+    2,
+    0,
+    2
+   ],
+   "uv": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "_what": "bush (Emerald tall grass)"
+  },
+  {
+   "tex": "in9kusa_2",
+   "src": 290,
+   "rect": [
+    2,
+    2,
+    2,
+    2
+   ],
+   "uv": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "_what": "bush (Emerald tall grass)"
+  },
+  {
+   "tex": "in9kusa_2",
+   "src": 290,
+   "rect": [
+    1,
+    4,
+    1,
+    4
+   ],
+   "uv": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "_what": "bush (Emerald tall grass)"
+  },
+  {
+   "tex": "in9kusa_2",
+   "src": 290,
+   "rect": [
+    1,
+    6,
+    1,
+    6
+   ],
+   "uv": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "_what": "bush (Emerald tall grass)"
+  },
+  {
+   "tex": "in9kusa_2",
+   "src": 290,
+   "rect": [
+    4,
+    8,
+    4,
+    8
+   ],
+   "uv": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "_what": "bush (Emerald tall grass)"
+  },
+  {
+   "tex": "in9kusa_2",
+   "src": 290,
+   "rect": [
+    12,
+    8,
+    12,
+    8
+   ],
+   "uv": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "_what": "bush (Emerald tall grass)"
+  },
+  {
+   "tex": "in82_flo1",
+   "src": 389,
+   "rect": [
+    12,
+    2,
+    12,
+    2
+   ],
+   "uv": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "_what": "flowers"
+  },
+  {
+   "tex": "in82_flo1",
+   "src": 389,
+   "rect": [
+    12,
+    4,
+    12,
+    4
+   ],
+   "uv": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "_what": "flowers"
+  },
+  {
+   "tex": "in82_flo1",
+   "src": 389,
+   "rect": [
+    9,
+    8,
+    9,
+    8
+   ],
+   "uv": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "_what": "flowers"
+  }
+ ],
+ "decals": [
+  {
+   "tex": "m_nsch01_17",
+   "src": 282,
+   "at": [
+    1.5
+   ],
+   "y": 20,
+   "w": 16,
+   "h": 16,
+   "_what": "balloon"
+  },
+  {
+   "tex": "m_nsch01_18",
+   "src": 282,
+   "at": [
+    4.5
+   ],
+   "y": 26,
+   "w": 16,
+   "h": 16,
+   "_what": "balloon"
+  },
+  {
+   "tex": "m_nsch01_19",
+   "src": 282,
+   "at": [
+    7.5
+   ],
+   "y": 20,
+   "w": 16,
+   "h": 16,
+   "_what": "balloon"
+  }
+ ]
+}

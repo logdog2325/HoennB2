@@ -5,7 +5,9 @@
  * whose bits 0-10 the option accessors 0x0200898c-0x02008b0c use and whose bits 11-15 nothing reads:
  *   bit 11 (CFG_FAIRY)   1 = Fairy type on (Gen 6 chart, retypes, Fairy moves)       0 = Black 2's Gen 5 types
  *   bit 12 (CFG_CLASSIC) 1 = Gen 3 rule: a damaging move's category comes from its type  0 = Black 2's per-move split
- * Birch's two questions in the intro set them once (Intro_SetConfigBit); a new game starts with both 0.
+ *   bit 15 (CFG_SEASONS) 1 = Black 2's seasons by the DS clock's month                    0 = summer all year
+ * Birch's questions in the intro set them once (Intro_SetConfigBit); a new game starts with all of them 0 (bits 13
+ * and 14 are hoenn_music's and sprite_switch's).
  *
  * Types: 0-16 Black 2's, 17 = Fairy, 18 = "no type" (Black 2 used 17; every such check in ov167 moves to 18).
  * The data (a/0/1/6 species, a/0/2/1 moves) holds the Gen 6 types; with the toggle off the two readers below give
@@ -34,10 +36,15 @@ typedef int s32;
 #define CommonTypeBoostingItem     FN(void (*)(void *, void *, u32, u32), 0x021c5164)
 #define CommonGemDecide            FN(void (*)(void *, void *, u32, void *, u32), 0x021c59fc)
 #define CommonGemPower             FN(void (*)(void *, void *, u32, void *, u32), 0x021c5aac)
+#define BtlNet_SendSync            FN(u32 (*)(u8 *), 0x021b9bb8)   /* func_ov167_021b9bb8: send the 32-byte sync to all */
+#define BtlNet_RecvSync            FN(u32 (*)(u8 *), 0x021b9c0c)   /* func_ov167_021b9c0c: TRUE once it has arrived */
+#define BtlProc_InitSub            FN(void (*)(u32, u32, u32, u32), 0x021ce10c)   /* the battle proc's first ... */
+#define BtlProc_ExitSub            FN(void (*)(u32, u32, u32, u32), 0x021ce138)   /* ... and last call */
 #define VANILLA_CHART              ((const u8 *)0x021d7500)  /* data_ov167_021d7500, u8[17][17] in halves: 0 2 4 8 */
 
 #define CFG_FAIRY   (1u << 11)
 #define CFG_CLASSIC (1u << 12)
+#define CFG_SEASONS (1u << 15)
 #define TYPE_NORMAL 0
 #define TYPE_FAIRY  17
 #define TYPE_NONE   18
@@ -51,15 +58,69 @@ static void SelfTest_Hook(void);
 #endif
 
 /* ---- toggles ------------------------------------------------------------------------------------------------- */
-static u32 config(void) {
+/* Link battles (link, 2026-10-18; notes/LINK.md): both machines must use the same Fairy and split rules, or they
+ * compute different damage and the battle desyncs (each machine runs the battle's calculations: the client keeps its
+ * own server copy, BtlMainModule unk0C). Before the parties, Black 2 sends one BtlMainSyncData (32 bytes: the random
+ * state, ...) from the battle's server machine to every machine (ov167 func_ov167_0219ada0, every link battle style,
+ * local wireless and Wi-Fi alike). Its byte 0x1f has 4 spare bits (unk1F_4: the main module is zeroed and nothing
+ * writes or reads them). The server writes 8 | Fairy (bit 0) | classic split (bit 1) there (Link_SyncSend); every
+ * machine, the server included, takes the bits it receives as the battle's rules (Link_SyncRecv), and config()
+ * answers them instead of the save's bits 11-12 until the battle proc ends (Link_BattleInit / Link_BattleExit clear
+ * them). A server without this code sends 0, read as Black 2's rules (no Fairy, per-move split): right for an
+ * unmodified Black 2; an older HoennB2 release computes with its own options instead, but link.py's GGID keeps those
+ * out of local wireless. gLinkRules: 0 none, else 0x100 | the two bits; it lives in ITCM (.text, as emerald_mech's
+ * gEmPhase): 0 at boot. */
+__asm__(".text\n\t.align 2\n\t.global gLinkRules\ngLinkRules:\n\t.word 0\n");
+extern volatile u32 gLinkRules;
+#define LINK_SYNC_RULES 0x1f        /* BtlMainSyncData byte: bits 4-7 = unk1F_4 */
+
+static u32 config_saved(void) {
     void *sc = g_SaveControlWork;
     if (!sc) return 0;
     return *(const u16 *)SaveControl_GetBlockPtr(sc, 27);
 }
 
+static u32 config(void) {
+    u32 v = config_saved(), r = gLinkRules;
+    if (r) v = (v & ~(CFG_FAIRY | CFG_CLASSIC)) | (r & 1 ? CFG_FAIRY : 0) | (r & 2 ? CFG_CLASSIC : 0);
+    return v;
+}
+
+/* ov167 func_ov167_0219ada0: its `bl func_ov167_021b9bb8` (the server sends, r0 = &mainModule->syncData) */
+u32 Link_SyncSend(u8 *sync) {
+    u32 v = config_saved();
+    sync[LINK_SYNC_RULES] = (u8)((sync[LINK_SYNC_RULES] & 0x0f)
+                                 | ((8 | (v & CFG_FAIRY ? 1 : 0) | (v & CFG_CLASSIC ? 2 : 0)) << 4));
+    return BtlNet_SendSync(sync);
+}
+
+/* ... and its `bl func_ov167_021b9c0c` (every machine receives it into the same struct) */
+u32 Link_SyncRecv(u8 *sync) {
+    u32 ok = BtlNet_RecvSync(sync), n;
+    if (ok) {
+        n = sync[LINK_SYNC_RULES] >> 4;
+        gLinkRules = 0x100 | ((n & 8) ? (n & 3) : 0);
+    }
+    return ok;
+}
+
+/* ov167 func_ov167_021998c0 (battle proc init) `bl func_ov167_021ce10c` and func_ov167_02199cd4 (battle proc end)
+ * `bl func_ov167_021ce138`: every battle starts and ends with the save's rules (arguments passed through) */
+void Link_BattleInit(u32 a, u32 b, u32 c, u32 d) { gLinkRules = 0; BtlProc_InitSub(a, b, c, d); }
+void Link_BattleExit(u32 a, u32 b, u32 c, u32 d) { gLinkRules = 0; BtlProc_ExitSub(a, b, c, d); }
+
 /* Exported for fairy_ui (Thumb, 0/1 in r0, C calling convention: clobbers only r0-r3, r12, lr) */
 u32 Fairy_IsOn(void) { return (config() & CFG_FAIRY) != 0; }
 u32 Split_IsClassic(void) { return (config() & CFG_CLASSIC) != 0; }
+
+/* ---- seasons (Birch's fifth question; patches/hoenn_season.py, notes/SEASONS.md) -------------------------------
+ * hoenn_season locks Black 2's two season readers to summer; fairy.py points them here instead, so the lock holds
+ * only while bit 15 is 0 (every save made before the question, a "No", no save loaded yet).
+ * Season_FromMonth: Season_GetRealTime (arm9 0x02034f6c) calls it with the RTC month (1-12) in r0 where it computed
+ *   (month - 1) & 3 (0 spring, 1 summer, 2 autumn, 3 winter); r1-r3 are dead there.
+ * Season_Kept: GameData_GetSeason (arm9 0x020173ac) jumps here; the kept season is GameData +0x1c8. */
+u32 Season_FromMonth(u32 month) { return (config() & CFG_SEASONS) ? ((month - 1) & 3) : 1; }
+u32 Season_Kept(const u8 *gameData) { return (config() & CFG_SEASONS) ? gameData[0x1c8] : 1; }
 
 /* ---- type chart (replaces ov167 GetTypeEffectiveness 0x021bd160 and GetTypeWeaknesses 0x021bd2b0) ---------------- */
 static u32 vanilla_eff(u32 a, u32 d) {

@@ -492,6 +492,41 @@ def steven_partner():
             'pic_emerald': 'STEVEN', 'music': 'MALE', 'female': False, 'name': 'STEVEN', 'items': [], 'double': False,
             'ai': 0b111, 'party_kind': 'NoItemCustomMoves', 'party': party}
 
+# Emerald's rematches (emerald_rematch 2026-10-18, notes/EMERALD_REMATCH.md): pokeemerald src/battle_setup.c gRematchTable,
+# one row per trainer who rematches: the first battle's trainer, then up to four rematch tiers ("tier 2-5": the row's
+# entries 1-4, repeats dropped). The tiers are not Black 2 trainers (no ids: Black 2's table is full); each tier's record
+# and party are "rematch slots" (data/emerald/hoenn_rematch.json, src/trainers/emerald_rematch/) that
+# b2tools/patches/emerald_rematch.py installs and loads in place of the first battle's record while the rematch is
+# fought (the first battle's id, name, picture and NPC stay). Messages of the first battle's trainer: REMATCH_MSG.
+# Rows and slots are only ever appended (saves keep a bit per row): gRematchTable's order, then REMATCH_LATE in the
+# order they were added. Left out: the Elite Four and Wallace (their rows have no tiers).
+REMATCH_LATE = ['REMATCH_WALLY_VR']        # added later (emerald_rematch 2026-10-18, "add the wally battles too")
+# gym: 1-8 the Gym Leaders (after the Hall of Fame, tiers in turn); 9 + n post-game trainers with their own progress
+# (Wally at Victory Road's exit: after the Hall of Fame, tiers in turn); 0 route trainers (tier by badges)
+REMATCH_GYM = {'REMATCH_ROXANNE': 1, 'REMATCH_BRAWLY': 2, 'REMATCH_WATTSON': 3, 'REMATCH_FLANNERY': 4,
+               'REMATCH_NORMAN': 5, 'REMATCH_WINONA': 6, 'REMATCH_TATE_AND_LIZA': 7, 'REMATCH_JUAN': 8,
+               'REMATCH_WALLY_VR': 9}
+# message types of a rematch trainer (a/0/8/9 records of the first battle's id; Black 2's own types stop at 24):
+# 100 intro (shown before YES/NO), 101 after the rematch, 102 "you need two Pokémon"; 104-106 the same for the second
+# NPC of a pair (Black 2's 5000 + id NPC); 103 the in-battle defeat line (both NPCs' lines joined, as type 1)
+REMATCH_MSG = dict(intro=100, post=101, cannot=102, defeat=103, intro2=104, post2=105, cannot2=106)
+
+def rematch_rows_emerald():
+    """[{row, first, tiers [TRAINER_*], gym (REMATCH_GYM, 0 = a route trainer), map}]: gRematchTable's order, then
+    REMATCH_LATE."""
+    src = open(f'{EMERALD}/src/battle_setup.c', encoding='utf-8').read()
+    out = []
+    for name, args in re.findall(r'\[(REMATCH_\w+)\] = REMATCH\(([^)]*)\)', src):
+        a = [x.strip() for x in args.split(',')]
+        first, tiers = a[0], []
+        for t in a[1:5]:
+            if t != first and t not in tiers: tiers.append(t)
+        if tiers:
+            out.append(dict(row=name, first=first, tiers=tiers, gym=REMATCH_GYM.get(name, 0), map=a[5]))
+    out = [r for r in out if r['row'] not in REMATCH_LATE] + [r for n in REMATCH_LATE for r in out if r['row'] == n]
+    assert len(out) == 73 and sum(1 for r in out if 1 <= r['gym'] <= 8) == 8 and out[-1]['row'] == 'REMATCH_WALLY_VR', len(out)
+    return out
+
 def load_class_names_emerald():
     """pokeemerald src/data/text/trainer_class_names.h, by the pokeruby class names (CLASS_EMERALD)."""
     src = open(f'{EMERALD}/src/data/text/trainer_class_names.h', encoding='utf-8').read()
@@ -730,6 +765,8 @@ def main():
         hoenn_map, built = emerald_maps()
     else:
         money = {cls: int(v) for cls, v in re.findall(r'TRAINER_CLASS_(\w+),\s*(\d+)', open(f'{RUBY}/data/trainer_money.inc').read())}
+    em_rows = rematch_rows_emerald() if emerald else []           # Emerald's rematches (REMATCH_MSG)
+    em_first = {r['first']: r for r in em_rows}
     for t in wanted:
         tr = trainers[t]; bid = ids[t]; sc = scaling.get(t)
         levels = sc['new_levels'] if sc else [m['level'] for m in tr['party']]
@@ -787,6 +824,23 @@ def main():
             if pair:
                 o1 = objects[1]
                 say(7, o1['intro'], True); say(9, o1['after'], False); say(10, o1['cannot'], False)
+        if t in em_first:     # Emerald's rematch lines (REMATCH_MSG): the trainerbattle_rematch[_double] each NPC's script
+            rbs = [b for b in by_trainer.get(t, []) if 'rematch' in b['kind']]          # jumps to, and its msgbox after
+            def rematch_of(label, k):
+                for c in scripts.get(label, (None, []))[1]:
+                    mm = re.match(r'goto_if_eq VAR_RESULT, TRUE, (\w+)$', c)
+                    hit = [b for b in rbs if mm and b['label'] == mm.group(1)]
+                    if hit: return hit[0]
+                return rbs[k] if k < len(rbs) else None
+            npcs = [rematch_of(o['script'], k) for k, o in enumerate(objects[:2 if pair else 1])] or rbs[:1]
+            assert npcs and all(npcs), f'{t}: no trainerbattle_rematch for its NPCs'
+            for k, rb in enumerate(npcs):
+                base = REMATCH_MSG['intro2'] if k else REMATCH_MSG['intro']   # (the YES / NO follows the intro: no {be01})
+                say(base, rb['intro'], False); say(base + 1, rb['after'], False); say(base + 2, rb['cannot'], False)
+            defeats = [rb['defeat'] for rb in npcs]
+            defeats = [d for k, d in enumerate(defeats) if d in texts and d not in defeats[:k]]
+            if defeats:
+                msgs.append((REMATCH_MSG['defeat'], '{be01}\\n'.join(convert(texts[d], expand=True)[0] for d in defeats)))
         name, _ = convert(tr.get('name', ''), expand=True)
         out_trainers[t] = dict(b2_id=bid, sapphire_class=tr['class'], pic=tr['pic'], b2_class=pic_class[tr['pic']],
                                name=name, double=double, pair=pair, items=items[:4], ai=ai,
@@ -809,6 +863,10 @@ def main():
             a, b = p['defeat_pages']
             m = [(1, '{be01}\\n'.join(pages[a:b]))]
             if k == 0: m = [(0, field[0])] + m + [(ty, field[ty]) for ty in (2, 6) if field[ty]]
+            if REMATCH_MSG['defeat'] in msgs:     # Emerald's rematch lines: the field lines are the first twin's, the
+                rp = '{be01}\\n'.join(msgs[REMATCH_MSG['defeat']].split('{be01}\\n')[a:b])   # in-battle line by page as type 1
+                if k == 0: m += [(ty, msgs[ty]) for ty in (100, 101, 102) if ty in msgs]
+                if rp: m.append((REMATCH_MSG['defeat'], rp))
             items = [i for i in d['items'] if i != 'ITEM_NONE']; per = len(items) // n
             objs = [dict(o, npc_script=3000 + ids[p.get('id', t)]) for o in d['objects'] if o['gfx'] == p['gfx']]
             out_trainers[p.get('id', t)] = dict(
@@ -820,7 +878,7 @@ def main():
     os.makedirs(OUT_SRC, exist_ok=True)
     class_consts = {v: k for k, v in defines(f'{B2}/include/constants/trainer_classes.h', 'TRAINER_CLASS_').items()}
     names_dir = {os.path.basename(f)[:4]: f for f in glob.glob(os.path.join(OUT_SRC, '*.s'))}
-    for t, d in out_trainers.items():
+    def source_lines(t, d, what='generated by converter/gen_trainers.py, do not edit'):
         cls_const = class_consts.get(d['b2_class'], str(d['b2_class']))
         kind = ['PARTY_MOVES'] + (['PARTY_ITEMS'] if d['party_items'] else [])
         args = [f'class={cls_const}', f'party={" | ".join(kind)}']
@@ -829,7 +887,7 @@ def main():
         if d['ai']: args.append('ai=' + ' | '.join(d['ai']))
         args.append(f'money={d["money"]}')
         lines = ['#include "asm/trainer.inc"', '',
-                 f'// {t} ({d["sapphire_class"]} {d["name"]}): generated by converter/gen_trainers.py, do not edit',
+                 f'// {t} ({d["sapphire_class"]} {d["name"]}): {what}',
                  f'    Trainer {", ".join(args)}']
         for m in d['party']:
             a = [f'level={m["level"]}', f'species={m["species"] or "SPECIES_NONE"}', f'difficulty={m["difficulty"]}']
@@ -837,11 +895,83 @@ def main():
             a += [f'move{i + 1}={mv}' for i, mv in enumerate(m['moves']) if mv != 'MOVE_NONE']
             lines.append(f'    PartyMon {", ".join(a)}')
         lines.append('    PartyEnd')
+        return lines
+    for t, d in out_trainers.items():
+        lines = source_lines(t, d)
         safe = re.sub(r'\W', '', t[len('TRAINER_'):].lower())
         path = os.path.join(OUT_SRC, f'{d["b2_id"]:04d}_{safe}.s')
         old = names_dir.get(f'{d["b2_id"]:04d}')
         if old and old != path: os.replace(old, path)       # (renamed: same file, never deleted)
         open(path, 'w').write('\n'.join(lines) + '\n')
+
+    # ---- Emerald's rematch tiers (rematch_rows_emerald): one rematch slot per tier, numbered in gRematchTable's order
+    #      (Tate & Liza: two, split as their first battle, SPLIT_EMERALD); record and party as a first battle's (levels
+    #      through data/level_scaling.json, default moves written out), class and name the first battle's
+    em_rematch = None
+    if emerald:
+        def tier_record(t, d0, r_first):
+            tr, sc = trainers[t], scaling.get(t)
+            levels = sc['new_levels'] if sc else [m['level'] for m in tr['party']]
+            mons = []
+            for k, m in enumerate(tr['party']):             # (as the first-battle loop above)
+                lv = levels[k] if k < len(levels) else m['level']
+                mv = m['moves'] if m['moves'] else default_moves(sets.get(m['species'], []), lv)
+                mv = [b2c(b2_moves, x, 'move') or 'MOVE_NONE' for x in mv if x != 'MOVE_NONE'] + ['MOVE_NONE'] * 4
+                mons.append(dict(level=lv, sapphire_level=m['level'], species=b2c(b2_species, m['species'], 'species'),
+                                 difficulty=m['iv'], item=b2c(b2_items, m['item'], 'item') or 'ITEM_NONE', moves=mv[:4]))
+            items = [b2c(b2_items, i, 'item') or 'ITEM_NONE' for i in tr.get('items', [])] + ['ITEM_NONE'] * 4
+            ai = [AI_BITS[b] for b in range(16) if tr.get('ai', 0) >> b & 1 and b in AI_BITS]
+            if tr.get('double'): ai.append('AI_FLAG_TAG_STRATEGY')
+            if tr['pic'] != trainers[r_first]['pic']: report[f'rematch tier with another picture: {t}'] += 1
+            return dict(sapphire_class=tr['class'], name=d0['name'], b2_class=d0['b2_class'], double=bool(tr.get('double')),
+                        items=items[:4], ai=ai, money=money.get(tr['class'], 5) * (2 if tr.get('double') else 1),
+                        party_items=any(m['item'] != 'ITEM_NONE' for m in tr['party']), party=mons,
+                        level_scaled=bool(sc and sc['new_levels'] != sc['sapphire_levels']))
+        def split_party(mons):         # Tate & Liza: the leads one each (Emerald's double sends party[0] and [1]), Solrock
+            fixed = {}                 # Tate's and Lunatone Liza's (their first battle's split), the others to whoever has
+            for i, m in enumerate(mons):                     # fewer (Liza on a tie); each keeps Emerald's order
+                if i == 0 or m['species'] == 'SPECIES_SOLROCK': fixed[i] = 0
+                elif i == 1 or m['species'] == 'SPECIES_LUNATONE': fixed[i] = 1
+            for i in range(len(mons)):
+                if i not in fixed:
+                    n = [sum(1 for v in fixed.values() if v == s) for s in (0, 1)]
+                    fixed[i] = 0 if n[0] < n[1] else 1
+            return [[m for i, m in enumerate(mons) if fixed[i] == s] for s in (0, 1)]
+        rdir = os.path.join(GEN, 'src', 'trainers_rematch')
+        os.makedirs(rdir, exist_ok=True)
+        rows, slots = [], []
+        for r in em_rows:
+            f = r['first']
+            if f not in out_trainers: raise SystemExit(f'Emerald rematch {r["row"]}: {f} is not a converted trainer')
+            parts = split.get(f)
+            d0 = out_trainers[f]
+            row = dict(row=r['row'], first=f, b2_id=ids[f], gym=r['gym'], map=r['map'],
+                       partner=ids[parts[1]['id']] if parts else 0, tiers=[])
+            for k, t in enumerate(r['tiers']):
+                rec = tier_record(t, d0, f)
+                recs = [(t, rec)]
+                if parts:              # two single-style trainers fought together (h_trainerbattle_two), as the first battle
+                    halves = split_party(rec['party'])
+                    items = [i for i in rec['items'] if i != 'ITEM_NONE']; per = len(items) // 2
+                    recs = []
+                    for h, p in enumerate(parts):
+                        dp = out_trainers[p.get('id', f)]
+                        recs.append((t, dict(rec, name=dp['name'], b2_class=dp['b2_class'], double=False,
+                                             items=(items[h * per:(h + 1) * per] + ['ITEM_NONE'] * 4)[:4],
+                                             money=rec['money'] // 2, party=halves[h],
+                                             party_items=any(m['item'] != 'ITEM_NONE' for m in halves[h]), part=p['name'])))
+                row['tiers'].append(dict(tier=2 + k, trainer=t, slot=len(slots), double=rec['double'] or bool(parts)))
+                for t2, rd in recs:
+                    s = len(slots)
+                    half = f', {rd["part"]}\'s half' if 'part' in rd else ''
+                    slots.append(dict(slot=s, trainer=t2, row=r['row'], first=f, half=rd.get('part'), b2_class=rd['b2_class'],
+                                      double=rd['double'], party=[f'{m["species"]} Lv{m["level"]}' for m in rd['party']]))
+                    safe = re.sub(r'\W', '', t2[len('TRAINER_'):].lower()) + (f'_{rd["part"].lower()}' if 'part' in rd else '')
+                    what = f'rematch slot {s} (tier {2 + k} of {f}{half}): generated by converter/gen_trainers.py, do not edit'
+                    open(os.path.join(rdir, f'{s:03d}_{safe}.s'), 'w').write('\n'.join(source_lines(t2, rd, what)) + '\n')
+            rows.append(row)
+        em_rematch = dict(rows=rows, slots=slots)
+        json.dump(em_rematch, open(os.path.join(GEN, 'data', 'hoenn_rematch.json'), 'w'), indent=1, ensure_ascii=False)
 
     # ---- text: names, class names, messages (Black 2's files with our lines in place)
     os.makedirs(OUT_TEXT, exist_ok=True)
@@ -903,7 +1033,7 @@ def main():
           f'ids {min(ids.values())}-{max(ids.values())}, {len(free)} pool ids left; classes: {len(review)} '
           f'({len(class_edit)} edited); messages {len(allm) - filler}/{len(recs)} records; unknown: {dict(unknown)}; {dict(report)}')
     if ruby: install_ruby(twin, scaling, trainers)
-    if emerald: install_emerald(ids, id_report, out_trainers, sapphire_left, b2_class_names, b2_class_art, resources)
+    if emerald: install_emerald(ids, id_report, out_trainers, sapphire_left, b2_class_names, b2_class_art, resources, em_rematch)
 
 # ---- Ruby: install what differs from Sapphire's files into the ruby/ overlays -------------------------------------------
 def _read(path):
@@ -1011,7 +1141,7 @@ def install_ruby(twin, scaling, trainers):
     print('  ' + ', '.join(sorted(os.path.relpath(p, OUT) for p in want)))
 
 # ---- Emerald: install what differs from Sapphire's files into the emerald/ overlays ---------------------------------------
-def install_emerald(ids, id_report, out_trainers, sapphire_left, b2_class_names, b2_class_art, resources):
+def install_emerald(ids, id_report, out_trainers, sapphire_left, b2_class_names, b2_class_art, resources, em_rematch=None):
     """Compare the Emerald set generated in GEN with the committed Sapphire files and write Emerald's overlays (as
     install_ruby): OUT/src/trainers/emerald, OUT/src/text/system/emerald (0381-0383, 0485), OUT/data/emerald
     (hoenn_trainers.json = Emerald's registry, hoenn_trainer_data.json, hoenn_trainer_classes.json, hoenn_trainer_msgs.json)
@@ -1120,8 +1250,24 @@ def install_emerald(ids, id_report, out_trainers, sapphire_left, b2_class_names,
     if rc['special_bgm'] != sc['special_bgm']: cls['special_bgm'] = rc['special_bgm']
     cls['review'] = rc['review']
     want[os.path.join(OUT, 'data', E, 'hoenn_trainer_classes.json')] = _dump(cls)
+    # 7. Emerald's rematches (rematch_rows_emerald): the rematch slots' sources and the table emerald_rematch.py reads
+    rdir = os.path.join(OUT, 'src', 'trainers', 'emerald_rematch')
+    if em_rematch:
+        for f in sorted(glob.glob(os.path.join(GEN, 'src', 'trainers_rematch', '*.s'))):
+            want[os.path.join(rdir, os.path.basename(f))] = _read(f)
+        want[os.path.join(OUT, 'data', E, 'hoenn_rematch.json')] = _dump(dict(
+            _doc='Emerald\'s rematches (emerald_rematch 2026-10-18, notes/EMERALD_REMATCH.md). Generated by converter/gen_trainers.py '
+                 '(HOENN_VERSION=emerald) from pokeemerald src/battle_setup.c gRematchTable: "rows" = the 73 trainers who '
+                 'rematch (64 route trainers, the 8 Gym Leaders = gym 1-8, Wally at Victory Road = gym 9, a post-game '
+                 'row; gym 0 = a route trainer; rows and slots are only appended), each with its first battle\'s '
+                 'Black 2 id (b2_id; partner: Liza\'s for Tate & Liza) and its tiers 2-5 (slot = the rematch slot of the tier, '
+                 'Tate & Liza: slot = Tate\'s half, slot + 1 = Liza\'s); "slots" = what each rematch slot holds '
+                 '(src/trainers/emerald_rematch/NNN_*.s, installed by b2tools/patches/emerald_rematch.py). Rematch slots are '
+                 'not Black 2 trainer ids: the battle keeps the first battle\'s id, name, picture, NPC and flag. Message '
+                 'types of the first battle\'s trainer: ' + ', '.join(f'{v} {k}' for k, v in REMATCH_MSG.items()) + '.',
+            **em_rematch))
     # compare with / write the committed overlays; stale generated ones go to the Trash
-    mine = [(os.path.join(OUT, 'src', 'trainers', E), '*.s')] + [
+    mine = [(os.path.join(OUT, 'src', 'trainers', E), '*.s'), (rdir, '*.s')] + [
         (os.path.join(OUT, 'src', 'text', 'system', E), f'{n}_*.txt') for n in ('0381', '0382', '0383', '0485')]
     stale = [p for d, pat in mine for p in glob.glob(os.path.join(d, pat)) if p not in want]
     changed = [p for p, txt in want.items() if not os.path.exists(p) or _read(p) != txt]
@@ -1134,6 +1280,10 @@ def install_emerald(ids, id_report, out_trainers, sapphire_left, b2_class_names,
     print(f'  classes: {len(used)} used, {len(edits)} overlay edits; spare classes left: {len(spare_left)} {spare_left}')
     for k, u in unbuilt.items():
         print(f'  trainers on maps not built ({k}): {sum(len(set(v)) for v in u.values())} on {len(u)} maps: {sorted(u)}')
+    if em_rematch:
+        print(f'  rematches: {len(em_rematch["rows"])} trainers ({sum(1 for r in em_rematch["rows"] if 1 <= r["gym"] <= 8)} Gym Leaders, '
+              f'{sum(1 for r in em_rematch["rows"] if r["gym"] > 8)} post-game), '
+              f'{sum(len(r["tiers"]) for r in em_rematch["rows"])} tiers in {len(em_rematch["slots"])} rematch slots')
     if check:
         if changed or stale:
             print('NOT CURRENT:', [os.path.relpath(p, OUT) for p in changed + stale])

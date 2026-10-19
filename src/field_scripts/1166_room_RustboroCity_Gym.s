@@ -7,6 +7,7 @@
 #include "hoenn.h"
 #include "hoenn_trainers.h"
 #include "hoenn_story.inc"
+#include "hoenn_rematch.inc"    // Emerald's rematches (em_gym_rematch: nothing in Sapphire / Ruby)
 
     ScriptEntry Script_1    // Roxanne (RustboroCity_Gym_EventScript_Roxanne)
     ScriptEntry Script_2    // Gym guide (RustboroCity_Gym_EventScript_GymGuide)
@@ -46,6 +47,7 @@ L_RG_GiveRockTomb:                               // RustboroCity_Gym_EventScript
 L_RG_Release:
     h_release
 L_RG_Rematch:                                    // (already beaten)
+    em_gym_rematch TRAINER_ROXANNE, RG_ROXANNE   // Emerald: after the Hall of Fame, a rematch (hoenn_rematch.inc)
     h_goto_if_unset FLAG_RECEIVED_TM_ROCK_TOMB, L_RG_GiveRockTomb
     h_msgbox 3                                   // Since you are so strong, you should challenge other Gym Leaders. ...
     h_release

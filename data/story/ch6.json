@@ -514,7 +514,9 @@
    "p0": 0,
    "move": 15,
    "dir": 1,
-   "what": "TRAINER_LOIS_AND_HAL_1: eye-contact trainer (Sapphire object 1, MAN_5, FACE_DOWN)"
+   "what": "TRAINER_LOIS_AND_HAL_1: eye-contact trainer (Sapphire object 1, MAN_5, FACE_DOWN)",
+   "p0_emerald": 1,
+   "what_emerald": "TRAINER_LOIS_AND_HAL_1: eye-contact trainer (Sapphire object 1, MAN_5, FACE_DOWN) | Emerald (2026-10-18, pokeemerald's object): p0 1"
   },
   {
    "kind": "npc",
@@ -530,7 +532,9 @@
    "p0": 0,
    "move": 15,
    "dir": 1,
-   "what": "TRAINER_LOIS_AND_HAL_1: eye-contact trainer (Sapphire object 2, WOMAN_5, FACE_DOWN)"
+   "what": "TRAINER_LOIS_AND_HAL_1: eye-contact trainer (Sapphire object 2, WOMAN_5, FACE_DOWN)",
+   "p0_emerald": 1,
+   "what_emerald": "TRAINER_LOIS_AND_HAL_1: eye-contact trainer (Sapphire object 2, WOMAN_5, FACE_DOWN) | Emerald (2026-10-18, pokeemerald's object): p0 1"
   },
   {
    "kind": "sign",

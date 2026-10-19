@@ -57,7 +57,12 @@ def symbols(module):
     out = {}
     for line in open(p):
         m = re.match(r'(\S+) kind:function\(\w+,size=(0x[0-9a-f]+)\) addr:(0x[0-9a-f]+)', line)
-        if m: out[m.group(1)] = (int(m.group(3), 16), int(m.group(2), 16))
+        if m:
+            addr, size = int(m.group(3), 16), int(m.group(2), 16)
+            out[m.group(1)] = (addr, size)
+            # also by the decomp's address name (func_ov142_0219c444 / func_0201f14c), which a newer decomp may have
+            # replaced with a real one (ItemMenuProc_Init): our lookups keep working (notes/POKEBW2_UPGRADE.md)
+            out.setdefault(f'func_{module}_{addr:08x}' if module != 'arm9' else f'func_{addr:08x}', (addr, size))
     return out
 
 def ov_base(n):

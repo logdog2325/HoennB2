@@ -22,7 +22,12 @@ Script_1:                                    // Record Corner attendant (Cable C
     ActorsUnpauseAll
     VMHalt
 
-Script_2:                                    // Colosseum attendant (Cable Club): Sapphire's apology
+Script_2:                                    // Colosseum attendant: Sapphire's apology until FLAG_SYS_POKEDEX_GET, then Black 2's Union Room counter (global 2101)
+#ifdef FLAG_SYS_POKEDEX_GET
+    FlagGet FLAG_SYS_POKEDEX_GET, 0x8000
+    WorkCmpConst 0x8000, 1
+    VMJumpIf CMP_EQ, L_2_Open
+#endif
     ActorsPauseAll
     WordSetPlayerName 0
     SEPlay SEQ_SE_MESSAGE
@@ -33,8 +38,17 @@ Script_2:                                    // Colosseum attendant (Cable Club)
     FinishAllEvents
     ActorsUnpauseAll
     VMHalt
+L_2_Open:
+    FlagSet 106
+    RTCallGlobal 2101                          // it pauses, talks, ends the events (FinishAllEvents) itself
+    VMHalt
 
-Script_3:                                    // Trade Center attendant (Cable Club): Sapphire's apology
+Script_3:                                    // Trade Center attendant: Sapphire's apology until FLAG_SYS_POKEDEX_GET, then Black 2's Wi-Fi Club counter (global 10100)
+#ifdef FLAG_SYS_POKEDEX_GET
+    FlagGet FLAG_SYS_POKEDEX_GET, 0x8000
+    WorkCmpConst 0x8000, 1
+    VMJumpIf CMP_EQ, L_3_Open
+#endif
     ActorsPauseAll
     WordSetPlayerName 0
     SEPlay SEQ_SE_MESSAGE
@@ -44,6 +58,10 @@ Script_3:                                    // Trade Center attendant (Cable Cl
     ActorMsgClose
     FinishAllEvents
     ActorsUnpauseAll
+    VMHalt
+L_3_Open:
+    FlagSet 106
+    RTCallGlobal 10100                          // it pauses, talks, ends the events (FinishAllEvents) itself
     VMHalt
 
     .balign 4, 0

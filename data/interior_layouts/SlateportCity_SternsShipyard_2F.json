@@ -62,58 +62,6 @@
    "h": 10,
    "gap": 1,
    "_what": "wall panel (12,1)"
-  },
-  {
-   "tex": "in22_kabe03",
-   "src": 303,
-   "at": [
-    9.0
-   ],
-   "z": 5,
-   "y": -50,
-   "w": 32,
-   "h": 48,
-   "gap": 60,
-   "_what": "the pit's north wall"
-  },
-  {
-   "tex": "in22_kabe03",
-   "src": 303,
-   "at": [
-    11.0
-   ],
-   "z": 5,
-   "y": -50,
-   "w": 32,
-   "h": 48,
-   "gap": 60,
-   "_what": "the pit's north wall"
-  },
-  {
-   "tex": "in22_kabe03",
-   "src": 303,
-   "at": [
-    13.0
-   ],
-   "z": 5,
-   "y": -50,
-   "w": 32,
-   "h": 48,
-   "gap": 60,
-   "_what": "the pit's north wall"
-  },
-  {
-   "tex": "in22_kabe03",
-   "src": 303,
-   "at": [
-    15.0
-   ],
-   "z": 5,
-   "y": -50,
-   "w": 32,
-   "h": 48,
-   "gap": 60,
-   "_what": "the pit's north wall"
   }
  ],
  "furniture": [

@@ -135,7 +135,7 @@
     },
     "MauvilleCity_EventScript_Woman": {
      "script": 15,
-     "sprite": 26
+     "sprite": 22
     }
    }
   },
@@ -293,7 +293,7 @@
     },
     "RustboroCity_EventScript_Woman": {
      "script": 34,
-     "sprite": 22
+     "sprite": 43
     },
     "RustboroCity_EventScript_NinjaBoy": {
      "script": 35,
@@ -309,7 +309,7 @@
     },
     "RustboroCity_EventScript_Man2": {
      "script": 38,
-     "sprite": 19
+     "sprite": 42
     },
     "RustboroCity_EventScript_Boy1": {
      "script": 39,
@@ -546,7 +546,7 @@
     },
     "Route115_EventScript_Woman": {
      "script": 3,
-     "sprite": 53
+     "sprite": 27
     }
    }
   },
@@ -669,7 +669,7 @@
     },
     "Route104_EventScript_Woman": {
      "script": 19,
-     "sprite": 53
+     "sprite": 27
     },
     "Route104_EventScript_Girl2": {
      "script": 20,
@@ -872,7 +872,7 @@
     },
     "Route103_EventScript_Man": {
      "script": 4,
-     "sprite": 20
+     "sprite": 19
     },
     "Route103_EventScript_Boy": {
      "script": 5,
@@ -995,11 +995,11 @@
     },
     "Route111_EventScript_Man1": {
      "script": 24,
-     "sprite": 20
+     "sprite": 19
     },
     "Route111_EventScript_Man2": {
      "script": 25,
-     "sprite": 19
+     "sprite": 42
     }
    }
   },
@@ -1179,7 +1179,7 @@
     },
     "Route121_EventScript_Woman": {
      "script": 5,
-     "sprite": 27
+     "sprite": 26
     }
    }
   },
@@ -1390,7 +1390,7 @@
     },
     "SafariZone_North_EventScript_Man": {
      "script": 2,
-     "sprite": 19
+     "sprite": 42
     }
    }
   },
@@ -1579,7 +1579,7 @@
     },
     "BattleFrontier_OutsideEast_EventScript_Man1": {
      "script": 12,
-     "sprite": 20
+     "sprite": 19
     },
     "BattleFrontier_OutsideEast_EventScript_Hiker": {
      "script": 13,
@@ -1635,15 +1635,15 @@
     },
     "BattleFrontier_OutsideEast_EventScript_Man3": {
      "script": 26,
-     "sprite": 20
+     "sprite": 19
     },
     "BattleFrontier_OutsideEast_EventScript_Woman1": {
      "script": 27,
-     "sprite": 22
+     "sprite": 43
     },
     "BattleFrontier_OutsideEast_EventScript_Woman2": {
      "script": 28,
-     "sprite": 22
+     "sprite": 43
     },
     "BattleFrontier_OutsideEast_EventScript_BlackBelt2": {
      "script": 29,
@@ -1655,7 +1655,7 @@
     },
     "BattleFrontier_OutsideEast_EventScript_Woman3": {
      "script": 31,
-     "sprite": 26
+     "sprite": 22
     },
     "BattleFrontier_OutsideEast_EventScript_Gentleman": {
      "script": 32,
@@ -1700,11 +1700,11 @@
     },
     "BattleFrontier_OutsideWest_EventScript_Man1": {
      "script": 40,
-     "sprite": 20
+     "sprite": 19
     },
     "BattleFrontier_OutsideWest_EventScript_Woman1": {
      "script": 41,
-     "sprite": 22
+     "sprite": 43
     },
     "BattleFrontier_OutsideWest_EventScript_FatMan1": {
      "script": 42,
@@ -1716,7 +1716,7 @@
     },
     "BattleFrontier_OutsideWest_EventScript_Man2": {
      "script": 44,
-     "sprite": 42
+     "sprite": 358
     },
     "BattleFrontier_OutsideWest_EventScript_Lass": {
      "script": 45,
@@ -1736,7 +1736,7 @@
     },
     "BattleFrontier_OutsideWest_EventScript_Woman3": {
      "script": 49,
-     "sprite": 53
+     "sprite": 27
     },
     "BattleFrontier_OutsideWest_EventScript_Boy2": {
      "script": 50,
@@ -1767,7 +1767,7 @@
    "npcs": {
     "SafariZone_South_EventScript_Man": {
      "script": 6,
-     "sprite": 19
+     "sprite": 42
     }
    }
   },
@@ -1999,15 +1999,15 @@
     },
     "SlateportCity_EventScript_Man2": {
      "script": 44,
-     "sprite": 20
+     "sprite": 19
     },
     "SlateportCity_EventScript_Woman2": {
      "script": 45,
-     "sprite": 22
+     "sprite": 43
     },
     "SlateportCity_EventScript_Man3": {
      "script": 46,
-     "sprite": 42
+     "sprite": 358
     }
    }
   },
@@ -2063,7 +2063,7 @@
    "npcs": {
     "DewfordTown_EventScript_Woman": {
      "script": 11,
-     "sprite": 53
+     "sprite": 27
     }
    }
   }

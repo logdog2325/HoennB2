@@ -319,7 +319,11 @@ L_TestTruckDone:
     VMStackPushConst 0
     VMStackCmp CMP_EQ
     VMJumpIf CMP_STACK, L_TestPartyDone     // (jumps when the comparison is false)
+#ifdef HOENN_TEST_CHGROUDON
+    PokePartyAdd 0x8001, SPECIES_GROUDON, 0, 100    // HOENN_TEST_CHGROUDON=1: a Lv 100 Groudon (gym/boss tests). No badges
+#else                                                // here: giving them in this zone init froze the game on entering Littleroot
     PokePartyAdd 0x8001, SPECIES_MUDKIP, 0, 50
+#endif
 L_TestPartyDone:
 #endif
     // Sapphire LittlerootTown_EventScript_SetTwinPos: until Birch is rescued the twin (uid 1) stands at the north

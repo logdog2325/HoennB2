@@ -52,6 +52,104 @@ BERRY_LINES = [
     "{0100:0} left the {0100:1}\\nunpicked.",                                                # Route102_Text_1A18C5
 ]
 
+# ---- berry planting (HOENN_BERRY_PLANTING, user goal 2026-10-18; notes/BERRY_PLANTING.md) ----------------------------
+# Gen 3's real berry trees instead of the daily spots, behind the switch: every Gen 3 berry tree (soft soil included) is
+# one actor, uid PLANT_UID - its index on its map, object code PLANT_VCODE + Gen 3 tree id (b2tools/patches/berries.c turns it
+# into the picture of the tree's berry and stage when the actor is made), script global 7999 + PLANT_SCRIPT (file 1241
+# Script_300, src/field_scripts/common/berry_planting.inc). Per version, from its own decomp: the trees' maps and tiles
+# (data/maps/*/map.json berry tree objects) and the berries Gen 3's new game plants (data/scripts/new_game.inc
+# setberrytree): Sapphire and Ruby pokeruby, Emerald pokeemerald (its Route 115 trees stand one tile east).
+# Writes data/hoenn_berry_trees.json (Emerald: data/emerald/hoenn_berry_trees.json; read by patches/berries.py),
+# data/story/berries/berry_trees.json (Emerald: data/story/berries/emerald/; patches/story.py places it instead of
+# data/story/berry_spots.json when the switch is on) and src/text/berries/overrides_berry_planting.json (the lines,
+# appended to script text 208 after the daily ones: patches/text.py packs them only with the switch).
+PLANT_SCRIPT = 300                     # Script_300 = global 8299
+PLANT_UID = 250                        # actor uid = 250 - the tree's index on its map (Black 2's actor save keeps a uid
+                                       # in 8 bits: 400 + k came back as 144 + k after Continue; 233-250 are free)
+PLANT_VCODE = 0x0F00                   # object code = 0x0F00 + tree id (berries.c VCODE_BASE, b2tools/npc_check.py)
+PLANT_TEXT = BERRY_TEXT + len(BERRY_LINES)   # 34: berry_planting_defs.inc BT_T_WANTPLANT
+MIRAGE_FLAG = 'FLAG_BERRY_TREE_PICKED_73'    # Mirage Island's Liechi tree: hidden while the island is away (Route130.inc)
+# Sapphire's berry_tree.inc text (Ruby's = Sapphire's; Emerald's the same lines), Black 2's item names for
+# {STR_VAR_1} [BERRY] ("Oran Berry"), line breaks for Black 2's window
+PLANT_LINES = [
+    "It’s soft, loamy soil.\\nWant to plant a Berry?",                       # Route102_Text_1A16CD
+    "{0100:0} planted one {0100:1}\\nin the soft, loamy soil.",                  # Route102_Text_1A16FB
+    "One {0100:1} was planted here.",                                            # Route102_Text_1A172C
+    "{0100:1} has sprouted.",                                                     # Route102_Text_1A174B
+    "This {0100:1} plant\\nis growing taller.",                                  # Route102_Text_1A175C
+    "These {0100:1} flowers\\nare blooming cutely.",                             # Route102_Text_1A177D + 1A17B0
+    "These {0100:1} flowers\\nare blooming prettily.",                           # + 1A17B7
+    "These {0100:1} flowers\\nare blooming very beautifully.",                   # + 1A179F
+    "Want to water the {0100:1}\\nwith the Wailmer Pail?",                       # Route102_Text_1A18E6
+    "{0100:0} watered the {0100:1}.",                                            # Route102_Text_1A1912
+    "The plant seems to be delighted.",                                          # Route102_Text_1A1925
+    "The {0100:1} can’t be planted\\nhere.",                                # (Black 2's Bag lists every item)
+]
+BERRY_NAMES = ['CHERI', 'CHESTO', 'PECHA', 'RAWST', 'ASPEAR', 'LEPPA', 'ORAN', 'PERSIM', 'LUM', 'SITRUS', 'FIGY', 'WIKI',
+               'MAGO', 'AGUAV', 'IAPAPA', 'RAZZ', 'BLUK', 'NANAB', 'WEPEAR', 'PINAP', 'POMEG', 'KELPSY', 'QUALOT',
+               'HONDEW', 'GREPA', 'TAMATO', 'CORNN', 'MAGOST', 'RABUTA', 'NOMEL', 'SPELON', 'PAMTRE', 'WATMEL', 'DURIN',
+               'BELUE', 'LIECHI', 'GANLON', 'SALAC', 'PETAYA', 'APICOT', 'LANSAT', 'STARF', 'ENIGMA']   # Gen 3 berry 1-43
+
+def planting_trees(decomp, hoenn=lambda m: m):
+    """{tree id: (map, [x, y], Gen 3 berry name or None)}: a decomp's berry tree objects and its new game's berries."""
+    root = os.path.join(ROOT, 'external', decomp)
+    consts = {}
+    bh = os.path.join(root, 'include', 'constants', 'berry.h')
+    if os.path.exists(bh):
+        consts = {k: int(v) for k, v in re.findall(r'#define (BERRY_TREE_\w+)\s+(\d+)', open(bh).read())}
+    tid = lambda v: v if isinstance(v, int) else consts[v] if v in consts else int(v, 0)
+    planted = {tid(t): b for t, b in re.findall(r'setberrytree (\w+),\s*ITEM_TO_BERRY\(ITEM_(\w+)_BERRY\)',
+                                                 open(os.path.join(root, 'data', 'scripts', 'new_game.inc')).read())}
+    out = {}
+    for f in sorted(glob.glob(os.path.join(root, 'data', 'maps', '*', 'map.json'))):
+        m = json.load(open(f))
+        for o in m.get('object_events') or []:
+            if 'BERRY_TREE' in o['graphics_id']:
+                t = tid(o['trainer_sight_or_berry_tree_id'])
+                assert t not in out and 0 < t < 128, (decomp, t)
+                out[t] = (hoenn(m['name']), [o['x'], o['y']], planted.get(t))
+    assert set(planted) <= set(out), set(planted) - set(out)
+    return dict(sorted(out.items()))
+
+def text_of(files, name):
+    return next(t for p, t in files.items() if p.endswith(name))
+
+def planting_files(trees, version_name, items):
+    """{path: text} of the registry, the story objects and the text lines."""
+    sub = '' if version_name == 'sapphire' else version_name + '/'
+    reg = {str(t): dict(map=mp, at=at, berry=f'ITEM_{b}_BERRY' if b else None,
+                        number=BERRY_NAMES.index(b) + 1 if b else 0,
+                        item=items[f'ITEM_{b}_BERRY'] if b else 0) for t, (mp, at, b) in trees.items()}
+    index = {}
+    for t, (mp, at, b) in trees.items(): index[t] = sum(1 for u, v in trees.items() if v[0] == mp and u < t)
+    assert max(index.values()) < 18
+    objs = [dict(kind='npc', map=mp, at=at, uid=PLANT_UID - index[t], model=PLANT_VCODE + t, dir=1,
+                 script=7999 + PLANT_SCRIPT, optional=True,
+                 note=f'berry tree {t}' + (f' ({b.title()} at new game)' if b else ' (soft soil)'),
+                 **({'flag': MIRAGE_FLAG} if mp == 'Route130' else {}))
+            for t, (mp, at, b) in trees.items()]
+    assert sum(1 for o in objs if 'flag' in o) == 1, 'one tree on Mirage Island'
+    b2 = os.path.basename(glob.glob(os.path.join(ROOT, 'src', 'text', 'script', '0208_*.txt'))[0])
+    text = {'_doc': 'Generated by converter/gen_hidden_items.py: berry planting\'s lines (Sapphire\'s berry_tree.inc), '
+                    'appended to script text 208 after the daily berry lines; b2tools/patches/text.py adds them only '
+                    'with HOENN_BERRY_PLANTING=1 (src/field_scripts/common/berry_planting_defs.inc BT_T_*).',
+            f'script/{b2}': {str(PLANT_TEXT + i): (l.encode().decode('unicode_escape') if '\\u' in l else l)
+                             for i, l in enumerate(PLANT_LINES)}}
+    return {
+        os.path.join(ROOT, 'data', sub, 'hoenn_berry_trees.json'): json.dumps(
+            {'_doc': f'Generated by converter/gen_hidden_items.py: {version_name.title()}\'s Gen 3 berry trees for berry '
+                     'planting (HOENN_BERRY_PLANTING): Gen 3 tree id -> map, tile, the berry its new game plants '
+                     '(fully grown; null = soft soil), Gen 3 berry number, Black 2 item. b2tools/patches/berries.py '
+                     'reads it (the new-game trees of the save).', 'trees': reg}, indent=1) + '\n',
+        os.path.join(ROOT, 'data', 'story', 'berries', sub, 'berry_trees.json'): json.dumps(
+            {'_doc': 'Generated by converter/gen_hidden_items.py: berry planting\'s tree actors (uid 250 - index on the map, '
+                     'object code 0x0F00 + tree id = the tree\'s picture, b2tools/patches/berries.c; script global 8299). '
+                     'b2tools/patches/story.py places them instead of data/story/berry_spots.json when '
+                     'HOENN_BERRY_PLANTING=1.', 'objects': objs}, indent=1) + '\n',
+        os.path.join(ROOT, 'src', 'text', 'berries', 'overrides_berry_planting.json'):
+            json.dumps(text, indent=1, ensure_ascii=False) + '\n',
+    }
+
 def berry_spots(items):
     """[(spot k, map, (x, y), tree id, B2 item, count)]: every Sapphire berry tree with a berry at new game."""
     planted = {int(t): b for t, b in re.findall(r'setberrytree (\d+), ITEM_TO_BERRY\((ITEM_\w+)\)',
@@ -110,6 +208,9 @@ def berry_scripts(spots, items):
     assert [v['k'] for v in spots] == list(range(1, len(spots) + 1)) and len(spots) < ZONE_INIT_CALL
     entries += ''.join(f'    ScriptEntry {"Script_" + str(BERRY_BASE + k) if k >= ZONE_INIT_CALL else "L_BerryNoSpot"}\n'
                        for k in range(len(spots) + 1, ZONE_INIT_MAP + 1))       # (spots 81-84: none yet)
+    entries += (f'#ifdef HOENN_BERRY_PLANTING                    // berry planting (notes/BERRY_PLANTING.md): global {7999 + PLANT_SCRIPT}\n'
+                f'    ScriptEntry Script_{PLANT_SCRIPT}                         // = every tree (data/story/berries/berry_trees.json)\n'
+                '#endif\n')
     body = ['', '// ---- daily berry spots (converter/gen_hidden_items.py; data/hoenn_berry_spots.json) ----', '']
     for v in spots:
         flag = f'FLAG_BERRY_TREE_PICKED_{v["k"]:02d}'
@@ -148,11 +249,19 @@ def berry_scripts(spots, items):
             [f'    FlagReset FLAG_BERRY_TREE_PICKED_{v["k"]:02d}' for v in spots] + \
             ['L_BerryNewDayDone:', '    VMReturn', '',
              f'Script_{BERRY_BASE + ZONE_INIT_CALL}:              // global {7999 + BERRY_BASE + ZONE_INIT_CALL}: RTCallGlobal from a tree zone\'s own init',
+             '#ifdef HOENN_BERRY_PLANTING',
+             '    BerryCmd BT_OP_UPDATE, 0                       // (berry planting: the trees grow by the clock)',
+             '#else',
              '    VMCall L_BerryNewDay                           // (a new day: every tree grows back before the zone spawns)',
+             '#endif',
              '    RTEndGlobal',
              '    VMHalt',
              f'Script_{BERRY_BASE + ZONE_INIT_MAP}:              // global {7999 + BERRY_BASE + ZONE_INIT_MAP}: the init (MapScript 2) of a tree zone without one',
+             '#ifdef HOENN_BERRY_PLANTING',
+             '    BerryCmd BT_OP_UPDATE, 0',
+             '#else',
              '    VMCall L_BerryNewDay',
+             '#endif',
              '    VMHalt',
              'L_BerryNoSpot:',
              '    VMHalt', '',
@@ -194,6 +303,9 @@ def berry_scripts(spots, items):
              '    LastKeyWait',
              '    WorkSetConst 0x8010, 1',
              '    VMReturn',
+             '#ifdef HOENN_BERRY_PLANTING                      // berry planting: Script_300 (src/field_scripts/common/)',
+             '#include "common/berry_planting.inc"',
+             '#endif',
              '    .balign 4, 0']
     return entries, '\n'.join(body) + '\n'
 
@@ -246,10 +358,16 @@ def main():
     berries = berry_spots(items)
     entries, body = berry_scripts(berries, items)
     s = s.replace('    ScriptEntry Script_213\n', '    ScriptEntry Script_213\n' + entries, 1)
-    s = s.replace('#include "asm/field_script.inc"\n', '#include "asm/field_script.inc"\n#include "hoenn.h"\n', 1)
+    s = s.replace('#include "asm/field_script.inc"\n', '#include "asm/field_script.inc"\n#include "hoenn.h"\n'
+                  '#ifdef HOENN_BERRY_PLANTING\n#include "common/berry_planting_defs.inc"\n#endif\n', 1)
     s = s.rstrip('\n') + '\n' + body
     open(os.path.join(ROOT, 'src', 'field_scripts', '1241_hidden_items.s'), 'w').write(head + s)
     print(f'{len(berries)} berry spots (global {8213}-{8212 + len(berries)})')
+    plant = planting_files(planting_trees('pokeruby'), 'sapphire', items)
+    for path, text in plant.items():
+        os.makedirs(os.path.dirname(path), exist_ok=True)
+        if not os.path.exists(path) or open(path, encoding='utf-8').read() != text: open(path, 'w', encoding='utf-8').write(text)
+    print(f'berry planting: {len(json.loads(text_of(plant, "hoenn_berry_trees.json"))["trees"])} trees (data/hoenn_berry_trees.json)')
     print(f'{len(out)} hidden items in {len({v["map"] for v in out.values()})} maps, slots 1-{max(used)}; notes:', *notes,
           sep='\n  ')
 
@@ -333,6 +451,11 @@ def main_emerald():
           f'{gone}; slots used up to {max(used)} of {SLOTS}')
     print(f'  on maps this build does not have ({len(unbuilt)}): ' + '; '.join(unbuilt))
     if notes: print('  notes: ' + '; '.join(sorted(set(notes))))
+    trees = planting_trees('pokeemerald', lambda m: hoenn(m) or m)
+    plant = planting_files(trees, 'emerald', items)
+    plant.pop(os.path.join(ROOT, 'src', 'text', 'berries', 'overrides_berry_planting.json'))   # (shared: Sapphire's run writes it)
+    want.update(plant)
+    print(f'berry planting: {len(trees)} Emerald trees (data/emerald/hoenn_berry_trees.json)')
     _write_or_check(want, check)
 
 if __name__ == '__main__':

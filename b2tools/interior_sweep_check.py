@@ -341,6 +341,37 @@ def check_room(name):
     return c.out
 
 # ------------------------------------------------------------------------------------------------ zones of a ROM
+def _check_cameras(hdrs, cams):
+    """Camera boxes of the version's room zones (data/interiors with the version's overlay; the room variant a Ruby or
+    Emerald build installs, e.g. CaveOfOrigin_1F_Emerald): the zone's a/1/0/9 entry must hold the box its room wants,
+    and must not be shared with a zone that wants another box (Emerald v1.1: Emerald's interiors patch lets room zones
+    that want the same box share one entry). A zone's header copies (data/interiors "variants": Altering Cave's wild
+    tables) want their room's box; before, Altering Cave's own copies were listed as sharing its box."""
+    import version
+    box = lambda k: struct.unpack('<7i', cams[k])[3:] if k < len(cams) and len(cams[k]) == 28 else None
+    want = {}                                            # zone -> (room, wanted box)
+    for f in version.overlay(os.path.join(ROOT, 'data', 'interiors'), '*.json'):
+        cfg = json.load(open(f))
+        if not cfg.get('room') or not version.room_in_version(cfg['room']): continue
+        room = version.room_variant(cfg['room'])
+        if not os.path.exists(os.path.join(ROOMS_DIR, room, 'room.json')): room = cfg['room']
+        if not os.path.exists(os.path.join(ROOMS_DIR, room, 'room.json')): continue   # not built in this folder
+        want[cfg['zone']] = (room, tuple(json.load(open(os.path.join(ROOMS_DIR, room, 'room.json')))['camera']))
+        for v in cfg.get('variants', []):               # the zone's header copies (Altering Cave's wild tables)
+            want.setdefault(v['zone'], want[cfg['zone']])
+    out = []
+    copies = {v['zone'] for f in version.overlay(os.path.join(ROOT, 'data', 'interiors'), '*.json')
+              for v in json.load(open(f)).get('variants', [])}
+    for zone, (room, w) in sorted(want.items()):
+        if zone in copies: continue                      # (checked as their room's zone)
+        k = hdrs[zone]['cam_bound']; cam = box(k)
+        if cam is None or tuple(cam) != w:
+            out.append(f'{room}: camera: zone {zone} camera box {k} = {cam}, room wants {list(w)}')
+        users = [z for z, hh in enumerate(hdrs) if hh['cam_bound'] == k]
+        if len(users) > 1 and any(want.get(z, (None, None))[1] != w for z in users):
+            out.append(f'{room}: camera: camera box {k} shared by zones {users}')
+    return out
+
 def check_zones(rom):
     import zoneheaders
     from zones import parse_entities
@@ -355,6 +386,7 @@ def check_zones(rom):
     cfgs = {c['zone']: c for c in (json.load(open(f)) for f in glob.glob(os.path.join(ROOT, 'data', 'interiors', '*.json')))}
     names = {r['zone']: n for n, r in INTERIORS.items()}
     tmpl = hdrs[390]
+    out += _check_cameras(hdrs, cams)
     for zone, cfg in sorted(cfgs.items()):
         name = cfg.get('room') or names.get(zone, f'zone {zone}')
         say = lambda kind, msg: out.append(f'{name}: {kind}: {msg}')
@@ -364,11 +396,6 @@ def check_zones(rom):
             continue                      # (sweep_rooms) a room not built in this interiors folder (not in this ROM)
         if cfg.get('room'):
             meta = json.load(open(os.path.join(ROOMS_DIR, cfg['room'], 'room.json')))
-            cam = struct.unpack('<7i', cams[h['cam_bound']])[3:] if h['cam_bound'] < len(cams) and len(cams[h['cam_bound']]) == 28 else None
-            if cam is None or list(cam) != list(meta['camera']):
-                say('camera', f'zone {zone} camera box {h["cam_bound"]} = {cam}, room wants {meta["camera"]}')
-            users = [z for z, hh in enumerate(hdrs) if hh['cam_bound'] == h['cam_bound']]
-            if len(users) > 1: say('camera', f'camera box {h["cam_bound"]} shared by zones {users}')
             musers = [z for z, hh in enumerate(hdrs) if hh['matrix'] == h['matrix']]
             if len(musers) > 1: say('matrix', f'matrix {h["matrix"]} shared by zones {musers}')
         # warps both ways

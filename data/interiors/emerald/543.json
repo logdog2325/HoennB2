@@ -1,0 +1,137 @@
+{
+ "_doc": "battle_tents (hill rooms helper, 2026-10-18; work/agents/battle_tents/tools/rooms_hill.py writes this file): TrainerHill_Entrance (Emerald's Trainer Hill, notes/BATTLE_TENTS.md), Emerald only (data/versions.json rooms: \"emerald\"; zone claimed in data/emerald/hoenn_interiors.json). Positions are Emerald tiles; room origin [1, 1] (zone tile = Emerald tile + origin). NPC uid = Emerald local id; scripts, texts and the map scripts are battle_tents'. Trigger (9,6): the entry script while VAR_TRAINER_HILL_IS_ACTIVE (work 0x4001 here) is 0. Emerald's counter gate (17,10) does not open: the elevator brings the player to (17,11).",
+ "zone": 543,
+ "room": "TrainerHill_Entrance",
+ "area": 331,
+ "parent": 370,
+ "warps": [
+  {
+   "at": [
+    9,
+    16
+   ],
+   "tile_only": true,
+   "to": [
+    370,
+    7
+   ],
+   "what": "Emerald warp 0 (9,16) -> Route 111's door"
+  },
+  {
+   "at": [
+    10,
+    16
+   ],
+   "tile_only": true,
+   "to": [
+    370,
+    7
+   ],
+   "what": "Emerald warp 1 (10,16) -> Route 111's door"
+  },
+  {
+   "at": [
+    9,
+    1
+   ],
+   "tile_only": true,
+   "to": [
+    544,
+    0
+   ],
+   "what": "Emerald warp 2 (9,1): stairs up -> 1F warp 0"
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 1,
+   "model": 79,
+   "script": 1,
+   "dir": 2,
+   "at": [
+    11,
+    6
+   ],
+   "what": "Emerald object 1 TEALA (FACE_LEFT): attendant; model 79"
+  },
+  {
+   "uid": 2,
+   "model": 78,
+   "script": 2,
+   "dir": 1,
+   "at": [
+    4,
+    9
+   ],
+   "what": "Emerald object 2 NURSE (FACE_DOWN): nurse; model 78"
+  },
+  {
+   "uid": 3,
+   "model": 77,
+   "script": 3,
+   "dir": 1,
+   "at": [
+    14,
+    9
+   ],
+   "what": "Emerald object 3 MART_EMPLOYEE (FACE_DOWN): Mart clerk; model 77"
+  },
+  {
+   "uid": 4,
+   "model": 15,
+   "script": 4,
+   "dir": 1,
+   "at": [
+    5,
+    14
+   ],
+   "move": 3,
+   "range": [
+    1,
+    1
+   ],
+   "what": "Emerald object 4 GIRL_3 (WANDER_AROUND): girl; model 15"
+  },
+  {
+   "uid": 5,
+   "model": 20,
+   "script": 5,
+   "dir": 1,
+   "at": [
+    14,
+    15
+   ],
+   "move": 3,
+   "range": [
+    1,
+    1
+   ],
+   "what": "Emerald object 5 MAN_3 (WANDER_AROUND): man; model 20"
+  }
+ ],
+ "signs": [
+  {
+   "script": 6,
+   "at": [
+    8,
+    10
+   ],
+   "dir": 0,
+   "what": "time board (Emerald bg (8,10), facing north)"
+  }
+ ],
+ "triggers": [
+  {
+   "script": 7,
+   "var": 16385,
+   "value": 0,
+   "at": [
+    9,
+    6
+   ],
+   "w": 1,
+   "h": 1,
+   "what": "entry trigger (Emerald coord (9,6), VAR_TRAINER_HILL_IS_ACTIVE == 0)"
+  }
+ ]
+}

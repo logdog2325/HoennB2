@@ -159,6 +159,7 @@ Ch6_NormanPostBattle:                               // PetalburgCity_Gym_EventSc
 #include "scenes/PetalburgCity_Gym_Postgame.inc"
 #endif
     h_goto_if_unset FLAG_RECEIVED_TM42, L_Ch6_GiveFacade
+    em_gym_rematch TRAINER_NORMAN, 1                // Emerald: after the Hall of Fame, a rematch (hoenn_rematch.inc; Dad is uid 1)
     h_goto_if_set FLAG_SYS_GAME_CLEAR, L_Ch6_NoAmountOfTraining
     h_msgbox PGT_KeepTraining                       // Dad: <player>, you should go visit your mother ...
     h_release
@@ -281,7 +282,9 @@ L_Ch6_StatueCertified:
     SEPlay SE_EXIT
     FadeOutBlack
     FadeWait
-    MapChangeCore PG_ZONE, PGX(\x), 0, \z, 0        // warpdoor MAP_PETALBURG_CITY_GYM, 255, x, z
+    MapChangeCore PG_ZONE, PGX(\x), 0, (\z) - 1, 0  // warpdoor MAP_PETALBURG_CITY_GYM, 255, x, z: one tile north of Sapphire's
+    // arrival (as Black 2's doors), so walking back south onto the entrance tiles fires the back exit (Discord 2026-10-14:
+    // arriving ON the trigger tile, pressing south hit the wall and the doors seemed one-way)
     FadeInBlack
     FadeWait
     h_release

@@ -588,7 +588,7 @@ Script_20:
 
 Script_21:
     ActorsPauseAll
-    WorkSetConst 0x800c, 328
+    WorkSetConst 0x800c, 120
     WorkSetConst 0x800d, 1
     VMCall Script_401
     FinishAllEvents
@@ -1074,7 +1074,7 @@ Script_74:
 
 Script_75:
     ActorsPauseAll
-    WorkSetConst 0x800c, 350
+    WorkSetConst 0x800c, 124
     WorkSetConst 0x800d, 1
     VMCall Script_401
     FinishAllEvents
@@ -1335,7 +1335,7 @@ Script_103:
 
 Script_104:
     ActorsPauseAll
-    WorkSetConst 0x800c, 375
+    WorkSetConst 0x800c, 128
     WorkSetConst 0x800d, 1
     VMCall Script_401
     FinishAllEvents
@@ -1704,7 +1704,7 @@ Script_144:
 
 Script_145:
     ActorsPauseAll
-    WorkSetConst 0x800c, 328
+    WorkSetConst 0x800c, 120
     WorkSetConst 0x800d, 1
     VMCall Script_401
     FinishAllEvents

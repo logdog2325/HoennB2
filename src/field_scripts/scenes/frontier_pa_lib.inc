@@ -39,6 +39,11 @@
 #define PA_NAME 14                              // a = facility, b = word slot: the opponent's name
 #define PA_BATTLE 15                            // a = facility: the battle; var = 1 won, 0 lost
 #define PA_HEARD 16                             // a = facility, b = 1 to mark: var = the Brain's first speech was heard
+// the Battle Tower's Salon Maiden Anabel (src/field_scripts/0030_room_BattleTower_BattleRoom.s, Emerald; the tower is
+// Black 2's Battle Subway: its streak and its three entered Pokémon are the Subway's)
+#define PA_TOWER_STATUS 20                      // a = the Subway streak (wins so far): var = GetFrontierBrainStatus (0-4)
+#define PA_TOWER_BATTLE 21                      // a = that status: the battle against Anabel; var = 1 won, 0 lost
+#define PA_TOWER_HEARD 22                       // a = 0 her first speech / 1 her Gold intro, b = 1 to mark: var = heard
 
 // leave a challenge room for the lobby (the challenge's status set before): the opponent flag left set, the lobby's
 // returned-check runs on arrival

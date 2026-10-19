@@ -16,6 +16,7 @@
 #include "hoenn_trainers.h"
 #include "hoenn_key_items.h"
 #include "hoenn_story.inc"
+#include "hoenn_rematch.inc"    // Emerald's rematches (em_gym_rematch: nothing in Sapphire / Ruby)
 
     ScriptEntry MG_TateAndLiza          // 1: MossdeepCity_Gym_EventScript_TateAndLiza (objects 1 and 9)
     ScriptEntry MG_GymGuide             // 2: MossdeepCity_Gym_EventScript_GymGuide (object 8)
@@ -110,6 +111,7 @@ L_MG_GiveCalmMind:                      // MossdeepCity_Gym_EventScript_GiveCalm
     h_setflag FLAG_RECEIVED_TM_CALM_MIND
     h_release
 L_MG_AfterBattle:
+    em_gym_rematch TRAINER_TATE, MG_TATE, TRAINER_LIZA   // Emerald: after the Hall of Fame, a rematch (both twins; hoenn_rematch.inc)
     h_goto_if_unset FLAG_RECEIVED_TM_CALM_MIND, L_MG_GiveCalmMind
     h_msgbox_actor T_TateAndLizaPostBattle, MG_TATE      // Tate: Looks like the bond between you and your Pokémon ...
     h_release

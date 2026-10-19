@@ -8,6 +8,7 @@
 // uid 123, Mia (24) uid 124. Gina & Mia (TRAINER_GINA_AND_MIA_1, sight 0 in Sapphire: they battle when talked to)
 // are story people, not eye-contact trainers, because Gina's after-battle line names the player "Big guy"/"Big girl"
 // (GetPlayerBigGuyGirlString), which Black 2's trainer lines cannot do: Ch1 writes it twice (ActorMsgGendered).
+#include "hoenn_tms.h"  // new_tms: ITEM_TM96 ... (#pragma once: this file is included twice)
 #ifdef SCENE_ENTRIES
     ScriptEntry R104_Init           // 1: Route104_OnTransition (zone init): the Flower Shop worker outside
     ScriptEntry R104_WhiteHerb      // 2: flower shop worker outside (Route104_EventScript_14EF09), White Herb
@@ -63,8 +64,8 @@ R104_TM09:                          // Route104_EventScript_14EF93 (lock, facepl
     h_goto_if_set FLAG_RECEIVED_TM09, L_R104_TM09Given
     h_msgbox R104_T(2)              // I like filling my mouth with seeds, then spitting them out fast! ...
     h_closemessage
-    h_giveitem ITEM_TM09            // Sapphire TM09 Bullet Seed: Bullet Seed is no Gen 5 TM, so TM09 (its number,
-    h_goto_if_eq HLIB_RESULT, 0, L_R104_Release   // converter/gen_items.py's rule for such TMs)
+    h_giveitem ITEM_TM98            // Sapphire TM09 Bullet Seed: the new TM98 (b2tools/patches/new_tms.py)
+    h_goto_if_eq HLIB_RESULT, 0, L_R104_Release
     h_setflag FLAG_RECEIVED_TM09
     h_release
 L_R104_TM09Given:

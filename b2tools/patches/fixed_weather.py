@@ -240,9 +240,26 @@ def outdoor_headers(headers, bgm_src, world):
         done.append(f"{m}: zone {zid} weather {v['weather']}")
     return 'fixed weather: ' + '; '.join(done)
 
+# The falling "ash" (light snow, weather 1: ov036 WEATHER_OVERLAYS entry 1 = ov075's 0x021ea364 {a/0/5/5 23 NCGR, 24 NCLR,
+# 22 NCER, 21 NANR}) recoloured grey (user 2026-10-17: "make the falling flakes especially greyer"). Hoenn uses weather 1
+# only for the ash (data/hoenn_weather.json: Route 113, Jagged Pass, Mt. Chimney), so Black 2's own palette is changed.
+ASH_FLAKES_ARC, ASH_FLAKES_PAL = 55, 24
+ASH_FLAKES = {1: (120, 116, 112), 2: (100, 96, 92)}       # Black 2: (224, 232, 240), (216, 224, 232)
+
+def ash_flakes(files):
+    import struct, narcio
+    e = narcio.load(files, ASH_FLAKES_ARC)
+    d = bytearray(e[ASH_FLAKES_PAL])
+    assert d[:4] == b'RLCN', 'a/0/5/5 24 is not the snow palette'
+    for i, (r, g, b) in ASH_FLAKES.items():
+        struct.pack_into('<H', d, 0x28 + 2 * i, (r >> 3) | ((g >> 3) << 5) | ((b >> 3) << 10))
+    e[ASH_FLAKES_PAL] = bytes(d)
+    narcio.save(files, ASH_FLAKES_ARC, e)
+
 def apply(files):
     """Rooms' weather (after the interiors patch), the fog flag on every Hoenn chunk and model (after every patch
     that writes them: listed after them) and the doors that arrive inside a part."""
+    ash_flakes(files)
     import sys
     sys.path.insert(0, os.path.join(ROOT, 'b2tools'))
     import narcio, zoneheaders

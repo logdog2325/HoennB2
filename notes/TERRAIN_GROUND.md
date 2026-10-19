@@ -66,8 +66,57 @@ standing in for step 2). Bridges over water were built with a reduced map set (L
 Petalburg, 110, 119, Fortree, 120, Pacifidlog) so the chunk archive fits the reserve. Proofs: `screenshots/ground/`.
 
 ## Not done / open
-- Surfing under bridges: our world is one layer, so a surfer meets the deck as land (lands on it, can surf off the
-  other side). Black 2's two-layer `GC` chunks could do real under-passes (not studied).
+- Surfing under bridges (surf_under 2026-10-17, surf_under2 2026-10-18): Route 110's Seaside Cycling Road (both parts
+  over the sea) is Black 2 `GC` chunks with two collision layers (world.py bridge_layers, the caves' rule: notes/CAVES.md
+  "Walk-under bridges"): layer 0 = surf water under the road, layer 1 = the road; its fenced railings = water in layer
+  0, solid in layer 1; the land at the road's ends = solid in layer 0. Surfers pass under (New Mauville's entrance is
+  reached under the road, as in Sapphire), walkers and cyclists stay on the road. The road's support tiles (open
+  water in the model) stay solid, as before.
+  **Two lookup heights [code][test].** The first try (8502244; user's melonDS test: no surfing under, then stuck on the
+  road) had water at -8 under the road at 0. Black 2 checks a step at the actor's own height (ActorRouteCollCheck),
+  but the surf landing test (ov036 CheckSurfExitEvent), surfing off land (CheckSurfHeightAllow) and the bike's tile
+  tests read the tile in front via FieldPlayer_GetWPosInDir (0x0219a9ce), whose y is the player's GRID height << 16 =
+  HEIGHT_TO_GRID(y) * 16, truncated toward 0 (ov012 field_actor_tool.c:14). A surfer at -8 looks ahead at 0, where the
+  road (0) beats the water (-8): the landing test fired, the surfer jumped onto the road and stood on its water layer
+  (the step's own height) on foot. Fix (world.py _bridge_ok, _b2_front_y): water under the railings at -27.8 (the
+  deepest flat record whose step in from the -8 water stays under 20: offset index 371; 81,054 of 81,920 fx), under the
+  road at -31.4 (index 145: a surfer at -27.8 or -31.4 looks ahead at -16, where -31.4 water is still nearer than the
+  road at 0), railings solid at 16, ends solid at -31.4. Black 2 draws the part of the sprite above the deck through it:
+  16 under the road showed head and body, 24 the tip of the hat (user's melonDS test of db93950), 31.4 nothing (one
+  pixel of hat on the east railing, 27.8 under it, while passing; DeSmuME, surf_under_hat 2026-10-18).
+  outdoor_check.py models both heights; on 8502244's world it reports 98 "stuck" landings, on this one none. DeSmuME:
+  work/agents/surf_under2/tests/surf.py, bike.py.
+  Routes 119/120's plank bridges (bridges 2026-10-18): their decks stood 8 over the water with open water beside
+  them; a deeper water under them loses the step in from the open water (20 units), so no two-layer setting both
+  passed a surfer and hid it. **Raised** (terrain/heights.py raise_bridges, step 11b, after every other height): the
+  span (Sapphire's walkable elevation-15 tiles over surf water) stands at least RAISE_CLEAR = 32 over its water's
+  surf height - the higher bank's height when that is enough and reachable, else the lowest multiple of 16 that
+  works - and the dry end tiles step 16 at a time from each bank, then run flat to it (Black 2's limit is 20). A walker
+  on the end tile next to the span must read the deck in front at its grid height (_b2_front_y), not the water layer.
+  bridge_layers then gives the span two layers with the water at the open water's own height (no dip going under,
+  first choice when the deck stands RAISE_CLEAR over it) and its end tiles a solid layer under them (the end check
+  also has the walkers stepping on from the bank). Results (all three versions, the same tiles):
+  | bridge | span | water (surf y) | end tiles (west .. east) | cells |
+  |---|---|---|---|---|
+  | Route 119 by the Weather Institute (344-348, 93-94) | 48 | 8 | 32 48 / 48 48 | (10, 2) |
+  | Route 120 by Fortree (418-433, 75-76) | 80 | 40 | 48 64 / 80 80 | (13, 2) |
+  | Route 120 south (432-439, 127-128) | 32 | -8 | 32 / 32 | (13, 3), (13, 4) |
+  Route 120's south bridge is not raised: its river was split at the bridge into two water bodies, the north one (and
+  the strip of land north of it, Sapphire elevation 3, two secret-base caves) at the bridge's level 32 over the south
+  bank, where Sapphire has one body of elevation 1 reached from the south bank. heights.py now treats the water on both
+  sides of a surf-under span as one body when floating regions take a shore's level (step 2), and the span counts as a
+  surf shore only within one level of the water's other shores (4b): the river and the strip are at the south bank's
+  level 0, 40 under the deck. Drawing (terrain/ground.py): runs split at the deck's steps, wooden risers at every step
+  (deck_risers; heights.py draws no rock skirt there, _riser), posts every 4 tiles from the span's middle (bridge_posts;
+  a pier's post per tile read as a fence and stood in a surfer's way), south/east side faces a hair inside the deck so
+  world.py lifts them by the deck (they fell to the water's level; jetty 2026-10-18: so do every plank deck's faces
+  over a tile of another height - Mr. Briney's jetty, Lavaridge's bridge, Route 119's south bridge). Rock round the dry end tiles rises to them as
+  faces; water.py draws the water under the span at its own level. People on the decks (Route 120's Steven and
+  Kecleon) stand at the deck's height (story.py deck_y). Cost: a second collision layer is 8,200 B per cell, and
+  Black 2 loads a chunk into a fixed 110,600-byte buffer with no length check: world.py write_cell's chunk_fit measures
+  every two-layer cell (its model through ToNsbmd) and, when it is over, gives back the cracks fix in that cell only -
+  first the T-junction splits, then also the ground's under-floor. Sapphire: (10, 2) (Route 119's bridge) 123,444 B
+  with both, 105,652 B without either; (13, 4) (Route 120's south bridge, its south row) 101,156 B without the splits.
 - The Cycling Road and Fortree's walkways are flat (heights module could raise them); Fortree's walkways run between
   tree tiles that hide the player from the south camera (town layout).
 - Ash grass blades are Black 2's green tall grass (its snowy winter grass has the same texture names as summer's, so

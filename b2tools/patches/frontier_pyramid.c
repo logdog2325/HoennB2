@@ -123,6 +123,7 @@ typedef struct {
 #define PF_HEARD_BRAIN 4
 #define PF_SESSION_SAVED 8   /* (spare) */
 
+#define BAG_CURSOR_FIELD 0x1A    /* the field part of Black 2's bag cursor (scroll[6], index[6], pocket): bag_pocket */
 typedef struct { u8 x, y, kind, src; } Obj;        /* floor tile, 0 trainer / 1 item, index in the square's list */
 typedef struct {
     u8 bag[BAG_SIZE];        /* the Battle Bag as a Black 2 BagSave */
@@ -133,15 +134,22 @@ typedef struct {
     Obj obj[16];
     u8 wildIdx, wildLvl, wildPending, pad;
     u8 walls[128];           /* the floor's collision, a bit a tile (y * 32 + x) */
+    u8 cursor[BAG_CURSOR_FIELD];   /* the player's own Bag's field cursor while swapped (bag_swap / bag_unswap) */
 } State;
 
 typedef struct { u32 magic, size, total, n, ent[12]; } Hdr;
 static State *st(u8 *eng) { return (State *)(eng + ((((Hdr *)eng)->size + 3) & ~3)); }
+#ifndef FR_REC_OFF          /* HOENN_SAVE_COMPAT=1 (save_compat.py, notes/SAVE_PKHEX.md): 64 and 20, after the blocks' footers */
+#define FR_REC_OFF 60
+#endif
+#ifndef PY_SAVE_OFF
+#define PY_SAVE_OFF 16
+#endif
 static u16 *rec(void *gd) {
-    return (u16 *)((u8 *)SaveControl_GetBlockPtr(gd ? GameData_GetSaveControl(gd) : g_SaveControl, 0x38) + 60);
+    return (u16 *)((u8 *)SaveControl_GetBlockPtr(gd ? GameData_GetSaveControl(gd) : g_SaveControl, 0x38) + FR_REC_OFF);
 }
 static PySave *sv(void *gd) {
-    return (PySave *)((u8 *)SaveControl_GetBlockPtr(gd ? GameData_GetSaveControl(gd) : g_SaveControl, 0x3e) + 16);
+    return (PySave *)((u8 *)SaveControl_GetBlockPtr(gd ? GameData_GetSaveControl(gd) : g_SaveControl, 0x3e) + PY_SAVE_OFF);
 }
 static u32 rnd(u32 n) { return GFL_RandomLC(n); }
 static u32 umod(u32 a, u32 b) { return a - udiv(a, b) * b; }
@@ -321,6 +329,36 @@ static void choose_trainers(u8 *eng, void *gd) {
 }
 
 /* ------------------------------------------------------------------------------------------- the Battle Bag */
+/* The field Bag opens on its cursor's pocket (GameData + 0x18C -> Black 2's bag cursor, arm9 0x02008860-0x020088ee:
+ * s16 scroll[6] at 0x00, s16 index[6] at 0x0C, u16 pocket at 0x18 = Items 0, Medicine 1, TMs 2, Berries 3, Key Items 4,
+ * Free Space 5 (BagSave_GetPocketPtr's order); returning from the party screen sets it to the pocket of the item used).
+ * pokeemerald's Pyramid Bag is one list with its own position (battle_pyramid_bag.c gPyramidBagMenuState), apart from the
+ * player's Bag: here the player's field cursor is kept aside while the Battle Bag is swapped in, the Battle Bag starts at
+ * the top of its first pocket with items, and whenever its pocket is empty (Items: the Battle Bag's are Medicine and
+ * Berries; or the last of a pocket used) the Bag opens on the first pocket with items: checked when the field Bag opens
+ * (PY_BagOpen, from ov012's bag launcher; also back from the party screen) and on every field frame of a floor. */
+#define bag_cursor(gd) (*(u8 **)((u8 *)(gd) + 0x18C))
+static u32 bag_pocket_has(const u8 *bag, u32 p) {                  /* BagSave pocket p (cursor order) holds an item */
+    static const u16 kUi[5][2] = { { 0, 310 }, { 0x7d8 / 4, 48 }, { 0x624 / 4, 109 }, { 0x898 / 4, 64 }, { 0x4d8 / 4, 83 } };
+    const u16 *slot = (const u16 *)bag; u32 j;
+    if (p >= 5) return 0;                                         /* (Free Space: the Battle Bag registers none) */
+    for (j = 0; j < kUi[p][1]; j++)
+        if (slot[2 * (kUi[p][0] + j)] && slot[2 * (kUi[p][0] + j) + 1]) return 1;
+    return 0;
+}
+static void bag_pocket_c(u8 *eng, u8 *c, u32 force) {              /* the Battle Bag's pocket: never an empty one */
+    State *t = st(eng); u32 p, q;
+    if (!t->origBag || !c) return;
+    p = *(u16 *)(c + 0x18);
+    if (!force && bag_pocket_has(t->bag, p)) return;
+    for (q = 0; q < 5 && !bag_pocket_has(t->bag, q); q++) ;
+    if (q == 5) return;                                            /* (an empty Battle Bag: left as it is) */
+    *(u16 *)(c + 0x18) = (u16)q;
+    ((s16 *)c)[q] = 0; ((s16 *)c)[6 + q] = 0;                     /* the top of that pocket */
+}
+static void bag_pocket(u8 *eng, void *gd, u32 force) { bag_pocket_c(eng, bag_cursor(gd), force); }
+/* the field Bag opens (frontier_pyramid_stub.c PY_I_BagNew / PY_I_BagPocket, ov012's bag launcher): its cursor */
+void PY_BagOpen(u8 *eng, u8 *cursor) { bag_pocket_c(eng, cursor, 0); }
 static void bag_build(u8 *eng, void *gd, u32 heap) {               /* the ten slots -> the BagSave in State */
     State *t = st(eng); PySave *s = sv(gd); u32 l = lvl(rec(gd)), i;
     memset_(t->bag, 0, BAG_SIZE);
@@ -360,6 +398,11 @@ static void bag_swap(u8 *eng, void *gd, u32 heap) {
     bag_build(eng, gd, heap);
     t->origBag = *(u32 *)((u8 *)gd + 0x190);
     *(u32 *)((u8 *)gd + 0x190) = (u32)t->bag;
+    if (bag_cursor(gd)) {                                         /* the player's Bag position aside, the Battle Bag's own */
+        memcpy_(t->cursor, bag_cursor(gd), BAG_CURSOR_FIELD);
+        memset_(bag_cursor(gd), 0, BAG_CURSOR_FIELD);
+    }
+    bag_pocket(eng, gd, 1);
 }
 static void bag_unswap(u8 *eng, void *gd) {
     State *t = st(eng);
@@ -367,6 +410,7 @@ static void bag_unswap(u8 *eng, void *gd) {
     bag_sync(eng, gd);
     *(u32 *)((u8 *)gd + 0x190) = t->origBag;
     t->origBag = 0;
+    if (bag_cursor(gd)) memcpy_(bag_cursor(gd), t->cursor, BAG_CURSOR_FIELD);   /* the player's Bag position back */
 }
 static u32 bag_add(PySave *s, u32 l, u32 item, u32 count) {        /* AddPyramidBagItem: 1 = put away */
     u16 it[10]; u8 q[10]; u32 i;
@@ -482,6 +526,7 @@ u32 PY_Step(u8 *eng, u8 *ctx, void *field) {
     void *gd = *(void **)(ctx + 8), *gsys = *(void **)(ctx + 4), *player, *asys, *enc;
     u16 *r = rec(gd); PySave *s = sv(gd); State *t; s16 pp[3]; u32 i, ex, ey, heap = *(u16 *)ctx;
     if (*(u16 *)(ctx + 16) != PY_ZONE_FLOOR || !in_challenge(r)) return 1;
+    bag_pocket(eng, gd, 0);                                        /* (every field frame: the Bag never opens on an empty pocket) */
     if (!(ctx[60] & 0x10)) return 0;                               /* (only after a step) */
     t = floor_(eng, gd);
     bag_sync(eng, gd);

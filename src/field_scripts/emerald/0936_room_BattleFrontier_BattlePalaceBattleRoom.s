@@ -141,7 +141,7 @@ L_PB_Silver:
     h_applymovement PA_PLAYER, PB_MvFaceUp
     h_applymovement PB_ATT, PB_MvFaceDown
     h_waitmovement
-    h_msgbox_actor PA_PALACEBATTLEROOM_PASS, PB_ATT
+    fd_say PA_PALACEBATTLEROOM_PASS, PB_ATT                // (Emerald v1.1: the balloon closes before the info window)
     MEPlay FR_ME_OBTAIN_SYMBOL
     h_buffer_player
     h_msgbox_info PA_PALACEBATTLEROOM_GOT_SILVER
@@ -166,7 +166,7 @@ L_PB_Gold:
     h_applymovement PA_PLAYER, PB_MvFaceUp
     h_applymovement PB_ATT, PB_MvFaceDown
     h_waitmovement
-    h_msgbox_actor PA_PALACEBATTLEROOM_PASS2, PB_ATT
+    fd_say PA_PALACEBATTLEROOM_PASS2, PB_ATT                // (Emerald v1.1: the balloon closes before the info window)
     MEPlay FR_ME_OBTAIN_SYMBOL
     h_buffer_player
     h_msgbox_info PA_PALACEBATTLEROOM_GOT_GOLD

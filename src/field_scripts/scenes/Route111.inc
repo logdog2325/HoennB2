@@ -7,6 +7,7 @@
 // OnTransition sandstorm area) are not done: Black 2 has one weather per zone and no script weather command it uses
 // (FieldSetWeather is never used by Black 2, ov012 0x021611e0, not decompiled); the Desert Ruins wall
 // (FLAG_REGI_DOORS_OPENED, setmetatile on load) waits for the Desert Ruins room (Ch12, not built).
+#include "hoenn_tms.h"  // new_tms: ITEM_TM96 ... (#pragma once: this file is included twice)
 #ifdef SCENE_ENTRIES
     ScriptEntry R111_Init                   // 1: Route111_OnTransition (zone init)
     ScriptEntry R111_Victor                 // 2: object 1 (Winstrate family)
@@ -265,7 +266,7 @@ R111_SecretPowerMan:                        // Route111_EventScript_1A3858 (data
     h_release
 L_R111_SPGive:
     h_closemessage
-    h_giveitem ITEM_TM43
+    h_giveitem ITEM_TM102               // Gen 3 TM43 Secret Power: the new TM102 (b2tools/patches/new_tms.py)
     h_goto_if_eq HLIB_RESULT, 0, L_R111_SPNoRoom
     h_msgbox T_SPExplain
     h_closemessage

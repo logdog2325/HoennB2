@@ -4,6 +4,7 @@
 #include "hoenn.h"  // ch7
 #include "hoenn_trainers.h"  // ch7
 #include "hoenn_story.inc"  // ch7
+#include "hoenn_rematch.inc"    // Emerald's rematches (em_gym_rematch: nothing in Sapphire / Ruby)
 
     ScriptEntry Script_None
     ScriptEntry FG_Winona  // 2: FortreeCity_Gym_EventScript_Winona  // story:
@@ -60,6 +61,7 @@ L_FG_GiveAerialAce:                 // FortreeCity_Gym_EventScript_GiveAerialAce
     h_setflag FLAG_RECEIVED_TM_AERIAL_ACE
     h_release
 L_FG_WinonaAgain:
+    em_gym_rematch TRAINER_WINONA, FG_WINONA     // Emerald: after the Hall of Fame, a rematch (hoenn_rematch.inc)
     h_goto_if_unset FLAG_RECEIVED_TM_AERIAL_ACE, L_FG_GiveAerialAce
     h_msgbox T_WinonaPostBattle     // Though I fell to you, I will remain devoted to Bird Pokémon.
     h_release

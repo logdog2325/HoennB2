@@ -41,7 +41,7 @@ import os, sys, math, json
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 from dae import Model
-from buildings import Region, shadow, pc_door_hood
+from buildings import Region, shadow, pc_door_hood, dark_doorway
 from exterior_layers import separate
 from models_slateport import (UP, E, N, face, rect, decal, walls, flat, rectangle, box_walls, gable_roof, frustum,
                               post, slope, tiled, WRAPPED, gable_ends)
@@ -87,7 +87,8 @@ SOURCES = {'h_mado': 'ext00', 'pc_win1': 'ext00', 'gate_1': 'ext00', 'h_kage': '
            'vtou_kabe01': 'ext21', 'c12_gym_02': 'ext52', 'r4_b03_yane01': 'ext05', 't06_h_03_a': 'ext53',
            'yane_001': 'ext00', 'c14_h1_body': 'ext57', 'rr_misel1_02': 'ext59',
            'o23_cloud_a': 'map90', 't02_kabe01': 'map3', 't02michi_b': 'map3', 'yamagake01': 'map3',
-           'c5_wbt_02': 'ext55', 'c5_wbt_04': 'ext55', 'c5_wbt_05': 'ext55', 'c5_wbt_06': 'ext55', 'c5_wbt_07': 'ext55'}
+           'c5_wbt_02': 'ext55', 'c5_wbt_04': 'ext55', 'c5_wbt_05': 'ext55', 'c5_wbt_06': 'ext55', 'c5_wbt_07': 'ext55',
+           'pc_kabe02': 'ext00'}   # (buildings.DARK_FALLBACK: the dark doorway of a model with no dark texel of its own)
 
 # ------------------------------------------------------------------------------------------------ helpers
 def polygon(cx, cz, r, n):
@@ -523,8 +524,13 @@ def texture_png(tex, setname, out):
 def write_models(out, ms):
     os.makedirs(out, exist_ok=True)
     used = set()
+    def image(t):          # (the texture as decoded for this pack: dark_doorway reads its texels)
+        if t not in SOURCES: return None
+        if not os.path.exists(os.path.join(out, t + '.png')): texture_png(t, SOURCES[t], out)
+        return os.path.join(out, t + '.png')
     for name, m in ms.items():
         separate(m)        # layers >= 1 unit apart (melonDS flicker; b2tools/exterior_layers.py)
+        dark_doorway(m, out, name, image)   # dark box behind the door (buildings.door_recess)
         n = m.write(os.path.join(out, f'{name}.dae'),
                     wrap={t: ('WRAP', 'WRAP') if t in WRAPPED else ('CLAMP', 'CLAMP') for t in m.tris})
         used |= set(m.tris)

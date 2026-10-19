@@ -6,6 +6,7 @@
 // OnTransition special SetRoute123Weather and the ten COORD_EVENT_WEATHER tiles (rain/sun cycle): Black 2's field
 // weather is fixed in the zone header and no script command changes it (FieldSetWeather is not used by Black 2's
 // scripts), so the route keeps its header weather.
+#include "hoenn_tms.h"  // new_tms: ITEM_TM96 ... (#pragma once: this file is included twice)
 #ifdef SCENE_ENTRIES
     ScriptEntry R123_Girl               // 1: object 23 (Route123_EventScript_151C5D)
 #else
@@ -24,7 +25,7 @@ R123_Girl:                              // TM19 for a Grass-type Pokémon in the
     h_goto_if_eq C8B_POS, 0, L_R123_NoGrass
     h_msgbox T_GirlThanks               // Oh? You like Grass-type Pokemon, too, don't you? ... you can have this!
     h_closemessage
-    h_giveitem ITEM_TM19
+    h_giveitem ITEM_TM99                // Gen 3 TM19 Giga Drain: the new TM99 (b2tools/patches/new_tms.py)
     h_goto_if_eq HLIB_RESULT, 0, L_R123_BagFull
     h_setflag FLAG_RECEIVED_TM19
     h_msgbox T_GirlTree                 // I check trees with my Grass-type Pokemon. I'm like a tree doctor.

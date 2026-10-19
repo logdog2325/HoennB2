@@ -10,6 +10,7 @@
 #include "hoenn.h"
 #include "hoenn_trainers.h"
 #include "hoenn_story.inc"
+#include "hoenn_rematch.inc"    // Emerald's rematches (em_gym_rematch: nothing in Sapphire / Ruby)
 
     ScriptEntry Script_1    // Dad (PetalburgCity_Gym_EventScript_Norman)
     ScriptEntry Script_2    // zone init (PetalburgCity_Gym_OnTransition)

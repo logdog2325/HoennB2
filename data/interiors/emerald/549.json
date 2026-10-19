@@ -1,0 +1,48 @@
+{
+ "_doc": "battle_tents (hill rooms helper, 2026-10-18; work/agents/battle_tents/tools/rooms_hill.py writes this file): BattleTower_Elevator_Emerald (Emerald's Trainer Hill, notes/BATTLE_TENTS.md), Emerald only (data/versions.json rooms: \"emerald\"; zone claimed in data/emerald/hoenn_interiors.json). Positions are Emerald tiles; room origin [1, 1] (zone tile = Emerald tile + origin). NPC uid = Emerald local id; scripts, texts and the map scripts are battle_tents'. The room is the Battle Tower's elevator car (LAYOUT_BATTLE_ELEVATOR, the same layout; origin (1,1)); its door (1-2,6) = Emerald warps 0/1 to the roof.",
+ "zone": 549,
+ "room": "BattleTower_Elevator_Emerald",
+ "area": 306,
+ "parent": 370,
+ "warps": [
+  {
+   "at": [
+    1,
+    6
+   ],
+   "tile_only": true,
+   "to": [
+    548,
+    1
+   ],
+   "what": "Emerald warp 0 (1,6) -> roof warp 1"
+  },
+  {
+   "at": [
+    2,
+    6
+   ],
+   "tile_only": true,
+   "to": [
+    548,
+    1
+   ],
+   "what": "Emerald warp 1 (2,6) -> roof warp 1"
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 1,
+   "model": 79,
+   "script": 1,
+   "dir": 1,
+   "at": [
+    0,
+    6
+   ],
+   "what": "Emerald object 1 TEALA (FACE_DOWN): elevator attendant; model 79"
+  }
+ ],
+ "signs": [],
+ "triggers": []
+}

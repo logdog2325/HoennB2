@@ -412,14 +412,37 @@ L_ManChosen:
     return out
 
 # Sapphire 2F attendants (data/scripts/cable_club.inc): before the Pokédex (Colosseum, Trade Center) or a visit to
-# Mauville (Record Corner) they apologise; afterwards they invite you into the Cable Club, which this game cannot
-# offer (no link rooms; Black 2's Union Room and Wi-Fi counters need its own warp-pad props, see the report): they
-# keep their apology.
+# Mauville (Record Corner) they apologise; afterwards they invite you into the Cable Club. Black 2 has no Cable Club
+# rooms; its link counters are global scripts (link, 2026-10-18; notes/LINK.md): after the Pokédex the Colosseum
+# attendant runs Black 2's Union Room counter (global 2101: trades and battles over local wireless) and the Trade
+# Center attendant Black 2's Wi-Fi Club counter (global 10100: trades and battles with Pal Pad friends over Nintendo
+# WFC), both with Black 2's own words. Their lift (props this room lacks) is replaced by a fade in global 2100-2110
+# (src/field_scripts/1231_global_2100.s). The Record Corner (record mixing) has no Black 2 counterpart: it apologises.
 ATTENDANT = {   # Sapphire script -> (line before, gate flag, room)
     '1A3EA6': ('OldaleTown_PokemonCenter_2F_Text_1A13DF', 'FLAG_SYS_POKEDEX_GET', 'Colosseum'),
     '1A40CC': ('OldaleTown_PokemonCenter_2F_Text_1A141C', 'FLAG_SYS_POKEDEX_GET', 'Trade Center'),
     '1A41FB': ('OldaleTown_PokemonCenter_2F_Text_1A145C', 'FLAG_VISITED_MAUVILLE_CITY', 'Record Corner'),
 }
+LINK_COUNTER = {   # room -> (Black 2 global script, what it is)
+    'Colosseum': (2101, "Black 2's Union Room counter (global 2101)"),
+    'Trade Center': (10100, "Black 2's Wi-Fi Club counter (global 10100)"),
+}
+FLAG_B2_LINK_OPEN = 106     # Black 2's "the Center's link counters are open" (set with the C-Gear, 0854.s; read only by
+                            # the counters 1231/1245/1246; not one of Hoenn's ids: src/include/hoenn.h's free list)
+
+def link_counter(f, line, flag, glob):
+    """Sapphire's apology until FLAG is set, then Black 2's link counter (a global script with its own words)."""
+    k = len(f.blocks) + 1
+    return f"""#ifdef {flag}
+    FlagGet {flag}, 0x8000
+    WorkCmpConst 0x8000, 1
+    VMJumpIf CMP_EQ, L_{k}_Open
+#endif
+{talk(f, line)}L_{k}_Open:
+    FlagSet {FLAG_B2_LINK_OPEN}
+    RTCallGlobal {glob}                          // it pauses, talks, ends the events (FinishAllEvents) itself
+    VMHalt
+"""
 
 def attendant_of(script):
     """The cable_club.inc routine a Center's 2F attendant script calls."""
@@ -481,6 +504,11 @@ def person(f, name, lid, o):
     lib = attendant_of(s)
     if lib:
         before, flag, room = ATTENDANT[lib]
+        if room in LINK_COUNTER:
+            glob, what = LINK_COUNTER[room]
+            n = f.add(link_counter(f, f.text(before), flag, glob),
+                      f'{room} attendant: Sapphire\'s apology until {flag}, then {what}')
+            return npc_entry(lid, o, 79, n)
         n = f.add(talk(f, f.text(before)), f'{room} attendant (Cable Club): Sapphire\'s apology')
         f.notes.append(f'{room} attendant: link play (Cable Club {room}; after {flag} Sapphire invites you in)')
         return npc_entry(lid, o, 79, n)

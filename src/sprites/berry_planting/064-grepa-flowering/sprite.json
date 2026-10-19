@@ -1,0 +1,17 @@
+{
+ "kind": "overworld",
+ "frames": 1,
+ "size": [
+  32,
+  32
+ ],
+ "controller": 4,
+ "textures": [
+  "t4x4x1.0"
+ ],
+ "palette": "t4x4x1",
+ "name": "grepa-flowering",
+ "stage": 4,
+ "sapphire": "pokeruby graphics/object_events/pics/berry_trees/grepa.png frame 2, palette 01",
+ "made_by": "b2tools/berry_planting_art.py (Sapphire's pixels 1:1)"
+}

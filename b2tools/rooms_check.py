@@ -383,7 +383,10 @@ class Built:
                     dj, oj, tj = items[j][0], items[j][1], items[j][2]
                     if dj - di >= GAP - 1e-3: break
                     if oi == oj and oi != 'T': continue                       # a model's own faces
-                    if oi == 'T' and oj == 'T' and abs(dj - di) < 1e-3: continue  # one surface split in triangles
+                    # (two room faces in one plane: the triangles of one surface never overlap, so the overlap test
+                    # below drops them; a second copy of a surface does overlap and fights: Stern's Shipyard 2F's pit
+                    # wall was drawn by the builder and again by four recipe decals, 2026-10-18)
+                    if ti == tj == 'black': continue                         # (the void's plain black: copies look alike)
                     if shadow(ti) and shadow(tj): continue                    # Black 2 overlaps shadows itself
                     if 'T' in (oi, oj) and (shadow(ti) or shadow(tj)):         # a piece's shadow over the floor it
                         other = items[i] if oi == 'T' else items[j]             # stands on (Black 2's own spacing)
@@ -445,7 +448,8 @@ def preprocess(src):
     """A field script as the assembler sees it (the C preprocessor with the build's include paths and defines)."""
     dec = os.path.join(ROOT, 'external', 'pokebw2')
     r = subprocess.run(['/opt/homebrew/opt/llvm/bin/clang', '-E', '-P', '-x', 'assembler-with-cpp', '-I', f'{dec}/include',
-                        '-I', f'{dec}/lib/nitro/include', '-I', os.path.join(ROOT, 'src', 'include'), '-D', 'BLACK2', src],
+                        '-I', f'{dec}/lib/nitro/include', '-I', f'{dec}/build/include/generated',
+                        '-I', os.path.join(ROOT, 'src', 'include'), '-D', 'BLACK2', src],
                        capture_output=True, text=True, cwd=os.path.dirname(src))
     return r.stdout if r.returncode == 0 else ''
 

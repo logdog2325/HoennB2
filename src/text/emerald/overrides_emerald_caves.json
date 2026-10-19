@@ -2,10 +2,10 @@
  "_doc": "Emerald's new cave places (converter/gen_caves_emerald.py PLACES: lines no zone of the Emerald build shows)",
  "system/0109_place_names.txt": {
   "91": "Magma Hideout",
+  "106": "Marine Cave",
   "107": "Mirage Tower",
   "110": "Artisan Cave",
   "111": "Desert Underpass",
-  "106": "Marine Cave",
   "112": "Terra Cave"
  }
 }

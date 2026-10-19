@@ -1,0 +1,35 @@
+{
+ "_doc": "battle_tents (rooms_tents helper, 2026-10-18): FallarborTown_BattleTentBattleRoom (Emerald's Battle Tent, notes/BATTLE_TENTS.md), Emerald only (data/versions.json rooms: \"emerald\"; claimed in data/emerald/hoenn_interiors.json). People = Emerald's objects (uid = Emerald local id; script = the zone script's entry number), their sprites from data/sprite_map.json. Positions are Emerald tiles; room origin [1, 0] (zone tile = Emerald tile + origin). Map scripts: battle_tents'.",
+ "zone": 526,
+ "room": "FallarborTown_BattleTentBattleRoom",
+ "area": 305,
+ "parent": 6,
+ "warps": [],
+ "npcs": [
+  {
+   "uid": 2,
+   "model": 46,
+   "script": 2,
+   "dir": 1,
+   "at": [
+    3,
+    2
+   ],
+   "what": "Emerald object 2 BLACK_BELT (FACE_DOWN): attendant; model 46"
+  },
+  {
+   "uid": 3,
+   "model": 162,
+   "script": 2,
+   "dir": 1,
+   "at": [
+    5,
+    1
+   ],
+   "flag": 1094,
+   "what": "Emerald object 3 VAR_0 (FACE_DOWN): opponent (OBJ_EVENT_GFX_VAR_0): code 162 = work 0x4020 (as the Factory / Battle Tower), hidden by FLAG_HIDE_BATTLE_TOWER_OPPONENT (1094) until shown; model 162"
+  }
+ ],
+ "signs": [],
+ "triggers": []
+}

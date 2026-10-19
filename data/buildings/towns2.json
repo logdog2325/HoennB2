@@ -6,7 +6,7 @@
    "model": "work/buildings/slateport/house.nsbmd",
    "door": 260,
    "dx": 0,
-   "dz": 20,
+   "dz": 22,
    "what": "Slateport house, 4 wide, door in column 1 (Name Rater's house, left half of house 2)"
   },
   {
@@ -38,7 +38,7 @@
    "model": "work/buildings/slateport/shipyard.nsbmd",
    "door": 261,
    "dx": -16,
-   "dz": 20,
+   "dz": 22,
    "what": "Stern's Shipyard (8 wide, door in column 2) with the dock frames"
   },
   {
@@ -46,7 +46,7 @@
    "model": "work/buildings/slateport/harbor.nsbmd",
    "door": 261,
    "dx": 8,
-   "dz": 20,
+   "dz": 22,
    "what": "Harbor (7 wide, door in the middle)"
   },
   {
@@ -70,7 +70,7 @@
    "model": "work/buildings/mauville/bikeshop.nsbmd",
    "door": 260,
    "dx": -8,
-   "dz": 20,
+   "dz": 22,
    "what": "Rydel's Cycles (5 wide, door in column 1)"
   },
   {
@@ -86,7 +86,7 @@
    "model": "work/buildings/mauville/house1.nsbmd",
    "door": 260,
    "dx": -40,
-   "dz": 20,
+   "dz": 22,
    "what": "Mauville house 1 with the door-less annex east of it (9 wide)"
   },
   {
@@ -94,7 +94,7 @@
    "model": "work/buildings/mauville/house.nsbmd",
    "door": 260,
    "dx": 0,
-   "dz": 20,
+   "dz": 22,
    "what": "Mauville house 2 (4 wide, door in column 1)"
   },
   {
@@ -102,7 +102,7 @@
    "model": "work/buildings/verdanturf/house.nsbmd",
    "door": 259,
    "dx": 0,
-   "dz": 20,
+   "dz": 22,
    "what": "Verdanturf house, 4 wide, door in column 1 (Friendship Rater's, east house)"
   },
   {
@@ -110,7 +110,7 @@
    "model": "work/buildings/verdanturf/wanda.nsbmd",
    "door": 259,
    "dx": 8,
-   "dz": 20,
+   "dz": 22,
    "what": "Wanda's house (5 wide, door in the middle)"
   },
   {

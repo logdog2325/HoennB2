@@ -1,0 +1,47 @@
+{
+ "_doc": "TM96-TM104 at items 120-128 (b2tools/patches/new_tms.py writes this file: python3 new_tms.py --text). Descriptions = the move's own (0402), as Black 2's TMs.",
+ "system/0064_item_names.txt": {
+  "120": "TM96",
+  "121": "TM97",
+  "122": "TM98",
+  "123": "TM99",
+  "124": "TM100",
+  "125": "TM101",
+  "126": "TM102",
+  "127": "TM103",
+  "128": "TM104"
+ },
+ "system/0481_item_names_with_article.txt": {
+  "120": "{bd01}a {ff00:255}TM96",
+  "121": "{bd01}a {ff00:255}TM97",
+  "122": "{bd01}a {ff00:255}TM98",
+  "123": "{bd01}a {ff00:255}TM99",
+  "124": "{bd01}a {ff00:255}TM100",
+  "125": "{bd01}a {ff00:255}TM101",
+  "126": "{bd01}a {ff00:255}TM102",
+  "127": "{bd01}a {ff00:255}TM103",
+  "128": "{bd01}a {ff00:255}TM104"
+ },
+ "system/0482_item_names_plural.txt": {
+  "120": "TM96s",
+  "121": "TM97s",
+  "122": "TM98s",
+  "123": "TM99s",
+  "124": "TM100s",
+  "125": "TM101s",
+  "126": "TM102s",
+  "127": "TM103s",
+  "128": "TM104s"
+ },
+ "system/0063_scrcmd_resort_shop_scrcmd_bsubway.txt": {
+  "120": "The user focuses its mind before\\nlaunching a punch. It will fail if the user\\nis hit before it is used.",
+  "121": "The user attacks the target with\\na pulsing blast of water.\\nIt may also confuse the target.",
+  "122": "The user forcefully shoots seeds at the\\ntarget. Two to five seeds are shot in\\nrapid succession.",
+  "123": "A nutrient-draining attack. The user's\\nHP is restored by half the damage\\ntaken by the target.",
+  "124": "The target is slammed with a steel-hard\\ntail. It may also lower the target's\\nDefense stat.",
+  "125": "The user strikes the target with a quick\\njolt of electricity.\\nThis attack cannot be evaded.",
+  "126": "The user attacks the target with a\\nsecret power. Its added effects vary\\ndepending on the user's environment.",
+  "127": "The target is hit with wings of steel.\\nIt may also raise the user's Defense stat.",
+  "128": "The user employs its psychic power to\\nexchange Abilities with the target."
+ }
+}

@@ -72,6 +72,8 @@
     "mus_vs_frontier_brain": "SEQ_SE_SW_FRIGATE_05",
     "mus_b_dome_lobby": "SEQ_SE_SW_FRIGATE_06"
   },
+  "emerald_music": {"_doc": "battle_tents (2026-10-18): an Emerald-only room's pokeemerald map song -> our song key (b2tools/patches/hoenn_music.py emerald_map_song): MUS_B_TOWER_RS is Ruby/Sapphire's tower song, key mus_b_tower (the Battle Tents, the Trainer Hill; the lounges, Reception Gate and Scott's house once built)",
+                    "MUS_B_TOWER_RS": "mus_b_tower"},
   "zone_songs": {"17": "mus_b_frontier", "21": "mus_b_tower_frontier", "343": "mus_b_tower_frontier",
                  "336": "mus_b_tower_frontier", "15": "mus_b_tower_frontier", "419": "mus_b_tower",
                  "399": "mus_b_pike", "400": "mus_b_pike", "401": "mus_b_pike", "402": "mus_b_pike", "403": "mus_b_pike",

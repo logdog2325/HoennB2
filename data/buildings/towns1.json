@@ -30,7 +30,7 @@
    "model": "work/buildings/rustboro/grey5.nsbmd",
    "door": 261,
    "dx": 8,
-   "dz": 20,
+   "dz": 22,
    "what": "Rustboro grey house 5 wide (House 1, House 2)"
   },
   {
@@ -38,7 +38,7 @@
    "model": "work/buildings/rustboro/flat1.nsbmd",
    "door": 261,
    "dx": 8,
-   "dz": 20,
+   "dz": 22,
    "what": "Rustboro Flat 1 (tan, 9 wide, two storeys)"
   },
   {
@@ -46,7 +46,7 @@
    "model": "work/buildings/rustboro/school.nsbmd",
    "door": 261,
    "dx": 8,
-   "dz": 20,
+   "dz": 22,
    "what": "Rustboro Trainer's School (tan, 7 wide)"
   },
   {
@@ -54,7 +54,7 @@
    "model": "work/buildings/rustboro/cutter.nsbmd",
    "door": 261,
    "dx": 8,
-   "dz": 20,
+   "dz": 22,
    "what": "Rustboro Cutter's house (tan, 5 wide)"
   },
   {
@@ -62,7 +62,7 @@
    "model": "work/buildings/rustboro/house3.nsbmd",
    "door": 261,
    "dx": 0,
-   "dz": 20,
+   "dz": 22,
    "what": "Rustboro House 3 (tan, 6 wide)"
   },
   {
@@ -70,7 +70,7 @@
    "model": "work/buildings/rustboro/flat2.nsbmd",
    "door": 261,
    "dx": -8,
-   "dz": 20,
+   "dz": 22,
    "what": "Rustboro Flat 2 (tall grey, 7 wide)"
   },
   {

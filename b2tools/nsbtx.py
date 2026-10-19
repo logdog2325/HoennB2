@@ -203,6 +203,22 @@ def _pal_size(src, name):
     nxt = [x for x in offs if x > o]
     return (nxt[0] if nxt else len(src['pdata'])) - o
 
+def image_source(name, img):
+    """A parsed one-texture source for merge() from a PIL image (power-of-two sides, 8-1024): a 16-colour palette
+    texture (format 3) named `name` with palette `name`_pl. Used for Gen 3 art drawn on a room surface (models_interior
+    gen3_tile_image: Mauville Gym's switches, 2026-10-18)."""
+    from PIL import Image
+    im = img.convert('RGB').quantize(colors=16)
+    w, h = im.size
+    assert w in (8, 16, 32, 64, 128, 256, 512, 1024) and h in (8, 16, 32, 64, 128, 256, 512, 1024), (name, im.size)
+    px = list(im.getdata())
+    raw = bytes((px[i] & 15) | ((px[i + 1] & 15) << 4) for i in range(0, w * h, 2))
+    pal = (im.getpalette() or [])[:48]; pal += [0] * (48 - len(pal))
+    pdata = b''.join(struct.pack('<H', (pal[i] >> 3) | ((pal[i + 1] >> 3) << 5) | ((pal[i + 2] >> 3) << 10)) for i in range(0, 48, 3))
+    params = (((w // 8).bit_length() - 1) << 20) | (((h // 8).bit_length() - 1) << 23) | (3 << 26)
+    return dict(texdata=raw, c_data=b'', c_idx=b'', pdata=pdata, pflag=0,
+                texs=[(name, (params, 0x80000000 | w | (h << 11)))], pals=[(name + '_pl', (0, 0))])
+
 def merge(base, additions):
     """base: BTX0 bytes. additions: [(src BTX0 bytes, texture name, palette name or None)], optionally
     (..., new texture name, new palette name): the copy goes in under those names (a texture and its palette are
@@ -216,7 +232,9 @@ def merge(base, additions):
     pflag = B['pflag']
     cache = {}
     for src_bytes, tname, pname, *renamed in additions:
-        S = cache.setdefault(id(src_bytes), _parse(src_bytes))
+        S = src_bytes if isinstance(src_bytes, dict) else cache.setdefault(id(src_bytes), _parse(src_bytes))   # (image_source)
+        recolor = renamed[2] if len(renamed) > 2 else None       # optional palette transform (BGR555 bytes -> bytes)
+        renamed = renamed[:2]
         name, pnew = (renamed + [None, None])[:2] if renamed else (tname, pname)
         assert len(name) <= 16 and (pnew is None or len(pnew) <= 16), f'{name}/{pnew}: names hold 16 characters'
         if name in have_t: continue
@@ -232,6 +250,7 @@ def merge(base, additions):
         if pname and (pnew or pname) not in have_p:
             o, flag = dict(S['pals'])[pname]
             data = S['pdata'][o << 3:(o << 3) + _pal_size(S, pname)]
+            if recolor: data = recolor(data)
             while len(pdata) % 8: pdata.append(0)
             pals.append((pnew or pname, struct.pack('<HH', len(pdata) >> 3, flag))); have_p.add(pnew or pname)
             pdata += data

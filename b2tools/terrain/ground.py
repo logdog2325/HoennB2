@@ -395,19 +395,33 @@ def draw_decks(m, k):
             members = {'bike_path'}
         tiles = [(tx, tz) for tz in range(32) for tx in range(32) if member(tx, tz)]
         if not tiles: continue
+        # (bridges 2026-10-18) a raised plank bridge's runs end where its height steps: world.py's lift cut a run over
+        # several heights into one piece per tile (+80 triangles on Route 120's south bridge)
+        Fh = getattr(sys.modules.get('terrain.heights'), 'FIELD', None)
+        up = getattr(Fh, 'raised_decks', ())
+        hy_ = lambda tx, tz: Fh.y(k.cell.X + tx, k.cell.Z + tz)
+        def runs_h(vals, at):
+            out = []
+            for a, b in runs(vals):
+                if not any((k.cell.X + at(v)[0], k.cell.Z + at(v)[1]) in up for v in range(a, b + 1)):
+                    out.append((a, b)); continue
+                s0 = a
+                for v in range(a + 1, b + 2):
+                    if v > b or hy_(*at(v)) != hy_(*at(s0)): out.append((s0, v - 1)); s0 = v
+            return out
         rows, cols = {}, {}
         for tx, tz in tiles:
             if mat == 'hashi02a' or _deck_dir(k, tx, tz, members) == 'ew': rows.setdefault(tz, []).append(tx)
             else: cols.setdefault(tx, []).append(tz)
         for tz, xs in rows.items():
-            for a, b in runs(xs):
+            for a, b in runs_h(xs, lambda v, tz=tz: (v, tz)):
                 if mat == 'hashi02a':
                     flat(m, mat, X(a), Z(tz), X(b + 1), Z(tz + 1), y, lambda x, z: (0.97, (x + HALF) / T))
                 else:
                     z0 = Z(tz)
                     flat(m, mat, X(a), Z(tz), X(b + 1), Z(tz + 1), y, lambda x, z: (0.34 + 0.63 * (z - z0) / T, (x + HALF) / T))
         for tx, zs in cols.items():
-            for a, b in runs(zs):
+            for a, b in runs_h(zs, lambda v, tx=tx: (tx, v)):
                 x0 = X(tx)
                 flat(m, mat, X(tx), Z(a), X(tx + 1), Z(b + 1), y, lambda x, z: (0.34 + 0.63 * (x - x0) / T, -(z + HALF) / T))
         def open_edge(tx, tz, dx, dz):
@@ -421,24 +435,87 @@ def draw_decks(m, k):
         # (a side face on a tile's south/east edge is lifted by the tile beyond it, where its centre falls: over a lower
         # floor - a walkway on posts, heights.STILTS - it sank into the ground. Those stand a hair inside their deck)
         H_ = sys.modules.get('terrain.heights'); stilts = getattr(getattr(H_, 'FIELD', None), 'stilt_decks', ())
-        inset = lambda tx, tz: 0.05 if (k.cell.X + tx, k.cell.Z + tz) in stilts else 0
+        # (bridges 2026-10-18: so do a raised plank bridge's, heights.py raise_bridges: its south faces over the water
+        # stood 32 units down at the water's level, by its posts. jetty 2026-10-18: and any plank deck's face over a tile
+        # of another height - Mr. Briney's jetty on Route 104, 16 over the sea: its south faces stood at the sea's level,
+        # 1 unit behind its posts, exterior_check layers hashi01a / hashi01a; Lavaridge's and Route 119's south bridge
+        # had faces sunk or floating 8-16 units. The Cycling Road's concrete faces (hashi02a) are left where they were:
+        # over land they stand in the rock faces heights.py draws up to the road, buried where they sank)
+        def inset(tx, tz, dx=0, dz=0):
+            p = (k.cell.X + tx, k.cell.Z + tz)
+            if p in stilts or p in up: return 0.05
+            Fh_ = getattr(H_, 'FIELD', None)
+            return 0.05 if (mat == 'hashi01a' and (dx or dz) and Fh_ is not None
+                            and Fh_.y(p[0] + dx, p[1] + dz) != Fh_.y(*p)) else 0
         for dz, n in ((-1, NORTH), (1, SOUTH)):
             er = {}
             for tx, tz in tiles:
-                if open_edge(tx, tz, 0, dz): er.setdefault((tz, inset(tx, tz)), []).append(tx)
+                if open_edge(tx, tz, 0, dz): er.setdefault((tz, inset(tx, tz, 0, max(dz, 0))), []).append(tx)
             for (tz, ins), xs in er.items():
-                for a, b in runs(xs):
+                for a, b in runs_h(xs, lambda v, tz=tz: (v, tz)):
                     z = Z(tz) if dz < 0 else Z(tz + 1) - ins; L = b + 1 - a
                     face(m, mat, [(X(a), y, z, 0.34, 0), (X(b + 1), y, z, 0.34, L), (X(b + 1), y - 8, z, 0.22, L), (X(a), y - 8, z, 0.22, 0)], n)
         for dx, n in ((-1, WEST), (1, EAST)):
             ec = {}
             for tx, tz in tiles:
-                if open_edge(tx, tz, dx, 0): ec.setdefault((tx, inset(tx, tz)), []).append(tz)
+                if open_edge(tx, tz, dx, 0): ec.setdefault((tx, inset(tx, tz, max(dx, 0), 0)), []).append(tz)
             for (tx, ins), zs in ec.items():
-                for a, b in runs(zs):
+                for a, b in runs_h(zs, lambda v, tx=tx: (tx, v)):
                     x = X(tx) if dx < 0 else X(tx + 1) - ins; L = b + 1 - a
                     face(m, mat, [(x, y, Z(a), 0.34, 0), (x, y, Z(b + 1), 0.34, L), (x, y - 8, Z(b + 1), 0.22, L), (x, y - 8, Z(a), 0.22, 0)], n)
-        if mat == 'hashi01a': pier_posts(m, k, tiles, open_edge); stilt_floor(m, k, tiles)
+        if mat == 'hashi01a': pier_posts(m, k, tiles, open_edge); stilt_floor(m, k, tiles); deck_risers(m, k, tiles)
+
+def bridge_posts(k, tiles):
+    """(bridges 2026-10-18) Posts of a raised plank bridge (heights.py raise_bridges) for pier_posts to draw: under the
+    open edges of its span over the water, at tile boundaries every 4 tiles counted from the span's middle (none on a
+    span of 5: B1 stands between its rock abutments), not at every tile as a pier's - a row of posts there read as a
+    fence, and a surfer passing under goes between them (its sprite is two tiles wide). -> {(x, z, drop)}"""
+    H = sys.modules.get('terrain.heights'); F = getattr(H, 'FIELD', None) if H else None
+    raised = getattr(F, 'raised_decks', ()) if F is not None else ()
+    if not raised: return set()
+    world, cx, cz = k.cell.world, k.cell.X, k.cell.Z
+    span = lambda p: p in raised and water_under(world, *p) is not None
+    open_ = lambda p: (world.get(p) or (0, 0))[1] in SURFACE
+    out = set()
+    for tx, tz in tiles:
+        p = (cx + tx, cz + tz)
+        if not span(p): continue
+        for along, side in (((1, 0), (0, 1)), ((1, 0), (0, -1)), ((0, 1), (1, 0)), ((0, 1), (-1, 0))):
+            if not open_((p[0] + side[0], p[1] + side[1])): continue
+            a = 0                                           # (the run of span tiles along this edge, p its a-th)
+            while span((p[0] - along[0] * (a + 1), p[1] - along[1] * (a + 1))): a += 1
+            n = a + 1
+            while span((p[0] + along[0] * (n - a), p[1] + along[1] * (n - a))): n += 1
+            i = a                                           # (the boundary on p's west / north side: i of 0..n)
+            if not (0 < i < n and abs((i - n / 2) / 4 - round((i - n / 2) / 4)) < 1e-9): continue
+            t = water_under(world, *p)
+            drop = F.y(*p) - F.y(*t)
+            if along == (1, 0): px, pz = X(tx), (Z(tz + 1) - 3 if side[1] > 0 else Z(tz) + 3)
+            else: pz, px = Z(tz), (X(tx + 1) - 3 if side[0] > 0 else X(tx) + 3)
+            out.add((px, pz, drop))
+    return out
+
+def deck_risers(m, k, tiles):
+    """(bridges 2026-10-18) A raised plank bridge (heights.py raise_bridges, F.raised_decks) steps from its banks up to
+    its span: where a deck tile stands higher than the walkable tile beside it (the bank, a lower step) a wooden riser
+    of the planks' dark side band (u 0.34 at the top to 0.22 at the foot, as the deck's side faces) closes the step,
+    facing the lower tile, a hair inside the deck tile so world.py lifts it by the deck's height (heights.py draws no
+    rock skirt there). North-facing risers are left out (Black 2's camera looks north: never seen)."""
+    F = getattr(sys.modules.get('terrain.heights'), 'FIELD', None)
+    raised = getattr(F, 'raised_decks', ()) if F is not None else ()
+    if not raised: return
+    cx, cz = k.cell.X, k.cell.Z
+    for tx, tz in tiles:
+        p = (cx + tx, cz + tz)
+        if p not in raised: continue
+        for dx, dz, n in ((0, 1, SOUTH), (-1, 0, WEST), (1, 0, EAST)):
+            q = (p[0] + dx, p[1] + dz)
+            d = F.y(*p) - F.y(*q)
+            if q not in F.walk or q in F.slope or d < 0.5: continue
+            if dz: z = Z(tz + 1) - 0.05; a, b = (X(tx), z), (X(tx + 1), z)
+            else: x = X(tx) + 0.05 if dx < 0 else X(tx + 1) - 0.05; a, b = (x, Z(tz)), (x, Z(tz + 1))
+            face(m, 'hashi01a', [(a[0], 0, a[1], 0.34, 0), (b[0], 0, b[1], 0.34, 1), (b[0], -d, b[1], 0.22, 1),
+                                 (a[0], -d, a[1], 0.22, 0)], n)
 
 POSTED_DECKS = {'PacifidlogTown', 'DewfordTown'}   # (walkways and boat docks at the land's level on posts, as Humilau's)
 def stilt_floor(m, k, tiles):
@@ -481,6 +558,7 @@ def pier_posts(m, k, tiles, open_edge):
                     xe = X(tx) + 3 if dx < 0 else X(tx + 1) - 3
                     corners |= {(xe, Z(tz) + 3, drop - 13), (xe, Z(tz + 1) - 3, drop - 13)}
             continue                                      # (drop - 13: y1 = -drop - 14 + 13, 1 into the floor)
+        if (cx + tx, cz + tz) in getattr(F, 'raised_decks', ()): continue     # (a raised bridge: bridge_posts)
         t = water_under(k.cell.world, cx + tx, cz + tz)
         if t is None: continue
         drop = F.y(cx + tx, cz + tz) - F.y(*t)            # deck over its water tile (the water's surface 11 below that)
@@ -491,6 +569,7 @@ def pier_posts(m, k, tiles, open_edge):
             else:
                 xe = X(tx) + 3 if dx < 0 else X(tx + 1) - 3
                 corners |= {(xe, Z(tz) + 3, drop), (xe, Z(tz + 1) - 3, drop)}
+    corners |= bridge_posts(k, tiles)
     for px, pz, drop in corners:
         y0, y1 = -8, -drop - 14                           # (into the water: its sheet lies 11 under the water's height)
         v = (y0 - y1) / 16                                # (the side band u 0.22..0.34 across, one texel a unit up)
@@ -617,7 +696,8 @@ def paved_tiles(world):
         px = sapphire_pixels(e[0], wx, wz) if e[1] == 'path' else None
         if px is not None:
             r, g, b = np.median(px, 0)
-            if g >= 208 and b >= 208: tex = 't02michi_c'           # (the pale roads and white stone)
+            if g >= 208 and b >= 208 and b >= r - 12: tex = 't02michi_c'   # (the pale roads and white stone: blue-grey or
+            # white. Emerald's Rustboro cobble is pale too but cream, 238,238,213: slabs, as Sapphire's 205,205,164; #9 2026-10-18)
         out[(wx, wz)] = tex
     # (the lamp posts, signs and stall props standing in the paving, 3+ sides paved: on the slabs, not on grass squares)
     for (wx, wz), e in world.items():

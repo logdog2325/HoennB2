@@ -52,7 +52,7 @@ The MIT License does **not** cover game content: the Pokémon games' text, maps,
 
 Community sprites (the NEW sprite set), used with credit:
 - **hyo-oppa:** Brendan (overworld, battle front and back), Emerald's Brendan (battle front and back) and Wally (battle front).
-- **CalculusNova:** Wally (overworld; CC BY-NC-SA 3.0).
+- **Kymotonian** and **Klein Studio:** Wally (overworld).
 - **Wolfang62:** Professor Birch (overworld).
 - **DiegoWT:** May and Archie (originally commissioned by Zailens and Kyledove).
 - **joojishibuki:** Maxie's battle sprite.

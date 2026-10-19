@@ -383,7 +383,12 @@
    "what": "TRAINER_LAO_1 (object 8, buried in ash in Sapphire: placed as a normal trainer, sight 1) (move 53: v165_fixes)",
    "evtype": 2,
    "p0": 1,
-   "move": 53
+   "move": 53,
+   "at_emerald": [
+    29,
+    6
+   ],
+   "what_emerald": "TRAINER_LAO_1 (object 8, buried in ash in Sapphire: placed as a normal trainer, sight 1) (move 53: v165_fixes) | Emerald (2026-10-18, pokeemerald's object): at [29, 6]"
   },
   {
    "kind": "npc",
@@ -399,7 +404,12 @@
    "what": "TRAINER_LUNG (object 9, buried in ash in Sapphire: placed as a normal trainer, sight 1) (move 53: v165_fixes)",
    "evtype": 2,
    "p0": 1,
-   "move": 53
+   "move": 53,
+   "at_emerald": [
+    71,
+    2
+   ],
+   "what_emerald": "TRAINER_LUNG (object 9, buried in ash in Sapphire: placed as a normal trainer, sight 1) (move 53: v165_fixes) | Emerald (2026-10-18, pokeemerald's object): at [71, 2]"
   },
   {
    "kind": "trigger",
@@ -1111,7 +1121,9 @@
    "what": "TRAINER_JOHN_AND_JAY_1: John (OLD_MAN_1, sight 0)",
    "evtype": 1,
    "p0": 0,
-   "move": 15
+   "move": 15,
+   "p0_emerald": 1,
+   "what_emerald": "TRAINER_JOHN_AND_JAY_1: John (OLD_MAN_1, sight 0) | Emerald (2026-10-18, pokeemerald's object): p0 1"
   },
   {
    "kind": "npc",
@@ -1127,7 +1139,9 @@
    "what": "TRAINER_JOHN_AND_JAY_1: Jay (OLD_WOMAN_1, sight 0)",
    "evtype": 1,
    "p0": 0,
-   "move": 15
+   "move": 15,
+   "p0_emerald": 1,
+   "what_emerald": "TRAINER_JOHN_AND_JAY_1: Jay (OLD_WOMAN_1, sight 0) | Emerald (2026-10-18, pokeemerald's object): p0 1"
   }
  ]
 }

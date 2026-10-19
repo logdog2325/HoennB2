@@ -895,3 +895,38 @@ so the climb from a crisis Sootopolis loads the clean top with no reload. Sootop
   after `em_weather_zone 1` (screen black) and `SE_RayquazaScene`'s `h_delay 90` after `h_playbgm_hoenn
   MUS_EM_RAYQUAZA_APPEARS` (screen black, Rayquaza added); replace those delays with the cutscene call.
 
+
+## Fidelity fixes (2026-10-18, emerald fidelity helper; Sapphire / Ruby assemble to the same bytes)
+- **Victory Road 1F: Wally's entrance battle at Emerald's spot** (pokeemerald `data/maps/VictoryRoad_1F/scripts.inc`, map.json).
+  Triggers (2,23) / (3,23) (data/story/ch11.json `at_emerald`; the third trigger `skip_emerald`); Wally (uid 4) waits hidden at
+  Emerald's (12,25) FACE_DOWN (`at_emerald`, `dir_emerald`, `move_emerald`), walks left 10 / 9 and up; the player turns down;
+  Emerald's lines (src/text/script/emerald/0228_room_VictoryRoad_1F.txt) and TRAINER_WALLY_VR_1. He stays (no removeobject):
+  VAR_VICTORY_ROAD_1F_STATE = 1 / 2 = which trigger, and on every field load / return (0341 MapScript 3/4 = 0340 script 10,
+  V1_EmFieldLoad) `ActorSetGPos` puts him at (2,24) / (3,24) facing down, y = 1 tile (the raised floor; y 0 sank him into
+  it). By uid, so the zone's NPC order doesn't matter. The zone init keeps him hidden while the state is 0 (a lost battle).
+  The Hall of Fame hides him (0114 HF_EmeraldFlags) and shows the post-game Wally at the exit (31,9), whose rematches
+  (notes/EMERALD_REMATCH.md) are unchanged. Old Emerald saves that beat him at Sapphire's spot keep him hidden.
+- **The Mirage Tower and seamless zone changes** (scenes/emerald/Route111_Mirage.inc header). Black 2 keeps a loaded map
+  cell until it leaves the 2x2 window, and a seamless zone change runs the zone init with the field up; the tower's cell
+  (8,3) is loaded at Route 112's seam and at the desert part's edge (zone 610, fixed_weather's sandstorm part, a copy of
+  zone 370's init). A roll there left the old picture: a tower whose door is parked, or plain sand with a working door.
+  Now the zone init keeps the tower as drawn in zone 610 and in zone 370 after FLAG_EM_MIRAGE_TOWER_KEEP (2391; set by
+  zone 610's and Route 112's zone inits, cleared by zone 370's and Mauville's). Rolls (Emerald's 50 %) stay on the entries
+  where the cell isn't drawn: Route 113, Mauville, warps into zone 370. No fade, no field rebuild.
+- **Battle Pyramid Bag** (notes/FRONTIER_PYRAMID.md): opens on its first pocket with items, with its own position.
+- **Emerald-only trainers placed** (follow-up 2026-10-18): data/story/emerald/e_trainers.json (an Emerald-only story overlay,
+  written by work/agents/emerald_fidelity/tools/gen_e_trainers.py from data/emerald/hoenn_trainer_data.json and pokeemerald's
+  map.json) adds the 16 trainers no file placed: Victory Road 1F Quincy (32,17) / Katelynn (29,17), B1F Mitchell / Halle,
+  B2F Dianne / Felix, Mt. Pyre 2F Zander / Leah, 3F Gabrielle, 6F Cedric, Abandoned Ship Thalia / Demetrius / Garrison /
+  Jani, Route 115 Jaiden, Route 123 Jonas: pokeemerald's tile, local id as uid, sprite, movement, sight; eye-contact
+  script 3000 + the Black 2 id (team, lines and the rematches of patches/emerald_rematch.py come with it: Thalia,
+  Gabrielle). Placed trainers whose Emerald object differs got `_emerald` overrides in ch4/ch6/ch7/ch8b.json (Mt. Pyre
+  Mark / William / Kayla / Valerie / Dez & Luke, Abandoned Ship Kira & Dan, Meteor Falls John & Jay, Route 113 Lao /
+  Lung, Route 119 Yasu: tile or sight). Audit: work/agents/emerald_fidelity/tools/trainer_audit.py ROM --world
+  work/world_emerald (every trainer object of pokeemerald vs the ROM's zone NPCs). Not placed: Trick House puzzle 1's
+  Sally / Eddie / Robin (missing in Sapphire / Ruby too), the trainers of unbuilt maps (Trick House 2-8, S.S. Tidal rooms).
+- **Sprite ids renumbered by pokeemerald** (follow-up 2026-10-18): Emerald's MAN_3/4/5 and WOMAN_2/3/4/5 are Ruby's
+  MAN_4/5/6 and WOMAN_3/4/5/7 (the same people; Ruby's WOMAN_6 was dropped), and POKEFAN_M / POKEFAN_F are new names.
+  data/emerald/sprite_map.json maps them to the same Black 2 models as Sapphire's people; the trainer NPCs
+  (data/emerald/hoenn_trainer_npcs.json) are regenerated. Emerald's townspeople and room people with these ids still
+  show the old pick until gen_map_content / the rooms are regenerated for Emerald (the lead's files).

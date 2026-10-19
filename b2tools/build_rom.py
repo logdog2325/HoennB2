@@ -37,7 +37,7 @@ ORIGINAL_SHA1 = 'e51e6dfb8678a3d19dcd2a10691b96a569ca0abb'
 RESERVE = {
     2: 512 << 10,     # a/0/0/2 system text (place names)
     3: 1 << 20,       # a/0/0/3 script text (story chapters; v12)
-    8: 32 << 20,      # a/0/0/8 map chunks (terrain ~8.1 MB + rooms + caves + standalone maps + event islands; v14: +8 MB for post-game maps)
+    8: 36 << 20,      # a/0/0/8 map chunks (terrain ~8.1 MB + rooms + caves + standalone maps + event islands; v14: +8 MB for post-game maps; 2026-10-18: +4 MB, Emerald grew past 32 MB with the cracks fix, bridges and Battle Tents/Trainer Hill rooms)
     9: 256 << 10,     # a/0/0/9 matrices
     14: 4 << 20,      # a/0/1/4 map textures
     56: 1 << 20,      # a/0/5/6 scripts (story chapters; v12)
@@ -113,6 +113,11 @@ def main(args):
     patches = [a for a in args if not a.startswith('--')]
     if os.environ.get('HOENN_MUSIC') and 'hoenn_music' not in patches:
         patches.append('hoenn_music')   # Hoenn's songs, last (after the zone headers): HOENN_MUSIC=hoenn, notes/MUSIC.md
+    if os.environ.get('HOENN_SAVE_COMPAT', '1') != '0' and os.environ.get('HOENN_VERSION', '').strip().lower() == 'emerald' \
+            and 'save_compat' not in patches:
+        patches.append('save_compat')   # PKHeX-compatible Emerald saves (ON since 2026-10-18; =0 for the old layout): notes/SAVE_PKHEX.md
+    if os.environ.get('HOENN_BERRY_PLANTING', '1') != '0' and 'berries' not in patches:
+        patches.append('berries')       # Gen 3 berry planting (on by default since 2026-10-18; =0 = the daily trees): notes/BERRY_PLANTING.md
     files = os.path.join(OUT, 'files')
     if clean or not os.path.isdir(files):
         shutil.rmtree(files, ignore_errors=True)

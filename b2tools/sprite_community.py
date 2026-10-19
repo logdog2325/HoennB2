@@ -78,6 +78,9 @@ SHEETS = {
     # left, right, up); each cell is an exact 2x upscale, but the down / up rows' 2x2 blocks start one pixel in
     # (cell=64: checked per cell, see sheet())
     'birch': dict(file='birch_sheet_Wolfang62.png', author='Wolfang62', bg='alpha', scale=2, cell=64),
+    # fifth batch (user 2026-10-17): Kymotonian and Klein Studio's Wally, a Pokemon Essentials sheet at 2x (64x64 cells,
+    # rows down, left, right, up; cell (1,0) starts one pixel down), replacing CalculusNova's Gen 3-sized Wally as NEW
+    'wally_kk': dict(file='wally_sheet_Kymotonian_KleinStudio.png', author='Kymotonian, Klein Studio', bg='alpha', scale=2, cell=64),
 }
 
 # ------------------------------------------------------------------------------------------------ frames on the sheets
@@ -718,7 +721,8 @@ def jpeg_review(path, scale=6):
 # pixel at the hand in each side frame) and the hair's (88,64,64); merged into the more used one. (In CIE Lab the two
 # dark hair browns (64,48,48) / (88,64,64) are a little closer, but merging them would recolour 439 pixels: the hair
 # loses its dark shading.) Before/after: screenshots/birch_sprite/birch_overworld_review.png
-EXTRA_MERGES = {232: {(223, 165, 123): (214, 153, 110)}, 241: {(200, 152, 56): (208, 152, 72)},
+EXTRA_MERGES = {87: {(207, 150, 111): (208, 152, 112), (255, 209, 182): (248, 208, 184), (209, 147, 104): (208, 152, 112), (248, 248, 248): (239, 237, 252), (71, 47, 47): (56, 40, 56), (197, 197, 205): (194, 192, 223), (64, 64, 88): (56, 40, 56), (48, 45, 87): (56, 40, 56)},   # Wally (Kymotonian/Klein Studio): 23 colours -> 15, the 8 closest pairs (user approved 2026-10-17, edits allowed)
+                232: {(223, 165, 123): (214, 153, 110)}, 241: {(200, 152, 56): (208, 152, 72)},
                 104: {(96, 56, 51): (88, 64, 64)}}
 
 def _merge_extra(frames, code):
@@ -1056,11 +1060,11 @@ def build_archie_ow():
     return [f'{os.path.relpath(folder, ROOT)} ({n} colours)']
 
 def build_wally_ow():
-    fr = wally_plan()
+    fr = ess_walk_plan('wally_kk')
     assert all(l == 0 for _, l, _ in fr)
     folder, n, merges = write_overworld(87, 'wally', [f for f, _, _ in fr], 'Wally',
-                                        "community: src/sprites/community/incoming/wally_sheet_CalculusNova.png by "
-                                        "CalculusNova (walking frames without the backpack; right = left mirrored)")
+                                        "community: src/sprites/community/incoming/wally_sheet_Kymotonian_KleinStudio.png "
+                                        "by Kymotonian and Klein Studio (8 colour pairs merged: EXTRA_MERGES[87])")
     return [f'{os.path.relpath(folder, ROOT)} ({n} colours)']
 
 def build_birch_ow():

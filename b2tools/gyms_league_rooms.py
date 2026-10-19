@@ -406,6 +406,7 @@ def mauville_states():
     states = dict(normal=t0, alt=run(t0, special2, True), off=run(t0, special3, False))
     return {k: {xz: v[1] for xz, v in t.items()} for k, t in states.items()}
 
+MG_SWITCHES = [(0, 9), (8, 11), (4, 15)]      # Sapphire's switch tiles (0478 script entries 5-7)
 def mauville(state='normal'):
     n = 'MauvilleCity_Gym'
     st = mauville_states()
@@ -419,7 +420,9 @@ def mauville(state='normal'):
              map=n, style='gl_mauville', floor=[[3, 2, 6, 7], [0, 8, 9, 17], [2, 18, 7, 20]],
              blocks=[dict(use='gl_mauville_pole', units=[x + 0.25, z + 0.3, x + 0.75, z + 0.8]) for x, z in poles] +
                     [dict(use='gl_mauville_wall', tiles=walls)],
-             furniture=[dict(m='d6_yuka_biri02_1', tile=t) for t in beams] + statues(n))   # one tile (rooms_cleanup)
+             furniture=[dict(m='d6_yuka_biri02_1', tile=t) for t in beams] + statues(n),   # one tile (rooms_cleanup)
+             # the floor switches, drawn with Sapphire's own switch metatile (they were invisible: user report 2026-10-14)
+             floor_tex=[dict(tex=f'g3sw_{x}_{z}', gen3=[x, z], rect=[x, z, x, z], stretch=True) for x, z in MG_SWITCHES])
     if state != 'normal':
         r['_doc'] += (f' Layout "{state}" (story_fixups): Sapphire\'s MauvilleGymSpecial' + ('2 (every switch swaps the '
                       'beams)' if state == 'alt' else '3 (every beam off: Wattson beaten)') + ', loaded instead of the room '

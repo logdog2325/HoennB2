@@ -1,0 +1,1548 @@
+{
+ "_doc": "battle_tents (hill rooms helper, 2026-10-18; work/agents/battle_tents/tools/rooms_hill.py writes this file). Trainer Hill 2F, Variety mode (Emerald LAYOUT_TRAINER_HILL_2F rows 0-4 + the mode's floor from data/emerald/trainer_hill.json rows 5-20). Origin [1, 1] as every mode of this floor (zone tile = Emerald tile + origin). Stairs down (2,1) = stair_d01, up (12,1) = stair_u01, both entered walking north; the timer (14,1) a lit board on the wall; the floor board and its cabinets (4-10,3-5). Collision = the mode's (block); ledges 0, sliding ice 0 tiles, slide arrows 31 (drawn only: hill_special_tiles.json).",
+ "map": "pokeemerald/TrainerHill_2F",
+ "style": "th_hill",
+ "origin": [
+  1,
+  1
+ ],
+ "floor": [
+  [
+   0,
+   1,
+   3,
+   19
+  ],
+  [
+   11,
+   1,
+   14,
+   19
+  ],
+  [
+   4,
+   3,
+   10,
+   19
+  ]
+ ],
+ "block": [
+  [
+   0,
+   20
+  ],
+  [
+   1,
+   20
+  ],
+  [
+   2,
+   20
+  ],
+  [
+   3,
+   20
+  ],
+  [
+   4,
+   20
+  ],
+  [
+   5,
+   20
+  ],
+  [
+   6,
+   20
+  ],
+  [
+   7,
+   20
+  ],
+  [
+   8,
+   20
+  ],
+  [
+   9,
+   20
+  ],
+  [
+   10,
+   20
+  ],
+  [
+   11,
+   20
+  ],
+  [
+   12,
+   20
+  ],
+  [
+   13,
+   20
+  ],
+  [
+   14,
+   20
+  ]
+ ],
+ "furniture": [
+  {
+   "m": "stair_d01",
+   "stair": [
+    2,
+    1
+   ],
+   "dir": "N",
+   "_what": "stairs down (Emerald warp 0, (2,1))"
+  },
+  {
+   "m": "stair_u01",
+   "stair": [
+    12,
+    1
+   ],
+   "dir": "N",
+   "_what": "stairs up (Emerald warp 1, (12,1))"
+  }
+ ],
+ "decals": [
+  {
+   "tex": "bs_kanban",
+   "src": 330,
+   "at": [
+    14.5
+   ],
+   "y": 20,
+   "w": 14,
+   "h": 10,
+   "uv": [
+    0,
+    0,
+    0.5,
+    1
+   ],
+   "_what": "the timer (Emerald (14,1), MB_TRAINER_HILL_TIMER): a lit board"
+  }
+ ],
+ "blocks": [
+  {
+   "rect": [
+    4,
+    3,
+    5,
+    4
+   ],
+   "use": "th_locker",
+   "_what": "cabinets left of the floor board (Emerald 4-5,3-4)"
+  },
+  {
+   "rect": [
+    9,
+    3,
+    10,
+    4
+   ],
+   "use": "th_locker",
+   "_what": "cabinets right of the floor board (Emerald 9-10,3-4)"
+  },
+  {
+   "rect": [
+    6,
+    3,
+    8,
+    5
+   ],
+   "use": "th_console",
+   "_what": "the floor board (Emerald 6-8,3-5)"
+  }
+ ],
+ "floor_tex": [
+  {
+   "rect": [
+    4,
+    6,
+    5,
+    6
+   ],
+   "tex": "out50_step04",
+   "src": 331,
+   "size": 16,
+   "size_v": 16,
+   "rot": 0,
+   "_what": "Emerald's slide arrows (MB_SLIDE_*), N: the stadium's step triangle"
+  },
+  {
+   "rect": [
+    9,
+    6,
+    10,
+    6
+   ],
+   "tex": "out50_step04",
+   "src": 331,
+   "size": 16,
+   "size_v": 16,
+   "rot": 0,
+   "_what": "Emerald's slide arrows (MB_SLIDE_*), N: the stadium's step triangle"
+  },
+  {
+   "rect": [
+    3,
+    7,
+    3,
+    7
+   ],
+   "tex": "out50_step04",
+   "src": 331,
+   "size": 16,
+   "size_v": 16,
+   "rot": 0,
+   "_what": "Emerald's slide arrows (MB_SLIDE_*), N: the stadium's step triangle"
+  },
+  {
+   "rect": [
+    6,
+    7,
+    6,
+    7
+   ],
+   "tex": "out50_step04",
+   "src": 331,
+   "size": 16,
+   "size_v": 16,
+   "rot": 0,
+   "_what": "Emerald's slide arrows (MB_SLIDE_*), N: the stadium's step triangle"
+  },
+  {
+   "rect": [
+    8,
+    7,
+    8,
+    7
+   ],
+   "tex": "out50_step04",
+   "src": 331,
+   "size": 16,
+   "size_v": 16,
+   "rot": 0,
+   "_what": "Emerald's slide arrows (MB_SLIDE_*), N: the stadium's step triangle"
+  },
+  {
+   "rect": [
+    2,
+    8,
+    2,
+    8
+   ],
+   "tex": "out50_step04",
+   "src": 331,
+   "size": 16,
+   "size_v": 16,
+   "rot": 0,
+   "_what": "Emerald's slide arrows (MB_SLIDE_*), N: the stadium's step triangle"
+  },
+  {
+   "rect": [
+    7,
+    19,
+    7,
+    19
+   ],
+   "tex": "out50_step04",
+   "src": 331,
+   "size": 16,
+   "size_v": 16,
+   "rot": 0,
+   "_what": "Emerald's slide arrows (MB_SLIDE_*), N: the stadium's step triangle"
+  },
+  {
+   "rect": [
+    5,
+    17,
+    5,
+    17
+   ],
+   "tex": "out50_step04",
+   "src": 331,
+   "size": 16,
+   "size_v": 16,
+   "rot": 180,
+   "_what": "Emerald's slide arrows (MB_SLIDE_*), S: the stadium's step triangle"
+  },
+  {
+   "rect": [
+    6,
+    18,
+    6,
+    18
+   ],
+   "tex": "out50_step04",
+   "src": 331,
+   "size": 16,
+   "size_v": 16,
+   "rot": 180,
+   "_what": "Emerald's slide arrows (MB_SLIDE_*), S: the stadium's step triangle"
+  },
+  {
+   "rect": [
+    11,
+    7,
+    11,
+    7
+   ],
+   "tex": "out50_step04",
+   "src": 331,
+   "size": 16,
+   "size_v": 16,
+   "rot": 90,
+   "_what": "Emerald's slide arrows (MB_SLIDE_*), W: the stadium's step triangle"
+  },
+  {
+   "rect": [
+    12,
+    8,
+    12,
+    8
+   ],
+   "tex": "out50_step04",
+   "src": 331,
+   "size": 16,
+   "size_v": 16,
+   "rot": 90,
+   "_what": "Emerald's slide arrows (MB_SLIDE_*), W: the stadium's step triangle"
+  },
+  {
+   "rect": [
+    1,
+    9,
+    1,
+    13
+   ],
+   "tex": "out50_step04",
+   "src": 331,
+   "size": 16,
+   "size_v": 16,
+   "rot": 90,
+   "_what": "Emerald's slide arrows (MB_SLIDE_*), W: the stadium's step triangle"
+  },
+  {
+   "rect": [
+    13,
+    9,
+    13,
+    13
+   ],
+   "tex": "out50_step04",
+   "src": 331,
+   "size": 16,
+   "size_v": 16,
+   "rot": 90,
+   "_what": "Emerald's slide arrows (MB_SLIDE_*), W: the stadium's step triangle"
+  },
+  {
+   "rect": [
+    2,
+    14,
+    2,
+    14
+   ],
+   "tex": "out50_step04",
+   "src": 331,
+   "size": 16,
+   "size_v": 16,
+   "rot": 90,
+   "_what": "Emerald's slide arrows (MB_SLIDE_*), W: the stadium's step triangle"
+  },
+  {
+   "rect": [
+    12,
+    14,
+    12,
+    14
+   ],
+   "tex": "out50_step04",
+   "src": 331,
+   "size": 16,
+   "size_v": 16,
+   "rot": 90,
+   "_what": "Emerald's slide arrows (MB_SLIDE_*), W: the stadium's step triangle"
+  },
+  {
+   "rect": [
+    3,
+    15,
+    3,
+    15
+   ],
+   "tex": "out50_step04",
+   "src": 331,
+   "size": 16,
+   "size_v": 16,
+   "rot": 90,
+   "_what": "Emerald's slide arrows (MB_SLIDE_*), W: the stadium's step triangle"
+  },
+  {
+   "rect": [
+    11,
+    15,
+    11,
+    15
+   ],
+   "tex": "out50_step04",
+   "src": 331,
+   "size": 16,
+   "size_v": 16,
+   "rot": 90,
+   "_what": "Emerald's slide arrows (MB_SLIDE_*), W: the stadium's step triangle"
+  },
+  {
+   "rect": [
+    4,
+    16,
+    4,
+    16
+   ],
+   "tex": "out50_step04",
+   "src": 331,
+   "size": 16,
+   "size_v": 16,
+   "rot": 90,
+   "_what": "Emerald's slide arrows (MB_SLIDE_*), W: the stadium's step triangle"
+  },
+  {
+   "rect": [
+    10,
+    16,
+    10,
+    16
+   ],
+   "tex": "out50_step04",
+   "src": 331,
+   "size": 16,
+   "size_v": 16,
+   "rot": 90,
+   "_what": "Emerald's slide arrows (MB_SLIDE_*), W: the stadium's step triangle"
+  },
+  {
+   "rect": [
+    9,
+    17,
+    9,
+    17
+   ],
+   "tex": "out50_step04",
+   "src": 331,
+   "size": 16,
+   "size_v": 16,
+   "rot": 90,
+   "_what": "Emerald's slide arrows (MB_SLIDE_*), W: the stadium's step triangle"
+  },
+  {
+   "rect": [
+    8,
+    18,
+    8,
+    18
+   ],
+   "tex": "out50_step04",
+   "src": 331,
+   "size": 16,
+   "size_v": 16,
+   "rot": 90,
+   "_what": "Emerald's slide arrows (MB_SLIDE_*), W: the stadium's step triangle"
+  },
+  {
+   "rect": [
+    4,
+    7,
+    5,
+    8
+   ],
+   "tex": "in02_yuka6",
+   "src": 283,
+   "size": 32
+  },
+  {
+   "rect": [
+    9,
+    7,
+    10,
+    8
+   ],
+   "tex": "in02_yuka6",
+   "src": 283,
+   "size": 32
+  },
+  {
+   "rect": [
+    3,
+    8,
+    3,
+    9
+   ],
+   "tex": "in02_yuka6",
+   "src": 283,
+   "size": 32
+  },
+  {
+   "rect": [
+    6,
+    8,
+    8,
+    8
+   ],
+   "tex": "in02_yuka6",
+   "src": 283,
+   "size": 32
+  },
+  {
+   "rect": [
+    11,
+    8,
+    11,
+    9
+   ],
+   "tex": "in02_yuka6",
+   "src": 283,
+   "size": 32
+  },
+  {
+   "rect": [
+    2,
+    9,
+    2,
+    13
+   ],
+   "tex": "in02_yuka6",
+   "src": 283,
+   "size": 32
+  },
+  {
+   "rect": [
+    7,
+    9,
+    7,
+    9
+   ],
+   "tex": "in02_yuka6",
+   "src": 283,
+   "size": 32
+  },
+  {
+   "rect": [
+    12,
+    9,
+    12,
+    13
+   ],
+   "tex": "in02_yuka6",
+   "src": 283,
+   "size": 32
+  },
+  {
+   "rect": [
+    3,
+    13,
+    3,
+    14
+   ],
+   "tex": "in02_yuka6",
+   "src": 283,
+   "size": 32
+  },
+  {
+   "rect": [
+    11,
+    13,
+    11,
+    14
+   ],
+   "tex": "in02_yuka6",
+   "src": 283,
+   "size": 32
+  },
+  {
+   "rect": [
+    4,
+    14,
+    4,
+    15
+   ],
+   "tex": "in02_yuka6",
+   "src": 283,
+   "size": 32
+  },
+  {
+   "rect": [
+    10,
+    14,
+    10,
+    15
+   ],
+   "tex": "in02_yuka6",
+   "src": 283,
+   "size": 32
+  },
+  {
+   "rect": [
+    5,
+    15,
+    5,
+    16
+   ],
+   "tex": "in02_yuka6",
+   "src": 283,
+   "size": 32
+  },
+  {
+   "rect": [
+    9,
+    15,
+    9,
+    16
+   ],
+   "tex": "in02_yuka6",
+   "src": 283,
+   "size": 32
+  },
+  {
+   "rect": [
+    6,
+    16,
+    6,
+    17
+   ],
+   "tex": "in02_yuka6",
+   "src": 283,
+   "size": 32
+  },
+  {
+   "rect": [
+    8,
+    16,
+    8,
+    17
+   ],
+   "tex": "in02_yuka6",
+   "src": 283,
+   "size": 32
+  },
+  {
+   "rect": [
+    7,
+    17,
+    7,
+    18
+   ],
+   "tex": "in02_yuka6",
+   "src": 283,
+   "size": 32
+  },
+  {
+   "rect": [
+    4,
+    9,
+    6,
+    13
+   ],
+   "tex": "in01_gyuka",
+   "src": 282,
+   "size": 32
+  },
+  {
+   "rect": [
+    8,
+    9,
+    10,
+    13
+   ],
+   "tex": "in01_gyuka",
+   "src": 282,
+   "size": 32
+  },
+  {
+   "rect": [
+    3,
+    10,
+    3,
+    12
+   ],
+   "tex": "in01_gyuka",
+   "src": 282,
+   "size": 32
+  },
+  {
+   "rect": [
+    7,
+    10,
+    7,
+    16
+   ],
+   "tex": "in01_gyuka",
+   "src": 282,
+   "size": 32
+  },
+  {
+   "rect": [
+    11,
+    10,
+    11,
+    12
+   ],
+   "tex": "in01_gyuka",
+   "src": 282,
+   "size": 32
+  },
+  {
+   "rect": [
+    5,
+    14,
+    6,
+    14
+   ],
+   "tex": "in01_gyuka",
+   "src": 282,
+   "size": 32
+  },
+  {
+   "rect": [
+    8,
+    14,
+    9,
+    14
+   ],
+   "tex": "in01_gyuka",
+   "src": 282,
+   "size": 32
+  },
+  {
+   "rect": [
+    6,
+    15,
+    6,
+    15
+   ],
+   "tex": "in01_gyuka",
+   "src": 282,
+   "size": 32
+  },
+  {
+   "rect": [
+    8,
+    15,
+    8,
+    15
+   ],
+   "tex": "in01_gyuka",
+   "src": 282,
+   "size": 32
+  },
+  {
+   "rect": [
+    0,
+    18,
+    0,
+    19
+   ],
+   "tex": "in01_gyuka",
+   "src": 282,
+   "size": 32
+  },
+  {
+   "rect": [
+    14,
+    18,
+    14,
+    19
+   ],
+   "tex": "in01_gyuka",
+   "src": 282,
+   "size": 32
+  },
+  {
+   "rect": [
+    1,
+    19,
+    1,
+    19
+   ],
+   "tex": "in01_gyuka",
+   "src": 282,
+   "size": 32
+  },
+  {
+   "rect": [
+    13,
+    19,
+    13,
+    19
+   ],
+   "tex": "in01_gyuka",
+   "src": 282,
+   "size": 32
+  },
+  {
+   "rect": [
+    0,
+    6,
+    1,
+    7
+   ],
+   "tex": "in45_yuka02",
+   "src": 326,
+   "size": 32
+  },
+  {
+   "rect": [
+    7,
+    6,
+    7,
+    6
+   ],
+   "tex": "in45_yuka02",
+   "src": 326,
+   "size": 32
+  },
+  {
+   "rect": [
+    12,
+    6,
+    14,
+    6
+   ],
+   "tex": "in45_yuka02",
+   "src": 326,
+   "size": 32
+  },
+  {
+   "rect": [
+    13,
+    7,
+    14,
+    7
+   ],
+   "tex": "in45_yuka02",
+   "src": 326,
+   "size": 32
+  },
+  {
+   "rect": [
+    0,
+    8,
+    0,
+    9
+   ],
+   "tex": "in45_yuka02",
+   "src": 326,
+   "size": 32
+  },
+  {
+   "rect": [
+    14,
+    8,
+    14,
+    9
+   ],
+   "tex": "in45_yuka02",
+   "src": 326,
+   "size": 32
+  },
+  {
+   "rect": [
+    0,
+    14,
+    0,
+    16
+   ],
+   "tex": "in45_yuka02",
+   "src": 326,
+   "size": 32
+  },
+  {
+   "rect": [
+    14,
+    14,
+    14,
+    16
+   ],
+   "tex": "in45_yuka02",
+   "src": 326,
+   "size": 32
+  },
+  {
+   "rect": [
+    1,
+    15,
+    1,
+    17
+   ],
+   "tex": "in45_yuka02",
+   "src": 326,
+   "size": 32
+  },
+  {
+   "rect": [
+    13,
+    15,
+    13,
+    17
+   ],
+   "tex": "in45_yuka02",
+   "src": 326,
+   "size": 32
+  },
+  {
+   "rect": [
+    2,
+    16,
+    2,
+    18
+   ],
+   "tex": "in45_yuka02",
+   "src": 326,
+   "size": 32
+  },
+  {
+   "rect": [
+    12,
+    16,
+    12,
+    18
+   ],
+   "tex": "in45_yuka02",
+   "src": 326,
+   "size": 32
+  },
+  {
+   "rect": [
+    3,
+    17,
+    3,
+    19
+   ],
+   "tex": "in45_yuka02",
+   "src": 326,
+   "size": 32
+  },
+  {
+   "rect": [
+    11,
+    17,
+    11,
+    19
+   ],
+   "tex": "in45_yuka02",
+   "src": 326,
+   "size": 32
+  },
+  {
+   "rect": [
+    4,
+    18,
+    4,
+    19
+   ],
+   "tex": "in45_yuka02",
+   "src": 326,
+   "size": 32
+  },
+  {
+   "rect": [
+    10,
+    18,
+    10,
+    19
+   ],
+   "tex": "in45_yuka02",
+   "src": 326,
+   "size": 32
+  },
+  {
+   "rect": [
+    5,
+    19,
+    5,
+    19
+   ],
+   "tex": "in45_yuka02",
+   "src": 326,
+   "size": 32
+  },
+  {
+   "rect": [
+    9,
+    19,
+    9,
+    19
+   ],
+   "tex": "in45_yuka02",
+   "src": 326,
+   "size": 32
+  },
+  {
+   "rect": [
+    2,
+    6,
+    3,
+    6
+   ],
+   "tex": "in45_sho01",
+   "src": 326,
+   "size": 32
+  },
+  {
+   "rect": [
+    6,
+    6,
+    6,
+    6
+   ],
+   "tex": "in45_sho01",
+   "src": 326,
+   "size": 32
+  },
+  {
+   "rect": [
+    8,
+    6,
+    8,
+    6
+   ],
+   "tex": "in45_sho01",
+   "src": 326,
+   "size": 32
+  },
+  {
+   "rect": [
+    11,
+    6,
+    11,
+    6
+   ],
+   "tex": "in45_sho01",
+   "src": 326,
+   "size": 32
+  },
+  {
+   "rect": [
+    2,
+    7,
+    2,
+    7
+   ],
+   "tex": "in45_sho01",
+   "src": 326,
+   "size": 32
+  },
+  {
+   "rect": [
+    7,
+    7,
+    7,
+    7
+   ],
+   "tex": "in45_sho01",
+   "src": 326,
+   "size": 32
+  },
+  {
+   "rect": [
+    12,
+    7,
+    12,
+    7
+   ],
+   "tex": "in45_sho01",
+   "src": 326,
+   "size": 32
+  },
+  {
+   "rect": [
+    1,
+    8,
+    1,
+    8
+   ],
+   "tex": "in45_sho01",
+   "src": 326,
+   "size": 32
+  },
+  {
+   "rect": [
+    13,
+    8,
+    13,
+    8
+   ],
+   "tex": "in45_sho01",
+   "src": 326,
+   "size": 32
+  },
+  {
+   "rect": [
+    0,
+    10,
+    0,
+    13
+   ],
+   "tex": "in45_sho01",
+   "src": 326,
+   "size": 32
+  },
+  {
+   "rect": [
+    14,
+    10,
+    14,
+    13
+   ],
+   "tex": "in45_sho01",
+   "src": 326,
+   "size": 32
+  },
+  {
+   "rect": [
+    1,
+    14,
+    1,
+    14
+   ],
+   "tex": "in45_sho01",
+   "src": 326,
+   "size": 32
+  },
+  {
+   "rect": [
+    13,
+    14,
+    13,
+    14
+   ],
+   "tex": "in45_sho01",
+   "src": 326,
+   "size": 32
+  },
+  {
+   "rect": [
+    2,
+    15,
+    2,
+    15
+   ],
+   "tex": "in45_sho01",
+   "src": 326,
+   "size": 32
+  },
+  {
+   "rect": [
+    12,
+    15,
+    12,
+    15
+   ],
+   "tex": "in45_sho01",
+   "src": 326,
+   "size": 32
+  },
+  {
+   "rect": [
+    3,
+    16,
+    3,
+    16
+   ],
+   "tex": "in45_sho01",
+   "src": 326,
+   "size": 32
+  },
+  {
+   "rect": [
+    11,
+    16,
+    11,
+    16
+   ],
+   "tex": "in45_sho01",
+   "src": 326,
+   "size": 32
+  },
+  {
+   "rect": [
+    0,
+    17,
+    0,
+    17
+   ],
+   "tex": "in45_sho01",
+   "src": 326,
+   "size": 32
+  },
+  {
+   "rect": [
+    4,
+    17,
+    4,
+    17
+   ],
+   "tex": "in45_sho01",
+   "src": 326,
+   "size": 32
+  },
+  {
+   "rect": [
+    10,
+    17,
+    10,
+    17
+   ],
+   "tex": "in45_sho01",
+   "src": 326,
+   "size": 32
+  },
+  {
+   "rect": [
+    14,
+    17,
+    14,
+    17
+   ],
+   "tex": "in45_sho01",
+   "src": 326,
+   "size": 32
+  },
+  {
+   "rect": [
+    1,
+    18,
+    1,
+    18
+   ],
+   "tex": "in45_sho01",
+   "src": 326,
+   "size": 32
+  },
+  {
+   "rect": [
+    5,
+    18,
+    5,
+    18
+   ],
+   "tex": "in45_sho01",
+   "src": 326,
+   "size": 32
+  },
+  {
+   "rect": [
+    9,
+    18,
+    9,
+    18
+   ],
+   "tex": "in45_sho01",
+   "src": 326,
+   "size": 32
+  },
+  {
+   "rect": [
+    13,
+    18,
+    13,
+    18
+   ],
+   "tex": "in45_sho01",
+   "src": 326,
+   "size": 32
+  },
+  {
+   "rect": [
+    2,
+    19,
+    2,
+    19
+   ],
+   "tex": "in45_sho01",
+   "src": 326,
+   "size": 32
+  },
+  {
+   "rect": [
+    6,
+    19,
+    6,
+    19
+   ],
+   "tex": "in45_sho01",
+   "src": 326,
+   "size": 32
+  },
+  {
+   "rect": [
+    8,
+    19,
+    8,
+    19
+   ],
+   "tex": "in45_sho01",
+   "src": 326,
+   "size": 32
+  },
+  {
+   "rect": [
+    12,
+    19,
+    12,
+    19
+   ],
+   "tex": "in45_sho01",
+   "src": 326,
+   "size": 32
+  }
+ ],
+ "mats": [
+  {
+   "tex": "in45_glow",
+   "src": 326,
+   "rect": [
+    2,
+    6,
+    2,
+    6
+   ],
+   "uv": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "border": 0,
+   "border_units": 0,
+   "y": 0,
+   "_what": "Emerald's glitter mat (MB_SECRET_BASE_GLITTER_MAT) (Emerald 2,6 metatile 0x29c)"
+  },
+  {
+   "tex": "in45_glow",
+   "src": 326,
+   "rect": [
+    13,
+    6,
+    13,
+    6
+   ],
+   "uv": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "border": 0,
+   "border_units": 0,
+   "y": 0,
+   "_what": "Emerald's glitter mat (MB_SECRET_BASE_GLITTER_MAT) (Emerald 13,6 metatile 0x29c)"
+  },
+  {
+   "tex": "in45_glow",
+   "src": 326,
+   "rect": [
+    0,
+    7,
+    0,
+    7
+   ],
+   "uv": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "border": 0,
+   "border_units": 0,
+   "y": 0,
+   "_what": "Emerald's glitter mat (MB_SECRET_BASE_GLITTER_MAT) (Emerald 0,7 metatile 0x29c)"
+  },
+  {
+   "tex": "in45_glow",
+   "src": 326,
+   "rect": [
+    14,
+    8,
+    14,
+    8
+   ],
+   "uv": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "border": 0,
+   "border_units": 0,
+   "y": 0,
+   "_what": "Emerald's glitter mat (MB_SECRET_BASE_GLITTER_MAT) (Emerald 14,8 metatile 0x29c)"
+  },
+  {
+   "tex": "in45_glow",
+   "src": 326,
+   "rect": [
+    14,
+    15,
+    14,
+    15
+   ],
+   "uv": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "border": 0,
+   "border_units": 0,
+   "y": 0,
+   "_what": "Emerald's glitter mat (MB_SECRET_BASE_GLITTER_MAT) (Emerald 14,15 metatile 0x29c)"
+  },
+  {
+   "tex": "in45_glow",
+   "src": 326,
+   "rect": [
+    0,
+    16,
+    0,
+    16
+   ],
+   "uv": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "border": 0,
+   "border_units": 0,
+   "y": 0,
+   "_what": "Emerald's glitter mat (MB_SECRET_BASE_GLITTER_MAT) (Emerald 0,16 metatile 0x29c)"
+  },
+  {
+   "tex": "in45_glow",
+   "src": 326,
+   "rect": [
+    13,
+    17,
+    13,
+    17
+   ],
+   "uv": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "border": 0,
+   "border_units": 0,
+   "y": 0,
+   "_what": "Emerald's glitter mat (MB_SECRET_BASE_GLITTER_MAT) (Emerald 13,17 metatile 0x29c)"
+  },
+  {
+   "tex": "in45_glow",
+   "src": 326,
+   "rect": [
+    2,
+    18,
+    2,
+    18
+   ],
+   "uv": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "border": 0,
+   "border_units": 0,
+   "y": 0,
+   "_what": "Emerald's glitter mat (MB_SECRET_BASE_GLITTER_MAT) (Emerald 2,18 metatile 0x29c)"
+  },
+  {
+   "tex": "in45_glow",
+   "src": 326,
+   "rect": [
+    0,
+    19,
+    0,
+    19
+   ],
+   "uv": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "border": 0,
+   "border_units": 0,
+   "y": 0,
+   "_what": "Emerald's glitter mat (MB_SECRET_BASE_GLITTER_MAT) (Emerald 0,19 metatile 0x29c)"
+  },
+  {
+   "tex": "in45_glow",
+   "src": 326,
+   "rect": [
+    4,
+    19,
+    4,
+    19
+   ],
+   "uv": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "border": 0,
+   "border_units": 0,
+   "y": 0,
+   "_what": "Emerald's glitter mat (MB_SECRET_BASE_GLITTER_MAT) (Emerald 4,19 metatile 0x29c)"
+  },
+  {
+   "tex": "in45_glow",
+   "src": 326,
+   "rect": [
+    10,
+    19,
+    10,
+    19
+   ],
+   "uv": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "border": 0,
+   "border_units": 0,
+   "y": 0,
+   "_what": "Emerald's glitter mat (MB_SECRET_BASE_GLITTER_MAT) (Emerald 10,19 metatile 0x29c)"
+  },
+  {
+   "tex": "in45_glow",
+   "src": 326,
+   "rect": [
+    14,
+    19,
+    14,
+    19
+   ],
+   "uv": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "border": 0,
+   "border_units": 0,
+   "y": 0,
+   "_what": "Emerald's glitter mat (MB_SECRET_BASE_GLITTER_MAT) (Emerald 14,19 metatile 0x29c)"
+  }
+ ],
+ "alt_of": "TrainerHill_2F"
+}

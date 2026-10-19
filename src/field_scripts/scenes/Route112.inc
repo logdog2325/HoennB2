@@ -16,6 +16,7 @@ R112_Init:                                  // Route112_MapScript1_150508 (Setup
     h_setvar VAR_JAGGED_PASS_ASH_WEATHER, 0
 #ifdef HOENN_EMERALD
     h_clearflag FLAG_FORCE_MIRAGE_TOWER_VISIBLE     // Emerald's OnTransition also clears it: the Mirage Tower shows only on some visits again (scenes/emerald/Route111_Mirage.inc)
+    h_setflag FLAG_EM_MIRAGE_TOWER_KEEP             // (2026-10-18) a walk on into Route 111 keeps the tower as its cell is drawn already (Route111_Mirage.inc)
 #endif
     VMHalt
 R112_Grunt1:                                // Route112_EventScript_150513

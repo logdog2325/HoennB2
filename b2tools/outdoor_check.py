@@ -56,7 +56,7 @@ class Frame:
     def __init__(self, name, wd, cells, maps, only=None, group=None):
         self.name, self.wd, self.cells, self.maps, self.group = name, wd, cells, maps, group
         self.only = only or set(cells)                   # cells to check (alt frames: the swapped ones)
-        self._per, self._pl = {}, {}
+        self._per, self._per1, self._pl = {}, {}, {}
 
     def per(self, c):
         if c not in self._per:
@@ -64,16 +64,37 @@ class Frame:
             self._per[c] = open(os.path.join(d, 'collision.per'), 'rb').read() if d else None
         return self._per[c]
 
-    def rec(self, wx, wz):
-        """(a, b, class, flags) of a world tile, None outside the built cells."""
-        b = self.per((wx // 32, wz // 32))
-        if b is None: return None
-        return struct.unpack_from('<HHHH', b, 4 + 8 * ((wz % 32) * 32 + wx % 32))
+    def per1(self, c):
+        """The cell's second collision layer (collision1.per: walk-under bridges, world.py bridge_layers), or None."""
+        if c not in self._per1:
+            d = self.cells.get(c); p = os.path.join(d, 'collision1.per') if d else None
+            self._per1[c] = open(p, 'rb').read() if p and os.path.exists(p) else None
+        return self._per1[c]
 
-    def y(self, wx, wz):
-        """Collision height at a tile's centre (units), None outside."""
+    def layers(self, wx, wz):
+        """The tile's records, layer 0 first ([] outside the built cells)."""
+        o = 4 + 8 * ((wz % 32) * 32 + wx % 32)
+        return [struct.unpack_from('<HHHH', b, o) for b in (self.per((wx // 32, wz // 32)), self.per1((wx // 32, wz // 32)))
+                if b is not None]
+
+    def rec(self, wx, wz, y=None):
+        """(a, b, class, flags) of a world tile, None outside the built cells. With y: of a two-layer tile the layer
+        whose height is nearest y, ties to layer 0 (ov036 FieldG3DMapper_GetTerrain); without: layer 0."""
+        L = self.layers(wx, wz)
+        if not L: return None
+        if y is None or len(L) == 1 or L[0] == L[1]: return L[0]
+        ys = [self.y(wx, wz, r) for r in L]
+        return min(zip(L, ys), key=lambda t: abs(t[1] - y) if t[1] is not None else 1e9)[0]
+
+    def land(self, wx, wz):
+        """The layer one walks on: of a two-layer tile its land layer (a deck, a bridge's end), else layer 0."""
+        L = self.layers(wx, wz)
+        return next((r for r in reversed(L) if b2_land(r)), L[0] if L else None)
+
+    def y(self, wx, wz, r=None):
+        """Collision height at a tile's centre (units), None outside (of record r of the tile; default layer 0)."""
         from terrain import heights as H
-        r = self.rec(wx, wz)
+        r = r or self.rec(wx, wz)
         if r is None: return None
         a, i = r[0], r[1]
         if a & 3: return None
@@ -278,7 +299,7 @@ def b2_land(r):
 
 NOLAND = 0x4000         # b2tools/terrain/heights.py step 12 / patches/hm_free.py SurfLandingTileType
 
-def b2_landing(frame, a, b):
+def b2_landing(frame, a, b, rb=None):
     """Black 2 lets a surfer on tile a land on tile b (final_check 2026-10-08, ov036 CheckSurfExitEvent 0x02182cd4): the
     tile in the key's direction - or the one beyond it when that is a shore (class 0x41/0x44, MapTile_IsSurfEdge) - must
     have neither flag bit 0 (solid) nor bit 1 (surfable, CheckSurfBeginTiles); no actor in the way (func_ov036_02182fdc).
@@ -286,7 +307,8 @@ def b2_landing(frame, a, b):
     < 20, CheckSurfHeightAllow 0x0219ab30): a surfer climbs onto any deck; Black 2's own maps keep every landable tile
     next to surf water 0, 4 or 8 units above it (1,121 cells in a/0/0/8). hm_free's SurfLandingTileType also refuses a
     tile with NOLAND (Sapphire's elevation rule, heights.py step 12)."""
-    rb = frame.rec(*b)
+    import world as W_                          # (a two-layer tile: the layer nearest the surfer's grid height x 16,
+    rb = rb or frame.rec(*b, W_._b2_front_y(frame.y(*a)))   # FieldPlayer_GetWPosInDir; world.py _b2_front_y)
     return rb is not None and not (rb[3] & (3 | NOLAND)) and rb[2] not in SURF_CLASSES
 
 def b2_surf(r):
@@ -309,6 +331,7 @@ def check_size(frame, out):
         p = os.path.join(d, 'terrain.nsbmd')
         if not os.path.exists(p): out.append(('size', f'cell {c}: no terrain.nsbmd (ToNsbmd not run)', c)); continue
         n = 20 + sum(os.path.getsize(os.path.join(d, f)) for f in ('terrain.nsbmd', 'collision.per', 'placements.bin'))
+        if os.path.exists(os.path.join(d, 'collision1.per')): n += 4 + os.path.getsize(os.path.join(d, 'collision1.per'))   # ('GC')
         if n > CHUNK_LIMIT: out.append(('size', f'cell {c}: chunk {n} B (limit {CHUNK_LIMIT})', c))
 
 # ---------------------------------------------------------------------------------------------------------- walk
@@ -354,7 +377,9 @@ def check_walk(frame, out, S=None):
         (x, z0), z = q.popleft()
         a = S.get((x, z0))
         if a is None: continue
-        on_water = sap_water((x, z0))
+        # (surf_under 2026-10-17) under a bridge: a surfer (elevation 1) on a walkable elevation-15 tile is still surfing
+        # (pokeruby: IsZCoordMismatchAt never refuses 15, ObjectEventUpdateZCoord keeps the 1); Route 110's Cycling Road
+        on_water = sap_water((x, z0)) or (z == 1 and a[4] == 15)
         for (dx, dz), side in DIRS.items():
             k = (x + dx, z0 + dz); b = S.get(k)
             if b is None: continue
@@ -365,6 +390,8 @@ def check_walk(frame, out, S=None):
                 continue
             if b[3] and k not in warps: continue
             if sap_water(k):
+                push((k, 1)); continue
+            if on_water and b[4] == 15 and not b[3]:   # (under a bridge, as above)
                 push((k, 1)); continue
             if on_water:                          # landing: only onto elevation 3 (pokeruby field_player_avatar.c
                 # CheckForObjectEventCollision -> sub_8058EF0: an elevation mismatch, the tile's elevation 3, no object;
@@ -388,32 +415,62 @@ def check_walk(frame, out, S=None):
         dx, dz = W_.DOOR_STEP.get(d.get('dir', 2), (0, 1))
         starts.append(((d['x'] - 8) // 16 + dx, (d['z'] - 8) // 16 + dz))
     def sides(r): return WALL_SIDES.get(r[2], '') if r else ''
-    def b2_move(a, b, d):
-        ra, rb = frame.rec(*a), frame.rec(*b)
+    def b2_move(a, b, d, ya=None):
+        """A step from tile a (standing at height ya: the layer of a two-layer tile; default its land layer) onto b."""
+        ra = frame.rec(*a, ya) if ya is not None else frame.land(*a)
+        ya = frame.y(*a, ra) if ra is not None else None
+        rb = frame.rec(*b, ya)
         if not b2_land(rb) or not (b2_land(ra) or b2_surf(ra)): return False
-        if b2_surf(ra): return b2_landing(frame, a, b)  # (dismount: see b2_landing)
-        ya, yb = frame.y(*a), frame.y(*b)
+        if b2_surf(ra): return b2_landing(frame, a, b, frame.rec(*b, W_._b2_front_y(ya)))  # (dismount: see b2_landing)
+        yb = frame.y(*b, rb)
         if ya is None or yb is None or abs(ya - yb) >= 20: return False
         return DIRS[d] not in sides(ra) and OPP[DIRS[d]] not in sides(rb)
-    reach_b, q = set(), deque()
+    # (surf_under 2026-10-17) states are (tile, height): on a two-layer tile (walk-under bridges, world.py
+    # bridge_layers) Black 2 takes the layer nearest the actor's height (frame.rec with y)
+    reach_b, seen_b, q = set(), set(), deque()
+    def add(t, r):
+        st = (t, frame.y(*t, r))
+        if st not in seen_b: seen_b.add(st); reach_b.add(t); q.append(st)
     for s in starts:
-        if b2_land(frame.rec(*s)): reach_b.add(s); q.append(s)
+        r = frame.land(*s)
+        if b2_land(r): add(s, r)
+    # (surf_under2 2026-10-18) the tile in front of the player - the surf landing test, surfing off land - is looked up
+    # at the player's grid height x 16 (world.py _b2_front_y), the step itself at the actor's own height
+    front = lambda t, y: frame.rec(*t, W_._b2_front_y(y))
+    stuck = []
     while q:
-        a = q.popleft(); ra = frame.rec(*a)
+        a, ya = q.popleft(); ra = frame.rec(*a, ya)
         for d in DIRS:
-            b = (a[0] + d[0], a[1] + d[1]); rb = frame.rec(*b)
-            if rb is None or b in reach_b: continue
+            b = (a[0] + d[0], a[1] + d[1]); rb = frame.rec(*b, ya)
+            if rb is None: continue
+            if b2_surf(ra):
+                if b2_landing(frame, a, b, front(b, ya)):   # (CheckSurfExitEvent, before the surf move)
+                    if b2_land(rb): add(b, rb)
+                    else: stuck.append((a, b))      # (lands on the layer nearest its own height: water, on foot)
+                    continue
+                if b2_surf(rb):
+                    yb = frame.y(*b, rb)
+                    if yb is not None and (abs(ya - yb) < 20 or 0x40 in (ra[2], rb[2])):
+                        add(b, rb)                   # (surfing: the 20-unit step rule too; waterfalls: climbed)
+                continue
             if rb[2] in LEDGE and LEDGE[rb[2]] == d and b2_land(ra):
-                c = (b[0] + d[0], b[1] + d[1])
-                if b2_land(frame.rec(*c)) and c not in reach_b: reach_b.add(c); q.append(c)
+                c = (b[0] + d[0], b[1] + d[1]); rc = frame.rec(*c, ya)
+                if b2_land(rc): add(c, rc)
                 continue
-            if b2_surf(rb):
-                ya, yb = frame.y(*a), frame.y(*b)
-                if ya is None or yb is None: continue
-                if (b2_surf(ra) and (abs(ya - yb) < 20 or 0x40 in (ra[2], rb[2]))) or (not b2_surf(ra) and 0 <= ya - yb < 20):
-                    reach_b.add(b); q.append(b)     # (surfing: the 20-unit step rule too; waterfalls: climbed)
+            rf = front(b, ya)
+            if b2_surf(rf):                          # (surfing off land: CheckSurfHeightAllow, 0 <= land - water < 20)
+                yf = frame.y(*b, rf)
+                if yf is not None and 0 <= ya - yf < 20:
+                    if b2_surf(rb): add(b, rb)
+                    else: stuck.append((a, b))
                 continue
-            if b2_move(a, b, d): reach_b.add(b); q.append(b)
+            if b2_move(a, b, d, ya): add(b, rb)
+    for a, b in stuck:
+        if in_only(frame, *b):
+            out.append(('walk', f'world {a}->{b}: Black 2 lands / starts surfing by the tile in front (grid height) but '
+                                f'stands on another layer there (its own height): stuck', b))
+    land_any = lambda k: any(b2_land(r) for r in frame.layers(*k))
+    surf_any = lambda k: any(b2_surf(r) for r in frame.layers(*k))
     only = lambda k: in_only(frame, *k)
     frame.reach = (reach_s, reach_b, states)
     # tiles
@@ -428,21 +485,24 @@ def check_walk(frame, out, S=None):
             if r[2] != want and k in reach_s | reach_b:
                 out.append(('walk', f'{where}: Sapphire ledge {mb_name(s[5])}, Black 2 class {r[2]:#x} flags {r[3]:#x}', k))
             continue
-        if sap_walk(k) and k in reach_s and not b2_land(r):
+        if sap_walk(k) and k in reach_s and not land_any(k) and not (s[4] == 1 and surf_any(k)):
+            # (a walkable elevation-1 tile - Route 110's railings and supports, MB_WARP_OR_BRIDGE - is surf water in Black
+            # 2's layer 0 under a bridge: Sapphire's surfer moves over it too, a walker never reaches elevation 1)
             out.append(('walk', f'{where}: walkable in Sapphire ({s[6]}, {mb_name(s[5])}), solid in Black 2 '
                                 f'(class {r[2]:#x} flags {r[3]:#x})', k))
-        elif b2_land(r) and k in reach_b and not sap_walk(k):
+        elif land_any(k) and k in reach_b and not sap_walk(k):
             what = 'water' if sap_water(k) else 'solid'
             out.append(('walk', f'{where}: walkable in Black 2, {what} in Sapphire ({s[6]}, {mb_name(s[5])})', k))
-        elif sap_water(k) and k in reach_s and not b2_surf(r) and s[5] != mb('MB_WATERFALL'):
+        elif sap_water(k) and k in reach_s and not surf_any(k) and s[5] != mb('MB_WATERFALL'):
             out.append(('walk', f'{where}: surf water in Sapphire ({mb_name(s[5])}), not in Black 2 (class {r[2]:#x} '
                                 f'flags {r[3]:#x})', k))
-        elif b2_surf(r) and k in reach_b and not sap_water(k):
+        elif surf_any(k) and k in reach_b and not sap_water(k) and not (not s[3] and s[4] in (1, 15)):
+            # (a walkable elevation-1 or -15 tile: Sapphire's surfer moves over it too, under a bridge)
             out.append(('walk', f'{where}: surf water in Black 2, not in Sapphire ({s[6]}, {mb_name(s[5])})', k))
     # reachable in Sapphire, walkable/surfable in Black 2 too, but Black 2 never gets there (cut off by a solid tile,
     # a height step, a railing, a ledge the wrong way): grouped into regions
     cut = {k for k in reach_s if only(k) and k not in reach_b and k not in warps and
-           ((sap_walk(k) and b2_land(frame.rec(*k))) or (sap_water(k) and b2_surf(frame.rec(*k))))}
+           ((sap_walk(k) and land_any(k)) or (sap_water(k) and surf_any(k)))}
     while cut:
         k0 = min(cut, key=lambda k: (k[1], k[0])); reg, q2 = {k0}, [k0]; cut.discard(k0)
         while q2:
@@ -453,8 +513,8 @@ def check_walk(frame, out, S=None):
         s = S.get(k0)
         edge = sorted({(x + dx, z + dz) for x, z in reg for dx, dz in DIRS if (x + dx, z + dz) not in reg and
                        (x + dx, z + dz) in reach_s})[:6]
-        edge = [(e, 'B2 reached' if e in reach_b else 'B2 %s' % ('land' if b2_land(frame.rec(*e)) else 'surf' if
-                 b2_surf(frame.rec(*e)) else 'solid'), 'S ' + mb_name(S.get(e)[5])) for e in edge]
+        edge = [(e, 'B2 reached' if e in reach_b else 'B2 %s' % ('land' if land_any(e) else 'surf' if
+                 surf_any(e) else 'solid'), 'S ' + mb_name(S.get(e)[5])) for e in edge]
         out.append(('walk', f'{s[0]} ({s[1]},{s[2]}) world {k0}: {len(reg)} tiles reachable in Sapphire are cut off in '
                             f'Black 2 ({sum(1 for k in reg if sap_water(k))} water; next to reached tiles {edge})', k0))
     # tiles outside every map that Black 2 lets you walk on
@@ -462,35 +522,36 @@ def check_walk(frame, out, S=None):
         if k not in S.t and only(k): out.append(('walk', f'world {k}: walkable in Black 2 outside every map', k))
     # moves between tiles walkable in both games
     for k in sorted(reach_s & reach_b, key=lambda k: (k[1], k[0])):
-        if not only(k) or not sap_walk(k) or not b2_land(frame.rec(*k)): continue
+        if not only(k) or not sap_walk(k) or not b2_land(frame.land(*k)): continue
         a = S.get(k)
         for d, side in DIRS.items():
             n = (k[0] + d[0], k[1] + d[1])
             b = S.get(n)
-            if b is None or n in warps or not sap_walk(n) or not b2_land(frame.rec(*n)): continue
+            if b is None or n in warps or not sap_walk(n) or not b2_land(frame.land(*n)): continue
             sap = not (_sap_blocked(a[5], side) or _sap_blocked(b[5], OPP[side])) and \
                 any(z == 0 or b[4] in (0, 15) or b[4] == z for z in states[k])
             b2 = b2_move(k, n, d)
             if sap != b2:
                 out.append(('walk', f'{a[0]} ({a[1]},{a[2]}) -> {side} world {k}->{n}: Sapphire '
                                     f'{"allows" if sap else "blocks"} (elev {sorted(states[k])}->{b[4]}), Black 2 '
-                                    f'{"allows" if b2 else "blocks"} (y {frame.y(*k):.0f}->{frame.y(*n):.0f}, '
-                                    f'sides {sides(frame.rec(*k)) or "-"}/{sides(frame.rec(*n)) or "-"})', k))
+                                    f'{"allows" if b2 else "blocks"} (y {frame.y(*k, frame.land(*k)):.0f}->'
+                                    f'{frame.y(*n, frame.rec(*n, frame.y(*k, frame.land(*k)))):.0f}, '
+                                    f'sides {sides(frame.land(*k)) or "-"}/{sides(frame.land(*n)) or "-"})', k))
 
     # surf landings (final_check 2026-10-08): from a water tile both games surf on, onto a tile both walk on
     for k in sorted((reach_s | reach_b), key=lambda k: (k[1], k[0])):
         if not only(k) or not sap_water(k) or not b2_surf(frame.rec(*k)): continue
         for d, side in DIRS.items():
             n = (k[0] + d[0], k[1] + d[1])
-            b = S.get(n); rn = frame.rec(*n)
+            b = S.get(n); rn = frame.rec(*n, W_._b2_front_y(frame.y(*k)))   # (a two-layer tile: the layer the surfer meets)
             if b is None or n in warps or not sap_walk(n) or not b2_land(rn) or rn[2] in (0x41, 0x44): continue
             sap = b[4] in (0, 1, 3) and not (_sap_blocked(S.get(k)[5], side) or _sap_blocked(b[5], OPP[side]))
             b2 = b2_landing(frame, k, n)
             if sap != b2:
                 out.append(('walk', f'{b[0]} ({b[1]},{b[2]}) world {n}: surf landing from {k} ({side}): Sapphire '
                                     f'{"allows" if sap else "blocks"} (elevation {b[4]}), Black 2 '
-                                    f'{"allows" if b2 else "blocks"} (step {frame.y(*n) - frame.y(*k):.0f}: water y '
-                                    f'{frame.y(*k):.0f} -> {frame.y(*n):.0f}, class {rn[2]:#x} flags {rn[3]:#x})', n))
+                                    f'{"allows" if b2 else "blocks"} (step {frame.y(*n, rn) - frame.y(*k):.0f}: water y '
+                                    f'{frame.y(*k):.0f} -> {frame.y(*n, rn):.0f}, class {rn[2]:#x} flags {rn[3]:#x})', n))
 
 # ----------------------------------------------------------------------------------------------------------- bld
 MOUTH_TEX = ('doukutu01', 'out57_doukutu')
@@ -991,8 +1052,8 @@ def check_ent(frame, out):
 ACCEPT = [
     ('main', 'walk', r'Route110 .*(fence|other:bridge_support|cliff), MB_(WARP_OR_BRIDGE|NORMAL|OCEAN_WATER)\)|Route110 .*surf water in '
      r'Sapphire \(MB_OCEAN_WATER\), not in Black 2|Route110 \(23,81\).*cut off',
-     'the Cycling Road is one layer: its railings stand on the sea under it (Sapphire surfs under it; '
-     'notes/TERRAIN_GROUND.md "Surfing under bridges")'),
+     'the Cycling Road\'s support tiles stay solid (Sapphire surfs through them too; the road and its fenced '
+     'railings are two layers: notes/TERRAIN_GROUND.md "Surfing under bridges")'),
     ('.*', 'walk', r'walkable in Sapphire \((building|sign), MB_NORMAL\), solid in Black 2',
      'a placed building model stands there (Gym fronts, the Battle Tower: Sapphire walks behind the 2D roof)'),
     ('.*', 'walk', r'1 tiles reachable in Sapphire are cut off.*MB_(ANIMATED|NON_ANIMATED)_DOOR',
@@ -1083,6 +1144,14 @@ ACCEPT_EMERALD = [
      "emerald_polish_outdoor) pokeemerald's map.bin leaves the mouth's top tile passable (reached only by a step north "
      "off the door's own warp tile), while its OpenMagmaHideout script sets it impassable (setmetatile 16, 17, ..., "
      "TRUE): here it is the mouth's rock"),
+    # (Emerald v1.1) the two other layouts' findings that are not bugs
+    ('alt_Route125|alt_Route127', 'walk', r'MossdeepCity \(34,7\) .*cut off',
+     "the abnormal-weather layouts of Routes 125/127 (cell (22,5)) carry Mossdeep's own tiles: the same one-tile nook "
+     "(grass between two trees, a house and its sign) that the main frame accepts as a walk-behind tile"),
+    ('alt_Route111', 'door', r'zone 370 Route111 warp 3 at \(267, 118\) .*the warp tile itself is walkable',
+     "Route 111 without the Mirage Tower (LAYOUT_ROUTE111_NO_MIRAGE_TOWER, map replace event 0) is plain sand where the "
+     "tower's door was; the zone init sets that layout only with the tower hidden and then parks the door (src/field_scripts/scenes/"
+     "emerald/Route111_Mirage.inc: ObjInitWarpGPos R111M_TOWER_WARP), as pokeemerald's warp lies inert on a sand metatile"),
 ]
 import version as _version
 if _version.EMERALD: ACCEPT += ACCEPT_EMERALD

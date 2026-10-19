@@ -1,0 +1,113 @@
+{
+ "_doc": "battle_tents (rooms_tents helper, 2026-10-18): FallarborTown_BattleTentLobby (Emerald's Battle Tent, notes/BATTLE_TENTS.md), Emerald only (data/versions.json rooms: \"emerald\"; claimed in data/emerald/hoenn_interiors.json). People = Emerald's objects (uid = Emerald local id; script = the zone script's entry number), their sprites from data/sprite_map.json. Positions are Emerald tiles; room origin [1, 0] (zone tile = Emerald tile + origin). Map scripts: battle_tents'.",
+ "zone": 520,
+ "room": "FallarborTown_BattleTentLobby",
+ "area": 305,
+ "parent": 6,
+ "warps": [
+  {
+   "at": [
+    6,
+    9
+   ],
+   "tile_only": true,
+   "to": [
+    6,
+    8
+   ],
+   "what": "Emerald warp 0 (6,9) -> FallarborTown (zone 6 warp 8)"
+  },
+  {
+   "at": [
+    7,
+    9
+   ],
+   "tile_only": true,
+   "to": [
+    6,
+    8
+   ],
+   "what": "Emerald warp 1 (7,9) -> FallarborTown (zone 6 warp 8)"
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 1,
+   "model": 46,
+   "script": 1,
+   "dir": 1,
+   "at": [
+    6,
+    5
+   ],
+   "what": "Emerald object 1 BLACK_BELT (FACE_DOWN): attendant; model 46"
+  },
+  {
+   "uid": 2,
+   "model": 64,
+   "script": 2,
+   "dir": 1,
+   "at": [
+    1,
+    5
+   ],
+   "move": 5,
+   "range": [
+    1,
+    1
+   ],
+   "what": "Emerald object 2 HIKER (WANDER_LEFT_AND_RIGHT, range 1,1): FallarborTown_BattleTentLobby_EventScript_Hiker; model 64"
+  },
+  {
+   "uid": 3,
+   "model": 8,
+   "script": 3,
+   "dir": 1,
+   "at": [
+    12,
+    6
+   ],
+   "move": 4,
+   "range": [
+    1,
+    1
+   ],
+   "what": "Emerald object 3 LITTLE_BOY (WANDER_UP_AND_DOWN, range 1,1): FallarborTown_BattleTentLobby_EventScript_LittleBoy; model 8"
+  },
+  {
+   "uid": 4,
+   "model": 15,
+   "script": 4,
+   "dir": 1,
+   "at": [
+    10,
+    9
+   ],
+   "what": "Emerald object 4 LASS (FACE_DOWN): FallarborTown_BattleTentLobby_EventScript_Lass; model 15"
+  },
+  {
+   "uid": 5,
+   "model": 289,
+   "script": 5,
+   "dir": 3,
+   "at": [
+    0,
+    7
+   ],
+   "flag": 16,
+   "what": "Emerald object 5 SCOTT (FACE_RIGHT): Scott: map-local flag 0x10 (16), set by the zone init to hide him; model 289"
+  }
+ ],
+ "signs": [
+  {
+   "script": 7,
+   "at": [
+    4,
+    5
+   ],
+   "dir": 4,
+   "what": "rules board (Emerald bg (4,5), any side)"
+  }
+ ],
+ "triggers": []
+}

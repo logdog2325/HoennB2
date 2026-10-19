@@ -48,6 +48,9 @@ MC_Init:                                // MauvilleCity_OnTransition
     h_clearflag FLAG_HIDE_WATTSON_MAUVILLE_GYM   // MauvilleCity_EventScript_MoveWattsonBackToGym
     h_setflag FLAG_HIDE_WATTSON_MAUVILLE
 L_MC_InitDone:
+#ifdef HOENN_EMERALD
+    h_clearflag FLAG_EM_MIRAGE_TOWER_KEEP           // (2026-10-18) a walk north into Route 111 rolls the Mirage Tower again (scenes/emerald/Route111_Mirage.inc)
+#endif
 #ifdef HOENN_TEST_CH3B
     VMCall Test_Ch3bStart
 #endif

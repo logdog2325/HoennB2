@@ -55,11 +55,14 @@ Script_2:
 #define T_HaveCase 6
 #define T_PutPokeblocks 7
 
-Story_CL_Receptionist:                      // SlateportCity_ContestLobby_EventScript_ContestReceptionist (stand-in)
+// Pokémon Contests can't run on Black 2: the receptionist offers Black 2's Pokémon Musical instead (musical agent
+// 2026-10-18; common/musical.inc, b2tools/patches/musical.py). Text lines 8-21 (T_RecAccepting /
+// T_RecAnotherTime stay in the file, unused).
+#include "common/musical.inc"
+#define T_Musical 8
+Story_CL_Receptionist:                    // the Musical's reception (Sapphire's contest receptionist's place)
     c3_talk
-    h_msgbox T_RecAccepting
-    h_msgbox T_RecAnotherTime
-    h_release
+    musical_reception T_Musical
 Story_CL_Girl:
     h_msgbox_npc T_Berries
 Story_CL_Boy:

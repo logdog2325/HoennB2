@@ -1,0 +1,18 @@
+{
+ "_doc": "Emerald builds (Anabel, 2026-10-18): written by b2tools/frontier_text.py tower_room from pokeemerald. script/0689_room_BattleTower_BattleRoom.txt (src/text/script/0021_room_BattleTower_BattleRoom.txt) lines 6-18: the Salon Maiden Anabel's Battle Room lines and her name (src/include/frontier_tower_lines.h).",
+ "script/0689_room_BattleTower_BattleRoom.txt": {
+  "6": "Excuse me, but…{be01}\\nOur leader, the Salon Maiden, is on\\nher way here in hopes of battling you.{be01}\\nShe should be arriving very shortly.",
+  "7": "You will be facing the Salon Maiden.\\nAre you prepared?",
+  "8": "Greetings…\\nMy name is Anabel.{be01}\\nI am the Salon Maiden, and I am in\\ncharge of running the Battle Tower…{be01}\\nI have heard several rumors\\nabout you…{be01}\\nIn all honesty, what I have heard does\\nnot seem attractive in any way…{be01}\\nThe reason I’ve come to see you…\\nWell, there is but one reason…",
+  "9": "Let me see your talent in\\nits entirety…",
+  "10": "Anabel: Fufufu, nicely done…{be01}\\nYour Frontier Pass, please…\\nYour talent shall be recognized.",
+  "11": "The Ability Symbol was embossed on\\nthe Frontier Pass!",
+  "12": "… … … … … …{be01}\\nYou have confidence in your Pokémon\\nbattling talent, don’t you?{be01}\\nI urge you to keep battling and\\nkeep on winning.{be01}\\nI will be waiting for you.\\nUntil the next time we meet…",
+  "13": "Anabel: You really did come back to\\nsee me…{be01}\\n… … … … … …{be01}\\nYou’ve won straight matches to see me…\\nI won’t have to hold back against you…{be01}\\nIt’s been too long now…{be01}\\nToo long since I’ve been able to battle\\nwithout thinking about anything…",
+  "14": "Let’s begin, shall we?",
+  "15": "Anabel: Fufu, congratulations…\\nYour Frontier Pass, please…",
+  "16": "The Ability Symbol took on\\na golden shine!",
+  "17": "That was fun…{be01}\\nI have never had a Pokémon battle\\nso enjoyable before…{be01}\\nI wish I could battle with you again…",
+  "18": "Anabel"
+ }
+}

@@ -23,8 +23,11 @@ def assemble(src):
             zone, x, z = os.environ['HOENN_TEST_WARP'].split(',')
             test += ['-D', 'HOENN_TEST_WARP', '-D', f'TEST_WARP_ZONE={zone}', '-D', f'TEST_WARP_X={x}', '-D', f'TEST_WARP_Z={z}']
         test += version.ASM_DEFINES      # -D HOENN_SAPPHIRE / HOENN_RUBY, HOENN_VERSION_ID (src/include/hoenn_version.inc)
+        if os.environ.get('HOENN_BERRY_PLANTING', '1') != '0':   # berry planting (notes/BERRY_PLANTING.md; off by default:
+            test += ['-D', 'HOENN_BERRY_PLANTING']          #  1241_hidden_items.s, scenes/Route130.inc)
         subprocess.run([f'{LLVM}/clang', '--target=armv5te-none-eabi', '-x', 'assembler-with-cpp', '-c', *test,
-                        '-I', f'{DECOMP}/include', '-I', f'{DECOMP}/lib/nitro/include', '-I', os.path.join(ROOT, 'src', 'include'), '-I', os.path.join(ROOT, 'src', 'field_scripts'), '-D', 'BLACK2',   # field_scripts: "common/x.inc" (notes/STORY_COMMON.md)
+                        '-I', f'{DECOMP}/include', '-I', f'{DECOMP}/lib/nitro/include', '-I', f'{DECOMP}/build/include/generated',   # the newer decomp's generated constants headers (notes/POKEBW2_UPGRADE.md; absent = ignored)
+                        '-I', os.path.join(ROOT, 'src', 'include'), '-I', os.path.join(ROOT, 'src', 'field_scripts'), '-D', 'BLACK2',   # field_scripts: "common/x.inc" (notes/STORY_COMMON.md)
                         '-o', o, os.path.abspath(src)], check=True, cwd=DECOMP)
         # an unknown name (e.g. a FLAG_ without #include "hoenn.h") would silently assemble as 0: refuse it
         undef = subprocess.run([f'{LLVM}/llvm-nm', '--undefined-only', o], capture_output=True, text=True, check=True).stdout.split()

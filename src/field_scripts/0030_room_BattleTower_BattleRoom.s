@@ -7,6 +7,21 @@
 #include "hoenn.h"
 #include "hoenn_story.inc"
 #include "scenes/battle_tower_lib.inc"
+#ifdef HOENN_EMERALD
+// Pokémon Emerald NDS (2026-10-18): the Salon Maiden Anabel, the Battle Tower's Frontier Brain, as pokeemerald
+// (data/maps/BattleFrontier_BattleTowerBattleRoom/scripts.inc; src/frontier_util.c GetFrontierBrainStatus with
+// sFrontierBrainStreakAppearances[TOWER] = {35, 70, 35, 1}): she replaces the opponent of the 35th battle of a streak
+// (the Silver Symbol), then of the 70th (the Gold Symbol), and with both symbols of the 35th, the 70th and every 35th
+// after it. The streak is Black 2's Subway streak (command 358), the battle frontier_palace_arena.c's (FrontierPA
+// PA_TOWER_*: her parties, Emerald's sFrontierBrainsMons[TOWER]), her walking sprite and battle picture frontier_core's
+// (notes/FRONTIER.md 5). Her lines: src/text/emerald/overrides_frontier_tower.json (b2tools/frontier_text.py tower_room)
+#include "hoenn_emerald.inc"
+#include "hoenn_frontier.inc"
+#include "scenes/frontier_pa_lib.inc"
+#include "frontier_tower_lines.h"
+#define BTB_ANABEL_SPRITE 56            // OBJ_EVENT_GFX_ANABEL (data/emerald/sprite_map.json)
+#define BTB_BRAIN BT_T4                 // her status for the next battle (FRONTIER_BRAIN_*: 0 not ready)
+#endif
 
     ScriptEntry BTB_Enter               // 1: ON_FRAME_TABLE VAR_TEMP_0 0 (BattleTower_BattleRoom_EventScript_1608EB)
     ScriptEntry Script_None             // 2: the opponent and the attendant (Sapphire: no script)
@@ -32,6 +47,10 @@ BTB_Enter:                              // the player arrives at Sapphire (4,8)
     h_applymovement BT_PLAYER, BTB_MvPlayerIn       // BattleTower_BattleRoom_Movement_160AB7
     h_waitmovement
 L_BTB_Next:                             // 1608FA
+#ifdef HOENN_EMERALD
+    VMCall Sub_BTB_BrainStatus          // frontier_getbrainstatus: the Salon Maiden instead of a trainer?
+    h_goto_if_ne BTB_BRAIN, 0, L_BTB_Anabel
+#endif
     BSubwayCmd_Tool 307, 0, 0, 0        // ChooseNextBattleTowerTrainer (chosen at registration) + FillBattleTowerTrainerParty
     BSubwayCmd_Tool 308, 0, 0, BT_OPPONENT_GFX      // SetBattleTowerTrainerGfxId (its class's sprite: battle_tower.py)
     h_addobject BT_OPPONENT, FLAG_HIDE_BATTLE_TOWER_OPPONENT
@@ -43,6 +62,9 @@ L_BTB_Next:                             // 1608FA
     BSubwayCmd_Tool 332, 0, 0, BT_T1    // 1 = won (switch VAR_RESULT, case 1)
     BSubwayCmd_Tool 347, 0, 0, 0        // (Black 2: the battle setup freed)
     h_goto_if_eq BT_T1, 1, L_BTB_Won
+#ifdef HOENN_EMERALD
+L_BTB_Lost:
+#endif
     // lost: LoadPlayerParty, SetBattleTowerProperty 0 = 5, 14; sub_810FF60 (0x8004 = 3); warp to the lobby
     BSubwayCmd_Tool 304, 0, 0, 0        // Black 2: the streak ends here (its length kept, best, round 0)
     WorkCmpConst VAR_BT_LEVEL_TYPE, 0
@@ -86,6 +108,10 @@ L_BTB_TestDone:
     MEWait                              //  use a copy of the three, the party itself is never changed)
     h_heal
 L_BTB_Ask:                              // 1609B2
+#ifdef HOENN_EMERALD
+    VMCall Sub_BTB_BrainStatus          // AskReadyForOpponent: frontier_getbrainstatus -> MaidenUpNext
+    h_goto_if_ne BTB_BRAIN, 0, L_BTB_MaidenNext
+#endif
     BSubwayCmd_Tool 8, 0, 0, BT_T1      // the next battle's number
     WordSetNumber 1, BT_T1, 1
     bt_room_yesno 1, BT_T2              // You will be facing opponent no. <n>. Are you ready?
@@ -142,6 +168,79 @@ L_BTB_Seven100:
     WorkSetConst VAR_BT_STATUS_LV100, BT_ST_WON
     VMJump L_BTB_ToLobby
 
+#ifdef HOENN_EMERALD
+Sub_BTB_BrainStatus:                    // BTB_BRAIN = GetFrontierBrainStatus with the Subway streak (wins so far)
+    BSubwayCmd_Tool 358, 0, 0, BT_T1
+    FrontierPA PA_TOWER_STATUS, BT_T1, 0, BTB_BRAIN
+    VMReturn
+
+L_BTB_MaidenNext:                       // MaidenUpNext (Emerald's second attendant, who runs in with the news, is not
+    bt_room_say BTB_L_MAIDEN_ON_HER_WAY //  in this room: the attendant says it)
+L_BTB_MaidenAsk:                        // AskReadyForMaiden (the tower's YES/NO questions in place of the menu)
+    bt_room_yesno BTB_L_MAIDEN_READY, BT_T2     // You will be facing the Salon Maiden. Are you prepared?
+    h_goto_if_yes BT_T2, L_BTB_Continue
+    bt_room_yesno 2, BT_T2              // Would you like to save and quit the game?
+    h_goto_if_yes BT_T2, L_BTB_Rest
+    bt_room_yesno 3, BT_T2              // Would you like to cancel your Battle Room challenge?
+    h_goto_if_yes BT_T2, L_BTB_Retire
+    VMJump L_BTB_MaidenAsk
+
+    .macro btb_anabel_say n             // a line Anabel says (the window closes)
+    ActorMsg MSGFILE_SCRIPT, \n, BT_OPPONENT, 0, 0
+    LastKeyWait
+    MsgWinCloseAll
+    .endm
+L_BTB_Anabel:                           // BattleAnabel: frontier_setbrainobj, she walks in slowly
+    WorkSetConst BT_OPPONENT_GFX, BTB_ANABEL_SPRITE
+    h_addobject BT_OPPONENT, FLAG_HIDE_BATTLE_TOWER_OPPONENT
+    h_applymovement BT_OPPONENT, BTB_MvAnabelIn
+    h_waitmovement
+    h_goto_if_eq BTB_BRAIN, 2, L_BTB_AnabelGoldIntro     // FRONTIER_BRAIN_GOLD
+    h_goto_if_eq BTB_BRAIN, 3, L_BTB_AnabelSilver        // FRONTIER_BRAIN_STREAK
+    h_goto_if_eq BTB_BRAIN, 4, L_BTB_AnabelGold          // FRONTIER_BRAIN_STREAK_LONG
+    FrontierPA PA_TOWER_HEARD, 0, 1, BT_T1               // FRONTIER_DATA_HEARD_BRAIN_SPEECH (no symbol yet), now set
+    h_goto_if_ne BT_T1, 0, L_BTB_AnabelSilver
+    btb_anabel_say BTB_L_ANABEL_GREETINGS
+L_BTB_AnabelSilver:
+    btb_anabel_say BTB_L_ANABEL_LET_ME_SEE
+    VMCall Sub_BTB_AnabelBattle
+    fr_symbol_get FRONTIER_FACILITY_TOWER, BT_T1
+    h_goto_if_ne BT_T1, 0, L_BTB_AnabelDone
+    btb_anabel_say BTB_L_ANABEL_POST_SILVER
+    MEPlay FR_ME_OBTAIN_SYMBOL          // playfanfare MUS_OBTAIN_SYMBOL
+    h_msgbox_info BTB_L_GOT_SILVER      // The Ability Symbol was embossed on the Frontier Pass!
+    MEWait
+    MsgWinCloseAll
+    fr_symbol_give FRONTIER_FACILITY_TOWER, 0
+    btb_anabel_say BTB_L_ANABEL_UNTIL_NEXT
+    VMJump L_BTB_AnabelDone
+L_BTB_AnabelGoldIntro:                  // AnabelGoldIntro
+    FrontierPA PA_TOWER_HEARD, 1, 1, BT_T1               // (the Silver Symbol held), now set
+    h_goto_if_ne BT_T1, 0, L_BTB_AnabelGold
+    btb_anabel_say BTB_L_ANABEL_CAME_BACK
+L_BTB_AnabelGold:
+    btb_anabel_say BTB_L_ANABEL_LETS_BEGIN
+    VMCall Sub_BTB_AnabelBattle
+    fr_symbol_get FRONTIER_FACILITY_TOWER, BT_T1
+    h_goto_if_eq BT_T1, 2, L_BTB_AnabelDone
+    btb_anabel_say BTB_L_ANABEL_POST_GOLD
+    MEPlay FR_ME_OBTAIN_SYMBOL
+    h_msgbox_info BTB_L_GOT_GOLD        // The Ability Symbol took on a golden shine!
+    MEWait
+    MsgWinCloseAll
+    fr_symbol_give FRONTIER_FACILITY_TOWER, 1
+    btb_anabel_say BTB_L_ANABEL_LAST
+L_BTB_AnabelDone:                       // DefeatedAnabel*: the streak goes on as after any win (her battle is the 7th
+    fr_set FR_BRAIN_BEATEN, 1           //  of its set: back to the lobby, which says the Brain line and pays +10 BP)
+    VMJump L_BTB_Won
+Sub_BTB_AnabelBattle:                   // DoTowerBattle against Anabel (lost: back to the lobby as any loss)
+    h_heal
+    FrontierPA PA_TOWER_BATTLE, BTB_BRAIN, 0, BT_T1
+    h_heal
+    h_goto_if_ne BT_T1, 1, L_BTB_Lost
+    VMReturn
+#endif
+
 Sub_BTB_SaveStreak:                     // SaveCurrentWinStreak: recordWinStreaks[level] = max(it, the streak in BT_T2)
     WorkCmpConst VAR_BT_LEVEL_TYPE, 0
     VMJumpIf CMP_NE, L_BTB_SS100
@@ -177,6 +276,12 @@ BTB_MvOppIn:                            // _160AC0
     walk_down 4
     face_left
     step_end
+#ifdef HOENN_EMERALD
+BTB_MvAnabelIn:                         // BattleFrontier_BattleTowerBattleRoom_Movement_AnabelEnter
+    walk_slow_down 4
+    face_left
+    step_end
+#endif
 BTB_MvOppOut:                           // _160AC6
     walk_up 4
     step_end

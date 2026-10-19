@@ -228,6 +228,7 @@ Sub_PYL_Quit:                           // _QuitWithoutSaving: the Battle Bag is
     EmPyr PY_T1, PY_UNLOAD
     py_party_order 0
     h_heal
+    WordSetPlayerName 0                 // (2026-10-18) "<player> got the Bag back." in the library's didn't-save line
     VMReturn
 Sub_PYL_Won:                            // _WonChallenge: the three's held items into the Battle Bag, LoadPlayerParty,
     EmPyr PY_T1, PY_HELD_TO_BAG         // pyramid_clearhelditems, HealPlayerParty, "The Battle Bag you used will be kept"
@@ -248,6 +249,7 @@ Sub_PYL_Lost:                           // _LostChallenge: LoadPlayerParty, pyra
     EmPyr PY_T1, PY_UNLOAD
     py_party_order 0
     h_heal
+    WordSetPlayerName 0                 // (2026-10-18) "<player> got the Bag back." in the library's lost line
     VMReturn
 
     .balign 4, 0

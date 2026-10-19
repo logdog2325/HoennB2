@@ -5,6 +5,7 @@
 #include "hoenn_trainers.h"
 #include "hoenn_key_items.h"
 #include "hoenn_story.inc"
+#include "hoenn_rematch.inc"    // Emerald's rematches (em_gym_rematch: nothing in Sapphire / Ruby)
 
     ScriptEntry Script_1
     ScriptEntry Script_2
@@ -300,6 +301,7 @@ L_LG_BagFull:                                    // Common_EventScript_ShowBagIs
     h_msgbox_actor 8, LG_FLANNERY                // Too bad! The Bag is full...
     h_release
 L_LG_Rematch:                                    // (already beaten)
+    em_gym_rematch TRAINER_FLANNERY, LG_FLANNERY // Emerald: after the Hall of Fame, a rematch (hoenn_rematch.inc)
     h_goto_if_unset FLAG_RECEIVED_TM_OVERHEAT, L_LG_GiveOverheat
     h_msgbox 3                                   // Your power reminds me of someone... You battle like Norman, ...
     h_release

@@ -1,0 +1,13 @@
+First, we will hold your Pokémon for\nsafekeeping.{be01}\nYou may then choose from our\nselection of Pokémon.
+Right this way, please!
+Thank you for competing!\nLet us restore your Pokémon!
+The 2nd match is next!\nAre you ready?
+The 3rd match is next!\nAre you ready?
+Would you like to save and quit\nthe game?
+Would you like to retire from your\nBattle Swap challenge?
+Before starting the battle, would you\nlike to swap a Pokémon?
+Thank you!\nYour Pokémon swap is complete.
+I am saving your data.\nPlease wait.
+Go On
+Rest
+Retire

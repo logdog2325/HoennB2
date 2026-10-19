@@ -77,7 +77,8 @@ ACCEPT = {
 def preprocess(path):
     dec = os.path.join(ROOT, 'external', 'pokebw2')
     r = subprocess.run(['/opt/homebrew/opt/llvm/bin/clang', '-E', '-P', '-x', 'assembler-with-cpp', '-I', f'{dec}/include',
-                        '-I', f'{dec}/lib/nitro/include', '-I', os.path.join(ROOT, 'src', 'include'), '-I', FS,
+                        '-I', f'{dec}/lib/nitro/include', '-I', f'{dec}/build/include/generated',
+                        '-I', os.path.join(ROOT, 'src', 'include'), '-I', FS,
                         '-D', 'BLACK2', *version.ASM_DEFINES, path], capture_output=True, text=True, cwd=os.path.dirname(path))
     if r.returncode: raise RuntimeError(r.stderr[:400])
     return r.stdout

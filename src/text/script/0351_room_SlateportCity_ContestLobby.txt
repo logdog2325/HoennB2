@@ -6,3 +6,17 @@ Do any of your friends have any\nBerries?{be01}\nYou can use that Berry Blender 
 Let’s get blending already!
 I have two, so you can have one!
 Make Pokéblocks and put them in there.{be01}\nWhen you make a Pokéblock, everyone\nhas to put in a different Berry.
+Hello, there!{be01}\nContests are on hold for now...\nbut our Musical stage is open!
+In a Musical, Pokémon dress up\nin Props and dance on stage!{be01}\nHere’s a Prop Case. It holds a set\nof Props to get you started!
+Oh! Fans from your last show left\nyou some presents!
+Would you like to perform?
+I’m sorry, but none of your Pokémon\ncan perform.
+Please choose the Pokémon that\nwill perform.
+Which show would you like\nto perform in?
+Stardom
+Forest Stroll
+A Sweet Soirée
+Exciting Nimbasa
+Cancel
+Great! Please walk this way!
+We hope to see you on stage\nanother time.

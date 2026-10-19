@@ -99,7 +99,17 @@ Script_5:
 #define T_PokeblocksWithFamily 11
 #define T_NoPokeblockCase 12            // Emerald only (appended lines)
 #define T_ClearedThatUp 13
-LB_Receptionist:                            // ..._EventScript_ContestReceptionist (stand-in)
+// Pokémon Contests can't run on Black 2: the receptionist offers Black 2's Pokémon Musical instead (musical agent
+// 2026-10-18; common/musical.inc, b2tools/patches/musical.py). Text lines 12-25 (Emerald: 14-27, after its
+// Pokéblock Case lines). T_RecAccepting, T_RecAnotherTime and Emerald's T_ClearedThatUp stay in the files, unused
+// (after the Pokéblock Case the Musical's own "Hello, there!" follows). The link receptionist is unchanged.
+#include "common/musical.inc"
+#ifdef HOENN_EMERALD
+#define T_Musical 14
+#else
+#define T_Musical 12
+#endif
+LB_Receptionist:                            // ..._EventScript_ContestReceptionist: the Musical's reception
     c3_talk
 #ifdef HOENN_EMERALD
 // EMERALD (emerald_ch45_magma 2026-10-12; pokeemerald data/scripts/contest_hall.inc SpeakToContestReceptionist): the Pokéblock Case is
@@ -111,14 +121,9 @@ LB_Receptionist:                            // ..._EventScript_ContestReceptioni
     h_closemessage
     h_giveitem ITEM_POKEBLOCK_CASE, 1
     h_setflag FLAG_RECEIVED_POKEBLOCK_CASE
-    h_msgbox T_ClearedThatUp            // Okay, now that we've cleared that up... Hello! This is the reception counter for Pokémon Contests.
-    VMJump L_LB_Another
 L_LB_Welcome:
 #endif
-    h_msgbox T_RecAccepting
-L_LB_Another:
-    h_msgbox T_RecAnotherTime
-    h_release
+    musical_reception T_Musical
 
 LB_LinkReceptionist:                        // ..._EventScript_LinkContestReceptionist (no Contest Pass)
     c3_talk

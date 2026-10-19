@@ -1,0 +1,40 @@
+Welcome to the Battle Tent\nSlateport Site!{be01}\nI am your guide to the Battle Swap\nTournament.
+Would you like to take the Battle\nSwap challenge?
+Here at the Slateport Battle Tent,\nwe hold Battle Swap events{be00}\nusing rental Pokémon.{be01}\nFirst, you will be loaned three\nPokémon specifically for this event.{be01}\nUsing the supplied rental Pokémon,\nyou must conduct a Single Battle.{be01}\nIf you win, you are permitted to trade\none of your rental Pokémon.{be01}\nRepeat this cycle of battling and\ntrading--if you win three times in{be00}\na row, you will earn a fine prize.{be01}\nIf you want to interrupt your\nchallenge, please save the game.{be01}\nIf you don’t save before interrupting,\nyou will be disqualified.
+…
+…
+Before you begin your challenge,\nI need to save data. Is that okay?
+Please step this way.
+We look forward to your next visit.
+I’m sorry to say this, but you didn’t\nsave before you quit playing last time.{be01}\nAs a result, you have been disqualified\nfrom your challenge.
+Congratulations!\nYou’ve won three straight matches!{be01}\nI will return your Pokémon in exchange\nfor our rental Pokémon.{be01}\nI must also save your event results.\nPlease wait.
+…
+In recognition of your 3-win streak,\nwe award you this prize.
+{0100:0} received the prize\n{0100:1}.
+Oh?\nYou seem to have no room for this.{be01}\nPlease make room in your Bag and\nlet me know.
+Thank you for participating!{be01}\nI will return your Pokémon in exchange\nfor our rental Pokémon.{be01}\nI must also save your event results.\nPlease wait.
+We’ve been waiting for you!{be01}\nBefore we resume your challenge,\nI must save the game.
+…
+We look forward to your next visit.
+Challenge
+Info
+Exit
+So, like, I couldn’t find myself any\nPokémon that were, like, for me.{be01}\nSo, I figured, like, hey, I should file\na complaint to the guy there?{be01}\nAnd he wouldn’t hear me out, like, hey!\nSo, like, total bummer, man!{be01}\nHey, like, you! Zip it, you know?\nJust, you know, take this!
+That’s, like, TM41, you know?\nHey, it’s Torment, you hearing me?{be01}\nLike, it won’t let the other guy\nuse the same move twice in a row, see?{be01}\nHey, now, you listen here, like,\nI’m not laying a torment on you!
+I don’t really like Bug Pokémon,\nbut maybe I’ll try using some for{be00}\na change of pace.{be01}\nWho knows, I might even get to like\nthem!
+You can battle all you want here even\nif you don’t have any tough Pokémon.
+Wouldn’t it be nice if they had more of\na selection?
+Too bad!\nThe Bag is full…
+The Battle Swap rules are listed.
+Which heading do you want to read?
+In a Battle Swap event, you may use\nonly three Pokémon.{be01}\nWhether you are renting or swapping,\nyour team may not have two or more{be00}\nof the same Pokémon.
+You may swap Pokémon only with\nthe Trainer you have just defeated.{be01}\nYou may swap for only those Pokémon\nused by the beaten Trainer.
+After every battle you win, you may\nswap for one of your defeated{be00}\nopponent’s Pokémon.{be01}\nYou will not be able to swap Pokémon\nwith the third Trainer in the event.
+There are two key points to be aware\nof when swapping Pokémon.{be01}\nFirst, when swapping, you can’t check\nthe stats of the Pokémon you are{be00}\nabout to receive.{be01}\nSecond, the Pokémon on your team\nare lined up in sequence, depending on{be00}\nthe order in which you rented them.{be01}\nThis sequence remains unchanged\neven when swaps are made.
+The Pokémon of the Slateport\nBattle Tent are all rentals.{be01}\nAll rental Pokémon are kept at\nLevel 30.
+Basic Rules
+Swap: Partner
+Swap: Number
+Swap: Notes
+Battle Pokémon
+Exit

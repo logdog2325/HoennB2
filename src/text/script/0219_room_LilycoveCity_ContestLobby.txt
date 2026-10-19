@@ -10,3 +10,17 @@ Oh, dear! They still haven’t given\nyou a Contest Pass?{be01}\nYou should go g
 You can see a whole variety of\nPokémon here.{be01}\nThat’s why I make this place a regular\npart of my daily stroll.
 I wonder what kind of Pokéblock I’ll get?\nThis is so exciting!
 I made Pokéblocks with Mom, Dad and\nBig Sister. They turned out great!{be01}\nI bet you can make smoother, better\nPokéblocks if you have more people.
+Hello, there!{be01}\nContests are on hold for now...\nbut our Musical stage is open!
+In a Musical, Pokémon dress up\nin Props and dance on stage!{be01}\nHere’s a Prop Case. It holds a set\nof Props to get you started!
+Oh! Fans from your last show left\nyou some presents!
+Would you like to perform?
+I’m sorry, but none of your Pokémon\ncan perform.
+Please choose the Pokémon that\nwill perform.
+Which show would you like\nto perform in?
+Stardom
+Forest Stroll
+A Sweet Soirée
+Exciting Nimbasa
+Cancel
+Great! Please walk this way!
+We hope to see you on stage\nanother time.

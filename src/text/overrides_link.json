@@ -1,0 +1,11 @@
+{
+ "_doc": "Link play (link, 2026-10-18; notes/LINK.md): a traded Pokémon keeps its met location, a line of the place-name file, and the receiving game names it from its own file. Emerald NDS puts six new places on lines that Sapphire's and Ruby's zones never show (converter/gen_caves_emerald.py PLACE_NAMES, src/text/emerald/overrides_emerald_caves.json; Black 2's unused Unova names there): every version gets them, so an Emerald Pokémon met in one of them shows the right name in Sapphire and Ruby NDS too. Keep these lines equal to PLACE_NAMES.",
+ "system/0109_place_names.txt": {
+  "91": "Magma Hideout",
+  "106": "Marine Cave",
+  "107": "Mirage Tower",
+  "110": "Artisan Cave",
+  "111": "Desert Underpass",
+  "112": "Terra Cave"
+ }
+}

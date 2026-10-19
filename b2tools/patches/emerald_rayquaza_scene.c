@@ -54,6 +54,7 @@ void DoRayquazaScene(u8 animId, bool8 endEarly, MainCallback exitCallback);
 #define GFL_BGSysSetVRAMBanks      B2(void (*)(const u32 *), 0x02046c40)
 #define GFL_FadeSet                B2(void (*)(u32, s32, s32, s32), 0x0204e060)
 #define GFL_SndSEPlay              B2(void (*)(u32), 0x02006254)
+#define GFL_SEPlayKeepVol          B2(void (*)(u32, s32), 0x020061dc)   /* an SE on a given GFL player (0-4 = SDAT 1-5) */
 #define GFL_SndBGMPlay             B2(void (*)(u32, u32), 0x02005df4)
 #define GFL_SndBGMGetID            B2(u32 (*)(void), 0x02005c9c)
 #define GFL_SndBGMIsPlaying        B2(u32 (*)(void), 0x02005fa8)
@@ -406,6 +407,7 @@ void LoadCompressedSpritePalette(const struct CompressedSpritePalette *src) {
 /* ---- sound.c: Black 2's sounds (emerald_rayquaza_scene.py's table); songs only with the Hoenn music answer -------- */
 static u8 sHoennMusic;
 static u32 sRainPlaying;
+static u32 sFieldBgm, sFieldBgmOn;                    /* (Emerald v1.1) the field's song when the scene began */
 void PlaySE(u16 songNum) {
     s32 p;
     switch (songNum) {
@@ -414,14 +416,21 @@ void PlaySE(u16 songNum) {
         if (sRainPlaying && (p = GFL_SndSeqGetPlayerIndex(RAY_SE_DOWNPOUR)) >= 0) GFL_SndPlayerStop(p);
         sRainPlaying = 0;
         break;
-    case SE_THUNDER:       GFL_SndSEPlay(RAY_SE_THUNDER); break;
+    /* (Emerald v1.1) the thunder on PLAYER_SE_3 (GFL player 4): Black 2 gives SEQ_SE_FLD_32 the downpour's own player
+     * (PLAYER_SE_2, one sequence at a time), so the first lightning cut the rain off; Emerald's thunder plays over it */
+    case SE_THUNDER:       GFL_SEPlayKeepVol(RAY_SE_THUNDER, 4); break;
     case SE_INTRO_BLAST:   GFL_SndSEPlay(RAY_SE_INTRO_BLAST); break;
     case SE_M_WHIRLPOOL:   GFL_SndSEPlay(RAY_SE_M_WHIRLPOOL); break;
     case SE_MUGSHOT:       GFL_SndSEPlay(RAY_SE_MUGSHOT); break;
     case SE_SLIDING_DOOR:  GFL_SndSEPlay(RAY_SE_SLIDING_DOOR); break;
     }
 }
-void PlayCry_Normal(u16 species, s8 pan) { (void)pan; PokeVoice_Play(species, 0, 64, 0, 0, 0, 0, 0); }
+#ifndef SPECIES_RAYQUAZA
+#define SPECIES_RAYQUAZA 406           /* pokeemerald include/constants/species.h */
+#endif
+/* pokeemerald's species ids are Gen 3's internal ones (SPECIES_RAYQUAZA = 406); Black 2's cries are by national number
+   (Rayquaza 384). 406 played Budew's cry (the user, 2026-10-18: "it sounded like another Pokémon"). */
+void PlayCry_Normal(u16 species, s8 pan) { (void)pan; PokeVoice_Play(species == SPECIES_RAYQUAZA ? 384 : species, 0, 64, 0, 0, 0, 0, 0); }
 void PlayNewMapMusic(u16 songNum) {
     if (sHoennMusic && songNum == MUS_RAYQUAZA_APPEARS) GFL_SndBGMPlay(RAY_MUS_RAYQUAZA_APPEARS, 0xFFFF);
 }
@@ -511,6 +520,7 @@ static u32 Ray_Init(void *proc, u32 *state, void *param, void *work) {
     sFrames = sRun = sDone = sInVBlank = sRainPlaying = 0;
     sHbSrc = NULL;
     gScanlineEffect.waveTaskId = TASK_NONE;
+    sFieldBgm = GFL_SndBGMGetID(); sFieldBgmOn = GFL_SndBGMIsPlaying();
     DoRayquazaScene(sAnim, sEndEarly, CB2_RayDone);
     R16(DS_MASTER_A) = 0;                               /* palettes and backdrop are black: the scene fades in itself */
     ime = R16(DS_IME); R16(DS_IME) = 0;
@@ -543,6 +553,12 @@ static u32 Ray_Exit(void *proc, u32 *state, void *param, void *work) {
     R16(0x04000004) = (R16(0x04000004) & ~0x10) | (sOldDispstat & 0x10);
     R16(DS_IME) = ime;
     if (sRainPlaying && (p = GFL_SndSeqGetPlayerIndex(RAY_SE_DOWNPOUR)) >= 0) GFL_SndPlayerStop(p);
+    /* (Emerald v1.1) Emerald returns with CB2_ReturnToFieldContinueScriptPlayMapMusic: the map's song again. The full
+     * scene (Hoenn answer) stops the field's song, plays mus_rayquaza_appears and stops that, behind the back of Black 2's
+     * field sound (it still counts its own song as playing), so the field reopened without music until the script's
+     * BGMChangeMap at best. The field's song again when the scene left it stopped or changed. */
+    if (sHoennMusic && sFieldBgmOn && (!GFL_SndBGMIsPlaying() || GFL_SndBGMGetID() != sFieldBgm))
+        GFL_SndBGMPlay(sFieldBgm, 0xFFFF);
     GFL_FadeSet(3, 16, 16, 0);                          /* both screens black, as Black 2's procs end */
     R32(DS_DISPCNT) = 0x10000;
     for (i = 0; i < 256; i++) ((vu32 *)DS_OAM)[i] = i & 1 ? 0 : 0x0200;

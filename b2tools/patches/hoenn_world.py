@@ -44,6 +44,15 @@ def _terrain(d):
     from nsbmd_fix import tree_materials
     return tree_materials(open(os.path.join(d, 'terrain.nsbmd'), 'rb').read())[0]
 
+def _chunk(d):
+    """A cell's chunk for a/0/0/8: 'WB' (model, terrain, buildings), or 'GC' (model, terrain layer 0, terrain layer 1,
+    buildings) when world.py wrote a second collision layer (collision1.per: walk-under bridges, world.py bridge_layers;
+    ov036 FIELD_CHUNK_VTABLES picks the accessor by the chunk's magic, outdoors as in caves: patches/interiors.py)."""
+    p1 = os.path.join(d, 'collision1.per')
+    layers = [open(os.path.join(d, 'collision.per'), 'rb').read()] + ([open(p1, 'rb').read()] if os.path.exists(p1) else [])
+    return gf_container_build('GC' if len(layers) > 1 else 'WB',
+                              [_terrain(d)] + layers + [open(os.path.join(d, 'placements.bin'), 'rb').read()])
+
 def apply(files):
     world = json.load(open(os.path.join(W, 'world.json')))
     retargeted = version_doors(world)
@@ -53,9 +62,7 @@ def apply(files):
     fw = _fixed_weather()      # (the material fog flag of every Hoenn chunk and model: patches/fixed_weather.py apply)
     for c in cells:
         d = os.path.join(W, 'cells', f'{c["cx"]:02d}_{c["cz"]:02d}')
-        chunks.append(gf_container_build('WB', [_terrain(d),
-                                                open(os.path.join(d, 'collision.per'), 'rb').read(),
-                                                open(os.path.join(d, 'placements.bin'), 'rb').read()]))
+        chunks.append(_chunk(d))
     # warp-only maps (world.py build_standalone): their unique chunks next, each group on its own matrix after the
     # Hoenn matrix, in world.json's order (identical cells share a chunk)
     standalone = world.get('standalone', [])
@@ -65,9 +72,7 @@ def apply(files):
             if c['chunk'] in done_dirs: continue
             assert c['chunk'] == len(chunks), f"standalone chunk {c['chunk']} would be entry {len(chunks)}"
             d = os.path.join(W, 'cells', c['dir'])
-            chunks.append(gf_container_build('WB', [_terrain(d),
-                                                    open(os.path.join(d, 'collision.per'), 'rb').read(),
-                                                    open(os.path.join(d, 'placements.bin'), 'rb').read()]))
+            chunks.append(_chunk(d))
             done_dirs[c['chunk']] = c['dir']
     # other layouts of a map (world.py build_alts, data/hoenn_world.json "alt_layouts": Route 131 after the game):
     # their cells' chunks last, swapped for the cell's own chunk by a/0/1/0 map replacements (kind 0 = one chunk id
@@ -78,9 +83,7 @@ def apply(files):
     for a in sorted(world.get('alt_cells', []), key=lambda a: a['chunk']):
         assert a['chunk'] == len(chunks), f"alt chunk {a['chunk']} would be entry {len(chunks)}"
         d = os.path.join(W, 'cells', a['dir'])
-        chunks.append(gf_container_build('WB', [_terrain(d),
-                                                open(os.path.join(d, 'collision.per'), 'rb').read(),
-                                                open(os.path.join(d, 'placements.bin'), 'rb').read()]))
+        chunks.append(_chunk(d))
         # ("cond", Emerald's abnormal weather: emerald_postgame.c's own conditions 0x81-0x90 in place of an event's)
         replaces.append(struct.pack('<HBB6H', world['matrix'], 0, a['cond'] if 'cond' in a else a['event'] + 3,
                                     a['base_chunk'], a['chunk'], 0, 0, 0, 0xFFFF))
@@ -91,9 +94,7 @@ def apply(files):
     for gname, a in galts:
         assert a['chunk'] == len(chunks), f"{gname} alt chunk {a['chunk']} would be entry {len(chunks)}"
         d = os.path.join(W, 'cells', a['dir'])
-        chunks.append(gf_container_build('WB', [_terrain(d),
-                                                open(os.path.join(d, 'collision.per'), 'rb').read(),
-                                                open(os.path.join(d, 'placements.bin'), 'rb').read()]))
+        chunks.append(_chunk(d))
         replaces.append(struct.pack('<HBB6H', gmat[gname], 0, a['event'] + 3, a['base_chunk'], a['chunk'], 0, 0, 0, 0xFFFF))
     narcio.save(files, 8, chunks)
     if replaces:                              # (a/0/1/0 has a RESERVE in build_rom.py)

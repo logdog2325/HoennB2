@@ -8,6 +8,7 @@
 // data/story/ch2.json), text 0145 lines 0-4. Room origin (0,0).
 #include "asm/field_script.inc"
 #include "hoenn.h"
+#include "hoenn_tms.h"  // new_tms: ITEM_TM96 ...
 #include "hoenn_trainers.h"
 #include "hoenn_key_items.h"
 #include "hoenn_story.inc"
@@ -32,7 +33,7 @@ GCS_Steven:
     h_setflag FLAG_DELIVERED_STEVEN_LETTER
     h_msgbox 2                      // Steven: Okay, thank you. ...It contains my favorite move, Steel Wing.
     h_closemessage                  // (Black 2: the item script opens its own window)
-    h_giveitem ITEM_TM47            // TM47 Steel Wing: no Gen 5 TM teaches it; TM47 kept as the stand-in (converter/gen_items.py rule)
+    h_giveitem ITEM_TM103           // Gen 3 TM47 Steel Wing: the new TM103 (b2tools/patches/new_tms.py)
     h_goto_if_ne HLIB_RESULT, 0, L_GCS_Given
     h_msgbox 4                      // Oh, your Bag is full... That's too bad, then.
 L_GCS_Given:

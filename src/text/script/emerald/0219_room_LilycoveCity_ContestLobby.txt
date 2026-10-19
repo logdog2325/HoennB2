@@ -12,3 +12,17 @@ I wonder what kind of Pokéblock I’ll get?\nThis is so exciting!
 I made Pokéblocks with Mom, Dad and\nBig Sister. They turned out great!{be01}\nI bet you can make smoother, better\nPokéblocks if you have more people.
 Hello!{be01}\nThis is the reception counter for\nPokémon Contests.{be01}\nOh? It appears that you don’t have\na Pokéblock Case yet.{be01}\nIn that case, we need to provide you\nwith this!
 Okay, now that we’ve cleared that\nup…{be01}\nHello!{be01}\nThis is the reception counter for\nPokémon Contests.
+Hello, there!{be01}\nContests are on hold for now...\nbut our Musical stage is open!
+In a Musical, Pokémon dress up\nin Props and dance on stage!{be01}\nHere’s a Prop Case. It holds a set\nof Props to get you started!
+Oh! Fans from your last show left\nyou some presents!
+Would you like to perform?
+I’m sorry, but none of your Pokémon\ncan perform.
+Please choose the Pokémon that\nwill perform.
+Which show would you like\nto perform in?
+Stardom
+Forest Stroll
+A Sweet Soirée
+Exciting Nimbasa
+Cancel
+Great! Please walk this way!
+We hope to see you on stage\nanother time.

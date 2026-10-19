@@ -1,0 +1,255 @@
+{
+ "_doc": "VerdanturfTown's Battle Tent lobby (Emerald LAYOUT_BATTLE_TENT_LOBBY 13x10). The tent's canvas curves in at the back corners (Emerald (0,2..4), (11,2..3), (12,2..4) are canvas: the walls step in there) and at the front (Emerald's solid (0,8..9), (1,9), (11,9), (12,8..9): no floor, no wall, the black lip: \"open\"). The orange U-shaped reception counter = blocks on Emerald's counter tiles (rows 2-5), its gap (6,4..5) where the attendant stands; the attendant leads the player from (6,5) up through the counter to the glass door (6,1) (door_h5_in in a dark doorway on the back wall; Emerald's door tile (6,1) stays walkable). Rules board (Emerald sign (4,5)) = poster01 on the counter; the PC (Emerald's machine (11,3..4), MB_PC (11,4)) = pc01 against the wall's step. Exit mat (6..7,9) = the Musical's red mat in24_mat. Balloons on the canvas.",
+ "map": "VerdanturfTown_BattleTentLobby",
+ "decomp": "pokeemerald",
+ "style": "bt_tent",
+ "origin": [
+  1,
+  0
+ ],
+ "wall_rows": "keep",
+ "floor": [
+  [
+   1,
+   2,
+   10,
+   4
+  ],
+  [
+   11,
+   4,
+   11,
+   4
+  ],
+  [
+   0,
+   5,
+   12,
+   7
+  ],
+  [
+   1,
+   8,
+   11,
+   8
+  ],
+  [
+   2,
+   9,
+   10,
+   9
+  ]
+ ],
+ "open": [
+  [
+   0,
+   8,
+   0,
+   9
+  ],
+  [
+   1,
+   9,
+   1,
+   9
+  ],
+  [
+   11,
+   9,
+   11,
+   9
+  ],
+  [
+   12,
+   8,
+   12,
+   9
+  ]
+ ],
+ "block": [],
+ "furniture": [
+  {
+   "m": "door_h5_in",
+   "tile": [
+    6,
+    2
+   ],
+   "wall": "N",
+   "gap": -1,
+   "doorway": true,
+   "y": -1,
+   "_what": "glass door to the corridor (Emerald (6,1))"
+  },
+  {
+   "m": "pc01",
+   "tile": [
+    11,
+    4
+   ],
+   "wall": "N",
+   "_what": "PC (Emerald machine (11,3..4), MB_PC (11,4))"
+  },
+  {
+   "m": "poster01",
+   "tile": [
+    4,
+    5
+   ],
+   "y": 14,
+   "dz": -4,
+   "_what": "rules board on the counter (Emerald sign (4,5))"
+  }
+ ],
+ "blocks": [
+  {
+   "tiles": [
+    [
+     2,
+     2
+    ],
+    [
+     3,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     3,
+     4
+    ],
+    [
+     4,
+     4
+    ],
+    [
+     5,
+     4
+    ],
+    [
+     2,
+     5
+    ],
+    [
+     3,
+     5
+    ],
+    [
+     4,
+     5
+    ],
+    [
+     5,
+     5
+    ]
+   ],
+   "use": "bt_counter",
+   "_what": "reception counter, left half"
+  },
+  {
+   "tiles": [
+    [
+     9,
+     2
+    ],
+    [
+     10,
+     2
+    ],
+    [
+     10,
+     3
+    ],
+    [
+     7,
+     4
+    ],
+    [
+     8,
+     4
+    ],
+    [
+     9,
+     4
+    ],
+    [
+     10,
+     4
+    ],
+    [
+     7,
+     5
+    ],
+    [
+     8,
+     5
+    ],
+    [
+     9,
+     5
+    ],
+    [
+     10,
+     5
+    ]
+   ],
+   "use": "bt_counter",
+   "_what": "reception counter, right half"
+  }
+ ],
+ "mats": [
+  {
+   "tex": "in24_mat",
+   "src": 305,
+   "rect": [
+    6,
+    9,
+    7,
+    9
+   ],
+   "border": 0.25,
+   "border_units": 4,
+   "_what": "exit mat (Emerald's warps (6,9), (7,9))"
+  }
+ ],
+ "decals": [
+  {
+   "tex": "m_nsch01_17",
+   "src": 282,
+   "at": [
+    1.5
+   ],
+   "y": 20,
+   "w": 16,
+   "h": 16,
+   "_what": "balloon"
+  },
+  {
+   "tex": "m_nsch01_18",
+   "src": 282,
+   "at": [
+    3.5
+   ],
+   "y": 26,
+   "w": 16,
+   "h": 16,
+   "_what": "balloon"
+  },
+  {
+   "tex": "m_nsch01_19",
+   "src": 282,
+   "at": [
+    9.5
+   ],
+   "y": 20,
+   "w": 16,
+   "h": 16,
+   "_what": "balloon"
+  }
+ ]
+}

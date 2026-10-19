@@ -18,7 +18,7 @@ How dare you make my granddaughter\ncry!{be01}\nFor that, I’m going to smack y
 If you’re not in any hurry, visit with\nus awhile.
 What’s that?\nWhat am I doing?{be01}\nI’m thinking about making my own room\nhere using a Pokémon move.{be01}\nI know! I’ll give you this TM.\nWill you use it to make your own room?
 Oh, you don’t want this?\nIf you change your mind, tell me, okay?
-Find a big tree that looks like it might\ndrop some vines.{be01}\nUse Flame Charge in front of the tree.\nSome vines should get free and drop{be00}\ndown, so you can climb the tree.{be01}\nYou’ll find a lot of space for putting\nyour favorite things.{be01}\nIt’ll be your own secret room...\nA Secret Base!{be01}\nYou should make one, too.{be01}\nAnother thing, you don’t always have\nto make your Secret Base in a tree.{be01}\nTry using Flame Charge on rock walls\nthat have small indents in them.{be01}\nI’m going to look for other places, too.\nOkay, bye!
+Find a big tree that looks like it might\ndrop some vines.{be01}\nUse Secret Power in front of the tree.\nSome vines should get free and drop{be00}\ndown, so you can climb the tree.{be01}\nYou’ll find a lot of space for putting\nyour favorite things.{be01}\nIt’ll be your own secret room...\nA Secret Base!{be01}\nYou should make one, too.{be01}\nAnother thing, you don’t always have\nto make your Secret Base in a tree.{be01}\nTry using Secret Power on rock walls\nthat have small indents in them.{be01}\nI’m going to look for other places, too.\nOkay, bye!
 Oh, you don’t have any room for this.{be01}\nI’ll hold on to it, so come back for it\nanother time, okay?
 Too bad!\nThe Bag is full...
 Gabby: We’ll be keeping an eye out\nfor you!

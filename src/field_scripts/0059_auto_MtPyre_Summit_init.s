@@ -1,6 +1,7 @@
-// MtPyre_Summit (zone 29): no map scripts yet (Unova's would run our scripts). converter/gen_map_content.py
+// MtPyre_Summit (zone 29): map scripts of scenes/MtPyre_Summit_init.inc. converter/gen_map_content.py
 #include "asm/field_script.inc"
+#include "hoenn.h"
+#include "hoenn_story.inc"
 
-    MapScriptsEnd
-    .byte 0x00
-    .byte 0x00
+#include "scenes/MtPyre_Summit_init.inc"
+    .balign 4, 0

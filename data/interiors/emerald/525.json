@@ -1,0 +1,35 @@
+{
+ "_doc": "battle_tents (rooms_tents helper, 2026-10-18): VerdanturfTown_BattleTentBattleRoom (Emerald's Battle Tent, notes/BATTLE_TENTS.md), Emerald only (data/versions.json rooms: \"emerald\"; claimed in data/emerald/hoenn_interiors.json). People = Emerald's objects (uid = Emerald local id; script = the zone script's entry number), their sprites from data/sprite_map.json. Positions are Emerald tiles; room origin [1, 0] (zone tile = Emerald tile + origin). Map scripts: battle_tents'.",
+ "zone": 525,
+ "room": "VerdanturfTown_BattleTentBattleRoom",
+ "area": 305,
+ "parent": 120,
+ "warps": [],
+ "npcs": [
+  {
+   "uid": 2,
+   "model": 162,
+   "script": 2,
+   "dir": 1,
+   "at": [
+    11,
+    1
+   ],
+   "flag": 1094,
+   "what": "Emerald object 2 VAR_0 (FACE_DOWN): opponent (OBJ_EVENT_GFX_VAR_0): code 162 = work 0x4020 (as the Factory / Battle Tower), hidden by FLAG_HIDE_BATTLE_TOWER_OPPONENT (1094) until shown; model 162"
+  },
+  {
+   "uid": 3,
+   "model": 28,
+   "script": 2,
+   "dir": 3,
+   "at": [
+    2,
+    4
+   ],
+   "what": "Emerald object 3 EXPERT_M (FACE_RIGHT): attendant; model 28"
+  }
+ ],
+ "signs": [],
+ "triggers": []
+}

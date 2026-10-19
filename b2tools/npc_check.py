@@ -31,6 +31,8 @@ PLAYER_FORM = 24608            # the largest other form: fishing 239/248 (12 fra
 EFFECTS = 32768                # field effects, shadows etc.: 24.4 KB measured in Slateport (NPC_LIMIT.md) + margin
 DYNAMIC = range(162, 178)      # codes read from works 0x4020-0x402F (GetWKOBJCODENPCOBJCODE)
 DYNAMIC_SHEET = 12320          # the rival (162 -> Brendan 1 / May 4: player-sized sheets)
+BERRY_TREES = range(0x0F00, 0x0F80)   # berry planting's tree actors (HOENN_BERRY_PLANTING, patches/berries.c): each
+BERRY_SHEET = 544              # shows one of the one-frame 32x32 pictures (a distinct code each, at worst)
 
 # ---------------------------------------------------------------------------------------------------- ROM access
 
@@ -122,6 +124,7 @@ class Rom:
     def sheet(self, code):
         """VRAM bytes of an object code's sheet (0 for 3D objects, which are not billboards)."""
         if code in DYNAMIC: return DYNAMIC_SHEET
+        if code in BERRY_TREES: return BERRY_SHEET
         if code not in self._sheet:
             rec = self.table[obj_record(code)] if obj_record(code) < len(self.table) else None
             self._sheet[code] = tex_bytes(self.sheets[rec[15]]) if rec and rec[1] == 1 and rec[15] < len(self.sheets) else 0

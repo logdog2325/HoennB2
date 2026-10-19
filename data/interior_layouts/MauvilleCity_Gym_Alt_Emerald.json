@@ -319,5 +319,63 @@
    ],
    "_what": "exit mat (Sapphire's Gym entrance mat)"
   }
+ ],
+ "floor_tex": [
+  {
+   "tex": "g3sw_0_15",
+   "gen3": [
+    0,
+    15
+   ],
+   "rect": [
+    0,
+    15,
+    0,
+    15
+   ],
+   "stretch": true
+  },
+  {
+   "tex": "g3sw_4_12",
+   "gen3": [
+    4,
+    12
+   ],
+   "rect": [
+    4,
+    12,
+    4,
+    12
+   ],
+   "stretch": true
+  },
+  {
+   "tex": "g3sw_3_9",
+   "gen3": [
+    3,
+    9
+   ],
+   "rect": [
+    3,
+    9,
+    3,
+    9
+   ],
+   "stretch": true
+  },
+  {
+   "tex": "g3sw_8_9",
+   "gen3": [
+    8,
+    9
+   ],
+   "rect": [
+    8,
+    9,
+    8,
+    9
+   ],
+   "stretch": true
+  }
  ]
 }

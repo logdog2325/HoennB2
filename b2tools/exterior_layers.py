@@ -16,7 +16,7 @@ frame). Vertices of other faces that touch a moved piece move with it (a post's 
 no gaps open. Texture coordinates stay, nothing is added or removed."""
 import math
 
-MIN_GAP = 1.0
+MIN_GAP = 2.0                    # (was 1.0: building sides still flickered in melonDS, Discord 2026-10-14; the checker and the terrain use 2)
 MAX_PUSH = 6.0
 
 def _sub(a, b): return (a[0] - b[0], a[1] - b[1], a[2] - b[2])

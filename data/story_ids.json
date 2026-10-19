@@ -5759,6 +5759,60 @@
    "id": 16723,
    "kind": "var",
    "chapter": "Emerald"
+  },
+  "FLAG_DAILY_EM_REMATCHES": {
+   "id": 2756,
+   "kind": "flag",
+   "chapter": "Emerald",
+   "note": "Emerald rematches: clear = a new day since the 'fought today' bits were cleared (emerald_rematch.c clears VAR_EM_REMATCH_DONE_*, then sets it)"
+  },
+  "VAR_EM_REMATCH_DONE_0": {
+   "id": 16724,
+   "kind": "var",
+   "chapter": "Emerald",
+   "note": "Emerald rematches: rows 0-15 of data/emerald/hoenn_rematch.json fought today (bit = row % 16)"
+  },
+  "VAR_EM_REMATCH_DONE_1": {
+   "id": 16725,
+   "kind": "var",
+   "chapter": "Emerald",
+   "note": "Emerald rematches: rows 16-31 of data/emerald/hoenn_rematch.json fought today (bit = row % 16)"
+  },
+  "VAR_EM_REMATCH_DONE_2": {
+   "id": 16735,
+   "kind": "var",
+   "chapter": "Emerald",
+   "note": "Emerald rematches: rows 32-47 of data/emerald/hoenn_rematch.json fought today (bit = row % 16)"
+  },
+  "VAR_EM_REMATCH_DONE_3": {
+   "id": 16736,
+   "kind": "var",
+   "chapter": "Emerald",
+   "note": "Emerald rematches: rows 48-63 of data/emerald/hoenn_rematch.json fought today (bit = row % 16)"
+  },
+  "VAR_EM_REMATCH_DONE_4": {
+   "id": 16737,
+   "kind": "var",
+   "chapter": "Emerald",
+   "note": "Emerald rematches: rows 64-79 of data/emerald/hoenn_rematch.json fought today (bit = row % 16)"
+  },
+  "VAR_EM_REMATCH_LEADERS": {
+   "id": 16739,
+   "kind": "var",
+   "chapter": "Emerald",
+   "note": "Emerald rematches: 2 bits per Gym Leader (gym n: bits 2n-2..2n-1) = rematch tiers beaten, 0-3 (notes/EMERALD_REMATCH.md)"
+  },
+  "VAR_EM_REMATCH_POSTGAME": {
+   "id": 16740,
+   "kind": "var",
+   "chapter": "Emerald",
+   "note": "Emerald rematches: 2 bits per post-game rematch row (data/emerald/hoenn_rematch.json gym 9 + n: bits 2n..2n+1; 9 = Wally at Victory Road) = rematch tiers beaten, 0-3"
+  },
+  "FLAG_EM_MIRAGE_TOWER_KEEP": {
+   "id": 2391,
+   "kind": "flag",
+   "chapter": "Emerald",
+   "note": "Emerald Mirage Tower: set = the next zone init of Route 111's zone 370 keeps the tower as its cell is drawn (no roll); set by Route 112's zone init (its seam draws the tower's cell first) and by the desert part zone 610's, cleared by zone 370's and Mauville's (scenes/emerald/Route111_Mirage.inc)"
   }
  },
  "reserved": {

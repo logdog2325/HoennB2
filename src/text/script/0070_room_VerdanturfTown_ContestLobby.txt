@@ -5,3 +5,17 @@ We hope you will participate another\ntime.
 Oh, my love for Pokémon...\nThe attraction they evoke in me...{be01}\nWhoops!\nYou weren’t meant to see that!{be00}\nWell, anyway.{be01}\nIf you’re entering a Contest, try this\nmove on for size.
 My feelings for Pokémon...\nOh, they attract me so...
 Too bad!\nThe Bag is full...
+Hello, there!{be01}\nContests are on hold for now...\nbut our Musical stage is open!
+In a Musical, Pokémon dress up\nin Props and dance on stage!{be01}\nHere’s a Prop Case. It holds a set\nof Props to get you started!
+Oh! Fans from your last show left\nyou some presents!
+Would you like to perform?
+I’m sorry, but none of your Pokémon\ncan perform.
+Please choose the Pokémon that\nwill perform.
+Which show would you like\nto perform in?
+Stardom
+Forest Stroll
+A Sweet Soirée
+Exciting Nimbasa
+Cancel
+Great! Please walk this way!
+We hope to see you on stage\nanother time.

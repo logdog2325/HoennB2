@@ -1,0 +1,8 @@
+{
+ "_doc": "Emerald only (user report 2026-10-14): the trainer card's 8th leader is Juan, not Wallace (b2tools/patches/trainer_card.py LEADERS[7] = Black 2's Juan, sprite 126). Motto from pokeemerald's Sootopolis Gym sign; the line from Juan's defeat text (SootopolisCity_Gym_1F_Text_JuanDefeat).",
+ "system/0379_btl_server_flow.txt": {
+  "86": "Sootopolis City Gym Leader\\nJuan",
+  "87": "The Gym Leader with the beauty\\nof pure water!",
+  "88": "From you, I sense the brilliant shine\\nof skill that will overcome all."
+ }
+}

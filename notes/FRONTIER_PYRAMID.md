@@ -37,7 +37,20 @@ test) back (16-19). Retire runs the same script path as a battle loss (L_PYF_Los
 - Test Rest -> Continue -> resume on the rested tile; a real battle loss; floors 3-7; the top and Brandon (slot 533,
   Emerald's streaks 21/70/35); Open Level.
 - The battle's "X defeated Y" line shows "Player" instead of the player's name (seen once; not looked into).
-- The field Bag opens on the Items pocket, which is empty in the Battle Bag (items are in Medicine / Berries).
+- (Done 2026-10-18) The field Bag opened on the Items pocket, empty in the Battle Bag (its items are Medicine / Berries).
+  Now the Battle Bag has its own position (pokeemerald's Pyramid Bag keeps its own): the player's Bag cursor (GameData +
+  0x18C: scroll[6], index[6], pocket at 0x18) is put aside at bag_swap and back at bag_unswap; the Battle Bag starts on its
+  first pocket with items, and when its pocket is empty the Bag opens on the first one with items: frontier_pyramid.c
+  bag_pocket, run when the field Bag opens (ov012's launcher func_ov012_0215bd48: its func_02034ad0 / func_020088a4 calls
+  -> frontier_pyramid_stub.c PY_I_BagNew / PY_I_BagPocket -> engine entry PY_BagOpen) and on every field frame of a floor.
+  Tested in DeSmuME (screenshots/emerald_fidelity/py_*): floor 1 opens on Medicine (Hyper Potion, Ether); the player's
+  own pocket (Berries, set before the challenge) is back in the lobby.
+- (Done 2026-10-18) The lobby's "{0100:0} got the Bag back." (the lost and didn't-save lines) showed no name: the
+  library's lines read word buffer 0, which Sub_PYL_Lost / Sub_PYL_Quit never set. Both now end with WordSetPlayerName 0
+  (0694_room_BattleFrontier_BattlePyramidLobby.s), as Sub_PYL_Won already did.
+- Self-test 2026-10-18 (work/agents/emerald_fidelity/tests/pyramid_floors.py, log/pyramid_floors*.txt): streak 14 (floors
+  15-21), floors 1-7: each layout as pyr.py recomputes it, exits to the next floor, an item ball, trainers that see the
+  player, wild battles; the top, Brandon (Regirock / Registeel / Regice, silver) and the lost path back to the lobby.
 - Area 291 is shared with zones 526-530 (not checked whether any is a Hoenn zone; check before changing its textures).
 - The lead's world needs a rebuild (with the claim, world.py opens zone 17's door 3 to the lobby) and
   rebuild_interiors must build the two rooms. Add `frontier_pyramid` after `rods` in the Emerald build lists.

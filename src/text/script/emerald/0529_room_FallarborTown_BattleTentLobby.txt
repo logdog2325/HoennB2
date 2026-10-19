@@ -1,0 +1,39 @@
+I welcome you to the Battle Tent\nFallarbor Site!{be01}\nI am your guide to the Set KO Tourney!
+Now, do you wish to take the challenge\nof a Set KO Tourney?
+In the Fallarbor Battle Tent,\nwe undertake the Set KO Tourney.{be01}\nAll participants enter with a team of\nthree Pokémon.{be01}\nThe three Pokémon must be lined up\nin the order that they are to appear in.{be01}\nDuring battle, the Pokémon will appear\none at a time in the preset order.{be01}\nOnce a Pokémon enters battle, it must\nremain out until the match is decided.{be01}\nIf a match remains undecided in\nthree turns, it goes to judging.{be01}\nIf you wish to interrupt your challenge,\nplease save the game.{be01}\nIf you don’t save, you will not be able\nto continue with your challenge.{be01}\nIf you pull off the feat of beating\nthree Trainers in succession,{be00}\nwe will present you with a fine prize.
+My dear challenger!{be01}\nYou do not have the three Pokémon\nrequired for entry.{be01}\nTo qualify, you must bring three\ndifferent kinds of Pokémon.{be01}\nThey also must not hold the same\nkinds of items.{be01}\nEggs{0100:1} ineligible.{be01}\nWhen you have made your preparations,\nplease do return.
+Very well, now select your\nthree Pokémon, please.
+Before showing you to the Battle\nTent, I must save. Is that okay?
+I shall now guide you to\nthe Battle Tent.
+We await your challenge on\nanother occasion!
+My dear challenger!{be01}\nYou did not save the game before\nshutting down, did you?{be01}\nIt is unfortunate, but that has\nresulted in your disqualification{be00}\nfrom your challenge.{be01}\nYou may, of course, start with a fresh\nchallenge.
+How splendid! You have beaten\nthree Trainers in succession!
+Please wait while I save the game.
+In commemoration of your 3-win streak,\nwe present you with this prize.
+{0100:0} received the prize\n{0100:1}.
+Oh?\nYour Bag seems to be full.{be01}\nI urge you to clear space and\nreturn for your prize.
+Thank you so much for participating!{be01}\nPlease wait while I save the game.
+We have been looking forward to\nyour arrival.{be01}\nBefore I show you to the Battle Tent,\nI must save the game. Please wait.
+…
+We await your challenge on\nanother occasion!
+Challenge
+Info
+Exit
+I heard something about some tent,\nso I came to camp out.{be01}\nI didn’t know that tents these days\nare so luxurious!{be01}\nSince I’m here, I may as well try\nmy hand at battling!
+Fufufufufu.{be01}\nI’m going to make everyone think\nI’m just a kid and let them play down.{be01}\nThen, I’ll shock them and grab\nthe title!
+You know how Battle Tents offer\ndifferent events in different towns?{be01}\nMy favorite is definitely the Battle\nTent in Fallarbor Town.{be01}\nI think it’s fantastic how Trainers\ntry to win with all their faith in{be00}\ntheir Pokémon.
+Scott: Hi, {0100:0}!\nSo you came out to this Battle Tent!{be01}\nThe people in these parts tend to be\neasygoing and laid-back.{be01}\nBut, you see, what I’m looking for are\npeople with…{be01}\nHow should I say this?{be01}\nSomeone bursting with the desire\nand the drive to win.{be01}\nIf there were a Trainer like that,\nI’d immediately…{be01}\nWhoops! Never mind!\nKeep working at it!
+Scott: Instead of wasting your\ntime with the likes of me, why not{be00}\nmake a challenge?
+The Set KO Tourney’s rules are listed.
+Which heading do you want to read?
+At this Battle Tent, the levels of\nyour opponents will be adjusted to{be00}\nmatch the levels of your Pokémon.{be01}\nHowever, no Trainer you face will\nhave any Pokémon below Level 30.
+The Set KO Tourney has special rules,\nunlike standard battles.{be01}\nFirst, one battle lasts only\nthree turns.{be01}\nIf the outcome is not decided after\nthree turns, it goes to judging.{be01}\nThe Referee will choose the winner\nbased on how the Pokémon battled.{be01}\nAlso, a Pokémon cannot be switched out\nuntil its battle’s outcome is decided.
+The first judging factor is “Mind.”\nThis factor evaluates how aggressive{be00}\nthe battlers were.{be01}\nThe judging is based on how often\nthe Trainers ordered the use of{be00}\noffensive moves.
+The second judging factor is “Skill.”\nThis factor evaluates how effectively{be00}\nPokémon moves were used.{be01}\nIf a move worked successfully,\nthe Skill rating goes up.{be01}\nIf a move failed, the Skill rating\nis lowered.{be01}\nIf it was an offensive move, the Skill\nrating goes up if the move was “super{be00}\neffective” and goes down if it was{be00}\n“not very effective.”{be01}\nThe Skill rating will not go up for\nmoves such as Protect and Detect.{be01}\nIf the opponent used Protect or\nDetect, and your Pokémon failed to{be00}\nhit with a move, its Skill rating will not{be00}\ngo down.
+The third judging factor is “Body.”\nThis factor is based on how much HP{be00}\nremained at the end of a battle.{be01}\nThe rating takes into account how much\nHP a Pokémon had at the start of{be00}\nbattle, and what remained at the end.
+Battle Trainers
+Battle Rules
+Judge: Mind
+Judge: Skill
+Judge: Body
+Exit

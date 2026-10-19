@@ -213,6 +213,18 @@
     [
      2,
      "I’m exhausted, so I need a break.\\nIt’s important to get proper rest."
+    ],
+    [
+     100,
+     "Isn’t it neat to hold a battle while\\ncycling?"
+    ],
+    [
+     101,
+     "Were you going after a record?{be01}\\nI’m sorry if I held you up!"
+    ],
+    [
+     103,
+     "Wow…\\nHow could you be so strong?"
     ]
    ],
    "objects": [
@@ -2088,6 +2100,34 @@
     [
      10,
      "Liv: If you want to battle us,\\nyou have to have two Pokémon!{be00}\\nIt’s not fair if you don’t!"
+    ],
+    [
+     100,
+     "Amy: I’m Amy.\\nAnd this is my little sister Liv.{be00}\\nWe battle together!"
+    ],
+    [
+     101,
+     "Amy: You have to think about all\\nkinds of things when you’re battling{be00}\\nagainst two Trainers."
+    ],
+    [
+     102,
+     "Amy: Uh-oh, you have only one\\nPokémon with you.{be00}\\nYou can’t battle us like that."
+    ],
+    [
+     104,
+     "Liv: We battle together as one\\nteam."
+    ],
+    [
+     105,
+     "Liv: We work perfectly together,\\nme and my big sister…{be01}\\nBut why did we lose again?"
+    ],
+    [
+     106,
+     "Liv: If you want to battle us, you\\nhave to have two Pokémon!{be00}\\nIt’s not fair if you don’t!"
+    ],
+    [
+     103,
+     "Amy: Aww, boo!\\nWe couldn’t win again…{be01}\\nLiv: Awww, we lost again…\\nBig sister…"
     ]
    ],
    "objects": [
@@ -2283,6 +2323,18 @@
     [
      2,
      "I’m sure there are many secrets to be\\ndiscovered in the world’s seas.{be01}\\nI mean to find them all!"
+    ],
+    [
+     100,
+     "I’ve told you that I’m weak…\\nAre you sure you want to do this?"
+    ],
+    [
+     101,
+     "I may be weak at battling, but my\\ndrive to explore can’t be bested.{be01}\\nI will travel the seas all around\\nthe world!"
+    ],
+    [
+     103,
+     "Yes…\\nI didn’t think I could win."
     ]
    ],
    "objects": [
@@ -2913,6 +2965,34 @@
     [
      10,
      "Meg: Do you only have one Pokémon?\\nWe can’t battle with you, then.{be01}\\nWe want to have a 2-on-2 battle."
+    ],
+    [
+     100,
+     "Anna: I can’t keep losing in front of\\nmy junior partner, right?"
+    ],
+    [
+     101,
+     "Anna: Your Pokémon have some good\\ncombinations.{be01}\\nI’d say you’re second only to us!"
+    ],
+    [
+     102,
+     "Anna: If you want to battle us,\\nbring two Pokémon with you."
+    ],
+    [
+     104,
+     "Meg: I’m going to tag up with my\\nsenior partner and win this time!"
+    ],
+    [
+     105,
+     "Meg: I battled together with my\\nsenior partner, but we lost…{be01}\\nThat’s so discouraging…"
+    ],
+    [
+     106,
+     "Meg: Do you only have one Pokémon?\\nWe can’t battle with you, then.{be01}\\nWe want to have a 2-on-2 battle."
+    ],
+    [
+     103,
+     "Anna: I couldn’t get into the groove.{be01}\\nMeg: Too strong!"
     ]
    ],
    "objects": [
@@ -5046,6 +5126,18 @@
     [
      2,
      "There’s no need to panic or stress.\\nTake it easy. There’s plenty of time."
+    ],
+    [
+     100,
+     "Aren’t you going a little too fast?\\nTake it easy and let’s battle."
+    ],
+    [
+     101,
+     "There’s no need to panic or stress.\\nTake it easy. There’s plenty of time."
+    ],
+    [
+     103,
+     "I didn’t panic, but I still lost…"
     ]
    ],
    "objects": [
@@ -5654,6 +5746,18 @@
     [
      2,
      "You really do have to be careful with\\nany sort of fire in a forest.{be01}\\nDon’t ever underestimate the power\\nof fire."
+    ],
+    [
+     100,
+     "Have you learned to keep water handy\\nfor campfires?"
+    ],
+    [
+     101,
+     "You really do have to be careful with\\nany sort of fire in a forest.{be01}\\nDon’t ever underestimate the power\\nof fire."
+    ],
+    [
+     103,
+     "I got hosed down before I could\\nflare up, I guess."
     ]
    ],
    "objects": [
@@ -6798,6 +6902,18 @@
     [
      2,
      "… … … … … …\\n… … … … … …{be00}\\nI’ll try harder…"
+    ],
+    [
+     100,
+     "… … … … … …\\n… … … … … …{be00}\\nWant to battle again?"
+    ],
+    [
+     101,
+     "… … … … … …\\n… … … … … …{be00}\\nI’ll try harder…{be00}\\nFor my precious Bug Pokémon…"
+    ],
+    [
+     103,
+     "… … … … … …\\nI lost again…"
     ]
    ],
    "objects": [
@@ -7231,6 +7347,22 @@
     [
      2,
      "I can see your talent becoming a giant\\nwave to cause a storm of astonishment{be00}\\namong Trainers one day!"
+    ],
+    [
+     100,
+     "Brawly: A wave may draw back, but it\\nalways returns to the shore.{be01}\\nA giant wave of a talent like you…\\nI knew you would return!{be01}\\nShow me how much higher\\nyou’ve gone!"
+    ],
+    [
+     101,
+     "Brawly: Battling is vast and it’s deep.\\nYou can’t see the bottom.{be00}\\nIt’s just like the sea of Hoenn!"
+    ],
+    [
+     102,
+     "Brawly: A wave may draw back, but it\\nalways returns to the shore.{be01}\\nA giant wave of a talent like you…\\nI knew you would return!{be01}\\nOh? You only have one Pokémon\\nthat can battle.{be01}\\nI’m sorry, but I’d like you to come back\\nwith at least two Pokémon."
+    ],
+    [
+     103,
+     "Wow!\\nSwamped again!"
     ]
    ],
    "objects": [
@@ -7340,6 +7472,22 @@
     [
      2,
      "I can see your talent becoming a giant\\nwave to cause a storm of astonishment{be00}\\namong Trainers one day!"
+    ],
+    [
+     100,
+     "Brawly: A wave may draw back, but it\\nalways returns to the shore.{be01}\\nA giant wave of a talent like you…\\nI knew you would return!{be01}\\nShow me how much higher\\nyou’ve gone!"
+    ],
+    [
+     101,
+     "Brawly: Battling is vast and it’s deep.\\nYou can’t see the bottom.{be00}\\nIt’s just like the sea of Hoenn!"
+    ],
+    [
+     102,
+     "Brawly: A wave may draw back, but it\\nalways returns to the shore.{be01}\\nA giant wave of a talent like you…\\nI knew you would return!{be01}\\nOh? You only have one Pokémon\\nthat can battle.{be01}\\nI’m sorry, but I’d like you to come back\\nwith at least two Pokémon."
+    ],
+    [
+     103,
+     "Wow!\\nSwamped again!"
     ]
    ],
    "objects": [
@@ -10026,6 +10174,18 @@
     [
      2,
      "I thought I was raising my Pokémon\\ndiligently, but, oh no, there is still{be00}\\nmuch to be done."
+    ],
+    [
+     100,
+     "You can make Pokémon stronger or\\nweaker depending on the moves you{be00}\\nteach them.{be01}\\nWhat kinds of moves do your Pokémon\\nknow?"
+    ],
+    [
+     101,
+     "Maybe I should have stopped my\\nPokémon from evolving until they{be00}\\nlearned better moves…"
+    ],
+    [
+     103,
+     "You’ve taught them good moves!"
     ]
    ],
    "objects": [
@@ -11038,6 +11198,18 @@
     [
      2,
      "Listen, you. If you’re strong,\\nyou should have told me before!"
+    ],
+    [
+     100,
+     "Ever since I lost to you, I desperately\\ntrained my Pokémon.{be00}\\nYou can’t say no to my challenge!"
+    ],
+    [
+     101,
+     "If you’re going to get stronger,\\nI’ll get stronger, too."
+    ],
+    [
+     103,
+     "Arrgh, I lost…\\nIs my training method not right?"
     ]
    ],
    "objects": [
@@ -11563,6 +11735,18 @@
     [
      2,
      "Being a psychic is about willpower.\\nI thought I wouldn’t lose to you…"
+    ],
+    [
+     100,
+     "I’ve convinced myself that I won’t\\nlose anymore. That makes me strong!"
+    ],
+    [
+     101,
+     "I should train at Mt. Pyre…\\nI’ll never beat you this way…"
+    ],
+    [
+     103,
+     "I feel sad…"
     ]
    ],
    "objects": [
@@ -12691,6 +12875,18 @@
     [
      2,
      "You’re traveling light but you have\\neverything you need.{be01}\\nYou’re on top of things mentally and\\nphysically, too."
+    ],
+    [
+     100,
+     "How’s your journey with Pokémon\\ngoing?"
+    ],
+    [
+     101,
+     "In the same way that you, as a Trainer,\\nrely on your Pokémon, your Pokémon{be00}\\nrely on you."
+    ],
+    [
+     103,
+     "I’m still missing something…"
     ]
    ],
    "objects": [
@@ -13793,6 +13989,18 @@
     [
      2,
      "“Hello” is the beginning of “good-bye.”\\nI hope we meet again."
+    ],
+    [
+     100,
+     "Hello, we meet again.\\nMay I ask you for a battle?"
+    ],
+    [
+     101,
+     "“Hello” is the beginning of “good-bye.”\\nI hope we meet again."
+    ],
+    [
+     103,
+     "Oh, my…\\nI did the best that I could…"
     ]
    ],
    "objects": [
@@ -15791,6 +15999,18 @@
     [
      2,
      "Shouting is good for me!\\nIt uplifts me!"
+    ],
+    [
+     100,
+     "Win or lose, I love battling at sea!"
+    ],
+    [
+     101,
+     "If you’re faced with a challenge,\\ntry shouting at the sea!"
+    ],
+    [
+     103,
+     "Waaah! I lost again!\\nWaaah! Waaah!"
     ]
    ],
    "objects": [
@@ -16062,6 +16282,18 @@
     [
      2,
      "I didn’t expect to lose this easily…\\nI’ll win next time!"
+    ],
+    [
+     100,
+     "I have this new routine.\\nDefeat ten Trainers a day.{be00}\\nGuess what? You’re number ten!"
+    ],
+    [
+     101,
+     "An opponent I just can’t beat…\\nSnivel…{be00}\\nI can’t believe this is happening…"
+    ],
+    [
+     103,
+     "Wait! That’s nasty!\\nI demand a rematch!"
     ]
    ],
    "objects": [
@@ -16156,6 +16388,18 @@
     [
      2,
      "The sand acts as a cushion to reduce\\nimpact and prevent injury.{be00}\\nThis is the perfect place to train."
+    ],
+    [
+     100,
+     "Okay, let’s get this battle on!"
+    ],
+    [
+     101,
+     "Even when I lose, I still get some\\nenjoyment out of it.{be00}\\nIt must be that I love Pokémon."
+    ],
+    [
+     103,
+     "I can battle but my Pokémon…"
     ]
    ],
    "objects": [
@@ -16897,6 +17141,18 @@
     [
      2,
      "An electric guitar doesn’t always\\nhave to be noisy…{be01}\\nIt can be strummed to squeeze out\\nthis heart-stirring melody…"
+    ],
+    [
+     100,
+     "A melody from my Pokémon and me…\\nLet us deliver it to your soul."
+    ],
+    [
+     101,
+     "When I play, my emotions should reach\\nyou through my electric guitar…"
+    ],
+    [
+     103,
+     "La-lalala…"
     ]
    ],
    "objects": [
@@ -19309,6 +19565,18 @@
     [
      2,
      "Did you know?{be01}\\nSome people cleverly ride their\\nbicycles up this horribly bumpy pass."
+    ],
+    [
+     100,
+     "Picnics are fun wherever you go.\\nJust like Pokémon!"
+    ],
+    [
+     101,
+     "I’ll forget about losing and just\\nenjoy this bumpy hike."
+    ],
+    [
+     103,
+     "I only lost because the ground is\\ntoo bumpy!"
     ]
    ],
    "objects": [
@@ -20658,6 +20926,18 @@
     [
      2,
      "For thirty years I have searched for\\nancient ruins!{be01}\\nNo, wait, was that forty years?\\nWhich was it now?"
+    ],
+    [
+     100,
+     "For thirty years I have searched for\\nancient ruins!{be01}\\nNo, wait, was that forty years?\\nAnyway, am I to be challenged?"
+    ],
+    [
+     101,
+     "For thirty years I have searched for\\nancient ruins!{be01}\\nNo, wait, was that forty years\\nI’ve searched?{be01}\\nHmm… It could even be fifty…\\nHow long have I been at this?"
+    ],
+    [
+     103,
+     "I’ve found no ruins, nor have I found\\nany strong Pokémon…"
     ]
    ],
    "objects": [
@@ -21198,6 +21478,18 @@
     [
      2,
      "I may have blown it…{be01}\\nI might have dropped to last during\\nthat battle…"
+    ],
+    [
+     100,
+     "I’m smack in the middle of a triathlon,\\nbut I’m comfortably ahead.{be00}\\nLet’s make this a quick battle!"
+    ],
+    [
+     101,
+     "I was tops in swimming and cycling,\\nbut I’m not quite that confident with{be00}\\nPokémon yet."
+    ],
+    [
+     103,
+     "I ran out of energy again!"
     ]
    ],
    "objects": [
@@ -22170,6 +22462,18 @@
     [
      2,
      "When I see a Pokémon that I don’t know,\\nmy passion as a collector is ignited!"
+    ],
+    [
+     100,
+     "Hi, have you caught any new Pokémon?{be01}\\nCould I see your Pokémon?\\nJust one look, please?"
+    ],
+    [
+     101,
+     "Oh, I long to make all rare Pokémon\\nmine!"
+    ],
+    [
+     103,
+     "Your Pokémon…\\nI envy you."
     ]
    ],
    "objects": [
@@ -22527,6 +22831,18 @@
     [
      2,
      "Fishing is the greatest whether it’s\\nin the sea or a stream.{be00}\\nYou agree with me, right?"
+    ],
+    [
+     100,
+     "I caught a bunch of Pokémon fishing.\\nI’ll show you an impressive battle!"
+    ],
+    [
+     101,
+     "Win or lose, Pokémon are the greatest!\\nYou agree with me, right?"
+    ],
+    [
+     103,
+     "I lost again spectacularly!"
     ]
    ],
    "objects": [
@@ -23039,6 +23355,18 @@
     [
      2,
      "The tide ebbs and flows inside the\\nShoal Cave.{be01}\\nBy the way, it’s about six hours from\\nhigh tide to low tide. Did you know?"
+    ],
+    [
+     100,
+     "It’s high time I get my payback\\nfrom you! Come on, we’re battling!"
+    ],
+    [
+     101,
+     "The Shoal Cave…{be01}\\nThere are places you can and can’t\\nget to depending on the rise and fall{be00}\\nof the tide.{be01}\\nBy the way, it’s about six hours from\\nhigh tide to low tide. Don’t forget!"
+    ],
+    [
+     103,
+     "I couldn’t win!\\nI flat out couldn’t win!"
     ]
    ],
    "objects": [
@@ -23133,6 +23461,18 @@
     [
      2,
      "If I had an Acro Bike, I’d be able to\\njump ledges."
+    ],
+    [
+     100,
+     "I got used to this bumpiness.\\nI sing while I climb now."
+    ],
+    [
+     101,
+     "I should get an Acro Bike from Rydel\\nin Mauville City…"
+    ],
+    [
+     103,
+     "It’s still not easy to battle on this\\nbumpy ground…"
     ]
    ],
    "objects": [
@@ -23942,6 +24282,18 @@
     [
      2,
      "You’re rock steady.\\nI’d like to write a tune about you."
+    ],
+    [
+     100,
+     "Today’s the day I’m going to do it!\\nI’ll turn out your lights before{be00}\\nI finish singing my song!"
+    ],
+    [
+     101,
+     "I thought you’d be so enthralled\\nby my tune, you’d lose."
+    ],
+    [
+     103,
+     "Hey, hold it!\\nI haven’t even hit the chorus!"
     ]
    ],
    "objects": [
@@ -24064,6 +24416,22 @@
     [
      2,
      "Your power reminds me of someone…{be01}\\nOh! I know! You battle like Norman,\\nthe Gym Leader of Petalburg."
+    ],
+    [
+     100,
+     "Flannery: Losing a battle isn’t going\\nto deflate me.{be01}\\nI love Pokémon.\\nI love to battle.{be00}\\nAnd… I love this Gym!{be01}\\nLet’s exchange superhot moves\\nin another battle!"
+    ],
+    [
+     101,
+     "Flannery: I lost the match,\\nbut I’m completely satisfied.{be01}\\nIt’s not often I get to enjoy a battle\\nthis heated.{be01}\\nLet’s have another one like this\\nagain sometime!"
+    ],
+    [
+     102,
+     "Flannery: Losing a battle isn’t going\\nto deflate me.{be01}\\nI love Pokémon.\\nI love to battle.{be00}\\nAnd… I love this Gym!{be01}\\nLet’s exchange superhot moves\\nin another battle!{be01}\\nOh, wait. Do you only have one Pokémon\\nthat can battle?{be01}\\nI hate to say this, but when you come\\nsee me, bring at least two Pokémon."
+    ],
+    [
+     103,
+     "Whew!\\nOn the verge of eruption!"
     ]
    ],
    "objects": [
@@ -24186,6 +24554,22 @@
     [
      2,
      "Your power reminds me of someone…{be01}\\nOh! I know! You battle like Norman,\\nthe Gym Leader of Petalburg."
+    ],
+    [
+     100,
+     "Flannery: Losing a battle isn’t going\\nto deflate me.{be01}\\nI love Pokémon.\\nI love to battle.{be00}\\nAnd… I love this Gym!{be01}\\nLet’s exchange superhot moves\\nin another battle!"
+    ],
+    [
+     101,
+     "Flannery: I lost the match,\\nbut I’m completely satisfied.{be01}\\nIt’s not often I get to enjoy a battle\\nthis heated.{be01}\\nLet’s have another one like this\\nagain sometime!"
+    ],
+    [
+     102,
+     "Flannery: Losing a battle isn’t going\\nto deflate me.{be01}\\nI love Pokémon.\\nI love to battle.{be00}\\nAnd… I love this Gym!{be01}\\nLet’s exchange superhot moves\\nin another battle!{be01}\\nOh, wait. Do you only have one Pokémon\\nthat can battle?{be01}\\nI hate to say this, but when you come\\nsee me, bring at least two Pokémon."
+    ],
+    [
+     103,
+     "Whew!\\nOn the verge of eruption!"
     ]
    ],
    "objects": [
@@ -25234,6 +25618,18 @@
     [
      2,
      "Pokémon no longer of this world.\\nPokémon that are with you now.{be01}\\nAnd the Pokémon that you will meet\\nin the future…{be01}\\nThey are all to be equally cherished.\\nPlease remember that."
+    ],
+    [
+     100,
+     "Oh, it’s you…{be01}\\nHave you come to show me your grown\\nPokémon?"
+    ],
+    [
+     101,
+     "Pokémon no longer of this world.\\nPokémon that are with you now.{be01}\\nAnd the Pokémon that you will meet\\nin the future…{be01}\\nThey are all to be equally cherished.\\nI see that you’ve remembered that."
+    ],
+    [
+     103,
+     "How amazing!\\nYou are a special person."
     ]
    ],
    "objects": [
@@ -32474,6 +32870,18 @@
     [
      2,
      "If you’re faced with a decision and\\nyou let someone else choose for you,{be00}\\nyou will regret it, however things{be00}\\nturn out."
+    ],
+    [
+     100,
+     "Come on, battle with me!"
+    ],
+    [
+     101,
+     "I made the decision to battle, so\\nI can accept this loss with grace.{be01}\\nI am still upset about losing!"
+    ],
+    [
+     103,
+     "Ohh…\\nI thought I could win…"
     ]
    ],
    "objects": [
@@ -34496,6 +34904,18 @@
     [
      2,
      "Pokémon isn’t all about power.{be01}\\nPolishing a unique aspect of one’s\\ncharacter is another way of enjoying{be00}\\nPokémon."
+    ],
+    [
+     100,
+     "The Pokémon I’ve been raising are\\nlooking good, just like before."
+    ],
+    [
+     101,
+     "Your Pokémon are growing good!\\nYou should enter them in Contests."
+    ],
+    [
+     103,
+     "You know how to raise them properly.\\nYou might have Day Care skills…"
     ]
    ],
    "objects": [
@@ -34752,6 +35172,18 @@
     [
      2,
      "Rather than battling, perhaps I should\\nshow off my Pokémon at the Fan Club."
+    ],
+    [
+     100,
+     "Ahahahaha! I would be happy to show\\noff my Pokémon as often as you like!"
+    ],
+    [
+     101,
+     "I don’t think that I could ever stop\\nfrom showing off my Pokémon.{be01}\\nBut I like to battle, too!"
+    ],
+    [
+     103,
+     "Oh, dear, this won’t do."
     ]
    ],
    "objects": [
@@ -35170,6 +35602,18 @@
     [
      2,
      "My whole life has been about losing,\\nbut I will never give up!"
+    ],
+    [
+     100,
+     "I’m still feeling good. I’ll keep on\\nswimming to Ever Grande City."
+    ],
+    [
+     101,
+     "I’ll eventually reach Ever Grande City\\nwhere I can eventually win…"
+    ],
+    [
+     103,
+     "I’ve yet to taste my first victory…"
     ]
    ],
    "objects": [
@@ -35984,6 +36428,18 @@
     [
      2,
      "We all have psychic powers.\\nWe’ve just forgotten how to use them."
+    ],
+    [
+     100,
+     "Have you awoken the psychic powers\\nwithin you?"
+    ],
+    [
+     101,
+     "Your power with Pokémon…\\nThat could be a psychic power, too."
+    ],
+    [
+     103,
+     "Astounding!"
     ]
    ],
    "objects": [
@@ -36332,6 +36788,18 @@
     [
      2,
      "To break away from civilization and\\nawaken the wild spirit within!{be01}\\nThat’s our vision."
+    ],
+    [
+     100,
+     "I’m going to regain my wild spirit by\\nbeing together with Pokémon."
+    ],
+    [
+     101,
+     "Believe in your Pokémon.\\nBelieve in yourself.{be01}\\nThe road will reveal itself to you."
+    ],
+    [
+     103,
+     "You’ve remained strong!"
     ]
    ],
    "objects": [
@@ -36708,6 +37176,18 @@
     [
      2,
      "If you have a big Bug Pokémon,\\npeople respect you for it."
+    ],
+    [
+     100,
+     "My Bug Pokémon have grown.\\nI’ll be popular again."
+    ],
+    [
+     101,
+     "You get to be popular if you have\\nstrong Pokémon, right?{be00}\\nSo, I’ve been training hard."
+    ],
+    [
+     103,
+     "I can’t be popular if I lose."
     ]
    ],
    "objects": [
@@ -37426,6 +37906,18 @@
     [
      2,
      "… … … … … …\\n… … … … … …{be00}\\nI’ll try harder…"
+    ],
+    [
+     100,
+     "… … … … … …\\n… … … … … …{be00}\\nWant to battle again?"
+    ],
+    [
+     101,
+     "… … … … … …\\n… … … … … …{be00}\\nI’ll try harder…{be00}\\nFor my precious Bug Pokémon…"
+    ],
+    [
+     103,
+     "… … … … … …\\nI lost again…"
     ]
    ],
    "objects": [
@@ -37699,6 +38191,18 @@
     [
      2,
      "While swimming, I noticed that some\\nPokémon attack, and some just watch.{be01}\\nI guess Pokémon have personalities\\nof their own."
+    ],
+    [
+     100,
+     "If you just float in the sea like this,\\nTrainers challenge you!"
+    ],
+    [
+     101,
+     "This has nothing to do with anything,\\nbut maybe I’ll visit the Trick House."
+    ],
+    [
+     103,
+     "That’s strange…\\nI lost again…"
     ]
    ],
    "objects": [
@@ -38252,6 +38756,18 @@
     [
      2,
      "I’ll have to redo some courses at\\nthe Trainer’s School.{be00}\\nIf I don’t, Roxanne will be steamed."
+    ],
+    [
+     100,
+     "I’ve been studying seriously at the\\nTrainer’s School.{be00}\\nI won’t lose like I did last time."
+    ],
+    [
+     101,
+     "I’ll have to redo some courses at\\nthe Trainer’s School.{be00}\\nIf I don’t, Roxanne will be steamed."
+    ],
+    [
+     103,
+     "Hunh?\\nI studied diligently."
     ]
    ],
    "objects": [
@@ -38683,6 +39199,18 @@
     [
      2,
      "Maybe I’ll go catch more Pokémon at\\nthe Safari."
+    ],
+    [
+     100,
+     "My precious Pokémon grew!\\nHave a good look!"
+    ],
+    [
+     101,
+     "Maybe I’ll go catch more Pokémon at\\nthe Safari."
+    ],
+    [
+     103,
+     "Oh, how dare you!\\nYou still won’t take it easy!"
     ]
    ],
    "objects": [
@@ -39613,6 +40141,34 @@
     [
      10,
      "Jay: Well, well, aren’t you a young\\nTrainer?{be01}\\nIf you’d care to battle with us, you’ll\\nhave to come back with more Pokémon."
+    ],
+    [
+     100,
+     "John: We’ve always battled Pokémon\\ntogether as a twosome.{be00}\\nWe’ve confidence in ourselves."
+    ],
+    [
+     101,
+     "John: Married for fifty years…{be01}\\nOn reflection, the dear wife and I,\\nwe battled day in and day out…"
+    ],
+    [
+     102,
+     "John: Well, well, what a young Trainer!{be01}\\nWill you battle with us? If so, you’ll\\nhave to return with more Pokémon."
+    ],
+    [
+     104,
+     "Jay: We’ve been married for\\nfifty years.{be01}\\nWe’ve supported each other all that\\ntime. We’ve made ourselves strong."
+    ],
+    [
+     105,
+     "Jay: Fifty years of marriage…\\nMany things have happened.{be01}\\nI hope that we will continue to make\\nhappy memories together."
+    ],
+    [
+     106,
+     "Jay: Well, well, aren’t you a young\\nTrainer?{be01}\\nIf you’d care to battle with us, you’ll\\nhave to come back with more Pokémon."
+    ],
+    [
+     103,
+     "John: Oh, my.\\nWe’ve lost, dear wife.{be01}\\nJay: Oh, dear.\\nWe’ve lost, my dear husband."
     ]
    ],
    "objects": [
@@ -40511,6 +41067,22 @@
     [
      2,
      "The Trainers who have gathered all\\nthe Gym Badges of Hoenn should make{be00}\\nway to the ultimate destination.{be01}\\nThe Pokémon League.{be01}\\nTravel to the easternmost reaches\\nof Hoenn, to the island Ever Grande.{be01}\\nThere, you shall find the Pokémon\\nLeague."
+    ],
+    [
+     100,
+     "Juan: Ah, this Gym had returned to its\\nusual state of serenity…{be01}\\nBut our young typhoon has returned\\nto put us to the test again!{be01}\\nWell, my friend, most certainly!{be01}\\nI shall be delighted to dance with you\\nas often as you wish!"
+    ],
+    [
+     101,
+     "Juan: If I told you to become my\\napprentice, you will refuse, I am sure.{be01}\\nI would like to make a gift of my coat\\nto you.{be01}\\nBut again, you will refuse.\\nI imagine that to be so.{be01}\\nAnd that, my friend, is a certain sign\\nof nobility!"
+    ],
+    [
+     102,
+     "Juan: Ah, this Gym had returned to its\\nusual state of serenity…{be01}\\nBut our young typhoon has returned\\nto put us to the test again!{be01}\\nWell, my friend, most certainly!\\nI shall be delighted to dance with you…{be01}\\nAh, no, no, no.\\nYou have with you but one Pokémon.{be01}\\nI wish that you would return with\\ntwo, perhaps more, Pokémon, please."
+    ],
+    [
+     103,
+     "Ahahaha, you are the winner!\\nYou have defeated me again!"
     ]
    ],
    "objects": [
@@ -41119,6 +41691,18 @@
     [
      2,
      "Awww, I’ll never become an elegant\\nTrainer like Roxanne this way!"
+    ],
+    [
+     100,
+     "I studied a whole lot since I saw you.\\nYou must see my achievements!"
+    ],
+    [
+     101,
+     "You’ve beaten Roxanne?\\nI can’t beat you, then. Not yet."
+    ],
+    [
+     103,
+     "I’m in shock.\\nI lost again?"
     ]
    ],
    "objects": [
@@ -41670,6 +42254,18 @@
     [
      2,
      "I have to ride a Bike next, but…\\nI’m about to throw in the towel…"
+    ],
+    [
+     100,
+     "A triathlon is long. But I guess the\\nroad to become the Pokémon Champion{be00}\\nis also a long and grueling one."
+    ],
+    [
+     101,
+     "You should give serious thought to\\nchallenges on Victory Road."
+    ],
+    [
+     103,
+     "A Pokémon battle really is harsh\\nand unforgiving…"
     ]
    ],
    "objects": [
@@ -43383,6 +43979,34 @@
     [
      10,
      "Kira: Oh, you don’t have two Pokémon?\\nWe’ll have to battle some other time!"
+    ],
+    [
+     100,
+     "Dan: We’ve been searching for\\ntreasures all this time.{be01}\\nOur Pokémon have grown stronger, too.\\nLet us show you, okay?"
+    ],
+    [
+     101,
+     "Dan: We can’t find any treasures,\\nwe lose at Pokémon…{be01}\\nI want to go home… But if I say that,\\nshe gets all angry with me…"
+    ],
+    [
+     102,
+     "Dan: You don’t even have two Pokémon.\\nYou can’t expect to beat us like that."
+    ],
+    [
+     104,
+     "Kira: Oh? We meet again!{be01}\\nJust like us, you still haven’t given up\\nsearching for treasures, have you?{be01}\\nWant to make it so the loser has\\nto give up searching?"
+    ],
+    [
+     105,
+     "Kira: We’re not leaving until we raise\\nour Pokémon some more and we find{be00}\\nthe treasures here!"
+    ],
+    [
+     106,
+     "Kira: Oh, you don’t have two Pokémon?\\nWe’ll have to battle some other time!"
+    ],
+    [
+     103,
+     "Dan: You’re strong, as usual!{be01}\\nKira: Oh, we lost again…"
     ]
    ],
    "objects": [
@@ -43753,6 +44377,18 @@
     [
      2,
      "Going barefoot feels great.\\nBut your Running Shoes are cool, too."
+    ],
+    [
+     100,
+     "I still run in my bare feet daily.\\nMy soles are tough!"
+    ],
+    [
+     101,
+     "Want to go barefoot for a while?\\nSo I can try your Running Shoes?"
+    ],
+    [
+     103,
+     "Yowch!\\nPebbles dug into my arches!"
     ]
    ],
    "objects": [
@@ -43834,6 +44470,18 @@
     [
      2,
      "Going barefoot feels great.\\nBut your Running Shoes are cool, too."
+    ],
+    [
+     100,
+     "I still run in my bare feet daily.\\nMy soles are tough!"
+    ],
+    [
+     101,
+     "Want to go barefoot for a while?\\nSo I can try your Running Shoes?"
+    ],
+    [
+     103,
+     "Yowch!\\nPebbles dug into my arches!"
     ]
    ],
    "objects": [
@@ -44221,6 +44869,18 @@
     [
      2,
      "I must refine the art of concealment.\\nI bid thee farewell."
+    ],
+    [
+     100,
+     "From out of the ashes I leap! Hiyah!\\nI challenge thee!"
+    ],
+    [
+     101,
+     "My flawless concealment was let down\\nby my immature battle skills…{be01}\\nI bid thee farewell."
+    ],
+    [
+     103,
+     "With honor I admit defeat!"
     ]
    ],
    "objects": [
@@ -45707,6 +46367,34 @@
     [
      10,
      "Roy: Did you want to battle us?\\nBring two Pokémon, then."
+    ],
+    [
+     100,
+     "Lila: Sigh…{be01}\\nHere I am in the sea, but who’s with me?\\nMy little brother!{be01}\\nOh, hi, it’s been a while. Let’s battle\\nso I won’t have to dwell on things!"
+    ],
+    [
+     101,
+     "Lila: Sigh…{be01}\\nIf I had a nice boyfriend, we’d beat\\nanyone with lovely combinations…"
+    ],
+    [
+     102,
+     "Lila: You’re planning to battle us?\\nNot unless you have two Pokémon."
+    ],
+    [
+     104,
+     "Roy: If we lose, I’ll catch heck.\\nI’m going to go totally all out!"
+    ],
+    [
+     105,
+     "Roy: My big sister is really scary\\nwhen she gets angry.{be01}\\nShe’s going to make me train really\\nhard with Pokémon later…"
+    ],
+    [
+     106,
+     "Roy: Did you want to battle us?\\nBring two Pokémon, then."
+    ],
+    [
+     103,
+     "Lila: Roy!\\nIt’s your fault we lost again!{be01}\\nWe’re having a training session later!{be01}\\nRoy: Uh-oh…\\nMy big sister will chew me out again."
     ]
    ],
    "objects": [
@@ -46234,6 +46922,34 @@
     [
      10,
      "Kira: Oh, you don’t have two Pokémon?\\nWe’ll have to battle some other time!"
+    ],
+    [
+     100,
+     "Dan: We’ve been searching for\\ntreasures all this time.{be01}\\nOur Pokémon have grown stronger, too.\\nLet us show you, okay?"
+    ],
+    [
+     101,
+     "Dan: We can’t find any treasures,\\nwe lose at Pokémon…{be01}\\nI want to go home… But if I say that,\\nshe gets all angry with me…"
+    ],
+    [
+     102,
+     "Dan: You don’t even have two Pokémon.\\nYou can’t expect to beat us like that."
+    ],
+    [
+     104,
+     "Kira: Oh? We meet again!{be01}\\nJust like us, you still haven’t given up\\nsearching for treasures, have you?{be01}\\nWant to make it so the loser has\\nto give up searching?"
+    ],
+    [
+     105,
+     "Kira: We’re not leaving until we raise\\nour Pokémon some more and we find{be00}\\nthe treasures here!"
+    ],
+    [
+     106,
+     "Kira: Oh, you don’t have two Pokémon?\\nWe’ll have to battle some other time!"
+    ],
+    [
+     103,
+     "Dan: You’re strong, as usual!{be01}\\nKira: Oh, we lost again…"
     ]
    ],
    "objects": [
@@ -46348,6 +47064,18 @@
     [
      2,
      "If you look at the beach from the sky,\\nit looks like a big flower garden!"
+    ],
+    [
+     100,
+     "I’m not losing to you again!\\nThat’s why I have my inner tube!"
+    ],
+    [
+     101,
+     "If I have an inner tube, me and my\\nPokémon’s cuteness goes way up!"
+    ],
+    [
+     103,
+     "Mommy!"
     ]
    ],
    "objects": [
@@ -46726,6 +47454,18 @@
     [
      2,
      "The man next door…{be01}\\nHe says he’s just sightseeing,\\nbut I don’t know about that."
+    ],
+    [
+     100,
+     "What on earth would compel you to\\ncome back? You must really be curious!"
+    ],
+    [
+     101,
+     "I’m sure that man’s up to something!\\nHe just acts so suspiciously!"
+    ],
+    [
+     103,
+     "Aren’t you too strong?"
     ]
    ],
    "objects": [
@@ -47331,6 +48071,18 @@
     [
      2,
      "Try raising Pokémon with more\\nattention to their character traits."
+    ],
+    [
+     100,
+     "Allow me to reevaluate if you have\\nraised your Pokémon properly."
+    ],
+    [
+     101,
+     "Pokémon seem to like different kinds\\nof Pokéblocks, depending on their nature."
+    ],
+    [
+     103,
+     "They are growing admirably."
     ]
    ],
    "objects": [
@@ -47613,6 +48365,18 @@
     [
      2,
      "You’re very good at this.\\nI must say I’m impressed!"
+    ],
+    [
+     100,
+     "Oh, hello, hasn’t it been a while?\\nMay I invite you to battle?"
+    ],
+    [
+     101,
+     "You’ve remained very good at this.\\nI must say I’m impressed!"
+    ],
+    [
+     103,
+     "Oh, how super!"
     ]
    ],
    "objects": [
@@ -48001,6 +48765,18 @@
     [
      2,
      "I didn’t expect to lose this easily…\\nI’ll win next time!"
+    ],
+    [
+     100,
+     "I have this new routine.\\nDefeat ten Trainers a day.{be00}\\nGuess what? You’re number ten!"
+    ],
+    [
+     101,
+     "An opponent I just can’t beat…\\nSnivel…{be00}\\nI can’t believe this is happening…"
+    ],
+    [
+     103,
+     "Wait! That’s nasty!\\nI demand a rematch!"
     ]
    ],
    "objects": [
@@ -48517,6 +49293,18 @@
     [
      2,
      "Training is meaningful only if you\\nkeep it up regularly.{be01}\\nOkay! I’ll resume my training!\\nTomorrow!"
+    ],
+    [
+     100,
+     "Are you keeping up with your training?\\nI sure am!{be00}\\nLet me show you the evidence!"
+    ],
+    [
+     101,
+     "I’ll resume training tomorrow.\\nLet’s battle again sometime!"
+    ],
+    [
+     103,
+     "I need to get more practices in,\\nI guess."
     ]
    ],
    "objects": [
@@ -48611,6 +49399,18 @@
     [
      2,
      "I’m sure there are many secrets to be\\ndiscovered in the world’s seas.{be01}\\nI mean to find them all!"
+    ],
+    [
+     100,
+     "I’ve told you that I’m weak…\\nAre you sure you want to do this?"
+    ],
+    [
+     101,
+     "I may be weak at battling, but my\\ndrive to explore can’t be bested.{be01}\\nI will travel the seas all around\\nthe world!"
+    ],
+    [
+     103,
+     "Yes…\\nI didn’t think I could win."
     ]
    ],
    "objects": [
@@ -48893,6 +49693,18 @@
     [
      2,
      "Shouting is good for me!\\nIt uplifts me!"
+    ],
+    [
+     100,
+     "Win or lose, I love battling at sea!"
+    ],
+    [
+     101,
+     "If you’re faced with a challenge,\\ntry shouting at the sea!"
+    ],
+    [
+     103,
+     "Waaah! I lost again!\\nWaaah! Waaah!"
     ]
    ],
    "objects": [
@@ -52583,6 +53395,18 @@
     [
      2,
      "My delightful Pokémon looks darling\\neven when it’s fainted!"
+    ],
+    [
+     100,
+     "Hi, you! My delightfully adorable\\nPokémon has become more darling!"
+    ],
+    [
+     101,
+     "The more I spend time with it,\\nthe more adorable my Pokémon becomes."
+    ],
+    [
+     103,
+     "Oh!\\nMy darling Pokémon!"
     ]
    ],
    "objects": [
@@ -54155,6 +54979,18 @@
     [
      2,
      "The road ahead remains long and harsh.{be01}\\nWhen will my Pokémon and I become\\nthe best?"
+    ],
+    [
+     100,
+     "Since we met, we have trained hard\\nwith our sights on number one.{be01}\\nHelp us see how much stronger we’ve\\nbecome!"
+    ],
+    [
+     101,
+     "You’ve obviously kept up your\\nPokémon training.{be01}\\nSo long as you remain strong, I, too,\\ncan become stronger!"
+    ],
+    [
+     103,
+     "Urgh!\\nI didn’t expect you to be so strong!"
     ]
    ],
    "objects": [
@@ -54787,6 +55623,18 @@
     [
      2,
      "I’ve been teaching my Pokémon karate.{be01}\\nIt looks like they’ll get a lot better\\nthan me. I’m excited about that."
+    ],
+    [
+     100,
+     "After you beat me, we trained hard to\\nimprove our skills.{be00}\\nCome on, give us a rematch!"
+    ],
+    [
+     101,
+     "My Pokémon will grow stronger!\\nI’ll redouble my training!"
+    ],
+    [
+     103,
+     "Ugwaaah!\\nWe lost again!"
     ]
    ],
    "objects": [
@@ -55419,6 +56267,22 @@
     [
      2,
      "Dad: With that Badge, the Defense\\nof all your Pokémon will increase.{be01}\\nPokémon that know the HM move Surf\\nwill be able to travel over water.{be01}\\nThis is my gift to you. {0100:0}, I’m\\nsure you can use it correctly."
+    ],
+    [
+     100,
+     "Dad: {0100:0}…\\nI had a feeling that you would come.{be01}\\nI would never refuse to accept\\na challenge from you.{be01}\\nYou do understand, don’t you?{be01}\\nInside a Gym, it doesn’t matter that\\nwe are a parent and child.{be01}\\n…No, because we are parent and child,\\nwe owe it to each other to do the best{be00}\\nwe can. Isn’t that right, {0100:0}?"
+    ],
+    [
+     101,
+     "Dad: {0100:0}…\\nWhat is your dream?{be01}\\nMy dream…\\nHahaha…{be00}\\nIt has already come true, actually."
+    ],
+    [
+     102,
+     "Dad: {0100:0}…\\nI had a feeling that you would come.{be01}\\nI would never refuse to accept\\na challenge from you.{be01}\\nYou do understand, don’t you?{be01}\\nInside a Gym, it doesn’t matter that\\nwe are a parent and child.{be01}\\nHm? Wait a second, {0100:0}.{be01}\\nDo you only have one Pokémon that is\\ncapable of battle?{be01}\\nSorry, but you’ll have to come back\\nwith at least two Pokémon."
+    ],
+    [
+     103,
+     "Uh… Haha…\\nMaybe that was going too hard…"
     ]
    ],
    "objects": [],
@@ -55516,6 +56380,22 @@
     [
      2,
      "Dad: With that Badge, the Defense\\nof all your Pokémon will increase.{be01}\\nPokémon that know the HM move Surf\\nwill be able to travel over water.{be01}\\nThis is my gift to you. {0100:0}, I’m\\nsure you can use it correctly."
+    ],
+    [
+     100,
+     "Dad: {0100:0}…\\nI had a feeling that you would come.{be01}\\nI would never refuse to accept\\na challenge from you.{be01}\\nYou do understand, don’t you?{be01}\\nInside a Gym, it doesn’t matter that\\nwe are a parent and child.{be01}\\n…No, because we are parent and child,\\nwe owe it to each other to do the best{be00}\\nwe can. Isn’t that right, {0100:0}?"
+    ],
+    [
+     101,
+     "Dad: {0100:0}…\\nWhat is your dream?{be01}\\nMy dream…\\nHahaha…{be00}\\nIt has already come true, actually."
+    ],
+    [
+     102,
+     "Dad: {0100:0}…\\nI had a feeling that you would come.{be01}\\nI would never refuse to accept\\na challenge from you.{be01}\\nYou do understand, don’t you?{be01}\\nInside a Gym, it doesn’t matter that\\nwe are a parent and child.{be01}\\nHm? Wait a second, {0100:0}.{be01}\\nDo you only have one Pokémon that is\\ncapable of battle?{be01}\\nSorry, but you’ll have to come back\\nwith at least two Pokémon."
+    ],
+    [
+     103,
+     "Uh… Haha…\\nMaybe that was going too hard…"
     ]
    ],
    "objects": [],
@@ -55805,6 +56685,18 @@
     [
      2,
      "Losing to you stimulated my senses!\\nI’ll train myself and Pokémon harder!"
+    ],
+    [
+     100,
+     "Check out this beautiful body!\\nI’m more shapely than a Swimmer!"
+    ],
+    [
+     101,
+     "I’m going to train even harder!\\nYou’re a great motivator!{be00}\\nYou have to come back again!"
+    ],
+    [
+     103,
+     "Whoops! Really too strong!\\nNot bad! Not bad at all!"
     ]
    ],
    "objects": [
@@ -57967,6 +58859,18 @@
     [
      2,
      "I’m getting famished… My inner tube\\nlooks like a giant doughnut…"
+    ],
+    [
+     100,
+     "I’m hungry, but I’ve got enough pep in\\nme for a battle!"
+    ],
+    [
+     101,
+     "When you eat on a beach, everything\\nseems to taste a little better."
+    ],
+    [
+     103,
+     "I lost…\\nIt’s because I’m hungry…"
     ]
    ],
    "objects": [
@@ -58523,6 +59427,34 @@
     [
      10,
      "Roy: Did you want to battle us?\\nBring two Pokémon, then."
+    ],
+    [
+     100,
+     "Lila: Sigh…{be01}\\nHere I am in the sea, but who’s with me?\\nMy little brother!{be01}\\nOh, hi, it’s been a while. Let’s battle\\nso I won’t have to dwell on things!"
+    ],
+    [
+     101,
+     "Lila: Sigh…{be01}\\nIf I had a nice boyfriend, we’d beat\\nanyone with lovely combinations…"
+    ],
+    [
+     102,
+     "Lila: You’re planning to battle us?\\nNot unless you have two Pokémon."
+    ],
+    [
+     104,
+     "Roy: If we lose, I’ll catch heck.\\nI’m going to go totally all out!"
+    ],
+    [
+     105,
+     "Roy: My big sister is really scary\\nwhen she gets angry.{be01}\\nShe’s going to make me train really\\nhard with Pokémon later…"
+    ],
+    [
+     106,
+     "Roy: Did you want to battle us?\\nBring two Pokémon, then."
+    ],
+    [
+     103,
+     "Lila: Roy!\\nIt’s your fault we lost again!{be01}\\nWe’re having a training session later!{be01}\\nRoy: Uh-oh…\\nMy big sister will chew me out again."
     ]
    ],
    "objects": [
@@ -58624,6 +59556,18 @@
     [
      2,
      "A Pokémon that grows steadily is one\\nyou can count on."
+    ],
+    [
+     100,
+     "A Pokémon that grows steadily is one\\nyou can count on."
+    ],
+    [
+     101,
+     "My Pokémon are growing stronger.\\nI have to grow stronger, too."
+    ],
+    [
+     103,
+     "Your Pokémon are seriously strong."
     ]
    ],
    "objects": [
@@ -59603,6 +60547,18 @@
     [
      2,
      "Flowers, Pokémon…\\nI love whatever smells nice.{be01}\\nStinky things…\\nI’ll pass."
+    ],
+    [
+     100,
+     "Were you drawn here by the sweet\\naroma?"
+    ],
+    [
+     101,
+     "If you use a sweet aroma properly,\\nPokémon will be attracted by it."
+    ],
+    [
+     103,
+     "The power of aroma…\\nIt didn’t seem to do much."
     ]
    ],
    "objects": [
@@ -59686,6 +60642,18 @@
     [
      2,
      "I think I need a dip in Lavaridge\\nHot Spring with the locals!"
+    ],
+    [
+     100,
+     "I’m happily surrounded by hot people\\naround these parts. I won’t lose!"
+    ],
+    [
+     101,
+     "Actually, it really is hot here.\\nI’m overdressed for these parts."
+    ],
+    [
+     103,
+     "Gosh, you’re still the same\\nfirebrand as before!"
     ]
    ],
    "objects": [
@@ -59832,6 +60800,18 @@
     [
      2,
      "Pokémon no longer of this world.\\nPokémon that are with you now.{be01}\\nAnd the Pokémon that you will meet\\nin the future…{be01}\\nThey are all to be equally cherished.\\nPlease remember that."
+    ],
+    [
+     100,
+     "Oh, it’s you…{be01}\\nHave you come to show me your grown\\nPokémon?"
+    ],
+    [
+     101,
+     "Pokémon no longer of this world.\\nPokémon that are with you now.{be01}\\nAnd the Pokémon that you will meet\\nin the future…{be01}\\nThey are all to be equally cherished.\\nI see that you’ve remembered that."
+    ],
+    [
+     103,
+     "How amazing!\\nYou are a special person."
     ]
    ],
    "objects": [
@@ -60131,6 +61111,22 @@
     [
      2,
      "Since you are so strong, you should\\nchallenge other Gym Leaders.{be01}\\nBy battling many Trainers, you should\\nlearn many things."
+    ],
+    [
+     100,
+     "Roxanne: I’m so glad to see you again.\\nI’m Roxanne, the Gym Leader here.{be01}\\nI’m sure we’ve both experienced many\\nbattles since we last met.{be01}\\nI would like to see how much better\\nwe’ve become. Let us battle!"
+    ],
+    [
+     101,
+     "Roxanne: I still have much to learn\\nwhen it comes to battling Pokémon.{be01}\\nThat awareness makes me love battling\\nall that much more!"
+    ],
+    [
+     102,
+     "Roxanne: I’m so glad to see you again.\\nI’m Roxanne, the Gym Leader here.{be01}\\nI’m sure we’ve both experienced many\\nbattles since we last met.{be01}\\nI would like to see how much better\\nwe’ve become…{be01}\\nOh, no…\\nYou only have one Pokémon with you?{be01}\\nPlease return with at least one more\\nPokémon."
+    ],
+    [
+     103,
+     "Grr…\\nAgain, I have lost…"
     ]
    ],
    "objects": [
@@ -60240,6 +61236,22 @@
     [
      2,
      "Since you are so strong, you should\\nchallenge other Gym Leaders.{be01}\\nBy battling many Trainers, you should\\nlearn many things."
+    ],
+    [
+     100,
+     "Roxanne: I’m so glad to see you again.\\nI’m Roxanne, the Gym Leader here.{be01}\\nI’m sure we’ve both experienced many\\nbattles since we last met.{be01}\\nI would like to see how much better\\nwe’ve become. Let us battle!"
+    ],
+    [
+     101,
+     "Roxanne: I still have much to learn\\nwhen it comes to battling Pokémon.{be01}\\nThat awareness makes me love battling\\nall that much more!"
+    ],
+    [
+     102,
+     "Roxanne: I’m so glad to see you again.\\nI’m Roxanne, the Gym Leader here.{be01}\\nI’m sure we’ve both experienced many\\nbattles since we last met.{be01}\\nI would like to see how much better\\nwe’ve become…{be01}\\nOh, no…\\nYou only have one Pokémon with you?{be01}\\nPlease return with at least one more\\nPokémon."
+    ],
+    [
+     103,
+     "Grr…\\nAgain, I have lost…"
     ]
    ],
    "objects": [
@@ -60959,6 +61971,18 @@
     [
      2,
      "I think I need a dip in Lavaridge\\nHot Spring with the locals!"
+    ],
+    [
+     100,
+     "I’m happily surrounded by hot people\\naround these parts. I won’t lose!"
+    ],
+    [
+     101,
+     "Actually, it really is hot here.\\nI’m overdressed for these parts."
+    ],
+    [
+     103,
+     "Gosh, you’re still the same\\nfirebrand as before!"
     ]
    ],
    "objects": [
@@ -61665,6 +62689,18 @@
     [
      2,
      "Well, well, I’ve lost. I can’t call\\nmyself an Expert now, can I?"
+    ],
+    [
+     100,
+     "If you can mesh your heart with those\\nof your Pokémon, why, you should be{be00}\\nable to achieve great things."
+    ],
+    [
+     101,
+     "Perhaps your heart has become one\\nwith the hearts of your Pokémon."
+    ],
+    [
+     103,
+     "Oh, my goodness.\\nNow, aren’t you something!"
     ]
    ],
    "objects": [
@@ -63578,6 +64614,18 @@
     [
      2,
      "A big body that’s all lumpy and hard,\\nenormous horns, and vicious fangs…{be01}\\nUfufufufu…\\nI wish I had a Pokémon like that…"
+    ],
+    [
+     100,
+     "Ufufufufufu…\\nCome on, battle my Pokémon…"
+    ],
+    [
+     101,
+     "Ufufufufufu…{be01}\\nWhen I see Pokémon battling, I get all\\nshivery and shaky…"
+    ],
+    [
+     103,
+     "I feel so lucky getting to see your\\nPokémon…"
     ]
    ],
    "objects": [
@@ -65099,6 +66147,22 @@
     [
      6,
      "Tate: Hehehe… Were you surprised?{be01}\\nLiza: That there are two Gym Leaders?{be01}\\nTate: Oops, you have only one…\\nLiza: Pokémon that can battle.{be01}\\nTate: We can’t battle that way!{be01}\\nLiza: If you want to challenge us,\\nbring some more Pokémon."
+    ],
+    [
+     100,
+     "Tate: Pokémon…\\nLiza: Pokémon…{be01}\\nTate: By changing the party’s mix…\\nLiza: The battle style changes.{be01}\\nTate: But me…\\nLiza: But me…{be01}\\nTate: I’ll always be with Liza!\\nLiza: I’ll always be with Tate!{be01}\\nTate: Our combination…\\nLiza: We’ll show you again and again!"
+    ],
+    [
+     101,
+     "Tate: You can knock us down,\\nbut we’ll never stay down!{be01}\\nLiza: Because the two of us,\\nwe always support each other!"
+    ],
+    [
+     102,
+     "Tate: You’re back again…\\nLiza: You’re back again…{be01}\\nTate: To give us a rematch.\\nLiza: To give us a rematch.{be01}\\nTate: But…\\nLiza: For our match…{be01}\\nTate: You brought just one Pokémon!\\nLiza: You brought just one Pokémon!{be01}\\nTate: We need you to bring at least…\\nLiza: Two Pokémon when you come back."
+    ],
+    [
+     103,
+     "Tate: You and your Pokémon…\\nLiza: It’s as if you were siblings!"
     ]
    ],
    "objects": [
@@ -65201,6 +66265,22 @@
     [
      6,
      "Tate: Hehehe… Were you surprised?{be01}\\nLiza: That there are two Gym Leaders?{be01}\\nTate: Oops, you have only one…\\nLiza: Pokémon that can battle.{be01}\\nTate: We can’t battle that way!{be01}\\nLiza: If you want to challenge us,\\nbring some more Pokémon."
+    ],
+    [
+     100,
+     "Tate: Pokémon…\\nLiza: Pokémon…{be01}\\nTate: By changing the party’s mix…\\nLiza: The battle style changes.{be01}\\nTate: But me…\\nLiza: But me…{be01}\\nTate: I’ll always be with Liza!\\nLiza: I’ll always be with Tate!{be01}\\nTate: Our combination…\\nLiza: We’ll show you again and again!"
+    ],
+    [
+     101,
+     "Tate: You can knock us down,\\nbut we’ll never stay down!{be01}\\nLiza: Because the two of us,\\nwe always support each other!"
+    ],
+    [
+     102,
+     "Tate: You’re back again…\\nLiza: You’re back again…{be01}\\nTate: To give us a rematch.\\nLiza: To give us a rematch.{be01}\\nTate: But…\\nLiza: For our match…{be01}\\nTate: You brought just one Pokémon!\\nLiza: You brought just one Pokémon!{be01}\\nTate: We need you to bring at least…\\nLiza: Two Pokémon when you come back."
+    ],
+    [
+     103,
+     "Tate: You and your Pokémon…\\nLiza: It’s as if you were siblings!"
     ]
    ],
    "objects": [
@@ -65659,6 +66739,18 @@
     [
      2,
      "The man next door…{be01}\\nHe says he’s just sightseeing,\\nbut I don’t know about that."
+    ],
+    [
+     100,
+     "What on earth would compel you to\\ncome back? You must really be curious!"
+    ],
+    [
+     101,
+     "I’m sure that man’s up to something!\\nHe just acts so suspiciously!"
+    ],
+    [
+     103,
+     "Aren’t you too strong?"
     ]
    ],
    "objects": [
@@ -66105,6 +67197,18 @@
     [
      2,
      "There is no such thing as a born genius.\\nIt all depends on effort!{be00}\\nThat is what I believe…"
+    ],
+    [
+     100,
+     "Hm… As always, your agility speaks\\nfor itself.{be00}\\nCome, keep me company!"
+    ],
+    [
+     101,
+     "All it takes is effort!{be01}\\nI lost because I haven’t put in enough\\neffort!"
+    ],
+    [
+     103,
+     "As strong as ever!"
     ]
    ],
    "objects": [
@@ -66737,6 +67841,18 @@
     [
      2,
      "I swim the seas with a heart full of\\ndreams…{be01}\\nIt’s a song!\\nAnyways, I’m swimming some more."
+    ],
+    [
+     100,
+     "Swimming in the big, wide sea,\\nmy Pokémon has grown stronger!"
+    ],
+    [
+     101,
+     "What you learn in battle makes you\\na stronger Trainer.{be00}\\nThe waves taught me that."
+    ],
+    [
+     103,
+     "What a shock!{be01}\\nMy Pokémon has gotten stronger, but\\nI stayed weak as a Trainer!"
     ]
    ],
    "objects": [
@@ -67405,6 +68521,18 @@
     [
      2,
      "Try hiking, and I mean really\\npounding, on these mountain trails{be00}\\nwith a heavy pack weighing dozens of{be00}\\npounds.{be01}\\nThat, my friend, will get your body\\ninto serious shape."
+    ],
+    [
+     100,
+     "I’ve been keeping fit by hiking.\\nPower, I have in spades!"
+    ],
+    [
+     101,
+     "I hear there are some seriously tough\\nTrainers on top of Mt. Chimney.{be01}\\nI intend to get up there and give them\\na challenge!"
+    ],
+    [
+     103,
+     "I got trumped in power?"
     ]
    ],
    "objects": [
@@ -67887,6 +69015,18 @@
     [
      2,
      "Perhaps the power is from the spirits\\nof Pokémon in fitful sleep here…"
+    ],
+    [
+     100,
+     "Behind you…\\nWhat is it…"
+    ],
+    [
+     101,
+     "The Pokémon at rest here…\\nSometimes, they play…"
+    ],
+    [
+     103,
+     "Something faded away…"
     ]
    ],
    "objects": [
@@ -67981,6 +69121,18 @@
     [
      2,
      "Losing to you stimulated my senses!\\nI’ll train myself and Pokémon harder!"
+    ],
+    [
+     100,
+     "Check out this beautiful body!\\nI’m more shapely than a Swimmer!"
+    ],
+    [
+     101,
+     "I’m going to train even harder!\\nYou’re a great motivator!{be00}\\nYou have to come back again!"
+    ],
+    [
+     103,
+     "Whoops! Really too strong!\\nNot bad! Not bad at all!"
     ]
    ],
    "objects": [
@@ -69289,6 +70441,22 @@
     [
      2,
      "The Trainers who have gathered all\\nthe Gym Badges of Hoenn should make{be00}\\nway to the ultimate destination.{be01}\\nThe Pokémon League.{be01}\\nTravel to the easternmost reaches\\nof Hoenn, to the island Ever Grande.{be01}\\nThere, you shall find the Pokémon\\nLeague."
+    ],
+    [
+     100,
+     "Juan: Ah, this Gym had returned to its\\nusual state of serenity…{be01}\\nBut our young typhoon has returned\\nto put us to the test again!{be01}\\nWell, my friend, most certainly!{be01}\\nI shall be delighted to dance with you\\nas often as you wish!"
+    ],
+    [
+     101,
+     "Juan: If I told you to become my\\napprentice, you will refuse, I am sure.{be01}\\nI would like to make a gift of my coat\\nto you.{be01}\\nBut again, you will refuse.\\nI imagine that to be so.{be01}\\nAnd that, my friend, is a certain sign\\nof nobility!"
+    ],
+    [
+     102,
+     "Juan: Ah, this Gym had returned to its\\nusual state of serenity…{be01}\\nBut our young typhoon has returned\\nto put us to the test again!{be01}\\nWell, my friend, most certainly!\\nI shall be delighted to dance with you…{be01}\\nAh, no, no, no.\\nYou have with you but one Pokémon.{be01}\\nI wish that you would return with\\ntwo, perhaps more, Pokémon, please."
+    ],
+    [
+     103,
+     "Ahahaha, you are the winner!\\nYou have defeated me again!"
     ]
    ],
    "objects": [
@@ -69711,6 +70879,18 @@
     [
      2,
      "Wally: I couldn’t beat you this time,\\ntoo… But one of these days, {0100:0},{be00}\\nI’m going to catch up to you…{be01}\\nAnd challenge the Pokémon League!"
+    ],
+    [
+     100,
+     "Wally: Hi! {0100:0}!{be01}\\nI’ve gotten stronger since that last\\ntime! I wanted to show you, {0100:0}!{be01}\\nOkay… Here I come!"
+    ],
+    [
+     101,
+     "Wally: I couldn’t beat you this time,\\ntoo… But one of these days, {0100:0},{be00}\\nI’m going to catch up to you…{be01}\\nAnd challenge the Pokémon League!"
+    ],
+    [
+     103,
+     "Wow!\\n{0100:0}, you are strong, after all!"
     ]
    ],
    "objects": [
@@ -70014,6 +71194,18 @@
     [
      2,
      "Wally: I couldn’t beat you this time,\\ntoo… But one of these days, {0100:0},{be00}\\nI’m going to catch up to you…{be01}\\nAnd challenge the Pokémon League!"
+    ],
+    [
+     100,
+     "Wally: Hi! {0100:0}!{be01}\\nI’ve gotten stronger since that last\\ntime! I wanted to show you, {0100:0}!{be01}\\nOkay… Here I come!"
+    ],
+    [
+     101,
+     "Wally: I couldn’t beat you this time,\\ntoo… But one of these days, {0100:0},{be00}\\nI’m going to catch up to you…{be01}\\nAnd challenge the Pokémon League!"
+    ],
+    [
+     103,
+     "Wow!\\n{0100:0}, you are strong, after all!"
     ]
    ],
    "objects": [
@@ -70095,6 +71287,18 @@
     [
      2,
      "I would like to circle the globe once\\nagain with my Pokémon."
+    ],
+    [
+     100,
+     "With my Pokémon, I have traveled\\nto the world’s four corners.{be01}\\nYou might say I have some confidence\\nin my abilities."
+    ],
+    [
+     101,
+     "Your Pokémon and you…{be01}\\nYour prowess together will be\\nconsidered strong, even overseas."
+    ],
+    [
+     103,
+     "Ah, well played."
     ]
    ],
    "objects": [
@@ -70706,6 +71910,22 @@
     [
      2,
      "I swell with optimism, seeing a promising\\nyoung Trainer like you!"
+    ],
+    [
+     100,
+     "Wattson: Ah-ha! Here at last!\\nI know what you want.{be00}\\nYou want to battle my Pokémon!{be01}\\nWahahahaha!{be01}\\nI’ll make sparks fly from you!\\nDon’t say I didn’t warn you!"
+    ],
+    [
+     101,
+     "Wattson: We’ll have to recharge our\\nbatteries again.{be01}\\nWhen we’re fully charged up, we’ll\\ngladly accept your challenge.{be01}\\nSo, come back again sometime,\\nwon’t you?"
+    ],
+    [
+     102,
+     "Wattson: Ah-ha! Here at last!\\nI know what you want.{be00}\\nYou want to battle my Pokémon!{be01}\\nWahahahaha!{be01}\\nOops! Wait!\\nYou’ve only one Pokémon with you!{be01}\\nCome see me with two or more\\nPokémon, all right?"
+    ],
+    [
+     103,
+     "Oof…\\nOur batteries ran dry…"
     ]
    ],
    "objects": [
@@ -70828,6 +72048,22 @@
     [
      2,
      "I swell with optimism, seeing a promising\\nyoung Trainer like you!"
+    ],
+    [
+     100,
+     "Wattson: Ah-ha! Here at last!\\nI know what you want.{be00}\\nYou want to battle my Pokémon!{be01}\\nWahahahaha!{be01}\\nI’ll make sparks fly from you!\\nDon’t say I didn’t warn you!"
+    ],
+    [
+     101,
+     "Wattson: We’ll have to recharge our\\nbatteries again.{be01}\\nWhen we’re fully charged up, we’ll\\ngladly accept your challenge.{be01}\\nSo, come back again sometime,\\nwon’t you?"
+    ],
+    [
+     102,
+     "Wattson: Ah-ha! Here at last!\\nI know what you want.{be00}\\nYou want to battle my Pokémon!{be01}\\nWahahahaha!{be01}\\nOops! Wait!\\nYou’ve only one Pokémon with you!{be01}\\nCome see me with two or more\\nPokémon, all right?"
+    ],
+    [
+     103,
+     "Oof…\\nOur batteries ran dry…"
     ]
    ],
    "objects": [
@@ -71354,6 +72590,18 @@
     [
      2,
      "Pokémon and Trainers learn much\\nthrough battling.{be01}\\nWhat’s important is to never give up\\neven if you lose."
+    ],
+    [
+     100,
+     "We’re training here to elevate our\\ngame to the next level.{be00}\\nStay and train with us!"
+    ],
+    [
+     101,
+     "Since you’re that strong, you should\\naim for the Pokémon League."
+    ],
+    [
+     103,
+     "Ooh, you’re decent!"
     ]
    ],
    "objects": [
@@ -71529,6 +72777,18 @@
     [
      2,
      "You’re rock steady.\\nI’d like to write a tune about you."
+    ],
+    [
+     100,
+     "Today’s the day I’m going to do it!\\nI’ll turn out your lights before{be00}\\nI finish singing my song!"
+    ],
+    [
+     101,
+     "I thought you’d be so enthralled\\nby my tune, you’d lose."
+    ],
+    [
+     103,
+     "Hey, hold it!\\nI haven’t even hit the chorus!"
     ]
    ],
    "objects": [
@@ -71798,6 +73058,22 @@
     [
      2,
      "Though I fell to you, I will remain\\ndevoted to Bird Pokémon."
+    ],
+    [
+     100,
+     "Winona: We humans can never escape\\ngravity’s pull on the ground.{be01}\\nBut by striving for excellence,\\nwe have the power to soar!{be01}\\nYou have scaled the pinnacle as\\nthe reigning Champion.{be01}\\nPlease, allow me to see your power\\nat full flight!"
+    ],
+    [
+     101,
+     "Winona: Even though I have lost,\\nthe wings of my heart remain unbroken.{be01}\\nI can rise and soar again and\\nyet again.{be01}\\nI am convinced of it!"
+    ],
+    [
+     102,
+     "Winona: We humans can never escape\\ngravity’s pull on the ground.{be01}\\nBut by striving for excellence,\\nwe have the power to soar!{be01}\\nYou have scaled the pinnacle as\\nthe reigning Champion.{be01}\\nPlease, allow me to see your power\\nat full flight!{be01}\\nOh, no… Do you have but one\\nPokémon with you?{be01}\\nPlease return with two Pokémon\\nat the very least."
+    ],
+    [
+     103,
+     "I failed to reach your height again…"
     ]
    ],
    "objects": [
@@ -71934,6 +73210,22 @@
     [
      2,
      "Though I fell to you, I will remain\\ndevoted to Bird Pokémon."
+    ],
+    [
+     100,
+     "Winona: We humans can never escape\\ngravity’s pull on the ground.{be01}\\nBut by striving for excellence,\\nwe have the power to soar!{be01}\\nYou have scaled the pinnacle as\\nthe reigning Champion.{be01}\\nPlease, allow me to see your power\\nat full flight!"
+    ],
+    [
+     101,
+     "Winona: Even though I have lost,\\nthe wings of my heart remain unbroken.{be01}\\nI can rise and soar again and\\nyet again.{be01}\\nI am convinced of it!"
+    ],
+    [
+     102,
+     "Winona: We humans can never escape\\ngravity’s pull on the ground.{be01}\\nBut by striving for excellence,\\nwe have the power to soar!{be01}\\nYou have scaled the pinnacle as\\nthe reigning Champion.{be01}\\nPlease, allow me to see your power\\nat full flight!{be01}\\nOh, no… Do you have but one\\nPokémon with you?{be01}\\nPlease return with two Pokémon\\nat the very least."
+    ],
+    [
+     103,
+     "I failed to reach your height again…"
     ]
    ],
    "objects": [
@@ -72015,6 +73307,18 @@
     [
      2,
      "There are some things money can’t buy.\\nThat’s Pokémon…"
+    ],
+    [
+     100,
+     "After I lost to you, I learned a bunch\\nof things about Pokémon."
+    ],
+    [
+     101,
+     "I’m fabulously wealthy, but I can’t\\nseem to win at Pokémon…{be01}\\nIt’s so deep, the world of Pokémon…"
+    ],
+    [
+     103,
+     "I lost again?\\nWhy couldn’t I win?"
     ]
    ],
    "objects": [

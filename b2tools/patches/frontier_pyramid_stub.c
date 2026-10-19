@@ -24,7 +24,7 @@ typedef int s32;
 #define PY_ENG (*(u8 **)PY_ENG_ADDR)
 typedef struct { u32 magic, size, total, n, ent[12]; } Hdr;
 #define ENTRY(eng, k) ((void *)((eng) + ((Hdr *)(eng))->ent[k] + 1))
-enum { E_CMD, E_RD, E_STEP, E_ENC, E_SAVEMENU, E_PARTY, E_TRAINER, E_MSGEX, E_MSGLD };
+enum { E_CMD, E_RD, E_STEP, E_ENC, E_SAVEMENU, E_PARTY, E_TRAINER, E_MSGEX, E_MSGLD, E_BAG };
 
 #ifdef PART_OV012
 void PY_I_LoadParty(void *setup, void *gd, u32 heap) {
@@ -45,6 +45,20 @@ u32 PY_I_MsgExists(u32 id, u32 type, u32 heap) {
         if (r >= 0) return (u32)r;
     }
     return FN(u32 (*)(u32, u32, u32), NEXT_MSGEX)(id, type, heap);
+}
+/* ov012 func_ov012_0215bd48 (the field Bag's launcher, FieldAppCall): its two calls of func_02034ad0 (the Bag's start
+ * data; + 0x0C = the bag cursor) and its func_020088a4 (back from the party screen: the cursor's pocket = the item's).
+ * In the Pyramid the Battle Bag never opens on an empty pocket (frontier_pyramid.c PY_BagOpen; 2026-10-18) */
+void *PY_I_BagNew(void *gd, void *perms, u32 mode, u32 heap) {
+    u8 *e = PY_ENG;
+    void *p = FN(void *(*)(void *, void *, u32, u32), BAG_NEW)(gd, perms, mode, heap);
+    if (e && p) ((void (*)(u8 *, void *))ENTRY(e, E_BAG))(e, *(void **)((u8 *)p + 0x0C));
+    return p;
+}
+void PY_I_BagPocket(void *cursor, u32 pocket) {
+    u8 *e = PY_ENG;
+    FN(void (*)(void *, u32), BAG_SET_POCKET)(cursor, pocket);
+    if (e) ((void (*)(u8 *, void *))ENTRY(e, E_BAG))(e, cursor);
 }
 void PY_I_MsgLoad(u32 id, u32 type, void *strbuf, u32 heap) {
     u8 *e = PY_ENG;

@@ -560,7 +560,9 @@ for n in ('AquaHideout_B1F', 'AquaHideout_B2F'): ROOMS[n]['parent'] = 2
 ROOMS['MagmaHideout_1F'].update(first=True)
 for n in ('MagmaHideout_B1F', 'MagmaHideout_B2F'): ROOMS[n]['parent'] = 228
 
-PLACE = {'ship': 65, 'aqua': 69, 'magma': 69}       # system text 0109 lines (data/hoenn_zones.json places)
+PLACE = {'ship': 65, 'aqua': 69, 'magma': 91}       # system text 0109 lines (data/hoenn_zones.json places; Ruby's Magma Hideout:
+# Emerald's own line 91 "Magma Hideout", in every version since the link work, so a Ruby catch shows its real place
+# in Sapphire and Emerald too; Gen 3 Ruby shared Sapphire's line, 69, user 2026-10-18 optional fixes)
 
 # ------------------------------------------------------------------------------------------------ zone files
 _door = {}

@@ -13,6 +13,10 @@ include/constants/pokemon.h, which match the code):
   2/3 an item used from the Bag (party screen / event_field_proclink.c script_evo): EVO_METHOD_ITEM 8 (item == param),
     ITEM_MALE 17, ITEM_FEMALE 18.
   So a trade-with-item evolution becomes EVO_METHOD_ITEM with the same item: used from the Bag like a stone.
+- Real trades (link, 2026-10-18; notes/LINK.md): with "keep_trade_methods" in data/trade_evos.json, Black 2's own trade
+  entries (5/6/7) stay in each record after the new ones, so a link trade evolves as in Black 2 / Gen 3 (the trade app,
+  ov194, calls CheckEvolveSpecies mode 1 for the received Pokémon; the evolution scene removes a TRADE_WITH_ITEM item);
+  modes 0, 2 and 3 never read methods 5-7, so the in-game ways above work exactly as before.
 - An Everstone (hold effect 64) stops every mode but 3 (Kadabra excepted, as in Black 2).
 
 How the Bag makes a stone usable (ov142 func_ov142_0219a4d0, the Bag's Use; item params from PML_ItemGetParam
@@ -105,16 +109,18 @@ def apply(files):
     vanilla = narcio.load(VANILLA, ARC_EVO)
     evo = narcio.load(files, ARC_EVO)
     traders = {i for i, rec in enumerate(vanilla) if any(m in trade for m, _, _ in entries_of(rec))}
+    keep = data.get('keep_trade_methods', False)        # link (2026-10-18): a real trade evolves too, see the docstring
     assert traders == set(new), f'trade species not covered: {sorted(traders - set(new))}, ' \
                                 f'not trade species: {sorted(set(new) - traders)}'
     for sp, lst in new.items():
         kept = [e for e in entries_of(vanilla[sp]) if e[0] not in trade]
         assert all(e in lst for e in kept), f'species {sp}: a non-trade evolution was lost: {kept} vs {lst}'
         assert not any(e[0] in trade for e in lst), f'species {sp}: still a trade method'
-        assert evo[sp] in (vanilla[sp], pack(lst)), f'species {sp}: evolution file changed by another patch'
-        evo[sp] = pack(lst)
+        full = lst + ([e for e in entries_of(vanilla[sp]) if e[0] in trade] if keep else [])
+        assert evo[sp] in (vanilla[sp], pack(lst), pack(full)), f'species {sp}: evolution file changed by another patch'
+        evo[sp] = pack(full)
     narcio.save(files, ARC_EVO, evo)
-    out.append(f'{len(new)} species')
+    out.append(f'{len(new)} species' + (" (+ Black 2's own trade methods)" if keep else ''))
 
     # 2. items an EVO_METHOD_ITEM evolution uses: the Bag "Use" of an evolution stone
     items = narcio.load(files, ARC_ITEM)

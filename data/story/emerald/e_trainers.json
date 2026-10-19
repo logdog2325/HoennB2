@@ -1,0 +1,261 @@
+{
+ "_doc": "Emerald-only trainers that no map, room or chapter file placed (emerald fidelity helper 2026-10-18; written by work/agents/emerald_fidelity/tools/gen_e_trainers.py from data/emerald/hoenn_trainer_data.json and pokeemerald's map.json: tile, local id, sprite, movement, sight). Format: b2tools/patches/story.py. Eye-contact trainers: script 3000 + the Black 2 id (Black 2's global trainer scripts), so their battle, lines and Emerald rematches (patches/emerald_rematch.py, Thalia and Gabrielle) need no zone script.",
+ "objects": [
+  {
+   "kind": "npc",
+   "map": "VictoryRoad_1F",
+   "at": [
+    29,
+    17
+   ],
+   "uid": 8,
+   "model": 43,
+   "script": 3205,
+   "evtype": 1,
+   "p0": 2,
+   "move": 17,
+   "dir": 3,
+   "what": "TRAINER_KATELYNN (Katelynn): Emerald-only eye-contact trainer, pokeemerald VictoryRoad_1F object 8 (WOMAN_5, FACE_RIGHT, sight 2; VictoryRoad_1F_EventScript_Katelynn)"
+  },
+  {
+   "kind": "npc",
+   "map": "VictoryRoad_1F",
+   "at": [
+    32,
+    17
+   ],
+   "uid": 9,
+   "model": 19,
+   "script": 3204,
+   "evtype": 1,
+   "p0": 2,
+   "move": 16,
+   "dir": 2,
+   "what": "TRAINER_QUINCY (Quincy): Emerald-only eye-contact trainer, pokeemerald VictoryRoad_1F object 9 (MAN_3, FACE_LEFT, sight 2; VictoryRoad_1F_EventScript_Quincy)"
+  },
+  {
+   "kind": "npc",
+   "map": "VictoryRoad_B1F",
+   "at": [
+    14,
+    16
+   ],
+   "uid": 20,
+   "model": 19,
+   "script": 3300,
+   "evtype": 1,
+   "p0": 4,
+   "move": 15,
+   "dir": 1,
+   "what": "TRAINER_MITCHELL (Mitchell): Emerald-only eye-contact trainer, pokeemerald VictoryRoad_B1F object 20 (MAN_3, FACE_DOWN, sight 4; VictoryRoad_B1F_EventScript_Mitchell)"
+  },
+  {
+   "kind": "npc",
+   "map": "VictoryRoad_B1F",
+   "at": [
+    14,
+    20
+   ],
+   "uid": 21,
+   "model": 43,
+   "script": 3308,
+   "evtype": 1,
+   "p0": 3,
+   "move": 7,
+   "dir": 0,
+   "what": "TRAINER_HALLE (Halle): Emerald-only eye-contact trainer, pokeemerald VictoryRoad_B1F object 21 (WOMAN_5, FACE_UP_AND_RIGHT, sight 3; VictoryRoad_B1F_EventScript_Halle)"
+  },
+  {
+   "kind": "npc",
+   "map": "VictoryRoad_B2F",
+   "at": [
+    25,
+    18
+   ],
+   "uid": 6,
+   "model": 43,
+   "script": 3222,
+   "evtype": 1,
+   "p0": 2,
+   "move": 15,
+   "dir": 1,
+   "what": "TRAINER_DIANNE (Dianne): Emerald-only eye-contact trainer, pokeemerald VictoryRoad_B2F object 6 (WOMAN_5, FACE_DOWN, sight 2; VictoryRoad_B2F_EventScript_Dianne)"
+  },
+  {
+   "kind": "npc",
+   "map": "VictoryRoad_B2F",
+   "at": [
+    25,
+    21
+   ],
+   "uid": 7,
+   "model": 19,
+   "script": 3158,
+   "evtype": 1,
+   "p0": 2,
+   "move": 14,
+   "dir": 0,
+   "what": "TRAINER_FELIX (Felix): Emerald-only eye-contact trainer, pokeemerald VictoryRoad_B2F object 7 (MAN_3, FACE_UP, sight 2; VictoryRoad_B2F_EventScript_Felix)"
+  },
+  {
+   "kind": "npc",
+   "map": "MtPyre_2F",
+   "at": [
+    6,
+    9
+   ],
+   "uid": 7,
+   "model": 46,
+   "script": 3045,
+   "evtype": 1,
+   "p0": 2,
+   "move": 14,
+   "dir": 0,
+   "what": "TRAINER_ZANDER (Zander): Emerald-only eye-contact trainer, pokeemerald MtPyre_2F object 7 (BLACK_BELT, FACE_UP, sight 2; MtPyre_2F_EventScript_Zander)"
+  },
+  {
+   "kind": "npc",
+   "map": "MtPyre_2F",
+   "at": [
+    6,
+    6
+   ],
+   "uid": 8,
+   "model": 184,
+   "script": 3134,
+   "evtype": 1,
+   "p0": 2,
+   "move": 8,
+   "dir": 1,
+   "what": "TRAINER_LEAH (Leah): Emerald-only eye-contact trainer, pokeemerald MtPyre_2F object 8 (HEX_MANIAC, FACE_DOWN_AND_LEFT, sight 2; MtPyre_2F_EventScript_Leah)"
+  },
+  {
+   "kind": "npc",
+   "map": "MtPyre_3F",
+   "at": [
+    6,
+    4
+   ],
+   "uid": 4,
+   "model": 27,
+   "script": 3139,
+   "evtype": 1,
+   "p0": 4,
+   "move": 46,
+   "dir": 2,
+   "what": "TRAINER_GABRIELLE_1 (Gabrielle): Emerald-only eye-contact trainer, pokeemerald MtPyre_3F object 4 (WOMAN_2, FACE_LEFT_AND_RIGHT, sight 4; MtPyre_3F_EventScript_Gabrielle)"
+  },
+  {
+   "kind": "npc",
+   "map": "MtPyre_6F",
+   "at": [
+    10,
+    3
+   ],
+   "uid": 3,
+   "model": 183,
+   "script": 3259,
+   "evtype": 1,
+   "p0": 3,
+   "move": 19,
+   "dir": 1,
+   "what": "TRAINER_CEDRIC (Cedric): Emerald-only eye-contact trainer, pokeemerald MtPyre_6F object 3 (PSYCHIC_M, ROTATE_CLOCKWISE, sight 3; MtPyre_6F_EventScript_Cedric)"
+  },
+  {
+   "kind": "npc",
+   "map": "AbandonedShip_Rooms_1F",
+   "at": [
+    10,
+    11
+   ],
+   "uid": 3,
+   "model": 17,
+   "script": 3161,
+   "evtype": 1,
+   "p0": 4,
+   "move": 15,
+   "dir": 1,
+   "what": "TRAINER_THALIA_1 (Thalia): Emerald-only eye-contact trainer, pokeemerald AbandonedShip_Rooms_1F object 3 (BEAUTY, FACE_DOWN, sight 4; AbandonedShip_Rooms_1F_EventScript_Thalia)"
+  },
+  {
+   "kind": "npc",
+   "map": "AbandonedShip_Rooms_1F",
+   "at": [
+    10,
+    16
+   ],
+   "uid": 4,
+   "model": 11,
+   "script": 3206,
+   "evtype": 1,
+   "p0": 4,
+   "move": 7,
+   "dir": 0,
+   "what": "TRAINER_DEMETRIUS (Demetrius): Emerald-only eye-contact trainer, pokeemerald AbandonedShip_Rooms_1F object 4 (YOUNGSTER, FACE_UP_AND_RIGHT, sight 4; AbandonedShip_Rooms_1F_EventScript_Demetrius)"
+  },
+  {
+   "kind": "npc",
+   "map": "AbandonedShip_Rooms2_1F",
+   "at": [
+    3,
+    2
+   ],
+   "uid": 4,
+   "model": 64,
+   "script": 3309,
+   "evtype": 1,
+   "p0": 3,
+   "move": 17,
+   "dir": 3,
+   "what": "TRAINER_GARRISON (Garrison): Emerald-only eye-contact trainer, pokeemerald AbandonedShip_Rooms2_1F object 4 (HIKER, FACE_RIGHT, sight 3; AbandonedShip_Rooms2_1F_EventScript_Garrison)"
+  },
+  {
+   "kind": "npc",
+   "map": "AbandonedShip_Rooms2_1F",
+   "at": [
+    7,
+    2
+   ],
+   "uid": 5,
+   "model": 154,
+   "script": 3223,
+   "evtype": 1,
+   "p0": 3,
+   "move": 16,
+   "dir": 2,
+   "what": "TRAINER_JANI (Jani): Emerald-only eye-contact trainer, pokeemerald AbandonedShip_Rooms2_1F object 5 (TUBER_F, FACE_LEFT, sight 3; AbandonedShip_Rooms2_1F_EventScript_Jani)"
+  },
+  {
+   "kind": "npc",
+   "map": "Route115",
+   "at": [
+    11,
+    12
+   ],
+   "uid": 118,
+   "model": 8,
+   "script": 3511,
+   "evtype": 1,
+   "p0": 3,
+   "move": 54,
+   "dir": 1,
+   "what": "TRAINER_JAIDEN (Jaiden): Emerald-only eye-contact trainer, pokeemerald Route115 object 18 (NINJA_BOY, TREE_DISGUISE, sight 3; Route115_EventScript_Jaiden)"
+  },
+  {
+   "kind": "npc",
+   "map": "Route123",
+   "at": [
+    138,
+    14
+   ],
+   "uid": 134,
+   "model": 8,
+   "script": 3265,
+   "evtype": 1,
+   "p0": 1,
+   "move": 54,
+   "dir": 1,
+   "what": "TRAINER_JONAS (Jonas): Emerald-only eye-contact trainer, pokeemerald Route123 object 34 (NINJA_BOY, TREE_DISGUISE, sight 1; Route123_EventScript_Jonas)"
+  }
+ ]
+}

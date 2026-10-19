@@ -40,11 +40,14 @@ Script_1:
 #define T_ICreateSketches 4     // FallarborTown_ContestLobby_Text_ICreateSketches
 #define T_SketchIsUp 5          // FallarborTown_ContestLobby_Text_YourSketchIsUp
 
-FCL_Receptionist:                           // (stand-in)
+// Pokémon Contests can't run on Black 2: the receptionist offers Black 2's Pokémon Musical instead (musical agent
+// 2026-10-18; common/musical.inc, b2tools/patches/musical.py). Text lines 6-19 (T_RecAccepting /
+// T_RecAnotherTime stay in the file, unused).
+#include "common/musical.inc"
+#define T_Musical 6
+FCL_Receptionist:                    // the Musical's reception (Sapphire's contest receptionist's place)
     c4_talk
-    h_msgbox T_RecAccepting
-    h_msgbox T_RecAnotherTime
-    h_release
+    musical_reception T_Musical
 FCL_Lass:
     h_msgbox_npc T_Pokeblock
 FCL_SketchArtist:

@@ -136,7 +136,14 @@
    "move": 8,
    "what": "TRAINER_MARK: eye-contact trainer (Sapphire object 1, MANIAC, FACE_DOWN_AND_LEFT)",
    "evtype": 1,
-   "p0": 2
+   "p0": 2,
+   "at_emerald": [
+    3,
+    6
+   ],
+   "move_emerald": 17,
+   "dir_emerald": 3,
+   "what_emerald": "TRAINER_MARK: eye-contact trainer (Sapphire object 1, MANIAC, FACE_DOWN_AND_LEFT) | Emerald (2026-10-18, pokeemerald's object): at [3, 6], move 17, dir 3"
   },
   {
    "kind": "npc",
@@ -156,7 +163,9 @@
    "at_emerald": [
     3,
     9
-   ]
+   ],
+   "p0_emerald": 1,
+   "what_emerald": "TRAINER_DEZ_AND_LUKE: eye-contact trainer (Sapphire object 6, MAN_5, FACE_DOWN) | Emerald (2026-10-18, pokeemerald's object): p0 1"
   },
   {
    "kind": "npc",
@@ -176,7 +185,9 @@
    "at_emerald": [
     2,
     9
-   ]
+   ],
+   "p0_emerald": 1,
+   "what_emerald": "TRAINER_DEZ_AND_LUKE: eye-contact trainer (Sapphire object 5, WOMAN_5, FACE_DOWN) | Emerald (2026-10-18, pokeemerald's object): p0 1"
   },
   {
    "kind": "npc",
@@ -192,7 +203,9 @@
    "move": 9,
    "what": "TRAINER_WILLIAM: eye-contact trainer (Sapphire object 1, PSYCHIC_M, FACE_DOWN_AND_RIGHT)",
    "evtype": 1,
-   "p0": 3
+   "p0": 3,
+   "p0_emerald": 4,
+   "what_emerald": "TRAINER_WILLIAM: eye-contact trainer (Sapphire object 1, PSYCHIC_M, FACE_DOWN_AND_RIGHT) | Emerald (2026-10-18, pokeemerald's object): p0 4"
   },
   {
    "kind": "npc",
@@ -208,7 +221,13 @@
    "move": 8,
    "what": "TRAINER_KAYLA: eye-contact trainer (Sapphire object 2, LASS, FACE_DOWN_AND_LEFT)",
    "evtype": 1,
-   "p0": 3
+   "p0": 3,
+   "at_emerald": [
+    11,
+    4
+   ],
+   "p0_emerald": 4,
+   "what_emerald": "TRAINER_KAYLA: eye-contact trainer (Sapphire object 2, LASS, FACE_DOWN_AND_LEFT) | Emerald (2026-10-18, pokeemerald's object): at [11, 4], p0 4"
   },
   {
    "kind": "npc",
@@ -256,7 +275,9 @@
    "move": 18,
    "what": "TRAINER_VALERIE_1: eye-contact trainer (Sapphire object 1, HEX_MANIAC, ROTATE_COUNTERCLOCKWISE)",
    "evtype": 1,
-   "p0": 2
+   "p0": 2,
+   "p0_emerald": 3,
+   "what_emerald": "TRAINER_VALERIE_1: eye-contact trainer (Sapphire object 1, HEX_MANIAC, ROTATE_COUNTERCLOCKWISE) | Emerald (2026-10-18, pokeemerald's object): p0 3"
   },
   {
    "kind": "npc",

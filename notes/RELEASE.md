@@ -19,3 +19,5 @@ release/POST_Sapphire.md, release/POST_Ruby.md (never reference each other); scr
 Showcase screenshots are native DS size only (user, 2026-10-08): 256x192 (one screen) or 256x384 (both), no upscaling; the animated titles too.
 
 Public repo (patches only): https://github.com/logdog2325/pokemon-ruby-sapphire-nds (local clone ~/Documents/GitHub/pokemon-ruby-sapphire-nds). A release = `gh release create vNN <both .bps>` there, plus README/screenshots updates. Never push this private HoennB2 repo; never upload .nds.
+
+Player guide (item 14, 2026-10-18): before each public release run `python3 b2tools/gen_docs.py` (writes ~/Documents/GitHub/pokemon-ruby-sapphire-nds/docs/ from the game's data) and commit docs/ with the release in the download repo. The README links docs/README.md ("## Player guide").

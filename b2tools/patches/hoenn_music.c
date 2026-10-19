@@ -4,8 +4,8 @@
  * The choice: the options u16 at the start of the trainer-data save block (SaveControl block 27), bit 13 (fairy_core's
  * Intro_SetConfigBit writes it in the intro; 0 for a new game and every older save). 1 = Hoenn's songs:
  *   - zones: GetRegularZoneBGMID (arm9 0x020300b0) asks Music_ZoneBGM instead of DecideZoneHeaderBGMID: the zone
- *     header's third BGM field (autumn: patches/hoenn_season keeps Hoenn in summer, the second field, so the third is
- *     free) holds the zone's Hoenn song;
+ *     header's third BGM field (autumn: free, because the Unova option always takes the second, summer field: the
+ *     season is summer unless Birch's seasons answer was YES, patches/hoenn_season.py) holds the zone's Hoenn song;
  *   - every other BGM and jingle: GFL_SndBGMPlayCore (0x02005d98) passes its sequence through Music_Redirect, a
  *     Unova -> Hoenn table (battles, victories, surf, bike, jingles, Hall of Fame, credits, the stand-ins the story
  *     scripts play); with the Unova option a Hoenn -> stand-in table (for the few songs scripts name directly);
@@ -119,7 +119,10 @@ u32 Music_ZoneBGM(void *gd, u32 zone, u32 season) {
         if (!bgm) bgm = DecideZoneHeaderBGMID(zone, 2);
         if (bgm) return bgm;
     }
-    return DecideZoneHeaderBGMID(zone, season);
+    /* the summer field in every season (Birch's seasons question, notes/SEASONS.md): the autumn field holds the Hoenn
+     * song, the spring and winter fields the reused Unova zone's own; with the summer lock season is 1 anyway */
+    (void)season;
+    return DecideZoneHeaderBGMID(zone, 1);
 }
 
 static u32 lookup(const u16 *t, u32 n, u32 seq) {

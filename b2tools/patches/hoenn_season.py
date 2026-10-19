@@ -1,4 +1,14 @@
-"""Hoenn has no seasons: Black 2's season is always summer.
+"""Hoenn's season: summer all year, unless the player answered YES to Birch's fifth question (2026-10-18).
+
+Birch's seasons question (patches/fairy.py, options u16 bit 15, notes/SEASONS.md): this patch locks Black 2's two
+season readers to summer (below); fairy.py, which asks the question, then points the same two sites at its ITCM readers
+Season_FromMonth / Season_Kept (fairy.c), which give Black 2's own answer while bit 15 is set and summer otherwise.
+So every save made before the question (bit 15 was never set), a NO, and a build without fairy stay in summer, exactly
+as below. With YES the season follows the DS clock's month as in Black 2 ((month - 1) & 3: Jan/May/Sep spring,
+Feb/Jun/Oct summer, Mar/Jul/Nov autumn, Apr/Aug/Dec winter); hoenn_textures gives area 2's four texture sets Hoenn's
+textures and standalone gives the warp-only maps two seasonal areas. The banner part below is for both answers.
+
+The summer lock (Hoenn had no seasons before the question):
 
 Season_GetRealTime (arm9 0x02034f6c) returns (month - 1) & 3 (0 spring, 1 summer, 2 autumn, 3 winter; read with
 b2tools/armdis.py). Every seasonal thing (area textures and lights, winter snow, encounters, season banner) follows
@@ -57,4 +67,5 @@ def apply_code(code):
         data[at:at + 8] = new
     if os.path.islink(path): os.unlink(path)
     open(path, 'wb').write(data)
-    return 'season always summer (real time and the kept season); place-name banner without the season part'
+    return ('season summer (real time and the kept season; fairy.py lifts it when Birch\'s seasons answer is YES); '
+            'place-name banner without the season part')

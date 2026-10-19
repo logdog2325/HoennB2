@@ -21,13 +21,17 @@ ROOT = os.path.join(HERE, '..')
 B2 = os.path.join(ROOT, 'external', 'pokebw2')
 sys.path.insert(0, os.path.join(ROOT, 'b2tools'))
 import version  # noqa: E402  (HOENN_VERSION=emerald: main_emerald)
+sys.path.insert(0, os.path.join(ROOT, 'b2tools', 'patches'))
+import new_tms  # noqa: E402  (the new TMs TM96-TM104: their items and moves)
 ALIAS = {'ITEM_PARALYZE_HEAL': 'ITEM_PARLYZ_HEAL', 'ITEM_THUNDER_STONE': 'ITEM_THUNDERSTONE'}
 MAIL = ['ITEM_GREET_MAIL', 'ITEM_FAVORED_MAIL', 'ITEM_RSVP_MAIL', 'ITEM_THANKS_MAIL', 'ITEM_INQUIRY_MAIL',
         'ITEM_LIKE_MAIL', 'ITEM_REPLY_MAIL', 'ITEM_BRIDGE_MAIL_S', 'ITEM_BRIDGE_MAIL_D']
 TM_TABLE = 0x02090c84
 
 def b2_items():
-    return {k: int(v) for k, v in re.findall(r'#define (ITEM_\w+)\s+(\d+)', open(f'{B2}/include/constants/items.h').read())}
+    items = {k: int(v) for k, v in re.findall(r'#define (ITEM_\w+)\s+(\d+)', open(f'{B2}/include/constants/items.h').read())}
+    items.update(new_tms.item_constants())          # ITEM_TM96 ... at Black 2's unused ids 120-128 (src/include/hoenn_tms.h)
+    return items
 
 def tm_items():
     """MOVE_X -> Black 2 TM/HM item constant."""
@@ -40,6 +44,11 @@ def tm_items():
         out[names[m]] = item
     return out
 
+# Gen 3 TM moves with no Gen 5 TM: their own new TMs, TM96-TM104 (user 2026-10-17, RESUME item 16; b2tools/patches/
+# new_tms.py). Before that (item 15b) they gave the closest Black 2 TM. Snatch has no new TM yet (given nowhere we build:
+# SS Tidal), so it stays a stand-in.
+NEW_TM = new_tms.move_to_item()
+
 def map_item(name, items, tms, notes, mail_i):
     if name in items: return name
     if name in ALIAS: return ALIAS[name]
@@ -47,6 +56,9 @@ def map_item(name, items, tms, notes, mail_i):
     if m:
         move = 'MOVE_' + m.group(3).replace('SOLARBEAM', 'SOLAR_BEAM')
         if move in tms: return tms[move]
+        if move in NEW_TM:                          # its own new TM (b2tools/patches/new_tms.py)
+            notes.append(f'{name}: {move} is no Black 2 TM/HM; the new {NEW_TM[move]}')
+            return NEW_TM[move]
         stand = f'ITEM_{m.group(1)}{m.group(2)}'
         notes.append(f'{name}: {move} is no Gen 5 TM/HM; stand-in {stand}')
         return stand

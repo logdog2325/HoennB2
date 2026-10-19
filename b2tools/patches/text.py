@@ -21,6 +21,8 @@ def apply(files):
     extras = sorted(glob.glob(os.path.join(OURS, 'overrides_*.json')))       # generated line sets (overrides_key_items.json:
     if version.has_overlay():                                                 # Ruby's/Emerald's own lines after the shared ones
         extras += sorted(glob.glob(os.path.join(OURS, version.OVERLAY, 'overrides*.json')))
+    if os.environ.get('HOENN_BERRY_PLANTING', '1') != '0':                         # berry planting's lines (off by
+        extras.append(os.path.join(OURS, 'berries', 'overrides_berry_planting.json'))   # default; BERRY_PLANTING.md)
     extras += [p for p in os.environ.get('HOENN_EXTRA_TEXT', '').split(':') if p]   # converter/gen_key_items.py
     for extra in extras:                                                      # --install); HOENN_EXTRA_TEXT=a.json:b.json
         for name, lines in json.load(open(extra, encoding='utf-8')).items():  # adds files for a test build
@@ -82,6 +84,11 @@ def apply(files):
 # work/emu/base_littleroot.dst, right on a cold boot). With HOENN_TEXT_SLOTS=1 every system file sits in a fixed slot
 # (vanilla size + 1/16 + 64 bytes, zero-padded; the message reader goes by the file's own offset table), so editing a
 # line no longer moves the files after it. On by default since the v13.1 savestate remake (HOENN_TEXT_SLOTS=0 turns it off).
+# Files that grew past the rule on purpose: the place names (109) carry Sinnoh's lines 154-264 and Black 2's
+# "Faraway place" padding to line 511 (patches/met_names.py, 2026-10-18): 17,652 B against a 5,624 B slot. Raising
+# a slot moves the files after it once (remake the base savestates).
+SLOT_EXTRA = {109: 12800}
+
 def fixed_slots(files):
     import narcio
     vanilla = narcio.load(os.path.join(DECOMP, 'build', 'b2_us', 'files'), 2)
@@ -90,6 +97,7 @@ def fixed_slots(files):
     over = []
     for i, (e, v) in enumerate(zip(entries, vanilla)):
         slot = (len(v) + 64 + len(v) // 16 + 3) & ~3
+        slot += SLOT_EXTRA.get(i, 0)
         if len(e) > slot: over.append(f'{i:04d}: {len(e)} B > slot {slot}')
         else: entries[i] = e + bytes(slot - len(e))
     if over:

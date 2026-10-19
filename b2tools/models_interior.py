@@ -1516,13 +1516,27 @@ def convert_chunks(out, files):
     if r.returncode: raise SystemExit(f'{out}: ToNsbmd failed: {r.stderr[-500:]}')
 
 # ------------------------------------------------------------------------------------------------ output
+def gen3_tile_image(name, x, z):
+    """The map's own drawn Gen 3 metatile at (x, z), 2x nearest (32x32), as a room texture: Sapphire's art resized,
+    nothing drawn (user 2026-10-14: Mauville Gym's floor switches were invisible: b2tools/gyms_league_rooms.py)."""
+    import numpy as np
+    from PIL import Image
+    from gba import Repo, MetatileRenderer
+    dec, folder = globals()['map_source'](name) if 'map_source' in globals() else ('pokeruby', name)
+    repo = Repo(os.path.join(ROOT, 'external', dec))
+    g, l = repo.layout_grid(repo.map_json(folder)['layout'])
+    mr = MetatileRenderer(repo, l['primary_tileset'], l['secondary_tileset'])
+    im = Image.fromarray(np.asarray(mr.render(int(g[z, x]) & 0x3FF), dtype=np.uint8), 'RGBA')
+    return im.convert('RGB').resize((32, 32), Image.NEAREST)
+
 def texture_sources(room):
     """{texture: source map texture set} for every material of the terrain model."""
     st = room.style
     src = {st[k]['tex']: st[k]['src'] for k in ('floor', 'wall', 'genkan', 'black')}
     for mt in room.r.get('mats', []): src[mt['tex']] = mt['src']
     for d in room.r.get('decals', []): src[d['tex']] = d['src']
-    for ft in room.r.get('floor_tex', []): src[ft['tex']] = ft['src']
+    for ft in room.r.get('floor_tex', []):             # "gen3": [x, z]: the map's own drawn Gen 3 metatile there
+        src[ft['tex']] = ('gen3', room.r['map'], *ft['gen3']) if 'gen3' in ft else ft['src']
     for b in room.r.get('blocks', []):
         b = room.block_style(b)
         for k in ('top', 'side'): src[b[k]['tex']] = b[k]['src']
@@ -1545,9 +1559,11 @@ def build(name, out_root=OUT):
     src = texture_sources(room)
     if mist: src[MIST.VOID] = 332
     images = {}
-    for ts in sorted(set(src.values())):
+    for ts in sorted({v for v in src.values() if isinstance(v, int)}):
         images.update({n: img for n, img, _ in nsbtx.decode(b2files.map_textures(FILES, ts))
                        if n in src and src[n] == ts})
+    for n, v in src.items():
+        if isinstance(v, tuple) and v[0] == 'gen3': images[n] = gen3_tile_image(*v[1:])
     for mat in m.tris:
         images[mat].save(os.path.join(out, mat + '.png'))
     big = room.mw * room.mh > 1

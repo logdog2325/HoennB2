@@ -4,7 +4,7 @@
   {"res": 360, "model": "work/buildings/fallarbor/house.nsbmd", "door": 236, "dx": 0, "dz": 21, "what": "Fallarbor house (olive siding, orange tiled roof)"},
   {"res": 361, "model": "work/buildings/fallarbor/house_pipes.nsbmd", "door": 236, "dx": 0, "dz": 21, "what": "Fallarbor house with Prof. Cozmo's roof pipes"},
   {"res": 362, "model": "work/buildings/fallarbor/contest.nsbmd", "door": 101, "dx": 10, "dz": 21, "what": "Contest Hall (Gen 3 small hall: Fallarbor; Verdanturf's and Slateport's look the same)"},
-  {"res": 363, "model": "work/buildings/lavaridge/house.nsbmd", "door": 260, "dx": 0, "dz": 20, "what": "Lavaridge house (Herb Shop and the house beside it)"},
+  {"res": 363, "model": "work/buildings/lavaridge/house.nsbmd", "door": 260, "dx": 0, "dz": 22, "what": "Lavaridge house (Herb Shop and the house beside it)"},
   {"res": 364, "model": "work/buildings/fortree/treehouse.nsbmd", "door": 65535, "dx": 0, "dz": 0, "what": "Fortree tree house (open doorway; origin at the walkway's north edge)"},
   {"res": 365, "model": "work/buildings/fortree/treehouse_tall.nsbmd", "door": 65535, "dx": 0, "dz": 0, "what": "Fortree tree house 4 (log rails beside the extra deck row)"}
  ],

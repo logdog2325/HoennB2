@@ -9,7 +9,7 @@ entries keep their places in INFO and the FAT: only their values change, and the
 the archive keeps its size and every other file its offset (the ROM layout is unchanged; savestates keep working, with
 the new songs after a cold boot; Emerald alone grows its archive once by data "archive_reserve": archive_reserve()).
 Then each Hoenn zone's header gets its Hoenn song in its third BGM field (bgm2,
-autumn: patches/hoenn_season keeps Hoenn in summer, bgm1, which keeps the Black 2 song).
+autumn: the Unova option always plays bgm1, the summer field, which keeps the Black 2 song, also with Birch's seasons).
 
 apply_code (code): hoenn_music.c, linked into ITCM after the code already there (hoenn_world, roamers, fairy, fairy_ui:
 the arena literal protocol), with the tables (Unova -> Hoenn redirects, the trainer classes' encounter, battle and

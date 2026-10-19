@@ -4,3 +4,17 @@ We hope you will participate another\ntime.
 Hi, are you making any Pokéblocks?{be01}\nYou should come by with a bunch of\nBerries sometime.
 You see how they display a sketch of\na Contest winner here?{be01}\nI sketch them!{be01}\nIf any of your Pokémon wins a Contest,\nI’d gladly make a sketch of it!
 Hello! Congratulations!{be01}\nI’ve put up a sketch of your Pokémon\nright here for everyone to see!
+Hello, there!{be01}\nContests are on hold for now...\nbut our Musical stage is open!
+In a Musical, Pokémon dress up\nin Props and dance on stage!{be01}\nHere’s a Prop Case. It holds a set\nof Props to get you started!
+Oh! Fans from your last show left\nyou some presents!
+Would you like to perform?
+I’m sorry, but none of your Pokémon\ncan perform.
+Please choose the Pokémon that\nwill perform.
+Which show would you like\nto perform in?
+Stardom
+Forest Stroll
+A Sweet Soirée
+Exciting Nimbasa
+Cancel
+Great! Please walk this way!
+We hope to see you on stage\nanother time.

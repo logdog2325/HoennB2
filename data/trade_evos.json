@@ -11,12 +11,15 @@
     "  used from the Bag like an evolution stone. Karrablast/Shelmet -> SPECIES_IN_PARTY (as Mantyke/Remoraid), with",
     "  the partner's evolved form accepted too, so the second one can still evolve after the first.",
     "  Branches keep their other evolution (Poliwhirl Water Stone, Slowpoke Lv 37, Feebas Beauty 170).",
+    "keep_trade_methods (link, 2026-10-18; notes/LINK.md): Black 2's own trade entries stay after these, so a real link",
+    "  trade also evolves (Kadabra, Machoke, Onix holding a Metal Coat, Karrablast for Shelmet ...), as in Black 2.",
     "bag_items: every item an ITEM evolution above uses gets the Bag 'Use' of an evolution stone in its item data",
     "  (a/0/2/4: +0xA field use 20, +0xC party use 1, +0x11 bit 3 = evolve), and stays holdable.",
     "shop: items appended to a Hoenn shop list (b2tools/patches/shops.py ids): the items Hoenn has no other source for,",
     "  and Metal Coat / Dragon Scale (otherwise only 5% wild held items; user's choice): Lilycove Dept. Store 3F, right",
     "  clerk (id 15, X items). Black 2's own prices (item data). a/2/8/2 is then exactly its fixed 1300 bytes: no room left."
   ],
+  "keep_trade_methods": true,
   "evolutions": {
     "SPECIES_KADABRA":    [["EVO_METHOD_LEVEL", 36, "SPECIES_ALAKAZAM"]],
     "SPECIES_MACHOKE":    [["EVO_METHOD_LEVEL", 38, "SPECIES_MACHAMP"]],

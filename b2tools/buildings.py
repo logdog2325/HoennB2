@@ -186,3 +186,361 @@ def cull_unseen(m, margin=0.02):
         if keep: m.tris[mat] = keep
         else: del m.tris[mat]
     return n
+
+# --------------------------------------------------------------------------------------------------- dark doorways
+# User 2026-10-18: "make sure when doors open it looks black so it looks like your entering a house and not just walking
+# through walls". Black 2's door models open into the building (door_op / door_cl, 8 frames: the two BCA0 animations in
+# the door's pack-0 info record, read with apicula): door_n_01-03 (259-261), door_t1_01/02 (164, 165), door_t2_h (236)
+# and r34_door1 (101) swing 90 degrees inwards about a vertical hinge at their origin (the plate's right edge) while
+# moving 3.5 back, so the whole plate (x -17..1 or -18..2) opens; door_pc (93) slides its two halves 62 degrees apart
+# round the arc's centre (the door origin), opening the arc's middle (x -12.2..12.2). Behind the door Black 2's
+# buildings have a hole in the front wall and a box about 16 deep drawn with one dark texel of a texture they already
+# use (t2_build01, res 3: hole x -32..-13.9, y 3..37, box z 16..32 in t2_buil2's (41, 41, 41); pc_01, res 0: hole
+# x -13.9..14.3, y 3.2..28.9 behind door_pc, box 16.3 deep in pc_kabe02's (33, 33, 33)), so an open door shows darkness.
+# Ours had a solid wall behind every door: an opening door showed the wall ("walking through walls").
+#
+# door_recess() gives our models the same darkness for the price pack 0 can pay (it is read whole into the field heap,
+# which the menu save shares: patches/area2_buildings.py save_headroom; a hole and Black 2's box cost ~600 B a model,
+# 32 KB for the 52 door models, more than the save's margin; ToNsbmd writes ~28 B a triangle): ONE dark quad (2
+# triangles, ~64 B) in a dark texel of one of the model's own textures (no new material: ~300 B), uniform like Black 2's
+# box, so it looks the same from the camera:
+#   'plane'  a dark quad between the wall and the door, 2 units (exterior_layers.MIN_GAP) from both: the door must stand
+#            4 or more in front of its wall. The Center's door_pc does (its arc stands 9.8 out); the house doors stand
+#            at dz = wall + 2 (data/buildings, dark doorways 2026-10-18; they were 0-1 unit nearer the wall).
+#   'hole'   the doors with glass (164, 165, 236: their pane h_mado stands 1 behind to 0 in front of the plate's origin,
+#            seen through the window, so the quad cannot stand in front of it): the hole is cut out of the wall (wall
+#            cells merged back into rectangles first: fewest new triangles) and the quad stands in it, or 2+ units
+#            behind the pane when the pane is nearer the wall than that (then a little bigger, for rays through the hole).
+# The quad is as big as the CLOSED door hides from every view of the field camera (DOOR_VIEWS: rays sx = dx/dz,
+# sy = dy/dz towards the eye, 185.7 up and 142 south of the player, notes/NPC_LIMIT.md: sy 0.55 with the door at the
+# top of the screen, ~1 with the player at the door, 1.6 with the player 3 tiles behind the door's wall, 2.0 with 4;
+# sx up to 1.0 at the screen's edges), together with what stands in front of it (canopies, posts, eaves): no dark rim
+# shows round a closed door (exterior_check.py doors). Sampled every 0.5 unit; the largest such rectangle. A
+# 'plane' quad keeps clear of every face between the wall and the door; a 'hole' takes them away with the wall. The
+# open doorway is then 51-84% dark (the rest: a thin frame of wall the closed door's parallax needs; Black 2's own hole
+# is bigger than its door, which its awning and the sunk plate hide).
+DOOR_PARTS = {        # the closed door's opaque faces (door coordinates, quads counter-clockwise from the front)
+    'plate': [((-17, 6, 2), (1, 6, 2), (1, 32, 2), (-17, 32, 2)), ((1, 6, 2), (1, 6, -2), (1, 32, -2), (1, 32, 2))],
+    't1_01': [((-17, 6, 2), (1, 6, 2), (1, 32, 2), (-17, 32, 2)), ((1, 6, 2), (1, 6, -2), (1, 32, -2), (1, 32, 2)),
+              ((-16, 6, -1), (0, 6, -1), (0, 32, -1), (-16, 32, -1))],          # (its window's glass: h_mado behind)
+    't1_02': [((-18, 4, 2), (2, 4, 2), (2, 33, 2), (-18, 33, 2)), ((2, 4, 2), (2, 4, -1), (2, 33, -1), (2, 33, 2)),
+              ((-16.3, 4, 0), (0.1, 4, 0), (0.1, 30.1, 0), (-16.3, 30.1, 0))],
+    'r34': [((-20, 3.1, 1.9), (0, 3.1, 1.9), (0, 30.1, 1.9), (-20, 30.1, 1.9)),
+            ((0, 3.1, 1.9), (0, 3.1, -0.2), (0, 30.1, -0.2), (0, 30.1, 1.9)),
+            ((-20, 3.1, -0.2), (-20, 3.1, 1.9), (-20, 30.1, 1.9), (-20, 30.1, -0.2)),
+            ((-20, 30.1, 1.9), (0, 30.1, 1.9), (0, 30.1, -0.2), (-20, 30.1, -0.2))],
+    'pc': [((x0, 2.9, z0), (x1, 2.9, z1), (x1, 29.8, z1), (x0, 29.8, z0))
+           for (x0, z0), (x1, z1) in zip(PC_DOOR_ARC, PC_DOOR_ARC[1:])],
+}
+DOOR_SHAPE = {259: 'plate', 260: 'plate', 261: 'plate', 164: 't1_01', 165: 't1_02', 236: 't1_02', 101: 'r34', 93: 'pc'}
+DOOR_ZFACES = {'plate': (2.0,), 't1_01': (2.0, -1.0), 't1_02': (2.0, 0.0), 'r34': (1.9,), 'pc': (13.0,)}   # (its faces
+                      # that face the camera within 11 degrees, exterior_check's layers rule: the arc's middle for door_pc)
+DOOR_GLASS = {'t1_01', 't1_02'}
+LAYER_GAP = 2.0            # exterior_layers.MIN_GAP
+DOOR_VIEWS = [(sx / 8.0, sy) for sx in range(-8, 9, 2) for sy in (0.55, 0.7, 0.85, 1.0, 1.15, 1.3, 1.5, 1.75, 2.0)] + \
+             [(sx / 8.0, sy) for sx in range(-7, 8, 2) for sy in (0.62, 0.92, 1.22, 1.62, 1.87)]   # (dense: gaps between a door
+                                                     # and a post in front of it show only over a few degrees)
+DARK_MAX = 60              # a texel this dark (largest channel) counts as darkness (Black 2's: 33-41)
+DARK_FALLBACK = ('pc_kabe02', 'ext00', 38, 19)   # Black 2's Center recess texel, in pack 0's set (a new material: ~300 B)
+HOLE_STEP = 0.5
+
+def door_plane(door, dz, wall):
+    """('plane' or 'hole', z of the dark quad) for door `door` at dz in front of a wall at z = wall (see above)."""
+    shape = DOOR_SHAPE[door]
+    zf = [dz + z for z in DOOR_ZFACES[shape]]
+    if shape not in DOOR_GLASS and min(zf) >= wall + 2 * LAYER_GAP - 1e-6: return 'plane', wall + LAYER_GAP
+    if min(zf) >= wall + LAYER_GAP - 1e-6: return 'hole', wall
+    return 'hole', min(wall - LAYER_GAP, min(zf) - LAYER_GAP)
+
+_DOOR_RECORDS = {}
+def door_record(out, name):
+    """(door, dx, dz) of model <out>/<name> from the registries data/buildings/*.json (model work/buildings/<town>/<name>
+    .nsbmd, town = the out directory's name), or (65535, 0, 0) when no registry places it."""
+    import os, json, glob
+    if not _DOOR_RECORDS:
+        root = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
+        for f in sorted(glob.glob(os.path.join(root, 'data', 'buildings', '*.json'))):
+            for r in json.load(open(f)).get('models', []):
+                key = tuple(r['model'][:-len('.nsbmd')].split('/')[-2:])
+                rec = (r['door'], r['dx'], r['dz'])
+                assert _DOOR_RECORDS.get(key, rec) == rec, f'{key}: two door records {_DOOR_RECORDS[key]} / {rec}'
+                _DOOR_RECORDS[key] = rec
+    return _DOOR_RECORDS.get((os.path.basename(os.path.normpath(out)), name), (0xFFFF, 0, 0))
+
+def _tri_n(P):
+    u = [P[1][k] - P[0][k] for k in range(3)]; v = [P[2][k] - P[0][k] for k in range(3)]
+    n = (u[1] * v[2] - u[2] * v[1], u[2] * v[0] - u[0] * v[2], u[0] * v[1] - u[1] * v[0])
+    L = math.sqrt(n[0] ** 2 + n[1] ** 2 + n[2] ** 2)
+    return (n[0] / L, n[1] / L, n[2] / L) if L > 1e-9 else None
+
+def _clip_attr(poly, axis, value, keep_greater):
+    """Sutherland-Hodgman clip of a polygon of flat vertex lists [x, y, z, u, v, r, g, b] against coordinate `axis`
+    = value; every attribute is interpolated along the cut edges (exact for a planar triangle's affine uv/colour)."""
+    out = []
+    for i in range(len(poly)):
+        a, b = poly[i], poly[(i + 1) % len(poly)]
+        ina = a[axis] >= value if keep_greater else a[axis] <= value
+        inb = b[axis] >= value if keep_greater else b[axis] <= value
+        if ina: out.append(a)
+        if ina != inb:
+            t = (value - a[axis]) / (b[axis] - a[axis])
+            out.append([a[k] + t * (b[k] - a[k]) for k in range(len(a))])
+    return out
+
+def _outside_box(poly, box):
+    """The pieces of convex polygon poly outside box (x0, x1, y0, y1, z0, z1): up to six convex polygons."""
+    x0, x1, y0, y1, z0, z1 = box
+    out = [_clip_attr(poly, 0, x0, False), _clip_attr(poly, 0, x1, True)]
+    mid = _clip_attr(_clip_attr(poly, 0, x0, True), 0, x1, False)
+    out += [_clip_attr(mid, 1, y0, False), _clip_attr(mid, 1, y1, True)]
+    mid = _clip_attr(_clip_attr(mid, 1, y0, True), 1, y1, False)
+    out += [_clip_attr(mid, 2, z0, False), _clip_attr(mid, 2, z1, True)]
+    return [p for p in out if len(p) >= 3]
+
+def _poly_area(p):
+    s = [0.0, 0.0, 0.0]
+    for i in range(1, len(p) - 1):
+        u = [p[i][k] - p[0][k] for k in range(3)]; v = [p[i + 1][k] - p[0][k] for k in range(3)]
+        s[0] += u[1] * v[2] - u[2] * v[1]; s[1] += u[2] * v[0] - u[0] * v[2]; s[2] += u[0] * v[1] - u[1] * v[0]
+    return math.sqrt(s[0] ** 2 + s[1] ** 2 + s[2] ** 2) / 2
+
+def _inside_open(t, box, eps=1e-4):
+    """Does triangle t (vertex tuples) reach into the open box (not only touch its faces)?"""
+    for k in range(3):
+        lo, hi = min(v[k] for v in t), max(v[k] for v in t)
+        if hi <= box[2 * k] + eps or lo >= box[2 * k + 1] - eps: return False
+    return True
+
+def _flat(v): return list(v[:5]) + list(v[5])
+def _unflat(v): return tuple(v[:5]) + (tuple(v[5:8]),)
+
+def _rect_cell(t1, t2):
+    """If triangles t1, t2 (same material) together are one axis-aligned rectangle facing +z with one affine texture
+    mapping and one colour (a face() cell): (x0, x1, y0, y1, z, f) with f(x, y) -> vertex; else None."""
+    P = {tuple(round(c, 5) for c in v[:3]) for v in list(t1) + list(t2)}
+    if len(P) != 4 or len({p[2] for p in P}) != 1: return None
+    xs, ys = sorted({p[0] for p in P}), sorted({p[1] for p in P})
+    if len(xs) != 2 or len(ys) != 2 or t1[0][5] != t2[0][5]: return None
+    if len({v[5] for v in list(t1) + list(t2)}) != 1: return None
+    n = _tri_n(t1)
+    if not n or n[2] < 0.999 or (_tri_n(t2) or (0, 0, 0))[2] < 0.999: return None
+    (ax, ay, _, au, av, _), (bx, by, _, bu, bv, _), (cx, cy, _, cu, cv, _) = t1
+    den = (bx - ax) * (cy - ay) - (cx - ax) * (by - ay)
+    if abs(den) < 1e-9: return None
+    def f(x, y):                                  # the affine uv map of t1 at (x, y)
+        s = ((x - ax) * (cy - ay) - (cx - ax) * (y - ay)) / den
+        r = ((bx - ax) * (y - ay) - (x - ax) * (by - ay)) / den
+        return (x, y, t1[0][2], au + s * (bu - au) + r * (cu - au), av + s * (bv - av) + r * (cv - av), t1[0][5])
+    if any(abs(f(v[0], v[1])[3] - v[3]) > 1e-4 or abs(f(v[0], v[1])[4] - v[4]) > 1e-4 for v in t2): return None
+    return xs[0], xs[1], ys[0], ys[1], t1[0][2], f
+
+def _cut_box(tris, box):
+    """Triangles [(x, y, z, u, v, (r, g, b))] with everything inside box removed. A face() cell (two triangles making
+    one rectangle) keeps up to four rectangles round the box (2 triangles each); other triangles are clipped one by one
+    (up to six convex pieces each)."""
+    keep, hit = [], []
+    for t in tris: (hit if _inside_open(t, box) else keep).append(t)
+    used = set()
+    for i in range(len(hit)):
+        if i in used: continue
+        for j in range(i + 1, len(hit)):
+            if j in used: continue
+            c = _rect_cell(hit[i], hit[j])
+            if c is None: continue
+            x0, x1, y0, y1, z, f = c
+            bx0, bx1, by0, by1 = max(x0, box[0]), min(x1, box[1]), max(y0, box[2]), min(y1, box[3])
+            for rx0, rx1, ry0, ry1 in ((x0, bx0, y0, y1), (bx1, x1, y0, y1), (bx0, bx1, y0, by0), (bx0, bx1, by1, y1)):
+                if rx1 - rx0 > 1e-4 and ry1 - ry0 > 1e-4:
+                    q = [f(rx0, ry0), f(rx1, ry0), f(rx1, ry1), f(rx0, ry1)]
+                    keep += [[q[0], q[1], q[2]], [q[0], q[2], q[3]]]
+            used |= {i, j}
+            break
+    for i, t in enumerate(hit):
+        if i in used: continue
+        for p in _outside_box([_flat(v) for v in t], box):
+            if _poly_area(p) < 1e-4: continue
+            for k in range(1, len(p) - 1):
+                tri = [p[0], p[k], p[k + 1]]
+                if _poly_area(tri) >= 1e-5: keep.append([_unflat(v) for v in tri])
+    return keep
+
+_IMAGES = {}
+def _rgba(path):
+    if path not in _IMAGES:
+        import os
+        import numpy as np
+        from PIL import Image
+        _IMAGES[path] = np.asarray(Image.open(path).convert('RGBA')).astype(int) if path and os.path.exists(path) else None
+    return _IMAGES[path]
+
+def _dark_texel(img):
+    """(value, x, y) of the darkest opaque texel of an RGBA array, preferring one whose 3x3 neighbourhood is dark too."""
+    import numpy as np
+    lum = img[..., :3].max(-1) + (img[..., 3] < 255) * 1000
+    pad = np.pad(lum, 1, mode='edge')
+    nb = np.max([pad[1 + dy:1 + dy + lum.shape[0], 1 + dx:1 + dx + lum.shape[1]] for dy in (-1, 0, 1) for dx in (-1, 0, 1)], 0)
+    score = np.where(nb <= DARK_MAX, lum, lum + 500)
+    j, i = np.unravel_index(np.argmin(score), score.shape)
+    return int(lum[j, i]), int(i), int(j)
+
+def _opaque(img, uvs):
+    """Are the texels under these uvs (vertices, edge midpoints, centre) all opaque? (alpha-tested crests, lattices
+    and the translucent ground shadow are no occluders)"""
+    if img is None: return True
+    h, w = img.shape[:2]
+    pts = list(uvs) + [((uvs[a][0] + uvs[b][0]) / 2, (uvs[a][1] + uvs[b][1]) / 2) for a, b in ((0, 1), (1, 2), (2, 0))]
+    pts.append((sum(p[0] for p in uvs) / 3, sum(p[1] for p in uvs) / 3))
+    for u, v in pts:
+        x = min(int((u % 1.0) * w), w - 1); y = min(int(((1 - v) % 1.0) * h), h - 1)
+        if img[y, x, 3] < 250: return False
+    return True
+
+def _ray_t(O, D, T):
+    """Line O + t D (R,3) against triangles T (N,3,3): t (R,N) of the crossing (any sign), inf where none."""
+    import numpy as np
+    out = np.full((len(O), len(T)), np.inf)
+    if not len(T): return out
+    v0, e1, e2 = T[:, 0], T[:, 1] - T[:, 0], T[:, 2] - T[:, 0]
+    for i in range(0, len(O), 512):
+        o, d = O[i:i + 512, None, :], D[i:i + 512, None, :]
+        p = np.cross(d, e2[None]); det = (e1[None] * p).sum(-1)
+        ok = np.abs(det) > 1e-9
+        inv = np.where(ok, 1 / np.where(ok, det, 1), 0)
+        s = o - v0[None]
+        u = (s * p).sum(-1) * inv
+        q = np.cross(s, e1[None])
+        v = (d * q).sum(-1) * inv
+        t = (e2[None] * q).sum(-1) * inv
+        hit = ok & (u >= -1e-6) & (v >= -1e-6) & (u + v <= 1 + 1e-6)
+        out[i:i + 512] = np.where(hit, t, np.inf)
+    return out
+
+def _largest_rect(ok):
+    """(r0, r1, c0, c1) of the largest all-True rectangle of a 2D bool array (inclusive), or None."""
+    best, H = None, [0] * ok.shape[1]
+    for r in range(ok.shape[0]):
+        H = [H[c] + 1 if ok[r, c] else 0 for c in range(ok.shape[1])]
+        stack = []
+        for c in range(len(H) + 1):
+            h = H[c] if c < len(H) else 0
+            start = c
+            while stack and stack[-1][1] >= h:
+                s, sh = stack.pop()
+                area = sh * (c - s)
+                if sh and (best is None or area > best[0]): best = (area, r - sh + 1, r, s, c - 1)
+                start = s
+            stack.append((start, h))
+    return best[1:] if best else None
+
+def door_wall(m, door, dx, dz):
+    """z of the wall door `door` at (dx, dz) stands in: the nearest surface of m facing the camera behind the door's
+    front, at the door's centre (None: none)."""
+    quads = DOOR_PARTS[DOOR_SHAPE[door]]
+    cx = dx + (min(p[0] for q in quads for p in q) + max(p[0] for q in quads for p in q)) / 2
+    cy = (min(p[1] for q in quads for p in q) + max(p[1] for q in quads for p in q)) / 2
+    wall = None
+    for mat, ts in m.tris.items():
+        for t in ts:
+            n = _tri_n(t)
+            if not n or n[2] < 0.999: continue
+            z = sum(v[2] for v in t) / 3
+            if z >= dz + max(DOOR_ZFACES[DOOR_SHAPE[door]]) - 0.5 or (wall is not None and z <= wall): continue
+            (ax, ay), (bx, by), (qx, qy) = [(v[0], v[1]) for v in t]
+            den = (by - qy) * (ax - qx) + (qx - bx) * (ay - qy)
+            if abs(den) < 1e-9: continue
+            w0 = ((by - qy) * (cx - qx) + (qx - bx) * (cy - qy)) / den
+            w1 = ((qy - ay) * (cx - qx) + (ax - qx) * (cy - qy)) / den
+            if min(w0, w1, 1 - w0 - w1) >= -1e-6: wall = z
+    return wall
+
+def door_recess(m, door, dx, dz, image, min_size=(6.0, 8.0)):
+    """The dark doorway behind door model `door` drawn at (dx, 0, dz) of model m (see above). image(texture) -> png
+    path of a texture of m (None if unknown). Run after exterior_layers.separate (nothing moves the quad) and before
+    cull_unseen. Returns dict(mode, wall, z, quad=(x0, x1, y0, y1), texel=(material, x, y, value)) or None (no door
+    model, no wall behind it, or too little of it hidden)."""
+    import numpy as np
+    if door in (None, 0xFFFF) or door not in DOOR_SHAPE: return None
+    quads = [[(x + dx, y, z + dz) for x, y, z in q] for q in DOOR_PARTS[DOOR_SHAPE[door]]]
+    dtris = [t for q in quads for t in ([q[0], q[1], q[2]], [q[0], q[2], q[3]])]
+    allp = [p for q in quads for p in q]
+    X0, X1 = min(p[0] for p in allp), max(p[0] for p in allp)
+    Y1 = max(p[1] for p in allp); zfront = max(p[2] for p in allp)
+    wall = door_wall(m, door, dx, dz)
+    if wall is None: return None
+    mode, zd = door_plane(door, dz, wall)
+    zq = zd if mode == 'plane' else wall                 # where the closed door must hide it: the quad, or the hole
+    back = wall - zd if mode == 'hole' else 0.0          # (a quad behind the hole: rays go this far into it)
+    floor = 0.0 if not back else 2.0 + back * max(sy for _, sy in DOOR_VIEWS) + 0.1   # (and stay over the ground shadow)
+    zcut = zfront - 0.01
+    # what hides it: the door, and the model's opaque faces in front of zq that face the eye, without the ones in the
+    # door's box (cut away below where the quad comes)
+    bdoor = (X0, X1, floor, Y1, zd - LAYER_GAP + 0.01, zcut)
+    occ = []
+    for mat, ts in m.tris.items():
+        img = _rgba(image(mat)) if image else None
+        for t in _cut_box([t for t in ts if max(v[2] for v in t) > zq + 1e-3], bdoor):
+            if _tri_n(t) and _opaque(img, [v[3:5] for v in t]): occ.append([v[:3] for v in t])
+    T = np.array(occ + dtris, float).reshape(-1, 3, 3)
+    N = np.cross(T[:, 1] - T[:, 0], T[:, 2] - T[:, 0])
+    is_door = np.arange(len(T)) >= len(occ)
+    xs = np.arange(X0, X1 + 1e-6, HOLE_STEP); ys = np.arange(floor, Y1 + 1e-6, HOLE_STEP)
+    gx, gy = np.meshgrid(xs, ys)
+    # (sampled a hair off the grid: a ray exactly along the seam of two faces would find neither)
+    Q = np.stack([gx.ravel() + 0.0137, gy.ravel() + 0.0071, np.full(gx.size, zq)], 1)
+    covered = np.ones(len(Q), bool)
+    for sx, sy in DOOR_VIEWS:
+        d = np.array([sx, sy, 1.0])
+        t = _ray_t(Q, np.repeat(d[None], len(Q), 0), T)
+        valid = ((N @ d) > 1e-9)[None] & np.where(is_door[None], t > -back - 1e-3, t > 1e-4)
+        covered &= (valid & np.isfinite(t)).any(1)
+    if mode == 'plane':     # the quad keeps clear of every face between the wall and the door (nothing to cut: 2 triangles)
+        free = np.ones(len(Q), bool)
+        for ts in m.tris.values():
+            for t in ts:
+                P = np.array([v[:3] for v in t], float)
+                if P[:, 2].max() <= wall + 0.01 or P[:, 2].min() >= zcut: continue
+                n = np.cross(P[1] - P[0], P[2] - P[0])
+                if abs(n[2]) < 0.05 * np.linalg.norm(n):        # (an upright face: its footprint, a hair wider)
+                    lo, hi = P.min(0) - 0.25, P.max(0) + 0.25
+                    free &= ~((Q[:, 0] >= lo[0]) & (Q[:, 0] <= hi[0]) & (Q[:, 1] >= lo[1]) & (Q[:, 1] <= hi[1]))
+                    continue
+                (ax, ay), (bx, by), (qx, qy) = P[:, :2]
+                den = (by - qy) * (ax - qx) + (qx - bx) * (ay - qy)
+                w0 = ((by - qy) * (Q[:, 0] - qx) + (qx - bx) * (Q[:, 1] - qy)) / den
+                w1 = ((qy - ay) * (Q[:, 0] - qx) + (ax - qx) * (Q[:, 1] - qy)) / den
+                free &= ~((w0 >= -0.02) & (w1 >= -0.02) & (1 - w0 - w1 >= -0.02))
+        covered &= free
+    rect = _largest_rect(covered.reshape(gx.shape))
+    if rect is None: return None
+    r0, r1, c0, c1 = rect
+    hx0, hx1, hy0, hy1 = float(xs[c0]), float(xs[c1]), float(ys[r0]), float(ys[r1])
+    if hx1 - hx0 < min_size[0] or hy1 - hy0 < min_size[1]: return None
+    # cut away what stands in it (the wall, for a hole), then the quad: the darkest texel of the model's own textures
+    box = (hx0, hx1, hy0, hy1, zd - LAYER_GAP + 0.01, zcut)
+    for mat in list(m.tris):
+        m.tris[mat] = _cut_box(m.tris[mat], box)
+        if not m.tris[mat]: del m.tris[mat]
+    best = None
+    for mat in m.tris:
+        img = _rgba(image(mat)) if image and mat != 'h_kage' else None
+        if img is None: continue
+        val, i, j = _dark_texel(img)
+        if val <= DARK_MAX and (best is None or val < best[3]): best = (mat, i, j, val, img.shape)
+    if best is None:
+        img = _rgba(image(DARK_FALLBACK[0])) if image else None
+        best = (DARK_FALLBACK[0], DARK_FALLBACK[2], DARK_FALLBACK[3], None, img.shape if img is not None else (32, 64))
+    mat, i, j, val, (h, w) = best[0], best[1], best[2], best[3], best[4][:2]
+    u, v = (i + 0.5) / w, 1 - (j + 0.5) / h
+    sx = max(abs(a) for a, _ in DOOR_VIEWS); sy = max(b for _, b in DOOR_VIEWS)
+    qx0, qx1, qy0 = hx0 - back * sx, hx1 + back * sx, hy0 - back * sy      # (a quad behind a hole: what rays reach)
+    m.quad(mat, [(qx0, qy0, zd, u, v), (qx1, qy0, zd, u, v), (qx1, hy1, zd, u, v), (qx0, hy1, zd, u, v)])
+    return dict(mode=mode, wall=wall, z=zd, quad=(qx0, qx1, qy0, hy1), hole=(hx0, hx1, hy0, hy1), texel=(mat, i, j, val))
+
+RECESS_LOG = {}            # (town, model name) -> door_recess's result (for the checks)
+def dark_doorway(m, out, name, image):
+    """door_recess for model <out>/<name> with its door record from data/buildings (no record or no door: nothing)."""
+    import os
+    door, dx, dz = door_record(out, name)
+    r = door_recess(m, door, dx, dz, image)
+    RECESS_LOG[(os.path.basename(os.path.normpath(out)), name)] = r
+    return r

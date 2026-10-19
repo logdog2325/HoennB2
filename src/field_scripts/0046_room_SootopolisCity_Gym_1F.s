@@ -2,9 +2,11 @@
 // Messages: src/text/script/0029_room_SootopolisCity_Gym_1F.txt
 #include "asm/field_script.inc"
 #include "hoenn.h"  // ch10
+#include "hoenn_tms.h"  // new_tms: ITEM_TM96 ...
 #include "hoenn_trainers.h"  // ch10
 #include "hoenn_key_items.h"  // ch10
 #include "hoenn_story.inc"  // ch10
+#include "hoenn_rematch.inc"    // Emerald's rematches (em_gym_rematch: nothing in Sapphire / Ruby)
 
     ScriptEntry Script_1
     ScriptEntry GY_Init  // 2: zone init (SootopolisCity_Gym_1F_OnTransition: VAR_ICE_STEP_COUNT 1)  // story:
@@ -165,12 +167,13 @@ GY_Wallace:                             // SootopolisCity_Gym_1F_EventScript_Wal
     h_release
 #endif
 L_GY_GiveWaterPulse:                    // SootopolisCity_Gym_1F_EventScript_GiveWaterPulse2
-    h_giveitem ITEM_TM03                // ITEM_TM03_WATER_PULSE: Black 2's TM03 is Psyshock (the line says so)
+    h_giveitem ITEM_TM97                // Gen 3 TM03 Water Pulse: the new TM97 (b2tools/patches/new_tms.py)
     h_goto_if_eq HLIB_RESULT, 0, L_GY_BagFull
-    h_msgbox_actor T_ExplainWaterPulse, GY_WALLACE     // The TM I handed you contains Psyshock. ...
+    h_msgbox_actor T_ExplainWaterPulse, GY_WALLACE     // The TM I handed you contains Water Pulse. ...
     h_setflag FLAG_RECEIVED_TM_WATER_PULSE
     h_release
 L_GY_AfterBattle:
+    em_gym_rematch TRAINER_WALLACE, GY_WALLACE   // Emerald: Juan after the Hall of Fame, a rematch (hoenn_rematch.inc)
     h_goto_if_unset FLAG_RECEIVED_TM_WATER_PULSE, L_GY_GiveWaterPulse
     h_goto_if_no_badge 6, L_GY_GoGetFortree     // goto_if_unset FLAG_BADGE06_GET (the Feather Badge)
     h_msgbox_actor T_WallacePostBattle, GY_WALLACE  // Trainers who have gathered all the Gym Badges of Hoenn should make way for the ultimate destination. ...
@@ -215,7 +218,7 @@ Sub_GY_EmJuanDefeated:                  // SootopolisCity_Gym_1F_EventScript_Jua
     h_setflag FLAG_HIDE_WALLACE_SOOTOPOLIS              // FLAG_HIDE_SOOTOPOLIS_CITY_WALLACE
     h_setvar VAR_SOOTOPOLIS_STATE, 6                    // VAR_SOOTOPOLIS_CITY_STATE
     h_clearflag FLAG_HIDE_SOOTOPOLIS_CITY_MAN_1
-    h_giveitem ITEM_TM03                // SootopolisCity_Gym_1F_EventScript_GiveWaterPulse (Black 2's TM03 is Psyshock: row 3 says so)
+    h_giveitem ITEM_TM97                // SootopolisCity_Gym_1F_EventScript_GiveWaterPulse (Water Pulse: the new TM97)
     h_goto_if_eq HLIB_RESULT, 0, L_GY_EmBagFull
     h_msgbox_actor T_ExplainWaterPulse, GY_WALLACE
     h_setflag FLAG_RECEIVED_TM_WATER_PULSE

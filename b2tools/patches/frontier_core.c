@@ -12,6 +12,8 @@
  *     a 256-byte slot: frontier_core.py makes the block 252 bytes long, so no other block moves). Black 2's own code
  *     never reads past byte 60 of that block (its clear, func_0200e0f4, still clears only 60: the Battle Tower's
  *     challenges do not touch the records); a new game clears all 252 (FR_PlayInit, the block's initializer).
+ *     HOENN_SAVE_COMPAT=1 (save_compat.py, notes/SAVE_PKHEX.md): the block keeps Black 2's 60 bytes (PKHeX's checks pass)
+ *     and the records sit after its 4-byte footer (FR_REC_OFF 64), keys 0-94 + their CRC (save_compat.c).
  *   BP shop lists: Emerald's Exchange Service Corner lists on Black 2's BP shop screen (FR_ShopMsgData).
  *   BP window: Black 2's money window with the shop's "N BP" line (FR_BPWin).
  */
@@ -81,7 +83,13 @@ typedef int s32;
 #define PLAY_BLOCK        0x38      /* Black 2's Battle Subway play block */
 #define PLAY_B2_SIZE      60        /* what Black 2 uses of it */
 #define PLAY_SIZE         252       /* the Emerald build's size: 252 + 4 (footer) = its 256-byte slot */
-#define N_KEYS            ((PLAY_SIZE - PLAY_B2_SIZE) / 2)   /* 96 */
+#ifndef FR_REC_OFF                  /* HOENN_SAVE_COMPAT=1 (save_compat.py, notes/SAVE_PKHEX.md): 64, after the footer */
+#define FR_REC_OFF        PLAY_B2_SIZE
+#endif
+#ifndef FR_N_KEYS                   /* HOENN_SAVE_COMPAT=1: 95 (key 95's place holds the record area's CRC) */
+#define FR_N_KEYS         ((PLAY_SIZE - PLAY_B2_SIZE) / 2)
+#endif
+#define N_KEYS            FR_N_KEYS   /* 96 */
 #define RECORD_ADD_BP     0x21      /* Black 2's trainer card record of BP earned (its own award commands add it) */
 #define BP_MAX            9999
 #define STREAK_MAX        9999      /* pokeemerald MAX_STREAK */
@@ -110,7 +118,7 @@ static u32 udiv(u32 a, u32 b) {                      /* no division helper in th
 }
 
 static u16 *records(void *gd) {
-    return (u16 *)((u8 *)SaveControl_GetBlockPtr(GameData_GetSaveControl(gd), PLAY_BLOCK) + PLAY_B2_SIZE);
+    return (u16 *)((u8 *)SaveControl_GetBlockPtr(GameData_GetSaveControl(gd), PLAY_BLOCK) + FR_REC_OFF);
 }
 
 static u32 streak_key(u16 *rec, u32 arg) {           /* arg = f | m << 3 -> the current streak's key */
@@ -370,5 +378,10 @@ u32 FR_ShopMsgData(void *ui, u32 id) {
 /* the play block's initializer (new game): all 252 bytes (Black 2's func_0200e0f4 clears 60) */
 void FR_PlayInit(void *block) {
     u32 *p = block, i;
+#ifdef HOENN_SAVE_COMPAT            /* the block stays 60 bytes: its whole 256-byte slot (the footer is 0 here: a new
+                                       game's save area is cleared first, runSaveBlkInitializers) */
+    for (i = 0; i < 256 / 4; i++) p[i] = 0;
+#else
     for (i = 0; i < PLAY_SIZE / 4; i++) p[i] = 0;
+#endif
 }

@@ -26,7 +26,7 @@ copies) is a different archive and different ov186 code: untouched.
 import os, sys, struct, json
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.dirname(HERE))
-import narcio, sprites as S, title_art as T                                   # noqa: E402
+import narcio, sprites as S, title_art as T, version                          # noqa: E402
 
 ROOT = os.path.abspath(os.path.join(HERE, '..', '..'))
 SRC = os.path.join(ROOT, 'src', 'trainer_card')
@@ -40,6 +40,8 @@ CLASS_NEW = [112, 113, 115, 114, 117, 116, 118, 119]             # Sapphire's ba
 # 80x80 still from (x, y) (None: found from the head's top row), drawn at 2x
 LEADERS = [('Roxanne', [118]), ('Brawly', [119]), ('Wattson', [120]), ('Flannery', [121]), ('Norman', [122]),
            ('Winona', [123]), ('Tate & Liza', [124, 125]), ('Wallace', [140])]
+if version.is_emerald():     # Emerald's 8th leader is Juan (Black 2's PWT Juan, a/0/7/1 sprite 126; Wallace is the Champion):
+    LEADERS[7] = ('Juan', [126])   # user report 2026-10-14; his name, motto and line: src/text/emerald/overrides_trainer_card_juan.json
 BADGE_PALS = [1, 6, 2, 3, 4, 5, 7, 0]                           # NCLR 4 palette of 2D badge cell k (ov186 table)
 CASE_Y0, CASE_Y1 = 88, 168                                       # NSCR 38 rows 11-20: the badge case
 PEN_Y0, PEN_Y1 = 8, 88                                           # rows 1-10: the pennants

@@ -427,6 +427,7 @@ def height_field(world, maps, cfg, trees=()):
     global FIELD
     F = Field(); FIELD = F
     elev, mtile, repo = _sapphire_grids(maps, cfg)
+    F.elev = elev                # (Sapphire's elevation per world tile: world.py bridge_layers, surf_under 2026-10-17)
     for name, mp in maps.items(): F.floor[name] = mp['cfg'].get('floor', 'route')
     cls = lambda k: world[k][1] if k in world else None
     # (Sapphire marks 41 scattered tiles of Route 126's crater wall passable; they are unreachable rock: solid here)
@@ -540,7 +541,13 @@ def height_field(world, maps, cfg, trees=()):
     # sweep 2026-10-06): e.g. Petalburg's grass strip south of its west pond, cut off by trees, stood at Sapphire's
     # level 0 while Petalburg stands at +16, so the pond stepped 16 units in the middle. The biggest shore region
     # goes first; groups already placed keep their heights (union only joins groups that are still separate)
-    for comp in _components({k for k, e in world.items() if e[1] in WATER and e[1] != 'waterfall'}, nb):
+    # (bridges 2026-10-18) ...and the water on both sides of a surf-under plank bridge (Sapphire's walkable
+    # elevation-15 bridge tiles over surf water, Routes 119/120: a surfer passes under them, raise_bridges) is one
+    # body: Route 120's south bridge parted its river, and the strip north of it (two secret-base caves) took the
+    # bridge's level, 32 over the river's south bank, where Sapphire has both at elevation 3
+    span = {k for k in walk if cls(k) == 'bridge' and elev.get(k) == 15 and world[k][0] not in STILTS
+            and any(n in world and world[n][2] and cls(n) in ('water', 'deep_water') for n in nb(k))}
+    for comp in _components({k for k, e in world.items() if e[1] in WATER and e[1] != 'waterfall'} | span, nb):
         if len(comp) >= 400: continue                            # the sea: its shores are anchored above
         shore = sorted({region[n] for p in comp for n in nb(p) if n in region and cls(n) != 'bridge'},
                        key=lambda r: -size[r])
@@ -731,6 +738,13 @@ def height_field(world, maps, cfg, trees=()):
     for comp in _components({k for k in wet if not fall_row(k)}, nb):
         surf = {F.h[n] for p in comp for n in nb(p)
                 if n in walk and n not in F.slope and n in F.h and ((deck(n) and (n not in pier or elev.get(n) in (0, 3, 15))) or elev.get(n) == 3)}
+        # (bridges 2026-10-18) a surf-under span (step 2) is a shore only within one level of the water's other shores:
+        # a surfer passes under it now (raise_bridges), and 2+ levels over them it split Route 120's south river at a
+        # 32-unit step the surfer could not climb (Sapphire: one body of elevation 1)
+        own = {F.h[n] for p in comp for n in nb(p) if n in span and n in F.h}
+        rest = {F.h[n] for p in comp for n in nb(p) if n not in span and n in walk and n not in F.slope and n in F.h
+                and ((deck(n) and (n not in pier or elev.get(n) in (0, 3, 15))) or elev.get(n) == 3)}
+        if own and rest and max(abs(a - b) for a in own for b in rest) > LEVEL: surf = rest
         if len(surf) == 1:
             h0 = surf.pop()
             for p in comp: F.h[p] = h0
@@ -1115,6 +1129,11 @@ def height_field(world, maps, cfg, trees=()):
             if n in world or n in src: continue
             src[n] = (h0, d + 1); q.append(n)
             if h0: F.h[n] = h0
+    # 11b. raised plank bridges (bridges 2026-10-18): Routes 119/120's decks over surf water stand high enough over it
+    #     for a surfer to pass under them, hidden (raise_bridges); last, so every height above (the water's level from
+    #     its shores, the faces, the exposed rock) is what it was with the decks at their banks' level
+    raise_bridges(F, world, walk, elev, cls, nb)
+
     # 12. surf landing (final_check 2026-10-08): Sapphire lands a surfer only on elevation 3 (pokeruby
     #     field_player_avatar.c sub_8058EF0: an elevation mismatch with the surfer's 1 onto a tile of elevation 3; 0 and
     #     1 never mismatch, the surfer moves on); Black 2 lands it on any tile that is not solid or surfable, at any
@@ -1126,6 +1145,77 @@ def height_field(world, maps, cfg, trees=()):
     print(f'heights: {len(F.slope)} stair/slope tiles, {len(F.walls)} walled tiles, {len(F.noland)} no-landing tiles, {len(F.notes)} notes')
     for n in F.notes: print('heights:', n)
     return F
+
+RAISE_CLEAR = 32     # a raised plank bridge's deck over the surf height of its water, at least (raise_bridges)
+SURF_Y = -8          # a surfer's height under its water tile's (water.py Y_WATER)
+
+def raise_bridges(F, world, walk, elev, cls, nb):
+    """(bridges 2026-10-18) Gen 3 surfs under Routes 119/120's plank bridges (a walkable elevation-15 span over surf
+    water: elevation 15 keeps the mover's elevation, so a surfer passes under while a walker crosses on top). Ours stood
+    at their banks' level, 8 over the water's surf height: no two-layer setting both passes a surfer and hides it (the
+    deck needs ~32 over the surfer: surf_under2 2026-10-18, 31.4 under Route 110's road showed nothing, 24 the hat) and
+    a deeper water under the deck loses the step in from the open water beside it (20 units, ActorRouteCollCheckCore).
+    So the deck is raised: the span (its columns of elevation-15 tiles) to a height D at least RAISE_CLEAR over the
+    surfer (the water's surf height U, kept: no dip going under), the dry end tiles between it and each bank step 16
+    at a time from the bank (Black 2's limit is 20; as step 3b's steps) and run flat on to D (even steps of 5-11 lifted
+    Route 120's east end tile to 91, and the cliff tile behind it, 2 under the bank, read as open ground: walk_diff
+    OPEN). D is the higher bank's height when that is
+    enough and reachable from the other bank, else the lowest multiple of 16 that works. Black 2 reads the tile in front
+    of the player at its grid height (16 * int(y / 16), world.py _b2_front_y): a walker on the end tile next to the
+    span must still find the deck there, not the water layer under it (else the bike's tests and surfing off read the
+    water), so D is raised until it does. world.py bridge_layers then gives the span two layers (water at U, the deck
+    at D) and its ends a solid layer under them; ground.py draws the deck, wooden risers at its steps (F.raised_decks)
+    and posts into the water (pier_posts); water.py draws the water under the deck at its own level, heights.draw rock
+    faces up to the dry end tiles (abutments) and no face from the water up to the span (open_under).
+    Fortree's walkways (STILTS) and decks over land or with no bank at an end (piers) are left alone."""
+    F.raised_decks = set()
+    front = lambda y: 16 * int(y / 16)                       # (world.py _b2_front_y)
+    deck_side = lambda y, U, D: abs(y - D) + 0.5 < abs(y - U)   # (y picks the deck's layer: world.py _b2_pick)
+    for comp in _components({k for k in walk if cls(k) == 'bridge' and world[k][0] not in STILTS}, nb):
+        span = {k for k in comp if elev.get(k) == 15}
+        water = {n for k in span for n in nb(k) if n in world and world[n][2] and cls(n) in ('water', 'deep_water')}
+        if not span or not water: continue
+        xs, zs = [p[0] for p in comp], [p[1] for p in comp]
+        ew = max(xs) - min(xs) >= max(zs) - min(zs)
+        axis = 0 if ew else 1
+        lo_, hi_ = min(p[axis] for p in comp), max(p[axis] for p in comp)
+        n = hi_ - lo_ + 1
+        col = lambda i: [p for p in comp if p[axis] - lo_ == i]
+        wet = [i for i in range(n) if col(i) and all(p in span for p in col(i))]
+        if not wet or any(i not in wet for i in range(wet[0], wet[-1] + 1)) or any(not col(i) for i in range(n)):
+            F.notes.append(f'bridge at {min(comp)}: not raised (its span is not one run of whole columns)'); continue
+        def bank(end, d):
+            hs = [F.y(*q) for p in col(end) for q in [((p[0] + d, p[1]) if ew else (p[0], p[1] + d))]
+                  if q in walk and cls(q) != 'bridge' and q not in F.slope and cls(q) not in WATER]
+            return Counter(hs).most_common(1)[0][0] if hs else None
+        h0, h1 = bank(0, -1), bank(n - 1, 1)
+        if h0 is None or h1 is None:
+            F.notes.append(f'bridge at {min(comp)}: not raised (no bank at an end)'); continue
+        dry_lo, dry_hi = wet[0], n - 1 - wet[-1]
+        U = min(F.y(*q) for q in water) + SURF_Y
+        def profile(D):
+            """column -> height for a span at D, or None when a step is over 16 or a walker next to it reads water."""
+            out = {i: D for i in wet}
+            step = lambda h, k: h + max(-abs(D - h), min(abs(D - h), 16 * k)) * (1 if D >= h else -1)
+            for i in range(dry_lo): out[i] = step(h0, i + 1)
+            for j in range(dry_hi): out[n - 1 - j] = step(h1, j + 1)
+            seq = [h0] + [out[i] for i in range(n)] + [h1]
+            if any(abs(a - b) > 16 for a, b in zip(seq, seq[1:])): return None
+            for L in (seq[wet[0]], seq[wet[-1] + 2]):            # (the end tile or bank next to the span)
+                if not (deck_side(L, U, D) and deck_side(front(L), U, D)): return None
+            return out
+        need = U + RAISE_CLEAR
+        top = max(h0, h1)
+        tries = ([top] if top >= need else []) + list(range(-(-need // 16) * 16, need + 16 * (n + 2), 16))
+        D = next((d for d in tries if profile(d)), None)
+        if D is None:
+            F.notes.append(f'bridge at {min(comp)}: not raised (no deck height {RAISE_CLEAR} over its water works)'); continue
+        hs = profile(D)
+        for p in comp:
+            F.h[p] = hs[p[axis] - lo_]; F.coll_h.pop(p, None)
+        F.raised_decks |= set(comp)
+        F.notes.append(f'bridge at {min(comp)}: surf-under span at {D} over surf water at {U} (banks {h0} and {h1}, '
+                       f'end tiles {[hs[i] for i in range(n) if i not in wet]})')
 
 # ---- geometry ------------------------------------------------------------------------------------------------------
 # Black 2's cliff (Route 1 chunk 2, Route 20 chunk 287, Route 19 chunk 282): the face stands in the LOW tile next to
@@ -1219,6 +1309,11 @@ class _Lattice:
         pts = {'n': [(0, 0), (1, 0), (2, 0)], 's': [(0, 2), (1, 2), (2, 2)],
                'w': [(0, 0), (0, 1), (0, 2)], 'e': [(2, 0), (2, 1), (2, 2)]}[side]
         return [self.surf(k, i, j) for i, j in pts]
+
+def _riser(F, hi, lo):
+    """A raised plank bridge's deck tile hi standing over the walkable tile lo beside it (its bank, a lower step):
+    terrain/ground.py deck_risers closes that step with planks, no rock skirt here (raise_bridges)."""
+    return hi in getattr(F, 'raised_decks', ()) and lo in F.walk and lo not in F.slope and F.y(*hi) > F.y(*lo) + 0.5
 
 _LAT = {}
 def _lat(F):
@@ -1372,6 +1467,7 @@ def draw(m, cell):
                 if max(abs(p - r) for p, r in zip(a, b)) < 0.01: continue
                 if lat.open_under(k, q) or lat.open_under(q, k): continue    # (a pier over its water: open under)
                 if lat.water_step(k, q) or lat.water_step(q, k): continue    # (sea rocks parting two water levels)
+                if _riser(F, k, q) or _riser(F, q, k): continue      # (a raised bridge's step: ground.py's wooden riser)
                 if side == 'n' and min(b) >= max(a) - 0.01: continue           # (faces north: culled, never seen)
                 upper_slope = (q in F.slope and sum(a) > sum(b)) or (k in F.slope and sum(b) > sum(a))
                 tex = 'kaidan01a' if upper_slope else 'gake01a'

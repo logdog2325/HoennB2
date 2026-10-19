@@ -146,7 +146,10 @@ def claim(reg, group, names):
         if name in ids:
             out.append(f'{name} already {ids[name]["id"]} ({ids[name]["chapter"]})'); continue
         kind = 'var' if name.startswith('VAR_') else 'flag'
-        free = [i for i in r['works' if kind == 'var' else 'flags'] if (kind, i) not in used]
+        pool = r['works' if kind == 'var' else 'flags']
+        if name.startswith('FLAG_DAILY_'):     # a midnight-reset flag: the daily pool (as main() gives chapters' FLAG_DAILY_*)
+            pool = [i for a, b in reg['daily'] for i in range(a, b + 1)]                      # (emerald_rematch 2026-10-18)
+        free = [i for i in pool if (kind, i) not in used]
         if not free: raise SystemExit(f'{group}: no unused reserved {kind} left for {name}')
         ids[name] = {'id': free[0], 'kind': kind, 'chapter': group}
         used.add((kind, free[0]))

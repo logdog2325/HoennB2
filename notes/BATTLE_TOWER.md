@@ -89,6 +89,10 @@ greeting, heal, battle, after a win heal + "opponent no. N" / save and quit / ca
 Rest = save the play block + FieldSetNextZone(lobby) + flag 2405 + save, then soft reset (Sapphire resets too).
 Retire = soft reset without saving → "didn't save … disqualified" on Continue (as Sapphire).
 
+Emerald builds (2026-10-18): the Battle Room brings out the Salon Maiden Anabel at Emerald's streaks (battle 35 / 70, then
+every 35th with both symbols) and the lobby pays her +10 BP: notes/FRONTIER.md 5 ("The Battle Tower's Salon Maiden
+Anabel"); Sapphire and Ruby assemble 0030/0042 byte for byte as before.
+
 ### 2.3 PWT building (zone 192)
 Second building on the island (door 3 at tile (37,30): helper C's porch + standalone `pwt.nsbmd`, `B2_ZONE_192`). pwt.py:
 zones 192/193 place 62 (Battle Tower), the lobby's exit → island warp 3, lobby map scripts from 0385. 0384.s: entries 8,

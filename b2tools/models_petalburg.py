@@ -15,7 +15,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 from exterior_layers import separate
 from dae import Model
-from buildings import Region, rect, decal, box_walls, hip_roof, gable_roof, face, slope, shadow, DOOR_WALL, pc_door_hood, cull_unseen
+from buildings import Region, rect, decal, box_walls, hip_roof, gable_roof, face, slope, shadow, DOOR_WALL, pc_door_hood, cull_unseen, dark_doorway
 
 TEX = os.path.join(HERE, '..', 'work', 'tex')
 UP, E, S = (0, 1, 0), (1, 0, 0), (0, 0, 1)
@@ -174,6 +174,7 @@ def write(out, models, sources):
     used = set()
     for name, m in models.items():
         separate(m)        # layers >= 1 unit apart (melonDS flicker; b2tools/exterior_layers.py)
+        dark_doorway(m, out, name, lambda t: os.path.join(TEX, sources[t], t + '.png') if t in sources else None)
         cull_unseen(m)     # nothing the field camera never sees (pack 0 heap; buildings.cull_unseen)
         n = m.write(os.path.join(out, f'{name}.dae'), wrap={t: ('WRAP', 'WRAP') if t in WRAPPED else ('CLAMP', 'CLAMP') for t in m.tris})
         used |= {t for t in m.tris if m.tris[t]}

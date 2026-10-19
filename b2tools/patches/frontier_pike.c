@@ -124,6 +124,9 @@ typedef int s32;
 /* the Frontier's records (notes/FRONTIER.md 2.2, frontier_core): u16[96] after Black 2's 60 bytes of save block 0x38 */
 #define PLAY_BLOCK 0x38
 #define PLAY_B2_SIZE 60
+#ifndef FR_REC_OFF                               /* the records' offset (HOENN_SAVE_COMPAT=1: 64, notes/SAVE_PKHEX.md) */
+#define FR_REC_OFF PLAY_B2_SIZE
+#endif
 #define K_STATUS 0
 #define K_FACILITY 1
 #define K_BATTLE_MODE 2
@@ -183,10 +186,10 @@ static u32 rnd(u32 n) { return GFL_RandomLC(n); }
 static u32 udiv(u32 a, u32 b) { return ((u32 (*)(u32, u32))0x0208d868)(a, b); }   /* arm9 __aeabi_uidivmod (ARM) */
 static u32 umod(u32 a, u32 b) { return a - udiv(a, b) * b; }
 static u16 *rec(void *gd) {
-    return (u16 *)((u8 *)SaveControl_GetBlockPtr(GameData_GetSaveControl(gd), PLAY_BLOCK) + PLAY_B2_SIZE);
+    return (u16 *)((u8 *)SaveControl_GetBlockPtr(GameData_GetSaveControl(gd), PLAY_BLOCK) + FR_REC_OFF);
 }
 #ifdef PK_PART_LINES                    /* (the battle has no GameData at hand: the global SaveControl) */
-static u16 *rec_g(void) { return (u16 *)((u8 *)SaveControl_GetBlockPtr(g_SaveControl, PLAY_BLOCK) + PLAY_B2_SIZE); }
+static u16 *rec_g(void) { return (u16 *)((u8 *)SaveControl_GetBlockPtr(g_SaveControl, PLAY_BLOCK) + FR_REC_OFF); }
 #endif
 static u16 *wk(void *gd, u32 id) { return EventWork_GetWkPtr(GameData_GetEventWork(gd), id); }
 static u32 bits(u32 v, u32 at, u32 n) { return (v >> at) & ((1u << n) - 1); }

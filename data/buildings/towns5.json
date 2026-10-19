@@ -6,7 +6,7 @@
    "model": "work/buildings/routes/briney.nsbmd",
    "door": 260,
    "dx": 8,
-   "dz": 20,
+   "dz": 22,
    "what": "Route 104 Mr. Briney's cottage (5 wide, door in the middle)"
   },
   {
@@ -14,7 +14,7 @@
    "model": "work/buildings/routes/flowershop.nsbmd",
    "door": 260,
    "dx": 0,
-   "dz": 20,
+   "dz": 22,
    "what": "Route 104 Pretty Petal flower shop (6 wide, door in column 2)"
   },
   {
@@ -22,7 +22,7 @@
    "model": "work/buildings/routes/seashore.nsbmd",
    "door": 260,
    "dx": 8,
-   "dz": 20,
+   "dz": 22,
    "what": "Route 109 Seashore House (5 wide, door in the middle)"
   },
   {
@@ -38,7 +38,7 @@
    "model": "work/buildings/routes/trickhouse.nsbmd",
    "door": 261,
    "dx": 8,
-   "dz": 20,
+   "dz": 22,
    "what": "Route 110 Trick House (5 wide, two tiers, door in the middle)"
   },
   {
@@ -46,7 +46,7 @@
    "model": "work/buildings/routes/winstrate.nsbmd",
    "door": 261,
    "dx": 8,
-   "dz": 20,
+   "dz": 22,
    "what": "Route 111 Winstrate family's house (5 wide, door in the middle)"
   },
   {
@@ -54,7 +54,7 @@
    "model": "work/buildings/routes/cablecar.nsbmd",
    "door": 261,
    "dx": 0,
-   "dz": 20,
+   "dz": 22,
    "what": "Route 112 cable car station with its pylon (4 wide + east wing; door on the west door tile, the east door tile's door is a res 261 prop)"
   },
   {
@@ -62,7 +62,7 @@
    "model": "work/buildings/routes/weather.nsbmd",
    "door": 261,
    "dx": 8,
-   "dz": 20,
+   "dz": 22,
    "what": "Route 119 Weather Institute (11 wide, door in the middle)"
   },
   {

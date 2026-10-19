@@ -1,0 +1,8 @@
+Hm! Hm!{be01}\nYou finally came!\nYes, you have arrived!{be01}\nWait! Don’t say it!\nI know why you came all the way{be00}\nhere by yourself!{be01}\nYou wanted to see me, the owner\nof the Trainer Hill, because…{be01}\nYou want to form a tag team with me!\nWa-hoo!{be01}\n…Uh?\nThat’s not it?{be01}\nAnyway, I watched you on your way up.\nMarvelous battling! Bravo, indeed!
+For a marvelous someone like you,\nI have the most marvelous gift!
+Oh, no, full up with things!\nYou’ll be back later for this!
+Oh, hold on here! Did you possibly get\nhere marvelously quickly?{be01}\nHow splendid! You needn’t have\nhurried so to see me!{be01}\nThat is so delightful. I’ll have the Time\nBoard at the reception updated!
+But, oh…\nYou weren’t very quick getting here.
+Perhaps it would please me more if you\narrived zippier next time.{be01}\nThen, I should be pleased to form\na tag team with you!{be01}\nUntil we meet again, amigo!
+Obtained the {0100:2}!
+The Bag is full…

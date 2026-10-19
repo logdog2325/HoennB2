@@ -1,0 +1,108 @@
+{
+ "_doc": "battle_tents (hill rooms helper, 2026-10-18; work/agents/battle_tents/tools/rooms_hill.py writes this file). Trainer Hill roof (Emerald 25x16; walkable x 7-17, rows 5-10). Outdoors: the whole rooftop of Emerald's rows 5-11 (x 0-24: the lower roofs beyond the fences too, so the sky-painted side walls (in39_sora) stand far out), a thin glass balustrade (in71saku01) on Emerald's fence columns x 6 / 18 and along the front edge (row 11). The penthouse (Emerald's stairs/elevator head, x 7-17 rows 0-6) is the back wall (stadium panels painted on it) with its corner block (11-13,5-6), the stairs down (9,5) = stair_d01 and the elevator door (15,5) = elevator01 (Emerald's animated door: a stairs-type warp entered walking north). The owner stands at (12,7). Emerald's walkable tiles outside the fences ((0,6-7), (2,6-7), (22,6-7), (24,6-7)) cannot be reached.",
+ "map": "pokeemerald/TrainerHill_Roof",
+ "style": "th_roof",
+ "origin": [
+  1,
+  -3
+ ],
+ "floor": [
+  [
+   0,
+   5,
+   24,
+   11
+  ]
+ ],
+ "stairs": [
+  [
+   9,
+   5
+  ],
+  [
+   15,
+   5
+  ]
+ ],
+ "block": [],
+ "blocks": [
+  {
+   "units": [
+    6.375,
+    4.25,
+    6.625,
+    11.25
+   ],
+   "use": "th_rail",
+   "_what": "west railing (Emerald fence x 6)"
+  },
+  {
+   "units": [
+    18.375,
+    4.25,
+    18.625,
+    11.25
+   ],
+   "use": "th_rail",
+   "_what": "east railing (Emerald fence x 18)"
+  },
+  {
+   "units": [
+    6.375,
+    11.0,
+    18.625,
+    11.25
+   ],
+   "use": "th_rail",
+   "_what": "front railing (Emerald's posts, row 11)"
+  },
+  {
+   "rect": [
+    11,
+    5,
+    13,
+    6
+   ],
+   "use": "th_tower",
+   "_what": "the penthouse's corner (Emerald (11-13,5-6))"
+  }
+ ],
+ "furniture": [
+  {
+   "m": "stair_d01",
+   "stair": [
+    9,
+    5
+   ],
+   "dir": "N",
+   "_what": "stairs down to 4F (Emerald warp 0, (9,5))"
+  },
+  {
+   "m": "elevator01",
+   "at": [
+    15.875,
+    4.6875
+   ],
+   "_what": "elevator door (Emerald warp 1, (15,5)): its origin (6 units off its box) on the warp tile's centre line, as the Dept. Store's"
+  }
+ ],
+ "decals": [
+  {
+   "tex": "out50_kabe03",
+   "src": 331,
+   "at": [
+    12.5
+   ],
+   "y": 0,
+   "w": 176,
+   "h": 48,
+   "uv": [
+    0,
+    0,
+    5.5,
+    1.5
+   ],
+   "_what": "the penthouse's front (Emerald x 7-17, rows 0-5)"
+  }
+ ]
+}

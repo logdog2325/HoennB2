@@ -1,0 +1,333 @@
+{
+ "_doc": "battle_tents (hill rooms helper, 2026-10-18; work/agents/battle_tents/tools/rooms_hill.py writes this file): Trainer Hill (Emerald, Route 111) in Black 2's Big Stadium art (Nimbasa, texture set 331: white panel walls with green light strips out50_kabe03, teal/grey panels, blue seats and rails) with pastel tiled floors from the Trainer School (325: mint tiles clsm_yuka06/01), Shopping Mall Nine (326: pale yellow in45_yuka02, teal in45_yuka05, light panels in45_kb01/kb03), the Pokemon Center (283: in02_yuka6 peach, in02_pc3 blue), set 282 (lavender m_nsch01_03, in01_sch_y03, orange plaid in01_gyuka, notes in01_onpu4).",
+ "th_hill": {
+  "_doc": "Trainer Hill floors 1F-4F: Emerald's green dotted floor = the Trainer School's mint tiles clsm_yuka06 (325, one tile a square), stadium wall out50_kabe03 (331).",
+  "floor": {
+   "tex": "clsm_yuka06",
+   "src": 325,
+   "size": 32
+  },
+  "wall": {
+   "tex": "out50_kabe03",
+   "src": 331,
+   "u_size": 32,
+   "v": [
+    0,
+    1.5
+   ]
+  },
+  "genkan": {
+   "tex": "chip_ent",
+   "src": 306,
+   "stretch": true
+  },
+  "black": {
+   "tex": "black",
+   "src": 285
+  }
+ },
+ "th_lobby": {
+  "_doc": "Trainer Hill entrance: Emerald's yellow lobby tiles = Shopping Mall Nine's pale yellow squares in45_yuka02 (326), stadium wall out50_kabe03, Black 2's entrance notch chip_ent (306).",
+  "floor": {
+   "tex": "in45_yuka02",
+   "src": 326,
+   "size": 32
+  },
+  "wall": {
+   "tex": "out50_kabe03",
+   "src": 331,
+   "u_size": 32,
+   "v": [
+    0,
+    1.5
+   ]
+  },
+  "genkan": {
+   "tex": "chip_ent",
+   "src": 306,
+   "stretch": true
+  },
+  "black": {
+   "tex": "black",
+   "src": 285
+  }
+ },
+ "th_roof": {
+  "_doc": "Trainer Hill roof: grey-green stadium panels out50_yuka07 (331) underfoot, the walls painted as sky (Black 2's cloud texture in39_sora, set 320) so the rooftop stands in the open.",
+  "floor": {
+   "tex": "out50_yuka07",
+   "src": 331,
+   "size": 32
+  },
+  "wall": {
+   "tex": "in39_sora",
+   "src": 320,
+   "u_size": 64,
+   "v": [
+    0,
+    0.75
+   ]
+  },
+  "genkan": {
+   "tex": "chip_ent",
+   "src": 306,
+   "stretch": true
+  },
+  "black": {
+   "tex": "black",
+   "src": 285
+  }
+ },
+ "th_crate": {
+  "_doc": "Emerald's stacked white blocks with a red stripe (the floors' maze walls): white top out50_line02, sides Shopping Mall Nine's red light panel in45_kb01 (326), 16 high (as the Gyms' blocks since map_gfx 2026-10-11: at 18 their tops cut the body of people standing south of them).",
+  "h": 16,
+  "top": {
+   "tex": "out50_line02",
+   "src": 331,
+   "size": 16
+  },
+  "side": {
+   "tex": "in45_kb01",
+   "src": 326,
+   "u_size": 16,
+   "v": [
+    0,
+    1
+   ]
+  },
+  "shade_top": 1.0,
+  "shade_s": 0.92,
+  "shade_we": 0.7
+ },
+ "th_panel": {
+  "_doc": "Emerald's solid teal floor panels (246): a low teal step, top in45_yuka05 (326), sides the stadium's teal out50_yuka02 (331), 8 high.",
+  "h": 8,
+  "top": {
+   "tex": "in45_yuka05",
+   "src": 326,
+   "size": 16
+  },
+  "side": {
+   "tex": "out50_yuka02",
+   "src": 331,
+   "u_size": 16,
+   "v": [
+    0,
+    0.5
+   ]
+  },
+  "shade_top": 1.0,
+  "shade_s": 0.85,
+  "shade_we": 0.6
+ },
+ "th_ledge": {
+  "_doc": "Emerald's blue benches / counters you jump down from (MB_JUMP_SOUTH, Black 2 ledge cells 0x75): the stadium's blue seats out50_seat01 on top, blue rail panel out50_tes02 on the sides, 8 high.",
+  "h": 8,
+  "top": {
+   "tex": "out50_seat01",
+   "src": 331,
+   "size": 16
+  },
+  "side": {
+   "tex": "out50_tes02",
+   "src": 331,
+   "u_size": 16,
+   "v": [
+    0,
+    0.5
+   ]
+  },
+  "shade_top": 1.0,
+  "shade_s": 0.85,
+  "shade_we": 0.6
+ },
+ "th_glass": {
+  "_doc": "Emerald's green glass partitions (24d/255): Humilau's window glass in82_mado (389) on the faces, white frame top out50_line02, 18 high (FRONT_H; at 26 their sides cut the player in the doorway between them, rooms_view m).",
+  "h": 18,
+  "top": {
+   "tex": "out50_line02",
+   "src": 331,
+   "size": 16
+  },
+  "side": {
+   "tex": "in82_mado",
+   "src": 389,
+   "u_size": 32,
+   "v": [
+    0,
+    1
+   ]
+  },
+  "shade_top": 1.0,
+  "shade_s": 0.95,
+  "shade_we": 0.75
+ },
+ "th_capsule": {
+  "_doc": "Emerald's blue capsule pillars (base tile 297/2d7; Emerald draws them over the two tiles north, which stay walkable): a one-tile pillar, white top, blue light panel in45_kb03 (326) sides, 16 high (as th_crate).",
+  "h": 16,
+  "top": {
+   "tex": "out50_line02",
+   "src": 331,
+   "size": 16
+  },
+  "side": {
+   "tex": "in45_kb03",
+   "src": 326,
+   "u_size": 16,
+   "v": [
+    0,
+    1
+   ]
+  },
+  "shade_top": 1.0,
+  "shade_s": 0.9,
+  "shade_we": 0.65
+ },
+ "th_inner": {
+  "_doc": "Emerald's black inner walls (208 inside a floor: Expert 1F): low stadium wall blocks, the wall out50_kabe03 on the faces, grey metal out50_yuka08 on top, 16 high.",
+  "h": 16,
+  "top": {
+   "tex": "out50_yuka08",
+   "src": 331,
+   "size": 16
+  },
+  "side": {
+   "tex": "out50_kabe03",
+   "src": 331,
+   "u_size": 16,
+   "v": [
+    0.5,
+    1
+   ]
+  },
+  "shade_top": 0.9,
+  "shade_s": 0.85,
+  "shade_we": 0.6
+ },
+ "th_locker": {
+  "_doc": "The cabinets beside the floor board (Emerald (4-5,3-4), (9-10,3-4)): the Trainer School's red lockers clsm_kabe02 (325) on the faces, white top, 28 high.",
+  "h": 28,
+  "top": {
+   "tex": "out50_line02",
+   "src": 331,
+   "size": 16
+  },
+  "side": {
+   "tex": "clsm_kabe02",
+   "src": 325,
+   "u_size": 16,
+   "v": [
+    0,
+    1
+   ]
+  },
+  "shade_top": 1.0,
+  "shade_s": 0.9,
+  "shade_we": 0.6
+ },
+ "th_console": {
+  "_doc": "The floor board (Emerald (6-8,3-5)): a console with a screen on top (meka_monitor, set 289) and a blue light panel in45_kb03 front, 14 high.",
+  "h": 14,
+  "top": {
+   "tex": "meka_monitor",
+   "src": 289,
+   "size": 32
+  },
+  "side": {
+   "tex": "in45_kb03",
+   "src": 326,
+   "u_size": 16,
+   "v": [
+    0,
+    1
+   ]
+  },
+  "shade_top": 1.0,
+  "shade_s": 0.9,
+  "shade_we": 0.65
+ },
+ "th_counter": {
+  "_doc": "Reception counters of the entrance: white/grey band top in45_count01 (326), the stadium's blue panel out50_tes02 (331) on the faces, 14 high (the Centers' counter height).",
+  "h": 14,
+  "top": {
+   "tex": "in45_count01",
+   "src": 326,
+   "size": 16
+  },
+  "side": {
+   "tex": "out50_tes02",
+   "src": 331,
+   "u_size": 16,
+   "v": [
+    0,
+    0.75
+   ]
+  },
+  "shade_top": 1.0,
+  "shade_s": 0.9,
+  "shade_we": 0.65
+ },
+ "th_gate": {
+  "_doc": "The entrance's gate to the elevator (Emerald (17,10)): a low glass gate, in82_mado (389) faces.",
+  "h": 14,
+  "top": {
+   "tex": "out50_line02",
+   "src": 331,
+   "size": 16
+  },
+  "side": {
+   "tex": "in82_mado",
+   "src": 389,
+   "u_size": 16,
+   "v": [
+    0,
+    0.5
+   ]
+  },
+  "shade_top": 1.0,
+  "shade_s": 0.95,
+  "shade_we": 0.75
+ },
+ "th_rail": {
+  "_doc": "The roof's railing: a glass balustrade in71saku01 (352, steel rail and glass panels), 14 high, grey rail top out50_tes03 (331).",
+  "h": 14,
+  "top": {
+   "tex": "out50_tes03",
+   "src": 331,
+   "size": 8
+  },
+  "side": {
+   "tex": "in71saku01",
+   "src": 352,
+   "u_size": 16,
+   "v": [
+    0,
+    0.5
+   ]
+  },
+  "shade_top": 1.0,
+  "shade_s": 0.95,
+  "shade_we": 0.75
+ },
+ "th_tower": {
+  "_doc": "The roof's penthouse corner (Emerald's stairs/elevator head, (11-13,5-6)): stadium wall out50_kabe03 faces, 48 high, dark grey top.",
+  "h": 48,
+  "top": {
+   "tex": "out50_yuka08",
+   "src": 331,
+   "size": 16
+  },
+  "side": {
+   "tex": "out50_kabe03",
+   "src": 331,
+   "u_size": 32,
+   "v": [
+    0,
+    1.5
+   ]
+  },
+  "shade_top": 0.5,
+  "shade_s": 0.95,
+  "shade_we": 0.6
+ }
+}

@@ -65,6 +65,9 @@ typedef signed int s32;
 #define PokeParty_GetParam         FN(u32 (*)(void *, u32, void *), 0x0201ccf8)
 #define PokeParty_SetParam         FN(void (*)(void *, u32, u32), 0x0201cd1c)
 #define PokeParty_SetNature        FN(void (*)(void *, u32), 0x0201d5e0)
+#define PokeParty_SetMove          FN(void (*)(void *, u32, u32), 0x0201d224)
+#define PokeParty_CreatePkm        FN(void (*)(void *, u32, u32, u32, u32, u32, u32, u32), 0x0201c464)
+#define PokeParty_GetPkmRawSize    FN(u32 (*)(void), 0x0201c2c8)
 #define PokeParty_RecalcStats      FN(void (*)(void *), 0x0201d5f4)
 #define PML_PersonalGetParamSingle FN(u32 (*)(u32, u32, u32), 0x0201ef1c)
 #define GetIndexOfObjID            FN(u32 (*)(u32), 0x0200fe34)
@@ -119,7 +122,11 @@ typedef signed int s32;
 
 /* frontier_core's record keys (notes/FRONTIER.md 2.2) */
 #define FR_PLAY_BLOCK 0x38
+#ifdef FR_REC_OFF                       /* HOENN_SAVE_COMPAT=1 (save_compat.py, notes/SAVE_PKHEX.md): 64 */
+#define FR_AREA_OFF   FR_REC_OFF
+#else
 #define FR_AREA_OFF   60
+#endif
 #define K_STATUS 0
 #define K_FACILITY 1
 #define K_LVL 3
@@ -134,8 +141,14 @@ typedef signed int s32;
 #define K_F_SEED 87
 #define K_D_SEED 88
 #define K_D_INFO 90
+#define K_TENT_OPP 44            /* battle_tents (notes/FRONTIER.md 6): bits 0-4 the tent's current opponent (0-29), 5-9 /
+                                   10-14 the trainers of the challenge's 1st / 2nd battle (Emerald's trainerIds[0..1]) */
+#define K_TENT_RENTS 45          /* 45-47: the Slateport tent's six rentals (tent set indices: low byte, high byte; 0xFF
+                                   none): 0-2 the player's, 3-5 the candidates not rented / the last opponent's three */
+#define TENT_SLATEPORT 2         /* the tent file's tents: 0 Verdanturf, 1 Fallarbor, 2 Slateport */
 #define FAC_DOME 1
 #define FAC_FACTORY 4
+#define FAC_TENT_SLATEPORT 0x14  /* (battle_tents) FrontierCmd's facility for the Slateport tent: 0x10 | the Factory */
 
 /* our words of the Subway work during a challenge */
 #define S_MAGIC 14
@@ -147,6 +160,7 @@ typedef signed int s32;
 #define S_FLAGS 24              /* bit 0: rented or swapped since the last win (Emerald's sPerformedRentalSwap) */
 #define S_LEVEL 25
 #define S_GOLD 26               /* Brain battle: 1 silver party, 2 gold */
+#define F_TENT 2                /* S_FLAGS bit 1: the battle is the Slateport tent's (battle_tents) */
 #define MAGIC_FACTORY 0xF0D0
 #define MAGIC_DOME    0xD03E
 #define T_BRAIN 0xFFFE
@@ -355,6 +369,122 @@ static u32 factory_style(u8 *bsw) {
     for (i = 1; i < 8; i++) if (pts[i] >= kStyleRequired[i - 1]) { res = i; count++; }
     return count > 2 ? 8 : res;
 }
+
+/* ======================================================================== the Slateport Battle Tent (battle_tents) */
+/* pokeemerald src/battle_tent.c (GenerateInitialRentalMons, GenerateOpponentMons), battle_factory_screen.c
+ * (CreateSlateportTentSelectableMons) and battle_tower.c (FillFactoryTentTrainerParty): the Factory's rules on the
+ * tent's own 70 sets and 30 trainers, every Pokémon at TENT_MIN_LEVEL (30) with IVs 0 and friendship 0, three battles.
+ * The tent file (arc 211 TENT_FILE, b2tools/patches/frontier_factory_dome.py tent_file): 'TENT', size, then for tents
+ * 0-2 {u16 trainers, u16 sets, u16 set count, u16 trainer count} (byte offsets); a trainer {u16 Black 2 class, u16
+ * walking sprite, u16 its set list (byte offset), u16 count}; set lists of u16 tent set indices; sets of 16 bytes in
+ * Black 2's set format (u16 species, 4 x u16 moves, u8 EV flags, u8 nature, u16 item, u16 form). */
+typedef struct { u16 tr, sets, n_sets, n_tr; } TentHead;
+typedef struct { u16 cls, sprite, list, n; } TentTr;
+typedef struct { u16 species, moves[4]; u8 ev, nature; u16 item, form; } TentSet;
+static void tent_head(Rd *r, u32 tent, TentHead *h) { GFL_ArcToolReadRange(r->h, TENT_FILE, 8 + 8 * tent, 8, h); }
+static void tent_tr(Rd *r, const TentHead *h, u32 t, TentTr *o) { GFL_ArcToolReadRange(r->h, TENT_FILE, h->tr + 8 * t, 8, o); }
+static u32 tent_list(Rd *r, const TentTr *t, u32 k) { u16 v; GFL_ArcToolReadRange(r->h, TENT_FILE, t->list + 2 * k, 2, &v); return v; }
+static void tent_set(Rd *r, const TentHead *h, u32 id, TentSet *o) { GFL_ArcToolReadRange(r->h, TENT_FILE, h->sets + 16 * id, 16, o); }
+static u32 rent_get(const u16 *k, u32 i) { return (k[K_TENT_RENTS + i / 2] >> (8 * (i & 1))) & 0xff; }
+static void rent_set(u16 *k, u32 i, u32 v) {
+    u16 *p = &k[K_TENT_RENTS + i / 2];
+    *p = (i & 1) ? (u16)((*p & 0xff) | (v & 0xff) << 8) : (u16)((*p & 0xff00) | (v & 0xff));
+}
+static u32 tent_met(const u16 *k, u32 i) { return (k[K_TENT_OPP] >> (5 + 5 * i)) & 31; }
+static void tent_met_set(u16 *k, u32 i, u32 t) { k[K_TENT_OPP] = (u16)((k[K_TENT_OPP] & ~(31u << (5 + 5 * i))) | (t & 31) << (5 + 5 * i)); }
+
+/* GenerateInitialRentalMons: six of the tent's sets, no set twice, one species at most twice (Emerald's currSpecies),
+ * no held item twice -> rentals 0-5 */
+static void tent_rentals(void *gd) {
+    u16 *k = rec(gd), sp[6], held[6], ids[6], cur = 0;
+    u32 i = 0, j, id;
+    TentHead h; TentSet ts;
+    Rd r; rd_open(&r);
+    tent_head(&r, TENT_SLATEPORT, &h);
+    while (i != 6) {
+        id = rnd(h.n_sets);
+        tent_set(&r, &h, id, &ts);
+        for (j = 0; j < i; j++) {
+            if (ids[j] == id) break;
+            if (sp[j] == ts.species) { if (cur == 0) cur = ts.species; else break; }
+        }
+        if (j != i) continue;
+        for (j = 0; j < i; j++)
+            if (held[j] && held[j] == ts.item) { if (ts.species == cur) cur = 0; break; }
+        if (j != i) continue;
+        ids[i] = (u16)id; sp[i] = ts.species; held[i] = ts.item;
+        rent_set(k, i, id);
+        i++;
+    }
+    rd_close(&r);
+}
+
+/* GenerateOpponentMons: a trainer not met in this challenge (with more than eight sets), three of its sets whose species
+ * none of the six rentals has, no species or held item twice -> the Subway work (S_TRAINER, S_OPP) */
+static void tent_opponent(void *gd, u8 *bsw) {
+    u16 *k = rec(gd), *s = scratch(bsw), sp[3], held[3];
+    u32 bn = k[K_BATTLE_NUM], t, j, i = 0, id;
+    TentHead h; TentTr tr; TentSet a, b;
+    Rd r; rd_open(&r);
+    tent_head(&r, TENT_SLATEPORT, &h);
+    for (;;) {
+        do {
+            t = rnd(h.n_tr);
+            for (j = 0; j < bn && j < 2 && tent_met(k, j) != t; j++) continue;
+        } while (j < bn && j < 2);
+        tent_tr(&r, &h, t, &tr);
+        if (tr.n > 8) break;
+    }
+    if (bn < 2) tent_met_set(k, bn, t);                 /* (TENT_STAGES_PER_CHALLENGE - 1) */
+    k[K_TENT_OPP] = (u16)((k[K_TENT_OPP] & ~31u) | t);
+    while (i != 3) {
+        id = tent_list(&r, &tr, rnd(tr.n));
+        tent_set(&r, &h, id, &a);
+        for (j = 0; j < 6; j++) {
+            u32 m = rent_get(k, j);
+            if (m == 0xff) continue;
+            tent_set(&r, &h, m, &b);
+            if (b.species == a.species) break;
+        }
+        if (j != 6) continue;
+        for (j = 0; j < i && sp[j] != a.species; j++) continue;
+        if (j != i) continue;
+        for (j = 0; j < i && !(held[j] && held[j] == a.item); j++) continue;
+        if (j != i) continue;
+        sp[i] = a.species; held[i] = a.item; s[S_OPP + i] = (u16)id; i++;
+    }
+    s[S_TRAINER] = (u16)t; s[S_IV] = 0; s[S_COUNT] = 3; s[S_LEVEL] = TENT_LEVEL;
+    rd_close(&r);
+}
+
+/* CreateSlateportTentSelectableMons / FillFactoryTentTrainerParty: the sets at TENT_LEVEL, IVs 0, friendship 0, EVs 510 / n
+ * on the set's stats (a u8, as Emerald's CreateMonWithEVSpread), the set's nature, moves and item; a rental keeps its
+ * personality (by its set) from the rental screen to every battle */
+static void tent_party(void *party, const u16 *ids, u32 n) {
+    u32 i, j, c, e;
+    TentHead h; TentSet ts;
+    Rd r; rd_open(&r);
+    tent_head(&r, TENT_SLATEPORT, &h);
+    PokeParty_InitCore(party, 6);
+    for (i = 0; i < n; i++) {
+        void *pkm = GFL_HeapAllocate(HEAP_TAIL, PokeParty_GetPkmRawSize(), 1, "fr", 0);
+        tent_set(&r, &h, ids[i], &ts);
+        PokeParty_CreatePkm(pkm, ts.species & 0x7ff, TENT_LEVEL, 0, 0xFFFFFFFF, 0, personality(0x7E47, ids[i] + 1000), 0);
+        PokeParty_SetParam(pkm, P_ITEM, ts.item);
+        for (j = 0; j < 4; j++) PokeParty_SetMove(pkm, ts.moves[j], j);
+        PokeParty_SetParam(pkm, 0x09, 0);                /* friendship 0 */
+        for (c = 0, j = 0; j < 6; j++) c += (ts.ev >> j) & 1;
+        e = c ? (510 / c) & 0xff : 0;
+        for (j = 0; j < 6; j++) PokeParty_SetParam(pkm, P_EV_HP + j, ((ts.ev >> j) & 1) ? e : 0);
+        PokeParty_SetNature(pkm, ts.nature);
+        PokeParty_RecalcStats(pkm);
+        PokeParty_SetParam(pkm, 0xa0, PokeParty_GetParam(pkm, P_MAXHP, 0));
+        PokeParty_AddPkm(party, pkm);
+        GFL_HeapFree(pkm);
+    }
+    rd_close(&r);
+}
+static void tent_rent_ids(const u16 *k, u16 *ids, u32 first, u32 n) { u32 i; for (i = 0; i < n; i++) ids[i] = (u16)rent_get(k, first + i); }
 
 /* ================================================================================================ the Battle Dome */
 typedef struct {
@@ -617,15 +747,18 @@ static u32 dome_opponent(void *gd, u8 *bsw) {
 }
 
 /* ================================================================================================ names, words */
-static void load_line(u32 line, void *strbuf) {
-    void *msg = GFL_MsgSysLoadData(0, ARC_SCRIPT_TEXT, FR_TEXT_FILE, HEAP_TAIL);
+static void load_line_of(u32 file, u32 line, void *strbuf) {
+    void *msg = GFL_MsgSysLoadData(0, ARC_SCRIPT_TEXT, file, HEAP_TAIL);
     GFL_MsgDataLoadStrbuf(msg, line, strbuf);
     GFL_MsgDataFree(msg);
 }
+static void load_line(u32 line, void *strbuf) { load_line_of(FR_TEXT_FILE, line, strbuf); }
 static void word_name(void *env, u32 slot, u32 t) {
     void *sb = GFL_StrBufCreate(32, HEAP_TAIL);
     void *gd = gd_of(env);
-    if (t == T_PLAYER) GFL_StrBufLoadString(sb, GetGameDataPlayerInfo(gd));
+    u8 *bsw = BSubway_GetWork(gd);
+    if (bsw && t != T_PLAYER && (scratch(bsw)[S_FLAGS] & F_TENT)) load_line_of(TENT_TEXT_SLATEPORT, TENT_NAME_BASE + t, sb);
+    else if (t == T_PLAYER) GFL_StrBufLoadString(sb, GetGameDataPlayerInfo(gd));
     else load_line(t == T_BRAIN ? (rec(gd)[K_FACILITY] == FAC_DOME ? kNameTucker : kNameNoland) : FR_NAME_BASE + t, sb);
     WordSet_LoadStrbuf(ScriptWork_GetWordSet(FieldScriptEnv_GetScriptWork(env)), slot, sb, 0, 1, 2);
     GFL_StrBufFree(sb);
@@ -652,6 +785,24 @@ static u32 battle_prep(void *env, u32 facility) {
     TrRec rr;
     Rd r; rd_open(&r);
     s[S_MAGIC] = facility == FAC_DOME ? MAGIC_DOME : MAGIC_FACTORY;
+    s[S_FLAGS] &= ~F_TENT;
+    if (facility == FAC_TENT_SLATEPORT) {           /* the Slateport tent's trainer: its class, walking sprite and name */
+        TentHead h; TentTr tt;
+        s[S_FLAGS] |= F_TENT;
+        tent_head(&r, TENT_SLATEPORT, &h);
+        tent_tr(&r, &h, t, &tt);
+        rd_close(&r);
+        zero(tr, 0x30);
+        *(u32 *)tr = 1;
+        *(u16 *)(tr + 4) = tt.cls;
+        load_line_of(TENT_TEXT_SLATEPORT, TENT_NAME_BASE + t, sb);
+        GFL_StrBufStoreString(sb, (u16 *)(tr + 8), 8);
+        GFL_StrBufFree(sb);
+        *(u16 *)(tr + 24) = NONE;
+        for (i = 0; i < 3; i++)                     /* (placeholders: FR_BuildSetup gives the battle the tent's party) */
+            SubwayPkm_FromSet(tr + TRAINER_PKM + i * PKM_SIZE, ARC_SETS, FR_SET_BASE + i, 0, personality(0x77, i), 0, i, 0, HEAP_TAIL);
+        return tt.sprite;
+    }
     if (t == T_BRAIN) { cls = facility == FAC_DOME ? kTuckerClass : kNolandClass; sprite = facility == FAC_DOME ? kTuckerSprite : kNolandSprite; }
     else { trainer(&r, t, &rr); cls = rr.cls; sprite = rr.sprite; }
     rd_close(&r);
@@ -680,6 +831,24 @@ void *FR_BuildSetup(u8 *bsw, void *gsys) {
     Rd r;
     if (s[S_MAGIC] != MAGIC_FACTORY && s[S_MAGIC] != MAGIC_DOME) return BSubway_BuildSetup(bsw, gsys);   /* (the stub checks first) */
     gd = GSYS_GetGameData(gsys);
+    if (s[S_MAGIC] == MAGIC_FACTORY && (s[S_FLAGS] & F_TENT)) {     /* the Slateport tent: its rentals and opponent at 30 */
+        u16 *k = rec(gd);
+        pl = PokeParty_Create(HEAP_TAIL);
+        op = PokeParty_Create(HEAP_TAIL);
+        tent_rent_ids(k, ids, 0, 3);
+        tent_party(pl, ids, 3);
+        tent_party(op, s + S_OPP, 3);
+#ifdef HOENN_TEST_FD_WEAK
+        for (i = 0; i < 3; i++) { void *p = PokeParty_GetPkm(op, i); PokeParty_SetParam(p, 0xa0, 1); }   /* TEST ONLY */
+#endif
+        setup = SetupTrialHouseBattle(gsys, pl, 0, bsw + BSW_TRAINERS, bsw + BSW_UNK2C8 + 288 * ((*(u16 *)(bsw + BSW_UNKC) >> 5) & 7), 3);
+        PokeParty_Copy(op, *(void **)((u8 *)setup + SETUP_PARTY1));
+        /* GetAiScriptsInBattleFactory: a tent's trainers have no AI scripts (they pick their moves at random) */
+        { u32 *tr = *(u32 **)((u8 *)setup + 72 + 4); if (tr) tr[2] = 0; }
+        GFL_HeapFree(pl);
+        GFL_HeapFree(op);
+        return setup;
+    }
     n = s[S_COUNT];
     pl = PokeParty_Create(HEAP_TAIL);
     op = PokeParty_Create(HEAP_TAIL);
@@ -726,6 +895,8 @@ typedef struct {
 #define PICK_RENT 0
 #define PICK_SWAP 1
 #define PICK_DOME 2
+#define PICK_TENT_RENT 3        /* the Slateport tent (battle_tents): rent three of its six */
+#define PICK_TENT_SWAP 4
 
 static void *open_screen(PickWork *w, u32 need) {
     void *inner;
@@ -757,6 +928,11 @@ u32 FR_PickCallback(void *event, u32 *state, void *data) {
             rd_close(&r);
             make_party(w->party, k + K_F_MONS, 6, (k[K_LVL] & 1) ? 100 : 50, 32, k[K_F_SEED], nat, 0);
             w->need = 3;
+        } else if (w->kind == PICK_TENT_RENT || w->kind == PICK_TENT_SWAP) {
+            u16 ids[6];
+            w->need = w->kind == PICK_TENT_RENT ? 3 : 1;
+            tent_rent_ids(k, ids, 0, w->need == 3 ? 6 : 3);
+            tent_party(w->party, ids, w->need == 3 ? 6 : 3);
         } else if (w->kind == PICK_SWAP) {
             u8 nat[3]; Fact f; Rd r; rd_open(&r);
             for (i = 0; i < 3; i++) { fact(&r, k[K_F_MONS + i] & 0x3ff, &f); nat[i] = f.nature; }
@@ -776,6 +952,29 @@ u32 FR_PickCallback(void *event, u32 *state, void *data) {
         *state = 1;
         return 0;
     case 1:
+        if (w->kind == PICK_TENT_RENT) {               /* (the Slateport tent: the same, its rentals 3-5 keep the three left) */
+            u16 c[6]; u32 m = 3;
+            for (n = 0, i = 0; i < 6; i++) if (w->picked[i] >= 1 && w->picked[i] <= 6) n++;
+            if (n != 3) { GameEvent_ChainNext(event, open_screen(w, 3)); return 0; }
+            for (i = 0; i < 6; i++) c[i] = (u16)rent_get(k, i);
+            for (i = 0; i < 3; i++) rent_set(k, i, c[w->picked[i] - 1]);
+            for (i = 0; i < 6; i++) {
+                u32 j;
+                for (j = 0; j < 3 && w->picked[j] != i + 1; j++) continue;
+                if (j == 3 && m < 6) rent_set(k, m++, c[i]);
+            }
+            *w->out = 1;
+            break;
+        }
+        if (w->kind == PICK_TENT_SWAP) {               /* the player's three: one to give away; then the opponent's */
+            u16 ids[3];
+            if (cancelled(w) || (w->first = first_pick(w)) > 2) { *w->out = 0; break; }
+            tent_rent_ids(k, ids, 3, 3);
+            tent_party(w->party, ids, 3);
+            GameEvent_ChainNext(event, open_screen(w, 1));
+            *state = 3;
+            return 0;
+        }
         if (w->kind == PICK_RENT) {                    /* Emerald's rental screen cannot be left without three */
             for (n = 0, i = 0; i < 6; i++) if (w->picked[i] >= 1 && w->picked[i] <= 6) n++;
             if (n != 3) { GameEvent_ChainNext(event, open_screen(w, 3)); return 0; }
@@ -806,6 +1005,12 @@ u32 FR_PickCallback(void *event, u32 *state, void *data) {
         n = first_pick(w);
         if (cancelled(w) || n > 2) { *w->out = 0; break; }
         k[K_F_MONS + w->first] = k[K_F_MONS + 3 + n];
+        *w->out = 1;
+        break;
+    case 3:                                            /* (the Slateport tent's swap: the one taken) */
+        n = first_pick(w);
+        if (cancelled(w) || n > 2) { *w->out = 0; break; }
+        rent_set(k, w->first, rent_get(k, 3 + n));
         *w->out = 1;
         break;
     }
@@ -989,6 +1194,17 @@ u32 FR_Cmd(void *vm, void *env, u8 *blob, void *evfn) {
                load_line(b, sb);
                WordSet_LoadStrbuf(ScriptWork_GetWordSet(FieldScriptEnv_GetScriptWork(env)), a, sb, 0, 1, 2);
                GFL_StrBufFree(sb); return 0; }
+    /* ---- the Slateport Battle Tent (battle_tents) */
+    case 60: { u32 i; k[K_BATTLE_NUM] = 0; k[K_TENT_OPP] = 0;                 /* T_INIT: a new challenge (the lobby) */
+               for (i = 0; i < 3; i++) k[K_TENT_RENTS + i] = 0xffff;
+               return 0; }
+    case 61: tent_rentals(gd); return 0;                                       /* T_GEN_RENTALS */
+    case 62: return start_pick(env, var, PICK_TENT_RENT, blob, evfn);          /* T_RENT: the screen, three of six */
+    case 63: tent_opponent(gd, work_of(env)); *var = 0; return 0;              /* T_GEN_OPPONENT */
+    case 64: return start_pick(env, var, PICK_TENT_SWAP, blob, evfn);          /* T_SWAP: var = 1 swapped */
+    case 65: { u16 *s = scratch(work_of(env)); u32 i;                          /* T_KEEP_OPPONENT: rentals 3-5 */
+               for (i = 0; i < 3; i++) rent_set(k, 3 + i, s[S_OPP + i]);
+               return 0; }
     /* ---- the battle (both) */
     case 50: *var = battle_prep(env, a); return 0;                             /* B_PREP facility: var = sprite */
     case 51: { u8 *w = work_of(env); void *gsys = FieldScriptEnv_GetGameSystem(env), *ev;   /* B_BATTLE */
@@ -1003,7 +1219,9 @@ u32 FR_Cmd(void *vm, void *env, u8 *blob, void *evfn) {
                if (setup) { FreeVSPlayerBlk(); BtlSetup_Free(setup); *(void **)(w + BSW_SETUP) = 0; }
                return 0; }
     case 53: bsw = BSubway_GetWork(gd); BSubwayWork_Free(FieldScriptEnv_GetGameSystem(env), bsw); return 0;  /* B_END */
-    case 54: { u32 t = scratch(work_of(env))[S_TRAINER];                       /* B_SPEECH: var = the greeting's line */
+    case 54: if (scratch(work_of(env))[S_FLAGS] & F_TENT) {                  /* (the Slateport tent: its battle room's text) */
+                 *var = TENT_SPEECH_BASE + scratch(work_of(env))[S_TRAINER]; return 0; }
+             { u32 t = scratch(work_of(env))[S_TRAINER];                       /* B_SPEECH: var = the greeting's line */
                *var = t == T_BRAIN ? NONE : FR_SPEECH_BASE + t; return 0; }
     case 55: word_name(env, a, scratch(work_of(env))[S_TRAINER]); return 0;    /* B_NAME slot */
     case 56: *var = scratch(work_of(env))[S_GOLD]; return 0;                   /* B_BRAIN_GOLD: 1 silver, 2 gold party */

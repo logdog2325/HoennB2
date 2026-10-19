@@ -28,8 +28,20 @@ UNOVA_ROUTES = [319, 321, 326, 329, 331, 337, 345, 348, 365, 368, 370, 374, 378,
                 475, 551]
 UNOVA_OTHER_OUTDOOR = [154, 157, 194, 198, 205, 230, 238, 240, 444, 456, 461]
 # not used: zones with special map types (Castelia rails 28, League 136, moving bridges 249-263, Liberty Garden 235)
-AVOID = {28, 136, 147, 235, 249, 250, 253, 254, 255, 263} | set(range(610, 614)) | {550, 586, 608, 609}   # 610-613, 550, 586,
+AVOID = {28, 136, 147, 235, 249, 250, 253, 254, 255, 263} | set(range(610, 614)) | {550, 586, 608, 609} \
+        | {155, 426, 455, 495, 502, 566}   # 610-613, 550, 586,
 #   608, 609: fixed-weather zone copies (patches/fixed_weather.py; 550-609: Route 119/123's sunny ends, v166_fixes)
+#   155, 426, 455, 495, 502, 566 (special_zones 2026-10-18, notes/SPECIAL_ZONES.md): the last ids that Black 2's decompiled
+#   C names in code with behaviour (PearlB2's data/b2_special_zones.json "avoid") which no Hoenn map or room has and
+#   DENY/AVOID lacked: Pinwheel Forest 155 (Leafeon's place in Black 2), White Forest 426, Virbank Gym 455/502
+#   (gym_virbank.c), Castelia Sewers 495 (an Escape Rope exit rule for warps from zone 40), Pokestar Studios 566 (a forced
+#   camera). The 50 Hoenn maps and rooms already on such ids keep them (zones are fixed: saves store them); what matters
+#   there is switched off at build time by patches/special_zones.py (location evolutions, rails, calendar weather) and
+#   patches/zone_effects.py (gimmicks, cameras, Route 103/122 version swap, ...); notes/SPECIAL_ZONES.md has the rest.
+#   Rule for new maps and rooms: never an id the decomp's code names (re-scan a newer decomp as PearlB2's b2_special_zones.py
+#   does and add what is new here). Two dormant weather rules still ask for used ids: Black 2's Route 7 weather
+#   (337 = Route 106, only while flag 2413 is set: nothing sets it) and the DS owner's-birthday weather 0 of Routes 14/15
+#   (374/378 = Routes 112/113, Sapphire/Ruby): give those maps a weather of their own only after reading the notes.
 SKIP_MAPS = {'Route104_Prototype'}     # pokeruby test map, not in the game
 
 def gen5_name(s):

@@ -501,7 +501,8 @@ def fortree():
                 furniture=statues(n))
 room('FortreeCity_Gym', 119, 309, 16, fortree(),
      story=['Winona (4,1), trainers Jared, Terrell, Kylee, Will, Gym guide (2,19), statue plaques',
-            'the rotating gates (Sapphire: rotating_gate objects turned by walking into their arms): not built'])
+            'the rotating gates (Gen 3 rotating_gate.c): b2tools/patches/rotating_gates.c (zone 119) + the arm actors of '
+            'data/story/fortree_gates.json (fortree_gates 2026-10-20)'])
 
 # ---- Mossdeep Gym (20x30) -------------------------------------------------------------------------------------
 def mossdeep():

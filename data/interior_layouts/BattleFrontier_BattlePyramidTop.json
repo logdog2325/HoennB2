@@ -125,5 +125,13 @@
  ],
  "exits": [],
  "furniture": [],
- "mats": []
+ "mats": [],
+ "inner_walls": {
+  "top": {
+   "tex": "in10_tile05",
+   "src": 291,
+   "size": 32
+  },
+  "_what": "em_rooms 2026-10-19: Emerald's sandstone steps between the terraces (rows 10-16) are light-topped low blocks (models_interior inner_walls), not walls with a black cap (black bands across the view, rooms_check h, tested)"
+ }
 }

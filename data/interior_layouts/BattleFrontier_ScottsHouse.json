@@ -1,0 +1,54 @@
+{
+ "_doc": "Scott's House (Emerald only: pokeemerald BattleFrontier_ScottsHouse, 6x8, LAYOUT_BATTLE_FRONTIER_SCOTTS_HOUSE, gTileset_Building + gTileset_BattleFrontier; frontier_lounges 2026-10-20, written by work/agents/frontier_lounges/tools/lounge_rooms.py; zone 498): the lounges' look (style sp_battle). LAYOUT_BATTLE_FRONTIER_SCOTTS_HOUSE (6x8): rows 0-1 back wall (Emerald's orange band), an orange chair (5,3) (walkable), a potted plant (5,4)-(5,5) (pot (5,5) solid), the exit mat (2-3,7).",
+ "map": "BattleFrontier_ScottsHouse",
+ "decomp": "pokeemerald",
+ "style": "sp_battle",
+ "floor": [
+  [
+   0,
+   2,
+   5,
+   6
+  ],
+  [
+   1,
+   7,
+   4,
+   7
+  ]
+ ],
+ "mats": [
+  {
+   "tex": "chip_mat",
+   "src": 306,
+   "rect": [
+    2,
+    7,
+    3,
+    7
+   ],
+   "border": 0.25,
+   "border_units": 4,
+   "y": 0,
+   "_what": "exit mat (2-3, 7)"
+  }
+ ],
+ "furniture": [
+  {
+   "m": "chushion01",
+   "tile": [
+    5,
+    3
+   ],
+   "_what": "chair (5,3) (Emerald's orange chair, walkable)"
+  },
+  {
+   "m": "plant01",
+   "tile": [
+    5,
+    5
+   ],
+   "_what": "potted plant (5,5) (Emerald's pot, solid)"
+  }
+ ]
+}

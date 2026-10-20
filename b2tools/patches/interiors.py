@@ -118,7 +118,10 @@ def apply(files):
     # caves (data/cave_layouts, built by b2tools/models_cave.py; notes/CAVES.md) that this build's interiors folder
     # doesn't have yet (an agent's copy of work/interiors made before the cave existed) are left out, so every room
     # agent's build keeps working while the cave agents add caves; rebuild_interiors.sh with no names builds them all
-    unbuilt_caves = [c for c in cfgs if c.get('cave') and c.get('room') and not os.path.exists(os.path.join(ROOMS, c['room'], 'room.json'))]
+    # (trick_house 2026-10-19: also a room json marked "optional", the Trick House puzzle rooms, so builds whose rooms folder
+    # predates them keep working)
+    unbuilt_caves = [c for c in cfgs if (c.get('cave') or c.get('optional')) and c.get('room')
+                     and not os.path.exists(os.path.join(ROOMS, c['room'], 'room.json'))]
     if unbuilt_caves:
         cfgs = [c for c in cfgs if c not in unbuilt_caves]
         print('interiors: caves left out (not built in', ROOMS + '):', ', '.join(c['room'] for c in unbuilt_caves))
@@ -129,6 +132,7 @@ def apply(files):
     ours = {c['zone'] for c in cfgs}
     rooms = [c for c in cfgs if c.get('room')]
     done = []
+    variant_matrix = {}                                    # zone copy -> its own room's matrix ("variants" with "room")
     if rooms:
         chunks, mats = narcio.load(files, 8), narcio.load(files, 9)
         texsets, btex, packs, cams = (narcio.load(files, a) for a in (14, 175, 226, 109))
@@ -208,6 +212,10 @@ def apply(files):
                 hd[k] = v
             if 'battle_bg' in cfg:                         # header flags bits 5-9 (e.g. an Elite Four room's own)
                 hd['flags'] = (hd['flags'] & ~(31 << 5)) | ((cfg['battle_bg'] & 31) << 5)
+            if 'cycling' in cfg:                           # header flags bit 10: the Bike may be ridden here (Gen 3's rule
+                hd['flags'] = (hd['flags'] & ~(1 << 10)) | (int(bool(cfg['cycling'])) << 10)   # for the map, where the
+                # Black 2 header the room copies says otherwise: Sky Pillar's cracked floors need the Mach Bike, the Cycling
+                # Road gates let you ride onto the road; frontier_sp 2026-10-20, notes/CAVES.md)
             pack, sets, ext = _area_record(files, hd['area'])
             assert ext == 0, f'zone {zone}: area {hd["area"]} is an exterior area'
             for ts in sets:
@@ -237,6 +245,28 @@ def apply(files):
                         map_adds.setdefault(ts, []).append((tex_source(src, ad, tex), tex, tex + '_pl'))
                 alt_metas.append(am)
                 done.append(f"zone {zone}: {alt['room']} = chunks {ids2} (matrix {m2}, loaded instead of {m} while map replace event {alt['event']} is set)")
+            # (trick_house 2026-10-19) a zone copy ("variants", below) with a room of its own: the room's other state
+            # (Trick House puzzle 3's red/blue doors), entered by a script's map change, so no map replacement event
+            # (all ten are taken); its chunks and matrix as an alt room's, the header copied from this zone below
+            for var in cfg.get('variants', []):
+                if 'room' not in var: continue
+                vr = version.room_variant(var['room'])
+                ad = os.path.join(ROOMS, vr)
+                if not os.path.exists(os.path.join(ad, 'room.json')):
+                    done.append(f"zone {var['zone']}: room {vr} not built ({ROOMS}): left out"); continue
+                am = json.load(open(os.path.join(ad, 'room.json')))
+                ids2 = []
+                for c in (am.get('chunks') or [am]):
+                    if c is None: ids2.append(0xFFFFFFFF); continue
+                    ids2.append(len(chunks)); chunks.append(chunk_container(ad, c))
+                aw, ah = am.get('matrix', [1, 1])
+                m2 = len(mats); mats.append(struct.pack('<HHHH', 0, 0, aw, ah) + struct.pack(f'<{aw * ah}I', *ids2)); mat_users[m2] = 1
+                variant_matrix[var['zone']] = m2
+                for ts in sets:
+                    for tex, src in am['map_textures'].items():
+                        map_adds.setdefault(ts, []).append((tex_source(src, ad, tex), tex, tex + '_pl'))
+                alt_metas.append(am)
+                done.append(f"zone {var['zone']}: {vr} = chunks {ids2} (matrix {m2}; a copy of zone {zone})")
             have = {struct.unpack_from('<H', info, 0)[0] for info in _pack_sections(packs[pack])[0]}
             for mdl in meta.get('models', []) + meta.get('extra_models', []) + [x for am in alt_metas for x in am.get('models', [])]:
                 if mdl['res'] in have or mdl['res'] in pack_adds.get(pack, {}): continue
@@ -358,6 +388,10 @@ def apply(files):
     # leads into one of them. No a/0/1/2 entry moves (the copies overwrite free zones' headers).
     for cfg in cfgs:
         for v in cfg.get('variants', []):
+            if 'room' in v:                                # (trick_house) the copy with its own room's matrix
+                if v['zone'] not in variant_matrix: continue
+                headers[v['zone']] = dict(headers[cfg['zone']], matrix=variant_matrix[v['zone']])
+                done.append(f"zone {v['zone']}: copy of zone {cfg['zone']} with its room {v['room']}"); continue
             headers[v['zone']] = dict(headers[cfg['zone']], encounters=v['encounters'])
             done.append(f"zone {v['zone']}: copy of zone {cfg['zone']} with encounter file {v['encounters']} ({v.get('table')})")
     test = os.environ.get('HOENN_TEST_INTERIOR_DOOR')

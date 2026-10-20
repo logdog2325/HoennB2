@@ -70,6 +70,11 @@ WALK = [
     ('interior', 'THROUGH', r'back-wall strip', "the user's option C (2026-10-11): where a bare stretch of the back wall's "
      "lower row lies between pieces, the wall stays flat and the strip in front of it is walkable, one row more than "
      "Sapphire (models_interior.bare_wall_tiles, room.json 'walk_up')"),
+    ('interior', 'INVISIBLE', r'^Route110_TrickHousePuzzle3_Alt(_Emerald)? .*cut off',
+     "(th_glitch 2026-10-19) Trick House puzzle 3's other door state (zone 451): this checker walks it from the exit mats "
+     "on Gen 3's map as drawn, but in door state 1 Gen 3's SetDoorsState1 shuts these tiles off from the mats too (you get "
+     "there through the buttons): per state, with the buttons toggling, Gen 3 and ours reach the same tiles in both versions "
+     "(work/agents/th_glitch/tools/p3_states.py: 383 / 388 (state, tile) pairs)"),
     ('interior', 'THROUGH', r'^BattleTower_BattleRoom \(4, 1\): THROUGH move \(4, 1\) -> \(5, 1\)',
      "the Battle Tower's Battle Room is played by script only (src/field_scripts/0030_room_BattleTower_BattleRoom.s: "
      "the player is paused from the arrival to the warp or reset): (4,1) is the opponent's door (Sapphire "

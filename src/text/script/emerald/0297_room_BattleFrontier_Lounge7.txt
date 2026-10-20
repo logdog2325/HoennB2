@@ -1,0 +1,40 @@
+Those ladies, the way they bad-mouth\neach other, you probably think that{be00}\nthey don’t get along.{be01}\nBut if that were true, they wouldn’t\nstay out here together, would they?
+When I was just a wee Youngster,\nthose ladies were strong and beautiful.{be01}\nThey were idols among us Trainers.{be01}\nEven now, age hasn’t dulled their\nabilities.{be01}\nIn fact, their Pokémon moves have\ngrown even more polished.{be01}\nBut… For some reason, I can’t help\nbut feel this…{be01}\nTime is so cruel…
+Buhahaha!{be01}\nYou couldn’t tell it from looking now,\nbut I used to be one tough Trainer.{be01}\nI had a reputation as the toughest\nBeauty around, I tell you!{be01}\n… … … … … …{be01}\nWhat is it now?\nYou don’t believe me.{be01}\nI’m not like that blowhard woman over\nthere. I’m actually talented!{be01}\nLet me prove it to you.\nI can teach your Pokémon special and{be00}\nyet cute moves.{be01}\nBut my lessons don’t come free.\nHow about paying for the moves I teach{be00}\nwith a wee bit of Battle Points?
+Buhahaha!{be01}\nAre you back to learn special and\nyet cute Pokémon moves?
+Fine, fine, look here!\nWhich move should I teach?
+Softboiled  16 BP
+Seismic Toss  24 BP
+Dream Eater  24 BP
+Mega Punch  24 BP
+Mega Kick  48 BP
+Body Slam  48 BP
+Rock Slide  48 BP
+Counter  48 BP
+Thunder Wave  48 BP
+Swords Dance  48 BP
+Exit
+The move {0100:1}, is it?\nThat will be {0100:2} Battle Points, okay?
+What the…\nYou haven’t got enough Battle Points!
+Fine, fine, now pick the Pokémon\nI should teach the move to.
+Do you see how skilled I am now?\nI’ll take your Battle Points, thanks!
+What’s that?\nYou don’t want to…{be01}\nIf you want to see how skilled I am,\nyou come see me anytime!
+Ihihihi!{be01}\nI know it’s hard to see now, but I used\nto be one fantastic Trainer.{be01}\nI had a reputation as the most\ninvincible Swimmer around, I tell you!{be01}\n… … … … … …{be01}\nWhat’s wrong?\nYou don’t believe me.{be01}\nI’m not like that buffoonish woman over\nthere. I’m actually experienced!{be01}\nI can prove it to you.\nI can teach your Pokémon hard and{be00}\nyet pretty moves.{be01}\nBut my lessons don’t come free.\nHow about paying for the moves I teach{be00}\nwith a wee bit of Battle Points?
+Ihihihi!{be01}\nHave you come to learn hard and\nyet pretty Pokémon moves?
+Fine, fine, look here!\nWhich move should I teach?
+Defense Curl  16 BP
+Snore  24 BP
+Mud-Slap  24 BP
+Swift  24 BP
+Icy Wind  24 BP
+Endure  48 BP
+Psych Up  48 BP
+Ice Punch  48 BP
+Thunderpunch  48 BP
+Fire Punch  48 BP
+Exit
+The move {0100:1}, is it?\nThat will be {0100:2} Battle Points, okay?
+What the…\nYou haven’t got enough Battle Points!
+Fine, fine, now pick the Pokémon\nI should teach the move to.
+Do you see how skilled I am now?\nI’ll take your Battle Points, thanks!
+What’s that?\nYou don’t want to…{be01}\nIf you want to see how skilled I am,\nyou come see me anytime!

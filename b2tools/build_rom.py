@@ -37,7 +37,7 @@ ORIGINAL_SHA1 = 'e51e6dfb8678a3d19dcd2a10691b96a569ca0abb'
 RESERVE = {
     2: 512 << 10,     # a/0/0/2 system text (place names)
     3: 1 << 20,       # a/0/0/3 script text (story chapters; v12)
-    8: 36 << 20,      # a/0/0/8 map chunks (terrain ~8.1 MB + rooms + caves + standalone maps + event islands; v14: +8 MB for post-game maps; 2026-10-18: +4 MB, Emerald grew past 32 MB with the cracks fix, bridges and Battle Tents/Trainer Hill rooms)
+    8: 40 << 20,      # a/0/0/8 map chunks (terrain ~8.1 MB + rooms + caves + standalone maps + event islands; v14: +8 MB for post-game maps; 2026-10-18: +4 MB, Emerald grew past 32 MB with the cracks fix, bridges and Battle Tents/Trainer Hill rooms; 2026-10-20: 40 MB for the Trick House, seasons and Frontier rooms)
     9: 256 << 10,     # a/0/0/9 matrices
     14: 4 << 20,      # a/0/1/4 map textures
     56: 1 << 20,      # a/0/5/6 scripts (story chapters; v12)

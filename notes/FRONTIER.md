@@ -149,7 +149,7 @@ The room: zone 419 (frontier_core_room: data/interior_layouts/BattleFrontier_Exc
 data/interiors/emerald/419.json, door = BattleFrontier_OutsideEast warp 6), zone script
 src/field_scripts/emerald/0838_room_BattleFrontier_ExchangeServiceCorner.s, text
 src/text/script/emerald/0648_room_BattleFrontier_ExchangeServiceCorner.txt (b2tools/frontier_text.py install). The two
-BP tutors sit on Emerald's empty west bench (zone tiles (1,7), (1,8)), talked to from the east.
+BP tutors sat on Emerald's empty west bench until 2026-10-20; they are back in Emerald's Lounge7 (section 8).
 - **BP shops**: `fr_bp_shop SHOP, welcome, bye`: Emerald's welcome line, Black 2's BP shop screen (BP shown in the corner,
   BP paid, Black 2's quantity and "not enough BP" / bag checks), Emerald's goodbye. `FR_SHOP_VITAMINS` 240 (Protein, Calcium, Iron,
   Zinc, Carbos, HP Up: 1 BP each), `FR_SHOP_HOLD_ITEMS` 241 (Leftovers, White Herb, Quick Claw, Mental Herb 48 BP; Bright
@@ -293,3 +293,65 @@ ITCM is full: an Emerald build of today's lists leaves 256 bytes after rods (are
 | Battle Tower Anabel (2026-10-18): FrontierPA (command 291) sub-commands 20-22 PA_TOWER_STATUS / BATTLE / HEARD; record key 9 bits 12/13 (her speeches heard); FR_SYMBOLS bits 0/1, FR_BRAIN_BEATEN (the Tower lobby clears it); the Tower battle room's text lines 6-18 (Emerald) | Anabel | section 5 |
 - Script command 494 is claimed by emerald_rayquaza_scene (Emerald's Rayquaza cutscene); the scene loads from arc 211 and uses 287 B of the Frontier code area (2026-10-12).
 - save_compat (2026-10-18; ON by default in Emerald builds since 2026-10-18, HOENN_SAVE_COMPAT=0 = the old layout; notes/SAVE_PKHEX.md): blocks 0x38 / 0x3e keep Black 2's 60 / 16 bytes (PKHeX), the records move to block 0x38 + 64 (after its footer) and the PySave to 0x3e + 20; record key 95 holds the record area's CRC (keys 0-94 for scripts); ~860 B of the Frontier code area; arm9 hooks 0x0203b854, 0x0203b95e, 0x0200713a, 0x0200732c.
+
+## 7. The island's doors (frontier_sp, 2026-10-20) [code][test]
+Discord report: "one of the Battle Frontier entrances is blocked" (video: a red-roofed house on the ferry dock). It is the
+**Reception Gate** (pokeemerald BattleFrontier_ReceptionGate, OutsideWest warps 8 (26,65) and 9 (26,61)): the dock's
+only way onto the island. In v1.1 the ferries landed mid-island (36,41) and nobody needed it; since v1.2 they land on
+the dock (pokeemerald's (19,67)) and the gate was still a closed placeholder (room `todo`), so the island could not be
+reached by ferry at all.
+- Built (work/agents/frontier_sp/tools/frontier_rooms.py; claims in data/emerald/hoenn_interiors.json): Reception Gate
+  zone 453 (own files 2080/2081/1055: greeter, facility / rules / Frontier Pass guides with Emerald's menus, the first
+  visit's scene with Scott, FLAG_HIDE_BATTLE_FRONTIER_RECEPTION_GATE_SCOTT = VAR_HAS_ENTERED_BATTLE_FRONTIER; no Frontier
+  Pass item in this port: the scene says its lines), Lounge4 zone 459 and Lounge8 zone 469 (three people each, Lounge6's
+  layout and recipe). The gate's island side is an arrow warp (walk south off (26,61)): world.py standalone_door now
+  writes Black 2's walk-in warp (dir 1, type 4) for an arrow into a room (it wrote dir 2: entered only from inside the
+  building). The roof hides the player on that tile (the stand-in house has no north door).
+- Tested (screenshots/frontier_sp/): dock -> gate (scene) -> island -> gate from the north -> dock; the three guides'
+  menus; every open island door in and out: Tower 21, Arena 429, Palace 466, Pyramid 347, Ranking Hall (PWT) 192,
+  Exchange 419, Lounge6 421, Lounge8 469, Pike 399, Dome 411, Factory 408, Lounge4 459, gate 453 both doors; Artisan
+  Cave 1F 372 / B1F 373 by warping below them.
+- Still closed (rooms not built; each needs more than a simple house; the lounges and Scott's House: built since, section 8): Lounge1 (the Breeder who judges potential),
+  Lounge2 (the Frontier Maniac's streak hints), Lounge3 (the Gambler's BP bets), Lounge5 (the Nature Girl), Lounge7 (the
+  two BP move tutors: they stand in the Exchange Service Corner today), Scott's House (his symbol rewards), the Mart
+  (pokeemerald's Frontier list: data/emerald/hoenn_shops.json "later"), the Pokemon Center 1F/2F (a respawn record).
+  Lounge9's warp (East (21,45)) is no door in Emerald either (a flower bed, behaviour 0): closed by design.
+- Found, not fixed (water: bridge_surf's area): Artisan Cave B1F's mouth (West (39,55), our (55,68)) is reached in
+  Emerald by surfing down the waterfall below the Battle Palace pond (Gen 3 pushes a surfer down: ForcedMovement
+  PushedSouthByCurrent); here a surfer cannot go down it at (114,78) -> (114,79), and no other shore touches that channel.
+  The 1F mouth (East (28,7)) is a closed pocket reached from inside the cave, as in Emerald.
+
+## 8. The last houses: Lounges 1/2/3/5/7, Scott's House (frontier_lounges, 2026-10-20) [code][test]
+Built from pokeemerald (people, tiles, lines, behaviour); rooms by work/agents/frontier_lounges/tools/lounge_rooms.py
+(9x10 lounges = Lounge6's recipe; the 13x8 lounges and Scott's 6x8 house = the same look with Emerald's furniture tiles);
+zone jsons by frontier_sp's frontier_rooms.zone_json; claims in data/emerald/hoenn_interiors.json; the island doors open
+through world.py's standalone_door (status auto) on the next world rebuild. Scripts src/field_scripts/emerald/<header>_room_*.s.
+| room | zone | header s/i/t -> own | what |
+|---|---|---|---|
+| Lounge1 | 470 | 940/941/196 -> 2086/2087/1058 | the Breeder: Black 2's own IV judge (PokePartyGetIV: total, per stat), Emerald's thresholds, best stat with Emerald's tie coin flip; 2 boys |
+| Lounge2 | 476 | 952/953/607 -> 2088/2089/1059 | the Frontier Maniac: the day's facility, one of 3 lines by the better Lv. 50 / Open current streak (record keys; Tower = VAR_BT_LAST_STREAK_LV50/LV100); 3 maniacs, a triathlete |
+| Lounge3 | 477 | 954/955/608 -> 2090/2091/1060 | the Gambler: >= 3 Silver Symbols, the day's challenge, 5/10/15 BP bet (BP window), settled when a lobby sees that challenge end, twice the stake back; 4 people |
+| Lounge5 | 496 | 992/993/296 -> 2092/2093/1061 | the Nature Girl: Black 2's nature field (PokePartyGetParam 112, as PokeParty_SetNature), Emerald's 25 lines; 3 people |
+| Lounge7 | 497 | 994/995/297 -> 2094/2095/1062 | the two BP move tutors (fr_bp_tutor, moved out of the Exchange Corner, which keeps only its own people), a sailor, a gentleman |
+| Scott's House | 498 | 996/997/298 -> 2096/2097/1063 | Scott: first visit 1-4 BP by VAR_SCOTT_STATE; Lansat / Starf Berry for all 7 Silver / Gold Symbols; Silver / Gold Shield lines at 50 / 100 tower wins; random lines |
+- Ids (Emerald reserve, data/story_ids.json): flags FLAG_MET_BATTLE_FRONTIER_BREEDER 2443, _MANIAC 2446, _GAMBLER 2467,
+  FLAG_SCOTT_GIVES_BATTLE_POINTS 2468, FLAG_COLLECTED_ALL_SILVER_SYMBOLS 2561, _GOLD_SYMBOLS 2562, FLAG_DAILY_FRONTIER_LOUNGES
+  2757 (midnight reset); works VAR_FRONTIER_MANIAC_FACILITY 0x416A, VAR_FRONTIER_GAMBLER_CHALLENGE 0x416B, _SET_CHALLENGE
+  0x416C, _AMOUNT_BET 0x416D, _STATE 0x416E, _CODE 0x416F (our own: the bet's FR_FACILITY | FR_BATTLE_MODE << 3).
+  FLAG_TEMP_2/3/4 = map-local flags 0x22-0x24.
+- hoenn_frontier.inc: `fr_gambler_settle won` (Emerald's FrontierGamblerSetWonOrLost; in fr_lobby_returned's quit / won /
+  lost paths and the Battle Tower lobby's disqualified / won / lost paths, #ifdef HOENN_EMERALD) and `fr_lounge_new_day`.
+- Approximations: (1) Emerald moves the Maniac's facility and the Gambler's challenge by the days passed; here by one on
+  the first talk of a new day (Black 2's midnight-reset flag). (2) This port's Battle Tower has single battles only: the
+  Maniac's tower doubles / multis / link news read streak 0 (their first line), and a Gambler bet on the tower's doubles or
+  multis is settled by its single battles (else it could never end). (3) The shields are decorations (none in Black 2):
+  Scott says his lines and sets the flag, as the Battle Tower lobby's award man does; no item.
+- Test kit: HOENN_TEST_CHFRLOUNGES=1 with the post-game kit (scenes/frontier_lounges_test.inc: 200 BP, the 7 Silver Symbols).
+- Tested (one Emerald build, muted DeSmuME, work/agents/frontier_lounges/pt/fl.py; screenshots/frontier_lounges/, sheet.png):
+  each house entered through its island door and left by its mat, everyone talked to; the Breeder judged Swampert
+  ("better-than-average", best Defense, "outstanding"); the Maniac's news (Tower doubles day: its first line); a 5 BP bet
+  (200 -> 195 BP, VAR_FRONTIER_GAMBLER_STATE 1, code 0) and his "pronto" line on the next talk; the Nature Girl's line; Mega
+  Punch taught by the left tutor (a move forgotten, "I'll take your Battle Points"); Scott's 3 BP (VAR_SCOTT_STATE >= 9), then
+  the Lansat Berry for the 7 Silver Symbols on the next visit; the Exchange Corner shows only uids 2-5, 7-9. Checkers:
+  rooms_check / script_check (no finding in these zones; open counts as frontier_sp's), npc_check (7 zones ok), door_check (0).
+  Not played: a bet settled by a real challenge, the Gold Symbol berry, the shields.

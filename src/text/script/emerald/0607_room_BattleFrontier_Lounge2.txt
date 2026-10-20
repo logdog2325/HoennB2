@@ -1,0 +1,46 @@
+Howdy! When it comes to news about\nthe Battle Frontier, I’m no. 1.{be01}\nYou can think of me as\nthe Frontier Maniac.{be01}\nJust checking, but you are a Trainer,\nisn’t that right?{be01}\nI’ll happily share the hottest news\nI gathered about the Battle Frontier.
+Howdy! Did you swing by to grill me\nabout the latest word? Oh, all right!
+What amazing news-gathering power!\nMy mentor’s like none other!
+What amazing powers of observation!\nMy mentor’s like none other!
+What amazing power of persuasion!\nMy mentor’s like none other!
+…What is this place?\nIt’s scaring me…
+Let’s see now…{be01}\nIt sounds like Battle Tower\nSingle is the hottest.
+Let’s see now…{be01}\nIt sounds like Battle Tower\nDouble is the hottest.
+Let’s see now…{be01}\nIt sounds like Battle Tower\nMulti is the hottest.
+Let’s see now…{be01}\nIt sounds like Battle Tower\nMulti-Link is the hottest.
+Let’s see now…{be01}\nIt sounds like the Battle Dome\nis the hottest place going.
+Let’s see now…{be01}\nIt sounds like the Battle Factory\nis the hottest place going.
+Let’s see now…{be01}\nIt sounds like the Battle Palace\nis the hottest place going.
+Let’s see now…{be01}\nIt sounds like the Battle Arena\nis the hottest place going.
+Let’s see now…{be01}\nIt sounds like the Battle Pike\nis the hottest place going.
+Let’s see now…{be01}\nIt sounds like the Battle Pyramid\nis the hottest place going.
+Bet you didn’t know this!{be01}\nOne of those top Trainers that Scott\ncalls the Frontier Brains is there.{be01}\nIt’s this mysterious Trainer called\nthe Salon Maiden that runs the place.
+Have you battled the Salon Maiden?{be01}\nWhen she’s measuring up her opponent,\nshe apparently uses these Pokémon:{be01}\nA Psychic-type Psi Pokémon,\na Fire-type Volcano Pokémon,{be00}\nand a Normal-type Sleeping Pokémon.
+Have you battled the Salon Maiden\nwhen she’s serious?{be01}\nWhen she’s battling flat out,\nshe apparently uses these Pokémon:{be01}\nA Dragon & Psychic Eon Pokémon,\nan Electric-type Thunder Pokémon,{be00}\nand a Normal-type Sleeping Pokémon.
+Sure, there are several places where\nyou can enter Double Battles.{be01}\nBut the Double Battle Rooms of\nthe Battle Tower are, like, basic!{be01}\nThey’re where you should learn about\nhow Double Battles are played here{be00}\nin the Battle Frontier.
+Watch yourself in the battles here.{be01}\nI hear there are Trainers that have\nstrategies they developed just for{be00}\nDouble Battles.
+Once you’re confident and comfortable\nwith Double Battles here, you should{be00}\nthink about challenging other places{be00}\noffering Double Battles.
+All sorts of Trainers gather in\nthe Battle Salon.{be01}\nJust think--you may run into your\nfriends or followers!{be00}\nYou should look carefully!
+All sorts of Trainers gather in\nthe Battle Salon.{be01}\nJust think--you may run into your\nfriends or followers!{be00}\nYou should look carefully!
+All sorts of Trainers gather in\nthe Battle Salon.{be01}\nJust think--you may run into your\nfriends or followers!{be00}\nYou should look carefully!
+If you’re with a friend, head for the\nLink Multi Battle Room.{be01}\nIf you play with a strong friend,\nyou can expect to see tough foes!
+If you’re with a friend, head for the\nLink Multi Battle Room.{be01}\nIf you play with a strong friend,\nyou can expect to see tough foes!
+If you’re with a friend, head for the\nLink Multi Battle Room.{be01}\nIf you play with a strong friend,\nyou can expect to see tough foes!
+Bet you didn’t know this!{be01}\nOne of those top Trainers that Scott\ncalls the Frontier Brains is there.{be01}\nIt’s this flamboyant Trainer called\nthe Dome Ace that runs the place.
+Have you battled the Dome Ace?{be01}\nWhen he’s treating the opponent\nlightly, he uses these three Pokémon:{be01}\nA Dragon & Flying Dragon Pokémon,\na Water & Ground Mud Fish Pokémon,{be00}\nand a Fire & Flying Flame Pokémon.
+Have you battled the Dome Ace\nwhen he’s serious?{be01}\nWhen he’s demonstrating his strategy,\nhe uses these three Pokémon:{be01}\nA Dragon & Flying Eon Pokémon,\na Water & Ground Mud Fish Pokémon,{be00}\nand a Steel- & Psychic-type Iron Leg{be00}\nPokémon.
+Bet you didn’t know this!{be01}\nOne of those top Trainers that Scott\ncalls the Frontier Brains is there.{be01}\nIt’s this freaky Trainer called\nthe Factory Head that runs the place.
+Have you battled the Factory Head\nalready?{be01}\nLet me think… When he goes to battle,\nhe just gets three rental Pokémon.{be01}\nHe battles under pretty much the same\nconditions as you.
+Have you battled the Factory Head\nwhen he’s serious?{be01}\nWhen he goes seriously to battle,\nhe still gets three rental Pokémon.{be01}\nHe battles under virtually the same\nconditions as you.
+Bet you didn’t know this!{be01}\nOne of those top Trainers that Scott\ncalls the Frontier Brains is there.{be01}\nIt’s this sinister Trainer called\nthe Palace Maven that runs the place.
+Have you battled the Palace Maven\nbefore?{be01}\nWhen he’s testing the opponent’s\nspirit, he’s said to use these Pokémon:{be01}\nA Poison & Flying-type Bat Pokémon,\na Normal-type Lazy Pokémon, and a{be00}\nWater- & Ice-type Transport Pokémon.
+Have you battled the Palace Maven\nwhen he’s serious?{be01}\nWhen he throws his entire might into\nbattle, he’s said to use these Pokémon:{be01}\nA Fire-type Legendary Pokémon,\na Normal-type Lazy Pokémon,{be00}\nand a Water-type Aurora Pokémon.
+Bet you didn’t know this!{be01}\nOne of those top Trainers that Scott\ncalls the Frontier Brains is there.{be01}\nIt’s this cute Trainer called\nthe Arena Tycoon that runs the place.
+Have you battled the Arena Tycoon\nbefore?{be01}\nWhen she’s assessing the foe’s ability,\nshe supposedly uses these Pokémon:{be01}\nA Bug & Fighting Single Horn Pokémon,\na Dark-type Moonlight Pokémon,{be00}\nand a Bug & Ghost Shed Pokémon.
+Have you battled the Arena Tycoon\nwhen she’s serious?{be01}\nWhen she battles for keeps,\nshe supposedly uses these Pokémon:{be01}\nA Dark-type Moonlight Pokémon,\na Ghost & Poison Shadow Pokémon{be00}\nand a Grass- & Fighting-type{be00}\nMushroom Pokémon.
+Bet you didn’t know this!{be01}\nOne of those top Trainers that Scott\ncalls the Frontier Brains is there.{be01}\nIt’s this scary Trainer called\nthe Pike Queen that runs the place.
+Have you battled the Pike Queen\nbefore?{be01}\nWhen she’s in a good mood, they say\nshe uses these three Pokémon:{be01}\nA Poison-type Fang Snake Pokémon,\na Bug & Rock Mold Pokémon,{be00}\nand a Water-type Tender Pokémon.
+Have you battled the Pike Queen\nwhen she’s serious?{be01}\nWhen she’s seriously annoyed, they say\nshe uses these three Pokémon:{be01}\nA Poison-type Fang Snake Pokémon,\na Steel & Ground Iron Snake Pokémon,{be00}\nand a Water- & Flying-type Atrocious{be00}\nPokémon.
+Bet you didn’t know this!{be01}\nOne of those top Trainers that Scott\ncalls the Frontier Brains is there.{be01}\nIt’s this fiery-hot Trainer called\nthe Pyramid King that runs the place.
+Have you battled the Pyramid King\nbefore?{be01}\nWhen he’s checking the foe’s power,\nhe apparently uses these Pokémon:{be01}\nA Rock-type Rock Peak Pokémon,\nan Ice-type Iceberg Pokémon,{be00}\nand a Steel-type Iron Pokémon.
+Have you battled the Pyramid King\nwhen he’s serious?{be01}\nWhen he’s pumped with hot power,\nhe apparently uses these Pokémon:{be01}\nAn Ice & Flying Freeze Pokémon, an\nElectric & Flying Electric Pokémon,{be00}\nand a Fire- & Flying-type Flame{be00}\nPokémon.

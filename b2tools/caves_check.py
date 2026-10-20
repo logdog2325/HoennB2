@@ -61,6 +61,9 @@ G3_SURF = MC.SURF | {0x70, 0x71, 0x72, 0x73}
 G3_JUMP = {0x38: (1, 0), 0x39: (-1, 0), 0x3A: (0, -1), 0x3B: (0, 1)}
 G3_BLOCK = {0x30: 'e', 0x31: 'w', 0x32: 'n', 0x33: 's', 0x34: 'ne', 0x35: 'nw', 0x36: 'se', 0x37: 'sw'}
 G3_ICE, G3_WATERFALL, G3_MUD = 0x20, 0x13, 0xD0
+# (th_glitch 2026-10-19) MB_TRICK_HOUSE_PUZZLE_8_FLOOR 0x48 slips you on as MB_ICE (pokeruby field_player_avatar.c
+# sForcedMovementTestFuncs: both ForcedMovement_Slip): the Trick House's slippery floor
+G3_SLIP = {G3_ICE, 0x48}
 G3_DOORS = {0x60, 0x6C}                                             # MB_ANIMATED_DOOR, MB_WATER_DOOR: arches in Black 2
 
 def _heights():
@@ -249,7 +252,7 @@ class Cave:
                 elif e == 1 and beh(cur) in G3_SURF | {0} and elev(t) == 3 and beh(t) not in G3_SURF: ne = 3   # land
                 else: out.append((d, None, f'elevation {e} -> {elev(t)}')); continue
             else: ne = new_e(e, cur, t)
-            while beh(t) == G3_ICE:
+            while beh(t) in G3_SLIP:
                 t2 = (t[0] + dx, t[1] + dz)
                 if not walk(t2) or not can_enter(ne, t2) or d in G3_BLOCK.get(beh(t), '') or OPP[d] in G3_BLOCK.get(beh(t2), ''): break
                 ne = new_e(ne, t, t2); t = t2

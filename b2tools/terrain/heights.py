@@ -60,6 +60,7 @@ LEVEL = 16                        # units per Sapphire elevation step (= one row
 WATER = {'water', 'deep_water', 'current_n', 'current_s', 'current_e', 'current_w', 'waterfall'}
 NOLAND = 0x4000     # collision flag (u32 bit 30): no surf landing here (hm_free.py SurfLandingTileType; no Black 2 code
                     # tests flag bits 9-14: ov036's GetTileFlags users test 0x01/0x02/0x04/0x08/0x20/0x40/0x100)
+NOSURF = 0x2000     # collision flag (u32 bit 29): no surf start from here (hm_free.py SurfStartTileType; step 12b)
 BLOCK = WATER | {'sign', 'building', 'door'}
 CONNECT = {'stairs', 'mud'}                       # walkable tiles that join two levels (slope tiles)
 LEDGES = {'ledge_s', 'ledge_n', 'ledge_e', 'ledge_w'}
@@ -314,6 +315,7 @@ class Field:
         self.decks, self.wet = set(), set()   # walkable deck tiles; unwalkable water tiles (4b)
         self.deck_water = {}             # deck tile -> stands over water (ground.water_under), memo for _Lattice
         self.noland = set()              # walkable tiles a surfer may not land on (step 12; collision flag NOLAND)
+        self.nosurf = set()              # walkable tiles no surf starts from (step 12b; collision flag NOSURF)
         self.stilt_decks = set()         # walkways on posts over the forest floor (STILTS: Fortree), step 7
         self.stilt_ground = set()        # the floor tiles round them: no face, no skirt up to the deck (open_under)
         self.notes = []
@@ -339,6 +341,8 @@ class Field:
             cls = WALL_CLASS.get(frozenset(self.walls[(wx, wz)]), cls)
         if (wx, wz) in self.noland and not flags & 1:
             flags |= NOLAND
+        if (wx, wz) in self.nosurf and not flags & 1:
+            flags |= NOSURF
         # (sweep_outdoor 2026-10-11: surf water, ponds, falls, shoals and currents are the water module's records at the
         # water's own height; one at exactly y 0 - water leveled 8 over its lower shore, 4b - is not a ground record)
         if a == 0 and b == flat_index(0) and cls not in (0x3F, 0x3D, 0x40, 0x17, 0x94, 0x95, 0x96, 0x97):
@@ -547,10 +551,13 @@ def height_field(world, maps, cfg, trees=()):
     # bridge's level, 32 over the river's south bank, where Sapphire has both at elevation 3
     span = {k for k in walk if cls(k) == 'bridge' and elev.get(k) == 15 and world[k][0] not in STILTS
             and any(n in world and world[n][2] and cls(n) in ('water', 'deep_water') for n in nb(k))}
+    pond_of, pond_shore = {}, []                                 # (water tile -> its body; the bodies' shore regions)
     for comp in _components({k for k, e in world.items() if e[1] in WATER and e[1] != 'waterfall'} | span, nb):
         if len(comp) >= 400: continue                            # the sea: its shores are anchored above
         shore = sorted({region[n] for p in comp for n in nb(p) if n in region and cls(n) != 'bridge'},
                        key=lambda r: -size[r])
+        for p in comp: pond_of[p] = len(pond_shore)
+        pond_shore.append(shore)
         placed = [r for r in shore if find(r)[0] == find(G)[0]]
         if not placed:    # (else a bridge over it: Route 120's strip at the Scorched Slab, across its pond from the
             # bridge, floated at Sapphire's level 0, 32 under the bridge: the pond stepped 32 and the cave could not be
@@ -594,6 +601,20 @@ def height_field(world, maps, cfg, trees=()):
             want = find(near)[1] - find(G)[1] - d                      # (union: height(near) - height(r) = d)
             if abs(want - LEVEL * rlvl[r]) >= 2 * LEVEL:
                 union(near, r, d, f'walled-in region at {rid[r][0]}'); continue
+        # (bridge_surf 2026-10-20) an island - a group still floating that touches a pond, river or lake and has no
+        # warp: reached only over the water - stands level with that water's biggest placed shore, as the shore rule
+        # above does when a shore is placed by then. In a warp-only group with no sea nothing is placed then (Emerald's
+        # Safari Zone southeast: the grass east of the pond under the waterfall took its Sapphire level, the upper
+        # river's, 32 over the pond's other shores; the pond split at a 32-unit step there, and a surfer who came down
+        # the waterfall could reach no other shore: trapped without Waterfall). Only where no sea anchors the levels
+        # (wetmaps): in the connected world the rule moved 25 islands and Route 115's lake by up to 32 (a new trap)
+        if near is None and not wetmaps and not any(t in warp_at for t in ts):
+            isl = [s_ for i in sorted({pond_of[n] for t in ts for n in nb(t) if n in pond_of})
+                   for s_ in pond_shore[i] if find(s_)[0] == find(G)[0]]
+            if isl:
+                union(max(isl, key=lambda s_: size[s_]), r, 0, f'island at {rid[r][0]}')
+                F.notes.append(f'island at {rid[r][0]}: level with the shore at {rid[max(isl, key=lambda s_: size[s_])][0]}')
+                continue
         union(r, G, LEVEL * rlvl[r], 'anchor')
     rh = [find(r)[1] - find(G)[1] for r in range(G)]
     # (walkability 2026-10-11, door_fix's finding) a building stands level (step 8: at its door's front tile), so two
@@ -1142,7 +1163,27 @@ def height_field(world, maps, cfg, trees=()):
     #     which b2tools/patches/hm_free.py SurfLandingTileType turns into "solid" for the landing check only
     F.noland = {k for k in walk if cls(k) not in WATER and elev.get(k) not in (0, 1, 3)
                 and any(cls(n) in WATER for n in nb(k))}
-    print(f'heights: {len(F.slope)} stair/slope tiles, {len(F.walls)} walled tiles, {len(F.noland)} no-landing tiles, {len(F.notes)} notes')
+    # 12b. surf start (bridge_surf 2026-10-20): Sapphire starts a surf only when PlayerGetElevation() - the player's
+    #     previous elevation - is 3 and the water's elevation mismatches the current one (pokeruby / pokeemerald
+    #     IsPlayerFacingSurfableFishableWater); Black 2 from any tile 0-20 units over the water (CheckSurfHeightAllow).
+    #     Walkable tiles beside surf water where Sapphire's player never stands at elevation 3 carry NOSURF, which
+    #     b2tools/patches/hm_free.py SurfStartTileType turns into "solid" for the surf start only: elevation 0 (the
+    #     current elevation 0 never mismatches), 2 and 4-14, and groups of walkable elevation-15 tiles (bridges keep the
+    #     elevation carried onto them, ObjectEventUpdateElevation) whose land beside them has no elevation 3. Emerald's
+    #     Mossdeep north shore (elevation 7/9, 8 over the sea north of it) let a surfer out onto a sea no Gen 3 player
+    #     reaches, with no landing (NOLAND): a trap (v1.2). Also Route 119's elevation-4 river banks below the Weather
+    #     Institute bridge, and the bridge decks themselves (raise_bridges keeps them 32+ over their water anyway; at 8
+    #     over it, v1.0.4, a player surfed off the Weather Institute bridge into the pocket north of it and could not
+    #     land back: the Discord report). b2tools/surf_trap_check.py checks both rules against Gen 3's.
+    carries3 = {}                                                # elevation-15 tile -> its group has elevation 3 beside it
+    for comp in _components({k for k in walk if elev.get(k) == 15 and cls(k) not in WATER}, nb):
+        cs = set(comp)
+        ok = any(n in walk and n not in cs and cls(n) not in WATER and elev.get(n) == 3 for p in comp for n in nb(p))
+        for p in comp: carries3[p] = ok
+    F.nosurf = {k for k in walk if cls(k) not in WATER and any(cls(n) in WATER for n in nb(k))
+                and elev.get(k) not in (None, 1, 3) and not carries3.get(k)}     # (1: railings, never stood on)
+    print(f'heights: {len(F.slope)} stair/slope tiles, {len(F.walls)} walled tiles, {len(F.noland)} no-landing tiles, '
+          f'{len(F.nosurf)} no-surf-start tiles, {len(F.notes)} notes')
     for n in F.notes: print('heights:', n)
     return F
 

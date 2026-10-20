@@ -1,0 +1,143 @@
+{
+ "_doc": "frontier_center (2026-10-20, work/agents/frontier_center/tools/center_rooms.py writes this file): BattleFrontier_PokemonCenter_1F, Emerald only. Zone 460 = Black 2's Pokemon Center zone 460 (map type 16): its respawn record (ov012 RESPAWN_ZONE_INFO record 76, tile (7,12) = the tile in front of the nurse) is the Frontier's (b2tools/patches/centers.py), as pokeemerald's OnTransition setrespawn HEAL_LOCATION_BATTLE_FRONTIER_OUTSIDE_EAST.",
+ "zone": 460,
+ "room": "BattleFrontier_PokemonCenter_1F",
+ "area": 283,
+ "header": {
+  "parent": 17,
+  "place": 62
+ },
+ "warps": [
+  {
+   "at": [
+    7,
+    8
+   ],
+   "tile_only": true,
+   "to": [
+    17,
+    14
+   ],
+   "what": "Emerald warp 0 -> BattleFrontier_OutsideEast 12 (zone 17 door 14)"
+  },
+  {
+   "at": [
+    6,
+    8
+   ],
+   "tile_only": true,
+   "to": [
+    17,
+    14
+   ],
+   "what": "Emerald warp 1 -> BattleFrontier_OutsideEast 12 (zone 17 door 14)"
+  },
+  {
+   "at": [
+    1,
+    6
+   ],
+   "tile_only": true,
+   "to": [
+    499,
+    0
+   ],
+   "type": 2,
+   "dir": 4,
+   "what": "Emerald warp 2 -> BattleFrontier_PokemonCenter_2F 0 (escalator, entered walking west)"
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 1,
+   "model": 78,
+   "script": 1,
+   "dir": 1,
+   "at": [
+    7,
+    2
+   ],
+   "move": 15,
+   "_what": "Emerald object 1 nurse (7,2), BattleFrontier_PokemonCenter_1F_EventScript_Nurse"
+  },
+  {
+   "uid": 2,
+   "model": 12,
+   "script": 2,
+   "dir": 1,
+   "at": [
+    4,
+    5
+   ],
+   "move": 46,
+   "_what": "Emerald object 2 school_kid_m (4,5), BattleFrontier_PokemonCenter_1F_EventScript_SchoolKid"
+  },
+  {
+   "uid": 3,
+   "model": 19,
+   "script": 3,
+   "dir": 1,
+   "at": [
+    11,
+    4
+   ],
+   "_what": "Emerald object 3 man_3 (11,4), BattleFrontier_PokemonCenter_1F_EventScript_Man"
+  },
+  {
+   "uid": 4,
+   "model": 35,
+   "script": 4,
+   "dir": 2,
+   "at": [
+    2,
+    3
+   ],
+   "_what": "Emerald object 4 picnicker (2,3), BattleFrontier_PokemonCenter_1F_EventScript_Picnicker"
+  },
+  {
+   "uid": 5,
+   "model": 4429,
+   "script": 5,
+   "dir": 3,
+   "at": [
+    1,
+    3
+   ],
+   "_what": "Emerald object 5 skitty (1,3), BattleFrontier_PokemonCenter_1F_EventScript_Skitty"
+  }
+ ],
+ "signs": [
+  {
+   "script": 6,
+   "at": [
+    2,
+    1
+   ],
+   "dir": 0
+  },
+  {
+   "script": 6,
+   "at": [
+    3,
+    1
+   ],
+   "dir": 0
+  },
+  {
+   "script": 7,
+   "at": [
+    11,
+    1
+   ],
+   "dir": 0
+  },
+  {
+   "script": 7,
+   "at": [
+    12,
+    1
+   ],
+   "dir": 0
+  }
+ ]
+}

@@ -1,6 +1,7 @@
 {
  "zone": 165,
  "room": "SkyPillar_2F",
+ "cycling": true,
  "cave": true,
  "cave_auto": true,
  "area": 295,

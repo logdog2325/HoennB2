@@ -166,7 +166,15 @@
   "TrainerHill_4F_Unique": "emerald",
   "TrainerHill_4F_Expert": "emerald",
   "TrainerHill_Entrance": "emerald",
-  "TrainerHill_Roof": "emerald"
+  "TrainerHill_Roof": "emerald",
+  "Route110_TrickHousePuzzle2_Emerald": "emerald",
+  "Route110_TrickHousePuzzle3_Emerald": "emerald",
+  "Route110_TrickHousePuzzle3_Alt_Emerald": "emerald",
+  "Route110_TrickHousePuzzle4_Emerald": "emerald",
+  "Route110_TrickHousePuzzle5_Emerald": "emerald",
+  "Route110_TrickHousePuzzle8_Emerald": "emerald",
+  "Route110_TrickHousePuzzle6_Emerald": "emerald",
+  "Route110_TrickHousePuzzle7_Emerald": "emerald"
  },
  "doors": {
   "ruby": [
@@ -241,7 +249,15 @@
    "SkyPillar_2F": "SkyPillar_2F_Emerald",
    "SkyPillar_3F": "SkyPillar_3F_Emerald",
    "SkyPillar_4F": "SkyPillar_4F_Emerald",
-   "SkyPillar_5F": "SkyPillar_5F_Emerald"
+   "SkyPillar_5F": "SkyPillar_5F_Emerald",
+   "Route110_TrickHousePuzzle2": "Route110_TrickHousePuzzle2_Emerald",
+   "Route110_TrickHousePuzzle3": "Route110_TrickHousePuzzle3_Emerald",
+   "Route110_TrickHousePuzzle3_Alt": "Route110_TrickHousePuzzle3_Alt_Emerald",
+   "Route110_TrickHousePuzzle4": "Route110_TrickHousePuzzle4_Emerald",
+   "Route110_TrickHousePuzzle5": "Route110_TrickHousePuzzle5_Emerald",
+   "Route110_TrickHousePuzzle8": "Route110_TrickHousePuzzle8_Emerald",
+   "Route110_TrickHousePuzzle6": "Route110_TrickHousePuzzle6_Emerald",
+   "Route110_TrickHousePuzzle7": "Route110_TrickHousePuzzle7_Emerald"
   }
  },
  "maps": {

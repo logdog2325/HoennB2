@@ -77,6 +77,9 @@ Test_PG_Start:
 #ifdef HOENN_TEST_CHPGFIX
 #include "scenes/postgame_fix_test.inc"         // (postgame_fix) rods and TM94 for the Safari Zone tests
 #endif
+#ifdef HOENN_TEST_CHFRLOUNGES
+#include "scenes/frontier_lounges_test.inc"     // (frontier_lounges) 200 BP, the seven Silver Symbols
+#endif
 L_PGT_Done:
     VMReturn
 #endif

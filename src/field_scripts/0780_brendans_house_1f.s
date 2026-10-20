@@ -43,20 +43,22 @@
 Script_1:
 Script_2:                      // the blackout at home (script_check 2026-10-08). Black 2's EventBattleLose (ov012
     ActorsPauseAll              // event_battle_lose.c) runs local script 2 of the respawn zone instead of the Centers'
-    TrainerCardGetSex 0x8030    // global 2001 when IsReturnLocationNonLeaguePokeCen is FALSE, which it is for the
-    WorkCmpConst 0x8030, 1      // new game's respawn point, this room (RESPAWN_ZONE_INFO 0: zone 390 (6,8)). A VMHalt
-    VMJumpIf CMP_EQ, L_BlackoutMay  // here left the screen black for good after any battle lost before a Pokémon Center
-    PokePartyRecoverAll         // or after the Hall of Fame (h_setrespawn 1). Sapphire's whiteout heals the party and
-    FadeInBlack                 // shows the player at home with no line (overworld.c DoWhiteOut).
-    FadeWait
+    PokePartyRecoverAll         // global 2001 when IsReturnLocationNonLeaguePokeCen is FALSE, which it is for the
+    TrainerCardGetSex 0x8030    // new game's respawn point, this room (RESPAWN_ZONE_INFO 0: zone 390 (6,8)): any battle
+    WorkCmpConst 0x8030, 1      // lost before a Pokémon Center or after the Hall of Fame (h_setrespawn 1). Gen 3
+    VMJumpIf CMP_EQ, L_BlackoutMay  // (pokeruby/pokeemerald DoWhiteOut -> the last heal location, setrespawn
+    FadeOutBlack                // HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F / _MAYS_HOUSE_2F (4,2)) heals the party
+    RTReserveScript 22          // and wakes you in your own bedroom, facing down, no line (littleroot2 2026-10-19;
+    FadeWait                    // until then this room). Still on the blackout's black screen: on to the bedroom tile
+    MapChangeCore 391, 5, 0, 3, 1   // (map (4,2) + the room's origin (1,1)), whose script 22 fades in (players_house_2f.inc)
     FinishAllEvents
     ActorsUnpauseAll
     VMHalt
-L_BlackoutMay:                  // a girl's home is May's house (Sapphire: HEAL_LOCATION_LITTLEROOT_TOWN_MAYS_HOUSE_2F):
-    FadeOutBlack                // on to the same tile there (the rooms mirror each other); its script 2 heals and
-    RTReserveScript 2           // fades in (0784_mays_house_1f.s), still on the black screen of the blackout
+L_BlackoutMay:                  // a girl's home is May's house: her bedroom, the same tile
+    FadeOutBlack
+    RTReserveScript 22
     FadeWait
-    MapChangeCore 392, 6, 0, 8, 0
+    MapChangeCore 393, 5, 0, 3, 1
     FinishAllEvents
     ActorsUnpauseAll
     VMHalt

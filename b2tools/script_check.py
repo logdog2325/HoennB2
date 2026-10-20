@@ -899,6 +899,39 @@ ACCEPT = [   # (zone name regex, kind regex, message regex, why); checked on the
      "the camper's walk back in front of the door (Sapphire's walk_right, walk_sweep 2026-10-12): the zone init puts him "
      "on (95,98) beside it whenever the arrival scene runs (VAR_SAFARI_ZONE_STATE 2); the checker starts him on his "
      "template tile (96,98) (played in the emulator: (95,98) -> (96,98), screenshots/walk_sweep/safari_*)"),
+    ('Route110_TrickHouseEntrance$', 'ent', r'ObjInitNPCGPos moves person 0 \(uid 1\) to .*a solid tile',
+     "the Trick Master hides IN the furniture (pokeruby SetHidingSpotPuzzle1-8: beneath the desk, behind the tree, in the "
+     "dresser, beyond/behind the windows, in the planter, in the cupboard), invisible, talked to from the tile in front "
+     "(trick_house 2026-10-19, emulator: levels 0-2 found, screenshots/trick_house/s*_03_found.png)"),
+    ('Route110_TrickHouse(Entrance|End)$', 'path', r'actor 1 steps from \(\d+, \d+\) onto \(\d+, \d+\): a solid tile',
+     "the Trick Master's exit (Movement_TrickMasterJumpAway: slide_up x6 off the screen through the back wall), then "
+     "removeobject (trick_house 2026-10-19, emulator)"),
+    ('Route110_TrickHousePuzzle6$', 'ent', r'people on one tile \(\d+, \d+\): uid 1[0-5]\d \(sprite (119|135), flag 0\)'
+     r'(, uid 1[0-5]\d \(sprite (119|135), flag 0\))+$',
+     "a rotating gate's arms (3D actors, codes 119/135, uid 100 + 4 * gate + arm) all stand on one tile next to the gate's "
+     "pivot; b2tools/patches/rotating_gates.c draws each one turned onto its tile edge and takes it out of the actor "
+     "collision (th_p6 2026-10-19, emulator: screenshots/trick_house/p6_*)"),
+    ('FortreeCity_Gym$', 'ent', r'people on one tile \(\d+, \d+\): uid 1[0-3]\d \(sprite (119|135), flag 0\)'
+     r'(, uid 1[0-3]\d \(sprite (119|135), flag 0\))+$',
+     "Fortree Gym's rotating gates (fortree_gates 2026-10-20): a gate's arms (3D actors, codes 119/135, uid 100 + 4 * gate "
+     "+ arm; data/story/fortree_gates.json, Emerald emerald/) all stand on one tile next to the gate's pivot; "
+     "b2tools/patches/rotating_gates.c draws each one turned onto its tile edge and takes it out of the actor collision "
+     "(emulator: screenshots/fortree_gates/)"),
+    ('Route110_TrickHousePuzzle7$', 'ent', r'person \d+ uid 2[1-5] \(sprite (146|202|203), script \d+, flag 3[2-6]\) at \(\d+, \d+\): '
+     r'on a solid tile', "a lever's turned red arrow (Sapphire/Ruby puzzle 7): a flat 3D object standing on its lever (solid "
+     "anyway) whose model draws the arrow beside it, so the arrow you walk onto stays free (a Black 2 actor blocks its own "
+     "tile); talking to it runs the lever (th_p7 2026-10-19, emulator: screenshots/trick_house/p7_s_*)"),
+    ('Route110_TrickHousePuzzle7$', 'ent', r"Black 2's own sign 0 \(script 1\) is still in the room at \(8, 3\)",
+     "the scroll's own story sign (Sapphire (7,2), script 1): Black 2's zone 447 (Virbank Gate) happens to have its sign "
+     "1 on the same tile (th_p7 2026-10-19)"),
+    ('Route110_TrickHousePuzzle7$', 'path', r'the player steps from \(\d+, \d+\) onto \(\d+, \d+\): a solid tile \(class 0x1 '
+     r'flags 0x81\) \(trigger \d+ script \d+', "Sapphire/Ruby puzzle 7's raised track (elevation 4, rows 6-7): solid in Black "
+     "2 because Gen 3 bumps you at its edge, but its arrows' slides cross it, as in Gen 3 (scripted moves ignore collision; "
+     "th_p7 2026-10-19, emulator: every slide lands where Gen 3's forced movement does)"),
+    ('Route110_TrickHousePuzzle7$', 'path', r'actor [1-9] steps from \(\d+, \d+\) onto \(\d+, \d+\): .*\(trigger \d+ script [4-7] '
+     r'from', "Emerald's puzzle 7 colour buttons (scripts 4-7): the checker walks the riders through all four press-count "
+     "branches one after another, but each press runs one branch, a step round the rider's 2x2 square from where the "
+     "last press left it (th_p7 2026-10-19, emulator: every rider where Emerald puts it after each of 50+ presses)"),
 ]
 
 if version.is_emerald():         # (mtpyre 2026-10-19) only Emerald assembles these scripts without running them

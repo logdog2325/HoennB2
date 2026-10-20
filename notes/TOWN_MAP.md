@@ -122,6 +122,19 @@ header fly point to **Sapphire's heal location** (`heal_locations.json`, the til
 walkable and in the town's zone in work/world), as Sapphire's Fly (`sub_8053538(heal location)`). Teleport and the Escape
 Rope's fallback use the same point (ov035), as Sapphire's Teleport. Littleroot keeps world.py's point between the houses.
 `HEAL_LANDING = False` turns this off.
+**Fly to Littleroot by sex** (littleroot2, 2026-10-19; `LITTLEROOT_FLY`): Gen 3 lands in front of your own house
+(pokeruby/pokeemerald region_map.c: HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE (5,9) for a boy, _MAYS_HOUSE (14,9) for a
+girl = world (173,361) / (182,361)). ov033 EventFly's creation (func_ov033_02178908, `bl LoadZoneSpawnInfoCheckRail` at
+0x02178956) calls a 52-byte hook in the zero tail of dive.py's spawn-hook block (0x02179ED0): the spawn as before, then in
+zone 389 x/z = the tile of the player's sex (the Fly work's take-off effect, 11 = boy, set just before the call). The
+Escape Rope's fallback keeps the header point between the houses (Gen 3's Escape Rope never lands in Littleroot). Code only.
+**Teleport home** (littleroot2 follow-up, `HOME_TELEPORT`): Gen 3's Teleport goes to the last heal location, the player's
+own bedroom before the first Center and after the Hall of Fame (HEAL_LOCATION_LITTLEROOT_TOWN_<house>_2F (4,2) = zone tile
+(5,3) of 391 / 393). ov035 EventMapChangeTeleport_Create's `bl LoadZoneSpawnInfoCheckRail` (0x0217DD88) calls a 72-byte
+ITCM hook (the arena-literal protocol): the spawn as before, then for return location 1 (1-based = record 0, home; the
+caller's r6; r5 = gsys) the
+bedroom of the player's sex, y 0. Centers' return locations land as before (the heal tiles above). The blackout at home
+lands in the same bedroom by script (0780 Script_2 -> MapChangeCore to the 2F with its script 22 reserved).
 
 **Wall maps.** Sapphire's `EventScript_RegionMap` (msgbox Common_Text_LookCloserAtMap, fade, `special
 FieldShowRegionMap`): the Centers' map (centers_rooms.py `region_map()`) and the bedroom map now show the line, then

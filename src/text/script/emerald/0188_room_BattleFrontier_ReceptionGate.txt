@@ -1,0 +1,50 @@
+Is it your first time here?\nPlease step this way!
+The front lines of Pokémon battling!\nWelcome to the Battle Frontier!
+For a first-time visitor, we issue\nthe Frontier Pass.{be01}\nIt’s for use at all the facilities\nin the Battle Frontier.{be01}\nHere you are!
+{0100:0} obtained\nthe Frontier Pass.
+{0100:0} placed the Trainer Card\nin the Frontier Pass.
+We hope you enjoy all that the Battle\nFrontier has to offer!
+???: Well, if it isn’t {0100:0}!\nYou came out here!
+Guide: Oh! Mr. Scott, sir!\nGood day to you, sir!
+Scott: It’s great to see you here,\nit really is!{be01}\nI hope you’ll take your time and\nexplore everywhere.{be01}\nNaturally, I hope you’ll also experience\nthe pure essence of battling.{be01}\nI also have my quarters here, so feel\nfree to visit if you have time.
+I’m your guide to the various facilities\nhere in the Battle Frontier.
+Which would you like to learn about?
+It is the gigantic tower considered\nto be the Battle Frontier’s symbol.{be01}\nThere are four kinds of Battle Rooms\nin the tower for Single, Double, Multi,{be00}\nand Link Multi Battles.
+The Battle Dome is the large building\nshaped like a huge egg.{be01}\nEvents named Battle Tourneys are held\nin this facility.{be01}\nThe Battle Tourneys are offered in\ntwo courses--for Single and Double{be00}\nBattles.
+The Battle Palace is the red building\non the right of the Battle Frontier.{be01}\nThere are two kinds of Battle Halls\nfor Single and Double Battles.
+The Battle Arena is the dojo-like\nbuilding at the center-right of{be00}\nthe Battle Frontier.{be01}\nAn event called the Set KO Tourney\ntakes place at the Battle Arena.
+The Battle Factory is the large\nbuilding that is the closest to us.{be01}\nAn event called the Battle Swap\nis conducted there.{be01}\nThe Battle Swap event is offered in\ntwo courses for Single and Double{be00}\nBattles.
+The Battle Pike is the building shaped\nlike a Pokémon at the center-left of{be00}\nthe Battle Frontier.{be01}\nAn event called the Battle Choice\nis conducted there.
+The Battle Pyramid is the enormous\npyramid.{be01}\nAn event called the Battle Quest\nis conducted there.
+The Ranking Hall is located near\nthe Battle Tower.{be01}\nThere, you may see the most fantastic\nrecords left by the Trainers that{be00}\ntook on the many challenges of{be00}\nthe Battle Frontier.
+The Exchange Service Corner is near\nthe Battle Tower.{be01}\nThe Battle Points you have earned in\nthe Battle Frontier may be exchanged{be00}\nfor fabulous prizes there.
+I’m your guide to the basic rules that\nare common to all the challenges{be00}\noffered by the facilities in the Battle{be00}\nFrontier.
+What would you like to learn about?
+All the challenges at the Battle\nFrontier’s facilities come in{be00}\ntwo courses--Level 50 and Open Level.
+The Level 50 course is open to Pokémon\nup to and including Level 50.{be01}\nPlease keep in mind, however, that\nno Trainer you face will have any{be00}\nPokémon below Level 50.{be01}\nThis course is the entry level for\nbattles at the Battle Frontier.{be01}\nTo begin, we hope you will challenge\nthis course.
+The Open Level course places no limit\non the levels of Pokémon entering{be00}\nchallenges.{be01}\nThe levels of your opponents will\nbe adjusted to match the levels of{be00}\nyour Pokémon.{be01}\nHowever, no Trainer you face will\nhave any Pokémon below Level 60.
+Virtually any kind of Pokémon may take\non the challenges at all facilities.{be01}\nEggs and certain kinds of Pokémon,\nhowever, are not permitted.{be01}\nThe numbers of Pokémon required for\nchallenges will depend on the facility.{be01}\nAt all facilities, however, two or more\nof the same kind of Pokémon are not{be00}\npermitted.
+When entering a challenge at a Battle\nFrontier facility, Pokémon may not{be00}\nbe holding the same kind of item.{be01}\nPlease make sure that all Pokémon\nentering a challenge are holding{be00}\ndifferent items.
+I’m your guide to the Frontier Pass.
+Which would you like to learn about?
+There are seven facilities at\nthe Battle Frontier.{be01}\nTrainers who gain recognition for\ntheir abilities may be rewarded with{be00}\nsymbols from each of the facilities.{be01}\nTo earn a symbol, Trainers may need\nto defeat other Trainers in a row,{be00}\nand may need to win events repeatedly.{be01}\nIt’s certainly not easy to win symbols.\nI wish you the best of luck!
+It is possible to record one battle\non your Frontier Pass.{be01}\nYou may record a battle you had with\na friend or friends.{be01}\nOr you may record a battle conducted\nat the Battle Frontier excluding{be00}\nmatches at the Battle Pike or{be00}\nthe Battle Pyramid.{be01}\nYou may choose to record your match\nat the end of a battle.
+Battle Points are rewards given to\nTrainers who battled outstandingly{be00}\nat the Battle Frontier.{be01}\nYou may trade in your Battle Points\nfor prizes at the Exchange Service{be00}\nCorner.
+Battle Tower
+Battle Dome
+Battle Palace
+Battle Arena
+Battle Factory
+Battle Pike
+Battle Pyramid
+Ranking Hall
+Exchange Service
+Exit
+Two Styles
+Lv. 50
+Open Level
+Pokémon Type & No.
+Hold Items
+Symbols
+Record
+Battle Pts

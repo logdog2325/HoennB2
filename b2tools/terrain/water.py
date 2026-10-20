@@ -248,9 +248,35 @@ def collision(cls, tile, cell):
     h = sys.modules.get('terrain.heights')          # heights.py re-heights only ground-level records: water follows
     F = getattr(h, 'FIELD', None) if h else None    # the level it gives the water body (its surface is 8 below)
     y = getattr(F, 'coll_h', {}).get((wx, wz), F.y(wx, wz)) if F is not None else 0   # (a height drawn otherwise
-    if not y: return r                                                                   #  keeps its collision)
+    foot = _fall_foot(cell.world, F, h, wx, wz, r[0], y) if F is not None else None    #  keeps its collision)
+    if foot is not None:
+        a, _, c, f = r[0]
+        return (a, foot, c, f), r[1]
+    if not y: return r
     a, _, c, f = r[0]
     return (a, h.flat_index(y + Y_WATER), c, f), r[1]
+
+def _fall_foot(world, F, h, wx, wz, rec, y):
+    """(artisan_surf 2026-10-20) Height index for the surf water right below a waterfall's 0x40 row when it stands level
+    with the water above the falls, else None. ov036 CheckAutoTileEvents (0x02182890) [code] starts the descent
+    (script 10015) only when the surfer's y - the water above the 0x40 row - is HIGHER than the tile 2 ahead (`ble`
+    at 0x02182946). Where heights.py levels both rivers by their shores at one height (Battle Frontier East: the
+    Palace pond's falls, the way to Artisan Cave B1F; Route 119 north of the Weather Institute bridge) a surfer could
+    not go down, which Gen 3 always allows (MB_WATERFALL is a forced south current). That foot tile's collision goes to
+    the highest flat height just under the water above (7.85 under 8.00): the descent runs, nothing drawn changes.
+    Only the level case: falls whose foot water stands higher than their top (Ever Grande, Route 114's by Meteor Falls)
+    are a heights matter, not a small offset."""
+    if rec[2] not in (0x3F, 0x3D): return None
+    me, up, top = world.get((wx, wz)), world.get((wx, wz - 1)), world.get((wx, wz - 2))
+    if me and me[1] == 'waterfall' and me[2]: return None              # (a column tile above the 0x40 row: upper water)
+    if not (up and up[1] == 'waterfall' and up[2]): return None       # (the 0x40 row: a column's bottom tile, _collision)
+    if not (top and top[1] in SURFACE and top[2]): return None
+    ch = getattr(F, 'coll_h', {})
+    above = ch.get((wx, wz - 2), F.y(wx, wz - 2)) + Y_WATER
+    if abs(y + Y_WATER - above) >= 1: return None
+    ny = h.NORMALS[0][1]
+    under = [(-d / ny, i) for i, d in enumerate(h.OFFS) if above - 1 < -d / ny < above - 0.05]
+    return max(under)[1] if under else None
 
 def _collision(cls, tile, wx, wz, world):
     name, _, walk = tile

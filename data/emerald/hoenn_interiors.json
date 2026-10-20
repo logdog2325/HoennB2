@@ -116,7 +116,7 @@
    "claimed": "frontier_pyramid (2026-10-12): the Battle Pyramid, notes/FRONTIER_PYRAMID.md; zone, own script/init/text numbers and the room are this agent's"
   },
   "BattleFrontier_Lounge1": {
-   "status": "todo",
+   "status": "auto",
    "map_id": "MAP_BATTLE_FRONTIER_LOUNGE1",
    "map_type": "MAP_TYPE_INDOOR",
    "entered_from": "BattleFrontier_OutsideEast",
@@ -136,7 +136,18 @@
      "dest_warp": 5
     }
    ],
-   "emerald": "BattleFrontier_Lounge1"
+   "emerald": "BattleFrontier_Lounge1",
+   "zone": 470,
+   "scripts": 940,
+   "init_scripts": 941,
+   "text": 196,
+   "entities": 190,
+   "area": 351,
+   "own_matrix": false,
+   "own_scripts": 2086,
+   "own_init": 2087,
+   "own_text": 1058,
+   "claimed_by": "frontier_lounges (2026-10-20): Battle Frontier Lounge1, the Breeder's lounge (IV judge); zone, own script/init/text numbers and the room are this helper's (converter/allocate_interiors.py --claim; recipe/zone json: work/agents/frontier_lounges/tools/lounge_rooms.py)"
   },
   "BattleFrontier_ExchangeServiceCorner": {
    "status": "auto",
@@ -185,7 +196,7 @@
    "claimed": "frontier_core_room (2026-10-12): the Exchange Service Corner (for frontier_core, notes/FRONTIER.md); zone 419 (Black 2: an Anville Town house), own script/init/text numbers 1976/1977/1003 and the room are this agent's; room data/interior_layouts/BattleFrontier_ExchangeServiceCorner.json, zone file data/interiors/emerald/419.json"
   },
   "BattleFrontier_Lounge5": {
-   "status": "todo",
+   "status": "auto",
    "map_id": "MAP_BATTLE_FRONTIER_LOUNGE5",
    "map_type": "MAP_TYPE_INDOOR",
    "entered_from": "BattleFrontier_OutsideEast",
@@ -211,7 +222,18 @@
      "dest_warp": 7
     }
    ],
-   "emerald": "BattleFrontier_Lounge5"
+   "emerald": "BattleFrontier_Lounge5",
+   "zone": 496,
+   "scripts": 992,
+   "init_scripts": 993,
+   "text": 296,
+   "entities": 287,
+   "area": 298,
+   "own_matrix": false,
+   "own_scripts": 2092,
+   "own_init": 2093,
+   "own_text": 1061,
+   "claimed_by": "frontier_lounges (2026-10-20): Battle Frontier Lounge5, the Nature Girl's lounge; zone, own script/init/text numbers and the room are this helper's (converter/allocate_interiors.py --claim; recipe/zone json: work/agents/frontier_lounges/tools/lounge_rooms.py)"
   },
   "BattleFrontier_Lounge6": {
    "status": "auto",
@@ -248,7 +270,7 @@
    "claimed_by": "em_trades (2026-10-19): the Battle Frontier lounge of Emerald's fourth in-game trade (the Beauty: Meowth for Skitty, b2tools/patches/trades.py); zone 421, own script/init/text 2078/2079/1054 and the room are this helper's (converter/allocate_interiors.py --claim)"
   },
   "BattleFrontier_Lounge3": {
-   "status": "todo",
+   "status": "auto",
    "map_id": "MAP_BATTLE_FRONTIER_LOUNGE3",
    "map_type": "MAP_TYPE_INDOOR",
    "entered_from": "BattleFrontier_OutsideEast",
@@ -268,10 +290,21 @@
      "dest_warp": 9
     }
    ],
-   "emerald": "BattleFrontier_Lounge3"
+   "emerald": "BattleFrontier_Lounge3",
+   "zone": 477,
+   "scripts": 954,
+   "init_scripts": 955,
+   "text": 608,
+   "entities": 565,
+   "area": 282,
+   "own_matrix": false,
+   "own_scripts": 2090,
+   "own_init": 2091,
+   "own_text": 1060,
+   "claimed_by": "frontier_lounges (2026-10-20): Battle Frontier Lounge3, the Gambler's lounge (BP bets); zone, own script/init/text numbers and the room are this helper's (converter/allocate_interiors.py --claim; recipe/zone json: work/agents/frontier_lounges/tools/lounge_rooms.py)"
   },
   "BattleFrontier_Lounge8": {
-   "status": "todo",
+   "status": "auto",
    "map_id": "MAP_BATTLE_FRONTIER_LOUNGE8",
    "map_type": "MAP_TYPE_INDOOR",
    "entered_from": "BattleFrontier_OutsideEast",
@@ -291,7 +324,18 @@
      "dest_warp": 10
     }
    ],
-   "emerald": "BattleFrontier_Lounge8"
+   "emerald": "BattleFrontier_Lounge8",
+   "zone": 469,
+   "scripts": 938,
+   "init_scripts": 939,
+   "text": 195,
+   "entities": 189,
+   "area": 351,
+   "own_matrix": false,
+   "own_scripts": 2084,
+   "own_init": 2085,
+   "own_text": 1057,
+   "claimed_by": "frontier_sp (2026-10-20): Battle Frontier Lounge8 (three people); zone, own script/init/text numbers and the room are this helper's (converter/allocate_interiors.py --claim; recipe/zone json: work/agents/frontier_sp/tools/frontier_rooms.py)"
   },
   "BattleFrontier_Lounge9": {
    "status": "todo",
@@ -323,7 +367,7 @@
    "emerald": "BattleFrontier_Lounge9"
   },
   "BattleFrontier_PokemonCenter_1F": {
-   "status": "todo",
+   "status": "center",
    "map_id": "MAP_BATTLE_FRONTIER_POKEMON_CENTER_1F",
    "map_type": "MAP_TYPE_INDOOR",
    "entered_from": "BattleFrontier_OutsideEast",
@@ -355,7 +399,18 @@
      "dest_warp": 0
     }
    ],
-   "emerald": "BattleFrontier_PokemonCenter_1F"
+   "emerald": "BattleFrontier_PokemonCenter_1F",
+   "zone": 460,
+   "scripts": 920,
+   "init_scripts": 921,
+   "text": 658,
+   "entities": 606,
+   "area": 283,
+   "own_matrix": false,
+   "own_scripts": 2102,
+   "own_init": 2103,
+   "own_text": 1066,
+   "claimed_by": "frontier_center (2026-10-20): the Battle Frontier's Pokemon Center 1F (Black 2's free Center zone 460: its respawn record 76 is the Frontier's, b2tools/patches/centers.py); zone, own script/init/text numbers and the room are this helper's (work/agents/frontier_center/tools/claim.py, rooms/scripts: work/agents/frontier_center/tools/center_rooms.py)"
   },
   "ArtisanCave_1F": {
    "status": "cave",
@@ -524,7 +579,7 @@
    "claimed": "frontier_factory_dome (2026-10-12): the Battle Factory / Battle Dome, notes/FRONTIER_FACTORY_DOME.md; zone, own script/init/text numbers and the room are this agent's"
   },
   "BattleFrontier_Lounge2": {
-   "status": "todo",
+   "status": "auto",
    "map_id": "MAP_BATTLE_FRONTIER_LOUNGE2",
    "map_type": "MAP_TYPE_INDOOR",
    "entered_from": "BattleTower_Outside",
@@ -550,10 +605,21 @@
      "dest_warp": 3
     }
    ],
-   "emerald": "BattleFrontier_Lounge2"
+   "emerald": "BattleFrontier_Lounge2",
+   "zone": 476,
+   "scripts": 952,
+   "init_scripts": 953,
+   "text": 607,
+   "entities": 564,
+   "area": 282,
+   "own_matrix": false,
+   "own_scripts": 2088,
+   "own_init": 2089,
+   "own_text": 1059,
+   "claimed_by": "frontier_lounges (2026-10-20): Battle Frontier Lounge2, the Frontier Maniac's lounge (streak hints); zone, own script/init/text numbers and the room are this helper's (converter/allocate_interiors.py --claim; recipe/zone json: work/agents/frontier_lounges/tools/lounge_rooms.py)"
   },
   "BattleFrontier_Mart": {
-   "status": "todo",
+   "status": "auto",
    "map_id": "MAP_BATTLE_FRONTIER_MART",
    "map_type": "MAP_TYPE_INDOOR",
    "entered_from": "BattleTower_Outside",
@@ -579,10 +645,21 @@
      "dest_warp": 4
     }
    ],
-   "emerald": "BattleFrontier_Mart"
+   "emerald": "BattleFrontier_Mart",
+   "zone": 528,
+   "scripts": 1056,
+   "init_scripts": 1057,
+   "text": 537,
+   "entities": 494,
+   "area": 291,
+   "own_matrix": false,
+   "own_scripts": 2100,
+   "own_init": 2101,
+   "own_text": 1065,
+   "claimed_by": "frontier_center (2026-10-20): the Battle Frontier's Mart (pokeemerald's Frontier list); zone, own script/init/text numbers and the room are this helper's (work/agents/frontier_center/tools/claim.py, rooms/scripts: work/agents/frontier_center/tools/center_rooms.py)"
   },
   "BattleFrontier_ScottsHouse": {
-   "status": "todo",
+   "status": "auto",
    "map_id": "MAP_BATTLE_FRONTIER_SCOTTS_HOUSE",
    "map_type": "MAP_TYPE_INDOOR",
    "entered_from": "BattleTower_Outside",
@@ -608,10 +685,21 @@
      "dest_warp": 5
     }
    ],
-   "emerald": "BattleFrontier_ScottsHouse"
+   "emerald": "BattleFrontier_ScottsHouse",
+   "zone": 498,
+   "scripts": 996,
+   "init_scripts": 997,
+   "text": 298,
+   "entities": 289,
+   "area": 298,
+   "own_matrix": false,
+   "own_scripts": 2096,
+   "own_init": 2097,
+   "own_text": 1063,
+   "claimed_by": "frontier_lounges (2026-10-20): Battle Frontier ScottsHouse, Scott's House (his BP and symbol rewards); zone, own script/init/text numbers and the room are this helper's (converter/allocate_interiors.py --claim; recipe/zone json: work/agents/frontier_lounges/tools/lounge_rooms.py)"
   },
   "BattleFrontier_Lounge4": {
-   "status": "todo",
+   "status": "auto",
    "map_id": "MAP_BATTLE_FRONTIER_LOUNGE4",
    "map_type": "MAP_TYPE_INDOOR",
    "entered_from": "BattleTower_Outside",
@@ -631,10 +719,21 @@
      "dest_warp": 6
     }
    ],
-   "emerald": "BattleFrontier_Lounge4"
+   "emerald": "BattleFrontier_Lounge4",
+   "zone": 459,
+   "scripts": 918,
+   "init_scripts": 919,
+   "text": 659,
+   "entities": 607,
+   "area": 347,
+   "own_matrix": false,
+   "own_scripts": 2082,
+   "own_init": 2083,
+   "own_text": 1056,
+   "claimed_by": "frontier_sp (2026-10-20): Battle Frontier Lounge4 (three people); zone, own script/init/text numbers and the room are this helper's (converter/allocate_interiors.py --claim; recipe/zone json: work/agents/frontier_sp/tools/frontier_rooms.py)"
   },
   "BattleFrontier_Lounge7": {
-   "status": "todo",
+   "status": "auto",
    "map_id": "MAP_BATTLE_FRONTIER_LOUNGE7",
    "map_type": "MAP_TYPE_INDOOR",
    "entered_from": "BattleTower_Outside",
@@ -654,10 +753,21 @@
      "dest_warp": 7
     }
    ],
-   "emerald": "BattleFrontier_Lounge7"
+   "emerald": "BattleFrontier_Lounge7",
+   "zone": 497,
+   "scripts": 994,
+   "init_scripts": 995,
+   "text": 297,
+   "entities": 288,
+   "area": 298,
+   "own_matrix": false,
+   "own_scripts": 2094,
+   "own_init": 2095,
+   "own_text": 1062,
+   "claimed_by": "frontier_lounges (2026-10-20): Battle Frontier Lounge7, the two BP move tutors' lounge; zone, own script/init/text numbers and the room are this helper's (converter/allocate_interiors.py --claim; recipe/zone json: work/agents/frontier_lounges/tools/lounge_rooms.py)"
   },
   "BattleFrontier_ReceptionGate": {
-   "status": "todo",
+   "status": "auto",
    "map_id": "MAP_BATTLE_FRONTIER_RECEPTION_GATE",
    "map_type": "MAP_TYPE_INDOOR",
    "entered_from": "BattleTower_Outside",
@@ -683,7 +793,18 @@
      "dest_warp": 9
     }
    ],
-   "emerald": "BattleFrontier_ReceptionGate"
+   "emerald": "BattleFrontier_ReceptionGate",
+   "zone": 453,
+   "scripts": 906,
+   "init_scripts": 907,
+   "text": 188,
+   "entities": 182,
+   "area": 316,
+   "own_matrix": false,
+   "own_scripts": 2080,
+   "own_init": 2081,
+   "own_text": 1055,
+   "claimed_by": "frontier_sp (2026-10-20): the Battle Frontier Reception Gate (the ferry dock's way into the Frontier; Scott, the Frontier Pass scene, the three guides); zone, own script/init/text numbers and the room are this helper's (converter/allocate_interiors.py --claim; recipe/zone json: work/agents/frontier_sp/tools/frontier_rooms.py)"
   },
   "ArtisanCave_B1F": {
    "status": "cave",
@@ -1159,7 +1280,7 @@
    "claimed": "frontier_palace_arena (2026-10-12): the Battle Palace / Battle Arena, notes/FRONTIER.md; zone, own script/init/text numbers and the room are this agent's"
   },
   "BattleFrontier_PokemonCenter_2F": {
-   "status": "todo",
+   "status": "auto",
    "map_id": "MAP_BATTLE_FRONTIER_POKEMON_CENTER_2F",
    "map_type": "MAP_TYPE_INDOOR",
    "entered_from": "BattleFrontier_PokemonCenter_1F",
@@ -1191,7 +1312,18 @@
      "dest_warp": 0
     }
    ],
-   "emerald": "BattleFrontier_PokemonCenter_2F"
+   "emerald": "BattleFrontier_PokemonCenter_2F",
+   "zone": 499,
+   "scripts": 998,
+   "init_scripts": 999,
+   "text": 299,
+   "entities": 290,
+   "area": 298,
+   "own_matrix": false,
+   "own_scripts": 2098,
+   "own_init": 2099,
+   "own_text": 1064,
+   "claimed_by": "frontier_center (2026-10-20): the Battle Frontier's Pokemon Center 2F (the link desks, as the other Centers); zone, own script/init/text numbers and the room are this helper's (work/agents/frontier_center/tools/claim.py, rooms/scripts: work/agents/frontier_center/tools/center_rooms.py)"
   },
   "MagmaHideout_2F_1R": {
    "status": "cave",

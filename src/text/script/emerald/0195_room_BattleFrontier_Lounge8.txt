@@ -1,0 +1,3 @@
+At the Battle Tower, an older girl\ntold me that I have a lot of talent{be00}\nfor battling!{be01}\nI like Pokémon Contests more!{be01}\nBut I’m no good at Contests!{be01}\nI guess having talent and liking\nsomething aren’t the same.
+What a Trainer needs…{be01}\nKnowledge…\nStrategy…{be00}\nLuck…{be00}\nGuts…{be00}\nSpirit…{be00}\nBravery…{be00}\nAnd ability…{be01}\nWell, I’m all set in every way!\nI’ll be unstoppable at every building!{be01}\nHuh? Pokémon?\nWhat’s that?
+Do you know about the Frontier\nBrains?{be01}\nThat’s what Scott calls the seven\nspecial Trainers that run the seven{be00}\nfacilities in the Battle Frontier.

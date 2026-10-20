@@ -1,0 +1,63 @@
+{
+ "_doc": "frontier_sp (2026-10-20): BattleFrontier_Lounge4, Emerald only (data/emerald/hoenn_interiors.json claim). Zone 459, room data/interior_layouts/BattleFrontier_Lounge4.json (Emerald tile + room origin = zone tile). People = Emerald's objects in Emerald's order (uid = script = Emerald local id). Scripts: src/field_scripts/emerald/0918_room_BattleFrontier_Lounge4.s. Written by work/agents/frontier_sp/tools/frontier_rooms.py.",
+ "zone": 459,
+ "room": "BattleFrontier_Lounge4",
+ "area": 306,
+ "parent": 17,
+ "warps": [
+  {
+   "at": [
+    4,
+    9
+   ],
+   "tile_only": true,
+   "to": [
+    17,
+    22
+   ],
+   "what": "Emerald warp 0 (4,9) -> BATTLE_FRONTIER_OUTSIDE_WEST warp 6 (zone 17 door 22: Black 2's warps of zone 17, then world.json's doors)"
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 1,
+   "model": 26,
+   "script": 1,
+   "dir": 0,
+   "at": [
+    4,
+    4
+   ],
+   "what": "Emerald object 1 WOMAN_3 (FACE_UP): BattleFrontier_Lounge4_EventScript_Woman; model 26 (WOMAN_3)"
+  },
+  {
+   "uid": 2,
+   "model": 66,
+   "script": 2,
+   "dir": 1,
+   "at": [
+    6,
+    6
+   ],
+   "move": 3,
+   "range": [
+    1,
+    1
+   ],
+   "what": "Emerald object 2 COOK (WANDER_AROUND, range 1,1): BattleFrontier_Lounge4_EventScript_Cook; model 66 (COOK)"
+  },
+  {
+   "uid": 3,
+   "model": 19,
+   "script": 3,
+   "dir": 3,
+   "at": [
+    0,
+    5
+   ],
+   "what": "Emerald object 3 MAN_3 (FACE_RIGHT): BattleFrontier_Lounge4_EventScript_Man; model 19 (MAN_3)"
+  }
+ ],
+ "signs": [],
+ "triggers": []
+}

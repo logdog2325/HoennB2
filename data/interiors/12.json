@@ -17,25 +17,29 @@
    "at": [5, 1],
    "tile_only": true,
    "to": [593, 0],
-   "what": "Sapphire warp 1 -> SingleBattleColosseum 0 (Cable Club door: a solid tile, reached only by script in Sapphire)"
+   "what": "Sapphire warp 1 -> SingleBattleColosseum 0 (Cable Club door: a solid tile, reached only by script in Sapphire; dir 0: never fires)",
+   "dir": 0
   },
   {
    "at": [8, 1],
    "tile_only": true,
    "to": [58, 0],
-   "what": "Sapphire warp 2 -> TradeCenter 0 (Cable Club door: a solid tile, reached only by script in Sapphire)"
+   "what": "Sapphire warp 2 -> TradeCenter 0 (Cable Club door: a solid tile, reached only by script in Sapphire; dir 0: never fires)",
+   "dir": 0
   },
   {
    "at": [11, 1],
    "tile_only": true,
    "to": [501, 0],
-   "what": "Sapphire warp 3 -> RecordCorner 0 (Cable Club door: a solid tile, reached only by script in Sapphire)"
+   "what": "Sapphire warp 3 -> RecordCorner 0 (Cable Club door: a solid tile, reached only by script in Sapphire; dir 0: never fires)",
+   "dir": 0
   },
   {
    "at": [0, 0],
    "tile_only": true,
    "to": [33, 0],
-   "what": "Sapphire warp 4 -> DoubleBattleColosseum 0 (Cable Club door: a solid tile, reached only by script in Sapphire)"
+   "what": "Sapphire warp 4 -> DoubleBattleColosseum 0 (Cable Club door: a solid tile, reached only by script in Sapphire; dir 0: never fires)",
+   "dir": 0
   }
  ],
  "npcs": [

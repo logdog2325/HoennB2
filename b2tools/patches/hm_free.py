@@ -48,6 +48,13 @@ Code (apply_code; every site checked against the decomp's build bytes):
    when the tile carries NOLAND (flag 0x4000, set by b2tools/terrain/heights.py step 12 on walkable tiles beside surf
    water whose Sapphire elevation is not 0, 1 or 3). Code in ITCM after hoenn_world's ZoneLookup (the same arena move),
    before roamers.
+ - Surf start (bridge_surf 2026-10-20): ov036 CheckSurfHeightAllow (0x0219ab30; the A-button prompt via
+   CheckFieldEnvInteraction and ov012's party-menu Surf both call it) starts a surf from any tile 0-20 units over the
+   water in front. Sapphire wants PlayerGetElevation() == 3 (pokeruby / pokeemerald IsPlayerFacingSurfableFishableWater:
+   the previous elevation 3, the current one mismatching the water's): no surf from an elevation-4 bank or a bridge
+   reached from one. Its tile under the player (`bl FieldPlayer_GetTileTypeInDirEx` with dir 9 at 0x0219ab4e) ->
+   `bl SurfStartTileType`: the tile type with the solid flag added when it carries NOSURF (flag 0x2000, heights.py
+   step 12b), so CheckSurfBeginTiles refuses (MapTile_BlocksCollision on the tile under). Same ITCM block as the landing.
  - Fly: the Town Map key item opens in fly mode when HM02 + Feather Badge (ov012 0x0215bfdc), and picking a town from
    it flies like the party menu's Fly (ov012 0x0215c01e-0x0215c029).
  The new arm9 code goes in 0x02005080-0x02005123 (unreferenced SDK version strings; exp_share.py uses
@@ -961,6 +968,9 @@ ITCM_BASE, ARENA_ITCM_LIT = 0x01FF8000, 0x0207B400          # (patches/hoenn_wor
 GetTileTypeAtPos, FieldG3DMapper_GetTerrain = 0x021A29D0, 0x02185170
 SURF_EXIT_TILE_CALLS = (0x02182D14, 0x02182D40)            # ov036 CheckSurfExitEvent
 NOLAND = 0x4000                                             # b2tools/terrain/heights.py (collision flag, u32 bit 30)
+FieldPlayer_GetTileTypeInDirEx = 0x0219A70C                 # ov036 (player, dir, s32 *y); dir 9 = the tile under
+SURF_START_UNDER_CALL = 0x0219AB4E                          # ov036 CheckSurfHeightAllow: the tile under the player
+NOSURF = 0x2000                                             # b2tools/terrain/heights.py step 12b (collision flag, bit 29)
 
 def surf_landing(base):
     """u32 SurfLandingTileType(FieldG3DMapper *mapper, const VecFx32 *pos): GetTileTypeAtPos (MapTerrainBuf: tileType
@@ -979,6 +989,18 @@ def surf_landing(base):
     t.word('noland', NOLAND << 16)
     return t.assemble()
 
+def surf_start(base):
+    """u32 SurfStartTileType(FieldPlayer *player, u16 dir, s32 *y): FieldPlayer_GetTileTypeInDirEx, with the solid flag
+    (bit 16) added when the tile has NOSURF: CheckSurfBeginTiles then refuses the surf (bridge_surf 2026-10-20)."""
+    t = Thumb(base)
+    t.push([4])                                                 # push {r4, lr} (8-byte stack)
+    t.bl(FieldPlayer_GetTileTypeInDirEx)                        # (r0-r2 as CheckSurfHeightAllow passed them)
+    t.ldr_lit(1, 'nosurf'); t.tst(0, 1); t.beq('done')
+    t.movs(1, 1); t.lsls(1, 1, 16); t.orrs(0, 1)                # solid: no surf from here
+    t.label('done'); t.pop([4])
+    t.word('nosurf', NOSURF << 16)
+    return t.assemble()
+
 def apply_surf_landing(code):
     yml = os.path.join(code, 'itcm.yaml')
     text = open(yml).read()
@@ -990,6 +1012,8 @@ def apply_surf_landing(code):
     lit = ARENA_ITCM_LIT - ARM9
     assert struct.unpack_from('<I', arm9, lit)[0] == base, f'ITCM arena literal {struct.unpack_from("<I", arm9, lit)[0]:#x} != {base:#x}'
     blob = surf_landing(base)
+    start_at = base + ((len(blob) + 3) & ~3)                   # (bridge_surf 2026-10-20) the surf start, after it
+    blob = blob + bytes(start_at - base - len(blob)) + surf_start(start_at)
     end = (base + len(blob) + 31) & ~31
     struct.pack_into('<I', arm9, lit, end); _save(path9, arm9)
     path, itcm = _load(code, 'itcm.bin')
@@ -999,8 +1023,11 @@ def apply_surf_landing(code):
     path, d = _load(code, 'arm9_ov036.bin')
     for at in SURF_EXIT_TILE_CALLS:
         _patch(d, OV036, at, _bl(at, GetTileTypeAtPos), _bl(at, base), 'CheckSurfExitEvent tile type')
+    at = SURF_START_UNDER_CALL
+    _patch(d, OV036, at, _bl(at, FieldPlayer_GetTileTypeInDirEx), _bl(at, start_at), 'CheckSurfHeightAllow tile under')
     _save(path, d)
-    return f'surf landing: SurfLandingTileType {len(blob)} B at {base:#x} (ITCM arena from {end:#x})'
+    return (f'surf landing: SurfLandingTileType at {base:#x}, SurfStartTileType at {start_at:#x} ({len(blob)} B; ITCM '
+            f'arena from {end:#x})')
 
 def apply_code(code):
     vanilla = os.path.join(DECOMP, 'build', 'b2_us', 'build')

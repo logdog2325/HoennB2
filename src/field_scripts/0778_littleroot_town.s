@@ -121,6 +121,9 @@ L_TestTwoAdd:
 #ifdef HOENN_TEST_CHTM
     VMCall Test_TM_Setup                          // test only: town_map's start state (scenes/town_map_test.inc)
 #endif
+#ifdef HOENN_TEST_CHTH
+    VMCall Test_TH_Setup                          // test only: the Trick House's start state (scenes/trick_house_test.inc)
+#endif
 #ifdef HOENN_TEST_WARP
     // Test builds only (HOENN_TEST_WARP=zone,x,z, b2tools/patches/scripts.py): the town sign warps there, as Black 2's
     // scripted warps do (story_finish): fade out, reserve the global arrival script 10017 (hm_free.py Script_18: fade in,
@@ -743,5 +746,10 @@ Mv_TestEmote103:
 #ifdef HOENN_TEST_CHTM
 #if __has_include("scenes/town_map_test.inc")
 #include "scenes/town_map_test.inc"
+#endif
+#endif
+#ifdef HOENN_TEST_CHTH
+#if __has_include("scenes/trick_house_test.inc")
+#include "scenes/trick_house_test.inc"
 #endif
 #endif

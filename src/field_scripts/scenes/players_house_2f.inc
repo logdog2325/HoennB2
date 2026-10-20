@@ -146,7 +146,8 @@ L_PC_Off:
     ActorsUnpauseAll
     VMHalt
 
-Script_22:                                       // reserved after Mom sends the player upstairs (1F script 21)
+Script_22:                                       // reserved after Mom sends the player upstairs (1F script 21), and by the
+                                                 // blackout at home (0780 Script_2: the bedroom, Gen 3's last heal location)
     FadeInBlack
     FadeWait
     VMHalt
@@ -158,7 +159,16 @@ Script_24:                                       // zone init (Sapphire OnTransi
     VMJumpIf CMP_STACK, L_Init2FNot4
     WorkSetConst VAR_LITTLEROOT_INTRO_STATE, 5
 L_Init2FNot4:
-    ObjInitNPCGPos 0, 0, RIVAL_X, 0, 3           // RivalCheckingNotebook (index 0 = the rival; until the Route 103 battle)
+    // call_if_unset FLAG_DEFEATED_RIVAL_ROUTE103, ..._RivalCheckingNotebook: the rival (index 0) is at the notebook only
+    // until the Route 103 battle; afterwards (home again after the Lilycove battle, also after the Hall of Fame) at the
+    // data's tile, Sapphire's object position = the PC (littleroot2, 2026-10-19). B2 reloads the room's people at each
+    // map load, so every save gets the right spot on entering the room.
+    VMStackPushFlag FLAG_DEFEATED_RIVAL_ROUTE103
+    VMStackPushConst 0
+    VMStackCmp CMP_EQ
+    VMJumpIf CMP_STACK, L_Init2FRivalAtPC        // (jumps when the comparison is false: the flag is set)
+    ObjInitNPCGPos 0, 0, RIVAL_X, 0, 3           // RivalCheckingNotebook (setobjectxyperm 1, notebook; face up)
+L_Init2FRivalAtPC:
 #ifdef HOENN_EMERALD
     VMCall Sub_Em_2FInit                         // Emerald: ready to meet the rival, the rival at the PC (scenes/emerald/players_house_2f.inc)
 #endif

@@ -1,0 +1,67 @@
+{
+ "_doc": "frontier_center (2026-10-20, work/agents/frontier_center/tools/center_rooms.py writes this file): Battle Frontier Mart (pokeemerald LAYOUT_MART, the Mart layout; zone 528). A copy of OldaleTown_Mart.json (edit that master and rerun). LAYOUT_POKE_MART (11x8): Sapphire's Poké Mart. Rows 0-1 back wall (clock at (1,0)); row 1 = shop shelves along the wall: glass-front coolers (3-5) and two goods shelves (6-7, 8-9); glass counter: (2,1)-(2,4) and (0,4)-(1,4) with the register at (2,2), the clerk at (1,3) behind it; goods shelf block (6-7, 4-6); goods shelf against the east wall (10, 4-6); plant (10,3); exit mat (3-4, 7). Black 2 pieces: Shopping Mall Nine floor/wall (style \"shop\"), its red entrance mat in45_mat01; glass counter = shelf03 (the display counter of Black 2's Pokémon Center mart, chunk 827) with cashier01; goods shelves = pcshelf01 (the Center mart's goods shelf); coolers = in_vender01 (glass-front drinks machine, one tile); clock = the pendulum clock picture in69_clock01 (texture set 350) as in Brendan's room.",
+ "map": "pokeemerald/BattleFrontier_Mart",
+ "style": "shop",
+ "floor": [[0, 1, 10, 7]],
+ "mats": [
+  {
+   "tex": "in45_mat01",
+   "src": 326,
+   "rect": [3, 7, 4, 7],
+   "border": 0.25,
+   "border_units": 4,
+   "y": 0,
+   "_what": "red entrance mat (Shopping Mall Nine)"
+  }
+ ],
+ "decals": [{"tex": "in69_clock01", "src": 350, "at": [1.5], "y": 18, "w": 11, "h": 22, "gap": 2, "_what": "wall clock (1,0)"}],
+ "furniture": [
+  {
+   "m": "shelf03",
+   "at": [2.5, 2.5],
+   "rot": 90,
+   "dx": 3.0,
+   "dz": -3.0,
+   "_what": "glass counter (2,1)-(2,3), display toward the customers (east)"
+  },
+  {"m": "shelf03", "at": [2.5, 4.0], "rot": 90, "dx": 3.0, "dz": -3.0, "_what": "glass counter (2,3)-(2,4)"},
+  {
+   "m": "shelf03",
+   "at": [1.4375, 4.5],
+   "dx": 3.0,
+   "dz": 3.0,
+   "_what": "glass counter (0,4)-(1,4), display toward the customers (south)"
+  },
+  {
+   "m": "cashier01",
+   "at": [2.5, 2.5],
+   "rot": 90,
+   "dx": -0.174,
+   "y": 18.0,
+   "_what": "register on the counter (2,2), keys toward the clerk"
+  },
+  {"m": "in_vender01", "at": [3.5, 0.4375], "dx": 1.0, "dz": 1.5, "_what": "glass-front cooler (3,1)"},
+  {"m": "in_vender01", "at": [4.5, 0.4375], "dx": 1.0, "dz": 1.5, "_what": "glass-front cooler (4,1)"},
+  {"m": "in_vender01", "at": [5.5, 0.4375], "dx": 1.0, "dz": 1.5, "_what": "glass-front cooler (5,1)"},
+  {"m": "pcshelf01", "at": [7.0, 0.75], "dx": -4.0, "dz": 4.0, "_what": "goods shelf (6,1)-(7,1)"},
+  {"m": "pcshelf01", "at": [9.0, 0.75], "dx": -4.0, "dz": 4.0, "_what": "goods shelf (8,1)-(9,1)"},
+  {
+   "m": "pcshelf01",
+   "at": [7.0, 5.0],
+   "rot": 180,
+   "dx": 4.0,
+   "dz": -4.0,
+   "_what": "goods shelf block (6-7, 4-6), north side"
+  },
+  {"m": "pcshelf01", "at": [7.0, 6.0], "dx": -4.0, "dz": 4.0, "_what": "goods shelf block (6-7, 4-6), south side"},
+  {
+   "m": "pcshelf01",
+   "at": [10.6875, 5.5],
+   "rot": 270,
+   "dx": -4.0,
+   "dz": -4.0,
+   "_what": "goods shelf against the east wall (10, 4-6)"
+  },
+  {"m": "plant01", "at": [10.5, 3.5], "dz": 0.945, "_what": "potted plant (10,3)"}
+ ]
+}

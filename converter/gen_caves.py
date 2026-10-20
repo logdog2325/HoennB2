@@ -494,6 +494,7 @@ def main(names):
             for k_ in ('npcs', 'signs'): cfg[k_] = old.get(k_, cfg[k_])
             cfg['cave_auto'] = False
             report.append(f'{name}: zone {zone} json edited by hand: kept its npcs/signs')
+        if old and 'cycling' in old: cfg['cycling'] = old['cycling']   # (frontier_sp: the Bike rule, patches/interiors.py)
         files = {k_: r[k_] for k_ in ('scripts', 'init_scripts', 'text')} if r.get('own_files') else {}
         cfg.update(files)
         if variants: cfg['variants'] = variants         # (b2tools/patches/interiors.py copies the zone's header)

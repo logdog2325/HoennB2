@@ -1,0 +1,6 @@
+…
+{0100:0} found a scroll.
+{0100:0} memorized the secret code\nwritten on the scroll.
+A secret code is written on it.
+The door is locked.{be01}\n...On closer inspection, this is written\non it: “Write the secret code here.”
+{0100:0} wrote down the secret code\non the door.{be01}\n“Trick Master is cool.”\n... ... ... ... ... ... ... ...{be01}\nThe lock clicked open!

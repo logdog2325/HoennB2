@@ -1,5 +1,5 @@
 {
- "_doc": "frontier_core_room (2026-10-12): the Battle Frontier Exchange Service Corner, Emerald only (data/versions.json rooms: \"emerald\"; data/emerald/hoenn_interiors.json claim). Zone 419 (Black 2: an Anville Town house), room data/interior_layouts/BattleFrontier_ExchangeServiceCorner.json (Emerald tile + room origin = zone tile, origin in the built room.json). Scripts: frontier_core's zone script (header numbers 838 / 839 / text 648, own files 1976 / 1977 / text 1003). People = Emerald's objects in Emerald's order (uid = script = Emerald local id) without the two decoration clerks (uids 1 and 6: removed by the user's decision 2026-10-12, Black 2 has no decorations), then the two BP move tutors of BattleFrontier_Lounge7 (uids 10, 11) on the west bench. Written by work/agents/frontier_core/room/tools/exchange_room.py.",
+ "_doc": "frontier_core_room (2026-10-12): the Battle Frontier Exchange Service Corner, Emerald only (data/versions.json rooms: \"emerald\"; data/emerald/hoenn_interiors.json claim). Zone 419 (Black 2: an Anville Town house), room data/interior_layouts/BattleFrontier_ExchangeServiceCorner.json (Emerald tile + room origin = zone tile, origin in the built room.json). Scripts: frontier_core's zone script (header numbers 838 / 839 / text 648, own files 1976 / 1977 / text 1003). People = Emerald's objects in Emerald's order (uid = script = Emerald local id) without the two decoration clerks (uids 1 and 6: removed by the user's decision 2026-10-12, Black 2 has no decorations). The two BP move tutors of BattleFrontier_Lounge7 (uids 10, 11 here until 2026-10-20) are back in Lounge7 (frontier_lounges, zone 497). Written by work/agents/frontier_core/room/tools/exchange_room.py.",
  "zone": 419,
  "room": "BattleFrontier_ExchangeServiceCorner",
  "area": 306,
@@ -134,28 +134,6 @@
     1
    ],
    "what": "Emerald object 9 GIRL_1 (WANDER_AROUND, range 1,1): BattleFrontier_ExchangeServiceCorner_EventScript_Girl; model 16 (GIRL_1)"
-  },
-  {
-   "uid": 10,
-   "model": 29,
-   "script": 10,
-   "dir": 3,
-   "at": [
-    0,
-    7
-   ],
-   "what": "LeftMoveTutor (BattleFrontier_Lounge7 object at (2,5), EXPERT_F; model 29 (OLD_WOMAN_1)): sits on Emerald's empty west bench (0,7), facing the room (east), talked to from (1,7)"
-  },
-  {
-   "uid": 11,
-   "model": 29,
-   "script": 11,
-   "dir": 3,
-   "at": [
-    0,
-    8
-   ],
-   "what": "RightMoveTutor (BattleFrontier_Lounge7 object at (6,5), EXPERT_F; model 29 (OLD_WOMAN_1)): sits on Emerald's empty west bench (0,8), facing the room (east), talked to from (1,8)"
   }
  ],
  "signs": [],

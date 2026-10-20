@@ -1,1 +1,20 @@
 …
+You’re being watched...
+Hah? Grrr...{be01}\nHow did you know I concealed myself\nbeneath this desk? You’re sharp!
+Hah? Grrr...{be01}\nHow did you know I concealed myself\nbehind this tree? You’re sharp!
+Hah? Grrr...{be01}\nHow did you know I concealed myself\nin this dresser? You’re sharp!
+Hah? Grrr...{be01}\nHow did you know I concealed myself\nbeyond this window? You’re sharp!
+Hah? Grrr...{be01}\nHow did you know I concealed myself\nin this planter? You’re sharp!
+Hah? Grrr...{be01}\nHow did you know I concealed myself\nin this cupboard? You’re sharp!
+Hah? Grrr...{be01}\nHow did you know I concealed myself\nbehind this window? You’re sharp!
+Hah? Grrr...{be01}\nHow did you know I concealed myself\nbeneath this cushion? You’re sharp!
+Behold!{be01}\nFor I am the greatest living mystery\nof a man in all of Hoenn!{be00}\nThey call me...{be01}\nThe Trick Master!\nWahahaha! Glad to meet you!
+You, you’ve come to challenge my\nTrick House, haven’t you?{be01}\nThat’s why you’re here, isn’t it?\nYes, it is!{be01}\nConsider your challenge accepted!{be01}\nEnter through the scroll there,\nand let your challenge commence!{be01}\nI shall be waiting in the back!
+It’s a scroll.
+There is a big hole behind the scroll!{be01}\nWant to go in?
+There is a note affixed to the scroll...{be01}\n“I am leaving on a journey.\nDon’t look for me. Trick Master”
+For the next time, I’ll use this trick,\nand that scheme, and those ruses...{be01}\nMufufufu... If I may say so, it’s\nbrilliantly difficult, even for me!
+Hah? What?!\nOh, it’s you!{be01}\nI’m in the midst of devising new tricky\nchallenges!{be01}\nIt’s not too much to ask for a bit more\ntime for me to think, is it now?{be00}\nYou wouldn’t begrudge me that?{be00}\nCome back in a little while!
+Ah, it’s you! You’re here to accept the\nreward from before, isn’t that right?{be00}\nYes, right I am!{be01}\nHere!\nI’ll give it to you now!
+Hah?\nDid you not come to claim your reward?
+Too bad!\nThe Bag is full...

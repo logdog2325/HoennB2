@@ -5842,6 +5842,103 @@
    "kind": "flag",
    "chapter": "Emerald",
    "note": "Emerald Battle Frontier Lounge6: the Beauty's Meowth-for-Skitty trade is done (pokeemerald's flag; src/field_scripts/emerald/0842_room_BattleFrontier_Lounge6.s)"
+  },
+  "VAR_TRICK_HOUSE_PUZZLE_3_DOORS": {
+   "id": 16526,
+   "kind": "var",
+   "chapter": "Ch3"
+  },
+  "VAR_TRICK_HOUSE_PUZZLE_3_BUTTON": {
+   "id": 16527,
+   "kind": "var",
+   "chapter": "Ch3"
+  },
+  "FLAG_TRICK_HOUSE_PUZZLE_3_ROCK_1": {
+   "id": 433,
+   "kind": "flag",
+   "chapter": "Ch3"
+  },
+  "FLAG_TRICK_HOUSE_PUZZLE_3_ROCK_2": {
+   "id": 434,
+   "kind": "flag",
+   "chapter": "Ch3"
+  },
+  "FLAG_TRICK_HOUSE_PUZZLE_3_ROCK_3": {
+   "id": 435,
+   "kind": "flag",
+   "chapter": "Ch3"
+  },
+  "FLAG_TRICK_HOUSE_PUZZLE_3_ROCK_4": {
+   "id": 436,
+   "kind": "flag",
+   "chapter": "Ch3"
+  },
+  "FLAG_MET_BATTLE_FRONTIER_BREEDER": {
+   "id": 2443,
+   "kind": "flag",
+   "chapter": "Emerald"
+  },
+  "FLAG_MET_BATTLE_FRONTIER_MANIAC": {
+   "id": 2446,
+   "kind": "flag",
+   "chapter": "Emerald"
+  },
+  "FLAG_MET_BATTLE_FRONTIER_GAMBLER": {
+   "id": 2467,
+   "kind": "flag",
+   "chapter": "Emerald"
+  },
+  "FLAG_SCOTT_GIVES_BATTLE_POINTS": {
+   "id": 2468,
+   "kind": "flag",
+   "chapter": "Emerald"
+  },
+  "FLAG_COLLECTED_ALL_SILVER_SYMBOLS": {
+   "id": 2561,
+   "kind": "flag",
+   "chapter": "Emerald"
+  },
+  "FLAG_COLLECTED_ALL_GOLD_SYMBOLS": {
+   "id": 2562,
+   "kind": "flag",
+   "chapter": "Emerald"
+  },
+  "FLAG_DAILY_FRONTIER_LOUNGES": {
+   "id": 2757,
+   "kind": "flag",
+   "chapter": "Emerald",
+   "note": "midnight-reset flag (frontier_lounges): clear = a new day since the Frontier Maniac's facility and the Gambler's challenge last moved on (pokeemerald UpdateFrontierManiac / UpdateFrontierGambler, +1 per day here)"
+  },
+  "VAR_FRONTIER_MANIAC_FACILITY": {
+   "id": 16746,
+   "kind": "var",
+   "chapter": "Emerald"
+  },
+  "VAR_FRONTIER_GAMBLER_CHALLENGE": {
+   "id": 16747,
+   "kind": "var",
+   "chapter": "Emerald"
+  },
+  "VAR_FRONTIER_GAMBLER_SET_CHALLENGE": {
+   "id": 16748,
+   "kind": "var",
+   "chapter": "Emerald"
+  },
+  "VAR_FRONTIER_GAMBLER_AMOUNT_BET": {
+   "id": 16749,
+   "kind": "var",
+   "chapter": "Emerald"
+  },
+  "VAR_FRONTIER_GAMBLER_STATE": {
+   "id": 16750,
+   "kind": "var",
+   "chapter": "Emerald"
+  },
+  "VAR_FRONTIER_GAMBLER_CODE": {
+   "id": 16751,
+   "kind": "var",
+   "chapter": "Emerald",
+   "note": "Emerald Battle Frontier Lounge3 (frontier_lounges): the Gambler's bet challenge as FR_FACILITY | FR_BATTLE_MODE << 3 (pokeemerald sFrontierChallenges[VAR_FRONTIER_GAMBLER_SET_CHALLENGE]); hoenn_frontier.inc fr_gambler_settle compares it on a lobby return"
   }
  },
  "reserved": {

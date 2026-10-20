@@ -180,12 +180,18 @@ L_BTL_RL100:
     VMReturn
 
 L_BTL_Disqualified:                     // 160330
+#ifdef HOENN_EMERALD
+    fr_gambler_settle 0                 // the Frontier Gambler's bet on this challenge (Lounge3): lost (quit unsaved)
+#endif
     bt_say 12                           // Excuse me! You didn't save before you quit your challenge last time ...
     h_closemessage
     WorkSetConst BT_STATE, 5
     h_release
 
 L_BTL_Lost:                             // 160419
+#ifdef HOENN_EMERALD
+    fr_gambler_settle 0                 // the Frontier Gambler's bet on this challenge (Lounge3): lost
+#endif
     bt_print 17                         // Thank you for playing!
     bt_print 18                         // Your record will be saved. Please wait.
     VMCall Sub_BTL_LastStreak           // SetBattleTowerProperty 13
@@ -218,6 +224,7 @@ Sub_BTL_SaveRecord:                     // SaveBattleTowerProgress: VAR_TEMP_0 =
 
 L_BTL_Won:                              // 160342 (also the receptionist with a prize still to give)
 #ifdef HOENN_EMERALD
+    fr_gambler_settle 1                 // the Frontier Gambler's bet on this challenge (Lounge3): won
     fr_get FR_BRAIN_BEATEN, BT_T1       // the set ended with the Salon Maiden (0030_room_BattleTower_BattleRoom.s):
     h_goto_if_eq BT_T1, 0, L_BTL_WonTrainers    // Emerald's frontier_isbrain -> DefeatedMaiden
     bt_print BTL_FR_TB + FRT_WON_BRAIN  // Congratulations! You have defeated the Salon Maiden and swept seven Trainers!

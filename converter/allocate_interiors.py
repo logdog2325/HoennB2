@@ -38,6 +38,9 @@ def variant_zones():
     for f in glob.glob(os.path.join(ROOT, 'data', 'cave_layouts', '*.json')):
         r = json.load(open(f))
         if isinstance(r, dict): out |= {v['zone'] for v in r.get('variants', [])}
+    for f in glob.glob(os.path.join(ROOT, 'data', 'interiors', '**', '*.json'), recursive=True):   # (trick_house: a room's
+        r = json.load(open(f))                                         # other state in a zone of its own, Puzzle 3's 451)
+        if isinstance(r, dict): out |= {v['zone'] for v in r.get('variants', [])}
     return out
 
 def deny_avoid():
@@ -95,7 +98,8 @@ def rooms():
     return out
 
 # maps whose scripts.inc `warp` commands lead to rooms no warp event reaches (the fourth pass of rooms()), in order
-SCRIPT_WARP_MAPS = ('BattleTower_Lobby', 'BattleTower_Elevator')
+SCRIPT_WARP_MAPS = ('BattleTower_Lobby', 'BattleTower_Elevator',
+                    'Route110_TrickHouseEntrance')   # (trick_house 2026-10-19) its scroll warps to Puzzle2-8
 
 def event_rooms(outdoor, have):
     """Third pass (events agent, 2026-10-07): the caves and rooms of the event maps of other decomps
@@ -182,7 +186,10 @@ def main():
         w_, h_ = r['size']
         # center = Pokémon Center 1F/2F rebuilt with Sapphire's Gen 3 layout (nurse and PC, no Mart counter: Hoenn has
         # its own Marts; user, 2026-10-06), by hand in Black 2's own Center zones (1F) — gen_interiors leaves them alone
-        status = ('hand' if name in FIXED else 'center' if name.endswith(('_PokemonCenter_1F', '_PokemonCenter_2F')) else
+        # (trick_house 2026-10-19) a room registered by hand ("hand": Trick House Puzzle2-8, b2tools/trick_house.py) stays
+        # hand, so gen_interiors.py never writes a placeholder room for it
+        status = ('hand' if name in FIXED or old.get(name, {}).get('status') == 'hand' else
+                  'center' if name.endswith(('_PokemonCenter_1F', '_PokemonCenter_2F')) else
                   'cave' if r['map_type'] in ('MAP_TYPE_UNDERGROUND', 'MAP_TYPE_UNDERWATER') else   # (underwater: dive agent)
                   'big' if w_ > 30 or h_ > 29 else
                   'link' if r['tilesets'][1] == 'gTileset_CableClub' else 'auto')

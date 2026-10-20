@@ -1,5 +1,5 @@
 {
- "_doc": "emerald_rooms (b2tools/emerald_rooms.py writes this file: edit the script and rerun). Emerald's Fortree Gym (Emerald's layout, same size): the grass paths between wooden posts, the ledges of the right lane (rows 6/12/17, jumped down), Winona's nook top right, the statues by the exit (15-16, 24). The rotating gates are not built (as in Sapphire's room).",
+ "_doc": "emerald_rooms (b2tools/emerald_rooms.py writes this file: edit the script and rerun). Emerald's Fortree Gym (Emerald's layout, same size): the grass paths between wooden posts, the ledges of the right lane (rows 6/12/17, jumped down), Winona's nook top right, the statues by the exit (15-16, 24). The rotating gates: pokeemerald's 8 (b2tools/patches/rotating_gates.c, arm actors in data/story/emerald/fortree_gates.json).",
  "map": "pokeemerald/FortreeCity_Gym",
  "style": "gl_fortree",
  "floor": [

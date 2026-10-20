@@ -59,9 +59,10 @@ def apply(files):
     sets[HOENN_SET] = nsbtx.merge(sets[HOENN_SET], adds)
     pack = len(narcio.load(files, 174)[0])
     seasons = seasonal_sets(files, sets, mods, adds[len(mods):], pack)
+    decals = seasonal_decals(files, sets, pack)
     narcio.save(files, 14, sets)
     return (f'{len(adds)} textures added to set {HOENN_SET}: {before} -> {len(sets[HOENN_SET])} B; with building '
-            f'textures {len(sets[HOENN_SET]) + pack} B of ~200 KB; ' + seasons)
+            f'textures {len(sets[HOENN_SET]) + pack} B of ~200 KB; ' + seasons + '; ' + decals + '; ' + autumn_leaves(files))
 
 def season_source(raw, load, ts, name, pal, season):
     """The Black 2 map set to take texture `name` (palette `pal`) from for `season` when it comes from set `ts` in
@@ -116,3 +117,88 @@ def seasonal_sets(files, sets, mods, ash_adds, pack):
         out.append(f'{label} set {ts_out}: {before} -> {len(sets[ts_out])} B ({len(sets[ts_out]) + pack} B with '
                    f'buildings; {own} copied textures with their own {label} art)')
     return 'seasons: ' + ', '.join(out)
+
+def clear_source(name, w=8, h=8):
+    """A parsed one-texture source for nsbtx.merge: `name`, w x h, 16 colours with colour 0 transparent, every texel
+    colour 0 (the DS never draws a clear texel: no colour, no depth), palette `name`_pl all black."""
+    import struct
+    params = (((w // 8).bit_length() - 1) << 20) | (((h // 8).bit_length() - 1) << 23) | (3 << 26) | (1 << 29)
+    return dict(texdata=bytes(w * h // 2), c_data=b'', c_idx=b'', pdata=bytes(32), pflag=0,
+                texs=[(name, (params, 0x80000000 | w | (h << 11)))], pals=[(name + '_pl', (0, 0))])
+
+def seasonal_decals(files, sets, pack):
+    """terrain/seasons.py SEASONAL (seasons2, 2026-10-20): Black 2's seasonal decal art under Hoenn names in area 2's
+    four sets: the season's own (renamed copy, byte for byte, of Black 2's set `ts` texture `src`) in the set of the
+    season it shows in, a clear 8x8 stand-in in the other three (the chunks draw these decals all year: they bind by
+    name, and a missing name draws flat white). kisetu_yuki (snow) is Black 2's own and already in all four."""
+    import struct
+    sys.path.insert(0, os.path.join(HERE, '..'))
+    from terrain import seasons as S
+    raw = open(os.path.join(files, 'a', '0', '1', '3'), 'rb').read()
+    tex = lambda a: struct.unpack_from('<H', raw, a * 10 + 2)[0]
+    out = []
+    for season, label in ((0, 'spring'), (1, 'summer'), (2, 'autumn'), (3, 'winter')):
+        ts_out = tex(HOENN_AREA + season)
+        adds = []
+        for name, (shown, ts, src) in sorted(S.SEASONAL.items()):
+            if season == shown:
+                b2 = sets[ts]
+                pal = src + '_pl' if src + '_pl' in {n for n, _ in nsbtx._parse(b2)['pals']} else None
+                adds.append((b2, src, pal, name, name + '_pl' if pal else None))
+            else:
+                adds.append((clear_source(name), name, name + '_pl'))
+        before = len(sets[ts_out])
+        sets[ts_out] = nsbtx.merge(sets[ts_out], adds)
+        out.append(f'{label} set {ts_out} +{len(sets[ts_out]) - before} B ({len(sets[ts_out]) + pack} B with buildings)')
+    return 'seasonal decals ' + ', '.join(sorted(S.SEASONAL)) + ': ' + ', '.join(out)
+
+AUTUMN_SRT = 47                   # Route 20's texture animation (a/0/6/8 file 47): area 2's own (file 0) + its leaves
+
+def autumn_leaves(files):
+    """Route 20's falling leaves (terrain/seasons.py ribbons, material _ha01) move by Route 20's texture animation, SRT
+    file 47 (its areas 214-217 name it in all four seasons): it has every track of area 2's own SRT file 0 (ponds,
+    rivers, shores, sea foam...), byte for byte, except the sea (sea_mizu1, sea_mizu1_1: Route 20's sea scrolls twice as
+    fast), plus _ha01 and Route 20's lavender. So file 47's two sea tracks become file 0's (same sizes, in place: no
+    archive changes size) and area 2's autumn record (4) names file 47; spring, summer and winter keep file 0, where
+    the clear stand-in draws nothing anyway (and with seasons off nothing changes: summer). The warp-only maps keep
+    their own (no falling leaves there: terrain/seasons.py AREA2_ONLY)."""
+    import struct
+    from b2files import arc_path
+    p = arc_path(files, 68)
+    d = bytearray(open(p, 'rb').read())
+    hdr = struct.unpack_from('<H', d, 0xC)[0]
+    n = struct.unpack_from('<H', d, hdr + 8)[0]
+    spans = [struct.unpack_from('<II', d, hdr + 12 + 8 * i) for i in range(n)]
+    gmif = hdr + struct.unpack_from('<I', d, hdr + 4)[0]
+    gmif += struct.unpack_from('<I', d, gmif + 4)[0]
+    assert d[gmif:gmif + 4] == b'GMIF'
+    base = gmif + 8
+    def tracks(i):                              # material -> [(info, absolute data offset)] of entry i's one animation
+        e0 = base + spans[i][0]
+        srt = e0 + struct.unpack_from('<I', d, e0 + 0x10)[0]
+        assert d[srt:srt + 4] == b'SRT0'
+        (_, ent), = nsbtx._dict(d, srt + 8)
+        a = srt + struct.unpack_from('<I', ent, 0)[0]
+        return {m: [struct.unpack_from('<II', me, 8 * k) for k in range(5)] for m, me in nsbtx._dict(d, a + 8)}, a
+    t0, a0 = tracks(0); t47, a47 = tracks(AUTUMN_SRT)
+    assert '_ha01' in t47 and set(t0) <= set(t47), 'SRT 47 is not Route 20\'s'
+    fixed = 0
+    for mat in ('sea_mizu1', 'sea_mizu1_1'):
+        for k in range(5):
+            (i0, o0), (i47, o47) = t0[mat][k], t47[mat][k]
+            assert i0 == i47, (mat, k, hex(i0), hex(i47))
+            if i0 & 0x20000000: continue                       # (a constant: the same value in both)
+            size = 240 * (2 if i0 >> 28 & 1 else 4) >> (i0 >> 30 & 3)
+            src, dst = a0 + o0, a47 + o47
+            if d[dst:dst + size] != d[src:src + size]:
+                d[dst:dst + size] = d[src:src + size]; fixed += 1
+    if os.path.islink(p): os.unlink(p)
+    open(p, 'wb').write(d)
+    rp = os.path.join(files, 'a', '0', '1', '3')
+    raw = bytearray(open(rp, 'rb').read())
+    rec = (HOENN_AREA + 2) * 10
+    assert raw[rec + 4] in (0, AUTUMN_SRT), f'area {HOENN_AREA} autumn srt {raw[rec + 4]}'
+    raw[rec + 4] = AUTUMN_SRT
+    if os.path.islink(rp): os.unlink(rp)
+    open(rp, 'wb').write(raw)
+    return f'autumn: area {HOENN_AREA} record {HOENN_AREA + 2} srt {AUTUMN_SRT} (Route 20\'s falling leaves; {fixed} sea tracks set to file 0\'s)'

@@ -6,6 +6,7 @@
 //  0x7A02  the same + the game cleared and the Battle Tower / Southern Island landmarks (the post-game icons)
 //  0x7A03  only the Town Map (no Badges, no town visited: the view-only map and the hidden icons)
 //  0x7A04  0x7A01 + the Pokédex with Swellow and Zigzagoon caught (its area page draws the town map's art)
+//  0x7A07  0x7A01 with Teleport instead of Fly (littleroot2: Teleport home before any Pokémon Center)
 // Never assembled into normal builds.
 #ifdef HOENN_TEST_CHTM
 #ifndef TOWN_MAP_TEST_INC
@@ -22,6 +23,9 @@ Test_TM_Setup:
     ItemAdd ITEM_HM02, 1, HLIB_TMP
     PokePartyAdd HLIB_TMP, SPECIES_SWELLOW, 0, 50
     PokePartyLearnMove 0, 0, MOVE_FLY
+    h_goto_if_ne TM_STAGE, 0x7A07, L_TM_NoTeleport   // 0x7A07 (littleroot2): Teleport instead of Fly (the party menu's first field move)
+    PokePartyLearnMove 0, 0, MOVE_TELEPORT
+L_TM_NoTeleport:
     TrainerCardAddBadge 0
     TrainerCardAddBadge 1
     TrainerCardAddBadge 2

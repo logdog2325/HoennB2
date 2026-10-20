@@ -36,7 +36,8 @@ Starting to surf **[code]**: `CheckFieldEnvInteraction` (ov036 0x02182e54) → `
 not already surfing; `CheckSurfBeginTiles(tile under, tile in front)` (0x021a2ec0): the tile under must not block,
 the tile in front needs flag 0x02 and must not block (or be a surf edge 0x41/0x44, which you jump over:
 `CreateSurfPos`, `src/ov033/event_fishing.c:27-66`); and `0 <= y_player - y_water < 20` units.
-Our water is 8 below the land, like all of Black 2's (below).
+Our water is 8 below the land, like all of Black 2's (below). Since bridge_surf (2026-10-20) a tile with NOSURF (Gen 3's
+elevation rule) refuses it too: "Surf start and surf traps" below.
 
 | Hoenn | Record (incl., height idx, class, flags) | Black 2 source **[bytes]** |
 |---|---|---|
@@ -181,3 +182,81 @@ all fixed in terrain/water.py:
   layers add where nothing hides them). `outdoor_check --kinds layer` accepts the coplanar seam sheets (ike01/ike01).
 - Left: the mitred corners of the banks (short diagonal seams over the floor) have no layer under them; cells (13, 4)
   and (22, 6) have no water seams (chunk buffer).
+
+## Surf start and surf traps (bridge_surf, 2026-10-20) [code][test]
+Discord (Emerald v1.0.4, video): from Route 119's plank bridge by the Weather Institute the player surfed north into the
+short river below the waterfall, could not get back onto the bridge and had no other way out (no Fly or Teleport).
+- **Gen 3** [code] (pokeruby / pokeemerald `field_player_avatar.c`): `IsPlayerFacingSurfableFishableWater` starts a surf
+  only when `PlayerGetElevation()` (the player's previousElevation) is 3 and the water's elevation mismatches the
+  current one (a current elevation 0 never mismatches). A bridge tile (elevation 15) keeps the elevation the player
+  carried onto it (`ObjectEventUpdateElevation`). Route 119's bridge (Route119 (16-20, 33-34)) has elevation-4 land at
+  both ends (Route119 (14-15)/(21-22)), so Gen 3 never surfs off it - nor off the river's elevation-4 banks south of it
+  (Route119 (16-18,44), (21-22,46), (24-26,47)). A surfer (elevation 1) passes under elevation-15 tiles, and lands only on
+  elevation 3 (`CanStopSurfing`): the pocket below the waterfall is reached and left under the bridge, and has four
+  elevation-3 tiles to land on (Route119 (16,29-30), (20,29-30)).
+- **Black 2** [code]: `CheckSurfHeightAllow` (ov036 0x0219ab30) wants only `0 <= y(tile under) - y(water) < 20` and a
+  non-solid tile under (`CheckSurfBeginTiles`). In v1.0.4 the deck stood 8 over the water in one layer: surf off it,
+  no landing back on it (NOLAND, step 12) and no way under it: trapped. `b2tools/surf_trap_check.py` on that world
+  (work/agents/bridges/world_base) finds exactly this pocket plus three more traps at Route 120's two bridges. v18.0 /
+  Emerald v1.1 raised the decks 32+ over their water with two collision layers (notes/TERRAIN_GROUND.md): the height
+  refuses the surf off, a surfer passes under. **v1.1/v1.2 have no trap at any bridge** (checked on the release ROMs'
+  own collision: v18.1 Sapphire and Ruby and Emerald v1.2 are byte-identical to work/world and work/world_emerald).
+- **Emerald v1.2 still had a trap elsewhere**: Mossdeep's north shore (MossdeepCity (54-55,4) elevation 7 at 64,
+  (61-69,6) elevation 9 at 96) stands 8 over the water north of it, a 941-tile sea (Route 125's east end) no Gen 3
+  player reaches and that has no landing: surf off = stuck. And the Safari Zone southeast (Emerald): the pond under the
+  waterfall stood at two levels 32 apart (the grass east of it, an island, had taken the upper river's level), so a
+  surfer who came down the waterfall reached no shore.
+- **Fix**: heights.py step 12b sets the collision flag NOSURF (0x2000) on walkable tiles beside surf water where
+  Sapphire's player never has elevation 3: elevation 0, 2, 4-14, and groups of elevation-15 tiles with no elevation-3
+  land beside them (all four bridges over water carry elevation 4: Route 119 by the Weather Institute and south of it
+  (Route119 (21-23, 84-85), no surfer under it in either game), Route 120 by Fortree and south). hm_free.py
+  `SurfStartTileType` (ITCM, after the landing hook) wraps CheckSurfHeightAllow's tile-under lookup and adds the solid
+  flag on NOSURF: no surf prompt there. 168 tiles in Sapphire/Ruby's world, 169 in Emerald's (+5 Battle Frontier, +11
+  Birth Island); nothing else in the collision changes. Safari Zone: heights.py's island rule (TERRAIN_HEIGHTS.md
+  step 9): the pond is one level (24) with its shores at 32, the waterfall drops 32 into it.
+- **Check**: `HOENN_VERSION=... python3 b2tools/surf_trap_check.py [WORLD] [--sim]`: Gen 3's movement (elevation and
+  previous elevation, surf start and landing, bridges, ledges, waterfalls only downhill) and Black 2's (outdoor_check's
+  rules) from every warp / door; a TRAP is a reachable state that reaches no warp again (no Fly, Teleport, Dive,
+  Waterfall). Also lists surf starts one game allows and the other refuses. outdoor_check's walk models NOSURF and the
+  Sapphire side's surf start (state elevation 3).
+  | world | traps | surf starts B2 allows, Gen 3 refuses |
+  |---|---|---|
+  | v1.0.4-era (bridges' world_base, Sapphire) | 4 (Route 119 pocket, Route 120 x3) | 68 (bridge decks, Route 119 banks) |
+  | v18.1 / E v1.2 (work/world, work/world_emerald) | 0 / 2 (Mossdeep north sea, Safari SE pond) | 10 / 21 |
+  | after (bridge_surf worlds) | 0 / 0 | 2 / 2 (Route 134's elevation-3 water tiles at (367,354): Gen 3 walks onto them) |
+- **Tests** [test] (DeSmuME, muted; work/agents/bridge_surf/tests/surf_test.py on test ROMs from main HEAD + this fix,
+  HOENN_TEST_WARP=463,340,93 with the sign kit Groudon/Swampert/Balance Badge/HM03; other spots by clones of the ROM
+  with the sign's warp rewritten; screenshots/bridge_surf/): Emerald and Sapphire: on Route 119's deck facing north and
+  south and on its elevation-4 south bank, A gives no prompt; from the elevation-3 east shore (353,102) "The water is a
+  deep blue..." -> surf, north under the deck (8 under it at 48) into the pocket, land on (344,90), surf again, back
+  under the deck, land at (353,102) ((352,102) is a trainer's tile). Emerald: Mossdeep's north bank (742,164) and
+  (750,166): no prompt; the same ROM with NOSURF cleared on those tiles (v1.2's collision) surfs off (742,164) into a
+  45-tile pocket with no landing (the v1.2 trap, `emerald_mossdeep_repro_*`); Safari Zone southeast: surf off the upper
+  river's bank, down the waterfall (carried 2 tiles to (125,83), 56 -> 24), across the pond, land on (124,92), walk on.
+  Sapphire: Route 120's Fortree deck facing north and south: no prompt; surf off the strip's west end (425,73), south
+  under the deck (40) to (424,79) and back, land on the strip. All 29 checks passed.
+- Left as they are: Route 120's strip north of the Fortree bridge (Route120 (17-22,13), elevation 3, 64) stands 24 over
+  the pond south of it (40): Gen 3 surfs south from it, Black 2 refuses; its west end surfs off as in Gen 3 (pre-dates
+  the bridges work; no trap). Caves (their own collision, notes/CAVES.md) have no NOSURF. The Safari waterfall now
+  drops 32 like Route 119's below the Weather Institute: the same grass/waterfall-streak layer pairs at its foot as the
+  other waterfalls (outdoor_check layer; waterfalls are still flat sheets, "Open" above).
+
+## Going down a waterfall needs a lower foot (artisan_surf, 2026-10-20) [code][test]
+Found by frontier_sp: in Emerald, Artisan Cave B1F (Frontier West (39,55), our (55,68)) is reached only by surfing down
+the falls south of the Battle Palace (Frontier East (34-53,64-66), our (106-125,77-79)); here the surfer stopped at
+(114,78) facing the 0x40 row.
+- **Cause** [code]: ov036 CheckAutoTileEvents (0x02182890) runs the descent (script 10015) only when the surfer's y is
+  HIGHER than the tile 2 ahead (`ble` at 0x02182946; y = the player's own, FieldInteractWk_CalcPlayerFrontPos copies
+  it). The whole Frontier is one level (land 16, every water 8), so the water above the falls and the foot stood level
+  (8.00 / 8.00): no descent, no message. Same on Route 119 north of the Weather Institute bridge (345-347,88), all
+  versions.
+- **Fix** (water.py `_fall_foot`): the surf water right below a 0x40 row, when level (within 1 unit) with the water above
+  the row, gets the highest flat collision height under it: 7.85 for 8.00 (0.16 units; drawing unchanged).
+  Collision diff against main's world: only those 23 tiles (Frontier East 20, Route 119 3), class and flags as before.
+- **Check**: work/agents/artisan_surf/tools/fall_sweep.py WORLD lists every 0x40 tile with the heights above / at the foot.
+  Emerald after: Frontier, Route 119, Safari SE (56 -> 24, bridge_surf) go down. Not going down (foot higher than the
+  top; climbed with Waterfall, going down never needed): Ever Grande (823-834,307) -24 / -8, Route 114 by Meteor Falls
+  (97-100,72) -8 / 24. surf_trap_check 0 traps; outdoor_check size 0.
+- **Test** (DeSmuME, muted; post-game sign kit, screenshots/artisan_surf/): land east of the falls (127,75) -> surf off
+  (126,75) -> (114,78) -> down the falls to (114,80) (y 8.00 -> 7.85) -> surf west to (55,72) -> land (55,71) -> walk
+  into the mouth (55,68) -> Artisan Cave B1F (zone 373) at (8,48) -> walked to (10,46). All 8 checks passed.

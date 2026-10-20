@@ -1,0 +1,11 @@
+Hello, and welcome to the Pokémon\nCenter.{be01}\nWe restore your tired Pokémon to\nfull health.{be01}\nWould you like to rest your Pokémon?
+Okay, I’ll take your Pokémon for a\nfew seconds.
+Thank you for waiting.{be01}\nWe’ve restored your Pokémon to\nfull health.
+We hope to see you again!
+Your Pokémon may be infected with\nPokérus.{be01}\nLittle is known about the Pokérus\nexcept that they are microscopic life-{be00}\nforms that attach to Pokémon.{be01}\nWhile infected, Pokémon are said to\ngrow exceptionally well.
+There was someone here using a \nPokémon I’ve never seen before.{be01}\nI never learned about it at\nTrainer’s School at least.{be01}\nI wonder where you can catch Pokémon\nlike that.
+Okay! Next stop, the Battle Arena!\nI’d better get the right Pokémon from{be00}\nthe PC Storage System.
+Giggle… I’m going to go through every\nchallenge with just this baby!
+Skitty: Mya myaaah!
+Pokémon magazines!\nPokémon Pal...{be01}\nPokémon Handbook...\nAdorable Pokémon...
+{0100:0} took a closer look at the\nHoenn region map.

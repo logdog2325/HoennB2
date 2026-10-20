@@ -298,6 +298,7 @@ def b2_land(r):
     return r is not None and not (r[3] & 1) and r[2] not in SURF_CLASSES
 
 NOLAND = 0x4000         # b2tools/terrain/heights.py step 12 / patches/hm_free.py SurfLandingTileType
+NOSURF = 0x2000         # b2tools/terrain/heights.py step 12b / patches/hm_free.py SurfStartTileType (no surf start here)
 
 def b2_landing(frame, a, b, rb=None):
     """Black 2 lets a surfer on tile a land on tile b (final_check 2026-10-08, ov036 CheckSurfExitEvent 0x02182cd4): the
@@ -390,7 +391,10 @@ def check_walk(frame, out, S=None):
                 continue
             if b[3] and k not in warps: continue
             if sap_water(k):
-                push((k, 1)); continue
+                # (bridge_surf 2026-10-20) surfing off land: IsPlayerFacingSurfableFishableWater wants the previous
+                # elevation 3 and a mismatch - here the state's elevation 3 (0 never mismatches; it is set with the previous)
+                if on_water or z == 3: push((k, 1))
+                continue
             if on_water and b[4] == 15 and not b[3]:   # (under a bridge, as above)
                 push((k, 1)); continue
             if on_water:                          # landing: only onto elevation 3 (pokeruby field_player_avatar.c
@@ -459,8 +463,8 @@ def check_walk(frame, out, S=None):
                 continue
             rf = front(b, ya)
             if b2_surf(rf):                          # (surfing off land: CheckSurfHeightAllow, 0 <= land - water < 20)
-                yf = frame.y(*b, rf)
-                if yf is not None and 0 <= ya - yf < 20:
+                yf = frame.y(*b, rf)                 # (and no NOSURF on the tile under: hm_free SurfStartTileType)
+                if yf is not None and 0 <= ya - yf < 20 and not ra[3] & NOSURF:
                     if b2_surf(rb): add(b, rb)
                     else: stuck.append((a, b))
                 continue
@@ -736,7 +740,7 @@ def texture_names(frame):
     from area2_buildings import groups
     F = os.path.join(ROOT, 'external', 'pokebw2', 'build', 'b2_us', 'files')
     tn = {n for n, _ in nsbtx._parse(b2files.map_textures(F, 3))['texs']}
-    for f in terrain.modules(): tn |= set(getattr(f, 'TEXTURES', {}))
+    for f in terrain.modules(): tn |= set(getattr(f, 'TEXTURES', {})) | set(getattr(f, 'SEASONAL', {}))
     ap = os.path.join(ROOT, 'data', 'hoenn_ash.json')
     if os.path.exists(ap): tn |= set(json.load(open(ap)).get('textures', {}))
     bn = {n for n, _ in nsbtx._parse(b2files.building_textures(F, 0))['texs']}

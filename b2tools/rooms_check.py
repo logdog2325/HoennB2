@@ -1,6 +1,10 @@
 """Static checker for the built interior rooms (rooms_cleanup agent, 2026-10-06; notes/INTERIORS.md "Room checks").
 
-    python3 rooms_check.py [--dir ROOMS] [--rom ROM] [--world WORLD] [--kinds abcdefghijklmnopq] [--summary] [ROOM ...]
+    python3 rooms_check.py [--dir ROOMS] [--rom ROM] [--world WORLD] [--kinds abcdefghijklmnopq] [--summary] [--accepted]
+                           [ROOM ...]
+
+Findings checked and left on purpose are in ACCEPT (each with its reason; em_rooms 2026-10-19): not printed, counted by
+--summary, listed with their reasons by --accepted.
 
 (ROOMS_CHECK_MODELS=DIR: take the furniture model cache from DIR/_models instead, e.g. to check the lead's
 work/interiors without writing there.) Reads only what the builder made (ROOMS/<Map>/room.json, collision*.per, terrain(_all).dae; default HOENN_INTERIORS_DIR
@@ -76,6 +80,19 @@ def zone_cfgs():
     if version.is_emerald():            # (emerald_rooms) an Emerald room variant is checked with its room's zone json
         for room, v in version.variants().items():
             if room in out: out[v] = out[room]
+    # (em_rooms 2026-10-19) a zone's other layouts ("alt_rooms", loaded instead of the room while a map replace event is
+    # set) whose people only show with them: the Trainer Hill floors' mode rooms (TrainerHill_1F_Variety ...) and the
+    # mode's trainers ("what" starting with the mode's name, shown only in that mode). They are checked in their own
+    # layout; before, every mode's trainers were checked in the Normal floor (on its walls).
+    for room, c in list(out.items()):
+        alts = [a['room'] for a in c.get('alt_rooms', []) if a['room'].startswith(room + '_')]
+        if not alts or not c.get('npcs'): continue
+        mode = lambda n, a: n.get('what', '').split(' ', 1)[0] == a[len(room) + 1:]
+        moved = set()
+        for a in alts:
+            mine = [n for n in c['npcs'] if mode(n, a)]
+            if mine: out[a] = dict(c, room=a, npcs=mine); moved |= {id(n) for n in mine}
+        if moved: out[room] = dict(c, npcs=[n for n in c['npcs'] if id(n) not in moved])
     return out
 
 
@@ -89,6 +106,8 @@ class Built:
         self.name, self.d, self.cfg = name, os.path.join(rooms_dir, name), cfg
         self.meta = json.load(open(os.path.join(self.d, 'room.json')))
         self.ox, self.oz = self.meta['origin']
+        try: mi.load_recipe(name)       # (em_rooms 2026-10-19) registers the recipe's "decomp" (DECOMP_OF): Emerald-only
+        except Exception: pass          # rooms (Frontier, Battle Tents) read pokeemerald's map, not a missing pokeruby one
         self.sm = mi.sapphire_map(self.meta['map'])
         self.out = []
         # collision over zone tiles: {(x, z): (a, b, cls, flags)}
@@ -567,12 +586,131 @@ def check_scripts(rooms_dir, cfgs, built):
                 pos[actor] = b.check_path(f'NPC uid {actor}', start, steps, f'{os.path.basename(f)} {script} {label}')
 
 
+# ------------------------------------------------------------------------------------------------ accepted findings
+# (em_rooms 2026-10-19) Findings checked and left on purpose, each with its reason: (rooms, kinds, line, reason), rooms
+# and line regular expressions (rooms: the whole room name; line: anywhere in the finding). Accepted lines are not
+# printed (--accepted lists them with their reasons; --summary counts them). Every version: most are rooms Sapphire,
+# Ruby and Emerald share (notes/INTERIORS.md "Room sweep 2", "Final interior sweep for v16.4": left as known).
+SHIP_B1F = 'AbandonedShip_Corridors_B1F'
+FRONTIER_SCRIPTED = ('BattleFrontier_Battle(DomeCorridor|DomePreBattleRoom|FactoryPreBattleRoom|FactoryBattleRoom|'
+                     'PalaceCorridor|PalaceBattleRoom)|(Slateport|Verdanturf|Fallarbor)(City|Town)_BattleTent(Corridor|BattleRoom)')
+ACCEPT = [
+    # ---- one-way warps the originals have (pokeruby / pokeemerald) and leftovers nothing leads into
+    ('AquaHideout_B2F', 'e', r'warp 9 at .* -> AquaHideout_B1F .* warp 4, which leads to zone 5 warp 7',
+     "the hideout's warp pad (B2F (32,20) -> B1F (31,4), itself a pad to B1F (27,12)): one-way in the originals"),
+    ('AquaHideout_B1F', 'e', r'warp (14|21|23) at .* -> zone 5 warp (12|17) -> back to warp (9|20) at .*another spot',
+     "B1F's warp-pad maze: a pad leads to another pad whose own warp goes elsewhere (pokeruby's and pokeemerald's own "
+     "warp table: B1F 14/21 -> 12 -> 9, 23 -> 17 -> 20)"),
+    ('SeafloorCavern_Entrance', 'e', r'warp 0 .* -> Underwater4',
+     'the way out of the cavern is Dive: surfacing in Underwater4 leads up to Route 128, not back in (originals)'),
+    ('SeafloorCavern_Room[46]', 'e', r'-> SeafloorCavern_Entrance \(zone 177\) warp 1',
+     "the back exits of Rooms 4 and 6 drop to the Entrance's warp 1, whose own way leads on to Room 1 (originals)"),
+    ('Route110_TrickHouseCorridor', 'e', r'-> Route110_TrickHouseEntrance \(zone 514\) warp 2',
+     "the corridor's exit leads back into the Entrance (warp 2), whose own warp leads to the current puzzle (originals: "
+     "the scroll's entrance)"),
+    ('Route110_TrickHousePuzzle6(_Emerald)?', 'k', r'without hide flags: trick_house NPC uid 1[0-5]\d \(gate \d+ \([LT][1-4] at '
+     r'(?!.*NPC uid (?!1[0-5]\d \(gate))',     # (every one listed is an arm; rooms_check cuts long lines)
+     "(th_p6 2026-10-19) a rotating gate's arms (3D actors, uid 100 + 4 * gate + arm) all stand on one tile next to the "
+     "gate's pivot and are always there, as Gen 3's gates; b2tools/patches/rotating_gates.c draws each one on its tile "
+     "edge and takes it out of the actor collision (emulator: screenshots/trick_house/p6_*)"),
+    ('Route110_TrickHousePuzzle[2-8]', 'e', r'warp [01] at \(\d+,22\) -> Route110_TrickHouseEntrance \(zone 514\) warp 2, '
+     r'which leads to zone 552 warp 0, not back here',
+     "(th_glitch 2026-10-19) the puzzle rooms' exit mats lead to the Entrance's warp 2 (the hole behind the scroll), whose "
+     "own warp names Puzzle 1 (the scroll's script sends you to the current puzzle): pokeruby's and pokeemerald's "
+     "Route110_TrickHousePuzzle2-8 and Entrance warp tables are the same"),
+    ('Route110_TrickHousePuzzle[2-8]', 'e', r'warp 2 at \(14,2\) -> Route110_TrickHouseEnd \(zone 513\) warp 0, which leads '
+     r'to zone 552 warp 2, not back here',
+     "(th_glitch 2026-10-19) every puzzle's door leads to the one end room, whose arrival door (10,1) shuts behind you "
+     "and names Puzzle 1's door (both decomps' Route110_TrickHouseEnd warp 0 -> Puzzle1 warp 2); the way on is the corridor"),
+    ('EverGrandeCity_ChampionsRoom', 'e', r'warp 1 at tile \(7,1\) leads to its own warp 0',
+     "the walk into the Hall of Fame is the champion scene's MapChangeCore; the player never walks freely in this room "
+     "(arrival walk-up and post-battle scene are scripted, as the originals)"),
+    ('CaveOfOrigin_B[13]F', 'e', r'not back here',
+     "Emerald: Sapphire's B1F-B3F (zones 100-102) are not part of Emerald's cave (1F -> B1F = zone 103 only, pokeemerald); "
+     "only parked warps lead into them"),
+    ('MossdeepCity_GameCorner_1F_Emerald', 'e', r'warp 2 at Sapphire \(2, 0\)',
+     "pokeemerald's leftover basement warp (Ruby/Sapphire's Mystery Events door, moved into the wall): its tile and every "
+     "tile round it are solid, the zone init (GC_Init) parks it off the map, and B1F is reachable only through it"),
+    # ---- scripted rooms and doorways (the player never walks there freely)
+    (FRONTIER_SCRIPTED, 'bcm', r'door_(h5_in|pwood01)#\d+',
+     "a scripted room: the opponent comes out of / the player is walked into the door (opened first, bt_door_open), "
+     "the frame reaches 1 unit into the tile in front"),
+    ('BattleFrontier_Battle(DomeCorridor|DomePreBattleRoom|FactoryPreBattleRoom|FactoryBattleRoom)', 'b',
+     r'(plant01|table01|chair01|shelf02|pcdesk02|machine02)#',
+     "a scripted room (ActorsPauseAll, the walk is the script's): Emerald's own furniture on tiles its collision marks "
+     "walkable, off the scripted path (pokeemerald draws its table and chairs there too)"),
+    ('(Slateport|Verdanturf|Fallarbor)(City|Town)_BattleTentLobby', 'bm', r'door_h5_in#0',
+     "the glass door (6,1) behind the counter: only the attendant's scripted walk reaches it, after bt_door_open "
+     "(Emerald's door tile is walkable too)"),
+    ('BattleFrontier_BattleArenaLobby', 'c', r'BLACK_BELT .*attendant\) at Sapphire \(7, 7\)',
+     "pokeemerald stands the attendant behind its counter on a solid tile"),
+    ('BattleFrontier_BattlePyramidLobby', 'm', r'attendant \(HIKER\)\) at Sapphire \(7, 12\): cut by room black',
+     "seen only with the player in the upper hall, which only the scripted walk reaches, the attendant leading "
+     "(PYL_MvAttendantToPanel)"),
+    # ---- people where the originals stand them / layouts they only show with
+    ('.*', 'k', r'stands on a solid tile \(as in Sapphire\)',
+     "the original stands it on a tile its own collision marks solid (the S.S. Tidal and the submarine in the harbors' "
+     "water, the cable cars on their track, Steven's balls on his table, Tate and Liza on their platform)"),
+    ('LittlerootTown_ProfessorBirchsLab_Emerald', 'km', r"Poké Ball with (Totodile|Chikorita) on Emerald's table",
+     "shown only with the Table layout (alt room LittlerootTown_ProfessorBirchsLab_Emerald_Table, map replace event 4), "
+     "where the balls stand on desk01's top (solid_y 11); this base layout has the boxes"),
+    # ---- known since the Sapphire/Ruby sweeps (shared rooms)
+    (SHIP_B1F, 'bm', r'stair_u01#[34]', "the stair model reaches 7 units into the walkable tile beside its warp tile "
+     "(Black 2's stairs are wider than a tile; known since v16.4)"),
+    (SHIP_B1F, 'h', r'\((2|10), 4\)\]', "one-tile notches beside the cabins: Sapphire's own void between the ship's cabins"),
+    ('EverGrandeCity_HallOfFame', 'h', r'\((1|13), (6|11)\)\]', "the side walls' one-tile notches (Sapphire's room; known)"),
+    ('FortreeCity_(DecorationShop|House[1-5])', 'h', r'\(3, 2\), \(3, 3\), \(4, 2\), \(4, 3\)',
+     "Fortree's tree trunk, a jog of the back wall (left as story_fixups decided)"),
+    ('FortreeCity_Gym(_Emerald)?', 'k', r'without hide flags: fortree_gates NPC uid 1[0-3]\d \(gate \d+ \([LT][1-4] at '
+     r'(?!.*NPC uid (?!1[0-3]\d \(gate))',     # (every one listed is an arm; rooms_check cuts long lines)
+     "(fortree_gates 2026-10-20) a rotating gate's arms (3D actors, uid 100 + 4 * gate + arm, data/story/fortree_gates.json) "
+     "all stand on one tile next to the gate's pivot and are always there, as Gen 3's gates; b2tools/patches/rotating_gates.c "
+     "draws each one on its tile edge and takes it out of the actor collision (emulator: screenshots/fortree_gates/)"),
+    ('Route117_PokemonDayCare|RustboroCity_DevonCorp_1F(_Emerald)?', 'b', r'(cabin_door|elevator01)#\d+ .*covers 6%',
+     "the door frame reaches 1 unit into the tile in front (known)"),
+    ('RustboroCity_DevonCorp_1F(_Emerald)?', 'm', r'player at Sapphire \(14, 0\) facing north: head hidden',
+     "the elevator doorway tile: the wall over the doorway in front of the player walking in"),
+    ('MtChimney_CableCarStation|Route112_CableCarStation', 'f', r'table03#[01] .*in40_kage are 1.0 units apart',
+     "the benches' own shadow 1 unit over the floor decal (Sapphire/Ruby the same room; a fix would change every version)"),
+    ('AbandonedShip_HiddenFloorCorridors|AquaHideout_(1F|B2F)|MagmaHideout_B2F', 'f', r'room d0_miz and room d0_miz are 0.0 units apart',
+     "the water rects overlap 4 units at their joins (models_interior water(): each grows 4 units to close cracks), "
+     "the same opaque texture at the same world UVs: identical pixels, nothing to flicker"),
+    # ---- slivers: a few pixels of a sprite's edge from one camera spot (Black 2's billboards; known <= 30 px, notes)
+    ('MossdeepCity_SpaceCenter_2F|SlateportCity_SternsShipyard_2F|LilycoveCity_DepartmentStore_5F', 'm',
+     r'NPC .*: cut by (monitor01|pcshelf01)#',
+     "people under taller furniture behind them seen from a camera far north: Black 2's own billboard look "
+     "(notes/INTERIORS.md v16.4: left as known)"),
+    ('LilycoveCity_DepartmentStore_[24]F|LilycoveCity_LilycoveMuseum_1F|LittlerootTown_(Brendans|Mays)House_1F|'
+     'MossdeepCity_SpaceCenter_2F|Route119_WeatherInstitute_1F|SlateportCity_OceanicMuseum_1F|'
+     'RustboroCity_DevonCorp_3F(_Emerald)?|DewfordTown_Gym(_Emerald)?|FortreeCity_Gym(_Emerald)?|'
+     'LilycoveCity_DepartmentStoreElevator_Emerald|BattleFrontier_BattlePikeLobby|TrainerHill_2F_Unique|BattleTower_Lobby', 'm',
+     r'^(?!.*\((?:3[1-9]|[4-9]\d|\d{3,}) px\)).*(cut by|stands inside) ',
+     "slivers of 6-30 px of a sprite's edge from one camera spot (Black 2's billboards; notes/INTERIORS.md v16.4: left "
+     "as known)"),
+    ('BattleFrontier_BattleFactoryLobby', 'bm', r'shelf03#1[012]',
+     "Emerald's one-tile counter ends (7,5) (11,5) (16,6) with walkable floor on both sides: the 30-unit counter piece "
+     "reaches 7 units into each, a foot-level sliver of the player beside it (Black 2 has no one-tile counter piece)"),
+    ('BattleFrontier_BattleDomeLobby', 'b', r'shelf03#8 covers 30%',
+     "Emerald's one-tile counter (11,9) with walkable floor on both sides: the counter piece reaches 7 units into the "
+     "tile beside it (no person is drawn into it, kind m)"),
+]
+
+def accepted(line):
+    """The reason a finding is accepted, or None."""
+    room = line.split(':')[0].strip()
+    m = re.search(r': \((\w)\) ', line); k = m.group(1) if m else ''
+    if ': (e) warp:' in line: k = 'e'
+    for rooms, kinds, rx, why in ACCEPT:
+        if k in kinds and re.fullmatch(rooms, room) and re.search(rx, line): return why
+    return None
+
 # ------------------------------------------------------------------------------------------------ main
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--dir', default=os.environ.get('HOENN_INTERIORS_DIR') or os.path.join(ROOT, 'work', 'interiors'))
     ap.add_argument('--rom'); ap.add_argument('--kinds', default='abcdefghijklmnopq'); ap.add_argument('--summary', action='store_true')
     ap.add_argument('--world')                                       # (j) exits: the world dir (default work/world)
+    ap.add_argument('--accepted', action='store_true')               # list the accepted findings (ACCEPT) with reasons
     ap.add_argument('rooms', nargs='*')
     a = ap.parse_args()
     os.environ['HOENN_INTERIORS_DIR'] = os.path.abspath(a.dir)        # preview_interior's model cache lives there
@@ -615,7 +753,14 @@ def main():
     if version.is_emerald():            # (emerald_rooms) rooms Emerald replaces by a variant are not in its ROM either
         rep = set(version.variants())
         out = [(k, ln) for k, ln in out if ln.split(':')[0].strip() not in rep]
+    acc = [(k, ln, accepted(ln)) for k, ln in out]                   # (em_rooms) ACCEPT: checked, left on purpose
+    if a.accepted:
+        for k, ln, why in acc:
+            if why: print(f'{ln}  [accepted: {why}]')
+        return
+    out = [(k, ln) for k, ln, why in acc if not why]
     if a.summary:
+        print(f'accepted: {sum(1 for *_, why in acc if why)} findings (--accepted lists them)')
         c = Counter(k for k, _ in out)
         rooms = defaultdict(set)
         for k, ln in out: rooms[k].add(ln.split(':')[0])

@@ -130,7 +130,9 @@ L_HF_E_Fossil:
     h_setvar VAR_STEVENS_HOUSE_STATE, 2          // pokeemerald: 2 (given). The shared line above says Sapphire's 1; Emerald's 1 = the Dive is due (emerald_ch9_mirage)
     h_setflag FLAG_HIDE_SAFARI_ZONE_SOUTH_CONSTRUCTION_WORKERS               // the Safari Zone's new areas open (Safari builder)
     h_clearflag FLAG_HIDE_SAFARI_ZONE_SOUTH_EAST_EXPANSION
-    h_setflag FLAG_HIDE_LILYCOVE_CITY_RIVAL
+    h_setflag FLAG_HIDE_RIVAL_LILYCOVE_MART      // setflag FLAG_HIDE_LILYCOVE_CITY_RIVAL: that is the Lilycove rival's flag
+                                                 // (ours: data/story/ch8a.json's FLAG_HIDE_RIVAL_LILYCOVE_MART; 445 hid nothing
+                                                 // until littleroot2 2026-10-19: a declined rival stayed after the Hall of Fame)
     h_setflag FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_RIVAL_BEDROOM         // the rival is not in the bedroom any more
     h_setflag FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_RIVAL_BEDROOM
     h_goto_if_ne VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 0, L_HF_E_Dex

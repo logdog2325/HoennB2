@@ -157,6 +157,9 @@ def apply(files):
     cnt = bytearray(counts[0]); cnt[f] = len(cur); counts[0] = bytes(cnt)
     narcio.save(files, ARC_SHOP, lists); narcio.save(files, ARC_SHOP_COUNT, counts)
     size0 = os.path.getsize(arc_path(VANILLA, ARC_SHOP))
-    _pad_to(arc_path(files, ARC_SHOP), size0)
+    # (frontier_center 2026-10-20) an Emerald build's own shop lists (shops.py "extra": the Battle Frontier Mart) grow
+    # a/2/8/2 past Black 2's size, as trainer_hill.py's and fairy.py's do after this patch
+    import version
+    _pad_to(arc_path(files, ARC_SHOP), max(size0, os.path.getsize(arc_path(files, ARC_SHOP))) if version.is_emerald() else size0)
     out.append(f'shop {shop["id"]} ({shop["label"]}) + items {add}')
     return 'trade evolutions: ' + '; '.join(out)

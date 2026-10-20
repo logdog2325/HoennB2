@@ -1,0 +1,290 @@
+{
+ "_doc": "Battle Frontier Lounge5 (Emerald only: pokeemerald BattleFrontier_Lounge5, 13x8, LAYOUT_BATTLE_FRONTIER_LOUNGE1, gTileset_Building + gTileset_BattleFrontier; frontier_lounges 2026-10-20, written by work/agents/frontier_lounges/tools/lounge_rooms.py; zone 496): Lounge6's look (style sp_battle: Nimbasa's Battle Test room, area 306) on Emerald's wider lounge. LAYOUT_BATTLE_FRONTIER_LOUNGE1 (Lounges 2 and 5): rows 0-1 back wall with the TV (6,1) (MB_TELEVISION) between two rows of five potted plants (pots (1-5,2) and (7-11,2), solid; (0,2), (6,2), (12,2) walkable), two plant pillars in the middle (pots (6,4) and (6,6), solid), the orange chairs (walkable), the exit mat (1-2,7) (MB_SOUTH_ARROW_WARP pair).",
+ "map": "BattleFrontier_Lounge5",
+ "decomp": "pokeemerald",
+ "style": "sp_battle",
+ "floor": [
+  [
+   0,
+   2,
+   12,
+   6
+  ],
+  [
+   1,
+   7,
+   11,
+   7
+  ]
+ ],
+ "mats": [
+  {
+   "tex": "chip_mat",
+   "src": 306,
+   "rect": [
+    1,
+    7,
+    2,
+    7
+   ],
+   "border": 0.25,
+   "border_units": 4,
+   "y": 0,
+   "_what": "exit mat (1-2, 7)"
+  }
+ ],
+ "furniture": [
+  {
+   "m": "plant01",
+   "at": [
+    1.5,
+    1.7931
+   ],
+   "dz": 0.945,
+   "_what": "potted plant (1,2)"
+  },
+  {
+   "m": "plant01",
+   "at": [
+    2.5,
+    1.7931
+   ],
+   "dz": 0.945,
+   "_what": "potted plant (2,2)"
+  },
+  {
+   "m": "plant01",
+   "at": [
+    3.5,
+    1.7931
+   ],
+   "dz": 0.945,
+   "_what": "potted plant (3,2)"
+  },
+  {
+   "m": "plant01",
+   "at": [
+    4.5,
+    1.7931
+   ],
+   "dz": 0.945,
+   "_what": "potted plant (4,2)"
+  },
+  {
+   "m": "plant01",
+   "at": [
+    5.5,
+    1.7931
+   ],
+   "dz": 0.945,
+   "_what": "potted plant (5,2)"
+  },
+  {
+   "m": "plant01",
+   "at": [
+    7.5,
+    1.7931
+   ],
+   "dz": 0.945,
+   "_what": "potted plant (7,2)"
+  },
+  {
+   "m": "plant01",
+   "at": [
+    8.5,
+    1.7931
+   ],
+   "dz": 0.945,
+   "_what": "potted plant (8,2)"
+  },
+  {
+   "m": "plant01",
+   "at": [
+    9.5,
+    1.7931
+   ],
+   "dz": 0.945,
+   "_what": "potted plant (9,2)"
+  },
+  {
+   "m": "plant01",
+   "at": [
+    10.5,
+    1.7931
+   ],
+   "dz": 0.945,
+   "_what": "potted plant (10,2)"
+  },
+  {
+   "m": "plant01",
+   "at": [
+    11.5,
+    1.7931
+   ],
+   "dz": 0.945,
+   "_what": "potted plant (11,2)"
+  },
+  {
+   "m": "monitor01",
+   "at": [
+    6.5,
+    1.7188
+   ],
+   "dx": 1.5,
+   "dz": 2.5,
+   "_what": "TV (6,1) (Emerald MB_TELEVISION; no message, as the houses' TVs)"
+  },
+  {
+   "m": "plant01",
+   "tile": [
+    6,
+    4
+   ],
+   "_what": "plant pillar (6,4) (Emerald's pot, solid)"
+  },
+  {
+   "m": "plant01",
+   "tile": [
+    6,
+    6
+   ],
+   "_what": "plant pillar (6,6) (Emerald's pot, solid)"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    0,
+    3
+   ],
+   "_what": "chair (0,3) (Emerald's orange chair, walkable)"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    0,
+    4
+   ],
+   "_what": "chair (0,4) (Emerald's orange chair, walkable)"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    0,
+    5
+   ],
+   "_what": "chair (0,5) (Emerald's orange chair, walkable)"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    2,
+    3
+   ],
+   "_what": "chair (2,3) (Emerald's orange chair, walkable)"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    2,
+    4
+   ],
+   "_what": "chair (2,4) (Emerald's orange chair, walkable)"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    4,
+    3
+   ],
+   "_what": "chair (4,3) (Emerald's orange chair, walkable)"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    4,
+    4
+   ],
+   "_what": "chair (4,4) (Emerald's orange chair, walkable)"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    10,
+    3
+   ],
+   "_what": "chair (10,3) (Emerald's orange chair, walkable)"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    12,
+    3
+   ],
+   "_what": "chair (12,3) (Emerald's orange chair, walkable)"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    8,
+    4
+   ],
+   "_what": "chair (8,4) (Emerald's orange chair, walkable)"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    10,
+    4
+   ],
+   "_what": "chair (10,4) (Emerald's orange chair, walkable)"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    12,
+    4
+   ],
+   "_what": "chair (12,4) (Emerald's orange chair, walkable)"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    8,
+    5
+   ],
+   "_what": "chair (8,5) (Emerald's orange chair, walkable)"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    10,
+    5
+   ],
+   "_what": "chair (10,5) (Emerald's orange chair, walkable)"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    12,
+    5
+   ],
+   "_what": "chair (12,5) (Emerald's orange chair, walkable)"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    8,
+    6
+   ],
+   "_what": "chair (8,6) (Emerald's orange chair, walkable)"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    10,
+    6
+   ],
+   "_what": "chair (10,6) (Emerald's orange chair, walkable)"
+  }
+ ]
+}

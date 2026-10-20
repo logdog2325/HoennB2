@@ -1,0 +1,20 @@
+…
+Aak!\nYou’ve made it to me?{be00}\nHmmm… You’re sharp!
+It took me all night to plant all those\ntrees…{be01}\nYou’re almost my equal in greatness by\none, two, three, four, five, six places!
+It took me all night to make the maze…{be01}\nYou’re almost my equal in greatness by\none, two, three, four, five places!
+It took me all night to prepare\nthe wall panels…{be01}\nYou’re almost my equal in greatness by\none, two, three, four places!
+It took me all night to shove in those\nboulders…{be01}\nYou’re almost my equal in greatness by\none, two, three places!
+It took me all night to make Mechadolls\nand another to think up the quiz…{be01}\nYou’re almost my equal in greatness by\none, two places!
+It took me all night to install\nthe doors…{be01}\nYou’re almost my equal in greatness!
+It took me all night setting up arrows…{be01}\nYou’re my equal in greatness!
+It took me all night polishing floors…{be01}\nYou’re above me in greatness!\nPossibly…
+Fine!\nYou have earned this reward!
+Scrub that smug smirk from your face!\nIt’s much too early to think you’ve won!{be01}\nI’ll make new tricks to stump you, I will.\nYou may mock me only when you’re done.{be01}\nCome back for the next exciting\ninstallment!
+What? Have you no room for this?\nWhat manner of items do you carry?{be01}\nBut fine, since you’ve reached me,\nyour reward will be with me till later.
+Wh-what should I do?\nMy fountain of ideas for tricks has{be00}\nrun dry…{be01}\nPerhaps it is time I toured the country\non a quest to devise new tricks…
+… … … … … …{be01}\nI am leaving on a journey of discovery.\nA quest in search of new tricks.{be01}\nI wish that you will one day visit and\nentertain me again.{be01}\nAnd now, farewell!
+Now, now! You’re ignoring me now?\nNow that, I consider heartbreaking!
+I hate to admit defeat, but you have\nbested me!{be01}\nStill, you must have been reeled in by\nmy charisma for you to visit me again{be00}\nand again. Yes, you must have!{be01}\nBut that has nothing to do with my\nlosing!{be01}\nIn recognition of the friendship\nbetween you, the driven, and the genius{be00}\nthat is myself, I demand that you take{be00}\nthis keepsake!{be01}\nActually there are two--\na Red Tent and a Blue Tent.{be00}\nWhich do you prefer?
+Too bad!\nThe Bag is full…
+Red Tent
+Blue Tent

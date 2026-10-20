@@ -1,0 +1,85 @@
+{
+ "_doc": "frontier_lounges (2026-10-20): BattleFrontier_Lounge3, Emerald only (data/emerald/hoenn_interiors.json claim). Zone 477, room data/interior_layouts/BattleFrontier_Lounge3.json (Emerald tile + room origin = zone tile). People = Emerald's objects in Emerald's order (uid = script = Emerald local id). Scripts: src/field_scripts/emerald/0954_room_BattleFrontier_Lounge3.s. Written by work/agents/frontier_lounges/tools/lounge_rooms.py (frontier_rooms.zone_json).",
+ "zone": 477,
+ "room": "BattleFrontier_Lounge3",
+ "area": 306,
+ "parent": 17,
+ "warps": [
+  {
+   "at": [
+    4,
+    9
+   ],
+   "tile_only": true,
+   "to": [
+    17,
+    11
+   ],
+   "what": "Emerald warp 0 (4,9) -> BATTLE_FRONTIER_OUTSIDE_EAST warp 9 (zone 17 door 11: Black 2's warps of zone 17, then world.json's doors)"
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 1,
+   "model": 64,
+   "script": 1,
+   "dir": 0,
+   "at": [
+    4,
+    6
+   ],
+   "what": "Emerald object 1 HIKER (FACE_UP): BattleFrontier_Lounge3_EventScript_Gambler; model 64 (HIKER)"
+  },
+  {
+   "uid": 2,
+   "model": 25,
+   "script": 2,
+   "dir": 1,
+   "at": [
+    4,
+    4
+   ],
+   "what": "Emerald object 2 FAT_MAN (FACE_DOWN): BattleFrontier_Lounge3_EventScript_FatMan; model 25 (FAT_MAN)"
+  },
+  {
+   "uid": 3,
+   "model": 27,
+   "script": 3,
+   "dir": 3,
+   "at": [
+    3,
+    5
+   ],
+   "what": "Emerald object 3 WOMAN_2 (FACE_RIGHT): BattleFrontier_Lounge3_EventScript_Woman; model 27 (WOMAN_2)"
+  },
+  {
+   "uid": 4,
+   "model": 27,
+   "script": 4,
+   "dir": 2,
+   "at": [
+    5,
+    5
+   ],
+   "what": "Emerald object 4 POKEFAN_F (FACE_LEFT): BattleFrontier_Lounge3_EventScript_PokefanF; model 27 (WOMAN_2)"
+  },
+  {
+   "uid": 5,
+   "model": 19,
+   "script": 5,
+   "dir": 1,
+   "at": [
+    0,
+    6
+   ],
+   "move": 3,
+   "range": [
+    65535,
+    3
+   ],
+   "what": "Emerald object 5 MAN_3 (WANDER_AROUND, range 0,3): BattleFrontier_Lounge3_EventScript_Man; model 19 (MAN_3)"
+  }
+ ],
+ "signs": [],
+ "triggers": []
+}

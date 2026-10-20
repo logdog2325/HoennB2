@@ -1,0 +1,93 @@
+{
+ "_doc": "frontier_center (2026-10-20, work/agents/frontier_center/tools/center_rooms.py writes this file): BattleFrontier_PokemonCenter_2F, Emerald only (zone 499; room = Emerald's Center 2F). The three attendants and their scripts are the other Centers' (Oldale's 2F: the Union Room and Wi-Fi Club counters after the Pokedex, the Record Corner's apology); pokeemerald's Mystery Gift man (hidden until Mystery Gift) is left out as in the other Centers. The link-room doors never fire (dir 0: Black 2's link counters instead).",
+ "zone": 499,
+ "room": "BattleFrontier_PokemonCenter_2F",
+ "area": 283,
+ "header": {
+  "parent": 17,
+  "place": 62,
+  "bgm0": 1060,
+  "bgm1": 1060,
+  "bgm2": 1060,
+  "bgm3": 1060
+ },
+ "warps": [
+  {
+   "at": [
+    1,
+    6
+   ],
+   "tile_only": true,
+   "to": [
+    460,
+    2
+   ],
+   "type": 2,
+   "dir": 4,
+   "what": "Emerald warp 0 -> BattleFrontier_PokemonCenter_1F 2 (escalator, entered walking west)"
+  },
+  {
+   "at": [
+    5,
+    1
+   ],
+   "tile_only": true,
+   "to": [
+    499,
+    0
+   ],
+   "dir": 0,
+   "what": "Emerald warp 1 -> Union Room (Cable Club door: dir 0, never fires)"
+  },
+  {
+   "at": [
+    9,
+    1
+   ],
+   "tile_only": true,
+   "to": [
+    499,
+    0
+   ],
+   "dir": 0,
+   "what": "Emerald warp 2 -> Trade Center (Cable Club door: dir 0, never fires)"
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 1,
+   "model": 79,
+   "script": 1,
+   "dir": 1,
+   "at": [
+    2,
+    2
+   ],
+   "_what": "teala (4,2), Sapphire OldaleTown_PokemonCenter_2F_EventScript_152F66 (Emerald: at (2, 2), Sapphire (4, 2))"
+  },
+  {
+   "uid": 2,
+   "model": 79,
+   "script": 2,
+   "dir": 1,
+   "at": [
+    6,
+    2
+   ],
+   "_what": "teala (7,2), Sapphire OldaleTown_PokemonCenter_2F_EventScript_152F6C (Emerald: at (6, 2), Sapphire (7, 2))"
+  },
+  {
+   "uid": 3,
+   "model": 79,
+   "script": 3,
+   "dir": 1,
+   "at": [
+    10,
+    2
+   ],
+   "_what": "teala (10,2), Sapphire OldaleTown_PokemonCenter_2F_EventScript_152F72"
+  }
+ ],
+ "signs": [],
+ "parent": 17
+}

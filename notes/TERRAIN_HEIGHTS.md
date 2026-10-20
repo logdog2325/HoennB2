@@ -108,6 +108,11 @@ elevation is not 0, the target's is not 0/15 and they differ; elevation 0/15 til
    walls (0x51-0x58) on plain-floor tiles: 260 tiles (Lilycove 62, Pacifidlog 61, Mossdeep 38, Routes 119/124/127
    16-18 each, Route 114's ridge path 14, Route 109's beach chairs 12, Fortree 12, ...).
 8. Ground texture per level region: `gake_michi` where most of the region is brown rock in Sapphire, else grass.
+9. (bridge_surf 2026-10-20) **Surf start**: walkable tiles beside surf water where Sapphire's player never stands at
+   elevation 3 carry NOSURF (step 12b; hm_free refuses a surf from them, Gen 3's rule: notes/TERRAIN_WATER.md "Surf
+   start and surf traps"). **Islands** in a warp-only group with no sea (no 400-tile water anchors its levels): a
+   floating group with water beside it and no warp stands level with that water's biggest placed shore instead of its
+   Sapphire level (Emerald's Safari Zone southeast; in the connected world the shore rule already does this).
 
 **Offline check [test]** (`work/agents/heights/movecheck.py`, scratch, not in git): every move Sapphire allows on land (both sides walkable, not water,
 from all reachable (tile, elevation) states) against Black 2's rule on the built collision (step < 20 units, side

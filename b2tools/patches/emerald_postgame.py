@@ -97,6 +97,11 @@ def _save(p, d):
 def _vanilla(name, base, a, b):
     return open(os.path.join(ROOT, 'external', 'pokebw2', 'build', 'b2_us', 'build', name), 'rb').read()[a - base:b - base]
 
+def _fairy_symbol(code, name):
+    """An ITCM function of fairy.py (<code>/fairy_symbols.json, Thumb address | 1), or None without fairy."""
+    p = os.path.join(code, 'fairy_symbols.json')
+    return json.load(open(p)).get(name) if os.path.exists(p) else None
+
 def apply_code(code):
     if not version.is_emerald():
         return f'{version.NAME}: nothing (Emerald only)'
@@ -110,10 +115,16 @@ def apply_code(code):
     p9, arm9 = _load(code, 'arm9.bin')
     assert bytes(arm9[PART_A[0] - ARM9:PART_A[1] - ARM9]) == _vanilla('arm9.bin', ARM9, *PART_A), 'arm9 part A: not Black 2\'s code'
     assert bytes(arm9[ROUTE7_CALL - ARM9:ROUTE7_CALL - ARM9 + 4]) == bl(ROUTE7_CALL, PART_A[0]), 'GetWeatherAll: not Black 2\'s Route 7 call'
-    assert bytes(arm9[BIRTHDAY_CALL - ARM9:BIRTHDAY_CALL - ARM9 + 4]) == bl(BIRTHDAY_CALL, 0x02033084), 'GetWeatherAll: not Black 2\'s birthday call'
+    # (seasons2) the birthday call is Black 2's, or fairy.py's Season_Snow (the winter snowfall; it answers no birthday
+    # weather in Emerald: SNOW_CHAIN 0), which stays
+    snow = _fairy_symbol(code, 'Season_Snow')
+    cur = bytes(arm9[BIRTHDAY_CALL - ARM9:BIRTHDAY_CALL - ARM9 + 4])
+    assert cur == bl(BIRTHDAY_CALL, 0x02033084) or (snow and cur == bl(BIRTHDAY_CALL, snow & ~1)), \
+        'GetWeatherAll: not Black 2\'s birthday call (nor fairy.py\'s Season_Snow)'
     arm9[PART_A[0] - ARM9:PART_A[1] - ARM9] = a + bytes(PART_A[1] - PART_A[0] - len(a))
     arm9[ROUTE7_CALL - ARM9:ROUTE7_CALL - ARM9 + 4] = bl(ROUTE7_CALL, sa['EM_AbnormalWeather'] & ~1)
-    arm9[BIRTHDAY_CALL - ARM9:BIRTHDAY_CALL - ARM9 + 4] = bytes.fromhex('381cc046')        # adds r0, r7, #0; nop
+    if cur == bl(BIRTHDAY_CALL, 0x02033084):
+        arm9[BIRTHDAY_CALL - ARM9:BIRTHDAY_CALL - ARM9 + 4] = bytes.fromhex('381cc046')    # adds r0, r7, #0; nop
     _save(p9, arm9)
     p12, ov12 = _load(code, 'arm9_ov012.bin')
     assert bytes(ov12[PART_B[0] - OV012:PART_B[1] - OV012]) == _vanilla('arm9_ov012.bin', OV012, *PART_B), 'ov012 part B: not Black 2\'s code'

@@ -1,0 +1,14 @@
+{
+ "code": 146,
+ "name": "trick-arrow-262-lever1",
+ "what": "Trick House puzzle 7: the red arrow turned by lever(s) [1] (Gen 3 metatile 0x262) flat on the floor; stands on the lever (12, 16), the arrow (1, 1) off it (b2tools/trick_house.py)",
+ "record_from": 8201,
+ "record": {
+  "collWidth": 1,
+  "collHeight": 1,
+  "offX": 0,
+  "offY": 0,
+  "offZ": 0
+ },
+ "made_by": "b2tools/trick_house.py"
+}

@@ -221,6 +221,9 @@ def build(name, rooms, door, text, scripts, sprites, todo):
     cfg = dict(zone=zone, room=name, area=AREA, parent=parent,
         _doc=f'{name}: shops agent (b2tools/shops_rooms.py); recipe data/interior_layouts/{name}.json (b2tools/shops_recipes.py)',
         warps=warps, npcs=npcs, signs=signs)
+    if name.startswith('Route110_SeasideCyclingRoad'):   # (frontier_sp 2026-10-20) Gen 3 lets you ride in the Cycling Road
+        cfg = dict(list(cfg.items())[:2] + [('cycling', True)] + list(cfg.items())[2:])   # gates (pokeruby
+        # Overworld_IsBikingAllowed): the gatesman sends a walker back, so the gate must let you get on the Bike there
     json.dump(cfg, open(os.path.join(ROOT, 'data', 'interiors', f'{zone}.json'), 'w'), indent=1, ensure_ascii=False)
     return s_path, len(npcs), len(signs)
 

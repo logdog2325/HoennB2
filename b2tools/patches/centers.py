@@ -21,6 +21,12 @@ ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..')
 def records(data):
     return [list(struct.unpack_from('<HHHBBHHHHHH', data, TABLE + SIZE * i)) for i in range(COUNT)]
 
+# (frontier_center 2026-10-20) Emerald-only Pokemon Center 1F rooms (data/emerald/hoenn_interiors.json) -> the outdoor map
+# their door is on. The Battle Frontier's Center has Black 2's free Center zone 460 and so its record (76, tile (7, 12)):
+# pokeemerald's OnTransition setrespawn HEAL_LOCATION_BATTLE_FRONTIER_OUTSIDE_EAST; Teleport / the Escape Rope after a
+# blackout there go to the island (zone 17)
+EMERALD_CENTERS = {'BattleFrontier_PokemonCenter_1F': 'BattleFrontier_OutsideEast'}
+
 def center_towns():
     """{1F zone: (town map, town zone)} for every Hoenn Pokémon Center 1F."""
     rooms = json.load(open(os.path.join(ROOT, 'data', 'hoenn_interiors.json')))['rooms']
@@ -30,6 +36,14 @@ def center_towns():
         if r['status'] == 'center' and name.endswith('_PokemonCenter_1F'):
             town = name.split('_PokemonCenter')[0]
             out[r['zone']] = (town, zones[town]['zone'])
+    sys.path.insert(0, os.path.join(ROOT, 'b2tools'))
+    import version
+    if version.is_emerald():
+        em = json.load(open(os.path.join(ROOT, 'data', 'emerald', 'hoenn_interiors.json')))['rooms']
+        ezones = version.load_json(os.path.join(ROOT, 'data', 'hoenn_zones.json'))['maps']
+        for name, town in EMERALD_CENTERS.items():
+            r = em.get(name, {})
+            if r.get('status') == 'center' and 'zone' in r: out[r['zone']] = (town, ezones[town]['zone'])
     return out
 
 def door_tile(town, town_zone, center_zone):

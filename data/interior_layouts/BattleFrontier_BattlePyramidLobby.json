@@ -1,5 +1,5 @@
 {
- "_doc": "Battle Pyramid lobby (Emerald 15x18). The hall (rows 13-17) with the exit mat (7,17); the attendant's corridor up the middle (7, 8-12; Emerald's staircase) to the upper hall (rows 5-7) and the floor panel (7,4) that takes the player into the Pyramid (Emerald's blue panel: the floor's exit model is the same blue). Emerald's statues and torches on the upper hall's wall tiles stand as blocks; the results PC (5,12) and the rules board (1,12) on the hall's back wall.",
+ "_doc": "Battle Pyramid lobby (Emerald 15x18). The hall (rows 13-17) with the exit mat (7,17); the attendant's corridor up the middle (7, 8-12; Emerald's staircase) to the upper hall (rows 5-7) and the floor panel (7,4) that takes the player into the Pyramid (Emerald's blue panel: the floor's exit model is the same blue). Emerald's statues and torches on the upper hall's wall tiles stand as blocks; the results PC (5,12) and the rules board (1,12) on the hall's back wall. (em_rooms 2026-10-19: no potted plants at (0,13) / (14,13): Emerald has none there, the hint giver stood in one and the player walked through the other.)",
  "map": "BattleFrontier_BattlePyramidLobby",
  "decomp": "pokeemerald",
  "style": "pyr_room",
@@ -49,6 +49,86 @@
   [
    12,
    5
+  ],
+  [
+   3,
+   3
+  ],
+  [
+   9,
+   3
+  ],
+  [
+   3,
+   4
+  ],
+  [
+   9,
+   4
+  ],
+  [
+   0,
+   8
+  ],
+  [
+   1,
+   8
+  ],
+  [
+   2,
+   8
+  ],
+  [
+   12,
+   8
+  ],
+  [
+   13,
+   8
+  ],
+  [
+   14,
+   8
+  ],
+  [
+   0,
+   9
+  ],
+  [
+   1,
+   9
+  ],
+  [
+   2,
+   9
+  ],
+  [
+   12,
+   9
+  ],
+  [
+   13,
+   9
+  ],
+  [
+   14,
+   9
+  ],
+  [
+   0,
+   10
+  ],
+  [
+   1,
+   10
+  ],
+  [
+   2,
+   10
+  ],
+  [
+   2,
+   11
   ]
  ],
  "furniture": [
@@ -70,20 +150,6 @@
    "wall": "N",
    "gap": 2,
    "_what": "rules board (Emerald sign (1,12))"
-  },
-  {
-   "m": "plant01",
-   "tile": [
-    0,
-    13
-   ]
-  },
-  {
-   "m": "plant01",
-   "tile": [
-    14,
-    13
-   ]
   }
  ],
  "floor_tex": [
@@ -99,5 +165,20 @@
    "stretch": true
   }
  ],
- "mats": []
+ "mats": [
+  {
+   "tex": "chip_mat",
+   "src": 291,
+   "rect": [
+    7,
+    17,
+    7,
+    17
+   ],
+   "border": 0.25,
+   "border_units": 4,
+   "_what": "exit mat (Emerald's mat and warp (7,17); em_rooms 2026-10-19)"
+  }
+ ],
+ "_block": "em_rooms 2026-10-19: (2,5) (4,5) (10,5) (12,5) the torches; the rest are Emerald's walkable tiles the room does not draw (the statue niches (3..4) / (9..4) and the upper hall's side bays (0..2, 8..11), (12..14, 8..9)): only the attendant's scripted walk up the middle reaches the upper hall, so they are solid (no walk into the void)"
 }

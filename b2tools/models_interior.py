@@ -48,6 +48,8 @@ Room recipe (all positions in Sapphire map tiles; x east, z south; tile (x, z) c
                gets only a black lip (walkways floating in the dark, as Black 2's League corridors); true = no walls at all
   ledges       true: Sapphire's jump tiles (MB_JUMP_*) become Black 2 ledge cells (jumped over in their direction)
   encounters   true: walkable tiles with Sapphire's wild-encounter behaviours get Black 2's encounter flag (0x84)
+  ice          [[x, z], ...]: walkable tiles that slide you on (Black 2's ice cells, class 0x18 flags 0x80)
+  open_no_strip  true: no back-wall floor strip from a floor tile into an "open" tile north of it (walkways over a void)
   raised / ramps / water   walkable tiles on a higher level, 45-degree sloped floors between levels, Black 2 surf
                water (ship_hideouts agent; the keys are described above Room.water_tiles)
   decals also take "uv" [u0, v0, u1, v1] (a part of an atlas texture) and "face_z" (a tile line: a block's face)
@@ -557,12 +559,23 @@ class Room:
         kind = np.zeros((self.NZ, self.NX), np.uint8)    # [z, x]; one chunk = 512 x 512 (more for big rooms)
         shade = np.ones((self.NZ, self.NX), np.float32)
         ft = self.floor_tiles
+        # (th_glitch 2026-10-19) "open_no_strip": true (with "open" tile rects): a floor tile whose north neighbour is an
+        # open tile gets no back strip (the 12 units of floor in front of a back wall, there drawn into the void tile:
+        # Trick House puzzle 5's walkways looked most of a tile deeper than Gen 3's; walk_diff OPEN)
+        open_n = set()
+        if self.r.get('open_no_strip') and isinstance(self.r.get('open'), list):
+            for t in self.r['open']:
+                if len(t) == 4 and all(isinstance(v, int) for v in t):
+                    open_n |= {(xx, zz) for xx in range(t[0], t[2] + 1) for zz in range(t[1], t[3] + 1)}
+            open_n -= set(ft)
         for (x, z) in sorted(ft):
             g = (x, z) in self.genkan
             X0, X1, Z0, Z1 = self.lx(x), self.lx(x + 1), self.lz(z), self.lz(z + 1)
             kind[Z0:Z1, X0:X1] = 2 if g else 1
             if g: continue
             n, w, e = (x, z - 1) not in ft, (x - 1, z) not in ft, (x + 1, z) not in ft
+            if n and (x, z - 1) in open_n:           # "open_no_strip": no wall there, so no strip under one: the
+                n = False                            # walkway ends at its tile's edge over the void
             if n:
                 kind[Z0 - BACK:Z0, X0:X1] = 1; shade[Z0 - BACK:Z0 + 4, X0:X1] = SHADE_FLOOR_BACK
             if w:
@@ -1347,6 +1360,9 @@ class Room:
         # only matters for double-battle grass), as models_cave.py's cave floors
         enc = {(self.ox + x, self.oz + z) for z in range(self.H) for x in range(self.W)
                if sm['beh'][z][x] in (0x02, 0x03, 0x08, 0x0B, 0x24)} if self.r.get('encounters') else set()
+        # "ice": [[x, z], ...] (trick_house: Trick House puzzle 8's slippery floor, MB_TRICK_HOUSE_PUZZLE_8_FLOOR, slips
+        # as MB_ICE): Black 2's sliding ice cells, class 0x18 flags 0x80 (models_cave_misc.py's ice, Icirrus City's)
+        ice = {(self.ox + x, self.oz + z) for x, z in self.r.get('ice', [])}
         # (walkability 2026-10-11) Sapphire's one-way walls (MB_IMPASSABLE_* 0x30-0x37: the Contest Halls' seat rows) and
         # its elevation rule (two walkable tiles of different elevations, neither 0/15: Mossdeep Gym's and the hideouts'
         # raised floors) keep tiles apart that Black 2 let you walk between (b2tools/walk_diff.py THROUGH, 93 moves):
@@ -1362,7 +1378,7 @@ class Room:
                         per += (struct.pack('<HHHH', *extra[(x, z)]) if (x, z) in extra else
                                 struct.pack('<HHHH', *planes[(x, z)], 1, 0x81) if (x, z) in planes else
                                 struct.pack('<HHHH', 0, 3, ledge[(x, z)], 1) if (x, z) in ledge else
-                                struct.pack('<HHHH', 0, 3, self.side_walls.get((x, z), 0), 0x84 if (x, z) in enc else 0x80) if (x, z) in walk else
+                                struct.pack('<HHHH', 0, 3, 0x18 if (x, z) in ice else self.side_walls.get((x, z), 0), 0x84 if (x, z) in enc else 0x80) if (x, z) in walk else
                                 struct.pack('<HHHH', 0, heights().flat_index(solid_h[(x, z)]), 1, 0x81) if (x, z) in solid_h else
                                 struct.pack('<HHHH', 0, 3, 1, 0x81))
                 self.chunk_collision.append(bytes(per))
@@ -1516,9 +1532,11 @@ def convert_chunks(out, files):
     if r.returncode: raise SystemExit(f'{out}: ToNsbmd failed: {r.stderr[-500:]}')
 
 # ------------------------------------------------------------------------------------------------ output
-def gen3_tile_image(name, x, z):
+def gen3_tile_image(name, x, z, mt=None):
     """The map's own drawn Gen 3 metatile at (x, z), 2x nearest (32x32), as a room texture: Sapphire's art resized,
-    nothing drawn (user 2026-10-14: Mauville Gym's floor switches were invisible: b2tools/gyms_league_rooms.py)."""
+    nothing drawn (user 2026-10-14: Mauville Gym's floor switches were invisible: b2tools/gyms_league_rooms.py).
+    mt: another metatile of the map's tilesets instead (floor_tex "gen3_mt": the state a script's setmetatile shows,
+    e.g. the Trick House's covered holes; trick_house 2026-10-19)."""
     import numpy as np
     from PIL import Image
     from gba import Repo, MetatileRenderer
@@ -1526,7 +1544,7 @@ def gen3_tile_image(name, x, z):
     repo = Repo(os.path.join(ROOT, 'external', dec))
     g, l = repo.layout_grid(repo.map_json(folder)['layout'])
     mr = MetatileRenderer(repo, l['primary_tileset'], l['secondary_tileset'])
-    im = Image.fromarray(np.asarray(mr.render(int(g[z, x]) & 0x3FF), dtype=np.uint8), 'RGBA')
+    im = Image.fromarray(np.asarray(mr.render(int(g[z, x]) & 0x3FF if mt is None else mt), dtype=np.uint8), 'RGBA')
     return im.convert('RGB').resize((32, 32), Image.NEAREST)
 
 def texture_sources(room):
@@ -1536,10 +1554,12 @@ def texture_sources(room):
     for mt in room.r.get('mats', []): src[mt['tex']] = mt['src']
     for d in room.r.get('decals', []): src[d['tex']] = d['src']
     for ft in room.r.get('floor_tex', []):             # "gen3": [x, z]: the map's own drawn Gen 3 metatile there
-        src[ft['tex']] = ('gen3', room.r['map'], *ft['gen3']) if 'gen3' in ft else ft['src']
+        src[ft['tex']] = (('gen3', room.r['map'], *ft['gen3']) + ((ft['gen3_mt'],) if 'gen3_mt' in ft else ())) \
+            if 'gen3' in ft else ft['src']
     for b in room.r.get('blocks', []):
         b = room.block_style(b)
-        for k in ('top', 'side'): src[b[k]['tex']] = b[k]['src']
+        for k in ('top', 'side'):        # (src ["gen3", map, x, z(, metatile)]: Gen 3 art, as floor_tex; trick_house)
+            src[b[k]['tex']] = tuple(b[k]['src']) if isinstance(b[k]['src'], list) else b[k]['src']
     for rp in room.r.get('ramps', []):                   # ship_hideouts' keys
         for k in ('tex', 'side'):
             if rp.get(k): src[rp[k]['tex']] = rp[k]['src']

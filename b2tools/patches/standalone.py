@@ -128,7 +128,8 @@ def seasonal_areas(files, world, raw):
     """Point 4 of the module doc. raw = a/0/1/3 (edited in place). The groups: the first free ones (no zone header
     names any of their four ids, no used area's record names their texture sets), 6 and 10 in all three versions."""
     import nsbtx
-    from hoenn_textures import season_source
+    from hoenn_textures import season_source, clear_source
+    from terrain import seasons as SEASONS
     areas = sorted({g['area'] for g in world['standalone']})
     headers, hentries = zoneheaders.load(files)
     n = len(raw) // 10
@@ -161,6 +162,11 @@ def seasonal_areas(files, world, raw):
             alt = int(ts) if season == 1 else season_source(vraw, vload, int(ts), name, pal, season)
             adds.append((vload(alt), name, pal))                       # (summer: map_textures' own source)
         sets[first + season] = nsbtx.merge(sets[base], adds)
+        # (seasons2) no falling leaves here (terrain/seasons.py AREA2_ONLY: the art is 4 KB of texture VRAM, and
+        # Emerald's Battle Frontier outside, on these sets, is within 5 KB of the 384 KB): the clear stand-in instead
+        art = [n for n, (shown, _, _) in SEASONS.SEASONAL.items() if shown == season and n in SEASONS.AREA2_ONLY]
+        if art:
+            sets[first + season] = nsbtx.merge(sets[first + season], [(clear_source(n), n, n + '_pl') for n in art], drop=set(art))
         tex_of.append(first + season); sizes.append(len(sets[first + season]))
     if extra:
         assert sets[first + 1] == sets[areas[0]], 'the summer set differs from map_textures\' (it must stay the same)'

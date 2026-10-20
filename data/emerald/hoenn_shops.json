@@ -1,5 +1,5 @@
 {
- "_doc": "Emerald overlay of data/hoenn_shops.json (version.load_json deep merge), written by b2tools/shops_data.py with HOENN_VERSION=emerald: the shop ids whose pokeemerald list differs from Sapphire's (label = Sapphire's, the same mart; emerald_label = pokeemerald's). later: pokeemerald marts on maps this build does not have.",
+ "_doc": "Emerald overlay of data/hoenn_shops.json (version.load_json deep merge), written by b2tools/shops_data.py with HOENN_VERSION=emerald: the shop ids whose pokeemerald list differs from Sapphire's (label = Sapphire's, the same mart; emerald_label = pokeemerald's). extra: Emerald-only marts with their own shop ids (EXTRA; b2tools/patches/shops.py). later: pokeemerald marts on maps this build does not have.",
  "shops": {
   "19": {
    "map": "SlateportCity",
@@ -24,8 +24,58 @@
    ]
   }
  },
+ "extra": {
+  "26": {
+   "emerald_map": "BattleFrontier_Mart",
+   "emerald_label": "BattleFrontier_Mart_Pokemart",
+   "emerald": [
+    "ITEM_ULTRA_BALL",
+    "ITEM_HYPER_POTION",
+    "ITEM_MAX_POTION",
+    "ITEM_FULL_RESTORE",
+    "ITEM_FULL_HEAL",
+    "ITEM_REVIVE",
+    "ITEM_MAX_REPEL",
+    "ITEM_PROTEIN",
+    "ITEM_CALCIUM",
+    "ITEM_IRON",
+    "ITEM_ZINC",
+    "ITEM_CARBOS",
+    "ITEM_HP_UP"
+   ],
+   "items": [
+    "ITEM_ULTRA_BALL",
+    "ITEM_HYPER_POTION",
+    "ITEM_MAX_POTION",
+    "ITEM_FULL_RESTORE",
+    "ITEM_FULL_HEAL",
+    "ITEM_REVIVE",
+    "ITEM_MAX_REPEL",
+    "ITEM_PROTEIN",
+    "ITEM_CALCIUM",
+    "ITEM_IRON",
+    "ITEM_ZINC",
+    "ITEM_CARBOS",
+    "ITEM_HP_UP"
+   ],
+   "ids": [
+    2,
+    25,
+    24,
+    23,
+    27,
+    28,
+    77,
+    46,
+    49,
+    47,
+    52,
+    48,
+    45
+   ]
+  }
+ },
  "later": [
-  "BattleFrontier_Mart_Pokemart",
   "TrainerHill_Entrance_Pokemart_Basic",
   "TrainerHill_Entrance_Pokemart_Expanded"
  ],

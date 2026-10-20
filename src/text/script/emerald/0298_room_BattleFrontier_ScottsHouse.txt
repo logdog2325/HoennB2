@@ -1,0 +1,17 @@
+Scott: Well, hello and welcome!\nHeheh… Sorry about the cramped space.{be01}\nAnyway, {0100:0}, let me formally\nwelcome you to the Battle Frontier.{be01}\nThis is my dream come true.\nIt took me years and years, but I’ve{be00}\nfinally given shape to my dream.
+On reflection, it was a terribly long\njourney…{be01}\nI left home alone on a quest to find\nstrong Trainers.{be01}\nNo one can imagine how much effort\nor time it took to make this real.
+But that’s all in the past.\nNo point dwelling on that!{be01}\nAll I want for you is to enjoy battling\nto your heart’s content here.{be01}\n{0100:0}, I want you to have this\nas a memento for all the time our{be00}\npaths crossed on our journeys.
+{0100:0} obtained\n{0100:1} Battle Point(s).
+Scott: You can check your Battle\nPoints on your Frontier Pass.{be01}\nThe more success you have here at\nthe Battle Frontier, the more Battle{be00}\nPoints you will collect.{be01}\nUse your Battle Points the way you\nsee fit, like trading them for items.
+I’m expecting great things from you!
+Scott: Every Trainer is an individual.\nThey all lead lives of their own.{be01}\nBut when they’re in a battle,\nit doesn’t matter who they are.{be01}\nThey’re all the same!{be01}\nI love the purity of battle,\nwhere everyone is equal.{be01}\nThat’s why I go everywhere seeking\nTrainers who are serious about{be00}\nbattling, and invite them here.
+Scott: Have you met any of\nthe Frontier Brains?{be01}\nBetter yet, have you obtained any\nsymbols from them?{be01}\nI handpicked the Frontier Brains\nas the toughest Trainers anywhere.{be01}\nBut I’m sure that seeing how tough\nyou are will startle even them!
+Scott: You don’t just train for battle,\nright?{be01}\nI think I remember you working on\na Pokédex as well.{be01}\nWell, guess what?{be01}\nYou may run into wild Pokémon in\nthe Battle Frontier somewhere…{be00}\nFufufu!
+Scott: Are you enjoying things in\nthe Battle Frontier?{be01}\n…Wait a second…\nOh!{be01}\nYour Frontier Pass!\nYou’ve collected the full set{be00}\nof silver symbols!{be01}\nThat’s more than impressive!\nYou are tough, just as I suspected!{be01}\nNormally, I wouldn’t do something\nlike this, but this is a special time!{be01}\nI want you to have this.\nI’m sure you can put it to proper use.
+Scott: I hope you’re enjoying\neverything in the Battle Frontier.{be01}\n…Wait a second…\nOh, my disbelieving eyes!{be01}\nYour Frontier Pass!\nYou’ve gathered up the full set{be00}\nof gold symbols!{be01}\nThat’s more than stupendous!\nYou’re incredible, just as I suspected!{be01}\n… … … … … …{be01}\n{0100:0}, you’ve got to accept this!{be01}\nI think you will be able to\nappreciate the value of my gift!
+I must say I have the gift of knowing\na good Trainer when I see one.{be01}\nI’m so glad I had the foresight to\nbring you here!
+Your Berry Pocket seems to\nbe stuffed.
+Scott: Oh, I heard about you!\nHow you ruled the Battle Tower!{be00}\nYou beat over 50 Trainers in a row?{be01}\nThat’s fantastic!\nI want you to have this!
+Scott: Oh, my! I heard about you!\nHow you overwhelmed the Battle Tower!{be00}\nYou beat over 100 Trainers in a row?{be01}\nThat’s ridiculously spectacular!\nYou’ve got to have this!
+I’ll be expecting to hear even greater\nthings about you now!
+Oops, well, if you have too much\nstuff, come back for this later.

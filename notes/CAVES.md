@@ -416,3 +416,23 @@ walk_diff's 84 open cave tiles (HEAD 9b691e0), each looked at (renders + DeSmuME
 - After: walk_diff cave OPEN 84 -> 0 (intended 42 -> 89: the 38 above, 13 tiles the new rock shape turns into the same
   two intended kinds - 8 of Sapphire's own invisible walls, 5 rock tops). caves_check t 42 -> 42, h 13 -> 14: one new
   6 px hole at Victory Road B2F (41, 24) in one of the nine views (yaw 20); left, too small to see.
+
+## The Bike per zone (frontier_sp, 2026-10-20) [code][test]
+Discord report: "There's a time and place for everything" when using the Bike in Sky Pillar. A room or cave takes the
+flags of the Black 2 zone header it copies (gen_caves.py's template zone, a room's parent template 390), and bit 10
+(cycling, ZoneHeader `cycling`; ov036 fieldmap.c also takes you off the bike on entering a zone without it) was off in
+Sky Pillar 1F-5F (Dragonspiral's) in all three versions, so the cracked floors of 2F and 4F (Mach Bike in Gen 3) could
+not be crossed and Rayquaza (S/R post-game, Emerald after the story) could not be reached. Gen 3's rule: pokeruby
+Overworld_IsBikingAllowed (no Bike in INDOOR / SECRET_BASE / UNDERWATER maps, Seafloor Cavern Room 9, Cave of Origin
+B4F; always in the Route 110 Cycling Road gates), pokeemerald map.json allow_cycling.
+- Fix: a room/cave zone json key `"cycling": true|false` (patches/interiors.py sets bit 10 after the template's flags;
+  gen_caves.py and shops_rooms.py keep it when they rewrite the jsons). Set on Sky Pillar 1F-5F (164-168, all versions)
+  and the Cycling Road gates 510/511 (all versions: the gate took the player off the bike and the gatesman sends a walker
+  back, so Cycling Road could not be entered; tested both ways in screenshots/frontier_sp/cr_*).
+- The cracked floors (step triggers, PlayerGetExState 1 = riding: no fall) work as Gen 3 at the Mach Bike's top speed:
+  Black 2's bike has one speed, so any riding crosses; walking onto a crack drops you to the same tile below. Gen 3 also
+  turns a crossed crack into a hole for the rest of the visit: not ported (nothing depends on it).
+- Sweep: work/agents/frontier_sp/tools/cycling_sweep.py ROM (HOENN_VERSION=...) compares every zone with its Gen 3 maps.
+  Left as they are (no player needs the Bike there): Gen 3 allows, we forbid - Abandoned Ship (11 zones), New Mauville
+  (2), Emerald's AbandonedShip_Underwater1/2; we allow, Gen 3 forbids - Cave of Origin B4F, Seafloor Cavern Room 9, the
+  underwater maps (S/R), Black 2's link rooms, Emerald's Sky Pillar top, Birth Island, Navel Rock, Terra / Marine Cave.

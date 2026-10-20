@@ -81,6 +81,11 @@ Story_Init:                             // LilycoveCity_OnTransition (SetupEvilT
     h_call_if_set FLAG_SYS_WEATHER_CTRL, Common_SetLegendaryWeather     // chapter Ch10's (Kyogre's rain)
 #endif
     h_setup_rival_gfx
+#ifdef HOENN_EMERALD                                    // Emerald: the Hall of Fame hides the rival here for good (pokeemerald
+    h_goto_if_unset FLAG_SYS_GAME_CLEAR, L_LC_EmRivalDone   // hall_of_fame.inc setflag FLAG_HIDE_LILYCOVE_CITY_RIVAL; nothing
+    h_setflag FLAG_HIDE_RIVAL_LILYCOVE_MART             // clears it). Also for saves cleared before littleroot2 (2026-10-19),
+L_LC_EmRivalDone:                                       // whose Hall of Fame set an unused flag instead
+#endif
 #ifdef HOENN_TEST_CH8A
     VMCall Test_Ch8aStart
 #endif

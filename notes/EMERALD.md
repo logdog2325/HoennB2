@@ -680,7 +680,7 @@ Gyms); `python3 emerald_rooms.py` rewrites every file below, `--check` only says
 | Mauville Gym | Emerald's beams from Sapphire's Special2/3 logic on Emerald's map (normal / alt / off as alt rooms), **4 switches** (the 4th `MG_Switch4Em` at (8,9)); Angelo new |
 | Lavaridge Gym 1F/B1F | Emerald's 17x19 floors; 24 holes drop to B1F, vents blow back up (step triggers `EL_Hole`/`EL_Vent`, Emerald's warp order in the overlays 145/148); Keegan moved to B1F; Jace/Jeff/Eli new |
 | Petalburg Gym | Emerald's room; Norman one row up on the mat |
-| Fortree Gym | Emerald's room (no rotating gates: none are built in any version); Humberto/Darius new |
+| Fortree Gym | Emerald's room with pokeemerald's 8 rotating gates (fortree_gates 2026-10-20, b2tools/patches/rotating_gates.c); Humberto/Darius new |
 | Mossdeep Gym | Emerald's 26x36 floating rooms, **the rotating-tile puzzle** (below); 6 new trainers; 4 Sapphire signs off; statues = rock objects (Black 2 has no statue person) |
 | Sootopolis Gym 1F/B1F | Emerald's thin ice (5 new triggers, 7 Sapphire ones off; 3rd ramp at 67 steps, Sapphire 69), wider B1F (origin (1,-4)), fountains; Daphne/Annika new; **Wallace still stands where Emerald has Juan (story)** |
 | Birch's Lab | variant + table layout (alt room, event 4); Johto starters switched on (`EMJ_JOHTO_ON 1`, `data/story/emerald/e_ch11_johto.json`) |
@@ -702,7 +702,7 @@ the objects): positions follow from the counts, nothing is read at run time. Sol
 ### Not built (and why)
 - **Marts**: Emerald's only change is the Mystery Gift questionnaire sheet (Black 2 has no such feature). **May's 1F,
   Brendan's 2F**: nothing visible changes in Black 2's art. **Lilycove unused mart**: unreachable in both games.
-- **Trick House puzzles 2-8**, Fortree's rotating gates (no version has them), the Battle Tower lobby's other 3
+- (Trick House puzzles 2-8 and Fortree's rotating gates: built 2026-10-19/20.) The Battle Tower lobby's other 3
   receptionists, Emerald's link attendants / record boards / Mystery Gift man / Devon display signs (story or Phase 4).
 
 ### For the story agents (Emerald positions, map tiles)

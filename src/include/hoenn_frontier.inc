@@ -338,6 +338,36 @@
     VMJump \enter
     .endm
 
+// The Frontier Gambler's bet (frontier_lounges, 2026-10-20; BattleFrontier_Lounge3): pokeemerald FrontierGamblerSetWonOrLost,
+// which GetChallengeStatus calls as a lobby sees a challenge end. A bet placed (VAR_FRONTIER_GAMBLER_STATE 1) on this
+// challenge (VAR_FRONTIER_GAMBLER_CODE = FR_FACILITY | FR_BATTLE_MODE << 3) becomes won (2) or lost (3: lost, or quit
+// without saving). fr_lobby_returned does it; the Battle Tower lobby (its own flow) calls it itself. Uses FR_T2, FR_T3.
+    .macro fr_gambler_settle won
+    WorkCmpConst VAR_FRONTIER_GAMBLER_STATE, 1
+    VMJumpIf CMP_NE, .Lfrgs\@
+    FrGet FR_BATTLE_MODE, FR_T2
+    WorkMul FR_T2, 8
+    FrGet FR_FACILITY, FR_T3
+    WorkAdd FR_T2, FR_T3
+    WorkCmpWork FR_T2, VAR_FRONTIER_GAMBLER_CODE
+    VMJumpIf CMP_NE, .Lfrgs\@
+    WorkSetConst VAR_FRONTIER_GAMBLER_STATE, 3 - (\won)
+.Lfrgs\@:
+    .endm
+
+// pokeemerald UpdateFrontierManiac / UpdateFrontierGambler (clock.c, each new day: += daysSince, then mod 10 / 12): here
+// + 1 on the first talk to the Maniac (Lounge2) or the Gambler (Lounge3) of a new day (FLAG_DAILY_FRONTIER_LOUNGES:
+// Black 2 clears it at midnight). frontier_lounges, 2026-10-20.
+    .macro fr_lounge_new_day
+    h_goto_if_set FLAG_DAILY_FRONTIER_LOUNGES, .Lfrnd\@
+    h_setflag FLAG_DAILY_FRONTIER_LOUNGES
+    WorkAdd VAR_FRONTIER_MANIAC_FACILITY, 1
+    WorkMod VAR_FRONTIER_MANIAC_FACILITY, 10
+    WorkAdd VAR_FRONTIER_GAMBLER_CHALLENGE, 1
+    WorkMod VAR_FRONTIER_GAMBLER_CHALLENGE, 12
+.Lfrnd\@:
+    .endm
+
 // The lobby's state on arrival (the zone's map-script condition, as Emerald's OnFrame table: run it once per visit,
 // e.g. while a map-local work is 0): FR_STATUS of this facility -> quit without saving (the line, the current
 // streak ends), won (congratulations or the Brain line, "we award you these Battle Points", Emerald's BP, the
@@ -363,6 +393,7 @@
 .Lfrlr_end\@:
     h_release
 .Lfrlr_quit\@:
+    fr_gambler_settle 0                 // (Emerald's GetChallengeStatus: CHALLENGE_STATUS_SAVING = lost)
     .ifnb \onquit
     VMCall \onquit
     .endif
@@ -372,6 +403,7 @@
     h_closemessage
     h_release
 .Lfrlr_won\@:
+    fr_gambler_settle 1
     .ifnb \onwon
     VMCall \onwon
     .endif
@@ -402,6 +434,7 @@
     fr_save_quiet
     VMJump .Lfrlr_bye\@
 .Lfrlr_lost\@:
+    fr_gambler_settle 0
     .ifnb \onlost
     VMCall \onlost
     .endif

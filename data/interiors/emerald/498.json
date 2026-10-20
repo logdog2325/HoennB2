@@ -1,0 +1,49 @@
+{
+ "_doc": "frontier_lounges (2026-10-20): BattleFrontier_ScottsHouse, Emerald only (data/emerald/hoenn_interiors.json claim). Zone 498, room data/interior_layouts/BattleFrontier_ScottsHouse.json (Emerald tile + room origin = zone tile). People = Emerald's objects in Emerald's order (uid = script = Emerald local id). Scripts: src/field_scripts/emerald/0996_room_BattleFrontier_ScottsHouse.s. Written by work/agents/frontier_lounges/tools/lounge_rooms.py (frontier_rooms.zone_json).",
+ "zone": 498,
+ "room": "BattleFrontier_ScottsHouse",
+ "area": 306,
+ "parent": 17,
+ "warps": [
+  {
+   "at": [
+    2,
+    7
+   ],
+   "tile_only": true,
+   "to": [
+    17,
+    21
+   ],
+   "what": "Emerald warp 0 (2,7) -> BATTLE_FRONTIER_OUTSIDE_WEST warp 5 (zone 17 door 21: Black 2's warps of zone 17, then world.json's doors)"
+  },
+  {
+   "at": [
+    3,
+    7
+   ],
+   "tile_only": true,
+   "to": [
+    17,
+    21
+   ],
+   "what": "Emerald warp 1 (3,7) -> BATTLE_FRONTIER_OUTSIDE_WEST warp 5 (zone 17 door 21: Black 2's warps of zone 17, then world.json's doors)"
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 1,
+   "model": 289,
+   "script": 1,
+   "dir": 1,
+   "at": [
+    2,
+    3
+   ],
+   "move": 2,
+   "what": "Emerald object 1 SCOTT (LOOK_AROUND): BattleFrontier_ScottsHouse_EventScript_Scott; model 289 (SCOTT)"
+  }
+ ],
+ "signs": [],
+ "triggers": []
+}

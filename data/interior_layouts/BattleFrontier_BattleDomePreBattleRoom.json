@@ -51,11 +51,12 @@
   },
   {
    "m": "chair01",
+   "rot": 90,
    "tile": [
-    8,
+    3,
     4
    ],
-   "rot": 270
+   "_what": "Emerald's chair (3,4) west of the table (em_rooms 2026-10-19: at (8,4) it stood half under table01, its seat 0.5 units under the table top: flicker in melonDS, rooms_check f)"
   },
   {
    "m": "shelf02",

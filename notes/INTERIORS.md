@@ -183,7 +183,7 @@ tile leads back (used to visit the truck, which no door reaches).
 | Mauville Gym (239) | 304 Nimbasa Gym (22) | white stage, poles, barriers = d6_yuka_biri02 | Wattson, 4 trainers; barrier switches |
 | Lavaridge 1F/B1F (145/148) | 388 Reversal Mtn lava (80) | sand, lava-rock bands, holes, vents, ledges | Flannery, buried trainers; fall/jet animations |
 | Petalburg Gym (452, 1x4) | 286 Aspertia Gym school (4) | 9 wood rooms, mats, door_pwood01 doors | Norman, Wally's tutorial, 7 trainers; doors open per trainer |
-| Fortree Gym (119) | 309 Mistralton Gym (27) | turf, wooden posts, ledges | Winona, 4 trainers; rotating gates |
+| Fortree Gym (119) | 309 Mistralton Gym (27) | turf, wooden posts, ledges | Winona, 4 trainers; rotating gates (b2tools/patches/rotating_gates.c, arms: data/story/fortree_gates.json) |
 | Mossdeep Gym (322) | 335 Caitlin (53) | starry floor, white walls, arrow/stop tiles | Tate & Liza, 6 trainers; spin tiles + switches |
 | Sootopolis 1F/B1F (23/24) | 292 Cold Storage (10) | ice rooms, fountains, ice ramps; snow cave | Wallace, 8 trainers; thin ice; exit (Sootopolis not built) |
 | Corridors 1-5 (35/36/42/43/47) | 334 Marshal (52) | stairs between rails floating in the dark, door_h5_in | - |
@@ -549,3 +549,25 @@ lobby, Elite Four). Proofs: screenshots/sweep_rooms_v164/.
   from the source pack. 14 animations in 8 interior packs were incomplete (machine01/02, the Center ball machine mball01,
   pcmachine01, the electric floor d6_yuka_biri02); a/1/7/5 members 5, 22, 23, 24, 31, 53, 63, 76 grow 312-2,112 B; file
   layout unchanged. Check any ROM: `python3 b2tools/anim_tex_check.py ROM` (Black 2 itself: complete).
+
+## Emerald rooms_check review (em_rooms, 2026-10-19) [code][test]
+- **rooms_check was blind to 32 Emerald-only rooms** (Frontier, Battle Tents, Lounge6): `Built` read their map from pokeruby
+  (the recipe's "decomp" is only registered by `load_recipe`). Fixed (load the recipe first); the real Emerald v1.2 count was
+  232, not 137. (walk_diff has the same blind spot through models_cave.sapphire: 32 "! cannot read" in its Emerald report.)
+- Checker rules: `interior_sweep_check` dest warp 0x100 = Black 2's dynamic warp (Lilycove elevator, Altering Cave door);
+  `rooms_check.zone_cfgs` checks a Trainer Hill mode's trainers in that mode's alt room. `rooms_check.ACCEPT`: the findings
+  left on purpose, each with its reason (`--accepted` lists them).
+- Fixed (Emerald recipes, screenshots/em_rooms/): Battle Factory lobby (the player walked past the rules board into the
+  wall and the void behind it: option C's walk_up; blocked), results terminals over the player's head (Factory 8 units
+  back, Dome on Emerald's back counter row (4,9) (18,9)), Pyramid lobby (two potted plants on Emerald's open floor, the hint
+  giver stood in one; unreachable upper-hall tiles solid), Pyramid top (black slabs between the terraces -> inner_walls
+  stone steps), Dome pre-battle chair half under the table (flicker), exit mats in the Dome/Factory/Pyramid lobbies.
+- Emerald v1.2 + these: rooms_check 0 open, 143 accepted.
+- **Sapphire/Ruby (same review, release_kit/next/sr_rooms.patch after em_rooms.patch):** the v18.x release reports were the
+  KeyError crash (kind d), not empty. 64 open: 60 Center 2F Cable Club door warps "to their own warp 0" (Gen 3's doors
+  behind the desks, used only by link scripts; the desks run Black 2's Union Room / Wi-Fi Club, notes/LINK.md), 3 Aqua
+  Hideout B1F warp pads (the original maze), 1 Battle Tower lobby 11 px sliver. One real bug: Pacifidlog's Center 2F has
+  Sapphire's Double Battle door at (0,1) with open floor south of it, so walking up into that corner warped the player to
+  the escalator top (tested: screenshots/em_rooms/30-31). Fix: centers_rooms.py gives every Cable Club door warp dir 0
+  (CheckWarpDirectionMatch: matches no direction, never fires); interior_sweep_check skips type-2 dir-0 warps (not type 5:
+  warp panels are dir 0 and fire). Release ROMs + those 60 dir bytes: Sapphire 0 open (59 accepted), Ruby 0 (54).

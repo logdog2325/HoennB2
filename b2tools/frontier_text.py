@@ -145,19 +145,13 @@ def tower_lines():
 
 ESC = 'BattleFrontier_ExchangeServiceCorner'
 ESC_TEXT = os.path.join(ROOT, 'src', 'text', 'script', 'emerald', '0648_room_' + ESC + '.txt')   # header text 648 (own 1003)
-ESC_TUTOR_LEFT, ESC_TUTOR_RIGHT = 7, 26          # the tutor blocks (19 lines each) in that file
-
 def esc_lines():
     """the Exchange Service Corner's text (src/field_scripts/emerald/0838_room_BattleFrontier_ExchangeServiceCorner.s):
-    0 the clerks' welcome, 1 their goodbye, 2-6 the people, 7-25 / 26-44 the left / right BP tutor (fr_bp_tutor)"""
-    out = [line(ESC, l) for l in ('WelcomePleaseChoosePrize', 'ThankYouVisitWithPoints', 'WishIHadAllDolls',
-                                  'GetYouAnythingYouWant', 'ItemsWillGetMonTougher', 'GoGetYourOwnDoll',
-                                  'MoreBattlePointsForRecord')]
-    assert len(out) == ESC_TUTOR_LEFT
-    out += tutor_block(0)
-    assert len(out) == ESC_TUTOR_RIGHT
-    out += tutor_block(1)
-    return out
+    0 the clerks' welcome, 1 their goodbye, 2-6 the people. (The two BP tutors' blocks, lines 7-44 until 2026-10-20,
+    moved with the tutors to BattleFrontier_Lounge7: frontier_lounges, work/agents/frontier_lounges/tools/lounge_rooms.py.)"""
+    return [line(ESC, l) for l in ('WelcomePleaseChoosePrize', 'ThankYouVisitWithPoints', 'WishIHadAllDolls',
+                                   'GetYouAnythingYouWant', 'ItemsWillGetMonTougher', 'GoGetYourOwnDoll',
+                                   'MoreBattlePointsForRecord')]
 
 def install():
     import json

@@ -318,8 +318,39 @@ def data_header():
          'static const u8 kRetypeOld[N_RETYPES][2] = {' + ', '.join('{%d, %d}' % ot[s] for s in RETYPES) + '};',
          'static const u8 kNewMoveFallback[N_NEW_MOVES] = {' + ', '.join(str(T[m[4]]) for m in NEW_MOVES) + '};',
          '__attribute__((used)) const u16 kAnimDonor[N_NEW_MOVES] = {' + ', '.join(str(m[5]) for m in NEW_MOVES) + '};',
-         f'#define SHOP_ID {SHOP_ID}', f'#define SHOP_FILE {SHOP_FILE}']
+         f'#define SHOP_ID {SHOP_ID}', f'#define SHOP_FILE {SHOP_FILE}'] + snow_tables()
     return '\n'.join(L) + '\n'
+
+SNOW_WEATHER = 5            # Black 2's snowfall on Route 6/7, Driftveil, Mistralton (white flakes; Hail in battles)
+SNOW_DAYS = {4: (1, 2, 3, 4, 9, 10, 13, 19, 20), 8: (1, 2, 8, 9, 10, 18, 19), 12: (1, 2, 3, 8, 9, 18)}
+                            # Black 2's calendar (a/0/9/6): weather 5 on Route 6 (zone 331), Route 7 (337), Driftveil
+                            # (96) and Mistralton (107) in the three winter months, the same days on all four
+
+def snow_zones():
+    """Hoenn's outdoor zones that get Black 2's winter snowfall (Season_Snow): every zone of the built world
+    (world.json 'zones', the warp-only maps too) whose maps terrain/seasons.py does not exclude (the ash, the volcano,
+    the hot springs, the tropical islands and the sea routes); the desert's and the ash's own zones are not listed."""
+    sys.path.insert(0, os.path.join(HERE, '..'))
+    import version
+    from terrain import seasons
+    w = json.load(open(os.path.join(version.world_dir(), 'world.json')))
+    return sorted(int(z) for z, v in w['zones'].items() if v.get('maps') and not set(v['maps']) & seasons.EXCLUDE)
+
+def snow_tables():
+    sys.path.insert(0, os.path.join(HERE, '..'))
+    import version
+    zs = snow_zones()
+    bits = bytearray(616 // 8)
+    for z in zs:
+        assert z < 8 * len(bits), z
+        bits[z >> 3] |= 1 << (z & 7)
+    days = [sum(1 << (d - 1) for d in SNOW_DAYS[m]) for m in (4, 8, 12)]
+    return [f'/* snowy zones: {zs} */', 'static const u8 kSnowZones[' + str(len(bits)) + '] = {' + ', '.join(map(str, bits)) + '};',
+            'static const u32 kSnowDays[3] = {' + ', '.join(f'{d:#x}u' for d in days) + '};',
+            f'#define SNOW_WEATHER {SNOW_WEATHER}',
+            # (Emerald: emerald_postgame puts its abnormal weather where GetBirthdayZoneWeather was and answers no
+            # birthday weather; Sapphire/Ruby: Black 2's, after the snow)
+            f'#define SNOW_CHAIN {0 if version.is_emerald() else BIRTHDAY_WEATHER | 1:#x}']
 
 def items_header(ov167):
     rows = []
@@ -428,6 +459,9 @@ def season_sites():
     hs = _hoenn_season()
     return [(ARM9 + hs.AT, hs.OLD, hs.NEW, 'Season_FromMonth', 'call'),
             (ARM9 + hs.AT_GET, hs.OLD_GET, hs.NEW_GET, 'Season_Kept', 'jump')]
+
+SNOW_CALL = 0x02032EEA                 # GetWeatherAll's bl GetBirthdayZoneWeather (gsys, gamedata, zone) -> Season_Snow
+BIRTHDAY_WEATHER = 0x02033084          # GetBirthdayZoneWeather (Sapphire/Ruby: Season_Snow chains to it)
 
 def intro_script(ov294):
     """Script 9 (after the name is confirmed): Birch's six questions (Fairy, split, music, sprite style, seasons, the
@@ -561,6 +595,10 @@ def apply_code(code):
             arm9[o:o + 8] = old[:2] + _bl(at + 2, sym[name] & ~1) + bytes.fromhex('c046')
         else:
             arm9[o:o + 8] = _long_jump(at, sym[name] & ~1)
+    # the snowfall (Season_Snow): GetWeatherAll's birthday call (Black 2's; emerald_postgame, listed later, keeps it)
+    o = SNOW_CALL - ARM9
+    assert bytes(arm9[o:o + 4]) == _bl(SNOW_CALL, BIRTHDAY_WEATHER), f'GetWeatherAll birthday call: {bytes(arm9[o:o + 4]).hex()}'
+    arm9[o:o + 4] = _bl(SNOW_CALL, sym['Season_Snow'] & ~1)
     # ov294: intro command 31 and the script
     o = INTRO_COMMANDS - OV294 + 4 * INTRO_CMD['SET_CONFIG_BIT']
     assert struct.unpack_from('<I', ov294, o)[0] == 0x021a2845, 'sCommands[31] is not IntroCmd_SetMsgLanguage'
@@ -569,13 +607,14 @@ def apply_code(code):
     for so, script in parts:
         ov294[so:so + len(script)] = script
     for p, d in ((p9, arm9), (p167, ov167), (p294, ov294), (p036, ov036)): _save(p, d)
-    exports = {k: sym[k] | 1 for k in ('Fairy_IsOn', 'Split_IsClassic')}
+    exports = {k: sym[k] | 1 for k in ('Fairy_IsOn', 'Split_IsClassic', 'Season_Snow')}
     exports.update({'itcm_start': base, 'itcm_end': end, 'selftest': st_addr})
     open(os.path.join(code, 'fairy_symbols.json'), 'w').write(json.dumps(exports, indent=1))
     return (f'fairy: {len(blob)} B of ITCM at {base:#x} (arena from {end:#x}); Fairy_IsOn {sym["Fairy_IsOn"] | 1:#x}, '
             f'Split_IsClassic {sym["Split_IsClassic"] | 1:#x}; {len(SENTINELS)} sentinels, {len(CALLS)} calls, '
             f'intro {"+".join(str(len(x) // 24) for _, x in parts)} entries (Exp. Share question: flag {exp_share_flag()}); seasons: options bit {CFG_SEASONS_BIT} '
-            f'(Season_FromMonth {sym["Season_FromMonth"] | 1:#x}, Season_Kept {sym["Season_Kept"] | 1:#x})' + (f'; SELFTEST buffer {st_addr:#x}' if selftest else ''))
+            f'(Season_FromMonth {sym["Season_FromMonth"] | 1:#x}, Season_Kept {sym["Season_Kept"] | 1:#x}, '
+            f'Season_Snow {sym["Season_Snow"] | 1:#x}: {len(snow_zones())} snowy zones)' + (f'; SELFTEST buffer {st_addr:#x}' if selftest else ''))
 
 if __name__ == '__main__':      # python3 fairy.py: compile and link at a dummy base, show the symbols
     with tempfile.TemporaryDirectory() as tmp:

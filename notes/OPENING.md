@@ -98,7 +98,16 @@ e-mail, Mom's Running Shoes outside May's door and the manual on May's table: al
 Bedroom PC (user, 2026-10-19): before the first Pokémon (flag 2401) the player's own PC is Gen 3's Player's PC with its one
 Potion only (scenes/players_house_2f.inc L_PC_NoPokemon: Withdraw Item gives it once, FLAG_RECEIVED_PC_POTION, then
 "There are no items."; Turn Off / B), never Black 2's boxes; with a Pokémon, Black 2's PC (global 10090) as before.
-Fly to Littleroot still lands between the houses for both (Gen 3: in front of your own house): needs a code change.
+Fly to Littleroot lands in front of your own house since littleroot2 (2026-10-19; notes/TOWN_MAP.md "Fly to Littleroot by sex").
+A blackout or Teleport with the home return point (before the first Center, after the Hall of Fame) wakes you in your own
+bedroom at Gen 3's heal spot (5,3), facing down (littleroot2; notes/TOWN_MAP.md "Teleport home"); until then the 1F (6,8)
+and, for Teleport, Littleroot between the houses. Emerald: the Hall of Fame now hides the Lilycove rival (flag 675, the
+object's; it set the unused 445 before) and Lilycove's zone init hides it for saves already cleared.
+The rival in their room (littleroot2): Sapphire/Ruby at the notebook only until the Route 103 battle
+(FLAG_DEFEATED_RIVAL_ROUTE103), afterwards at the data's tile = the PC (home again after Lilycove, and after the Hall of Fame);
+hidden from the first meeting until Lilycove. Emerald: no notebook rival; at the PC after the meeting, out from the Route 101
+rescue, home again after the Lilycove battle (the zone init clears FLAG_HIDE_*_RIVAL_BEDROOM when FLAG_MET_RIVAL_LILYCOVE is
+set and the game is not cleared: the shared Lilycove scene clears only Sapphire's flag), hidden after the Hall of Fame.
 Open: stand-in sounds; Black 2 fast-walk codes (the twin walks at normal
 speed); a hidden truck can reappear if its chunk reloads without a field load (walking far away and back); the
 twin should wander again after Birch's rescue; Littleroot's Mom, Norman and the S.S. Ticket scenes come later.

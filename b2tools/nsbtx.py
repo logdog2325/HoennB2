@@ -219,14 +219,28 @@ def image_source(name, img):
     return dict(texdata=raw, c_data=b'', c_idx=b'', pdata=pdata, pflag=0,
                 texs=[(name, (params, 0x80000000 | w | (h << 11)))], pals=[(name + '_pl', (0, 0))])
 
-def merge(base, additions):
+def merge(base, additions, drop=()):
     """base: BTX0 bytes. additions: [(src BTX0 bytes, texture name, palette name or None)], optionally
     (..., new texture name, new palette name): the copy goes in under those names (a texture and its palette are
     found by name only, so another set's same-named texture can stand beside the base's own: data/hoenn_ash.json).
-    Returns BTX0 bytes."""
+    drop: base textures left out first (their texels too; every palette stays), e.g. to put another texture in under
+    the same name (seasons2: the warp-only maps' clear falling leaves). Returns BTX0 bytes."""
     B = _parse(base)
     texdata, c_data, c_idx, pdata = bytearray(B['texdata']), bytearray(B['c_data']), bytearray(B['c_idx']), bytearray(B['pdata'])
     texs = [(n, struct.pack('<II', *v)) for n, v in B['texs']]
+    if drop:                                     # (the kept textures' texels again, in their order, packed)
+        texdata, c_data, c_idx, texs, moved = bytearray(), bytearray(), bytearray(), [], {}
+        for n, (params, extra) in B['texs']:
+            if n in drop: continue
+            key = (params & 0xFFFF, (params >> 26) & 7 == 5)
+            if key not in moved:
+                raw, idx = _tex_bytes(B, params)
+                if key[1]:
+                    moved[key] = len(c_data); c_data += raw; c_idx += idx
+                else:
+                    while len(texdata) % 8: texdata.append(0)
+                    moved[key] = len(texdata); texdata += raw
+            texs.append((n, struct.pack('<II', (params & ~0xFFFF) | (moved[key] >> 3), extra)))
     pals = [(n, struct.pack('<HH', *v)) for n, v in B['pals']]
     have_t, have_p = {n for n, _ in texs}, {n for n, _ in pals}
     pflag = B['pflag']

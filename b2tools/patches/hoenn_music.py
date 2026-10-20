@@ -111,6 +111,13 @@ def zone_songs(headers, mp):
     for m, v in rooms.items():
         if 'zone' not in v or not version.room_in_version(m): continue
         out[v['zone']] = map_song(m, mp); src[v['zone']] = m
+    # (th_glitch 2026-10-19) a room's zone copy with its other room state (data/interiors/<zone>.json "variants" with
+    # "room": Trick House puzzle 3's zone 451) plays the room's song: it got its parent's (Route 110) after every button
+    for f in sorted(glob.glob(os.path.join(ROOT, 'data', 'interiors', '*.json'))):
+        c = json.load(open(f))
+        for var in c.get('variants', []):
+            if 'room' in var and c.get('zone') in out:
+                out[var['zone']] = out[c['zone']]; src[var['zone']] = f'{src[c["zone"]]} (zone copy)'
     if version.is_emerald():       # (emerald_caves 2026-10-12) Emerald's own rooms (data/emerald/hoenn_interiors.json, a
         em = os.path.join(ROOT, 'data', 'emerald', 'hoenn_interiors.json')    # zone claimed): their pokeemerald map's song
         for m, v in (json.load(open(em))['rooms'].items() if os.path.exists(em) else []):

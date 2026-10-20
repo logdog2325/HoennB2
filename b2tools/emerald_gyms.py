@@ -298,7 +298,8 @@ def fortree(ER):
              furniture=statues(n))
     gym_variant(ER, g, "Emerald's Fortree Gym (Emerald's layout, same size): the grass paths between wooden posts, the "
                 "ledges of the right lane (rows 6/12/17, jumped down), Winona's nook top right, the statues by the exit "
-                "(15-16, 24). The rotating gates are not built (as in Sapphire's room).", r)
+                "(15-16, 24). The rotating gates: pokeemerald's 8 (b2tools/patches/rotating_gates.c, arm actors in "
+                "data/story/emerald/fortree_gates.json).", r)
     ER.overlay(119, g, "the exits (15,24) (16,24).", warps={0: (15, 24), 1: (16, 24)})
     REPORT.extend(place_people(ER, g))
 

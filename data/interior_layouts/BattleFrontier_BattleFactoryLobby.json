@@ -141,7 +141,8 @@
     7
    ],
    "y": 14,
-   "_what": "results terminal (Emerald sign (2,7))"
+   "_what": "results terminal (Emerald sign (2,7)) (em_rooms 2026-10-19: 8 units back on the two-row counter: its dark base crossed the head of a player at the counter)",
+   "dz": -8
   },
   {
    "m": "monitor01",
@@ -150,7 +151,8 @@
     7
    ],
    "y": 14,
-   "_what": "results terminal (Emerald sign (11,7))"
+   "_what": "results terminal (Emerald sign (11,7)) (em_rooms 2026-10-19: 8 units back on the two-row counter: its dark base crossed the head of a player at the counter)",
+   "dz": -8
   },
   {
    "m": "machine02",
@@ -194,6 +196,74 @@
    "border": 0.25,
    "border_units": 4,
    "_what": "attendant's mat"
+  },
+  {
+   "tex": "chip_mat",
+   "src": 345,
+   "rect": [
+    9,
+    11,
+    10,
+    11
+   ],
+   "border": 0.25,
+   "border_units": 4,
+   "_what": "exit mat (Emerald's mat and warps (9..10,11); em_rooms 2026-10-19: the recipe's doc named it, the list lacked it)"
   }
- ]
+ ],
+ "block": [
+  [
+   7,
+   2
+  ],
+  [
+   8,
+   2
+  ],
+  [
+   9,
+   2
+  ],
+  [
+   10,
+   2
+  ],
+  [
+   11,
+   2
+  ],
+  [
+   7,
+   3
+  ],
+  [
+   8,
+   3
+  ],
+  [
+   9,
+   3
+  ],
+  [
+   10,
+   3
+  ],
+  [
+   11,
+   3
+  ],
+  [
+   8,
+   4
+  ],
+  [
+   9,
+   4
+  ],
+  [
+   10,
+   4
+  ]
+ ],
+ "_block": "em_rooms 2026-10-19: Emerald's rules board (9,4) and the counter beside it (8..10,4) are solid, and the striped wall behind them (7..11, 2..3), walkable in Emerald's collision but out of reach there, stays solid: the bare stretch of the back row in front of the board was made walkable (option C, walk_up) and let the player walk past the board into the wall and the black void behind it (rooms_check l/m/q, tested)"
 }

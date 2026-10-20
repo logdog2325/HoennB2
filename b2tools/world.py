@@ -212,10 +212,11 @@ def build_cell(m_name, cx, cz, world, trees, cfg_maps):
     on_pier = lambda tx, tz: bool(GROUND_MOD and hasattr(GROUND_MOD, 'paved_tile') and GROUND_MOD.paved_tile(world, X + tx, Z + tz))
     cover = {(tx, tz) for tz in range(32) for tx in range(32) if on_path(tx, tz)}
     if GROUP.get('path_as_ground'): cover = set()        # (a warp-only map whose paths are its ground: Sootopolis)
-    cover |= {(tx, tz) for tz in range(32) for tx in range(32) if (get(tx, tz) or (0, 0))[1] == 'lava'}
+    mcover = {(tx, tz) for tz in range(32) for tx in range(32) if (get(tx, tz) or (0, 0))[1] == 'lava'}
     for f in FEATURES:
-        if hasattr(f, 'ground_cover'): cover |= f.ground_cover(cell)
-    if VOID: cover |= {(tx, tz) for tz in range(32) for tx in range(32) if (X + tx, Z + tz) in VOID}   # (nothing drawn)
+        if hasattr(f, 'ground_cover'): mcover |= f.ground_cover(cell)
+    if VOID: mcover |= {(tx, tz) for tz in range(32) for tx in range(32) if (X + tx, Z + tz) in VOID}  # (nothing drawn)
+    cover |= mcover                                      # (mcover: drawn by a module, not the plain path: SEASONS)
     if not HF: bc.ground_heights(m, lambda tx, tz: 0, lambda tx, tz: None if (tx, tz) in cover else 'grass01ax')
     anchors = {(wx - X, wz - Z) for (wx, wz) in trees if wx // 32 == cx and wz // 32 == cz}
     covered = {(ax + dx, az + dz) for ax, az in anchors for dx in (0, 1) for dz in (0, 1)}
@@ -330,6 +331,8 @@ def build_cell(m_name, cx, cz, world, trees, cfg_maps):
     bc.ledge_corners(m, get, hy)                         # Sapphire's ledge corner tiles
     for tz, xs in grass_rows.items():
         for x0, x1 in runs(xs, tz): bc.tall_grass_run(m, x0, x1, tz)
+    if SEASONS is not None:      # Black 2's seasonal decals (terrain/seasons.py): clear outside their season
+        season_decals(m, tm, cell, get, hy, anchors, mcover, on_pier)
     if HF:                                               # heights: all of it on its tile's height
         HF.lift(m, cx, cz); mat = HF.material(cx, cz)
         if GROUP.get('ground'):          # a warp-only map's ground by tile class (data/hoenn_standalone.json 'ground')
@@ -450,6 +453,58 @@ def build_cell(m_name, cx, cz, world, trees, cfg_maps):
             if keep: m.tris[mat] = keep
             else: del m.tris[mat]
     return m, bytes(per), grid
+
+SEASON_STATS = {'snow': 0, 'leaf': 0, 'ribbons': 0, 'ribbon_cells': 0}
+SEASON_MATS = {'kisetu_yuki', 'ochiba_h', '_ha01'}       # (terrain/seasons.py's materials: no T-junction splits)
+
+def season_decals(m, tm, cell, get, hy, anchors, mcover, on_pier):
+    """Black 2's seasonal decals on one cell (terrain/seasons.py: snow patches, fallen leaves, Route 20's falling-leaf
+    ribbons), all drawing nothing outside their season. m gets the decals at ground level (lifted with the rest), tm
+    (the trees' model, at their heights) the ribbons. A decal tile is walkable plain grass or dirt path of a map that
+    has them, level with its four neighbours, with nothing else drawn on it or beside it (a building's, sign's or
+    prop's shadow, flowers, a sand spot, a bridge, stairs, water, a cliff's lip, ash), outside every tree's footprint
+    and not just south of tall grass (its layers reach 2 units into the next tile): the decals stay 2 units clear of
+    every other surface (melonDS's depth fights, notes/PEARL_LESSONS lesson 14)."""
+    S = SEASONS
+    X, Z = cell.X, cell.Z
+    tree_t = {(ax + dx, az + dz) for ax, az in anchors for dx in (0, 1) for dz in (0, 1)}
+    tree_t |= {(wx - X + dx, wz - Z + dz) for wx, wz in OVERLAP for dx in (0, 1) for dz in (0, 1)}
+    tree_t |= {(wx - X, wz - Z) for wx, wz in NARROW}
+    tree_t |= {(tx, tz) for tz in range(-1, 33) for tx in range(-1, 33) if (get(tx, tz) or (0, ''))[1] in S.TREES}
+    level = lambda tx, tz: all(hy(tx + dx, tz + dz) == hy(tx, tz) for dx, dz in ((0, 0), (1, 0), (-1, 0), (0, 1), (0, -1)))
+    def ok(tx, tz):
+        e = get(tx, tz)
+        if not e or not e[2] or e[1] not in S.GROUND or e[0] in S.EXCLUDE: return False
+        wx, wz = X + tx, Z + tz
+        if (tx, tz) in mcover or (tx, tz) in tree_t or on_pier(tx, tz) or (wx, wz) in SOLID_AT: return False
+        if (wx, wz) in ASH_GROUND or (wx, wz) in ASH_LIP or (wx, wz) in OPEN_BLD: return False
+        if HF and ((wx, wz) in HF.slope or (wx, wz) in HF.decks or (wx, wz) in HF.stilt_decks or (wx, wz) in HF.walls
+                   or (e[1] != 'path' and HF.mat.get((wx, wz), 'grass01ax') != 'grass01ax')): return False
+        if HF and not level(tx, tz): return False
+        if (get(tx, tz - 1) or (0, ''))[1] in ('tall_grass', 'long_grass'): return False
+        for dz in (-1, 0, 1):
+            for dx in (-1, 0, 1):
+                n = get(tx + dx, tz + dz)
+                if n and (n[1] in S.NEAR_NOT or n[1] in WATER) or (X + tx + dx, Z + tz + dz) in VOID: return False
+        return True
+    near_tree = lambda tx, tz: any((tx + dx, tz + dz) in tree_t for dx in (-1, 0, 1) for dz in (-1, 0, 1))
+    def blocked_n(tx, tz):
+        k = 0
+        for dz in (-1, 0, 1):
+            for dx in (-1, 0, 1):
+                n = get(tx + dx, tz + dz)
+                if (dx or dz) and (n is None or not n[2]) and not (n and n[1] in WATER): k += 1
+        return k
+    snow, leaf = S.decals(m, cell, ok, near_tree, blocked_n)
+    SEASON_STATS['snow'] += len(snow); SEASON_STATS['leaf'] += len(leaf)
+    in_cell = [(tx, tz) for tz in range(32) for tx in range(32)]
+    excluded = sum(1 for t in in_cell if (get(*t) or ('',))[0] in S.EXCLUDE)
+    walk = sorted(hy(*t) for t in in_cell if (get(*t) or (0, 0, False))[2] or t in tree_t)
+    ash = any((X + tx, Z + tz) in ASH_TREES or (X + tx, Z + tz) in ASH_NEAR for tx, tz in in_cell)
+    tall = any((get(*t) or (0, ''))[1] in ('building', 'building_roof', 'door') for t in in_cell)   # (roofs reach 60+)
+    if walk and excluded < 512 and not ash and not GROUP and not tall:   # (warp-only maps: no ribbons, AREA2_ONLY)
+        n = S.ribbons(tm, cell, walk[-1], sum(1 for t in tree_t if 0 <= t[0] < 32 and 0 <= t[1] < 32))
+        SEASON_STATS['ribbons'] += n; SEASON_STATS['ribbon_cells'] += n > 0
 
 def lava_tile(m, tx, tz, get):
     """One lava tile of a warp-only map (Mt. Chimney's crater; data/hoenn_standalone.json 'lava', 'lava_top',
@@ -1300,7 +1355,8 @@ def write_cell(d, m_name, c, world, trees, cfg_maps, placements, extra):
     # the ground's T-junctions split: melonDS and the hardware open 1-pixel cracks there that show the background
     # (purple/blue lines across Slateport and elsewhere, Discord 2026-10-18; terrain/tjunction.py)
     from terrain import tjunction
-    tjunction.fix(m, skip={t for t in m.tris if t in TREE_MATS or t.startswith(('kusa', 'hana')) or 'kage' in t})
+    tjunction.fix(m, skip={t for t in m.tris if t in TREE_MATS or t.startswith(('kusa', 'hana')) or 'kage' in t
+                           or t in SEASON_MATS})
     ntri = write_dae(m)
     open(os.path.join(d, 'collision.per'), 'wb').write(per)
     if per1: open(os.path.join(d, 'collision1.per'), 'wb').write(per1)   # (patches/hoenn_world.py: a 'GC' chunk)
@@ -1323,6 +1379,14 @@ def write_cell(d, m_name, c, world, trees, cfg_maps, placements, extra):
             else: WATER_MOD._SEAMS.pop(m_name, None)
             return True
         over = lambda: n is not None and n > CHUNK_LIMIT
+        drops = []                  # (seasons2) Black 2's seasonal decals go first, before any of the cracks fix
+        for mats in (('ochiba_h',), ('_ha01',), ('kisetu_yuki',)):
+            if not over(): break
+            if not any(k in m.tris for k in mats): continue
+            for k in mats: m.tris.pop(k, None); pre.pop(k, None)
+            drops += mats; ntri = write_dae(m); n = chunk_bytes(d)
+            what = 'no ' + ', '.join(drops)
+            SEASON_STATS.setdefault('dropped', []).append((c, mats[0]))
         if over() and seams(False):
             ntri = write_dae(m); n, what = chunk_bytes(d), 'no water seams'
         if over():
@@ -1333,6 +1397,7 @@ def write_cell(d, m_name, c, world, trees, cfg_maps, placements, extra):
             UNDERFLOOR[0] = False
             try: m = finish(build_cell(m_name, c[0], c[1], world, trees, cfg_maps)[0])     # (water.draw: seams again)
             finally: UNDERFLOOR[0] = True
+            for k in drops: m.tris.pop(k, None)
             ntri = write_dae(m); n, what = chunk_bytes(d), 'no T-junction splits, no under-floor'
         if over() and seams(False):
             ntri = write_dae(m); n, what = chunk_bytes(d), 'no T-junction splits, no under-floor, no water seams'
@@ -1420,6 +1485,10 @@ def main():
     write_palettes(os.path.join(OUT, 'palettes.txt'))
     print(f'{len(order)} cells ({len(built)} with map tiles), matrix {W}x{H}, zones {sorted(z for z in zones if z)}')
     print('\n'.join(report + sa_report))
+    if SEASONS is not None:
+        print(f"seasons: {SEASON_STATS['snow']} snow tiles, {SEASON_STATS['leaf']} leaf tiles, "
+              f"{SEASON_STATS['ribbons']} falling-leaf ribbons over {SEASON_STATS['ribbon_cells']} cells (terrain/seasons.py); "
+              f"left out to fit the chunk buffer: {SEASON_STATS.get('dropped', [])}")
 
 # ---- other layouts of a main-matrix map (data/hoenn_world.json "alt_layouts") ------------------------------------------
 def build_alts(cfg, lay, world0, cells, chunk_id, rects=()):
@@ -1508,6 +1577,7 @@ def build_alts(cfg, lay, world0, cells, chunk_id, rects=()):
 
 GROUND_MOD = next((f for f in FEATURES if f.__name__.endswith('ground')), None)
 PALMS = next((f for f in FEATURES if f.__name__.endswith('palms')), None)     # terrain/palms.py: Mossdeep's palms
+SEASONS = next((f for f in FEATURES if f.__name__.endswith('seasons')), None)  # terrain/seasons.py: snow, leaves
 
 import contextlib as _ctx
 @_ctx.contextmanager
@@ -1607,6 +1677,10 @@ def standalone_door(name, mp, w, hgt):
     room, dest = INTERIORS.get(w['dest']), map_name(w['dest'])
     if room and room['status'] in ('auto', 'b2', 'center', 'cave', 'big'):
         door.update(dest_zone=room['zone'], dest_warp=0 if room['status'] == 'b2' else int(w['dest_warp']), dir=2, type=3)
+        if arrow:      # (frontier_sp 2026-10-20) an arrow warp into a room (Emerald's Battle Frontier Reception Gate, entered
+            door.update(dir=d, type=4)   # walking south off the island's arrow tile (26,61)): Black 2's walk-in warp on the
+            # tile beyond the arrow, as the main world's arrow doors (Lavaridge's Pokemon Center back door). A dir-2 door
+            # there was entered only from inside the building. No Sapphire/Ruby standalone map has an arrow into a room
     elif str(w['dest']).startswith('B2_ZONE_'):    # a room of Black 2's own, by zone id: the PWT lobby (zone 192 warp 0,
         door.update(dest_zone=int(w['dest'][8:]), dest_warp=int(w['dest_warp']), dir=2, type=3)   # the island's PWT door,
         # data/hoenn_map_additions.json; battle_tower 2026-10-08)
@@ -1949,6 +2023,7 @@ def feature_texture(name):
     import b2files, nsbtx
     src = name
     if name in ASH_TEX: ts, src = ASH_TEX[name]        # (a snowy stand-in: Black 2's texture of another name)
+    elif SEASONS is not None and name in SEASONS.SEASONAL: _, ts, src = SEASONS.SEASONAL[name]   # (its season's art)
     else: ts = EXTRA_TEX.get(name) or next(f.TEXTURES[name] for f in FEATURES if name in getattr(f, 'TEXTURES', {}))
     if ts not in _tex_cache:
         files = os.path.join(ROOT, 'external', 'pokebw2', 'build', 'b2_us', 'files')
@@ -1964,6 +2039,7 @@ def write_palettes(path):
             lines.append(f"{t} {getattr(f, 'PALETTES', {}).get(t, t + '_pl')}")
     for t in sorted(EXTRA_TEX): lines.append(f'{t} {t}_pl')       # (standalone groups' textures: '_pl' checked there)
     for t in sorted(ASH_TEX): lines.append(f'{t} {t}_pl')         # (snowy ash, data/hoenn_ash.json)
+    for t in sorted(getattr(SEASONS, 'SEASONAL', {})): lines.append(f'{t} {t}_pl')   # (terrain/seasons.py)
     open(path, 'w').write('\n'.join(lines) + '\n')
 
 def lay_cells(lay, cfg):

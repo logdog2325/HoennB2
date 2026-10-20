@@ -1,0 +1,68 @@
+{
+ "_doc": "frontier_lounges (2026-10-20): BattleFrontier_Lounge1, Emerald only (data/emerald/hoenn_interiors.json claim). Zone 470, room data/interior_layouts/BattleFrontier_Lounge1.json (Emerald tile + room origin = zone tile). People = Emerald's objects in Emerald's order (uid = script = Emerald local id). Scripts: src/field_scripts/emerald/0940_room_BattleFrontier_Lounge1.s. Written by work/agents/frontier_lounges/tools/lounge_rooms.py (frontier_rooms.zone_json).",
+ "zone": 470,
+ "room": "BattleFrontier_Lounge1",
+ "area": 306,
+ "parent": 17,
+ "warps": [
+  {
+   "at": [
+    4,
+    9
+   ],
+   "tile_only": true,
+   "to": [
+    17,
+    7
+   ],
+   "what": "Emerald warp 0 (4,9) -> BATTLE_FRONTIER_OUTSIDE_EAST warp 5 (zone 17 door 7: Black 2's warps of zone 17, then world.json's doors)"
+  }
+ ],
+ "npcs": [
+  {
+   "uid": 1,
+   "model": 187,
+   "script": 1,
+   "dir": 3,
+   "at": [
+    0,
+    6
+   ],
+   "what": "Emerald object 1 OLD_MAN (FACE_RIGHT): BattleFrontier_Lounge1_EventScript_Breeder; model 187 (OLD_MAN_2)"
+  },
+  {
+   "uid": 2,
+   "model": 14,
+   "script": 2,
+   "dir": 1,
+   "at": [
+    7,
+    6
+   ],
+   "move": 3,
+   "range": [
+    1,
+    2
+   ],
+   "what": "Emerald object 2 BOY_3 (WANDER_AROUND, range 1,2): BattleFrontier_Lounge1_EventScript_Boy1; model 14 (BOY_3)"
+  },
+  {
+   "uid": 3,
+   "model": 21,
+   "script": 3,
+   "dir": 1,
+   "at": [
+    5,
+    4
+   ],
+   "move": 3,
+   "range": [
+    2,
+    1
+   ],
+   "what": "Emerald object 3 BOY_2 (WANDER_AROUND, range 2,1): BattleFrontier_Lounge1_EventScript_Boy2; model 21 (BOY_2)"
+  }
+ ],
+ "signs": [],
+ "triggers": []
+}

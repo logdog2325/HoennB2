@@ -9042,6 +9042,321 @@
    "own_init": 1606,
    "own_text": 834
   },
+  "Route110_TrickHousePuzzle2": {
+   "zone": 432,
+   "status": "hand",
+   "scripts": 864,
+   "init_scripts": 865,
+   "text": 177,
+   "entities": 171,
+   "area": 349,
+   "own_matrix": false,
+   "map_id": "MAP_ROUTE110_TRICK_HOUSE_PUZZLE2",
+   "map_type": "MAP_TYPE_INDOOR",
+   "entered_from": "Route110_TrickHouseEntrance",
+   "tilesets": [
+    "gTileset_Building",
+    "gTileset_TrickHousePuzzle"
+   ],
+   "size": [
+    15,
+    22
+   ],
+   "warps": [
+    {
+     "x": 0,
+     "y": 21,
+     "dest": "Route110_TrickHouseEntrance",
+     "dest_warp": 2
+    },
+    {
+     "x": 1,
+     "y": 21,
+     "dest": "Route110_TrickHouseEntrance",
+     "dest_warp": 2
+    },
+    {
+     "x": 13,
+     "y": 1,
+     "dest": "Route110_TrickHouseEnd",
+     "dest_warp": 0
+    }
+   ],
+   "own_scripts": 1867,
+   "own_init": 1868,
+   "own_text": 965,
+   "note": "trick_house 2026-10-19 (notes/TRICK_HOUSE.md): reached only by the entrance scroll's script warp; status hand = built by b2tools/trick_house.py, never by gen_interiors.py"
+  },
+  "Route110_TrickHousePuzzle3": {
+   "zone": 434,
+   "status": "hand",
+   "scripts": 868,
+   "init_scripts": 869,
+   "text": 179,
+   "entities": 173,
+   "area": 349,
+   "own_matrix": false,
+   "map_id": "MAP_ROUTE110_TRICK_HOUSE_PUZZLE3",
+   "map_type": "MAP_TYPE_INDOOR",
+   "entered_from": "Route110_TrickHouseEntrance",
+   "tilesets": [
+    "gTileset_Building",
+    "gTileset_TrickHousePuzzle"
+   ],
+   "size": [
+    15,
+    22
+   ],
+   "warps": [
+    {
+     "x": 0,
+     "y": 21,
+     "dest": "Route110_TrickHouseEntrance",
+     "dest_warp": 2
+    },
+    {
+     "x": 1,
+     "y": 21,
+     "dest": "Route110_TrickHouseEntrance",
+     "dest_warp": 2
+    },
+    {
+     "x": 13,
+     "y": 1,
+     "dest": "Route110_TrickHouseEnd",
+     "dest_warp": 0
+    }
+   ],
+   "own_scripts": 1869,
+   "own_init": 1870,
+   "own_text": 966,
+   "note": "trick_house 2026-10-19 (notes/TRICK_HOUSE.md): reached only by the entrance scroll's script warp; status hand = built by b2tools/trick_house.py, never by gen_interiors.py; zone 451 is its other door state (data/interiors/434.json \"variants\")"
+  },
+  "Route110_TrickHousePuzzle4": {
+   "zone": 438,
+   "status": "hand",
+   "scripts": 876,
+   "init_scripts": 877,
+   "text": 602,
+   "entities": 559,
+   "area": 316,
+   "own_matrix": false,
+   "map_id": "MAP_ROUTE110_TRICK_HOUSE_PUZZLE4",
+   "map_type": "MAP_TYPE_INDOOR",
+   "entered_from": "Route110_TrickHouseEntrance",
+   "tilesets": [
+    "gTileset_Building",
+    "gTileset_TrickHousePuzzle"
+   ],
+   "size": [
+    15,
+    22
+   ],
+   "warps": [
+    {
+     "x": 0,
+     "y": 21,
+     "dest": "Route110_TrickHouseEntrance",
+     "dest_warp": 2
+    },
+    {
+     "x": 1,
+     "y": 21,
+     "dest": "Route110_TrickHouseEntrance",
+     "dest_warp": 2
+    },
+    {
+     "x": 13,
+     "y": 1,
+     "dest": "Route110_TrickHouseEnd",
+     "dest_warp": 0
+    }
+   ],
+   "own_scripts": 1872,
+   "own_init": 1873,
+   "own_text": 967,
+   "note": "trick_house 2026-10-19 (notes/TRICK_HOUSE.md): reached only by the entrance scroll's script warp; status hand = built by b2tools/trick_house.py, never by gen_interiors.py"
+  },
+  "Route110_TrickHousePuzzle5": {
+   "zone": 441,
+   "status": "hand",
+   "scripts": 882,
+   "init_scripts": 883,
+   "text": 654,
+   "entities": 602,
+   "area": 349,
+   "own_matrix": false,
+   "map_id": "MAP_ROUTE110_TRICK_HOUSE_PUZZLE5",
+   "map_type": "MAP_TYPE_INDOOR",
+   "entered_from": "Route110_TrickHouseEntrance",
+   "tilesets": [
+    "gTileset_Building",
+    "gTileset_TrickHousePuzzle"
+   ],
+   "size": [
+    15,
+    22
+   ],
+   "warps": [
+    {
+     "x": 0,
+     "y": 21,
+     "dest": "Route110_TrickHouseEntrance",
+     "dest_warp": 2
+    },
+    {
+     "x": 1,
+     "y": 21,
+     "dest": "Route110_TrickHouseEntrance",
+     "dest_warp": 2
+    },
+    {
+     "x": 13,
+     "y": 1,
+     "dest": "Route110_TrickHouseEnd",
+     "dest_warp": 0
+    }
+   ],
+   "own_scripts": 1874,
+   "own_init": 1875,
+   "own_text": 968,
+   "note": "trick_house 2026-10-19 (notes/TRICK_HOUSE.md): reached only by the entrance scroll's script warp; status hand = built by b2tools/trick_house.py, never by gen_interiors.py"
+  },
+  "Route110_TrickHousePuzzle6": {
+   "zone": 442,
+   "status": "hand",
+   "scripts": 884,
+   "init_scripts": 885,
+   "text": 655,
+   "entities": 603,
+   "area": 349,
+   "own_matrix": false,
+   "map_id": "MAP_ROUTE110_TRICK_HOUSE_PUZZLE6",
+   "map_type": "MAP_TYPE_INDOOR",
+   "entered_from": "Route110_TrickHouseEntrance",
+   "tilesets": [
+    "gTileset_Building",
+    "gTileset_TrickHousePuzzle"
+   ],
+   "size": [
+    15,
+    22
+   ],
+   "warps": [
+    {
+     "x": 0,
+     "y": 21,
+     "dest": "Route110_TrickHouseEntrance",
+     "dest_warp": 2
+    },
+    {
+     "x": 1,
+     "y": 21,
+     "dest": "Route110_TrickHouseEntrance",
+     "dest_warp": 2
+    },
+    {
+     "x": 13,
+     "y": 1,
+     "dest": "Route110_TrickHouseEnd",
+     "dest_warp": 0
+    }
+   ],
+   "own_scripts": 1876,
+   "own_init": 1877,
+   "own_text": 969,
+   "note": "trick_house 2026-10-19 (notes/TRICK_HOUSE.md): reached only by the entrance scroll's script warp; status hand = built by b2tools/trick_house.py, never by gen_interiors.py"
+  },
+  "Route110_TrickHousePuzzle7": {
+   "zone": 447,
+   "status": "hand",
+   "scripts": 894,
+   "init_scripts": 895,
+   "text": 604,
+   "entities": 561,
+   "area": 316,
+   "own_matrix": false,
+   "map_id": "MAP_ROUTE110_TRICK_HOUSE_PUZZLE7",
+   "map_type": "MAP_TYPE_INDOOR",
+   "entered_from": "Route110_TrickHouseEntrance",
+   "tilesets": [
+    "gTileset_Building",
+    "gTileset_TrickHousePuzzle"
+   ],
+   "size": [
+    15,
+    22
+   ],
+   "warps": [
+    {
+     "x": 0,
+     "y": 21,
+     "dest": "Route110_TrickHouseEntrance",
+     "dest_warp": 2
+    },
+    {
+     "x": 1,
+     "y": 21,
+     "dest": "Route110_TrickHouseEntrance",
+     "dest_warp": 2
+    },
+    {
+     "x": 13,
+     "y": 1,
+     "dest": "Route110_TrickHouseEnd",
+     "dest_warp": 0
+    }
+   ],
+   "own_scripts": 1878,
+   "own_init": 1879,
+   "own_text": 970,
+   "note": "trick_house 2026-10-19 (notes/TRICK_HOUSE.md): reached only by the entrance scroll's script warp; status hand = built by b2tools/trick_house.py, never by gen_interiors.py"
+  },
+  "Route110_TrickHousePuzzle8": {
+   "zone": 449,
+   "status": "hand",
+   "scripts": 898,
+   "init_scripts": 899,
+   "text": 184,
+   "entities": 178,
+   "area": 349,
+   "own_matrix": false,
+   "map_id": "MAP_ROUTE110_TRICK_HOUSE_PUZZLE8",
+   "map_type": "MAP_TYPE_INDOOR",
+   "entered_from": "Route110_TrickHouseEntrance",
+   "tilesets": [
+    "gTileset_Building",
+    "gTileset_TrickHousePuzzle"
+   ],
+   "size": [
+    15,
+    22
+   ],
+   "warps": [
+    {
+     "x": 0,
+     "y": 21,
+     "dest": "Route110_TrickHouseEntrance",
+     "dest_warp": 2
+    },
+    {
+     "x": 1,
+     "y": 21,
+     "dest": "Route110_TrickHouseEntrance",
+     "dest_warp": 2
+    },
+    {
+     "x": 13,
+     "y": 1,
+     "dest": "Route110_TrickHouseEnd",
+     "dest_warp": 0
+    }
+   ],
+   "own_scripts": 1880,
+   "own_init": 1881,
+   "own_text": 971,
+   "note": "trick_house 2026-10-19 (notes/TRICK_HOUSE.md): reached only by the entrance scroll's script warp; status hand = built by b2tools/trick_house.py, never by gen_interiors.py"
+  },
   "Route111_OldLadysRestStop": {
    "zone": 553,
    "status": "auto",

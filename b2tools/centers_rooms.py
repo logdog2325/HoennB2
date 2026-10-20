@@ -185,7 +185,13 @@ def warps_of(name):
         if b in (0x6A, 0x6B):                    # escalators at the left wall: entered walking west (warp dir 4)
             e.update(type=2, dir=4, what=what + ' (escalator, entered walking west)')
         elif ALL.get(dest, {}).get('status') == 'link':
-            e['what'] = what + ' (Cable Club door: a solid tile, reached only by script in Sapphire)'
+            # (em_rooms 2026-10-19) dir 0: the warp never fires. Black 2 fires a door warp when the player walks into its
+            # tile; Gen 3's Cable Club doors are impassable and only its link scripts walk the player through them, and
+            # the desks here run Black 2's Union Room / Wi-Fi Club (notes/LINK.md), not these doors. Pacifidlog's
+            # Double Battle door (0,1) has open floor south of it: walking up into the corner wall warped the player to
+            # the escalator (the destination rooms are not built: this room's own warp 0)
+            e.update(dir=0, what=what + ' (Cable Club door: a solid tile, reached only by script in Sapphire; dir 0: '
+                                        'never fires)')
         out.append(e)
     return out
 

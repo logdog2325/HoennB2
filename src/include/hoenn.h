@@ -190,6 +190,8 @@
 #define VAR_TRICK_HOUSE_PUZZLE_8_STATE               0x4089
 #define VAR_TRICK_HOUSE_ROOMS_COMPLETED              0x408B
 #define VAR_TRICK_HOUSE_STATE                        0x408C
+#define VAR_TRICK_HOUSE_PUZZLE_3_DOORS               0x408E
+#define VAR_TRICK_HOUSE_PUZZLE_3_BUTTON              0x408F
 #define FLAG_DECLINED_BIKE                           336   
 #define FLAG_DECLINED_WALLY_BATTLE_MAUVILLE          337   
 #define FLAG_DEFEATED_MAUVILLE_GYM                   338   
@@ -259,6 +261,10 @@
 #define FLAG_TV_SHOW_RECENT_HAPPENINGS_PENDING       430     // ch3a: Sapphire's RECENT_HAPPENINGS TV show recorded by the Oceanic Museum 1F reporter (InterviewAfter); Black 2 has no TV shows, so it stays pending: InterviewBefore = this flag
 #define FLAG_TV_SHOW_FAN_CLUB_LETTER_PENDING         431     // ch3a: Sapphire's FAN_CLUB_LETTER TV show (Slateport Fan Club reporter, lead Pokemon without a nickname); InterviewBefore = this flag
 #define FLAG_TV_SHOW_FAN_CLUB_OPINIONS_PENDING       432     // ch3a: Sapphire's PKMN_FAN_CLUB_OPINIONS TV show (Slateport Fan Club reporter, nicknamed lead Pokemon); InterviewBefore = this flag
+#define FLAG_TRICK_HOUSE_PUZZLE_3_ROCK_1             433   
+#define FLAG_TRICK_HOUSE_PUZZLE_3_ROCK_2             434   
+#define FLAG_TRICK_HOUSE_PUZZLE_3_ROCK_3             435   
+#define FLAG_TRICK_HOUSE_PUZZLE_3_ROCK_4             436   
 // Ch3 reserved for its own new ids: flags 430-440; works 0x408E-0x4093
 
 // ---- Ch4 ----------------------------------------------------------------------------------------------------
@@ -817,6 +823,12 @@
 #define VAR_EM_REMATCH_DONE_4                        0x4161  // Emerald rematches: rows 64-79 of data/emerald/hoenn_rematch.json fought today (bit = row % 16)
 #define VAR_EM_REMATCH_LEADERS                       0x4163  // Emerald rematches: 2 bits per Gym Leader (gym n: bits 2n-2..2n-1) = rematch tiers beaten, 0-3 (notes/EMERALD_REMATCH.md)
 #define VAR_EM_REMATCH_POSTGAME                      0x4164  // Emerald rematches: 2 bits per post-game rematch row (data/emerald/hoenn_rematch.json gym 9 + n: bits 2n..2n+1; 9 = Wally at Victory Road) = rematch tiers beaten, 0-3
+#define VAR_FRONTIER_MANIAC_FACILITY                 0x416A
+#define VAR_FRONTIER_GAMBLER_CHALLENGE               0x416B
+#define VAR_FRONTIER_GAMBLER_SET_CHALLENGE           0x416C
+#define VAR_FRONTIER_GAMBLER_AMOUNT_BET              0x416D
+#define VAR_FRONTIER_GAMBLER_STATE                   0x416E
+#define VAR_FRONTIER_GAMBLER_CODE                    0x416F  // Emerald Battle Frontier Lounge3 (frontier_lounges): the Gambler's bet challenge as FR_FACILITY | FR_BATTLE_MODE << 3 (pokeemerald sFrontierChallenges[VAR_FRONTIER_GAMBLER_SET_CHALLENGE]); hoenn_frontier.inc fr_gambler_settle compares it on a lobby return
 #define FLAG_MET_SCOTT_RUSTBORO                      127   
 #define FLAG_MET_SCOTT_AFTER_OBTAINING_STONE_BADGE   128   
 #define FLAG_MET_SCOTT_IN_LILYCOVE                   129   
@@ -912,6 +924,13 @@
 #define FLAG_CAUGHT_LATIAS_OR_LATIOS                 2393    // Emerald Southern Island: the Lati was caught (pokeemerald's flag; scenes/emerald/SouthernIsland_Interior.inc)
 #define FLAG_SHOWN_EON_TICKET                        2394    // Emerald Lilycove Harbor: the Eon Ticket was shown once (pokeemerald's flag; scenes/LilycoveCity_Harbor_Events.inc)
 #define FLAG_BATTLE_FRONTIER_TRADE_DONE              2436    // Emerald Battle Frontier Lounge6: the Beauty's Meowth-for-Skitty trade is done (pokeemerald's flag; src/field_scripts/emerald/0842_room_BattleFrontier_Lounge6.s)
+#define FLAG_MET_BATTLE_FRONTIER_BREEDER             2443  
+#define FLAG_MET_BATTLE_FRONTIER_MANIAC              2446  
+#define FLAG_MET_BATTLE_FRONTIER_GAMBLER             2467  
+#define FLAG_SCOTT_GIVES_BATTLE_POINTS               2468  
+#define FLAG_COLLECTED_ALL_SILVER_SYMBOLS            2561  
+#define FLAG_COLLECTED_ALL_GOLD_SYMBOLS              2562  
+#define FLAG_DAILY_FRONTIER_LOUNGES                  2757    // midnight-reset flag (frontier_lounges): clear = a new day since the Frontier Maniac's facility and the Gambler's challenge last moved on (pokeemerald UpdateFrontierManiac / UpdateFrontierGambler, +1 per day here)
 // Emerald reserved for its own new ids: flags 127-130, 133, 244-245, 248, 250, 254, 329, 331, 333-335, 441-443, 445-446, 502-506, 534-538, 574-578, 635-639, 742, 744-745, 747-748, 835-838, 840, 954, 956, 958-959, 961, 1054-1058, 1086-1090, 2347-2360, 2381-2394, 2436, 2443, 2446, 2467-2468, 2561-2567, 2571-2584, 2715-2719, 3033-3041, 3045-3063; works 0x4120-0x4122, 0x4124-0x4125, 0x4139, 0x413B, 0x413D-0x413F, 0x4145-0x4148, 0x414F, 0x4151-0x4155, 0x415F-0x4161, 0x4163-0x4164, 0x416A-0x4173, 0x4175, 0x4177, 0x417B-0x417D
 
 // ---- Black 2 system flags with the same meaning as Sapphire's -------------------------------------

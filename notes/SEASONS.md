@@ -30,6 +30,67 @@ switch. The test ROM is **not built yet**: the disk had 3.4 GB free and the rule
   all four of area 2's sets). The season card on warps and the banner without the season part are unchanged.
 - Release branch: b2tools/release_kit/next/seasons.patch (sapphire-ruby). Test ROM: Sapphire_SEASONS_OPTION_TEST.nds.
 
+## Snow, autumn leaves and the grass (seasons2, 2026-10-20; only with Birch's seasons answer YES)
+User requests: the grass should change colour with the seasons, Black 2's autumn leaves, snow in winter.
+- **The grass does follow the season** (checked in DeSmuME with the season forced, screenshots/seasons2/): the ground
+  (grass01ax), cliff-top grass (gake1_1), tall grass (kusa_ec1/2), hedges (plant01) and the round trees (ki03*) take
+  Black 2's art for the season from area 2's sets 2-5 (one art per season, the same in every Unova area except
+  Icirrus/Dragonspiral's snowy winter and White Forest's spring-all-year: work/agents/seasons2/tools/variants.py). Ground
+  colour measured on Route 101: spring (100,178,74), summer (76,175,116), autumn (160,177,74), winter (132,168,89). What
+  stays: tall grass's dark bottom layer kusa_ec3 (the same in all of Black 2's sets), the long grass in spring (Route 7's
+  set: spring = summer), flowers (hana01.1), Mossdeep's palms (Humilau's, all year), paths, sand, sea, ash. In spring
+  and winter Black 2's grass is close to summer's (pale mint / yellow-green / pale grey-green), which reads as "the
+  same" next to trees that change a lot; Black 2's winter look on its routes comes from snow patches and snowfall (below).
+- **Black 2's winter on its routes** (Route 6/7/19/20, Aspertia, Floccesy, Virbank, Driftveil, Mistralton): pale grass,
+  `kisetu_yuki` snow patches (A5I3 32x32 soft blob, fully clear in its spring/summer/autumn sets; 1x1 or 2x2-tile flat
+  quads 2 units over the ground, one image each, on ~10% of the walkable ground, mostly at the foot of trees, ledges and
+  fences; chunks 47-63, 279-296, 617-621), tile class 2 under them (snow footprints and no actor shadow in winter:
+  ov012 field_actor_tool.c, predicates ov036 0x021a2ce0 class 2 / 0x021a2cec class 0x1e = spring+winter), and calendar
+  snowfall (a/0/9/6: weather 1 on 10-11 days of each winter month on Floccesy/Route 20/Virbank, weather 5 on 6-9 days on
+  Route 6/7, Driftveil, Mistralton; Icirrus also 4 = snowstorm, 8 = diamond dust). Fully snowy chunks only in the far
+  north (a/0/1/0 season swaps: Icirrus 64-66, Dragonspiral 67, Route 8 68-69 -> 194-199 in winter).
+- **Black 2's autumn**: the autumn set (orange trees, yellow grass, kisetu_hana's flower patches become orange leaf
+  clusters) everywhere, and on **Route 20 only** autumn chunk swaps (286-289 -> 290-293) with leaf carpets
+  (54ochiba01/b/c; walk-through piles: class 0x25, ov036 0x021a2cd4, leaves fly up: fldeff_ochiba 0x021c94e0) and
+  **falling leaves**: long thin ribbons of `54_ha01` (128x64, four rows of yellow leaves) 40-80 units up across the chunk,
+  material `_ha01`, scrolled along and stepped through the rows by Route 20's texture animation (a/0/6/8 file 47; areas
+  214-217 srt 47). No falling-leaves weather or particle exists (weathers 0-14: ov074-078).
+- **Hoenn now** (b2tools/terrain/seasons.py, world.py season_decals, patches/hoenn_textures.py seasonal_decals +
+  autumn_leaves, standalone.py, fairy.c Season_Snow):
+  - winter: kisetu_yuki patches by Black 2's rule (1 or 2 tiles, y +2, chance by blocked neighbours P_SNOW), on walkable
+    plain grass or dirt path, level, nothing else drawn on or next to the tile (shadows, flowers, sand spot, bridge,
+    stairs, water, cliff lip, ash), outside tree footprints, not south of tall grass; snowfall = Black 2's weather 5 on
+    Route 6's days (Apr 1-4, 9, 10, 13, 19, 20; Aug 1, 2, 8-10, 18, 19; Dec 1-3, 8, 9, 18): GetWeatherAll's birthday
+    call (arm9 0x02032eea) goes to fairy.c Season_Snow (+233-245 B ITCM with the zone bitmap), which answers the
+    birthday weather as before when it does not snow (Sapphire/Ruby: GetBirthdayZoneWeather; Emerald: none, its
+    abnormal weather sits in Route 7's and the birthday functions' place, emerald_postgame, and is asked first). Weather 1
+    (light snow) is not used: its palette is the one fixed_weather.py greys for Route 113's ash. Weather 5 is Hail in
+    battles, as on those routes in Black 2. Not copied: tile class 2 (snow footprints) - a tile class is in the chunk all year and
+    changes the battle terrain (GetTileEncountType: route floor 0x1f -> 0, class 2 -> 2) also for players without seasons.
+  - autumn: fallen leaves = kisetu_hana's autumn clusters (renamed `ochiba_h`) on tiles next to trees (P_LEAF), and Route
+    20's ribbons (data/season_ribbons.json, one of its four chunks' sets per cell) over cells with >= 140 tree tiles,
+    their heights mapped to 60-100 over the cell's highest walkable or tree tile (clear of every tree) and cut at the
+    cell's edges; area 2's autumn record gets srt 47, whose two sea tracks are set to area 2's own (file 47 scrolls the
+    sea twice as fast; in place, same size). The warp-only maps get no ribbons, a clear `_ha01` (standalone.py,
+    nsbtx.merge drop=) and keep their own srt: their sets also serve Emerald's Battle Frontier outside, whose texture
+    VRAM (npc_check) was within 5 KB of the 384 KB with the 4 KB leaf art (now 384,176 B, v1.2 383,936 B). Not copied: walk-through leaf piles (class 0x25 changes the battle terrain all year, as above).
+  - texture sets: `_ha01` / `ochiba_h` are Black 2's art in area 2's autumn set and a clear 8x8 stand-in in the other
+    three (+232 B; autumn +4,760 B: 180,084 B with buildings; npc_check's worst zones: see the build log).
+  - exclusions (no decals, no snowfall): Route 113 (ash), Jagged Pass, Mt. Chimney, Fallarbor (ash next door),
+    Lavaridge (hot springs), Sootopolis, Mossdeep, Dewford, Pacifidlog, Ever Grande, Southern/Faraway/Birth Island,
+    Navel Rock, Sky Pillar, Battle Frontier/Tower outside, Mt. Pyre summit and the sea routes 105-109, 122, 124-134;
+    sand, beaches, the desert, the sea, ponds, paths of paved towns, decks and caves/rooms never get decals. Routes
+    119/123 keep Sapphire's own day-by-day rain cycle (no snowfall there); Kyogre's rain wins over snow.
+  - chunk buffer: world.py write_cell's chunk_fit drops a cell's seasonal decals (leaves, then ribbons, then snow)
+    before any of the cracks fix; the cracks-fix fallbacks are the same as without seasons (Sapphire and Emerald).
+  - seasons off (NO, or summer): every decal texel is clear (the DS draws no colour or depth for it), collision,
+    placements, world.json and the summer area records are unchanged, Season_Snow returns at once. The only change is
+    CTRMap's position scale of the cells with decals (NitroModelResource.determineBaseGlobalScale averages every
+    sub-mesh's box): their vertices round up to 0.01 unit differently, a few edge pixels move one colour step.
+  - testing: no build switch; work/agents/seasons2/tools/shots.py forces a season in RAM (Season_GetRealTime and
+    GameData_GetSeason return it) before a sign warp (HOENN_TEST_WARP), SNOWDATE=month,day pokes the RTC cache
+    (0x021418d4) and POKE=addr:hex the kept-season check, for the snowfall.
+
 ## How Black 2 picks the season [code]
 - `Season_GetRealTime` (arm9 0x02034f6c) returns `(month - 1) & 3` from the DS clock (read with armdis: `ldr r0,
   [sp,#4]` = month 1-12, `subs r1, r0, #1`, `ands` with 3). So **Jan/May/Sep = spring, Feb/Jun/Oct = summer,

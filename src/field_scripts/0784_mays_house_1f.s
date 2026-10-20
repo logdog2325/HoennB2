@@ -43,9 +43,9 @@
 Script_1:
     VMHalt                      // free
 
-Script_2:                      // a girl's blackout at home (script_check 2026-10-08): reserved by Brendan's house's
-    ActorsPauseAll              // script 2 (the blackout lands there, RESPAWN_ZONE_INFO 0: 0780_brendans_house_1f.s),
-    PokePartyRecoverAll         // which warps a girl on to this tile; Sapphire heals and shows you at home, no line
+Script_2:                      // a girl's blackout at home (script_check 2026-10-08), unused since littleroot2 (2026-10-19):
+    ActorsPauseAll              // Brendan's house's script 2 (RESPAWN_ZONE_INFO 0) now sends a girl to her bedroom (2F)
+    PokePartyRecoverAll         // as Gen 3; kept as it was (heal, fade in)
     FadeInBlack
     FadeWait
     FinishAllEvents

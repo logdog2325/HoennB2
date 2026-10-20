@@ -168,17 +168,21 @@
    "m": "monitor01",
    "tile": [
     4,
-    10
+    9
    ],
-   "y": 14
+   "y": 14,
+   "_what": "results terminal on the counter's back row, Emerald's (4,9) (em_rooms 2026-10-19: it stood on the front row ((4,10)), its dark base across the head of a player at the counter; 8 units west, off the attendant beside it)",
+   "dx": -8
   },
   {
    "m": "monitor01",
    "tile": [
     18,
-    10
+    9
    ],
-   "y": 14
+   "y": 14,
+   "_what": "results terminal on the counter's back row, Emerald's (18,9) (em_rooms 2026-10-19: it stood on the front row ((18,10)), its dark base across the head of a player at the counter; 8 units east, off the attendant beside it)",
+   "dx": 8
   },
   {
    "m": "pc01",
@@ -246,6 +250,19 @@
    "border": 0.25,
    "border_units": 4,
    "_what": "attendant's mat"
+  },
+  {
+   "tex": "chip_mat",
+   "src": 352,
+   "rect": [
+    11,
+    16,
+    12,
+    16
+   ],
+   "border": 0.25,
+   "border_units": 4,
+   "_what": "exit mat (Emerald's mat and warps (11..12,16); em_rooms 2026-10-19)"
   }
  ]
 }

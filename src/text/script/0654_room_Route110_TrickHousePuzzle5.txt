@@ -1,0 +1,75 @@
+…
+{0100:0} found a scroll.
+{0100:0} memorized the secret code\nwritten on the scroll.
+A secret code is written on it.
+The door is locked.{be01}\n...On closer inspection, this is written\non it: “Write the secret code here.”
+{0100:0} wrote down the secret code\non the door.{be01}\n“Trick Master is a genius.”\n... ... ... ... ... ... ... ...{be01}\nThe lock clicked open!
+Congratulations. Correct You Are.\nGo Through. Please.
+Bzzzt. Disappointment.\nError.
+Wahahahaha! Wahahahaha!\nClickety-Clack!
+Your Next Challenge We Wait For.
+Clickety-Clack...\nMechadoll 1 Am I!{be01}\nIf You Answer Quizzes Correctly,\nThen You Will Go To Mechadoll 5.{be00}\nThen You Can Obtain The Secret Code.
+Mechadoll 1 Quiz.{be01}\nOne of these Pokémon is not found\non Route 103. Which one is it?
+Zigzagoon
+Nincada
+Poochyena
+Mechadoll 1 Quiz.{be01}\nOne of these Pokémon is not of the\nGrass type. Which one is it?
+Nincada
+Lotad
+Roselia
+Mechadoll 1 Quiz.{be01}\nOne of these Pokémon uses Scratch.\nWhich one is it?
+Shroomish
+Nincada
+Surskit
+Clickety-Clack...\nMechadoll 2 Am I!{be01}\nMechadoll 1’s Quiz Difficulty Level\nIs Set Too Low.
+Mechadoll 2 Quiz.{be01}\nIn Prof. Birch’s bag, there were three\nPokémon. Which one was at the right?
+Treecko
+Torchic
+Mudkip
+Mechadoll 2 Quiz.{be01}\nWhich Pokémon was offered for a trade\nat the Pokémon Trainer’s School?
+Seedot
+Shroomish
+Spinda
+Mechadoll 2 Quiz.{be01}\nThe Devon Researcher was looking for\nwhat Pokémon in Petalburg Woods?
+Shroomish
+Zigzagoon
+Wurmple
+Clickety-Clack...\nMechadoll 3 Am I!{be01}\nMatters Of Money Are My Sole Focus.
+Mechadoll 3 Quiz.{be01}\nWhich costs more?\nThree Poké Balls or one Super Potion?
+Poké Ball
+Super Potion
+Same price
+Mechadoll 3 Quiz.{be01}\nSell one Escape Rope and buy\none Antidote. How much money remains?
+$135
+$155
+$175
+Mechadoll 3 Quiz.{be01}\nDo one Full Heal and Great Ball\ncost more than one Revive?
+They will cost more.
+They will cost less.
+Same price
+Clickety-Clack...\nMechadoll 4 That Is Me!{be01}\nMy Quiz Is An Object Of Beauty.
+Mechadoll 4 Quiz.{be01}\nRustboro Gym Leader Roxanne used a\nGeodude. Was it male or female?
+⑭
+⑮
+Neither
+Mechadoll 4 Quiz.{be01}\nIn Dewford Hall, were there more men\nor women?
+Males
+Females
+Same number
+Mechadoll 4 Quiz.{be01}\nThe first Trainer in Dewford Gym was\nmale or female?
+Male
+Female
+It depends
+Clickety-Clack...\nMechadoll 5 Am I!{be01}\nThe Master’s Best And Proudest\nAchievement Am I.
+Mechadoll 5 Quiz.{be01}\nHow many Bikes does Rydel have on\ndisplay outside his cycle shop?
+6
+8
+10
+Mechadoll 5 Quiz.{be01}\nHow many people give you Berries at the\nPretty Petal flower shop?
+1
+2
+3
+Mechadoll 5 Quiz.{be01}\nHow many signs are there in\nLilycove City?
+6
+7
+8

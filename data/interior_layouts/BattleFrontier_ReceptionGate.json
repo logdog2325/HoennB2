@@ -1,0 +1,254 @@
+{
+ "_doc": "Battle Frontier Reception Gate (Emerald only: pokeemerald BattleFrontier_ReceptionGate, 9x14, LAYOUT_BATTLE_FRONTIER_RECEPTION_GATE, gTileset_General + gTileset_BattleFrontier; frontier_sp 2026-10-20, written by work/agents/frontier_sp/tools/frontier_rooms.py; zone 453, data/interiors/emerald/453.json): the gate between the ferry dock and the Battle Frontier. The Exchange Service Corner's look (style sp_battle: Nimbasa's Battle Test room, area 306). LAYOUT_BATTLE_FRONTIER_RECEPTION_GATE (9x14): rows 0-1 back wall with the glass door (4,1) (MB_NON_ANIMATED_DOOR: the builder's 'stairs' spot, a type-2 warp entered walking north into the solid door tile), the red carpet (4, 2-13) from the door to the exit mat (4,13) (MB_SOUTH_ARROW_WARP); four yellow booths, each a counter C round its guide: rows 3 and 5 (x 0-2 / 6-8) and the counter tile (1,4) / (7,4) (MB_COUNTER: talked to across it), the same at rows 10-12; plants (1-2, 8) and (6-8, 7) (pots solid, their tops walkable in Emerald's collision: one Black 2 plant on each pot tile); orange chairs (0, 6-8) and (8,8), walkable.",
+ "map": "BattleFrontier_ReceptionGate",
+ "decomp": "pokeemerald",
+ "style": "sp_battle",
+ "floor": [
+  [
+   0,
+   2,
+   8,
+   13
+  ]
+ ],
+ "mats": [
+  {
+   "tex": "chip_mat",
+   "src": 306,
+   "rect": [
+    4,
+    2,
+    4,
+    13
+   ],
+   "border": 0.25,
+   "border_units": 4,
+   "y": 0,
+   "_what": "red carpet (4, 2-13) from the door to the exit mat (4,13)"
+  }
+ ],
+ "blocks": [
+  {
+   "tiles": [
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     4
+    ],
+    [
+     0,
+     5
+    ],
+    [
+     1,
+     5
+    ],
+    [
+     2,
+     5
+    ]
+   ],
+   "use": "bt_counter",
+   "_what": "left booth rows 3-5 (Emerald's yellow counters; the counter tile (1,4))"
+  },
+  {
+   "tiles": [
+    [
+     0,
+     10
+    ],
+    [
+     1,
+     10
+    ],
+    [
+     2,
+     10
+    ],
+    [
+     1,
+     11
+    ],
+    [
+     0,
+     12
+    ],
+    [
+     1,
+     12
+    ],
+    [
+     2,
+     12
+    ]
+   ],
+   "use": "bt_counter",
+   "_what": "left booth rows 10-12 (Emerald's yellow counters; the counter tile (1,11))"
+  },
+  {
+   "tiles": [
+    [
+     6,
+     3
+    ],
+    [
+     7,
+     3
+    ],
+    [
+     8,
+     3
+    ],
+    [
+     7,
+     4
+    ],
+    [
+     6,
+     5
+    ],
+    [
+     7,
+     5
+    ],
+    [
+     8,
+     5
+    ]
+   ],
+   "use": "bt_counter",
+   "_what": "right booth rows 3-5 (Emerald's yellow counters; the counter tile (7,4))"
+  },
+  {
+   "tiles": [
+    [
+     6,
+     10
+    ],
+    [
+     7,
+     10
+    ],
+    [
+     8,
+     10
+    ],
+    [
+     7,
+     11
+    ],
+    [
+     6,
+     12
+    ],
+    [
+     7,
+     12
+    ],
+    [
+     8,
+     12
+    ]
+   ],
+   "use": "bt_counter",
+   "_what": "right booth rows 10-12 (Emerald's yellow counters; the counter tile (7,11))"
+  }
+ ],
+ "furniture": [
+  {
+   "m": "door_h5_in",
+   "tile": [
+    4,
+    2
+   ],
+   "wall": "N",
+   "gap": -1,
+   "doorway": true,
+   "y": -1,
+   "_what": "glass door to the island (Emerald's door (4,1), warp 1: walked into from (4,2))"
+  },
+  {
+   "m": "plant01",
+   "tile": [
+    1,
+    8
+   ],
+   "_what": "potted plant (1,8) (Emerald's pot, solid)"
+  },
+  {
+   "m": "plant01",
+   "tile": [
+    2,
+    8
+   ],
+   "_what": "potted plant (2,8) (Emerald's pot, solid)"
+  },
+  {
+   "m": "plant01",
+   "tile": [
+    6,
+    7
+   ],
+   "_what": "potted plant (6,7) (Emerald's pot, solid)"
+  },
+  {
+   "m": "plant01",
+   "tile": [
+    7,
+    7
+   ],
+   "_what": "potted plant (7,7) (Emerald's pot, solid)"
+  },
+  {
+   "m": "plant01",
+   "tile": [
+    8,
+    7
+   ],
+   "_what": "potted plant (8,7) (Emerald's pot, solid)"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    0,
+    6
+   ],
+   "_what": "chair (0,6) (Emerald's orange chair, walkable)"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    0,
+    7
+   ],
+   "_what": "chair (0,7) (Emerald's orange chair, walkable)"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    0,
+    8
+   ],
+   "_what": "chair (0,8) (Emerald's orange chair, walkable)"
+  },
+  {
+   "m": "chushion01",
+   "tile": [
+    8,
+    8
+   ],
+   "_what": "chair (8,8) (Emerald's orange chair, walkable)"
+  }
+ ]
+}

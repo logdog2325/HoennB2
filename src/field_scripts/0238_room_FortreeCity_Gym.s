@@ -21,8 +21,10 @@ Script_None:
 // Scripts 2-4, text lines 1-9 (line 0 is the generator's). Winona (uid 1), the Gym guide (uid 6), the two statue plaques
 // ((1,21), (4,21); script 4) and the four trainers (Jared uid 2, Terrell 3, Kylee 4, Will 5: Black 2's eye-contact
 // trainer script 3000 + id) are in data/story/ch7.json. Room tiles = Sapphire tiles + (1,1).
-// Not ported: the rotating gates (FortreeCity_Gym_OnTransition / OnWarp: RotatingGate_InitPuzzle*): the room builder
-// leaves them out (b2tools/gyms_league_rooms.py), so there is nothing to turn.
+// The rotating gates (FortreeCity_Gym_OnTransition / OnWarp: RotatingGate_InitPuzzle*; fortree_gates 2026-10-20) need no
+// script: b2tools/patches/rotating_gates.c turns them (zone 119: pokeruby's 7 gates, Emerald pokeemerald's 8; the arm
+// actors uid 100+ are data/story/fortree_gates.json / emerald/), and their turns (map-local works 0x4000-0x4007) are
+// cleared on every map change, as RotatingGate_InitPuzzle resets them when you enter.
 #define T_ReceivedFeatherBadge 1
 #define T_ExplainFeatherBadge 2
 #define T_ExplainAerialAce 3

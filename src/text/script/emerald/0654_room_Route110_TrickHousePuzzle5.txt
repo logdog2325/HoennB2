@@ -1,0 +1,75 @@
+…
+{0100:0} found a scroll.
+{0100:0} memorized the secret code\nwritten on the scroll.
+A secret code is written on it.
+The door is locked.{be01}\n…On closer inspection, this is written\non it: “Write the secret code here.”
+{0100:0} wrote down the secret code\non the door.{be01}\n“Trick Master is a genius.”\n… … … … … … … …{be01}\nThe lock clicked open!
+Congratulations. Correct You Are.\nGo Through. Please.
+Bzzzt. Disappointment.\nError.
+Wahahahaha! Wahahahaha!\nClickety-Clack!
+Your Next Challenge We Wait For.
+Clickety-Clack…\nMechadoll 1 Am I!{be01}\nIf You Answer Quizzes Correctly,\nThen You Will Go To Mechadoll 5.{be00}\nThen You Can Obtain The Secret Code.
+Mechadoll 1 Quiz.{be01}\nOne of these Pokémon is not found\non Route 110. Which one is it?
+Oddish
+Poochyena
+Taillow
+Mechadoll 1 Quiz.{be01}\nOne of these Pokémon is not of the\nWater type. Which one is it?
+Azurill
+Lotad
+Wingull
+Mechadoll 1 Quiz.{be01}\nOne of these Pokémon does not use\nLeech Life. Which one is it?
+Dustox
+Zubat
+Nincada
+Clickety-Clack…\nMechadoll 2 Am I!{be01}\nMechadoll 1’s Quiz Difficulty Level\nIs Set Too Low.
+Mechadoll 2 Quiz.{be01}\nWhich of these Pokémon did Wally\nborrow from your father?
+Ralts
+Zigzagoon
+Slakoth
+Mechadoll 2 Quiz.{be01}\nWhich of these Pokémon was chasing\nProf. Birch?
+Poochyena
+Shroomish
+Zigzagoon
+Mechadoll 2 Quiz.{be01}\nWhich of these Pokémon did Team Aqua\nuse in Petalburg Forest?
+Poochyena
+Zubat
+Carvanha
+Clickety-Clack…\nMechadoll 3 Am I!{be01}\nMatters Of Money Are My Sole Focus.
+Mechadoll 3 Quiz.{be01}\nWhich costs more?\nThree Harbor Mails or one Burn Heal?
+Burn Heal
+Harbor Mail
+Same price
+Mechadoll 3 Quiz.{be01}\nSell one Great Ball and buy\none Potion. How much money remains?
+$60
+$55
+Nothing
+Mechadoll 3 Quiz.{be01}\nDo one Repel and Soda Pop cost\nmore than one Super Potion?
+They will cost more.
+They will cost less.
+Same price
+Clickety-Clack…\nMechadoll 4 That Is Me!{be01}\nMy Quiz Is An Object Of Beauty.
+Mechadoll 4 Quiz.{be01}\nIn Seashore House, were there more men\nor women?
+Male
+Female
+Neither
+Mechadoll 4 Quiz.{be01}\nIn Lavaridge Town, were there more\nelderly men or elderly women?
+Elderly men
+Elderly ladies
+Same number
+Mechadoll 4 Quiz.{be01}\nIn the Trainer’s School, how many\ngirl students were there?
+None
+1
+2
+Clickety-Clack…\nMechadoll 5 Am I!{be01}\nThe Master’s Best And Proudest\nAchievement Am I.
+Mechadoll 5 Quiz.{be01}\nIn Slateport’s Pokémon Fan Club,\nhow many Pokémon were there?
+2
+3
+4
+Mechadoll 5 Quiz.{be01}\nIn Fortree City, how many\ntree houses were there?
+6
+7
+8
+Mechadoll 5 Quiz.{be01}\nOn the Cycling Road, how many\nTriathletes were there?
+6
+7
+8

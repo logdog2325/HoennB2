@@ -39,7 +39,23 @@ def apply(files):
         assert 0 < len(s['ids']) < 256, f'shop id {k}: {len(s["ids"])} items'
         lists[f] = struct.pack(f'<{len(s["ids"])}H', *s['ids'])
         cnt[f] = len(s['ids'])
+    # (frontier_center 2026-10-20) Emerald-only marts with their own shop ids (data/emerald/hoenn_shops.json "extra",
+    # b2tools/shops_data.py EXTRA: the Battle Frontier Mart = id 26): their empty list files id + 6 after Black 2's
+    # specialty slots. a/2/8/2 grows by their bytes (trainer_hill.py and fairy.py grow it too)
+    extra = {}
+    import version
+    if version.is_emerald():
+        extra = json.load(open(os.path.join(ROOT, 'data', 'emerald', 'hoenn_shops.json'))).get('extra', {})
+    for k, s in extra.items():
+        f = int(k) + 6
+        assert 32 <= f < 79 and not lists[f] and cnt[f] == 0, f'shop id {k}: list file {f} is not an empty one'
+        lists[f] = struct.pack(f'<{len(s["ids"])}H', *s['ids'])
+        cnt[f] = len(s['ids'])
     counts[0] = bytes(cnt)
     narcio.save(files, 282, lists); narcio.save(files, 283, counts)
-    _pad_to(arc_path(files, 282), size0)
-    return f'{len(shops)} shop lists (ids {min(map(int, shops))}-{max(map(int, shops))}), a/2/8/2 kept at {size0} bytes'
+    if not extra:
+        _pad_to(arc_path(files, 282), size0)
+        return f'{len(shops)} shop lists (ids {min(map(int, shops))}-{max(map(int, shops))}), a/2/8/2 kept at {size0} bytes'
+    _pad_to(arc_path(files, 282), max(size0, os.path.getsize(arc_path(files, 282))))
+    return (f'{len(shops)} shop lists (ids {min(map(int, shops))}-{max(map(int, shops))}), a/2/8/2 {size0} -> '
+            f'{os.path.getsize(arc_path(files, 282))} bytes' + ''.join(f'; Emerald shop {k}: {s["emerald_label"]} ({len(s["ids"])} items)' for k, s in extra.items()))

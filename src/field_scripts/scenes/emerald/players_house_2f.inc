@@ -48,6 +48,17 @@ Sub_Em_2FInit:                                   // ..._2F_OnTransition (called 
     h_goto_if_ne HLIB_TMP, EM_PLAYER_SEX, L_Em_2FReadyDone
     h_setvar VAR_LITTLEROOT_RIVAL_STATE, 2
 L_Em_2FReadyDone:
+    // Home again after the Lilycove battle (littleroot2, 2026-10-19): pokeemerald's LilycoveCity_EventScript_DefeatedMay/
+    // Brendan clear this bedroom flag and the Hall of Fame sets it for good; our shared Lilycove scene clears only Sapphire's
+    // FLAG_HIDE_*_UPSTAIRS, so the room does it here, which also fixes saves already past Lilycove
+    // (FLAG_MET_RIVAL_LILYCOVE = beaten there; FLAG_SYS_GAME_CLEAR = after the Hall of Fame). Only in the rival's house:
+    // the player's own room keeps its (unused) rival hidden.
+    h_goto_if_unset FLAG_MET_RIVAL_LILYCOVE, L_Em_2FHomeDone
+    h_goto_if_set FLAG_SYS_GAME_CLEAR, L_Em_2FHomeDone
+    TrainerCardGetSex HLIB_TMP
+    h_goto_if_ne HLIB_TMP, EM_PLAYER_SEX, L_Em_2FHomeDone
+    h_clearflag EM_BEDROOM_HIDE
+L_Em_2FHomeDone:
     h_goto_if_lt VAR_LITTLEROOT_RIVAL_STATE, 3, L_Em_2FInitEnd
     ObjInitNPCGPos EM_RIVAL2F_INDEX, 0, EM_PC_X, 0, 3   // TryUpdate(Brendan/May)Pos: at the PC, facing up
 L_Em_2FInitEnd:

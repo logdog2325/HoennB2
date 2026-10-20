@@ -583,7 +583,8 @@ def _pad_narc(data, target):
 # island's). Black 2 lands on the zone header's fly point (ov033 EventFly: LoadZoneSpawnInfoCheckRail), which
 # hoenn_world.py sets to a walkable tile near the map's middle (world.py 'fly'); Teleport and the Escape Rope's fallback
 # use the same point (ov035 event_mapchange.c), and Sapphire's Teleport lands at the heal location too. Littleroot keeps
-# world.py's point between the two houses (Sapphire lands at the player's own house: one point per zone here).
+# world.py's point between the two houses (the Escape Rope's fallback); Fly lands at the player's own house and Teleport home
+# in the bedroom (the hooks below).
 HEAL_LANDING = True
 def fly_points(world_dir=None):
     """{zone: (x, z)}: the heal tile of each town (and the Battle Tower island) in its matrix's tiles, when that tile is
@@ -630,6 +631,168 @@ def fly_points(world_dir=None):
             kept.append(f"{name} ({ch!r}, zone {zone_here})"); continue
         out[z['zone']] = (x, zz)
     return out, kept
+
+# Fly to Littleroot lands in front of the player's own house (littleroot2, 2026-10-19): pokeruby region_map.c (Fly to
+# MAPSEC_LITTLEROOT_TOWN: sub_8053538(playerGender == MALE ? HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE :
+# ..._MAYS_HOUSE)), pokeemerald the same (SetWarpDestinationToHealLocation): (5,9) below Brendan's door for a boy,
+# (14,9) below May's for a girl. Black 2's Fly takes the zone header's one fly point, so EventFly's creation
+# (ov033 func_ov033_02178908) calls a hook instead of LoadZoneSpawnInfoCheckRail: it loads the spawn as before, then in
+# Littleroot puts the player on the tile of their sex (the event's take-off effect, set just before the call from the
+# player's sex: 11 boy, 31 girl). The header point between the houses stays for the Escape Rope's fallback (Teleport
+# home: the bedroom, apply_home_teleport below). The hook sits in the
+# zero tail of dive.py's spawn-hook block (ov033's dead CheckAbyssalRuinsStepEvent; dive runs first in the patch list).
+# Code only: saves are unchanged.
+LITTLEROOT_FLY = True
+OV033 = 0x02176B00
+FLY_SPAWN_CALL = 0x02178956             # func_ov033_02178908: bl LoadZoneSpawnInfoCheckRail (r0 = &work->spawn, r1 = zone)
+LoadZoneSpawnInfoCheckRail = 0x020190C8
+FLY_HOOK_SPACE = (0x02179E98, 0x02179F04)   # dive.py HOOK (its spawn hook, then zeros)
+FLY_EFFECT_OUT = 0x1C                   # FlyEventWork.effectOut (work + 0x28) from &work->spawn (work + 0xC)
+
+def littleroot_landings(world_dir=None):
+    """(zone, {'boy': (x, z), 'girl': (x, z)}): Gen 3's Fly landings in Littleroot (the version's decomp's heal locations
+    HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE / _MAYS_HOUSE) in world tiles, each checked walkable and in the zone."""
+    import version
+    world_dir = world_dir or os.environ.get('HOENN_WORLD_DIR') or version.world_dir()
+    w = json.load(open(os.path.join(world_dir, 'world.json')))
+    zone = json.load(open(os.path.join(ROOT, 'data', 'hoenn_zones.json')))['maps']['LittlerootTown']['zone']
+    heal = {h['id']: h for h in json.load(open(os.path.join(version.DECOMP, 'src', 'data', 'heal_locations.json')))['heal_locations']}
+    ox, oz = origins()['LittlerootTown'][:2]
+    out = {}
+    for sex, hid in (('boy', 'HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE'), ('girl', 'HEAL_LOCATION_LITTLEROOT_TOWN_MAYS_HOUSE')):
+        h = heal[hid]
+        assert h['map'] == 'MAP_LITTLEROOT_TOWN', h
+        x, z = ox + h['x'], oz + h['y']
+        cell = next(c for c in w['cells'] if c['cx'] == x // 32 and c['cz'] == z // 32)
+        d = cell.get('dir') or f"{cell['cx']:02d}_{cell['cz']:02d}"
+        ch = json.load(open(os.path.join(world_dir, 'cells', d, 'chunk.json')))['collision'][z % 32][x % 32]
+        assert cell['zone'] == zone and ch not in '#v', (sex, x, z, ch, cell['zone'])   # (a zone_rect would win: none in Littleroot)
+        out[sex] = (x, z)
+    return zone, out
+
+def littleroot_fly_hook(at, zone, pts):
+    """hook(spawn, zone): LoadZoneSpawnInfoCheckRail(spawn, zone); in `zone`, spawn.pos.x/z = the boy's or the girl's
+    tile centre (fx32: tile * 16 + 8 units)."""
+    fx = lambda t: t << 16 | 0x8000
+    assert pts['boy'][1] == pts['girl'][1], pts
+    t = T(at)
+    t.push([3, 4, 5]); t.mov(4, 0); t.mov(5, 1)
+    t.bl(LoadZoneSpawnInfoCheckRail)
+    t.ldr_lit(0, 'zone'); t.cmpr(5, 0); t.bne('done')
+    t.ldr_lit(1, 'xb'); t.ldr_off(0, 4, FLY_EFFECT_OUT); t.cmp(0, 11); t.beq('set')   # 11: a boy's take-off
+    t.ldr_lit(1, 'xg')
+    t.label('set'); t.str_off(1, 4, 16)                          # spawn.pos.x (pos at +16: dive.py's hook)
+    t.ldr_lit(1, 'z'); t.str_off(1, 4, 24)                       # spawn.pos.z (y: the header's)
+    t.label('done'); t.pop([3, 4, 5])
+    t.word('zone', zone); t.word('xb', fx(pts['boy'][0])); t.word('xg', fx(pts['girl'][0])); t.word('z', fx(pts['boy'][1]))
+    return t.assemble()
+
+def apply_littleroot_fly(code):
+    zone, pts = littleroot_landings()
+    path = os.path.join(code, 'arm9_ov033.bin')
+    ov = bytearray(open(path, 'rb').read())
+    n = len(littleroot_fly_hook(FLY_HOOK_SPACE[0], zone, pts))
+    at = (FLY_HOOK_SPACE[1] - n) & ~3
+    assert not any(ov[at - OV033:FLY_HOOK_SPACE[1] - OV033]), 'Littleroot Fly hook: dive.py\'s spawn hook block has no room (dive patch first?)'
+    hook = littleroot_fly_hook(at, zone, pts)
+    ov[at - OV033:at - OV033 + len(hook)] = hook
+    def bl(src, dst):
+        off = dst - (src + 4)
+        return struct.pack('<HH', 0xF000 | (off >> 12) & 0x7FF, 0xF800 | (off >> 1) & 0x7FF)
+    c = FLY_SPAWN_CALL - OV033
+    assert bytes(ov[c:c + 4]) == bl(FLY_SPAWN_CALL, LoadZoneSpawnInfoCheckRail), f'EventFly spawn call: {bytes(ov[c:c + 4]).hex()}'
+    ov[c:c + 4] = bl(FLY_SPAWN_CALL, at)
+    if os.path.islink(path): os.unlink(path)
+    open(path + '.tmp', 'wb').write(ov); os.replace(path + '.tmp', path)
+    return f"; Fly to Littleroot lands by the player's sex: boy {pts['boy']}, girl {pts['girl']} (ov033 hook {len(hook)} B at {at:#x})"
+
+# Teleport home (littleroot2 follow-up, 2026-10-19): Gen 3's Teleport goes to the last heal location (pokeruby
+# field_effect.c Overworld_SetWarpDestToLastHealLoc, pokeemerald TeleportWarpOutFieldEffect_End
+# SetWarpDestinationToLastHealLocation). Before the first Pokémon Center, and again after the Hall of Fame, that is the
+# player's own bedroom (InsideOfTruck / the Hall of Fame: setrespawn HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F or
+# _MAYS_HOUSE_2F, (4,2) of the 2F map). Black 2's Teleport (ov035 EventMapChangeTeleport_Create) lands on the zone header
+# point of the return location's main zone: for RESPAWN_ZONE_INFO record 0 (home) that is Littleroot, between the
+# houses. Its LoadZoneSpawnInfoCheckRail call goes to a hook in ITCM (the arena-literal protocol of hm_free.py /
+# fairy.py): the spawn as before, then, when the return location is 1 (1-based: RESPAWN_ZONE_INFO record 0, h_setrespawn 1;
+# the caller keeps it in r6, the GameSystem in r5),
+# the bedroom of the player's sex at Gen 3's tile (the room's zone tiles = map tiles + its origin), on the floor (y 0,
+# as the rooms' scripted warps). A Center's return location keeps Black 2's landing (town_map's heal tiles).
+# The blackout at home lands in the same bedroom by script (0780_brendans_house_1f.s Script_2). Code only.
+HOME_TELEPORT = True
+TELEPORT_SPAWN_CALL = 0x0217DD88        # ov035 EventMapChangeTeleport_Create: bl LoadZoneSpawnInfoCheckRail
+OV035 = 0x0217C940
+GetGameDataPlayerInfo, getTrainerGender = 0x0201736C, 0x02008BF0
+ITCM_BASE, ARENA_ITCM_LIT, ARM9 = 0x01FF8000, 0x0207B400, 0x02004000
+
+def home_bedrooms(rooms_dir=None):
+    """{'boy': (zone, x, z), 'girl': (zone, x, z)}: Gen 3's home heal locations (the version's decomp:
+    HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F / _MAYS_HOUSE_2F) in our rooms' zone tiles, checked walkable."""
+    import version
+    rooms_dir = rooms_dir or os.environ.get('HOENN_INTERIORS_DIR') or os.path.join(ROOT, 'work', 'interiors')
+    rooms = json.load(open(os.path.join(ROOT, 'data', 'hoenn_interiors.json')))['rooms']
+    heal = {h['id']: h for h in json.load(open(os.path.join(version.DECOMP, 'src', 'data', 'heal_locations.json')))['heal_locations']}
+    out = {}
+    for sex, house in (('boy', 'BRENDANS'), ('girl', 'MAYS')):
+        h = heal[f'HEAL_LOCATION_LITTLEROOT_TOWN_{house}_HOUSE_2F']
+        name = {'BRENDANS': 'LittlerootTown_BrendansHouse_2F', 'MAYS': 'LittlerootTown_MaysHouse_2F'}[house]
+        assert h['map'] == 'MAP_' + 'LITTLEROOT_TOWN_' + house + '_HOUSE_2F', h
+        d = os.path.join(rooms_dir, version.room_variant(name))
+        if not os.path.exists(os.path.join(d, 'room.json')): d = os.path.join(rooms_dir, name)
+        meta = json.load(open(os.path.join(d, 'room.json')))
+        ox, oz = meta['origin']
+        x, z = h['x'] + ox, h['y'] + oz
+        per = open(os.path.join(d, meta['collision']), 'rb').read()
+        assert not struct.unpack_from('<HHHH', per, 4 + 8 * (z * 32 + x))[3] & 1, (name, x, z, 'solid')
+        out[sex] = (rooms[name]['zone'], x, z)
+    return out
+
+def home_teleport_hook(base, homes):
+    fx = lambda t: t << 16 | 0x8000
+    assert homes['boy'][1:] == homes['girl'][1:], homes
+    t = T(base)
+    t.push([4, 5, 6]); t.mov(4, 0)
+    t.bl(LoadZoneSpawnInfoCheckRail)                             # (r0 = spawn, r1 = the main zone): Black 2's landing
+    t.cmp(6, 1); t.bne('done')                                   # the caller's GetReturnLocationIdx: 1 = home (record 0)
+    t.mov(0, 5); t.bl(GSYS_GetGameData); t.bl(GetGameDataPlayerInfo); t.bl(getTrainerGender)
+    t.ldr_lit(1, 'zb'); t.cmp(0, 0); t.beq('load')
+    t.ldr_lit(1, 'zg')
+    t.label('load'); t.mov(0, 4); t.bl(LoadZoneSpawnInfoCheckRail)   # the bedroom zone (changeType, zone, direction)
+    t.ldr_lit(0, 'x'); t.str_off(0, 4, 16)                       # spawn.pos.x
+    t.movs(0, 0); t.str_off(0, 4, 20)                            # spawn.pos.y: the floor
+    t.ldr_lit(0, 'z'); t.str_off(0, 4, 24)                       # spawn.pos.z
+    t.label('done'); t.pop([4, 5, 6])
+    t.word('zb', homes['boy'][0]); t.word('zg', homes['girl'][0]); t.word('x', fx(homes['boy'][1])); t.word('z', fx(homes['boy'][2]))
+    return t.assemble()
+
+def apply_home_teleport(code):
+    homes = home_bedrooms()
+    yml = os.path.join(code, 'itcm.yaml')
+    text = open(yml).read()
+    size = int(re.search(r'^code_size: (\d+)$', text, re.M).group(1))
+    assert re.search(r'^base_address: (\d+)$', text, re.M).group(1) == str(ITCM_BASE)
+    base = ITCM_BASE + size
+    p9 = os.path.join(code, 'arm9.bin'); arm9 = bytearray(open(p9, 'rb').read())
+    lit = ARENA_ITCM_LIT - ARM9
+    assert struct.unpack_from('<I', arm9, lit)[0] == base, 'Teleport home: the ITCM arena literal is not the end of ITCM'
+    blob = home_teleport_hook(base, homes)
+    end = (base + len(blob) + 31) & ~31
+    struct.pack_into('<I', arm9, lit, end)
+    pi = os.path.join(code, 'itcm.bin'); itcm = open(pi, 'rb').read()
+    assert len(itcm) == size
+    po = os.path.join(code, 'arm9_ov035.bin'); ov = bytearray(open(po, 'rb').read())
+    def bl(src, dst):
+        off = dst - (src + 4)
+        assert -(1 << 22) <= off < (1 << 22)
+        return struct.pack('<HH', 0xF000 | (off >> 12) & 0x7FF, 0xF800 | (off >> 1) & 0x7FF)
+    c = TELEPORT_SPAWN_CALL - OV035
+    assert bytes(ov[c:c + 4]) == bl(TELEPORT_SPAWN_CALL, LoadZoneSpawnInfoCheckRail), f'Teleport spawn call: {bytes(ov[c:c + 4]).hex()}'
+    ov[c:c + 4] = bl(TELEPORT_SPAWN_CALL, base)
+    for path, data in ((p9, arm9), (pi, bytes(itcm) + blob + bytes(end - base - len(blob))), (po, ov)):
+        if os.path.islink(path): os.unlink(path)
+        open(path + '.tmp', 'wb').write(data); os.replace(path + '.tmp', path)
+    open(yml, 'w').write(re.sub(r'^code_size: \d+$', f'code_size: {end - ITCM_BASE}', text, flags=re.M))
+    return (f"; Teleport home lands in the bedroom: boy zone {homes['boy']}, girl {homes['girl']} "
+            f"(ITCM hook {len(blob)} B at {base:#x}, arena from {end:#x})")
 
 LAYOUT = {}
 def apply(files):
@@ -848,4 +1011,6 @@ def apply_code(code):
     _put(ov, FIND_ENTRY[0], None, fe + bytes(FIND_ENTRY[1] - FIND_ENTRY[0] - len(fe)), 'find entry')
     if os.path.islink(path): os.unlink(path)
     open(path + '.tmp', 'wb').write(ov); os.replace(path + '.tmp', path)
-    return f"ov144: {lay['n']} entries, locations from a/0/8/4 #{NEW_FILE}, zone table lookup, route refine, view mode for scripts"
+    fly = apply_littleroot_fly(code) if LITTLEROOT_FLY else ''
+    fly += apply_home_teleport(code) if HOME_TELEPORT else ''
+    return f"ov144: {lay['n']} entries, locations from a/0/8/4 #{NEW_FILE}, zone table lookup, route refine, view mode for scripts" + fly

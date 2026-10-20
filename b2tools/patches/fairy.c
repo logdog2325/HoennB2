@@ -122,6 +122,34 @@ u32 Split_IsClassic(void) { return (config() & CFG_CLASSIC) != 0; }
 u32 Season_FromMonth(u32 month) { return (config() & CFG_SEASONS) ? ((month - 1) & 3) : 1; }
 u32 Season_Kept(const u8 *gameData) { return (config() & CFG_SEASONS) ? gameData[0x1c8] : 1; }
 
+/* Season_Snow (seasons2, 2026-10-20): Black 2's winter snowfall on Hoenn's land. GetWeatherAll (arm9 0x02032e94) asks,
+ * in order: weather.py's hook (Kyogre's rain, Route 119/123's day cycles; Emerald: emerald_mech's), Route 7's weather
+ * (never in Sapphire/Ruby; Emerald: emerald_postgame's abnormal weather), the birthday weather, then the calendar and the
+ * zone header. Its birthday call (bl at 0x02032eea) comes here: snowfall when the seasons option is on, the kept season
+ * is winter, the clock's month is a winter month (April, August, December), the zone is one of Hoenn's snowy outdoor
+ * zones (kSnowZones, fairy.py snow_tables: terrain/seasons.py's EXCLUDE left out) and the day is one of Black 2's
+ * snowfall days on Route 6, Route 7, Driftveil and Mistralton (a/0/9/6 calendar: weather 5 on 6-9 days of each winter
+ * month; kSnowDays, one mask per month); otherwise the birthday weather as before (SNOW_CHAIN: GetBirthdayZoneWeather
+ * 0x02033084; Emerald: none, emerald_postgame's code is there). Weather 5 (white flakes, a/0/5/5 files 0-3; Black 2's
+ * light snow, weather 1, shares its palette with Route 113's grey ash, fixed_weather.py ash_flakes) is Hail in battles,
+ * as on those routes in Black 2 (ConvFieldWeatherToBtl). */
+#define RTC_GetCachedDate FN(void (*)(u32 *), 0x0204424c)
+u32 Season_Snow(void *gsys, const u8 *gameData, u32 zone) {
+    u32 date[4];                                            /* RTCDate: year, month 1-12, day 1-31, week */
+    if ((config() & CFG_SEASONS) && gameData[0x1c8] == 3 && zone < 8 * sizeof(kSnowZones)
+        && ((kSnowZones[zone >> 3] >> (zone & 7)) & 1)) {
+        RTC_GetCachedDate(date);
+        if (((date[1] - 1) & 3) == 3 && date[2] >= 1 && date[2] <= 31
+            && ((kSnowDays[(date[1] - 1) >> 2] >> (date[2] - 1)) & 1)) return SNOW_WEATHER;
+    }
+#if SNOW_CHAIN
+    return FN(u32 (*)(void *, const u8 *, u32), SNOW_CHAIN)(gsys, gameData, zone);
+#else
+    (void)gsys;
+    return 0xFFFF;
+#endif
+}
+
 /* ---- type chart (replaces ov167 GetTypeEffectiveness 0x021bd160 and GetTypeWeaknesses 0x021bd2b0) ---------------- */
 static u32 vanilla_eff(u32 a, u32 d) {
     switch (VANILLA_CHART[a * 17 + d]) {

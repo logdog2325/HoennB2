@@ -372,6 +372,12 @@ def _check_cameras(hdrs, cams):
             out.append(f'{room}: camera: camera box {k} shared by zones {users}')
     return out
 
+# (em_rooms 2026-10-19) dest warp id 0x100 = Black 2's dynamic warp: it goes to GameData's next zone, which a script sets
+# right before it is used (ov035 EventMapChangeWarp_CreateFromEntity; FieldSetNextZone): the Lilycove Department Store
+# elevator's door (the floor picked in the elevator) and Route 103's Altering Cave door (the day's copy of the cave,
+# scenes/Route103_AlteringCave.inc). Not a missing warp, and the warp that leads to it has no fixed way back.
+DYN_WARP = 0x100
+
 def check_zones(rom):
     import zoneheaders
     from zones import parse_entities
@@ -412,16 +418,23 @@ def check_zones(rom):
         # warps both ways
         for i, w in enumerate(e['warps']):
             dz, dw = w['dest_zone'], w['dest_warp']
+            if w['type'] == 2 and w['dir'] == 0: continue       # (em_rooms) a walk-in warp that never fires: dir 0 matches
+                                     # no direction (CheckWarpDirectionMatch; notes/INTERIORS.md "Warps that fire on
+                                     # stepping"): an arrival spot (a hole's or ladder's step trigger warps), or a Gen 3 door
+                                     # only scripts used (the Centers' Cable Club doors). Not type 5: warp panels are dir 0
+                                     # and fire when stepped on
             if dz == zone and dw == 0 and i != 0:
                 say('warp', f'warp {i} at tile ({w["tile_x"]},{w["tile_z"]}) leads to its own warp 0 (destination not built)')
                 continue
             if w['type'] == 1 and 0xFFFF in (dz, dw): continue   # a mat that never fires (GetWarpIDByPlayerPos skips it:
                                      # IsWarpZoneOrWarpID0xFFFF): a landing spot or a Mt. Pyre hole (its step trigger falls)
+            if dw == DYN_WARP: continue                          # (em_rooms 2026-10-19) Black 2's dynamic warp, below
             if dz >= len(hdrs): say('warp', f'warp {i} -> zone {dz} (no such zone)'); continue
             de = ent(dz)
             if dw >= len(de['warps']):
                 say('warp', f'warp {i} -> zone {dz} warp {dw}, which does not exist ({len(de["warps"])} warps)'); continue
             back = de['warps'][dw]
+            if back['dest_warp'] == DYN_WARP: continue           # the way back is a dynamic warp (the elevator, Route 103)
             if back['dest_zone'] != zone:
                 bn = names.get(dz, f'zone {dz}')
                 say('warp', f'warp {i} at ({w["tile_x"]},{w["tile_z"]}) -> {bn} (zone {dz}) warp {dw}, which leads to zone '

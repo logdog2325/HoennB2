@@ -1,0 +1,45 @@
+…What’s that you want?{be01}\nCan’t you see we’re kind of busy here?\nCan’t your business wait till later?
+…Huh?\nYou look to me like a tough Trainer.{be01}\nHeheh…\nListen, I have this proposition.{be01}\nWe have a little group going here,\nand we play a little game with what{be00}\ngoes on in the Battle Frontier.{be01}\nThe rules are really simple.{be01}\nFirst, we pick one of the facilities\nin the Battle Frontier.{be01}\nThen, we each pick a different Trainer\nwho’s taking that facility’s challenge,{be00}\nand bet with our Battle Points.{be01}\nThe guy who bet on the Trainer with\nthe best record takes all the Battle{be00}\nPoints in the pool.{be01}\nSounds simple, huh?\nSo, anyway…
+I’ll see to it that you benefit, too.\nSo how about it?{be00}\nHow about entering that event for me?
+All right, that’s perfect.\nSo, uh… How about spotting me some{be00}\nof your Battle Points?{be01}\nTrust me, I’ll show you my gratitude\nafterward.
+Great, great!\nSo, how much can you spot me?
+Oh, no, no, no!\nYou don’t have enough Battle Points!{be01}\nI wish you wouldn’t monkey around and\nwaste everyone’s time!
+Heheh! Thanks much!\nSo, off you go!
+Oh, it’s you…\nNice try…{be01}\nI hate to break it to you, but I can’t\nreturn your Battle Points…{be01}\nI guess we’ll have to let it motivate\nus to try harder next time!
+Oh, yes!\nHello there, champ!{be01}\nI knew you could!\nI knew you would!{be00}\nWe’re both big winners!{be01}\nI’ll return your Battle Points and,\nof course, a little extra from me!
+{0100:0} obtained\n{0100:1} Battle Points.
+If you’re up for another challenge,\nplease do think of me!
+Not interested?! You shouldn’t be\nso afraid to take a chance!
+Oh…
+I backed the wrong Trainer again!{be01}\nMaybe I should be battling normally\nlike everyone else…
+That Trainer…{be01}\nHe’s good, but he gets rattled too\neasily to survive the Battle Dome…
+Giggle!\nI know a winner when I see one!
+Those Trainers…\nWhat are they doing?{be00}\nThey should be taking challenges.
+5 BP
+10 BP
+15 BP
+Exit
+What I’m looking for is a Trainer who’s\ngoing to be challenging the Battle{be00}\nTower’s Single Battle Rooms.{be01}\nBut so far, I haven’t seen a Trainer\nthat has that winning quality.
+What I’m looking for is a Trainer who’s\ngoing to be challenging the Battle{be00}\nTower’s Double Battle Rooms.{be01}\nBut so far, I haven’t seen a Trainer\nthat has that winning quality.
+What I’m looking for is a Trainer who’s\ngoing to be challenging the Battle{be00}\nTower’s Multi Battle Rooms.{be01}\nBut so far, I haven’t seen a Trainer\nthat has that winning quality.
+What I’m looking for is a Trainer who’s\ngoing to be entering the Battle{be00}\nDome’s Single Battle Tourney.{be01}\nBut so far, I haven’t seen a Trainer\nthat has that winning quality.
+What I’m looking for is a Trainer who’s\ngoing to be entering the Battle{be00}\nDome’s Double Battle Tourney.{be01}\nBut so far, I haven’t seen a Trainer\nthat has that winning quality.
+What I’m looking for is a Trainer who’s\ngoing to be entering the Battle{be00}\nFactory’s Battle Swap Single Tourney.{be01}\nBut so far, I haven’t seen a Trainer\nthat has that winning quality.
+What I’m looking for is a Trainer who’s\ngoing to be entering the Battle{be00}\nFactory’s Battle Swap Double Tourney.{be01}\nBut so far, I haven’t seen a Trainer\nthat has that winning quality.
+What I’m looking for is a Trainer who’s\ngoing to be challenging the Battle{be00}\nPalace’s Single Battle Halls.{be01}\nBut so far, I haven’t seen a Trainer\nthat has that winning quality.
+What I’m looking for is a Trainer who’s\ngoing to be challenging the Battle{be00}\nPalace’s Double Battle Halls.{be01}\nBut so far, I haven’t seen a Trainer\nthat has that winning quality.
+What I’m looking for is a Trainer who’s\ngoing to be entering the Battle{be00}\nArena’s Set KO Tourney.{be01}\nBut so far, I haven’t seen a Trainer\nthat has that winning quality.
+What I’m looking for is a Trainer who’s\ngoing to be entering the Battle Pike’s{be00}\nBattle Choice.{be01}\nBut so far, I haven’t seen a Trainer\nthat has that winning quality.
+What I’m looking for is a Trainer who’s\ngoing to be entering the Battle{be00}\nPyramid’s Battle Quest.{be01}\nBut so far, I haven’t seen a Trainer\nthat has that winning quality.
+Get to the Battle Tower’s\nSingle Battle Rooms pronto!{be01}\nIt’s a must-win situation!\nDon’t blow your chance!{be00}\nBoth of our futures depend on you!
+Get to the Battle Tower’s\nDouble Battle Rooms pronto!{be01}\nIt’s a must-win situation!\nDon’t blow your chance!{be00}\nBoth of our futures depend on you!
+Get to the Battle Tower’s\nMulti Battle Rooms pronto!{be01}\nIt’s a must-win situation!\nDon’t blow your chance!{be00}\nBoth of our futures depend on you!
+Get to the Battle Dome’s\nSingle Battle Tourney pronto!{be01}\nIt’s a must-win situation!\nDon’t blow your chance!{be00}\nBoth of our futures depend on you!
+Get to the Battle Dome’s\nDouble Battle Tourney pronto!{be01}\nIt’s a must-win situation!\nDon’t blow your chance!{be00}\nBoth of our futures depend on you!
+Get to the Battle Factory’s\nBattle Swap Single Tourney pronto!{be01}\nIt’s a must-win situation!\nDon’t blow your chance!{be00}\nBoth of our futures depend on you!
+Get to the Battle Factory’s\nBattle Swap Double Tourney pronto!{be01}\nIt’s a must-win situation!\nDon’t blow your chance!{be00}\nBoth of our futures depend on you!
+Get to the Battle Palace’s\nSingle Battle Halls pronto!{be01}\nIt’s a must-win situation!\nDon’t blow your chance!{be00}\nBoth of our futures depend on you!
+Get to the Battle Palace’s\nDouble Battle Halls pronto!{be01}\nIt’s a must-win situation!\nDon’t blow your chance!{be00}\nBoth of our futures depend on you!
+Get to the Battle Arena’s\nSet KO Tourney pronto!{be01}\nIt’s a must-win situation!\nDon’t blow your chance!{be00}\nBoth of our futures depend on you!
+Get to the Battle Pike’s\nBattle Choice pronto!{be01}\nIt’s a must-win situation!\nDon’t blow your chance!{be00}\nBoth of our futures depend on you!
+Get to the Battle Pyramid’s\nBattle Quest pronto!{be01}\nIt’s a must-win situation!\nDon’t blow your chance!{be00}\nBoth of our futures depend on you!

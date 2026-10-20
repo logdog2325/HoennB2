@@ -18,6 +18,14 @@ import narcio, sprites  # noqa: E402
 
 SRC = os.path.join(os.path.dirname(os.path.dirname(HERE)), 'src', 'objects3d')
 FREE_PEOPLE_RECORDS = {112, 118, 194}    # empty people records (entityType 0, res 0) no Black 2 zone, ActorNew or WKOBJCODE work uses
+# (trick_house 2026-10-19: + 142, the Trick House's hole; checked the same way: no zone NPC, ActorNew or WKOBJCODE work)
+FREE_PEOPLE_RECORDS |= {142}
+# (th_p6 2026-10-19: + 119 and 135, the rotating gates' arms (patches/rotating_gates.py); no Black 2 zone NPC (a/1/2/6),
+# ActorNew (a/0/5/6) or WKOBJCODE work (162-177) uses them, no Hoenn sprite either: data/sprite_map.json, emerald/)
+FREE_PEOPLE_RECORDS |= {119, 135}
+# (th_p7 2026-10-19: + 145, 146, 202 and 203, Trick House puzzle 7's turned arrows (b2tools/trick_house.py); checked the
+# same way: no Black 2 zone NPC, ActorNew or WKOBJCODE work, no Hoenn sprite; 185 is not free: zones 301-303/445 use it)
+FREE_PEOPLE_RECORDS |= {145, 146, 202, 203}
 KEYS = ('uid entityType sceneNodeType shadow footprint reflections billboardSize spriteAtlasSize '
         'spriteControllerType gender collWidth collHeight offX offY offZ res1 res2 anim0 anim1 anim2').split()
 FMT = '<HBBBBBBBBBBBbbbHHHHH'

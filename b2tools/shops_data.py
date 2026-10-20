@@ -116,6 +116,12 @@ EMERALD_LABEL = {   # Sapphire label -> (pokeemerald map, label) where pokeemera
 }
 
 
+EXTRA = {   # (frontier_center 2026-10-20) shop id -> (pokeemerald map, label): Emerald-only marts (list file id + 6, empty in
+    # Black 2; ids 23/25 are trainer_hill's, list file 79 fairy's)
+    26: ('BattleFrontier_Mart', 'BattleFrontier_Mart_Pokemart'),
+}
+
+
 def emerald_list(m, label):
     """pokeemerald's list: `.2byte ITEM_X` lines up to `pokemartlistend` (or ITEM_NONE)."""
     s = open(os.path.join(EMERALD_MAPS, m, 'scripts.inc')).read()
@@ -165,15 +171,27 @@ def main_emerald():
     size = len(write_narc(arc))
     assert size <= size0, f'Emerald shop lists: a/2/8/2 would be {size} bytes, over Black 2\'s {size0}'
     seen = {(EMERALD_LABEL.get(lab, (m, lab))[1]) for m, lab in SHOPS.values()}
+    # (frontier_center 2026-10-20) Emerald-only marts built since: their own shop ids after Black 2's specialty slots
+    # (EXTRA; b2tools/patches/shops.py writes them to their empty list files k + 6 in Emerald builds)
+    extra = {}
+    for i, (m, lab) in EXTRA.items():
+        b2 = []
+        for it in emerald_list(m, lab):
+            b = map_item(tmn.get(it, it), items, tms, notes, [0, {}])
+            if b: b2.append(b)
+            else: notes.append(f'{lab}: {it} has no Black 2 item, left out')
+        extra[str(i)] = dict(emerald_map=m, emerald_label=lab, emerald=emerald_list(m, lab), items=b2, ids=[items[b] for b in b2])
+        seen.add(lab)
     later = []
     for f in sorted(glob.glob(os.path.join(EMERALD_MAPS, '*', 'scripts.inc'))):
         for lab in re.findall(r'\bpokemart (\w+)', open(f).read()):
             if lab not in seen and lab not in later: later.append(lab)
     doc = ('Emerald overlay of data/hoenn_shops.json (version.load_json deep merge), written by b2tools/shops_data.py with '
            'HOENN_VERSION=emerald: the shop ids whose pokeemerald list differs from Sapphire\'s (label = Sapphire\'s, the '
-           'same mart; emerald_label = pokeemerald\'s). later: pokeemerald marts on maps this build does not have.')
+           'same mart; emerald_label = pokeemerald\'s). extra: Emerald-only marts with their own shop ids (EXTRA; '
+           'b2tools/patches/shops.py). later: pokeemerald marts on maps this build does not have.')
     want = {os.path.join(ROOT, 'data', 'emerald', 'hoenn_shops.json'): json.dumps(
-        {'_doc': doc, 'shops': out, 'later': later, 'notes': sorted(set(notes))}, indent=1, ensure_ascii=False) + '\n'}
+        {'_doc': doc, 'shops': out, 'extra': extra, 'later': later, 'notes': sorted(set(notes))}, indent=1, ensure_ascii=False) + '\n'}
     for i, sh in out.items():
         print(f'{i} {sh["emerald_label"]}: {" ".join(x[5:] for x in sh["items"])}\n   (Sapphire: {" ".join(x[5:] for x in sap[i]["items"])})')
     print(f'{len(out)} of {len(SHOPS)} lists differ in Emerald; a/2/8/2 {size} of {size0} bytes; later (maps not built): {later}')

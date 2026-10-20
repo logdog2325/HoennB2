@@ -1,6 +1,7 @@
 {
  "zone": 510,
  "room": "Route110_SeasideCyclingRoadNorthEntrance",
+ "cycling": true,
  "area": 326,
  "parent": 368,
  "_doc": "Route110_SeasideCyclingRoadNorthEntrance: shops agent (b2tools/shops_rooms.py); recipe data/interior_layouts/Route110_SeasideCyclingRoadNorthEntrance.json (b2tools/shops_recipes.py)",

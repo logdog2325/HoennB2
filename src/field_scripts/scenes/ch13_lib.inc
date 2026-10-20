@@ -15,6 +15,18 @@
 #include "hoenn_key_items.h"
 #include "scenes/ch2_boat.inc"              // ch2_land, ch2_hide_player (the ferry trips: h_sail_ferry, hoenn_story.inc)
 
+// The ferry's landing at the island (zone 17, standalone group BattleTower_Outside): Sapphire's MAP_BATTLE_TOWER_OUTSIDE
+// (19,23), group origin (17,18). Emerald's island is the Battle Frontier: pokeemerald's harbors warp MAP_BATTLE_FRONTIER_
+// OUTSIDE_WEST, 19, 67 (its dock, the attendant below at (19,68)); Outside West's origin in Emerald's world is (16,13).
+// (Until 2026-10-19 Emerald used Sapphire's numbers: (36,41) is a wall tile in the middle of the Frontier.)
+#ifdef HOENN_EMERALD
+#define CH13_BT_DOCK_X (19 + 16)
+#define CH13_BT_DOCK_Z (67 + 13)
+#else
+#define CH13_BT_DOCK_X (19 + 17)
+#define CH13_BT_DOCK_Z (23 + 18)
+#endif
+
 #define CH13_SE_DING_DONG SEQ_SE_DECIDE1    /* [guess] Sapphire SE_DING_DONG, the ship's chime (notes/STORY_SPECIALS.md: no match known) */
 #define CH13_RESPAWN_LILYCOVE 8             /* FieldSetTeleportZone n = 1 + the record of Lilycove's Pokémon Center (RESPAWN_ZONE_INFO 7) */
 #define CH13_RESPAWN_SLATEPORT 18           /* ... of Slateport's (record 17): notes in b2tools/patches/centers.py */

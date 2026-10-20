@@ -901,6 +901,16 @@ ACCEPT = [   # (zone name regex, kind regex, message regex, why); checked on the
      "template tile (96,98) (played in the emulator: (95,98) -> (96,98), screenshots/walk_sweep/safari_*)"),
 ]
 
+if version.is_emerald():         # (mtpyre 2026-10-19) only Emerald assembles these scripts without running them
+    ACCEPT.append(('LavaridgeTown_Gym_(1F|B1F)$', 'mapc',
+                   r'MapChangeCore (148 \(LavaridgeTown_Gym_B1F\) \((4,22|7,21|1,24|1,12|5,13|5,10|5,7|11,19|11,15)\)|'
+                   r'145 \(LavaridgeTown_Gym_1F\) \((4,22|2,7|7,15|7,21)\)):',
+                   "Sapphire's own holes and vents (0290 Script_1-20, 0296 Script_1-6, b2tools/gyms_league_rooms.py) are "
+                   "assembled into Emerald's script files too, but no Emerald trigger runs them: Emerald's holes and vents are "
+                   "the EL_Hole / EL_Vent entries (data/interiors/emerald/145.json, 148.json), and these Sapphire landing tiles "
+                   "are walls on Emerald's 17x19 floors. Emulator 2026-10-19: every Emerald hole and vent lands on its tile "
+                   "and the player walks off; the 8 under Emerald's buried trainers cannot be stepped on, as in pokeemerald"))
+
 def accepted(zone_name, kind, msg):
     return next((why for zn, k, rx, why in ACCEPT if re.match(f'({k})$', kind) and re.search(zn, zone_name) and re.search(rx, msg)), None)
 

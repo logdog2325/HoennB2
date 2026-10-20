@@ -20,7 +20,8 @@ Code (apply_code), every site checked against Black 2's bytes:
          (donor ids), Metronome's move count, ItemEvent_AddItemCore's item table (moved to ITCM, +2 items)
   arm9   PML_MoveGetParam (type and category of every move read: UI, AI, battle), PML_PersonalFetchBW2 /
          PML_PersonalLoadBW2 (species types; the one-record cache keyed by the toggle), item icons
-  ov294  intro command 31 and Birch's questions
+  ov294  intro command 31 and Birch's questions (the sixth, the Exp. Share, 2026-10-19: command 31 with an event flag
+         >= 16 sets/clears FLAG_EXP_SHARE_ON; scenes/truck.inc Script_30 gives the item; notes/RESEARCH_EXPSHARE_HM.md)
   ov167  link battles (link, 2026-10-18; notes/LINK.md): the battle's server machine sends its bits 11-12 in the spare
          nibble of the pre-battle sync (func_ov167_0219ada0) and every machine battles with them (fairy.c gLinkRules)
   arm9   Season_GetRealTime / GameData_GetSeason: hoenn_season's summer lock -> Season_FromMonth / Season_Kept (summer
@@ -405,7 +406,15 @@ MSG_YES, MSG_NO, MSG_FAIRY_Q, MSG_SPLIT_Q = 19, 20, 26, 27       # text 0054 (sr
 MSG_MUSIC_Q, MSG_HOENN, MSG_UNOVA = 28, 29, 30                   # the music question and its two answers (music_check)
 MSG_SPRITES_Q, MSG_CLASSIC, MSG_NEW = 31, 32, 33                 # the sprite style question and its answers (sprite_switch)
 MSG_SEASONS_Q = 34                                               # the seasons question (Black 2's unused line 34)
+MSG_EXPSHARE_Q = 35                                              # the Exp. Share question (Black 2's unused line 35)
 CFG_FAIRY_BIT, CFG_CLASSIC_BIT, CFG_MUSIC_BIT, CFG_SPRITES_BIT, CFG_SEASONS_BIT = 11, 12, 13, 14, 15
+
+def exp_share_flag():
+    """FLAG_EXP_SHARE_ON (src/include/hoenn.h): the sixth question's YES sets it through Intro_SetConfigBit (any
+    argument >= 16 is an event flag) and the truck's new-game script gives the Exp. Share when it is set."""
+    m = re.search(r'#define\s+FLAG_EXP_SHARE_ON\s+(\d+)', open(os.path.join(ROOT, 'src', 'include', 'hoenn.h')).read())
+    assert m and int(m.group(1)) >= 16, 'FLAG_EXP_SHARE_ON missing from src/include/hoenn.h'
+    return int(m.group(1))
 
 def _hoenn_season():
     spec = importlib.util.spec_from_file_location('hoenn_season_sites', os.path.join(HERE, 'hoenn_season.py'))
@@ -421,11 +430,11 @@ def season_sites():
             (ARM9 + hs.AT_GET, hs.OLD_GET, hs.NEW_GET, 'Season_Kept', 'jump')]
 
 def intro_script(ov294):
-    """Script 9 (after the name is confirmed): Birch's five questions (Fairy, split, music, sprite style, seasons)
-    between his "You're X who's moving to my hometown" and "All right, are you ready?". Script 9 asks the first three
-    and runs on into the dead FAREWELL script's room (they are contiguous); then it jumps (INTRO_CMD_GOTO) to script
-    10, the dead RIVAL_NAMED (its own 14 entries, all used now), which asks the fourth and fifth and ends as
-    hoenn_intro's script did. Returns [(file offset, bytes)] for the two places."""
+    """Script 9 (after the name is confirmed): Birch's six questions (Fairy, split, music, sprite style, seasons, the
+    Exp. Share) between his "You're X who's moving to my hometown" and "All right, are you ready?". Script 9 asks the
+    first four and runs on into the dead FAREWELL script's room (they are contiguous: 19 of its 21 entries); then it
+    jumps (INTRO_CMD_GOTO) to script 10, the dead RIVAL_NAMED (its own 14 entries, all used now), which asks the fifth
+    and sixth and ends as hoenn_intro's script did. Returns [(file offset, bytes)] for the two places."""
     def entry(off):
         return bytes(ov294[off:off + 24])
     def e(cmd, *args, run=0):
@@ -445,14 +454,20 @@ def intro_script(ov294):
              # the third question is music_check's (notes/MUSIC.md, patch hoenn_music): bit 13 = Hoenn music
              e('TALK', MSG_MUSIC_Q, 0, 1), e('YES_NO', MSG_HOENN, MSG_UNOVA, 1),
              e('SET_CONFIG_BIT', CFG_MUSIC_BIT, 1), e('SET_CONFIG_BIT', CFG_MUSIC_BIT, 0),
+             # the fourth is sprite_switch's (patch sprite_switch): bit 14 = the NEW (Gen 5) sprites; CLASSIC is the
+             # cursor's first answer (mashing A, and every older save, keep the classic set)
+             e('TALK', MSG_SPRITES_Q, 0, 1), e('YES_NO', MSG_CLASSIC, MSG_NEW, 1),
+             e('SET_CONFIG_BIT', CFG_SPRITES_BIT, 0), e('SET_CONFIG_BIT', CFG_SPRITES_BIT, 1),
              e('GOTO', RIVAL_NAMED_SCRIPT)]
-    # the fourth is sprite_switch's (patch sprite_switch): bit 14 = the NEW (Gen 5) sprites; CLASSIC is the cursor's
-    # first answer (mashing A, and every older save, keep the classic set)
-    second = [e('TALK', MSG_SPRITES_Q, 0, 1), e('YES_NO', MSG_CLASSIC, MSG_NEW, 1),
-              e('SET_CONFIG_BIT', CFG_SPRITES_BIT, 0), e('SET_CONFIG_BIT', CFG_SPRITES_BIT, 1),
-              # the fifth (2026-10-18): bit 15 = Black 2's real seasons (YES), summer all year (NO, as every older save)
-              e('TALK', MSG_SEASONS_Q, 0, 1), e('YES_NO', MSG_YES, MSG_NO, 1),
+    flag = exp_share_flag()
+    # the fifth (2026-10-18): bit 15 = Black 2's real seasons (YES), summer all year (NO, as every older save)
+    second = [e('TALK', MSG_SEASONS_Q, 0, 1), e('YES_NO', MSG_YES, MSG_NO, 1),
               e('SET_CONFIG_BIT', CFG_SEASONS_BIT, 1), e('SET_CONFIG_BIT', CFG_SEASONS_BIT, 0),
+              # the sixth (2026-10-19): YES sets FLAG_EXP_SHARE_ON (an event flag, not an options bit: bits 11-15 are
+              # all taken); the truck's new-game script (scenes/truck.inc Script_30) then gives the Exp. Share, so it
+              # starts in Key Items switched on. NO = today's game (Mr. Stone gives it), as every older save.
+              e('TALK', MSG_EXPSHARE_Q, 0, 1), e('YES_NO', MSG_YES, MSG_NO, 1),
+              e('SET_CONFIG_BIT', flag, 1), e('SET_CONFIG_BIT', flag, 0),
               old[2], old[5], old[6], old[7], old[8], old[9]]
     room = (FAREWELL - ASK_RIVAL_NAME) // 24 + 11                    # script 9's 10 entries + FAREWELL's 11
     assert FAREWELL - ASK_RIVAL_NAME == 240 and len(first) <= room, (len(first), room)
@@ -559,7 +574,7 @@ def apply_code(code):
     open(os.path.join(code, 'fairy_symbols.json'), 'w').write(json.dumps(exports, indent=1))
     return (f'fairy: {len(blob)} B of ITCM at {base:#x} (arena from {end:#x}); Fairy_IsOn {sym["Fairy_IsOn"] | 1:#x}, '
             f'Split_IsClassic {sym["Split_IsClassic"] | 1:#x}; {len(SENTINELS)} sentinels, {len(CALLS)} calls, '
-            f'intro {"+".join(str(len(x) // 24) for _, x in parts)} entries; seasons: options bit {CFG_SEASONS_BIT} '
+            f'intro {"+".join(str(len(x) // 24) for _, x in parts)} entries (Exp. Share question: flag {exp_share_flag()}); seasons: options bit {CFG_SEASONS_BIT} '
             f'(Season_FromMonth {sym["Season_FromMonth"] | 1:#x}, Season_Kept {sym["Season_Kept"] | 1:#x})' + (f'; SELFTEST buffer {st_addr:#x}' if selftest else ''))
 
 if __name__ == '__main__':      # python3 fairy.py: compile and link at a dummy base, show the symbols

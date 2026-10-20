@@ -40,9 +40,10 @@ def version_doors(world):
     return done
 
 def _terrain(d):
-    """A cell's terrain model with Black 2's own round-tree material values (b2tools/nsbmd_fix.py tree_materials)."""
-    from nsbmd_fix import tree_materials
-    return tree_materials(open(os.path.join(d, 'terrain.nsbmd'), 'rb').read())[0]
+    """A cell's terrain model with Black 2's own round-tree material values (b2tools/nsbmd_fix.py tree_materials) and
+    one polygon ID per translucent water sheet in every chunk (water_materials: water.py's seam sheets)."""
+    from nsbmd_fix import tree_materials, water_materials
+    return water_materials(tree_materials(open(os.path.join(d, 'terrain.nsbmd'), 'rb').read())[0])[0]
 
 def _chunk(d):
     """A cell's chunk for a/0/0/8: 'WB' (model, terrain, buildings), or 'GC' (model, terrain layer 0, terrain layer 1,

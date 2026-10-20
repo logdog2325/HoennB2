@@ -14,7 +14,19 @@ Pages (a page per version where the versions differ):
   fairy-type.md              the Fairy option's retyped species, moves and new moves (patches/fairy.py)
   evolutions.md              the trade evolutions made in-game (data/trade_evos.json)
   options.md                 Birch's start-of-game questions
+  postgame-<version>.md      after the Hall of Fame and outside the story: the event tickets and islands, the roamers,
+                             the gifts, the new places, the other legendaries, the battles (Battle Tower / PWT or the
+                             Frontier, Wally, Emerald's rematches). Read from the scripts themselves (src/field_scripts,
+                             the version's overlay: levels, step limits, prizes, conditions; postgame_page stops when a
+                             script no longer has what the page states), patches/roamers.py, the encounter files (Altering
+                             Cave, Mirage Island) and data/emerald/hoenn_rematch.json (notes/POSTGAME.md, EVENTS.md,
+                             EMERALD_REMATCH.md, BATTLE_TOWER.md)
   battle-frontier.md         Emerald's Frontier rules (patches/frontier_core.py, notes/FRONTIER.md)
+  levels.md                  the Exp. Share level curve (data/level_scaling.json, converter/level_scaling.py,
+                             notes/LEVEL_SCALING.md): the rule, the table, what follows it (the one-off battles read from
+                             each version's scripts against its decomp's setwildbattle levels), what doesn't (gifts,
+                             trades), the Gym Leaders', Elite Four's and Champion's aces per version (levels_data, run per
+                             version with --levels-data)
 Each version's data is read in its own process (HOENN_VERSION is read once, by b2tools/version.py)."""
 import collections, glob, json, os, re, subprocess, sys
 
@@ -92,7 +104,14 @@ def _title(c, prefix):
     return ' '.join(w.capitalize() for w in c[len(prefix):].split('_')) if c.startswith(prefix) else c
 
 def place(name):
-    """A decomp map name for players: Route101 -> Route 101, GraniteCave_B2F -> Granite Cave B2F."""
+    """A decomp map name for players: Route101 -> Route 101, GraniteCave_B2F -> Granite Cave B2F. Emerald: where Emerald
+    gave a Sapphire map's name to one of its own maps (data/versions.json "name_clash": the Safari Zone's new areas), both
+    take Emerald's own names (SafariZone_Northeast = Emerald's Safari Zone North, SafariZone_Northeast_Emerald = its
+    Safari Zone Northeast)."""
+    if version.is_emerald():
+        clash = version.versions_json().get('maps', {}).get('emerald', {}).get('name_clash', [])
+        if name.endswith('_Emerald') and name[:-len('_Emerald')] in clash: name = name[:-len('_Emerald')]
+        elif name in clash: name = version.decomp_map(name) or name
     out = []
     for tok in name.split('_'):
         if re.fullmatch(r'B?\d+F|\d+R', tok): out.append(tok); continue
@@ -151,6 +170,7 @@ def rock_smash_tables():
     for e in groups['wild_encounter_groups'][0]['encounters']:
         if 'rock_smash_mons' not in e or (suffix and not e.get('base_label', '').endswith(suffix)): continue
         name = folder.get(e['map'])
+        name = name and version.hoenn_map(name)          # (Emerald's renames and name clashes, as hm_free.py)
         z = (zones.get(name) or {}).get('zone') or ((rooms.get(name) or {}).get('zone') if isinstance(rooms.get(name), dict) else None)
         if z is None: continue
         out[name] = [(m['species'], int(curve[str(m['min_level'])]), int(curve[str(m['max_level'])]))
@@ -376,7 +396,7 @@ def evolutions_page(names):
 
 def options_page():
     L = [HEADER, '# Start-of-game options\n',
-         'Before your adventure starts, Professor Birch asks five questions. Your answers set these options, and '
+         'Before your adventure starts, Professor Birch asks six questions. Your answers set these options, and '
          'they can\'t be changed later.\n',
          '| Question | Answers | What it changes |', '|---|---|---|',
          '| The Fairy type | Yes / No | Yes: the Fairy type, Gen 6\'s type chart, new Fairy moves ([details](fairy-type.md)). No: Black 2\'s types. |',
@@ -384,7 +404,10 @@ def options_page():
          '| Music | Hoenn / Unova | Hoenn\'s original soundtrack played on Black 2\'s instruments, or Black 2\'s music. |',
          '| Character sprites | Classic / New | The Gen 3 style overworld sprites, or new Gen 5 style ones. |',
          '| Seasons | Yes / No | Yes: Black 2\'s seasons follow the month on your DS clock (spring: Jan/May/Sep, summer: '
-         'Feb/Jun/Oct, autumn: Mar/Jul/Nov, winter: Apr/Aug/Dec). No: summer all year, as in Ruby and Sapphire. |']
+         'Feb/Jun/Oct, autumn: Mar/Jul/Nov, winter: Apr/Aug/Dec). No: summer all year, as in Ruby and Sapphire. |',
+         '| The Exp. Share | Yes / No | Yes: you start with the Exp. Share in your Key Items, switched on: Pokémon that '
+         'don\'t battle still gain Exp. Points. Use it in the Bag to switch it off or on. No: Mr. Stone gives it to you in '
+         'Rustboro after you deliver his Letter, as in the original games. |']
     return '\n'.join(L) + '\n'
 
 def frontier_page(names):
@@ -413,12 +436,699 @@ def frontier_page(names):
          'Match), four floors each, against the clock. The owner on the roof gives a prize by your time.\n']
     return '\n'.join(L)
 
+
+# ---- post-game --------------------------------------------------------------------------------------------------------
+FS = os.path.join(ROOT, 'src', 'field_scripts')
+
+def _src(rel):
+    """A field script source as this version builds it: a numbered script file's version overlay
+    (src/field_scripts/<version>/NNNN_*.s) replaces the shared one; scene files are read by the path given (a version's
+    scene file under scenes/<version>/ is included by the shared one, it does not replace it)."""
+    p = os.path.join(FS, rel)
+    if not rel.startswith('scenes/'): p = version.overlay_file(p)
+    return open(p, encoding='utf-8').read()
+
+def _num(rel, pattern):
+    """The first group of `pattern` in a script source as a number. The guide states it, so a script that no longer
+    has it stops the generator instead of leaving the page wrong."""
+    m = re.search(pattern, _src(rel))
+    if not m: raise SystemExit(f'gen_docs: {rel} has no {pattern!r} any more: update postgame_page')
+    return int(m.group(1), 0)
+
+def _define(rel, name):
+    return _num(rel, rf'#define\s+{name}\s+(0x[0-9A-Fa-f]+|\d+)\b')
+
+def _need(rel, *texts):
+    """The conditions the guide states, as the script has them (stops when one is gone)."""
+    s = _src(rel)
+    for t in texts:
+        if t not in s: raise SystemExit(f'gen_docs: {rel} no longer has {t!r}: update postgame_page')
+
+def _key_item(c):
+    """A Hoenn key item constant -> the Black 2 item it is (src/include/hoenn_key_items.h)."""
+    m = re.search(rf'#define\s+{c}\s+(ITEM_\w+)', open(os.path.join(ROOT, 'src', 'include', 'hoenn_key_items.h')).read())
+    return m.group(1) if m else c
+
+def _join(xs):
+    xs = list(xs)
+    return xs[0] if len(xs) == 1 else ', '.join(xs[:-1]) + ' and ' + xs[-1]
+
+def _or(xs):
+    xs = list(xs)
+    return xs[0] if len(xs) == 1 else ', '.join(xs[:-1]) + ' or ' + xs[-1]
+
+def _routes(maps):
+    """['Route110', 'Route111', 'Route117', ...] -> 'Routes 110-111 and 117-134'."""
+    runs = []
+    for n in sorted(int(re.fullmatch(r'Route(\d+)', m).group(1)) for m in maps):
+        if runs and n == runs[-1][1] + 1: runs[-1][1] = n
+        else: runs.append([n, n])
+    parts = [f'{a}' if a == b else f'{a}-{b}' for a, b in runs]
+    return ('Route ' if len(parts) == 1 and '-' not in parts[0] else 'Routes ') + _join(parts)
+
+def _outside(room):
+    """The outdoor map whose door leads into `room` (the version's decomp map.json warps), e.g. DesertRuins -> Route111."""
+    maps = glob.glob(os.path.join(version.DECOMP, 'data', 'maps', '*', 'map.json'))
+    ids = {json.load(open(p))['id']: os.path.basename(os.path.dirname(p)) for p in maps}
+    target = next(i for i, n in ids.items() if n == room)
+    for p in maps:
+        d = json.load(open(p))
+        if any(w.get('dest_map') == target for w in d.get('warp_events') or []) and d.get('map_type') != 'MAP_TYPE_INDOOR':
+            name = os.path.basename(os.path.dirname(p))
+            if name.startswith('Route'): return name
+    raise SystemExit(f'gen_docs: no route door into {room}')
+
+def _party(t, names):
+    return ', '.join(f'{names.species(p["species"])} {p["level"]}' for p in t['party'])
+
+def _levels(t):
+    lv = sorted(p['level'] for p in t['party'])
+    return f'{lv[0]}' if lv[0] == lv[-1] else f'{lv[0]}-{lv[-1]}'
+
+def _class_names():
+    """pokeemerald's trainer class names ("{PKMN} BREEDER" -> "Pokémon Breeder")."""
+    src = open(os.path.join(ROOT, 'external', 'pokeemerald', 'src', 'data', 'text', 'trainer_class_names.h')).read()
+    def nice(s):
+        words = []
+        for w in s.split():
+            w = {'{PKMN}': 'Pokémon', 'AND': 'and'}.get(w, w.capitalize())
+            words.append(w)
+        return ' '.join(words)
+    return {k: nice(v) for k, v in re.findall(r'\[TRAINER_CLASS_(\w+)\]\s*=\s*_\("([^"]*)"\)', src)}
+
+def _rematch_pages(names):
+    """Emerald's rematch tables (data/emerald/hoenn_rematch.json, the parties as built: levels on the curve)."""
+    d = json.load(open(os.path.join(ROOT, 'data', 'emerald', 'hoenn_rematch.json')))
+    data = version.load_json(os.path.join(ROOT, 'data', 'hoenn_trainer_data.json'))['trainers']
+    by_id = {}
+    for t in data.values():
+        if 'emerald_trainer' in t: by_id.setdefault(t['b2_id'], t)
+    slots = {s['slot']: s for s in d['slots']}
+    def team(slot):
+        out = []
+        for s in [slots[slot]] + ([slots[slot + 1]] if slots[slot].get('half') else []):
+            mons = ', '.join(f'{names.species(m.split(" Lv")[0])} {m.split(" Lv")[1]}' for m in s['party'])
+            out.append(f'{s["half"]}: {mons}' if s.get('half') else mons)
+        return '; '.join(out)
+    def top(slot):
+        return max(int(m.split(' Lv')[1]) for m in slots[slot]['party'] + (slots[slot + 1]['party'] if slots[slot].get('half') else []))
+    leaders, wally, route = [], [], []
+    cls = _class_names()
+    m = re.search(r'if \(b < (\d+)\) return -1;', open(os.path.join(HERE, 'patches', 'emerald_rematch.c')).read())
+    if not m: raise SystemExit('gen_docs: emerald_rematch.c has no badge rule any more: update postgame_page')
+    badges = int(m.group(1))
+    for r in d['rows']:
+        t = by_id[r['b2_id']]
+        if 1 <= r['gym'] <= 8:
+            where = ', '.join(sorted({place(m) for m in t.get('maps') or []}))
+            name = t['name'] + (' and ' + by_id[r['partner']]['name'] if r['partner'] else '')
+            leaders.append((r['gym'], name, where, [team(x['slot']) for x in r['tiers']]))
+        elif r['gym'] == 9:
+            wally = [team(x['slot']) for x in r['tiers']]
+        else:
+            tiers = {x['tier']: x['slot'] for x in r['tiers']}
+            lv, last = [], '-'
+            for k in range(2, 6):                # the tier fought at 5-8 badges (a missing tier: the one before it)
+                if k in tiers: last = f'{top(tiers[k])}'
+                lv.append(last)
+            dbl = any(x['double'] for x in r['tiers'])
+            who = f'{cls.get(t["emerald_class"], _title(t["emerald_class"], ""))} {t["name"]}' + (' (double)' if dbl else '')
+            route.append((place_key(t['maps'][0]), who, place(t['maps'][0]), lv))
+    leaders.sort()
+    route.sort()
+    return badges, leaders, wally, [r[1:] for r in route]
+
+def postgame_page(names):
+    E = version.is_emerald()
+    import roamers
+    sp = names.species
+    item = lambda c: names.item(_key_item(c))
+    EON, MAP, AURORA, MYSTIC = item('ITEM_EON_TICKET'), item('ITEM_OLD_SEA_MAP'), item('ITEM_AURORA_TICKET'), item('ITEM_MYSTIC_TICKET')
+    SS = names.item('ITEM_SS_TICKET')
+    lati_roam, lati_island = sp(version.TABLE['roamer']), sp(version.TABLE['island'])
+    colour = {'LATIAS': 'red', 'LATIOS': 'blue'}[version.TABLE['roamer']]
+    if E: lati_island_txt = f'{sp("LATIOS")} or {sp("LATIAS")} (the one that is not roaming)'
+    else: lati_island_txt = lati_island
+
+    # the scripts' own conditions and levels
+    _need('scenes/players_house_1f_events.inc', 'FLAG_SYS_GAME_CLEAR', 'FLAG_RECEIVED_SS_TICKET', 'ITEM_EON_TICKET')
+    _need('scenes/SlateportCity_Harbor_Events.inc', 'FLAG_SYS_GAME_CLEAR', 'ITEM_OLD_SEA_MAP')
+    _need('scenes/FallarborTown_House1_Events.inc', 'FLAG_SYS_GAME_CLEAR', 'ITEM_AURORA_TICKET')
+    _need('scenes/Route114_LanettesHouse_Events.inc', 'FLAG_SYS_GAME_CLEAR', 'ITEM_MYSTIC_TICKET')
+    _need('scenes/LilycoveCity_Harbor_Ch13.inc', 'FLAG_ENCOUNTERED_LATIAS_OR_LATIOS', 'L_EV_LH_EventTickets')
+    _need('scenes/SouthernIsland_Interior.inc', 'h_setflag FLAG_ENCOUNTERED_LATIAS_OR_LATIOS')
+    if E:                   # Emerald's Eon Ticket (one of the harbor's event tickets) and its Lati rule (postgame_fix)
+        _need('scenes/LilycoveCity_Harbor_Events.inc', 'h_goto_if_set FLAG_SHOWN_EON_TICKET', 'L_EV_LH_EonFirstTime',
+              'L_EV_LH_GoToSouthernIsland', 'ListMenuAdd EV_LH_T + 10, 65535, 2')
+        _need('scenes/LilycoveCity_Harbor_Ch13.inc', 'ListMenuAdd EV_LH_T + 10, 65535, 7')
+        _need('scenes/emerald/SouthernIsland_Interior.inc', 'h_goto_if_set SII_TEMP_2', 'h_goto_if_set FLAG_DEFEATED_LATIAS_OR_LATIOS',
+              'h_goto_if_set FLAG_CAUGHT_LATIAS_OR_LATIOS', 'FLAG_CAUGHT_LATIAS_OR_LATIOS, FLAG_DEFEATED_LATIAS_OR_LATIOS')
+        _need('0114_room_EverGrandeCity_HallOfFame.s', 'h_clearflag FLAG_DEFEATED_LATIAS_OR_LATIOS')
+    _need('scenes/BirchLab_Postgame.inc', 'PokeDexGiveNational', 'Sub_PG_StartBeastsAndBirds')
+    _need('scenes/PetalburgWoods_Postgame.inc', 'PokeDexHaveNational', 'FLAG_DEFEATED_CELEBI')
+    _need('scenes/MossdeepCity_SpaceCenter_1F_Postgame.inc', 'FLAG_SYS_GAME_CLEAR', 'h_getpartysize')
+    _need('scenes/PetalburgCity_Gym_Postgame.inc', 'FLAG_SYS_GAME_CLEAR', 'FLAG_RECEIVED_ENIGMA_BERRY', 'h_checkitem ITEM_ENIGMA_BERRY')
+    _need('scenes/Route103_AlteringCave.inc', 'FLAG_SYS_GAME_CLEAR', 'FLAG_DAILY_ALTERING_CAVE', 'FLAG_LANDMARK_ALTERING_CAVE')
+    _need('0114_room_EverGrandeCity_HallOfFame.s', 'HF_ResetEliteFour', 'FLAG_HIDE_WALLY_DEFEATED_VICTORY_ROAD', 'FLAG_HIDE_LILYCOVE_MOTEL_PEOPLE')
+    _need('0114_room_EverGrandeCity_HallOfFame.s', 'h_clearflag FLAG_DEFEATED_MEW', 'h_clearflag FLAG_DEFEATED_DEOXYS',
+          'h_clearflag FLAG_DEFEATED_LUGIA', 'h_clearflag FLAG_DEFEATED_HO_OH', 'h_clearflag FLAG_DEFEATED_CELEBI')
+    hof_shared = _src('0114_room_EverGrandeCity_HallOfFame.s').split('HF_SetGameClearFlags:', 1)[1].split('#ifdef HOENN_EMERALD', 1)[0]
+    if 'h_clearflag FLAG_DEFEATED_MEW' not in hof_shared:   # (every version since postgame_fix, not Emerald's block only)
+        raise SystemExit('gen_docs: 0114 no longer resets the event legendaries in every version: update postgame_page')
+    lv_lati_island = _define('scenes/SouthernIsland_Interior.inc', 'SII_LATIOS_LEVEL')
+    lv = {k: _define('scenes/events_lib.inc', f'EV_{k}_LEVEL') for k in ('MEW', 'DEOXYS', 'LUGIA', 'HO_OH')}
+    lv_jirachi = _define('scenes/postgame_lib.inc', 'PG_JIRACHI_LEVEL')
+    lv_celebi = _define('scenes/postgame_lib.inc', 'PG_CELEBI_LEVEL')
+    lv_beldum = _num('scenes/MossdeepCity_StevensHouse_Ch13.inc', r'PokePartyAdd \w+, SPECIES_BELDUM, 0, (\d+)')
+    lv_regi = _level_in('scenes/ch12_lib.inc', re.search(r'CallWildBattle \\species, (\w+), 1', _src('scenes/ch12_lib.inc')).group(1))
+    mirage = _define('scenes/Route130.inc', 'MI_MASK') + 1
+    steps = [int(x) for x in re.findall(r'L_BE_Max\d+:\s*\n\s*h_goto_if_gt BE_STEPS, (\d+)', _src('scenes/BirthIsland_Exterior_rock.inc'))]
+    diploma = _src('0360_room_LilycoveCity_CoveLilyMotel_2F.s').split('Sub_MO2_CompletedHoennDex:', 1)[1]
+    diploma = [int(x) for x in re.findall(r'PokeDexIsRegist 1, (\d+),', diploma)]
+    roam = [(sp(s), roamers.scaled(l)) for s, l in roamers.ROAMERS]
+    roam_routes = _routes(roamers.locations()[0])
+    regis = []
+    for f in ('0232_room_DesertRuins.s', '0254_room_IslandCave.s', '0188_room_AncientTomb.s'):
+        s = re.search(r'h_regi_battle SPECIES_(\w+)', _src(f)).group(1)
+        room = re.sub(r'^\d+_room_|\.s$', '', f)
+        regis.append((sp(s), place(room), place(_outside(room))))
+    if E:
+        lv_ray = _define('scenes/emerald/em_ch10_lib.inc', 'EM_RAYQUAZA_LEVEL')
+        lv_groudon = _define('0732_room_TerraCave_End.s', 'TCE_LEVEL')       # (Emerald-only script files: overlay_file)
+        lv_kyogre = _define('0738_room_MarineCave_End.s', 'MCE_LEVEL')
+        aw_steps = _define('scenes/emerald/abnormal_weather.inc', 'AW_STEPS')
+        zones = version.load_json(os.path.join(ROOT, 'data', 'hoenn_zones.json'))['maps']
+        aw = re.findall(r'\.set AW_ZONE_(\d+), (\d+)', _src('scenes/emerald/abnormal_weather.inc'))
+        n_terra = _define('scenes/emerald/abnormal_weather.inc', 'AW_TERRA_SPOTS')
+        def aw_routes(zs):
+            return _routes(sorted({m for m, z in zones.items() if z.get('zone') in zs and re.fullmatch(r'Route\d+', m)}))
+        terra_routes = aw_routes({int(z) for k, z in aw if int(k) <= n_terra})
+        marine_routes = aw_routes({int(z) for k, z in aw if int(k) > n_terra})
+        johto = re.findall(r'emj_ball SPECIES_(\w+)', _src('scenes/emerald/BirchLab_JohtoStarters.inc'))
+        lv_johto = _num('scenes/emerald/BirchLab_JohtoStarters.inc', r'PokePartyAdd EMJ_SLOT, \\species, 0, (\d+)')
+        johto_need = _num('scenes/emerald/BirchLab_JohtoStarters.inc', r'h_goto_if_lt C11_DEXCOUNT, (\d+), L_EMJ_NotReady')
+        hoenn_dex = len(re.findall(r'PokeDexIsRegist C11_DEXKIND', _src('scenes/ch11_dexcount.inc')))
+        _need('1086_room_TrainerHill_Entrance.s', 'L_TE_Closed')
+        _need('0754_room_MeteorFalls_StevensCave.s', 'FLAG_DEFEATED_METEOR_FALLS_STEVEN')
+        rm_badges, rm_leaders, rm_wally, rm_route = _rematch_pages(names)
+        data = version.load_json(os.path.join(ROOT, 'data', 'hoenn_trainer_data.json'))['trainers']
+        steven = data['TRAINER_STEVEN_EMERALD']
+    else:
+        lv_ray = _define('scenes/SkyPillar_Top.inc', 'SP_RAYQUAZA_LEVEL')
+        lv_legend = _define('0206_room_CaveOfOrigin_B4F.s', 'B4_KYOGRE_LEVEL')
+        data = version.load_json(os.path.join(ROOT, 'data', 'hoenn_trainer_data.json'))['trainers']
+    wally = data['TRAINER_WALLY_3']
+    enc = version.load_json(os.path.join(ROOT, 'data', 'hoenn_encounters.json'))
+    files = {int(os.path.basename(p)[:4]): p for p in version.overlay(os.path.join(ROOT, 'src', 'encounters'), '*.s')}
+    def grass(m):
+        return combine(parse_encounters(files[enc[m]])['GrassEncounters'], GRASS, names)
+    altering = [grass(m) for m in ['AlteringCave'] + [f'AlteringCave_{i}' for i in range(2, 10) if f'AlteringCave_{i}' in enc]]
+    if E:   # the Safari Zone's new areas: their own tables, played by part zones (data/emerald/hoenn_weather.json "wild")
+        wparts = version.load_json(os.path.join(ROOT, 'data', 'hoenn_weather.json'))['parts']
+        smash = rock_smash_tables()
+        safari_new = []                  # [(area, [(how, species ...)])]
+        for m in ('SafariZone_Northeast_Emerald', 'SafariZone_Southeast_Emerald'):
+            if not any(v.get('wild') == m for v in wparts.values()) or m not in enc:
+                raise SystemExit(f'gen_docs: {m} has no wild table of its own any more: update postgame_page')
+            t = parse_encounters(files[enc[m]])
+            how = []
+            for title, secs in (('grass', ('GrassEncounters',)), ('surfing', ('SurfEncounters',)),
+                                ('fishing', ('RipplingFishingEncounters', 'FishingEncounters'))):
+                mons = list(dict.fromkeys(names.species(s) for sec in secs for s, _, _ in t.get(sec) or []))
+                if mons: how.append((title, mons))
+            if smash.get(m): how.append(('Rock Smash', list(dict.fromkeys(names.species(s) for s, _, _ in smash[m]))))
+            safari_new.append((m, how))
+    wynaut = grass('Route130')
+    tidal_to = 'the Battle Frontier' if E else 'the Battle Tower island'
+
+    # ---- at a glance
+    glance = [(SS, 'Dad, at home in Littleroot', 'after the Hall of Fame', 'back-home-in-littleroot')]
+    if E: glance.append((f'Roaming {sp("LATIAS")} or {sp("LATIOS")}', 'Mom\'s question at home', 'after the Hall of Fame', 'roaming-legendaries'))
+    else: glance.append((f'Roaming {lati_roam}', 'the TV news at home', 'after the Hall of Fame', 'roaming-legendaries'))
+    glance += [('National Pokédex', 'Prof. Birch\'s Lab, Littleroot', 'after the Hall of Fame', 'back-home-in-littleroot'),
+               ('Roaming ' + _join(n for n, _ in roam[1:]), 'all over Hoenn', 'with the National Pokédex', 'roaming-legendaries'),
+               (EON, 'Mom', f'after Dad gives you the {SS}', 'event-tickets-and-islands'),
+               (MAP, 'Capt. Stern, Slateport City harbor', 'after the Hall of Fame', 'event-tickets-and-islands'),
+               (AURORA, 'Prof. Cozmo, Fallarbor Town', 'after the Hall of Fame', 'event-tickets-and-islands'),
+               (MYSTIC, 'Lanette, Route 114', 'after the Hall of Fame', 'event-tickets-and-islands'),
+               (f'{sp("BELDUM")} (Lv {lv_beldum})', 'Steven\'s house, Mossdeep City', 'after the Hall of Fame', 'gifts'),
+               (f'{sp("JIRACHI")} (Lv {lv_jirachi})', 'Mossdeep Space Center 1F', 'after the Hall of Fame', 'gifts'),
+               (f'{sp("CELEBI")} (Lv {lv_celebi})', 'Petalburg Woods', 'with the National Pokédex', 'gifts'),
+               (names.item('ITEM_ENIGMA_BERRY'), 'Dad, Petalburg City Gym', 'after the Hall of Fame', 'gifts')]
+    if E: glance.append(('Johto starters', 'Prof. Birch\'s Lab', f'{johto_need} Hoenn Pokédex Pokémon caught', 'gifts'))
+    glance += [('Diploma', 'Cove Lily Motel 2F, Lilycove City', 'all Hoenn Pokédex Pokémon caught', 'gifts'),
+               ('Altering Cave', 'Route 103', 'after the Hall of Fame', 'altering-cave'),
+               ('Mirage Island', 'Route 130', 'some days, any time in the game', 'mirage-island')]
+    if E:
+        glance += [('Steven\'s Cave', 'Meteor Falls', 'after the Hall of Fame', 'stevens-cave'),
+                   (f'Terra Cave and Marine Cave ({sp("GROUDON")}, {sp("KYOGRE")})', 'Weather Institute, Route 119', 'after the Hall of Fame', 'terra-cave-and-marine-cave'),
+                   ('Desert Underpass', 'Route 114', 'after the Hall of Fame', 'desert-underpass'),
+                   ('Safari Zone, two new areas', 'Safari Zone', 'after the Hall of Fame', 'safari-zone')]
+    else:
+        glance.append((f'Sky Pillar ({sp("RAYQUAZA")})', 'Route 131', 'after the Hall of Fame', 'sky-pillar'))
+    glance.append(('Wally', 'Victory Road 1F', 'after the Hall of Fame', 'battles-after-the-hall-of-fame'))
+    if E:
+        glance += [('Battle Frontier', 'the S.S. Tidal, from Slateport or Lilycove', 'after the Hall of Fame', 'battles-after-the-hall-of-fame'),
+                   ('Trainer Hill', 'Route 111', 'after the Hall of Fame', 'battles-after-the-hall-of-fame'),
+                   ('Gym Leader rematches', 'each Gym', 'after the Hall of Fame', 'rematches'),
+                   ('Trainer rematches', 'the routes', f'with {rm_badges} badges', 'rematches')]
+    else:
+        glance.append(('Battle Tower and PWT', 'the S.S. Tidal, from Slateport or Lilycove', 'after the Hall of Fame', 'battles-after-the-hall-of-fame'))
+
+    L = [HEADER, f'# After the Hall of Fame: {version.PUBLIC_NAME}\n',
+         'What there is to do once you have entered the Hall of Fame: the event islands and their tickets, the roaming '
+         'legendaries, gifts, new places and battles. Levels are the ones you meet in this game.\n',
+         '## At a glance\n', '| What | Where | When |', '|---|---|---|']
+    L += [f'| [{w}](#{a}) | {where} | {when} |' for w, where, when, a in glance]
+
+    # ---- home
+    beasts = _join(n for n, _ in roam[1:])
+    L += ['', '## Back home in Littleroot\n', 'After the credits you wake up in your room.\n']
+    if E:
+        L += [f'1. Go downstairs. Dad is home and gives you the **{SS}**. Then Mom turns on the TV: a news flash about '
+              'a Pokémon in flight. She asks you what colour the announcer said:',
+              f'   - **Red**: {sp("LATIAS")} roams Hoenn, and {sp("LATIOS")} waits on Southern Island.',
+              f'   - **Blue**: {sp("LATIOS")} roams Hoenn, and {sp("LATIAS")} waits on Southern Island.',
+              f'2. Talk to Mom: a letter from the Lilycove ferry company, with the **{EON}**.',
+              f'3. Go outside. Prof. Birch is waiting by your door and takes you to his Lab, where your Pokédex becomes '
+              f'the **National Pokédex**. From then on {beasts} roam Hoenn.']
+    else:
+        L += [f'1. Go downstairs. Dad is home and gives you the **{SS}**.',
+              f'2. Check the TV downstairs: a news bulletin about a {colour} Flying Pokémon. That is {lati_roam}, and it '
+              'now roams Hoenn. (The news is only on the TV in your own house.)',
+              f'3. Talk to Mom: a letter from the Lilycove ferry company, with the **{EON}**.',
+              f'4. Go outside. Prof. Birch is waiting by your door and takes you to his Lab, where your Pokédex becomes '
+              f'the **National Pokédex**. From then on {beasts} roam Hoenn too.']
+    L += ['', f'The {SS} lets you board the S.S. Tidal at Slateport\'s and Lilycove\'s harbors, to {tidal_to} '
+          '([battles](#battles-after-the-hall-of-fame)).\n']
+
+    # ---- roamers
+    L += ['## Roaming legendaries\n', '| Pokémon | Level | Starts roaming |', '|---|---|---|']
+    if E: L.append(f'| {sp("LATIAS")} or {sp("LATIOS")} | {roam[0][1]} | after Mom\'s question (the colour you answer) |')
+    else: L.append(f'| {lati_roam} | {roam[0][1]} | when you watch the news on the TV at home |')
+    L += [f'| {n} | {l} | when you get the National Pokédex |' for n, l in roam[1:]]
+    L += ['', f'- **Where:** {roam_routes}. Never in towns, caves or buildings.',
+          '- **Meeting one:** on the route where a roamer is, 1 in 4 wild battles in tall grass or on the water is the '
+          'roamer (never when fishing). With several on the same route, it is one of them at random. A Repel keeps a '
+          'roamer away only when your first Pokémon\'s level is higher than the roamer\'s.',
+          '- **They move:** each time you walk from one route or town into the next, every roamer moves to a route next '
+          'to its own (now and then further away). When you fly, go through a door or load your game, they all jump to '
+          'new routes at random.',
+          '- **In battle:** a roamer runs away as soon as it can. A move or Ability that traps it (such as Mean Look or '
+          'Shadow Tag) stops it. The damage and status problems you gave it stay after it gets away.',
+          '- **Caught:** it stops roaming. **Knocked out:** it is gone until you next enter the Hall of Fame; then it '
+          'roams again with full HP.',
+          '- **Tracking:** a roamer\'s AREA page in the Pokédex shows the route it is on right now (no area while it is '
+          'not roaming).', '']
+
+    # ---- tickets and islands
+    L += ['## Event tickets and islands\n',
+          '| Ticket | Who gives it | Island | Pokémon |', '|---|---|---|---|',
+          f'| {EON} | Mom, at home (after Dad gives you the {SS}) | Southern Island | {lati_island_txt}, Lv {lv_lati_island} |',
+          f'| {MAP} | Capt. Stern, Slateport City harbor | Faraway Island | {sp("MEW")}, Lv {lv["MEW"]} |',
+          f'| {AURORA} | Prof. Cozmo, in his house in Fallarbor Town | Birth Island | {sp("DEOXYS")}, Lv {lv["DEOXYS"]} |',
+          f'| {MYSTIC} | Lanette, in her house on Route 114 | Navel Rock | {sp("LUGIA")} and {sp("HO_OH")}, Lv {lv["LUGIA"]} |'
+          if lv['LUGIA'] == lv['HO_OH'] else
+          f'| {MYSTIC} | Lanette, in her house on Route 114 | Navel Rock | {sp("LUGIA")} Lv {lv["LUGIA"]}, {sp("HO_OH")} Lv {lv["HO_OH"]} |',
+          '',
+          '- Each ticket is given the first time you talk to that person after the Hall of Fame.',
+          '- Show the ticket at **Lilycove City\'s harbor** (the Slateport ferry doesn\'t sail to the islands). With '
+          'several tickets you choose the island. Every island has a sailor who takes you back to Lilycove.',
+          (f'- The first time you show the {EON}, the ferry sails you straight to Southern Island. After that Southern '
+           'Island is on the ferry\'s list for as long as you hold the ticket.' if E else
+           f'- While you hold the {EON} and haven\'t been to Southern Island yet, the Lilycove ferry takes you there first.'),
+          f'- The first time you show the {MAP}, Mr. Briney sails you to Faraway Island himself.', '',
+          '### Southern Island\n',
+          f'Walk to the far end of the island and read the stone. {lati_island_txt[0].upper() + lati_island_txt[1:]} flies down and battles you. '
+          + ('If you run away, it is there again on your next visit. If you knock it out, it flies away and comes back '
+             'after your next Hall of Fame. Once caught, it is gone. You lose: you black out, and it waits for your next '
+             'visit.\n' if E else
+             f'**One chance only:** whatever happens in the battle, it doesn\'t come back and the ferry doesn\'t sail there '
+             'again. Save before you read the stone.\n'),
+          '### Faraway Island\n',
+          f'When you go into the grassy middle of the island, {sp("MEW")} sees you and runs into the tall grass. It wanders '
+          'there; talk to it to battle it.\n',
+          '### Birth Island\n',
+          'Talk to the triangle: it jumps to another spot. Walk to it and talk to it again, in no more steps than the '
+          f'shortest way ({_join(str(s) for s in steps)} steps for its {len(steps)} moves). With too many steps it goes '
+          f'back to where it started. The {len(steps)}th time you reach it in time, it breaks and {sp("DEOXYS")} '
+          'appears. Leaving the island resets the puzzle.\n',
+          '### Navel Rock\n',
+          f'Inside, the way forks: up to the summit, where {sp("HO_OH")} comes down when you walk up to it, and the long '
+          f'way down to the bottom, where {sp("LUGIA")} waits.\n',
+          f'### If you run, lose or knock one out ({sp("MEW")}, {sp("DEOXYS")}, {sp("LUGIA")}, {sp("HO_OH")})\n',
+          '- **Caught:** it is gone from the island.',
+          f'- **Ran away:** it is there again on your next visit ({sp("DEOXYS")}: solve the triangle again).',
+          '- **You lose:** you black out, and it waits for your next visit.',
+          '- **Knocked out:** it flies away, and comes back after your next Hall of Fame.', '']
+
+    # ---- gifts
+    L += ['## Gifts\n',
+          f'- **{sp("BELDUM")}** (Lv {lv_beldum}): the Poké Ball in Steven\'s house in Mossdeep City, after the Hall of Fame. '
+          'You need room in your party.',
+          f'- **{sp("JIRACHI")}** (Lv {lv_jirachi}): the scientist at the back of the Mossdeep Space Center (1F) gives it '
+          'after the Hall of Fame. You need room in your party.',
+          f'- **{sp("CELEBI")}** (Lv {lv_celebi}): once you have the National Pokédex, it stands in the clearing in the '
+          'north-east of Petalburg Woods, behind the girl who gives the Miracle Seed. Talk to it to battle it. If you run, '
+          'it is back next time; if you knock it out, it comes back after your next Hall of Fame.',
+          f'- **{names.item("ITEM_ENIGMA_BERRY")}**: Dad gives you one in Petalburg City Gym after the Hall of Fame (once; not '
+          'while you already carry one).',
+          f'- **Diploma**: catch all {len(diploma)} Pokémon of the Hoenn Pokédex'
+          + (f' ({sp("JIRACHI")} and {sp("DEOXYS")} aren\'t needed)' if 385 not in diploma and 386 not in diploma else '')
+          + ' and talk to the game designer on the 2F of the Cove Lily Motel in Lilycove City. He and the rest of the '
+          'game\'s staff are there after the Hall of Fame.']
+    if E:
+        L.append(f'- **{_join(sp(s) for s in johto)}** (Lv {lv_johto}): once you have caught {johto_need} of the '
+                 f'{hoenn_dex} Pokémon of the Hoenn Pokédex (after the National Pokédex), go to Prof. Birch\'s Lab: '
+                 'choose one of the three. You need room in your party.')
+    L.append('')
+
+    # ---- places
+    L += ['## New places\n', '### Altering Cave\n',
+          'After the Hall of Fame a cave opens in the cliff on the north side of the water on Route 103 (Surf to it). Its '
+          f'wild Pokémon change by the day: {altering[0][0][0]} until your first visit, then the next one in this list '
+          'each new day you pass through Route 103 (after the last, back to the first).\n',
+          '| | Pokémon | Level |', '|---|---|---|']
+    L += [f'| {i + 1} | {", ".join(r[0] for r in t)} | {", ".join(r[1] for r in t)} |' for i, t in enumerate(altering)]
+    six = 1 - ((mirage - 1) / mirage) ** 6
+    L += ['', '### Mirage Island\n',
+          'Not tied to the Hall of Fame: the island shows on Route 130 (between Route 129 and Route 131) on days when the '
+          f'day\'s number matches a Pokémon in your party (Eggs too). That is 1 in {mirage} for each Pokémon each day, '
+          f'about 1 in {round(1 / six)} days with six. The number changes once a day. On the island: '
+          f'{_join(f"{n} (Lv {l})" for n, l, _ in wynaut)} in the tall grass, and a {names.item("ITEM_LIECHI_BERRY")} tree.\n']
+    if E:
+        L += ['### Steven\'s Cave\n',
+              'After the Hall of Fame the rock in the first room of Meteor Falls is gone, and behind it is Steven\'s cave. '
+              f'Steven battles you (Lv {_levels(steven)}; his team is on the [trainers page](trainers-emerald.md#steven)). '
+              'Beat him once; after that he only talks. If you lose, he battles you again next time.\n',
+              '### Terra Cave and Marine Cave\n',
+              'After the Hall of Fame, talk to the scientist on the Weather Institute\'s 2F (Route 119). He reports a '
+              'drought or heavy rain somewhere, a place picked at random each time you come up to his floor:',
+              f'- **Drought:** a cave entrance opens in a rock wall on {terra_routes}. It is Terra Cave, with '
+              f'{sp("GROUDON")} (Lv {lv_groudon}) at its end.',
+              f'- **Heavy rain:** rough water on {marine_routes}. Dive there to reach Marine Cave, with {sp("KYOGRE")} '
+              f'(Lv {lv_kyogre}) at its end.',
+              f'- The weather ends after {aw_steps:,} steps; ask the scientist again for a new place.',
+              '- Caught or knocked out: it is gone, and its weather ends. Ran away: it is back on your next visit. Once '
+              'both are caught or knocked out, the scientist has no more reports.\n',
+              '### Desert Underpass\n',
+              'After the Hall of Fame the Fossil Maniac\'s tunnel on Route 114 opens further. At the far end of the '
+              'Desert Underpass lies the fossil you didn\'t take at the Mirage Tower (the Root Fossil or the Claw Fossil). '
+              f'Wild Pokémon there: {_join(r[0] for r in grass("DesertUnderpass"))} '
+              f'([wild Pokémon](wild-pokemon-emerald.md#{_anchor(place("DesertUnderpass"))})).\n',
+              '### Safari Zone\n',
+              'After the Hall of Fame the workers leave and two new areas open on the Safari Zone\'s east side, each with '
+              'its own wild Pokémon:']
+        L += [f'- [{place(m)}](wild-pokemon-emerald.md#{_anchor(place(m))}): '
+              + '; '.join(f'{how} {_join(mons)}' for how, mons in hows) + '.' for m, hows in safari_new]
+        L += ['',
+              '### Artisan Cave\n',
+              'On the Battle Frontier island: a cave between its east and west halves, with wild '
+              f'{_join(f"{r[0]} (Lv {r[1]})" for r in grass("ArtisanCave_1F"))} '
+              f'([wild Pokémon](wild-pokemon-emerald.md#{_anchor(place("ArtisanCave_1F") + " / " + place("ArtisanCave_B1F"))})).\n']
+    else:
+        L += ['### Sky Pillar\n',
+              'After the Hall of Fame the Sky Pillar\'s island appears on Route 131. At the top waits '
+              f'{sp("RAYQUAZA")} (Lv {lv_ray}). **One chance only:** whatever happens in the battle, it doesn\'t come back.\n']
+
+    # ---- other legendaries
+    L += ['## Other legendaries\n', 'The legendaries you meet in the rest of the game:\n',
+          '| Pokémon | Where | When | Level | Chances |', '|---|---|---|---|---|']
+    if not E:
+        L.append(f'| {sp(version.TABLE["legendary"])} | Cave of Origin, Sootopolis City | during the story | {lv_legend} | one battle |')
+    for n, room, route in regis:
+        L.append(f'| {n} | {room} ({route}) | after the Sealed Chamber | {lv_regi} | one battle |')
+    if E:
+        L += [f'| {sp("RAYQUAZA")} | Sky Pillar, top (Route 131) | after the Sootopolis events | {lv_ray} | ran away: back next visit; caught or knocked out: gone |',
+              f'| {sp("GROUDON")} | Terra Cave | after the Hall of Fame | {lv_groudon} | ran away: back next visit |',
+              f'| {sp("KYOGRE")} | Marine Cave | after the Hall of Fame | {lv_kyogre} | ran away: back next visit |']
+    else:
+        L.append(f'| {sp("RAYQUAZA")} | Sky Pillar, top (Route 131) | after the Hall of Fame | {lv_ray} | one battle |')
+    L += ['', f'The three chambers open together: in the Sealed Chamber under the sea of Route 134 (Dive), read the braille '
+          f'on the back wall with {sp("RELICANTH")} first and {sp("WAILORD")} last in your party. Each chamber then has '
+          'its own braille puzzle.\n']
+
+    # ---- battles
+    L += ['## Battles after the Hall of Fame\n',
+          '- **The Pokémon League** can be challenged again. The Elite Four and the Champion keep their teams.',
+          f'- **Wally** waits in Victory Road 1F for a battle (Lv {_levels(wally)}; his team is on the '
+          f'[trainers page](trainers-{version.VERSION}.md#wally)).' + (' Afterwards he rematches you once a day '
+                                                                         '([rematches](#rematches)).' if E else '')]
+    if E:
+        L += [f'- **The Battle Frontier**: take the S.S. Tidal from Slateport or Lilycove with the {SS}. Rules, Battle '
+              'Points and prizes: [Battle Frontier page](battle-frontier.md). Black 2\'s Pokémon World Tournament (PWT) '
+              'is in the Frontier\'s Ranking Hall.',
+              '- **Trainer Hill** (Route 111) opens after the Hall of Fame; the **Battle Tents** in Verdanturf, Fallarbor '
+              'and Slateport are open during the story too. Both are on the [Battle Frontier page](battle-frontier.md).',
+              f'- **Steven** in [Steven\'s Cave](#stevens-cave).', '']
+    else:
+        bt = _src('0042_room_BattleTower_Lobby.s')
+        short = re.findall(r'VAR_BT_PRIZE, (ITEM_\w+)', bt.split('Sub_BTL_DeterminePrize:', 1)[1].split('L_BTL_LongPrize:', 1)[0])
+        long_ = re.findall(r'VAR_BT_PRIZE, (ITEM_\w+)', bt.split('L_BTL_LongPrize:', 1)[1].split('L_BTL_PrizeSet:', 1)[0])
+        after = _num('0042_room_BattleTower_Lobby.s', r'h_goto_if_gt BT_T2, (\d+), L_BTL_LongPrize')
+        ribbon = _num('0042_room_BattleTower_Lobby.s', r'WorkCmpConst BT_T2, (\d+)\s*\n\s*VMJumpIf CMP_LE, L_BTL_RibDone')
+        banned = []
+        for n in re.findall(r'WorkCmpConst 0x8050, (\d+)', _src('scenes/battle_tower_eligible.inc')):
+            if int(n) not in banned: banned.append(int(n))
+        L += [f'- **The Battle Tower island**: take the S.S. Tidal from Slateport or Lilycove with the {SS}.', '',
+              '### Battle Tower\n',
+              '- Two rooms: **Lv. 50** (your Pokémon must be level 50 or lower; the opponents are level 50) and '
+              '**Lv. 100** (any level; the opponents are level 100). Your Pokémon keep their own levels.',
+              '- Three Pokémon, no Eggs, no species twice and no held item twice. Not allowed: '
+              + _join(names.species_t[s] for s in sorted(banned)) + '.',
+              '- A challenge is seven battles in a row; your Pokémon are healed between battles. You can save and quit '
+              'between battles and go on later.',
+              f'- Prize for each challenge won: one of {_or(names.item(i) for i in short)} (at random) for your first '
+              f'{after + 1} challenges in a row, then one of {_or(names.item(i) for i in long_)}.',
+              f'- When a challenge ends with more than {ribbon} wins in a row, the three Pokémon get the Winning Ribbon '
+              '(Lv. 50) or the Victory Ribbon (Lv. 100).',
+              '- A man in the lobby awards the Silver Shield at a best streak of 50 and the Gold Shield at 100 (a record '
+              'only: this game has no decorations).', '',
+              '### Pokémon World Tournament (PWT)\n',
+              'The second building on the island is Black 2\'s PWT. The left desk offers the Driftveil, Rental and Mix '
+              'tournaments (Download needs Nintendo\'s closed online service). The right desk offers the Unova Leaders and '
+              'Hoenn Leaders tournaments, and more as you win them, as in Black 2 (Kanto, Johto and Sinnoh Leaders after '
+              'the Unova Leaders, then World Leaders and Champions). Battle Points won there are spent at the lobby\'s '
+              'counters.', '',
+              'Gym Leader and trainer rematches are in Pokémon Emerald NDS only.', '']
+    if E:
+        badges, leaders, wally_tiers, route = rm_badges, rm_leaders, rm_wally, rm_route
+        L += ['## Rematches\n',
+              f'- **Trainers on the routes:** once you have {badges} badges, talk to a trainer from the list below whom '
+              'you have beaten. Answer YES for a rematch. Each trainer battles once a day, with a team that depends on '
+              'your badges. Pairs fight a double battle (you need two Pokémon that can battle).',
+              '- **Gym Leaders:** after the Hall of Fame, talk to a Leader in their Gym, once a day. Each rematch is a '
+              'double battle, with a stronger team each time you win (four teams; the last one repeats). Until you have '
+              'done Wattson\'s job in New Mauville (he gives you TM24 Thunderbolt), each Leader offers only the first '
+              'rematch, and Wattson none.',
+              '- **Wally:** after the Hall of Fame he waits at the exit of Victory Road 1F. After your first battle there, '
+              f'he rematches you once a day: {len(wally_tiers)} stronger teams in turn (the last one repeats).', '',
+              '### Gym Leaders\n']
+        for _, name, where, tiers in leaders:
+            L += [f'**{name}** ({where})', '', '| Rematch | Team (double battle) |', '|---|---|']
+            L += [f'| {i + 1} | {t} |' for i, t in enumerate(tiers)]
+            L.append('')
+        L += ['### Wally\n', '| Rematch | Team |', '|---|---|']
+        L += [f'| {i + 1} | {t} |' for i, t in enumerate(wally_tiers)]
+        L += ['', '### Trainers\n', 'The highest level in each team, by the badges you have.\n',
+              f'| Trainer | Where | {badges} badges | {badges + 1} | {badges + 2} | {badges + 3} |', '|---|---|---|---|---|---|']
+        L += [f'| {who} | {where} | ' + ' | '.join(lv) + ' |' for who, where, lv in route]
+        L.append('')
+    return '\n'.join(L)
+
+
+# ---- levels -----------------------------------------------------------------------------------------------------------
+def _level_in(rel, tok):
+    """A level as a script writes it: a number, or a #define name (in the same file or any scene library)."""
+    if tok.isdigit(): return int(tok)
+    libs = sorted(os.path.relpath(p, FS) for p in glob.glob(os.path.join(FS, 'scenes', '**', '*.inc'), recursive=True))
+    for p in [rel] + libs:
+        m = re.search(rf'#define\s+{tok}\s+(\d+)\b', _src(p))
+        if m: return int(m.group(1))
+    raise SystemExit(f'gen_docs: no level for {tok} ({rel}): update levels_data')
+
+def _gen3_statics(dec):
+    """Species -> level of the decomp's one-off battles (setwildbattle / seteventmon in its maps' scripts)."""
+    out = {}
+    for p in sorted(glob.glob(os.path.join(ROOT, 'external', dec, 'data', 'maps', '*', 'scripts.inc'))):
+        for s, lv in re.findall(r'(?:setwildbattle|seteventmon) SPECIES_(\w+), (\d+)', open(p, encoding='utf-8').read()):
+            out.setdefault(s, int(lv))
+    return out
+
+def levels_data(names):
+    """This version's part of levels.md (gen_docs.py --levels-data prints it as JSON): the one-off battles (Gen 3 level,
+    level here), the gifts and trades, and the Gym Leaders', Elite Four's and Champion's aces (data/hoenn_trainer_data.json:
+    sapphire_level = the version's own Gen 3 level, level = this game's)."""
+    import roamers, trades
+    E = version.is_emerald()
+    sp = names.species
+    g3 = _gen3_statics('pokeemerald')                 # (the event islands are Emerald's maps in every version)
+    if not E: g3.update(_gen3_statics('pokeruby'))
+    one = []                                          # (key, Pokémon, where, Gen 3 level, level here)
+    def add(key, mon, where, g3_species, here):
+        one.append((key, mon, where, g3[g3_species], here))
+    if not E:
+        add('legend', sp(version.TABLE['legendary']), 'Cave of Origin', 'GROUDON_OR_KYOGRE',
+            _define('0206_room_CaveOfOrigin_B4F.s', 'B4_KYOGRE_LEVEL'))
+    regi = _level_in('scenes/ch12_lib.inc', re.search(r'CallWildBattle \\species, (\w+), 1', _src('scenes/ch12_lib.inc')).group(1))
+    for f in ('0232_room_DesertRuins.s', '0254_room_IslandCave.s', '0188_room_AncientTomb.s'):
+        s = re.search(r'h_regi_battle SPECIES_(\w+)', _src(f)).group(1)
+        add(s, sp(s), place(re.sub(r'^\d+_room_|\.s$', '', f)), s, regi)
+    lati = _define('scenes/SouthernIsland_Interior.inc', 'SII_LATIOS_LEVEL')
+    if E: add('lati', f'{sp("LATIOS")} or {sp("LATIAS")}', 'Southern Island', 'LATIOS', lati)
+    else: add('lati', sp(version.TABLE['island']), 'Southern Island', 'LATIAS_OR_LATIOS', lati)
+    add('RAYQUAZA', sp('RAYQUAZA'), 'Sky Pillar', 'RAYQUAZA',
+        _define('scenes/emerald/em_ch10_lib.inc', 'EM_RAYQUAZA_LEVEL') if E else _define('scenes/SkyPillar_Top.inc', 'SP_RAYQUAZA_LEVEL'))
+    if E:
+        add('GROUDON', sp('GROUDON'), 'Terra Cave', 'GROUDON', _define('0732_room_TerraCave_End.s', 'TCE_LEVEL'))
+        add('KYOGRE', sp('KYOGRE'), 'Marine Cave', 'KYOGRE', _define('0738_room_MarineCave_End.s', 'MCE_LEVEL'))
+    for s, where in (('MEW', 'Faraway Island'), ('DEOXYS', 'Birth Island'), ('LUGIA', 'Navel Rock'), ('HO_OH', 'Navel Rock')):
+        add(s, sp(s), where, s, _define('scenes/events_lib.inc', f'EV_{s}_LEVEL'))
+    disc = {n: int(a) for n, a, _ in re.findall(r'(\w+) (\d+) \([^)]*\) -> (\d+)', _src('scenes/postgame_lib.inc'))}
+    one.append(('CELEBI', sp('CELEBI'), 'Petalburg Woods', disc['Celebi'], _define('scenes/postgame_lib.inc', 'PG_CELEBI_LEVEL')))
+    for s, l in roamers.ROAMERS:
+        one.append((s, sp(s), 'roaming', l, roamers.scaled(l)))
+    def static_level(rel, species):      # a number or a #define name (postgame_fix: the statics follow the curve)
+        return _level_in(rel, re.search(rf'h_static_battle SPECIES_{species}, (\w+)', _src(rel)).group(1))
+    add('KECLEON', sp('KECLEON'), 'Routes 119 and 120 (Devon Scope)', 'KECLEON', static_level('scenes/ch7_lib.inc', 'KECLEON'))
+    add('VOLTORB', sp('VOLTORB'), 'New Mauville', 'VOLTORB', static_level('0266_room_NewMauville_Inside.s', 'VOLTORB'))
+    hideout = 'MagmaHideout_B1F' if version.is_ruby() else 'AquaHideout_B1F'
+    hf = os.path.basename(next(p for p in version.overlay(FS, '*.s') if p.endswith(f'_room_{hideout}.s')))
+    add('ELECTRODE', sp('ELECTRODE'), place(hideout), 'ELECTRODE', static_level(hf, 'ELECTRODE'))
+
+    gifts = [('Your first Pokémon', 'Route 101', _num('0634_route_101.s', r'PokePartyAdd \w+, \w+, 0, (\d+)')),
+             (sp('CASTFORM'), 'Weather Institute, Route 119',
+              _num('1128_room_Route119_WeatherInstitute_2F.s', r'PokePartyAddEx \w+, SPECIES_CASTFORM, 0, (\d+)')),
+             (f'{sp("LILEEP")} or {sp("ANORITH")}', 'Devon Corporation, Rustboro City (from the fossil)',
+              _num('scenes/RustboroCity_DevonCorp_2F_Fossil.inc', r'PokePartyAdd \w+, DVF_SPECIES, 0, (\d+)')),
+             (sp('BELDUM'), 'Steven\'s house, Mossdeep City',
+              _num('scenes/MossdeepCity_StevensHouse_Ch13.inc', r'PokePartyAdd \w+, SPECIES_BELDUM, 0, (\d+)')),
+             (sp('JIRACHI'), 'Mossdeep Space Center', _define('scenes/postgame_lib.inc', 'PG_JIRACHI_LEVEL'))]
+    if E:
+        johto = re.findall(r'emj_ball SPECIES_(\w+)', _src('scenes/emerald/BirchLab_JohtoStarters.inc'))
+        gifts.append((_or(sp(s) for s in johto), 'Prof. Birch\'s Lab',
+                      _num('scenes/emerald/BirchLab_JohtoStarters.inc', r'PokePartyAdd EMJ_SLOT, \\species, 0, (\d+)')))
+    trade = [(names.species_t[t['species']], names.species_t[t['wanted']], t['level']) for _, t in sorted(trades.TRADES.items())]
+
+    data = version.load_json(os.path.join(ROOT, 'data', 'hoenn_trainer_data.json'))['trainers']
+    by_id = {}
+    for t in data.values():
+        if E and 'emerald_trainer' not in t: continue
+        if t.get('rematch_of'): continue
+        by_id.setdefault(t['b2_id'], t)
+    key = {}
+    for i, t in sorted(by_id.items()):
+        cls = t['sapphire_class']
+        if cls not in ('LEADER', 'ELITE_FOUR', 'CHAMPION'): continue
+        k = (('LEADER', 'ELITE_FOUR', 'CHAMPION').index(cls), 'Tate' if t['name'] == 'Liza' else t['name'])
+        key.setdefault(k, []).extend(t['party'])
+    aces = []
+    for (c, name), party in sorted(key.items(), key=lambda kv: (kv[0][0], max(p['level'] for p in kv[1]))):
+        ace = max(party, key=lambda p: (p['level'], p['sapphire_level']))
+        who = {0: 'Gym Leader', 1: 'Elite Four', 2: 'Champion'}[c] + ' ' + ('Tate and Liza' if name == 'Tate' else name)
+        aces.append((who, sp(ace['species']), ace['sapphire_level'], ace['level']))
+    return dict(version=version.VERSION, one=one, gifts=gifts, trades=trade, aces=aces)
+
+def levels_page(parts):
+    """levels.md from data/level_scaling.json (converter/level_scaling.py, notes/LEVEL_SCALING.md) and each version's
+    levels_data (parts: version -> its JSON)."""
+    sc = json.load(open(os.path.join(ROOT, 'data', 'level_scaling.json')))
+    t = {int(k): v for k, v in sc['curve']['table'].items()}
+    same = max(l for l in t if all(t[k] == k for k in range(1, l + 1)))
+    top = min(l for l in t if t[l] == 100 and l < 100)
+    rise = ', '.join(f'+{t[l] - l} at Lv {l}' for l in (25, 30, 42, 58))
+    a, l0, p = sc['curve']['a'], sc['curve']['L0'], sc['curve']['p']
+    V = version.VERSIONS
+    def vname(vs):
+        return 'all versions' if len(vs) == len(V) else _join(VNAME[v] for v in vs)
+    L = [HEADER, '# Levels and the Exp. Share\n',
+         'This game has a Gen 6-style Exp. Share: a key item you switch on and off in the Bag. While it is on, the '
+         'Pokémon that don\'t battle get Exp. Points too, so your whole team grows together. You get it from Prof. '
+         'Birch\'s sixth question at the start ([options](options.md)) or from Mr. Stone in Rustboro, as in the '
+         'original games.\n',
+         '## Why the levels change\n',
+         'With the whole team levelling, the original levels would make the second half of the game easier than it '
+         'was. So opponents above Lv 24 (in the original story, everything after Mr. Stone\'s Exp. Share) get slightly '
+         'higher levels. The rise is small, because '
+         'Black 2\'s Exp. Points formula already gives less to a Pokémon that is stronger than its opponent. The new '
+         'levels keep the gap between your main Pokémon and your opponents about where it was in the original games.\n',
+         '## The rule\n',
+         f'- Nothing at Lv {same} or below changes, so everything before the Exp. Share keeps its level.',
+         f'- Above that the rise is small: {rise}.',
+         f'- Lv {top} and above becomes Lv 100.',
+         f'- The formula, for the curious: new level = L + {a:.2f} × (L − {l0:g})^{p:g}, rounded to the nearest level, '
+         'at most 100.', '',
+         '## The levels\n',
+         f'Find the original level: the row is the tens, the column the ones. Levels 1-{same} don\'t change; '
+         f'{top} and above become 100.\n',
+         '| | ' + ' | '.join(f'+{i}' for i in range(10)) + ' |', '|---|' + '---|' * 10]
+    for d in range(20, top + 1, 10):
+        L.append(f'| **{d}** | ' + ' | '.join(str(t[d + i]) if d + i <= 100 else '' for i in range(10)) + ' |')
+    L += ['', '## What follows the curve\n',
+          '- **Every trainer**: route trainers, Gym Leaders, the Elite Four, the Champion, your rival, Wally and the '
+          'team bosses (Pokémon Emerald NDS: the rematch teams too).',
+          '- **Every wild Pokémon**: tall grass, caves, surfing, the three rods and Rock Smash. Each slot\'s lowest and '
+          'highest level are both converted (the wild Pokémon pages already show the new levels).',
+          '- **The legendaries and the other one-off battles**, as the table shows.', '',
+          '| Pokémon | Where | Versions | Original | This game |', '|---|---|---|---|---|']
+    rows, order = collections.OrderedDict(), []
+    for v in V:                          # one order keeping every version's own (a version's new row after its neighbour)
+        prev = None
+        for k, mon, where, g, here in parts[v]['one']:
+            rows.setdefault((k, mon, where, g, here), []).append(v)
+            if k not in order: order.insert(order.index(prev) + 1 if prev else 0, k)
+            prev = k
+    off = []
+    for (k, mon, where, g, here), vs in sorted(rows.items(), key=lambda kv: (order.index(kv[0][0]), V.index(kv[1][0]))):
+        L.append(f'| {mon} | {where} | {vname(vs)} | {g} | {here} |')
+        if t[g] != here and (mon, g, here) not in off: off.append((mon, g, here))
+    if off:
+        L += ['', 'Not on the curve: ' + _join(f'{m} (Lv {h}; the curve would give {t[g]})' for m, g, h in off)
+              + '. These keep their original level.']
+    L += ['', '## What doesn\'t\n',
+          '- **Gifts** keep their original level:']
+    grows = collections.OrderedDict()
+    for v in V:
+        for mon, where, lv in parts[v]['gifts']:
+            grows.setdefault((mon, where, lv), []).append(v)
+    L += [f'  - {mon} (Lv {lv}), {where}' + ('' if len(vs) == len(V) else f' ({vname(vs)})') for (mon, where, lv), vs in grows.items()]
+    tgroups = collections.OrderedDict()               # (em_trades) each version's own trades (Emerald has its four)
+    for v in V:
+        tgroups.setdefault(json.dumps(parts[v]['trades']), []).append(v)
+    def trade_list(trs):
+        return _join(f'{a} for your {b} (Lv {lv})' for a, b, lv in trs)
+    if len(tgroups) == 1 and parts[V[0]]['trades']:
+        L.append('- **In-game trades** come at a fixed level: ' + trade_list(parts[V[0]]['trades']) + '.')
+    elif len(tgroups) > 1:
+        L.append('- **In-game trades** come at a fixed level:')
+        L += [f'  - {vname(vs)}: ' + trade_list(json.loads(trs)) + '.' for trs, vs in tgroups.items() if json.loads(trs)]
+    L += ['- **Battle facilities** have their own level rules: the Battle Tower, the Pokémon World Tournament, and in '
+          'Pokémon Emerald NDS the Battle Frontier, Battle Tents and Trainer Hill '
+          '([Battle Frontier page](battle-frontier.md)).', '',
+          '## The switch doesn\'t matter\n',
+          'The levels are part of the game itself. They are the same whether your Exp. Share is on or off, and whether '
+          'you took it from Prof. Birch at the start or from Mr. Stone. Switching it off only means the Pokémon that '
+          'don\'t battle stop getting Exp. Points; the opponents stay as they are.\n',
+          '## Key battles\n',
+          'The highest-level Pokémon of each Gym Leader, the Elite Four and the Champion: the original game\'s level and '
+          'this game\'s. Full teams are on the trainers pages.\n']
+    groups = collections.OrderedDict()
+    for v in V:
+        groups.setdefault(json.dumps(parts[v]['aces']), []).append(v)
+    for aces, vs in groups.items():
+        L += [f'### {_join(VNAME[v] for v in vs)}\n', '| Battle | Pokémon | Original | This game |', '|---|---|---|---|']
+        L += [f'| {who} | {mon} | {g} | {here} |' for who, mon, g, here in json.loads(aces)]
+        L += ['', 'Teams: ' + ', '.join(f'[{VNAME[v]}](trainers-{v}.md)' for v in vs) + '.', '']
+    return '\n'.join(L)
+
 def index_page():
     L = [HEADER, '# Pokémon Ruby, Sapphire & Emerald NDS: player guide\n',
          'Made from the game\'s own data, so it matches the current release.\n',
          '| | Sapphire | Ruby | Emerald |', '|---|---|---|---|']
-    for title, stem in (('Wild Pokémon', 'wild-pokemon'), ('Item locations', 'items'), ('Important trainers', 'trainers')):
+    for title, stem in (('Wild Pokémon', 'wild-pokemon'), ('Item locations', 'items'), ('Important trainers', 'trainers'),
+                        ('After the Hall of Fame', 'postgame')):
         L.append(f'| {title} | ' + ' | '.join(f'[{VNAME[v]}]({stem}-{v}.md)' for v in version.VERSIONS) + ' |')
+    L.append('| Levels and the Exp. Share | ' + ' | '.join(f'[{VNAME[v]}](levels.md)' for v in version.VERSIONS) + ' |')
     L += ['', '- [Start-of-game options](options.md)', '- [The Fairy type (optional)](fairy-type.md)',
           '- [TMs and HMs](tms-and-hms.md)', '- [Trade evolutions](evolutions.md)', '- [Battle Frontier, Battle Tents and Trainer Hill (Emerald)](battle-frontier.md)', '',
           'Learnsets are Black 2\'s, plus the Fairy moves when the Fairy type is on.', '']
@@ -430,6 +1140,9 @@ def write(out, name, text):
     print('wrote', name, len(text), 'B')
 
 def main():
+    if '--levels-data' in sys.argv:              # this version's part of levels.md, as JSON (HOENN_VERSION set by the caller)
+        print(json.dumps(levels_data(Names()), ensure_ascii=False))
+        return
     args = [a for a in sys.argv[1:] if not a.startswith('--')]
     out = os.path.abspath(args[0] if args else os.path.expanduser('~/Documents/GitHub/pokemon-ruby-sapphire-nds/docs'))
     os.makedirs(out, exist_ok=True)
@@ -438,6 +1151,7 @@ def main():
         write(out, f'wild-pokemon-{version.VERSION}.md', wild_page(names))
         write(out, f'items-{version.VERSION}.md', items_page(names))
         write(out, f'trainers-{version.VERSION}.md', trainers_page(names))
+        write(out, f'postgame-{version.VERSION}.md', postgame_page(names))
         if version.is_emerald(): write(out, 'battle-frontier.md', frontier_page(names))
         return
     for v in version.VERSIONS:
@@ -448,6 +1162,10 @@ def main():
     write(out, 'fairy-type.md', fairy_page(names))
     write(out, 'evolutions.md', evolutions_page(names))
     write(out, 'options.md', options_page())
+    parts = {v: json.loads(subprocess.run([sys.executable, os.path.abspath(__file__), '--levels-data'], check=True,
+                                          capture_output=True, text=True, env=dict(os.environ, HOENN_VERSION=v)).stdout)
+             for v in version.VERSIONS}
+    write(out, 'levels.md', levels_page(parts))
     write(out, 'README.md', index_page())
 
 if __name__ == '__main__':

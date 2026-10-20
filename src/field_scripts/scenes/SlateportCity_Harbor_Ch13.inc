@@ -57,7 +57,7 @@ L_HB13_BattleTower:
     h_goto_if_no HLIB_TMP, L_HB13_ChooseNewDestination
     h_msgbox HB13_T + 6
     ch13_board_dock HB13_ATTENDANT
-    h_sail_ferry HB13_BT_ZONE, 19 + 17, 23 + 18, 1, 3      // warp MAP_BATTLE_TOWER_OUTSIDE, 255, 19, 23 (script 3 of its scene)
+    h_sail_ferry HB13_BT_ZONE, CH13_BT_DOCK_X, CH13_BT_DOCK_Z, 1, 3   // warp MAP_BATTLE_TOWER_OUTSIDE, 255, 19, 23 (Emerald: MAP_BATTLE_FRONTIER_OUTSIDE_WEST, 19, 67; ch13_lib.inc) (script 3 of its scene)
     h_release
 L_HB13_ChooseNewDestination:
     ParentActorMsg MSGFILE_SCRIPT, HB13_T + 5, 0, 0     // Then, where would you like to go?

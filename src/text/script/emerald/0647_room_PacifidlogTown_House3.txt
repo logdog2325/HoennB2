@@ -1,0 +1,7 @@
+Is that a Pokédex?{be01}\nDid you get to meet a lot of different\nPokémon?{be01}\nI wish I was like you.
+This vase looks expensive...\nPeered inside...{be01}\nBut, it was empty.
+Check out this {0100:2}!{be01}\nIt’s the {0100:2} that I caught\nyesterday to celebrate my birthday!{be01}\nOh, I can see that you want it!\nAfter all, it’s priceless!{be01}\nI’ll tell you what. I might be willing\nto trade it for a {0100:1}.
+Oh, so you’re not going to go through\nwith this?{be01}\nThat’s cool. I’m not desperate to make\na trade or anything.
+No, no, no! I won’t accept any\nless than a real {0100:1}!
+Oh, so this is a {0100:1}?{be01}\nIt’s sort of like a {0100:2},\nand yet it’s subtly different.{be01}\nThank you!
+I know I could go looking for one\non my own, but…{be01}\nBut I really wanted to get a Bagon\nthat another Trainer caught…

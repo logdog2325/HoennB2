@@ -1271,6 +1271,8 @@ def write_cell(d, m_name, c, world, trees, cfg_maps, placements, extra):
     texdir = os.path.join(ROOT, 'work', 'tex', 'area2')
     os.makedirs(d)
     m, per, grid = build_cell(m_name, c[0], c[1], world, trees, cfg_maps)
+    if WATER_MOD is not None: WATER_MOD.cut_ground_now(m)  # (the ground over water goes before tjunction.fix's fans:
+    #                                                         terrain/water.py cut_ground_now; else at write time)
     per, per1 = bridge_split(per, c, world)               # walk-under bridges: a second collision layer (bridge_layers)
     for mat in m.tris:
         src = os.path.join(texdir, mat.replace('.', '_') + '.png')
@@ -1311,15 +1313,29 @@ def write_cell(d, m_name, c, world, trees, cfg_maps, placements, extra):
         # over it, the bytes run into the next heap block. When the cell comes out over (measured: its model through
         # ToNsbmd), the cracks fix (purple lines) is given back in this cell only: first the T-junction splits, then
         # also the ground's under-floor (Route 119's bridge cell (10, 2): 123,444 B with both, 112,052 without the
-        # splits, ~105,500 without either)
+        # splits, ~105,500 without either). (water_seams 2026-10-19) The water's seam layers (terrain/water.py
+        # _seam_layers, _bank_seams) go first at each step, so no cell has less of the cracks fix than before them
         n, what = chunk_bytes(d), 'full'
-        if n is not None and n > CHUNK_LIMIT:
-            m.tris = pre; ntri = write_dae(m); n, what = chunk_bytes(d), 'no T-junction splits'
-        if n is not None and n > CHUNK_LIMIT:
+        kept = getattr(WATER_MOD, '_SEAMS', {}).get(m_name) if WATER_MOD is not None else None
+        def seams(on):
+            if kept is None: return False
+            if on: WATER_MOD._SEAMS[m_name] = kept
+            else: WATER_MOD._SEAMS.pop(m_name, None)
+            return True
+        over = lambda: n is not None and n > CHUNK_LIMIT
+        if over() and seams(False):
+            ntri = write_dae(m); n, what = chunk_bytes(d), 'no water seams'
+        if over():
+            seams(True); m.tris = pre; ntri = write_dae(m); n, what = chunk_bytes(d), 'no T-junction splits'
+        if over() and seams(False):
+            ntri = write_dae(m); n, what = chunk_bytes(d), 'no T-junction splits, no water seams'
+        if over():
             UNDERFLOOR[0] = False
-            try: m = finish(build_cell(m_name, c[0], c[1], world, trees, cfg_maps)[0])
+            try: m = finish(build_cell(m_name, c[0], c[1], world, trees, cfg_maps)[0])     # (water.draw: seams again)
             finally: UNDERFLOOR[0] = True
             ntri = write_dae(m); n, what = chunk_bytes(d), 'no T-junction splits, no under-floor'
+        if over() and seams(False):
+            ntri = write_dae(m); n, what = chunk_bytes(d), 'no T-junction splits, no under-floor, no water seams'
         if n is None: print(f'warning: chunk_fit: cell {c}: no ToNsbmd here, chunk size not checked')
         elif what != 'full': print(f'chunk_fit: cell {c}: {what} ({n} B, limit {CHUNK_LIMIT})')
         if n is not None and n > CHUNK_LIMIT:

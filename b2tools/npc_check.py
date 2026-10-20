@@ -3,7 +3,8 @@
     python3 npc_check.py ROM.nds|FILES_DIR [--all-zones] [--zone N ...] [--verbose] [--strict]
 
 What limits the people Black 2 can draw at once on one field (all from code, measured in DeSmuME, NPC_LIMIT.md):
-- **32 billboard materials** (ov036 Field_InitActorSystem: FldActSys_InitBlAct(…, 0x20) -> FldBlAct_InitMatCache):
+- **32 billboard materials** (ov036 Field_InitActorSystem: FldActSys_InitBlAct(…, 0x20) -> FldBlAct_InitMatCache;
+  Emerald 40 since 2026-10-19, patches/area2_buildings.py; the number is read from the ROM's ov036, mat_cache()):
   one entry per distinct sprite code (a/0/4/7 object code) on the field: the zone's preloaded list (zone header
   npc_cache < 24: a/0/5/7, kept for the whole field), the player's walking sprite, the player's current other form
   (bike, surf, fishing ...) and every code an NPC on the field uses. A code that finds the cache full is uploaded but
@@ -22,7 +23,8 @@ import os, sys, re, json, mmap, struct, itertools, collections
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.join(HERE, '..')
 
-MAT_CACHE = 32                 # ov036 Field_InitActorSystem: FldActSys_InitBlAct(actorSystem, actorBlAct, 0x20)
+MAT_CACHE = 32                 # ov036 Field_InitActorSystem: FldActSys_InitBlAct(actorSystem, actorBlAct, 0x20) (Black 2)
+MAT_CACHE_AT, OV036 = 0x02180A86, 0x0217F600    # its `mov r2, #imm8` (patches/area2_buildings.py sets Emerald's 40)
 PLAYER_ENTRIES = 2             # the player's walking sheet (FldActSys_LoadStaticBlact) + its current other form
 ACTORS = 64                    # main FldActSys_Create(heap, 0x40, save): actor capacity, the player included
 TEX_VRAM = 3 * 128 * 1024      # FIELDMAP_VRAM_CONFIG texture banks A+B+C (GFL_G3DSysCreate linked-list manager)
@@ -81,6 +83,32 @@ def tex_bytes(btx):
             return tex + c4 + c4 // 2 + (struct.unpack_from('<H', t, 0x30)[0] << 3)
     return 0
 
+def mat_cache(path):
+    """(size, source) of the material cache the built game makes: the immediate of Field_InitActorSystem's
+    `mov r2, #imm8` in ov036 (a build's code/arm9_ov036.bin next to its files/, or the .nds's compressed overlay)."""
+    if os.path.isdir(path):
+        p = os.path.join(os.path.dirname(os.path.abspath(path)), 'code', 'arm9_ov036.bin')
+        if not os.path.exists(p): return MAT_CACHE, 'default (no code/arm9_ov036.bin next to the files)'
+        ov, src = open(p, 'rb').read(), 'code/arm9_ov036.bin'
+    else:
+        sys.path.insert(0, os.path.join(ROOT, 'external', 'pokebw2', 'tools', 'scripts'))
+        from blz import blz_decompress
+        with open(path, 'rb') as f:
+            h = f.read(0x60)
+            fat, = struct.unpack_from('<I', h, 0x48); oto, ots = struct.unpack_from('<II', h, 0x50)
+            f.seek(oto); ot = f.read(ots)
+            ov = None
+            for e in range(0, ots, 32):
+                oid, ram, _, _, _, _, fid, cs = struct.unpack_from('<8I', ot, e)
+                if oid != 36: continue
+                f.seek(fat + 8 * fid); s, en = struct.unpack('<II', f.read(8)); f.seek(s); ov = f.read(en - s)
+                if (cs >> 24) & 1: ov = blz_decompress(ov[:cs & 0xFFFFFF] if cs & 0xFFFFFF else ov)
+        if ov is None: return MAT_CACHE, 'default (no overlay 36)'
+        src = 'ov036'
+    o = MAT_CACHE_AT - OV036
+    if ov[o + 1] != 0x22: return MAT_CACHE, f'default ({src} {MAT_CACHE_AT:#x} is not mov r2, #imm)'
+    return ov[o], src
+
 HDR = struct.Struct('<BBHHHHH4HHHHHHHHH3I')
 NPC = struct.Struct('<HHHHHHHHHHHHIHHi')
 
@@ -109,6 +137,7 @@ class Rom:
         self.sheets = f.narc(48)
         self.cache = f.narc(57)
         self._sheet = {}
+        self.mat_cache, self.mat_cache_src = mat_cache(path)
     def zone(self, z):
         h = self.headers[z]
         return dict(map_type=h[0], npc_cache=h[1], area=h[2], scripts=h[4], entities=h[12])
@@ -176,16 +205,16 @@ def budget(rom, z, present, extra=()):
     area = rom.area_tex(h['area'])
     vram = area + sheets + PLAYER_WALK + PLAYER_FORM + EFFECTS
     over = []
-    if entries > MAT_CACHE: over.append(f'materials {entries}/{MAT_CACHE}')
+    if entries > rom.mat_cache: over.append(f'materials {entries}/{rom.mat_cache}')
     if vram > TEX_VRAM: over.append(f'VRAM {vram}/{TEX_VRAM}')
     if len(present) + 1 > ACTORS: over.append(f'actors {len(present) + 1}/{ACTORS}')
     return dict(codes=len(codes), pre=len(pre - codes), entries=entries, sheets=sheets, area=area, vram=vram,
-                npcs=len(present), over=over)
+                npcs=len(present), over=over, limit=rom.mat_cache)
 
 def invisible(rom, z, present):
     """NPCs whose code finds the material cache full, in spawn order (the zone's NPC list order)."""
     h = rom.zone(z)
-    have = set(rom.preloaded(h['npc_cache'])); free = MAT_CACHE - PLAYER_ENTRIES - len(have); out = []
+    have = set(rom.preloaded(h['npc_cache'])); free = rom.mat_cache - PLAYER_ENTRIES - len(have); out = []
     for i, n in present:
         if n['model'] in have: continue
         if free > 0: have.add(n['model']); free -= 1
@@ -215,13 +244,13 @@ def check(rom, zones, hidden=frozenset()):
         rows.append(row)
     return rows, bad
 
-def report(rows, bad, fnames, verbose=False):
+def report(rows, bad, fnames, verbose=False, limit=MAT_CACHE):
     lines = [f'{"zone":>4} {"name":34} {"NPCs":>4} {"codes":>5} {"mat":>6} {"sheets B":>8} {"area B":>7} {"VRAM B":>7}  status']
     for r in rows:
         w = r['worst']
         if not verbose and not w['over'] and w['codes'] == 0: continue
         status = 'OVER: ' + ', '.join(w['over']) if w['over'] else 'ok'
-        lines.append(f"{r['zone']:4d} {r['name'][:34]:34} {w['npcs']:4d} {w['codes']:5d} {w['entries']:3d}/{MAT_CACHE} "
+        lines.append(f"{r['zone']:4d} {r['name'][:34]:34} {w['npcs']:4d} {w['codes']:5d} {w['entries']:3d}/{w.get('limit', limit)} "
                      f"{w['sheets']:8d} {w['area']:7d} {w['vram']:7d}  {status}")
     for r in bad:
         lines.append(f"\n{r['name']} (zone {r['zone']}): {len(r['states_over'])} flag combinations over a limit "
@@ -231,7 +260,7 @@ def report(rows, bad, fnames, verbose=False):
         for hidden, over in r['states_over'][:8]:
             lines.append(f"   hidden {[fnames.get(f, f) for f in hidden] or 'none'}: {', '.join(over)}")
     lines.append(f'\n{len(rows)} zones checked, {len(bad)} over a limit (worst case: every spawn flag clear). Limits: '
-                 f'{MAT_CACHE} materials ({PLAYER_ENTRIES} for the player), {TEX_VRAM} B texture VRAM '
+                 f'{limit} materials ({PLAYER_ENTRIES} for the player), {TEX_VRAM} B texture VRAM '
                  f'(area + sheets + player {PLAYER_WALK} + {PLAYER_FORM} + effects {EFFECTS}), {ACTORS} actors.')
     return '\n'.join(lines)
 
@@ -282,7 +311,8 @@ def main(argv):
             hidden = {inv[f] if f in inv else int(f, 0) for f in a.set.split(',')}
         rows, bad = check(rom, zones, hidden=hidden)
         if hidden: print(f'Story state: {len(hidden)} flags set (their NPCs hidden)')
-    print(report(rows, bad, fn, verbose=a.verbose))
+    print(f'Material cache: {rom.mat_cache} ({rom.mat_cache_src})')
+    print(report(rows, bad, fn, verbose=a.verbose, limit=rom.mat_cache))
     return 1 if bad and a.strict else 0
 
 def apply(files):
@@ -291,7 +321,7 @@ def apply(files):
     rows, bad = check(rom, hoenn_zones())
     top = sorted(rows, key=lambda r: -r['worst']['entries'])[:3]
     return (f"{len(rows)} zones, {len(bad)} over a limit" + (': ' + ', '.join(f"{r['name']} ({', '.join(r['worst']['over'])})" for r in bad) if bad else '')
-            + '; fullest: ' + ', '.join(f"{r['name']} {r['worst']['entries']}/{MAT_CACHE} materials" for r in top))
+            + '; fullest: ' + ', '.join(f"{r['name']} {r['worst']['entries']}/{rom.mat_cache} materials" for r in top))
 
 if __name__ == '__main__':
     sys.exit(main(sys.argv[1:]))

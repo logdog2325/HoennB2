@@ -290,3 +290,28 @@ a wall puts the player inside it).
   - the header still reads UNOVA POKÉDEX (graphic), and "Unova Pokédex: Search Mode" is in system text 0479;
   - the AREA tab shows Black 2's Unova map (town_map's phase 2);
   - the Habitat list (after the National Dex) is Black 2's.
+
+## DSi (TWL) mode and hardware-only checks (summary_crash, 2026-10-19) [code][test]
+- **Black 2's protection unit in DSi mode** (its crt0, arm9 0x02004a98; the branch at 0x02004ac0 picks TWL or NITRO):
+  common: 0x04000000 64 MB (I/O, VRAM), DTCM 0x02FE0000 16 KB, ITCM 0x01000000 16 MB, BIOS 0xFFFF0000 32 KB (read
+  only). TWL: main 0x02000000 32 MB, **region 2 = 0x02F80000 512 KB with no ARM9 data or code access** (the ARM7's
+  private RAM: its code at 0x02FE0000 and 0x02F88000), 0x08000000 128 MB, region 7 = 0x02FFC000 16 KB. NITRO: region 2
+  = 0x027FF000 4 KB (read/write), region 7 = 0x02FFF000 4 KB. So an ARM9 access to 0x02F80000-0x02FDFFFF or
+  0x02FE4000-0x02FFBFFF works in DS mode (a mirror of main RAM 0x02380000-0x023FBFFF) and aborts in DSi mode only.
+- **Main arena:** DS mode 0x021FD080-0x023E0000 (Emerald: -0x023D0000, the Frontier code area above it); DSi mode
+  0x0276DDE0-0x02F80000 (GetUserMemRegionDefaultStart/End test OS_IsRunOnTwl, 0x0207ac8c). Root heap 1 is 0x48AE00 B in
+  DSi mode, 0x1A3E00 B in DS mode (GFLAppInit's tables 0x0208ee58 / 0x0208ee68). In DSi mode 0x021FD080-0x02700000 is
+  outside every arena (arm9i is staged at 0x02400000 at boot; the TWL-only code runs at 0x02700000-0x0276DDE0), so the
+  Frontier code area at 0x023D0000 is not reserved there, only unused by the game.
+- **Tools** (work/agents/summary_crash): `run.sh ROM SAV TAG steps` (sc.py: battery save -> Continue -> X menu ->
+  POKEMON -> SUMMARY, pages, move detail; `sprites:new|classic` pokes options bit 14, `setmon:I,SP`). Env: `WATCH=1`
+  the usual watcher; `TWLW=1` flags ARM9 accesses that only DSi mode aborts on (above) and any ARM9 access to a DS-mode
+  mirror 0x02400000-0x02FFFFFF; `GARBAGE=0xA5` fills every free GFL heap block before the menu (real RAM is not zero);
+  steps `trace` / `framtrace` / `difftrace` (DIFFRUNS json, DIFFMODS) log which patched code runs, `readlog` logs every
+  romfs_fread (file id word 8, top 9, pos 11 of the handle).
+- `python3 external/pokebw2/tools/scripts/verify_dsi_rom.py ROM` checks every DSi digest and HMAC of a built ROM (v18.0
+  and Emerald v1.0.4: all ok; only the secure-area ones are skipped, as for any decrypted dump).
+
+## zsh and the read watcher (museum_desk, 2026-10-19)
+`WATCH` is a special parameter in zsh: `export WATCH=1` never reaches Python, so a script that starts the bad-read
+watcher that way never watched. Put it in front of the command instead: `WATCH=1 python3 …`.

@@ -54,12 +54,18 @@ T, Y0, GAP = 16, -2, 1.95                  # GAP: Black 2's own rugs lie 1.96-1.
 PADS = {'warp01', 'warp02', 'warp03'}      # Black 2's warp panels (pad + rising rings, 2 tiles): stepped onto (sweep_rooms)
 WALK_MOVES = {12: (0, -1), 13: (0, 1), 14: (-1, 0), 15: (1, 0), 16: (0, -1), 17: (0, 1), 18: (-1, 0), 19: (1, 0)}
 DIR_VEC = {1: (0, 1), 2: (0, -1), 3: (1, 0), 4: (-1, 0)}       # Black 2 warp dir -> the way the player walks in
+GEN3_WARP_BEH = {0x0F, 0x29, 0x8C} | set(range(0x60, 0x6F))   # Gen 3 tiles that fire a warp (MB_MT_PYRE_HOLE, Lavaridge
+                                                               # B1F, Trick House puzzle door, doors / ladder / arrows /
+                                                               # holes / escalators / water door 0x60-0x6E)
 INTERIORS = json.load(open(os.path.join(ROOT, 'data', 'hoenn_interiors.json')))['rooms']
 NO_MAT = {'Route114_FossilManiacsTunnel',                                  # exits Sapphire draws without a mat;
           'SkyPillar_1F',                    # Dragonspiral's lit doorway as the exit notch (caves_misc_skypillar.py)
           'AbandonedShip_Deck'}              # the gangway down to the dock and the sea (ship_hideouts_rooms.py)
 TARGETS = {tuple(w['to']) for f in version.overlay(os.path.join(ROOT, 'data', 'interiors'), '*.json')
-           for w in json.load(open(f)).get('warps', []) if 'to' in w}            # (zone, warp) some room warp leads to
+           for w in json.load(open(f)).get('warps', []) if 'to' in w             # (zone, warp) some room warp leads to
+           and not (w.get('dir') == 0 and w.get('type', 2) == 2)}                # (not a dir-0 arrival spot: it never
+                                                                                 #  fires; Lavaridge's holes and vents
+                                                                                 #  warp by script, MapChangeCore)
 
 
 def zone_cfgs():
@@ -323,18 +329,31 @@ class Built:
             if not (0 <= s[0] < self.sm['w'] and 0 <= s[1] < self.sm['h']): continue   # Sapphire's off-map warps (ferry)
             dflt = (2, 2) if w.get('tile_only') else (1, 1)                  # as patches/interiors.py
             typ = w.get('type', spot['type'] if spot else dflt[0]); d = w.get('dir', spot['dir'] if spot else dflt[1])
+            # a door / stairs warp (not a mat) fires when the player walks into its tile from the one before it, and only
+            # when that tile is solid: on a walkable one the player steps onto it and nothing happens (Emerald v1.1's
+            # League door: the variant's "stairs" left the door tiles out, league_door 2026-10-19). Only where Gen 3 fires
+            # a warp on that tile: on plain floor (behaviour 0: the Trick House's scroll and corridor landing, the Ever
+            # Grande corridors' foot) the warp is an arrival spot in Gen 3 too, entered by a script warp or never
+            if typ != 1 and d in DIR_VEC and t in self.walk and self.sm['beh'][s[1]][s[0]] in GEN3_WARP_BEH:
+                self.say('e', f'warp {i} at Sapphire {s} (entered walking {DIR_VEC[d]}) is on a walkable tile: the player '
+                         'steps onto it and the warp never fires (list the tile in the recipe\'s "stairs")')
             # arrival: type 1 (mats) you arrive on the tile and walk off it north (or any side); others step out
-            # opposite to the walk-in direction
+            # opposite to the walk-in direction. A type-2 warp walks the player out one tile even when its own tile is
+            # walkable, and dir 0 walks them north (measured, league_door 2026-10-19: the Trick House corridor's dir 2
+            # put the player in the void below the landing, the entrance's dir 1 in the scroll wall, Corridor 5's dir 0
+            # (6,11) -> (6,10))
             if not arrival: continue                                      # nothing leads here (Cable Club doors,
                                                                              # a hole's extra walk-in sides)
             if typ == 1:
                 nb = [(t[0] + a, t[1] + b) for a, b in ((0, -1), (1, 0), (-1, 0))]
                 if t not in self.walk and not any(q in self.walk for q in nb):
                     self.say('e', f'warp {i} (exit mat) at Sapphire {s}: you arrive on it and cannot walk off it')
-            elif d in DIR_VEC and t not in self.walk:                       # (on a walkable warp tile you just stand)
-                v = DIR_VEC[d]; out = (t[0] - v[0], t[1] - v[1])
+            elif (d in DIR_VEC and t not in self.walk) or \
+                    (typ == 2 and (d in DIR_VEC or d == 0) and (self.cfg['zone'], i) in TARGETS):   # (a warp that fires leads here)
+                v = DIR_VEC.get(d, DIR_VEC[1]); out = (t[0] - v[0], t[1] - v[1])
                 if out not in self.walk:
-                    self.say('e', f'warp {i} at Sapphire {s} (entered walking {v}): the tile you step out onto, Sapphire {self.sap(out)}, is not walkable')
+                    self.say('e', f'warp {i} at Sapphire {s} (dir {d}): an arriving player is walked out onto Sapphire '
+                             f'{self.sap(out)}, which is not walkable (into a wall or the void)')
         # exit mats drawn on their warp tiles: a rug/mat face covers every exit tile (Sapphire draws a mat on every exit
         # but the Fossil Maniac's tunnel mouth)
         for sp in self.meta['warp_spots'] if self.name not in NO_MAT and self.name[:-8] not in NO_MAT else []:   # (+ its _Emerald variant)

@@ -89,6 +89,10 @@ def recipe_for(mapname, recipes):
     return v if v in recipes or os.path.exists(os.path.join(MC.LAYOUTS, v + '.json')) else mapname
 
 # ---------------------------------------------------------------------------------------------------- encounters
+REG_DOC = ('Emerald-only maps\' wild-table files (a/1/2/7 ids; caves: converter/gen_caves_emerald.py, outdoor maps: '
+           'converter/gen_encounters.py emerald_new_maps; allocate: free Unova files that no Sapphire or Emerald zone and no '
+           'data/hoenn_encounters.json entry uses, else new files after Black 2\'s)')
+
 def allocate(name, table, reg, shared_reg, tables):
     """A free Unova a/1/2/7 file for an Emerald-only cave (gen_caves.allocate's rules over Sapphire's and Emerald's zones and
     both registries); an Emerald-only cave whose table equals another's shares its file."""
@@ -384,9 +388,7 @@ def emerald_main(names):
                       f'{len(npcs)} objects, encounters {fid}, dark {dark}')
         for u in unresolved: report.append(f'  unresolved: {u}')
     if reg != reg_before:
-        json.dump(dict(_doc='Emerald-only caves\' wild-table files (a/1/2/7 ids; converter/gen_caves_emerald.py: free Unova files '
-                            'that no Sapphire or Emerald zone and no data/hoenn_encounters.json entry uses)', **dict(sorted(reg.items()))),
-                  open(reg_path, 'w'), indent=1)
+        json.dump(dict(_doc=REG_DOC, **dict(sorted(reg.items()))), open(reg_path, 'w'), indent=1)
     # the new places' names on their lines (patches/text.py reads src/text/emerald/overrides*.json in an Emerald build)
     json.dump({'_doc': 'Emerald\'s new cave places (converter/gen_caves_emerald.py PLACES: lines no zone of the Emerald build shows)',
                'system/0109_place_names.txt': {str(k): v for k, v in sorted(PLACE_NAMES.items())}},

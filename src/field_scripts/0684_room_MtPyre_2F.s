@@ -4,6 +4,7 @@
 
     ScriptEntry Script_1
     ScriptEntry Script_2
+    ScriptEntry PyreFall_1
     ScriptEntriesEnd
 
 Script_1:
@@ -29,4 +30,17 @@ Script_2:
     FinishAllEvents
     ActorsUnpauseAll
     VMHalt
+// ---- holes: the holes' falls, run by their step triggers (data/interiors/<zone>.json). Written by
+// b2tools/facilities_pyre.py with the PyreFall_* entries: edit that script, not this part.
+PyreFall_1:                                    // hole (11,9) -> fall to MtPyre_1F warp 5 (20,9)
+    ActorsPauseAll
+    SEPlay SEQ_SE_DANSA
+    FadeOutBlack
+    RTReserveScript 10017
+    FadeWait
+    MapChangeCore 341, 21, 0, 9, 1
+    FinishAllEvents
+    ActorsUnpauseAll
+    VMHalt
+// ---- holes end
     .balign 4, 0

@@ -54,7 +54,7 @@
   {"kind": "npc", "map": "RustboroCity_House3", "at": [4, 4], "uid": 3, "model": 4121, "script": 5, "dir": 1, "what": "Pekachu (object 3)"},
   {"kind": "sign", "map": "LittlerootTown_BrendansHouse_1F", "at": [3, 7], "script": 19, "dir": 4, "what": "the table: Running Shoes manual (CheckShowShoesManual, a boy's own house)"},
   {"kind": "sign", "map": "LittlerootTown_MaysHouse_1F", "at": [6, 7], "script": 19, "dir": 4, "what": "the table: Running Shoes manual (a girl's own house)"},
-  {"kind": "npc", "map": "RustboroCity_House1", "at": [6, 4], "uid": 1, "model": 8, "script": 3, "dir": 2, "what": "trader, in-game trade Makuhita for Slakoth (object 1)"},
+  {"kind": "npc", "map": "RustboroCity_House1", "at": [6, 4], "uid": 1, "model": 8, "model_emerald": 21, "script": 3, "dir": 2, "what": "trader, in-game trade Makuhita for Slakoth (object 1); Emerald: the Camper (pokeemerald OBJ_EVENT_GFX_CAMPER, model_emerald 21 = data/sprite_map.json CAMPER), Seedot for Ralts (em_trades)"},
   {"kind": "npc", "map": "Route104", "at": [37, 8], "uid": 116, "model": 29, "script": 6, "dir": 2, "what": "woman by the berry trees, Chesto Berry (object 16; Route 104's zone 329 since the zone rectangles)"},
   {"kind": "npc", "map": "Route104", "at": [27, 15], "uid": 123, "model": 9, "script": 7, "dir": 1, "what": "Gina (object 23, TRAINER_GINA_AND_MIA_1)"},
   {"kind": "npc", "map": "Route104", "at": [28, 15], "uid": 124, "model": 9, "script": 8, "dir": 1, "what": "Mia (object 24)"}

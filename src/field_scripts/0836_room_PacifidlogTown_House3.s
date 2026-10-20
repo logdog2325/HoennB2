@@ -47,13 +47,19 @@ Script_2:
 #define H3_SLOT 0x8020                              // party slot picked
 #define H3_OK 0x8021                                // 1 = a Pokémon was picked
 #define H3_CHECK 0x8022                             // FieldTradeCheck: 0 = the wanted species
+#ifdef HOENN_EMERALD                                // (em_trades) Emerald: pokeemerald INGAME_TRADE_HORSEA, the
+#define H3_WANTED SPECIES_BAGON                      // man's Horsea "Seasor" for a Bagon (same trade 26, Emerald's
+#define H3_OFFERED SPECIES_HORSEA                    // data; text src/text/script/emerald/0647_*: lines 2-6 keep
+#else                                               // the meanings below; T_FLUFFY = "Oh, so this is a Bagon?
+#define H3_WANTED SPECIES_BELLOSSOM                  // It's sort of like a Horsea...", T_FRIENDS = "...a Bagon that
+#endif                                              // another Trainer caught...")
 
 Story_H3_Trader:                                    // PacifidlogTown_House3_EventScript_Trader (lock, faceplayer)
     h_lock
     SEPlay SEQ_SE_MESSAGE
     h_faceplayer
     h_goto_if_set FLAG_PACIFIDLOG_NPC_TRADE_COMPLETED, L_H3_Completed
-    h_bufferspeciesname 1, SPECIES_BELLOSSOM        // GetInGameTradeSpeciesInfo: STR_VAR_1 the wanted species, STR_VAR_2
+    h_bufferspeciesname 1, H3_WANTED                // GetInGameTradeSpeciesInfo: STR_VAR_1 the wanted species, STR_VAR_2
     FieldTradeGetSpecies HLIB_TMP, H3_TRADE         //   the offered one (read from the trade)
     h_bufferspeciesname 2, HLIB_TMP
     h_yesno T_WILLING, HLIB_TMP                     // Hello, Trainer. Would you do me a favor and trade Pokémon with me? ...
@@ -67,6 +73,10 @@ Story_H3_Trader:                                    // PacifidlogTown_House3_Eve
     FieldTradeCheck H3_CHECK, H3_TRADE, H3_SLOT     // GetTradeSpecies + compare with the wanted species
     h_goto_if_ne H3_CHECK, 0, L_H3_NotRequested
     FieldTradeStart H3_TRADE, H3_SLOT               // CreateInGameTradePokemon + DoInGameTradeScene
+#ifdef HOENN_EMERALD
+    h_bufferspeciesname 1, H3_WANTED               // bufferspeciesname STR_VAR_1, VAR_0x8009 (STR_VAR_2 = the Horsea)
+    h_bufferspeciesname 2, H3_OFFERED
+#endif
     h_msgbox T_FLUFFY                               // Wow! This Bellossom is so fluffy!
     h_setflag FLAG_PACIFIDLOG_NPC_TRADE_COMPLETED
     VMJump L_H3_Release
@@ -74,7 +84,7 @@ L_H3_Decline:
     h_msgbox T_DISAPPOINTED                         // I'm a little disappointed...
     VMJump L_H3_Release
 L_H3_NotRequested:
-    h_bufferspeciesname 1, SPECIES_BELLOSSOM        // bufferspeciesname 0, VAR_0x8009
+    h_bufferspeciesname 1, H3_WANTED                // bufferspeciesname 0, VAR_0x8009
     h_msgbox T_NOTMON                               // That's no Bellossom.
     VMJump L_H3_Release
 L_H3_Completed:

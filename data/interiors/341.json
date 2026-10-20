@@ -1,5 +1,5 @@
 {
- "_doc": "Mt. Pyre 1F (zone 341; scripts/text: the generated *_room_MtPyre_1F files). Area 323 = Black 2's Celestial Tower (interior pack 41). Warps in Sapphire's order, then the holes' extra directions (b2tools/facilities_pyre.py). Item balls as generated.",
+ "_doc": "Mt. Pyre 1F (zone 341; scripts/text: the generated *_room_MtPyre_1F files). Area 323 = Black 2's Celestial Tower (interior pack 41). Warps in Sapphire's order (holes and landings: markers that never fire); a hole falls by its step trigger (b2tools/facilities_pyre.py). Item balls as generated.",
  "zone": 341,
  "room": "MtPyre_1F",
  "area": 323,

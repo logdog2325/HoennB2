@@ -6,7 +6,9 @@ Pokémon's base exp (before its own level scaling, trade/Lucky Egg/Pass Power bo
 share. Messages as in Gen 6: each participant keeps its own "X gained N Exp. Points!", then ONE line "The rest of your
 team gained Exp. Points thanks to the Exp. Share!", then the benched Pokémon's level-ups and moves (no line each).
 Mr. Stone's gift script should do `ItemAdd ITEM_EXP_SHARE, 1, <var>` and `FlagSet FLAG_EXP_SHARE_ON` (Gen 6 gives it
-switched on).
+switched on). Birch's sixth question (2026-10-19; fairy.py intro_script) offers it from the start: YES sets
+FLAG_EXP_SHARE_ON in the intro and the truck's new-game script (src/field_scripts/scenes/truck.inc Script_30) adds the
+item; Mr. Stone then thanks the player without a second one (1154_room_RustboroCity_DevonCorp_3F.s).
 
 Code (every site checked against the decomp's build bytes before writing; addresses are RAM addresses):
  1. ov167 AddExpAndEVs (0x021aee0c): the held-Exp.-Share block 0x021aee70-0x021aeef8 (136 bytes, dead once the item

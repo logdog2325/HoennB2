@@ -85,9 +85,10 @@ def apply(files):
 # (vanilla size + 1/16 + 64 bytes, zero-padded; the message reader goes by the file's own offset table), so editing a
 # line no longer moves the files after it. On by default since the v13.1 savestate remake (HOENN_TEXT_SLOTS=0 turns it off).
 # Files that grew past the rule on purpose: the place names (109) carry Sinnoh's lines 154-264 and Black 2's
-# "Faraway place" padding to line 511 (patches/met_names.py, 2026-10-18): 17,652 B against a 5,624 B slot. Raising
-# a slot moves the files after it once (remake the base savestates).
-SLOT_EXTRA = {109: 12800}
+# "Faraway place" padding to line 511 (patches/met_names.py, 2026-10-18): 17,652 B against a 5,624 B slot. Birch's
+# intro text (54) carries his six questions (fairy.py intro_script; the 6th, the Exp. Share, 2026-10-19, ~0.4 KB past
+# its 5,040 B slot). Raising a slot moves the files after it once (remake the base savestates).
+SLOT_EXTRA = {109: 12800, 54: 512}
 
 def fixed_slots(files):
     import narcio

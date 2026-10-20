@@ -47,13 +47,15 @@ Script_2:
 #include "scenes/ch8b_lib.inc"
 #define MH1B_ELECTRODE1 6
 #define MH1B_ELECTRODE2 8
+#define MH1B_ELECTRODE_LEVEL 32             // Gen 3's 30 on the scaled curve (data/level_scaling.json; user decision
+                                        //   2026-10-19: the static battles follow the curve)
 
 Story_MH1B_Electrode1:                  // Hideout_B1F_EventScript_Electrode1
     c8b_talk
     h_playmoncry SPECIES_ELECTRODE      // setwildbattle ELECTRODE 30; waitse; playmoncry; delay 40; waitmoncry
     h_delay 40
     h_waitmoncry
-    h_static_battle SPECIES_ELECTRODE, 30, FLAG_HIDE_ELECTRODE_1_HIDEOUT, MH1B_ELECTRODE1
+    h_static_battle SPECIES_ELECTRODE, MH1B_ELECTRODE_LEVEL, FLAG_HIDE_ELECTRODE_1_HIDEOUT, MH1B_ELECTRODE1
     h_release
 
 Story_MH1B_Electrode2:                  // Hideout_B1F_EventScript_Electrode2
@@ -61,6 +63,6 @@ Story_MH1B_Electrode2:                  // Hideout_B1F_EventScript_Electrode2
     h_playmoncry SPECIES_ELECTRODE
     h_delay 40
     h_waitmoncry
-    h_static_battle SPECIES_ELECTRODE, 30, FLAG_HIDE_ELECTRODE_2_HIDEOUT, MH1B_ELECTRODE2
+    h_static_battle SPECIES_ELECTRODE, MH1B_ELECTRODE_LEVEL, FLAG_HIDE_ELECTRODE_2_HIDEOUT, MH1B_ELECTRODE2
     h_release
     .balign 4, 0

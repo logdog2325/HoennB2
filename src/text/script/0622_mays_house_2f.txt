@@ -13,3 +13,8 @@ Pokémon fully restored!\nItems ready, and... Huh?
 Huh?\nWho... Who are you?{be01}\n... ... ... ... ... ... ... ...\n... ... ... ... ... ... ... ...{be01}\nOh, you’re {0100:0}.\nSo your move was today.{be01}\nUm... I’m May.\nGlad to meet you!{be01}\nI...\nI have this dream of becoming friends{be00}\nwith Pokémon all over the world.{be01}\nI... I heard about you, {0100:0}, from\nmy dad, Prof. Birch.{be01}\nI was hoping that you would be nice,\n{0100:0}, and that we could be friends.{be01}\nOh, this is silly, isn’t it?\nI... I’ve just met you, {0100:0}.{be01}\nEheheh...{be01}\nOh, no! I forgot!{be01}\nI was supposed to go help Dad catch\nsome wild Pokémon!{be01}\n{0100:0}, I’ll catch you later!
 May: {0100:0}!{be01}\nI was just checking my Pokédex.{be01}\nThere’s still a lot of Pokémon that\nI’ve seen but haven’t caught.{be01}\nAnd there are many others that\nI think will evolve.{be01}\nI wonder where I should go catch\nsome Pokémon next?
 May: I wonder where I should go catch\nsome Pokémon next?{be01}\nWouldn’t it be funny if we ran into each\nother, {0100:0}?
+What would you like to do?
+Withdraw Item
+Turn Off
+Withdrew 1 Potion.
+There are no items.

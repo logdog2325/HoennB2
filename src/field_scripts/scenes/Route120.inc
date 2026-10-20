@@ -160,7 +160,7 @@ L_R120_KecleonScene:
     h_playmoncry SPECIES_KECLEON        // waitse, playmoncry SPECIES_KECLEON, 2, delay 40, waitmoncry
     h_delay 40
     h_waitmoncry
-    h_static_battle SPECIES_KECLEON, 30, FLAG_HIDE_KECLEON_ROUTE120_1, R120_KECLEON
+    h_static_battle SPECIES_KECLEON, C7_KECLEON_LEVEL, FLAG_HIDE_KECLEON_ROUTE120_1, R120_KECLEON
     // Route120_EventScript_151908: after the battle (won, caught or run from)
     h_applymovement R120_STEVEN, Common_Movement_WalkInPlaceFastestDown
     h_applymovement 255, Common_Movement_WalkInPlaceFastestUp

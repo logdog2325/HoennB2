@@ -14,3 +14,4 @@ Mr. Stone: Since my youth, I’ve immersed\nmyself in work.{be01}\nConsequently,
 If you visit the Shipyard in Slateport,\nyou should go see Capt. Stern.
 Devon’s new products, the Repeat Ball\nand Timer Ball, have become hugely{be00}\npopular among Trainers.
 Too bad!\nThe Bag is full...
+Mr. Stone: You delivered my Letter?\nThank you kindly!{be01}\nI meant to give you an Exp. Share,\nbut I see you already have one!{be01}\nThen I’ll simply wish you the\nbest of luck on your journey!

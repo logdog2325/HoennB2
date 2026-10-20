@@ -11,7 +11,7 @@ Mirage Island and Altering Cave (postgame_maps). Proofs: screenshots/postgame_sc
 | National Pokédex | first time in Littleroot after the Hall of Fame (after ch13's S.S. Ticket scene): Birch "!", "I have something to show you", the Lab, the upgrade (Black 2's PokeDexGiveNational); the beasts and birds start roaming | Emerald BeginDexUpgradeScene + UpgradeToNationalDex, word for word |
 | Enigma Berry | Norman, Petalburg Gym, after the Hall of Fame, once (not while the Bag holds one) | Sapphire ShouldGiveEnigmaBerry / GiveEnigmaBerry without the e-Reader check |
 | Jirachi Lv 5 | the scientist at (2,2) in the Mossdeep Space Center 1F, after the Hall of Fame | NEW lines (user to approve), Sapphire's Castform gift as the template |
-| Celebi Lv 10 | Petalburg Woods, the north-east clearing (Sapphire (36,4)), once the National Dex is there; caught or knocked out = gone | Emerald's static legendary shape (cry, battle, "The X flew away!") |
+| Celebi Lv 10 | Petalburg Woods, the north-east clearing (Sapphire (36,4)), once the National Dex is there; caught = gone, knocked out = back after the next Hall of Fame (user 2026-10-19: 0114 clears FLAG_DEFEATED_CELEBI) | Emerald's static legendary shape (cry, battle, "The X flew away!") |
 | Roamers | Latias Lv 44 (Sapphire 40), Raikou / Entei / Suicune / Articuno / Zapdos / Moltres Lv 55 (FRLG 50), levels on data/level_scaling.json's curve; Sapphire's 20 routes (110, 111, 117-134) | Sapphire roamer.c, seven at once |
 
 ## Roamers: what Black 2 has and what was added (b2tools/patches/roamers.py has the addresses)

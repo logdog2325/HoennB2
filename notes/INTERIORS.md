@@ -274,6 +274,12 @@ Black 2 facts used:
   you bump into a wall while surfing (ov036 0x0219c850 -> CheckWarpAtHitWall) **[code]**.
 - A warp fires only within 2 units of its y (CheckWarpPositionMatch) **[code]**: a door entered by surfing needs the
   water's height (Hoenn sea: −8), see "World fixes" below **[test]**.
+- **One walk-in warp per tile** (mtpyre, 2026-10-19): of several non-mat warps stacked on one solid tile (one per walking
+  direction), only the first fires; walking into the tile in another warp's direction does nothing **[test]**. Mt. Pyre's
+  holes were built that way and only their north side worked: 5F's two holes (east side only) trapped a player who fell
+  from 6F (Discord). A tile entered from several sides wants a step trigger on a walkable tile instead
+  (b2tools/facilities_pyre.py: the holes fall by trigger, as Gen 3 falls when you step on MB_MT_PYRE_HOLE).
+  `interior_sweep_check.py zones ROM` (run by rooms_check --rom) reports stacked walk-in warps.
 - Surf in a room: Wellspring's water cells work indoors (Rooms_B1F's flooded cabin: surf prompt, surfing, back on the
   carpet) **[test]**.
 - Script warps (MapChangeCore) place the player in 16-unit levels, so the deck's levels are 16 / 48 / 80.

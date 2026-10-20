@@ -9,13 +9,15 @@
    "at": [13, 3],
    "tile_only": true,
    "to": [513, 1],
-   "what": "Sapphire warp 0 -> Route110_TrickHouseEnd 1"
+   "what": "Sapphire warp 0 -> Route110_TrickHouseEnd 1 (dir 0: arrival only, Sapphire has no warp behaviour here)",
+   "dir": 0
   },
   {
    "at": [14, 3],
    "tile_only": true,
    "to": [513, 1],
-   "what": "Sapphire warp 1 -> Route110_TrickHouseEnd 1"
+   "what": "Sapphire warp 1 -> Route110_TrickHouseEnd 1 (dir 0: arrival only, Sapphire has no warp behaviour here)",
+   "dir": 0
   },
   {
    "at": [4, 23],

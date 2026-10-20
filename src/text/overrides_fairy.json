@@ -1,7 +1,7 @@
 {
- "_doc": "Fairy type and split toggle text (fairy_core 2026-10-08; b2tools/patches/fairy.py, notes/FAIRY.md). Lines past a file's end are appended (text.py). 0054: Birch's five questions (26 Fairy, 27 split, 28 music with the answers 29/30: music_check's, notes/MUSIC.md; 31 sprite style with the answers 32 CLASSIC / 33 NEW: sprite_switch's, b2tools/patches/sprite_switch.py; 34 seasons, YES/NO 19/20: hoenn_season's, notes/SEASONS.md; the intro script is fairy.py's intro_script); 29 and 31 were blank, 30, 32, 33 the dead rival/Juniper lines (the rival naming and Farewell scripts are gone); 0, 3, 4, 35-39 are Black 2's unused space-filled placeholders (only lines 5-34 are read: ov294's scripts, ov162 line 25), shortened like 32/33 were for room in the fixed text slot (the 4th question needed 152 B more, the 5th 260 B: 5000 of 5040 B now).",
+ "_doc": "Fairy type and split toggle text (fairy_core 2026-10-08; b2tools/patches/fairy.py, notes/FAIRY.md). Lines past a file's end are appended (text.py). 0054: Birch's six questions (26 Fairy, 27 split, 28 music with the answers 29/30: music_check's, notes/MUSIC.md; 31 sprite style with the answers 32 CLASSIC / 33 NEW: sprite_switch's, b2tools/patches/sprite_switch.py; 34 seasons, YES/NO 19/20: hoenn_season's, notes/SEASONS.md; 35 the Exp. Share (2026-10-19), YES/NO 19/20: YES sets FLAG_EXP_SHARE_ON, notes/RESEARCH_EXPSHARE_HM.md; the intro script is fairy.py's intro_script); 29 and 31 were blank, 30, 32, 33 the dead rival/Juniper lines (the rival naming and Farewell scripts are gone); 0, 3, 4, 36-39 are Black 2's unused space-filled placeholders (only lines 5-35 are read: ov294's scripts, ov162 line 25; 35 was one too), shortened like 32/33 were for room in the fixed text slot (the 4th question needed 152 B more, the 5th 260 B: 5000 of 5040 B; the 6th grew the slot instead: text.py SLOT_EXTRA[54]).",
  "system/0054_game_start.txt": {
-  "26": "Before you go, I have five quick\\nquestions for you.{be01}\\nYou can't change your answers\\nonce your adventure begins,{be00}\\nso think them over carefully.{be01}\\nFirst: some researchers now say\\nPokémon like Ralts and Marill{be00}\\nbelong to a brand-new type:\\nthe Fairy type!{be01}\\nWould you like to meet the\\nFairy type on your adventure?{be01}",
+  "26": "Before you go, I have six quick\\nquestions for you.{be01}\\nYou can't change your answers\\nonce your adventure begins,{be00}\\nso think them over carefully.{be01}\\nFirst: some researchers now say\\nPokémon like Ralts and Marill{be00}\\nbelong to a brand-new type:\\nthe Fairy type!{be01}\\nWould you like to meet the\\nFairy type on your adventure?{be01}",
   "27": "Second, about moves...{be01}\\nNowadays, every move is either\\nphysical or special on its own.{be01}\\nBut some old-school Trainers say a\\nmove's type decides that:{be00}\\nFire, Water, Grass, Electric, Ice,{be00}\\nPsychic, Dragon and Dark moves are{be00}\\nspecial, and the others physical.{be01}\\nShould each move keep its own\\nphysical or special nature?{be01}",
   "29": "HOENN",
   "32": "CLASSIC",
@@ -10,11 +10,11 @@
   "30": "UNOVA",
   "31": "Fourth... how everyone looks!{be01}\\nWould you like to see people the way\\nthey looked in Hoenn long ago,{be00}\\nor in Unova's newer style?{be01}",
   "0": "    \\x{ffff}",
-  "34": "And last... the seasons!{be01}\\nHere in Hoenn, it's summer all\\nyear round.{be01}\\nWould you like the seasons to change\\nwith the months instead?{be01}",
+  "34": "Fifth... the seasons!{be01}\\nHere in Hoenn, it's summer all\\nyear round.{be01}\\nWould you like the seasons to change\\nwith the months instead?{be01}",
   "36": "    \\x{ffff}",
   "3": "    \\x{ffff}",
   "4": "    \\x{ffff}",
-  "35": "    \\x{ffff}",
+  "35": "And last... the Exp. Share!{be01}\\nIt shares Exp. Points with your\\nwhole team, even the Pokémon{be00}\\nthat didn't battle.{be01}\\nYou can turn it on or off from\\nyour Bag whenever you like.{be01}\\nWould you like to start your\\njourney with an Exp. Share?{be01}",
   "37": "    \\x{ffff}",
   "38": "    \\x{ffff}",
   "39": "    \\x{ffff}"

@@ -804,7 +804,10 @@ def rock_smash_wild_asm():
     version's decomp), DoWildEncounterRateTest(rate, 1) = Random() % 2880 < rate * 16 (about 11% at rate 20), a slot by
     RS_SLOTS, a level in the slot's range (scaled by data/level_scaling.json's curve, as every wild level), then a wild
     battle (a loss whites out as Route 101's). The zone is the map's, or one of its parts (data/hoenn_weather.json:
-    Route 111's desert). Constants only (CallWildBattle's handler is not decompiled: no work values)."""
+    Route 111's desert); a map whose own wild table is a part's ('wild': Emerald's Safari Zone expansion, whose maps share
+    their neighbours' zones) only that part's zone. Maps by their HoennB2 names (version.hoenn_map: Emerald's renames and
+    name clashes; postgame_fix 2026-10-19: Emerald's SafariZone_North had lost its Geodude table to the expansion's
+    Shuckle one). Constants only (CallWildBattle's handler is not decompiled: no work values)."""
     import json, glob
     sys.path.insert(0, os.path.join(ROOT, 'b2tools'))
     import version
@@ -825,9 +828,11 @@ def rock_smash_wild_asm():
     for e in groups['wild_encounter_groups'][0]['encounters']:
         if 'rock_smash_mons' not in e or (suffix and not e.get('base_label', '').endswith(suffix)): continue
         name = folder.get(e['map'])
+        name = name and version.hoenn_map(name)
         z = (zones.get(name) or {}).get('zone') or ((rooms.get(name) or {}).get('zone') if isinstance(rooms.get(name), dict) else None)
         if z is None: continue                      # a map this version does not build
-        zs = [z] + [v['zone'] for v in parts.values() if v.get('map') == name]
+        zs = ([v['zone'] for v in parts.values() if v.get('wild') == name]
+              or [z] + [v['zone'] for v in parts.values() if v.get('map') == name and not v.get('wild')])
         t = len(blocks)
         for k, zz in enumerate(zs):
             out += [f'    VMStackPush 0x8034', f'    VMStackPushConst {zz}', '    VMStackCmp CMP_EQ',

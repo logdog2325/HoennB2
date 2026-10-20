@@ -39,13 +39,20 @@ Script_1:
 #define FH1_SLOT 0x8020                             // party slot picked (as Black 2's own trade scripts, b2:1040.s)
 #define FH1_OK 0x8021                               // 1 = a Pokémon was picked
 #define FH1_CHECK 0x8022                            // FieldTradeCheck: 0 = the wanted species
+#ifdef HOENN_EMERALD                                // (em_trades) Emerald: pokeemerald INGAME_TRADE_PLUSLE, the
+#define FH1_WANTED SPECIES_VOLBEAT                   // Ninja Boy's Plusle "Pluses" for a Volbeat (same trade 25,
+#define FH1_OFFERED SPECIES_PLUSLE                   // Emerald's data; text src/text/script/emerald/0140_*)
+#else
+#define FH1_WANTED SPECIES_PIKACHU
+#define FH1_OFFERED SPECIES_SKITTY
+#endif
 
 FH1_Trader:                                         // FortreeCity_House1_EventScript_Trader (lock, faceplayer)
     h_lock
     SEPlay SEQ_SE_MESSAGE
     h_faceplayer
     h_goto_if_set FLAG_FORTREE_NPC_TRADE_COMPLETED, L_FH1_Completed
-    h_bufferspeciesname 1, SPECIES_PIKACHU          // GetInGameTradeSpeciesInfo: STR_VAR_1 the wanted species, STR_VAR_2
+    h_bufferspeciesname 1, FH1_WANTED               // GetInGameTradeSpeciesInfo: STR_VAR_1 the wanted species, STR_VAR_2
     FieldTradeGetSpecies HLIB_TMP, FH1_TRADE        //   the offered one (read from the trade)
     h_bufferspeciesname 2, HLIB_TMP
     h_yesno T_WouldYouTradeIt, HLIB_TMP             // Hi, there's this Pokémon that I'm looking for. I want a Pikachu. ...
@@ -59,8 +66,8 @@ FH1_Trader:                                         // FortreeCity_House1_EventS
     FieldTradeCheck FH1_CHECK, FH1_TRADE, FH1_SLOT  // GetTradeSpecies + compare with the wanted species
     h_goto_if_ne FH1_CHECK, 0, L_FH1_NotRequested
     FieldTradeStart FH1_TRADE, FH1_SLOT             // CreateInGameTradePokemon + DoInGameTradeScene
-    h_bufferspeciesname 1, SPECIES_PIKACHU
-    h_bufferspeciesname 2, SPECIES_SKITTY
+    h_bufferspeciesname 1, FH1_WANTED
+    h_bufferspeciesname 2, FH1_OFFERED
     h_msgbox T_PleaseBeNice                         // Thank you! I'll be good to your Pikachu, so please be nice to my Skitty!
     h_setflag FLAG_FORTREE_NPC_TRADE_COMPLETED
     VMJump L_FH1_Release
@@ -68,7 +75,7 @@ L_FH1_Decline:
     h_msgbox T_ChangeYourMind                       // Oh, okay. If you change your mind, please come see me. ...
     VMJump L_FH1_Release
 L_FH1_NotRequested:
-    h_bufferspeciesname 1, SPECIES_PIKACHU          // bufferspeciesname 0, VAR_0x8009
+    h_bufferspeciesname 1, FH1_WANTED               // bufferspeciesname 0, VAR_0x8009
     h_msgbox T_NotRequested                         // Wait! That Pokémon isn't a Pikachu. ...
     VMJump L_FH1_Release
 L_FH1_Completed:

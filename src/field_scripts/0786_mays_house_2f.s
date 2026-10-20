@@ -54,7 +54,9 @@ Script_2:                      // Mom upstairs (no script in Sapphire; placehold
     ActorsUnpauseAll
     VMHalt
 
-Script_3:                      // PC: the player's own PC in their room (Black 2's full PC menu), else the rival's e-mail
+Script_3:                      // PC: the player's own PC in their room, else the rival's e-mail. Own PC: before the
+                               // first Pokémon only the Potion (L_PC_NoPokemon, scenes/players_house_2f.inc), after it
+                               // Black 2's full PC menu
     ActorsPauseAll
     TrainerCardGetSex 0x8011
     VMStackPush 0x8011
@@ -75,6 +77,7 @@ Script_3:                      // PC: the player's own PC in their room (Black 2
     PokePartyAdd 0x8013, SPECIES_ZIGZAGOON, 0, 5
     PokePartyAdd 0x8013, SPECIES_WURMPLE, 0, 5
 #endif
+    FlagSet FLAG_SYS_POKEMON_GET         // (so the full PC below runs, not the Potion-only PC of a new game)
 L_TestPartyDone:
 #if (HOENN_TEST_CHRP + 0) >= 2
     FlagSet 2402                         // =2: the Pokédex flag (the PC offers Professor's PC) and 12 Hoenn species caught
@@ -92,6 +95,10 @@ L_TestPartyDone:
     PokeDexRegist 0, SPECIES_SILCOON
 #endif
 #endif
+    VMStackPushFlag FLAG_SYS_POKEMON_GET // no Pokémon yet: Gen 3's Player's PC with its one Potion, nothing else
+    VMStackPushConst 1
+    VMStackCmp CMP_EQ
+    VMJumpIf CMP_STACK, L_PC_NoPokemon   // (jumps when the comparison is false: the flag is not set)
     RTCallGlobal 10090                   // this is the player's own room: Black 2's PC script (global file 1244, the
                                          // Pokémon Center PC): SE + "<player> booted up the PC." + "Which PC should be
                                          // accessed?" (Pokémon Storage System, <player>'s PC = Mailbox, ...) + switch off

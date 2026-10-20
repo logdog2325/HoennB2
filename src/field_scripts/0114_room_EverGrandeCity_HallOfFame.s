@@ -100,6 +100,11 @@ HF_SetGameClearFlags:                            // EverGrandeCity_HallOfFame_Ev
     h_clearflag FLAG_HIDE_WALLY_DEFEATED_VICTORY_ROAD
     h_clearflag FLAG_HIDE_SS_TIDAL_SLATEPORT_HARBOR
     h_clearflag FLAG_HIDE_SS_TIDAL_LILYCOVE_HARBOR
+    h_clearflag FLAG_DEFEATED_MEW                // Emerald's ResetDefeatedEventLegendaries in every version (user decision
+    h_clearflag FLAG_DEFEATED_DEOXYS             //   2026-10-19): an event legendary that was knocked out, not caught, is
+    h_clearflag FLAG_DEFEATED_LUGIA              //   back after every Hall of Fame (its island's zone init shows it again
+    h_clearflag FLAG_DEFEATED_HO_OH              //   when the flag is clear); Celebi (Petalburg Woods, not in Emerald)
+    h_clearflag FLAG_DEFEATED_CELEBI             //   follows the same rule
 #ifdef HOENN_EMERALD
     VMCall HF_EmeraldFlags                       // Emerald's own lines of SetGameClearFlags (below)
 #endif
@@ -115,10 +120,8 @@ HF_SetGameClearFlags:                            // EverGrandeCity_HallOfFame_Ev
 #ifdef HOENN_EMERALD
 HF_EmeraldFlags:                                 // the lines of Emerald's EverGrandeCity_HallOfFame_EventScript_SetGameClearFlags that Sapphire's lack
     h_setflag FLAG_IS_CHAMPION                   // setflag FLAG_IS_CHAMPION
-    h_clearflag FLAG_DEFEATED_MEW                // call ResetDefeatedEventLegendaries: a legend that was fought but not caught is back
-    h_clearflag FLAG_DEFEATED_DEOXYS             //   after every Hall of Fame (the island scenes show it again when their flag is clear)
-    h_clearflag FLAG_DEFEATED_LUGIA              //   (FLAG_DEFEATED_LATIAS_OR_LATIOS: the Southern Island scene has no such flag here)
-    h_clearflag FLAG_DEFEATED_HO_OH
+    h_clearflag FLAG_DEFEATED_LATIAS_OR_LATIOS   // call ResetDefeatedEventLegendaries (Mew, Deoxys, Lugia, Ho-Oh: above, every
+                                                 //   version): the Southern Island Lati is back (scenes/emerald/SouthernIsland_Interior.inc)
     h_goto_if_ne VAR_FOSSIL_MANIAC_STATE, 0, L_HF_E_Fossil
     h_setvar VAR_FOSSIL_MANIAC_STATE, 1          // call_if_eq VAR_FOSSIL_MANIAC_STATE, 0, SetDesertUnderpassCommentReady (the Fossil Maniac's tunnel hint)
 L_HF_E_Fossil:

@@ -398,12 +398,25 @@ def check_zones(rom):
             meta = json.load(open(os.path.join(ROOMS_DIR, cfg['room'], 'room.json')))
             musers = [z for z, hh in enumerate(hdrs) if hh['matrix'] == h['matrix']]
             if len(musers) > 1: say('matrix', f'matrix {h["matrix"]} shared by zones {musers}')
+        # walk-in warps (not mats) stacked on one tile: Black 2 fires only the first of them, the others never (Mt. Pyre's
+        # holes had one per walking direction and only the one entered walking north worked: a softlock on 5F, mtpyre
+        # 2026-10-19 [test]); a tile you can step onto from several sides wants a step trigger (facilities_pyre.py)
+        stack = defaultdict(list)
+        for i, w in enumerate(e['warps']):
+            if w['type'] != 1:
+                stack[(w['tile_x'], w['tile_z'], w['y'])].append(i)
+        for (tx, tz, _), ids in sorted(stack.items()):
+            if len(ids) > 1:
+                say('warp', f'warps {ids} on one tile ({tx},{tz}), entered walking {[e["warps"][i]["dir"] for i in ids]} (dir '
+                    f'1 S, 2 N, 3 E, 4 W): only the first, warp {ids[0]}, ever fires')
         # warps both ways
         for i, w in enumerate(e['warps']):
             dz, dw = w['dest_zone'], w['dest_warp']
             if dz == zone and dw == 0 and i != 0:
                 say('warp', f'warp {i} at tile ({w["tile_x"]},{w["tile_z"]}) leads to its own warp 0 (destination not built)')
                 continue
+            if w['type'] == 1 and 0xFFFF in (dz, dw): continue   # a mat that never fires (GetWarpIDByPlayerPos skips it:
+                                     # IsWarpZoneOrWarpID0xFFFF): a landing spot or a Mt. Pyre hole (its step trigger falls)
             if dz >= len(hdrs): say('warp', f'warp {i} -> zone {dz} (no such zone)'); continue
             de = ent(dz)
             if dw >= len(de['warps']):
@@ -450,7 +463,7 @@ def check_zones(rom):
             if parent is not None and parent < len(hdrs) and h['place'] != hdrs[parent]['place'] and 'place' not in cfg.get('header', {}):
                 say('place', f'place {h["place"]} but parent zone {parent} has {hdrs[parent]["place"]}')
             if parent is not None:
-                exits = [w['dest_zone'] for w in e['warps'] if w['dest_zone'] not in cfgs and w['dest_zone'] != zone]
+                exits = [w['dest_zone'] for w in e['warps'] if w['dest_zone'] not in cfgs and w['dest_zone'] not in (zone, 0xFFFF)]
                 if exits and parent not in exits:
                     say('parent', f'parent zone {parent} (place {hdrs[parent]["place"]}), but its exits lead to zones {sorted(set(exits))}')
     return out

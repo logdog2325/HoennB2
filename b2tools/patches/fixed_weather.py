@@ -15,6 +15,11 @@ So a weather that covers only part of a map needs a zone of its own there:
   zone on the first step onto one of its tiles: weather, music (Field_SwapZoneBGM), and the people of the same file
   respawned (DeleteAllActors + Field_HotswapSpawnActors). The banner does not show again: the place name is the
   same (ov036 IsLocNameIdxChanged).
+- a part with 'wild' (a map name of data/hoenn_encounters.json, Emerald's overlay included) plays that map's wild table
+  instead of the map zone's (postgame_fix 2026-10-19: Emerald's two new Safari Zone areas share their neighbours' zones,
+  38 and 40, so each is a part over its whole map with its own pokeemerald table, converter/gen_encounters.py
+  emerald_new_maps; b2tools/patches/hm_free.py's Rock Smash battles go by the part's zone too). Without 'weather' a part
+  keeps its map zone's weather.
 - 'maps': a whole outdoor map's zone gets the weather (outdoor_headers()).
 - 'rooms': a room's or cave's zone gets the weather (apply(), after the interiors patch writes their headers).
 - fog: every Hoenn chunk and Hoenn-made model takes the material fog flag Black 2's own have (fog_everything below):
@@ -25,7 +30,9 @@ player arrives in the part's weather instead of swapping after the first step.
 
 Zones of the parts: Black 2 zones no Hoenn map or room uses and no zone-keyed table names (gimmick, Flash, fog, ISS,
 calendar, script plugins, respawn table, the arm9 zone checks): 610-613 (Underground Ruins / Regi chambers in Unova);
-550, 586, 608, 609 (Route 119's and Route 123's sunny ends, v166_fixes: checked against the same tables)."""
+550, 586, 608, 609 (Route 119's and Route 123's sunny ends, v166_fixes: checked against the same tables); 355, 436
+(Emerald's Safari Zone expansion, postgame_fix: not ours in any version, not in converter/allocate_zones.py DENY/AVOID,
+on none of zone_effects' / special_zones' tables, the calendar or the script plugins' lists)."""
 import os, json, struct
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..')
@@ -223,15 +230,22 @@ def outdoor_headers(headers, bgm_src, world):
     """The parts' zone headers (copies of their map zone's, own weather/music) and the whole maps' weather. headers:
     the zone headers as patches/hoenn_world.py has just written them; bgm_src: Black 2's headers (for bgm_zone)."""
     done = []
+    wild = None
     for name, p, src, matrix, rects in parts(world):
         hd = dict(headers[src])
-        hd['weather_word'] = (hd['weather_word'] & ~WEATHER_MASK) | p['weather']
+        if 'weather' in p:
+            hd['weather_word'] = (hd['weather_word'] & ~WEATHER_MASK) | p['weather']
         if p.get('bgm_zone') is not None:
             b = bgm_src[p['bgm_zone']]
             hd['bgm0'], hd['bgm1'], hd['bgm2'], hd['bgm3'] = b['bgm0'], b['bgm1'], b['bgm2'], b['bgm3']
+        if p.get('wild'):                     # its own wild table (converter/gen_encounters.py: the map's file)
+            import version
+            wild = wild or version.load_json(os.path.join(ROOT, 'data', 'hoenn_encounters.json'))
+            hd['encounters'] = wild[p['wild']]
         headers[p['zone']] = hd
-        done.append(f"{name}: zone {p['zone']} = zone {src} + weather {p['weather']}"
+        done.append(f"{name}: zone {p['zone']} = zone {src}" + (f" + weather {p['weather']}" if 'weather' in p else '')
                     + (f", music of zone {p['bgm_zone']}" if p.get('bgm_zone') is not None else '')
+                    + (f", wild table {hd['encounters']} ({p['wild']})" if p.get('wild') else '')
                     + f", {len(rects)} rectangles on matrix {matrix}")
     for m, v in data()['maps'].items():
         if not any(m in z.get('maps', []) for z in world['zones'].values()): continue

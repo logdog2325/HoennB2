@@ -30,6 +30,19 @@
    "move": 15,
    "flag": "FLAG_HIDE_SOUTHERN_ISLAND_UNCHOSEN_EON_DUO_MON",
    "what": "Latias (the island's Pokémon when the player told Mom 'Blue': Latios roams; hidden until the slab scene; the shared object 102 is Latios)"
+  },
+  {
+   "kind": "sign",
+   "map": "SouthernIsland_Interior",
+   "at": [
+    13,
+    11
+   ],
+   "script": 1,
+   "dir": 0,
+   "cond": 1,
+   "y": 0,
+   "what": "the slab (postgame_fix 2026-10-19: pokeemerald's bg_event (13,11), SouthernIsland_Interior_EventScript_TryLatiEncounter = scenes/SouthernIsland_Interior.inc script 1, read facing north; Emerald's world had no sign here: data/emerald/hoenn_content.json maps pokeruby's label only, so the slab could not be read; Sapphire's world places it at the same tile (31,16))"
   }
  ]
 }

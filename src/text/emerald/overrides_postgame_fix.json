@@ -1,0 +1,11 @@
+{
+ "_doc": "Emerald builds (postgame_fix, 2026-10-19): pokeemerald's words for Lilycove Harbor's ferry (data/maps/LilycoveCity_Harbor/scripts.inc, src/strings.c, data/text/event_ticket_1.inc). script/0759_room_LilycoveCity_Harbor.txt = src/text/script/0261_room_LilycoveCity_Harbor.txt (the room's own text number): line 8 LilycoveCity_Harbor_Text_BattleFrontierItIs, 12-14 the destination menu's SLATEPORT CITY / BATTLE FRONTIER / EXIT (gText_SlateportCity, gText_BattleFrontier, gText_Exit; Sapphire: SLATEPORT / BATTLE TOWER / CANCEL), 17 EventTicket_Text_ThatPass, 29 (appended) SOUTHERN ISLAND (gText_SouthernIsland: scenes/events_lib.inc EV_LH_T + 10, the Eon Ticket's island in Emerald's menus). Slateport's ferry: src/text/script/emerald/0352_room_SlateportCity_Harbor.txt.",
+ "script/0759_room_LilycoveCity_Harbor.txt": {
+  "8": "Battle Frontier it is, then!",
+  "12": "Slateport City",
+  "13": "Battle Frontier",
+  "14": "Exit",
+  "17": "The ferry to Slateport is…{be01}\\nOh?\\nThat Pass…",
+  "29": "Southern Island"
+ }
+}

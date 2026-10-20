@@ -73,6 +73,12 @@ Script_30:                                       // new game, after the first fa
     FlagSet FLAG_HIDE_MOM_LITTLEROOT
     FlagSet FLAG_HIDE_MOM_UPSTAIRS
     VMCall Sub_NewGameFlags                      // the rest of Sapphire's new-game flags (scenes/new_game_flags.inc)
+    VMStackPushFlag FLAG_EXP_SHARE_ON            // Birch's sixth question (b2tools/patches/fairy.py intro_script):
+    VMStackPushConst 1                           // YES set FLAG_EXP_SHARE_ON in the intro, so the Exp. Share starts in
+    VMStackCmp CMP_EQ                            // Key Items, switched on (the Bag is only made after the intro, by
+    VMJumpIf CMP_STACK, L_TruckNoExpShare        // ov279 InitItemBag). NO (flag unset): Mr. Stone gives it, as before.
+    ItemAdd ITEM_EXP_SHARE, 1, 0x8010            // silently, on the black screen (a key item: the pocket has room)
+L_TruckNoExpShare:
     FadeOutBlackQ
     FadeWait
     RTReserveScript 31

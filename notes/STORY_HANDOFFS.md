@@ -233,8 +233,10 @@
 - Sky Pillar: `scenes/SkyPillar_Top.inc` (Rayquaza uid 101, Lv 78 = Sapphire 70, the hide flag is set before the battle as Sapphire), the Entrance
   room's landmark flag (`0338`/`0339_init`); 1F-5F / Outside have nothing scripted in Sapphire (the cracked floors are the cave builder's).
 - Steven's house: `scenes/MossdeepCity_StevensHouse_Ch13.inc` (ch9's fallback moved here: same text lines 8-15, tested: ball, nickname screen, letter).
-- Level scaling: static legendaries use the curve (Kyogre 45 -> 49 precedent): Rayquaza 70 -> 78, Latios 50 -> 55. ch12's Regis (Lv 40) and the
-  Kecleon/Electrode statics use Sapphire's levels unscaled (lead: decide whether static battles follow the curve everywhere).
+- Level scaling: static legendaries use the curve (Kyogre 45 -> 49 precedent): Rayquaza 70 -> 78, Latios 50 -> 55. DECIDED (user, 2026-10-19,
+  notes/DECISIONS.md): every static battle follows the curve in all versions: ch12's Regis 40 -> 44 (ch12_lib.inc CH12_REGI_LEVEL), the Kecleons
+  30 -> 32 (ch7_lib.inc C7_KECLEON_LEVEL), New Mauville's Voltorbs 25 -> 26 (NI_VOLTORB_LEVEL), the hideouts' Electrodes 30 -> 32
+  (AH1B_/MH1B_ELECTRODE_LEVEL). postgame_fix.
 - Test switches: `HOENN_TEST_CH13=1` plus `HOENN_TEST_CH13_W1..W4="zone,x,0,z,dir"` (the warp targets of Littleroot's four signs; each runs the
   chapter's start state once: `scenes/ch13_test.inc` header). Used here: W1 `448,276,0,333,0` (below Slateport's harbor door; walk in), W2 `391,8,0,4,0`
   (player's room: walk up to the stairs = the S.S. Ticket scene; the only warp without the tickets), W3 `107,707,0,171,0` (Steven's door), W4

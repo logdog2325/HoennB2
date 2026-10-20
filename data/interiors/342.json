@@ -1,5 +1,5 @@
 {
- "_doc": "Mt. Pyre 2F (zone 342; scripts/text: the generated *_room_MtPyre_2F files). Area 323 = Black 2's Celestial Tower (interior pack 41). Warps in Sapphire's order, then the holes' extra directions (b2tools/facilities_pyre.py). Item balls as generated.",
+ "_doc": "Mt. Pyre 2F (zone 342; scripts/text: the generated *_room_MtPyre_2F files). Area 323 = Black 2's Celestial Tower (interior pack 41). Warps in Sapphire's order (holes and landings: markers that never fire); a hole falls by its step trigger (b2tools/facilities_pyre.py). Item balls as generated.",
  "zone": 342,
  "room": "MtPyre_2F",
  "area": 323,
@@ -64,57 +64,12 @@
    ],
    "tile_only": true,
    "to": [
-    341,
-    5
+    65535,
+    65535
    ],
-   "what": "Sapphire warp 4 -> MtPyre_1F 5",
-   "type": 2,
-   "dir": 2
-  },
-  {
-   "at": [
-    11,
-    9
-   ],
-   "tile_only": true,
-   "type": 2,
-   "dir": 1,
-   "to": [
-    341,
-    5
-   ],
-   "_extra": true,
-   "what": "hole of Sapphire warp 4, entered walking S"
-  },
-  {
-   "at": [
-    11,
-    9
-   ],
-   "tile_only": true,
-   "type": 2,
-   "dir": 3,
-   "to": [
-    341,
-    5
-   ],
-   "_extra": true,
-   "what": "hole of Sapphire warp 4, entered walking E"
-  },
-  {
-   "at": [
-    11,
-    9
-   ],
-   "tile_only": true,
-   "type": 2,
-   "dir": 4,
-   "to": [
-    341,
-    5
-   ],
-   "_extra": true,
-   "what": "hole of Sapphire warp 4, entered walking W"
+   "what": "Sapphire warp 4 -> MtPyre_1F 5: a hole (marker, never fires; its step trigger falls)",
+   "type": 1,
+   "dir": 1
   }
  ],
  "npcs": [
@@ -154,5 +109,17 @@
  "header": {
   "encounters": 95,
   "enc_slot": 2
- }
+ },
+ "triggers": [
+  {
+   "script": 3,
+   "var": 0,
+   "value": 0,
+   "at": [
+    11,
+    9
+   ],
+   "what": "hole (11,9) -> fall to MtPyre_1F warp 5 (20,9)"
+  }
+ ]
 }

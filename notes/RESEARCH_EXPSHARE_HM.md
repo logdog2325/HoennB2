@@ -449,6 +449,67 @@ Setup:
     `ActorRouteCollCheckOneTileInDir`, ov036 `0x021ba954`), which only needs flag 2404 (set).
   - It depends on the destination's collision in our converted map: **untested on a real Strength map**.
 
+## 3. The Exp. Share from the start: Birch's sixth question (exp_share_start, 2026-10-19)
+
+User: "if possible make it a setting or Birch question to have the Exp. Share on from the beginning of the game".
+
+- **What the player sees.** After the seasons question (now "Fifth... the seasons!"; line 26 says "six quick
+  questions"), Birch asks (text 0054 line 35, Black 2's unused placeholder): "And last... the Exp. Share! / It shares
+  Exp. Points with your whole team, even the Pokémon that didn't battle. / You can turn it on or off from your Bag
+  whenever you like. / Would you like to start your journey with an Exp. Share?" YES / NO (cursor on YES, as the
+  other YES/NO questions).
+  - YES: from the truck on, the Exp. Share is in Key Items, switched on (the Bag's Use says "turned off" first).
+  - NO, and every save made before this: today's game (Mr. Stone gives it after the Letter, switched on).
+- **How.** fairy.py intro_script: the sprite question moved into script 9's run (19 of its 21 entries with FAREWELL's
+  room), so RIVAL_NAMED's 14 entries hold the seasons and the Exp. Share questions plus hoenn_intro's ending. The
+  answers go through intro command 31 as before; an argument >= 16 is an event flag instead of an options bit (fairy.c
+  Intro_SetConfigBit: EventWork_FlagSet / FlagReset on save block 0x2d), here FLAG_EXP_SHARE_ON (2058): the options
+  u16 has no free bit left (11-15 are Fairy, split, music, sprites, seasons). The flag survives into the field:
+  NewGame_Init clears the whole save before the intro (func_0200749c -> initSaveBlkCallbacks) and nothing clears
+  EventWork after it. The item can't be given in the intro: ov279 InitItemBag rebuilds the Bag at the opening. So the
+  truck's new-game script (scenes/truck.inc Script_30, a normal event script after the first fade-in, not a zone init)
+  does `ItemAdd ITEM_EXP_SHARE, 1` when the flag is set, silently on the black screen.
+- **Mr. Stone** (1154_room_RustboroCity_DevonCorp_3F.s, decision in DECISIONS.md 2026-10-19): `h_checkitem
+  ITEM_EXP_SHARE` first; with it in the Bag he thanks you for the Letter and says one new line ("I meant to give you an
+  Exp. Share, but I see you already have one! Then I'll simply wish you the best of luck on your journey!": message
+  16 of script text 0368, 17 in Emerald's own 0368), sets FLAG_RECEIVED_EXP_SHARE (his after-favor line follows, as in Gen 3) and leaves the
+  Bag toggle alone. Without it: the old gift, unchanged.
+- **Text slot.** 0054 is 5,460 B packed; its fixed slot grew by 512 B (text.py SLOT_EXTRA[54]: 5,552 B, 92 B
+  spare). That moves the system texts after 54 once: savestates made on an older ROM name new Pokémon "????" on
+  this one (TESTING.md "Stale savestates"); remake them (make_states.py, now 110 presses for six questions: tested,
+  truck to the twin) or cold-boot. Saves are unaffected (no save field changed).
+- **Tests** (DeSmuME, muted; test ROM = the release patch list + HOENN_TEST_WARP=577,3,2, Sapphire built on the lead's
+  world_rel; drivers: work/agents/exp_share_start/tests, a copy of freeze_fix's pt with share / stone stages; proofs
+  in screenshots/exp_share_start/):
+  - Sapphire, all YES (Fairy, modern split, Hoenn music, NEW sprites, seasons, Exp. Share): after the truck
+    FLAG_EXP_SHARE_ON = 1 and Key Items = Pal Pad, Exp. Share; the Bag's Use: "The Exp. Share was turned off." /
+    "...turned on." (S_yes_bag_key_items_toggle.png). Smoke house -> Littleroot -> May -> Birch's starter -> Route
+    101 training -> May's battle -> Pokédex -> a catch -> wall map -> evolution -> save -> Continue: all passed.
+    A wild Wurmple Lv2 with Mudkip Lv7 fighting and Poochyena Lv3 benched: "AA gained 7 Exp. Points!", then "The rest
+    of your team gained Exp. Points thanks to the Exp. Share!"; Poochyena's Exp. 27 -> 33
+    (S_yes_battle_team_line.png).
+  - Mr. Stone with it (Letter flag poked, warped in by the town sign): the thanks + the new line, no jingle, still one
+    Exp. Share, FLAG_RECEIVED_EXP_SHARE set, then "Since my youth..." on the next talk (S_yes_stone_sheet.png); the
+    same with the Exp. Share switched off first: it stays off (S_yes_switched_off_stone_sheet.png).
+  - Sapphire, NO (intro_pages.py: every page of questions 1, 5, 6 in S_no_intro_q*.png): FLAG_EXP_SHARE_ON = 0, Key
+    Items = Pal Pad only.
+  - Sapphire, all NO (Fairy off, classic split, Unova music, CLASSIC sprites, no seasons, no Exp. Share): the same
+    smoke passed (house to Continue). The same wild battle: only "AA gained 7 Exp. Points!", Poochyena's Exp. 27 -> 27.
+    Mr. Stone: the gift as before ("This is my way of thanking you...", "obtained the Exp. Share!", the
+    KEY ITEMS line, his explanation; FLAG_EXP_SHARE_ON set), then "Since my youth..." (S_no_stone_sheet.png).
+  - Emerald (work/world_emerald), all YES: the six questions (E_yes_questions.png); Key Items = Pal Pad, Exp. Share,
+    flag on; house -> Birch (the Emerald rival scene) -> training -> May -> Pokédex -> a catch; a wild Poochyena Lv2
+    with Mudkip Lv7 fighting and Wurmple Lv2 benched: "AA gained 8 Exp. Points!", the team line, Wurmple's Exp. 8 -> 17
+    (E_yes_battle_team_line.png); Mr. Stone's new line (Emerald's message 17, E_yes_stone_sheet.png); save -> Continue.
+    All NO: flag off, Pal Pad only, smoke to the starter; Mr. Stone's gift as before (E_no_stone_sheet.png).
+  - Ruby (text spot-check; 0054 and 0368 have no Ruby twins): "six quick questions", "Fifth... the seasons!", the
+    sixth question (R_yes_intro_q*.png); YES: flag on, Exp. Share in Key Items; Mr. Stone's new line
+    (R_yes_stone_sheet.png).
+  - Checkers on the test ROMs: script_check (Sapphire and Emerald): nothing open in zones 394 (truck) or 577 (Devon
+    Corp 3F), msg 0 / text 0 (the open findings are Mt. Pyre's triggers from other work); npc_check: Sapphire 0 over a
+    limit; Emerald 1 (Route 123, 33/32 materials with every spawn flag clear: the Emerald-only trainers placed there
+    on 2026-10-18, not this change). make_states.py (110 presses) reaches the truck and every later state.
+
 ## Untested / known gaps
 
 - **Surf (10002 + the ov036 nop), Waterfall up (10006) and down (ov036 nop + 10015), Dive (10011): not run.** No built

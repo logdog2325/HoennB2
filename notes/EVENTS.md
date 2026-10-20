@@ -23,7 +23,17 @@ screenshots/events/ (01-21).
   Lilycove ("Do you want to return to Lilycove?").
 - Legendary battles: `ev_legend_battle` (scenes/events_lib.inc): caught -> caught + hide flags; defeated -> defeated +
   hide flags and Emerald's "The X flew away!"; ran -> the line only, it is there again next visit; lost -> whiteout.
+  Every Hall of Fame clears the defeated flags (0114 HF_SetGameClearFlags, Emerald's ResetDefeatedEventLegendaries; all
+  versions since postgame_fix 2026-10-19, user decision; Celebi too), so a knocked-out legendary is back after it.
   Levels follow data/level_scaling.json (30 -> 32, 70 -> 78), as ch13 did for Latios and Rayquaza.
+- Emerald's Lilycove Harbor (postgame_fix 2026-10-19): the Eon Ticket is the fourth ticket (FLAG_SHOWN_EON_TICKET: its
+  first-time scene sails straight to Southern Island, then "Southern Island" stays first in the destination menu while
+  the ticket is held, and in the several-tickets menu), the menus say Emerald's words (Slateport City / Battle Frontier
+  / ... / Exit; Slateport: Lilycove City / Battle Frontier / Exit). Southern Island's Lati: pokeemerald's rule
+  (scenes/emerald/SouthernIsland_Interior.inc: FLAG_TEMP_2, FLAG_DEFEATED_/FLAG_CAUGHT_LATIAS_OR_LATIOS). Sapphire/Ruby
+  keep their one-time Eon trip and one-chance Latios/Latias. Emerald's world had no slab sign (its content file names
+  pokeemerald's script label): it is a story sign now (data/story/emerald/e_ch11.json), so Emerald v1.1's slab could not
+  be read at all. Tested: screenshots/postgame_fix/ (01 island, 03 ferries, 04 Safari).
 
 ## Maps from other decomps
 - data/hoenn_event_maps.json lists maps read from external/pokeemerald (and pokefirered, not used yet) as if they were

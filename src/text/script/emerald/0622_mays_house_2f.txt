@@ -14,3 +14,8 @@ Huh?\nWho... Who are you?{be01}\n... ... ... ... ... ... ... ...\n... ... ... ..
 May: {0100:0}!{be01}\nI was just checking my Pokédex.{be01}\nThere’s still a lot of Pokémon that\nI’ve seen but haven’t caught.{be01}\nAnd there are many others that\nI think will evolve.{be01}\nI wonder where I should go catch\nsome Pokémon next?
 May: I wonder where I should go catch\nsome Pokémon next?{be01}\nWouldn’t it be funny if we ran into each\nother, {0100:0}?
 It’s May’s Poké Ball!{be01}\nBetter leave it right where it is.
+What would you like to do?
+Withdraw Item
+Turn Off
+Withdrew 1 Potion.
+There are no items.

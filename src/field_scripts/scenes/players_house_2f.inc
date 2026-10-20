@@ -99,6 +99,53 @@ L_RivalWalking:
     VMHalt
 #endif
 
+// The player's own PC before the first Pokémon (zone Script_3 jumps here while FLAG_SYS_POKEMON_GET is unset; user
+// request 2026-10-19). Gen 3's bedroom PC is the Player's PC (player_pc.c: Item Storage, Mailbox, Decoration, Turn Off),
+// never Pokémon storage, and its Item Storage starts with one Potion (gNewGamePCItems). Black 2 has no item storage, so
+// until the starter this PC offers only that Potion: Withdraw Item gives it once (FLAG_RECEIVED_PC_POTION), then Gen 3's
+// "There are no items." Turn Off (or B) leaves. With a Pokémon, Script_3 runs Black 2's full PC (global 10090) as before;
+// a save that already has a Pokémon never comes here. Words: Gen 3's (gText_PlayerHouseBootPC, PCText_WhatYouDo,
+// PCText_WithdrawItem, SecretBaseText_TurnOff, gOtherText_WithdrewThing, gOtherText_NoItems), Gen 5 capitalisation.
+// Lines PC_T + 0..4 of the zone's text file (Sapphire/Ruby 0620/0622 lines 15-19, Emerald's own 16-20).
+#ifdef HOENN_EMERALD
+#define PC_T 16
+#else
+#define PC_T 15
+#endif
+L_PC_NoPokemon:
+    PokecenPCOpen                                // (Black 2's PC on: the same as the full PC's)
+    WordSetPlayerName 0
+    SystemMsg 2, 2                               // <player> booted up the PC.
+    LastKeyWait
+L_PC_Menu:
+    SystemMsg PC_T, 2                            // What would you like to do?
+    ListMenu_AnchorTopRight 31, 1, 0, 1, 0x8012  // (B = Turn Off)
+    ListMenuAdd PC_T + 1, 65535, 0               // Withdraw Item
+    ListMenuAdd PC_T + 2, 65535, 1               // Turn Off
+    ListMenuShow
+    WorkCmpConst 0x8012, 0
+    VMJumpIf CMP_NE, L_PC_Off
+    VMStackPushFlag FLAG_RECEIVED_PC_POTION
+    VMStackPushConst 1
+    VMStackCmp CMP_EQ
+    VMJumpIf CMP_STACK, L_PC_Withdraw            // (jumps when the comparison is false: the Potion is still there)
+    SystemMsg PC_T + 4, 2                        // There are no items.
+    LastKeyWait
+    VMJump L_PC_Menu
+L_PC_Withdraw:
+    ItemAdd ITEM_POTION, 1, 0x8013               // (a new game's Bag: always room)
+    FlagSet FLAG_RECEIVED_PC_POTION
+    SystemMsg PC_T + 3, 2                        // Withdrew 1 Potion.
+    LastKeyWait
+    VMJump L_PC_Menu
+L_PC_Off:
+    MsgWinCloseAll
+    WorkSetConst 0x8013, 0
+    PokecenPCClose 0x8013                        // (Black 2's PC off, as the full PC's normal exit)
+    FinishAllEvents
+    ActorsUnpauseAll
+    VMHalt
+
 Script_22:                                       // reserved after Mom sends the player upstairs (1F script 21)
     FadeInBlack
     FadeWait

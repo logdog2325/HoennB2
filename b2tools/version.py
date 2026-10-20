@@ -283,6 +283,15 @@ def decomp_map(name, version_=None):
     if name in m.get('gone', ()): return None
     return m.get('alias', {}).get(name, name)
 
+def hoenn_map(folder, version_=None):
+    """HoennB2's name of the version decomp's map folder `folder` (decomp_map's inverse, converter/gba.py emerald_names'
+    rule): Emerald's renames back to Sapphire's name (SafariZone_North -> SafariZone_Northeast), an Emerald-only map whose
+    folder is another Sapphire map's name -> '<folder>_Emerald' (SafariZone_Northeast -> SafariZone_Northeast_Emerald),
+    else `folder` (Sapphire, Ruby: always `folder`)."""
+    m = versions_json().get('maps', {}).get(version_ or VERSION, {})
+    if folder in m.get('name_clash', ()): return folder + '_Emerald'
+    return {v: k for k, v in m.get('alias', {}).items()}.get(folder, folder)
+
 # ---------------------------------------------------------------------------------------------------- outputs
 def build_dir(default):
     """The ROM folder: HOENN_BUILD_DIR, else `default` (work/rom) for Sapphire and default + '_ruby' / '_emerald' for

@@ -10,6 +10,10 @@
 // object 4 (uid 4, hidden by FLAG_HIDE_FERRY_SAILOR_LILYCOVE) takes the attendant's place, the party is healed and the
 // landing is scene script 3 of scenes/SouthernIsland_Exterior.inc. How the ticket reaches the player: CH13_EON_TICKET_GIFT in
 // scenes/ch13_gameclear.inc (off by default: in Sapphire it is a Mystery Event item no script gives).
+// EMERALD (postgame_fix 2026-10-19): pokeemerald's LilycoveCity_Harbor_EventScript_FerryAttendant instead of Sapphire's: the
+// Eon Ticket is one of the event tickets (scenes/LilycoveCity_Harbor_Events.inc: its first-time scene, then Southern Island
+// in the destination menu as long as the ticket is held), and the menu's words are Emerald's (Slateport City / Battle
+// Frontier / ... / Exit; text: src/text/emerald/overrides_postgame_fix.json).
 #include "scenes/ch13_lib.inc"
 #if __has_include("scenes/events_lib.inc")
 #include "scenes/events_lib.inc"            // (events agent) Emerald's event tickets and islands
@@ -32,6 +36,9 @@ Ch13_LH_FerryAttendant:                 // LilycoveCity_Harbor_EventScript_Ferry
     SEPlay SEQ_SE_MESSAGE
     h_faceplayer
     h_buffer_player
+#ifdef HOENN_EMERALD
+    VMJump L_LH13_FerryUnavailable      // Emerald: no Sapphire Eon Ticket trip (its ticket is one of L_EV_LH_EventTickets')
+#endif
     h_checkitem ITEM_EON_TICKET, 1, HLIB_TMP
     h_goto_if_eq HLIB_TMP, 1, L_LH13_EonTicketPossible
 L_LH13_FerryUnavailable:
@@ -53,6 +60,11 @@ L_LH13_RegularLocationSelect:
     ListMenuAdd LH13_T + 9, 65535, 1
 #ifdef EVENTS_LIB_INC
     VMCall Sub_EV_LH_TicketStates       // (events agent) Emerald's ScriptMenu_CreateLilycoveSSTidalMultichoice, 0x8004 = 0:
+#ifdef HOENN_EMERALD
+    h_goto_if_eq EV_LH_EON, 0, .Lev_rm0 // (Emerald: Southern Island first, while the Eon Ticket is held; the Battle Frontier
+    ListMenuAdd EV_LH_T + 10, 65535, 7  //  is listed without FLAG_MET_SCOTT_ON_SS_TIDAL: the S.S. Tidal's rooms, where Emerald
+.Lev_rm0:                               //  meets Scott, are not built)
+#endif
     h_goto_if_eq EV_LH_MYSTIC, 0, .Lev_rm1   // the islands of the tickets you hold (Southern Island stays Sapphire's
     ListMenuAdd EV_LH_T + 6, 65535, 3   //   one-time trip above)
 .Lev_rm1:
@@ -68,6 +80,9 @@ L_LH13_RegularLocationSelect:
     h_goto_if_eq HLIB_TMP, 0, L_LH13_GoToSlateport
     h_goto_if_eq HLIB_TMP, 1, L_LH13_GoToBattleTower
 #ifdef EVENTS_LIB_INC
+#ifdef HOENN_EMERALD
+    h_goto_if_eq HLIB_TMP, 7, L_EV_LH_GoToSouthernIsland
+#endif
     h_goto_if_eq HLIB_TMP, 3, L_EV_LH_GoToNavelRock
     h_goto_if_eq HLIB_TMP, 4, L_EV_LH_GoToBirthIsland
     h_goto_if_eq HLIB_TMP, 5, L_EV_LH_GoToFarawayIsland
@@ -91,7 +106,7 @@ L_LH13_GoToBattleTower:
     h_goto_if_no HLIB_TMP, L_LH13_ChangeMind
     h_msgbox LH13_T + 6
     ch13_board_dock LH13_ATTENDANT
-    h_sail_ferry LH13_SH_ZONE, 19 + 17, 23 + 18, 1, 3      // warp MAP_BATTLE_TOWER_OUTSIDE, 255, 19, 23 (script 3 of its scene)
+    h_sail_ferry LH13_SH_ZONE, CH13_BT_DOCK_X, CH13_BT_DOCK_Z, 1, 3   // warp MAP_BATTLE_TOWER_OUTSIDE, 255, 19, 23 (Emerald: MAP_BATTLE_FRONTIER_OUTSIDE_WEST, 19, 67; ch13_lib.inc) (script 3 of its scene)
     h_release
 L_LH13_ChangeMind:
     ParentActorMsg MSGFILE_SCRIPT, LH13_T + 5, 0, 0     // Then, where would you like to go?

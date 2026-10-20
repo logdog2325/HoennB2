@@ -885,10 +885,11 @@
    ],
    "uid": 1,
    "model": 23,
+   "model_emerald": 8,
    "script": 2,
    "dir": 3,
    "move": 17,
-   "what": "trader (Skitty for Pikachu) (Sapphire object 1, WOMAN_1, FACE_RIGHT)"
+   "what": "trader (Skitty for Pikachu) (Sapphire object 1, WOMAN_1, FACE_RIGHT); Emerald: the Ninja Boy, Plusle for Volbeat (em_trades; pokeemerald OBJ_EVENT_GFX_NINJA_BOY = pokeruby's LITTLE_BOY_1, id 5, the same picture: data/sprite_map.json LITTLE_BOY_1 = 8)"
   },
   {
    "kind": "npc",

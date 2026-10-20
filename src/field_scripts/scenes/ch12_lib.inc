@@ -45,6 +45,9 @@
 // a Regi (Sapphire: setwildbattle REGI 40, hide flag + FLAG_SYS_CTRL_OBJ_DELETE, ScrSpecial_StartRegiBattle): Black 2's
 // legendary encounter (the cry, then a battle with the "legendary" flag as its own Latios/Latias/Volcarona scripts, 0304.s,
 // 0364.s). The Regi's hide flag is set before the battle, as Sapphire, and the actor is gone afterwards.
+// Level: Sapphire/Ruby/Emerald 40 on the scaled curve (data/level_scaling.json), as every static legendary (user decision
+// 2026-10-19, notes/DECISIONS.md: the static battles follow the curve)
+#define CH12_REGI_LEVEL 44
     .macro h_regi_battle species, flag, uid
     h_lock
     SEPlay SEQ_SE_MESSAGE
@@ -54,7 +57,7 @@
     h_delay 40
     h_waitmoncry
     FlagSet \flag
-    CallWildBattle \species, 40, 1
+    CallWildBattle \species, CH12_REGI_LEVEL, 1
     WildBattleIsVictory CH12_TMP
     WorkCmpConst CH12_TMP, 1
     VMJumpIf CMP_EQ, .Lrb\@

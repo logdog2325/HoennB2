@@ -3,8 +3,34 @@
 #include "asm/field_script.inc"
 
     ScriptEntry Script_None
+    ScriptEntry PyreFall_1
+    ScriptEntry PyreFall_2
     ScriptEntriesEnd
 
 Script_None:
     VMHalt
+// ---- holes: the holes' falls, run by their step triggers (data/interiors/<zone>.json). Written by
+// b2tools/facilities_pyre.py with the PyreFall_* entries: edit that script, not this part.
+PyreFall_1:                                    // hole (10,12) -> fall to MtPyre_2F warp 2 (10,12)
+    ActorsPauseAll
+    SEPlay SEQ_SE_DANSA
+    FadeOutBlack
+    RTReserveScript 10017
+    FadeWait
+    MapChangeCore 342, 11, 0, 12, 1
+    FinishAllEvents
+    ActorsUnpauseAll
+    VMHalt
+
+PyreFall_2:                                    // hole (6,12) -> fall to MtPyre_2F warp 3 (6,12)
+    ActorsPauseAll
+    SEPlay SEQ_SE_DANSA
+    FadeOutBlack
+    RTReserveScript 10017
+    FadeWait
+    MapChangeCore 342, 7, 0, 12, 1
+    FinishAllEvents
+    ActorsUnpauseAll
+    VMHalt
+// ---- holes end
     .balign 4, 0

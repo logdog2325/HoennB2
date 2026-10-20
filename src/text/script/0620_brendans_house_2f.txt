@@ -13,3 +13,8 @@ Pokémon fully restored...\nItems all packed, and...
 Hey!\nYou...{be01}\nWho are you?{be01}\nOh, you’re {0100:0}, aren’t you?\nMoved in next door, right?{be01}\nI didn’t know that you’re a girl.{be01}\nDad, Prof. Birch, said that our new\nnext-door neighbor is a Gym Leader’s{be00}\nkid, so I assumed you’d be a guy.{be01}\nMy name’s Brendan.\nSo, hi, neighbor!{be01}\nHuh? Hey, {0100:0}, don’t you have\na Pokémon?{be01}\nDo you want me to go catch you one?{be01}\nAw, darn, I forgot...{be01}\nI’m supposed to go help my dad catch\nsome wild Pokémon.{be01}\nSome other time, okay?
 Brendan: Hey, it’s {0100:0}.{be01}\nI was just checking out my Pokédex.{be01}\nThere are still many Pokémon that\nI need to catch, I know, but this{be00}\nis looking pretty good.{be01}\nChecking this Pokédex out gives me\nthe urge to hit the road again.
 Brendan: I’m having a hard time deciding\nwhere I should catch Pokémon next.{be01}\nHey, {0100:0}, if I see you while I’m out\ncatching Pokémon, I can pitch you a{be00}\nbattle if you’d like.
+What would you like to do?
+Withdraw Item
+Turn Off
+Withdrew 1 Potion.
+There are no items.

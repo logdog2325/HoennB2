@@ -8,8 +8,8 @@
 #include "hoenn_story.inc"                      // (chapter Ch1's scenes/LittlerootTown_ch1.inc and the test switches)
 
     ScriptEntry Script_1    // sign: Littleroot Town
-    ScriptEntry Script_2    // sign: player's house (Sapphire: Brendan's house)
-    ScriptEntry Script_3    // sign: Prof. Birch's house
+    ScriptEntry Script_2    // sign: Brendan's house (west): "<player>'s House" for a boy, "Prof. Birch's House" for a girl
+    ScriptEntry Script_3    // sign: May's house (east): "Prof. Birch's House" for a boy, "<player>'s House" for a girl
     ScriptEntry Script_4    // sign: Prof. Birch's Pokémon Lab
     ScriptEntry Script_5    // NPC: twin (Sapphire LittlerootTown_EventScript_Twin, before the story starts)
     ScriptEntry Script_6    // NPC: fat man (LittlerootTown_EventScript_FatMan)
@@ -158,9 +158,20 @@ Script_2:
     ActorsUnpauseAll
     VMHalt
 #endif
+    // Sapphire / Emerald LittlerootTown_EventScript_BrendansHouseSign (the west house is Brendan's): checkplayergender,
+    // a boy reads "<player>'s House" (PlayersHouseSignMale), a girl "Prof. Birch's House" (BirchsHouseSignFemale)
+    h_goto_if_girl L_SignBirchsHouse
+L_SignPlayersHouse:
     WordSetPlayerName 0
     SEPlay SEQ_SE_MESSAGE
-    MsgPlaceSign 1, 2
+    MsgPlaceSign 1, 2                               // "<player>'s House"
+    MsgPlaceSignClose
+    FinishAllEvents
+    ActorsUnpauseAll
+    VMHalt
+L_SignBirchsHouse:
+    SEPlay SEQ_SE_MESSAGE
+    MsgPlaceSign 2, 2                               // "Prof. Birch's House"
     MsgPlaceSignClose
     FinishAllEvents
     ActorsUnpauseAll
@@ -193,12 +204,10 @@ L_TestMayBattle:
     ActorsUnpauseAll
     VMHalt
 #endif
-    SEPlay SEQ_SE_MESSAGE
-    MsgPlaceSign 2, 2
-    MsgPlaceSignClose
-    FinishAllEvents
-    ActorsUnpauseAll
-    VMHalt
+    // LittlerootTown_EventScript_MaysHouseSign (the east house is May's): a boy reads "Prof. Birch's House"
+    // (BirchsHouseSignMale), a girl "<player>'s House" (PlayersHouseSignFemale)
+    h_goto_if_girl L_SignPlayersHouse
+    VMJump L_SignBirchsHouse
 
 Script_4:
     ActorsPauseAll

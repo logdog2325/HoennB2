@@ -1,0 +1,7 @@
+Trading Pokémon with others…{be01}\nIt’s as if you’re trading your own\nmemories with other people.
+Wrooooaaar! I need it!\nI have to get me a {0100:1}!{be00}\nI’ll do anything for it!{be01}\n…Uh… Did you hear that?\nMy shout from the bottom of my heart?{be01}\nHaving heard that, you will trade\nyour {0100:1} for my {0100:2},{be00}\nwon’t you?
+Oh, yeah, right on!{be01}\n{0100:1}, welcome!\n{0100:2}, you take care!
+Uh, no, I don’t think so.\nThat isn’t a {0100:1}.
+No? You won’t trade me?\nEven after I bared my heart to you?
+I’m going to make Volbeat super\nstrong from this moment on!{be01}\nI hope you do the same with Plusle!
+Zigzagoon: Gumomoh?

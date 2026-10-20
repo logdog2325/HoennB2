@@ -41,6 +41,11 @@ Script_2:
 // ---- story
 #define DV3_STONE 1
 #define DV3_EMPLOYEE 2
+#ifdef HOENN_EMERALD                // the hack's line for a player who has the Exp. Share from Birch (last line of 0368)
+#define DV3_MSG_HAS_EXP_SHARE 17
+#else
+#define DV3_MSG_HAS_EXP_SHARE 16
+#endif
 
 // Rustboro's ReturnGoods warps here (warp MAP_RUSTBORO_CITY_DEVON_CORP_3F, 255, 2, 2) and reserves this script: on
 // the black screen the employee takes his OnTransition spot (setobjectxyperm 2, 3, 2, facing left) and the player
@@ -131,6 +136,8 @@ Sub_DV3_MrStoneTalk:
     h_closemessage
     VMReturn
 L_DV3_GiveExpShare:                 // RustboroCity_DevonCorp_3F_EventScript_GiveExpShare
+    h_checkitem ITEM_EXP_SHARE, 1, HLIB_TMP     // Birch's sixth question gave it already (YES, b2tools/patches/fairy.py):
+    h_goto_if_eq HLIB_TMP, 1, L_DV3_HasExpShare // no second one (notes/DECISIONS.md 2026-10-19)
     h_msgbox_actor 10, DV3_STONE    // Mr. Stone: You delivered my Letter? Thank you kindly!...
     h_closemessage                  // (Black 2: the item script opens its own window)
     h_giveitem ITEM_EXP_SHARE
@@ -139,6 +146,11 @@ L_DV3_GiveExpShare:                 // RustboroCity_DevonCorp_3F_EventScript_Giv
     FlagSet FLAG_EXP_SHARE_ON       // the hack's Gen 6 Exp. Share, given switched on (b2tools/patches/exp_share.py)
     h_msgbox_actor 11, DV3_STONE    // Mr. Stone: A Pokémon holding that Exp. Share...
     h_closemessage
+    VMReturn
+L_DV3_HasExpShare:                  // the hack's: the Exp. Share came from Birch, so Mr. Stone thanks you without the
+    h_msgbox_actor DV3_MSG_HAS_EXP_SHARE, DV3_STONE   // give and its explanation ("...I see you already have one!");
+    h_closemessage                  // the Bag toggle (FLAG_EXP_SHARE_ON) stays as the player left it
+    h_setflag FLAG_RECEIVED_EXP_SHARE
     VMReturn
 L_DV3_BagFull:                      // Common_EventScript_ShowBagIsFull (release + end: no turn back)
     h_msgbox_actor 15, DV3_STONE    // Too bad! The Bag is full...

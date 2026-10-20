@@ -21,7 +21,15 @@ GFL_HeapAllocate fails and the game halts in sys_exit with the bottom screen bla
 Black 2 sizes the field heap per map type: ov036 MAP_CONFIGS[type].heapSize - 0xf000 (src/ov036/fieldmap.c:131-132,
 1517; read only there). Map type 0 (every Hoenn outdoor zone) gets FIELD_HEAP_EXTRA more, taken from HEAPID_USER's
 free space while the field runs (110,696 B in Black 2 and here; Black 2 keeps it for C-Gear communication, which
-Hoenn never turns on: no script uses CGearPowerOn / FieldSubscreenChange)."""
+Hoenn never turns on: no script uses CGearPowerOn / FieldSubscreenChange).
+
+apply_code also sets the field's people-sprite material cache (notes/NPC_LIMIT.md; route123, 2026-10-19): ov036
+Field_InitActorSystem passes its size to FldActSys_InitBlAct (`mov r2, #0x20`, Black 2's 32). Emerald gets 40: its
+Route 123 (13 people sprites + 18 berry trees that can each show a different picture) needs 33 with the player's
+Surf/bike/fishing sprite, and the 33rd found no entry (the player stayed a frozen walking sprite on the shore while the
+Surf mount moved on, tested). Every user of the cache is sized by this number (FldBlAct_CreateMatCache,
+FldBlAct_InitLoader's request array; ov036 0x02193728-0x02194620); the billboard system under it has 64 materials
+(BlActSys_Create(0x40, ...), fieldmap.c:869). Cost: 8 x 20 B of field heap. Sapphire/Ruby keep 32 (byte-identical)."""
 import os, sys, json, struct
 import narcio
 from b2files import gf_container, gf_container_build
@@ -39,6 +47,13 @@ FIELD_HEAP_EXTRA = 0x14000           # map type 0: 1,210,312 -> 1,292,232 B of f
 # Free space moves 1:1 with the pack (it is read whole into one block) and with FIELD_HEAP_EXTRA.
 SAVE_NEED, FREE_MEASURED = 83004, (371448, 0x10000, 96880)
 SAVE_HEADROOM_MIN = 8 << 10
+MAT_CACHE_AT = 0x02180A86            # ov036 Field_InitActorSystem: mov r2, #0x20 (Thumb 0x2220) -> FldActSys_InitBlAct
+MAT_CACHE_VANILLA, MAT_CACHE_EMERALD = 32, 40
+
+def mat_cache_size():
+    """The material cache size this version's build gets (b2tools/npc_check.py reads it back from the ROM)."""
+    import version
+    return MAT_CACHE_EMERALD if version.is_emerald() else MAT_CACHE_VANILLA
 
 def save_headroom(pack_bytes):
     """Field heap left over during a save in a pack-0 zone (estimate from the measurement above)."""
@@ -112,6 +127,11 @@ def apply_code(code):
     old = struct.unpack_from('<I', data, at)[0]
     assert old in (FIELD_HEAP_VANILLA, new), f'MAP_CONFIGS[0].heapSize: unexpected {old:#x}'
     struct.pack_into('<I', data, at, new)
+    o, n = MAT_CACHE_AT - OV036, mat_cache_size()
+    assert data[o + 1] == 0x22 and data[o] in (MAT_CACHE_VANILLA, MAT_CACHE_EMERALD), \
+        f'ov036 {MAT_CACHE_AT:#x}: {data[o:o + 2].hex()} is not mov r2, #0x20'
+    data[o] = n
     if os.path.islink(path): os.unlink(path)
     open(path + '.tmp', 'wb').write(data); os.replace(path + '.tmp', path)
-    return f'field heap for map type 0: {FIELD_HEAP_VANILLA:#x} -> {new:#x} (MAP_CONFIGS[0].heapSize; the save needs ~83 KB free)'
+    return (f'field heap for map type 0: {FIELD_HEAP_VANILLA:#x} -> {new:#x} (MAP_CONFIGS[0].heapSize; the save needs '
+            f'~83 KB free); people-sprite material cache {n}')

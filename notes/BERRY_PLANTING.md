@@ -125,7 +125,9 @@ changes when its actor is made again (zone entry) or when it is talked to (the s
   stood there) the script deletes and re-adds the actor (ActorDelete / ActorAdd by uid), which resolves it again.
 - **Budget** (notes/NPC_LIMIT.md): one picture = one material (of 32) and 544 B of texture VRAM while shown; at worst
   every tree of a zone shows another picture. npc_check counts the tree codes that way (BERRY_TREES); fullest: Route 123
-  (18 trees): 8 other codes + 18 + 2 player = 28/32; Route 120 26, Route 104 27, Route 111 25. VRAM goes down
+  (18 trees): 8 other codes + 18 + 2 player = 28/32; Route 120 26, Route 104 27, Route 111 25. Emerald's Route 123
+  has 13 other codes (its Emerald-only trainers): 33, so Emerald's cache is 40 (notes/NPC_LIMIT.md "Emerald Route
+  123": with 18 different pictures the player's Surf sprite had found no entry). VRAM goes down
   compared with the daily trees (one-frame sheets instead of 12-frame ones). Field heap: unchanged (sheets live in VRAM,
   the code in ITCM; nothing loads into the field heap).
 - Left out: Gen 3's sway animations (the daily trees were still too), the sparkle when a stage changes, the watering

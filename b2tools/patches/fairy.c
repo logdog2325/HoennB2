@@ -7,7 +7,7 @@
  *   bit 12 (CFG_CLASSIC) 1 = Gen 3 rule: a damaging move's category comes from its type  0 = Black 2's per-move split
  *   bit 15 (CFG_SEASONS) 1 = Black 2's seasons by the DS clock's month                    0 = summer all year
  * Birch's questions in the intro set them once (Intro_SetConfigBit); a new game starts with all of them 0 (bits 13
- * and 14 are hoenn_music's and sprite_switch's).
+ * and 14 are hoenn_music's and sprite_switch's). The sixth question (the Exp. Share) sets an event flag instead.
  *
  * Types: 0-16 Black 2's, 17 = Fairy, 18 = "no type" (Black 2 used 17; every such check in ov167 moves to 18).
  * The data (a/0/1/6 species, a/0/2/1 moves) holds the Gen 6 types; with the toggle off the two readers below give
@@ -214,12 +214,26 @@ u8 *Fairy_PersonalLoad(u32 species, u32 form) {
 
 /* ---- intro: Birch's questions (ov294 sCommands[INTRO_CMD_SET_MSG_LANGUAGE = 31], unused by the US scripts) ------
  * args[0] = config bit, args[1] = value. IntroCmd +4 = IntroParam, IntroParam +4 = the new game's Config (ov162 copies
- * it into the save in NewGame_Exit); the save's own copy gets the bit at once too, so every reader agrees from here */
+ * it into the save in NewGame_Exit); the save's own copy gets the bit at once too, so every reader agrees from here.
+ * args[0] >= 16 is an event flag instead (Birch's sixth question, 2026-10-19: FLAG_EXP_SHARE_ON), set or cleared in
+ * the save's EventWork (block 0x2d, what GameData_GetEventWork returns). NewGame_Init cleared the whole save before
+ * the intro (func_0200749c -> initSaveBlkCallbacks) and nothing clears EventWork after it, so the flag reaches the
+ * field; the truck's new-game script (scenes/truck.inc Script_30) then puts the Exp. Share in the Bag (the Bag itself
+ * is only made after the intro, by ov279 InitItemBag, so it can't be given here). */
+#define EventWork_FlagSet          FN(void (*)(void *, u32), 0x020191d8)
+#define EventWork_FlagReset        FN(void (*)(void *, u32), 0x02019200)
 u32 Intro_SetConfigBit(void *cmd, void *work, s32 *args) {
     u16 *cfg = *(u16 **)(*(u8 **)((u8 *)cmd + 4) + 4);
     u32 mask = 1u << (args[0] & 15);
     void *sc = g_SaveControlWork;
     (void)work;
+    if ((u32)args[0] >= 16) {
+        if (sc) {
+            void *ew = SaveControl_GetBlockPtr(sc, 0x2d);
+            if (args[1]) EventWork_FlagSet(ew, (u32)args[0]); else EventWork_FlagReset(ew, (u32)args[0]);
+        }
+        return 1;
+    }
     if (args[1]) *cfg |= mask; else *cfg &= ~mask;
     if (sc) {
         u16 *save = (u16 *)SaveControl_GetBlockPtr(sc, 27);

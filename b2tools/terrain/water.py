@@ -37,7 +37,7 @@ materials get RGBA vertex colours + <transparent opaque="A_ONE"> (CTRMap's impor
 polygon alpha: ike01 -> 12/31, sea_mizu1_1 -> 16/31, checked by converting our .nsbmd back with apicula); the flat
 ground under water tiles is cut out at write time, so it also works when heights.py draws the ground.
 """
-import os, re, json, struct, shutil, sys
+import os, re, json, struct, shutil, sys, math
 from collections import deque, OrderedDict
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -408,8 +408,10 @@ def draw(m, cell):
             k = look(world, X + tx, Z + tz)
             if k: looks[(tx, tz)] = k
     inside = {p: k for p, k in looks.items() if 0 <= p[0] < 32 and 0 <= p[1] < 32}
+    _SEAMS.pop(m.name, None)             # (a model name is reused: chunk_fit's rebuild, other layouts' cells)
     if not inside: return
     g = _Geo(m)
+    drawn = {}                           # (material, final height) -> tiles: flat() records them for _seam_layers
     holes = {p for p, k in inside.items() if k in HOLE}
     if holes: _HOLES.setdefault(m.name, set()).update(holes)     # ground over them is cut when the model is written
     wet = lambda p: looks.get(p) in HOLE
@@ -422,7 +424,7 @@ def draw(m, cell):
     # jetty on Route 104 is 24 over his cove), not at the deck's own height (world.py lifts by the deck's tile)
     under = {}
     if _ground is not None and hgt:
-        for p in inside:
+        for p in looks:          # (the cell's own tiles for its sheets; the ones round it for _seam_layers' reach)
             e = world.get((X + p[0], Z + p[1]))
             if e and e[1] not in CLASSES and _ground.water_under(world, X + p[0], Z + p[1]) is not None:
                 lo = [H(n) for n in ((p[0] + 1, p[1]), (p[0] - 1, p[1]), (p[0], p[1] + 1), (p[0], p[1] - 1))
@@ -447,6 +449,8 @@ def draw(m, cell):
             own = H(p); groups.setdefault((own, target.get(p, under.get(p, own))), set()).add(p)
         for p, lo in extra.items(): groups.setdefault((H(p), lo), set()).add(p)
         for (own, t), part in groups.items():
+            if mat in SEAM_SHEET or mat in SEAM_FLOOR:
+                drawn.setdefault((mat, y + t), set()).update(part)    # (final height: seam layers below)
             for x0, z0, x1, z1 in _rects(part):
                 c = [uv] * 4 if uv else [(x0 / rep, -z1 / rep), (x1 / rep, -z1 / rep), (x1 / rep, -z0 / rep), (x0 / rep, -z0 / rep)]
                 yy = y + t - own                     # (world.py adds `own` back)
@@ -479,6 +483,8 @@ def draw(m, cell):
         _waterfall(g, fall, looks)
     _puddles(g, {p for p, k in inside.items() if k == 'puddle'}, lambda p: looks.get(p) == 'puddle')
     flat('sea_jimen', {p for p, k in inside.items() if k == 'sand'}, 0, 1)    # sand with water drawn on it (ground_cover)
+    T = lambda p: under.get(p, H(p))
+    seams = _seam_layers(drawn, looks, H, T, world, X, Z)
 
     # edges of every water tile: a bank where it meets land (profile of that land), a sea_zanami2 band where open sea
     # meets a shoal. Collinear edges merge into one strip (Black 2's banks are long strips); a strip end next to
@@ -491,7 +497,11 @@ def draw(m, cell):
             return BEACH_BANK_STILL if prof is BEACH_BANK and looks.get(p) in ('shoal', 'pond') else prof
         if looks.get(q) == 'shoal' and looks.get(p) in OPEN: return SHOAL_BAND
         return None
-    segs = {}
+    segs, banks = {}, []
+    def plain_bank(p, q):        # (_bank_seams: water and land on their own, no deck, bridge or road over either)
+        e = world.get((X + p[0], Z + p[1]))
+        if e is not None and e[1] not in CLASSES and e[1] not in WET_PROPS: return False
+        return _ground is None or not hasattr(_ground, 'water_under') or _ground.water_under(world, X + q[0], Z + q[1]) is None
     for (tx, tz) in holes:
         kind = {d: edge((tx, tz), (tx + dx, tz + dz)) for d, (dx, dz) in SIDES.items()}
         for d, (dx, dz) in SIDES.items():
@@ -503,6 +513,8 @@ def draw(m, cell):
             opp = kind[{'N': 'S', 'S': 'N', 'W': 'E', 'E': 'W'}[d]]
             scale = 0.5 / 0.75 if opp is not None and prof is not SHOAL_BAND else 1.0    # 1-tile channels
             segs.setdefault((d, line, id(prof), scale), []).append([a, a + 1, kind[lo] is not None, kind[hi] is not None, prof])
+            if prof is not SHOAL_BAND and prof is not PIER_BANK and plain_bank((tx, tz), (tx + dx, tz + dz)):
+                banks.append((d, line, a, scale, (tx, tz), (tx + dx, tz + dz)))
         for cx, cz in ((0, 0), (1, 0), (0, 1), (1, 1)):
             if kind['W' if cx == 0 else 'E'] is not None or kind['N' if cz == 0 else 'S'] is not None: continue
             ex, ez = (-1 if cx == 0 else 1), (-1 if cz == 0 else 1)
@@ -520,6 +532,8 @@ def draw(m, cell):
             else: merged.append(sg)
         for a, b, mlo, mhi, prof in merged:
             _strip(g, d, line, a, b, mlo, mhi, prof, scale)
+    for mat, tris in _bank_seams(banks, H, X, Z).items(): seams.setdefault(mat, []).extend(tris)
+    if seams: _SEAMS[m.name] = seams     # (added when the model is written: after heights' lift and tjunction.fix)
 
 def ground_cover(cell):
     """Cell tiles whose ground this module draws at ground level itself (beach sand with water drawn on it,
@@ -544,6 +558,149 @@ def _rects(tiles):
             z1 = z + 1
             while r in runs.get(z1, ()): runs[z1].discard(r); z1 += 1
             out.append((r[0], z, r[1], z1))
+    return out
+
+# ---- seam layers (water_seams 2026-10-19) ---------------------------------------------------------------------------
+# Discord 2026-10-19 (Emerald, "Oldale Town"): thin light lines across a pond (Petalburg City's in melonDS; Route
+# 102's east pond by Oldale, world tiles x 158-163, z 302-306, the same; all versions; notes/TERRAIN_WATER.md "Water
+# seams", which also has the grass slivers over the water: cut_ground_now). The DS (melonDS, hardware) rasterizes every
+# polygon from its own whole-pixel edges, so 1-pixel cracks open along edges inside a surface: at T-junctions, and
+# even where two polygons share an edge (the ground's under-floor, world.py, cracks 2026-10-18). Through a crack in the
+# translucent pond sheet (ike01, alpha 12/31) the light pond floor shows unblended (the light lines); through one in
+# an opaque floor (mizu_sita2, sea_mizu1) the sky. That pond also has the cell border x = 160 through it: the two
+# cells' sheets meet there with a T-junction tjunction.fix cannot see (it works per cell: (160, 304) is a vertex of
+# cell (5, 9) only). So, as the ground has its under-floor:
+# - every translucent sheet (ike01, sea_mizu1_1) gets a second sheet of the same material in the same plane: one quad
+#   over each connected body of water (its bounding box, reaching SEAM_REACH tiles into the next cell, the diagonal the
+#   other way). It shows only where the first sheet has a crack: the DS never blends a translucent pixel over a
+#   translucent pixel of the same polygon ID (melonDS PlotTranslucentPixel; GBATEK), and both sheets of a material
+#   carry one fixed ID in every chunk (nsbmd_fix.water_materials; CTRMap's writer numbered them by material index,
+#   which also blended twice along cell borders);
+# - every opaque floor (mizu_sita2, sea_mizu1) gets a second floor SEAM_DROP lower, one quad per body likewise;
+# - every line where a bank's top meets the land's ground gets a strip of that ground under it (_bank_seams).
+# All of them in pieces at most 4 times as long as wide, cut at half tiles (_square_pieces). And the ground over the
+# water is cut before tjunction.fix (cut_ground_now): its fans had left grass slivers over the water, lines DeSmuME
+# shows too.
+# A bounding box is used only where all its other tiles hide the layer (land at or over the water's own level for a
+# sheet; something opaque at least 2 over it for a floor); else (water of another level in the box) the box's tiles
+# that do, as column rectangles (flat() lays rows, whose inner edges run along x: these cross them only at points), the
+# ones holding the body. The layers are added when the model is written (the write hook below): after
+# heights.py's lift (they carry their final heights) and after tjunction.fix (they are not split).
+SEAM_SHEET = {'ike01': (Y_POND, 2, ('pond',)), 'sea_mizu1_1': (Y_SEA, 4, ('sea', 'current', 'deep', 'fall', 'shoal'))}
+SEAM_FLOOR = {'mizu_sita2': 8, 'sea_mizu1': 4}       # (texture repeat in tiles, as flat())
+SEAM_DROP = 4                                        # (the ground's under-floor is 4 under the ground too)
+SEAM_REACH = 2
+SEAM_ASPECT = 4                                      # (_square_pieces: longest piece for its width)
+_SEAMS = {}                                          # model name -> {material: [triangle]} (final model coordinates)
+_built = {}                                          # id(world) -> cells world.py builds (_seam_layers)
+
+def _components(tiles):
+    left, out = set(tiles), []
+    while left:
+        stack = [left.pop()]; comp = set(stack)
+        while stack:
+            x, z = stack.pop()
+            for n in ((x + 1, z), (x - 1, z), (x, z + 1), (x, z - 1)):
+                if n in left: left.discard(n); comp.add(n); stack.append(n)
+        out.append(comp)
+    return out
+
+def _seam_layers(drawn, looks, H, T, world, X, Z):
+    """{material: [triangle]} of one cell's seam layers (above): drawn = {(material, final height): tiles} from
+    draw()'s flat(); H(p) the land height of cell tile p, T(p) the level of the water there (its surface 8 below)."""
+    out = {}
+    R = SEAM_REACH
+    if id(world) not in _built:                      # (cells world.py builds: map tiles and a ring of one round them)
+        _built.clear()
+        have = {(x // 32, z // 32) for x, z in world}
+        _built[id(world)] = {(cx + dx, cz + dz) for cx, cz in have for dx in (-1, 0, 1) for dz in (-1, 0, 1)}
+    built = lambda q: ((X + q[0]) // 32, (Z + q[1]) // 32) in _built[id(world)]   # (no sheet past the world's edge)
+    def top(q):                                      # the highest opaque surface at tile q (land, or a water floor)
+        k = looks.get(q)
+        if k in HOLE: return T(q) + (Y_POND_FLOOR if k == 'pond' else Y_SEA_DEEP)
+        return H(q)
+    for (mat, y), tiles in sorted(drawn.items()):
+        if mat in SEAM_SHEET:
+            ys, rep, kinds = SEAM_SHEET[mat]
+            lvl, yy = y - ys, y
+            # (a neighbour cell's tiles of this body, the water under a deck by its own level: a pier's row in it)
+            same = set(tiles) | {q for q, k in looks.items() if k in kinds and not (0 <= q[0] < 32 and 0 <= q[1] < 32)
+                                 and -R <= q[0] < 32 + R and -R <= q[1] < 32 + R and T(q) == lvl and built(q)}
+            ok = lambda q: q in same or (looks.get(q) not in HOLE and H(q) >= lvl and built(q))
+        elif mat in SEAM_FLOOR:
+            rep, yy = SEAM_FLOOR[mat], y - SEAM_DROP
+            same = {q for q in tiles if built(q)}
+            ok = lambda q: q in same or (top(q) >= yy + 2 and built(q))
+        else:
+            continue
+        for comp in _components(same):
+            if mat in SEAM_SHEET and not any(0 <= q[0] < 32 and 0 <= q[1] < 32 for q in comp): continue
+            x0, x1 = min(q[0] for q in comp), max(q[0] for q in comp) + 1
+            z0, z1 = min(q[1] for q in comp), max(q[1] for q in comp) + 1
+            box = {(x, z) for x in range(x0, x1) for z in range(z0, z1)}
+            valid = {q for q in box if ok(q)}
+            if len(valid) == len(box):
+                rects = [(x0, z0, x1, z1)]
+            else:                                    # (water of another level in the box: Route 119's falls)
+                rects = [(a0, b0, a1, b1) for b0, a0, b1, a1 in _rects({(z, x) for x, z in valid})
+                         if any((x, z) in comp for x in range(a0, a1) for z in range(b0, b1))]
+            for r in rects:
+                for a0, b0, a1, b1 in _square_pieces(*r):
+                    P = lambda x, z: (U(x), yy, U(z), x / rep, -z / rep, (1.0, 1.0, 1.0))
+                    A, B, C, D = P(a1, b1), P(a1, b0), P(a0, b0), P(a0, b1)   # (diagonal A-C: flat()'s quads run D-B)
+                    out.setdefault(mat, []).extend([[A, B, C], [A, C, D]])
+    return out
+
+def _square_pieces(x0, z0, x1, z1):
+    """A seam rectangle in pieces at most SEAM_ASPECT times as long as wide, cut at half tiles: a long thin quad's
+    diagonal runs within a pixel of the edges beside it for a long way (a crack in both layers can meet there); a
+    stubbier piece's crosses them more steeply, and its own cuts never lie on the sheets' tile-aligned edges."""
+    w, h = x1 - x0, z1 - z0
+    if max(w, h) <= SEAM_ASPECT * min(w, h) or min(w, h) <= 0: return [(x0, z0, x1, z1)]
+    long0, long1, n = (x0, x1, math.ceil(w / h / SEAM_ASPECT)) if w > h else (z0, z1, math.ceil(h / w / SEAM_ASPECT))
+    cuts = sorted(c for c in {math.floor(long0 + (long1 - long0) * k / n) + 0.5 for k in range(1, n)} if long0 < c < long1)
+    edges = [long0] + cuts + [long1]
+    return [(a, z0, b, z1) if w > h else (x0, a, x1, b) for a, b in zip(edges, edges[1:])]
+
+BANK_SEAM = (0.875, 0.125, 6)     # (tiles under the land, tiles under the bank's slope, units under the land)
+
+def _bank_seams(banks, H, X, Z):
+    """{material: [triangle]}: a strip of the land's ground under every line where a bank's top meets the ground, or a
+    cliff's foot where the land stands higher (banks: (side, line, a, scale, water tile, land tile) per tile edge, from
+    draw()). The ground ends on that line and so does the cracks fix's under-floor 4 under it (world.py), so the DS's
+    crack along it showed the pond floor or the sea far below. The strip lies 6 under the water's land level (2 under
+    that under-floor), from 14 units inside the land (still in the land's own tile) to 2 under the bank's slope (the
+    slopes drop 16 a tile, 12 on a beach: still 2+ over it there; a 1-tile channel's squeezed slope: scaled), over the
+    water's sheets (8 and 11 under the land) and under everything you see; in pieces at most 4 tiles long, so no
+    diagonal runs along the line (_square_pieces)."""
+    hm = sys.modules.get('terrain.heights')
+    F = getattr(hm, 'FIELD', None) if hm is not None else None
+    def ground(q):                                   # the land's ground texture (world.py: HF.material), None: stairs
+        w = (X + q[0], Z + q[1])
+        if F is None: return 'grass01ax'
+        return None if w in getattr(F, 'slope', ()) else getattr(F, 'mat', {}).get(w, 'grass01ax')
+    land, under_bank, drop = BANK_SEAM
+    runs = {}
+    for d, line, a, scale, p, q in banks:
+        mat = ground(q)
+        if mat is None or H(q) < H(p): continue      # (land under the water's level: no bank top meets it; land over
+        #                                               it: the bank's top meets a cliff's foot, the strip lies under it)
+        runs.setdefault((d, line, scale, H(p), mat), []).append(a)
+    out = {}
+    for (d, line, scale, h, mat), xs in runs.items():
+        inward = {'N': 1, 'S': -1, 'W': 1, 'E': -1}[d]
+        xs.sort(); spans = [[xs[0], xs[0] + 1]]
+        for a in xs[1:]:
+            if a == spans[-1][1]: spans[-1][1] = a + 1
+            else: spans.append([a, a + 1])
+        for s0, s1 in [(a, b) for r0, r1 in spans for a, _, b, _ in _square_pieces(r0, 0, r1, land + under_bank)]:
+            pts = []                                 # (pieces at most 4 tiles long, cut at half tiles: _square_pieces)
+            for s, t in ((s0, -land), (s1, -land), (s1, under_bank * scale), (s0, under_bank * scale)):
+                fx, fz = (s, line + inward * t) if d in 'NS' else (line + inward * t, s)
+                pts.append((U(fx), h - drop, U(fz), fx / 4, -fz / 4, (1.0, 1.0, 1.0)))     # (ground UVs: build_chunk)
+            (ax, _, az), (bx, _, bz), (cx, _, cz) = [v[:3] for v in pts[:3]]
+            if (bz - az) * (cx - ax) - (bx - ax) * (cz - az) < 0: pts = pts[::-1]          # (face up, as _Geo.poly)
+            out.setdefault(mat, []).extend([[pts[0], pts[1], pts[2]], [pts[0], pts[2], pts[3]]])
     return out
 
 def _strip(g, d, line, a, b, mlo, mhi, prof, scale):
@@ -627,6 +784,16 @@ def _puddles(g, tiles, is_puddle):
 _HOLES = {}                  # model name -> cell tiles whose ground must go (world.py names a cell's models alike)
 GROUND = ('grass01ax', 'gake_michi')     # flat ground textures of build_chunk.ground / ground_heights (4-tile repeat)
 
+def cut_ground_now(m):
+    """(water_seams 2026-10-19) The ground cut (_cut_ground) on model m now rather than when it is written: world.py
+    write_cell calls it before tjunction.fix. The cut reads each flat ground triangle's tiles by rounding its corners to
+    the tile grid, which holds for ground_heights' rectangles but not for the fans tjunction.fix makes of them (centroid
+    corners): Route 102's pond kept a ground fan (160,305)-(173,305)-(170,304.67) whose rounded rows were empty, a sliver
+    of grass at the land's height over the water, drawn as a thin light line along the lower part's north bank (DeSmuME
+    and melonDS). Cut first, the splits also see the real edges round the water."""
+    holes = _HOLES.pop(m.name, None)
+    if holes: _cut_ground(m, holes)
+
 def _cut_ground(m, holes):
     """Remove the flat ground over water tiles: drop every flat ground triangle that overlaps one and re-lay the dry
     tiles of its block with 1-tile-high quads at the same height (same texture mapping as build_chunk.ground)."""
@@ -684,9 +851,15 @@ def _install_write_hook():
                 for a, b in ALIAS.items():
                     if b == k and a in moved: new[a] = moved[a]
             self.tris = new
-        n = orig(self, path, wrap=wrap, double_sided=double_sided)
-        mats = [(k, len(v)) for k, v in self.tris.items()]
-        if any(k in ALPHA or k in ALIAS for k, _ in mats): _patch_dae(path, mats)
+        added = {}                                   # the seam layers (_seam_layers), for this write only
+        for mat, tris in (_SEAMS.get(self.name) or {}).items():
+            if self.tris.get(mat): self.tris[mat].extend(tris); added[mat] = len(tris)
+        try:
+            n = orig(self, path, wrap=wrap, double_sided=double_sided)
+            mats = [(k, len(v)) for k, v in self.tris.items()]
+            if any(k in ALPHA or k in ALIAS for k, _ in mats): _patch_dae(path, mats)
+        finally:
+            for mat, k in added.items(): del self.tris[mat][len(self.tris[mat]) - k:]
         return n
     dae.Model.write = write
     dae.Model._water_hook = True

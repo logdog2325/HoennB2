@@ -97,13 +97,15 @@ L_NI_Quiet:
     h_closemessage
     h_release
 
+#define NI_VOLTORB_LEVEL 26                     // Sapphire/Ruby/Emerald 25 on the scaled curve (data/level_scaling.json;
+                                                //   user decision 2026-10-19: the static battles follow the curve)
     .macro ni_voltorb flag, uid             // NewMauville_Inside_EventScript_15E900 / 15E91E / 15E93C
     h_lock
     h_faceplayer
     h_playmoncry SPECIES_VOLTORB
     h_delay 40
     h_waitmoncry
-    h_static_battle SPECIES_VOLTORB, 25, \flag, \uid   // setwildbattle VOLTORB 25 + dowildbattle; gone afterwards
+    h_static_battle SPECIES_VOLTORB, NI_VOLTORB_LEVEL, \flag, \uid   // setwildbattle VOLTORB 25 + dowildbattle; gone afterwards
     h_release
     .endm
 Story_NI_Voltorb1:

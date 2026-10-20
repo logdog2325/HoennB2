@@ -235,7 +235,11 @@ def league():
                        dict(m='table01_2x2', tiles=[3, 10, 4, 11], _what='glass table (Emerald: two rows further south)')] + \
                       [dict(m='chushion01', tile=t, _what='seat (walkable)') for t in ([3, 9], [5, 10], [5, 11])] + \
                       [dict(m='stair_u01', stair=[1, 7], dir='W', _what='escalator up to the 2F (warp tile 1,7, rises west into the wall)')]
-    r['stairs'] = [[1, 7]]
+    # "stairs" replaces the warp tiles models_interior finds by itself (Sapphire's recipe gives none: the door tiles
+    # (9,1) (10,1), MB_NON_ANIMATED_DOOR), so the Elite Four door is listed again with the escalator. Without it the door
+    # tiles were plain floor: Black 2's warps 2/3 fire only when the player walks into a solid tile, so the player stepped
+    # onto the door and nothing happened (Emerald v1.1 "can't get into the Pokemon League", league_door 2026-10-19).
+    r['stairs'] = [[9, 1], [10, 1], [1, 7]]         # pokeemerald warps 2/3 (the Elite Four door) and 4 (the escalator)
     r['block'] = [[0, 6], [1, 6], [0, 8], [1, 8]]
     OUT[n] = r
     VARIANTS[LEAGUE] = n

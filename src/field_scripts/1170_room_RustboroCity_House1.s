@@ -42,13 +42,18 @@ Script_2:
 #define RH1_SLOT 0x8020                             // party slot picked (as Black 2's own trade scripts, b2:1040.s)
 #define RH1_OK 0x8021                               // 1 = a Pokémon was picked
 #define RH1_CHECK 0x8022                            // FieldTradeCheck: 0 = the wanted species
+#ifdef HOENN_EMERALD                                // (em_trades) Emerald: pokeemerald INGAME_TRADE_SEEDOT, the
+#define RH1_WANTED SPECIES_RALTS                     // Camper's Seedot "Dots" for a Ralts (same trade 24, Emerald's
+#else                                               // data; text src/text/script/emerald/0106_*)
+#define RH1_WANTED SPECIES_SLAKOTH
+#endif
 
 Script_3:                                        // RustboroCity_House1_EventScript_Trader (lock, faceplayer)
     h_lock
     SEPlay SEQ_SE_MESSAGE
     h_faceplayer
     h_goto_if_set FLAG_RUSTBORO_NPC_TRADE_COMPLETED, L_RH1_Completed
-    h_bufferspeciesname 1, SPECIES_SLAKOTH          // GetInGameTradeSpeciesInfo: STR_VAR_1 the wanted species, STR_VAR_2
+    h_bufferspeciesname 1, RH1_WANTED               // GetInGameTradeSpeciesInfo: STR_VAR_1 the wanted species, STR_VAR_2
     FieldTradeGetSpecies HLIB_TMP, RH1_TRADE        //   the offered one (read from the trade, as b2:1272.s does)
     h_bufferspeciesname 2, HLIB_TMP
     h_yesno 2, HLIB_TMP                             // Do you nickname your Pokémon? ... trade your Slakoth for my Makuhita?
@@ -69,7 +74,7 @@ L_RH1_Decline:
     h_msgbox 5                                      // Aww, it's a good Pokémon...
     VMJump L_RH1_Release
 L_RH1_NotRequested:
-    h_bufferspeciesname 1, SPECIES_SLAKOTH          // bufferspeciesname 0, VAR_0x8009
+    h_bufferspeciesname 1, RH1_WANTED               // bufferspeciesname 0, VAR_0x8009
     h_msgbox 4                                      // But that's no Slakoth. Tch, that's so disappointing...
     VMJump L_RH1_Release
 L_RH1_Completed:

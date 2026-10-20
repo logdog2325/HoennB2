@@ -51,9 +51,10 @@
    ],
    "uid": 2,
    "model": 22,
+   "model_emerald": 19,
    "script": 3,
    "dir": 3,
-   "what": "the trader (Sapphire object 2, WOMAN_5, FACE_RIGHT)"
+   "what": "the trader (Sapphire object 2, WOMAN_5, FACE_RIGHT); Emerald: a man, Horsea for Bagon (em_trades; pokeemerald OBJ_EVENT_GFX_MAN_3 = data/emerald/sprite_map.json 19)"
   },
   {
    "kind": "npc",

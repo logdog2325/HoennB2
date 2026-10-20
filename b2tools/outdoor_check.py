@@ -1076,6 +1076,10 @@ ACCEPT = [
     ('.*', 'layer', r'^buildings: h_kage\w* / h_kage\w*: ',
      "two Black 2 ground shadows (h_kage, flat under its own building and sign models) meeting where Sapphire puts "
      "buildings or signs side by side: the same dark texels on both"),
+    ('.*', 'layer', r'^terrain: (ike01 / ike01|sea_mizu1_1 / sea_mizu1_1): ',
+     "water.py's seam sheets (water_seams 2026-10-19, terrain/water.py _seam_layers): a second water sheet in the same "
+     "plane, drawn only through the first one's cracks (one polygon ID per sheet material, nsbmd_fix.water_materials: "
+     "the DS never blends a translucent pixel over one of the same ID)"),
     ('BirthIsland_Exterior|NavelRock_Exterior', 'door|walk', r'(HARBOR|cut off|warp 0 at)',
      "the islands' harbour rooms are not built: their doors stay parked (a sailor stands in front) and the player arrives "
      "by the ferry's scripted landing (events agent: data/story/events.json, events_lib.inc)"),

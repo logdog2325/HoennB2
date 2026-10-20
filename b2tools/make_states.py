@@ -40,8 +40,10 @@ def times(n, moves): return ' '.join([moves] * n)
 
 e.run(1200)
 for _ in range(40): e.press('A', 6, 50)          # title, Birch's intro
-for _ in range(90): e.press('A', 6, 40)          # boy, name AAAAAAA, Birch's 4 questions (YES/YES/HOENN/CLASSIC), into the truck
-                                                # (2026-10-11, 4 questions: 76 do not reach the truck, 80 do: 90 for margin)
+for _ in range(110): e.press('A', 6, 40)         # boy, name AAAAAAA, Birch's 6 questions (YES/YES/HOENN/CLASSIC/YES/YES), into the truck
+                                                # (2026-10-11, 4 questions: 76 do not reach the truck, 80 do: 90 for margin;
+                                                # 2026-10-19, 6 questions (seasons, the Exp. Share): 110 (mk_boot: 126-135 presses in all). Mashing A answers
+                                                # YES to both, so these states have real seasons and the Exp. Share on)
 run('W900 S')
 e.save_state(OUT + 'base_truck.dst')
 run('C10,10 R1 W300 ' + times(26, 'A W50') + ' W100 S')                        # step out, arrival, moving in

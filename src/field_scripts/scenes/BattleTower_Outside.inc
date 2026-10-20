@@ -64,7 +64,7 @@ L_BT_ChangeMind:
     ParentActorMsg MSGFILE_SCRIPT, 7, 0, 0      // Then, where would you like to go?
     VMJump L_BT_Choose
 
-BT_Arrive:                              // the player stands on the dock at (19,23), facing the attendant at (19,24)
+BT_Arrive:                              // the player stands on the dock at (19,23), facing the attendant at (19,24) (Emerald: (19,67), (19,68))
     ch2_land
     h_release
 #endif

@@ -27,7 +27,9 @@ Steps it runs:
 | Location name "Littleroot Town" | text done (place name 4); banner shows when walking in from Route 101 (not built yet) |
 
 ## Known gaps / next polish
-- House signs assume a boy player (Sapphire swaps them for May). Gender check comes with the story work.
+- House signs by gender (littleroot_may, 2026-10-19; a player's photo from real hardware): 0778 Script_2 (west house =
+  Brendan's) reads "<player>'s House" for a boy and "Prof. Birch's House" for a girl, Script_3 (east = May's) the other
+  way round, as Sapphire/Emerald's BrendansHouseSign / MaysHouseSign (checkplayergender). Until then both signs assumed a boy.
 - Twin uses only her pre-story line; Mom (story) is not placed.
 - Moving trucks (opening) stand at both houses (pack 0 res 460, `b2tools/models_truck_ext.py`, LittlerootTown "props" in
   data/hoenn_world.json); scripts hide them with `BMSetVisible 8, 170, 362, 0` (Brendan's) / `8, 179, 362, 0` (May's),

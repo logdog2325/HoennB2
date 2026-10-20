@@ -74,6 +74,9 @@ Test_PG_Start:
     h_setflag FLAG_RESCUED_BIRCH
     h_setflag FLAG_HIDE_BIRCH_BATTLE_POOCHYENA
     h_setflag FLAG_HIDE_BIRCH_STARTERS_BAG
+#ifdef HOENN_TEST_CHPGFIX
+#include "scenes/postgame_fix_test.inc"         // (postgame_fix) rods and TM94 for the Safari Zone tests
+#endif
 L_PGT_Done:
     VMReturn
 #endif

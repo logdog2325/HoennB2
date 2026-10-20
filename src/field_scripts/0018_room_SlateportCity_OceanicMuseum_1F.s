@@ -262,6 +262,9 @@ L_M1_PushBack:
 L_M1_CheckMoney:                            // ..._EventScript_CheckMoneyForFee
     MoneyCheck C3_TMP, 50
     h_goto_if_eq C3_TMP, 0, L_M1_NotEnoughMoney
+#ifdef HOENN_EMERALD
+    h_playse SE_SHOP                        // pokeemerald's CheckMoneyForFee: playse SE_SHOP (Ruby/Sapphire: none)
+#endif
     MoneySub 50
     MoneyWinUpdate
     h_msgbox_actor T_PleaseEnjoyYourself, C3_SEL
@@ -318,9 +321,17 @@ Story_M1_FamiliarGrunt:                     // ..._EventScript_FamiliarGrunt: th
     h_closemessage
     h_getplayerfacing C3_TMP                // VAR_FACING 2 (north) = Black 2 0
     h_goto_if_eq C3_TMP, 0, L_M1_GruntExitNorth
+#ifdef HOENN_EMERALD                        // pokeemerald: facing west/east the player turns down to watch him go
+    h_goto_if_eq C3_TMP, 1, L_M1_GruntExitSouth
+    h_applymovement 255, Mv_M1_PlayerWatchGruntExitWestEast
+L_M1_GruntExitSouth:
+#endif
     h_applymovement M1_FAMILIAR_GRUNT, Mv_M1_FamiliarGruntExit
     VMJump L_M1_GruntExit
 L_M1_GruntExitNorth:
+#ifdef HOENN_EMERALD
+    h_applymovement 255, Mv_M1_PlayerWatchGruntExitNorth
+#endif
     h_applymovement M1_FAMILIAR_GRUNT, Mv_M1_FamiliarGruntExitNorth
 L_M1_GruntExit:
     h_waitmovement
@@ -373,5 +384,17 @@ Mv_M1_FamiliarGruntExitNorth:
     walk_fast_down 4
     delay_8
     step_end
+#ifdef HOENN_EMERALD
+Mv_M1_PlayerWatchGruntExitNorth:            // ..._Movement_PlayerWatchGruntExitNorth (walk_in_place_faster = R/S fastest)
+    delay_16
+    delay_8
+    delay_4
+    walk_in_place_fastest_down
+    step_end
+Mv_M1_PlayerWatchGruntExitWestEast:         // ..._Movement_PlayerWatchGruntExitWestEast
+    delay_16
+    walk_in_place_fastest_down
+    step_end
+#endif
 #include "common/movement.inc"
     .balign 4, 0

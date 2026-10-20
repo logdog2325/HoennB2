@@ -91,7 +91,15 @@ Black 2 facts used (all from Black 2's own scripts or code, tested where marked)
 Tested 2026-10-06 (DeSmuME, fresh boot, boy): truck ride → step out → arrival (only your truck shows) → moving in →
 clock + Mom → TV report → May's mom → May upstairs (walks around you to the stairs) → twin's request at the north
 exit; the trucks are hidden after you go in. Build v9.
-Open: the girl's path (mirrored, untested); stand-in sounds; Black 2 fast-walk codes (the twin walks at normal
+Girl's path tested 2026-10-19 (littleroot_may, DeSmuME, new games as May on v18.0, Emerald v1.1 and the fix build;
+b2tools/release_kit/mk_boot.py's 9th argument `girl`): truck at May's house (east), Mom, clock, TV report, house signs
+(fixed then), Brendan's mom ("Our son is upstairs"), Brendan at his notebook / Emerald's Poke Ball meeting, his PC's
+e-mail, Mom's Running Shoes outside May's door and the manual on May's table: all as Sapphire / Emerald.
+Bedroom PC (user, 2026-10-19): before the first Pokémon (flag 2401) the player's own PC is Gen 3's Player's PC with its one
+Potion only (scenes/players_house_2f.inc L_PC_NoPokemon: Withdraw Item gives it once, FLAG_RECEIVED_PC_POTION, then
+"There are no items."; Turn Off / B), never Black 2's boxes; with a Pokémon, Black 2's PC (global 10090) as before.
+Fly to Littleroot still lands between the houses for both (Gen 3: in front of your own house): needs a code change.
+Open: stand-in sounds; Black 2 fast-walk codes (the twin walks at normal
 speed); a hidden truck can reappear if its chunk reloads without a field load (walking far away and back); the
 twin should wander again after Birch's rescue; Littleroot's Mom, Norman and the S.S. Ticket scenes come later.
 

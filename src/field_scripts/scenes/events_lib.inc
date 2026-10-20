@@ -96,9 +96,12 @@
 //      we sail to this place on the map? ... Please wait."   +2 "What's up, youngster? ... I'm afraid I can't help you..."
 //      +3 "Briney: Hold on a second! ..."   +4 "<player>, I'm terribly sorry. ... Let's find this island on this Old Sea Map!"
 //      +5 "Is it you who brought those odd tickets? ... Where shall we sail first?"   +6/+7/+8 Navel Rock / Birth Island /
-//      Faraway Island   +9 "Aye, right, as you like, then."
+//      Faraway Island   +9 "Aye, right, as you like, then."   +10 Southern Island (Emerald only: src/text/emerald/
+//      overrides_postgame_fix.json appends it)
 #define EV_LH_BRINEY 5
 #define EV_LH_MYSTIC 0x8034                 // Emerald VAR_TEMP_9: Mystic Ticket 0 none, 1 held, 2 held and not shown yet
 #define EV_LH_AURORA 0x8035                 // VAR_TEMP_D: Aurora Ticket
 #define EV_LH_MAP 0x8036                    // VAR_TEMP_C: Old Sea Map
+#define EV_LH_EON 0x8037                    // VAR_TEMP_E: Eon Ticket (Emerald only; Sapphire/Ruby keep their one-time trip)
+#define EV_LH_FIRST 0x8038                  // VAR_TEMP_B: the tickets shown for the first time (Eon 1, Aurora 2, Mystic 8; Emerald)
 #endif

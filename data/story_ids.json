@@ -5813,6 +5813,35 @@
    "kind": "flag",
    "chapter": "Emerald",
    "note": "Emerald Mirage Tower: set = the next zone init of Route 111's zone 370 keeps the tower as its cell is drawn (no roll); set by Route 112's zone init (its seam draws the tower's cell first) and by the desert part zone 610's, cleared by zone 370's and Mauville's (scenes/emerald/Route111_Mirage.inc)"
+  },
+  "FLAG_RECEIVED_PC_POTION": {
+   "id": 114,
+   "kind": "flag",
+   "chapter": "Ch0"
+  },
+  "FLAG_DEFEATED_LATIAS_OR_LATIOS": {
+   "id": 2392,
+   "kind": "flag",
+   "chapter": "Emerald",
+   "note": "Emerald Southern Island: the Lati was knocked out (pokeemerald's flag; cleared by the Hall of Fame: 0114 HF_EmeraldFlags)"
+  },
+  "FLAG_CAUGHT_LATIAS_OR_LATIOS": {
+   "id": 2393,
+   "kind": "flag",
+   "chapter": "Emerald",
+   "note": "Emerald Southern Island: the Lati was caught (pokeemerald's flag; scenes/emerald/SouthernIsland_Interior.inc)"
+  },
+  "FLAG_SHOWN_EON_TICKET": {
+   "id": 2394,
+   "kind": "flag",
+   "chapter": "Emerald",
+   "note": "Emerald Lilycove Harbor: the Eon Ticket was shown once (pokeemerald's flag; scenes/LilycoveCity_Harbor_Events.inc)"
+  },
+  "FLAG_BATTLE_FRONTIER_TRADE_DONE": {
+   "id": 2436,
+   "kind": "flag",
+   "chapter": "Emerald",
+   "note": "Emerald Battle Frontier Lounge6: the Beauty's Meowth-for-Skitty trade is done (pokeemerald's flag; src/field_scripts/emerald/0842_room_BattleFrontier_Lounge6.s)"
   }
  },
  "reserved": {

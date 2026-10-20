@@ -13,6 +13,9 @@
 // map-local work (Black 2 clears 0x4000-0x401F at every zone init, as Sapphire's VAR_TEMP_*): 0 = the invisible
 // Kecleons of this zone still have to be hidden (the zone's MapScriptConditions run c7's hide script, which sets it 1)
 #define C7_KECLEON_HIDDEN 0x4010
+// the Kecleons' level: Sapphire/Ruby/Emerald 30 (static_pokemon.inc, Route120's setwildbattle) on the scaled curve
+// (data/level_scaling.json; user decision 2026-10-19: the static battles follow the curve)
+#define C7_KECLEON_LEVEL 32
 
 // Common_EventScript_SetupRivalOnBikeGfxId with the bike sprites the sprites agents drew (src/sprites/overworld
 // 002-rival-brendan-bike, 005-rival-may-bike): an NPC with model 165 (WKOBJCODE 3) shows the object code in work
@@ -97,7 +100,7 @@
     h_playmoncry SPECIES_KECLEON               // waitse, playmoncry SPECIES_KECLEON, 2, delay 40, waitmoncry
     h_delay 40
     h_waitmoncry
-    h_static_battle SPECIES_KECLEON, 30, \flag, \uid
+    h_static_battle SPECIES_KECLEON, C7_KECLEON_LEVEL, \flag, \uid
     h_release
     .endm
 

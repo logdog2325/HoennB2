@@ -60,6 +60,7 @@
 #define FLAG_SYS_TV_HOME                             111   
 #define FLAG_UNKNOWN_BIRCH_380                       112   
 #define FLAG_VISITED_LITTLEROOT_TOWN                 113   
+#define FLAG_RECEIVED_PC_POTION                      114   
 // Ch0 reserved for its own new ids: flags 114-122, 125-126; works 0x403D-0x4040, 0x4042, 0x4056
 
 // ---- Ch1 ----------------------------------------------------------------------------------------------------
@@ -907,6 +908,10 @@
 #define FLAG_HIDE_MARINE_CAVE_KYOGRE                 2390  
 #define FLAG_DAILY_EM_REMATCHES                      2756    // Emerald rematches: clear = a new day since the 'fought today' bits were cleared (emerald_rematch.c clears VAR_EM_REMATCH_DONE_*, then sets it)
 #define FLAG_EM_MIRAGE_TOWER_KEEP                    2391    // Emerald Mirage Tower: set = the next zone init of Route 111's zone 370 keeps the tower as its cell is drawn (no roll); set by Route 112's zone init (its seam draws the tower's cell first) and by the desert part zone 610's, cleared by zone 370's and Mauville's (scenes/emerald/Route111_Mirage.inc)
+#define FLAG_DEFEATED_LATIAS_OR_LATIOS               2392    // Emerald Southern Island: the Lati was knocked out (pokeemerald's flag; cleared by the Hall of Fame: 0114 HF_EmeraldFlags)
+#define FLAG_CAUGHT_LATIAS_OR_LATIOS                 2393    // Emerald Southern Island: the Lati was caught (pokeemerald's flag; scenes/emerald/SouthernIsland_Interior.inc)
+#define FLAG_SHOWN_EON_TICKET                        2394    // Emerald Lilycove Harbor: the Eon Ticket was shown once (pokeemerald's flag; scenes/LilycoveCity_Harbor_Events.inc)
+#define FLAG_BATTLE_FRONTIER_TRADE_DONE              2436    // Emerald Battle Frontier Lounge6: the Beauty's Meowth-for-Skitty trade is done (pokeemerald's flag; src/field_scripts/emerald/0842_room_BattleFrontier_Lounge6.s)
 // Emerald reserved for its own new ids: flags 127-130, 133, 244-245, 248, 250, 254, 329, 331, 333-335, 441-443, 445-446, 502-506, 534-538, 574-578, 635-639, 742, 744-745, 747-748, 835-838, 840, 954, 956, 958-959, 961, 1054-1058, 1086-1090, 2347-2360, 2381-2394, 2436, 2443, 2446, 2467-2468, 2561-2567, 2571-2584, 2715-2719, 3033-3041, 3045-3063; works 0x4120-0x4122, 0x4124-0x4125, 0x4139, 0x413B, 0x413D-0x413F, 0x4145-0x4148, 0x414F, 0x4151-0x4155, 0x415F-0x4161, 0x4163-0x4164, 0x416A-0x4173, 0x4175, 0x4177, 0x417B-0x417D
 
 // ---- Black 2 system flags with the same meaning as Sapphire's -------------------------------------

@@ -1,0 +1,5 @@
+My Pokémon is a {0100:2}.\nDo you know it?{be00}\nIt’s quite cute and rather nice.{be01}\nThis little one, I could trade with\npride!{be01}\nWould you like to trade me a {0100:1}\nfor my {0100:2}?
+Oh, it’s adorable!\nThank you!{be00}\nI promise I’ll be good to it!{be01}\nOh! I hope you’ll be good to\nmy {0100:2}, too!
+Oh, I’m sorry!\nI don’t intend to trade for anything{be00}\nbut a {0100:1}.
+Oh, you won’t?\nWell, that’s fine, too.{be00}\nPlease come visit us again.
+Giggle!\nA Skitty is so much cuter than I had{be00}\nimagined. I’m delighted!

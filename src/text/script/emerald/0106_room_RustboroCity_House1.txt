@@ -1,0 +1,7 @@
+In all sorts of places, there are all\nsorts of Pokémon and people.{be01}\nI find that fascinating, so I go to all\nsorts of places.
+There’s a set of Pokémon picture books.
+Huh? My Pokémon is cute?\nSure, I knew that.{be01}\nBut if you really want, I’m willing\nto trade it to you.{be01}\nI’ll trade you my {0100:2} for\na {0100:1} if you want.
+Eheheh…\nPlease be good to my Pokémon.
+Huh? That doesn’t look anything like\na {0100:1} to me.
+Oh, if you don’t want to, that’s okay.\nBut my Pokémon is cute, you know…
+Any Pokémon can be cute if you raise\nit with care and kindness.

@@ -214,7 +214,7 @@
    "emerald": "BattleFrontier_Lounge5"
   },
   "BattleFrontier_Lounge6": {
-   "status": "todo",
+   "status": "auto",
    "map_id": "MAP_BATTLE_FRONTIER_LOUNGE6",
    "map_type": "MAP_TYPE_INDOOR",
    "entered_from": "BattleFrontier_OutsideEast",
@@ -234,7 +234,18 @@
      "dest_warp": 8
     }
    ],
-   "emerald": "BattleFrontier_Lounge6"
+   "emerald": "BattleFrontier_Lounge6",
+   "zone": 421,
+   "scripts": 842,
+   "init_scripts": 843,
+   "text": 650,
+   "entities": 598,
+   "area": 282,
+   "own_matrix": false,
+   "own_scripts": 2078,
+   "own_init": 2079,
+   "own_text": 1054,
+   "claimed_by": "em_trades (2026-10-19): the Battle Frontier lounge of Emerald's fourth in-game trade (the Beauty: Meowth for Skitty, b2tools/patches/trades.py); zone 421, own script/init/text 2078/2079/1054 and the room are this helper's (converter/allocate_interiors.py --claim)"
   },
   "BattleFrontier_Lounge3": {
    "status": "todo",

@@ -106,6 +106,31 @@ def tree_materials(bmd):
             n += 1
     return bytes(d), n
 
+# (water_seams 2026-10-19) The translucent water sheets' polygon ID, one value in every chunk. The DS draws no translucent
+# pixel over a translucent pixel of the same polygon ID (GX polygon attribute bits 24-29), so two sheets of one material
+# never blend twice where they overlap; water.py's seam sheets rely on it (terrain/water.py _seam_layers), also across
+# cells. CTRMap's writer gives an alpha material its index in the model as its ID (ike01 2-8, sea_mizu1_1 1-22 in our
+# chunks), so the same sheet had another ID in the next cell. Black 2: sea_mizu1_1 3 (Route 1 chunk 2, Undella Bay 247),
+# ike01 0 (Route 3 chunks 15/16, Striaton 11); ike01 takes 2 here, not 0: our pond banks' texture-alpha pieces (shore01)
+# draw with ID 0 and keep blending with the sheet as before.
+WATER_IDS = {'ike01': 2, 'sea_mizu1_1': 3}
+
+def water_materials(bmd):
+    """-> (new bytes, materials changed): WATER_IDS as the polygon ID of those materials (same length)."""
+    if bmd[:4] != b'BMD0': return bmd, 0
+    d = bytearray(bmd); n = 0
+    mdl = struct.unpack_from('<I', d, 16)[0]
+    for ent, _ in _ndict(d, mdl + 8):
+        m = mdl + struct.unpack_from('<I', d, ent)[0]
+        mo = m + struct.unpack_from('<I', d, m + 8)[0]
+        for me, name in _ndict(d, mo + 4):
+            if name not in WATER_IDS: continue
+            at = mo + struct.unpack_from('<I', d, me)[0] + 12          # NNSG3dResMatData polyAttr
+            pa = struct.unpack_from('<I', d, at)[0]
+            new = (pa & ~(0x3F << 24)) | WATER_IDS[name] << 24
+            if new != pa: struct.pack_into('<I', d, at, new); n += 1
+    return bytes(d), n
+
 if __name__ == '__main__':
     for f in sys.argv[1:]:
         b = open(f, 'rb').read()

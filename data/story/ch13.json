@@ -8,12 +8,16 @@
     19,
     24
    ],
+   "at_emerald": [
+    19,
+    68
+   ],
    "uid": 105,
    "model": 17,
    "script": 2,
    "dir": 0,
    "move": 14,
-   "what": "the ferry attendant (Sapphire object 5, BEAUTY, FACE_UP; scenes/BattleTower_Outside.inc script 2)"
+   "what": "the ferry attendant (Sapphire object 5, BEAUTY, FACE_UP; scenes/BattleTower_Outside.inc script 2; Emerald: pokeemerald BattleFrontier_OutsideWest's LOCALID_FRONTIER_FERRY_ATTENDANT on the dock, FACE_UP)"
   },
   {
    "kind": "npc",

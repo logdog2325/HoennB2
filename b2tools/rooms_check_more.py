@@ -197,9 +197,14 @@ class Room:
                 self.say('k', f'{len(lst)} people on Sapphire {self.sap(t)} without hide flags: {"; ".join(w for _, w in lst)[:160]}')
 
     # -------------------------------------------------------------------------------------------- (l) floor
-    def check_floor(self):
+    def check_floor(self, cfg=None):
         b = self.built
         if b is None: return
+        # a pit you fall through: a recipe "holes" tile with a step trigger on it (Mt. Pyre's holes, b2tools/
+        # facilities_pyre.py): nothing is drawn there on purpose, its trigger falls to the floor below as you step on
+        pits = {(x, z) for x0, z0, x1, z1 in self.recipe.get('holes', [])
+                for x in range(math.floor(x0), math.ceil(x1)) for z in range(math.floor(z0), math.ceil(z1))}
+        falls = pits & {tuple(t['at']) for t in (cfg or {}).get('triggers', []) if 'at' in t}
         seen, todo = set(), []
         V = {1: (0, 1), 2: (0, -1), 3: (1, 0), 4: (-1, 0)}           # Black 2 warp dir -> the way you walk in
         for s in self.meta['warp_spots']:
@@ -219,7 +224,7 @@ class Room:
             c = b.cells[p]
             try: h = b.plane_y(c, p[0] * T + 8, p[1] * T + 8)
             except Exception: h = 0
-            if not self.surface_at(p[0] * T + 8, p[1] * T + 8, ymin=h - 12, ymax=h + 3):
+            if not self.surface_at(p[0] * T + 8, p[1] * T + 8, ymin=h - 12, ymax=h + 3) and self.sap(p) not in falls:
                 bad.append(p)
         for comp in _components(set(bad)):
             s = sorted(self.sap(t) for t in comp)
@@ -288,11 +293,13 @@ def check_rom_textures(rom, rooms_dir, names):
                 f'{hd["area"]} set): built after the ROM, or left out (HOENN_SKIP_UNBUILT_ROOMS)?'); continue
         for meta in metas:
             for tex, src in meta['map_textures'].items():
-                st, sp = src_map(src)
+                # (["gen3", map, x, y]: a texture drawn from a Gen 3 metatile, Mauville Gym's switches: no Black 2 set to
+                #  compare it with, only its presence is checked; it crashed the Emerald release report, league_door)
+                st, sp = src_map(src) if isinstance(src, int) else (None, {})
                 for s in range(seasons):
                     rt, rp = items('rommap', texset + s, texsets[texset + s])
                     if tex not in rt: say(f'texture {tex} (set {src}) is not in the area {hd["area"]} map texture set {texset + s}: drawn untextured'); continue
-                    if rt[tex] != st.get(tex): say(f'texture {tex}: the area {hd["area"]} set {texset + s} has another texture under this name (the room shows that one, not set {src}\'s)')
+                    if st is not None and rt[tex] != st.get(tex): say(f'texture {tex}: the area {hd["area"]} set {texset + s} has another texture under this name (the room shows that one, not set {src}\'s)')
                     pl = tex + '_pl'
                     if pl in sp and rp.get(pl) != sp[pl]: say(f'palette {pl}: the area set {texset + s} has other colours under this name')
             infos, bmds = _pack_sections(packs[pack])
@@ -361,7 +368,7 @@ def run(rooms_dir, names, cfgs, kinds, rom=None, built=None, world=None):
             r = Room(rooms_dir, n, built(n) if built else None)
         except Exception as ex:
             out.append(('!', f'{n}: (!) cannot read the built room: {type(ex).__name__}: {ex}')); continue
-        for k, fn in (('h', r.check_black), ('i', r.check_textures_static), ('l', r.check_floor),
+        for k, fn in (('h', r.check_black), ('i', r.check_textures_static), ('l', lambda: r.check_floor(cfgs.get(n))),
                       ('k', lambda: r.check_story(objs.get(n, []), cfgs.get(n)))):
             if k in kinds:
                 try: fn()

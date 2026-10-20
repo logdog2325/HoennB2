@@ -143,3 +143,41 @@ Route 3 chunks 15/16, Striaton 11: shore01 only ever meets gake1_1 [bytes]). Bot
 - Beach slope is inside the water tile (Black 2 slopes the last sand tile, record class 0x19 with a slope).
 - Unsurfable water (Sapphire's map-border water) is solid at the water's height; Dive spots (deep water) are plain
   surfable sea (no Dive in Gen 5).
+
+## Water seams (water_seams, 2026-10-19) [code][test]
+Discord (Emerald, "Oldale Town", evening): thin light lines across a rectangular pond by an orange-roofed house and
+trees, Brendan on the grass bank to its right. melonDS on the v18.0/E v1.1 geometry shows exactly that at Petalburg
+City's pond (tile (96, 312): two horizontal lines, the middle one going on over the left bank, and a thin vertical one
+in the lower part, on the cell border x = 96); Route 102's east pond 5 tiles west of Oldale (x 158-163, z 302-306, in
+Oldale's cell (5, 9)) had the same kinds of lines (screenshots/water_seams). Same geometry in Sapphire/Ruby. Causes,
+all fixed in terrain/water.py:
+- **Grass over the water** (the lines DeSmuME shows too: Petalburg's two, Route 102's bank line, wedges over Route
+  114's ponds). tjunction.fix ran before the ground over water was cut (the cut ran when the model was written) and
+  re-fanned the ground's rectangles; the cut reads triangles by rounding corners to the tile grid, wrong for fans, and
+  kept slivers of ground over water: 182 triangles in Sapphire's world, 189 in Emerald's (~25 cells each).
+  `water.cut_ground_now` cuts before tjunction.fix (world.py write_cell): 0 left in both.
+- **Cracks in the water's layers.** The DS opens 1-pixel cracks along edges inside a surface (T-junctions, and shared
+  edges too). Through the translucent sheet (ike01 12/31) the light pond floor shows; through an opaque floor
+  (mizu_sita2, sea_mizu1) the sky. A cell border through a pond (x = 160 at Route 102, x = 96 at Petalburg) gives
+  T-junctions tjunction.fix can't see (it works per cell). Fix (`_seam_layers`): under every sheet a second sheet of
+  the same material in the same plane (one quad per water body, its bounding box reaching 2 tiles into the next built
+  cell, water under a deck counted at its own level, diagonal the other way), under every floor a second floor 4
+  lower. A same-ID translucent pixel is never blended twice on the DS, so the second sheet only shows through the
+  first one's cracks; `nsbmd_fix.water_materials` (patches/hoenn_world.py) gives ike01 polygon ID 2 and sea_mizu1_1 ID 3
+  in every chunk (CTRMap numbered them by material index, 2-8 and 1-22, so neighbouring cells also blended twice along
+  their border; Black 2: ike01 0, sea_mizu1_1 3). The box is used only where its other tiles hide the layer; else
+  (water of another level in it: Route 119's falls) the box's tiles that do, in column rectangles.
+- **Cracks where a bank meets the ground** (or a cliff's foot): the ground and the cracks fix's under-floor both end
+  on the bank's top line. `_bank_seams`: a strip of the land's ground 6 under the water's land level, 14 units into
+  the land tile and 2 under the slope.
+- Every seam quad is cut at half tiles into pieces at most 4 times as long as wide (`_square_pieces`): the diagonal of
+  a long thin quad runs within a pixel of the edges beside it for a long way, where cracks of both layers can meet.
+- Cost: Emerald a/0/0/8 +797 KB (it had 1.56 MB spare); largest chunk 110,364 B (22, 5) of 110,600. world.py
+  chunk_fit drops the water seams first at each step, so no cell has less of the ground cracks fix than in v18.0/E
+  v1.1: (13, 4) keeps its T-junction splits now (without water seams); (22, 6) keeps v18's state. outdoor_check size 0
+  in both worlds; collision, placements and world.json byte-identical to v18.0's/E v1.1's (walk_diff can't change).
+- Check: `python3 b2tools/water_seams_check.py WORLD [--before WORLD0] [cx_cz ...]` (inner edges of each water layer and
+  whether a polygon of the layer or the one under it backs them, water bank tops, ground over water, area the new
+  layers add where nothing hides them). `outdoor_check --kinds layer` accepts the coplanar seam sheets (ike01/ike01).
+- Left: the mitred corners of the banks (short diagonal seams over the floor) have no layer under them; cells (13, 4)
+  and (22, 6) have no water seams (chunk buffer).

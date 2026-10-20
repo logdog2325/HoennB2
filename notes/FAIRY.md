@@ -18,14 +18,17 @@ Design doc of the v16 Fairy type (user decision 2026-10-08, notes/DECISIONS.md) 
 | No Fairy TM | Gen 6's only Fairy TM is TM99 Dazzling Gleam; Black 2 has no TM99 and Hoenn's TM items stay as they are |
 
 ## Birch's questions (intro, after the name)
-Script: ov294 ASK_RIVAL_NAME (the last script hoenn_intro runs; the dead FAREWELL script after it gives the room), 15
+Script: ov294 ASK_RIVAL_NAME (the last script hoenn_intro runs; the dead FAREWELL script after it gives the room), 19
 of its 21 entries: "Ah, okay! You're X who's moving to my hometown..." → **question 1** (Fairy) → YES/NO → **question 2**
-(split) → YES/NO → **question 3** (music, music_check's: notes/MUSIC.md, patch hoenn_music) → HOENN/UNOVA → GOTO script
-10 (RIVAL_NAMED, dead since hoenn_intro dropped the rival naming; 10 of its 14 entries) → **question 4** (sprite style,
-sprite_switch's: patch sprite_switch, 2026-10-11) → CLASSIC/NEW → "All right, are you ready?" ... The answers go through
+(split) → YES/NO → **question 3** (music, music_check's: notes/MUSIC.md, patch hoenn_music) → HOENN/UNOVA →
+**question 4** (sprite style, sprite_switch's: patch sprite_switch, 2026-10-11) → CLASSIC/NEW → GOTO script 10
+(RIVAL_NAMED, dead since hoenn_intro dropped the rival naming; all 14 of its entries) → **question 5** (seasons,
+2026-10-18: notes/SEASONS.md) → YES/NO → **question 6** (the Exp. Share from the start, 2026-10-19:
+notes/RESEARCH_EXPSHARE_HM.md) → YES/NO → "All right, are you ready?" ... The answers go through
 intro command 31 (Black 2's unused INTRO_CMD_SET_MSG_LANGUAGE, now `Intro_SetConfigBit bit, value`) into the new game's
-Config (ov162 copies it into the save) and the save's own copy. The cursor starts on YES / HOENN / CLASSIC: mashing A
-gives Fairy on, modern split, Hoenn music, the classic sprites.
+Config (ov162 copies it into the save) and the save's own copy; question 6 passes an event flag instead of a bit
+(any argument >= 16: FLAG_EXP_SHARE_ON, set or cleared in the save's EventWork). The cursor starts on YES / HOENN /
+CLASSIC: mashing A gives Fairy on, modern split, Hoenn music, the classic sprites, real seasons, the Exp. Share.
 
 Text (src/text/overrides_fairy.json, file 0054 lines 26-30; lines 29, 32, 33 were dead rival/Juniper lines, blanked or
 reused, for room in the fixed text slot). One exchange, pages separated by " / ":
@@ -42,11 +45,19 @@ reused, for room in the fixed text slot). One exchange, pages separated by " / "
 > **28** (music_check) Third... the music! Every region has its own songs. / Would you like to hear Hoenn's music
 > on your journey, or Unova's? — **29** HOENN (bit 13 = 1) / **30** UNOVA
 >
-> **31** (sprite_switch) And last... how everyone looks! / Would you like to see people the way they looked in Hoenn
+> **31** (sprite_switch) Fourth... how everyone looks! / Would you like to see people the way they looked in Hoenn
 > long ago, or in Unova's newer style? — **32** CLASSIC / **33** NEW (bit 14 = 1)
+>
+> **34** (seasons) Fifth... the seasons! / Here in Hoenn, it's summer all year round. / Would you like the seasons to
+> change with the months instead? — YES = bit 15
+>
+> **35** (2026-10-19) And last... the Exp. Share! / It shares Exp. Points with your whole team, even the Pokémon that
+> didn't battle. / You can turn it on or off from your Bag whenever you like. / Would you like to start your journey
+> with an Exp. Share? — YES = FLAG_EXP_SHARE_ON; the truck's new-game script (scenes/truck.inc Script_30) adds the item
 
-(Line 26 says "four quick questions" since the 4th. Lines 0, 34 and 36, Black 2's unused space-filled placeholders,
-were shortened for the 152 B the 4th question needed in 0054's fixed text slot.)
+(Line 26 says "six quick questions" since the 6th. Lines 0, 3, 4, 35-39, Black 2's unused space-filled placeholders,
+were shortened for the 152 B the 4th question and the 260 B the 5th needed in 0054's fixed text slot; the 6th (line
+35) grew the slot by 512 B instead: text.py SLOT_EXTRA[54], which moves the system texts after 54 once.)
 
 | Options bit | Meaning (1) | Set by |
 |---|---|---|
@@ -54,7 +65,8 @@ were shortened for the 152 B the 4th question needed in 0054's fixed text slot.)
 | 12 | classic (Gen 3) physical/special rule | question 2, NO |
 | 13 | Hoenn music (music_check) | question 3, HOENN |
 | 14 | NEW (Gen 5 community) character sprites, src/sprites_gen5 (sprite_switch: b2tools/patches/sprite_switch.py) | question 4, NEW |
-| 15 | free | |
+| 15 | Black 2's seasons by the DS month (notes/SEASONS.md) | question 5, YES |
+| (flag 2058) | FLAG_EXP_SHARE_ON + the Exp. Share given in the truck (an event flag, not an options bit) | question 6, YES |
 
 ## How it works
 | Piece | Where | What |

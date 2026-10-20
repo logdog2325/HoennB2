@@ -21,8 +21,8 @@
    "at": [5, 2],
    "tile_only": true,
    "to": [552, 0],
-   "what": "Sapphire warp 2 -> Route110_TrickHousePuzzle1 0 (dir 1: arrival only, Sapphire has no warp behaviour here)",
-   "dir": 1
+   "what": "Sapphire warp 2 -> Route110_TrickHousePuzzle1 0 (dir 3: arrival only, Sapphire has no warp behaviour here)",
+   "dir": 3
   }
  ],
  "npcs": [],

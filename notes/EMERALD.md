@@ -398,6 +398,13 @@ below). Sapphire and Ruby build exactly as before (proofs below).
 **Phase 4**: the closed-door message (emerald_mech's script 2291) on the closed doors listed above; the Mirage Tower's
   collapse (LAYOUT_ROUTE111_NO_MIRAGE_TOWER: an alt layout + a free map-replace event); the Safari expansion's and the
   Frontier east half's own zones (wild tables, music) once they have scripts.
+  DONE for the Safari expansion's wild tables (postgame_fix 2026-10-19): each new area is a part zone over its whole map
+  (data/emerald/hoenn_weather.json "parts" with "wild": zones 355 / 436 copy zones 38 / 40's headers, people and scripts,
+  b2tools/patches/fixed_weather.py) playing pokeemerald's own gSafariZone_Northeast / _Southeast (land, water, the three
+  rods: a/1/2/7 files 138 / 139, converter/gen_encounters.py emerald_new_maps, data/emerald/hoenn_encounters.json) and,
+  for Rock Smash, Shuckle in zone 355 (patches/hm_free.py; Emerald's SafariZone_North, our SafariZone_Northeast, has
+  Geodude again: the name clash had given zone 38 the expansion's table). Crossing into a part respawns zone 38's / 40's
+  people (the weather parts' known swap). The Pokédex AREA page does not list Emerald-only tables (as Emerald's caves).
 
 ## Phase 4 mechanics (emerald_mech, 2026-10-12)
 
@@ -678,7 +685,7 @@ Gyms); `python3 emerald_rooms.py` rewrites every file below, `--check` only says
 | Sootopolis Gym 1F/B1F | Emerald's thin ice (5 new triggers, 7 Sapphire ones off; 3rd ramp at 67 steps, Sapphire 69), wider B1F (origin (1,-4)), fountains; Daphne/Annika new; **Wallace still stands where Emerald has Juan (story)** |
 | Birch's Lab | variant + table layout (alt room, event 4); Johto starters switched on (`EMJ_JOHTO_ON 1`, `data/story/emerald/e_ch11_johto.json`) |
 | 15 Center 2Fs | Emerald's 2F (+1 row: counters and the escalator one row down), warps trimmed to Emerald's 3 |
-| League 1F + new 2F | escalator to the new 2F (zone 344, Center 2F layout, bgm 1060), plants, table |
+| League 1F + new 2F | escalator to the new 2F (zone 344, Center 2F layout, bgm 1060), plants, table; the Elite Four door tiles (9,1) (10,1) are in the recipe's `"stairs"` with the escalator (a recipe's `"stairs"` replaces the door tiles the builder finds itself: v1.0-v1.1 left them out, the door tiles were floor and the door never fired; league_door 2026-10-19, rooms_check (e) "on a walkable tile" now catches it) |
 | Devon 1F/3F, Flat 1 2F, Fan Club, May's 2F | Emerald's furniture (Devon 1F displays, Flat 1's rug and table, May's pink rug) |
 | Mossdeep Game Corner | Emerald's 1F (boards, blocked counter; signs off); its basement warp is moved off the map by the zone init |
 | Contest Lobby | Emerald's 31x12 lobby; ch8a's 5 people `at_emerald` |

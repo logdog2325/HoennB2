@@ -1,0 +1,13 @@
+{
+ "_doc": "Emerald's in-game trades (em_trades 2026-10-19; b2tools/patches/trades.py EMERALD_TRADES): the nicknames and OT names of pokeemerald's sIngameTrades (src/data/trade.h) in title case, as Sapphire's in src/text/overrides.json (Makit, Elyssa), on the lines Black 2's trades 24-27 read (2n = nickname, 2n + 1 = OT). Lines 48-53 replace Sapphire's names in an Emerald build only; 54/55 are Black 2's trade 27 (Tangles / Slick), now the Battle Frontier's.",
+ "system/0037_field_trade_input_load_name.txt": {
+  "48": "Dots",
+  "49": "Kobe",
+  "50": "Pluses",
+  "51": "Roman",
+  "52": "Seasor",
+  "53": "Skylar",
+  "54": "Meowow",
+  "55": "Isis"
+ }
+}

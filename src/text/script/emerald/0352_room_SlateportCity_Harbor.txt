@@ -24,13 +24,13 @@ Hello, are you here for the ferry?\nMay I see your Ticket?
 {0100:0} doesn’t have the Ticket...{be01}\nI’m terribly sorry.{be01}\nYou must have a Ticket to board\nthe ferry.
 {0100:0} flashed the Ticket.{be01}\nPerfect! That’s all you need!{be01}\nAnd where would you like to go?
 Lilycove City it is, then!
-Battle Tower it is, then!
+Battle Frontier it is, then!
 Then, where would you like to go?
 Please board the ferry and wait for\ndeparture.
 Please sail with us another time!
-Lilycove
-Battle Tower
-Cancel
+Lilycove City
+Battle Frontier
+Exit
 This ferry is built to plow through\nfast-running currents.{be01}\nWe hope you enjoy your voyage with us.\nFeel free to explore the ship.
 We have made land in Slateport City.\nThank you for sailing with us.
 Capt. Stern: Oh, {0100:0}! I heard you\nbecame the Champion. Congratulations!{be01}\nOur crew found this on the seafloor,\ninside the hull of an old wreck.{be01}\nIt’s a sea map, faded by the years.\nIt shows an island that’s on no chart{be00}\nI know of.{be01}\nA Trainer like you should be the one\nto find it. Please, take it!

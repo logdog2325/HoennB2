@@ -8,6 +8,7 @@ switch. The test ROM is **not built yet**: the disk had 3.4 GB free and the rule
 ## Birch's seasons option (seasons agent, 2026-10-18; the user-tested prototype made a player choice)
 - **Birch's fifth question** (after the sprite style; fairy.py intro_script, text 0054 line 34): "And last... the
   seasons! Here in Hoenn, it's summer all year round. Would you like the seasons to change with the months instead?"
+  (Since 2026-10-19 it starts "Fifth... the seasons!": the Exp. Share question comes after it, notes/FAIRY.md.)
   YES / NO. Same text in Sapphire, Ruby and Emerald (0054 has no version overrides). Line 26 now says "five quick
   questions", line 31 starts "Fourth...". 0054 is at 5000 of its 5040-byte fixed slot (Black 2's unused placeholder
   lines 3, 4, 35, 37-39 shortened like 0/34/36 before).

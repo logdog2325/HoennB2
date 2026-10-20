@@ -14,3 +14,8 @@ Hey!\nYou...{be01}\nWho are you?{be01}\nOh, you’re {0100:0}, aren’t you?\nMo
 Brendan: Hey, it’s {0100:0}.{be01}\nI was just checking out my Pokédex.{be01}\nThere are still many Pokémon that\nI need to catch, I know, but this{be00}\nis looking pretty good.{be01}\nChecking this Pokédex out gives me\nthe urge to hit the road again.
 Brendan: I’m having a hard time deciding\nwhere I should catch Pokémon next.{be01}\nHey, {0100:0}, if I see you while I’m out\ncatching Pokémon, I can pitch you a{be00}\nbattle if you’d like.
 It’s Brendan’s Poké Ball!{be01}\nBetter leave it right where it is.
+What would you like to do?
+Withdraw Item
+Turn Off
+Withdrew 1 Potion.
+There are no items.

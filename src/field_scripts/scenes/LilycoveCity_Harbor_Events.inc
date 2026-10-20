@@ -10,9 +10,24 @@
 // Emerald sails to the islands only from Lilycove (its Slateport attendant offers Lilycove and the Battle Frontier): the
 // same here. The islands' sailors bring you back to this harbor (landing script 6, Ch13_LH_ArriveFromIsland).
 // (its defines EV_LH_*: scenes/events_lib.inc, needed before ch13's menu uses them)
+// EMERALD (postgame_fix 2026-10-19): the Eon Ticket is Emerald's fourth event ticket here (GetEonTicketState: the ticket
+// held with its ship = FLAG_SYS_HAS_EON_TICKET; FLAG_SHOWN_EON_TICKET), with its first-time scene (EonTicketFirstTime: "That
+// Pass...", the ferry sailor, Southern Island), Southern Island in the several-tickets menu and, afterwards, in the
+// destination menu for as long as the ticket is held, as pokeemerald. Sapphire/Ruby keep Sapphire's one-time Eon trip.
 
 // the three Get...State scripts: held = the ticket in the Bag and its FLAG_ENABLE_SHIP_ flag (the givers set both)
 Sub_EV_LH_TicketStates:
+#ifdef HOENN_EMERALD
+    h_setvar EV_LH_EON, 0                   // GetEonTicketState
+    h_goto_if_unset FLAG_SYS_HAS_EON_TICKET, L_EV_LH_S0
+    h_checkitem ITEM_EON_TICKET, 1, HLIB_RESULT
+    h_goto_if_eq HLIB_RESULT, 0, L_EV_LH_S0
+    h_setvar EV_LH_EON, 1
+    h_goto_if_set FLAG_SHOWN_EON_TICKET, L_EV_LH_S0
+    h_goto_if_set FLAG_ENCOUNTERED_LATIAS_OR_LATIOS, L_EV_LH_S0  // (saves of Emerald NDS v1.1 and earlier: the old trip made)
+    h_setvar EV_LH_EON, 2
+L_EV_LH_S0:
+#endif
     h_setvar EV_LH_MYSTIC, 0
     h_goto_if_unset FLAG_ENABLE_SHIP_NAVEL_ROCK, L_EV_LH_S1
     h_checkitem ITEM_MYSTIC_TICKET, 1, HLIB_RESULT
@@ -43,6 +58,23 @@ L_EV_LH_S3:
 L_EV_LH_EventTickets:
     VMCall Sub_EV_LH_TicketStates
     h_goto_if_eq EV_LH_MAP, 2, L_EV_LH_OldSeaMapFirstTime
+#ifdef HOENN_EMERALD
+    h_setvar EV_LH_FIRST, 0                 // GetFirstTimeShowingTicket (VAR_TEMP_B: Eon 1, Aurora 2, Mystic 8)
+    h_goto_if_ne EV_LH_EON, 2, L_EV_LH_F1
+    WorkAdd EV_LH_FIRST, 1
+L_EV_LH_F1:
+    h_goto_if_ne EV_LH_AURORA, 2, L_EV_LH_F2
+    WorkAdd EV_LH_FIRST, 2
+L_EV_LH_F2:
+    h_goto_if_ne EV_LH_MYSTIC, 2, L_EV_LH_F3
+    WorkAdd EV_LH_FIRST, 8
+L_EV_LH_F3:
+    h_goto_if_eq EV_LH_FIRST, 1, L_EV_LH_EonFirstTime
+    h_goto_if_eq EV_LH_FIRST, 2, L_EV_LH_AuroraFirstTime
+    h_goto_if_eq EV_LH_FIRST, 8, L_EV_LH_MysticFirstTime
+    h_goto_if_ne EV_LH_FIRST, 0, L_EV_LH_MultipleFirstTime
+    VMJump L_LH13_NoFirstTimeEventTickets   // NoFirstTimeEventTickets: "May I see your Ticket?" and the destination menu
+#endif
     h_goto_if_ne EV_LH_AURORA, 2, L_EV_LH_NoAurora
     h_goto_if_eq EV_LH_MYSTIC, 2, L_EV_LH_MultipleFirstTime
     VMJump L_EV_LH_AuroraFirstTime
@@ -88,6 +120,18 @@ L_EV_LH_NoAurora:
     ch2_hide_player
     .endm
 
+#ifdef HOENN_EMERALD
+L_EV_LH_EonFirstTime:                       // LilycoveCity_Harbor_EventScript_EonTicketFirstTime
+    h_setflag FLAG_SHOWN_EON_TICKET
+    h_msgbox LH13_T + 13                    // The ferry to Slateport is... Oh? That Pass...
+    ev_lh_get_sailor
+    h_msgbox_actor LH13_T + 14, LH13_SAILOR // Aye, mate, are you the one who brought that mighty odd Pass? ... All aboard!
+L_EV_LH_GoToSouthernIslandFirstTime:        // (Emerald's BoardFerryWithSailor: no heal, unlike Sapphire's Eon trip)
+    ev_lh_board_with_sailor
+    h_sail_ferry LH13_SI_ZONE, 13 + 15, 22 + 18, 1, 3      // warp MAP_SOUTHERN_ISLAND_EXTERIOR, 13, 22 (script 3 of its scene)
+    h_release
+#endif
+
 L_EV_LH_AuroraFirstTime:                    // LilycoveCity_Harbor_EventScript_AuroraTicketFirstTime
     h_setflag FLAG_SHOWN_AURORA_TICKET
     h_msgbox LH13_T + 13                    // The ferry to Slateport is... Oh? That Pass...
@@ -113,12 +157,30 @@ L_EV_LH_MultipleFirstTime:                  // LilycoveCity_Harbor_EventScript_M
     ev_lh_get_sailor
     ActorMsg MSGFILE_SCRIPT, EV_LH_T + 5, LH13_SAILOR, 0, 0   // Is it you who brought those odd tickets? ... Where shall we sail first?
     ListMenu_AnchorTopRight 31, 6, 0, 1, HLIB_TMP   // ScriptMenu_CreateLilycoveSSTidalMultichoice, 0x8004 = 1: the islands
+#ifdef HOENN_EMERALD
+    h_goto_if_ne EV_LH_EON, 2, L_EV_LH_M1   // not shown yet, in Emerald's order, each marked shown when listed
+    ListMenuAdd EV_LH_T + 10, 65535, 2
+    h_setflag FLAG_SHOWN_EON_TICKET
+L_EV_LH_M1:
+    h_goto_if_ne EV_LH_MYSTIC, 2, L_EV_LH_M2
+    ListMenuAdd EV_LH_T + 6, 65535, 3
+    h_setflag FLAG_SHOWN_MYSTIC_TICKET
+L_EV_LH_M2:
+    h_goto_if_ne EV_LH_AURORA, 2, L_EV_LH_M3
+    ListMenuAdd EV_LH_T + 7, 65535, 4
+    h_setflag FLAG_SHOWN_AURORA_TICKET
+L_EV_LH_M3:
+    ListMenuAdd LH13_T + 10, 65535, 6
+    ListMenuShow
+    h_goto_if_eq HLIB_TMP, 2, L_EV_LH_GoToSouthernIslandFirstTime
+#else
     ListMenuAdd EV_LH_T + 6, 65535, 3       // not shown yet (both here), each marked shown when listed
     ListMenuAdd EV_LH_T + 7, 65535, 4
     ListMenuAdd LH13_T + 10, 65535, 6
     ListMenuShow
     h_setflag FLAG_SHOWN_MYSTIC_TICKET
     h_setflag FLAG_SHOWN_AURORA_TICKET
+#endif
     h_goto_if_eq HLIB_TMP, 3, L_EV_LH_GoToNavelRockFirstTime
     h_goto_if_eq HLIB_TMP, 4, L_EV_LH_GoToBirthIslandFirstTime
     h_msgbox_actor EV_LH_T + 9, LH13_SAILOR // ExitFirstTimeTicketSailSelect: Aye, right, as you like, then.
@@ -179,6 +241,13 @@ L_EV_LH_OSM_Board:                          // BoardFerryWithBrineyAndSailorNort
 
 // the destination menu's islands (LilycoveCity_Harbor_EventScript_GoToNavelRock / GoToBirthIsland / GoToFarawayIsland):
 // "Please board the ferry and wait for departure.", the attendant steps aside, the crossing
+#ifdef HOENN_EMERALD
+L_EV_LH_GoToSouthernIsland:                 // LilycoveCity_Harbor_EventScript_GoToSouthernIsland
+    h_msgbox LH13_T + 6
+    ch13_board_dock LH13_ATTENDANT
+    h_sail_ferry LH13_SI_ZONE, 13 + 15, 22 + 18, 1, 3
+    h_release
+#endif
 L_EV_LH_GoToNavelRock:
     h_msgbox LH13_T + 6
     ch13_board_dock LH13_ATTENDANT

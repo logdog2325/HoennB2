@@ -318,6 +318,8 @@ class Field:
         self.nosurf = set()              # walkable tiles no surf starts from (step 12b; collision flag NOSURF)
         self.stilt_decks = set()         # walkways on posts over the forest floor (STILTS: Fortree), step 7
         self.stilt_ground = set()        # the floor tiles round them: no face, no skirt up to the deck (open_under)
+        self.road_deck, self.road_cross = set(), {}      # Route 110's raised Cycling Road (raise_road, step 11c)
+        self.road_rail, self.road_landing, self.road_base = set(), set(), {}
         self.notes = []
 
     def y(self, wx, wz):
@@ -490,6 +492,9 @@ def height_field(world, maps, cfg, trees=()):
     conn = {k for k in walk if cls(k) in CONNECT}
     stair_info = []
     fixed, structural = [], []
+    # (cycling_road 2026-10-25) Route 110's Cycling Road stands level with its ground here, its stairs flat: every step
+    # below (water, faces, trees, fences beside it) sees it at the ground's level; raise_road (step 11c) lifts the deck
+    road_r = {region[k] for k in walk if cls(k) == 'bike_path' and k in region}
     for comp in _components(conn, nb):
         cs = set(comp)
         side = {s: Counter(region[(p[0] + dx, p[1] + dz)] for p in comp if (p[0] + dx, p[1] + dz) not in cs
@@ -502,7 +507,7 @@ def height_field(world, maps, cfg, trees=()):
         mud = cls(comp[0]) == 'mud'
         stair_info.append((comp, axis, lo, hi, steps, mud))
         if lo is None or lo == hi: continue
-        if rlvl[lo] != rlvl[hi]: fixed.append((hi, lo, LEVEL * (rlvl[hi] - rlvl[lo]), comp[0]))
+        if rlvl[lo] != rlvl[hi]: fixed.append((hi, lo, 0 if {lo, hi} & road_r else LEVEL * (rlvl[hi] - rlvl[lo]), comp[0]))
         elif axis == 'z': structural.append((hi, lo, LEVEL * (1 if mud else steps), comp[0]))
     parent, off = list(range(len(rlvl))), [0] * len(rlvl)       # weighted union-find: off = height - parent's
     def find(r):
@@ -1154,6 +1159,9 @@ def height_field(world, maps, cfg, trees=()):
     #     for a surfer to pass under them, hidden (raise_bridges); last, so every height above (the water's level from
     #     its shores, the faces, the exposed rock) is what it was with the decks at their banks' level
     raise_bridges(F, world, walk, elev, cls, nb)
+    # 11c. the Cycling Road on its bridge (cycling_road 2026-10-25): Route 110's road deck ROAD_RISE over the ground and
+    #     the sea, its crossings two layers (raise_road)
+    raise_road(F, world, walk, elev, cls, nb)
 
     # 12. surf landing (final_check 2026-10-08): Sapphire lands a surfer only on elevation 3 (pokeruby
     #     field_player_avatar.c sub_8058EF0: an elevation mismatch with the surfer's 1 onto a tile of elevation 3; 0 and
@@ -1258,6 +1266,83 @@ def raise_bridges(F, world, walk, elev, cls, nb):
         F.notes.append(f'bridge at {min(comp)}: surf-under span at {D} over surf water at {U} (banks {h0} and {h1}, '
                        f'end tiles {[hs[i] for i in range(n) if i not in wet]})')
 
+ROAD_RISE = 32       # Route 110's Cycling Road deck over the ground (and the sea) under it (raise_road)
+
+def raise_road(F, world, walk, elev, cls, nb):
+    """(cycling_road 2026-10-25) Route 110's Seaside Cycling Road as Gen 3 has it: a road on a bridge. pokeruby and
+    pokeemerald Route110: the deck over land is elevation 4 with solid railings; the ground path crosses it at
+    elevation-15 road tiles (map rows 15 (x 26-28), 39-41 (x 11-13), 69-71 (x 16-18)) with elevation-3 ground on both
+    sides, so a walker (elevation 3) passes under the road there and cannot step onto the deck, a cyclist (4) rides over
+    them and cannot step off. Ours stood at the ground's level: through the gaps in the railings a walker stepped onto the
+    road and rode it without the gates or a Bike. Black 2 refuses a step of 20 units or more (ov012 field_actor_tool.c
+    ActorRouteCollCheckCore), and a walker less than ~32 under a deck shows through it (surf_under2 2026-10-18: 24 under
+    the road showed the hat), so the whole road - over land and over the sea, one level as in Gen 3 - stands ROAD_RISE
+    over the ground that step 2 leveled it with (its stairs flat there):
+      - road tiles (bike_path) +ROAD_RISE. Crossings (elevation-15 road with elevation-3 ground beside it and no water)
+        keep their ground height in F.road_cross: world.py bridge_layers gives them two layers, the path at the ground
+        (layer 0) and the deck (layer 1); Black 2 takes the layer nearest the actor, so a walker stays under the deck
+        (the deck beside it 32 up) and a cyclist on it (the ground beside it 32 down). Over the sea the deck stands 40
+        over the surfer, so bridge_layers keeps the water under it at the open water's height (raised, as Routes
+        119/120's plank bridges);
+      - the stairs up to the road (both gates' pockets) climb 16 a row from their foot (Black 2's 45-degree steps);
+        rows above the climb are a landing at the deck's height, drawn as the deck (Gen 3: 2 of the 3 rows climb);
+      - railings (unwalkable fence tiles, and Sapphire's walkable elevation-1 railings over the sea, beside a road tile
+        that is no crossing: ground.py _road_edge) and signs standing on the road go up with the deck;
+      - F.road_deck: every tile drawn as the deck (ground.py: deck, side faces, pillars, the ground under it); no rock
+        face or skirt runs up to it (_Lattice.open_under)."""
+    F.road_deck, F.road_cross, F.road_rail, F.road_landing = set(), {}, set(), set()
+    road = {k for k in walk if cls(k) == 'bike_path'}
+    if not road: return
+    base = {k: F.y(*k) for k in road}
+    F.road_base = dict(base)                 # (every deck tile's ground under it: ground.py road_under)
+    land = lambda n: n in walk and n not in road and cls(n) not in WATER
+    for comp in _components({k for k in road if elev.get(k) == 15}, nb):
+        cs = set(comp)
+        out = {n for p in comp for n in nb(p) if n not in cs and n not in road}
+        if any(cls(n) in WATER or (n in walk and elev.get(n) == 1) for n in out): continue   # (over the sea: bridge_layers)
+        if not any(land(n) and elev.get(n) == 3 for n in out): continue
+        for p in comp: F.road_cross[p] = base[p]
+    for k in road:
+        F.h[k] = base[k] + ROAD_RISE; F.coll_h.pop(k, None)
+    N8 = [(dx, dz) for dx in (-1, 0, 1) for dz in (-1, 0, 1) if dx or dz]
+    deck_by = lambda k: [F.y(k[0] + dx, k[1] + dz) for dx, dz in N8
+                         if (k[0] + dx, k[1] + dz) in road and (k[0] + dx, k[1] + dz) not in F.road_cross]
+    near = {(k[0] + dx, k[1] + dz) for k in road for dx, dz in N8} - road
+    for k in sorted(near):
+        e = world.get(k)
+        if e is None or not deck_by(k): continue
+        rail = e[1] == 'fence' and (not e[2] or elev.get(k) == 1)
+        sign = e[1] == 'sign' and sum(n in road for n in nb(k)) >= 2
+        if rail or sign:
+            F.road_base[k] = F.y(*k)
+            F.h[k] = max(deck_by(k)); F.coll_h.pop(k, None)
+            if rail: F.road_rail.add(k)
+            else: F.road_deck.add(k)
+    # the stairs up to the road: 16 a row from their foot, a landing at the deck's height above the climb
+    for comp in _components({k for k in walk if cls(k) == 'stairs' and k in F.slope}, nb):
+        ups = Counter((n[0] - p[0], n[1] - p[1]) for p in comp for n in nb(p) if n in road)
+        if not ups: continue
+        (dx, dz), _ = ups.most_common(1)[0]
+        side = {(0, -1): 'n', (0, 1): 's', (1, 0): 'e', (-1, 0): 'w'}[(dx, dz)]
+        at = lambda p: p[0] * dx + p[1] * dz                    # (grows towards the road)
+        lines = sorted({at(p) for p in comp})
+        g = min(F.y(*p) for p in comp)
+        D = max(F.y(*n) for p in comp for n in nb(p) if n in road)
+        rows = (D - g) // 16
+        if (D - g) % 16 or not 0 < rows <= len(lines):
+            F.notes.append(f'road stairs at {min(comp)}: {D - g} over {len(lines)} rows, left flat'); continue
+        for p in comp:
+            i = lines.index(at(p))
+            if i < rows:
+                F.slope[p] = (side, g + 16 * i, 16); F.h[p] = g + 16 * i + 8
+            else:
+                F.slope.pop(p, None); F.road_base[p] = g; F.h[p] = D; F.road_landing.add(p)
+            F.coll_h.pop(p, None)
+        F.notes.append(f'road stairs at {min(comp)}: {rows} rows climb {D - g}, {len(lines) - rows} landing row(s) at {D}')
+    F.road_deck |= road | F.road_rail | F.road_landing
+    F.notes.append(f'Cycling Road: {len(road)} road tiles +{ROAD_RISE}, {len(F.road_cross)} crossing tiles '
+                   f'{sorted(F.road_cross)[:1]}.., {len(F.road_rail)} railings, {len(F.road_landing)} landing tiles')
+
 # ---- geometry ------------------------------------------------------------------------------------------------------
 # Black 2's cliff (Route 1 chunk 2, Route 20 chunk 287, Route 19 chunk 282): the face stands in the LOW tile next to
 # the high ground; its lip (gake1_1 under grass, gake1_0 under rock) rolls 4 units down over the first half tile and
@@ -1302,6 +1387,8 @@ class _Lattice:
         walkway on posts q (STILTS)."""
         F = self.F
         if q in F.stilt_decks and k in F.stilt_ground: return True     # (a walkway on posts over the forest floor)
+        if q in F.road_deck and k not in F.road_deck and F.y(*q) > F.y(*k):   # (the raised Cycling Road over its ground:
+            return True                                                      # pillars and the floor, ground.py road_under)
         if q not in F.decks or (k not in F.wet and k not in F.noface): return False
         if q not in F.deck_water:                  # (a deck end resting on its bank keeps the bank under it)
             g = sys.modules.get('terrain.ground')

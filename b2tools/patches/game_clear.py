@@ -29,9 +29,12 @@ apply (a/2/1/5, the credits' pictures; ov266 reads them, decoded from its code):
     Zekrom. They are replaced by data/credits/*.png (indexed PNGs made by work/agents/halloffame/tools/credits_pics.py from
     emulator shots of our own Hoenn maps: Black 2's art), same sizes, so the archive keeps its size; the sprite over
     command 9's picture is made transparent (its tiles zeroed). The staff text (message file 369) is Black 2's, unchanged.
+  - Per version (hof_fix credits photos, 2026-10-25): data/credits/emerald/<file> replaces data/credits/<file> in an Emerald
+    build (version.overlay_file): Emerald's own maps and Brendan / May. Sapphire and Ruby share data/credits. Shots retaken
+    from the v18.2 / v1.3 release ROMs at noon (EMU_HOUR=12), seasons off (summer), the NEW sprites (Birch's 4th question).
 """
 import os, json, struct, sys
-import narcio
+import narcio, version
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, '..', '..'))
 
@@ -129,11 +132,11 @@ def apply(files):
     for p in range(PICS):
         for g, gname in enumerate(('m', 'f')):
             name = cfg['photos'][p][gname]
-            pix, pal = _png_indexed(os.path.join(DATA, name))
+            pix, pal = _png_indexed(version.overlay_file(os.path.join(DATA, name)))
             b = PIC_FIRST + 12 * p + 3 * g
             e[b], e[b + 1], e[b + 2] = _encode(e[b], e[b + 1], e[b + 2], pix, pal, True)
         done.append(cfg['photos'][p].get('place', str(p)))
-    pix, pal = _png_indexed(os.path.join(DATA, cfg['final']['file']))
+    pix, pal = _png_indexed(version.overlay_file(os.path.join(DATA, cfg['final']['file'])))
     e[CMD9], e[CMD9 + 1], e[CMD9 + 2] = _encode(e[CMD9], e[CMD9 + 1], e[CMD9 + 2], pix, pal, False)
     spr = bytearray(e[SPRITE_NCGR])
     assert spr[:4] == b'RGCN' and spr[0x10:0x14] == b'RAHC'

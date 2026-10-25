@@ -24,3 +24,28 @@ Credit every author used in release/CREDITS.md, the public README's Credits and 
 | File | What | Author (credit) |
 |---|---|---|
 | emerald/brendan_emerald_hyo-oppa.png | Brendan, Emerald outfit: overworld walk/run/bike/surf, item, front, 5-frame back throw (no fishing) | hyo-oppa: "give credit if used" on the sheet; the DeviantArt page also says "DO NOT EDIT!": no colour merges or other edits without asking |
+
+## hoenn_npcs_141/ (a Discord member, 2026-10-23; installed 2026-10-25, NEW set only)
+
+141 Gen 5-style NPC overworld sheets (32x384, 12 frames). Installed by b2tools/sprite_community_npcs.py (frames
+reordered for Black 2 and shifted down one row, never redrawn or recoloured); `python3 b2tools/sprite_community_npcs.py
+plan` lists every sheet's use or why it is not used. The artist is the name in the file name:
+
+| Artist | Sheets in the folder | Used (NEW set) |
+|---|---|---|
+| PurpleZaffre | 72 (NPC_0xx, NPC_1xx, NPC_2xx, NPC_Zxx, Birdkeeper) | Youngster, Twins, School Kids, Picnicker, Swimmers, Tubers, Gentleman, Black Belt, Running Triathletes, Fisherman, Hiker, Scientist, Mart clerk, Psychics, Sailor, Mom, Gabby, Ty, Maxie, Ace Trainers, Beauty, Bird Keeper, Battle Girl, Camper, Ninja Boy, Bug Catcher, Bug Maniac, Parasol Lady, Lady, Poké Maniac, Pokémon Breeders, Collector |
+| DiegoWT | 38 (NPCxx, trXxx, Aqua, Archie, Shelly, Wallace, Lisia, Aroma Lady, Backpacker) | Cycling Triathletes, Devon staff, cook, Pokémon Center nurse, Shelly, Rich Boy, Aroma Lady, Pokémon Ranger (M) |
+| izzyvicious | 17 (Leader_*) | Drake, Phoebe, Sidney, Courtney (Ruby), the seven Frontier Brains (Emerald) |
+| brawlzilla | 4 | Dragon Tamer, Kindler, Experts (M, F) |
+| pokelustcompany | 1 | Hex Maniac |
+| KleinStudio | 3 (Mom, Rival Mom, Wally) + 1 with Kymotonian (Birch) | none (Wally/Birch already in NEW; the Moms draw a shadow under the side frames) |
+| lime029 | 1 (Hoenn Delinquent) | none (not a Gen 3 class) |
+
+Ask the user who made these (credit pending):
+- 4 sheets without an artist in the name: Leader_Wally.png (not used), NPC_026__Lass.png (Lass), trPokeFan_F.png
+  (Poké Fan F), trPokeFan_M_2.png (Poké Fan M).
+- 15 recolours ("_Recolour" in the name; base artist in the name, recolourist unknown): Aromalady (DiegoWT),
+  Birdkeeper, NPC_009 Battle Girl, NPC_022 Reporter (Gabby), NPC_043 Lady, NPC_053 Bug Maniac, NPC_060 Ninja Boy,
+  NPC_083 Parasol Lady, NPC_084 Poké Maniac, NPC_205 / NPC_208 athletes (PurpleZaffre), Leader_Courtney (izzyvicious),
+  trRichBoy (DiegoWT): used; Leader_Tabitha (izzyvicious, 29 colours) and trGuitarist_2 (DiegoWT, 24 colours): not
+  used (over Black 2's 15 colours; a 15-colour version from the artist would fit).

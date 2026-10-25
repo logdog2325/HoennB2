@@ -916,6 +916,10 @@ def map_events(name, mp, zones, put, hgt, zone_at, world):
             npc.update(move=mv['move'], areaw=mv['areaw'], areah=mv['areah'])
             if 'dir' in mv and 'dir' not in ncfg: npc['dir'] = mv['dir']
         if 'uid' in ncfg: npc['uid'] = ncfg['uid']          # fixed actor id for scripts (ActorCmdExec etc.)
+        if (bridge_layers(world).get((wx, wz)) or ('',))[0] in ('deck', 'cross', 'end'):
+            # (cycling_road 2026-10-25) on a two-layer deck (Route 110's raised Cycling Road over the sea: water at -8
+            # under its deck at 32) a person at y 0 stood on the water layer, the nearer one: the deck's height (fx32)
+            npc['y'] = round(hgt(wx, wz) * 4096)
         if 'move' in ncfg: npc.update(move=ncfg['move'], areaw=0, areah=0)   # settings override Sapphire's (0 = stand)
         zones.setdefault(zone_at(wx, wz), new_zone())['npcs'].append(npc)
     for c in sapphire.get('coord_events', []):    # step triggers: Sapphire coord events with a var/value
@@ -1057,9 +1061,11 @@ def bridge_layers(world):
     under with no dip), their dry end tiles solid under the walker's layer. A deck that fails every choice keeps one
     layer (logged). Every other tile of a two-layer chunk has the same record in both layers. Returns {world tile:
     (kind, deck height, water record, solid height)}; {} without the height field.
-    Elevation-15 tiles over land (Fortree's walkways, Route 110's road south of the sea, Littleroot's two) keep one
-    layer. People standing on a deck need its height as their y (patches/story.py npc y: y 0 would put them on the
-    water when it is nearer 0 than the deck; Route 110's deck is at 0)."""
+    Elevation-15 tiles over land (Fortree's walkways, Littleroot's two) keep one layer; Route 110's road crossings
+    (cycling_road 2026-10-25, terrain/heights.py raise_road: the whole road stands 32 over the ground and the sea, so
+    its spans over the sea take the raised first choice) are 'cross': layer 0 the path at the ground, layer 1 the deck.
+    People standing on a deck need its height as their y (patches/story.py npc y, patches/trainers.py, map_events: at
+    y 0 the water 8 under it is nearer than the deck at 32)."""
     key = (id(world), id(HF))
     if key in _BRIDGES: return _BRIDGES[key]
     _BRIDGES.clear(); out = _BRIDGES.setdefault(key, {})
@@ -1144,6 +1150,12 @@ def bridge_layers(world):
         for k in comp: out[k] = ('deck', height(k), rec_at(Ud), None)
         for n in rails: out[n] = ('rail', rail_d[n] + dS, rec_at(Ur), None)
         for n in ends: out[n] = ('end', None, rec_at(Ud), E0[n])
+    # (cycling_road 2026-10-25) the Cycling Road's crossings (terrain/heights.py raise_road: Gen 3's elevation-15 road
+    # tiles over the ground path, Route110 rows 15, 39-41, 69-71): layer 0 the path at the ground's height, layer 1 the
+    # deck as built, ROAD_RISE over it. A walker (nearest layer: the path) meets the deck beside it 32 up, a cyclist on
+    # the deck the ground beside it 32 down: both refused (20-unit step), as Gen 3's elevations 3 and 4
+    for k, g in getattr(HF, 'road_cross', {}).items():
+        if k in world: out[k] = ('cross', height(k), (0, H_.flat_index(g), None, None), None)
     return out
 
 BRIDGE_CLEAR = 24      # (units a walk-under deck stands over the water under it, at least: bridge_layers)
@@ -1200,6 +1212,7 @@ def bridge_split(per, c, world):
         surf = rec[2] in (0x3F, 0x3D) and not rec[3] & 1
         if kind == 'deck': a, b = wrec, rec
         elif kind == 'rail': a, b = (rec if surf and rec[1] == wrec[1] else wrec), (0, H_.flat_index(deck_y), 0x01, 0x81)
+        elif kind == 'cross': a, b = (0, wrec[1], rec[2], rec[3]), rec     # (the path under the Cycling Road)
         else: a, b = (0, H_.flat_index(solid_y), 0x01, 0x81), rec
         struct.pack_into('<HHHH', l0, o, *a); struct.pack_into('<HHHH', l1, o, *b)
     return bytes(l0), bytes(l1)
@@ -1208,12 +1221,13 @@ CLIFF_MATS = {'gake01a', 'yamagake01', 'gake1_0', 'gake1_1', 'out57_gake01a', 'o
 UNDERFLOOR = [True]    # (build_cell: the cracks fix's ground under-floor; write_cell's chunk_fit turns it off for a cell)
 CHUNK_LIMIT = 110600   # Black 2's chunk buffer for map type 0 (0x1b008, ov036 MAP_CONFIGS[0]; outdoor_check.py size)
 
-def chunk_bytes(d):
+def chunk_bytes(d, model='terrain.dae'):
     """(bridges 2026-10-18) The size of cell directory d's chunk as patches/hoenn_world.py packs it ('WB'/'GC' container:
     20 + model + collision layers + placements, as outdoor_check.py check_size), its model converted here with ToNsbmd
-    (rebuild_slice.sh converts every cell again later: the same bytes). None when Java or ToNsbmd is not there."""
+    (rebuild_slice.sh converts every cell again later: the same bytes). None when Java or ToNsbmd is not there.
+    model: another model file of d (season_variants: a season's chunk, its .nsbmd next to it)."""
     import subprocess
-    dae, out = os.path.join(d, 'terrain.dae'), os.path.join(d, 'terrain.nsbmd')
+    dae, out = os.path.join(d, model), os.path.join(d, model[:-4] + '.nsbmd')
     pal = os.path.join(OUT, 'palettes.txt')
     write_palettes(pal)
     cp = ':'.join(os.path.join(ROOT, p) for p in ('work/java', 'tools/CTRMap.jar', 'tools/ctrmap-plugins/CTRMapV-1.4.1.jar'))
@@ -1222,7 +1236,7 @@ def chunk_bytes(d):
     except OSError:
         return None
     if r.returncode or not os.path.exists(out): return None
-    n = 20 + sum(os.path.getsize(os.path.join(d, f)) for f in ('terrain.nsbmd', 'collision.per', 'placements.bin'))
+    n = 20 + os.path.getsize(out) + sum(os.path.getsize(os.path.join(d, f)) for f in ('collision.per', 'placements.bin'))
     if os.path.exists(os.path.join(d, 'collision1.per')): n += 4 + os.path.getsize(os.path.join(d, 'collision1.per'))
     return n
 
@@ -1346,11 +1360,15 @@ def write_cell(d, m_name, c, world, trees, cfg_maps, placements, extra):
         m.normals = {t: (0, 1, 0) for t in TREE_MATS}   # (normal (0, 1, 0) in all its chunks), the cards too
         clear_tree_layers(m)                            # (tree parts 2 clear of rock faces and each other: flicker)
         return m
-    def write_dae(m):
-        return m.write(os.path.join(d, 'terrain.dae'), wrap=wraps | {t: ('WRAP', 'CLAMP') for t in m.tris if t in (
+    def write_dae(m, name='terrain.dae'):
+        return m.write(os.path.join(d, name), wrap=wraps | {t: ('WRAP', 'CLAMP') for t in m.tris if t in (
             'ki02ax', 'ki03ax', 'ki02c', 'ki03bx', 'ki03dx', 'michi01a', 'dansa01a', 'kusa_ec1', 'kusa_ec2', 'kusa_ec3')}
             | {'michi_hage': ('CLAMP', 'CLAMP')})
     finish(m)
+    # (perf 2026-10-25) the seasonal decals (terrain/seasons.py) leave the chunk every season draws: in it all year
+    # (clear outside their season) they cost every player their polygons and bytes (frame drops in v18.2 / Emerald
+    # v1.3, Fortree, Mauville). They go into their own season's chunk (season_variants, below)
+    dec = {k: m.tris.pop(k) for k in list(m.tris) if k in SEASON_MATS}
     pre = {k: [list(t) for t in v] for k, v in m.tris.items()}       # (chunk_fit: before the splits)
     # the ground's T-junctions split: melonDS and the hardware open 1-pixel cracks there that show the background
     # (purple/blue lines across Slateport and elsewhere, Discord 2026-10-18; terrain/tjunction.py)
@@ -1379,14 +1397,7 @@ def write_cell(d, m_name, c, world, trees, cfg_maps, placements, extra):
             else: WATER_MOD._SEAMS.pop(m_name, None)
             return True
         over = lambda: n is not None and n > CHUNK_LIMIT
-        drops = []                  # (seasons2) Black 2's seasonal decals go first, before any of the cracks fix
-        for mats in (('ochiba_h',), ('_ha01',), ('kisetu_yuki',)):
-            if not over(): break
-            if not any(k in m.tris for k in mats): continue
-            for k in mats: m.tris.pop(k, None); pre.pop(k, None)
-            drops += mats; ntri = write_dae(m); n = chunk_bytes(d)
-            what = 'no ' + ', '.join(drops)
-            SEASON_STATS.setdefault('dropped', []).append((c, mats[0]))
+        # ((seasons2) the seasonal decals went first here; since perf 2026-10-25 they are in their seasons' chunks)
         if over() and seams(False):
             ntri = write_dae(m); n, what = chunk_bytes(d), 'no water seams'
         if over():
@@ -1397,7 +1408,7 @@ def write_cell(d, m_name, c, world, trees, cfg_maps, placements, extra):
             UNDERFLOOR[0] = False
             try: m = finish(build_cell(m_name, c[0], c[1], world, trees, cfg_maps)[0])     # (water.draw: seams again)
             finally: UNDERFLOOR[0] = True
-            for k in drops: m.tris.pop(k, None)
+            for k in SEASON_MATS: m.tris.pop(k, None)
             ntri = write_dae(m); n, what = chunk_bytes(d), 'no T-junction splits, no under-floor'
         if over() and seams(False):
             ntri = write_dae(m); n, what = chunk_bytes(d), 'no T-junction splits, no under-floor, no water seams'
@@ -1406,7 +1417,75 @@ def write_cell(d, m_name, c, world, trees, cfg_maps, placements, extra):
         if n is not None and n > CHUNK_LIMIT:
             print(f'warning: chunk_fit: cell {c}: {n} B, over the chunk buffer ({CHUNK_LIMIT}) even without the cracks fix')
     json.dump(dict(cell=list(c), **extra, collision=grid, triangles=ntri), open(os.path.join(d, 'chunk.json'), 'w'), indent=1)
+    est = lambda k: 20 + len(per) + (4 + len(per1) if per1 else 0) + 4 + 16 * len(placements[c]) + 40 * k
+    season_variants(d, m, dec, write_dae, est)
     return ntri
+
+# ---- the seasons' own chunks (perf 2026-10-25) -------------------------------------------------------------------------
+# Black 2 swaps a chunk for another by season: a/0/1/0 entries of condition 0 (ov012 map_replace.c: values[season],
+# GameSystem_GetSeason; Route 20's autumn chunks 286-289 -> 290-293 with the falling leaves, Icirrus' winter chunks),
+# applied when the matrix loads (every warp; the season changes only then). seasons2 had put its decals in every
+# season's chunk, clear outside their season: v1.3 / v18.2 drew them all year (+80-260 polygons in the 2x2 chunks
+# around Fortree and Mauville, whose drawing already took about twice Black 2's busiest; frame drops reported there).
+# Now the cell's own chunk (spring and summer, and every season for players who answered NO to Birch's question) has
+# none; autumn's chunk has the leaves and the falling-leaf ribbons, winter's the snow. patches/hoenn_world.py appends
+# them after every other chunk of the world and adds the entries.
+SEASON_KINDS = (('autumn', 2, ('ochiba_h', '_ha01')), ('winter', 3, ('kisetu_yuki',)))   # (Black 2's seasons 0-3)
+SEASON_PENDING = {}   # cell dir -> [(name, season, model file in the dir)]: season_variants -> season_promote
+SEASON_DIRS = {}      # cell dir name -> {season: its season chunk's dir name}
+
+def season_variants(d, m, dec, write_dae, est):
+    """The season models of cell d: its model as written (m) + that season's decals (dec), as season_<name>.dae in d.
+    Over the chunk buffer (measured when est(triangles), the 40 B a triangle bound, is over it) the leaves go, then the
+    ribbons, as chunk_fit did. season_promote() gives a kept cell's seasons their own dirs."""
+    out = []
+    for name, season, mats in SEASON_KINDS:
+        have, fname = [k for k in mats if dec.get(k)], f'season_{name}.dae'
+        while have:
+            for k in have: m.tris[k] = dec[k]
+            try: ntri = write_dae(m, fname)
+            finally:
+                for k in have: del m.tris[k]
+            n = chunk_bytes(d, fname) if est(ntri) > CHUNK_LIMIT else None
+            if n is None or n <= CHUNK_LIMIT: break
+            SEASON_STATS.setdefault('dropped', []).append((os.path.basename(d), have.pop(0)))
+        if have: out.append((name, season, fname))
+    if out: SEASON_PENDING[d] = out
+
+def season_rename(d, old, new):
+    """The model name in d's season models too (build_standalone: the warp-only maps' cells share one name)."""
+    for _, _, fname in SEASON_PENDING.get(d, []):
+        p = os.path.join(d, fname)
+        text = open(p).read().replace(f'"{old}"', f'"{new}"')
+        open(p, 'w').write(text)
+
+def season_promote(d):
+    """Cell d is kept: its season models become cells of their own, alt_season_<name>_<d's name>/ (navgrid.py and the
+    walk checks skip alt_*) with d's collision, placements and textures."""
+    for name, season, fname in SEASON_PENDING.pop(d, []):
+        base = os.path.basename(d)
+        vd = os.path.join(os.path.dirname(d), f'alt_season_{name}_{base}')
+        os.makedirs(vd)
+        for f in os.listdir(d):
+            if f.endswith('.png') or f in ('collision.per', 'collision1.per', 'placements.bin'):
+                shutil.copy(os.path.join(d, f), os.path.join(vd, f))
+        os.rename(os.path.join(d, fname), os.path.join(vd, 'terrain.dae'))
+        if os.path.exists(os.path.join(d, fname[:-4] + '.nsbmd')):     # (season_variants measured it)
+            os.rename(os.path.join(d, fname[:-4] + '.nsbmd'), os.path.join(vd, 'terrain.nsbmd'))
+        cj = json.load(open(os.path.join(d, 'chunk.json'))); cj['season'] = season
+        json.dump(cj, open(os.path.join(vd, 'chunk.json'), 'w'), indent=1)
+        SEASON_DIRS.setdefault(base, {})[season] = os.path.basename(vd)
+
+def season_cells(groups):
+    """world.json 'season_cells': [dict(dir, base_chunk, season)] for every kept cell with season chunks; groups:
+    [(cell dir name, its chunk id)] (a chunk shared by identical cells once)."""
+    out, seen = [], set()
+    for dname, chunk in groups:
+        if chunk in seen: continue
+        seen.add(chunk)
+        for season, vd in sorted(SEASON_DIRS.get(dname, {}).items()):
+            out.append(dict(dir=vd, base_chunk=chunk, season=season))
+    return out
 
 def main():
     global HF
@@ -1462,6 +1541,7 @@ def main():
         d = os.path.join(OUT, 'cells', f'{c[0]:02d}_{c[1]:02d}')
         ntri = write_cell(d, f'hoenn_{c[0]}_{c[1]}', c, world, trees, cfg['maps'], placements,
                           dict(chunk=chunk_id[c], zone=cells[c]))
+        season_promote(d)
         report.append(f'cell {c}: chunk {chunk_id[c]}, zone {cells[c]}, {ntri} triangles, {len(placements[c])} placements')
     cell_dir = lambda cx, cz: os.path.join(OUT, 'cells', f'{cx:02d}_{cz:02d}') if (cx, cz) in chunk_id else None
     alts = build_alts(cfg, lay, world, cells, chunk_id, rects)       # Route 131 after the game (alt_layouts)
@@ -1477,10 +1557,16 @@ def main():
             a['chunk'] = nxt; nxt += 1
             report.append(f"{g['group']} alt cell ({a['cx']}, {a['cz']}): chunk {a['chunk']} for {a['base_chunk']} while "
                           f"map replace event {a['event']} is set ({a['map']} {a['layout']})")
+    seasonal = season_cells([(f'{c[0]:02d}_{c[1]:02d}', chunk_id[c]) for c in order] + [(a['dir'], a['chunk']) for a in alts]
+                            + [(c_['dir'], c_['chunk']) for g in standalone for c_ in g['cells'] + g.get('alt_cells', [])])
+    for s in seasonal: s['chunk'] = nxt; nxt += 1      # (perf: the seasons' chunks after every other chunk)
+    report.append(f'season chunks: {len(seasonal)} for {len({s["base_chunk"] for s in seasonal})} cells, chunks '
+                  f'{seasonal[0]["chunk"] if seasonal else "-"}..{seasonal[-1]["chunk"] if seasonal else "-"}')
     json.dump(dict(matrix=cfg['matrix'], width=W, height=H, area=cfg['area'],
                    cells=[dict(cx=c[0], cz=c[1], chunk=chunk_id[c], zone=cells[c]) for c in order],
                    zones={str(k): v for k, v in zones.items() if k is not None}, standalone=standalone,
-                   **({'alt_cells': alts} if alts else {}), **({'zone_rects': rects} if rects else {})),
+                   **({'alt_cells': alts} if alts else {}), **({'zone_rects': rects} if rects else {}),
+                   **({'season_cells': seasonal} if seasonal else {})),
               open(os.path.join(OUT, 'world.json'), 'w'), indent=1)
     write_palettes(os.path.join(OUT, 'palettes.txt'))
     print(f'{len(order)} cells ({len(built)} with map tiles), matrix {W}x{H}, zones {sorted(z for z in zones if z)}')
@@ -1488,7 +1574,7 @@ def main():
     if SEASONS is not None:
         print(f"seasons: {SEASON_STATS['snow']} snow tiles, {SEASON_STATS['leaf']} leaf tiles, "
               f"{SEASON_STATS['ribbons']} falling-leaf ribbons over {SEASON_STATS['ribbon_cells']} cells (terrain/seasons.py); "
-              f"left out to fit the chunk buffer: {SEASON_STATS.get('dropped', [])}")
+              f"left out of a season's chunk to fit the chunk buffer: {SEASON_STATS.get('dropped', [])}")
 
 # ---- other layouts of a main-matrix map (data/hoenn_world.json "alt_layouts") ------------------------------------------
 def build_alts(cfg, lay, world0, cells, chunk_id, rects=()):
@@ -1567,7 +1653,8 @@ def build_alts(cfg, lay, world0, cells, chunk_id, rects=()):
                 rd = lambda p: open(p, 'rb').read() if os.path.exists(p) else None
                 if all(rd(os.path.join(d, f)) == rd(os.path.join(base, f))
                        for f in ('terrain.dae', 'collision.per', 'collision1.per', 'placements.bin')):
-                    shutil.rmtree(d); continue                         # (this cell is the same in both layouts)
+                    shutil.rmtree(d); SEASON_PENDING.pop(d, None); continue   # (this cell is the same in both layouts)
+                season_promote(d)
                 out.append(dict(map=name, layout=a['layout'], event=a.get('event'), cx=c[0], cz=c[1],
                                 base_chunk=chunk_id[c], dir=os.path.basename(d), **({'cond': a['cond']} if 'cond' in a else {})))
                 if WATER_MOD: getattr(WATER_MOD, '_HOLES', {}).pop(m_name, None)
@@ -1832,13 +1919,16 @@ def build_standalone(cfg, first_chunk, main_zones):
             text = open(dae).read().replace(f'"{m_name}"', '"hoenn_s"')
             open(dae, 'w').write(text)
             import hashlib
-            key = hashlib.sha1(b''.join(open(os.path.join(d, f), 'rb').read() for f in ('terrain.dae', 'collision.per',
-                                                                                    'placements.bin', 'collision1.per')
+            season_rename(d, m_name, 'hoenn_s')                        # (perf: the season models count too)
+            seas = [s_[2] for s_ in SEASON_PENDING.get(d, [])]
+            key = hashlib.sha1(b''.join(open(os.path.join(d, f), 'rb').read() for f in ['terrain.dae', 'collision.per',
+                                                                                    'placements.bin', 'collision1.per'] + seas
                                         if os.path.exists(os.path.join(d, f)))).hexdigest()
             if key in seen:
-                shutil.rmtree(d); cid, dname = seen[key]
+                shutil.rmtree(d); SEASON_PENDING.pop(d, None); cid, dname = seen[key]
             else:
                 cid, dname = chunk, os.path.basename(d); seen[key] = (cid, dname); chunk += 1
+                season_promote(d)
             gcells.append(dict(cx=c[0], cz=c[1], chunk=cid, zone=cells[c], dir=dname))
             report.append(f'{gname} cell {c}: chunk {cid}, zone {cells[c]}, {ntri} triangles, {len(placements[c])} placements')
         gdir = {(g_['cx'], g_['cz']): os.path.join(OUT, 'cells', g_['dir']) for g_ in gcells}
@@ -1931,7 +2021,8 @@ def group_alts(gname, g, sa, cfg, gcells):
                 rd = lambda p: open(p, 'rb').read() if os.path.exists(p) else None     # (collision1.per: bridge_layers)
                 if all(rd(os.path.join(d, f)) == rd(os.path.join(bd, f))
                        for f in ('terrain.dae', 'collision.per', 'collision1.per', 'placements.bin')):
-                    shutil.rmtree(d); continue                   # (this cell is the same in both layouts)
+                    shutil.rmtree(d); SEASON_PENDING.pop(d, None); continue   # (this cell is the same in both layouts)
+                season_rename(d, m_name, 'hoenn_s'); season_promote(d)
                 assert uses[base[c]['chunk']] == 1, (f'{gname} cell {c}: its chunk {base[c]["chunk"]} is shared by '
                                                      f'{uses[base[c]["chunk"]]} cells, a map replacement would swap them all')
                 out.append(dict(map=name, layout=a['layout'], event=a['event'], cx=c[0], cz=c[1],

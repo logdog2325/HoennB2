@@ -42,8 +42,10 @@ Script_None:
 // (Sub_NI_Redraw, like the Mauville Gym's Sub_MG_Redraw). Sapphire's VAR_TEMP_1/2 (wiped by every map change here) are
 // the two event works themselves: a switch's step trigger fires while its colour is not down (data/story/ch6.json
 // "var" 0x4036 / 0x4037, value 0). Sapphire's OnTransition clears them on every entry: the zone init resets the events,
-// except after a switch's own map change (FLAG_NEW_MAUVILLE_REDRAW). The buttons' pressed/unpressed pictures are not
-// drawn (the electric floor on the passage tiles is the barrier).
+// except after a switch's own map change (FLAG_NEW_MAUVILLE_REDRAW). A raised barrier = Sapphire's blue / green bar
+// drawn on its passage tiles under Black 2's electric floor; the buttons are Sapphire's own button pictures, pressed or
+// not as each layout's setmetatile shows them (2026-10-25, b2tools/caves_misc_newmauville.py; the generator's switch
+// is always drawn unpressed).
 #define NM_EVENT_BLUE_DOWN 5            /* map replace event 5 (work 0x4036 == 0x1227): blue barriers lowered, green up */
 #define NM_EVENT_GREEN_DOWN 6           /* map replace event 6 (work 0x4037 == 0x830): green lowered, blue up */
 #define NI_X 0x8051                     /* scratch works of Sub_NI_Redraw */

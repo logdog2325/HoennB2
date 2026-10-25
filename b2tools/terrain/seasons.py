@@ -15,9 +15,10 @@ What Black 2 does (read from its own chunks and data, notes/SEASONS.md "Black 2'
 Here (Hoenn): the same decals, placed by rule on Hoenn's grass and dirt paths (decals()), and Route 20's ribbons over
 Hoenn's wooded cells (ribbons(); not in the warp-only maps, AREA2_ONLY). `_ha01` and `ochiba_h` (kisetu_hana's autumn leaves) are new names in Hoenn's sets:
 the art in the autumn set, a clear 8x8 stand-in in the other three (patches/hoenn_textures.py SEASONAL); the autumn
-area records get srt 47 (hoenn_textures autumn_leaves, standalone.seasonal_areas). With the seasons answer NO (always
-summer) every decal draws nothing (clear texels are never drawn on the DS) and no tile's collision changes, so the
-game plays and looks the same. Not copied: Black 2's walk-through leaf piles and snow footprints (tile classes 0x25
+area records get srt 47 (hoenn_textures autumn_leaves, standalone.seasonal_areas). The decals are not in a cell's own
+chunk but in its autumn and winter chunks, swapped in by season as Black 2 swaps Route 20's (world.py season_variants,
+patches/hoenn_world.py _season_chunks; perf 2026-10-25: drawn all year, clear, they cost frames). With the seasons
+answer NO (always summer) no tile's collision changes and no decal is loaded, so the game plays and looks the same. Not copied: Black 2's walk-through leaf piles and snow footprints (tile classes 0x25
 and 2) - a class is in the chunk all year and changes the battle terrain (GetTileEncountType 0x25 -> 17, 2 -> 2,
 route floor 0x1f -> 0) in every season, also for players without seasons."""
 import hashlib, os

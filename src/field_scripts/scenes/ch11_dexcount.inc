@@ -4,9 +4,9 @@
 #ifndef CH11_DEXCOUNT_INC
 #define CH11_DEXCOUNT_INC
 #ifndef C11_DEXKIND
-#define C11_DEXKIND 0x8062
-#define C11_DEXCOUNT 0x8063
-#define C11_DEXTMP 0x8064
+#define C11_DEXKIND 0x8054                       /* hof_fix 2026-10-25: were 0x8062-0x8064, past the script's 0x62 works (0x8000-0x8061) */
+#define C11_DEXCOUNT 0x8055
+#define C11_DEXTMP 0x8056
 #endif
 Sub_C11_CountDex:
     WorkSetConst C11_DEXCOUNT, 0

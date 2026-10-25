@@ -81,12 +81,23 @@ User requests: the grass should change colour with the seasons, Black 2's autumn
     Navel Rock, Sky Pillar, Battle Frontier/Tower outside, Mt. Pyre summit and the sea routes 105-109, 122, 124-134;
     sand, beaches, the desert, the sea, ponds, paths of paved towns, decks and caves/rooms never get decals. Routes
     119/123 keep Sapphire's own day-by-day rain cycle (no snowfall there); Kyogre's rain wins over snow.
-  - chunk buffer: world.py write_cell's chunk_fit drops a cell's seasonal decals (leaves, then ribbons, then snow)
-    before any of the cracks fix; the cracks-fix fallbacks are the same as without seasons (Sapphire and Emerald).
-  - seasons off (NO, or summer): every decal texel is clear (the DS draws no colour or depth for it), collision,
-    placements, world.json and the summer area records are unchanged, Season_Snow returns at once. The only change is
-    CTRMap's position scale of the cells with decals (NitroModelResource.determineBaseGlobalScale averages every
-    sub-mesh's box): their vertices round up to 0.01 unit differently, a few edge pixels move one colour step.
+  - **the seasons' own chunks (perf, 2026-10-25)**: v18.2 / Emerald v1.3 had the decals in every cell's chunk all
+    year (clear outside their season, but still transformed and drawn: +6,354 polygons in Sapphire/Ruby's world,
+    +6,313 in Emerald's, +80-260 in the 2x2 chunks around Fortree, Route 119/120 and Mauville, which already took 2.3-3.3x
+    Black 2's busiest; a frame-drop report there, Emerald v1.3). Now a cell's own chunk has none (spring, summer, and
+    every season for players who answered NO: byte for byte v18.1's / v1.2's chunks, all 326 cells) and each decal
+    cell gets an autumn chunk (leaves + ribbons) and a winter chunk (snow): world.py season_variants / season_promote
+    (cells/alt_season_<autumn|winter>_<cell>/), world.json "season_cells", appended by patches/hoenn_world.py
+    _season_chunks after every other chunk with one a/0/1/0 entry per cell, Black 2's own season swap (condition 0:
+    ov012 map_replace.c values[season] via GameSystem_GetSeason, as Route 20's autumn chunks 286-289 -> 290-293),
+    after the event and weather entries (a cell swapped for another layout takes that layout's season chunk).
+    Emerald: 317 season chunks for 226 cells (18.2 MB), Sapphire/Ruby 288 for 210 (15.7 MB): build_rom.py RESERVE[8]
+    64 MB (new ROM layout: remake savestates). Tested (DeSmuME, season forced in RAM, Littleroot): summer has no
+    decals, autumn shows the leaves and winter the snow as v1.3 did (work/agents/perf/shots/).
+  - chunk buffer: a season's chunk drops its decals (leaves, then ribbons, then snow) when the cell's chunk + them is
+    over the buffer (world.py season_variants); the cell's own chunk keeps every part of the cracks fix it had in v18.1.
+  - seasons off (NO, or summer): the season chunks are never loaded; collision, placements, world.json's cells and the
+    summer area records are unchanged, Season_Snow returns at once.
   - testing: no build switch; work/agents/seasons2/tools/shots.py forces a season in RAM (Season_GetRealTime and
     GameData_GetSeason return it) before a sign warp (HOENN_TEST_WARP), SNOWDATE=month,day pokes the RTC cache
     (0x021418d4) and POKE=addr:hex the kept-season check, for the snowfall.

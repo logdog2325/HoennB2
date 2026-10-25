@@ -525,8 +525,10 @@ def check_walk(frame, out, S=None):
     for k in sorted(reach_b, key=lambda k: (k[1], k[0])):
         if k not in S.t and only(k): out.append(('walk', f'world {k}: walkable in Black 2 outside every map', k))
     # moves between tiles walkable in both games
+    moved = set()
     for k in sorted(reach_s & reach_b, key=lambda k: (k[1], k[0])):
         if not only(k) or not sap_walk(k) or not b2_land(frame.land(*k)): continue
+        if sum(b2_land(r) for r in frame.layers(*k)) > 1: continue    # (two land layers: by elevation, below)
         a = S.get(k)
         for d, side in DIRS.items():
             n = (k[0] + d[0], k[1] + d[1])
@@ -536,11 +538,48 @@ def check_walk(frame, out, S=None):
                 any(z == 0 or b[4] in (0, 15) or b[4] == z for z in states[k])
             b2 = b2_move(k, n, d)
             if sap != b2:
+                moved.add((k, d))
                 out.append(('walk', f'{a[0]} ({a[1]},{a[2]}) -> {side} world {k}->{n}: Sapphire '
                                     f'{"allows" if sap else "blocks"} (elev {sorted(states[k])}->{b[4]}), Black 2 '
                                     f'{"allows" if b2 else "blocks"} (y {frame.y(*k, frame.land(*k)):.0f}->'
                                     f'{frame.y(*n, frame.rec(*n, frame.y(*k, frame.land(*k)))):.0f}, '
                                     f'sides {sides(frame.land(*k)) or "-"}/{sides(frame.land(*n)) or "-"})', k))
+    # (cycling_road 2026-10-25) moves by elevation: the check above asks whether Sapphire allows a move at ANY elevation
+    # reached on the tile, and Black 2 from the tile's land layer - blind where Gen 3's elevation decides alone (the
+    # Cycling Road's crossings: elevation-15 road over the ground path, where a walker at 3 must not step onto the
+    # elevation-4 deck, nor a cyclist at 4 off it onto the ground; ours stood one layer at the ground, walkers rode it).
+    # Here both games walk together: a state is (tile, Sapphire elevation, Black 2 height), seeded on every tile both
+    # reach on foot with one land layer, moving on foot only; a move one game makes and the other refuses from the same
+    # state is listed (once per tile and side, not again when the check above lists it)
+    def sap_step(k, z, d):
+        a, b = S.get(k), S.get((k[0] + d[0], k[1] + d[1]))
+        if b is None or _sap_blocked(a[5], DIRS[d]) or _sap_blocked(b[5], OPP[DIRS[d]]): return None
+        if z != 0 and b[4] not in (0, 15) and b[4] != z: return None
+        return z if 15 in (b[4], a[4]) else b[4]
+    land_layers = lambda k: [r for r in frame.layers(*k) if b2_land(r)]
+    seen_j, qj, said = set(), deque(), set()
+    for k in reach_s & reach_b:
+        if not only(k) or not sap_walk(k) or k in warps or len(land_layers(k)) != 1: continue
+        y = frame.y(*k, land_layers(k)[0])
+        for z in states[k] - {1}:
+            if y is not None and (k, z, y) not in seen_j: seen_j.add((k, z, y)); qj.append((k, z, y))
+    while qj:
+        k, z, y = qj.popleft()
+        for d, side in DIRS.items():
+            n = (k[0] + d[0], k[1] + d[1])
+            b = S.get(n)
+            if b is None or n in warps or not sap_walk(n) or not only(n) or not land_layers(n): continue
+            z2 = sap_step(k, z, d)
+            b2 = b2_move(k, n, d, y)
+            y2 = frame.y(*n, frame.rec(*n, y))
+            if (z2 is not None) == b2:
+                if b2 and y2 is not None and (n, z2, y2) not in seen_j: seen_j.add((n, z2, y2)); qj.append((n, z2, y2))
+                continue
+            if (k, d) in moved or (k, d) in said: continue
+            said.add((k, d)); a = S.get(k)
+            out.append(('walk', f'{a[0]} ({a[1]},{a[2]}) -> {side} world {k}->{n}: Sapphire '
+                                f'{"allows" if z2 is not None else "blocks"} at elevation {z} (->{b[4]}), Black 2 '
+                                f'{"allows" if b2 else "blocks"} at y {y:.0f} (->{y2 if y2 is None else round(y2)})', k))
 
     # surf landings (final_check 2026-10-08): from a water tile both games surf on, onto a tile both walk on
     for k in sorted((reach_s | reach_b), key=lambda k: (k[1], k[0])):
@@ -1062,9 +1101,14 @@ ACCEPT = [
      'a placed building model stands there (Gym fronts, the Battle Tower: Sapphire walks behind the 2D roof)'),
     ('.*', 'walk', r'1 tiles reachable in Sapphire are cut off.*MB_(ANIMATED|NON_ANIMATED)_DOOR',
      'a tile inside a building footprint behind its door (Sapphire draws it as roof)'),
-    ('main', 'walk', r'FortreeCity \((33|34),14\) -> [ew]',
+    ('main', 'walk', r'FortreeCity \((33|34),14\) -> [ew]|FortreeCity \((3[0-3]),14\) -> [nsw].* at elevation',
      "Fortree's tree-top walkway crosses over the path below it at (398-401, 74); one layer here, the crossing is the "
      "path's (16 under the west walkway, 32 under the east one, which its stairs reach)"),
+    ('main', 'walk', r'Route119 \((13|26|27),(84|85)\) -> [nsew].* at elevation',
+     "Route 119's long bridge (rows 84-85, elevation 4) crosses the paths at x 13 and 26-27 (elevation-15 tiles, as the "
+     "Cycling Road's crossings): one layer at the bridge's height here, so a walker on those paths can step onto it. "
+     "Found by the by-elevation move check (cycling_road 2026-10-25); terrain/heights.py raise_road's two layers would "
+     "fix it (not done: queued)"),
     ('main', 'walk', r'FortreeCity \(18,10\).*cut off|MossdeepCity \(34,7\).*cut off|Route112 \(11,35\).*cave_entrance|'
      r'DewfordTown \(11,15\).*sign|Route120 \(13,17\).*ROUTE120_NORTH_BRIDGE',
      'single tiles Sapphire draws behind a Gym, a sign or a cave mouth (walk-behind tiles), and the tile of Route 120\'s '

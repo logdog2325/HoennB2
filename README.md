@@ -54,9 +54,14 @@ Community sprites (the NEW sprite set), used with credit:
 - **hyo-oppa:** Brendan (overworld, battle front and back), Emerald's Brendan (battle front and back) and Wally (battle front).
 - **Kymotonian** and **Klein Studio:** Wally (overworld).
 - **Wolfang62:** Professor Birch (overworld).
-- **DiegoWT:** May and Archie (originally commissioned by Zailens and Kyledove).
+- **DiegoWT:** May and Archie (originally commissioned by Zailens and Kyledove); Shelly, the Pokémon Center nurse, the Cycling Triathletes, Aroma Lady, Rich Boy, Pokémon Ranger, Devon staff and the cook (overworld).
 - **joojishibuki:** Maxie's battle sprite.
 - **Kimmylube** and **AzureAquarian:** Team Aqua and Team Magma grunts.
+- **PurpleZaffre:** most trainer overworlds (Youngster, Twins, School Kids, Picnicker, Camper, Swimmers, Tubers, Ace Trainers, Beauty, Lady, Parasol Lady, Bird Keeper, Battle Girl, Psychics, Ninja Boy, Bug Catcher, Bug Maniac, Poké Maniac, Collector, Pokémon Breeders, Gentleman, Black Belt, Triathletes, Fisherman, Hiker, Sailor), the scientists, the Mart clerk, Mom, Gabby, Ty and Maxie.
+- **izzyvicious:** Drake, Phoebe, Sidney, Courtney and the Frontier Brains (overworld).
+- **brawlzilla:** Dragon Tamer, Kindler and the Experts (overworld).
+- **pokelustcompany:** Hex Maniac (overworld).
+- Shared on our Discord, artists still to be named: Lass and Poké Fans, and recolours of some sheets above.
 
 `src/sprites/community/incoming/CREDITS.md` lists where each sheet came from and its terms.
 

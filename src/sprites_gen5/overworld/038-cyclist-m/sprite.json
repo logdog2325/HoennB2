@@ -1,0 +1,26 @@
+{
+ "kind": "overworld",
+ "code": 38,
+ "sheet": 44,
+ "frames": 7,
+ "size": [
+  32,
+  32
+ ],
+ "controller": 2,
+ "textures": [
+  "t4x4x7.0",
+  "t4x4x7.1",
+  "t4x4x7.2",
+  "t4x4x7.3",
+  "t4x4x7.4",
+  "t4x4x7.5",
+  "t4x4x7.6"
+ ],
+ "palette": "t4x4x7",
+ "name": "cyclist-m",
+ "note": "Triathlete on a bike (M)",
+ "source": "community: hoenn_npcs_141/trCyclist_M_by_diegowt_ddsjrhr.png (shift +0)",
+ "colours": 13,
+ "made_by": "b2tools/sprite_community_npcs.py"
+}

@@ -1,0 +1,31 @@
+{
+ "kind": "overworld",
+ "code": 41,
+ "sheet": 47,
+ "frames": 12,
+ "size": [
+  32,
+  32
+ ],
+ "controller": 3,
+ "textures": [
+  "t4x4x12.0",
+  "t4x4x12.1",
+  "t4x4x12.2",
+  "t4x4x12.3",
+  "t4x4x12.4",
+  "t4x4x12.5",
+  "t4x4x12.6",
+  "t4x4x12.7",
+  "t4x4x12.8",
+  "t4x4x12.9",
+  "t4x4x12.10",
+  "t4x4x12.11"
+ ],
+ "palette": "t4x4x12",
+ "name": "swimmer-f",
+ "note": "Swimmer (F), Swimming Triathlete (F), Sis and Bro",
+ "source": "community: hoenn_npcs_141/NPC_030_Swimmer_F_PurpleZaffre.png (shift +1)",
+ "colours": 13,
+ "made_by": "b2tools/sprite_community_npcs.py"
+}

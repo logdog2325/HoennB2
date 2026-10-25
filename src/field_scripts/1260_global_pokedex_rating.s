@@ -22,9 +22,9 @@
 #define RP_NAT_CAUGHT 0x8044
 #define RP_NAT 0x8045
 // scenes/ch11_dexcount.inc (guarded: it is another chapter's file; the same names and works)
-#define C11_DEXKIND 0x8062
-#define C11_DEXCOUNT 0x8063
-#define C11_DEXTMP 0x8064
+#define C11_DEXKIND 0x8054                 /* hof_fix 2026-10-25: were 0x8062-0x8064, past the script's 0x62 works (0x8000-0x8061) */
+#define C11_DEXCOUNT 0x8055
+#define C11_DEXTMP 0x8056
 #define T_SoYouveSeen 0
 #define T_Rating10 1                      /* lines 1-20: the rating for the caught count / 10 (0-19) */
 #define T_DexCompleted 21

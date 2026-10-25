@@ -33,6 +33,13 @@ the tables, and the hooks; each site is checked against Black 2's bytes:
     ov203 0x021a7d8a/ae                 the Wi-Fi 2D room's own player (wifi_2dchar.c: 5 / 7, 4 / 6)
   the trainer card picture, by archive id (ov186 func_ov186_021a7ec0 / _021a7d40): GFL_G2DIOReadBGNCGR(40, 16 + v)
   at 0x021a7f32 and GFL_BGSysLoadNCLRDefault(40, v) at 0x021a7d58 -> the Gen 5 copy in a/0/4/8 with NEW
+Trainer classes with a code of their own (data/npc_class_sprites.json, b2tools/sprite_community_npcs.py; every build,
+before the tables, HOENN_SPRITES_GEN5 or not): each zone NPC whose script is 3000 + a trainer id of such a class (or a
+local zone script that starts that trainer's battle: Petalburg Gym's Ace Trainers) and whose code is the townsperson code
+the class shared moves to the class's code (the NPC record's u16 model, in place in
+a/1/2/6). That code's CLASSIC sheet is the old code's picture, its NEW sheet the class's community sheet, so the switch
+below picks them up like any other sheet. The in-build npc_check (earlier in the patch list) does not see the move:
+check the people-sprite budget with b2tools/npc_check.py on the built ROM.
 Sprite_OwRead remaps the sheet number (res1 of the object code's record; ARCID_MMODEL_GRA 48) before the read; with
 CLASSIC it reads the same file as before. (The field's third reader of that handle, FldActSys_SetupG3DObj, loads 3D
 models, never a sheet.) Sprite_TrBase remaps the sprite number GetTrSpriteBaseDatID gives (every
@@ -105,11 +112,73 @@ def differing(classic, gen5, unit):
     return [n for n in range(len(classic) // unit) if classic[unit * n:unit * n + unit] != gen5[unit * n:unit * n + unit]]
 
 
+CLASS_JSON = os.path.join(ROOT, 'data', 'npc_class_sprites.json')
+ARC_ENTITIES, ARC_SCRIPTS = 126, 56
+CALL_TRAINER_BATTLE = b'\x85\x00'     # field command 133 CallTrainerBattle trainer, ., . (include/asm/field_script.inc)
+
+
+def local_trainer(scr, s, pic, want):
+    """The trainer a zone's local script s battles (a gym trainer whose zone script starts the battle, e.g. Petalburg
+    Gym's Ace Trainers), when that trainer's class is in `want`: the first CallTrainerBattle naming such a trainer
+    between the script's start and the next script's (ScriptEntry: s32 offsets, then 0xFD13)."""
+    starts, p = [], 0
+    while p + 4 <= len(scr) and struct.unpack_from('<H', scr, p)[0] != 0xFD13:
+        starts.append(p + 4 + struct.unpack_from('<i', scr, p)[0]); p += 4
+    if not 1 <= s <= len(starts): return None
+    a = starts[s - 1]
+    b = min([x for x in starts if x > a] + [len(scr)])
+    i = scr.find(CALL_TRAINER_BATTLE, a, b)
+    while i >= 0 and i + 4 <= b:
+        t = struct.unpack_from('<H', scr, i + 2)[0]
+        if pic.get(t) in want: return t
+        i = scr.find(CALL_TRAINER_BATTLE, i + 1, b)
+    return None
+
+
+def class_codes(files):
+    """Trainers of the classes in data/npc_class_sprites.json move to their class's code (see the docstring)."""
+    if not os.path.exists(CLASS_JSON):
+        return 'no data/npc_class_sprites.json: trainers keep their codes'
+    import version, zoneheaders
+    classes = json.load(open(CLASS_JSON))['classes']
+    olds = {c['old'] for c in classes.values()}
+    pic = {t['b2_id']: t.get('pic') for t in version.load_json(os.path.join(ROOT, 'data', 'hoenn_trainer_data.json'))
+           ['trainers'].values() if isinstance(t, dict) and 'b2_id' in t}
+    headers, _ = zoneheaders.load(files)
+    ents = narcio.load(files, ARC_ENTITIES)
+    scripts = narcio.load(files, ARC_SCRIPTS)
+    moved, changed = {}, set()
+    for f, scr in sorted({(h['entities'], h['scripts']) for h in headers}):
+        e = ents[f]
+        if len(e) < 8: continue
+        n_sign, n_npc = e[4], e[5]
+        base = 8 + 0x14 * n_sign
+        if base + 0x24 * n_npc > len(e): continue
+        for i in range(n_npc):
+            o = base + 0x24 * i
+            model, script = struct.unpack_from('<H', e, o + 2)[0], struct.unpack_from('<H', e, o + 10)[0]
+            if 3000 <= script < 4000:
+                t = script - 3000
+            elif 0 < script < 1000 and model in olds and scr < len(scripts):
+                t = local_trainer(scripts[scr], script, pic, {p for p, c in classes.items() if c['old'] == model})
+            else:
+                t = None
+            c = classes.get(pic.get(t))
+            if c and model == c['old']:
+                if f not in changed: e = ents[f] = bytearray(e); changed.add(f)
+                struct.pack_into('<H', e, o + 2, c['code'])
+                moved[pic[t]] = moved.get(pic[t], 0) + 1
+    if changed:
+        narcio.save(files, ARC_ENTITIES, [bytes(x) for x in ents])
+    return f'class codes: {sum(moved.values())} trainers in {len(changed)} entity files moved ' + json.dumps(moved)
+
+
 def apply(files):
     global _tables
     _tables = None
+    moved = class_codes(files)
     if os.environ.get('HOENN_SPRITES_GEN5'):
-        return 'HOENN_SPRITES_GEN5=1 installed the Gen 5 set as the only set: no switch'
+        return moved + '; HOENN_SPRITES_GEN5=1 installed the Gen 5 set as the only set: no switch'
     scratch = tempfile.mkdtemp(prefix='sprite_switch_', dir=os.path.dirname(os.path.abspath(files)))
     try:
         both = install_both(scratch)
@@ -153,7 +222,7 @@ def apply(files):
     notes.append(f'icons/cards {len(icons)} as {len(ents) - first} entries of a/{ARC_OW:03d} (+{extra} B)')
     _tables = tables
     json.dump(tables, open(os.path.join(os.path.dirname(os.path.abspath(files)), TABLES), 'w'), indent=1)
-    return 'Gen 5 entries appended: ' + ', '.join(notes) + ' ' + json.dumps(tables)
+    return moved + '; Gen 5 entries appended: ' + ', '.join(notes) + ' ' + json.dumps(tables)
 
 
 # ---- code -------------------------------------------------------------------------------------------------------------

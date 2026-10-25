@@ -68,7 +68,8 @@ def deck_y(world_dir, wx, wz, prefix=''):
     """Height (units) of the ground layer of an outdoor tile with two collision layers (b2tools/world.py bridge_layers:
     a walk-under bridge's deck or the land at its ends, collision1.per), None elsewhere. Black 2 takes the layer nearest
     an actor's height: a person (entity y 0) or a trigger on a deck over water nearer 0 than the deck needs the deck's
-    height (Route 110's Cycling Road is at 0 itself; world.py bridge_layers)."""
+    height (Route 110's Cycling Road deck at 32 over water at -8 since cycling_road 2026-10-25; world.py bridge_layers;
+    patches/trainers.py and world.py map_events give trainers and map people the same height)."""
     import struct
     sys.path.insert(0, os.path.join(ROOT, 'b2tools'))
     from terrain.heights import NORMALS, OFFS

@@ -35,7 +35,7 @@ Test_CreditsShots:                                // credits photos 0-10, the co
     hft_place 397, 175, 318                       // 1 Oldale Town: the Pokémon Center (7, 18)
     hft_place 439, 103, 301                       // 2 Petalburg City: the Gym (15, 11)
     hft_place 113, 60, 198                        // 3 Rustboro City: Devon Corporation (12, 18)
-    hft_place 465, 118, 431                       // 4 Dewford Town: Mr. Briney's dock (10, 11)
+    hft_place 465, 120, 431                       // 4 Dewford Town: Mr. Briney's dock (12, 11; was (10, 11): the new roof hid the player, 2026-10-25)
     hft_place 448, 260, 342                       // 5 Slateport City: the Mart (12, 22)
     hft_place 406, 263, 208                       // 6 Mauville City (15, 8)
     hft_place 62, 196, 131                        // 7 Lavaridge Town (8, 11)
@@ -43,7 +43,7 @@ Test_CreditsShots:                                // credits photos 0-10, the co
     hft_place 96, 555, 140                        // 9 Lilycove City: the Department Store (27, 10)
     hft_place 107, 752, 177                       // 10 Mossdeep City: the Space Center (64, 17)
     hft_place 319, 48, 40, 0                      // the colour picture (nobody): Sootopolis City, the Cave of Origin (30, 19)
-    hft_place 389, 177, 363                       // 11 Littleroot Town: home (9, 11)
+    hft_place 389, 179, 363                       // 11 Littleroot Town: home (11, 11; was (9, 11): the new roof hid the player, 2026-10-25)
     FinishAllEvents
     ActorsUnpauseAll
     VMHalt

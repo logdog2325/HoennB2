@@ -472,6 +472,296 @@
    40
   ]
  ],
+ "floor_tex": [
+  {
+   "tex": "g3nm_23e",
+   "gen3": [
+    33,
+    6
+   ],
+   "gen3_mt": 574,
+   "rect": [
+    33,
+    6,
+    33,
+    6
+   ],
+   "stretch": true,
+   "_what": "switch (33,6) Sapphire 0x23e"
+  },
+  {
+   "tex": "g3nm_24f",
+   "gen3": [
+    13,
+    10
+   ],
+   "gen3_mt": 591,
+   "rect": [
+    13,
+    10,
+    13,
+    10
+   ],
+   "stretch": true,
+   "_what": "switch (13,10) Sapphire 0x236"
+  },
+  {
+   "tex": "g3nm_22e",
+   "gen3": [
+    17,
+    10
+   ],
+   "gen3_mt": 558,
+   "rect": [
+    17,
+    10,
+    17,
+    10
+   ],
+   "stretch": true,
+   "_what": "switch (17,10) Sapphire 0x22e"
+  },
+  {
+   "tex": "g3nm_22e",
+   "gen3": [
+    2,
+    11
+   ],
+   "gen3_mt": 558,
+   "rect": [
+    2,
+    11,
+    2,
+    11
+   ],
+   "stretch": true,
+   "_what": "switch (2,11) Sapphire 0x22e"
+  },
+  {
+   "tex": "g3nm_24f",
+   "gen3": [
+    6,
+    11
+   ],
+   "gen3_mt": 591,
+   "rect": [
+    6,
+    11,
+    6,
+    11
+   ],
+   "stretch": true,
+   "_what": "switch (6,11) Sapphire 0x236"
+  },
+  {
+   "tex": "g3nm_22e",
+   "gen3": [
+    25,
+    18
+   ],
+   "gen3_mt": 558,
+   "rect": [
+    25,
+    18,
+    25,
+    18
+   ],
+   "stretch": true,
+   "_what": "switch (25,18) Sapphire 0x22e"
+  },
+  {
+   "tex": "g3nm_24f",
+   "gen3": [
+    16,
+    22
+   ],
+   "gen3_mt": 591,
+   "rect": [
+    16,
+    22,
+    16,
+    22
+   ],
+   "stretch": true,
+   "_what": "switch (16,22) Sapphire 0x236"
+  },
+  {
+   "tex": "g3nm_24f",
+   "gen3": [
+    4,
+    26
+   ],
+   "gen3_mt": 591,
+   "rect": [
+    4,
+    26,
+    4,
+    26
+   ],
+   "stretch": true,
+   "_what": "switch (4,26) Sapphire 0x236"
+  },
+  {
+   "tex": "g3nm_22e",
+   "gen3": [
+    18,
+    36
+   ],
+   "gen3_mt": 558,
+   "rect": [
+    18,
+    36,
+    18,
+    36
+   ],
+   "stretch": true,
+   "_what": "switch (18,36) Sapphire 0x22e"
+  },
+  {
+   "tex": "g3nm_24f",
+   "gen3": [
+    30,
+    38
+   ],
+   "gen3_mt": 591,
+   "rect": [
+    30,
+    38,
+    30,
+    38
+   ],
+   "stretch": true,
+   "_what": "switch (30,38) Sapphire 0x236"
+  },
+  {
+   "tex": "g3nm_2c6",
+   "gen3": [
+    21,
+    4
+   ],
+   "gen3_mt": 710,
+   "rect": [
+    21,
+    4,
+    21,
+    4
+   ],
+   "stretch": true,
+   "_what": "barrier (21,4) Sapphire 0x2c6"
+  },
+  {
+   "tex": "g3nm_2ce",
+   "gen3": [
+    21,
+    5
+   ],
+   "gen3_mt": 718,
+   "rect": [
+    21,
+    5,
+    21,
+    5
+   ],
+   "stretch": true,
+   "_what": "barrier (21,5) Sapphire 0x2ce"
+  },
+  {
+   "tex": "g3nm_2c6",
+   "gen3": [
+    28,
+    24
+   ],
+   "gen3_mt": 710,
+   "rect": [
+    28,
+    24,
+    28,
+    24
+   ],
+   "stretch": true,
+   "_what": "barrier (28,24) Sapphire 0x2c6"
+  },
+  {
+   "tex": "g3nm_2ce",
+   "gen3": [
+    28,
+    25
+   ],
+   "gen3_mt": 718,
+   "rect": [
+    28,
+    25,
+    28,
+    25
+   ],
+   "stretch": true,
+   "_what": "barrier (28,25) Sapphire 0x2ce"
+  },
+  {
+   "tex": "g3nm_2c6",
+   "gen3": [
+    10,
+    26
+   ],
+   "gen3_mt": 710,
+   "rect": [
+    10,
+    26,
+    10,
+    26
+   ],
+   "stretch": true,
+   "_what": "barrier (10,26) Sapphire 0x2c6"
+  },
+  {
+   "tex": "g3nm_2ce",
+   "gen3": [
+    10,
+    27
+   ],
+   "gen3_mt": 718,
+   "rect": [
+    10,
+    27,
+    10,
+    27
+   ],
+   "stretch": true,
+   "_what": "barrier (10,27) Sapphire 0x2ce"
+  },
+  {
+   "tex": "g3nm_2c6",
+   "gen3": [
+    37,
+    35
+   ],
+   "gen3_mt": 710,
+   "rect": [
+    37,
+    35,
+    37,
+    35
+   ],
+   "stretch": true,
+   "_what": "barrier (37,35) Sapphire 0x2c6"
+  },
+  {
+   "tex": "g3nm_2ce",
+   "gen3": [
+    37,
+    36
+   ],
+   "gen3_mt": 718,
+   "rect": [
+    37,
+    36,
+    37,
+    36
+   ],
+   "stretch": true,
+   "_what": "barrier (37,36) Sapphire 0x2ce"
+  }
+ ],
  "blocks": [
   {
    "use": "cm_nm_wall",

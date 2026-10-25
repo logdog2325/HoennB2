@@ -117,8 +117,34 @@ Petalburg, 110, 119, Fortree, 120, Pacifidlog) so the chunk archive fits the res
   every two-layer cell (its model through ToNsbmd) and, when it is over, gives back the cracks fix in that cell only -
   first the T-junction splits, then also the ground's under-floor. Sapphire: (10, 2) (Route 119's bridge) 123,444 B
   with both, 105,652 B without either; (13, 4) (Route 120's south bridge, its south row) 101,156 B without the splits.
-- The Cycling Road and Fortree's walkways are flat (heights module could raise them); Fortree's walkways run between
-  tree tiles that hide the player from the south camera (town layout).
+- Fortree's walkways are flat (heights module could raise them); they run between tree tiles that hide the player
+  from the south camera (town layout).
+- **The Cycling Road on its bridge** (cycling_road 2026-10-25; user: "make Cycling Road how it is in Ruby/Sapphire").
+  Gen 3 (pokeruby and pokeemerald Route110, same elevations): the deck over land is elevation 4 with solid railings; the
+  ground path crosses it at elevation-15 road tiles - rows 15 (x 26-28), 39-41 (x 11-13), 69-71 (x 16-18) - with
+  elevation-3 ground both sides: a walker crosses under it and cannot step onto the deck, a cyclist cannot step off.
+  Ours stood at the ground's level, one layer, and walkers stepped through the railings' gaps onto the road.
+  Now (terrain/heights.py raise_road, step 11c): the whole road - over land and over the sea, one level as in Gen 3 -
+  stands ROAD_RISE = 32 over the ground (Black 2 refuses a step of 20+, ov012 ActorRouteCollCheckCore; 32 also hides
+  a walker under the deck, surf_under2: 24 showed the hat). Step 2 keeps the road level with its ground (its stairs
+  flat), so faces, trees, fences and water round it are what they were; raise_road then lifts road tiles, railings
+  (fence tiles beside a road tile that is no crossing, and Sapphire's elevation-1 railings over the sea) and the sign
+  on the rest area. The two stairs up to it (the gates' east pockets, Route110 (21-22, 11-13) and (28-29, 89-91))
+  climb 16 a row from their foot; their top row is a landing at the deck's height, drawn as deck. Collision (world.py
+  bridge_layers): the 21 crossing tiles are two layers ('cross': layer 0 the path at the ground, layer 1 the deck);
+  the spans over the sea, now 40 over the surfer, take the raised plank bridges' first choice (water layer at the open
+  water's own -8, railings solid at 48, ends solid at -8) instead of surf_under2's -27.8/-31.4 dip. Drawing
+  (terrain/ground.py): the deck and its 8-unit side faces lifted (side faces inset as the raised plank bridges'), the
+  railings on it, the ground under the deck over land (road_under: seen under its edges and at the crossings), a
+  concrete post (hashi02a side band) in every support tile against the deck over land, at the runs' ends and every
+  3 tiles over the sea, a 10-unit footing in land supports away from the deck (the south platform's); no rock face or
+  skirt up to the deck (heights.py _Lattice.open_under); water.py draws the water under the wide deck's middle tiles
+  at the water's level. People on two-layer deck tiles get the deck's y (map_events, patches/trainers.py: the
+  triathletes at Route110 (19,31), (30,31), (21,78), (27,24) stood on the water layer at y 0). Check: outdoor_check's
+  walk kind has a by-elevation move check (both games walk together per (tile, Sapphire elevation, Black 2 height));
+  on v18.2's world it lists the 30 crossing moves, here none. It also found Route 119's long bridge (rows 84-85: paths
+  under it at x 13 and 26-27, one layer: walkers can step onto it; accepted as queued) and Fortree's walkway (accepted).
+  Tested (DeSmuME, work/agents/cycling_road/tests/road_test.py, screenshots/cycling_road/).
 - Ash grass blades are Black 2's green tall grass (its snowy winter grass has the same texture names as summer's, so
   `nsbtx.merge` cannot add it next to them).
 - Models not in pack 0 that would fit better (pack budget, lead decides): Driftveil market `c5_market_01` (pack 8,

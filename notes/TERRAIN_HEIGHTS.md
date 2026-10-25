@@ -113,6 +113,11 @@ elevation is not 0, the target's is not 0/15 and they differ; elevation 0/15 til
    start and surf traps"). **Islands** in a warp-only group with no sea (no 400-tile water anchors its levels): a
    floating group with water beside it and no warp stands level with that water's biggest placed shore instead of its
    Sapphire level (Emerald's Safari Zone southeast; in the connected world the shore rule already does this).
+10. (cycling_road 2026-10-25) **Route 110's Cycling Road** stands level with its ground through steps 1-11 (its stairs'
+   constraint is level, step 2), then `raise_road` (step 11c) lifts the deck, its railings and the sign on it 32
+   (ROAD_RISE) over the ground and the sea, its two stairs climb 16 a row with a landing at the top, and its
+   elevation-15 crossings over the ground path keep the ground's height for world.py's second collision layer
+   (F.road_cross). Details: notes/TERRAIN_GROUND.md "The Cycling Road on its bridge".
 
 **Offline check [test]** (`work/agents/heights/movecheck.py`, scratch, not in git): every move Sapphire allows on land (both sides walkable, not water,
 from all reachable (tile, elevation) states) against Black 2's rule on the built collision (step < 20 units, side

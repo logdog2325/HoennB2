@@ -1,0 +1,145 @@
+{
+ "_doc": "Trainer classes with a sprite code of their own (b2tools/sprite_community_npcs.py, which writes this file): b2tools/patches/sprite_switch.py moves every zone NPC whose script is 3000 + a trainer id of that class (data/hoenn_trainer_data.json \"pic\") from code \"old\" to \"code\". The CLASSIC sheet of \"code\" is old's picture, the NEW one the class's community sheet (\"sheet\", src/sprites/community/incoming/hoenn_npcs_141/).",
+ "classes": {
+  "COOL_TRAINER_M": {
+   "code": 131,
+   "old": 19,
+   "sheet": "NPC_001_Ace_Trainer_M_PurpleZaffre.png"
+  },
+  "DRAGON_TAMER": {
+   "code": 195,
+   "old": 19,
+   "sheet": "rse_dragon_tamer_overworld_sprites_revamped_by_brawlzilla_d8ozn5c.png"
+  },
+  "BEAUTY": {
+   "code": 196,
+   "old": 17,
+   "sheet": "NPC_044_Beauty_PurpleZaffre.png"
+  },
+  "BIRD_KEEPER": {
+   "code": 218,
+   "old": 358,
+   "sheet": "Birdkeeper_PurpleZaffre_Recolour 2.png"
+  },
+  "KINDLER": {
+   "code": 219,
+   "old": 358,
+   "sheet": "rse_kindler_overworld_sprites_revamped_by_brawlzilla_d8qlki9.png"
+  },
+  "POKEFAN_F": {
+   "code": 220,
+   "old": 53,
+   "sheet": "trPokeFan_F.png"
+  },
+  "POKEFAN_M": {
+   "code": 308,
+   "old": 20,
+   "sheet": "trPokeFan_M_2.png"
+  },
+  "RICH_BOY": {
+   "code": 313,
+   "old": 18,
+   "sheet": "trRichBoy_by_diegowt_ddsjrhr_Recolour.png"
+  },
+  "COOL_TRAINER_F": {
+   "code": 316,
+   "old": 43,
+   "sheet": "NPC_002_Ace_Trainer_F_PurpleZaffre.png"
+  },
+  "BATTLE_GIRL": {
+   "code": 319,
+   "old": 15,
+   "sheet": "NPC_009_Battle_Girl_PurpleZaffre_Recolour.png"
+  },
+  "PSYCHIC_F": {
+   "code": 373,
+   "old": 15,
+   "sheet": "NPC_Z06_Psychic_F_PurpleZaffre.png"
+  },
+  "CAMPER": {
+   "code": 376,
+   "old": 21,
+   "sheet": "NPC_015_Camper_PurpleZaffre.png"
+  },
+  "NINJA_BOY": {
+   "code": 59,
+   "old": 8,
+   "sheet": "NPC_060_Ninja_Boy_PurpleZaffre_Recolour 2.png"
+  },
+  "BUG_CATCHER": {
+   "code": 304,
+   "old": 153,
+   "sheet": "NPC_013_Bug_Catcher_PurpleZaffre.png"
+  },
+  "BUG_MANIAC": {
+   "code": 305,
+   "old": 24,
+   "sheet": "NPC_053_Bug_Maniac_PurpleZaffre_Recolour.png"
+  },
+  "AROMA_LADY": {
+   "code": 309,
+   "old": 27,
+   "sheet": "Aromalady_by_diegowt_ddsjrhr_Recolour.png"
+  },
+  "POKEMON_RANGER_M": {
+   "code": 310,
+   "old": 21,
+   "sheet": "trRanger_M_by_diegowt_ddsjrhr.png"
+  },
+  "PARASOL_LADY": {
+   "code": 314,
+   "old": 43,
+   "sheet": "NPC_083_Parasol_Lady_PurpleZaffre_Recolour.png"
+  },
+  "LADY": {
+   "code": 317,
+   "old": 27,
+   "sheet": "NPC_043_Lady_PurpleZaffre_Recolour.png"
+  },
+  "POKEMANIAC": {
+   "code": 344,
+   "old": 24,
+   "sheet": "NPC_084_Poke_Maniac_PurpleZaffre_Recolour.png"
+  },
+  "TUBER_F": {
+   "code": 101,
+   "old": 154,
+   "sheet": "NPC_032_Tuber_F_PurpleZaffre.png"
+  },
+  "TUBER_M": {
+   "code": 147,
+   "old": 153,
+   "sheet": "NPC_031_Tuber_M_PurpleZaffre.png"
+  },
+  "POKEMON_BREEDER_F": {
+   "code": 188,
+   "old": 27,
+   "sheet": "NPC_Z08_Breeder_F_PurpleZaffre.png"
+  },
+  "POKEMON_BREEDER_M": {
+   "code": 189,
+   "old": 42,
+   "sheet": "NPC_Z07_Breeder_M_PurpleZaffre.png"
+  },
+  "COLLECTOR": {
+   "code": 191,
+   "old": 24,
+   "sheet": "NPC_053_Collector_PurpleZaffre.png"
+  },
+  "EXPERT_F": {
+   "code": 193,
+   "old": 29,
+   "sheet": "female_expert_overworld_sprites_revamped_by_brawlzilla_d8ozpxb.png"
+  },
+  "EXPERT_M": {
+   "code": 370,
+   "old": 28,
+   "sheet": "male_expert_overworld_sprites_revamped_by_brawlzilla_d8ozv6f.png"
+  },
+  "SCHOOL_KID_F": {
+   "code": 371,
+   "old": 15,
+   "sheet": "NPC_058_School_Kid_F_PurpleZaffre.png"
+  }
+ }
+}

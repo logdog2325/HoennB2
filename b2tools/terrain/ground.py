@@ -348,9 +348,83 @@ def _deck_dir(k, tx, tz, members):
     return 'ns' if wet_ew > wet_ns else 'ew'
 
 def _road_edge(k, tx, tz):
-    """A Cycling Road railing (fence next to the road deck or its supports): the deck continues under it."""
+    """A Cycling Road railing (fence next to the road deck or its supports): the deck continues under it. (cycling_road
+    2026-10-25: with the road raised, heights.py raise_road's railings; the fences beside its crossings stay on the ground)"""
+    F = _road_field()
+    if F is not None: return (k.cell.X + tx, k.cell.Z + tz) in F.road_rail
     return k.cls(tx, tz) == 'fence' and any(k.cls(tx + dx, tz + dz) in ('bike_path', 'other:bridge_support')
                                             for dx in (-1, 0, 1) for dz in (-1, 0, 1))
+
+def _road_field():
+    """heights.py's field when it raised the Cycling Road (raise_road: F.road_deck), else None."""
+    F = getattr(sys.modules.get('terrain.heights'), 'FIELD', None)
+    return F if F is not None and getattr(F, 'road_deck', None) else None
+
+ROAD_POST = 8, 6         # (a Cycling Road post: units along the road's edge, units out from it)
+
+def road_under(m, k):
+    """(cycling_road 2026-10-25) Under the raised Cycling Road (heights.py raise_road, ROAD_RISE over the ground):
+    - the ground under its deck over land (world.py draws none under the deck: ground_cover), at the ground's height in
+      the ground's texture - seen under the deck's edges, and the path at its crossings;
+    - posts where Sapphire draws the road's supports (other:bridge_support, its blue-and-brown posts beside the road): a
+      concrete post (hashi02a's side band, as the deck's side faces) in the support tile against the deck's edge, from the
+      ground - or 14 units into the water - up to the deck's height, with a cap. Every support tile over land gets one
+      (a solid tile you see why you cannot step on; one away from the deck a 10-unit footing: Gen 3 draws the posts of
+      the south platform two rows below it); over the water the runs get one at their ends and every 3 tiles."""
+    F = _road_field()
+    if F is None: return
+    CX, CZ, world = k.cell.X, k.cell.Z, k.cell.world
+    base = getattr(F, 'road_base', {})
+    # the ground under the deck over land: one quad per run of tiles in a row with the same drop and texture
+    rows = {}
+    for tz in range(32):
+        for tx in range(32):
+            p = (CX + tx, CZ + tz)
+            if p not in F.road_deck or p not in base or water_under(world, *p) is not None: continue
+            nbm = [F.mat.get(q) for q in ((p[0] + 1, p[1]), (p[0] - 1, p[1]), (p[0], p[1] + 1), (p[0], p[1] - 1))
+                   if q in F.walk and q not in F.road_deck and F.mat.get(q)]
+            mat = nbm[0] if nbm else F.mat.get(p, 'grass01ax')
+            rows.setdefault((tz, base[p] - F.y(*p), mat), []).append(tx)
+    for (tz, drop, mat), xs in rows.items():
+        for a, b in runs(xs):
+            flat(m, mat, X(a), Z(tz), X(b + 1), Z(tz + 1), drop, lambda x, z: ((x + HALF) / 64, -(z + HALF) / 64))
+    # posts in the support tiles beside the deck (one per tile, against the first deck tile beside it)
+    sup = lambda p: (world.get(p) or (0, 0))[1] == 'other:bridge_support'
+    pw, pd = ROAD_POST
+    for tz in range(32):
+        for tx in range(32):
+            s = (CX + tx, CZ + tz)
+            if not sup(s): continue
+            wet = water_under(world, *s)
+            d = next(((dx, dz) for dx, dz in ((0, -1), (0, 1), (-1, 0), (1, 0)) if (s[0] + dx, s[1] + dz) in F.road_deck), None)
+            cx, cz = X(tx) + 8, Z(tz) + 8
+            if d is None:                                     # (no deck beside it: over land a footing, 10 high)
+                if wet is not None: continue
+                _post(m, cx - pw / 2, cz - pw / 2, cx + pw / 2, cz + pw / 2, -1, 10, None)
+                continue
+            dx, dz = d
+            if wet is not None:                               # (over the water: run ends and every 3 tiles)
+                ax = (1, 0) if dz else (0, 1)
+                run = lambda q: sup(q) and (q[0] + dx, q[1] + dz) in F.road_deck
+                if run((s[0] - ax[0], s[1] - ax[1])) and run((s[0] + ax[0], s[1] + ax[1])) and (s[0] if dz else s[1]) % 3:
+                    continue
+            p = (s[0] + dx, s[1] + dz)
+            top = F.y(*p) - F.y(*s)
+            bot = (F.y(*wet) - F.y(*s) - 14) if wet is not None else -1
+            if dz: x0, x1 = cx - pw / 2, cx + pw / 2; z0, z1 = (Z(tz), Z(tz) + pd) if dz < 0 else (Z(tz + 1) - pd, Z(tz + 1) - 0.05)
+            else: z0, z1 = cz - pw / 2, cz + pw / 2; x0, x1 = (X(tx), X(tx) + pd) if dx < 0 else (X(tx + 1) - pd, X(tx + 1) - 0.05)
+            _post(m, x0, z0, x1, z1, bot, top, (dx, 0, dz))
+
+def _post(m, x0, z0, x1, z1, bot, top, hidden):
+    """A concrete post (hashi02a's side band, the deck's side faces; its top the deck's colour) from bot to top; the
+    side facing `hidden` (against the deck) is left out."""
+    v = (top - bot) / 16
+    for verts, n in (([(x0, bot, z1, 0.22, 0), (x1, bot, z1, 0.34, 0), (x1, top, z1, 0.34, v), (x0, top, z1, 0.22, v)], SOUTH),
+                     ([(x0, bot, z0, 0.22, 0), (x0, bot, z1, 0.34, 0), (x0, top, z1, 0.34, v), (x0, top, z0, 0.22, v)], WEST),
+                     ([(x1, bot, z0, 0.22, 0), (x1, bot, z1, 0.34, 0), (x1, top, z1, 0.34, v), (x1, top, z0, 0.22, v)], EAST),
+                     ([(x0, bot, z0, 0.22, 0), (x1, bot, z0, 0.34, 0), (x1, top, z0, 0.34, v), (x0, top, z0, 0.22, v)], NORTH)):
+        if n != hidden and n != NORTH: face(m, 'hashi02a', verts, n)     # (north faces: Black 2's camera never sees them)
+    flat(m, 'hashi02a', x0, z0, x1, z1, top, lambda x, z: (0.97, (x + HALF) / T))
 
 def draw_road_rails(m, k):
     """(walkability 2026-10-11) The Cycling Road's support tiles beside its deck over land (Sapphire's blue side strip
@@ -391,7 +465,9 @@ def draw_decks(m, k):
             member = lambda tx, tz: k.cls(tx, tz) == 'bridge' or (k.cell.X + tx, k.cell.Z + tz) in du
             members = {'bridge'}
         else:
-            member = lambda tx, tz: k.cls(tx, tz) in ('bike_path', 'other:acro_bike_rail') or _road_edge(k, tx, tz)
+            Fr = _road_field()        # (cycling_road: the raised road's landings and signs on it are deck too)
+            member = lambda tx, tz: k.cls(tx, tz) in ('bike_path', 'other:acro_bike_rail') or _road_edge(k, tx, tz) or (
+                Fr is not None and (k.cell.X + tx, k.cell.Z + tz) in Fr.road_deck)
             members = {'bike_path'}
         tiles = [(tx, tz) for tz in range(32) for tx in range(32) if member(tx, tz)]
         if not tiles: continue
@@ -426,6 +502,9 @@ def draw_decks(m, k):
                 flat(m, mat, X(tx), Z(a), X(tx + 1), Z(b + 1), y, lambda x, z: (0.34 + 0.63 * (x - x0) / T, -(z + HALF) / T))
         def open_edge(tx, tz, dx, dz):
             if member(tx + dx, tz + dz): return False
+            if mat == 'hashi02a' and Fh is not None and (k.cell.X + tx + dx, k.cell.Z + tz + dz) in Fh.slope and \
+                    (k.cell.X + tx, k.cell.Z + tz) in getattr(Fh, 'road_landing', ()):
+                return False                                  # (a raised road's landing: its stairs go on from it)
             if k.cls(tx, tz) == 'other:acro_bike_rail':      # a rail's side only over water (a post's tile with water
                 n = k.cls(tx + dx, tz + dz)                   # under it): over lower land heights.py draws the face
                 return n in WATER or (n == 'other:acro_bike_rail_support' and
@@ -443,7 +522,7 @@ def draw_decks(m, k):
         # over land they stand in the rock faces heights.py draws up to the road, buried where they sank)
         def inset(tx, tz, dx=0, dz=0):
             p = (k.cell.X + tx, k.cell.Z + tz)
-            if p in stilts or p in up: return 0.05
+            if p in stilts or p in up or p in getattr(Fh, 'road_deck', ()): return 0.05   # (cycling_road: the raised road)
             Fh_ = getattr(H_, 'FIELD', None)
             return 0.05 if (mat == 'hashi01a' and (dx or dz) and Fh_ is not None
                             and Fh_.y(p[0] + dx, p[1] + dz) != Fh_.y(*p)) else 0
@@ -1141,7 +1220,8 @@ def ground_cover(cell):
     for tz in range(32):
         for tx in range(32):
             c = k.cls(tx, tz)
-            if c in ('sand', 'ash_grass', 'bridge', 'bike_path', 'other:acro_bike_rail', 'other:berry_soil') + BEACH_PROPS or _road_edge(k, tx, tz):
+            if c in ('sand', 'ash_grass', 'bridge', 'bike_path', 'other:acro_bike_rail', 'other:berry_soil') + BEACH_PROPS or _road_edge(k, tx, tz) \
+                    or (cell.X + tx, cell.Z + tz) in getattr(_road_field(), 'road_deck', ()):    # (the raised road: road_under)
                 out.add((tx, tz))
             elif (cell.X + tx, cell.Z + tz) in sand_under(cell.world) or (cell.X + tx, cell.Z + tz) in deck_under(cell.world) or \
                     (c in ('path', 'wall', 'fence') and pier_tile(cell.world, cell.X + tx, cell.Z + tz)) or \
@@ -1161,7 +1241,9 @@ def draw(m, cell):
     if 'long_grass' in present: (draw_dark_grass if LONG_GRASS == 'dark' else draw_long_grass)(m, k)
     if present & {'bridge', 'bike_path', 'other:bridge_support', 'other:acro_bike_rail'} or 'fence' in present: draw_decks(m, k)
     if 'fence' in present: draw_fences(m, k)
-    if 'other:bridge_support' in present: draw_road_rails(m, k)
+    if _road_field() is not None:     # (cycling_road: the raised road's ground and posts; no railings at the ground)
+        if present & {'bike_path', 'other:bridge_support', 'stairs', 'fence', 'sign'}: road_under(m, k)
+    elif 'other:bridge_support' in present: draw_road_rails(m, k)
     if 'wall' in present: draw_walls(m, k)
     if 'bush' in present: draw_bushes(m, k)
     if present & {'prop', 'other:market_awning'}: draw_props(m, k)

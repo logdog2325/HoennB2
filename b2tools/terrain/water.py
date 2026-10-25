@@ -455,6 +455,9 @@ def draw(m, cell):
             if e and e[1] not in CLASSES and _ground.water_under(world, X + p[0], Z + p[1]) is not None:
                 lo = [H(n) for n in ((p[0] + 1, p[1]), (p[0] - 1, p[1]), (p[0], p[1] + 1), (p[0], p[1] - 1))
                       if looks.get(n) in HOLE and (world.get((X + n[0], Z + n[1])) or (0, 0))[1] in CLASSES]
+                if not lo:       # (cycling_road 2026-10-25: inside a wide deck - the raised Cycling Road - the water
+                    t = _ground.water_under(world, X + p[0], Z + p[1])        # tile it copies)
+                    lo = [hgt(*t)] if t is not None else []
                 if lo and min(lo) < H(p): under[p] = min(lo)        # (the lowest water beside it)
     def flat(mat, tiles, y, rep, uv=None, src=None):
         """src: the water tiles a grown floor came from. Its other tiles (under the banks) lie at the nearest water

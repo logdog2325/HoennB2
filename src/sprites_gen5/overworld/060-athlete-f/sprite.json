@@ -1,0 +1,26 @@
+{
+ "kind": "overworld",
+ "code": 60,
+ "sheet": 66,
+ "frames": 7,
+ "size": [
+  32,
+  32
+ ],
+ "controller": 2,
+ "textures": [
+  "t4x4x7.0",
+  "t4x4x7.1",
+  "t4x4x7.2",
+  "t4x4x7.3",
+  "t4x4x7.4",
+  "t4x4x7.5",
+  "t4x4x7.6"
+ ],
+ "palette": "t4x4x7",
+ "name": "athlete-f",
+ "note": "Running Triathlete (F)",
+ "source": "community: hoenn_npcs_141/NPC_208__athlete_F_PurpleZaffre_Recolour.png (shift +1)",
+ "colours": 15,
+ "made_by": "b2tools/sprite_community_npcs.py"
+}

@@ -51,7 +51,28 @@ def room_numbers():
     rooms = version.load_json(p)['rooms'].values() if os.path.exists(p) else []
     return {r[a]: r[b] for r in rooms if 'own_scripts' in r for a, b in (('scripts', 'own_scripts'), ('init_scripts', 'own_init'))}
 
+LOCAL_WORK_MAX = 0x8061   # a script's own works: Black 2's ScriptWork.localWork[0x62] (pokebw2 include/field/field_script.h)
+
+def check_local_works():
+    """Refuse script works 0x8062-0x80FF in our sources (hof_fix 2026-10-25): past localWork[0x62] they write over the
+    ScriptWork's own pointers (actorAnmProc, stadiumTrainers, subwork) and the next heap block. The Hall of Fame's
+    0x8066/0x8067 became ScriptWork.subwork, freed when the script ended: a data abort (black screen) on melonDS, Delta
+    and hardware; DeSmuME has no protection unit and went on. Comments are skipped."""
+    import re, glob
+    bad = []
+    paths = glob.glob(os.path.join(SRC, '**', '*.s'), recursive=True) + glob.glob(os.path.join(SRC, '**', '*.inc'), recursive=True)
+    paths += glob.glob(os.path.join(ROOT, 'src', 'include', '*.inc'))
+    for p in paths:
+        for n, line in enumerate(open(p, encoding='utf-8', errors='replace'), 1):
+            code = re.sub(r'/\*.*?\*/', '', line.split('//')[0])
+            for m in re.finditer(r'\b0x(80[0-9a-fA-F]{2})\b', code):
+                if int(m.group(1), 16) > LOCAL_WORK_MAX:
+                    bad.append(f'{os.path.relpath(p, ROOT)}:{n}: {m.group(0)}')
+    if bad:
+        raise SystemExit('scripts: script works past 0x8061 (Black 2 has 0x8000-0x8061 only):\n  ' + '\n  '.join(bad))
+
 def apply(files):
+    check_local_works()
     entries = narcio.load(files, 56)
     done = []
     moved = room_numbers()

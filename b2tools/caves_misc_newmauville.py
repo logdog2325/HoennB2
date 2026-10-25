@@ -25,6 +25,9 @@ Sapphire's riveted wall, its pale tile floor in64_lab03_01):
             (blue lowered, green up) and NewMauville_Inside_GreenDown, loaded instead of the room's by map replace
             events 5 and 6 (works 0x4036 / 0x4037; the zone's "alt_rooms": b2tools/patches/interiors.py; story_fixups
             2026-10-07; the story: src/field_scripts/0266_room_NewMauville_Inside.s)
+  switches  Sapphire's button metatiles on their tiles (floor_tex "gen3"/"gen3_mt": blue 0x236, green 0x22e, the
+            generator's red 0x23e; pressed 0x24f on the lowered colour's buttons in its layout; 2026-10-25), and
+            Sapphire's blue / green bar metatiles on the raised barriers' passage tiles, under the electric floor
 Wild encounters (behaviour 0x0B on the floor): recipe "encounters". The exit (32,33) is the builder's stair spot (a
 warp walked into northwards in a notch of the wall).
 """
@@ -48,6 +51,12 @@ BARRIER_PASS = {0x2c7, 0x2cf, 0x2c6, 0x2ce}          # the two lower tiles of ea
 BLUE_PASS, GREEN_PASS = {0x2c7, 0x2cf}, {0x2c6, 0x2ce}
 EVENT_BLUE_DOWN, EVENT_GREEN_DOWN = 5, 6              # map replace events (works 0x4036 / 0x4037, data/story_ids.json)
 ALTS = {'blue': (NAME + '_BlueDown', EVENT_BLUE_DOWN), 'green': (NAME + '_GreenDown', EVENT_GREEN_DOWN)}
+# the floor switches (user report 2026-10-25: invisible, as the Mauville Gym's were): Sapphire's own button metatiles
+# drawn on their tiles (floor_tex "gen3", "gen3_mt": models_interior gen3_tile_image), each layout with the buttons its
+# setmetatile shows: blue lowered = the blue buttons pressed (METATILE_BikeShop_Button_Pressed), green unpressed; green
+# lowered the reverse. The generator's switch (33,6) stays unpressed (Sapphire presses it with the generator off, a
+# state these layouts do not have). The same map and art in Ruby and Emerald (pokeemerald's map and BikeShop tileset).
+BUTTON_BLUE, BUTTON_GREEN, BUTTON_RED, BUTTON_PRESSED = 0x236, 0x22e, 0x23e, 0x24f
 
 STYLES = {
     "cm_newmauville": {
@@ -114,8 +123,18 @@ def recipe(state='base'):
             if x is not None and x == p + 1: p = x; continue
             floor.append([s, z, p, z])
             if x is not None: s = p = x
+    pressed = {'blue': BUTTON_BLUE, 'green': BUTTON_GREEN}.get(state)
+    switches = [dict(tex=f'g3nm_{m:x}', gen3=[x, z], gen3_mt=m, rect=[x, z, x, z], stretch=True,
+                     _what=f'switch ({x},{z}) Sapphire 0x{mt(x, z):x}')
+                for (x, z) in tiles if mt(x, z) in (BUTTON_BLUE, BUTTON_GREEN, BUTTON_RED)
+                for m in [BUTTON_PRESSED if mt(x, z) == pressed else mt(x, z)]]
+    # the raised barriers' passage tiles: Sapphire's blue / green bar drawn under the electric floor (its sparks alone
+    # were hard to see and had no colour; 2026-10-25); lowered ones are plain floor
+    bars = [dict(tex=f'g3nm_{mt(x, z):x}', gen3=[x, z], gen3_mt=mt(x, z), rect=[x, z, x, z], stretch=True,
+                 _what=f'barrier ({x},{z}) Sapphire 0x{mt(x, z):x}')
+            for (x, z) in tiles if mt(x, z) in BARRIER_PASS and [x, z] not in lowered]
     r = dict(map=NAME, style='cm_newmauville', origin=ORIGIN, encounters=True, open=True, floor=floor,
-             blocks=[dict(use='cm_nm_wall', tiles=walls)], furniture=furniture,
+             floor_tex=switches + bars, blocks=[dict(use='cm_nm_wall', tiles=walls)], furniture=furniture,
              cave_zone=dict(area=SET, header_zone=239))    # converter/gen_caves.py: P2 Laboratory's header
     if state == 'base':
         r['alt_rooms'] = [dict(room=n, event=e) for n, e in ALTS.values()]     # gen_caves -> the zone json -> interiors patch
@@ -126,7 +145,7 @@ def recipe(state='base'):
         r['_doc'] = (f'New Mauville inside with the {state} barriers lowered (story_fixups): Sapphire\'s '
                      f'{"EventScript_15E5DA (blue switch)" if state == "blue" else "EventScript_15E728 (green switch)"}, '
                      f'loaded instead of the room by map replace event {ALTS[state][1]}.')
-    return r, dict(tiles=len(tiles), walls=len(walls), furniture=len(furniture), lowered=len(lowered))
+    return r, dict(tiles=len(tiles), walls=len(walls), furniture=len(furniture), lowered=len(lowered), switches=len(switches), bars=len(bars))
 
 def main():
     sp = os.path.join(LAYOUTS, '_styles_caves_misc.json')

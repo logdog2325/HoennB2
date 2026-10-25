@@ -36,9 +36,10 @@
 #define T_LetsRecord 1
 #define HF_STEVEN 1
 #define HF_AGAIN 0x8060                          /* 1: the game was cleared before (Black 2's CallGameClear 1) */
-#define HF_PARTY_SLOT 0x8065
-#define HF_TMP 0x8066
-#define HF_RIBBON_GET 0x8067
+#define HF_PARTY_SLOT 0x8050                    /* hof_fix 2026-10-25: were 0x8065-0x8068, past the script's 0x62 works (0x8000-0x8061, */
+#define HF_TMP 0x8051                           /*   pokebw2 field_script.h ScriptWork.localWork): 0x8066/0x8067 overwrote ScriptWork.subwork, */
+#define HF_RIBBON_GET 0x8052                    /*   freed when the script ends (CallGameClear): a data abort on melonDS/Delta/hardware, */
+#define HF_RESULT 0x8053                        /*   the black screen right after the record machine (DeSmuME has no protection unit) */
 
 Script_None:
     VMHalt
@@ -81,13 +82,16 @@ L_HF_First:
     VMCall HF_SetGameClearFlags                  // call EverGrandeCity_HallOfFame_EventScript_SetGameClearFlags
     h_setrespawn 1                               // setrespawn HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F / MAYS_HOUSE_2F
     VMCall HF_GameClear                          // special GameClear: the heal, the Champion ribbons
-    FadeEx 3, 0, 16, 4                           // fadescreenspeed 1, 24 (a slow fade to black)
-    FadeExWait
-    h_goto_if_eq HF_AGAIN, 1, L_HF_Again
-    CallGameClear 0                              // waitstate: the record screen, the save, the credits (ends the script)
-    VMHalt
+    FadeOutBlackQ                                // fadescreenspeed 1, 24. hof_fix (2026-10-25, Ruby v18.2 report on Delta: black
+    FadeWait                                     //   for good after the record): Black 2's own ending of its Hall of Fame (0290.s):
+    h_goto_if_eq HF_AGAIN, 1, L_HF_Again         //   the field's fade (FieldFadeTCB), CallGameClear, FinishAllEvents + unpause + end.
+    CallGameClear 0                              //   Was FadeEx 3, 0, 16, 4 (GFL_FadeSet, past the field's fade state) + VMHalt only
+    VMJump L_HF_End                              //   (fine in DeSmuME). The record screen, the save, the credits.
 L_HF_Again:
     CallGameClear 1
+L_HF_End:
+    FinishAllEvents
+    ActorsUnpauseAll
     VMHalt
 
 HF_SetGameClearFlags:                            // EverGrandeCity_HallOfFame_EventScript_SetGameClearFlags
@@ -157,10 +161,10 @@ HF_GameClear:                                    // special GameClear (pokeruby 
 L_HF_RibbonLoop:
     WorkCmpWork HF_PARTY_SLOT, HF_TMP
     VMJumpIf CMP_GE, L_HF_RibbonsDone
-    PokePartyIsEgg 0x8068, HF_PARTY_SLOT
-    h_goto_if_ne 0x8068, 0, L_HF_NextSlot        // (not an Egg)
-    h_check_ribbon 0x8068, HF_PARTY_SLOT, RIBBON_CHAMPION
-    h_goto_if_ne 0x8068, 0, L_HF_NextSlot        // (does not have it yet)
+    PokePartyIsEgg HF_RESULT, HF_PARTY_SLOT
+    h_goto_if_ne HF_RESULT, 0, L_HF_NextSlot     // (not an Egg)
+    h_check_ribbon HF_RESULT, HF_PARTY_SLOT, RIBBON_CHAMPION
+    h_goto_if_ne HF_RESULT, 0, L_HF_NextSlot     // (does not have it yet)
     h_give_ribbon HF_PARTY_SLOT, RIBBON_CHAMPION
     WorkSetConst HF_RIBBON_GET, 1
 L_HF_NextSlot:

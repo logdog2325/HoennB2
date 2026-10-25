@@ -54,6 +54,31 @@ def _chunk(d):
     return gf_container_build('GC' if len(layers) > 1 else 'WB',
                               [_terrain(d)] + layers + [open(os.path.join(d, 'placements.bin'), 'rb').read()])
 
+def _season_chunks(world, cells, standalone, gmat, chunks):
+    """(perf 2026-10-25) The seasons' own chunks of the cells with seasonal decals (world.py season_variants: autumn's
+    leaves and falling-leaf ribbons, winter's snow; the cell's own chunk has none) appended after every other chunk, and
+    their a/0/1/0 entries as Black 2's Route 20 autumn chunks, (0, kind 0, condition 0, 286, 286, 290, 286, 0, 0xFFFF):
+    condition 0 picks values[season] (ov012 map_replace.c, GameSystem_GetSeason: summer with Birch's seasons answer NO)
+    when the matrix loads. They go after the event and weather entries (the same pass goes through the table in order),
+    so a cell swapped for another layout takes that layout's own season chunk (its entry is keyed on the layout's chunk),
+    and the cell's own season entry finds nothing to swap."""
+    seasonal = sorted(world.get('season_cells', []), key=lambda s: s['chunk'])
+    vals = {}
+    for s in seasonal:
+        assert s['chunk'] == len(chunks), f"season chunk {s['chunk']} would be entry {len(chunks)}"
+        chunks.append(_chunk(os.path.join(W, 'cells', s['dir'])))
+        vals.setdefault(s['base_chunk'], {})[s['season']] = s['chunk']
+    where = {}                                # chunk id -> the matrices it is in
+    for c in cells + world.get('alt_cells', []): where.setdefault(c['chunk'], set()).add(world['matrix'])
+    for g in standalone:
+        for c in g['cells'] + g.get('alt_cells', []): where.setdefault(c['chunk'], set()).add(gmat[g['group']])
+    out = []
+    for base, v in sorted(vals.items()):
+        assert base in where, f'season chunks of chunk {base}, which no matrix has'
+        for m in sorted(where[base]):
+            out.append(struct.pack('<HBB6H', m, 0, 0, base, base, v.get(2, base), v.get(3, base), 0, 0xFFFF))
+    return out
+
 def apply(files):
     world = json.load(open(os.path.join(W, 'world.json')))
     retargeted = version_doors(world)
@@ -97,10 +122,11 @@ def apply(files):
         d = os.path.join(W, 'cells', a['dir'])
         chunks.append(_chunk(d))
         replaces.append(struct.pack('<HBB6H', gmat[gname], 0, a['event'] + 3, a['base_chunk'], a['chunk'], 0, 0, 0, 0xFFFF))
+    replaces += _season_chunks(world, cells, standalone, gmat, chunks)
     narcio.save(files, 8, chunks)
     if replaces:                              # (a/0/1/0 has a RESERVE in build_rom.py)
         mr = narcio.load(files, 10)
-        for m in [world['matrix']] + [gmat[g] for g, _ in galts]:
+        for m in [world['matrix']] + sorted({gmat[g] for g, _ in galts} | {gmat[g['group']] for g in standalone}):
             assert not any(struct.unpack_from('<H', mr[0], i)[0] == m for i in range(0, len(mr[0]), 16)), \
                 f"a/0/1/0 already has entries for matrix {m}"
         if any(a.get('event') == 1 for a in world.get('alt_cells', [])) or any(a['event'] == 1 for _, a in galts):

@@ -59,12 +59,12 @@ Script_None:
 #define CH_RIVAL 2
 #define CH_BIRCH 3
 #define CH_EXIT_WARP 1
-#define CH_PARTY_SLOT 0x8065
-#define CH_TMP 0x8066
-#define CH_RIBBON_GET 0x8067
-#define C11_DEXKIND 0x8062                       /* scenes/ch11_dexcount.inc: kind in, count out */
-#define C11_DEXCOUNT 0x8063
-#define C11_DEXTMP 0x8064
+#define CH_PARTY_SLOT 0x8050                     /* hof_fix 2026-10-25: these six were 0x8062-0x8067, past the script's 0x62 works */
+#define CH_TMP 0x8051                            /*   (0x8000-0x8061, pokebw2 field_script.h ScriptWork.localWork): CH_TMP wrote over */
+#define CH_RIBBON_GET 0x8052                     /*   ScriptWork.subwork, the dex count over actorAnmProc (see 0114) */
+#define C11_DEXKIND 0x8054                       /* scenes/ch11_dexcount.inc: kind in, count out */
+#define C11_DEXCOUNT 0x8055
+#define C11_DEXTMP 0x8056
 
 CH_Init:                                         // EverGrandeCity_ChampionsRoom_OnTransition
 #ifdef HOENN_TEST_CH11

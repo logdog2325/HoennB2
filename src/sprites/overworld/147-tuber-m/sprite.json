@@ -1,0 +1,25 @@
+{
+ "kind": "overworld",
+ "code": 147,
+ "sheet": 145,
+ "frames": 7,
+ "size": [
+  32,
+  32
+ ],
+ "controller": 2,
+ "textures": [
+  "t4x4x7.0",
+  "t4x4x7.1",
+  "t4x4x7.2",
+  "t4x4x7.3",
+  "t4x4x7.4",
+  "t4x4x7.5",
+  "t4x4x7.6"
+ ],
+ "palette": "t4x4x7",
+ "name": "tuber-m",
+ "note": "TUBER_M trainers (CLASSIC): Black 2's code 153 picture unchanged; NEW: src/sprites_gen5/overworld/147-tuber-m",
+ "source": "Black 2 a/0/4/8 sheet 151 (code 153)",
+ "made_by": "b2tools/sprite_community_npcs.py"
+}

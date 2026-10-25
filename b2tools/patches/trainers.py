@@ -150,6 +150,12 @@ def place_npcs(files):
     ents = narcio.load(files, 126)
     by_zone = {}
     for n in cfg['outdoor']: by_zone.setdefault(n['zone'], []).append((n['x'], n['z'], n))
+    # (cycling_road 2026-10-25) an outdoor trainer on a two-layer deck (Route 110's raised Cycling Road over the sea:
+    # water at -8 under the deck at 32) stands at the deck's height: at y 0 the water layer was the nearer one
+    sys.path.insert(0, HERE)
+    from story import deck_y
+    world_dir = os.environ.get('HOENN_WORLD_DIR') or os.path.join(ROOT, 'work', 'world')
+    outdoor_y = {id(n): (deck_y(world_dir, n['x'], n['z']) or 0) * 4096 for n in cfg['outdoor']}
     skipped = []
     for n in cfg['rooms']:
         if not version.room_in_version(n['room']): continue    # the other version's room (data/versions.json)
@@ -164,7 +170,7 @@ def place_npcs(files):
         tmpl = dict(e['npcs'][0]) if e['npcs'] else dict(rail=0, y=0)
         for x, z, n in items:
             npc = dict(tmpl, **{k: n[k] for k in keys}, areaw=n.get('areaw', 0), areah=n.get('areah', 0), rail=0, x=x, z=z,
-                       y=0)                                     # (walkers: Sapphire's range, converter/gen_trainer_npcs.py)
+                       y=outdoor_y.get(id(n), 0))               # (walkers: Sapphire's range, converter/gen_trainer_npcs.py)
             while npc['uid'] in uids: npc['uid'] += 1
             uids.add(npc['uid'])
             e['npcs'].append(npc)

@@ -1,0 +1,31 @@
+{
+ "kind": "overworld",
+ "code": 308,
+ "sheet": 286,
+ "frames": 12,
+ "size": [
+  32,
+  32
+ ],
+ "controller": 3,
+ "textures": [
+  "t4x4x12.0",
+  "t4x4x12.1",
+  "t4x4x12.2",
+  "t4x4x12.3",
+  "t4x4x12.4",
+  "t4x4x12.5",
+  "t4x4x12.6",
+  "t4x4x12.7",
+  "t4x4x12.8",
+  "t4x4x12.9",
+  "t4x4x12.10",
+  "t4x4x12.11"
+ ],
+ "palette": "t4x4x12",
+ "name": "poke-fan-m",
+ "note": "POKEFAN_M trainers (moved from code 20 by sprite_switch)",
+ "source": "community: hoenn_npcs_141/trPokeFan_M_2.png (shift +1)",
+ "colours": 15,
+ "made_by": "b2tools/sprite_community_npcs.py"
+}

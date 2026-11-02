@@ -1,0 +1,49 @@
+{
+ "zone": 567,
+ "room": "SecretBase_Shrub1",
+ "cave": true,
+ "area": 299,
+ "dark": false,
+ "header": {
+  "map_type": 16,
+  "npc_cache": 24,
+  "weather_word": 0,
+  "flags": 18563,
+  "icon_word": 40975,
+  "place_display": 1,
+  "bgm0": 1018,
+  "bgm1": 1018,
+  "bgm2": 1018,
+  "bgm3": 1018,
+  "place": 86,
+  "encounters": 8191,
+  "enc_slot": 6
+ },
+ "warps": [
+  {
+   "at": [
+    5,
+    7
+   ],
+   "to": [
+    567,
+    256
+   ],
+   "what": "MAP_DYNAMIC: back where the player came from (GameData's next zone)"
+  }
+ ],
+ "triggers": [],
+ "npcs": [],
+ "signs": [
+  {
+   "script": 10736,
+   "at": [
+    3,
+    2
+   ],
+   "dir": 0,
+   "what": "the PC, facing north"
+  }
+ ],
+ "what": "SecretBase_Shrub1: Secret Base (b2tools/secret_base_data.py rooms, b2tools/models_cave.py); notes/SECRET_BASES.md"
+}

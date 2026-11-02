@@ -134,6 +134,8 @@ def build():
                             for i, p in enumerate(pics)],
                'berries': {NAMES[b - 1]: row for b, row in by_berry.items()}},
               open(os.path.join(OUT, 'pictures.json'), 'w'), indent=1)
+    import secret_base_data                 # Secret Bases' spot pictures follow the trees' in the same list (notes/SECRET_BASES.md)
+    secret_base_data.write_spots()
     return pics, by_berry
 
 

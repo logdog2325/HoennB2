@@ -4,6 +4,7 @@
 #include "asm/field_script.inc"
 #include "hoenn.h"
 #include "hoenn_story.inc"
+#include "common/secret_base_defs.inc"  // Secret Bases (notes/SECRET_BASES.md)
 #include "scenes/battle_tower_lib.inc"
 #ifdef HOENN_EMERALD
 // Pokémon Emerald NDS (frontier_core, 2026-10-12; notes/FRONTIER.md): the receptionist runs the Battle Frontier's
@@ -581,7 +582,10 @@ BTL_AwardMan:                           // 160733
     h_goto_if_set FLAG_RECEIVED_GOLD_SHIELD, L_BTL_AwardDone
     h_goto_if_set FLAG_RECEIVED_SILVER_SHIELD, L_BTL_Award100
     h_msgbox 29                         // Hahahaha! Pure magnificence! ... You've beaten 50 Trainers in a row! ...
-    h_setflag FLAG_RECEIVED_SILVER_SHIELD   // givedecoration DECOR_SILVER_SHIELD: Black 2 has no decorations
+    h_closemessage
+    sb_givedecoration 42, HLIB_TMP          // givedecoration DECOR_SILVER_SHIELD
+    h_goto_if_eq HLIB_TMP, 0, L_BTL_ShieldNoRoom
+    h_setflag FLAG_RECEIVED_SILVER_SHIELD
     h_msgbox 31                         // I suggest you keep it displayed. It will surely attract attention.
     h_release
 L_BTL_Award100:                         // 160773
@@ -594,8 +598,13 @@ L_BTL_Award100:                         // 160773
 L_BTL_AwardBest:
     h_goto_if_lt BT_T1, 100, L_BTL_AwardDone
     h_msgbox 30                         // Wahahaha! ... You've beaten 100 Trainers in a row! ...
-    h_setflag FLAG_RECEIVED_GOLD_SHIELD     // givedecoration DECOR_GOLD_SHIELD
+    h_closemessage
+    sb_givedecoration 43, HLIB_TMP          // givedecoration DECOR_GOLD_SHIELD
+    h_goto_if_eq HLIB_TMP, 0, L_BTL_ShieldNoRoom
+    h_setflag FLAG_RECEIVED_GOLD_SHIELD
     h_msgbox 31
+    h_release
+L_BTL_ShieldNoRoom:
     h_release
 L_BTL_AwardDone:                        // 1607C5
     h_msgbox 33                         // I'm overwhelmed with satisfaction after seeing your magnificent performance ...

@@ -28,7 +28,7 @@ import os, re, sys, glob, json
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.dirname(HERE)); sys.path.insert(0, HERE)
-import narcio, version  # noqa: E402
+import b2decomp, narcio, version  # noqa: E402
 
 ROOT = os.path.abspath(os.path.join(HERE, '..', '..'))
 
@@ -182,6 +182,8 @@ def apply(files):
     if os.environ.get('HOENN_BERRY_PLANTING', '1') != '0':      # berry planting (notes/BERRY_PLANTING.md): Gen 3's tree actors
         paths = [p for p in paths if os.path.basename(p) != 'berry_spots.json'] + \
             version.overlay(os.path.join(ROOT, 'data', 'story', 'berries'), 'berry_trees.json')   # (Emerald: emerald/)
+    if b2decomp.c_on():                                         # the lab aide of the following Pokémon (notes/FOLLOWERS.md)
+        paths += version.overlay(os.path.join(ROOT, 'data', 'story', 'followers'), '*.json')
     paths += [p for p in os.environ.get('HOENN_EXTRA_STORY', '').split(':') if p]   # test builds: more object files
     objs = [(os.path.basename(p), version_keys(o)) for p in paths for o in json.load(open(p)).get('objects', [])]
     if not objs: return 'no story objects (data/story/*.json)'
@@ -228,6 +230,8 @@ def apply(files):
         wx, wz = fmaps[m]['ox'] + o['at'][0], fmaps[m]['oz'] + o['at'][1]
         if 'y' not in o and prefix == '' and alt_land(world_dir, m, wx, wz):   # (postgame_maps) open sea here, land in
             o['y'] = ground_y(world_dir, wx, wz, f'alt_{m}_')       # the map's other layout: that layout's height
+        if 'y' not in o and o.get('y_from_reader'):                 # a Secret Base spot on a cliff or a tree: where it is read
+            o['y'] = sign_y(world_dir, wx, wz, prefix, 0)            # from (the actor's y below is fx32, as a deck's)
         if 'y' not in o and o.get('kind') == 'sign':                 # a hidden item / sign on a solid tile (a beach
             o['y'] = sign_y(world_dir, wx, wz, prefix, o.get('dir', 4))   # rock): the height you read it from
         o.setdefault('y', ground_y(world_dir, wx, wz, prefix))       # triggers fire within 2 units of their y
@@ -258,6 +262,7 @@ def apply(files):
                        rail=0, x=x, z=z, y=0)
             if o.get('_main'):         # (on a walk-under bridge's deck: its height; a person's y is fx32 (Black 2's own
                 npc['y'] = (deck_y(world_dir, x, z) or 0) * 4096    # people: 65536 = 16 units), triggers' and signs' units)
+            if o.get('y_from_reader'): npc['y'] = o['y'] * 4096
             assert npc['uid'] not in {n['uid'] for n in e['npcs']}, f'{src}: uid {npc["uid"]} already in zone {zone}'
             e['npcs'].append(npc)
         elif kind == 'trigger':

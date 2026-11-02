@@ -1,5 +1,5 @@
 """Release kit (from freeze_fix's tests/mk_boot.py): cold boot -> Birch's six questions (answers given) -> truck -> base_house.
-    python mk_boot.py ROM OUTDIR yes|no yes|no hoenn|unova [classic|new] [seasons yes|no] [expshare yes|no] [boy|girl]
+    python mk_boot.py ROM OUTDIR yes|no yes|no hoenn|unova [classic|new] [seasons yes|no] [expshare yes|no] [boy|girl] [follower yes|no]
     (Fairy, modern split = yes, music, sprite style: notes/FAIRY.md "Birch's questions"; the 4th defaults to classic;
     the 5th, seasons (2026-10-18, notes/SEASONS.md), defaults to no; the 6th, the Exp. Share from the start
     (2026-10-19, notes/RESEARCH_EXPSHARE_HM.md), defaults to no = today's game. A ROM from before the 6th question
@@ -20,6 +20,8 @@ assert seasons in ('yes', 'no'), seasons
 expshare = sys.argv[8] if len(sys.argv) > 8 else 'no'
 assert expshare in ('yes', 'no'), expshare
 gender = sys.argv[9] if len(sys.argv) > 9 else 'boy'
+follower = sys.argv[10] if len(sys.argv) > 10 else 'no'    # the 7th question (2026-11-01, notes/FOLLOWERS.md); no = today's game
+assert follower in ('yes', 'no'), follower
 assert gender in ('boy', 'girl'), gender
 GIRL_Q = 'Or are you a girl?'.encode('utf-16-le')     # Birch's question (system text 0054), decoded in a string buffer
 
@@ -60,6 +62,10 @@ try:                                                                    # (the 6
     n += F.to_next_menu(e, 20); shots.append(F.answer(e, expshare == 'yes'))
 except SystemExit:
     n += 20; print('no 6th question (a ROM from before 2026-10-19)', flush=True); assert expshare == 'no', 'no Exp. Share question'
+try:                                                                    # (the 7th: the following Pokémon)
+    n += F.to_next_menu(e, 20); shots.append(F.answer(e, follower == 'yes'))
+except SystemExit:
+    n += 20; print('no 7th question (a ROM without the followers)', flush=True); assert follower == 'no', 'no followers question'
 cfg = F.config(e); print('presses', n, 'config', hex(cfg) if cfg is not None else None, flush=True)
 F.sheet(shots, OUT + '/questions.png', 2)
 for i, im in enumerate(shots): im.save(f'{OUT}/question_{i + 1}.png')     # 256x384 each

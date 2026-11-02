@@ -257,7 +257,7 @@ L_R111_Gauntlet:                            // Route111_EventScript_1501F3
     c4_closedoor
     h_release
 
-// ---- the Secret Power man (TM43: Secret Power is no Gen 5 TM; Black 2's TM43 stands in, as converter/gen_items.py) --
+// ---- the Secret Power man (Gen 3's TM43 Secret Power = the new TM102, b2tools/patches/new_tms.py) --
 R111_SecretPowerMan:                        // Route111_EventScript_1A3858 (data/scripts/secret_power_tm.inc)
     c4_talk
     h_yesno T_SPAsk, C4_TMP

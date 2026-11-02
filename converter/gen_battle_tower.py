@@ -27,7 +27,9 @@ sys.path.insert(0, HERE)
 from gen3text import convert  # noqa: E402
 
 RUBY = os.path.join(ROOT, 'external', 'pokeruby')
-B2 = os.path.join(ROOT, 'external', 'pokebw2')
+sys.path.append(os.path.join(ROOT, 'b2tools'))
+import b2decomp  # noqa: E402  (the Black 2 decomp's source tree and build base: notes/POKEBW2_UPGRADE.md section 7)
+B2 = b2decomp.SRC
 OUT = os.path.join(ROOT, 'data', 'battle_tower.json')
 ITEM_ALIAS = {'ITEM_STICK': 'ITEM_STICK'}
 MOVE_ALIAS = {'MOVE_SELF_DESTRUCT': 'MOVE_SELFDESTRUCT', 'MOVE_SMOKESCREEN': 'MOVE_SMOKE_SCREEN'}

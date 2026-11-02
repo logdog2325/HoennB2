@@ -1,0 +1,27 @@
+{
+ "_doc": "The following Pokémon's text (notes/FOLLOWERS.md; b2tools/patches/text.py installs this file only when our C is on): Birch's seventh question (line 36, Black 2's unused space) and 'seven questions', and the talk script's 9 lines (global 10380, text 0434: Pokémon Pearl's Amity Square lines, as PearlB2's). Also the lab aide's lines (text 0625, lines 38-43; 0792 Script_9, data/story/followers).",
+ "system/0054_game_start.txt": {
+  "26": "Before you go, I have seven quick\\nquestions for you.{be01}\\nYou can't change your answers\\nonce your adventure begins,{be00}\\nso think them over carefully.{be01}\\nFirst: some researchers now say\\nPokémon like Ralts and Marill{be00}\\nbelong to a brand-new type:\\nthe Fairy type!{be01}\\nWould you like to meet the\\nFairy type on your adventure?{be01}",
+  "35": "Sixth... the Exp. Share!{be01}\\nIt shares Exp. Points with your\\nwhole team, even the Pokémon{be00}\\nthat didn't battle.{be01}\\nYou can turn it on or off from\\nyour Bag whenever you like.{be01}\\nWould you like to start your\\njourney with an Exp. Share?{be01}",
+  "36": "And last... your partner!{be01}\\nWill your first Pokémon walk with\\nyou wherever you go?{be01}"
+ },
+ "script/0434.txt": {
+  "23": "{0102:0} is happily keeping up.",
+  "24": "{0102:0} appears to be very\\nhappy.",
+  "25": "{0102:0} appears to be feeling\\ngood.",
+  "26": "{0102:0} is looking endearingly\\nat you.",
+  "27": "{0102:0} is picking at the ground\\nfor some reason...",
+  "28": "{0102:0} almost tripped!",
+  "29": "{0102:0} is skipping happily.",
+  "30": "{0102:0} seems to be so happy\\nit can’t keep still.",
+  "31": "{0102:0} seems to be enjoying\\nthe walk."
+ },
+ "script/0625_birch_lab.txt": {
+  "38": "Did you know? The Prof’s research\\nshows a first Pokémon will gladly{be00}\\nwalk along behind its Trainer.{be01}\\nWould you like your first Pokémon\\nto walk with you?",
+  "39": "All right! Your first Pokémon will\\ncome out and walk with you.",
+  "40": "I see. Come and talk to me if\\nyou change your mind.",
+  "41": "Your first Pokémon is enjoying\\nthe walk.{be01}\\nShould it go back in its Poké Ball?",
+  "42": "All right. Your first Pokémon\\nwill rest in its Poké Ball now.",
+  "43": "Good! Then keep walking together."
+ }
+}

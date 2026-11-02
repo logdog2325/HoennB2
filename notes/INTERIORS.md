@@ -123,7 +123,7 @@ tile leads back (used to visit the truck, which no door reaches).
   Script_3 of 0782 / 0786; "<player> booted up the PC." is Black 2's own line 0 of text 479, word for word Sapphire's).
   Sapphire's Item Storage and Decoration do not exist in Black 2 (see notes/STORY_SPECIALS.md row 83); the region map is
   text only; the clock is Sapphire's "stopped" line (setting it is the lead's story).
-- Movers are Black 2 workers (code 54): Black 2 has no walking Machoke.
+- Movers are Black 2's walking Pokémon (ARCID_TPOKE): Machoke 0x1044 (Sapphire, Ruby), Vigoroth 0x1141 (Emerald overlay `interiors/emerald/390.json`, `392.json`), as each original. No box-carrying frames exist.
 - Sapphire's Pichu doll and the lab rival are not placed; the rival's-house variants of the moms follow Sapphire's
   flags (the truck script must set them as Sapphire's InsideOfTruck_EventScript_15FC45/68 does).
 

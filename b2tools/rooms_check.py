@@ -484,7 +484,8 @@ def _overlap(p, q):
 # ------------------------------------------------------------------------------------------------ (d) scripts
 def preprocess(src):
     """A field script as the assembler sees it (the C preprocessor with the build's include paths and defines)."""
-    dec = os.path.join(ROOT, 'external', 'pokebw2')
+    import b2decomp
+    dec = b2decomp.SRC
     r = subprocess.run(['/opt/homebrew/opt/llvm/bin/clang', '-E', '-P', '-x', 'assembler-with-cpp', '-I', f'{dec}/include',
                         '-I', f'{dec}/lib/nitro/include', '-I', f'{dec}/build/include/generated',
                         '-I', os.path.join(ROOT, 'src', 'include'), '-D', 'BLACK2', src],
@@ -601,6 +602,12 @@ ACCEPT = [
     ('AquaHideout_B1F', 'e', r'warp (14|21|23) at .* -> zone 5 warp (12|17) -> back to warp (9|20) at .*another spot',
      "B1F's warp-pad maze: a pad leads to another pad whose own warp goes elsewhere (pokeruby's and pokeemerald's own "
      "warp table: B1F 14/21 -> 12 -> 9, 23 -> 17 -> 20)"),
+    ('SecretBase_.*', 'q', r'no wall on the .* side of walkable',
+     "Black 2's cave walls lean (models_cave's rock profile), so the check finds no vertical face; all 24 rooms are closed in game: screenshots/secret_bases/round2/5_*"),
+    ('SecretBase_.*', 'h', r'black between floors where Sapphire draws a wall',
+     "the same rock profile; the partitions draw in all 24 rooms: screenshots/secret_bases/round2/5_*"),
+    ('SecretBase_.*', 'e', r'warp 0 at Sapphire .* is on a walkable tile',
+     "a base's mat: the dynamic exit fires when the player walks south off it (in game: screenshots/secret_bases/2_back_at_spot.png)"),
     ('SeafloorCavern_Entrance', 'e', r'warp 0 .* -> Underwater4',
      'the way out of the cavern is Dive: surfacing in Underwater4 leads up to Route 128, not back in (originals)'),
     ('SeafloorCavern_Room[46]', 'e', r'-> SeafloorCavern_Entrance \(zone 177\) warp 1',

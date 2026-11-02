@@ -21,6 +21,46 @@ Test_SC_Setup:
     h_setvar SC_STAGE, 0x5C01               // SC_STAGE_SENTINEL
     FlagSet 2401                            // FLAG_SYS_POKEMON_GET
     FlagSet 2403                            // FLAG_SYS_B_DASH
+#ifdef HOENN_TEST_CHFOLLOW
+    // the followers' test (notes/FOLLOWERS.md "Test"): every badge, the bike and the machines of Surf, Waterfall and Dive
+    TrainerCardAddBadge 0
+    TrainerCardAddBadge 1
+    TrainerCardAddBadge 2
+    TrainerCardAddBadge 3
+    TrainerCardAddBadge 4
+    TrainerCardAddBadge 5
+    TrainerCardAddBadge 6
+    TrainerCardAddBadge 7
+    ItemAdd ITEM_MACH_BIKE, 1, HLIB_TMP
+    ItemAdd ITEM_HM03, 1, HLIB_TMP
+    ItemAdd ITEM_HM05, 1, HLIB_TMP
+    ItemAdd ITEM_HM06, 1, HLIB_TMP
+    ItemAdd ITEM_SUPER_ROD, 1, HLIB_TMP
+    ItemAdd ITEM_OLD_ROD, 1, HLIB_TMP
+    h_goto_if_eq SC_STAGE, 0x5C09, L_SC_FollowEgg
+    h_goto_if_eq SC_STAGE, 0x5C0A, L_SC_FollowHuge
+    h_goto_if_eq SC_STAGE, 0x5C0B, L_SC_FollowNoSprite
+    VMJump L_SC_FollowEnd
+L_SC_FollowEgg:                             // an Egg first: nobody follows
+    h_getpartysize HLIB_TMP
+    h_goto_if_ne HLIB_TMP, 0, L_SC_Done
+    PokePartyAddEgg HLIB_TMP, SPECIES_MUDKIP, 0
+    PokePartyAdd HLIB_TMP, SPECIES_SWAMPERT, 0, 100
+    VMReturn
+L_SC_FollowHuge:                            // Wailord (64 x 64): on the overworld only
+    h_getpartysize HLIB_TMP
+    h_goto_if_ne HLIB_TMP, 0, L_SC_Done
+    PokePartyAdd HLIB_TMP, SPECIES_WAILORD, 0, 100
+    PokePartyAdd HLIB_TMP, SPECIES_SWAMPERT, 0, 100
+    VMReturn
+L_SC_FollowNoSprite:                        // first a species with no walking sprite: the next one follows
+    h_getpartysize HLIB_TMP
+    h_goto_if_ne HLIB_TMP, 0, L_SC_Done
+    PokePartyAdd HLIB_TMP, SPECIES_SNIVY, 0, 100
+    PokePartyAdd HLIB_TMP, SPECIES_SWAMPERT, 0, 100
+    VMReturn
+L_SC_FollowEnd:
+#endif
     h_goto_if_eq SC_STAGE, 0x5C05, L_SC_Ch5
     h_goto_if_eq SC_STAGE, 0x5C06, L_SC_Ch13
     h_goto_if_eq SC_STAGE, 0x5C07, L_SC_Weak

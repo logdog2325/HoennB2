@@ -431,5 +431,396 @@
    "h06sango2": 246,
    "h06kuro": 246
   }
+ },
+ "sb_red": {
+  "area": 299,
+  "set": 332,
+  "pack": 17,
+  "tiers": 2,
+  "header_zone": 324,
+  "header_zone_dark": 325,
+  "floor": "d0yuka_001",
+  "floor_size": 64,
+  "top": "d0yuka_002",
+  "top_size": 16,
+  "face_low": "d0gake_001",
+  "face_low_rock": "d0gake_001b",
+  "face_mid": "d0gake_001b",
+  "lip_floor": "d0gake_002",
+  "lip_rock": "d0gake_002b",
+  "face_u": 32,
+  "rim": "d0gake_heri",
+  "ledge": "d0dan_001",
+  "stairs": "d0kaidan_01",
+  "cracked": [
+   "d29_gake3",
+   32
+  ],
+  "arch": {
+   "chunk": 788,
+   "box": [
+    176,
+    256,
+    456,
+    520
+   ],
+   "anchor": [
+    216,
+    480
+   ],
+   "materials": [
+    "d0ana_001",
+    "d0ana_002"
+   ],
+   "outside": {
+    "d0ana_001": "d0ana_001b",
+    "d0ana_002": "d0ana_002b"
+   }
+  },
+  "water": "d0_miz",
+  "water_top": "d0_miz2",
+  "water_bank": "d0mizu_gake",
+  "bridge": "d_hashi01",
+  "waterfall": "d0_miz",
+  "waterfall_foam": "d0_mizgiwa",
+  "waterfall_streaks": "d0sizuku",
+  "_doc": "Secret Base look (b2tools/secret_base_data.py): d0 in Gen 3 colours, area 299 (a set of its own).",
+  "tint": {
+   "default": [
+    1.0,
+    0.68,
+    0.6
+   ]
+  },
+  "decals": [],
+  "arch_clear_south": true
+ },
+ "sb_brown": {
+  "area": 299,
+  "set": 332,
+  "pack": 17,
+  "tiers": 2,
+  "header_zone": 324,
+  "header_zone_dark": 325,
+  "floor": "d0yuka_001",
+  "floor_size": 64,
+  "top": "d0yuka_002",
+  "top_size": 16,
+  "face_low": "d0gake_001",
+  "face_low_rock": "d0gake_001b",
+  "face_mid": "d0gake_001b",
+  "lip_floor": "d0gake_002",
+  "lip_rock": "d0gake_002b",
+  "face_u": 32,
+  "rim": "d0gake_heri",
+  "ledge": "d0dan_001",
+  "stairs": "d0kaidan_01",
+  "cracked": [
+   "d29_gake3",
+   32
+  ],
+  "arch": {
+   "chunk": 788,
+   "box": [
+    176,
+    256,
+    456,
+    520
+   ],
+   "anchor": [
+    216,
+    480
+   ],
+   "materials": [
+    "d0ana_001",
+    "d0ana_002"
+   ],
+   "outside": {
+    "d0ana_001": "d0ana_001b",
+    "d0ana_002": "d0ana_002b"
+   }
+  },
+  "water": "d0_miz",
+  "water_top": "d0_miz2",
+  "water_bank": "d0mizu_gake",
+  "bridge": "d_hashi01",
+  "waterfall": "d0_miz",
+  "waterfall_foam": "d0_mizgiwa",
+  "waterfall_streaks": "d0sizuku",
+  "_doc": "Secret Base look (b2tools/secret_base_data.py): d0 in Gen 3 colours, area 299 (a set of its own).",
+  "tint": {
+   "default": [
+    0.91,
+    0.97,
+    1.0
+   ]
+  },
+  "decals": [],
+  "arch_clear_south": true
+ },
+ "sb_blue": {
+  "area": 299,
+  "set": 332,
+  "pack": 17,
+  "tiers": 2,
+  "header_zone": 324,
+  "header_zone_dark": 325,
+  "floor": "d0yuka_001",
+  "floor_size": 64,
+  "top": "d0yuka_002",
+  "top_size": 16,
+  "face_low": "d0gake_001",
+  "face_low_rock": "d0gake_001b",
+  "face_mid": "d0gake_001b",
+  "lip_floor": "d0gake_002",
+  "lip_rock": "d0gake_002b",
+  "face_u": 32,
+  "rim": "d0gake_heri",
+  "ledge": "d0dan_001",
+  "stairs": "d0kaidan_01",
+  "cracked": [
+   "d29_gake3",
+   32
+  ],
+  "arch": {
+   "chunk": 788,
+   "box": [
+    176,
+    256,
+    456,
+    520
+   ],
+   "anchor": [
+    216,
+    480
+   ],
+   "materials": [
+    "d0ana_001",
+    "d0ana_002"
+   ],
+   "outside": {
+    "d0ana_001": "d0ana_001b",
+    "d0ana_002": "d0ana_002b"
+   }
+  },
+  "water": "d0_miz",
+  "water_top": "d0_miz2",
+  "water_bank": "d0mizu_gake",
+  "bridge": "d_hashi01",
+  "waterfall": "d0_miz",
+  "waterfall_foam": "d0_mizgiwa",
+  "waterfall_streaks": "d0sizuku",
+  "_doc": "Secret Base look (b2tools/secret_base_data.py): d0 in Gen 3 colours, area 299 (a set of its own).",
+  "tint": {
+   "default": [
+    0.62,
+    0.82,
+    1.0
+   ]
+  },
+  "decals": [],
+  "arch_clear_south": true
+ },
+ "sb_yellow": {
+  "area": 299,
+  "set": 332,
+  "pack": 17,
+  "tiers": 2,
+  "header_zone": 324,
+  "header_zone_dark": 325,
+  "floor": "d0yuka_001",
+  "floor_size": 64,
+  "top": "d0yuka_002",
+  "top_size": 16,
+  "face_low": "d0gake_001",
+  "face_low_rock": "d0gake_001b",
+  "face_mid": "d0gake_001b",
+  "lip_floor": "d0gake_002",
+  "lip_rock": "d0gake_002b",
+  "face_u": 32,
+  "rim": "d0gake_heri",
+  "ledge": "d0dan_001",
+  "stairs": "d0kaidan_01",
+  "cracked": [
+   "d29_gake3",
+   32
+  ],
+  "arch": {
+   "chunk": 788,
+   "box": [
+    176,
+    256,
+    456,
+    520
+   ],
+   "anchor": [
+    216,
+    480
+   ],
+   "materials": [
+    "d0ana_001",
+    "d0ana_002"
+   ],
+   "outside": {
+    "d0ana_001": "d0ana_001b",
+    "d0ana_002": "d0ana_002b"
+   }
+  },
+  "water": "d0_miz",
+  "water_top": "d0_miz2",
+  "water_bank": "d0mizu_gake",
+  "bridge": "d_hashi01",
+  "waterfall": "d0_miz",
+  "waterfall_foam": "d0_mizgiwa",
+  "waterfall_streaks": "d0sizuku",
+  "_doc": "Secret Base look (b2tools/secret_base_data.py): d0 in Gen 3 colours, area 299 (a set of its own).",
+  "tint": {
+   "default": [
+    0.89,
+    1.0,
+    0.78
+   ]
+  },
+  "decals": [],
+  "arch_clear_south": true
+ },
+ "sb_tree": {
+  "area": 299,
+  "set": 332,
+  "pack": 17,
+  "tiers": 2,
+  "header_zone": 324,
+  "header_zone_dark": 325,
+  "floor": "m_b08_yuka",
+  "floor_size": 32,
+  "top": "d0yuka_002",
+  "top_size": 16,
+  "face_low": "d0gake_001",
+  "face_low_rock": "d0gake_001b",
+  "face_mid": "d0gake_001b",
+  "lip_floor": "d0gake_002",
+  "lip_rock": "d0gake_002b",
+  "face_u": 32,
+  "rim": "d0gake_heri",
+  "ledge": "d0dan_001",
+  "stairs": "d0kaidan_01",
+  "cracked": [
+   "d29_gake3",
+   32
+  ],
+  "arch": {
+   "chunk": 788,
+   "box": [
+    176,
+    256,
+    456,
+    520
+   ],
+   "anchor": [
+    216,
+    480
+   ],
+   "materials": [
+    "d0ana_001",
+    "d0ana_002"
+   ],
+   "outside": {
+    "d0ana_001": "d0ana_001b",
+    "d0ana_002": "d0ana_002b"
+   }
+  },
+  "water": "d0_miz",
+  "water_top": "d0_miz2",
+  "water_bank": "d0mizu_gake",
+  "bridge": "d_hashi01",
+  "waterfall": "d0_miz",
+  "waterfall_foam": "d0_mizgiwa",
+  "waterfall_streaks": "d0sizuku",
+  "_doc": "Secret Base look (b2tools/secret_base_data.py): d0 in Gen 3 colours, area 299 (a set of its own).",
+  "tint": {
+   "default": [
+    0.5,
+    0.92,
+    0.5
+   ],
+   "m_b08_yuka": [
+    1.0,
+    0.86,
+    0.68
+   ]
+  },
+  "decals": [],
+  "arch_clear_south": true,
+  "tex_sets": {
+   "m_b08_yuka": 349
+  }
+ },
+ "sb_shrub": {
+  "area": 299,
+  "set": 332,
+  "pack": 17,
+  "tiers": 2,
+  "header_zone": 324,
+  "header_zone_dark": 325,
+  "floor": "d0yuka_001",
+  "floor_size": 64,
+  "top": "d0yuka_002",
+  "top_size": 16,
+  "face_low": "d0gake_001",
+  "face_low_rock": "d0gake_001b",
+  "face_mid": "d0gake_001b",
+  "lip_floor": "d0gake_002",
+  "lip_rock": "d0gake_002b",
+  "face_u": 32,
+  "rim": "d0gake_heri",
+  "ledge": "d0dan_001",
+  "stairs": "d0kaidan_01",
+  "cracked": [
+   "d29_gake3",
+   32
+  ],
+  "arch": {
+   "chunk": 788,
+   "box": [
+    176,
+    256,
+    456,
+    520
+   ],
+   "anchor": [
+    216,
+    480
+   ],
+   "materials": [
+    "d0ana_001",
+    "d0ana_002"
+   ],
+   "outside": {
+    "d0ana_001": "d0ana_001b",
+    "d0ana_002": "d0ana_002b"
+   }
+  },
+  "water": "d0_miz",
+  "water_top": "d0_miz2",
+  "water_bank": "d0mizu_gake",
+  "bridge": "d_hashi01",
+  "waterfall": "d0_miz",
+  "waterfall_foam": "d0_mizgiwa",
+  "waterfall_streaks": "d0sizuku",
+  "_doc": "Secret Base look (b2tools/secret_base_data.py): d0 in Gen 3 colours, area 299 (a set of its own).",
+  "tint": {
+   "default": [
+    0.62,
+    1.0,
+    0.5
+   ],
+   "d0yuka_001": [
+    1.0,
+    0.86,
+    0.6
+   ]
+  },
+  "decals": [],
+  "arch_clear_south": true
  }
 }

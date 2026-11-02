@@ -10,7 +10,8 @@
  *   +0   u32 magic BERRY_MAGIC (absent: the block still holds Black 2's Pokéstar data -> Gen 3's new-game trees)
  *   +4   u32 the DS clock (minutes since 2000-01-01 00:00) of the last growth update (Gen 3 lastBerryTreeUpdate)
  *   +8   u8  the version that set the trees up (HOENN_VERSION_ID), 3 bytes 0
- *   +12  BerryTree[128] (Gen 3's struct, 6 bytes: berry, stage | stopGrowth << 7, minutes until the next stage, yield,
+ *   +12  BerryTree[90] (trees 0-89: the ids Gen 3 uses, ends at +552; +552 to +996 belongs to the Contests' Pokeblock data,
+ *        decomp src/hoennb2/resident/contest_save.c, with its own magic) (Gen 3's struct, 6 bytes: berry, stage | stopGrowth << 7, minutes until the next stage, yield,
  *        regrowth count | watered bits << 4), tree id = Gen 3's (1-89 used): the actor's tile tells which
  *   780 bytes used; the block keeps Black 2's size, so its CRC, the save's CRC table and PKHeX's checks stay valid.
  */
@@ -48,7 +49,8 @@ typedef int s32;
 
 #define BERRY_MAGIC 0x33595242u   /* "BRY3" */
 #define SAVE_BLOCK 0x47
-#define N_TREES 128               /* BERRY_TREES_COUNT */
+#define N_TREES 90                /* Gen 3's tree ids are 1-89 (BERRY_TREES_COUNT is 128, 90-127 unused): +552 on is the
+                                     Contests' (the first set-up and every loop stop here, so a save's data stays) */
 #define HEAPID_GAMEEVENT 4
 #define POCKET_BERRIES 3          /* BagSave_GetPocketPtr: 0 items, 1 medicine, 2 TMs, 3 berries, 4 key items */
 
@@ -79,6 +81,7 @@ typedef struct {
     u8 version, pad[3];
     BerryTree trees[N_TREES];
 } BerrySave;
+typedef char BerrySaveEndsAt552[sizeof(BerrySave) == 552 ? 1 : -1];
 
 #define STOP 0x80
 #define STAGE(t) ((t)->stage & 0x7f)
@@ -133,7 +136,7 @@ static void time_update_trees(BerrySave *s, s32 minutes) {                      
             if ((s32)t->minutes > time) { t->minutes = (u16)(t->minutes - time); break; }
             time -= t->minutes;
             t->minutes = (u16)stage_minutes(t->berry);
-            if (!grow(t)) break;
+            if (!grow(t) || !t->berry) break;              /* (a tree gone after its tenth regrowth has no berry to time) */
             if (STAGE(t) == STAGE_BERRIES) t->minutes = (u16)(t->minutes * 4);
         }
     }

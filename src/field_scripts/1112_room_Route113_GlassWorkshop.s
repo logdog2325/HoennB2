@@ -4,6 +4,7 @@
 #include "hoenn.h"  // ch4
 #include "hoenn_trainers.h"  // ch4
 #include "hoenn_story.inc"  // ch4
+#include "common/secret_base_defs.inc"  // Secret Bases (notes/SECRET_BASES.md)
 #include "scenes/ch4_lib.inc"  // ch4
 
     ScriptEntry Script_1
@@ -40,8 +41,8 @@ Script_2:
 // from this line on; entries above marked "// story:"). The glass man: data/story/ch4.json uid 1 (his apprentice is
 // the generated script 1). Text lines 2-21 (0-1 are the generated ones). Ash: VAR_ASH_GATHER_COUNT, gathered on
 // Route 113 (scenes/Route113.inc). Sapphire's menu (ShowGlassWorkshopMenu) also lists the Pretty Chair and Pretty Desk
-// (decorations, 6000/8000 steps): Black 2 has no Secret Base decorations, so the menu here has the five flutes and
-// Cancel (Black 2's ListMenu; B = Cancel).
+// (decorations, 6000/8000 steps), notes/SECRET_BASES.md: the menu has the five flutes, the two and Cancel (Black 2's
+// ListMenu; B = Cancel). T_MenuChair and T_MenuDesk are their names in the text file.
 #define T_GlassIntro 2          // Route113_GlassWorkshop_Text_19E4E6
 #define T_GlassWalk 3           // Route113_GlassWorkshop_Text_19E59B
 #define T_HaveYouCollected 4    // Route113_GlassWorkshop_Text_19E65B
@@ -62,6 +63,8 @@ Script_2:
 #define T_MenuWhite 19          // "White Flute"
 #define T_MenuBlack 20          // "Black Flute"
 #define T_MenuCancel 21         // "Cancel"
+#define T_MenuChair 22          // "Pretty Chair" (notes/SECRET_BASES.md: at the end of the file)
+#define T_MenuDesk 23           // "Pretty Desk"
 #define GW_SEL 0x803A
 #define GW_ITEM 0x803B
 #define GW_COST 0x803C
@@ -98,6 +101,8 @@ L_GW_Menu:                                  // Route113_GlassWorkshop_EventScrip
     ListMenuAdd T_MenuRed, 65535, 2
     ListMenuAdd T_MenuWhite, 65535, 3
     ListMenuAdd T_MenuBlack, 65535, 4
+    ListMenuAdd T_MenuChair, 65535, 5
+    ListMenuAdd T_MenuDesk, 65535, 6
     ListMenuAdd T_MenuCancel, 65535, 7
     ListMenuShow
     h_goto_if_eq GW_SEL, 0, L_GW_Blue
@@ -105,6 +110,8 @@ L_GW_Menu:                                  // Route113_GlassWorkshop_EventScrip
     h_goto_if_eq GW_SEL, 2, L_GW_Red
     h_goto_if_eq GW_SEL, 3, L_GW_White
     h_goto_if_eq GW_SEL, 4, L_GW_Black
+    h_goto_if_eq GW_SEL, 5, L_GW_Chair
+    h_goto_if_eq GW_SEL, 6, L_GW_Desk
     h_msgbox T_DontWant                     // Cancel / B (Route113_GlassWorkshop_EventScript_16380E)
     h_release
 L_GW_Blue:
@@ -126,8 +133,22 @@ L_GW_White:
 L_GW_Black:
     WorkSetConst GW_ITEM, ITEM_BLACK_FLUTE
     WorkSetConst GW_COST, 1000
+    VMJump L_GW_Chosen
+L_GW_Chair:                                 // ..._16378C: setvar VAR_0x8008, DECOR_PRETTY_CHAIR, 6000 steps
+    WorkSetConst GW_ITEM, 13
+    WorkSetConst GW_COST, 6000
+    VMJump L_GW_ChosenDecor
+L_GW_Desk:                                  // ..._1637CD: DECOR_PRETTY_DESK, 8000 steps
+    WorkSetConst GW_ITEM, 6
+    WorkSetConst GW_COST, 8000
+L_GW_ChosenDecor:
+    WorkSet SB_W_ARG, GW_ITEM
+    SBCmd SB_OP_WORD, 1
+    SBCmd SB_OP_UNLOAD, 0
+    VMJump L_GW_Chosen2
 L_GW_Chosen:                                // Route113_GlassWorkshop_EventScript_163660 ... 163750
     WordSetItemName 1, GW_ITEM
+L_GW_Chosen2:
     WorkCmpWork VAR_ASH_GATHER_COUNT, GW_COST
     VMJumpIf CMP_LT, L_GW_NotEnoughFor
     h_yesno T_IsThatTheOne, C4_TMP
@@ -170,12 +191,23 @@ L_GW_Ready:                                 // Route113_GlassWorkshop_EventScrip
     h_goto_if_eq VAR_GLASS_WORKSHOP_STATE, 12, L_GW_ReadyName
     WorkSetConst GW_ITEM, ITEM_WHITE_FLUTE
     h_goto_if_eq VAR_GLASS_WORKSHOP_STATE, 13, L_GW_ReadyName
-    WorkSetConst GW_ITEM, ITEM_BLACK_FLUTE  // 14 (15/16 = the decorations: none in Black 2)
+    h_goto_if_eq VAR_GLASS_WORKSHOP_STATE, 14, L_GW_ReadyBlack
+    WorkSetConst GW_ITEM, 13                // 15: DECOR_PRETTY_CHAIR
+    h_goto_if_eq VAR_GLASS_WORKSHOP_STATE, 15, L_GW_ReadyDecor
+    WorkSetConst GW_ITEM, 6                 // 16: DECOR_PRETTY_DESK
+L_GW_ReadyDecor:
+    WorkSet SB_W_ARG, GW_ITEM
+    SBCmd SB_OP_WORD, 1
+    SBCmd SB_OP_UNLOAD, 0
+    VMJump L_GW_Give
+L_GW_ReadyBlack:
+    WorkSetConst GW_ITEM, ITEM_BLACK_FLUTE  // 14
 L_GW_ReadyName:
     WordSetItemName 1, GW_ITEM
 L_GW_Give:                                  // Route113_GlassWorkshop_EventScript_1639B1 / 163889
     h_msgbox T_Finished
     h_closemessage
+    h_goto_if_ge VAR_GLASS_WORKSHOP_STATE, 15, L_GW_GiveDecor
     ItemCheckSpace GW_ITEM, 1, C4_TMP
     h_goto_if_ne C4_TMP, 1, L_GW_BagFull
     VMStackPush 0x8000
@@ -186,6 +218,14 @@ L_GW_Give:                                  // Route113_GlassWorkshop_EventScrip
     VMStackPop 0x8001
     VMStackPop 0x8000
     h_setvar VAR_GLASS_WORKSHOP_STATE, 2
+    h_release
+L_GW_GiveDecor:                             // Route113_GlassWorkshop_EventScript_1638A1: givedecoration
+    sb_givedecoration_var GW_ITEM, C4_TMP
+    h_goto_if_eq C4_TMP, 0, L_GW_DecorFull      // ..._1638C3: no room: he keeps it
+    h_setvar VAR_GLASS_WORKSHOP_STATE, 2
+    h_release
+L_GW_DecorFull:
+    h_msgbox T_NoRoom
     h_release
 L_GW_BagFull:                               // Route113_GlassWorkshop_EventScript_1638B4
     h_bag_is_full T_BagFull

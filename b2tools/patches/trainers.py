@@ -33,8 +33,9 @@ sys.path.insert(0, os.path.dirname(HERE))
 import narcio, version  # noqa: E402   (Ruby: src/trainers/ruby/, data/ruby/<name>.json merged over data/<name>.json)
 
 ROOT = os.path.abspath(os.path.join(HERE, '..', '..'))
-DECOMP = os.path.join(ROOT, 'external', 'pokebw2')
-SRC_FILES = os.path.join(DECOMP, 'build', 'b2_us', 'files')
+import b2decomp  # noqa: E402  (the Black 2 decomp's source tree and build base: notes/POKEBW2_UPGRADE.md section 7)
+DECOMP = b2decomp.SRC
+SRC_FILES = os.path.join(b2decomp.BASE, 'build', 'b2_us', 'files')
 LLVM = '/opt/homebrew/opt/llvm/bin'
 ARM9_BASE = 0x02004000
 CLASS_RESOURCES = 0x02092394
@@ -247,7 +248,7 @@ def apply_code(code):
     path = os.path.join(code, 'arm9_ov167.bin')          # battle trainer lines get the player's name
     ov = bytearray(open(path, 'rb').read())
     o, blob = BTL_TRAINER_MSG - OV167_BASE, battle_trainer_msg()
-    vanilla = open(os.path.join(DECOMP, 'build', 'b2_us', 'build', 'arm9_ov167.bin'), 'rb').read()
+    vanilla = open(os.path.join(b2decomp.BASE, 'build', 'b2_us', 'build', 'arm9_ov167.bin'), 'rb').read()
     assert ov[o:o + len(blob)] in (vanilla[o:o + len(blob)], blob), 'ov167 0x021d0288 is not Black 2\'s'
     ov[o:o + len(blob)] = blob
     _write(path, ov)

@@ -1217,6 +1217,19 @@
    "var": "VAR_RUSTURF_TUNNEL_STATE",
    "value": 3,
    "what": "reunion: rock 1 smashed from the east"
+  },
+  {
+   "kind": "npc",
+   "map": "VerdanturfTown_ContestLobby",
+   "at": [
+    11,
+    5
+   ],
+   "uid": 2,
+   "model": 28,
+   "script": 5,
+   "dir": 2,
+   "what": "Blend Master (Sapphire object 2, OLD_MAN_1, the Berry Blender)"
   }
  ]
 }

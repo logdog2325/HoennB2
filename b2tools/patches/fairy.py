@@ -433,11 +433,13 @@ INTRO_CMD = dict(GOTO=1, YES_NO=3, SET_RESULT=6, WAIT=7, FADE=8, TALK=30, SET_CO
 INTRO_SCRIPTS, INTRO_COMMANDS = 0x021a4c9c, 0x021a4bbc          # sScripts[14], sCommands[53]
 ASK_RIVAL_NAME, FAREWELL = 0x021a426c, 0x021a435c                # script 9 (the last one hoenn_intro runs), 12 (dead)
 RIVAL_NAMED, RIVAL_NAMED_SCRIPT = 0x021a47c4, 10                 # script 10 (dead: hoenn_intro has no rival naming), 14 entries
+RENAME_RIVAL_SCRIPT = 11                                         # script 11 (dead too), 4 entries: the end of the seventh question's layout
 MSG_YES, MSG_NO, MSG_FAIRY_Q, MSG_SPLIT_Q = 19, 20, 26, 27       # text 0054 (src/text/overrides_fairy.json)
 MSG_MUSIC_Q, MSG_HOENN, MSG_UNOVA = 28, 29, 30                   # the music question and its two answers (music_check)
 MSG_SPRITES_Q, MSG_CLASSIC, MSG_NEW = 31, 32, 33                 # the sprite style question and its answers (sprite_switch)
 MSG_SEASONS_Q = 34                                               # the seasons question (Black 2's unused line 34)
 MSG_EXPSHARE_Q = 35                                              # the Exp. Share question (Black 2's unused line 35)
+MSG_FOLLOWER_Q = 36                                              # the following Pokémon's question (src/text/overrides_followers.json)
 CFG_FAIRY_BIT, CFG_CLASSIC_BIT, CFG_MUSIC_BIT, CFG_SPRITES_BIT, CFG_SEASONS_BIT = 11, 12, 13, 14, 15
 
 def exp_share_flag():
@@ -463,12 +465,27 @@ def season_sites():
 SNOW_CALL = 0x02032EEA                 # GetWeatherAll's bl GetBirthdayZoneWeather (gsys, gamedata, zone) -> Season_Snow
 BIRTHDAY_WEATHER = 0x02033084          # GetBirthdayZoneWeather (Sapphire/Ruby: Season_Snow chains to it)
 
-def intro_script(ov294):
+def follower_flag(code):
+    """FLAG_POKE_FOLLOWER when this build has the followers' C (b2tools/patches/followers.py, notes/FOLLOWERS.md): Birch
+    then asks a seventh question; else None, the six questions as before."""
+    sys.path.insert(0, os.path.dirname(HERE))
+    import b2decomp, decomp_build
+    if not b2decomp.c_on() or decomp_build.symbol('gFollowerConfig', code) is None:
+        return None
+    m = re.search(r'#define\s+FLAG_POKE_FOLLOWER\s+(\d+)', open(os.path.join(ROOT, 'src', 'include', 'hoenn.h')).read())
+    assert m and int(m.group(1)) >= 16, 'FLAG_POKE_FOLLOWER missing from src/include/hoenn.h'
+    return int(m.group(1))
+
+def intro_script(ov294, follower=None):
     """Script 9 (after the name is confirmed): Birch's six questions (Fairy, split, music, sprite style, seasons, the
     Exp. Share) between his "You're X who's moving to my hometown" and "All right, are you ready?". Script 9 asks the
     first four and runs on into the dead FAREWELL script's room (they are contiguous: 19 of its 21 entries); then it
     jumps (INTRO_CMD_GOTO) to script 10, the dead RIVAL_NAMED (its own 14 entries, all used now), which asks the fifth
-    and sixth and ends as hoenn_intro's script did. Returns [(file offset, bytes)] for the two places."""
+    and sixth and ends as hoenn_intro's script did. Returns [(file offset, bytes)] for the two places.
+    With `follower` (the flag), a seventh question: the following Pokémon's, YES/NO, the cursor on YES, B = NO, YES sets
+    the flag. That needs one place more: script 9 also shows the fifth question's text before its jump (the interpreter
+    jumps at once, and YES_NO only reads the entries after it), script 10 goes on to the seventh and "You're ready" text,
+    and script 11, the dead RENAME_RIVAL (its own 4 entries), ends it. Returns three places."""
     def entry(off):
         return bytes(ov294[off:off + 24])
     def e(cmd, *args, run=0):
@@ -491,18 +508,30 @@ def intro_script(ov294):
              # the fourth is sprite_switch's (patch sprite_switch): bit 14 = the NEW (Gen 5) sprites; CLASSIC is the
              # cursor's first answer (mashing A, and every older save, keep the classic set)
              e('TALK', MSG_SPRITES_Q, 0, 1), e('YES_NO', MSG_CLASSIC, MSG_NEW, 1),
-             e('SET_CONFIG_BIT', CFG_SPRITES_BIT, 0), e('SET_CONFIG_BIT', CFG_SPRITES_BIT, 1),
-             e('GOTO', RIVAL_NAMED_SCRIPT)]
+             e('SET_CONFIG_BIT', CFG_SPRITES_BIT, 0), e('SET_CONFIG_BIT', CFG_SPRITES_BIT, 1)]
+    seasons_talk = e('TALK', MSG_SEASONS_Q, 0, 1)
+    first += [seasons_talk] if follower is not None else []
+    first += [e('GOTO', RIVAL_NAMED_SCRIPT)]
     flag = exp_share_flag()
     # the fifth (2026-10-18): bit 15 = Black 2's real seasons (YES), summer all year (NO, as every older save)
-    second = [e('TALK', MSG_SEASONS_Q, 0, 1), e('YES_NO', MSG_YES, MSG_NO, 1),
+    second = ([] if follower is not None else [seasons_talk]) + [
+              e('YES_NO', MSG_YES, MSG_NO, 1),
               e('SET_CONFIG_BIT', CFG_SEASONS_BIT, 1), e('SET_CONFIG_BIT', CFG_SEASONS_BIT, 0),
               # the sixth (2026-10-19): YES sets FLAG_EXP_SHARE_ON (an event flag, not an options bit: bits 11-15 are
               # all taken); the truck's new-game script (scenes/truck.inc Script_30) then gives the Exp. Share, so it
               # starts in Key Items switched on. NO = today's game (Mr. Stone gives it), as every older save.
               e('TALK', MSG_EXPSHARE_Q, 0, 1), e('YES_NO', MSG_YES, MSG_NO, 1),
-              e('SET_CONFIG_BIT', flag, 1), e('SET_CONFIG_BIT', flag, 0),
-              old[2], old[5], old[6], old[7], old[8], old[9]]
+              e('SET_CONFIG_BIT', flag, 1), e('SET_CONFIG_BIT', flag, 0)]
+    end = [old[2], old[5], old[6], old[7], old[8], old[9]]
+    third = None
+    if follower is None:
+        second += end
+    else:
+        # the seventh (2026-11-01): YES sets FLAG_POKE_FOLLOWER: the first Pokémon walks behind the player (followers.py)
+        second += [e('TALK', MSG_FOLLOWER_Q, 0, 1), e('YES_NO', MSG_YES, MSG_NO, 1),
+                   e('SET_CONFIG_BIT', follower, 1), e('SET_CONFIG_BIT', follower, 0),
+                   end[0], end[1], e('GOTO', RENAME_RIVAL_SCRIPT)]
+        third = end[2:]
     room = (FAREWELL - ASK_RIVAL_NAME) // 24 + 11                    # script 9's 10 entries + FAREWELL's 11
     assert FAREWELL - ASK_RIVAL_NAME == 240 and len(first) <= room, (len(first), room)
     r = RIVAL_NAMED - OV294
@@ -510,7 +539,14 @@ def intro_script(ov294):
     assert struct.unpack_from('<I', ov294, scripts + 4 * RIVAL_NAMED_SCRIPT)[0] == RIVAL_NAMED, 'sScripts[10] moved'
     assert struct.unpack_from('<I', ov294, r)[0] == 5, 'RIVAL_NAMED does not start with Black 2\'s LOAD_GRAPHICS (5)'
     assert len(second) <= 14, len(second)
-    return [(o, b''.join(first)), (r, b''.join(second))]
+    out = [(o, b''.join(first)), (r, b''.join(second))]
+    if third is not None:
+        t = struct.unpack_from('<I', ov294, scripts + 4 * RENAME_RIVAL_SCRIPT)[0] - OV294
+        have = [struct.unpack_from('<I', ov294, t + 24 * i)[0] for i in range(4)]
+        assert have == [6, 41, 8, 52], f'sScripts[11] is not RENAME_RIVAL: {have}'
+        assert len(third) <= 4, len(third)
+        out.append((t, b''.join(third)))
+    return out
 
 def _load(code, name):
     p = os.path.join(code, name); return p, bytearray(open(p, 'rb').read())
@@ -603,7 +639,7 @@ def apply_code(code):
     o = INTRO_COMMANDS - OV294 + 4 * INTRO_CMD['SET_CONFIG_BIT']
     assert struct.unpack_from('<I', ov294, o)[0] == 0x021a2845, 'sCommands[31] is not IntroCmd_SetMsgLanguage'
     struct.pack_into('<I', ov294, o, sym['Intro_SetConfigBit'] | 1)
-    parts = intro_script(ov294)
+    parts = intro_script(ov294, follower_flag(code))
     for so, script in parts:
         ov294[so:so + len(script)] = script
     for p, d in ((p9, arm9), (p167, ov167), (p294, ov294), (p036, ov036)): _save(p, d)

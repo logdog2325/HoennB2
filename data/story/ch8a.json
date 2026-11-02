@@ -267,7 +267,7 @@
    ],
    "uid": 4,
    "model": 26,
-   "script": 4,
+   "script": 6,
    "dir": 1,
    "move": 15,
    "what": "LilycoveCity_DepartmentStore_5F_EventScript_ClerkMidLeft (Sapphire object 4, WOMAN_4, FACE_DOWN)"
@@ -281,7 +281,7 @@
    ],
    "uid": 5,
    "model": 26,
-   "script": 4,
+   "script": 7,
    "dir": 2,
    "move": 16,
    "what": "LilycoveCity_DepartmentStore_5F_EventScript_ClerkMidRight (Sapphire object 5, WOMAN_4, FACE_LEFT)"
@@ -295,7 +295,7 @@
    ],
    "uid": 6,
    "model": 26,
-   "script": 4,
+   "script": 8,
    "dir": 0,
    "move": 14,
    "what": "LilycoveCity_DepartmentStore_5F_EventScript_ClerkFarRight (Sapphire object 6, WOMAN_4, FACE_UP)"
@@ -1132,6 +1132,24 @@
    "dir": 3,
    "move": 17,
    "what": "LilycoveCity_ContestHall_EventScript_1592C0 (Sapphire object 29, WOMAN_3, FACE_RIGHT)"
+  },
+  {
+   "kind": "npc",
+   "map": "LilycoveCity_ContestLobby",
+   "at": [
+    12,
+    4
+   ],
+   "uid": 30,
+   "model": 16,
+   "script": 11,
+   "dir": 1,
+   "move": 15,
+   "what": "the Musical's host (not Sapphire's: Black 2's Musical stays, user 2026-11-01; common/musical.inc)",
+   "at_emerald": [
+    20,
+    4
+   ]
   }
  ]
 }

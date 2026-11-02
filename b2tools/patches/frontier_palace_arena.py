@@ -27,7 +27,8 @@ import version  # noqa: E402
 import frontier_area  # noqa: E402
 
 EM = os.path.join(ROOT, 'external', 'pokeemerald')
-B2 = os.path.join(ROOT, 'external', 'pokebw2')
+import b2decomp  # noqa: E402  (the Black 2 decomp's source tree and build base: notes/POKEBW2_UPGRADE.md section 7)
+B2 = b2decomp.SRC
 OV012, OV167 = 0x021503C0, 0x021998C0
 EVCMD_TABLE, PA_COMMAND, BOXADDEX = 0x0216B538, 291, 0x021570A5
 # (site, old target, new symbol): `bl` calls in ov167

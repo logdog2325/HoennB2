@@ -4,6 +4,7 @@
 #include "hoenn.h"
 #include "hoenn_trainers.h"
 #include "hoenn_story.inc"
+#include "common/secret_base_defs.inc"  // Secret Bases (notes/SECRET_BASES.md)
 #include "scenes/trick_house_lib.inc"
 
     ScriptEntry Script_None
@@ -168,9 +169,18 @@ L_THX_Done8:                             // CompletedPuzzle8: the last puzzle
     ListMenuAdd T_RedTent, 65535, 0
     ListMenuAdd T_BlueTent, 65535, 1
     ListMenuShow
+    h_goto_if_eq TH_TMP, 1, L_THX_Blue
+    sb_givedecoration 31, TH_TMP                    // givedecoration DECOR_RED_TENT
+    VMJump L_THX_Tent
+L_THX_Blue:
+    sb_givedecoration 32, TH_TMP                    // givedecoration DECOR_BLUE_TENT
+L_THX_Tent:
+#elif defined(HOENN_RUBY)
+    sb_givedecoration 31, TH_TMP                    // givedecoration DECOR_RED_TENT
+#else
+    sb_givedecoration 32, TH_TMP                    // givedecoration DECOR_BLUE_TENT
 #endif
-    // givedecoration DECOR_*_TENT: Black 2 has no decorations or Secret Bases (as the Wailmer Doll, Sootopolis): no
-    // item, and so never "No room in your PC" (Mechadoll 5's later hand-over at the entrance can't happen either)
+    // (Gen 3: no room -> Mechadoll 5 keeps it at the entrance. Prizes can't be asked for twice here: see below)
     h_msgbox T_Journey
     VMCall L_THX_Exit
     h_clearflag TH_FLAG_NUGGET           // ResetTrickHouseEndRoomFlag / ResetTrickHouseNuggetFlag

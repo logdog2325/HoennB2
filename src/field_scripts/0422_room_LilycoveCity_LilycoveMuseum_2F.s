@@ -5,6 +5,7 @@
 #include "hoenn.h"  // ch8a
 #include "hoenn_trainers.h"  // ch8a
 #include "hoenn_story.inc"  // ch8a
+#include "common/secret_base_defs.inc"  // Secret Bases (notes/SECRET_BASES.md)
 #include "scenes/ch8a_lib.inc"  // ch8a
 
     ScriptEntry Script_1
@@ -111,8 +112,13 @@ L_MU2_ThankPlayer:                          // ..._EventScript_ThankPlayer
     h_msgbox T_PaintingsAttracted
     h_closemessage
     ActorSetEyeToEye
-    h_msgbox T_TokenOfGratitude             // givedecoration DECOR_GLASS_ORNAMENT: no decorations in Black 2
+    h_msgbox T_TokenOfGratitude
+    h_closemessage
+    sb_givedecoration 44, HLIB_TMP          // givedecoration DECOR_GLASS_ORNAMENT
+    h_goto_if_eq HLIB_TMP, 0, L_MU2_NoRoom
     h_setflag FLAG_RECEIVED_GLASS_ORNAMENT
+    h_release
+L_MU2_NoRoom:                               // Common_EventScript_ShowNoRoomForDecor: he offers it again
     h_release
 L_MU2_ReceivedOrnament:
     h_buffer_player

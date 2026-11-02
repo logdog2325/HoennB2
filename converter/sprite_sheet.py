@@ -38,6 +38,7 @@ B2_FILES = os.environ.get('B2_FILES', os.path.join(ROOT, 'external', 'pokebw2', 
 RUBY = os.path.join(ROOT, 'external', 'pokeruby')
 sys.path.insert(0, os.path.join(ROOT, 'b2tools'))
 import nsbtx  # noqa: E402
+import b2decomp  # noqa: E402  (the Black 2 decomp's source tree and build base: notes/POKEBW2_UPGRADE.md section 7)
 from sprites import ow_table, obj_record, lz11_decompress  # noqa: E402
 from b2files import arc_path, narc_entries  # noqa: E402
 from PIL import Image, ImageDraw  # noqa: E402
@@ -55,7 +56,7 @@ class B2:
         self.sheets = narc_entries(arc_path(files, 48))
         self.species = {}
         names = {}
-        for line in open(os.path.join(ROOT, 'external', 'pokebw2', 'include', 'constants', 'species.h')):
+        for line in open(os.path.join(b2decomp.SRC, 'include', 'constants', 'species.h')):
             m = re.match(r'#define SPECIES_(\w+)\s+(\d+)\s*$', line)
             if m: names[int(m.group(2))] = m.group(1)
         d = narc_entries(arc_path(files, 208))[0]

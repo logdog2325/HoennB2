@@ -465,6 +465,56 @@
    "folder": "092-lansat-berries",
    "stage": 5,
    "shadow": 1
+  },
+  {
+   "folder": "093-sb-0-closed",
+   "stage": 0,
+   "shadow": 0
+  },
+  {
+   "folder": "094-sb-0-open",
+   "stage": 0,
+   "shadow": 0
+  },
+  {
+   "folder": "095-sb-1-closed",
+   "stage": 0,
+   "shadow": 0
+  },
+  {
+   "folder": "096-sb-1-open",
+   "stage": 0,
+   "shadow": 0
+  },
+  {
+   "folder": "097-sb-2-closed",
+   "stage": 0,
+   "shadow": 0
+  },
+  {
+   "folder": "098-sb-2-open",
+   "stage": 0,
+   "shadow": 0
+  },
+  {
+   "folder": "099-sb-3-closed",
+   "stage": 0,
+   "shadow": 0
+  },
+  {
+   "folder": "100-sb-3-open",
+   "stage": 0,
+   "shadow": 0
+  },
+  {
+   "folder": "101-sb-4-closed",
+   "stage": 0,
+   "shadow": 0
+  },
+  {
+   "folder": "102-sb-4-open",
+   "stage": 0,
+   "shadow": 0
   }
  ],
  "berries": {

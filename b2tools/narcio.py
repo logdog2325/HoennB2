@@ -1,6 +1,7 @@
 """Edit NARC archives in a files/ tree using the decomp's own reader/writer (tools/scripts/narc.py)."""
 import os, sys
-sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'external', 'pokebw2', 'tools', 'scripts'))
+import b2decomp  # noqa: E402  (the Black 2 decomp's source tree and build base: notes/POKEBW2_UPGRADE.md section 7)
+sys.path.insert(0, os.path.join(b2decomp.SRC, 'tools', 'scripts'))
 from narc import read_narc, write_narc  # noqa: E402
 from b2files import arc_path  # noqa: E402
 

@@ -3,6 +3,8 @@
     python3 armdis.py arm9 0x02018a54 0x02018ef0          (or ov036 0x021ab92c 0x021ab974)
 Binary bases: arm9 0x02004000 (arm9.bin offset 0x15130 = 0x02019130); overlays from the decomp's overlay table."""
 import sys, os, re, struct, subprocess, yaml
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+import b2decomp  # noqa: E402  (the Black 2 decomp's source tree and build base: notes/POKEBW2_UPGRADE.md section 7)
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 BUILD = os.path.join(ROOT, 'external', 'pokebw2', 'build', 'b2_us', 'build')
 LLVM = '/opt/homebrew/opt/llvm/bin/llvm-mc'
@@ -21,12 +23,13 @@ def image(name):
     return open(os.path.join(BUILD, f'arm9_ov{n:03d}.bin'), 'rb').read(), base
 
 def symbols(name):
-    p = os.path.join(ROOT, 'external', 'pokebw2', 'config', 'b2_us', 'arm9',
-                     'symbols.txt' if name == 'arm9' else f'overlays/ov{int(name[2:]):03d}/symbols.txt')
     out = {}
-    for line in open(p):
-        m = re.match(r'(\S+) kind:(\w+)\S* addr:(0x[0-9a-f]+)', line)
-        if m: out[int(m.group(3), 16)] = m.group(1)
+    for tree in (b2decomp.BASE, b2decomp.SRC):   # the decomp's current names win; the old copy's config adds the labels
+        p = os.path.join(tree, 'config', 'b2_us', 'arm9',   # it no longer has (inner data labels, ~1000 addresses)
+                         'symbols.txt' if name == 'arm9' else f'overlays/ov{int(name[2:]):03d}/symbols.txt')
+        for line in open(p):
+            m = re.match(r'(\S+) kind:(\w+)\S* addr:(0x[0-9a-f]+)', line)
+            if m: out[int(m.group(3), 16)] = m.group(1)
     return out
 
 def dis(name, start, end):

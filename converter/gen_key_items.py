@@ -27,7 +27,9 @@ from gen3text import convert
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 RUBY = os.path.join(ROOT, 'external', 'pokeruby')
-B2 = os.path.join(ROOT, 'external', 'pokebw2')
+sys.path.append(os.path.join(ROOT, 'b2tools'))
+import b2decomp  # noqa: E402  (the Black 2 decomp's source tree and build base: notes/POKEBW2_UPGRADE.md section 7)
+B2 = b2decomp.SRC
 
 # Sapphire item -> (Black 2 item, Sapphire's name in Gen 5 capitals, how)
 #   same   = Black 2's item with the same meaning (name already right or only respelled)

@@ -75,7 +75,8 @@ ACCEPT = {
 
 # ------------------------------------------------------------------------------------------------- preprocessing
 def preprocess(path):
-    dec = os.path.join(ROOT, 'external', 'pokebw2')
+    import b2decomp
+    dec = b2decomp.SRC
     r = subprocess.run(['/opt/homebrew/opt/llvm/bin/clang', '-E', '-P', '-x', 'assembler-with-cpp', '-I', f'{dec}/include',
                         '-I', f'{dec}/lib/nitro/include', '-I', f'{dec}/build/include/generated',
                         '-I', os.path.join(ROOT, 'src', 'include'), '-I', FS,

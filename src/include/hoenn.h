@@ -829,6 +829,10 @@
 #define VAR_FRONTIER_GAMBLER_AMOUNT_BET              0x416D
 #define VAR_FRONTIER_GAMBLER_STATE                   0x416E
 #define VAR_FRONTIER_GAMBLER_CODE                    0x416F  // Emerald Battle Frontier Lounge3 (frontier_lounges): the Gambler's bet challenge as FR_FACILITY | FR_BATTLE_MODE << 3 (pokeemerald sFrontierChallenges[VAR_FRONTIER_GAMBLER_SET_CHALLENGE]); hoenn_frontier.inc fr_gambler_settle compares it on a lobby return
+#define VAR_FOLLOWER_SLOT                            0x4170
+#define VAR_CONTEST_PRIZE_PICKUP                     0x419A
+#define VAR_SECRET_BASE_INIT                         0x41A2  // SB_WORK_INIT, include/hoennb2/secret_base.h
+#define VAR_SECRET_BASE_SPOT                         0x41A3
 #define FLAG_MET_SCOTT_RUSTBORO                      127   
 #define FLAG_MET_SCOTT_AFTER_OBTAINING_STONE_BADGE   128   
 #define FLAG_MET_SCOTT_IN_LILYCOVE                   129   
@@ -931,6 +935,8 @@
 #define FLAG_COLLECTED_ALL_SILVER_SYMBOLS            2561  
 #define FLAG_COLLECTED_ALL_GOLD_SYMBOLS              2562  
 #define FLAG_DAILY_FRONTIER_LOUNGES                  2757    // midnight-reset flag (frontier_lounges): clear = a new day since the Frontier Maniac's facility and the Gambler's challenge last moved on (pokeemerald UpdateFrontierManiac / UpdateFrontierGambler, +1 per day here)
+#define FLAG_POKE_FOLLOWER                           2563  
+#define FLAG_RECEIVED_CONTEST_PASS                   2573  
 // Emerald reserved for its own new ids: flags 127-130, 133, 244-245, 248, 250, 254, 329, 331, 333-335, 441-443, 445-446, 502-506, 534-538, 574-578, 635-639, 742, 744-745, 747-748, 835-838, 840, 954, 956, 958-959, 961, 1054-1058, 1086-1090, 2347-2360, 2381-2394, 2436, 2443, 2446, 2467-2468, 2561-2567, 2571-2584, 2715-2719, 3033-3041, 3045-3063; works 0x4120-0x4122, 0x4124-0x4125, 0x4139, 0x413B, 0x413D-0x413F, 0x4145-0x4148, 0x414F, 0x4151-0x4155, 0x415F-0x4161, 0x4163-0x4164, 0x416A-0x4173, 0x4175, 0x4177, 0x417B-0x417D
 
 // ---- Black 2 system flags with the same meaning as Sapphire's -------------------------------------

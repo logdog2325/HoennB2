@@ -68,7 +68,9 @@ town sign gives all 8 badges. List the patch after `scripts` and `hoenn_world`.
 import os, re, struct, sys, subprocess, tempfile, importlib.util
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
-DECOMP = os.path.join(ROOT, 'external', 'pokebw2')
+sys.path.append(os.path.join(ROOT, 'b2tools'))
+import b2decomp  # noqa: E402  (the Black 2 decomp's source tree and build base: notes/POKEBW2_UPGRADE.md section 7)
+DECOMP = b2decomp.SRC
 LLVM = '/opt/homebrew/opt/llvm/bin'
 _spec = importlib.util.spec_from_file_location('exp_share_', os.path.join(os.path.dirname(os.path.abspath(__file__)), 'exp_share.py'))
 _es = importlib.util.module_from_spec(_spec); _spec.loader.exec_module(_es)
@@ -1030,7 +1032,7 @@ def apply_surf_landing(code):
             f'arena from {end:#x})')
 
 def apply_code(code):
-    vanilla = os.path.join(DECOMP, 'build', 'b2_us', 'build')
+    vanilla = os.path.join(b2decomp.BASE, 'build', 'b2_us', 'build')
     # arm9: PML_MoveIsHM -> return FALSE; helpers in the SDK strings, badge table in the zero bytes before them
     path, d = _load(code, 'arm9.bin')
     _patch(d, ARM9, 0x02026B18, bytes.fromhex('084a0023'), bytes.fromhex('00207047'), 'PML_MoveIsHM')

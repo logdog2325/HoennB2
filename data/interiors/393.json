@@ -97,5 +97,6 @@
    "what": "stairs down -> 1F warp 1"
   }
  ],
- "triggers": []
+ "triggers": [],
+ "area": 300
 }

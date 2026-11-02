@@ -5,6 +5,7 @@
 #include "hoenn_trainers.h"  // ch10
 #include "hoenn_key_items.h"  // ch10
 #include "hoenn_story.inc"  // ch10
+#include "common/secret_base_defs.inc"  // Secret Bases (notes/SECRET_BASES.md)
 
     ScriptEntry Script_None
     ScriptEntry H6_Woman  // 2: object 1 (SootopolisCity_House6_EventScript_Woman)  // story:
@@ -28,7 +29,12 @@ H6_Woman:                               // SootopolisCity_House6_EventScript_Wom
     h_yesno T_FirstGuestInWhile, C10_SEL    // You're the first guest in a while. Would you like to take a doll?
     h_goto_if_no C10_SEL, L_H6_Decline
     h_msgbox T_TakeGoodCareOfIt         // Take good care of it!
-    h_setflag FLAG_RECEIVED_WAILMER_DOLL    // (givedecoration DECOR_WAILMER_DOLL: no decorations in Black 2)
+    h_closemessage
+    sb_givedecoration 117, HLIB_TMP         // givedecoration DECOR_WAILMER_DOLL
+    h_goto_if_eq HLIB_TMP, 0, L_H6_NoRoom
+    h_setflag FLAG_RECEIVED_WAILMER_DOLL
+    h_release
+L_H6_NoRoom:
     h_release
 L_H6_Decline:                           // SootopolisCity_House6_EventScript_DeclineWailmerDoll
     h_msgbox T_DontWantThisDoll

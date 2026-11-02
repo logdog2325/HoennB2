@@ -677,11 +677,11 @@
    ],
    "items": [
     "ITEM_TM10",
-    "ITEM_TM43"
+    "ITEM_TM102"
    ],
    "ids": [
     337,
-    370
+    126
    ]
   },
   "20": {
@@ -855,7 +855,7 @@
  },
  "notes": [
   "FortreeCity_Mart_Items: ITEM_WOOD_MAIL -> ITEM_INQUIRY_MAIL (Gen 3 mail, same stand-in as the item balls)",
-  "ITEM_TM43_SECRET_POWER: MOVE_SECRET_POWER is no Gen 5 TM/HM; stand-in ITEM_TM43",
+  "ITEM_TM43_SECRET_POWER: MOVE_SECRET_POWER is no Black 2 TM/HM; the new ITEM_TM102",
   "LilycoveCity_DepartmentStore_2F_Pokemart2: ITEM_MECH_MAIL -> ITEM_LIKE_MAIL (Gen 3 mail, same stand-in as the item balls)",
   "LilycoveCity_DepartmentStore_2F_Pokemart2: ITEM_WAVE_MAIL -> ITEM_RSVP_MAIL (Gen 3 mail, same stand-in as the item balls)",
   "PetalburgCity_Mart_Pokemart_Basic: ITEM_ORANGE_MAIL -> ITEM_FAVORED_MAIL (Gen 3 mail, same stand-in as the item balls)",

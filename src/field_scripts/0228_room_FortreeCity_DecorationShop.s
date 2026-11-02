@@ -3,6 +3,7 @@
 #include "asm/field_script.inc"
 #include "hoenn.h"  // ch7
 #include "hoenn_story.inc"  // ch7
+#include "common/secret_base_defs.inc"  // Secret Bases (notes/SECRET_BASES.md)
 
     ScriptEntry Script_1
     ScriptEntry Script_2
@@ -37,8 +38,7 @@ Script_2:
 
 // ---- story (chapter Ch7, ch7 agent 2026-10-07; Sapphire data/maps/FortreeCity_DecorationShop/scripts.inc; generators must keep
 // everything from this line on). Scripts 3-4 (the clerks, uids 3 and 4: data/story/ch7.json), text lines 2-3. Black 2 has
-// no Secret Base decorations (user decision): each clerk greets and, with nothing to sell, says goodbye
-// (Sapphire's pokemartdecoration menu between the two lines is left out).
+// pokemartdecoration between the clerk's two lines (notes/SECRET_BASES.md).
 #include "scenes/ch7_lib.inc"
 #define T_HowMayIServeYou 2
 #define T_PleaseComeAgain 3
@@ -46,11 +46,23 @@ Script_2:
 FDS_ClerkDesks:                                     // FortreeCity_DecorationShop_EventScript_ClerkDesks
     c7_talk
     h_msgbox T_HowMayIServeYou                      // Welcome! How may I serve you?
+    h_closemessage
+#ifdef HOENN_EMERALD
+    sb_shop SB_SHOP_EM_FORTREE_DESKS
+#else
+    sb_shop SB_SHOP_SR_FORTREE_DESKS
+#endif
     h_msgbox T_PleaseComeAgain                      // Please come again!
     h_release
 FDS_ClerkChairs:                                    // FortreeCity_DecorationShop_EventScript_ClerkChairs
     c7_talk
     h_msgbox T_HowMayIServeYou
+    h_closemessage
+#ifdef HOENN_EMERALD
+    sb_shop SB_SHOP_EM_FORTREE_CHAIRS
+#else
+    sb_shop SB_SHOP_SR_FORTREE_CHAIRS
+#endif
     h_msgbox T_PleaseComeAgain
     h_release
     .balign 4, 0

@@ -618,6 +618,11 @@ class Cave:
         cut = set()
         self.cut_clip = {}        # arch neighbours: their rock is drawn up to the arch's tunnel only (rock_cells)
         for a in self.arches:
+            if L.get('arch_clear_south') and a['face'] == 's':
+                # Secret Bases: Gen 3's rows south of the door are rock here, and rock rising towards the camera stood in front
+                # of the exit (the layouts "4": screenshots/secret_bases/round2/5_RedCave4_mat.png)
+                for z_ in range(a['z'] + 1, self.H):
+                    for k in (-1, 0, 1): cut.add((a['x'] + k, z_))
             for k in (-1, 0, 1):
                 ox_, oz_ = {'s': (k, 0), 'n': (k, 0), 'e': (0, k), 'w': (0, k)}[a['face']]
                 cut.add((a['x'] + ox_, a['z'] + oz_))
@@ -1206,6 +1211,7 @@ class Cave:
                 # wall; at an exit on the map's last rows its tunnel, roof and the outside version's white ground hung
                 # past the map's edge as a box over the black - Terra Cave's entrance, Fiery Path: pressed onto the edge)
                 X_ = min(max(X_, self.lx(0)), self.lx(self.W)); Z_ = min(max(Z_, self.lz(0)), self.lz(self.H))
+                if L.get('arch_clear_south') and a['face'] == 's': Z_ = min(Z_, self.lz(z + 1))   # the same, with the rock south of it cut
                 out.append((X_ - 256, (lift if lift is not None else vy) + y, Z_ - 256, u, v, c))
             if len({(round(p[0], 3), round(p[2], 3), round(p[1], 3)) for p in out}) < 3: continue
             self.m.tri(swap.get(mat, mat), out)
@@ -1539,6 +1545,10 @@ def build(name, out_root=OUT, recipe=None):
     os.makedirs(out, exist_ok=True)
     m = cave.build_terrain()
     L = cave.look
+    if L.get('tint'):            # Secret Bases: Gen 3's colours over Black 2's cave (look "tint": {material or "default": [r, g, b]})
+        for mat, tris in m.tris.items():
+            r_, g_, b_ = L['tint'].get(mat, L['tint']['default'])
+            m.tris[mat] = [[v[:5] + ((v[5][0] * r_, v[5][1] * g_, v[5][2] * b_),) for v in t_] for t_ in tris]
     tex_set = lambda t: L.get('tex_sets', {}).get(t, L['set'])        # (dive agent: a look may borrow textures)
     for mat in m.tris:
         images = set_images(tex_set(mat))

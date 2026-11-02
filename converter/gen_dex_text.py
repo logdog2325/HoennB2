@@ -43,7 +43,8 @@ import gen3text  # noqa: E402
 import b2font  # noqa: E402
 
 ENTRIES = os.path.join(ROOT, 'external', 'pokeruby', 'src', 'data', 'pokedex_entries_en.h')
-B2TEXT = os.path.join(ROOT, 'external', 'pokebw2', 'data', 'text', 'system')
+import b2decomp  # noqa: E402  (the Black 2 decomp's source tree and build base: notes/POKEBW2_UPGRADE.md section 7)
+B2TEXT = os.path.join(b2decomp.SRC, 'data', 'text', 'system')
 TEXT = os.path.join(ROOT, 'src', 'text')
 REVISION = 1
 N_SPECIES = 386

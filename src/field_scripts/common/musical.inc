@@ -1,3 +1,4 @@
+// Since v18.4 one person in Lilycove's Contest Lobby runs this (LB_MusicalHost, all versions); the counters run Contests.
 // The Pokémon Musical at Hoenn's Contest Hall counters (musical agent 2026-10-18; the user's idea, notes/RESUME.md
 // "Emerald gaps" -> Contests). Gen 3 Contests can't run on Black 2, so the Contest receptionists send you to Black 2's
 // own Musical instead: Sapphire/Ruby's four halls (Verdanturf, Fallarbor, Slateport, Lilycove), Emerald's Lilycove.
@@ -28,7 +29,7 @@
 #define MUS_SHOW 0x802C
 #define MUS_FAN 0x802D
 
-#define MUSL_HELLO 0            // Hello, there! Contests are on hold for now... but our Musical stage is open!
+#define MUSL_HELLO 0            // Hello, there! Our Musical stage is open!
 #define MUSL_CASE 1             // In a Musical, Pokémon dress up ... Here's a Prop Case ...
 #define MUSL_FANS 2             // Oh! Fans from your last show left you some presents!
 #define MUSL_ASK 3              // Would you like to perform?
@@ -98,7 +99,7 @@
     Cmd_016A MUS_OK, MUS_SLOT               // MUS_OK != 0: chosen (party slot in MUS_SLOT); 0: backed out
     h_goto_if_eq MUS_OK, 0, .Lmus_unload\@
     ParentActorMsg MSGFILE_SCRIPT, (\t) + MUSL_WHICH, 0, 0
-    ListMenu_AnchorTopRight 31, 1, 0, 1, MUS_SHOW
+    ListMenu_AnchorTopRight 31, 6, 0, 1, MUS_SHOW
     ListMenuAdd (\t) + MUSL_SHOW1, 65535, 0
     ListMenuAdd (\t) + MUSL_SHOW2, 65535, 1
     ListMenuAdd (\t) + MUSL_SHOW3, 65535, 2

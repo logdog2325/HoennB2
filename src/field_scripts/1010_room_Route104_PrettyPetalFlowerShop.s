@@ -8,6 +8,7 @@
 #include "hoenn.h"
 #include "hoenn_trainers.h"
 #include "hoenn_story.inc"
+#include "common/secret_base_defs.inc"  // Secret Bases (notes/SECRET_BASES.md)
 
     ScriptEntry Script_None
     ScriptEntry Script_2    // owner (Route104_PrettyPetalFlowerShop_EventScript_15BE0B)
@@ -58,6 +59,12 @@ L_FS_No:
     h_release
 L_FS_Shop:                                       // pokemartdecoration2: Black 2 has no decorations, so she sells
     h_msgbox 0                                   //   nothing (the user's choice for decoration shops, notes/DECISIONS.md)
+    h_closemessage
+#ifdef HOENN_EMERALD
+    sb_shop SB_SHOP_EM_FLOWER                    // pokemartdecoration2: the plants
+#else
+    sb_shop SB_SHOP_SR_FLOWER
+#endif
     h_msgbox 1                                   // Please come again!
     h_release
 

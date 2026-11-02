@@ -12,7 +12,58 @@ I wonder what kind of Pokéblock I’ll get?\nThis is so exciting!
 I made Pokéblocks with Mom, Dad and\nBig Sister. They turned out great!{be01}\nI bet you can make smoother, better\nPokéblocks if you have more people.
 Hello!{be01}\nThis is the reception counter for\nPokémon Contests.{be01}\nOh? It appears that you don’t have\na Pokéblock Case yet.{be01}\nIn that case, we need to provide you\nwith this!
 Okay, now that we’ve cleared that\nup…{be01}\nHello!{be01}\nThis is the reception counter for\nPokémon Contests.
-Hello, there!{be01}\nContests are on hold for now...\nbut our Musical stage is open!
+Would you like to enter your Pokémon\nin our Contests?
+Which topic would you like?
+A Pokémon Contest involves four\nTrainers entering one Pokémon each\nin competitive judging.{be01}\nA Contest has two stages of judging,\nprimary and secondary.{be01}\nPrimary judging is a popularity poll\ninvolving the audience.{be01}\nSecondary judging features appeals\nby the Pokémon using their moves.{be01}\nPlan appeals carefully to earn the\nmost attention of the Judge and\nexcite the audience.\nDo your best to stand out.{be01}\nThe primary and secondary scores are\nadded at the end.{be01}\nThe Pokémon garnering the highest\nscore is declared the winner.
+There are five kinds of Contests.{be01}\nCool, Beauty, Cute, Smart, and\nTough are the five categories.{be01}\nChoose the Contest that is right for\nthe Pokémon you plan to enter.
+There are four ranks of Pokémon\nContests.{be01}\nNormal, Super, Hyper, and Master\nare the four ranks.{be01}\nIn the Normal Rank, any Pokémon may\nenter.{be01}\nAny Pokémon that won a Normal Rank\nContest may move up to the Super Rank\nin the same category.{be01}\nIn the same way, a Super Rank winner\ncan move up to the Hyper Rank, and\na Hyper Rank winner can advance to\nthe Master Rank in the same category.{be01}\nA Pokémon that won in the Master Rank\nmay compete in the Master Rank as\noften as its Trainer wants.
+We hope you will participate another\ntime.
+Which Pokémon would you like to enter?
+Anyone with a Contest Pass may enter.{be01}\nYou may obtain a Contest Pass at the\nNormal Rank Contest HALL in\nVERDANTURF TOWN free of charge.{be01}\nPlease obtain a Contest Pass and\ncome again.
+Anyone with a Contest Pass may enter.{be01}\nIf you don’t have one, I can issue one\nfor you right now.{be01}\nWould you like me to issue you a\nContest Pass?
+Here you go!
+Oh?{be01}\nWe’ve already issued you a Contest\nPass, {0100:0}.{be01}\nPlease come back with your Contest\nPass.
+Please visit whenever you would like\nto enter a Contest.
+Which Contest would you like to enter?
+I’m terribly sorry, but your Pokémon\nis not qualified to compete at this\nRank yet...
+Is that your Contest Pokémon?
+Oh, but that Ribbon...{be01}\nYour Pokémon has won this Contest\nbefore, hasn’t it?{be01}\nWould you like to enter it in this\nContest anyway?
+I’m sorry, but an EGG cannot take part\nin a Pokémon Contest.
+Your Pokémon appears to be in no\ncondition to take part in a Contest...
+Okay, your Pokémon will be entered\nin this Contest.{be01}\nYour Pokémon is Entry No. 4.\nThe Contest will begin shortly.
+Congratulations! Your Pokémon is the\nContest winner!{be01}\nWe have your prize right here.\nPlease, right this way!
+Please come back for your prize\nlater on.
+We confer on you this Ribbon as your\nprize!
+{0100:0} received a Ribbon.
+{0100:0} put the Ribbon on\n{0100:1}.
+MC: Congratulations!\nPlease do compete again!
+Please pick up your prize at the\nreception counter later.\nPlease do compete again!
+Enter
+Info
+Exit
+What’s a Contest?
+Types of Contests
+Ranks
+Cancel
+Cool
+Beauty
+Cute
+Smart
+Tough
+Exit
+Normal Rank
+Super Rank
+Hyper Rank
+Master Rank
+Which Rank would you like to enter?
+Did you want to make some Pokéblocks\nwith the Blender?
+But you don’t have a Pokéblock Case.{be01}\nYou should get a Pokéblock Case and\nthen come see me.
+Oh?\nYou don’t have any Berries?{be01}\nIf you don’t have any Berries,\nyou can’t make any Pokéblocks.
+But your Pokéblock Case is full.{be01}\nYou should use some Pokéblocks before\nyou come see me again.
+Let’s get started, then!{be01}\nWhich Berry will you put in?
+That won’t blend, I’m afraid.\nIt isn’t that kind of Berry.
+Oh...\nYou’ve made this old-timer sad...
+Hello, there!{be01}\nOur Musical stage is open!
 In a Musical, Pokémon dress up\nin Props and dance on stage!{be01}\nHere’s a Prop Case. It holds a set\nof Props to get you started!
 Oh! Fans from your last show left\nyou some presents!
 Would you like to perform?

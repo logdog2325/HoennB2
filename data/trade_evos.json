@@ -17,7 +17,9 @@
     "  (a/0/2/4: +0xA field use 20, +0xC party use 1, +0x11 bit 3 = evolve), and stays holdable.",
     "shop: items appended to a Hoenn shop list (b2tools/patches/shops.py ids): the items Hoenn has no other source for,",
     "  and Metal Coat / Dragon Scale (otherwise only 5% wild held items; user's choice): Lilycove Dept. Store 3F, right",
-    "  clerk (id 15, X items). Black 2's own prices (item data). a/2/8/2 is then exactly its fixed 1300 bytes: no room left."
+    "  clerk (id 15, X items). Black 2's own prices (item data). evo_items (2026-11-01, b2tools/evo_items_check.py sweeps",
+    "  every version): the Shiny, Dusk, Dawn and Oval Stones, which had no source at all, 2,100 each. The list no longer",
+    "  fits a/2/8/2's 1300 bytes: the archive grows (fairy.py's and trainer_hill.py's lists grow it too)."
   ],
   "keep_trade_methods": true,
   "evolutions": {
@@ -55,6 +57,7 @@
     "id": 15,
     "label": "LilycoveCity_DepartmentStore_3F_Pokemart_StatBoosters",
     "add": ["ITEM_UP_GRADE", "ITEM_DUBIOUS_DISC", "ITEM_PROTECTOR", "ITEM_ELECTIRIZER", "ITEM_MAGMARIZER",
-            "ITEM_REAPER_CLOTH", "ITEM_PRISM_SCALE", "ITEM_METAL_COAT", "ITEM_DRAGON_SCALE"]
+            "ITEM_REAPER_CLOTH", "ITEM_PRISM_SCALE", "ITEM_METAL_COAT", "ITEM_DRAGON_SCALE",
+            "ITEM_SHINY_STONE", "ITEM_DUSK_STONE", "ITEM_DAWN_STONE", "ITEM_OVAL_STONE"]
   }
 }

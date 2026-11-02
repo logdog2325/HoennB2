@@ -57,7 +57,8 @@ def listing(zones):
     sz = json.load(open(P + '/data/b2_special_zones.json'))
     avoid, why = set(sz['avoid']), sz['why']
     names = {}
-    for line in open(P + '/external/pokebw2/build/include/generated/constants/zones.h'):
+    import b2decomp
+    for line in open(os.path.join(b2decomp.SRC, 'build', 'include', 'generated', 'constants', 'zones.h')):
         m = re.match(r'#define (ZONE_\w+) (\d+)', line)
         if m: names[int(m.group(2))] = m.group(1)
     use = {}

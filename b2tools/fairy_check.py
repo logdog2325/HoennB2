@@ -22,7 +22,9 @@ import os, re, sys, json, struct, subprocess, tempfile, importlib.util
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, '..'))
-DECOMP = os.path.join(ROOT, 'external', 'pokebw2')
+sys.path.append(HERE)
+import b2decomp  # noqa: E402  (the Black 2 decomp's source tree and build base: notes/POKEBW2_UPGRADE.md section 7)
+DECOMP = b2decomp.BASE   # `dsd dis` with the base's dsd and the config it reads (the new config needs a newer dsd)
 spec = importlib.util.spec_from_file_location('fairy', os.path.join(HERE, 'patches', 'fairy.py'))
 fairy = importlib.util.module_from_spec(spec); spec.loader.exec_module(fairy)
 
@@ -58,7 +60,7 @@ def gen6_published():
 
 # ---- 1. the sweep ---------------------------------------------------------------------------------------------------
 def disassemble(outdir):
-    subprocess.run([os.path.join(DECOMP, 'tools', 'dsd'), 'dis', '-c', 'config/b2_us/arm9/config.yaml', '-a', outdir],
+    subprocess.run([b2decomp.dsd(), 'dis', '-c', 'config/b2_us/arm9/config.yaml', '-a', outdir],
                    cwd=DECOMP, check=True, capture_output=True)
 
 def scan(asmdir):

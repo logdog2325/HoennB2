@@ -5,7 +5,8 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import narcio, version
 ROOT = os.path.join(os.path.dirname(__file__), '..', '..')
 SRC = os.path.join(ROOT, 'src', 'field_scripts')   # + src/field_scripts/ruby/ in a Ruby build (version.overlay)
-DECOMP = os.path.abspath(os.path.join(ROOT, 'external', 'pokebw2'))
+import b2decomp  # noqa: E402  (the Black 2 decomp's source tree and build base: notes/POKEBW2_UPGRADE.md section 7)
+DECOMP = b2decomp.SRC
 LLVM = '/opt/homebrew/opt/llvm/bin'
 
 def assemble(src):
@@ -25,6 +26,8 @@ def assemble(src):
         test += version.ASM_DEFINES      # -D HOENN_SAPPHIRE / HOENN_RUBY, HOENN_VERSION_ID (src/include/hoenn_version.inc)
         if os.environ.get('HOENN_BERRY_PLANTING', '1') != '0':   # berry planting (notes/BERRY_PLANTING.md; off by default:
             test += ['-D', 'HOENN_BERRY_PLANTING']          #  1241_hidden_items.s, scenes/Route130.inc)
+        if b2decomp.c_on():                      # the followers' talk script (needs our C: notes/FOLLOWERS.md)
+            test += ['-D', 'HOENN_FOLLOWERS']
         subprocess.run([f'{LLVM}/clang', '--target=armv5te-none-eabi', '-x', 'assembler-with-cpp', '-c', *test,
                         '-I', f'{DECOMP}/include', '-I', f'{DECOMP}/lib/nitro/include', '-I', f'{DECOMP}/build/include/generated',   # the newer decomp's generated constants headers (notes/POKEBW2_UPGRADE.md; absent = ignored)
                         '-I', os.path.join(ROOT, 'src', 'include'), '-I', os.path.join(ROOT, 'src', 'field_scripts'), '-D', 'BLACK2',   # field_scripts: "common/x.inc" (notes/STORY_COMMON.md)

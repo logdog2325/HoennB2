@@ -31,4 +31,9 @@ if [[ $# -eq 0 || " $* " == *" truck "* ]]; then
   # the open door's light: unlit (white vertex colours), so it shows at the textures' full brightness
   java -Djava.awt.headless=true -cp "$CP" ToNsbmd --vcol $O/truck/door.dae $O/truck/door.nsbmd $O/truck/palettes.txt > /dev/null
 fi
+# Secret Bases' decoration props (b2tools/secret_base_data.py, notes/SECRET_BASES.md)
+if [[ $# -eq 0 ]]; then
+  (cd b2tools && PYTHONPATH=../converter python3 secret_base_data.py models $O/_secret_bases > /dev/null)
+  java -Djava.awt.headless=true -cp "$CP" ToNsbmd --vcol --batch $O/_secret_bases/batch.txt $O/_secret_bases/palettes.txt > /dev/null
+fi
 ls -la $O/*/terrain.nsbmd | awk '{print $5, $9}'

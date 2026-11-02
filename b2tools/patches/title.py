@@ -377,7 +377,8 @@ def tune(rig):
     for at, old, new in CODE['arm9_ov162.bin']:
         if at != 0x8D0:
             base[at:at + len(old) // 2] = bytes.fromhex(new)
-    dsd = os.path.join(title_art.ROOT, 'external', 'pokebw2', 'tools', 'dsd')
+    import b2decomp
+    dsd = b2decomp.dsd()
     sizes = {}
     def size(fill):
         if fill not in sizes:

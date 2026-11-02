@@ -44,7 +44,8 @@ TOWER_LEVEL_CALL = 0x02161FAC        # BtlSetup_SetTrialHouseParty: battle_tower
 PLAY_SIZE_FN, PLAY_INIT_LIT = 0x0200E0F0, 0x0208F408             # block 0x38: size function, its table initializer
 PLAY_B2_SIZE, PLAY_SIZE = 60, 252
 EMERALD = os.path.join(ROOT, 'external', 'pokeemerald')
-B2 = os.path.join(ROOT, 'external', 'pokebw2')
+import b2decomp  # noqa: E402  (the Black 2 decomp's source tree and build base: notes/POKEBW2_UPGRADE.md section 7)
+B2 = b2decomp.SRC
 ESC = os.path.join(EMERALD, 'data', 'maps', 'BattleFrontier_ExchangeServiceCorner', 'scripts.inc')
 LOUNGE7 = os.path.join(EMERALD, 'data', 'maps', 'BattleFrontier_Lounge7', 'scripts.inc')
 # Exchange Service Corner shops: (shop id for CallFriendlyShopBuy, Emerald's menu label). Black 2's ids 240/241 are
@@ -150,7 +151,7 @@ def banned():
     sys.path.insert(0, os.path.join(B2, 'tools', 'scripts'))
     from narc import read_narc
     from b2files import arc_path
-    d = read_narc(open(arc_path(os.path.join(B2, 'extract', 'b2_us', 'files'), 106), 'rb').read())[20]
+    d = read_narc(open(arc_path(os.path.join(b2decomp.BASE, 'extract', 'b2_us', 'files'), 106), 'rb').read())[20]
     bits = d[0xA:0xA + 0x52]
     return [s for s in range(1, 656) if bits[s >> 3] >> (s & 7) & 1]
 

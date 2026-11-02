@@ -26,7 +26,8 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, '..', '..'))
 sys.path.insert(0, os.path.dirname(HERE))
 LLVM = '/opt/homebrew/opt/llvm/bin'
-DECOMP = os.path.join(ROOT, 'external', 'pokebw2')
+import b2decomp  # noqa: E402  (the Black 2 decomp's source tree and build base: notes/POKEBW2_UPGRADE.md section 7)
+DECOMP = b2decomp.SRC
 TYPE_FAIRY, TYPE_NONE = 17, 18
 ARM9 = 0x02004000
 ITCM_BASE, ARENA_ITCM_LIT = 0x01FF8000, 0x0207B400
@@ -67,7 +68,7 @@ def symbols(module):
 
 def ov_base(n):
     cur = None
-    for line in open(os.path.join(DECOMP, 'extract', 'b2_us', 'arm9_overlays', 'overlays.yaml')):
+    for line in open(os.path.join(b2decomp.BASE, 'extract', 'b2_us', 'arm9_overlays', 'overlays.yaml')):
         m = re.match(r'\s*-\s*id:\s*(\d+)', line)
         if m: cur = int(m.group(1)); continue
         m = re.match(r'\s*base_address:\s*(\d+)', line)

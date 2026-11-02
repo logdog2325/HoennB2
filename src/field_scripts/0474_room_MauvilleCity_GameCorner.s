@@ -5,6 +5,7 @@
 #include "hoenn.h"  // ch3b
 #include "hoenn_trainers.h"  // ch3b
 #include "hoenn_story.inc"  // ch3b
+#include "common/secret_base_defs.inc"  // Secret Bases (notes/SECRET_BASES.md)
 #include "scenes/ch3b_lib.inc"  // ch3b
 
     ScriptEntry Script_1
@@ -55,8 +56,7 @@ Script_2:
 // nothing, as the Contest counters register nobody (decision 2026-10-07): the Coins clerk and the prize ladies greet
 // you (and the clerk says you need a Coin Case when you have none), the machines say you cannot play without a Coin
 // Case and do nothing with one, the 20 Coins of the Pokéfan (FLAG_RECEIVED_20_COINS) are never given. The girl's
-// starter Doll is a decoration, which Black 2 cannot store: she takes Sapphire's own no-room path (Common_EventScript_
-// NoRoomForDecor + "You want it, but not right now?"). Asked in ch3b's report: a coin counter (a saved work) would
+// starter Doll is a decoration: given since v18.4 (notes/SECRET_BASES.md). Asked in ch3b's report: a coin counter (a saved work) would
 // let the clerk sell Coins and the prize corner give its TMs.
 #define T_ThisIsGameCorner 2
 #define T_NeedCoinCase 3
@@ -98,12 +98,33 @@ GC_Girl:                            // MauvilleCity_GameCorner_EventScript_Girl
     h_goto_if_no C3B_A, L_GC_GirlDecline
     h_goto_if_eq VAR_STARTER_MON, 1, L_GC_TorchicDoll
     h_goto_if_eq VAR_STARTER_MON, 2, L_GC_MudkipDoll
-    h_msgbox T_NoRoomTreecko        // checkdecorspace DECOR_TREECKO_DOLL fails: Common_EventScript_NoRoomForDecor
+    sb_checkdecorspace 88, C3B_A    // checkdecorspace DECOR_TREECKO_DOLL
+    h_goto_if_eq C3B_A, 0, L_GC_NoRoomTreecko
+    h_closemessage
+    sb_givedecoration 88, C3B_A
+    h_setflag FLAG_RECEIVED_STARTER_DOLL
+    h_release
+L_GC_NoRoomTreecko:
+    h_msgbox T_NoRoomTreecko        // Common_EventScript_NoRoomForDecor
     VMJump L_GC_GirlNotNow
 L_GC_TorchicDoll:
+    sb_checkdecorspace 89, C3B_A    // DECOR_TORCHIC_DOLL
+    h_goto_if_eq C3B_A, 0, L_GC_NoRoomTorchic
+    h_closemessage
+    sb_givedecoration 89, C3B_A
+    h_setflag FLAG_RECEIVED_STARTER_DOLL
+    h_release
+L_GC_NoRoomTorchic:
     h_msgbox T_NoRoomTorchic
     VMJump L_GC_GirlNotNow
 L_GC_MudkipDoll:
+    sb_checkdecorspace 90, C3B_A    // DECOR_MUDKIP_DOLL
+    h_goto_if_eq C3B_A, 0, L_GC_NoRoomMudkip
+    h_closemessage
+    sb_givedecoration 90, C3B_A
+    h_setflag FLAG_RECEIVED_STARTER_DOLL
+    h_release
+L_GC_NoRoomMudkip:
     h_msgbox T_NoRoomMudkip
 L_GC_GirlNotNow:                    // MauvilleCity_GameCorner_EventScript_NoRoomForStarterDoll
     h_msgbox T_WantItNotNow         // Huh? You want it, but not right now?

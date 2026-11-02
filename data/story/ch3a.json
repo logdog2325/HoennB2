@@ -1017,6 +1017,19 @@
    "script": 2,
    "dir": 2,
    "what": "Girl (Sapphire object 2, GIRL_3, FACE_LEFT)"
+  },
+  {
+   "kind": "npc",
+   "map": "SlateportCity_ContestLobby",
+   "at": [
+    11,
+    5
+   ],
+   "uid": 2,
+   "model": 28,
+   "script": 7,
+   "dir": 2,
+   "what": "Blend Master (Sapphire object 2, Berry Blender)"
   }
  ]
 }

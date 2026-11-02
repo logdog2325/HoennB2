@@ -7,7 +7,8 @@ import os, json, glob, shutil, subprocess, sys, tempfile
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import version  # noqa: E402  (Ruby/Emerald: src/text/<kind>/<version>/NNNN_*.txt replace files, src/text/<version>/overrides*.json lines)
 ROOT = os.path.join(os.path.dirname(__file__), '..', '..')
-DECOMP = os.path.join(ROOT, 'external', 'pokebw2')
+import b2decomp  # noqa: E402  (the Black 2 decomp's source tree and build base: notes/POKEBW2_UPGRADE.md section 7)
+DECOMP = b2decomp.SRC
 OURS = os.path.join(ROOT, 'src', 'text')
 
 def room_text_numbers():
@@ -24,6 +25,8 @@ def apply(files):
     if os.environ.get('HOENN_BERRY_PLANTING', '1') != '0':                         # berry planting's lines (off by
         extras.append(os.path.join(OURS, 'berries', 'overrides_berry_planting.json'))   # default; BERRY_PLANTING.md)
     extras += [p for p in os.environ.get('HOENN_EXTRA_TEXT', '').split(':') if p]   # converter/gen_key_items.py
+    if not b2decomp.c_on():                                                   # the followers' question and lines need
+        extras = [p for p in extras if os.path.basename(p) != 'overrides_followers.json']   # our C (notes/FOLLOWERS.md)
     for extra in extras:                                                      # --install); HOENN_EXTRA_TEXT=a.json:b.json
         for name, lines in json.load(open(extra, encoding='utf-8')).items():  # adds files for a test build
             if name != '_doc': overrides.setdefault(name, {}).update(lines)
@@ -92,13 +95,14 @@ SLOT_EXTRA = {109: 12800, 54: 512}
 
 def fixed_slots(files):
     import narcio
-    vanilla = narcio.load(os.path.join(DECOMP, 'build', 'b2_us', 'files'), 2)
+    vanilla = narcio.load(os.path.join(b2decomp.BASE, 'build', 'b2_us', 'files'), 2)
     entries = narcio.load(files, 2)
     assert len(entries) == len(vanilla), (len(entries), len(vanilla))
     over = []
     for i, (e, v) in enumerate(zip(entries, vanilla)):
         slot = (len(v) + 64 + len(v) // 16 + 3) & ~3
         slot += SLOT_EXTRA.get(i, 0)
+        if i == 54 and b2decomp.c_on(): slot += 128   # the seventh question (overrides_followers.json); off: the old layout
         if len(e) > slot: over.append(f'{i:04d}: {len(e)} B > slot {slot}')
         else: entries[i] = e + bytes(slot - len(e))
     if over:

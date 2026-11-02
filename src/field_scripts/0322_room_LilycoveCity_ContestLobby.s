@@ -17,6 +17,7 @@
     ScriptEntry LB_Girl                 // 8: object 6  // story:
     ScriptEntry LB_Blender2Girl         // 9: object 10  // story:
     ScriptEntry LB_NinjaBoy             // 10: object 14  // story:
+    ScriptEntry LB_MusicalHost          // 11: uid 30, not Sapphire's: Black 2's Musical  // story:
     ScriptEntriesEnd
 
 Script_1:
@@ -99,15 +100,18 @@ Script_5:
 #define T_PokeblocksWithFamily 11
 #define T_NoPokeblockCase 12            // Emerald only (appended lines)
 #define T_ClearedThatUp 13
-// Pokémon Contests can't run on Black 2: the receptionist offers Black 2's Pokémon Musical instead (musical agent
+// The receptionist runs real Contests since v18.4 (common/contests.inc); before, Black 2's Musical (musical agent
 // 2026-10-18; common/musical.inc, b2tools/patches/musical.py). Text lines 12-25 (Emerald: 14-27, after its
 // Pokéblock Case lines). T_RecAccepting, T_RecAnotherTime and Emerald's T_ClearedThatUp stay in the files, unused
 // (after the Pokéblock Case the Musical's own "Hello, there!" follows). The link receptionist is unchanged.
-#include "common/musical.inc"
+#include "common/contests.inc"
+#include "common/musical.inc"           // the Musical stays: LB_MusicalHost (b2tools/gen_contest_text.py: its 14 lines after CL_*)
 #ifdef HOENN_EMERALD
-#define T_Musical 14
+#define T_Contest 14
+#define T_Musical 65
 #else
-#define T_Musical 12
+#define T_Contest 12
+#define T_Musical 63
 #endif
 LB_Receptionist:                            // ..._EventScript_ContestReceptionist: the Musical's reception
     c3_talk
@@ -123,7 +127,11 @@ LB_Receptionist:                            // ..._EventScript_ContestReceptioni
     h_setflag FLAG_RECEIVED_POKEBLOCK_CASE
 L_LB_Welcome:
 #endif
-    musical_reception T_Musical
+#ifdef HOENN_EMERALD
+    contest_reception T_Contest, 255, T_RecAccepting
+#else
+    contest_reception T_Contest, 3, T_RecAccepting
+#endif
 
 LB_LinkReceptionist:                        // ..._EventScript_LinkContestReceptionist (no Contest Pass)
     c3_talk
@@ -138,8 +146,13 @@ LB_Girl:                                    // ..._EventScript_Girl (FLAG_RECEIV
 L_LB_GetPass:
     h_msgbox_npc T_GetPassVerdanturf
 
-LB_Blender2Girl:
-    h_msgbox_npc T_WhatKindOfPokeblock
+LB_Blender2Girl:                            // BerryBlender_EventScript_Blender2Girl: three opponents here
+    c3_talk
+    contest_blender T_Contest, 4
 LB_NinjaBoy:
     h_msgbox_npc T_PokeblocksWithFamily
+
+LB_MusicalHost:                             // Black 2's Musical, as these counters ran it from 2026-10-18 to v18.3 (user: keep it)
+    c3_talk
+    musical_reception T_Musical
     .balign 4, 0

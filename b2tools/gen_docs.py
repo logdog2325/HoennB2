@@ -32,8 +32,9 @@ import collections, glob, json, os, re, subprocess, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, '..'))
-B2 = os.path.join(ROOT, 'external', 'pokebw2')
 sys.path.insert(0, HERE)
+import b2decomp  # noqa: E402  (the Black 2 decomp's source tree and build base: notes/POKEBW2_UPGRADE.md section 7)
+B2 = b2decomp.SRC
 sys.path.insert(0, os.path.join(HERE, 'patches'))
 import version  # noqa: E402
 
@@ -219,6 +220,11 @@ def wild_page(names):
         for title, rows in sec:
             L += ['', f'**{title}**', '', '| Pokémon | Level | Chance |', '|---|---|---|']
             L += [f'| {a} | {b} | {c} |' for a, b, c in rows]
+        if 'Route119' in maps:                               # patches/feebas.py: Gen 3's hidden spots, no table of their own
+            scale = json.load(open(os.path.join(ROOT, 'data', 'level_scaling.json')))['curve']['table']
+            L += ['', f'**Feebas: fish on Route 119, 6 spots.** Six water tiles of the route, different in every save and fixed '
+                      f'for that save, as in Gen 3: fishing there with any rod, half the bites are a Feebas (Lv {scale["20"]}-{scale["25"]}), '
+                      'the others come from the tables above.']
     return '\n'.join(L) + '\n'
 
 def _anchor(s):
@@ -391,13 +397,18 @@ def evolutions_page(names):
     shop = d.get('shop') or {}
     if shop.get('add'):
         L += ['', 'Items with no other source in Hoenn (and the Metal Coat and Dragon Scale) are sold at the Lilycove '
-              'Department Store, 3F: ' + ', '.join(names.item(i) for i in shop['add']) + '.']
+              'Department Store, 3F (the right clerk): ' + ', '.join(names.item(i) for i in shop['add']) + '.']
+    L += ['', '## Evolution stones\n',
+          'The Fire, Water, Thunder, Leaf, Moon and Sun Stones are found in Hoenn. The Shiny, Dusk and Dawn Stones and the '
+          'Oval Stone are not, so the Lilycove Department Store sells them for 2,100 each. Use a stone from the Bag; a '
+          'Happiny evolves when it levels up during the day holding an Oval Stone. The Razor Claw and Razor Fang (held at '
+          'night, Weavile and Gliscor) are sold for 8 BP in the Pokémon World Tournament lobby.']
     return '\n'.join(L) + '\n'
 
 def options_page():
     L = [HEADER, '# Start-of-game options\n',
-         'Before your adventure starts, Professor Birch asks six questions. Your answers set these options, and '
-         'they can\'t be changed later.\n',
+         'Before your adventure starts, Professor Birch asks seven questions. Your answers set these options, and '
+         'they can\'t be changed later, except Following Pokémon.\n',
          '| Question | Answers | What it changes |', '|---|---|---|',
          '| The Fairy type | Yes / No | Yes: the Fairy type, Gen 6\'s type chart, new Fairy moves ([details](fairy-type.md)). No: Black 2\'s types. |',
          '| Physical / special | Each move\'s own / By type | Modern split (each move is physical or special), or the classic Gen 3 rule (the move\'s type decides). |',
@@ -407,7 +418,9 @@ def options_page():
          'Feb/Jun/Oct, autumn: Mar/Jul/Nov, winter: Apr/Aug/Dec). No: summer all year, as in Ruby and Sapphire. |',
          '| The Exp. Share | Yes / No | Yes: you start with the Exp. Share in your Key Items, switched on: Pokémon that '
          'don\'t battle still gain Exp. Points. Use it in the Bag to switch it off or on. No: Mr. Stone gives it to you in '
-         'Rustboro after you deliver his Letter, as in the original games. |']
+         'Rustboro after you deliver his Letter, as in the original games. |',
+         '| Following Pokémon | Yes / No | Yes: your first Pokémon walks behind you. No: it stays in its Poké Ball. The aide '
+         'in Birch\'s lab in Littleroot switches this on or off at any time, on saves from older versions too. |']
     return '\n'.join(L) + '\n'
 
 def frontier_page(names):

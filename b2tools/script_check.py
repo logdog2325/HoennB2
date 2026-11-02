@@ -43,7 +43,8 @@ from collections import defaultdict, Counter
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, '..'))
 sys.path.insert(0, HERE); sys.path.insert(0, os.path.join(HERE, 'patches'))
-sys.path.insert(0, os.path.join(ROOT, 'external', 'pokebw2', 'tools', 'scripts'))
+import b2decomp  # noqa: E402  (the Black 2 decomp's source tree and build base: notes/POKEBW2_UPGRADE.md section 7)
+sys.path.insert(0, os.path.join(b2decomp.SRC, 'tools', 'scripts'))
 import field_script as FS                     # noqa: E402  (the decomp's disassembler: command table, tracing)
 from msgdata import read_msgdata              # noqa: E402
 import version                                # noqa: E402

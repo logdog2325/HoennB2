@@ -3,8 +3,9 @@ import os, re, struct
 from b2files import narc_entries, arc_path
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-DECOMP = os.path.join(HERE, '..', 'external', 'pokebw2')
-FILES = os.path.join(DECOMP, 'extract', 'b2_us', 'files')
+import b2decomp  # noqa: E402  (the Black 2 decomp's source tree and build base: notes/POKEBW2_UPGRADE.md section 7)
+DECOMP = b2decomp.SRC
+FILES = os.path.join(b2decomp.BASE, 'extract', 'b2_us', 'files')
 
 def zone_headers():
     """{zone_id: {'name': ..., field: value}} parsed from data/zones/0000_zone_headers.s. Omitted fields take the

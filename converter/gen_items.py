@@ -18,8 +18,9 @@ import os, re, json, struct, sys, collections
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.join(HERE, '..')
-B2 = os.path.join(ROOT, 'external', 'pokebw2')
 sys.path.insert(0, os.path.join(ROOT, 'b2tools'))
+import b2decomp  # noqa: E402  (the Black 2 decomp's source tree and build base: notes/POKEBW2_UPGRADE.md section 7)
+B2, B2BASE = b2decomp.SRC, b2decomp.BASE
 import version  # noqa: E402  (HOENN_VERSION=emerald: main_emerald)
 sys.path.insert(0, os.path.join(ROOT, 'b2tools', 'patches'))
 import new_tms  # noqa: E402  (the new TMs TM96-TM104: their items and moves)
@@ -35,7 +36,7 @@ def b2_items():
 
 def tm_items():
     """MOVE_X -> Black 2 TM/HM item constant."""
-    arm9 = open(f'{B2}/build/b2_us/build/arm9.bin', 'rb').read()
+    arm9 = open(f'{B2BASE}/build/b2_us/build/arm9.bin', 'rb').read()
     moves = struct.unpack_from('<101H', arm9, TM_TABLE - 0x02004000)
     names = {int(v): k for k, v in re.findall(r'#define (MOVE_\w+)\s+(\d+)', open(f'{B2}/include/constants/moves.h').read())}
     out = {}

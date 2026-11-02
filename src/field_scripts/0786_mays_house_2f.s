@@ -99,6 +99,9 @@ L_TestPartyDone:
     VMStackPushConst 1
     VMStackCmp CMP_EQ
     VMJumpIf CMP_STACK, L_PC_NoPokemon   // (jumps when the comparison is false: the flag is not set)
+    RTCallGlobal 10738                   // Secret Bases: Gen 3's Player's PC has a Decoration entry: Black 2's PC or it
+    WorkCmpConst 0x8012, 0
+    VMJumpIf CMP_EQ, L_PCEnd
     RTCallGlobal 10090                   // this is the player's own room: Black 2's PC script (global file 1244, the
                                          // Pokémon Center PC): SE + "<player> booted up the PC." + "Which PC should be
                                          // accessed?" (Pokémon Storage System, <player>'s PC = Mailbox, ...) + switch off

@@ -26,7 +26,8 @@ ROOT = os.path.dirname(HERE)
 sys.path.insert(0, os.path.join(ROOT, 'b2tools'))
 import version  # noqa: E402  (HOENN_VERSION: which pokeruby branch the readers see)
 RUBY = os.path.join(ROOT, 'external', 'pokeruby')
-BW2 = os.path.join(ROOT, 'external', 'pokebw2')
+import b2decomp  # noqa: E402  (the Black 2 decomp's source tree and build base: notes/POKEBW2_UPGRADE.md section 7)
+BW2 = b2decomp.SRC
 OUT_JSON = os.path.join(ROOT, 'data', 'level_scaling.json')
 
 # ------------------------------------------------------------------------------------------------------------------

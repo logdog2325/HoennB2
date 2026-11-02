@@ -4,7 +4,8 @@ import os, sys, glob, subprocess, tempfile
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import narcio, version   # Ruby: src/encounters/ruby/NNNN_*.s replace Sapphire's files (version.overlay)
 ROOT = os.path.join(os.path.dirname(__file__), '..', '..')
-DECOMP = os.path.abspath(os.path.join(ROOT, 'external', 'pokebw2'))
+import b2decomp  # noqa: E402  (the Black 2 decomp's source tree and build base: notes/POKEBW2_UPGRADE.md section 7)
+DECOMP = b2decomp.SRC
 LLVM = '/opt/homebrew/opt/llvm/bin'
 
 def apply(files):

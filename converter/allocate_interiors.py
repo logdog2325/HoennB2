@@ -196,6 +196,9 @@ def main():
         out[name] = dict(zone=zone, status=status, scripts=hd['scripts'], init_scripts=hd['init_scripts'], text=hd['text'],
                          entities=hd['entities'], area=hd['area'], own_matrix=mat_users[hd['matrix']] == 1, **r)
     own_files(out, old)
+    # (secret_bases 2026-11-01) the bases are b2tools/secret_base_data.py's rooms: no door leads to them, so the walk above
+    # never finds them; they keep their entries (music, places, off zones and the room tools read them)
+    out.update({name: e for name, e in old.items() if e.get('status') == 'secret_base'})
     json.dump({'_doc': __doc__.strip().split('\n\n')[0], 'rooms': out}, open(reg_path, 'w'), indent=1)
     fam = collections.Counter(tuple(v['tilesets'])[1] for v in out.values())
     print(f'{len(out)} rooms, {sum(1 for v in out.values() if v["own_matrix"])} with their own matrix; '

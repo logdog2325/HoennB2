@@ -41,16 +41,17 @@ What this patch does:
                   #120; 0x021be4e6: lsls r4, r4, #2 -> #0), so a father's TM96+ move passes to the egg as Black 2's do.
   Text: src/text/overrides_new_tms.json (`python3 new_tms.py --text` writes it; apply checks it is current).
   Scripts: src/include/hoenn_tms.h (ITEM_TM96 ...; apply checks it), the six gifts and converter/gen_items.py.
-Not changed: shops (none sells these; their "TM N" line would show item - 327), Black 2's script command 0x2D4 (counts
+Shops: Slateport sells TM102; the decomp's scrcmd_shop.c prints the number. Not changed: Black 2's script command 0x2D4 (counts
 TM01-TM95 only; no Hoenn script uses it). Savestates made before need a cold boot (ITCM code)."""
 import os, re, sys, json, struct, subprocess, tempfile, importlib.util, collections
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, '..', '..'))
-DECOMP = os.path.join(ROOT, 'external', 'pokebw2')
-VANILLA_FILES = os.path.join(DECOMP, 'build', 'b2_us', 'files')
-VANILLA_CODE = os.path.join(DECOMP, 'build', 'b2_us', 'build')
 sys.path.insert(0, os.path.dirname(HERE))
+import b2decomp  # noqa: E402  (the Black 2 decomp's source tree and build base: notes/POKEBW2_UPGRADE.md section 7)
+DECOMP = b2decomp.SRC
+VANILLA_FILES = os.path.join(b2decomp.BASE, 'build', 'b2_us', 'files')
+VANILLA_CODE = os.path.join(b2decomp.BASE, 'build', 'b2_us', 'build')
 import narcio  # noqa: E402
 import version  # noqa: E402
 
@@ -207,6 +208,8 @@ def apply(files):
     tmpl = van[TEMPLATE]
     for k, (n, it, mv, _) in enumerate(NEW_TMS):
         d = bytearray(tmpl); d[0xF] = FIRST_BIT + k
+        if mv == 'MOVE_SECRET_POWER':                  # Gen 3's price for TM43, 3,000 (the stall at Slateport sells it)
+            struct.pack_into('<H', d, 0, 300)
         assert items[it] == van[it] or items[it] == bytes(d), f'item {it}: changed by another patch ({items[it].hex()})'
         assert not any(van[it][:0xC]), f'item {it} is not one of Black 2\'s unused ids'
         items[it] = bytes(d)

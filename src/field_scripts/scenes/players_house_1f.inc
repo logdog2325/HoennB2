@@ -14,7 +14,7 @@
 #include "hoenn_trainers.h"                     // (TRAINER_GABBY_AND_TY_1: the TV report's song)
 #define T(n) (T_BASE + (n))
 #ifdef HOENN_EMERALD
-#define MOVER_SPECIES SPECIES_VIGOROTH          // Emerald's movers are Vigoroth (the sheet stays Black 2's worker)
+#define MOVER_SPECIES SPECIES_VIGOROTH          // Emerald's movers are Vigoroth (data/interiors/emerald/390.json, 392.json)
 #else
 #define MOVER_SPECIES SPECIES_MACHOKE
 #endif

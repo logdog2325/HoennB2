@@ -79,9 +79,10 @@ import os, re, sys, json, glob, collections, tempfile, shutil, time
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 RUBY = os.path.join(ROOT, 'external', 'pokeruby')
-B2 = os.path.join(ROOT, 'external', 'pokebw2')
 sys.path.insert(0, HERE)
 sys.path.insert(0, os.path.join(ROOT, 'b2tools'))
+import b2decomp  # noqa: E402  (the Black 2 decomp's source tree and build base: notes/POKEBW2_UPGRADE.md section 7)
+B2, B2BASE = b2decomp.SRC, b2decomp.BASE
 import version                                                           # noqa: E402  (HOENN_VERSION)
 from gen3text import convert                                            # noqa: E402
 from level_scaling import load_aliases                                   # noqa: E402
@@ -680,7 +681,7 @@ def main():
     # ---- classes: Sapphire pic -> Black 2 class (kept, or a spare one repurposed by the patch)
     b2_class_names = text_lines(f'{B2}/data/text/system/0383_trainer_class_names.txt')
     b2_class_art = text_lines(f'{B2}/data/text/system/0485_trainer_class_names_with_article.txt')
-    arm9 = open(f'{B2}/build/b2_us/build/arm9.bin', 'rb').read()
+    arm9 = open(f'{B2BASE}/build/b2_us/build/arm9.bin', 'rb').read()
     def resources(c):
         o = 0x02092394 - 0x02004000 + 4 * c
         return arm9[o], arm9[o + 1], int.from_bytes(arm9[o + 2:o + 4], 'little')
@@ -993,7 +994,7 @@ def main():
     import struct
     sys.path.insert(0, os.path.join(ROOT, 'b2tools'))
     import narcio
-    F = f'{B2}/build/b2_us/files'
+    F = f'{B2BASE}/build/b2_us/files'
     a89, a90 = narcio.load(F, 89)[0], narcio.load(F, 90)[0]
     recs = [struct.unpack_from('<HH', a89, i) for i in range(0, len(a89), 4)]
     old_lines = text_lines(f'{B2}/data/text/system/0381_trainer_msg_load.txt')

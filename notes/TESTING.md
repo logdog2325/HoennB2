@@ -4,7 +4,11 @@
     cd b2tools && python3 build_rom.py --clean <patch> <patch> ...      → work/rom/hoenn.nds
 - Starts from an APFS clone of the decomp's matching file tree (links followed), applies `b2tools/patches/<name>.py`
   (each has `apply(files_dir)`), writes `work/rom/rom_config.yaml` with absolute paths, runs `dsd rom build`.
-- With no patches it reproduces the dump exactly (SHA1 `e51e6dfb…0abb`, checked). ~6 s.
+- With no patches it reproduces the dump exactly (SHA1 `e51e6dfb…0abb`, checked: `HOENN_DECOMP_C=0` or `HOENN_CODE=base`, since
+  Phase 1 our C is on by default). ~6 s. Black 2's code comes from the decomp's C (`b2tools/decomp_build.py`,
+  notes/POKEBW2_UPGRADE.md 8.8, section 9); `HOENN_CODE=base` = the dump's binaries, without the C-only features.
+- Followers (notes/FOLLOWERS.md): test builds (any `HOENN_TEST_*`) have none unless `HOENN_TEST_FOLLOW=1`. A plain build's
+  states made by mashing A have the follower on. `MAKE_STATES_OUT=dir/ make_states.py ROM` writes the states elsewhere.
 - NARC edits go through `b2tools/narcio.py` (the decomp's own `narc.py` reader/writer).
 
 ## Emulator harness (DeSmuME via py-desmume 0.0.9, in `.venv`)

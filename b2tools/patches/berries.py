@@ -22,8 +22,8 @@ protocol of roamers.py / rods.py), and the hooks, each checked against Black 2's
   - arm9 GetIndexOfObjID 0x0200fe34 (code -> a/0/4/7 record) -> `ldr r1, =Berry_ObjIndex; bx r1`: Black 2's ranges
     unchanged, PIC_CODE_BASE + i -> REC_BASE + i.
 berries_data.h: per version, from its own decomp (Sapphire/Ruby pokeruby, Emerald pokeemerald): kBerry[43] =
-{stageDuration, maxYield, minYield} (gBerries), kPic[43][5] (the picture of each stage), kInit[128] (the berry Gen 3's
-new game plants in each tree: data/hoenn_berry_trees.json, Emerald data/emerald/), kTreeX/kTreeZ[128] (each tree's world
+{stageDuration, maxYield, minYield} (gBerries), kPic[43][5] (the picture of each stage), kInit[90] (the berry Gen 3's
+new game plants in each tree: data/hoenn_berry_trees.json, Emerald data/emerald/), kTreeX/kTreeZ[90] (each tree's world
 tile: the script finds the tree by the talked-to actor's tile), the bases.
 """
 import os, re, sys, json, struct, subprocess, tempfile, importlib.util
@@ -45,7 +45,7 @@ RESOLVE_OLD = bytes.fromhex('08b5a229')    # push {r3, lr}; cmp r1, #162
 VCODE_BASE = 0x0F00                        # a tree actor's code: 0x0F00 + tree id (converter/gen_hidden_items.py PLANT_VCODE)
 PIC_CODE_BASE = 0x0E00                     # the pictures' codes
 TEMPLATE_CODE = 208                        # Black 2's gift box: one-frame 32x32 billboard (controller 4, no shadow)
-N_TREES = 128
+N_TREES = 90       # Gen 3's ids 0-89 (berries.c): the block from +552 on is the Contests'
 STATE = {}                                 # apply -> apply_code: rec_base, n_pics
 
 
@@ -141,9 +141,9 @@ def data_header(rec_base, n_pics):
         f'#define REC_BASE {rec_base}', f'#define HOENN_VERSION_ID {version.GAME_VERSION}',
         'static const u8 kBerry[43][3] = {' + ', '.join('{%d, %d, %d}' % s for s in stats) + '};',
         'static const u8 kPic[43][5] = {' + ', '.join('{' + ', '.join(map(str, r)) + '}' for r in pic) + '};',
-        'static const u8 kInit[128] = {' + ', '.join(map(str, kinit)) + '};',
-        'static const u16 kTreeX[128] = {' + ', '.join(map(str, kx)) + '};',
-        'static const u16 kTreeZ[128] = {' + ', '.join(map(str, kz)) + '};']) + '\n'
+        f'static const u8 kInit[{N_TREES}] = {{' + ', '.join(map(str, kinit)) + '};',
+        f'static const u16 kTreeX[{N_TREES}] = {{' + ', '.join(map(str, kx)) + '};',
+        f'static const u16 kTreeZ[{N_TREES}] = {{' + ', '.join(map(str, kz)) + '};']) + '\n'
 
 
 def _roamers():

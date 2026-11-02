@@ -1,0 +1,17 @@
+{
+ "kind": "overworld",
+ "frames": 1,
+ "size": [
+  32,
+  32
+ ],
+ "controller": 4,
+ "textures": [
+  "t4x4x1.0"
+ ],
+ "palette": "t4x4x1",
+ "name": "099-sb-3-closed",
+ "stage": 0,
+ "sapphire": "metatile 0x208 (gUnknown_083D1358 closed)",
+ "made_by": "b2tools/secret_base_data.py spots"
+}

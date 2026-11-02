@@ -13584,6 +13584,534 @@
    "own_scripts": 1771,
    "own_init": 1772,
    "own_text": 917
+  },
+  "SecretBase_RedCave1": {
+   "zone": 531,
+   "status": "secret_base",
+   "scripts": 1062,
+   "init_scripts": 1063,
+   "text": 319,
+   "entities": 310,
+   "area": 299,
+   "own_matrix": false,
+   "map_id": "MAP_SECRET_BASE_RED_CAVE1",
+   "map_type": "MAP_TYPE_SECRET_BASE",
+   "entered_from": null,
+   "tilesets": [
+    "gTileset_SecretBase",
+    "gTileset_SecretBaseRedCave"
+   ],
+   "size": [
+    11,
+    9
+   ],
+   "warps": []
+  },
+  "SecretBase_RedCave2": {
+   "zone": 532,
+   "status": "secret_base",
+   "scripts": 1064,
+   "init_scripts": 1065,
+   "text": 320,
+   "entities": 311,
+   "area": 299,
+   "own_matrix": false,
+   "map_id": "MAP_SECRET_BASE_RED_CAVE2",
+   "map_type": "MAP_TYPE_SECRET_BASE",
+   "entered_from": null,
+   "tilesets": [
+    "gTileset_SecretBase",
+    "gTileset_SecretBaseRedCave"
+   ],
+   "size": [
+    7,
+    16
+   ],
+   "warps": []
+  },
+  "SecretBase_RedCave3": {
+   "zone": 533,
+   "status": "secret_base",
+   "scripts": 1066,
+   "init_scripts": 1067,
+   "text": 321,
+   "entities": 312,
+   "area": 299,
+   "own_matrix": false,
+   "map_id": "MAP_SECRET_BASE_RED_CAVE3",
+   "map_type": "MAP_TYPE_SECRET_BASE",
+   "entered_from": null,
+   "tilesets": [
+    "gTileset_SecretBase",
+    "gTileset_SecretBaseRedCave"
+   ],
+   "size": [
+    15,
+    8
+   ],
+   "warps": []
+  },
+  "SecretBase_RedCave4": {
+   "zone": 534,
+   "status": "secret_base",
+   "scripts": 1068,
+   "init_scripts": 1069,
+   "text": 322,
+   "entities": 313,
+   "area": 299,
+   "own_matrix": false,
+   "map_id": "MAP_SECRET_BASE_RED_CAVE4",
+   "map_type": "MAP_TYPE_SECRET_BASE",
+   "entered_from": null,
+   "tilesets": [
+    "gTileset_SecretBase",
+    "gTileset_SecretBaseRedCave"
+   ],
+   "size": [
+    9,
+    15
+   ],
+   "warps": []
+  },
+  "SecretBase_BrownCave1": {
+   "zone": 506,
+   "status": "secret_base",
+   "scripts": 1012,
+   "init_scripts": 1013,
+   "text": 378,
+   "entities": 369,
+   "area": 299,
+   "own_matrix": false,
+   "map_id": "MAP_SECRET_BASE_BROWN_CAVE1",
+   "map_type": "MAP_TYPE_SECRET_BASE",
+   "entered_from": null,
+   "tilesets": [
+    "gTileset_SecretBase",
+    "gTileset_SecretBaseBrownCave"
+   ],
+   "size": [
+    11,
+    9
+   ],
+   "warps": []
+  },
+  "SecretBase_BrownCave2": {
+   "zone": 535,
+   "status": "secret_base",
+   "scripts": 1070,
+   "init_scripts": 1071,
+   "text": 323,
+   "entities": 314,
+   "area": 299,
+   "own_matrix": false,
+   "map_id": "MAP_SECRET_BASE_BROWN_CAVE2",
+   "map_type": "MAP_TYPE_SECRET_BASE",
+   "entered_from": null,
+   "tilesets": [
+    "gTileset_SecretBase",
+    "gTileset_SecretBaseBrownCave"
+   ],
+   "size": [
+    14,
+    9
+   ],
+   "warps": []
+  },
+  "SecretBase_BrownCave3": {
+   "zone": 536,
+   "status": "secret_base",
+   "scripts": 1072,
+   "init_scripts": 1073,
+   "text": 324,
+   "entities": 315,
+   "area": 299,
+   "own_matrix": false,
+   "map_id": "MAP_SECRET_BASE_BROWN_CAVE3",
+   "map_type": "MAP_TYPE_SECRET_BASE",
+   "entered_from": null,
+   "tilesets": [
+    "gTileset_SecretBase",
+    "gTileset_SecretBaseBrownCave"
+   ],
+   "size": [
+    15,
+    11
+   ],
+   "warps": []
+  },
+  "SecretBase_BrownCave4": {
+   "zone": 537,
+   "status": "secret_base",
+   "scripts": 1074,
+   "init_scripts": 1075,
+   "text": 325,
+   "entities": 316,
+   "area": 299,
+   "own_matrix": false,
+   "map_id": "MAP_SECRET_BASE_BROWN_CAVE4",
+   "map_type": "MAP_TYPE_SECRET_BASE",
+   "entered_from": null,
+   "tilesets": [
+    "gTileset_SecretBase",
+    "gTileset_SecretBaseBrownCave"
+   ],
+   "size": [
+    14,
+    12
+   ],
+   "warps": []
+  },
+  "SecretBase_BlueCave1": {
+   "zone": 507,
+   "status": "secret_base",
+   "scripts": 1014,
+   "init_scripts": 1015,
+   "text": 379,
+   "entities": 370,
+   "area": 299,
+   "own_matrix": false,
+   "map_id": "MAP_SECRET_BASE_BLUE_CAVE1",
+   "map_type": "MAP_TYPE_SECRET_BASE",
+   "entered_from": null,
+   "tilesets": [
+    "gTileset_SecretBase",
+    "gTileset_SecretBaseBlueCave"
+   ],
+   "size": [
+    11,
+    9
+   ],
+   "warps": []
+  },
+  "SecretBase_BlueCave2": {
+   "zone": 538,
+   "status": "secret_base",
+   "scripts": 1076,
+   "init_scripts": 1077,
+   "text": 326,
+   "entities": 317,
+   "area": 299,
+   "own_matrix": false,
+   "map_id": "MAP_SECRET_BASE_BLUE_CAVE2",
+   "map_type": "MAP_TYPE_SECRET_BASE",
+   "entered_from": null,
+   "tilesets": [
+    "gTileset_SecretBase",
+    "gTileset_SecretBaseBlueCave"
+   ],
+   "size": [
+    15,
+    7
+   ],
+   "warps": []
+  },
+  "SecretBase_BlueCave3": {
+   "zone": 540,
+   "status": "secret_base",
+   "scripts": 1080,
+   "init_scripts": 1081,
+   "text": 328,
+   "entities": 319,
+   "area": 299,
+   "own_matrix": false,
+   "map_id": "MAP_SECRET_BASE_BLUE_CAVE3",
+   "map_type": "MAP_TYPE_SECRET_BASE",
+   "entered_from": null,
+   "tilesets": [
+    "gTileset_SecretBase",
+    "gTileset_SecretBaseBlueCave"
+   ],
+   "size": [
+    10,
+    17
+   ],
+   "warps": []
+  },
+  "SecretBase_BlueCave4": {
+   "zone": 541,
+   "status": "secret_base",
+   "scripts": 1082,
+   "init_scripts": 1083,
+   "text": 329,
+   "entities": 320,
+   "area": 299,
+   "own_matrix": false,
+   "map_id": "MAP_SECRET_BASE_BLUE_CAVE4",
+   "map_type": "MAP_TYPE_SECRET_BASE",
+   "entered_from": null,
+   "tilesets": [
+    "gTileset_SecretBase",
+    "gTileset_SecretBaseBlueCave"
+   ],
+   "size": [
+    9,
+    17
+   ],
+   "warps": []
+  },
+  "SecretBase_YellowCave1": {
+   "zone": 508,
+   "status": "secret_base",
+   "scripts": 1016,
+   "init_scripts": 1017,
+   "text": 380,
+   "entities": 371,
+   "area": 299,
+   "own_matrix": false,
+   "map_id": "MAP_SECRET_BASE_YELLOW_CAVE1",
+   "map_type": "MAP_TYPE_SECRET_BASE",
+   "entered_from": null,
+   "tilesets": [
+    "gTileset_SecretBase",
+    "gTileset_SecretBaseYellowCave"
+   ],
+   "size": [
+    11,
+    9
+   ],
+   "warps": []
+  },
+  "SecretBase_YellowCave2": {
+   "zone": 542,
+   "status": "secret_base",
+   "scripts": 1084,
+   "init_scripts": 1085,
+   "text": 330,
+   "entities": 321,
+   "area": 299,
+   "own_matrix": false,
+   "map_id": "MAP_SECRET_BASE_YELLOW_CAVE2",
+   "map_type": "MAP_TYPE_SECRET_BASE",
+   "entered_from": null,
+   "tilesets": [
+    "gTileset_SecretBase",
+    "gTileset_SecretBaseYellowCave"
+   ],
+   "size": [
+    14,
+    9
+   ],
+   "warps": []
+  },
+  "SecretBase_YellowCave3": {
+   "zone": 395,
+   "status": "secret_base",
+   "scripts": 790,
+   "init_scripts": 791,
+   "text": 624,
+   "entities": 572,
+   "area": 299,
+   "own_matrix": false,
+   "map_id": "MAP_SECRET_BASE_YELLOW_CAVE3",
+   "map_type": "MAP_TYPE_SECRET_BASE",
+   "entered_from": null,
+   "tilesets": [
+    "gTileset_SecretBase",
+    "gTileset_SecretBaseYellowCave"
+   ],
+   "size": [
+    12,
+    11
+   ],
+   "warps": []
+  },
+  "SecretBase_YellowCave4": {
+   "zone": 445,
+   "status": "secret_base",
+   "scripts": 890,
+   "init_scripts": 891,
+   "text": 315,
+   "entities": 306,
+   "area": 299,
+   "own_matrix": false,
+   "map_id": "MAP_SECRET_BASE_YELLOW_CAVE4",
+   "map_type": "MAP_TYPE_SECRET_BASE",
+   "entered_from": null,
+   "tilesets": [
+    "gTileset_SecretBase",
+    "gTileset_SecretBaseYellowCave"
+   ],
+   "size": [
+    13,
+    14
+   ],
+   "warps": []
+  },
+  "SecretBase_Tree1": {
+   "zone": 457,
+   "status": "secret_base",
+   "scripts": 914,
+   "init_scripts": 915,
+   "text": 317,
+   "entities": 308,
+   "area": 299,
+   "own_matrix": false,
+   "map_id": "MAP_SECRET_BASE_TREE1",
+   "map_type": "MAP_TYPE_SECRET_BASE",
+   "entered_from": null,
+   "tilesets": [
+    "gTileset_SecretBase",
+    "gTileset_SecretBaseTree"
+   ],
+   "size": [
+    11,
+    9
+   ],
+   "warps": []
+  },
+  "SecretBase_Tree2": {
+   "zone": 504,
+   "status": "secret_base",
+   "scripts": 1008,
+   "init_scripts": 1009,
+   "text": 376,
+   "entities": 367,
+   "area": 299,
+   "own_matrix": false,
+   "map_id": "MAP_SECRET_BASE_TREE2",
+   "map_type": "MAP_TYPE_SECRET_BASE",
+   "entered_from": null,
+   "tilesets": [
+    "gTileset_SecretBase",
+    "gTileset_SecretBaseTree"
+   ],
+   "size": [
+    7,
+    16
+   ],
+   "warps": []
+  },
+  "SecretBase_Tree3": {
+   "zone": 516,
+   "status": "secret_base",
+   "scripts": 1032,
+   "init_scripts": 1033,
+   "text": 400,
+   "entities": 391,
+   "area": 299,
+   "own_matrix": false,
+   "map_id": "MAP_SECRET_BASE_TREE3",
+   "map_type": "MAP_TYPE_SECRET_BASE",
+   "entered_from": null,
+   "tilesets": [
+    "gTileset_SecretBase",
+    "gTileset_SecretBaseTree"
+   ],
+   "size": [
+    17,
+    8
+   ],
+   "warps": []
+  },
+  "SecretBase_Tree4": {
+   "zone": 517,
+   "status": "secret_base",
+   "scripts": 1034,
+   "init_scripts": 1035,
+   "text": 401,
+   "entities": 392,
+   "area": 299,
+   "own_matrix": false,
+   "map_id": "MAP_SECRET_BASE_TREE4",
+   "map_type": "MAP_TYPE_SECRET_BASE",
+   "entered_from": null,
+   "tilesets": [
+    "gTileset_SecretBase",
+    "gTileset_SecretBaseTree"
+   ],
+   "size": [
+    14,
+    14
+   ],
+   "warps": []
+  },
+  "SecretBase_Shrub1": {
+   "zone": 567,
+   "status": "secret_base",
+   "scripts": 1134,
+   "init_scripts": 1135,
+   "text": 199,
+   "entities": 193,
+   "area": 299,
+   "own_matrix": false,
+   "map_id": "MAP_SECRET_BASE_SHRUB1",
+   "map_type": "MAP_TYPE_SECRET_BASE",
+   "entered_from": null,
+   "tilesets": [
+    "gTileset_SecretBase",
+    "gTileset_SecretBaseShrub"
+   ],
+   "size": [
+    11,
+    9
+   ],
+   "warps": []
+  },
+  "SecretBase_Shrub2": {
+   "zone": 568,
+   "status": "secret_base",
+   "scripts": 1136,
+   "init_scripts": 1137,
+   "text": 200,
+   "entities": 194,
+   "area": 299,
+   "own_matrix": false,
+   "map_id": "MAP_SECRET_BASE_SHRUB2",
+   "map_type": "MAP_TYPE_SECRET_BASE",
+   "entered_from": null,
+   "tilesets": [
+    "gTileset_SecretBase",
+    "gTileset_SecretBaseShrub"
+   ],
+   "size": [
+    15,
+    7
+   ],
+   "warps": []
+  },
+  "SecretBase_Shrub3": {
+   "zone": 574,
+   "status": "secret_base",
+   "scripts": 1148,
+   "init_scripts": 1149,
+   "text": 201,
+   "entities": 195,
+   "area": 299,
+   "own_matrix": false,
+   "map_id": "MAP_SECRET_BASE_SHRUB3",
+   "map_type": "MAP_TYPE_SECRET_BASE",
+   "entered_from": null,
+   "tilesets": [
+    "gTileset_SecretBase",
+    "gTileset_SecretBaseShrub"
+   ],
+   "size": [
+    13,
+    11
+   ],
+   "warps": []
+  },
+  "SecretBase_Shrub4": {
+   "zone": 584,
+   "status": "secret_base",
+   "scripts": 1168,
+   "init_scripts": 1169,
+   "text": 403,
+   "entities": 394,
+   "area": 299,
+   "own_matrix": false,
+   "map_id": "MAP_SECRET_BASE_SHRUB4",
+   "map_type": "MAP_TYPE_SECRET_BASE",
+   "entered_from": null,
+   "tilesets": [
+    "gTileset_SecretBase",
+    "gTileset_SecretBaseShrub"
+   ],
+   "size": [
+    14,
+    11
+   ],
+   "warps": []
   }
  }
 }

@@ -38,14 +38,23 @@ Data:
     does not matter): system/0006_btl_main.txt (bag) + 2 lines, system/0017.txt and 0019.txt (battle std messages,
     one id in both) + the team line.
 
+In C (HOENN_CODE=source, 2026-10-25 feasibility; notes/POKEBW2_UPGRADE.md section 8): the decomp's
+src/hoennb2/exp_share_itcm.c has items 1-7 as C (HoennB2_GainExpFromFainted, HoennB2_ExpShareToggle, sItemPockets,
+sItemMenuFieldUses). When the code binaries have them (their link map names HoennB2_GainExpFromFainted), apply_code
+only checks that the flag and message ids compiled into them (include/hoennb2.h) are ours; the data and text below
+are installed either way.
+
 Test switch (test builds only): HOENN_TEST_EXPSHARE=1 replaces Littleroot's script file (a/0/5/6 entry 778) with a
 setup script: on entering Littleroot with an empty party it gives Treecko Lv5 + Torchic Lv5 + Mudkip Lv1 (levels up from one
-share) and the Exp. Share, switched on. List the patch after `scripts`.
+share) and the Exp. Share, switched on. List the patch after `scripts`. HOENN_TEST_EXPSHARE=2 (decomp_src, 2026-10-25): also,
+Littleroot's town sign (stand at (183,366) facing north) starts a wild battle against a Lv 2 Wurmple.
 """
 import os, re, struct, sys, subprocess, tempfile
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
-DECOMP = os.path.join(ROOT, 'external', 'pokebw2')
+sys.path.append(os.path.join(ROOT, 'b2tools'))
+import b2decomp  # noqa: E402  (the Black 2 decomp's source tree and build base: notes/POKEBW2_UPGRADE.md section 7)
+DECOMP = b2decomp.SRC
 LLVM = '/opt/homebrew/opt/llvm/bin'
 ITEM = 216                                    # ITEM_EXP_SHARE (external/pokebw2/include/constants/items.h:205)
 
@@ -320,6 +329,16 @@ TEST_SCRIPT = r'''
     ScriptEntry Script_9
     ScriptEntriesEnd
 Script_1:
+#ifdef EXPSHARE_BATTLE
+    // TEST ONLY (HOENN_TEST_EXPSHARE=2): the town sign starts a wild battle against a Lv 2 Wurmple
+    ActorsPauseAll
+    FlagSet 2401
+    CallWildBattle SPECIES_WURMPLE, 2, 0
+    CallWildBattleEnd
+    FinishAllEvents
+    ActorsUnpauseAll
+    VMHalt
+#endif
 Script_2:
 Script_3:
 Script_4:
@@ -352,7 +371,9 @@ def _test_party(files):
         open(src, 'w').write(TEST_SCRIPT)
         subprocess.run([f'{LLVM}/clang', '--target=armv5te-none-eabi', '-x', 'assembler-with-cpp', '-c',
                         '-I', f'{DECOMP}/include', '-I', f'{DECOMP}/lib/nitro/include', '-I', f'{DECOMP}/build/include/generated',
-                        '-I', os.path.join(ROOT, 'src', 'include'), '-D', 'BLACK2', '-o', o, src], check=True, cwd=DECOMP)
+                        '-I', os.path.join(ROOT, 'src', 'include'), '-D', 'BLACK2',
+                        *(['-D', 'EXPSHARE_BATTLE'] if os.environ.get('HOENN_TEST_EXPSHARE') == '2' else []),
+                        '-o', o, src], check=True, cwd=DECOMP)
         subprocess.run([f'{LLVM}/llvm-objcopy', '-O', 'binary', o, b], check=True)
         entries = narcio.load(files, 56)
         entries[778] = open(b, 'rb').read()
@@ -377,7 +398,7 @@ def _patch(data, base, addr, old, new, what):
 
 def _vanilla(name, base, addr, n):
     """The decomp's (= the dump's) bytes at addr in code file `name`."""
-    return open(os.path.join(DECOMP, 'build', 'b2_us', 'build', name), 'rb').read()[addr - base:addr - base + n]
+    return open(os.path.join(b2decomp.BASE, 'build', 'b2_us', 'build', name), 'rb').read()[addr - base:addr - base + n]
 
 def _load(code, name):
     path = os.path.join(code, name)
@@ -391,9 +412,34 @@ def _bl(src, dst):
     off = dst - (src + 4)
     return struct.pack('<HH', 0xF000 | (off >> 12) & 0x7FF, 0xF800 | (off >> 1) & 0x7FF)
 
+def _c_version(code, flag, msg_on, msg_off, team):
+    """The decomp's C has the Exp. Share (HOENN_CODE=source): check its constants and the two data tables, patch
+    nothing. None when the code binaries don't have it."""
+    import decomp_build
+    gain = decomp_build.symbol('HoennB2_GainExpFromFainted', code)
+    if gain is None:
+        return None
+    hdr = open(os.path.join(DECOMP, 'include', 'hoennb2.h')).read()
+    want = {'HOENNB2_FLAG_EXP_SHARE_ON': flag, 'HOENNB2_MSG_EXP_SHARE_ON': msg_on,
+            'HOENNB2_MSG_EXP_SHARE_OFF': msg_off, 'HOENNB2_MSG_EXP_SHARE_TEAM': team}
+    for name, value in want.items():
+        m = re.search(rf'^#define {name} (\d+)$', hdr, re.M)
+        assert m and int(m.group(1)) == value, f'{name} in the decomp\'s include/hoennb2.h is not ours ({value})'
+    toggle = decomp_build.symbol('HoennB2_ExpShareToggle', code)
+    arm9 = open(os.path.join(code, 'arm9.bin'), 'rb').read()
+    assert arm9[ITEM_CATEGORIES + ITEM - ARM9_BASE] == 4, 'sItemPockets[ITEM_EXP_SHARE] is not the key items pocket'
+    ov142 = open(os.path.join(code, 'arm9_ov142.bin'), 'rb').read()
+    entry = struct.unpack_from('<HHI', ov142, KEY_ITEM_USE_TABLE + 9 * 8 - OV142_BASE)
+    assert entry == (ITEM, 1, toggle | 1), f'sItemMenuFieldUses[9] = {entry}'
+    return (f'the decomp\'s C (HoennB2_GainExpFromFainted {gain:#x}, HoennB2_ExpShareToggle {toggle:#x}): flag {flag}, '
+            f'messages {msg_on}/{msg_off}/{team} checked, no binary patch')
+
 def apply_code(code):
     flag = flag_id()
     (msg_on, msg_off), team = _ids()
+    done = _c_version(code, flag, msg_on, msg_off, team)
+    if done:
+        return done
 
     # 1.-4. ov167
     path, d = _load(code, 'arm9_ov167.bin')

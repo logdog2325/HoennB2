@@ -1,5 +1,7 @@
-import os, re, glob
-ROOT = os.path.expanduser('~/Documents/GitHub/HoennB2/external/pokebw2/config/b2_us/arm9')
+import os, re, glob, sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+import b2decomp  # noqa: E402  (the Black 2 decomp's source tree and build base: notes/POKEBW2_UPGRADE.md section 7)
+ROOT = os.path.join(b2decomp.SRC, 'config', 'b2_us', 'arm9')
 _S = None
 def load():
     global _S

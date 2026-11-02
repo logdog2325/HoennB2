@@ -16,7 +16,7 @@
     ScriptEntry Script_6    // NPC: Aide
     ScriptEntry Script_7    // NPC: Prof. Birch
     ScriptEntry Script_8    // sign: machine (interiors)
-    ScriptEntry Script_9    // unused
+    ScriptEntry Script_9    // NPC: the following Pokémon's lab aide (data/story/followers; else unused)
     ScriptEntry Script_10   // map script (zone init, 0793): the rival's sprite, Birch shown once rescued (Sapphire OnTransition)
     ScriptEntry Script_11   // after Route 101 (reserved there): "I'd like you to have the Pokémon" + nickname
     ScriptEntry Script_12   // lab state 4 (0793 condition): the Pokédex (..._EventScript_GivePokedexEvent)
@@ -133,8 +133,39 @@ Script_8:                                         // the machine (Sapphire's ...
     ActorsUnpauseAll
     VMHalt
 
+#ifdef HOENN_FOLLOWERS
+// The following Pokémon on and off (notes/FOLLOWERS.md): for saves from before Birch's seventh question, and new saves
+// that want to change their answer. Only the flag changes: the module (follower.c) makes the follower on the player's next
+// step, or deletes it on the next step (or when the field opens, after a save), as it checks the flag at each.
+#define LAB_FOLLOW_TMP 0x8011
+Script_9:
+    ActorsPauseAll
+    SEPlay SEQ_SE_MESSAGE
+    h_faceplayer
+    h_goto_if_set FLAG_POKE_FOLLOWER, L_FollowerOn
+    h_yesno 38, LAB_FOLLOW_TMP                    // text 0625 line 38 (src/text/overrides_followers.json): walk with you?
+    h_goto_if_ne LAB_FOLLOW_TMP, 0, L_FollowerNotNow
+    FlagSet FLAG_POKE_FOLLOWER
+    h_msgbox 39
+    VMJump L_FollowerEnd
+L_FollowerNotNow:
+    h_msgbox 40
+    VMJump L_FollowerEnd
+L_FollowerOn:
+    h_yesno 41, LAB_FOLLOW_TMP                    // back in its Poké Ball?
+    h_goto_if_ne LAB_FOLLOW_TMP, 0, L_FollowerStays
+    FlagReset FLAG_POKE_FOLLOWER
+    h_msgbox 42
+    VMJump L_FollowerEnd
+L_FollowerStays:
+    h_msgbox 43
+L_FollowerEnd:
+    ActorMsgClose
+    h_release
+#else
 Script_9:
     VMHalt
+#endif
 
 Script_10:                                        // zone init: Common_EventScript_SetupRivalGfxId
     h_setup_rival_gfx

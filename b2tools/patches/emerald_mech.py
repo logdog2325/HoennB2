@@ -75,7 +75,8 @@ COMMANDS = {533: (0x021658C9, 'EM_CmdPartySwap'), 281: (0x02156EC1, 'EM_CmdTutor
 BACK_SPRITES = 0x02092314                 # arm9 TRAINER_CLASS_BACK_SPRITES: 32 x {u16 class, u16 back sprite}
 STEVEN_BACK, OLD_CLASS, B2_STEVEN_CLASS = 5, 37, 177
 EMERALD = os.path.join(ROOT, 'external', 'pokeemerald')
-B2 = os.path.join(ROOT, 'external', 'pokebw2')
+import b2decomp  # noqa: E402  (the Black 2 decomp's source tree and build base: notes/POKEBW2_UPGRADE.md section 7)
+B2 = b2decomp.SRC
 N_SPECIES = 650                           # Black 2 species 0-649 (national numbers)
 # Emerald's ten one-time tutors in Hoenn towns (pokeemerald data/scripts/move_tutors.inc); the other 20 of its 30 tutor
 # moves are the Battle Frontier's BP tutors (BattleFrontier_Lounge7; frontier_core, 2026-10-12, notes/FRONTIER.md 4).

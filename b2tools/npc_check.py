@@ -33,6 +33,7 @@ PLAYER_FORM = 24608            # the largest other form: fishing 239/248 (12 fra
 EFFECTS = 32768                # field effects, shadows etc.: 24.4 KB measured in Slateport (NPC_LIMIT.md) + margin
 DYNAMIC = range(162, 178)      # codes read from works 0x4020-0x402F (GetWKOBJCODENPCOBJCODE)
 DYNAMIC_SHEET = 12320          # the rival (162 -> Brendan 1 / May 4: player-sized sheets)
+SB_SPOTS = range(0x0D00, 0x0D4B)      # Secret Base spots (data/story/secret_bases.json): 2 pictures of a kind, one shown at a time
 BERRY_TREES = range(0x0F00, 0x0F80)   # berry planting's tree actors (HOENN_BERRY_PLANTING, patches/berries.c): each
 BERRY_SHEET = 544              # shows one of the one-frame 32x32 pictures (a distinct code each, at worst)
 
@@ -91,7 +92,8 @@ def mat_cache(path):
         if not os.path.exists(p): return MAT_CACHE, 'default (no code/arm9_ov036.bin next to the files)'
         ov, src = open(p, 'rb').read(), 'code/arm9_ov036.bin'
     else:
-        sys.path.insert(0, os.path.join(ROOT, 'external', 'pokebw2', 'tools', 'scripts'))
+        import b2decomp
+        sys.path.insert(0, os.path.join(b2decomp.SRC, 'tools', 'scripts'))
         from blz import blz_decompress
         with open(path, 'rb') as f:
             h = f.read(0x60)
@@ -200,6 +202,12 @@ def budget(rom, z, present, extra=()):
     h = rom.zone(z)
     pre = set(rom.preloaded(h['npc_cache']))
     codes = set(n['model'] for n in present) | set(extra)
+    # (a route's spots: one material per picture kind, plus the base's open picture if it is here)
+    sb = {c for c in codes if c in SB_SPOTS}
+    if sb:
+        import json as _j
+        kinds = {o['model']: o['note'].rsplit(' ', 1)[-1] for o in _j.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'data', 'story', 'secret_bases.json')))['objects']}
+        codes = (codes - sb) | {0x0E5D + 2 * int(kinds[c].rstrip(')')) for c in sb} | {0x0E5E + 2 * int(kinds[c].rstrip(')')) for c in list(sb)[:1]}
     entries = len(pre | codes) + PLAYER_ENTRIES
     sheets = sum(rom.sheet(c) for c in pre | codes)
     area = rom.area_tex(h['area'])

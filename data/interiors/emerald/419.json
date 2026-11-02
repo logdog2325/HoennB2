@@ -134,6 +134,28 @@
     1
    ],
    "what": "Emerald object 9 GIRL_1 (WANDER_AROUND, range 1,1): BattleFrontier_ExchangeServiceCorner_EventScript_Girl; model 16 (GIRL_1)"
+  },
+  {
+   "uid": 1,
+   "model": 79,
+   "script": 1,
+   "dir": 2,
+   "at": [
+    4,
+    4
+   ],
+   "what": "Emerald object 1 TEALA: BattleFrontier_ExchangeServiceCorner_EventScript_DecorClerk1; model 79"
+  },
+  {
+   "uid": 6,
+   "model": 79,
+   "script": 6,
+   "dir": 1,
+   "at": [
+    5,
+    5
+   ],
+   "what": "Emerald object 6 TEALA: BattleFrontier_ExchangeServiceCorner_EventScript_DecorClerk2; model 79"
   }
  ],
  "signs": [],

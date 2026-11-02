@@ -1142,6 +1142,19 @@
    "move": 15,
    "p0_emerald": 1,
    "what_emerald": "TRAINER_JOHN_AND_JAY_1: Jay (OLD_WOMAN_1, sight 0) | Emerald (2026-10-18, pokeemerald's object): p0 1"
+  },
+  {
+   "kind": "npc",
+   "map": "FallarborTown_ContestLobby",
+   "at": [
+    11,
+    5
+   ],
+   "uid": 4,
+   "model": 28,
+   "script": 5,
+   "dir": 2,
+   "what": "Berry Blender man (Sapphire object 4, OLD_MAN_1)"
   }
  ]
 }

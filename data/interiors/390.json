@@ -17,7 +17,7 @@
   },
   {
    "uid": 2,
-   "model": 54,
+   "model": 4164,
    "script": 27,
    "dir": 3,
    "at": [
@@ -30,11 +30,11 @@
     0
    ],
    "flag": 2062,
-   "what": "Machoke carrying a box: Black 2 worker (code 54) (FLAG_HIDE_MACHOKE_MOVER_2) (walks back and forth as Sapphire's WALK_RIGHT_AND_LEFT: Black 2 code 20; v165_fixes)"
+   "what": "Machoke (Black 2's walking Machoke, code 0x1044; no box-carrying frames) (FLAG_HIDE_MACHOKE_MOVER_2) (walks back and forth as Sapphire's WALK_RIGHT_AND_LEFT: Black 2 code 20; v165_fixes)"
   },
   {
    "uid": 3,
-   "model": 54,
+   "model": 4164,
    "script": 28,
    "dir": 0,
    "at": [
@@ -42,7 +42,7 @@
     5
    ],
    "flag": 2061,
-   "what": "Machoke facing the TV: Black 2 worker (code 54) (FLAG_HIDE_MACHOKE_MOVER_1)"
+   "what": "Machoke facing the TV (Black 2's walking Machoke, code 0x1044) (FLAG_HIDE_MACHOKE_MOVER_1)"
   },
   {
    "uid": 4,

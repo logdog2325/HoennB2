@@ -11,6 +11,7 @@
     ScriptEntry Script_2
     ScriptEntry VC_Receptionist     // 3: object 1 (VerdanturfTown_ContestLobby_EventScript_153D76, stand-in)  // story:
     ScriptEntry VC_AttractGirl      // 4: object 3 (VerdanturfTown_ContestLobby_EventScript_153E47, TM45)  // story:
+    ScriptEntry VC_BlendMaster      // 5: object 2 (the Blend Master, Sapphire's Berry Blender)  // story:
     ScriptEntriesEnd
 
 Script_1:
@@ -53,14 +54,18 @@ Script_2:
 #define T_AttractAfter 5
 #define T_BagFull 6
 
-// Pokémon Contests can't run on Black 2: the receptionist offers Black 2's Pokémon Musical instead (musical agent
+// The receptionist runs real Contests since v18.4 (common/contests.inc); before, Black 2's Musical (musical agent
 // 2026-10-18; common/musical.inc, b2tools/patches/musical.py). Text lines 7-20 (T_RecAccepting /
 // T_RecAnotherTime stay in the file, unused).
-#include "common/musical.inc"
-#define T_Musical 7
-VC_Receptionist:                    // the Musical's reception (Sapphire's contest receptionist's place)
+#include "common/contests.inc"
+#define T_Contest 7
+VC_Receptionist:                    // the Contest reception
     c3_talk
-    musical_reception T_Musical
+    contest_reception T_Contest, 0, T_RecAccepting
+
+VC_BlendMaster:                     // VerdanturfTown_ContestLobby_EventScript_1B77A0: one opponent
+    c3_talk
+    contest_blender T_Contest, 2
 
 VC_AttractGirl:                     // VerdanturfTown_ContestLobby_EventScript_153E47
     c3_talk

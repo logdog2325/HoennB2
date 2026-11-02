@@ -22,7 +22,7 @@ Please visit a Pokémon Center when your\nPokémon's HP goes down.{be01}\nIf you
 There! All happy and healthy!{be01}\nGood luck and take care!
 Wireless communications are turned OFF.\nTurn wireless communications ON{be00}\nin the System Settings.{be00}\nError code: 50699{be01}
                                                                   \x{ffff}
-Juniper's words echoed...\n{0100:0}! There's a time and place{be00}\nfor everything! But not now.
+Dad's advice...\n{0100:0}, there's a time and place{be00}\nfor everything! But not now.
 You can't dismount your Bike here.
 There is no Pokémon\nwith a Ribbon in your party.
 The {0109:1} can't be used\nwhen you have someone with you!

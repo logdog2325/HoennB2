@@ -54,9 +54,9 @@ The {0109:0} can't be held.
 Throw away how many\n{0109:0}?
 Threw away {0202:1} {0109:0}.
 Is it OK to throw away\n{0202:1} {0109:0}?
-Juniper's words echoed...\n{0100:0}! There's a time and{be00}\nplace for everything! But not now.
+Dad's advice...\n{0100:0}, there's a time and{be00}\nplace for everything! But not now.
 You can't dismount your Bike here.
-Juniper's words echoed...\n{0100:0}! There's a time and{be00}\nplace for everything! But not now.
+Dad's advice...\n{0100:0}, there's a time and{be00}\nplace for everything! But not now.
                \x{ffff}
 Booted up a TM.
 Booted up an HM.

@@ -398,7 +398,8 @@ def _tm():
 
 def _species():
     out = {}
-    for line in open(os.path.join(ROOT, 'external', 'pokebw2', 'include', 'constants', 'species.h')):
+    import b2decomp
+    for line in open(os.path.join(b2decomp.SRC, 'include', 'constants', 'species.h')):
         m = re.match(r'#define SPECIES_(\w+)\s+(\d+)\s*$', line)
         if m: out[m.group(1)] = int(m.group(2))
     return out

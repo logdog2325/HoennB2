@@ -11,6 +11,7 @@
 #include "asm/field_script.inc"
 #include "hoenn.h"
 #include "hoenn_story.inc"
+#include "common/secret_base_defs.inc"  // Secret Bases (notes/SECRET_BASES.md)
 #include "hoenn_emerald.inc"
 #include "hoenn_frontier.inc"
 
@@ -107,7 +108,10 @@ L_SH_CheckSilverShield:                 // 50 Battle Tower wins in a row, Lv. 50
     VMJump L_SH_Random
 L_SH_SilverShield:
     h_msgbox T_Beat50
-    h_setflag FLAG_RECEIVED_SILVER_SHIELD   // givedecoration DECOR_SILVER_SHIELD: no decorations in Black 2
+    h_closemessage
+    sb_givedecoration 42, HLIB_TMP          // givedecoration DECOR_SILVER_SHIELD
+    h_goto_if_eq HLIB_TMP, 0, L_SH_ShieldNoRoom
+    h_setflag FLAG_RECEIVED_SILVER_SHIELD
     h_setflag SH_TEMP_3
     VMJump L_SH_GivenShield
 L_SH_CheckGoldShield:
@@ -116,8 +120,13 @@ L_SH_CheckGoldShield:
     VMJump L_SH_Random
 L_SH_GoldShield:
     h_msgbox T_Beat100
-    h_setflag FLAG_RECEIVED_GOLD_SHIELD     // givedecoration DECOR_GOLD_SHIELD
+    h_closemessage
+    sb_givedecoration 43, HLIB_TMP          // givedecoration DECOR_GOLD_SHIELD
+    h_goto_if_eq HLIB_TMP, 0, L_SH_ShieldNoRoom
+    h_setflag FLAG_RECEIVED_GOLD_SHIELD
     h_setflag SH_TEMP_3
+L_SH_ShieldNoRoom:
+    h_release
 L_SH_GivenShield:
     h_msgbox T_EvenGreater
     h_release

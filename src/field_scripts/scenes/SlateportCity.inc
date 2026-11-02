@@ -1,3 +1,4 @@
+#include "common/secret_base_defs.inc"
 // Slateport City's story (Sapphire data/maps/SlateportCity/scripts.inc; chapter Ch3, part 3a, ch3a agent 2026-10-07).
 // converter/gen_map_content.py includes this file twice in 0896_auto_SlateportCity.s: the entries below are scripts
 // 1-28, the generated signs/people follow. Text: src/text/scenes/SlateportCity.txt (lines T_* below; other chapters
@@ -291,6 +292,12 @@ Story_Grunt8:
 Story_DollClerk:                            // SlateportCity_EventScript_DollClerk (pokemartdecoration: dolls)
     c3_talk
     h_msgbox T_HowMayIServeYou
+    h_closemessage
+#ifdef HOENN_EMERALD
+    sb_shop SB_SHOP_EM_SLATEPORT_DOLLS
+#else
+    sb_shop SB_SHOP_SR_SLATEPORT_DOLLS
+#endif
     h_msgbox T_PleaseComeAgain
     h_release
 
@@ -298,6 +305,12 @@ Story_DecorClerk:                           // SlateportCity_EventScript_DecorCl
     c3_talk
     h_goto_if_unset FLAG_RECEIVED_SECRET_POWER, L_SC_ComeBackWithSecretPower
     h_msgbox T_HowMayIServeYou
+    h_closemessage
+#ifdef HOENN_EMERALD
+    sb_shop SB_SHOP_EM_SLATEPORT
+#else
+    sb_shop SB_SHOP_SR_SLATEPORT_1
+#endif
     h_msgbox T_PleaseComeAgain
     h_release
 L_SC_ComeBackWithSecretPower:

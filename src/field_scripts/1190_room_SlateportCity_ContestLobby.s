@@ -13,6 +13,7 @@
     ScriptEntry Story_CL_Girl           // 4: object 4  // story:
     ScriptEntry Story_CL_Boy            // 5: object 6  // story:
     ScriptEntry Story_CL_LittleGirl     // 6: object 7 (Pokéblock Case)  // story:
+    ScriptEntry Story_CL_BlendMaster    // 7: object 2 (the Blend Master)  // story:
     ScriptEntriesEnd
 
 Script_1:
@@ -55,14 +56,18 @@ Script_2:
 #define T_HaveCase 6
 #define T_PutPokeblocks 7
 
-// Pokémon Contests can't run on Black 2: the receptionist offers Black 2's Pokémon Musical instead (musical agent
+// The receptionist runs real Contests since v18.4 (common/contests.inc); before, Black 2's Musical (musical agent
 // 2026-10-18; common/musical.inc, b2tools/patches/musical.py). Text lines 8-21 (T_RecAccepting /
 // T_RecAnotherTime stay in the file, unused).
-#include "common/musical.inc"
-#define T_Musical 8
-Story_CL_Receptionist:                    // the Musical's reception (Sapphire's contest receptionist's place)
+#include "common/contests.inc"
+#define T_Contest 8
+Story_CL_Receptionist:                    // the Contest reception
     c3_talk
-    musical_reception T_Musical
+    contest_reception T_Contest, 2, T_RecAccepting
+
+Story_CL_BlendMaster:                // SlateportCity_ContestLobby_EventScript_MasterM: two opponents
+    c3_talk
+    contest_blender T_Contest, 3
 Story_CL_Girl:
     h_msgbox_npc T_Berries
 Story_CL_Boy:

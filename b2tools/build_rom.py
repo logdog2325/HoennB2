@@ -2,7 +2,11 @@
 
     python3 build_rom.py [--clean] [--no-pad] [patch ...]
 
-1. Clones (APFS copy-on-write) external/pokebw2/build/b2_us/files -> work/rom/files  (only with --clean or first run)
+1. Clones (APFS copy-on-write) external/pokebw2/build/b2_us/files -> work/rom/files  (only with --clean or first run),
+   and the code binaries of b2decomp.code_dir() -> work/rom/code: the decomp's build of its C with our C changes
+   (default, HOENN_CODE=source; decomp_build.py runs ninja and the layout check first, then dsd_compat; HOENN_DECOMP_C=0
+   = our C off, the dump's code), or with HOENN_CODE=base the dump's binaries (fallback); notes/POKEBW2_UPGRADE.md
+   section 8
 2. Runs each named patch: patches/<name>.py defines apply(files_dir) (NitroFS files) and/or apply_code(code_dir)
    (decompressed arm9.bin / arm9_ovNNN.bin, a clone of the decomp's build dir; dsd recompresses them)
 3. Writes work/rom/rom_config.yaml (the decomp's config with absolute paths and our files_dir)
@@ -17,9 +21,10 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, '..'))
 sys.path.insert(0, HERE)
 import version  # noqa: E402  (HOENN_VERSION=sapphire|ruby|emerald: every patch asks b2tools/version.py; notes/RUBY.md, EMERALD.md)
-DECOMP = os.path.join(ROOT, 'external', 'pokebw2')
-SRC_BUILD = os.path.join(DECOMP, 'build', 'b2_us', 'build')
-SRC_FILES = os.path.join(DECOMP, 'build', 'b2_us', 'files')
+import b2decomp  # noqa: E402  (the Black 2 decomp's source tree and build base: notes/POKEBW2_UPGRADE.md section 7)
+DECOMP = b2decomp.SRC
+SRC_BUILD = b2decomp.code_dir()                 # the decomp's C build (HOENN_CODE=source, default) or BASE's (=base)
+SRC_FILES = os.path.join(b2decomp.BASE, 'build', 'b2_us', 'files')
 OUT = version.build_dir(os.path.join(ROOT, 'work', 'rom'))   # HOENN_BUILD_DIR (parallel/test builds), else work/rom
                                                              # (Sapphire) or work/rom_ruby / work/rom_emerald (never the Sapphire ROM)
 if version.EMERALD and not os.environ.get('HOENN_WORLD_DIR'):   # Emerald's own world (version.world_dir: pokeemerald's
@@ -55,6 +60,7 @@ RESERVE = {
     72: 1 << 20,      # a/0/7/2 trainer sprites, back
     92: 32 << 10,     # a/0/9/2 trainer parties (Sapphire's movesets written out; story_infra)
     89: 16 << 10,     # a/0/8/9 (story_infra)
+    271: 0,           # a/2/7/1 Pokéstar's archive -> the Contests' pictures, data and text (patches/contests.py): smaller, kept at its size
 }
 
 def pad_archives(files):
@@ -116,8 +122,13 @@ def main(args):
     if os.environ.get('HOENN_SAVE_COMPAT', '1') != '0' and os.environ.get('HOENN_VERSION', '').strip().lower() == 'emerald' \
             and 'save_compat' not in patches:
         patches.append('save_compat')   # PKHeX-compatible Emerald saves (ON since 2026-10-18; =0 for the old layout): notes/SAVE_PKHEX.md
+    if 'interiors' in patches and 'secret_bases' not in patches:        # Secret Bases (notes/SECRET_BASES.md): their prop pack
+        patches.insert(patches.index('interiors'), 'secret_bases')      # before the rooms, gimmick 30 after zone_effects
+        patches.append('secret_bases_late')
     if os.environ.get('HOENN_BERRY_PLANTING', '1') != '0' and 'berries' not in patches:
         patches.append('berries')       # Gen 3 berry planting (on by default since 2026-10-18; =0 = the daily trees): notes/BERRY_PLANTING.md
+    if b2decomp.c_on() and patches:     # what needs the decomp's C, last: their data in the resident section
+        patches += [p for p in ('followers', 'feebas') if p not in patches]   # notes/FOLLOWERS.md; patches/feebas.py
     files = os.path.join(OUT, 'files')
     if clean or not os.path.isdir(files):
         shutil.rmtree(files, ignore_errors=True)
@@ -125,7 +136,17 @@ def main(args):
         os.makedirs(OUT, exist_ok=True)
         subprocess.run(['cp', '-c', '-R', '-L', SRC_FILES, files], check=True)
         # code binaries (arm9.bin, arm9_ovNNN.bin, ...): patches with apply_code(code_dir) edit this copy
-        subprocess.run(['cp', '-c', '-R', '-L', SRC_BUILD, os.path.join(OUT, 'code')], check=True)
+        copy_code = lambda: subprocess.run(['cp', '-c', '-R', '-L', SRC_BUILD, os.path.join(OUT, 'code')], check=True)
+        if b2decomp.CODE == 'source':
+            import decomp_build     # ninja (incremental) + layout check, the copy + its link map under its lock, dsd compat
+            def copy_with_map():
+                copy_code()
+                decomp_build.copy_map(os.path.join(OUT, 'code'))
+            print(decomp_build.build(after=copy_with_map, c_off=os.environ.get('HOENN_DECOMP_C') == '0'))
+            print(decomp_build.dsd_compat(os.path.join(OUT, 'code')))
+            print(decomp_build.install_overlays(os.path.join(OUT, 'code'), c_off=not b2decomp.c_on()))   # the resident section
+        else:
+            copy_code()
     for name in patches:
         spec = importlib.util.spec_from_file_location(name, os.path.join(HERE, 'patches', f'{name}.py'))
         mod = importlib.util.module_from_spec(spec); spec.loader.exec_module(mod)
@@ -138,14 +159,17 @@ def main(args):
         pad_archives(files)
     cfg = write_config()
     rom = os.path.join(OUT, 'hoenn.nds')
-    r = subprocess.run([os.path.join(DECOMP, 'tools', 'dsd'), 'rom', 'build', '--config', cfg, '--rom', rom],
+    r = subprocess.run([b2decomp.dsd(), 'rom', 'build', '--config', cfg, '--rom', rom],
                        capture_output=True, text=True)
     if r.returncode:
         sys.exit(r.stdout[-2000:] + r.stderr[-4000:])
     digest = sha1(rom)
     print(rom, digest)
     if not patches and clean and not pad:
-        print('matches original' if digest == ORIGINAL_SHA1 else 'DOES NOT MATCH ORIGINAL')
+        c_on = b2decomp.CODE == 'source' and os.environ.get('HOENN_DECOMP_C') != '0'
+        print('matches original' if digest == ORIGINAL_SHA1 else
+              'differs from the original by our C (HOENN_DECOMP_C=0 or HOENN_CODE=base to compare)' if c_on else
+              'DOES NOT MATCH ORIGINAL')
     return rom
 
 if __name__ == '__main__':

@@ -1,0 +1,19 @@
+{
+ "_doc": "The lab aide who turns the following Pokémon on and off (notes/FOLLOWERS.md): for saves from before Birch's seventh question, and new saves that want to change their answer. Only in builds with our C on (b2tools/patches/story.py, b2decomp.c_on()). Tile: free in Sapphire's, Ruby's and Emerald's lab, off every scripted path (the door-to-Birch walk x 6, Birch's x 7 and y 8 walk, the rival's (7,4)-(7,5), the Aide's wander x 8-10, y 7-9); the sprite is the Aide's (73), so no new sprite slot.",
+ "objects": [
+  {
+   "kind": "npc",
+   "map": "LittlerootTown_ProfessorBirchsLab",
+   "at": [
+    3,
+    10
+   ],
+   "uid": 20,
+   "model": 73,
+   "script": 9,
+   "dir": 3,
+   "flag": 0,
+   "what": "lab aide: the following Pokémon on/off (0792 Script_9)"
+  }
+ ]
+}

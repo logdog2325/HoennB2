@@ -20,3 +20,5 @@ Red Flute
 White Flute
 Black Flute
 Cancel
+Pretty Chair
+Pretty Desk

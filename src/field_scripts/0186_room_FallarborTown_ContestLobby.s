@@ -11,6 +11,7 @@
     ScriptEntry FCL_Receptionist        // 2: object 1 (FallarborTown_ContestLobby_EventScript_ContestReceptionist, stand-in)  // story:
     ScriptEntry FCL_Lass                // 3: object 3 (FallarborTown_ContestLobby_EventScript_Lass)  // story:
     ScriptEntry FCL_SketchArtist        // 4: object 6 (FallarborTown_ContestLobby_EventScript_SketchArtist)  // story:
+    ScriptEntry FCL_BlendMaster         // 5: object 4 (Sapphire's Berry Blender man)
     ScriptEntriesEnd
 
 Script_1:
@@ -40,14 +41,18 @@ Script_1:
 #define T_ICreateSketches 4     // FallarborTown_ContestLobby_Text_ICreateSketches
 #define T_SketchIsUp 5          // FallarborTown_ContestLobby_Text_YourSketchIsUp
 
-// Pokémon Contests can't run on Black 2: the receptionist offers Black 2's Pokémon Musical instead (musical agent
+// The receptionist runs real Contests since v18.4 (common/contests.inc); before, Black 2's Musical (musical agent
 // 2026-10-18; common/musical.inc, b2tools/patches/musical.py). Text lines 6-19 (T_RecAccepting /
 // T_RecAnotherTime stay in the file, unused).
-#include "common/musical.inc"
-#define T_Musical 6
-FCL_Receptionist:                    // the Musical's reception (Sapphire's contest receptionist's place)
+#include "common/contests.inc"
+#define T_Contest 6
+FCL_Receptionist:                    // the Contest reception
     c4_talk
-    musical_reception T_Musical
+    contest_reception T_Contest, 1, T_RecAccepting
+
+FCL_BlendMaster:                     // FallarborTown_ContestLobby_EventScript_BerryBlenderMan: one opponent
+    c4_talk
+    contest_blender T_Contest, 2
 FCL_Lass:
     h_msgbox_npc T_Pokeblock
 FCL_SketchArtist:

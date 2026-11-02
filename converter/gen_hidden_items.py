@@ -33,7 +33,10 @@ from gen_key_items import TABLE as KEY_ITEMS
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 RUBY = os.path.join(ROOT, 'external', 'pokeruby')
-B2 = os.path.join(ROOT, 'external', 'pokebw2')
+import sys  # noqa: E402
+sys.path.append(os.path.join(ROOT, 'b2tools'))
+import b2decomp  # noqa: E402  (the Black 2 decomp's source tree and build base: notes/POKEBW2_UPGRADE.md section 7)
+B2 = b2decomp.SRC
 SLOTS = 213
 
 BERRY_BASE = 213                       # berry spot k = Script_(BERRY_BASE + k) of file 1241, global id 7999 + that

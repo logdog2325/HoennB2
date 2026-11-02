@@ -38,6 +38,8 @@ HOENN_VERSION=emerald zsh b2tools/rebuild_slice.sh    # Emerald   -> work/rom_em
 
 A full build takes about 10 to 15 minutes per version and runs the automatic checkers at the end. `b2tools/bps.py make` turns a built game into a patch.
 
+Since v19.0 and Emerald v2.0, the games' code is built from the pokebw2 decompilation. HoennB2's own changes to that code (PokéNav, Contests, Secret Bases, Following Pokémon and more) aren't in this repository, so this snapshot can't rebuild those releases on its own.
+
 ## License
 
 The code (Python, shell, C, Java and the field scripts) is under the **MIT License** (see `LICENSE`): you can reuse it in your own projects, as long as the copyright and license notice stay with it. A credit link back here is appreciated.

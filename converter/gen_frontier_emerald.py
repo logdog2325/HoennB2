@@ -36,7 +36,8 @@ from gen3text import convert  # noqa: E402
 import gen_battle_tower as gbt  # noqa: E402
 
 EM = os.path.join(ROOT, 'external', 'pokeemerald')
-B2 = os.path.join(ROOT, 'external', 'pokebw2')
+import b2decomp  # noqa: E402  (the Black 2 decomp's source tree and build base: notes/POKEBW2_UPGRADE.md section 7)
+B2 = b2decomp.SRC
 OUT = os.path.join(ROOT, 'data', 'emerald', 'frontier.json')
 GEN3_TYPES = ['NORMAL', 'FIGHTING', 'FLYING', 'POISON', 'GROUND', 'ROCK', 'BUG', 'GHOST', 'STEEL', 'MYSTERY', 'FIRE',
               'WATER', 'GRASS', 'ELECTRIC', 'PSYCHIC', 'ICE', 'DRAGON', 'DARK']

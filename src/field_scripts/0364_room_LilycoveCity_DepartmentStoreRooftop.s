@@ -4,6 +4,7 @@
 #include "hoenn.h"
 #include "hoenn_trainers.h"  // ch8a
 #include "hoenn_story.inc"  // ch8a
+#include "common/secret_base_defs.inc"  // Secret Bases (notes/SECRET_BASES.md)
 #include "scenes/ch8a_lib.inc"  // ch8a
 
     ScriptEntry Script_1
@@ -53,9 +54,15 @@ RT_Man:                                     // LilycoveCity_DepartmentStoreRooft
     h_msgbox T_WaitingForSale
     h_release
 
-RT_SaleWoman:                               // ..._EventScript_SaleWoman: pokemartdecoration (nothing is sold)
+RT_SaleWoman:                               // ..._EventScript_SaleWoman: pokemartdecoration, the clear-out sale
     c3_talk
     h_msgbox T_HowMayIServeYou
+    h_closemessage
+#ifdef HOENN_EMERALD
+    sb_shop SB_SHOP_EM_ROOFTOP
+#else
+    sb_shop SB_SHOP_SR_ROOFTOP
+#endif
     h_msgbox T_PleaseComeAgain
     h_release
 

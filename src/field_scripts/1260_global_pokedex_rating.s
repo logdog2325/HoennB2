@@ -35,8 +35,30 @@
     ScriptEntry Script_3
     ScriptEntriesEnd
 
+#ifdef HOENN_FOLLOWERS
+// 10380 (Black 2's Juniper in her lab, not used in Hoenn): the following Pokémon talked to (b2tools/patches/followers.py,
+// notes/FOLLOWERS.md): the cry of the Pokémon in the party slot the module keeps in VAR_FOLLOWER_SLOT, and one of 9 lines
+// (src/text/overrides_followers.json: the walking lines of Pokémon Pearl's Amity Square, as PearlB2's)
+Script_1:
+    SEPlay SEQ_SE_MESSAGE
+    ActorsPauseAll
+    ActorSetEyeToEye
+    WordSetPartyPokeName 0, VAR_FOLLOWER_SLOT
+    PokePartyGetSpecies 0x8020, VAR_FOLLOWER_SLOT
+    Random 0x8021, 9
+    WorkAdd 0x8021, 23                           // lines 23-31 of text 0434
+    PVPlay 0x8020, 0
+    ParentActorMsg MSGFILE_SCRIPT, 0x8021, 0, 0
+    PVWait
+    LastKeyWait
+    MsgWinCloseAll
+    FinishAllEvents
+    ActorsUnpauseAll
+    VMHalt
+#else
 Script_1:                                        // 10380: Black 2's Juniper in her lab (not used in Hoenn)
     RTEndGlobal
+#endif
 
 Script_2:                                        // 10381: Black 2's Juniper's father (not used in Hoenn)
     RTEndGlobal

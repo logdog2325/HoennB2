@@ -30,13 +30,18 @@ How the Bag makes a stone usable (ov142 func_ov142_0219a4d0, the Bag's Use; item
   stones' three values and stay holdable (hold effect +2/+3, Fling +5/+6, pocket and sort bytes unchanged).
 
 Shop (a/2/8/2 list file id + 6, its count in a/2/8/3 file 0; b2tools/shops_data.py): the items Hoenn has no other
-source for are appended to data/trade_evos.json's shop list. a/2/8/2 keeps its original 1300 bytes (shops.py)."""
+source for are appended to data/trade_evos.json's shop list. a/2/8/2 grows by them (evo_items 2026-11-01: 1300 bytes was
+full; fairy.py and trainer_hill.py grow it too): only savestates of an older ROM read it short. Shop screen: 45 entries
+at most (ov036 ShopUIWork.entries), 7 rows shown, scrolls. b2tools/evo_items_check.py sweeps each version for evolution
+items with no source and checks the built lists (--shop)."""
 import os, re, sys, json, struct
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, '..', '..'))
-DECOMP = os.path.join(ROOT, 'external', 'pokebw2')
-VANILLA = os.path.join(DECOMP, 'build', 'b2_us', 'files')
+sys.path.append(os.path.join(ROOT, 'b2tools'))
+import b2decomp  # noqa: E402  (the Black 2 decomp's source tree and build base: notes/POKEBW2_UPGRADE.md section 7)
+DECOMP = b2decomp.SRC
+VANILLA = os.path.join(b2decomp.BASE, 'build', 'b2_us', 'files')
 ARC_EVO, ARC_ITEM, ARC_SHOP, ARC_SHOP_COUNT = 19, 24, 282, 283
 STONES = ('ITEM_FIRE_STONE', 'ITEM_WATER_STONE', 'ITEM_THUNDERSTONE', 'ITEM_LEAF_STONE', 'ITEM_MOON_STONE',
           'ITEM_SUN_STONE', 'ITEM_SHINY_STONE', 'ITEM_DUSK_STONE', 'ITEM_DAWN_STONE')
@@ -157,9 +162,8 @@ def apply(files):
     cnt = bytearray(counts[0]); cnt[f] = len(cur); counts[0] = bytes(cnt)
     narcio.save(files, ARC_SHOP, lists); narcio.save(files, ARC_SHOP_COUNT, counts)
     size0 = os.path.getsize(arc_path(VANILLA, ARC_SHOP))
-    # (frontier_center 2026-10-20) an Emerald build's own shop lists (shops.py "extra": the Battle Frontier Mart) grow
+    # this list (evo_items 2026-11-01) and an Emerald build's own lists (shops.py "extra": frontier_center 2026-10-20) grow
     # a/2/8/2 past Black 2's size, as trainer_hill.py's and fairy.py's do after this patch
-    import version
-    _pad_to(arc_path(files, ARC_SHOP), max(size0, os.path.getsize(arc_path(files, ARC_SHOP))) if version.is_emerald() else size0)
+    _pad_to(arc_path(files, ARC_SHOP), max(size0, os.path.getsize(arc_path(files, ARC_SHOP))))
     out.append(f'shop {shop["id"]} ({shop["label"]}) + items {add}')
     return 'trade evolutions: ' + '; '.join(out)

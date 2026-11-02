@@ -14,12 +14,12 @@ TV, May's-mom, May and twin scenes take one more A each; counts re-verified on a
 the player facing someone (TV: Mom, May's house 1F: her mom, north exit: the twin) the count is exact: one more A
 would start talking to them.
 """
-import sys
+import os, sys
 from PIL import Image
 from emu import Emu, fresh_battery
 
 rom = sys.argv[1]
-OUT = '../work/emu/'
+OUT = os.environ.get('MAKE_STATES_OUT', '../work/emu/')   # (a folder of your own: with its trailing /)
 fresh_battery(rom)                              # a cold boot with no save: New Game
 e = Emu(rom)
 checks = []
@@ -40,10 +40,11 @@ def times(n, moves): return ' '.join([moves] * n)
 
 e.run(1200)
 for _ in range(40): e.press('A', 6, 50)          # title, Birch's intro
-for _ in range(110): e.press('A', 6, 40)         # boy, name AAAAAAA, Birch's 6 questions (YES/YES/HOENN/CLASSIC/YES/YES), into the truck
+for _ in range(118): e.press('A', 6, 40)         # boy, name AAAAAAA, Birch's 7 questions (YES/YES/HOENN/CLASSIC/YES/YES/YES), into the truck
                                                 # (2026-10-11, 4 questions: 76 do not reach the truck, 80 do: 90 for margin;
                                                 # 2026-10-19, 6 questions (seasons, the Exp. Share): 110 (mk_boot: 126-135 presses in all). Mashing A answers
-                                                # YES to both, so these states have real seasons and the Exp. Share on)
+                                                # YES to both, so these states have real seasons and the Exp. Share on;
+                                                # 2026-11-01, the 7th (the followers): 118; YES, but only a build with the config has one)
 run('W900 S')
 e.save_state(OUT + 'base_truck.dst')
 run('C10,10 R1 W300 ' + times(26, 'A W50') + ' W100 S')                        # step out, arrival, moving in

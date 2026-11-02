@@ -308,7 +308,8 @@ def main(names):
             if sapphire_table(n): print(n, allocate(n, reg))
         if reg != before: json.dump(reg, open(reg_path, 'w'), indent=1, sort_keys=True)
         return
-    names = names or sorted(f[:-5] for f in os.listdir(MC.LAYOUTS) if f.endswith('.json') and not f.startswith('_')
+    # (Secret Bases: their zone files are b2tools/secret_base_data.py's, notes/SECRET_BASES.md)
+    names = names or sorted(f[:-5] for f in os.listdir(MC.LAYOUTS) if f.endswith('.json') and not f.startswith('_') and not f.startswith('SecretBase_')
                             # (emerald_caves 2026-10-12) Emerald's caves ("map": "emerald/<Map>") are gen_caves_emerald's
                             and not str((MC.load_json(os.path.join(MC.LAYOUTS, f), {}) or {}).get('map', '')).startswith('emerald/'))
     # recipes that are another layout of a zone's cave ("alt_of": Shoal Cave's high tide, caves_misc) have no zone of

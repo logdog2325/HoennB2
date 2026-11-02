@@ -204,7 +204,12 @@ class Repo:
     def load_tileset(self, sym):
         if sym in self._ts:
             return self._ts[sym]
-        d = self.tileset_dir(sym)
+        m_sb = re.fullmatch(r'gTileset_SecretBase(RedCave|BrownCave|BlueCave|YellowCave|Tree|Shrub)', sym)
+        if m_sb:         # Secret Bases: one secondary metatile table, a folder of tiles and palettes per style
+            d0 = f'{self.root}/data/tilesets/secondary/secret_base'
+            d = d0 + '/' + re.sub(r'(?<!^)(?=[A-Z])', '_', m_sb.group(1)).lower()
+        else:
+            d = d0 = self.tileset_dir(sym)
         img = Image.open(f'{d}/tiles.png')
         idx = np.array(img)  # palette indices
         if idx.max() > 15:
@@ -218,8 +223,8 @@ class Repo:
         for i in range(16):
             lines = open(f'{d}/palettes/{i:02d}.pal').read().split('\n')[3:19]
             pals.append(np.array([[int(v) for v in l.split()] for l in lines if l.strip()], dtype=np.uint8))
-        mt = np.frombuffer(open(f'{d}/metatiles.bin', 'rb').read(), dtype='<u2').reshape(-1, 8)
-        attr = np.frombuffer(open(f'{d}/metatile_attributes.bin', 'rb').read(), dtype='<u2')
+        mt = np.frombuffer(open(f'{d0}/metatiles.bin', 'rb').read(), dtype='<u2').reshape(-1, 8)
+        attr = np.frombuffer(open(f'{d0}/metatile_attributes.bin', 'rb').read(), dtype='<u2')
         ts = dict(tiles=tiles, pals=pals, mt=mt, attr=attr)
         self._ts[sym] = ts
         return ts

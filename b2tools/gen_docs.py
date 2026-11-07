@@ -477,6 +477,15 @@ def _need(rel, *texts):
     for t in texts:
         if t not in s: raise SystemExit(f'gen_docs: {rel} no longer has {t!r}: update postgame_page')
 
+def _script_text(name):
+    """A script message file's lines (src/text/script, the version's overlay) as one line of plain text each. Braille is
+    shown as the text it spells (Black 2 has no braille font), so the guide can quote it."""
+    p = version.overlay_file(os.path.join(ROOT, 'src', 'text', 'script', name))
+    return [re.sub(r' +', ' ', re.sub(r'\{be0[01]\}', ' ', s).replace('\\n', ' ')).strip()
+            for s in open(p, encoding='utf-8').read().split('\n')]
+
+BADGES = ('Stone', 'Knuckle', 'Dynamo', 'Heat', 'Balance', 'Feather', 'Mind', 'Rain')   # TrainerCardHasBadge's numbers
+
 def _key_item(c):
     """A Hoenn key item constant -> the Black 2 item it is (src/include/hoenn_key_items.h)."""
     m = re.search(rf'#define\s+{c}\s+(ITEM_\w+)', open(os.path.join(ROOT, 'src', 'include', 'hoenn_key_items.h')).read())
@@ -616,6 +625,85 @@ def postgame_page(names):
     lv_regi = _level_in('scenes/ch12_lib.inc', re.search(r'CallWildBattle \\species, (\w+), 1', _src('scenes/ch12_lib.inc')).group(1))
     mirage = _define('scenes/Route130.inc', 'MI_MASK') + 1
     steps = [int(x) for x in re.findall(r'L_BE_Max\d+:\s*\n\s*h_goto_if_gt BE_STEPS, (\d+)', _src('scenes/BirthIsland_Exterior_rock.inc'))]
+    # Birth Island's walkthrough (played in the emulator 2026-11-05 on the step-count fix 93bee0e): the side to talk from
+    # after each jump. Checked here against the triangle's places and step limits: each walk is exactly the limit.
+    rock = [(int(x), int(z)) for x, z in re.findall(r'ActorSetGPos BE_ROCK, (\d+) \+ EV_BIRTH_OX, BE_GY, (\d+) \+ EV_BIRTH_OZ',
+                                                    _src('scenes/BirthIsland_Exterior_rock.inc'))]
+    be_sides = ('above', 'below', 'above', 'right', 'left', 'above', 'right', 'left', 'above', 'below')
+    _need('scenes/BirthIsland_Exterior.inc', 'PedometerEnd', 'PedometerStart', 'h_goto_if_eq VAR_DEOXYS_ROCK_LEVEL, 10, L_BE_Solved',
+          'h_setvar VAR_DEOXYS_ROCK_LEVEL, 0')
+    _need('scenes/BirthIsland_Exterior_rock.inc', 'VMJump L_BE_Progress                // (level 0: no limit)')
+    if len(rock) != len(steps) + 1 or len(be_sides) != len(steps):
+        raise SystemExit('gen_docs: Birth Island has other places or step limits now: update postgame_page')
+    off = {'above': (0, -1), 'below': (0, 1), 'left': (-1, 0), 'right': (1, 0)}
+    at = (rock[0][0], rock[0][1] + 1)                  # the first talk: from below, the side you come up from the dock
+    for i, side in enumerate(be_sides):
+        nxt = (rock[i + 1][0] + off[side][0], rock[i + 1][1] + off[side][1])
+        if abs(nxt[0] - at[0]) + abs(nxt[1] - at[1]) != steps[i]:
+            raise SystemExit(f'gen_docs: Birth Island jump {i + 1}: the walkthrough no longer fits its step limit: update postgame_page')
+        at = nxt
+    ev_objs = json.load(open(os.path.join(ROOT, 'data', 'story', 'events.json'), encoding='utf-8'))['objects']
+    tri = next(o for o in ev_objs if o.get('map') == 'BirthIsland_Exterior' and o.get('uid') == 101)
+    mew = next(o for o in ev_objs if o.get('map') == 'FarawayIsland_Interior' and o.get('flag') == 'FLAG_HIDE_MEW')
+    if tri.get('model') != 144 or mew.get('move') != 3:   # the white stone sphere for the triangle; Mew wanders (Black 2 move 3)
+        raise SystemExit('gen_docs: Birth Island\'s triangle or Faraway Island\'s Mew changed: update postgame_page')
+    _need('scenes/FarawayIsland_Interior.inc', 'FI_FindMew', 'Mv_FI_MewMoveAndHide')
+    # Navel Rock: the fork's two ladders, the rooms each way, Ho-Oh's trigger on the summit path, Lugia talked to
+    fork = _src('0532_room_NavelRock_Fork.s')
+    nr_up_x = int(re.search(r'ladder up \((\d+),\d+\) -> NavelRock_Up1 ', fork).group(1))
+    nr_down_x = int(re.search(r'ladder down \((\d+),\d+\) -> NavelRock_Down01 ', fork).group(1))
+    nr_up = len([p for p in glob.glob(os.path.join(FS, '*_room_NavelRock_Up*.s')) if '_init' not in p])
+    nr_down = len([p for p in glob.glob(os.path.join(FS, '*_room_NavelRock_Down*.s')) if '_init' not in p])
+    _need('scenes/NavelRock_Top.inc', 'step trigger (12,10)')
+    _need('0450_room_NavelRock_Bottom.s', 'object 1 (NavelRock_Bottom_EventScript_Lugia)')
+    # Sky Pillar: the cracks drop a walker (not a rider) to the floor below; the Bike is allowed on every floor; on 4F the
+    # two middle cracks of the top passage drop into 3F's closed-off part, whose stairs lead to 4F's corner with 5F's stairs
+    for f in ('0330_room_SkyPillar_2F.s', '0334_room_SkyPillar_4F.s'):
+        _need(f, 'cracked floor (', 'PlayerGetExState 0x8010')
+    _need('0334_room_SkyPillar_4F.s', 'cracked floor (6,4) -> fall to SkyPillar_3F (6,4)', 'cracked floor (7,4) -> fall to SkyPillar_3F (7,4)')
+    sp_rooms = {z: version.load_json(os.path.join(ROOT, 'data', 'interiors', f'{z}.json')) for z in range(164, 169)}
+    if not all(r.get('cycling') for r in sp_rooms.values()) \
+            or not any(w['at'] == [7, 1] and w['to'] == [167, 1] for w in sp_rooms[166]['warps']) \
+            or not any(w['at'] == [3, 1] and w['to'] == [168, 0] for w in sp_rooms[167]['warps']):
+        raise SystemExit('gen_docs: Sky Pillar\'s Bike rule or its 3F/4F stairs changed: update postgame_page')
+    # the Sealed Chamber and the three Regi chambers (the version's puzzles: Emerald = pokeemerald's)
+    _need('0430_room_SealedChamber_OuterRoom.s', 'step trigger (9..11,3): Dig', 'h_dig_user CH12_DIG, L_SO_NoDig')
+    _need('scenes/ch12_lib.inc', '.macro h_dig_user move, fail', 'Dig: no badge, no machine')
+    m = re.search(r'#ifdef HOENN_EMERALD[^\n]*\n#define SI_FIRST_SPECIES SPECIES_(\w+)[^\n]*\n#define SI_LAST_SPECIES SPECIES_(\w+)'
+                  r'[^\n]*\n#else[^\n]*\n#define SI_FIRST_SPECIES SPECIES_(\w+)[^\n]*\n#define SI_LAST_SPECIES SPECIES_(\w+)',
+                  _src('0408_room_SealedChamber_InnerRoom.s'))
+    if not m: raise SystemExit('gen_docs: 0408 has no Relicanth / Wailord order any more: update postgame_page')
+    si_first, si_last = (m.group(1), m.group(2)) if E else (m.group(3), m.group(4))
+    si_braille = _script_text('0263_room_SealedChamber_InnerRoom.txt')[0]
+    if sp(si_first) not in si_braille.split('.')[0]:
+        raise SystemExit('gen_docs: the Sealed Chamber\'s braille and its party check disagree: update postgame_page')
+    sc_go_up = _script_text('0281_room_Underwater_SealedChamber.txt')[0]
+    sc_dig = _script_text('0274_room_SealedChamber_OuterRoom.txt')[10]
+    dive_src = open(os.path.join(HERE, 'patches', 'dive.py'), encoding='utf-8').read()
+    if "('Underwater_SealedChamber', 'surface@12,44', 'SealedChamber_OuterRoom'" not in dive_src \
+            or "('Underwater_SealedChamber', 'surface', 'Route134'" not in dive_src \
+            or '10011/10012 surface when the player is diving' not in open(os.path.join(HERE, 'patches', 'hm_free.py'), encoding='utf-8').read():
+        raise SystemExit('gen_docs: surfacing into the Sealed Chamber changed: update postgame_page')
+    def braille_move(rel):
+        """A chamber's field-move spot: (move, item, badge, spot tiles x0, x1, y, braille tile x, y)."""
+        s = _src(rel)
+        t = re.search(r'step trigger \((\d+)(?:\.\.(\d+))?,(\d+)\): ([A-Z][a-z]+(?: [A-Z][a-z]+)?)', s)
+        u = re.search(r'h_field_move_user (ITEM_\w+), (\d+), \w+, L_', s)
+        b = re.search(r'ScriptEntry Story_\w+_Braille +// \d+: braille \((\d+),(\d+)\)', s)
+        if not (t and u and b): raise SystemExit(f'gen_docs: {rel}: its braille spot changed: update postgame_page')
+        x0 = int(t.group(1))
+        return (t.group(4), names.item(u.group(1)), BADGES[int(u.group(2))], x0, int(t.group(2) or x0), int(t.group(3)),
+                int(b.group(1)), int(b.group(2)))
+    regi_dr = braille_move('0232_room_DesertRuins.s')
+    regi_at = braille_move('0188_room_AncientTomb.s')
+    if E:
+        ic = _src('0254_room_IslandCave.s')
+        _need('0254_room_IslandCave.s', 'L_IC_CheckLap', 'IC_OffPath', 'L_IC_ClearIfFailed')
+        ic_lap = len(re.findall(r'^IC_Path\d+:', ic, re.M))
+    else:
+        ic_wait = _num('0254_room_IslandCave.s', r'SystemMsg T_BRAILLE, 2[^\n]*\n\s*VMSleep (\d+)')
+    br = {k: _script_text(f)[0] for k, f in (('dr', '0135_room_DesertRuins.txt'), ('ic', '0146_room_IslandCave.txt'),
+                                              ('at', '0104_room_AncientTomb.txt'))}
     diploma = _src('0360_room_LilycoveCity_CoveLilyMotel_2F.s').split('Sub_MO2_CompletedHoennDex:', 1)[1]
     diploma = [int(x) for x in re.findall(r'PokeDexIsRegist 1, (\d+),', diploma)]
     roam = [(sp(s), roamers.scaled(l)) for s, l in roamers.ROAMERS]
@@ -646,6 +734,33 @@ def postgame_page(names):
         rm_badges, rm_leaders, rm_wally, rm_route = _rematch_pages(names)
         data = version.load_json(os.path.join(ROOT, 'data', 'hoenn_trainer_data.json'))['trainers']
         steven = data['TRAINER_STEVEN_EMERALD']
+        # the abnormal weather: Castform first, the report, two spots per route, the caves' way in and Kyogre/Groudon's step
+        _need('1128_room_Route119_WeatherInstitute_2F.s', 'h_goto_if_set FLAG_RECEIVED_CASTFORM, L_WI2_AlreadyGave',
+              'h_goto_if_set FLAG_SYS_GAME_CLEAR, L_WI2_TryStartAbnormalWeather', 'h_goto_if_set WI2_FLAG_TEMP_2, L_WI2_AwReport')
+        per_route = collections.Counter(z for _, z in aw)
+        aw_two = len(set(per_route.values())) == 1 and next(iter(per_route.values())) == 2
+        _need('0732_room_TerraCave_End.s', 'trigger (17,26)'); _need('0738_room_MarineCave_End.s', 'trigger (9,26)')
+        _need('scenes/emerald/abnormal_weather.inc', 'Over while in Terra / Marine Cave: the end is pending')
+        if "('Underwater_MarineCave', 'surface', 'MarineCave_Entrance'" not in dive_src:
+            raise SystemExit('gen_docs: the Marine Cave\'s surfacing changed: update postgame_page')
+        # Steven's Cave: the first room's top-left corner, reached by the ladder up from B1F (the B1F rooms from the
+        # waterfall room above the first room)
+        mf = {z: version.load_json(os.path.join(ROOT, 'data', 'interiors', f'{z}.json'))['warps'] for z in (128, 129, 130)}
+        if not (any(w['at'] == [10, 3] and w['to'][0] == 129 for w in mf[128]) and any(w['to'][0] == 130 for w in mf[129])
+                and any(w['at'] == [3, 23] and w['to'] == [128, 3] for w in mf[130])):
+            raise SystemExit('gen_docs: Meteor Falls\' way to Steven\'s Cave changed: update postgame_page')
+        _need('0754_room_MeteorFalls_StevensCave.s', 'FLAG_DEFEATED_METEOR_FALLS_STEVEN')
+        # the Desert Underpass (the tunnel opens after the game; the fossil only after the Mirage Tower's), the Safari
+        # workers, Emerald's Sky Pillar after Sootopolis
+        _need('1116_room_Route114_FossilManiacsTunnel.s', 'h_goto_if_unset FLAG_SYS_GAME_CLEAR, L_FMT_InitDone')
+        _need('0750_room_DesertUnderpass.s', 'FLAG_HIDE_DESERT_UNDERPASS_FOSSIL')
+        _need('scenes/emerald/Route111_Mirage.inc', 'h_clearflag FLAG_HIDE_DESERT_UNDERPASS_FOSSIL')
+        e13 = json.load(open(os.path.join(ROOT, 'data', 'story', 'emerald', 'e_ch13.json'), encoding='utf-8'))['objects']
+        if sum(1 for o in e13 if o.get('map') == 'SafariZone_Southeast' and o.get('flag') == 'FLAG_HIDE_SAFARI_ZONE_SOUTH_CONSTRUCTION_WORKERS') != 2:
+            raise SystemExit('gen_docs: the Safari Zone\'s two workers moved: update postgame_page')
+        _need('0334_room_SkyPillar_4F.s', 'h_goto_if_ge VAR_SKY_PILLAR_STATE, 2, L_SPF_Cracked')
+        _need('scenes/emerald/SootopolisCity.inc', 'h_setvar VAR_SKY_PILLAR_STATE, 3')
+        _need('scenes/SkyPillar_Top.inc', 'L_SPT_Ran:')
     else:
         lv_ray = _define('scenes/SkyPillar_Top.inc', 'SP_RAYQUAZA_LEVEL')
         lv_legend = _define('0206_room_CaveOfOrigin_B4F.s', 'B4_KYOGRE_LEVEL')
@@ -772,23 +887,37 @@ def postgame_page(names):
            f'- While you hold the {EON} and haven\'t been to Southern Island yet, the Lilycove ferry takes you there first.'),
           f'- The first time you show the {MAP}, Mr. Briney sails you to Faraway Island himself.', '',
           '### Southern Island\n',
-          f'Walk to the far end of the island and read the stone. {lati_island_txt[0].upper() + lati_island_txt[1:]} flies down and battles you. '
+          'From the boat, walk into the middle of the island and on to the stone at its far end. Stand in front of it and '
+          f'read it. {lati_island_txt[0].upper() + lati_island_txt[1:]} flies down and battles you. '
           + ('If you run away, it is there again on your next visit. If you knock it out, it flies away and comes back '
              'after your next Hall of Fame. Once caught, it is gone. You lose: you black out, and it waits for your next '
              'visit.\n' if E else
              f'**One chance only:** whatever happens in the battle, it doesn\'t come back and the ferry doesn\'t sail there '
              'again. Save before you read the stone.\n'),
           '### Faraway Island\n',
-          f'When you go into the grassy middle of the island, {sp("MEW")} sees you and runs into the tall grass. It wanders '
-          'there; talk to it to battle it.\n',
+          f'When you go into the grassy middle of the island, {sp("MEW")} sees you and runs a few steps into the tall grass. '
+          'Unlike Gen 3, it doesn\'t hide in the grass or move away as you walk: it stays in sight and wanders about a '
+          'small patch of the tall grass on its own. Walk up next to it and talk to it to battle it. If it moves off, wait '
+          'for it to stop near you.\n',
           '### Birth Island\n',
-          'Talk to the triangle: it jumps to another spot. Walk to it and talk to it again, in no more steps than the '
-          f'shortest way ({_join(str(s) for s in steps)} steps for its {len(steps)} moves). With too many steps it goes '
-          f'back to where it started. The {len(steps)}th time you reach it in time, it breaks and {sp("DEOXYS")} '
-          'appears. Leaving the island resets the puzzle.\n',
+          'The triangle stands in the middle of the island top (in this game it looks like a white stone ball). Walk up '
+          'from the dock and talk to it from below: it jumps to another spot. Each time it jumps, walk the shortest way '
+          'to the side of it given here and talk to it again. Every step counts; turning on the spot does not.\n',
+          '| Jump | Talk to it from | Steps allowed |', '|---|---|---|']
+    L += [f'| {i + 1} | {side} | {n} |' for i, (side, n) in enumerate(zip(be_sides, steps))]
+    L += ['',
+          f'The {len(steps)}th time you talk to it after a jump, it breaks and {sp("DEOXYS")} appears. One step too many '
+          'and it goes back to the middle: talk to it there from below and start again from jump 1. Leaving the island '
+          'resets the puzzle.\n',
+          f'Up to {"v2.0" if E else "v19.0"} the triangle always went back to the middle after its first jump, however you '
+          'walked (a bug). The next update fixes it.\n',
           '### Navel Rock\n',
-          f'Inside, the way forks: up to the summit, where {sp("HO_OH")} comes down when you walk up to it, and the long '
-          f'way down to the bottom, where {sp("LUGIA")} waits.\n',
+          'From the boat, go into the rock and on through the caves to the long tunnel, and walk to its far end. There '
+          'the way forks:',
+          f'- **Up:** the ladder on the {"left" if nr_up_x < nr_down_x else "right"} climbs through {nr_up} small rooms to '
+          f'the summit. Walk up the narrow path: {sp("HO_OH")} flies down and battles you.',
+          f'- **Down:** the ladder on the {"right" if nr_up_x < nr_down_x else "left"} goes down through {nr_down} small '
+          f'rooms to the bottom, where {sp("LUGIA")} waits. Talk to it to battle it.\n',
           f'### If you run, lose or knock one out ({sp("MEW")}, {sp("DEOXYS")}, {sp("LUGIA")}, {sp("HO_OH")})\n',
           '- **Caught:** it is gone from the island.',
           f'- **Ran away:** it is there again on your next visit ({sp("DEOXYS")}: solve the triangle again).',
@@ -829,29 +958,50 @@ def postgame_page(names):
           f'day\'s number matches a Pokémon in your party (Eggs too). That is 1 in {mirage} for each Pokémon each day, '
           f'about 1 in {round(1 / six)} days with six. The number changes once a day. On the island: '
           f'{_join(f"{n} (Lv {l})" for n, l, _ in wynaut)} in the tall grass, and a {names.item("ITEM_LIECHI_BERRY")} tree.\n']
+    FIELD = '[field moves](tms-and-hms.md#field-moves-without-hms)'
+    sp_climb = [   # the Sky Pillar's floors once they are cracked (Sapphire / Ruby after the Hall of Fame, Emerald after Sootopolis)
+        '- **Cracked floors (2F and 4F):** walking onto a crack drops you to the floor below. Ride your Bicycle over them. '
+        'Here any riding crosses them, slow or fast (in Gen 3 it took the Mach Bike at full speed).',
+        '- **4F:** the stairs up to 5F are in the top-left corner, and you can\'t ride there. Ride round to the narrow '
+        'passage that runs just below that corner, get off the Bicycle, and walk onto one of the two cracks in the middle '
+        'of the passage. You drop into a closed-off part of 3F; its stairs take you up into the corner, by the stairs to 5F.']
     if E:
         L += ['### Steven\'s Cave\n',
-              'After the Hall of Fame the rock in the first room of Meteor Falls is gone, and behind it is Steven\'s cave. '
+              'After the Hall of Fame the rock in the first room of Meteor Falls (the room you come into from Route 114) '
+              'is gone, and behind it is Steven\'s cave. It is in the top-left corner of that room, which you can only reach '
+              'by a ladder up from the floor below:',
+              '1. In the first room, Surf to the waterfall and climb it (Waterfall) to the room above.',
+              '2. In that room, take a ladder down to the floor below (Meteor Falls B1F).',
+              '3. There, make your way to the ladder up in its west part (Surf where you need to). It comes up in the '
+              'corner of the first room, next to the cave.\n',
               f'Steven battles you (Lv {_levels(steven)}; his team is on the [trainers page](trainers-emerald.md#steven)). '
               'Beat him once; after that he only talks. If you lose, he battles you again next time.\n',
               '### Terra Cave and Marine Cave\n',
-              'After the Hall of Fame, talk to the scientist on the Weather Institute\'s 2F (Route 119). He reports a '
-              'drought or heavy rain somewhere, a place picked at random each time you come up to his floor:',
-              f'- **Drought:** a cave entrance opens in a rock wall on {terra_routes}. It is Terra Cave, with '
-              f'{sp("GROUDON")} (Lv {lv_groudon}) at its end.',
-              f'- **Heavy rain:** rough water on {marine_routes}. Dive there to reach Marine Cave, with {sp("KYOGRE")} '
-              f'(Lv {lv_kyogre}) at its end.',
-              f'- The weather ends after {aw_steps:,} steps; ask the scientist again for a new place.',
+              '1. After the Hall of Fame, talk to the scientist on the Weather Institute\'s 2F (Route 119). (If you never '
+              'took his Castform, he gives you that first: talk to him again.) He reports a drought or heavy rain on one '
+              'route, picked at random each time you come up to his floor. Asking him again on the same visit gives the '
+              'same route.',
+              f'2. Go to that route{" (each route has two places where it can happen: look along the whole route)" if aw_two else ""}:',
+              f'   - **Drought** ({terra_routes}): the sun is harsh and a new cave mouth has opened in a rock wall. Walk in: '
+              f'it is Terra Cave, with {sp("GROUDON")} (Lv {lv_groudon}) at its end.',
+              f'   - **Heavy rain** ({marine_routes}): look for a patch of rough water. Dive there ({FIELD}), swim into '
+              'the cave opening on the sea floor, and press A to surface inside. Surf across the pool to the shore and go '
+              f'on: it is Marine Cave, with {sp("KYOGRE")} (Lv {lv_kyogre}) at its end.',
+              '3. At the end of the cave, walk up toward it from below: it comes to you and battles you.\n',
+              f'- The weather lasts {aw_steps:,} steps from the moment the scientist spoke: go straight there. If the steps '
+              'run out while you are inside the cave, you can still finish it. After that, ask the scientist for a new place.',
               '- Caught or knocked out: it is gone, and its weather ends. Ran away: it is back on your next visit. Once '
               'both are caught or knocked out, the scientist has no more reports.\n',
               '### Desert Underpass\n',
-              'After the Hall of Fame the Fossil Maniac\'s tunnel on Route 114 opens further. At the far end of the '
-              'Desert Underpass lies the fossil you didn\'t take at the Mirage Tower (the Root Fossil or the Claw Fossil). '
+              'Go into the Fossil Maniac\'s house on Route 114 and on into his tunnel. After the Hall of Fame he stands '
+              'aside and the tunnel goes on into the Desert Underpass. At its far end lies the fossil you didn\'t take at '
+              'the Mirage Tower (the Root Fossil or the Claw Fossil); it is only there once you have taken one of the two. '
               f'Wild Pokémon there: {_join(r[0] for r in grass("DesertUnderpass"))} '
               f'([wild Pokémon](wild-pokemon-emerald.md#{_anchor(place("DesertUnderpass"))})).\n',
               '### Safari Zone\n',
-              'After the Hall of Fame the workers leave and two new areas open on the Safari Zone\'s east side, each with '
-              'its own wild Pokémon:']
+              'After the Hall of Fame the two workers at the east edge of the Safari Zone\'s first area (the one you come '
+              'into) are gone. Walk east past where they stood into the new south-east area; north of it is the new '
+              'north-east area. Each has its own wild Pokémon:']
         L += [f'- [{place(m)}](wild-pokemon-emerald.md#{_anchor(place(m))}): '
               + '; '.join(f'{how} {_join(mons)}' for how, mons in hows) + '.' for m, hows in safari_new]
         L += ['',
@@ -861,8 +1011,11 @@ def postgame_page(names):
               f'([wild Pokémon](wild-pokemon-emerald.md#{_anchor(place("ArtisanCave_1F") + " / " + place("ArtisanCave_B1F"))})).\n']
     else:
         L += ['### Sky Pillar\n',
-              'After the Hall of Fame the Sky Pillar\'s island appears on Route 131. At the top waits '
-              f'{sp("RAYQUAZA")} (Lv {lv_ray}). **One chance only:** whatever happens in the battle, it doesn\'t come back.\n']
+              'After the Hall of Fame a rocky islet appears on Route 131 (west of Pacifidlog Town). Surf to it and go into '
+              'the cave; at its far end you come out by the tower\'s door. Inside, take the stairs up floor by floor:']
+        L += sp_climb
+        L += ['', f'At the top waits {sp("RAYQUAZA")} (Lv {lv_ray}): talk to it. **One chance only:** whatever happens in '
+              'the battle, it doesn\'t come back. Save before you talk to it.\n']
 
     # ---- other legendaries
     L += ['## Other legendaries\n', 'The legendaries you meet in the rest of the game:\n',
@@ -877,9 +1030,53 @@ def postgame_page(names):
               f'| {sp("KYOGRE")} | Marine Cave | after the Hall of Fame | {lv_kyogre} | ran away: back next visit |']
     else:
         L.append(f'| {sp("RAYQUAZA")} | Sky Pillar, top (Route 131) | after the Hall of Fame | {lv_ray} | one battle |')
-    L += ['', f'The three chambers open together: in the Sealed Chamber under the sea of Route 134 (Dive), read the braille '
-          f'on the back wall with {sp("RELICANTH")} first and {sp("WAILORD")} last in your party. Each chamber then has '
-          'its own braille puzzle.\n']
+    L += ['', '### The Sealed Chamber\n',
+          'The three Regi chambers open together, from the Sealed Chamber under the sea of Route 134. Braille in this game '
+          'is shown as the plain text it spells.\n',
+          f'1. On Route 134, Surf to the patch of dark deep water (the current stops there) and Dive ({FIELD}).',
+          '2. Underwater, swim south into the opening below you, then follow the trench down to its far end. Stand just '
+          f'below the braille there ("{sc_go_up}") and press A to surface. (In Gen 3 it was B. Surfacing anywhere else '
+          'brings you back up on Route 134.)',
+          f'3. You come up in the Sealed Chamber. Walk to the braille in the middle of the top wall ("{sc_dig}") and step '
+          'onto the floor right in front of it with a Pokémon in your party that knows Dig: it digs through the wall for '
+          'you. It must be a Pokémon that knows Dig (the TM in your Bag is not enough; no badge is needed).',
+          f'4. Go through. Put {sp(si_first)} first and {sp(si_last)} last in your party (the last Pokémon you carry, '
+          f'however many you have), then read the braille on the far wall ("{si_braille}"). The room shakes: the three '
+          'chambers are open.\n',
+          '### The three Regi chambers\n',
+          'Each is a small cave with braille on the back wall of its first room. Stand in front of the braille and read it, '
+          'then do what it says: the wall behind it opens. Go through and talk to the Regi. When a field move is needed, '
+          'you don\'t choose it from the menu: step onto the right spot and it is used for you, as long as you could use '
+          f'it there ({FIELD}: the badge, then a Pokémon that knows the move or its TM or HM in your Bag).\n']
+    regi_where = {r[1]: f'{r[1]} ({r[2]}), {r[0]}' for r in regis}
+    def move_spot(spot):
+        move, it, badge, x0, x1, y, bx, by = spot
+        dx, dy = (x0 + x1) // 2 - bx, y - (by + 1)        # from the tile in front of the braille
+        if dx and dy > 0:
+            where = (f'{move} is used when you step onto the spot {abs(dx)} steps {"right" if dx > 0 else "left"} and {dy} '
+                     'steps down from the one in front of the braille.')
+        elif not dx and dy > 0:
+            where = (f'{move} is used when you step onto the middle of the room, {dy} steps straight down from the spot in '
+                     'front of the braille. You cross it when you walk straight up from the entrance.')
+        else: raise SystemExit('gen_docs: a Regi chamber\'s spot is somewhere new: update postgame_page')
+        return f'{where} ({badge} Badge; {it}.)'
+    L.append(f'- **{regi_where[place("DesertRuins")]}.** The braille: "{br["dr"]}" {move_spot(regi_dr)}')
+    if E:
+        L.append(f'- **{regi_where[place("IslandCave")]}.** The braille: "{br["ic"]}" Read it from the spot right in front '
+                 f'of it. Then walk once round the whole room on the tiles right next to the wall ({ic_lap} tiles: into every '
+                 'corner and past the exit), either way round, and come back to the spot in front of the braille: the wall '
+                 'opens. One step onto the open floor in the middle spoils it: read the braille again and start over.')
+    else:
+        L.append(f'- **{regi_where[place("IslandCave")]}.** The braille: "{br["ic"]}" Read it and then just wait: the '
+                 f'message stays up for about {round(ic_wait / 30 / 60)} minutes, then the wall opens. Here pressing a '
+                 'button doesn\'t spoil the wait (in Gen 3 it did).')
+    L += [f'- **{regi_where[place("AncientTomb")]}.** The braille: "{br["at"]}" {move_spot(regi_at)}', '']
+    if E:
+        L += [f'### {sp("RAYQUAZA")} at the Sky Pillar\n',
+              f'During the story the Sky Pillar\'s floors are whole. Once {sp("RAYQUAZA")} has stopped the fight in '
+              f'Sootopolis, it goes back to the top of the Sky Pillar (Route 131), and the floors are cracked:']
+        L += sp_climb
+        L += ['', f'At the top, talk to {sp("RAYQUAZA")} (Lv {lv_ray}).\n']
 
     # ---- battles
     L += ['## Battles after the Hall of Fame\n',
@@ -915,8 +1112,8 @@ def postgame_page(names):
               f'{after + 1} challenges in a row, then one of {_or(names.item(i) for i in long_)}.',
               f'- When a challenge ends with more than {ribbon} wins in a row, the three Pokémon get the Winning Ribbon '
               '(Lv. 50) or the Victory Ribbon (Lv. 100).',
-              '- A man in the lobby awards the Silver Shield at a best streak of 50 and the Gold Shield at 100 (a record '
-              'only: this game has no decorations).', '',
+              '- A man in the lobby awards the Silver Shield at a best streak of 50 and the Gold Shield at 100: decorations '
+              'for your Secret Base.', '',
               '### Pokémon World Tournament (PWT)\n',
               'The second building on the island is Black 2\'s PWT. The left desk offers the Driftveil, Rental and Mix '
               'tournaments (Download needs Nintendo\'s closed online service). The right desk offers the Unova Leaders and '

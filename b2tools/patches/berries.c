@@ -191,6 +191,10 @@ static BerrySave *update(void) {
     BerrySave *s = save();
     s32 now = now_minutes(), diff;
     if (now < 0) return s;
+    if (s->last == 0) {                                 /* set up before the clock could be read: start counting now */
+        s->last = (u32)now;                             /* (from 2000 on, every growing tree was wiped as 26 years) */
+        return s;
+    }
     diff = now - (s32)s->last;
     if (diff > 0) {
         time_update_trees(s, diff);

@@ -53,7 +53,8 @@ BE_Triangle:                            // BirthIsland_Exterior_EventScript_Tria
 #if HOENN_TEST_CH13_EVENTS == 3
     h_setvar BE_STEPS, 0                // test builds only: no step limit (the harness's steps are not exact)
 #endif
-    PedometerStart                      // VarSet(VAR_DEOXYS_ROCK_STEP_COUNT, 0)
+    PedometerEnd                        // VarSet(VAR_DEOXYS_ROCK_STEP_COUNT, 0): Black 2's PedometerStart only
+    PedometerStart                      // starts a stopped counter (a running one kept counting: every move failed)
     VMJump L_BE_CheckSteps
 L_BE_Progress:
     h_goto_if_eq VAR_DEOXYS_ROCK_LEVEL, 10, L_BE_Solved

@@ -1,0 +1,25 @@
+{
+ "kind": "trainer",
+ "side": "front",
+ "sprite": 37,
+ "archive": 71,
+ "files": {
+  "static": 296,
+  "parts": 297,
+  "palette": 303
+ },
+ "name": "collector",
+ "note": "Collector",
+ "source": "community: battle_fronts_2026-11-07/Collector.png by ASalman",
+ "layout": "drawn on the parts of Black 2 front sprite 27 (its cells and animations)",
+ "colours": 14,
+ "cleared_near_background": [
+  [
+   41,
+   214,
+   159
+  ]
+ ],
+ "made_by": "b2tools/sprite_community.py",
+ "mcss_from": 27
+}

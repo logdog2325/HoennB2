@@ -227,7 +227,7 @@ def apply(files):
             # uid + 3, map_replace.c; uid 9 = work 0x403A == 0x1028: no Black 2 script sets uids 7-9 and no replacement
             # uses conditions 10-12). Scripts switch it with MapReplaceSetEvent (converter/gen_caves.py tide_script).
             alt_metas = []
-            for alt in cfg.get('alt_rooms', []):
+            for alt in version.alt_rooms(cfg):           # (an entry's version keys: version.alt_rooms)
                 ad = os.path.join(ROOMS, alt['room'])
                 if not os.path.exists(os.path.join(ad, 'room.json')):     # not built in this interiors folder yet: the
                     done.append(f"zone {zone}: other layout {alt['room']} not built ({ROOMS}): left out")   # room only

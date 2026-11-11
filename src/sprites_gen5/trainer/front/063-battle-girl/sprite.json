@@ -1,0 +1,19 @@
+{
+ "kind": "trainer",
+ "side": "front",
+ "sprite": 63,
+ "archive": 71,
+ "files": {
+  "static": 504,
+  "parts": 505,
+  "palette": 511
+ },
+ "name": "battle-girl",
+ "note": "Battle Girl",
+ "source": "community: battle_fronts_2026-11-07/Battlegirl_16_colours.png by ASalman",
+ "layout": "drawn on the parts of Black 2 front sprite 132 (its cells and animations)",
+ "colours": 15,
+ "cleared_near_background": [],
+ "made_by": "b2tools/sprite_community.py",
+ "mcss_from": 132
+}

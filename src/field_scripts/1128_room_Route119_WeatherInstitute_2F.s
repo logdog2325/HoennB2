@@ -31,6 +31,9 @@ Script_None:
 #define T_CastformExplain 4
 #define T_NoRoom 5
 #define T_ResearchedRain 6
+#ifndef HOENN_EMERALD
+#define T_OtherLegendHint 7                 // (postgame_dex) the user's line: the readings under the sea off Route 128
+#endif
 #define WI2_GRUNT1 1
 #define WI2_GRUNT2 2
 #define WI2_SHELLY 3
@@ -102,6 +105,16 @@ L_WI2_PartyFull:                    // Route119_WeatherInstitute_2F_EventScript_
 L_WI2_AlreadyGave:                  // Route119_WeatherInstitute_2F_EventScript_163DBE
 #ifdef HOENN_EMERALD                // (emerald_ch12_13) Emerald's ScientistMentionWeather: after the game, the abnormal weather
     h_goto_if_set FLAG_SYS_GAME_CLEAR, L_WI2_TryStartAbnormalWeather
+#else
+// (postgame_dex 2026-11-09, the user's hint; Sapphire / Ruby, from the scientist who reports the weather in Emerald): after
+// the Champion, while the other version's legend sleeps in Seafloor Cavern Room 9 (not caught, not met since the last Hall
+// of Fame: scenes/SeafloorCavern_Room9_Postgame.inc), the readings under the sea; otherwise his rain line
+    h_goto_if_unset FLAG_SYS_GAME_CLEAR, L_WI2_Rain
+    h_goto_if_set FLAG_CAUGHT_OTHER_LEGEND, L_WI2_Rain
+    h_goto_if_set FLAG_DEFEATED_OTHER_LEGEND, L_WI2_Rain
+    h_msgbox T_OtherLegendHint      // We've been picking up strange readings from deep under the sea off Route 128... Could another one still be sleeping down there?
+    h_release
+L_WI2_Rain:
 #endif
     h_msgbox T_ResearchedRain       // I've been researching rain for many years, ...
     h_release

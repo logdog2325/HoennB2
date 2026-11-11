@@ -19,6 +19,8 @@
 #define RM_WON      3   // arg = trainer id: fought today; a Gym Leader's next tier
 #define RM_MSGBASE  4   // arg = TrainerGetMessageTypes' intro type: var = RM_MSG_INTRO, or RM_MSG_INTRO2 for type 7
                         // (the second NPC of a pair)
+#define RM_BEATEN   5   // arg = trainer id: its first battle was just won (global script 1239, after TrainerFlagSet):
+                        // no rematch and Black 2's after line until tomorrow (either NPC of a pair)
 #define RM_NONE     0   // no rematch now (fewer than 5 badges; a Leader before the Hall of Fame): the usual line
 #define RM_SINGLE   1   // a rematch, a single battle
 #define RM_DOUBLE   2   // a rematch, a double battle (two Pokémon able to battle needed)

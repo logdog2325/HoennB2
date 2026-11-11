@@ -72,6 +72,9 @@
 #define VAR_ROUTE102_ACCESSIBLE                      0x405C
 #define VAR_ROUTE103_STATE                           0x405D
 #define VAR_RUSTBORO_STATE                           0x405E
+#define VAR_DEXNAV_STATE                             0x405F  // dexnav 2026-11-09: 0 no DexNav, 1 given in the Lab (Route 101 tutorial to come), 2 tutorial search out, 3 done, 4-6 the tutorial battle's result for its last script (decomp include/hoennb2/dexnav.h)
+#define VAR_DEXNAV_CHAIN                             0x4060  // dexnav: consecutive DexNav battles (KO or catch) of VAR_DEXNAV_CHAIN_SPECIES
+#define VAR_DEXNAV_CHAIN_SPECIES                     0x4061  // dexnav: the chain's species
 #define FLAG_ADVENTURE_STARTED                       134   
 #define FLAG_DAILY_RECEIVED_BERRY_FLOWER_SHOP        2744  
 #define FLAG_DEFEATED_RIVAL_ROUTE103                 135   
@@ -676,6 +679,7 @@
 // ---- Postgame ----------------------------------------------------------------------------------------------------
 #define VAR_DEX_UPGRADE_JOHTO_STARTER_STATE          0x4136
 #define VAR_ROAMER_PLACE_HISTORY                     0x4137
+#define VAR_BIRCH_OTHER_STARTERS                     0x4138  // post-game, every version: how many of the two starters the player didn't choose Prof. Birch has given (0-2; scenes/BirchLab_Postgame.inc)
 #define FLAG_HIDE_DEX_UPGRADE_BRENDANS_DOOR          2399  
 #define FLAG_HIDE_DEX_UPGRADE_MAYS_DOOR              2412  
 #define FLAG_RECEIVED_ENIGMA_BERRY                   2422  
@@ -685,6 +689,8 @@
 #define FLAG_DEFEATED_CELEBI                         2426  
 #define FLAG_LATIOS_OR_LATIAS_ROAMING                2427  
 #define FLAG_ROAMING_BEASTS_BIRDS_STARTED            2428  
+#define FLAG_CAUGHT_OTHER_LEGEND                     2435    // S/R post-game: the other weather legend of Seafloor Cavern Room 9 (Sapphire Groudon, Ruby Kyogre; scenes/SeafloorCavern_Room9_Postgame.inc) was caught: gone for good (2432/2433 stay the post-game test kit's marks)
+#define FLAG_DEFEATED_OTHER_LEGEND                   2434    // S/R post-game: that legend was battled and not caught (knocked out, ran, or lost): back after the next Hall of Fame (scenes/postgame_legends.inc clears it)
 // Postgame reserved for its own new ids: flags 2432-2435; works 0x4138
 
 // ---- Postgame_maps ----------------------------------------------------------------------------------------------------
@@ -833,6 +839,11 @@
 #define VAR_CONTEST_PRIZE_PICKUP                     0x419A
 #define VAR_SECRET_BASE_INIT                         0x41A2  // SB_WORK_INIT, include/hoennb2/secret_base.h
 #define VAR_SECRET_BASE_SPOT                         0x41A3
+#define VAR_EM_REMATCH_FIRST_0                       0x4171  // Emerald rematches: rows 0-15 of data/emerald/hoenn_rematch.json beaten for the first time today (bit = row % 16; emerald_rematch.c RM_BEATEN: Black 2's after line and no rematch until tomorrow)
+#define VAR_EM_REMATCH_FIRST_1                       0x4172  // Emerald rematches: rows 16-31 of data/emerald/hoenn_rematch.json beaten for the first time today (bit = row % 16; emerald_rematch.c RM_BEATEN: Black 2's after line and no rematch until tomorrow)
+#define VAR_EM_REMATCH_FIRST_2                       0x4173  // Emerald rematches: rows 32-47 of data/emerald/hoenn_rematch.json beaten for the first time today (bit = row % 16; emerald_rematch.c RM_BEATEN: Black 2's after line and no rematch until tomorrow)
+#define VAR_EM_REMATCH_FIRST_3                       0x4175  // Emerald rematches: rows 48-63 of data/emerald/hoenn_rematch.json beaten for the first time today (bit = row % 16; emerald_rematch.c RM_BEATEN: Black 2's after line and no rematch until tomorrow)
+#define VAR_EM_REMATCH_FIRST_4                       0x4177  // Emerald rematches: rows 64-79 of data/emerald/hoenn_rematch.json beaten for the first time today (bit = row % 16; emerald_rematch.c RM_BEATEN: Black 2's after line and no rematch until tomorrow)
 #define FLAG_MET_SCOTT_RUSTBORO                      127   
 #define FLAG_MET_SCOTT_AFTER_OBTAINING_STONE_BADGE   128   
 #define FLAG_MET_SCOTT_IN_LILYCOVE                   129   
@@ -913,8 +924,8 @@
 #define FLAG_MIRAGE_TOWER_VISIBLE                    2359  
 #define FLAG_HIDE_MIRAGE_TOWER_ROOT_FOSSIL           2360  
 #define FLAG_HIDE_MIRAGE_TOWER_CLAW_FOSSIL           2381  
-#define FLAG_CHOSE_ROOT_FOSSIL                       2382  
-#define FLAG_CHOSE_CLAW_FOSSIL                       2383  
+#define FLAG_CHOSE_ROOT_FOSSIL                       2382    // Sapphire/Ruby use it too (postgame_dex 2026-11-09): set when that fossil is taken on Route 111, so the other one returns after the Champion (scenes/Route111.inc)
+#define FLAG_CHOSE_CLAW_FOSSIL                       2383    // Sapphire/Ruby use it too (postgame_dex 2026-11-09): set when that fossil is taken on Route 111, so the other one returns after the Champion (scenes/Route111.inc)
 #define FLAG_HIDE_ROUTE_111_DESERT_FOSSIL            2384  
 #define FLAG_HIDE_DESERT_UNDERPASS_FOSSIL            2385  
 #define FLAG_DEFEATED_METEOR_FALLS_STEVEN            2386  

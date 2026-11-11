@@ -1,0 +1,18 @@
+{
+ "kind": "trainer",
+ "side": "front",
+ "sprite": 29,
+ "archive": 71,
+ "files": {
+  "static": 232,
+  "parts": 233,
+  "palette": 239
+ },
+ "name": "fisherman",
+ "note": "Fisherman",
+ "source": "community: battle_fronts_2026-11-07/fisher.png by ASalman",
+ "layout": "drawn on the parts of Black 2 front sprite 29 (its cells and animations)",
+ "colours": 15,
+ "cleared_near_background": [],
+ "made_by": "b2tools/sprite_community.py"
+}

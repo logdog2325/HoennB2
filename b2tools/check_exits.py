@@ -10,8 +10,8 @@ gyms_league_rooms.py, ship_hideouts_rooms.py) resolve them. Each room warp is ma
   - to an outdoor map: that map's door (above). Exits made before the world changed point at the next door (seen in
     game: the Cycling Road gates, the Friendship Rater's house) or at the room itself (outdoor map not built then);
   - MAP_DYNAMIC (Lilycove's Dept. Store elevator): warp id 256 = Black 2's dynamic warp (ov035 event_mapchange.c
-    EventMapChangeWarp_CreateFromEntity: dest id 0x100 -> GameData's next zone, which arriving on such a warp sets to
-    where you came from, ov012 SetupZoneWarpArrival; scripts set it with FieldSetNextZone);
+    EventMapChangeWarp_CreateFromEntity: dest id 0x100 -> GameData's next zone, which only scripts set, FieldSetNextZone:
+    arriving on such a warp does not, notes/INTERIORS.md "Dynamic warps"; the elevator's zone init sets it);
   - to another room: that room's zone and Sapphire's warp id (rooms list their warps in Sapphire's order), only
     reported (some rooms list extra warps, e.g. Mt. Pyre's holes).
     python3 b2tools/check_exits.py [WORLD_DIR] [--fix] [--quiet]

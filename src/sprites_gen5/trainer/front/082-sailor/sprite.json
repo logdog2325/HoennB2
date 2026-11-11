@@ -1,0 +1,25 @@
+{
+ "kind": "trainer",
+ "side": "front",
+ "sprite": 82,
+ "archive": 71,
+ "files": {
+  "static": 656,
+  "parts": 657,
+  "palette": 663
+ },
+ "name": "sailor",
+ "note": "Sailor",
+ "source": "community: battle_fronts_2026-11-07/Sailor.png by ASalman",
+ "layout": "drawn on the parts of Black 2 front sprite 43 (its cells and animations)",
+ "colours": 14,
+ "cleared_near_background": [
+  [
+   17,
+   193,
+   157
+  ]
+ ],
+ "made_by": "b2tools/sprite_community.py",
+ "mcss_from": 43
+}

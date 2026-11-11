@@ -72,7 +72,7 @@ def check_files(art, text):
             if m and m + MAP_BYTES > len(d): problems.append(f'{name}: map')
             if m and any((e & 0x3FF) >= tiles for e in struct.unpack_from(f'<{MAP_BYTES // 2}H', d, m)):
                 problems.append(f'{name}: map tile')
-        need = 5 + {'menu': 5, 'ribbon_grid': 24}.get(name, 0)
+        need = 5 + {'menu': 6, 'ribbon_grid': 24}.get(name, 0)     # (menu: Gen 3's five buttons + the DexNav's)
         if n != need: problems.append(f'{name}: {n} pieces, the C expects {need}')
         for k in range(n):
             ofs, w, h, _ = struct.unpack_from('<IBBH', d, table + k * PIECE_SIZE)

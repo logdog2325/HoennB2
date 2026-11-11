@@ -109,6 +109,9 @@ HF_SetGameClearFlags:                            // EverGrandeCity_HallOfFame_Ev
     h_clearflag FLAG_DEFEATED_LUGIA              //   back after every Hall of Fame (its island's zone init shows it again
     h_clearflag FLAG_DEFEATED_HO_OH              //   when the flag is clear); Celebi (Petalburg Woods, not in Emerald)
     h_clearflag FLAG_DEFEATED_CELEBI             //   follows the same rule
+#if __has_include("scenes/postgame_legends.inc")
+    VMCall HF_ResetLostLegends                   // the one-chance legendaries not caught are back too (user decision 2026-11-09:
+#endif                                           //   Regis, Kyogre/Groudon, Rayquaza, the S/R Lati: scenes/postgame_legends.inc)
 #ifdef HOENN_EMERALD
     VMCall HF_EmeraldFlags                       // Emerald's own lines of SetGameClearFlags (below)
 #endif
@@ -190,4 +193,7 @@ Mv_HF_WalkIntoHallOfFame2:                       // EverGrandeCity_HallOfFame_Mo
 #endif
 #if __has_include("scenes/ch13_gameclear.inc")
 #include "scenes/ch13_gameclear.inc"
+#endif
+#if __has_include("scenes/postgame_legends.inc")
+#include "scenes/postgame_legends.inc"
 #endif

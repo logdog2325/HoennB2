@@ -1,0 +1,26 @@
+{
+ "kind": "trainer",
+ "side": "front",
+ "sprite": 70,
+ "archive": 71,
+ "files": {
+  "static": 560,
+  "parts": 561,
+  "palette": 567
+ },
+ "name": "expert-f",
+ "note": "Expert (F)",
+ "source": "community: battle_fronts_2026-11-07/Expert_F 2.png by ASalman",
+ "layout": "drawn on the parts of Black 2 front sprite 115 (its cells and animations)",
+ "colours": 13,
+ "cleared_near_background": [
+  [
+   237,
+   144,
+   183
+  ]
+ ],
+ "made_by": "b2tools/sprite_community.py",
+ "mcss_from": 115,
+ "static_intro": true
+}

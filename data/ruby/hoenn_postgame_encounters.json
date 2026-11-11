@@ -1,0 +1,144 @@
+{
+ "_doc": "Ruby's post-game slot edits (data/hoenn_postgame_encounters.json has the rules): Sapphire's exclusives in Ruby's slots, the mirror of Sapphire's. Replaces the whole 'maps'.",
+ "maps": {
+  "Route102": {
+   "from": "sapphire",
+   "note": "Seedot 4 (10 %) stays, 5 (10 %) is Lotad",
+   "grass": {
+    "5": "SPECIES_LOTAD"
+   }
+  },
+  "Route114": {
+   "from": "sapphire",
+   "note": "Seedot 1 (20 %) / Lotad 4 (10 %); Nuzleaf 6 / Lombre 7 (5 % each); Zangoose 5 (10 %) / Seviper 8-10 (9 %)",
+   "grass": {
+    "4": "SPECIES_LOTAD",
+    "7": "SPECIES_LOMBRE",
+    "8": "SPECIES_SEVIPER",
+    "9": "SPECIES_SEVIPER",
+    "10": "SPECIES_SEVIPER"
+   }
+  },
+  "GraniteCave_B1F": {
+   "from": "sapphire",
+   "note": "Mawile 8, 10 (5 %) / Sableye 9, 11 (5 %)",
+   "grass": {
+    "9": "SPECIES_SABLEYE",
+    "11": "SPECIES_SABLEYE"
+   }
+  },
+  "GraniteCave_B2F": {
+   "from": "sapphire",
+   "note": "Mawile 6, 8, 10 (10 %) / Sableye 7, 9, 11 (10 %)",
+   "grass": {
+    "7": "SPECIES_SABLEYE",
+    "9": "SPECIES_SABLEYE",
+    "11": "SPECIES_SABLEYE"
+   }
+  },
+  "CaveOfOrigin_1F": {
+   "from": "sapphire",
+   "note": "Mawile 3, 5 (20 %) / Sableye 4 (10 %)",
+   "grass": {
+    "4": "SPECIES_SABLEYE"
+   }
+  },
+  "CaveOfOrigin_B1F": {
+   "from": "sapphire",
+   "note": "Mawile 3, 5 (20 %) / Sableye 4 (10 %)",
+   "grass": {
+    "4": "SPECIES_SABLEYE"
+   }
+  },
+  "CaveOfOrigin_B2F": {
+   "from": "sapphire",
+   "note": "Mawile 3, 5 (20 %) / Sableye 4 (10 %)",
+   "grass": {
+    "4": "SPECIES_SABLEYE"
+   }
+  },
+  "CaveOfOrigin_B3F": {
+   "from": "sapphire",
+   "note": "Mawile 3, 5 (20 %) / Sableye 4 (10 %)",
+   "grass": {
+    "4": "SPECIES_SABLEYE"
+   }
+  },
+  "VictoryRoad_B2F": {
+   "from": "sapphire",
+   "note": "Mawile 1 (20 %) / Sableye 5, 7 (15 %)",
+   "grass": {
+    "5": "SPECIES_SABLEYE",
+    "7": "SPECIES_SABLEYE"
+   }
+  },
+  "SkyPillar_1F": {
+   "from": "sapphire",
+   "note": "Mawile 0 (20 %) / Sableye 3 (10 %)",
+   "grass": {
+    "3": "SPECIES_SABLEYE"
+   }
+  },
+  "SkyPillar_3F": {
+   "from": "sapphire",
+   "note": "Mawile 0 (20 %) / Sableye 3 (10 %)",
+   "grass": {
+    "3": "SPECIES_SABLEYE"
+   }
+  },
+  "SkyPillar_5F": {
+   "from": "sapphire",
+   "note": "Mawile 0 (20 %) / Sableye 3 (10 %)",
+   "grass": {
+    "3": "SPECIES_SABLEYE"
+   }
+  },
+  "MeteorFalls_1F_1R": {
+   "from": "sapphire",
+   "note": "grass Solrock 5 (10 %) / Lunatone 6, 7 (10 %); surf Solrock 2 (5 %) / Lunatone 3, 4 (5 %)",
+   "grass": {
+    "6": "SPECIES_LUNATONE",
+    "7": "SPECIES_LUNATONE"
+   },
+   "surf": {
+    "3": "SPECIES_LUNATONE",
+    "4": "SPECIES_LUNATONE"
+   }
+  },
+  "MeteorFalls_1F_2R": {
+   "from": "sapphire",
+   "note": "grass Solrock 3, 5 (20 %) / Lunatone 4, 7 (15 %); surf Solrock 2 (5 %) / Lunatone 3, 4 (5 %)",
+   "grass": {
+    "4": "SPECIES_LUNATONE",
+    "7": "SPECIES_LUNATONE"
+   },
+   "surf": {
+    "3": "SPECIES_LUNATONE",
+    "4": "SPECIES_LUNATONE"
+   }
+  },
+  "MeteorFalls_B1F_1R": {
+   "from": "sapphire",
+   "note": "grass Solrock 3, 5 (20 %) / Lunatone 4, 7 (15 %); surf Solrock 2 (5 %) / Lunatone 3, 4 (5 %)",
+   "grass": {
+    "4": "SPECIES_LUNATONE",
+    "7": "SPECIES_LUNATONE"
+   },
+   "surf": {
+    "3": "SPECIES_LUNATONE",
+    "4": "SPECIES_LUNATONE"
+   }
+  },
+  "MeteorFalls_B1F_2R": {
+   "from": "sapphire",
+   "note": "grass Solrock 3, 7 (15 %) / Lunatone 5 (10 %); surf Solrock 2 (5 %) / Lunatone 3, 4 (5 %)",
+   "grass": {
+    "5": "SPECIES_LUNATONE"
+   },
+   "surf": {
+    "3": "SPECIES_LUNATONE",
+    "4": "SPECIES_LUNATONE"
+   }
+  }
+ }
+}

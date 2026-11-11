@@ -348,6 +348,15 @@ CHARS = {
             **SKIN, 5: (197, 197, 213), 6: (139, 131, 164), 7: (106, 98, 123), 10: (255, 222, 106),
             12: (139, 82, 82), 13: (98, 57, 65)},
             mass=(11, (57, 65, 82), {6, 7, 10}))),
+    # Sr. and Jr. (Anna & Meg on Route 117, every version; Discord report 2026-11-10: they showed Black 2's biker 62,
+    # converter/gen_trainers.py PIC_SPRITE): class 82's own picture slot 81 (Black 2's empty "no data" picture of
+    # that class, which no build, class or PWT entrant used: work/agents/frontier_core/sprites/free_fronts.py).
+    # pokeruby's sr_and_jr.png and pokeemerald's front_pics/sr_and_jr.png are the same file, so this one folder serves
+    # Sapphire, Ruby and Emerald. Battle picture only (the twins keep their overworld code). Two figures on a
+    # one-person gesture slice the junior apart, so the intro shows the still figure (as Drake's on 62's cells).
+    'sr-and-jr': dict(
+        note='Sr. and Jr. (Anna & Meg)',
+        battle=dict(pic='sr_and_jr', slot=81, layout=57, intro='still', neck=24)),
     # Ruby (version='ruby': written to the ruby/ overlay folders, notes/RUBY.md "WP0 layout"; the Ruby ROM puts them
     # in Matt's and Shelly's slots, which play the Magma admins there). Ruby draws both with the grunt overworld
     # sprites, so their sheets are the Magma grunt sheets changed to their battle designs, as Matt's and Shelly's.
@@ -738,10 +747,11 @@ def anim_frames(sp, parts, pal, ticks):
 REF = {'aqua-grunt-m': (149, 293), 'aqua-grunt-f': (150, 294), 'archie': (151, 353), 'matt': (149, 293),
        'shelly': (150, 294), 'magma-grunt-m': (149, 293), 'magma-grunt-f': (150, 294), 'maxie': (151, 353),
        'tabitha': (149, 293), 'courtney': (150, 294),
-       'wally': (127, 231), 'sidney': (79, 94), 'phoebe': (77, 93), 'glacia': (80, 96), 'drake': (100, 229)}
+       'wally': (127, 231), 'sidney': (79, 94), 'phoebe': (77, 93), 'glacia': (80, 96), 'drake': (100, 229),
+       'sr-and-jr': (62, None)}
 REF_NAME = {149: 'Plasma grunt', 150: 'Plasma grunt', 151: 'Ghetsis', 127: 'Hugh', 79: 'Grimsley', 77: 'Shauntal',
             80: 'Caitlin', 100: 'Drayden', 293: 'Plasma grunt', 294: 'Plasma grunt', 353: 'Ghetsis', 231: 'Nate',
-            94: 'Grimsley', 93: 'Shauntal', 96: 'Caitlin', 229: 'Drayden'}
+            94: 'Grimsley', 93: 'Shauntal', 96: 'Caitlin', 229: 'Drayden', 62: 'the stand-in before'}
 
 def _b2_front(s):
     """Black 2's own front sprite s (the still figure), RGBA, cropped."""
@@ -775,7 +785,9 @@ def review(names, path=None):
         fr = anim_frames(sp, parts, npal, [0, T // 3, 2 * T // 3])
         cells.append((f'new: front {b["slot"]}', [fr[-1]], 2))
         cells.append((f'intro (layout {b["layout"]})' if b.get('intro') != 'still' else 'intro: still', fr[:3], 1))
-        o = ch['overworld']
+        o = ch.get('overworld')
+        if o is None:                               # a battle picture only (Sr. and Jr.)
+            rows.append((ch['note'], cells)); continue
         gfx = o.get('gfx') or CHARS[o['base']]['overworld']['gfx']
         g, gpal = gen3_overworld(gfx)
         cells.append((game + ('' if 'gfx' in o else ' (grunt)'), [rgba(g[k], gpal) for k in (0, 3, 1, 2)], 3))

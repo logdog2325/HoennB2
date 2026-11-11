@@ -1,0 +1,15 @@
+{
+ "kind": "trainer",
+ "side": "front",
+ "sprite": 21,
+ "archive": 71,
+ "files": {
+  "static": 168,
+  "parts": 169,
+  "palette": 175
+ },
+ "name": "ninja-boy",
+ "mcss_from": 15,
+ "note": "Ninja Boy: Black 2 front sprite 15 copied (the picture the class shared before it got its own slot for the NEW set; sprite_community.py PARTS_OWN_SLOT)",
+ "made_by": "b2tools/sprite_community.py"
+}

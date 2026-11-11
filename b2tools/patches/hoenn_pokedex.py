@@ -63,6 +63,9 @@ The Hoenn area page (this patch):
   file is replaced by the roamer's place now (encounter save block +6k: hp 0 = not roaming -> "area unknown"; location
   0-19 = Sapphire's sRoamerLocations row -> its route's habitat index and its walking / surfing bits), as Sapphire's
   area screen shows its roamer.
+- Post-game wild tables (postgame_dex 2026-11-09, patches/postgame_encounters.py): with our C on, HabitatRead then calls the
+  decomp's resident HoennB2_PostgameHabitat(habitat, species), which after the Champion puts the post-game twins' values
+  into the species' cells (8 B more ITCM).
 The Habitat list (the HABITAT button; ported 2026-10-11): Hoenn's places, pages and visited bits, see the "Habitat
 list" section below.
 """
@@ -200,6 +203,9 @@ def area_code(t, a):
     t.a('push {r4, r5, lr}\nsub sp, #0x4\nldr r5, [sp, #0x10]\nstr r5, [sp, #0x0]')
     t.bl(GFL_ArcToolReadHeapNewLZGetLen)
     t.a('adds r1, r4, #0x0'); t.bl_label('RoamerFix')
+    if a.get('pg_habitat'):          # the post-game tables' species after the Champion (patches/postgame_encounters.py:
+        t.a('adds r1, r4, #0x0')     # the decomp's resident HoennB2_PostgameHabitat(habitat, species) -> habitat)
+        t.bl(a['pg_habitat'])
     t.a('add sp, #0x4\npop {r4, r5, pc}')
     # RoamerFix(buf r0, species r1) -> buf: a roamer's habitat = its place now (roamers.c save layout)
     t.label('RoamerFix')
@@ -313,6 +319,12 @@ AREA = {}                                   # habitat() -> apply_code(): the ITC
 
 
 def apply_code(code):
+    if AREA:                         # post-game wild tables (patches/postgame_encounters.py): their area-page cells
+        import b2decomp
+        AREA.pop('pg_habitat', None)
+        if b2decomp.c_on():
+            import decomp_build
+            AREA['pg_habitat'] = decomp_build.symbol('HoennB2_PostgameHabitat', code)
     base, size, sym = install_itcm(code, AREA or None)
     out = [f'ITCM {base:#x} ({size} B)']
     # ov296 work struct: +0x2b4 must be ours (fairy_ui's struct 0x328 leaves +0x2b4..+0x2df free; else grow by 4)

@@ -64,8 +64,11 @@ brief, with a code hook):
   badges. Emerald's order needs 2 bits a trainer (~8 more saved works: 64 × 2 bits); say if wanted.
 - Emerald's Leaders become ready at random (31% every 20 trainer / 60 wild battles) and in step with each other; here
   each Leader is ready once a day.
-- The first battle does not count as today's: a trainer beaten for the first time offers a rematch right away when
-  the player talks to it again (5 badges or more).
+- (Changed 2026-11-10, Discord report: with 5 badges or more Anna & Meg could be battled again at once by talking to
+  the other twin.) The first battle now counts as that day's: global script 1239 (Emerald's copy) follows each
+  TrainerFlagSet with `EmRematch ..., RM_BEATEN, id` (emerald_rematch.c: the day's reset, then the row's bit in
+  `VAR_EM_REMATCH_FIRST_0-4`), so a trainer beaten for the first time offers no rematch and says its after-battle line
+  (Emerald's PostBattle, not the after-rematch line) until tomorrow, from either NPC of a pair.
 - (Done 2026-10-18: Victory Road's entrance battle now stands at Emerald's spot by the entrance, see above.)
 - The Elite Four and Wallace rematch as they already do (their rows have no tiers).
 
@@ -73,7 +76,7 @@ brief, with a code hook):
 | What | Id |
 |---|---|
 | Script command | 299 (Black 2's BMAnmPlayInv, unused by every Black 2 and Hoenn script) = `EmRematch var, op, arg` |
-| Saved works | `VAR_EM_REMATCH_DONE_0-4` 0x4154, 0x4155, 0x415F, 0x4160, 0x4161 (fought today: bit row % 16 of work row / 16); `VAR_EM_REMATCH_LEADERS` 0x4163 (2 bits a Gym: tiers beaten 0-3); `VAR_EM_REMATCH_POSTGAME` 0x4164 (2 bits a post-game row, gym 9 + n: Wally = bits 0-1) |
+| Saved works | `VAR_EM_REMATCH_DONE_0-4` 0x4154, 0x4155, 0x415F, 0x4160, 0x4161 (fought today: bit row % 16 of work row / 16); `VAR_EM_REMATCH_FIRST_0-4` 0x4171, 0x4172, 0x4173, 0x4175, 0x4177 (beaten for the first time today, same bits; 2026-11-10); `VAR_EM_REMATCH_LEADERS` 0x4163 (2 bits a Gym: tiers beaten 0-3); `VAR_EM_REMATCH_POSTGAME` 0x4164 (2 bits a post-game row, gym 9 + n: Wally = bits 0-1) |
 | Flag | `FLAG_DAILY_EM_REMATCHES` 2756 (midnight-reset block; clear = a new day: the code clears the DONE works, sets it) |
 | Trainer ids | none new: rows use the first battles' ids (data/emerald/hoenn_trainers.json) |
 | Rematch slots | 0-294 (data/emerald/hoenn_rematch.json "slots", src/trainers/emerald_rematch/NNN_*.s): 0-291 the first 72 rows, 292-294 Wally's VR_3-5; rows 0-71 in gRematchTable's order, row 72 Wally (REMATCH_LATE: rows and slots are only appended) |

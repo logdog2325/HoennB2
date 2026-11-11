@@ -382,7 +382,70 @@ def statue():
     flat(m, WHITE, ring(3), 43, rep=(UW, UW))
     return m
 
+# Town look pass (town_look 2026-11-09): the museum (0.72 height/depth) and the shipyard (0.53) were low wide boxes
+# from Black 2's camera (Black 2's buildings: 0.8-1.7). Each gets one more storey on its front part, drawn with the
+# same textures (a wall face is one stretched or tiled region as before); the last row (the sea behind the museum, the
+# shipyard's walk-behind roof row) keeps the old height, so the camera hides no more behind them (occl.py).
+def museum2():
+    """Oceanic Museum (6x4), two storeys: green ribbed walls to 54 on the front part with a second row of windows and
+    a mint band between the storeys, the old mint roof rim and raised centre with the skylights on top; the rear 16
+    units at the old height under a flat mint roof. Door as museum()."""
+    m = Model('sl_museum')
+    X, Z0, Z1, H = 46, -32, 20, DOOR_WALL
+    H2, ZB = H + 16, Z0 + 16
+    shadow(m, -52, 52, -38, 28)
+    box_walls(m, -X, X, ZB, Z1, 0, H2, GREEN_WALL, rep=(64, H2))
+    rect(m, METAL, (-X, 0, Z1 + 0.2), E, UP, 2 * X, 5, rep=(32, 32))
+    for wx in (-30, 30): window(m, wx, 18, Z1)
+    for wx in (-30, -12, 12, 30): window(m, wx, H + 7, Z1, 14, 10)
+    rect(m, MINT, (-X, H - 1, Z1 + 0.4), E, UP, 2 * X, 3, rep=(32, 32))       # storey band
+    out = rectangle(-X - 3, X + 3, ZB - 3, Z1 + 3)
+    walls(m, MINT, out, H2 - 2, H2 + 3, rep=(32, 32))
+    inner = rectangle(-X + 8, X - 8, ZB + 6, Z1 - 10)
+    frustum(m, MINT, out, inner, H2 + 3, H2 + 8, rep=(32, 32))
+    flat(m, MINT, inner, H2 + 8, rep=(32, 32))
+    for sx, sz in ((-8, -6), (8, -6)):                                # skylights (Sapphire's roof windows)
+        face(m, GLASS, (sx - 5, H2 + 8.4, sz + 5), E, N, [(0, 0), (10, 0), (10, 10), (0, 10)], rep=(10, 10))
+    walls(m, GREEN_WALL, rectangle(-X + 2, X - 2, Z0, ZB), 0, H, rep=(64, H))   # rear part (sides only)
+    flat(m, MINT, rectangle(-X + 1, X - 1, Z0 - 1, ZB), H, rep=(32, 32))
+    decal(m, CREST, (0, H + 1, Z1 + 3.3), E, UP, 10, 10)
+    pc_door_hood(m, MINT, MINT, 0, Z1 - 4, 31, 35, band_rep=(32, 32))
+    return m
+
+def shipyard2():
+    """Stern's Shipyard (8x6), a taller warehouse: dark plank walls to 56 on the front part (a beam band at the old
+    eave and under the new one, a second window), the old roof (rim, sloped panels, flat top, two vents) on top; the
+    rear row at the old height. The dock frames east of it as shipyard()."""
+    m = Model('sl_shipyard')
+    X, Z0, Z1, H = 62, -62, 20, 40
+    H2, ZB = H + 16, Z0 + 16
+    shadow(m, -68, 68, -68, 28)
+    box_walls(m, -X, X, ZB, Z1, 0, H2, PLANKS, rep=(31, 28))       # (vertical planks: two rows of 28, not three of 20)
+    for y in (H - 6, H2 - 6):
+        rect(m, BEAM, (-X, y, Z1 + 0.2), E, UP, 2 * X, 6, rep=(62, 6))
+    rect(m, GREY, (-X, 0, Z1 + 0.2), E, UP, 2 * X, 3, rep=(62, 3))
+    out = rectangle(-X - 2, X + 2, ZB - 2, Z1 + 2)
+    inner = rectangle(-X + 6, X - 6, ZB + 6, Z1 - 6)
+    walls(m, GREY, out, H2 - 1, H2 + 3, rep=(64, 4))
+    frustum(m, METAL, out, inner, H2 + 3, H2 + 7, rep=(32, 32))
+    flat(m, METAL, inner, H2 + 7, rep=(32, 32))
+    for vx in (-40, 40):
+        face(m, VENT, (vx - 10, H2 + 7.4, -30), E, N, [(0, 0), (20, 0), (20, 12), (0, 12)], rep=(20, 12))
+    window(m, 30, 22, Z1, 22, 12)
+    window(m, -30, H + 6, Z1, 22, 12)
+    walls(m, PLANKS, rectangle(-X + 2, X - 2, Z0, ZB), 0, H, rep=(31, 20))     # rear part (sides only)
+    flat(m, METAL, rectangle(-X + 1, X - 1, Z0 - 1, ZB), H, rep=(32, 32))
+    for fz in (-24, 24):
+        for fx in (X + 8, X + 26):
+            post(m, PLANKS, fx, fz, 4, 0, 34)
+        rect(m, BEAM, (X + 6, 28, fz + 2.1), E, UP, 22, 5, rep=(22, 5))
+    return m
+
 def models():
+    if not os.environ.get('HOENN_SLATEPORT_OLD'):
+        museum, shipyard = museum2, shipyard2
+    else:
+        museum, shipyard = globals()['museum'], globals()['shipyard']
     return {'house': house(), 'annex': annex(), 'fanclub': fanclub(), 'museum': museum(), 'shipyard': shipyard(),
             'harbor': harbor(), 'awning': awning(), 'stall': stall(), 'statue': statue()}
 

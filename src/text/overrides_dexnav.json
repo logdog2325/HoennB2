@@ -1,0 +1,24 @@
+{
+ "_doc": "The DexNav's lines (notes/DEXNAV.md; all NEW, approved by the user 2026-11-09). Route 101's text file (a/0/0/3 516) holds every DexNav line, so that Birch's Lab can show them too (ActorMsg and the DexNav's info op read any file: src/field_scripts/common/dexnav_defs.inc DN_T_*). b2tools/patches/text.py installs this file only when our C is on. Line breaks are the two characters \\\\n (as every override file's): a real newline would split a line in two and move every later line.",
+ "script/0516_route_101.txt": {
+  "7": "Prof. Birch: Oh, that’s right!\\nI nearly forgot.{be01}\\nI’ve just finished building a gadget\\nthat works together with the Pokédex.{be01}\\nI’d like you to try it out for me,\\n{0100:0}!",
+  "8": "{0100:0} received the DexNav!",
+  "9": "Prof. Birch: That’s the DexNav!{be01}\\nIt shows you the Pokémon that live\\nwherever you happen to be.{be01}\\nPick one you’ve already seen, and\\nthe DexNav finds one hiding nearby!{be01}\\nMay knows how to use it.\\nShe’ll show you, I’m sure!",
+  "10": "Prof. Birch: That’s the DexNav!{be01}\\nIt shows you the Pokémon that live\\nwherever you happen to be.{be01}\\nPick one you’ve already seen, and\\nthe DexNav finds one hiding nearby!{be01}\\nBrendan knows how to use it.\\nHe’ll show you, I’m sure!",
+  "11": "May: {0100:0}! Wait up!{be01}\\nYou got a DexNav from my dad, too,\\nright? Let me show you how it works!",
+  "12": "Brendan: Hey, {0100:0}! Hold on.{be01}\\nMy dad gave you a DexNav, right?\\nI’ll show you how to use it.",
+  "13": "May: Huh? You don’t have any\\nPoké Balls?{be01}\\nYou can’t catch anything like that!\\nHere, take these!",
+  "14": "Brendan: You’re out of Poké Balls?{be01}\\nHere, take these.\\nDon’t waste them.",
+  "15": "May: The DexNav’s screen shows the\\nPokémon that live around here.{be01}\\nOnce you’ve seen a Pokémon, tap it,\\nand the DexNav looks for one.{be01}\\nLet’s look for a Poochyena!",
+  "16": "Brendan: Check the DexNav’s screen.\\nIt shows the Pokémon living here.{be01}\\nTap one you’ve seen, and the DexNav\\nsearches for it.{be01}\\nWe’ll look for a Poochyena.",
+  "17": "May: Look! The grass over there\\nis rustling!{be01}\\nA Poochyena is hiding in it.\\nSneak up on it slowly, okay?{be01}\\nIf you run or ride a Bike near it,\\nit’ll get away!{be01}\\nPokémon you find with the DexNav can\\nknow moves they don’t usually have!",
+  "18": "Brendan: See that grass shaking?\\nThere’s a Poochyena in there.{be01}\\nWalk up to it slowly. If you run or\\nride a Bike close to it, it’ll bolt.{be01}\\nThe Pokémon the DexNav finds can\\nknow moves you don’t usually see.",
+  "19": "The DexNav is reacting!{be01}\\nThe grass nearby is rustling...\\nSomething is hiding in it!",
+  "20": "May: You caught it! Nice going!{be01}\\nThe more you find a Pokémon with the\\nDexNav, the better the ones you’ll{be00}\\nfind.{be01}\\nI’m going to look for more Pokémon.\\nSee you later, {0100:0}!",
+  "21": "Brendan: You caught it.\\nNot bad.{be01}\\nThe more you find a Pokémon with the\\nDexNav, the better the ones you get.{be01}\\nI’m off to look for more Pokémon.\\nSee you around, {0100:0}.",
+  "22": "May: Oh, it fainted...{be01}\\nWell, that’s how the DexNav works!\\nThe more you search, the better the{be00}\\nPokémon you’ll find.{be01}\\nI’m going to look for more Pokémon.\\nSee you later, {0100:0}!",
+  "23": "Brendan: It fainted, huh?{be01}\\nWell, that’s the DexNav.\\nThe more you search, the better the{be00}\\nPokémon you’ll find.{be01}\\nI’m off to look for more Pokémon.\\nSee you around, {0100:0}.",
+  "24": "May: Oh, it got away...{be01}\\nThat’s okay! You can look for one\\nwith the DexNav anytime.{be01}\\nSee you later, {0100:0}!",
+  "25": "Brendan: It got away, huh?{be01}\\nNo big deal. The DexNav can find\\nanother one anytime.{be01}\\nSee you around, {0100:0}."
+ }
+}

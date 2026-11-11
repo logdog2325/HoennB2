@@ -55,12 +55,16 @@
 #define ITEM_RED_OR_BLUE_ORB        ITEM_RED_ORB
 #define MODEL_GROUDON_OR_KYOGRE     4512                // Black 2 field model of the legendary
 #define MODEL_LATIAS_OR_LATIOS      4509
+#define SPECIES_KYOGRE_OR_GROUDON   SPECIES_KYOGRE      // the other version's weather legend (Sapphire's), asleep in Seafloor Cavern Room 9
+#define MODEL_KYOGRE_OR_GROUDON     4511                //   after the Champion (postgame_dex 2026-11-09, scenes/SeafloorCavern_Room9_Postgame.inc)
 #else
 #define SPECIES_GROUDON_OR_KYOGRE   SPECIES_KYOGRE
 #define SPECIES_LATIAS_OR_LATIOS    SPECIES_LATIOS
 #define ITEM_RED_OR_BLUE_ORB        ITEM_BLUE_ORB
 #define MODEL_GROUDON_OR_KYOGRE     4511
 #define MODEL_LATIAS_OR_LATIOS      4510
+#define SPECIES_KYOGRE_OR_GROUDON   SPECIES_GROUDON     // the other version's weather legend (Ruby's), asleep in Seafloor Cavern
+#define MODEL_KYOGRE_OR_GROUDON     4512                //   Room 9 after the Champion (postgame_dex 2026-11-09)
 #endif
 
 // pokeruby constants/version.inc trainer aliases: the trainer that plays the role.

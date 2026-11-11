@@ -320,13 +320,19 @@ def views():
     erase(grid, 0, 14, 31, 23, back)
     common = lambda header=None, cursor=None, rdy=None, sparkle=None, grid_cursor=None: [header, cursor, rdy, sparkle, grid_cursor]
     return polygon, ribbon_pals, {
-        'menu': dict(layers=[message, device, dots], pieces=common(h_menu) + buttons),
+        # (+ the DexNav's button, the sixth, b2tools/dexnav_art.py; the C shows it once the player has the DexNav)
+        'menu': dict(layers=[message, device, dots], pieces=common(h_menu) + buttons + [_dexnav_button()]),
         'condition': dict(layers=[None, None, graph], pieces=common(h_cond, None, None, spark)),
         'trainers': dict(layers=[None, None, contacts], pieces=common(h_tr, ball, ready)),
         'trainer_detail': dict(layers=[detail_box, device, dots], pieces=common()),
         'ribbon_list': dict(layers=[None, None, ribbon_list], pieces=common(h_rib, ball)),
         'ribbon_grid': dict(layers=[ribbon_box, None, grid], pieces=common(h_rib, None, None, None, frame) + sm + big),
     }
+
+
+def _dexnav_button():
+    import dexnav_art
+    return dexnav_art.pokenav_menu_button()
 
 
 class Packer:

@@ -6,7 +6,10 @@ from the project's own data, so a new release regenerates them instead of anyone
 Pages (a page per version where the versions differ):
   wild-pokemon-<version>.md  every built map's wild tables as the game has them (src/encounters, the version's overlay;
                              levels already scaled), Gen 3 slot odds (converter/gen_encounters.py keeps them), the Old /
-                             Good / Super Rod split (patches/rods.py) and the Rock Smash tables (patches/hm_free.py)
+                             Good / Super Rod split (patches/rods.py) and the Rock Smash tables (patches/hm_free.py);
+                             the post-game twins' tables "after the Champion" (data/hoenn_postgame_encounters.json);
+                             the Safari Zone's rules (the gate's scripts, the decomp's include/hoennb2/safari.h and
+                             resident/safari.c; left out, like dexnav.md, without our C)
   items-<version>.md         item balls, hidden items and the berry trees per area (data/hoenn_items.json ...)
   trainers-<version>.md      Gym Leaders, Elite Four, Champion, rivals, Wally and the team bosses (data/*/hoenn_trainer_data.json)
   tms-and-hms.md             Gen 3's TMs and HMs and the TM each one is here (converter/gen_items.py, patches/new_tms.py),
@@ -14,13 +17,22 @@ Pages (a page per version where the versions differ):
   fairy-type.md              the Fairy option's retyped species, moves and new moves (patches/fairy.py)
   evolutions.md              the trade evolutions made in-game (data/trade_evos.json)
   options.md                 Birch's start-of-game questions
+  dexnav.md                  the DexNav (notes/DEXNAV.md): getting it, Route 101's tutorial, the screens, searching,
+                             sneaking, search levels, bonuses, chains and shiny odds, read from its C in the decomp
+                             (src/hoennb2/resident/dexnav.c, src/hoennb2/dexnav/dexnav_screen.c), its scripts and text
+                             (b2tools/dexnav_art.py TEXT, patches/dexnav.py); dexnav_page stops when one no longer has
+                             what the page states. Skipped (one line printed, no links to it) when the decomp tree has no
+                             HoennB2 C (include/hoennb2.h): the public source snapshot with upstream pokebw2
   postgame-<version>.md      after the Hall of Fame and outside the story: the event tickets and islands, the roamers,
                              the gifts, the new places, the other legendaries, the battles (Battle Tower / PWT or the
                              Frontier, Wally, Emerald's rematches). Read from the scripts themselves (src/field_scripts,
                              the version's overlay: levels, step limits, prizes, conditions; postgame_page stops when a
                              script no longer has what the page states), patches/roamers.py, the encounter files (Altering
                              Cave, Mirage Island) and data/emerald/hoenn_rematch.json (notes/POSTGAME.md, EVENTS.md,
-                             EMERALD_REMATCH.md, BATTLE_TOWER.md)
+                             EMERALD_REMATCH.md, BATTLE_TOWER.md); completing the Pokédex (the post-game tables, Birch's
+                             two starters, Sapphire / Ruby's other weather legend and fossil, the legendaries back after
+                             a Hall of Fame: notes/POSTGAME.md "Post-game dex completion"; Huntail and Gorebyss from the
+                             build base's personal data, the wild Pokémon holding a Deep Sea item in the 5% slot)
   battle-frontier.md         Emerald's Frontier rules (patches/frontier_core.py, notes/FRONTIER.md)
   levels.md                  the Exp. Share level curve (data/level_scaling.json, converter/level_scaling.py,
                              notes/LEVEL_SCALING.md): the rule, the table, what follows it (the one-off battles read from
@@ -28,7 +40,7 @@ Pages (a page per version where the versions differ):
                              trades), the Gym Leaders', Elite Four's and Champion's aces per version (levels_data, run per
                              version with --levels-data)
 Each version's data is read in its own process (HOENN_VERSION is read once, by b2tools/version.py)."""
-import collections, glob, json, os, re, subprocess, sys
+import collections, glob, json, os, re, struct, subprocess, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, '..'))
@@ -178,7 +190,28 @@ def rock_smash_tables():
                      for m in e['rock_smash_mons']['mons']]
     return out
 
-def wild_page(names):
+def _sections(t, names):
+    """[(title, rows)] of a parsed encounter table: grass / cave floor, surfing and the three rods."""
+    sec = []
+    if t.get('GrassEncounters'): sec.append(('Grass and cave floor', combine(t['GrassEncounters'], GRASS, names)))
+    if t.get('SurfEncounters'): sec.append(('Surfing', combine(t['SurfEncounters'], SURF, names)))
+    rip = t.get('RipplingFishingEncounters') or []
+    if rip[:2]: sec.append(('Old Rod', combine(rip[:2], OLD_ROD, names)))
+    if rip[2:5]: sec.append(('Good Rod', combine(rip[2:5], GOOD_ROD, names)))
+    if t.get('FishingEncounters'): sec.append(('Super Rod', combine(t['FishingEncounters'], SUPER_ROD, names)))
+    return sec
+
+AFTER_CHAMPION = 'after the Champion'
+
+def wild_areas(names):
+    """[(maps, sections, after)] of every area with wild Pokémon, in the page's order: maps sharing an encounter file,
+    sections [(title, rows)], and after {title: rows}: the sections the area's post-game twin changes. After the Champion
+    (FLAG_SYS_GAME_CLEAR) a zone whose file is one of a version's maps in data/hoenn_postgame_encounters.json (data/ruby/,
+    data/emerald/ replace its "maps") reads the twin instead (converter/gen_postgame_encounters.py writes the twins,
+    b2tools/patches/postgame_encounters.py pairs them, keyed by the file; notes/POSTGAME.md "Post-game dex completion")."""
+    sys.path.insert(0, os.path.join(ROOT, 'converter'))
+    import gen_postgame_encounters
+    pg_files, pg_maps = gen_postgame_encounters.load()
     enc = version.load_json(os.path.join(ROOT, 'data', 'hoenn_encounters.json'))
     by_file = collections.defaultdict(list)
     for m, f in enc.items():
@@ -187,23 +220,103 @@ def wild_page(names):
         by_file[f].append(m)
     files = {int(os.path.basename(p)[:4]): p for p in version.overlay(os.path.join(ROOT, 'src', 'encounters'), '*.s')}
     smash = rock_smash_tables()
-    areas = []
+    areas, shown = [], set()
     for f, maps in by_file.items():
         if f not in files: continue
-        t = parse_encounters(files[f])
-        sec = []
-        if t.get('GrassEncounters'): sec.append(('Grass and cave floor', combine(t['GrassEncounters'], GRASS, names)))
-        if t.get('SurfEncounters'): sec.append(('Surfing', combine(t['SurfEncounters'], SURF, names)))
-        rip = t.get('RipplingFishingEncounters') or []
-        if rip[:2]: sec.append(('Old Rod', combine(rip[:2], OLD_ROD, names)))
-        if rip[2:5]: sec.append(('Good Rod', combine(rip[2:5], GOOD_ROD, names)))
-        if t.get('FishingEncounters'): sec.append(('Super Rod', combine(t['FishingEncounters'], SUPER_ROD, names)))
+        sec = _sections(parse_encounters(files[f]), names)
+        after = {}
+        twins = {pg_files[m] for m in maps if m in pg_maps}
+        if len(twins) > 1: raise SystemExit(f'gen_docs: file {f} has two post-game twins {twins}: update wild_areas')
+        if twins:
+            twin = twins.pop()
+            if '_pg_' not in os.path.basename(files.get(twin, '')):
+                raise SystemExit(f'gen_docs: post-game twin {twin} of {maps} is not a _pg_ table: update wild_areas')
+            before = dict(sec)
+            for title, rows in _sections(parse_encounters(files[twin]), names):
+                if before.get(title) != rows: after[title] = rows
+            if not after or set(after) - set(before):
+                raise SystemExit(f'gen_docs: the post-game twin of {maps} changes nothing or adds a section: update wild_areas')
+            shown.update(m for m in maps if m in pg_maps)
         for m in maps:
             if m in smash: sec.append(('Rock Smash', combine(smash.pop(m), ROCK_SMASH, names)))
-        if sec: areas.append((sorted(maps, key=place_key), sec))
+        if sec: areas.append((sorted(maps, key=place_key), sec, after))
     for m, mons in smash.items():                            # a rock-smash map without other wild Pokémon
-        areas.append(([m], [('Rock Smash', combine(mons, ROCK_SMASH, names))]))
+        areas.append(([m], [('Rock Smash', combine(mons, ROCK_SMASH, names))], {}))
+    if set(pg_maps) - shown:
+        raise SystemExit(f'gen_docs: post-game tables of {sorted(set(pg_maps) - shown)} are not on the page: update wild_areas')
     areas.sort(key=lambda a: place_key(a[0][0]))
+    return areas
+
+def area_name(maps):
+    return ' / '.join(place(m) for m in maps)
+
+def postgame_new(areas):
+    """{species name: [(area name, how)]} of the Pokémon an area has only after the Champion (how: the section titles)."""
+    out = collections.OrderedDict()
+    for maps, sec, after in areas:
+        before = dict(sec)
+        hows = collections.defaultdict(list)
+        for title, rows in after.items():
+            old = {r[0] for r in before.get(title, [])}
+            for r in rows:
+                if r[0] not in old: hows[r[0]].append(title)
+        for mon, ts in hows.items():
+            out.setdefault(mon, []).append((area_name(maps), ts))
+    return out
+
+def safari_rules(names):
+    """The Safari Zone's game (user decision 2026-11-10, notes/DECISIONS.md; notes/STORY_HANDOFFS.md "Safari Zone"), as
+    the gate's scripts (1138, scenes/SafariZone_Southeast.inc), the announcements (1260, src/text/overrides_safari.json)
+    and our C (decomp include/hoennb2/safari.h, src/hoennb2/resident/safari.c) have it: the wild page's section's lines,
+    or None without our C (the public snapshot)."""
+    if not has_our_c():
+        print(f'{version.NAME}: the Safari Zone rules left out of wild-pokemon-{version.VERSION}.md (the decomp tree has no HoennB2 C)')
+        return None
+    rel_h, rel_c = 'include/hoennb2/safari.h', 'src/hoennb2/resident/safari.c'
+    h, c = _decomp_c(rel_h), _decomp_c(rel_c)
+    steps, flee = _c_define(h, 'HOENNB2_SAFARI_STEPS', rel_h), _c_define(h, 'HOENNB2_SAFARI_FLEE_PERCENT', rel_h)
+    for t in ('script = HOENNB2_SCRID_SAFARI_OUT_OF_BALLS;', 'PlayerSave_GetStepCounter(playerSave) >= HOENNB2_SAFARI_STEPS',
+              'if (!sInSafari && zone != HOENNB2_SAFARI_GATE_ZONE) {', 'TakeSafariBalls(gameData);',
+              'GFL_RandomMTRange(100) < HOENNB2_SAFARI_FLEE_PERCENT', '(param->item == ITEM_SAFARI_BALL) != (sInSafari != FALSE)',
+              'return zone == HOENNB2_SAFARI_REST_HOUSE_ZONE || GetZoneMatrixId(zone) == GetZoneMatrixId(HOENNB2_SAFARI_MATRIX_ZONE);',
+              'return HOENNB2_TRAP_NONE;', 'BOOL HoennB2_Safari_CheckSureEscape('):
+        if t not in c: raise SystemExit(f'gen_docs: {rel_c} no longer has {t!r}: update safari_rules')
+    if "Emerald's two expansion parts share it" not in h:
+        raise SystemExit(f"gen_docs: {rel_h}: Emerald's Safari expansion is no longer in the game: update safari_rules")
+    gate = '1138_room_Route121_SafariZoneEntrance.s'
+    fee, balls = _define(gate, 'SZE_FEE'), _define(gate, 'SZE_BALLS')
+    _need(gate, 'h_checkitem ITEM_POKEBLOCK_CASE, 1, C8B_SEL', 'PokePartyGetCount C8B_A, 0', 'BoxGetCount C8B_A, 5',
+          'c8b_take_safari_balls               // (discord_fixes', 'ItemAdd ITEM_SAFARI_BALL, SZE_BALLS, C8B_B',
+          'PedometerEnd', 'PedometerStart', 'h_setvar VAR_SAFARI_ZONE_STATE, 2')
+    _need('scenes/SafariZone_Southeast.inc', 'h_setvar VAR_SAFARI_ZONE_STATE, 3', 'SZSE_Camper:', 'h_yesno T_CamperAsk, C8B_SEL')
+    _need('1260_global_pokedex_rating.s', 'SystemMsg T_SafariTimesUp, 2', 'SystemMsg T_SafariOutOfBalls, 2')
+    over = json.load(open(os.path.join(ROOT, 'src', 'text', 'overrides_safari.json'), encoding='utf-8'))
+    def line(f, n):
+        return '"' + over[f][str(n)].replace('\\n', ' ').replace('’', "'") + '"'
+    times_up = line('script/0434.txt', _define('1260_global_pokedex_rating.s', 'T_SafariTimesUp'))
+    no_balls = line('script/0434.txt', _define('1260_global_pokedex_rating.s', 'T_SafariOutOfBalls'))
+    only = line('system/0001.txt', _c_define(h, 'HOENNB2_MSG_SAFARI_BALLS_ONLY', rel_h))
+    outside = line('system/0001.txt', _c_define(h, 'HOENNB2_MSG_SAFARI_BALLS_OUTSIDE', rel_h))
+    case = names.item(_key_item('ITEM_POKEBLOCK_CASE'))
+    ball = names.item('ITEM_SAFARI_BALL')
+    return ['## Safari Zone rules\n',
+            'The Safari Zone, north of Route 121, is a game as in Gen 3:\n',
+            f'- **Entering:** the gate on Route 121 charges ${fee:,} and gives you {balls} {ball}s. You need the {case}, and '
+            "with a full party a free place in your PC's Boxes (a Pokémon you catch goes there).",
+            f'- **The game** lasts {steps} steps. It is over when you have walked them ({times_up}) or when your {ball}s '
+            f'run out, after the battle in which you threw the last one ({no_balls}). Then you are back at the gate. The '
+            'attendant by the door inside lets you leave sooner.',
+            f'- **Leftover {ball}s** are taken back when the game ends. Flying away, Teleport or blacking out ends the game '
+            'too, and takes the balls.',
+            f'- **Battles** are normal battles: your Pokémon fight as anywhere else (there is no bait or rock). Only {ball}s '
+            f"can be thrown ({only}), and they can't be used anywhere else ({outside}). Each turn, the wild Pokémon runs "
+            f'away {flee}% of the time. You can always run, as in Gen 3: no ability such as Shadow Tag stops you.',
+            '- The DexNav works here too: a search costs only the steps you walk, and its Pokémon follow the same rules.'
+            + (" Emerald's two new areas (after the Hall of Fame) are part of the game." if version.is_emerald() else '')]
+
+def wild_page(names):
+    areas = wild_areas(names)
+    safari = safari_rules(names)
     v = version.NAME
     L = [HEADER, f'# Wild Pokémon: {version.PUBLIC_NAME}\n',
          f'Every area with wild Pokémon, as the game has them. The tables are {v}\'s own (from the '
@@ -212,24 +325,41 @@ def wild_page(names):
          'levels here are the ones you meet.\n',
          '- Each rod fishes its own table, as in Gen 3: the Old Rod, the Good Rod and the Super Rod.',
          '- Rock Smash: breaking a rock sometimes starts a battle, as in Gen 3.',
-         '- Percentages add up the slots of the same Pokémon.\n',
+         '- Percentages add up the slots of the same Pokémon.',
+         '- **After the Champion** (from your first Hall of Fame on), some areas use a second '
+         f'table, marked "{AFTER_CHAMPION}": the other versions\' Pokémon take some of their slots, so you can catch '
+         f'them without trading ([completing the Pokédex](postgame-{version.VERSION}.md#completing-the-pokédex)).'
+         + ('' if safari else '\n'),
+         *(['- **Safari Zone:** its areas are a game with its own rules ([Safari Zone rules](#safari-zone-rules)).\n']
+           if safari else []),
          '## Areas\n']
-    L += [f'- [{" / ".join(place(m) for m in maps)}](#{_anchor(" / ".join(place(m) for m in maps))})' for maps, _ in areas]
-    for maps, sec in areas:
-        L += ['', f'## {" / ".join(place(m) for m in maps)}']
+    L += [f'- [{area_name(maps)}](#{_anchor(area_name(maps))})' + (f' (changes {AFTER_CHAMPION})' if after else '')
+          for maps, _, after in areas]
+    for maps, sec, after in areas:
+        L += ['', f'## {area_name(maps)}']
         for title, rows in sec:
             L += ['', f'**{title}**', '', '| Pokémon | Level | Chance |', '|---|---|---|']
             L += [f'| {a} | {b} | {c} |' for a, b, c in rows]
+            if title in after:
+                L += ['', f'**{title}, {AFTER_CHAMPION}**', '', '| Pokémon | Level | Chance |', '|---|---|---|']
+                L += [f'| {a} | {b} | {c} |' for a, b, c in after[title]]
+                new = [r[0] for r in after[title] if r[0] not in {x[0] for x in rows}]
+                if new: L += ['', f'New {AFTER_CHAMPION}: {_join(new)}.']
         if 'Route119' in maps:                               # patches/feebas.py: Gen 3's hidden spots, no table of their own
             scale = json.load(open(os.path.join(ROOT, 'data', 'level_scaling.json')))['curve']['table']
             L += ['', f'**Feebas: fish on Route 119, 6 spots.** Six water tiles of the route, different in every save and fixed '
                       f'for that save, as in Gen 3: fishing there with any rod, half the bites are a Feebas (Lv {scale["20"]}-{scale["25"]}), '
                       'the others come from the tables above.']
+    if safari: L += [''] + safari
     return '\n'.join(L) + '\n'
 
 def _anchor(s):
     s = s.lower().replace(' / ', '--')
     return re.sub(r'[^a-z0-9 _-]', '', s).replace(' ', '-')
+
+def _slug(s):
+    """GitHub's anchor of a heading (letters with accents kept, as 'completing-the-pokédex')."""
+    return re.sub(r'[^\w\- ]', '', s.lower()).replace(' ', '-')
 
 
 # ---- items ------------------------------------------------------------------------------------------------------------
@@ -413,7 +543,8 @@ def options_page():
          '| The Fairy type | Yes / No | Yes: the Fairy type, Gen 6\'s type chart, new Fairy moves ([details](fairy-type.md)). No: Black 2\'s types. |',
          '| Physical / special | Each move\'s own / By type | Modern split (each move is physical or special), or the classic Gen 3 rule (the move\'s type decides). |',
          '| Music | Hoenn / Unova | Hoenn\'s original soundtrack played on Black 2\'s instruments, or Black 2\'s music. |',
-         '| Character sprites | Classic / New | The Gen 3 style overworld sprites, or new Gen 5 style ones. |',
+         '| Character sprites | Classic / New | The Gen 3 style sprites, or new Gen 5 style ones made by community artists: '
+         'overworld sprites, and battle sprites for many trainers. |',
          '| Seasons | Yes / No | Yes: Black 2\'s seasons follow the month on your DS clock (spring: Jan/May/Sep, summer: '
          'Feb/Jun/Oct, autumn: Mar/Jul/Nov, winter: Apr/Aug/Dec). No: summer all year, as in Ruby and Sapphire. |',
          '| The Exp. Share | Yes / No | Yes: you start with the Exp. Share in your Key Items, switched on: Pokémon that '
@@ -447,6 +578,217 @@ def frontier_page(names):
          '## Trainer Hill\n',
          'North of Mauville on Route 111, open after the Hall of Fame. Four modes (Normal, Variety, Unique, Expert Tag '
          'Match), four floors each, against the clock. The owner on the roof gives a prize by your time.\n']
+    return '\n'.join(L)
+
+
+# ---- the DexNav -------------------------------------------------------------------------------------------------------
+def has_our_c():
+    """True when the decomp tree (b2decomp.SRC) has HoennB2's own C (include/hoennb2.h): the private repo's, where the
+    DexNav page and the Safari Zone's rules read its code and every check applies (a missing file stops the run). The
+    public source snapshot is used with upstream pokebw2, which has none of it: there dexnav.md and the Safari rules are
+    skipped with a one-line note, and nothing links them."""
+    return os.path.exists(os.path.join(B2, 'include', 'hoennb2.h'))
+
+def _decomp_c(rel):
+    """A file of the decomp tree the build uses (b2decomp.SRC): the DexNav's and the Safari Zone's C is ours, in
+    include/hoennb2 and src/hoennb2 (decomp_changes/hoennb2_decomp.patch)."""
+    p = os.path.join(B2, rel)
+    if not os.path.exists(p): raise SystemExit(f'gen_docs: no {rel} in {B2} (it has HoennB2\'s C otherwise): the guide reads it')
+    return open(p, encoding='utf-8').read()
+
+def _c_define(src, name, rel):
+    m = re.search(rf'#define\s+{name}\s+(\d+)\b', src)
+    if not m: raise SystemExit(f'gen_docs: {rel} has no {name} any more: update dexnav_page')
+    return int(m.group(1))
+
+def _c_body(src, name, rel):
+    m = re.search(rf'\nstatic u32 {name}\(u32 level(?:, u32 chain)?\) \{{\n(.*?)\n\}}\n', src, re.S)
+    if not m: raise SystemExit(f'gen_docs: {rel} has no {name} as the page reads it: update dexnav_page')
+    return m.group(1)
+
+def _c_ladder(body, name, rel):
+    """`return level >= 100 ? 25 : level >= 50 ? 20 : ... : 0;` -> [(100, 25), (50, 20), ..., (0, 0)]."""
+    m = re.fullmatch(r'\s*return ((?:level >= \d+ \? \d+ : )+)(\d+);\s*', body)
+    if not m: raise SystemExit(f'gen_docs: {rel} {name} is no longer a simple ladder: update dexnav_page')
+    return [(int(a), int(b)) for a, b in re.findall(r'level >= (\d+) \? (\d+)', m.group(1))] + [(0, int(m.group(2)))]
+
+def dexnav_page(names):
+    """dexnav.md (notes/DEXNAV.md): the DexNav in every version, read from its code (the decomp's
+    src/hoennb2/resident/dexnav.c and src/hoennb2/dexnav/dexnav_screen.c), its scripts (the Lab's gift, Route 101's
+    tutorial), its text (b2tools/dexnav_art.py TEXT) and b2tools/patches/dexnav.py (the tutorial's species and moves)."""
+    if not has_our_c():
+        return None
+    import dexnav_art, dexnav as dexnav_patch
+    rel_c, rel_s, rel_h = 'src/hoennb2/resident/dexnav.c', 'src/hoennb2/dexnav/dexnav_screen.c', 'include/hoennb2/dexnav.h'
+    c, scr, h = _decomp_c(rel_c), _decomp_c(rel_s), _decomp_c(rel_h)
+    # the screen's lines, by dexnav_screen.c's TXT_ names
+    enum = re.search(r'// The text file\'s lines \(b2tools/dexnav_art.py TEXT\)\nenum \{\n(.*?)\n\};', scr, re.S)
+    if not enum: raise SystemExit(f'gen_docs: {rel_s} has no TXT_ list any more: update dexnav_page')
+    txt, i = {}, 0
+    for name, num in re.findall(r'(TXT_\w+)(?: = (\d+))?,', enum.group(1)):
+        i = int(num) if num else i
+        txt[name] = dexnav_art.TEXT[i].replace('\\n', ' ').replace('’', "'")
+        i += 1
+    say = lambda k: f'"{txt[k]}"'
+    # the numbers
+    spot_min, spot_near, spot_max = (_c_define(c, n, rel_c) for n in ('SPOT_MIN', 'SPOT_NEAR', 'SPOT_MAX'))
+    flee = _c_define(c, 'FLEE_DISTANCE', rel_c)
+    odds = _c_define(c, 'SHINY_ODDS', rel_c)
+    lv_max, chain_max = _c_define(h, 'DEXNAV_LEVEL_MAX', rel_h), _c_define(h, 'DEXNAV_CHAIN_MAX', rel_h)
+    reveal = {k: _c_define(scr, f'REVEAL_{k}', rel_s) for k in ('POTENTIAL', 'ABILITY', 'MOVE')}
+    ivs_body = _c_body(c, 'PerfectIVs', rel_c)
+    ivs = [(int(a), int(b), int(x or 0)) for a, b, x in
+           re.findall(r'if \(level >= (\d+)\) \{\s*return (\d+)(?: \+ Chance\((\d+)\))?;\s*\}', ivs_body)]
+    last = re.search(r'\}\s*return Chance\((\d+)\);\s*$', ivs_body)
+    if not ivs or not last: raise SystemExit(f'gen_docs: {rel_c} PerfectIVs changed shape: update dexnav_page')
+    ivs.append((0, 0, int(last.group(1))))
+    ladders = {k: _c_ladder(_c_body(c, f, rel_c), f, rel_c) for k, f in
+               (('ability', 'HiddenAbilityChance'), ('egg', 'EggMoveChance'), ('item', 'RareItemChance'))}
+    sh = re.search(r'rolls = \(chain >= (\d+) \? (\d+) : chain / (\d+)\) \+ level / (\d+);\s*'
+                   r'if \(chain == (\d+) \|\| chain == (\d+)\) \{\s*rolls \+= (\d+);', _c_body(c, 'ShinyRolls', rel_c))
+    if not sh: raise SystemExit(f'gen_docs: {rel_c} ShinyRolls changed shape: update dexnav_page')
+    cap_at, cap, per_chain, per_level, bonus_a, bonus_b, bonus = (int(x) for x in sh.groups())
+    def rolls(level, chain):
+        return (cap if chain >= cap_at else chain // per_chain) + level // per_level + (bonus if chain in (bonus_a, bonus_b) else 0)
+    def one_in(n):            # the game's own try, then n more, each 1 in `odds`
+        return f'1 in {round(1 / (1 - (1 - 1 / odds) ** (1 + n))):,}'
+    # what the page states, as the code has it
+    for t in ('AddSlots(list, dex, gameData, enc->grass, 12, DEXNAV_GROUP_LAND', 'AddSlots(list, dex, gameData, enc->surf, 5, DEXNAV_GROUP_WATER',
+              'if (FieldPlayer_GetExState(player) == FLD_PLAYER_EXSTATE_CYCLING) {', 'acmd >= ACMD_DASH',
+              'if (result == BTL_RESULT_VICTORY || result == BTL_RESULT_CAPTURE) {\n            AddSearchLevel(gameData, work->species);',
+              'chainSpecies == work->species && chain < DEXNAV_CHAIN_MAX ? chain + 1 : 1', '} else if (!work->tutorial) {\n            SetChain(gameData, work->species, 0);',
+              'chain = 0;                          // another species: the chain starts again',
+              'HoennB2_DexNav_RandomEncounter(EncountSystem *system, u32 mode) {\n    if (CFG != NULL && system != NULL && system->field != NULL && SpotIsOurs(system)) {\n        return NULL;',
+              'sSearch.item = (u16)PML_PersonalGetParamSingle(sSearch.species, sSearch.form, PERSONAL_ITEM_2);',
+              'return hidden != 0 && hidden != PML_PersonalGetParamSingle(species, form, PERSONAL_ABILITY_1)',
+              'slot = i;       // the first empty slot, else the first move\'s', 'PokeParty_SetParam(pkm, PKM_PARAM_IV_HP + k, 31);',
+              'if (mon->group == DEXNAV_GROUP_WATER && ExState(field) != FLD_PLAYER_EXSTATE_SURF) {',
+              '} else if (!sSearch.tutorial && PlayerRunsOrRides(system->field)) {', 'EventWildBattleCall_CreateCore(system->gsys, system->field, setup, 0, 0, 0xff)',
+              'sSearch.eggMove = CFG->tutorialMoves[GFL_RandomLC(3)];', 'kind = 4;'):
+        if t not in c: raise SystemExit(f'gen_docs: {rel_c} no longer has {t!r}: update dexnav_page')
+    for t in ('Dn_BlitHome(work, PIECE_CROWN);', 'Dn_Message(work, TXT_UNSEEN);', 'search->hiddenAbility', 'search->eggMove != 0'):
+        if t not in scr: raise SystemExit(f'gen_docs: {rel_s} no longer has {t!r}: update dexnav_page')
+    if 'TXT_CHAIN' in scr.split('// The files (b2tools/dexnav_art.py', 1)[1]:
+        raise SystemExit(f'gen_docs: {rel_s} shows the chain now: update dexnav_page')
+    _need('0792_birch_lab.s', 'VMCall DN_LabGive                             // the DexNav, after the Poké Balls', 'VMCall DN_LabOwed')
+    lab = _src('0792_birch_lab.s').split('\nScript_7:', 1)[1]
+    if lab.find('VMCall DN_LabOwed') > lab.find('VMCall PG_LabStartersDue'):      # (an old save: the DexNav before anything else)
+        raise SystemExit('gen_docs: Birch no longer gives an old save the DexNav first: update dexnav_page')
+    _need('scenes/BirchLab_DexNav.inc', 'MEPlay SEQ_ME_KEYITEM', 'h_setvar VAR_DEXNAV_STATE, DN_STATE_TUTORIAL', 'DN_LabOwed:',
+          'h_goto_if_ne VAR_BIRCH_LAB_STATE, 5, L_DN_OwedDone', 'h_goto_if_ne VAR_DEXNAV_STATE, DN_STATE_NONE, L_DN_OwedDone')
+    _need('0634_route_101.s', '#include "scenes/Route101_DexNav.inc"')
+    _need('scenes/Route101_DexNav.inc', 'h_goto_if_ne DN_W_A, 0, DN_TutHasBalls', 'h_msgbox_gendered DN_T_INTRO_MAY, DN_T_INTRO_BRENDAN')
+    balls = _num('scenes/Route101_DexNav.inc', r'h_giveitem ITEM_POKE_BALL, (\d+)')
+    if "'-D', 'HOENN_DEXNAV'" not in open(os.path.join(HERE, 'patches', 'scripts.py'), encoding='utf-8').read():
+        raise SystemExit('gen_docs: the scripts no longer build the DexNav: update dexnav_page')
+    if '[_dexnav_button()]' not in open(os.path.join(HERE, 'pokenav_art.py'), encoding='utf-8').read() \
+            or "'DEXNAV')" not in open(os.path.join(HERE, 'dexnav_art.py'), encoding='utf-8').read():
+        raise SystemExit('gen_docs: the PokéNav menu has no DEXNAV button any more: update dexnav_page')
+    tut = names.species(dexnav_patch.TUTORIAL_SPECIES)
+    tut_moves = _or(names.move(m) for m in dexnav_patch.TUTORIAL_MOVES)
+    if dexnav_patch.TUTORIAL_MAP != 'Route101': raise SystemExit('gen_docs: the DexNav tutorial moved: update dexnav_page')
+
+    # the bonus table: a row per search-level band
+    lows = sorted({lo for lo, _, _ in ivs} | {lo for lad in ladders.values() for lo, _ in lad})
+    def at(lad, level): return next(v for lo, v in lad if level >= lo)
+    def ivs_at(level):
+        base, x = next((b, x) for lo, b, x in ivs if level >= lo)
+        return f'{x}% chance of 1' if not base else f'{base}, {x}% chance of {base + 1}' if x else f'{base}'
+    rows = []
+    for k, lo in enumerate(lows):
+        hi = lows[k + 1] - 1 if k + 1 < len(lows) else lv_max
+        rows.append(f'| {lo}-{hi} | {ivs_at(lo)} | {at(ladders["ability"], lo)}% | {at(ladders["egg"], lo)}% | {at(ladders["item"], lo)}% |')
+    chains = sorted({0, per_chain, 5 * per_chain, cap_at - 1, cap_at, cap_at + 1, bonus_a, bonus_b})
+    levels = (0, per_level, 2 * per_level, lv_max)
+
+    L = [HEADER, '# The DexNav\n',
+         'The DexNav of Omega Ruby and Alpha Sapphire, in all three versions. It sits on the touch screen while you '
+         'explore (the screen that used to stay empty) and has a page in the PokéNav. It shows the wild Pokémon of the '
+         'place you are in, and it finds hidden Pokémon for you: they can come with perfect IVs, an egg move, their '
+         'hidden ability or a rare held item, and now and then a shiny one.\n',
+         '## Getting it\n',
+         'Prof. Birch gives you the DexNav in his Lab, together with the Pokédex, right after your rival gives you Poké '
+         'Balls. The touch screen turns into the DexNav at once.\n',
+         'Already playing? If your save has its Pokédex from an older version, talk to Prof. Birch in his Lab and he gives '
+         'you the DexNav, before anything else he has for you.\n',
+         '## The tutorial on Route 101\n',
+         'The first time you step into the tall grass of Route 101 after getting it, your rival (May, or Brendan if you '
+         'play as May) runs up and shows you how it works:\n',
+         f'- If you have no Poké Balls left, your rival gives you {balls}.',
+         f'- The DexNav finds a {tut} hiding in shaking grass a few steps away. It knows {tut_moves}, one of its egg '
+         'moves.',
+         '- Walk onto the shaking grass to battle it. It is a normal wild battle: catch it or knock it out. This one '
+         'doesn\'t run off if you hurry.',
+         '- Afterwards your rival says goodbye and leaves. If you leave Route 101 before the battle, the shaking grass is '
+         'back the next time you walk there.\n',
+         '## The screen\n',
+         '**The area map.** A map of the place you are in, drawn with its Gen 3 tiles. Each of its wild Pokémon stands on '
+         'a tile of the kind it lives on: the ones of the tall grass, cave floor or sand on the ground, the ones you meet '
+         'while surfing on the water. A Pokémon you have caught is in colour, one you have only seen is a dark shape, and '
+         'one you haven\'t seen is a "?". A crown appears when you have caught every Pokémon of the place, and tapping '
+         'the map tells you how far you are (' + ', '.join(say(k) for k in ('TXT_PROGRESS_SOME', 'TXT_PROGRESS_ALMOST', 'TXT_PROGRESS_DONE'))
+         + f'). A place without wild Pokémon shows {say("TXT_NONE")} The POKéNAV button opens the PokéNav, once you have it.\n',
+         'The DexNav lists the Pokémon of the tall grass, cave floors, sand and water. Pokémon you fish, find with Rock '
+         'Smash or meet roaming, and Feebas, aren\'t on it. After the Champion it shows the area\'s new Pokémon too '
+         '(completing the Pokédex: ' + ', '.join(f'[{VNAME[v]}](postgame-{v}.md#completing-the-pokédex)' for v in version.VERSIONS)
+         + ').\n',
+         f'**Found Pokémon.** Tap a Pokémon you have seen: its picture, name, type and search level, and SEARCH. (One '
+         f'you haven\'t seen: {say("TXT_UNSEEN")})\n',
+         '**Hidden Pokémon.** While a Pokémon hides, this shows what the DexNav knows about it. Its level always; the '
+         'rest only from a high enough search level for that species (before that it shows "???"):\n',
+         '| Shown | From search level |', '|---|---|',
+         '| Level | always |',
+         f'| Potential: a gold star for each perfect IV (up to three) | {reveal["POTENTIAL"]} |',
+         f'| Ability ("!" for its hidden ability) | {reveal["ABILITY"]} |',
+         f'| First Move ("!" for an egg move) | {reveal["MOVE"]} |', '',
+         'The bonuses are decided when the search starts, so the battle\'s Pokémon is the one the screen shows.\n',
+         '## Searching\n',
+         '1. Tap a Pokémon on the area map, then SEARCH. Pokémon of the ground need you on foot; for one of the water you '
+         f'must be surfing ({say("TXT_NEED_SURF")}).',
+         f'2. The DexNav hides it {spot_near} to {spot_max} steps away ({spot_min} when there is no room further out), in '
+         'a spot you can walk (or surf) to: shaking tall grass, a dust cloud on a cave floor or in the desert sand, or '
+         f'rippling water. {say("TXT_ACTIVE")} When there is nowhere to put it: {say("TXT_NOT_FOUND")}',
+         '3. Walk onto the spot: a wild battle with that Pokémon starts, with the normal wild battle music. Catch it or '
+         'knock it out.\n',
+         '- While it hides, no other wild Pokémon jump out at you.',
+         f'- If you leave the area, or someone walks onto the spot, it is gone ({say("TXT_LOST")}).',
+         '- The DexNav also works as a page of the PokéNav: its DEXNAV button. There the D-pad moves a cursor over the '
+         'Pokémon and A picks one; starting a search closes the PokéNav.\n',
+         '## Sneaking\n',
+         f'Walk to it. If you run (holding B) or ride your Bicycle within {flee} steps of the spot, the Pokémon runs off '
+         f'({say("TXT_FLED")}) and your chain ends.\n',
+         '## Search levels\n',
+         f'Every species has its own search level. It goes up by 1 each time you catch or knock out a Pokémon of that '
+         f'species found with the DexNav (the tutorial\'s counts too), up to {lv_max}. The Found and Hidden screens show '
+         'it. A higher search level shows more on the Hidden screen ([above](#the-screen)) and gives better bonuses. '
+         'Saves from older versions start every species at 0.\n',
+         '## Bonuses\n',
+         'Each Pokémon the DexNav finds can get these, by the search level of its species:\n',
+         '| Search level | Perfect IVs | Hidden ability | Egg move | Rare held item |', '|---|---|---|---|---|'] + rows + [
+         '',
+         '- **Perfect IVs:** that many of its six stats get the highest IV, 31 (different stats, at random).',
+         '- **Hidden ability:** its hidden ability (from Black 2\'s data), only for a Pokémon whose hidden ability '
+         'differs from its usual ones. Otherwise it has one of its usual abilities.',
+         '- **Egg move:** one of its egg moves (for an evolved Pokémon, its first stage\'s), in its first empty move '
+         'slot, or in place of its first move.',
+         '- **Rare held item:** it holds its rarer wild item, the one wild Pokémon of its kind hold 5% of the time (only '
+         'Pokémon that have one).\n',
+         '## Chains and shiny Pokémon\n',
+         f'Your chain goes up by 1 each time you catch or knock out a DexNav Pokémon of the same species as the last one '
+         f'(up to {chain_max}). It goes back to 0 when you search for another species, when the Pokémon runs off or its '
+         'spot is lost, and when you run from the battle or lose it. The DexNav doesn\'t show the chain: count it '
+         'yourself.\n',
+         f'Every wild Pokémon has a 1 in {odds:,} chance to be shiny. A DexNav Pokémon gets extra tries at that chance: '
+         f'one for every {per_chain} in your chain ({cap} from a chain of {cap_at} on), one for every {per_level} search '
+         f'levels of its species, and {bonus} more when your chain is exactly {bonus_a} or {bonus_b}. Some examples:\n',
+         '| Chain | ' + ' | '.join(f'Search level {lv}' for lv in levels) + ' |', '|---|' + '---|' * len(levels)]
+    L += [f'| {ch} | ' + ' | '.join(one_in(rolls(lv, ch)) for lv in levels) + ' |' for ch in chains]
+    L += ['', '## Good to know\n',
+          '- It works with saves from older versions: talk to Prof. Birch to get it ([above](#getting-it)).',
+          '- In the Safari Zone a search costs only the steps you walk, and the Pokémon it finds follow the Safari Zone\'s '
+          'rules (' + ', '.join(f'[{VNAME[v]}](wild-pokemon-{v}.md#safari-zone-rules)' for v in version.VERSIONS) + ').',
+          '- Searching never changes the normal wild Pokémon: walking in the grass without a search is as before, and '
+          'the [wild Pokémon pages](README.md) show the same tables.', '']
     return '\n'.join(L)
 
 
@@ -490,6 +832,16 @@ def _key_item(c):
     """A Hoenn key item constant -> the Black 2 item it is (src/include/hoenn_key_items.h)."""
     m = re.search(rf'#define\s+{c}\s+(ITEM_\w+)', open(os.path.join(ROOT, 'src', 'include', 'hoenn_key_items.h')).read())
     return m.group(1) if m else c
+
+def _version_define(name):
+    """A species #define of src/include/hoenn_version.inc as this version's scripts assemble it (its #ifdef HOENN_EMERALD
+    / #elif defined(HOENN_RUBY) / #else blocks), e.g. SPECIES_KYOGRE_OR_GROUDON -> 'GROUDON' in Sapphire."""
+    src = open(os.path.join(ROOT, 'src', 'include', 'hoenn_version.inc'), encoding='utf-8').read()
+    m = re.search(r'\n#ifdef HOENN_EMERALD\n(.*?)\n#elif defined\(HOENN_RUBY\)\n(.*?)\n#else\n(.*?)\n#endif', src, re.S)
+    if not m: raise SystemExit('gen_docs: hoenn_version.inc has other version blocks now: update _version_define')
+    d = re.search(rf'#define\s+{name}\s+SPECIES_(\w+)', m.group(1 if version.is_emerald() else 2 if version.is_ruby() else 3))
+    if not d: raise SystemExit(f'gen_docs: hoenn_version.inc has no {name} for {version.NAME}: update postgame_page')
+    return d.group(1)
 
 def _join(xs):
     xs = list(xs)
@@ -558,6 +910,8 @@ def _rematch_pages(names):
     cls = _class_names()
     m = re.search(r'if \(b < (\d+)\) return -1;', open(os.path.join(HERE, 'patches', 'emerald_rematch.c')).read())
     if not m: raise SystemExit('gen_docs: emerald_rematch.c has no badge rule any more: update postgame_page')
+    if 'case RM_BEATEN:' not in open(os.path.join(HERE, 'patches', 'emerald_rematch.c')).read():
+        raise SystemExit('gen_docs: emerald_rematch.c no longer counts a first battle as that day\'s: update postgame_page')
     badges = int(m.group(1))
     for r in d['rows']:
         t = by_id[r['b2_id']]
@@ -579,6 +933,57 @@ def _rematch_pages(names):
     leaders.sort()
     route.sort()
     return badges, leaders, wally, [r[1:] for r in route]
+
+def deep_sea_line(names, areas):
+    """Huntail and Gorebyss: Clamperl with a Deep Sea item from the Bag (data/trade_evos.json), Capt. Stern's Scanner trade
+    for one of the two, wild Pokémon holding the other in their 5% item slot (Black 2's personal data a/0/1/6 +0xE of the
+    build base, evo_items_check.py wild_held's rule) as this version's wild tables have them. The DexNav's part only
+    where the decomp has its C (has_our_c)."""
+    evos = json.load(open(os.path.join(ROOT, 'data', 'trade_evos.json')))['evolutions'].get('SPECIES_CLAMPERL') or []
+    if {tuple(e) for e in evos} != {('EVO_METHOD_ITEM', 'ITEM_DEEP_SEA_TOOTH', 'SPECIES_HUNTAIL'),
+                                     ('EVO_METHOD_ITEM', 'ITEM_DEEP_SEA_SCALE', 'SPECIES_GOREBYSS')}:
+        raise SystemExit('gen_docs: Clamperl evolves another way now: update deep_sea_line')
+    _need('scenes/SlateportCity_Harbor_Ch6.inc', 'h_checkitem ITEM_SCANNER, 1, HLIB_TMP', 'h_giveitem ITEM_DEEP_SEA_TOOTH',
+          'h_giveitem ITEM_DEEP_SEA_SCALE', 'h_removeitem ITEM_SCANNER, 1, HLIB_TMP')
+    _need('1192_room_SlateportCity_Harbor.s', 'h_goto_if_badge 7, Ch6_HB_SternScanner')
+    import narcio
+    recs = narcio.load(os.path.join(b2decomp.BASE, 'build', 'b2_us', 'files'), 16)   # (the build base, as the TM pages' arm9)
+    targets = {names.species('HUNTAIL'), names.species('GOREBYSS')}
+    wild = collections.defaultdict(set)              # species name -> how it is met (the wild page's sections)
+    for maps, sec, after in areas:
+        for title, rows in list(sec) + list(after.items()):
+            how = ('fishing' if title.endswith(' Rod') else 'Rock Smash' if title == 'Rock Smash' else 'on foot'
+                   if title == 'Grass and cave floor' else 'underwater' if maps[0].startswith('Underwater') else 'surfing')
+            for r in rows: wild[r[0]].add(how)
+    parts, findable = [], []
+    for item in ('ITEM_DEEP_SEA_TOOTH', 'ITEM_DEEP_SEA_SCALE'):
+        iid = names.items_id[item]
+        mons = [names.species_t[i] for i, rec in enumerate(recs[:len(names.species_t)])
+                if len(rec) >= 0x10 and struct.unpack_from('<H', rec, 0xE)[0] == iid]
+        mons = [m for m in mons if m in wild and m not in targets]
+        if not mons: raise SystemExit(f'gen_docs: no wild Pokémon holds the {item} in {version.NAME}: update deep_sea_line')
+        hows = sorted({h for m in mons for h in wild[m]})
+        parts.append(f'the {names.item(item)} {_join(mons)} ({_join(hows)})')
+        findable += [m for m in mons if wild[m] & {'on foot', 'surfing'}]
+    line = (f'{names.species("CLAMPERL")} evolves into {names.species("HUNTAIL")} when you use a '
+            f'{names.item("ITEM_DEEP_SEA_TOOTH")} from the Bag, and into {names.species("GOREBYSS")} with a '
+            f'{names.item("ITEM_DEEP_SEA_SCALE")} ([trade evolutions](evolutions.md)). Capt. Stern at Slateport City\'s '
+            'harbor gives you one of the two for the Scanner. Wild Pokémon hold the other one 5% of the time: '
+            f'{_join(parts)}. Catch one that holds it.')
+    if findable:
+        line += f' The [DexNav](dexnav.md)\'s rare-held-item bonus raises that chance for {_join(findable)}.'
+    elif has_our_c():
+        c, rel = _decomp_c('src/hoennb2/resident/dexnav.c'), 'src/hoennb2/resident/dexnav.c'
+        for t in ('enc->grass, 12, DEXNAV_GROUP_LAND', 'enc->surf, 5, DEXNAV_GROUP_WATER',
+                  'if (mon->group == DEXNAV_GROUP_WATER && ExState(field) != FLD_PLAYER_EXSTATE_SURF) {'):
+            if t not in c: raise SystemExit(f'gen_docs: {rel} no longer has {t!r}: update deep_sea_line')
+        if 'FLD_PLAYER_EXSTATE_DIVE = ' not in _decomp_c('include/field/player_state.h'):
+            raise SystemExit('gen_docs: diving is no longer its own player state: update deep_sea_line')
+        if len(re.findall(r'\bAddSlots\(list, ', c)) != 2 or 'ENCTYPE_FISHING' in c:
+            raise SystemExit(f'gen_docs: {rel} lists fished Pokémon now: update deep_sea_line')
+        line += (' The DexNav can\'t help with these: it doesn\'t list fished Pokémon, and it searches the water only '
+                 'while you surf, not while you dive.')
+    return line
 
 def postgame_page(names):
     E = version.is_emerald()
@@ -788,6 +1193,57 @@ def postgame_page(names):
             safari_new.append((m, how))
     wynaut = grass('Route130')
     tidal_to = 'the Battle Frontier' if E else 'the Battle Tower island'
+    # completing the Pokédex (postgame_dex 2026-11-09; notes/POSTGAME.md "Post-game dex completion"): the other versions'
+    # wild Pokémon (the wild pages' tables after the Champion), Birch's two starters, the legendaries back after a Hall of
+    # Fame, Sapphire / Ruby's other weather legend in Seafloor Cavern Room 9 and the fossil not taken
+    areas_all = wild_areas(names)
+    pg_new = postgame_new(areas_all)
+    deep_sea = deep_sea_line(names, areas_all)
+    if not pg_new: raise SystemExit('gen_docs: no post-game wild Pokémon any more: update postgame_page')
+    _need('0792_birch_lab.s', 'VMCall PG_LabStartersDue', 'h_goto_if_eq HLIB_TMP, 1, PG_LabStarters')
+    _need('scenes/BirchLab_Postgame.inc', 'h_goto_if_unset FLAG_SYS_GAME_CLEAR, L_PGS_DueDone', 'L_PGS_Full:',
+          'h_goto_if_eq VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 1, L_PGS_DueDone', 'BoxAdd PGS_TMP, PGS_SPECIES, 0, 5',
+          'h_goto_if_lt VAR_BIRCH_OTHER_STARTERS, 2, L_PGS_Give')
+    lv_starters = _num('scenes/BirchLab_Postgame.inc', r'PokePartyAdd PGS_SLOT, PGS_SPECIES, 0, (\d+)')
+    _need('0114_room_EverGrandeCity_HallOfFame.s', 'VMCall HF_ResetLostLegends', '#include "scenes/postgame_legends.inc"')
+    _need('scenes/postgame_legends.inc', 'PokeDexIsRegist 1, \\species, HFL_TMP', 'hfl_reset SPECIES_REGIROCK, FLAG_HIDE_REGIROCK',
+          'hfl_reset SPECIES_REGICE, FLAG_HIDE_REGICE', 'hfl_reset SPECIES_REGISTEEL, FLAG_HIDE_REGISTEEL')
+    _need('scenes/ch12_lib.inc', 'FlagSet \\flag\n    CallWildBattle \\species, CH12_REGI_LEVEL, 1')   # (hidden before the battle)
+    if E:
+        _need('scenes/postgame_legends.inc', 'hfl_reset SPECIES_RAYQUAZA, FLAG_DEFEATED_RAYQUAZA',
+              'hfl_reset SPECIES_KYOGRE, FLAG_DEFEATED_KYOGRE', 'hfl_reset SPECIES_GROUDON, FLAG_DEFEATED_GROUDON')
+        _need('scenes/SkyPillar_Top.inc', 'h_setflag FLAG_DEFEATED_RAYQUAZA    // caught or knocked out')
+        _need('scenes/emerald/abnormal_weather.inc', 'h_goto_if_set FLAG_DEFEATED_KYOGRE', 'h_goto_if_set FLAG_DEFEATED_GROUDON')
+        _need('1128_room_Route119_WeatherInstitute_2F.s', 'h_goto_if_unset FLAG_DEFEATED_KYOGRE, L_WI2_AwStart',
+              'h_goto_if_unset FLAG_DEFEATED_GROUDON, L_WI2_AwStart')
+    else:
+        _need('scenes/postgame_legends.inc', 'hfl_reset SPECIES_RAYQUAZA, FLAG_HIDE_RAYQUAZA',
+              'hfl_reset SPECIES_LATIAS_OR_LATIOS, FLAG_ENCOUNTERED_LATIAS_OR_LATIOS',
+              'h_clearflag FLAG_HIDE_LEGEND_MON_CAVE_OF_ORIGIN', 'h_clearflag FLAG_DEFEATED_OTHER_LEGEND')
+        _need('0206_room_CaveOfOrigin_B4F.s', 'h_goto_if_set FLAG_LEGENDARY_BATTLE_COMPLETED, L_B4_Again', 'L_B4_Again:')
+        _need('scenes/LilycoveCity_Harbor_Ch13.inc', 'h_goto_if_set FLAG_ENCOUNTERED_LATIAS_OR_LATIOS, L_LH13_FerryUnavailable')
+        r9 = 'scenes/SeafloorCavern_Room9_Postgame.inc'
+        _need(r9, 'h_goto_if_unset FLAG_SYS_GAME_CLEAR, L_PGR9_InitDone', 'h_goto_if_set FLAG_CAUGHT_OTHER_LEGEND, L_PGR9_InitDone',
+              'h_goto_if_set FLAG_DEFEATED_OTHER_LEGEND, L_PGR9_InitDone', 'h_setflag FLAG_DEFEATED_OTHER_LEGEND',
+              'CallWildBattle SPECIES_KYOGRE_OR_GROUDON, R9_OTHER_LEGEND_LEVEL, 1', 'h_setflag FLAG_CAUGHT_OTHER_LEGEND')
+        _need('0380_room_SeafloorCavern_Room9.s', 'ScriptEntry PG_R9_OtherLegend')
+        _need(r9, 'MapReplaceSetEvent R9_EVENT_OTHER_LOOK, 1, 1')          # (the room's look swaps after the Champion)
+        lv_other = _define(r9, 'R9_OTHER_LEGEND_LEVEL')
+        other = sp(_version_define('SPECIES_KYOGRE_OR_GROUDON'))
+        if _version_define('SPECIES_KYOGRE_OR_GROUDON') == version.TABLE['legendary']:
+            raise SystemExit('gen_docs: Room 9\'s post-game legend is the story\'s: update postgame_page')
+        other_game = 'Ruby' if version.VERSION == 'sapphire' else 'Sapphire'
+        _need('1128_room_Route119_WeatherInstitute_2F.s', 'h_goto_if_set FLAG_CAUGHT_OTHER_LEGEND, L_WI2_Rain',
+              'h_goto_if_set FLAG_DEFEATED_OTHER_LEGEND, L_WI2_Rain', 'h_msgbox T_OtherLegendHint')
+        hint = _script_text('0365_room_Route119_WeatherInstitute_2F.txt')[_define('1128_room_Route119_WeatherInstitute_2F.s', 'T_OtherLegendHint')]
+        if 'Route 128...' not in hint: raise SystemExit('gen_docs: the Weather Institute\'s hint changed: update postgame_page')
+        hint = hint.split('Route 128...', 1)[0] + 'Route 128...'
+        if "('Underwater_SeafloorCavern', 'surface', 'SeafloorCavern_Entrance'" not in dive_src:
+            raise SystemExit('gen_docs: surfacing into the Seafloor Cavern changed: update postgame_page')
+        _need('scenes/Route111.inc', 'VMCall R111_PostgameFossil', 'h_goto_if_unset FLAG_SYS_GAME_CLEAR, L_R111_PgfDone',
+              'h_clearflag FLAG_HIDE_CLAW_FOSSIL       // the Root Fossil was taken', 'h_clearflag FLAG_HIDE_ROOT_FOSSIL',
+              'L_R111_NoGoggles:')
+        _need('scenes/RustboroCity_DevonCorp_2F_Fossil.inc', 'h_setvar VAR_FOSSIL_RESURRECTION_STATE, 0')
 
     # ---- at a glance
     glance = [(SS, 'Dad, at home in Littleroot', 'after the Hall of Fame', 'back-home-in-littleroot')]
@@ -802,7 +1258,14 @@ def postgame_page(names):
                (f'{sp("BELDUM")} (Lv {lv_beldum})', 'Steven\'s house, Mossdeep City', 'after the Hall of Fame', 'gifts'),
                (f'{sp("JIRACHI")} (Lv {lv_jirachi})', 'Mossdeep Space Center 1F', 'after the Hall of Fame', 'gifts'),
                (f'{sp("CELEBI")} (Lv {lv_celebi})', 'Petalburg Woods', 'with the National Pokédex', 'gifts'),
-               (names.item('ITEM_ENIGMA_BERRY'), 'Dad, Petalburg City Gym', 'after the Hall of Fame', 'gifts')]
+               (names.item('ITEM_ENIGMA_BERRY'), 'Dad, Petalburg City Gym', 'after the Hall of Fame', 'gifts'),
+               (f'The two starters you didn\'t choose (Lv {lv_starters})', 'Prof. Birch\'s Lab, Littleroot',
+                'after the Hall of Fame', _slug('The two starters you didn\'t choose')),
+               ('The other versions\' wild Pokémon', 'routes and caves', 'after the Hall of Fame', 'completing-the-pokédex')]
+    if not E:
+        glance += [(f'{other} (Lv {lv_other})', 'Seafloor Cavern, Route 128', 'after the Hall of Fame',
+                    _slug(f'{other} in the Seafloor Cavern')),
+                   ('The fossil you didn\'t take', 'Route 111, the desert', 'after the Hall of Fame', _slug('The fossil you didn\'t take'))]
     if E: glance.append(('Johto starters', 'Prof. Birch\'s Lab', f'{johto_need} Hoenn Pokédex Pokémon caught', 'gifts'))
     glance += [('Diploma', 'Cove Lily Motel 2F, Lilycove City', 'all Hoenn Pokédex Pokémon caught', 'gifts'),
                ('Altering Cave', 'Route 103', 'after the Hall of Fame', 'altering-cave'),
@@ -892,8 +1355,9 @@ def postgame_page(names):
           + ('If you run away, it is there again on your next visit. If you knock it out, it flies away and comes back '
              'after your next Hall of Fame. Once caught, it is gone. You lose: you black out, and it waits for your next '
              'visit.\n' if E else
-             f'**One chance only:** whatever happens in the battle, it doesn\'t come back and the ferry doesn\'t sail there '
-             'again. Save before you read the stone.\n'),
+             f'Once caught, it is gone. If you run away, lose or knock it out, it is gone for now: after your next Hall of '
+             f'Fame the ferry sails to the island again (while you hold the {EON}) and it waits at the stone '
+             '([legendaries that come back](#legendaries-that-come-back)).\n'),
           '### Faraway Island\n',
           f'When you go into the grassy middle of the island, {sp("MEW")} sees you and runs a few steps into the tall grass. '
           'Unlike Gen 3, it doesn\'t hide in the grass or move away as you walk: it stays in sight and wanders about a '
@@ -910,7 +1374,7 @@ def postgame_page(names):
           'and it goes back to the middle: talk to it there from below and start again from jump 1. Leaving the island '
           'resets the puzzle.\n',
           f'Up to {"v2.0" if E else "v19.0"} the triangle always went back to the middle after its first jump, however you '
-          'walked (a bug). The next update fixes it.\n',
+          f'walked (a bug, fixed in {"v2.1" if E else "v19.1"}).\n',
           '### Navel Rock\n',
           'From the boat, go into the rock and on through the caves to the long tunnel, and walk to its far end. There '
           'the way forks:',
@@ -945,6 +1409,73 @@ def postgame_page(names):
                  'choose one of the three. You need room in your party.')
     L.append('')
 
+    # ---- completing the Pokédex
+    own = sp(version.TABLE['legendary'])
+    FIELD = '[field moves](tms-and-hms.md#field-moves-without-hms)'
+    DEXNAV = '[DexNav](dexnav.md)' if has_our_c() else 'DexNav'
+    def where(areas):
+        out = []
+        for area, ts in areas:
+            how = [{'Grass and cave floor': None, 'Surfing': 'surfing'}.get(t, t) for t in ts]
+            q = ('' if how == [None] else f' ({_join(h for h in how if h)})' if None not in how
+                 else f' (also {_join(h for h in how if h)})')
+            out.append(f'[{area}](wild-pokemon-{version.VERSION}.md#{_anchor(area)}){q}')
+        return ', '.join(out)
+    L += ['## Completing the Pokédex\n',
+          f'After the Hall of Fame the whole Hoenn Pokédex can be completed in {version.PUBLIC_NAME} on its own, without '
+          'trading: the Pokémon only the other versions had, and the ones you could only have one of, are here too.\n',
+          '### The other versions\' Pokémon\n',
+          'Some routes and caves get new wild tables after the Hall of Fame: the other versions\' Pokémon take some of '
+          f'their slots. The [wild Pokémon page](wild-pokemon-{version.VERSION}.md) shows both tables of these areas (the '
+          f'second one is marked "{AFTER_CHAMPION}"). The Pokédex\'s AREA page and the {DEXNAV} show the new '
+          'Pokémon there once you are the Champion.\n',
+          '| Pokémon | Where |', '|---|---|']
+    L += [f'| {mon} | {where(areas)} |' for mon, areas in sorted(pg_new.items(), key=lambda kv: names.species_t.index(kv[0]))]
+    L += ['', '### The two starters you didn\'t choose\n',
+          'Talk to Prof. Birch in his Lab after he has given you the National Pokédex. He gives you the two Pokémon from his '
+          f'Bag that you didn\'t pick on Route 101, Lv {lv_starters}, one after the other. Each one joins your party, or '
+          'goes to your PC when your party is full. If your Boxes are full too, he keeps it until you have made room.'
+          + (' This comes before the Johto starters, which he still gives as before ([gifts](#gifts)).' if E else '') + '\n']
+    L += [f'### {sp("HUNTAIL")} and {sp("GOREBYSS")}\n', deep_sea + '\n']
+    if not E:
+        L += [f'### {other} in the Seafloor Cavern\n',
+              f'{other}, the legendary Pokémon of Pokémon {other_game}, sleeps in the last room of the Seafloor Cavern, '
+              f'the room where the story\'s {own} slept. After the Hall of Fame that room looks as it does in Pokémon '
+              f'{other_game}: ' + ('a basin of lava with Groudon on it' if other_game == 'Ruby' else 'a pool of water with '
+              'Kyogre in it') + f'. Dive on Route 128 ({FIELD}), surface into the cavern as in the story and make your way '
+              'through to that last room. Walk up toward it: it wakes up and '
+              f'battles you (Lv {lv_other}). Once caught, it is gone. If you run away, lose or knock it out, it is back '
+              'after your next Hall of Fame.\n',
+              'While it sleeps there, the scientist on the 2F of the Weather Institute (Route 119), the one who gave you '
+              f'Castform, has a hint: "{hint.replace(chr(8217), chr(39))}"\n',
+              '### The fossil you didn\'t take\n',
+              'After the Hall of Fame, the fossil you left in the Route 111 desert (the Root Fossil or the Claw Fossil) is '
+              'back at its spot the next time you come to Route 111. You need the Go-Goggles to cross the sandstorm, as '
+              'before. Take it to the Devon Corporation in Rustboro City to have it revived, as you did with the first '
+              'one.\n']
+    gone = 'it is back after your next Hall of Fame'
+    L += ['### Legendaries that come back\n',
+          'A legendary Pokémon that you ran from, lost to or knocked out comes back after your next Hall of Fame. Once '
+          'caught, it is gone for good. That is how the event-island legendaries, Celebi and the roaming legendaries '
+          'already worked, and now these do too:']
+    if E:
+        L += [f'- **{_join(n for n, _, _ in regis)}** in their chambers ([the Sealed Chamber](#the-sealed-chamber)).',
+              f'- **{sp("RAYQUAZA")}** at the top of the Sky Pillar: if you run away or lose, it is there again on your next visit; '
+              f'if you knock it out, {gone}.',
+              f'- **{sp("GROUDON")}** and **{sp("KYOGRE")}**: if you knock one out, the Weather Institute reports its '
+              'weather again after your next Hall of Fame, and its cave holds it again '
+              '([Terra Cave and Marine Cave](#terra-cave-and-marine-cave)).']
+    else:
+        L += [f'- **{own}** in the Cave of Origin: it is back in the deepest room, where you met it in the story.',
+              f'- **{_join(n for n, _, _ in regis)}** in their chambers ([the Sealed Chamber](#the-sealed-chamber)).',
+              f'- **{sp("RAYQUAZA")}** at the top of the [Sky Pillar](#sky-pillar).',
+              f'- **{lati_island}** on [Southern Island](#southern-island): the ferry sails there again while you hold '
+              f'the {EON}.',
+              f'- **{other}** in the [Seafloor Cavern]'
+              f'(#{_slug(f"{other} in the Seafloor Cavern")}).']
+    L += ['', '"Caught" means that your Pokédex shows it as caught (one you got in a trade counts too). This works on '
+          'saves from older versions as well: a legendary you lost there comes back after your next Hall of Fame.\n']
+
     # ---- places
     L += ['## New places\n', '### Altering Cave\n',
           'After the Hall of Fame a cave opens in the cliff on the north side of the water on Route 103 (Surf to it). Its '
@@ -958,7 +1489,6 @@ def postgame_page(names):
           f'day\'s number matches a Pokémon in your party (Eggs too). That is 1 in {mirage} for each Pokémon each day, '
           f'about 1 in {round(1 / six)} days with six. The number changes once a day. On the island: '
           f'{_join(f"{n} (Lv {l})" for n, l, _ in wynaut)} in the tall grass, and a {names.item("ITEM_LIECHI_BERRY")} tree.\n']
-    FIELD = '[field moves](tms-and-hms.md#field-moves-without-hms)'
     sp_climb = [   # the Sky Pillar's floors once they are cracked (Sapphire / Ruby after the Hall of Fame, Emerald after Sootopolis)
         '- **Cracked floors (2F and 4F):** walking onto a crack drops you to the floor below. Ride your Bicycle over them. '
         'Here any riding crosses them, slow or fast (in Gen 3 it took the Mach Bike at full speed).',
@@ -990,8 +1520,9 @@ def postgame_page(names):
               '3. At the end of the cave, walk up toward it from below: it comes to you and battles you.\n',
               f'- The weather lasts {aw_steps:,} steps from the moment the scientist spoke: go straight there. If the steps '
               'run out while you are inside the cave, you can still finish it. After that, ask the scientist for a new place.',
-              '- Caught or knocked out: it is gone, and its weather ends. Ran away: it is back on your next visit. Once '
-              'both are caught or knocked out, the scientist has no more reports.\n',
+              '- Caught: it is gone for good, and its weather ends. Knocked out: its weather ends, and after your next Hall '
+              'of Fame the scientist reports it again. Ran away or lost: it is back on your next visit. Once neither is '
+              'left (caught, or knocked out until your next Hall of Fame), the scientist has no more reports.\n',
               '### Desert Underpass\n',
               'Go into the Fossil Maniac\'s house on Route 114 and on into his tunnel. After the Hall of Fame he stands '
               'aside and the tunnel goes on into the Desert Underpass. At its far end lies the fossil you didn\'t take at '
@@ -1001,7 +1532,8 @@ def postgame_page(names):
               '### Safari Zone\n',
               'After the Hall of Fame the two workers at the east edge of the Safari Zone\'s first area (the one you come '
               'into) are gone. Walk east past where they stood into the new south-east area; north of it is the new '
-              'north-east area. Each has its own wild Pokémon:']
+              'north-east area.' + (' They are part of the Safari game ([Safari Zone rules](wild-pokemon-emerald.md#safari-zone-rules)).'
+                                    if has_our_c() else '') + ' Each has its own wild Pokémon:']
         L += [f'- [{place(m)}](wild-pokemon-emerald.md#{_anchor(place(m))}): '
               + '; '.join(f'{how} {_join(mons)}' for how, mons in hows) + '.' for m, hows in safari_new]
         L += ['',
@@ -1014,22 +1546,27 @@ def postgame_page(names):
               'After the Hall of Fame a rocky islet appears on Route 131 (west of Pacifidlog Town). Surf to it and go into '
               'the cave; at its far end you come out by the tower\'s door. Inside, take the stairs up floor by floor:']
         L += sp_climb
-        L += ['', f'At the top waits {sp("RAYQUAZA")} (Lv {lv_ray}): talk to it. **One chance only:** whatever happens in '
-              'the battle, it doesn\'t come back. Save before you talk to it.\n']
+        L += ['', f'At the top waits {sp("RAYQUAZA")} (Lv {lv_ray}): talk to it. Once caught, it is gone. If you run '
+              'away, lose or knock it out, it is back at the top after your next Hall of Fame '
+              '([legendaries that come back](#legendaries-that-come-back)).\n']
 
     # ---- other legendaries
     L += ['## Other legendaries\n', 'The legendaries you meet in the rest of the game:\n',
           '| Pokémon | Where | When | Level | Chances |', '|---|---|---|---|---|']
+    back = 'not caught: back after your next Hall of Fame'
+    ko = 'ran away: back next visit; knocked out: back after your next Hall of Fame'
     if not E:
-        L.append(f'| {sp(version.TABLE["legendary"])} | Cave of Origin, Sootopolis City | during the story | {lv_legend} | one battle |')
+        L.append(f'| {own} | Cave of Origin, Sootopolis City | during the story | {lv_legend} | {back} |')
     for n, room, route in regis:
-        L.append(f'| {n} | {room} ({route}) | after the Sealed Chamber | {lv_regi} | one battle |')
+        L.append(f'| {n} | {room} ({route}) | after the Sealed Chamber | {lv_regi} | {back} |')
     if E:
-        L += [f'| {sp("RAYQUAZA")} | Sky Pillar, top (Route 131) | after the Sootopolis events | {lv_ray} | ran away: back next visit; caught or knocked out: gone |',
-              f'| {sp("GROUDON")} | Terra Cave | after the Hall of Fame | {lv_groudon} | ran away: back next visit |',
-              f'| {sp("KYOGRE")} | Marine Cave | after the Hall of Fame | {lv_kyogre} | ran away: back next visit |']
+        L += [f'| {sp("RAYQUAZA")} | Sky Pillar, top (Route 131) | after the Sootopolis events | {lv_ray} | {ko} |',
+              f'| {sp("GROUDON")} | Terra Cave | after the Hall of Fame | {lv_groudon} | {ko} |',
+              f'| {sp("KYOGRE")} | Marine Cave | after the Hall of Fame | {lv_kyogre} | {ko} |']
     else:
-        L.append(f'| {sp("RAYQUAZA")} | Sky Pillar, top (Route 131) | after the Hall of Fame | {lv_ray} | one battle |')
+        L += [f'| {sp("RAYQUAZA")} | Sky Pillar, top (Route 131) | after the Hall of Fame | {lv_ray} | {back} |',
+              f'| {other} | [Seafloor Cavern, last room](#{_slug(f"{other} in the Seafloor Cavern")}) (Route 128) | '
+              f'after the Hall of Fame | {lv_other} | {back} |']
     L += ['', '### The Sealed Chamber\n',
           'The three Regi chambers open together, from the Sealed Chamber under the sea of Route 134. Braille in this game '
           'is shown as the plain text it spells.\n',
@@ -1126,7 +1663,8 @@ def postgame_page(names):
         L += ['## Rematches\n',
               f'- **Trainers on the routes:** once you have {badges} badges, talk to a trainer from the list below whom '
               'you have beaten. Answer YES for a rematch. Each trainer battles once a day, with a team that depends on '
-              'your badges. Pairs fight a double battle (you need two Pokémon that can battle).',
+              'your badges; the day you first beat a trainer counts as its battle that day, so its first rematch comes '
+              'the next day. Pairs fight a double battle (you need two Pokémon that can battle).',
               '- **Gym Leaders:** after the Hall of Fame, talk to a Leader in their Gym, once a day. Each rematch is a '
               'double battle, with a stronger team each time you win (four teams; the last one repeats). Until you have '
               'done Wattson\'s job in New Mauville (he gives you TM24 Thunderbolt), each Leader offers only the first '
@@ -1180,6 +1718,9 @@ def levels_data(names):
     if not E:
         add('legend', sp(version.TABLE['legendary']), 'Cave of Origin', 'GROUDON_OR_KYOGRE',
             _define('0206_room_CaveOfOrigin_B4F.s', 'B4_KYOGRE_LEVEL'))
+        # the other weather legend after the Champion (postgame_dex): Gen 3's level of that version's Cave of Origin B4F
+        add('other_legend', sp(_version_define('SPECIES_KYOGRE_OR_GROUDON')), 'Seafloor Cavern (after the Hall of Fame)',
+            'GROUDON_OR_KYOGRE', _define('scenes/SeafloorCavern_Room9_Postgame.inc', 'R9_OTHER_LEGEND_LEVEL'))
     regi = _level_in('scenes/ch12_lib.inc', re.search(r'CallWildBattle \\species, (\w+), 1', _src('scenes/ch12_lib.inc')).group(1))
     for f in ('0232_room_DesertRuins.s', '0254_room_IslandCave.s', '0188_room_AncientTomb.s'):
         s = re.search(r'h_regi_battle SPECIES_(\w+)', _src(f)).group(1)
@@ -1213,7 +1754,9 @@ def levels_data(names):
               _num('scenes/RustboroCity_DevonCorp_2F_Fossil.inc', r'PokePartyAdd \w+, DVF_SPECIES, 0, (\d+)')),
              (sp('BELDUM'), 'Steven\'s house, Mossdeep City',
               _num('scenes/MossdeepCity_StevensHouse_Ch13.inc', r'PokePartyAdd \w+, SPECIES_BELDUM, 0, (\d+)')),
-             (sp('JIRACHI'), 'Mossdeep Space Center', _define('scenes/postgame_lib.inc', 'PG_JIRACHI_LEVEL'))]
+             (sp('JIRACHI'), 'Mossdeep Space Center', _define('scenes/postgame_lib.inc', 'PG_JIRACHI_LEVEL')),
+             ('The two starters you didn\'t choose', 'Prof. Birch\'s Lab (after the Hall of Fame)',
+              _num('scenes/BirchLab_Postgame.inc', r'PokePartyAdd PGS_SLOT, PGS_SPECIES, 0, (\d+)'))]
     if E:
         johto = re.findall(r'emj_ball SPECIES_(\w+)', _src('scenes/emerald/BirchLab_JohtoStarters.inc'))
         gifts.append((_or(sp(s) for s in johto), 'Prof. Birch\'s Lab',
@@ -1331,7 +1874,7 @@ def levels_page(parts):
         L += ['', 'Teams: ' + ', '.join(f'[{VNAME[v]}](trainers-{v}.md)' for v in vs) + '.', '']
     return '\n'.join(L)
 
-def index_page():
+def index_page(dexnav=True):
     L = [HEADER, '# Pokémon Ruby, Sapphire & Emerald NDS: player guide\n',
          'Made from the game\'s own data, so it matches the current release.\n',
          '| | Sapphire | Ruby | Emerald |', '|---|---|---|---|']
@@ -1339,7 +1882,7 @@ def index_page():
                         ('After the Hall of Fame', 'postgame')):
         L.append(f'| {title} | ' + ' | '.join(f'[{VNAME[v]}]({stem}-{v}.md)' for v in version.VERSIONS) + ' |')
     L.append('| Levels and the Exp. Share | ' + ' | '.join(f'[{VNAME[v]}](levels.md)' for v in version.VERSIONS) + ' |')
-    L += ['', '- [Start-of-game options](options.md)', '- [The Fairy type (optional)](fairy-type.md)',
+    L += [''] + (['- [The DexNav](dexnav.md)'] if dexnav else []) + ['- [Start-of-game options](options.md)', '- [The Fairy type (optional)](fairy-type.md)',
           '- [TMs and HMs](tms-and-hms.md)', '- [Trade evolutions](evolutions.md)', '- [Battle Frontier, Battle Tents and Trainer Hill (Emerald)](battle-frontier.md)', '',
           'Learnsets are Black 2\'s, plus the Fairy moves when the Fairy type is on.', '']
     return '\n'.join(L)
@@ -1372,11 +1915,14 @@ def main():
     write(out, 'fairy-type.md', fairy_page(names))
     write(out, 'evolutions.md', evolutions_page(names))
     write(out, 'options.md', options_page())
+    dexnav = dexnav_page(names)
+    if dexnav: write(out, 'dexnav.md', dexnav)
+    else: print(f'skipped dexnav.md: the decomp tree ({os.path.relpath(B2, ROOT)}) has no HoennB2 C (include/hoennb2.h) to read the DexNav from')
     parts = {v: json.loads(subprocess.run([sys.executable, os.path.abspath(__file__), '--levels-data'], check=True,
                                           capture_output=True, text=True, env=dict(os.environ, HOENN_VERSION=v)).stdout)
              for v in version.VERSIONS}
     write(out, 'levels.md', levels_page(parts))
-    write(out, 'README.md', index_page())
+    write(out, 'README.md', index_page(dexnav is not None))
 
 if __name__ == '__main__':
     main()

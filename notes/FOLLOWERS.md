@@ -9,7 +9,8 @@ User (2026-11-01): port PearlB2's following Pokémon to the Hoenn games. The mod
   questions" in his intro. It sets the event flag FLAG_POKE_FOLLOWER (a new saved flag, 2563); clear (NO, and every save
   from before the question) = no follower. Not fixed for the game, unlike the other answers: see the next point.
 - A lab aide in Prof. Birch's Lab in Littleroot, at Gen 3 tile (3,10) (all versions; the Aide's sprite, `data/story/followers/`,
-  0792 Script_9, text 0625 lines 38-43), offers it: flag clear, "would you like your first Pokémon to walk with you?" YES/NO
+  0792 Script_9, text 0625 lines 38-43: placeholder rows in every version's 0625, filled with our C on; Emerald's Johto lines
+  are 44-54 since postgame_dex 2026-11-09, before that they were overwritten), offers it: flag clear, "would you like your first Pokémon to walk with you?" YES/NO
   (cursor on YES, B = NO), YES sets the flag; flag set, "should it go back in its Poké Ball?", YES clears it. So saves from before
   the question can turn it on and every save can change its mind. Only the flag changes; follower.c needs no call: at the
   next step it makes the follower or deletes it (no ball shows when it is deleted), and if the player saves first, it goes

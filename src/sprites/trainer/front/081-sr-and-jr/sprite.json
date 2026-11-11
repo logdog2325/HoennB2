@@ -1,0 +1,18 @@
+{
+ "kind": "trainer",
+ "side": "front",
+ "sprite": 81,
+ "archive": 71,
+ "files": {
+  "static": 648,
+  "parts": 649,
+  "palette": 655
+ },
+ "name": "sr-and-jr",
+ "note": "Sr. and Jr. (Anna & Meg)",
+ "source": "pokeruby graphics/trainers/sr_and_jr.png",
+ "layout": "parts and animations of Black 2 front sprite 57",
+ "made_by": "b2tools/sprite_upgrade.py",
+ "mcss_from": 57,
+ "static_intro": true
+}

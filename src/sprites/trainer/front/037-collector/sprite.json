@@ -1,0 +1,15 @@
+{
+ "kind": "trainer",
+ "side": "front",
+ "sprite": 37,
+ "archive": 71,
+ "files": {
+  "static": 296,
+  "parts": 297,
+  "palette": 303
+ },
+ "name": "collector",
+ "mcss_from": 58,
+ "note": "Collector: Black 2 front sprite 58 copied (the picture the class shared before it got its own slot for the NEW set; sprite_community.py PARTS_OWN_SLOT)",
+ "made_by": "b2tools/sprite_community.py"
+}

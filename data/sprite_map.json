@@ -1039,6 +1039,12 @@
    "art": "078-drake",
    "note": "Drake"
   },
+  "TRAINER_PIC_SR_AND_JR": {
+   "sprite": 81,
+   "b2_class": "NO_DATA_M_82 (82, Black 2's empty picture of that class)",
+   "art": "081-sr-and-jr",
+   "note": "Sr. and Jr. (Anna & Meg, every version: pokeemerald's picture is the same file); Black 2's biker 62 stood in before 2026-11-10"
+  },
   "TRAINER_PIC_ROXANNE": {
    "sprite": 118,
    "b2_class": "ROXANNE (136)",

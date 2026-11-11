@@ -1765,7 +1765,7 @@
    "id": 2070,
    "kind": "flag",
    "chapter": "Ch0",
-   "note": "(Sapphire name) the Pokédex was received"
+   "note": "(Sapphire name) the Pok\u00e9dex was received"
   },
   "FLAG_VISITED_MAUVILLE_CITY": {
    "id": 2071,
@@ -1776,7 +1776,7 @@
    "id": 2072,
    "kind": "flag",
    "chapter": "Ch0",
-   "note": "Lanette in Fallarbor's Pokémon Center"
+   "note": "Lanette in Fallarbor's Pok\u00e9mon Center"
   },
   "FLAG_HIDE_LANETTE": {
    "id": 2073,
@@ -5683,12 +5683,14 @@
   "FLAG_CHOSE_ROOT_FOSSIL": {
    "id": 2382,
    "kind": "flag",
-   "chapter": "Emerald"
+   "chapter": "Emerald",
+   "note": "Sapphire/Ruby use it too (postgame_dex 2026-11-09): set when that fossil is taken on Route 111, so the other one returns after the Champion (scenes/Route111.inc)"
   },
   "FLAG_CHOSE_CLAW_FOSSIL": {
    "id": 2383,
    "kind": "flag",
-   "chapter": "Emerald"
+   "chapter": "Emerald",
+   "note": "Sapphire/Ruby use it too (postgame_dex 2026-11-09): set when that fossil is taken on Route 111, so the other one returns after the Champion (scenes/Route111.inc)"
   },
   "FLAG_HIDE_ROUTE_111_DESERT_FOSSIL": {
    "id": 2384,
@@ -5969,6 +5971,72 @@
    "id": 16803,
    "kind": "var",
    "chapter": "Emerald"
+  },
+  "FLAG_CAUGHT_OTHER_LEGEND": {
+   "id": 2435,
+   "kind": "flag",
+   "chapter": "Postgame",
+   "note": "S/R post-game: the other weather legend of Seafloor Cavern Room 9 (Sapphire Groudon, Ruby Kyogre; scenes/SeafloorCavern_Room9_Postgame.inc) was caught: gone for good (2432/2433 stay the post-game test kit's marks)"
+  },
+  "FLAG_DEFEATED_OTHER_LEGEND": {
+   "id": 2434,
+   "kind": "flag",
+   "chapter": "Postgame",
+   "note": "S/R post-game: that legend was battled and not caught (knocked out, ran, or lost): back after the next Hall of Fame (scenes/postgame_legends.inc clears it)"
+  },
+  "VAR_BIRCH_OTHER_STARTERS": {
+   "id": 16696,
+   "kind": "var",
+   "chapter": "Postgame",
+   "note": "post-game, every version: how many of the two starters the player didn't choose Prof. Birch has given (0-2; scenes/BirchLab_Postgame.inc)"
+  },
+  "VAR_DEXNAV_STATE": {
+   "id": 16479,
+   "kind": "var",
+   "chapter": "Ch1",
+   "note": "dexnav 2026-11-09: 0 no DexNav, 1 given in the Lab (Route 101 tutorial to come), 2 tutorial search out, 3 done, 4-6 the tutorial battle's result for its last script (decomp include/hoennb2/dexnav.h)"
+  },
+  "VAR_DEXNAV_CHAIN": {
+   "id": 16480,
+   "kind": "var",
+   "chapter": "Ch1",
+   "note": "dexnav: consecutive DexNav battles (KO or catch) of VAR_DEXNAV_CHAIN_SPECIES"
+  },
+  "VAR_DEXNAV_CHAIN_SPECIES": {
+   "id": 16481,
+   "kind": "var",
+   "chapter": "Ch1",
+   "note": "dexnav: the chain's species"
+  },
+  "VAR_EM_REMATCH_FIRST_0": {
+   "id": 16753,
+   "kind": "var",
+   "chapter": "Emerald",
+   "note": "Emerald rematches: rows 0-15 of data/emerald/hoenn_rematch.json beaten for the first time today (bit = row % 16; emerald_rematch.c RM_BEATEN: Black 2's after line and no rematch until tomorrow)"
+  },
+  "VAR_EM_REMATCH_FIRST_1": {
+   "id": 16754,
+   "kind": "var",
+   "chapter": "Emerald",
+   "note": "Emerald rematches: rows 16-31 of data/emerald/hoenn_rematch.json beaten for the first time today (bit = row % 16; emerald_rematch.c RM_BEATEN: Black 2's after line and no rematch until tomorrow)"
+  },
+  "VAR_EM_REMATCH_FIRST_2": {
+   "id": 16755,
+   "kind": "var",
+   "chapter": "Emerald",
+   "note": "Emerald rematches: rows 32-47 of data/emerald/hoenn_rematch.json beaten for the first time today (bit = row % 16; emerald_rematch.c RM_BEATEN: Black 2's after line and no rematch until tomorrow)"
+  },
+  "VAR_EM_REMATCH_FIRST_3": {
+   "id": 16757,
+   "kind": "var",
+   "chapter": "Emerald",
+   "note": "Emerald rematches: rows 48-63 of data/emerald/hoenn_rematch.json beaten for the first time today (bit = row % 16; emerald_rematch.c RM_BEATEN: Black 2's after line and no rematch until tomorrow)"
+  },
+  "VAR_EM_REMATCH_FIRST_4": {
+   "id": 16759,
+   "kind": "var",
+   "chapter": "Emerald",
+   "note": "Emerald rematches: rows 64-79 of data/emerald/hoenn_rematch.json beaten for the first time today (bit = row % 16; emerald_rematch.c RM_BEATEN: Black 2's after line and no rematch until tomorrow)"
   }
  },
  "reserved": {

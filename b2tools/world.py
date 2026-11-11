@@ -298,11 +298,20 @@ def build_cell(m_name, cx, cz, world, trees, cfg_maps):
         n = 1
         while (tz, tx + n) in nset and hy(tx + n, tz) == hy(tx, tz) and ash1(tx + n, tz) == ash1(tx, tz): n += 1
         sign = any((get(tx + k + d, tz) or (0, 0))[1] == 'sign' for k in range(n) for d in (-1, 1))
+        big = (get(tx, tz) or ('',))[0] in NARROW_TALL                 # (town_look: taller one-tile trees there)
         row = Model(m_name); bc.narrow_tree_row(row, tx, bc.uz(tz + 1), n, cross=lambda k: level(tx + k, tz, 1),
-                                                card=3 if sign else 0)   # (a sign's board reaches 5 into the tile)
+                                                card=3 if sign else 0,   # (a sign's board reaches 5 into the tile)
+                                                **(dict(h=NARROW_TALL_H, w=NARROW_TALL_W) if big else {}))
+        if big:                       # (wider, not deeper: one tile deep as before, so a row's layers never reach
+            zb = bc.uz(tz + 1)        #  into the next row's at the same heights; outdoor_check layer, 2026-11-09)
+            xa, L = bc.ux(tx) + 8 - NARROW_TALL_W / 2, 16 * (n - 1) + NARROW_TALL_W
+            for mat, tris in row.tris.items():   # (and its shadow within the row's own tiles: a neighbour's is level)
+                sx = (lambda x: bc.ux(tx) + (x - xa) * 16 * n / L) if mat == 'ki02c' else (lambda x: x)
+                for t in tris: t[:] = [(sx(x), y, zb - (zb - z) * 16 / NARROW_TALL_W, u, v, c) for x, y, z, u, v, c in t]
         if ash1(tx, tz): ash_materials(row, ASH['trees'])
         tm.extend(row, dy=hy(tx, tz))
     is_path = lambda tx, tz: (world.get((X + tx, Z + tz)) or (None, None))[1] == 'path' or (X + tx, Z + tz) in p_under
+    town_stairs = getattr(HF, 'town_stairs', ()) if HF else ()
     ledges, grass_rows = {}, {}
     for tz in range(32):
         for tx in range(32):
@@ -310,7 +319,9 @@ def build_cell(m_name, cx, cz, world, trees, cfg_maps):
             if not e: continue
             c = e[1]
             if is_path(tx, tz) and not GROUP.get('path_as_ground') and not on_pier(tx, tz):   # (cover above; a ferry
-                bc.path_tile(m, tx, tz, is_path, y=0)                             # pier or a paved town: ground.py paves it)
+                bc.path_tile(m, tx, tz, (lambda a, b: True) if (X + tx, Z + tz) in town_stairs else is_path, y=0)
+                # (pier or a paved town: ground.py paves it; a terrace's flight, town_heights: the plain landing michi01b,
+                #  no grass fringe at the one-tile flights' tread ends, glitch check 2026-11-10)
             elif c == 'lava':            # a warp-only map's lava (Mt. Chimney's crater): GROUP['lava'] (lava_tile)
                 lava_tile(m, tx, tz, get)
             elif c == 'tall_grass': grass_rows.setdefault(tz, []).append(tx)
@@ -620,6 +631,11 @@ def ash_materials(m, names):
         if old in m.tris: m.tris.setdefault(new, []).extend(m.tris.pop(old))
 NEAR_STRUCTURE = ('building', 'door', 'bridge', 'stairs', 'sign', 'prop', 'other:big_tree')
 NARROW = set()         # one-tile trees drawn by build_cell (world tiles), set by prepare() (overlap_fill)
+# (town_look 2026-11-09, user: Dewford's one-tile trees 'read as bushes'): no whole 2x2 Black 2 tree fits there without
+# covering walkable sand or the sea (forest_fill already places every one that does); these maps' one-tile trees are
+# Black 2's round tree at 0.7 of its height (39 units, the old 0.5: 28) and 20 units across (2 over each side, within
+# the next tile's edge, so no person beside one meets its canopy). Drawing only: collision is unchanged.
+NARROW_TALL, NARROW_TALL_H, NARROW_TALL_W = {'DewfordTown'}, 0.7, 20
 OVERLAP = {}           # overlap_fill's overlapping 2x2 trees: anchor -> (level, lift)
 GROUP = {}             # the standalone group being built (data/hoenn_standalone.json): its look options; {} = main
 EXTRA_TEX = {}         # textures those options name -> Black 2 map texture set (a/0/1/4) they come from

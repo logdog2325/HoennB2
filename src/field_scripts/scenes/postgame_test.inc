@@ -73,6 +73,20 @@ Test_PG_Start:
     h_setvar VAR_BIRCH_LAB_STATE, 5
     h_setflag FLAG_RESCUED_BIRCH
     h_setflag FLAG_HIDE_BIRCH_BATTLE_POOCHYENA
+#ifndef HOENN_EMERALD                       // (postgame_dex 2026-11-10, the S/R tester's gap) the end of two stories the
+    h_setvar VAR_SEAFLOOR_CAVERN_STATE, 1   // post-game tests visit: Seafloor Cavern Room 9's (ch10_test.inc's stage 2:
+    h_setflag FLAG_HIDE_EVIL_LEADER_SEAFLOOR_CAVERN         // the scene and its people gone, so Room 9 shows the post-
+    h_setflag FLAG_HIDE_OTHER_LEADER_SEAFLOOR_CAVERN        // game legend) and the Weather Institute's (Shelly beaten,
+    h_setflag FLAG_HIDE_OTHER_TEAM_GRUNTS_SEAFLOOR_CAVERN   // Castform given, Route 119's zone init's state 2: the 2F
+    h_setflag FLAG_HIDE_AWAKENED_MON_SEAFLOOR_CAVERN        // scientist gives his post-game line)
+    h_setflag FLAG_HIDE_SLEEPING_MON_SEAFLOOR_CAVERN
+    h_setflag FLAG_HIDE_EVIL_TEAM_GRUNTS_SEAFLOOR_CAVERN
+    h_setvar VAR_WEATHER_INSTITUTE_STATE, 2
+    h_setflag FLAG_HIDE_EVIL_TEAM_WEATHER_INSTITUTE
+    h_setflag FLAG_HIDE_WEATHER_INSTITUTE_WORKERS_2F
+    h_clearflag FLAG_HIDE_WEATHER_INSTITUTE_WORKERS_1F
+    h_setflag FLAG_RECEIVED_CASTFORM
+#endif
     h_setflag FLAG_HIDE_BIRCH_STARTERS_BAG
 #ifdef HOENN_TEST_CHPGFIX
 #include "scenes/postgame_fix_test.inc"         // (postgame_fix) rods and TM94 for the Safari Zone tests

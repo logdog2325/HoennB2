@@ -901,6 +901,172 @@ def write_front(slot):
     sprites.write_json(os.path.join(folder, 'sprite.json'), meta)
     return folder, layout, rep
 
+# ------------------------------------------------------------------------------------------------ fronts drawn as parts
+# 29 Gen 5-style trainer battle fronts by a Discord artist (the user, 2026-11-07; credit: incoming/CREDITS.md), each a
+# 256x128 sheet in Black 2's own parts format (the loose parts the intro gesture moves + the whole standing figure),
+# drawn on the layout of one Black 2 front sprite (found by matching every sheet's shape with all 188 Black 2 sheets:
+# `parts_match`). Installed as drawn: the sheet is the slot's parts texture, the layout sprite's 8 files come with it
+# (mcss_from), the still is the standing figure (animation 1) as Black 2 frames its own. Pokémaniac, the Young Couple
+# and Gabby & Ty are single pictures (no loose parts) at the sheet's top left: they sit on Black 2 layouts whose intro
+# stands still with that cell (20, 22). The one change: the sheet's background colour, and the colours within
+# PARTS_BG_NEAR of it in every channel (leftovers of the erased template, e.g. Ninja Boy's (41,150,48) on (40,152,48),
+# green specks in battle otherwise), are clear. Bigger parts the layout has and a design lacks (a hat, a scarf) stay
+# blank in the gesture.
+PARTS_DIR = os.path.join(INCOMING, 'battle_fronts_2026-11-07')
+PARTS_BG_NEAR = 8
+PARTS_ARTIST = 'ASalman'   # a HoennB2 community member (the user, 2026-11-09); CREDITS.md
+PARTS_FRONTS = {   # slot: (file, Black 2 layout it was drawn on, folder name, note); the slots are the Hoenn classes'
+                   # (data/hoenn_trainer_classes.json), Ninja Boy and the Collector on spare ones of their own
+    2: ('youngster.png', 2, 'youngster', 'Youngster'),
+    13: ('Aroama_.png', 114, 'aroma-lady', 'Aroma Lady'),
+    14: ('Tuber_Girl.png', 15, 'tuber-f', 'Tuber (girl)'),
+    15: ('Tuber_boy_2.png', 15, 'tuber-m', 'Tuber (boy)'),
+    21: ('Ninja_boy.png', 15, 'ninja-boy', 'Ninja Boy'),
+    22: ('repoter.png', 22, 'interviewers', 'Gabby & Ty (Interviewer)'),
+    27: ('Ruin_Manic 2.png', 27, 'ruin-maniac', 'Ruin Maniac'),
+    28: ('Picnicker_ 3.png', 5, 'picnicker', 'Picnicker'),
+    29: ('fisher.png', 29, 'fisherman', 'Fisherman'),
+    32: ('Pokemanic.png', 20, 'pokemaniac', 'Pokémaniac'),
+    37: ('Collector.png', 27, 'collector', 'Collector'),
+    41: ('rich_boy.png', 41, 'rich-boy', 'Rich Boy'),
+    42: ('lady.png', 42, 'lady', 'Lady'),
+    48: ('Ace_Trainer_F.png', 49, 'ace-trainer-f', 'Ace Trainer (F)'),
+    49: ('Ace_Trainer_M.png', 49, 'ace-trainer-m', 'Ace Trainer (M)'),
+    51: ('Bug_Manic.png', 110, 'bug-maniac', 'Bug Maniac'),
+    56: ('Kindler.png', 73, 'kindler', 'Kindler'),
+    63: ('Battlegirl_16_colours.png', 132, 'battle-girl', 'Battle Girl'),
+    64: ('umberella 2.png', 64, 'parasol-lady', 'Parasol Lady'),
+    68: ('Young_Couple.png', 20, 'young-couple', 'Young Couple'),
+    69: ('Expert_M.png', 115, 'expert-m', 'Expert (M)'),
+    70: ('Expert_F 2.png', 115, 'expert-f', 'Expert (F)'),
+    72: ('Camper_2.png', 4, 'camper', 'Camper'),
+    82: ('Sailor.png', 43, 'sailor', 'Sailor'),
+    100: ('Dragon_Master.png', 138, 'dragon-tamer', 'Dragon Tamer'),
+    109: ('Birdkeeper._.png', 122, 'bird-keeper', 'Bird Keeper'),
+    110: ('Bug_Catcher.png', 110, 'bug-catcher', 'Bug Catcher'),
+    128: ('Guitar_.png', 30, 'guitarist', 'Guitarist'),
+    179: ('Hex_Manic.png', 179, 'hex-maniac', 'Hex Maniac'),
+}
+# Classes that shared a Black 2 picture with another class (Ninja Boy and Tuber boy 15, the Collector and Pokéfan 58)
+# move to a spare picture (work/agents/frontier_core/sprites/free_fronts.py: no build, class or PWT entrant uses it):
+# its CLASSIC art is a copy of the old picture (a src/sprites folder, mcss_from it), so CLASSIC looks as before.
+PARTS_OWN_SLOT = {21: (15, 'ninja-boy', 'Ninja Boy'), 37: (58, 'collector', 'Collector')}
+# Sheets whose loose parts do not sit in the layout's cells (checked frame by frame, 2026-11-07): the intro would show
+# slivers of the next part (the Tubers' and Ninja Boy's heads and skirts on Black 2's 15 are bigger than its cells) or
+# lose a part (the Experts' cane is not where 115's cane cell reads). Their standing figure (animation 1) is clean, so
+# the intro shows it (static_intro); the art is unchanged. A sheet redrawn on the layout's cells would animate.
+PARTS_STILL_INTRO = {14, 15, 21, 69, 70}
+
+def parts_sheet(file):
+    """(256x128 indices, 16 RGB palette with the background at 0, [colours made clear])"""
+    from PIL import Image
+    a = np.array(Image.open(os.path.join(PARTS_DIR, file)).convert('RGBA'))[..., :3].astype(int)
+    assert a.shape == (128, 256, 3), (file, a.shape)
+    bg = tuple(int(v) for v in a[0, 0])
+    isbg = np.abs(a - np.array(bg)).max(-1) <= PARTS_BG_NEAR
+    cleared = sorted({tuple(int(v) for v in p) for p in a[isbg]} - {bg})
+    cols = sorted({tuple(int(v) for v in p) for p in a[~isbg]}, key=lambda c: -sum(c))
+    assert len(cols) <= 15, f'{file}: {len(cols)} colours'
+    idx = np.zeros(a.shape[:2], np.uint8)
+    for i, c in enumerate(cols, 1):
+        idx[np.all(a == c, -1) & ~isbg] = i
+    pal = [bg] + cols + [(0, 0, 0)] * (15 - len(cols))
+    return idx, pal, cleared
+
+def parts_still(sp, tex, donor_parts, donor_still):
+    """80x80 still: animation 1 (the standing figure) where Black 2's own still of the layout sits (mcss.still_offset);
+    a layout without a still of its own: bottom row 79, centred (as front_still)."""
+    fig = mcss.render(sp, tex, 1, 0)
+    off = mcss.still_offset(sp, donor_parts, donor_still)
+    if off is None:
+        ys, xs = np.nonzero(fig)
+        off = (int((xs.min() + xs.max() + 1) // 2) - 40, int(ys.max()) - 79)
+    still = np.zeros((80, 80), np.uint8)
+    H, W = fig.shape
+    y0, x0 = max(0, -off[1]), max(0, -off[0])
+    y1, x1 = min(80, H - off[1]), min(80, W - off[0])
+    still[y0:y1, x0:x1] = fig[y0 + off[1]:y1 + off[1], x0 + off[0]:x1 + off[0]]
+    return still, int((fig != 0).sum() - (still != 0).sum()), off
+
+def parts_report(slot):
+    """Checks of one sheet on its layout: sheet pixels no cell shows, still pixels outside the 80x80 frame."""
+    import sprite_upgrade as U
+    file, layout, name, note = PARTS_FRONTS[slot]
+    idx, pal, cleared = parts_sheet(file)
+    dparts, dstill, dpal, sp = U.tr_donor(layout)
+    used = np.zeros(idx.shape, bool)
+    for cell in sp.cells:
+        for (x, y, w, h, u, v, hf, vf) in cell:
+            used[v:v + h, u:u + w] = True
+    still, lost, off = parts_still(sp, idx, dparts, dstill)
+    return dict(idx=idx, pal=pal, cleared=cleared, sp=sp, still=still, layout=layout, still_lost=lost, off=off,
+                unshown=int(((idx != 0) & ~used).sum()), colours=len([c for c in pal[1:] if c != (0, 0, 0)]))
+
+def write_front_parts(slot):
+    file, layout, name, note = PARTS_FRONTS[slot]
+    rep = parts_report(slot)
+    kind_dir = os.path.join(GEN5, 'trainer', 'front')
+    folder = os.path.join(kind_dir, f'{slot:03d}-{name}')
+    _replace_folder(kind_dir, slot, folder)
+    os.makedirs(folder, exist_ok=True)
+    pal = rep['pal']
+    sprites.write_pal(os.path.join(folder, 'palette.pal'), pal)
+    sprites.write_png(os.path.join(folder, 'parts.png'), rep['idx'].tobytes(), 256, 128, pal)
+    sprites.write_png(os.path.join(folder, 'static.png'), rep['still'].tobytes(), 80, 80, pal)
+    meta = dict(kind='trainer', side='front', sprite=slot, archive=sprites.ARC_TR['front'], files=sprites.tr_files(slot),
+                name=name, note=note, source=f"community: {os.path.basename(PARTS_DIR)}/{file} by {PARTS_ARTIST}",
+                layout=f'drawn on the parts of Black 2 front sprite {layout} (its cells and animations)',
+                colours=rep['colours'], cleared_near_background=[list(c) for c in rep['cleared']],
+                made_by='b2tools/sprite_community.py')
+    if layout != slot:
+        meta['mcss_from'] = layout
+    if slot in PARTS_STILL_INTRO:
+        meta['static_intro'] = True
+    sprites.write_json(os.path.join(folder, 'sprite.json'), meta)
+    return folder, rep
+
+def write_own_slot_classic(slot):
+    """src/sprites/trainer/front/<slot>-<name>: a copy of the Black 2 picture the class showed before (CLASSIC)."""
+    import sprite_upgrade as U
+    old, name, note = PARTS_OWN_SLOT[slot]
+    kind_dir = os.path.join(SRC, 'trainer', 'front')
+    folder = os.path.join(kind_dir, f'{slot:03d}-{name}')
+    _replace_folder(kind_dir, slot, folder)
+    os.makedirs(folder, exist_ok=True)
+    sprites.tr_export(FILES, 'front', old, folder, U.tr_entries())
+    meta = sprites.read_json(os.path.join(folder, 'sprite.json'))
+    meta.update(sprite=slot, files=sprites.tr_files(slot), name=name, mcss_from=old,
+                note=f'{note}: Black 2 front sprite {old} copied (the picture the class shared before it got its own '
+                     f'slot for the NEW set; sprite_community.py PARTS_OWN_SLOT)', made_by='b2tools/sprite_community.py')
+    sprites.write_json(os.path.join(folder, 'sprite.json'), meta)
+    return folder
+
+def build_parts_fronts():
+    out = []
+    for slot in sorted(PARTS_OWN_SLOT):
+        out.append(f'{os.path.relpath(write_own_slot_classic(slot), ROOT)} (CLASSIC copy of {PARTS_OWN_SLOT[slot][0]})')
+    for slot in sorted(PARTS_FRONTS):
+        folder, rep = write_front_parts(slot)
+        out.append(f'{os.path.relpath(folder, ROOT)} on layout {rep["layout"]}: {rep["colours"]} colours, '
+                   f'{len(rep["cleared"])} near-background cleared, {rep["unshown"]} sheet pixels outside every cell, '
+                   f'{rep["still_lost"]} standing pixels outside the 80x80 still'
+                   + (', intro: the standing figure' if slot in PARTS_STILL_INTRO else ''))
+    return out
+
+def parts_match(files=None):
+    """Each sheet's closest Black 2 front sprites by shape (intersection over union of the drawn pixels)."""
+    import sprite_upgrade as U
+    from PIL import Image
+    n = len(U.tr_entries()) // 8
+    masks = {s: U.tr_donor(s)[0] != 0 for s in range(n)}
+    out = []
+    for f in files or sorted(x for x in os.listdir(PARTS_DIR) if x.endswith('.png')):
+        a = np.array(Image.open(os.path.join(PARTS_DIR, f)).convert('RGB')).astype(int)
+        m = np.abs(a - a[0, 0]).max(-1) > PARTS_BG_NEAR
+        best = sorted(((int((m & k).sum()) / int((m | k).sum()), s) for s, k in masks.items()), reverse=True)[:3]
+        out.append(f'{f:28s} ' + '  '.join(f'{s:3d}:{v:.2f}' for v, s in best))
+    return out
+
 # ------------------------------------------------------------------------------------------------ Brendan's back
 # hyo-oppa's five Gen 4-style back frames (stand, arm back, arm raised, throw, follow-through) on Nate's back sprite 0
 # (cells 0 48x128, 1 24x72, 2 32x56, 3 40x48, 4 64x128, 5 88x112), as whole-figure poses
@@ -1116,6 +1282,8 @@ def build(parts):
         out += build_wally_ow()
     if 'birch' in parts:
         out += build_birch_ow()
+    if 'parts' in parts:
+        out += build_parts_fronts()
     return out
 
 
@@ -1293,6 +1461,8 @@ if __name__ == '__main__':
     if cmd == 'analyze':
         print('\n'.join(analyze()))
     elif cmd == 'build':
-        print('\n'.join(build(sys.argv[2:] or ['brendan', 'maxie', 'grunts', 'may', 'archie', 'wally', 'birch'])))
+        print('\n'.join(build(sys.argv[2:] or ['brendan', 'maxie', 'grunts', 'may', 'archie', 'wally', 'birch', 'parts'])))
+    elif cmd == 'partsmatch':
+        print('\n'.join(parts_match(sys.argv[2:])))
     elif cmd == 'review':
         print(review(*sys.argv[2:3]))

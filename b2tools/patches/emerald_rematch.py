@@ -12,7 +12,7 @@ apply(files):
      (after Black 2's 814 trainers). Both archives are in build_rom.py RESERVE: the ROM's file table does not move.
   2. emerald_rematch.c compiled into the Frontier code area (frontier_area.add) with the table of the 72 rows
      ("rows": the first battle's id, Gym number (9 + n: a post-game row, 9 = Wally at Victory Road), Liza's id for Tate,
-     the tiers' slots, which tiers are doubles) and the ids of src/include/hoenn.h (VAR_EM_REMATCH_DONE_0-4,
+     the tiers' slots, which tiers are doubles) and the ids of src/include/hoenn.h (VAR_EM_REMATCH_DONE_0-4, _FIRST_0-4,
      VAR_EM_REMATCH_LEADERS, VAR_EM_REMATCH_POSTGAME, FLAG_DAILY_EM_REMATCHES,
      FLAG_SYS_GAME_CLEAR, FLAG_GOT_TM_THUNDERBOLT_FROM_WATTSON).
   3. a report of where each row's trainer stands in this ROM: route trainers as eye-contact NPCs (script 3000 + id /
@@ -77,6 +77,7 @@ def msg_call(ov167):
 
 def data_header(rows, next_msgld):
     done = [_hoenn_h(f'VAR_EM_REMATCH_DONE_{i}') for i in range(5)]
+    first = [_hoenn_h(f'VAR_EM_REMATCH_FIRST_{i}') for i in range(5)]   # beaten for the first time today (RM_BEATEN)
     assert len(rows) <= 16 * len(done), len(rows)
     assert all(r['gym'] <= 8 + 8 for r in rows), 'W_POSTGAME holds 8 post-game rows (gym 9-16)'
     def row(r):
@@ -92,6 +93,7 @@ def data_header(rows, next_msgld):
         f'#define MSG_DEFEAT {MSG["defeat"]}',
         f'#define MSG_INTRO {MSG["intro"]}', f'#define MSG_INTRO2 {MSG["intro2"]}', f'#define NEXT_MSGLD {next_msgld:#x}',
         'static const u16 kDoneWork[] = {' + ', '.join(f'{w:#x}' for w in done) + '};',
+        'static const u16 kFirstWork[] = {' + ', '.join(f'{w:#x}' for w in first) + '};',
         'static const RmRow kRows[N_ROWS] = {\n    ' + ',\n    '.join(row(r) for r in rows) + '};']) + '\n'
 
 def build(base, workdir):

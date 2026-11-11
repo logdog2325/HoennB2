@@ -1,0 +1,19 @@
+{
+ "kind": "trainer",
+ "side": "front",
+ "sprite": 128,
+ "archive": 71,
+ "files": {
+  "static": 1024,
+  "parts": 1025,
+  "palette": 1031
+ },
+ "name": "guitarist",
+ "note": "Guitarist",
+ "source": "community: battle_fronts_2026-11-07/Guitar_.png by ASalman",
+ "layout": "drawn on the parts of Black 2 front sprite 30 (its cells and animations)",
+ "colours": 15,
+ "cleared_near_background": [],
+ "made_by": "b2tools/sprite_community.py",
+ "mcss_from": 30
+}

@@ -1,0 +1,18 @@
+{
+ "kind": "trainer",
+ "side": "front",
+ "sprite": 179,
+ "archive": 71,
+ "files": {
+  "static": 1432,
+  "parts": 1433,
+  "palette": 1439
+ },
+ "name": "hex-maniac",
+ "note": "Hex Maniac",
+ "source": "community: battle_fronts_2026-11-07/Hex_Manic.png by ASalman",
+ "layout": "drawn on the parts of Black 2 front sprite 179 (its cells and animations)",
+ "colours": 15,
+ "cleared_near_background": [],
+ "made_by": "b2tools/sprite_community.py"
+}

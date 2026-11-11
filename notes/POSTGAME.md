@@ -49,3 +49,31 @@ tests overwrite in a ROM clone: tests/lib.py patched_rom). `HOENN_TEST_ROAMER_AL
 route is the roamer; `HOENN_TEST_ROAMER_NOFLEE=1` (no roaming AI, so one can be knocked out) and
 `HOENN_TEST_ROAMER_PLACE0=14` (location 0 = Route 101, next to Littleroot); Littleroot's Lab sign = the town sign's state, then
 the Hall of Fame scene. Tests: work/agents/postgame_scripts/tests/t1-t7.
+
+## Post-game dex completion (postgame_dex, 2026-11-09; user decisions 2026-11-09, notes/DECISIONS.md)
+Every version exclusive and both unchosen starters can be had after the Champion, without trading. Report with the
+tables, the NEW lines and the test plan: work/agents/postgame_dex/REPORT.md.
+- **Wild exclusives:** a zone's encounter file has a post-game twin read once FLAG_SYS_GAME_CLEAR is set (the decomp's
+  src/hoennb2/resident/postgame_enc.c: EncData_Load asks HoennB2_ZoneEncID; decomp change: work/agents/postgame_dex/
+  postgame_decomp.patch until it is merged). Slot edits per version: data/hoenn_postgame_encounters.json (Sapphire, the
+  twin ids) + data/ruby/ + data/emerald/ ("maps" replaced whole); twins: converter/gen_postgame_encounters.py ->
+  src/encounters[/ruby|/emerald]/NNNN_pg_*.s (rerun it for a version after its gen_encounters/gen_caves); the {file ->
+  twin} pairs and the area page's post-game cells: b2tools/patches/postgame_encounters.py (build_rom adds it when our C is
+  on); the area page: hoenn_pokedex's ITCM HabitatRead calls HoennB2_PostgameHabitat.
+- **The other weather legend (S/R):** Sapphire's Groudon / Ruby's Kyogre sleeps in Seafloor Cavern Room 9 at (17,38)
+  (scenes/SeafloorCavern_Room9_Postgame.inc, Lv 49); FLAG_CAUGHT_OTHER_LEGEND / FLAG_DEFEATED_OTHER_LEGEND. The hint (user,
+  2026-11-09): the Weather Institute 2F scientist (Castform's, Emerald's weather reporter) says the readings under the sea off
+  Route 128 after the Champion while it sleeps there (1128 L_WI2_AlreadyGave, text 0365 line 7, + ruby/).
+  After the Champion the room looks as in the other version (user 2026-11-10): Sapphire shows Ruby's lava basin, Ruby
+  Sapphire's water pool (Room 9's "alt_rooms" in data/cave_layouts/SeafloorCavern_Room9.json + data/interiors/190.json,
+  per version through version.alt_rooms; map replace event 0 = work 0x4031, Emerald's Route 111 event, unused by S/R;
+  set on entry only by the zone init PG_R9_Init, reloading the matrix only when it differs). The legend stays on its tile.
+- **One-chance legendaries:** not caught (the Pokédex's caught mark) = back after the next Hall of Fame:
+  scenes/postgame_legends.inc (0114 HF_SetGameClearFlags); Cave of Origin B4F's re-encounter: 0206 L_B4_Again.
+- **Unchosen fossil (S/R):** back at its Route 111 spot (scenes/Route111.inc R111_PostgameFossil; FLAG_CHOSE_ROOT_FOSSIL /
+  _CLAW_FOSSIL, pokeemerald's names, now set in S/R too).
+- **Unchosen starters:** Birch, Lv 5, both in one talk (his four NEW lines approved by the user 2026-11-09) (scenes/BirchLab_Postgame.inc PG_LabStarters, VAR_BIRCH_OTHER_STARTERS;
+  party full: Black 2's BoxAdd into the PC). Text 0625 rows: 0-37 Gen 3, 38-43 the follower aide in every version
+  (placeholders, src/text/overrides_followers.json with our C on), Sapphire/Ruby 44-51 these lines; Emerald 44-54 its Johto
+  starters (EMJ_T), 55-62 these lines (PGS_T).
+- **Swarm bug fixed:** Black 2's swarm table names zone 0xffff under HOENNB2 (src/ov036/enc_pokeset.c SWARM_DATA).

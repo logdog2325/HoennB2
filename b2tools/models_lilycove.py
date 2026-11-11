@@ -62,7 +62,7 @@ PILLAR = Region('trailer_01a', (32, 64), 2, 16, 14, 28)
 SLATE = Region('en_sekia1', (64, 64), 33, 1, 39, 40)            # pack 48: dark slate blue (also Mossdeep's windows)
 
 SOURCES = {'r4_b03_yane01': 'ext05', 'pc_win1': 'ext00', 'h_mado': 'ext00', 'h_kage': 'ext00', 'gate_1': 'ext00',
-           'yane_001': 'ext00', 'c14_h1_body': 'ext57', 'c14_h2_yane': 'ext57', 'd5whouse1a': 'ext08',
+           'yane_001': 'ext00', 'c14_h1_body': 'ext57', 'c14_h2_yane': 'ext57', 'tl_shingle': 'townlook', 'd5whouse1a': 'ext08',
            'c4_bp01': 'ext06', 'trailer_01a': 'ext04', 'plant_tex4': 'ext00', 'en_sekia1': 'ext48', 'c7h2_1': 'ext10',
            'c5_rb_03_w1': 'ext08'}
 
@@ -339,11 +339,17 @@ def motel():
     for x in (2, 30):
         framed_window(m, x, 19, F, 14, 10)
     # lower roof (skirt) and the upper floor
-    skirt_roof(m, SHINGLE, (-hw - 6, hw + 6, B - 6, F + 6), (-hw + 12, hw - 12, B + 8, F - 12), eave - 2, eave + 12, rep=(24, 24))
+    # (town_look 2026-11-09: the shingles at Black 2's size, 1 unit a texel (were 1.5: oversized, user), one wrapped
+    #  polygon a roof face: b2tools/townlook_tex.py tl_shingle = SHINGLE as a texture of its own)
+    rectangle = lambda x0, x1, z0, z1: [(x0, z1), (x1, z1), (x1, z0), (x0, z0)]      # (octagon()'s order)
+    wring(m, 'tl_shingle', rectangle(-hw - 6, hw + 6, B - 6, F + 6), rectangle(-hw + 12, hw - 12, B + 8, F - 12), eave - 2, eave + 12, (16, 16))
     box_walls(m, -hw + 12, hw - 12, B + 8, F - 12, eave + 10, eave + 22, WHITE, rep=(UW, UW), sides='sew')
     rect(m, BEAM, (-hw + 12, eave + 10, F - 12 + 1.0), E, UP, 2 * hw - 24, 3, rep=(28, 3))
     decal(m, SLATE, (0, eave + 16, F - 12 + 1.0), E, UP, 2 * hw - 36, 4)           # Sapphire's dark window band
-    hip_roof(m, SHINGLE, -hw + 6, hw - 6, B + 2, F - 6, eave + 20, -hw + 26, hw - 26, (B + F) / 2 - 4, eave + 36, rep=(24, 24))
+    x0, x1, z0, z1, y0, rz, y1 = -hw + 6, hw - 6, B + 2, F - 6, eave + 20, (B + F) / 2 - 4, eave + 36
+    A, Bq, C, D, R0, R1 = (x0, y0, z1), (x1, y0, z1), (x1, y0, z0), (x0, y0, z0), (-hw + 26, y1, rz), (hw - 26, y1, rz)
+    for a, b, c, d in ((A, Bq, R1, R0), (C, D, R0, R1), (Bq, C, R1, R1), (D, A, R0, R0)):
+        wslope(m, 'tl_shingle', a, b, c, d, (16, 16))
     return m
 
 def beacon():
@@ -367,4 +373,5 @@ def models():
             'contest': contest_hall(), 'museum': museum(), 'motel': motel()}
 
 if __name__ == '__main__':
+    import townlook_tex; townlook_tex.build()            # (tl_shingle: the motel's roof)
     write_models(sys.argv[1], models())

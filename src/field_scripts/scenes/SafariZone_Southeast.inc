@@ -3,8 +3,8 @@
 // entries below are scripts 1-5, the generated people follow. Text: src/text/scenes/SafariZone_Southeast.txt (T_*
 // below). People: data/story/ch8b.json (outdoor uid = 100 + Sapphire local id; the standalone group's own matrix, the map
 // at (64,64)): the camper at the exit (101), the boy and the youngster whose lines mention Pokeblocks (102, 104; the
-// generator leaves them out because of the {POKEBLOCK} text code). Black 2 has no Safari Game (scenes in
-// 1138_room_Route121_SafariZoneEntrance.s): the area is a normal one, the camper takes the Safari Balls back.
+// generator leaves them out because of the {POKEBLOCK} text code). Black 2 has no Safari Game: Sapphire's game runs in
+// normal battles (1138_room_Route121_SafariZoneEntrance.s has how); the camper takes the Safari Balls back.
 #ifdef SCENE_ENTRIES
     ScriptEntry SZSE_Init               // 1: zone init (MapScript1_160073: the camper steps aside on arrival)
     ScriptEntry SZSE_Arrive             // 2: scene condition VAR_SAFARI_ZONE_STATE 2 (EventScript_16004B)
@@ -24,7 +24,15 @@
 #define SZSE_CAMPER 101
 // ObjInitNPCGPos takes the NPC's place in the zone's list: the generated people come first (one now: the man at (16,6)),
 // then data/story/ch8b.json's in their order (the camper first). Checked in the built ROM (tests/lib.py zone_npcs).
+// Emerald's zone 40 has five generated people (uids 0-4), so the camper is index 5 there (its ROM NPC list, checked in
+// Emerald v2.1 and the 2026-11-09/10 builds). With 1, Emerald moved uid 1 (the person at (111,71)) beside the door
+// and the camper walked on to (33,34), leaving the door open: the player walked straight back out with the 30 Safari
+// Balls, and paid again for 60 (Discord report, Emerald v2.1; reproduced in DeSmuME, fixed 2026-11-10 discord_fixes).
+#ifdef HOENN_EMERALD
+#define SZSE_CAMPER_IDX 5
+#else
 #define SZSE_CAMPER_IDX 1
+#endif
 #define SZSE_X(x) (64+(x))               // Sapphire tile -> tile of the Safari group's matrix
 #define SZSE_Z(z) (64+(z))
 #define SZE_ENTRANCE_ZONE 569
@@ -42,7 +50,8 @@ SZSE_Arrive:                            // SafariZone_Southeast_EventScript_1600
     h_waitmovement
     h_applymovement SZSE_CAMPER, Mv_SZSE_CamperToDoor       // back in front of the door: (31,34) -> (32,34), the tile the player
     h_waitmovement                      // just left (the entrance's warp lands on (32,34), Sapphire's door step: walk_sweep 2026-10-12)
-    h_setvar VAR_SAFARI_ZONE_STATE, 0   // (setobjectxyperm 1, 32, 34: the camper's template tile already)
+    h_setvar VAR_SAFARI_ZONE_STATE, 3   // Sapphire 0 (its game is FLAG_SYS_SAFARI_MODE): here 3 = a game, which our C's step and
+                                        // ball checks watch (1138's header); (setobjectxyperm 1, 32, 34: the camper's tile already)
     h_release
 
 SZSE_Camper:                            // SafariZone_Southeast_EventScript_1600A7

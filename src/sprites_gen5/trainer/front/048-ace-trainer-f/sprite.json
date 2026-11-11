@@ -1,0 +1,19 @@
+{
+ "kind": "trainer",
+ "side": "front",
+ "sprite": 48,
+ "archive": 71,
+ "files": {
+  "static": 384,
+  "parts": 385,
+  "palette": 391
+ },
+ "name": "ace-trainer-f",
+ "note": "Ace Trainer (F)",
+ "source": "community: battle_fronts_2026-11-07/Ace_Trainer_F.png by ASalman",
+ "layout": "drawn on the parts of Black 2 front sprite 49 (its cells and animations)",
+ "colours": 15,
+ "cleared_near_background": [],
+ "made_by": "b2tools/sprite_community.py",
+ "mcss_from": 49
+}

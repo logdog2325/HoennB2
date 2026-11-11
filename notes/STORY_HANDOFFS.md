@@ -137,7 +137,9 @@
   (hidden by FLAG_HIDE_GRUNTS_LILYCOVE, set by ch8b's AquaHideout_B2F) are Lilycove's; the hideout door's warp (zone 96 warp slot 27)
   is moved off the map by the zone init once the Mind Badge is owned (Sapphire's RemoveEvilTeamBaseEntrance).
 - The Dept Store floors set `VAR_DEPT_STORE_FLOOR` in their zone inits (init files 0393/0395/0399/0401/0403): the elevator reads it.
-  The elevator's exit tiles are Black 2's dynamic warp (warp id 256): the attendant sets the target with `FieldSetNextZone`.
+  The elevator's exit tiles are Black 2's dynamic warp (warp id 256): the attendant sets the target with `FieldSetNextZone`,
+  and (discord_fixes 2026-11-10) so does the elevator's zone init (0363) on the way in, from VAR_DEPT_STORE_FLOOR: Black 2's
+  arrival never sets it (notes/INTERIORS.md "Dynamic warps"), so the exits led to zone 0 (Black City) until the first ride.
 
 
 ## From ch9 (Mossdeep, Routes 124-127, Shoal Cave, the Treasure Hunter; 2026-10-07)
@@ -298,11 +300,34 @@
   - Doors of rooms (warp tiles) fire when the player presses the door's direction while standing on the tile (e.g. DOWN on Mt. Pyre
     1F (4,6)), not on arrival; test walks by `emu.step` need `calib2` after a zone change (rooms: the default address is often a
     camera copy).
-- Safari Zone (Black 2 has no Safari Game): a normal area. The entrance runs Sapphire's flow ($500, Pokéblock Case = Poffin Case, a
-  free Box slot with a full party, 30 Safari Balls as items: Black 2's Safari Ball is a real 1.5x ball), the camper inside takes the
-  remaining Balls back when you leave (`c8b_take_safari_balls`); no step or ball limit, no bait / rock / run-away mechanics, no
-  Pokéblock Feeder. Proposal (only with a battle-engine patch, not done): the Safari battle screen with Safari Balls, rocks and
-  bait, and an end-of-game check.
+- Safari Zone (Black 2 has no Safari Game): since 2026-11-10 (user: "closer to the original", notes/DECISIONS.md) Sapphire's game in
+  Black 2's normal battles. The entrance runs Sapphire's flow ($500, Pokéblock Case = Poffin Case, a free Box slot with a full party,
+  30 Safari Balls as items: Black 2's Safari Ball is a real 1.5x ball) and restarts Black 2's step counter (PedometerEnd, then
+  PedometerStart: Start alone keeps a running one); the camper inside takes the remaining Balls back when you leave
+  (`c8b_take_safari_balls`). Our C (decomp include/hoennb2/safari.h, src/hoennb2/resident/safari.c; three same-size call changes:
+  ov036 FieldEventProvider_Grid_CheckForEvent's PleasureBoat_Update, ov167 AISelectAction's TrAI_GetChosenMove, ov286
+  BBagMain_StateUsePage's BBagMain_CheckUse) watches VAR_SAFARI_ZONE_STATE (2 arriving, 3 a game: the Southeast arrival sets it,
+  1 back at the gate, 0 none): in a game in a Safari zone (the Rest House, or any zone of SafariZone_Southeast's matrix: Emerald's
+  expansion parts too) 500 steps or no Safari Ball left start global script 10383 / 10384 (1260: the announcement, state 1, the
+  warp to the gate, whose scene takes the balls; the C puts the player on foot first: a scripted warp keeps Surf); arriving in any
+  other zone but the gate ends a game (Fly, Teleport, a whiteout) and takes every Safari Ball. In battle: a wild Pokémon's chosen
+  move becomes running away with 15% a turn (Gen 3's flat rate); the battle bag refuses other balls in the Safari Zone and the
+  Safari Ball outside it (system text 0001 lines 52/53, src/text/overrides_safari.json). No bait / rock, no Pokéblock Feeder.
+  b2tools/patches/scripts.py check_safari: the ids shared with the C. The step that reaches 500 starts no wild battle (Gen 3:
+  the step script runs before the encounter check): dexnav.c's two encounter hooks ask HoennB2_Safari_StepsOver (decomp patch
+  release_kit/next/safari_laststep_decomp.patch, 2026-11-10; before it, a Wooper battle came on the 500th step, then Time's up).
+  Tested on the Emerald test ROM 03449c0e (discord_fixes, work/agents/discord_fixes/em: lift.py, safari.py, oldsave.py,
+  v21.py; screenshots/discord_fixes/emerald/contact_sheet.png): a full-party entry, the camper at the door, a real 500-step
+  run (saved at 300, Continue, Surf at the end: back in the gate on foot), balls out after the battle, a Poké Ball refused /
+  a Safari Ball thrown inside, a Safari Ball refused outside, flee 6 in 33 turns, the DexNav (its search 0 steps, its battle
+  under the rules), every way out (camper, Time's up, balls out, Fly, Teleport, a whiteout; Dig "You can't use that here.",
+  the Escape Rope "Dad's advice..."), the Rest House (its steps count; Time's up there), v2.1 saves (balls outside: gone;
+  inside: no game, the camper takes them). The Safari Ball's description named the Great Marsh: now the Safari Zone
+  (src/text/overrides.json, system text 0063 line 5). (discord_fixes 2026-11-10: the free-Box check is
+  `BoxGetCount v, 5` (kind 4 has no case and always gave 0: "Your PC Box is full" for every full party); the fee takes any
+  leftover Safari Balls before giving 30; Emerald's zone 40 lists five generated people first, so the camper's ObjInitNPCGPos
+  index is 5 there (1 left the door open in Emerald v2.1).) Not done (a battle-engine patch): the Safari battle screen with
+  bait and rocks.
 - Other Black 2 stand-ins: Route 121's weather, Route 123's rain/sun cycle (10 weather tiles) and Mt. Pyre's fog (fixed zone weather;
   no script command, see ch10's note on `FieldSetWeather`); the Berry Master's wife asks for a phrase with Black 2's word picker
   (`c8b_phrase`), which has no Gen 3 phrase list, so the picked word's id decides: 1 in 8 gives one of the five rare Berries (once

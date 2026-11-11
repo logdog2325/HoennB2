@@ -85,7 +85,7 @@ def zone_cfgs():
     # mode's trainers ("what" starting with the mode's name, shown only in that mode). They are checked in their own
     # layout; before, every mode's trainers were checked in the Normal floor (on its walls).
     for room, c in list(out.items()):
-        alts = [a['room'] for a in c.get('alt_rooms', []) if a['room'].startswith(room + '_')]
+        alts = [a['room'] for a in version.alt_rooms(c) if a['room'].startswith(room + '_')]
         if not alts or not c.get('npcs'): continue
         mode = lambda n, a: n.get('what', '').split(' ', 1)[0] == a[len(room) + 1:]
         moved = set()

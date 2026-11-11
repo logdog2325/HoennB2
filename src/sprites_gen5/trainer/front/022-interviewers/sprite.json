@@ -1,0 +1,24 @@
+{
+ "kind": "trainer",
+ "side": "front",
+ "sprite": 22,
+ "archive": 71,
+ "files": {
+  "static": 176,
+  "parts": 177,
+  "palette": 183
+ },
+ "name": "interviewers",
+ "note": "Gabby & Ty (Interviewer)",
+ "source": "community: battle_fronts_2026-11-07/repoter.png by ASalman",
+ "layout": "drawn on the parts of Black 2 front sprite 22 (its cells and animations)",
+ "colours": 13,
+ "cleared_near_background": [
+  [
+   111,
+   191,
+   160
+  ]
+ ],
+ "made_by": "b2tools/sprite_community.py"
+}

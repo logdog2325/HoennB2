@@ -49,5 +49,14 @@
   }
  ],
  "signs": [],
- "what": "SeafloorCavern_Room9: cave (converter/gen_caves.py, b2tools/models_cave.py); story objects: see notes/CAVES.md"
+ "what": "SeafloorCavern_Room9: cave (converter/gen_caves.py, b2tools/models_cave.py); story objects: see notes/CAVES.md",
+ "alt_rooms": [
+  {
+   "room": "SeafloorCavern_Room9_Ruby",
+   "room_ruby": "SeafloorCavern_Room9",
+   "event": 0,
+   "skip_emerald": true,
+   "what": "postgame_dex 2026-11-10 (user): after the Champion the other version's Room 9, as its legend slept there in its own game: Sapphire shows Ruby's lava basin (Groudon), Ruby Sapphire's water pool (Kyogre). Map replace event 0 (work 0x4031: Emerald's Route 111, unused by Sapphire and Ruby), set on every entry by the zone init (scenes/SeafloorCavern_Room9_Postgame.inc PG_R9_Init); version.alt_rooms reads the version keys"
+  }
+ ]
 }

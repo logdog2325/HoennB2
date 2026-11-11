@@ -23,6 +23,7 @@ UW = 400          # 'repeat' wider than any face: a region that is uniform along
 
 # --- pack 0 / slice textures (already in the Hoenn building texture set) ---
 WHITE = Region('r4_b03_yane01', (64, 64), 2, 18, 14, 26)       # light grey-white wall (Route 4 building)
+STRIPES = Region('r4_b03_yane01', (64, 64), 2, 20, 14, 27)     # light grey with a dark lower edge: corrugated metal when repeated
 BLUE = Region('r4_b03_yane01', (64, 64), 4, 34, 60, 54)        # flat blue panel
 SMALL_WIN = Region('r4_b03_yane01', (64, 64), 4, 7, 17, 18)    # blue window in a grey frame
 PANEL = Region('r4_b03_yane01', (64, 64), 11, 57, 33, 64)      # white sign board with grey studs
@@ -41,7 +42,7 @@ RIDGE = Region('t06_h_01_a', (64, 64), 0, 3, 64, 7)            # cream ridge ban
 CREAM = Region('t06_h_01_a', (64, 64), 35, 47, 50, 62)         # cream-yellow wall
 
 SOURCES = {'r4_b03_yane01': 'ext05', 'pc_win1': 'ext00', 'c14_h1_body': 'ext57', 'h_mado': 'ext00', 'h_kage': 'ext00',
-           'sand_tex001': 'ext01', 't06_h_01_a': 'ext53', 'yane_001': 'ext00'}
+           'sand_tex001': 'ext01', 't06_h_01_a': 'ext53', 'yane_001': 'ext00', 'tl_redtile': 'townlook'}
 
 WRAPPED = set()   # textures drawn whole and repeated by the hardware (WRAP), so a face needs no cutting
 
@@ -156,8 +157,13 @@ def house(width, door_dx, windows):
     face(m, CREAM, (-hw, 0, B), (0, 0, 1), UP, [(0, 0), (D, 0), (D, eave), (zc - B, yr), (0, eave_b)], rep=(UW, 37))
     ox, oz = hw + 3, 4                 # roof overhang
     kf, kb = (yr - eave) / (F - zc), (yr - eave_b) / (zc - B)       # pitches (the slopes continue the gables' edges)
-    slope(m, ROOF_RED, (-ox, eave - oz * kf, F + oz), (ox, eave - oz * kf, F + oz), (ox, yr, zc), (-ox, yr, zc), rep=(64, 24))
-    slope(m, ROOF_RED, (ox, eave_b - oz * kb, B - oz), (-ox, eave_b - oz * kb, B - oz), (-ox, yr, zc), (ox, yr, zc), rep=(64, 24))
+    if os.environ.get('HOENN_PETALBURG_OLD'):
+        slope(m, ROOF_RED, (-ox, eave - oz * kf, F + oz), (ox, eave - oz * kf, F + oz), (ox, yr, zc), (-ox, yr, zc), rep=(64, 24))
+        slope(m, ROOF_RED, (ox, eave_b - oz * kb, B - oz), (-ox, eave_b - oz * kb, B - oz), (-ox, yr, zc), (ox, yr, zc), rep=(64, 24))
+    else:   # (town_look 2026-11-09: the tiles a quarter smaller, user: 'oversized'; one wrapped polygon a slope,
+            #  b2tools/townlook_tex.py tl_redtile = two of ROOF_RED's tile rows)
+        wslope(m, 'tl_redtile', (-ox, eave - oz * kf, F + oz), (ox, eave - oz * kf, F + oz), (ox, yr, zc), (-ox, yr, zc), (48, 12))
+        wslope(m, 'tl_redtile', (ox, eave_b - oz * kb, B - oz), (-ox, eave_b - oz * kb, B - oz), (-ox, yr, zc), (ox, yr, zc), (48, 12))
     # ridge band: a thin cream strip on each slope just below the ridge
     for sgn, k in ((1, kf), (-1, kb)):
         z1 = zc + sgn * 5; y1 = yr - 5 * k
@@ -167,7 +173,73 @@ def house(width, door_dx, windows):
         else: slope(m, RIDGE, b, a, d, c, rep=(UW, 6))
     return m
 
-MODELS = {'gym': gym, 'wally': lambda: house(5, 0, (-22, 22)), 'house': lambda: house(4, -8, (14.5,))}
+def gym2():
+    """The generic Gym, town look pass (town_look 2026-11-09; every Hoenn town's Gym): Black 2's Gyms stand about as
+    tall as they are deep (Aspertia's c12_gym 0.96, Humilau's c14_gym 0.87; ours was 0.52: a 98x92 orange hip roof on
+    38-unit walls). Same footprint, porch, door (door_pc at dx 8, dz 20) and door-row corners as gym() (the porch alone
+    stands in the door row, so world.py's open_uncovered keeps those tiles walkable). The front part's walls rise to 54
+    with a second window band and a big sign board with the crest over the porch, under a low hip roof (rise 6); the
+    rear 18 units (the walk-behind roof row, or the row Gen 3 draws as roof) keep the old 38-unit walls under a lean-to
+    roof, so the camera hides no more of what lies behind (work/agents/town_look/tools/occl.py)."""
+    m = Model('hoenn_gym')
+    F, B = 24, -54
+    FM = F - 8
+    G, G2 = DOOR_WALL, DOOR_WALL + 16          # rear walls (as before), front part's walls
+    BF = B + 18                                # the front part's back wall
+    shadow(m, -52, 52, B - 4, F + 6)
+    box_walls(m, -46, 46, BF, FM, 0, G2, WHITE, rep=(UW, 8), sides='sew')
+    rect(m, BLUE, (-46, 0, FM + 1.0), E, UP, 92, 3, rep=(UW, 3))           # blue skirting
+    rect(m, BLUE, (-46, 8, FM + 1.0), E, UP, 92, 1.5, rep=(UW, 1.5))       # thin stripe (Sapphire's banded wall)
+    rect(m, BLUE, (-46, G - 3, FM + 1.0), E, UP, 92, 2, rep=(UW, 2))       # storey band
+    rect(m, BLUE, (-46, G2 - 5, FM + 1.0), E, UP, 92, 3, rep=(UW, 3))      # band under the eave
+    for x in (47, -47):                                                    # the same bands on the sides
+        d = (0, 0, -1) if x > 0 else (0, 0, 1)
+        z0 = FM if x > 0 else BF
+        for y, h in ((0, 3), (G2 - 5, 3)):
+            rect(m, BLUE, (x, y, z0), d, UP, FM - BF, h, rep=(UW, h))
+    for x in (-36, -22, 36):                                               # ground-storey windows (as before)
+        decal(m, SMALL_WIN, (x, 19, FM + 1.0), E, UP, 12, 8)
+    for x in (-32, 40):                                                    # upper windows
+        decal(m, SMALL_WIN, (x, G + 6, FM + 1.0), E, UP, 12, 7)
+    decal(m, CREST, (-38, 15, FM + 2.0), E, UP, 9, 9)                      # Poke Ball crest (as before)
+    decal(m, PANEL, (8, G + 7, FM + 2.0), E, UP, 32, 10)                   # big sign board over the porch
+    # roof: an orange hipped rim (Sapphire's orange Gym roof, user 2026-10-09) round a flat light roof deck, so the
+    # tiles no longer fill the view from the north (Black 2's Gyms: flat decks behind a parapet)
+    for (a, b, c, d) in (((-49, G2, FM + 3), (49, G2, FM + 3), (36, G2 + 7, FM - 10), (-36, G2 + 7, FM - 10)),
+                         ((49, G2, BF - 2), (-49, G2, BF - 2), (-36, G2 + 7, BF + 10), (36, G2 + 7, BF + 10)),
+                         ((49, G2, FM + 3), (49, G2, BF - 2), (36, G2 + 7, BF + 10), (36, G2 + 7, FM - 10)),
+                         ((-49, G2, BF - 2), (-49, G2, FM + 3), (-36, G2 + 7, FM - 10), (-36, G2 + 7, BF + 10))):
+        wslope(m, 'yane_001', a, b, c, d, (16, 32))
+    face(m, STRIPES, (0, G2 + 7, 0), E, (0, 0, -1), [(-36, -(FM - 10)), (36, -(FM - 10)), (36, -(BF + 10)), (-36, -(BF + 10))], rep=(UW, 8))   # (ribbed metal deck)
+    decal(m, CREST, (0, G2 + 8, (BF + 10 + FM - 10) / 2), E, (0, 0, -1), 22, 22)      # the Gym's emblem, centred on the deck (user)
+    # rear part: the old walls and a lean-to roof up to the front part's back wall
+    box_walls(m, -46, 46, B, BF, 0, G, WHITE, rep=(UW, 8), sides='ew')
+    for x in (47, -47):
+        d = (0, 0, -1) if x > 0 else (0, 0, 1)
+        rect(m, BLUE, (x, 0, BF if x > 0 else B), d, UP, BF - B, 3, rep=(UW, 3))
+    wslope(m, 'yane_001', (49, G, B - 3), (-49, G, B - 3), (-49, G + 6, BF), (49, G + 6, BF), (16, 32))
+    for x, d in ((49, (1, 0, 0)), (-49, (-1, 0, 0))):                      # its gable ends (white)
+        face(m, WHITE, (x - (1 if x > 0 else -1) * 3, G, 0), (0, 0, -1) if x > 0 else (0, 0, 1), UP,
+             [(-(B - 3), 0), (-BF, 0), (-BF, 6)] if x > 0 else [(B - 3, 0), (BF, 0), (BF, 6)], rep=(UW, 8))
+    # entrance porch: as gym()
+    bl, br, fl, fr = (-14, FM), (30, FM), (-6, F), (22, F)
+    H = G - 2
+    rect(m, WHITE, (fl[0], 0, F), E, UP, fr[0] - fl[0], H, rep=(UW, 8))
+    slope(m, WHITE, (fr[0], 0, F), (br[0], 0, FM), (br[0], H, FM), (fr[0], H, F), rep=(UW, 8))
+    slope(m, WHITE, (bl[0], 0, FM), (fl[0], 0, F), (fl[0], H, F), (bl[0], H, FM), rep=(UW, 8))
+    for (xa, za), (xb, zb) in (((fr[0], F), (br[0], FM)), ((bl[0], FM), (fl[0], F))):
+        ln = math.hypot(xb - xa, zb - za); ux, uz = (xb - xa) / ln, (zb - za) / ln
+        nx, nz = uz, -ux
+        cx, cz = (xa + xb) / 2 + nx * 1.0, (za + zb) / 2 + nz * 1.0
+        decal(m, GLASS, (cx, 11, cz), (ux, 0, uz), UP, 7, 14)
+    rect(m, BLUE, (fl[0], H - 2, F + 1.0), E, UP, fr[0] - fl[0], 2, rep=(UW, 2))
+    pc_door_hood(m, WHITE, BLUE, 8, F - 4, 31, 34, band_rep=(UW, 8))
+    top = [(fl[0] - 2, F + 2), (fr[0] + 2, F + 2), (br[0] + 2, FM - 4), (bl[0] - 2, FM - 4)]
+    wface(m, 'yane_001', (0, H + 1, 0), E, (0, 0, -1), [(x, -z) for x, z in top], (16, 32))
+    rect(m, WHITE, (fl[0] - 2, H, F + 2), E, UP, fr[0] - fl[0] + 4, 1, rep=(UW, 1))
+    return m
+
+MODELS = {'gym': gym2 if not os.environ.get('HOENN_GYM_OLD') else gym, 'wally': lambda: house(5, 0, (-22, 22)), 'house': lambda: house(4, -8, (14.5,))}
 
 def write(out, models, sources):
     os.makedirs(out, exist_ok=True)
@@ -185,6 +257,7 @@ def write(out, models, sources):
     open(os.path.join(out, 'textures.txt'), 'w').write(''.join(f'{sources[t]} {t}\n' for t in sorted(used)))
 
 def main(out):
+    import townlook_tex; townlook_tex.build()            # (tl_redtile)
     write(out, {k: f() for k, f in MODELS.items()}, SOURCES)
 
 if __name__ == '__main__':

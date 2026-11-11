@@ -145,8 +145,14 @@ PIC_SPRITE = {
     'POKEMANIAC': 32, 'KINDLER': 56, 'CAMPER': 72, 'PICNICKER': 28, 'BUG_MANIAC': 51, 'BUG_CATCHER': 110,
     'EXPERT_M': 69, 'EXPERT_F': 70, 'CYCLING_TRIATHLETE_M': 89, 'CYCLING_TRIATHLETE_F': 90,
     'RUNNING_TRIATHLETE_M': 52, 'RUNNING_TRIATHLETE_F': 6, 'SWIMMING_TRIATHLETE_M': 83,
-    'SWIMMING_TRIATHLETE_F': 84, 'DRAGON_TAMER': 100, 'BIRD_KEEPER': 109, 'NINJA_BOY': 15, 'SAILOR': 82,
-    'COLLECTOR': 58, 'SR_AND_JR': 62, 'YOUNG_COUPLE': 68, 'OLD_COUPLE': 74, 'SIS_AND_BRO': 16,
+    'SWIMMING_TRIATHLETE_F': 84, 'DRAGON_TAMER': 100, 'BIRD_KEEPER': 109, 'NINJA_BOY': 21, 'SAILOR': 82,
+    'COLLECTOR': 37, 'SR_AND_JR': 81, 'YOUNG_COUPLE': 68, 'OLD_COUPLE': 74, 'SIS_AND_BRO': 16,
+    # (Ninja Boy 21 and the Collector 37: spare pictures of their own since 2026-11-07, so the NEW set can show each
+    # class's own front; CLASSIC copies the pictures they shared before, 15 and 58: sprite_community.py PARTS_OWN_SLOT)
+    # (Sr. and Jr. 81 since 2026-11-10: Black 2's empty picture of class 82, which no build used, now Gen 3's own
+    # sr_and_jr front resized, src/sprites/trainer/front/081-sr-and-jr (b2tools/sprite_upgrade.py; no NEW art, so both
+    # sprite styles show it); before, Black 2's biker on a motorcycle with a bald man, 62, stood in. Young Couple 68,
+    # Old Couple 74 and Sis and Bro 16 are still Black 2 stand-ins)
 }
 # Black 2 classes to use as they are (same role, sprite and battle music), by Sapphire pic
 KEEP_CLASS = {

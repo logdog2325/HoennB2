@@ -9,6 +9,7 @@
 
     ScriptEntry Script_None
     ScriptEntry EL_Attendant            // 2: object 1 (the elevator girl)  // story:
+    ScriptEntry EL_Init                 // 3: zone init + field load (0363): the exit leads back to the floor the player came from  // story:
     ScriptEntriesEnd
 
 Script_None:
@@ -19,7 +20,7 @@ Script_None:
 // everything from this line on; entries above marked "// story:")
 // Sapphire data/maps/LilycoveCity_DepartmentStoreElevator/scripts.inc. The attendant asks for the floor (multichoice 57:
 // 1F-5F), sets the dynamic warp (setdynamicwarp -> FieldSetNextZone: this room's two exit tiles are Black 2's dynamic
-// warp, story_fixups' b2tools/check_exits.py: they lead to the zone/tile the script set, or where you came from),
+// warp, story_fixups' b2tools/check_exits.py: they lead to the zone/tile a script set, the ride's or the zone init's),
 // shakes the room (ShakeScreenInElevator) and stores the floor in VAR_DEPT_STORE_FLOOR. Each floor stores its own
 // number on loading (their zone inits: Sapphire's SetDepartmentStoreFloorVar reads the dynamic warp). Left out: the
 // "Now on: 3F" panel (DisplayCurrentElevatorFloor). People: data/story/ch8a.json. Lines 1-7 of the text file.
@@ -83,4 +84,35 @@ L_EL_Ride:                                  // ..._EventScript_MoveElevator
     WorkSet VAR_DEPT_STORE_FLOOR, C8_A
 L_EL_Exit:
     h_release
+
+// Zone init (discord_fixes 2026-11-10): leaving without a ride goes back to the floor the player got on at. Gen 3 does this
+// in SetupWarp (pokeemerald field_control_avatar.c): a warp into a map whose arrival warp is MAP_DYNAMIC sets the dynamic warp to
+// the warp the player came through. Black 2 has the same idea (ov012 SetupZoneWarpArrival marks an arrival on a 0x100
+// warp as change type 3, and ov035 FieldMapControl_InitSpawn would copy the remembered departure into GameData's next
+// zone), but SetupZoneWarpArrivalGrid (arm9 0x02018fd4) then writes change type 0 over it, so no warp sets the next
+// zone. Before this, the exits led to the save's zero spawn = zone 0, Unova's Black City, until the first ride, and
+// after a ride to the last floor ridden to, wherever the player had got on (both seen on Emerald v2.1, Discord report).
+// Every floor stores its number on loading (their zone inits), so it names the floor the player came from; an old save's
+// unset var is 0 = 1F. The same arrival tile as a ride: the elevator door, (3,2) facing down. Also run at a field load
+// without a map change (0363 MapScript 3: Continue runs no zone init), so a save made in here by an older version leads
+// out right too; after a ride the var already names the floor ridden to, which is what the ride set.
+EL_Init:
+    h_goto_if_eq VAR_DEPT_STORE_FLOOR, 1, L_EL_Init2F
+    h_goto_if_eq VAR_DEPT_STORE_FLOOR, 2, L_EL_Init3F
+    h_goto_if_eq VAR_DEPT_STORE_FLOOR, 3, L_EL_Init4F
+    h_goto_if_eq VAR_DEPT_STORE_FLOOR, 4, L_EL_Init5F
+    FieldSetNextZone 196, 1, 3, 0, 2        // 1F (VAR_DEPT_STORE_FLOOR 0, or anything else)
+    VMHalt
+L_EL_Init2F:
+    FieldSetNextZone 197, 1, 3, 0, 2
+    VMHalt
+L_EL_Init3F:
+    FieldSetNextZone 199, 1, 3, 0, 2
+    VMHalt
+L_EL_Init4F:
+    FieldSetNextZone 200, 1, 3, 0, 2
+    VMHalt
+L_EL_Init5F:
+    FieldSetNextZone 201, 1, 3, 0, 2
+    VMHalt
     .balign 4, 0

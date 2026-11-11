@@ -1,0 +1,18 @@
+{
+ "kind": "trainer",
+ "side": "front",
+ "sprite": 2,
+ "archive": 71,
+ "files": {
+  "static": 16,
+  "parts": 17,
+  "palette": 23
+ },
+ "name": "youngster",
+ "note": "Youngster",
+ "source": "community: battle_fronts_2026-11-07/youngster.png by ASalman",
+ "layout": "drawn on the parts of Black 2 front sprite 2 (its cells and animations)",
+ "colours": 14,
+ "cleared_near_background": [],
+ "made_by": "b2tools/sprite_community.py"
+}

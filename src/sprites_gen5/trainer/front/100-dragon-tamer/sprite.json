@@ -1,0 +1,19 @@
+{
+ "kind": "trainer",
+ "side": "front",
+ "sprite": 100,
+ "archive": 71,
+ "files": {
+  "static": 800,
+  "parts": 801,
+  "palette": 807
+ },
+ "name": "dragon-tamer",
+ "note": "Dragon Tamer",
+ "source": "community: battle_fronts_2026-11-07/Dragon_Master.png by ASalman",
+ "layout": "drawn on the parts of Black 2 front sprite 138 (its cells and animations)",
+ "colours": 15,
+ "cleared_near_background": [],
+ "made_by": "b2tools/sprite_community.py",
+ "mcss_from": 138
+}

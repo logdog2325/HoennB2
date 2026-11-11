@@ -15,7 +15,7 @@ Everything here is a set of Python tools (plus a little C and Java) that read th
 | `notes/` | Research and design notes: Black 2's map, terrain and script formats, how each system was ported, and what was learned along the way. Start with `notes/GEN5_MAPS.md`, `notes/WORLD.md`, `notes/TOOLCHAIN.md` and `notes/TESTING.md`. |
 | `viewer/` | Small HTML previews of the map plans. |
 
-Some topics others may find useful: putting a Gen 3 region onto Gen 5's map matrix and 3D terrain, Gen 5 field scripts, adding a type (Fairy) to Black 2, porting GBA songs to the DS sound format, making a Black 2 hack run on flashcarts and 3DS loaders (`b2tools/patches/antipiracy.py`: loaders only switch off Black 2's anti-piracy for the original game), and checks for things real hardware rejects but DeSmuME allows (`b2tools/anim_tex_check.py`).
+Some topics others may find useful: putting a Gen 3 region onto Gen 5's map matrix and 3D terrain, Gen 5 field scripts, adding a type (Fairy) to Black 2, porting GBA songs to the DS sound format, making a Black 2 hack run on flashcarts and 3DS loaders (`b2tools/patches/antipiracy.py`: loaders only switch off Black 2's anti-piracy for the original game), checks for things real hardware rejects but DeSmuME allows (`b2tools/anim_tex_check.py`), an Omega Ruby / Alpha Sapphire-style DexNav on Black 2's touch screen (its art and per-area map snapshots in `b2tools/dexnav_art.py` and `b2tools/dexnav_snapshots.py`, its hardware budgets in `b2tools/dexnav_check.py`), and post-game wild tables that let each version complete its Pokédex alone (`converter/gen_postgame_encounters.py`, `b2tools/patches/postgame_encounters.py`).
 
 ## Building
 
@@ -38,7 +38,7 @@ HOENN_VERSION=emerald zsh b2tools/rebuild_slice.sh    # Emerald   -> work/rom_em
 
 A full build takes about 10 to 15 minutes per version and runs the automatic checkers at the end. `b2tools/bps.py make` turns a built game into a patch.
 
-Since v19.0 and Emerald v2.0, the games' code is built from the pokebw2 decompilation. HoennB2's own changes to that code (PokéNav, Contests, Secret Bases, Following Pokémon and more) aren't in this repository, so this snapshot can't rebuild those releases on its own.
+Since v19.0 and Emerald v2.0, the games' code is built from the pokebw2 decompilation. HoennB2's own changes to that code (PokéNav, Contests, Secret Bases, Following Pokémon, the DexNav, the post-game wild tables and more) aren't in this repository, so this snapshot can't rebuild those releases on its own.
 
 ## License
 
@@ -63,6 +63,7 @@ Community sprites (the NEW sprite set), used with credit:
 - **izzyvicious:** Drake, Phoebe, Sidney, Courtney and the Frontier Brains (overworld).
 - **brawlzilla:** Dragon Tamer, Kindler and the Experts (overworld).
 - **pokelustcompany:** Hex Maniac (overworld).
+- **ASalman:** 29 trainer battle sprites, made for HoennB2 (Youngster, Aroma Lady, Tubers, Ninja Boy, Gabby and Ty, Ruin Maniac, Picnicker, Fisherman, Poké Maniac, Collector, Rich Boy, Lady, Ace Trainers, Bug Maniac, Kindler, Battle Girl, Parasol Lady, Young Couple, Experts, Camper, Sailor, Dragon Tamer, Bird Keeper, Bug Catcher, Guitarist, Hex Maniac).
 - Shared on our Discord, artists still to be named: Lass and Poké Fans, and recolours of some sheets above.
 
 `src/sprites/community/incoming/CREDITS.md` lists where each sheet came from and its terms.

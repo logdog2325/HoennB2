@@ -66,6 +66,7 @@ B4_Kyogre:                              // CaveOfOrigin_B4F_EventScript_15DDD7
     c10_lock
     h_applymovement 255, Common_Movement_WalkInPlaceFastestUp
     h_waitmovement
+    h_goto_if_set FLAG_LEGENDARY_BATTLE_COMPLETED, L_B4_Again   // post-game: back after a Hall of Fame (L_B4_Again below)
     h_msgbox_info T_BlueOrbGlowing      // <player>'s Blue Orb suddenly began glowing!
     h_closemessage
     SEPlay C10_SE_DETECT                // setweather NONE; SE_M_DETECT; the sparkle at (9,13)
@@ -108,6 +109,43 @@ L_B4_Caught:
     h_clearflag FLAG_SYS_WEATHER_CTRL   // the downpour ends (the `weather` patch reads this flag)
     h_setvar VAR_MT_PYRE_STATE, 2
     h_clearflag FLAG_HIDE_LEADER_MT_PYRE_SUMMIT
+    h_release
+
+// POST-GAME (postgame_dex 2026-11-09, user decision: the one-chance legendaries come back after the next Hall of Fame when
+// they were knocked out, ran or won, caught = gone). The Hall of Fame (0114, scenes/postgame_legends.inc) shows Kyogre /
+// Groudon here again and sets VAR_CAVE_OF_ORIGIN_B4F_STATE back to 0 when the story's battle did not catch it (the
+// Pokédex has it seen, not caught). The same trigger then wakes it without the story: no orb, no story flags; the cry, it
+// comes, the battle at the same level; the hide flag is set before it as in the story, so it is gone again until the
+// next Hall of Fame unless caught.
+L_B4_Again:
+    h_waitse
+    h_playmoncry SPECIES_GROUDON_OR_KYOGRE
+    h_delay 40
+    h_waitmoncry
+    h_applymovement B4_KYOGRE, Mv_B4_KyogreComes
+    h_waitmovement
+    h_delay 60
+    h_waitse
+    h_playmoncry SPECIES_GROUDON_OR_KYOGRE
+    h_delay 40
+    h_waitmoncry
+    FlagSet FLAG_HIDE_LEGEND_MON_CAVE_OF_ORIGIN
+    h_setvar VAR_CAVE_OF_ORIGIN_B4F_STATE, 1
+    CallWildBattle SPECIES_GROUDON_OR_KYOGRE, B4_KYOGRE_LEVEL, 1
+    WildBattleIsVictory C10_A
+    WorkCmpConst C10_A, 1
+    VMJumpIf CMP_EQ, L_B4_AgainOver
+    CallWildLose
+    VMHalt
+L_B4_AgainOver:
+    ActorDelete B4_KYOGRE
+    CallWildBattleEnd
+    WildBattleGetResult C10_A
+    WorkCmpConst C10_A, 0
+    VMJumpIf CMP_EQ, L_B4_AgainCaught   // caught: no line
+    h_msgbox_info T_KyogreSettled       // Kyogre appears to have settled into sleep again...
+    h_closemessage
+L_B4_AgainCaught:
     h_release
 
     .balign 4, 0

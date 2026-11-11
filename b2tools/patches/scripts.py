@@ -27,7 +27,8 @@ def assemble(src):
         if os.environ.get('HOENN_BERRY_PLANTING', '1') != '0':   # berry planting (notes/BERRY_PLANTING.md; off by default:
             test += ['-D', 'HOENN_BERRY_PLANTING']          #  1241_hidden_items.s, scenes/Route130.inc)
         if b2decomp.c_on():                      # the followers' talk script (needs our C: notes/FOLLOWERS.md)
-            test += ['-D', 'HOENN_FOLLOWERS']
+            test += ['-D', 'HOENN_FOLLOWERS', '-D', 'HOENN_DEXNAV',   # (and the DexNav's: notes/DEXNAV.md; the Safari
+                     '-D', 'HOENN_SAFARI']                            #  Zone's announcements, 1260: check_safari)
         subprocess.run([f'{LLVM}/clang', '--target=armv5te-none-eabi', '-x', 'assembler-with-cpp', '-c', *test,
                         '-I', f'{DECOMP}/include', '-I', f'{DECOMP}/lib/nitro/include', '-I', f'{DECOMP}/build/include/generated',   # the newer decomp's generated constants headers (notes/POKEBW2_UPGRADE.md; absent = ignored)
                         '-I', os.path.join(ROOT, 'src', 'include'), '-I', os.path.join(ROOT, 'src', 'field_scripts'), '-D', 'BLACK2',   # field_scripts: "common/x.inc" (notes/STORY_COMMON.md)
@@ -74,8 +75,29 @@ def check_local_works():
     if bad:
         raise SystemExit('scripts: script works past 0x8061 (Black 2 has 0x8000-0x8061 only):\n  ' + '\n  '.join(bad))
 
+def check_safari():
+    """The Safari Zone's ids that our C (the decomp's include/hoennb2/safari.h) shares with the scripts and texts: the state
+    var (hoenn.h), the two announcements' global script numbers (1260's entries: 10380 + index) and the battle bag's two
+    lines (src/text/overrides_safari.json). Only with our C on and the header there."""
+    import re
+    hdr = os.path.join(DECOMP, 'include', 'hoennb2', 'safari.h')
+    if not b2decomp.c_on() or not os.path.exists(hdr):
+        return
+    c = {k: int(v, 0) for k, v in re.findall(r'^#define (HOENNB2_\w+) (0x[0-9A-Fa-f]+|\d+)', open(hdr).read(), re.M)}
+    h = open(os.path.join(ROOT, 'src', 'include', 'hoenn.h')).read()
+    var = int(re.search(r'^#define VAR_SAFARI_ZONE_STATE\s+(0x[0-9A-Fa-f]+)', h, re.M).group(1), 16)
+    assert var == c['HOENNB2_VAR_SAFARI_ZONE_STATE'], f'VAR_SAFARI_ZONE_STATE {var:#x} is not safari.h\'s'
+    entries = re.findall(r'^\s*ScriptEntry (\w+)', open(source_for(1260)).read(), re.M)
+    for name, key in (('Script_SafariTimesUp', 'HOENNB2_SCRID_SAFARI_TIMES_UP'),
+                      ('Script_SafariOutOfBalls', 'HOENNB2_SCRID_SAFARI_OUT_OF_BALLS')):
+        assert 10380 + entries.index(name) == c[key], f'{name} is not global script {c[key]}'
+    lines = json.load(open(os.path.join(ROOT, 'src', 'text', 'overrides_safari.json'), encoding='utf-8'))['system/0001.txt']
+    for key in ('HOENNB2_MSG_SAFARI_BALLS_ONLY', 'HOENNB2_MSG_SAFARI_BALLS_OUTSIDE'):
+        assert str(c[key]) in lines, f'{key} {c[key]} is not a line of overrides_safari.json'
+
 def apply(files):
     check_local_works()
+    check_safari()
     entries = narcio.load(files, 56)
     done = []
     moved = room_numbers()

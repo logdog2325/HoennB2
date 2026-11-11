@@ -128,7 +128,8 @@ def main(args):
     if os.environ.get('HOENN_BERRY_PLANTING', '1') != '0' and 'berries' not in patches:
         patches.append('berries')       # Gen 3 berry planting (on by default since 2026-10-18; =0 = the daily trees): notes/BERRY_PLANTING.md
     if b2decomp.c_on() and patches:     # what needs the decomp's C, last: their data in the resident section
-        patches += [p for p in ('followers', 'feebas') if p not in patches]   # notes/FOLLOWERS.md; patches/feebas.py
+        patches += [p for p in ('followers', 'feebas', 'postgame_encounters', 'dexnav') if p not in patches]   # notes/FOLLOWERS.md;
+        # patches/feebas.py; patches/postgame_encounters.py (the post-game wild tables, after hoenn_pokedex); notes/DEXNAV.md
     files = os.path.join(OUT, 'files')
     if clean or not os.path.isdir(files):
         shutil.rmtree(files, ignore_errors=True)

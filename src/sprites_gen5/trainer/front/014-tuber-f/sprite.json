@@ -1,0 +1,26 @@
+{
+ "kind": "trainer",
+ "side": "front",
+ "sprite": 14,
+ "archive": 71,
+ "files": {
+  "static": 112,
+  "parts": 113,
+  "palette": 119
+ },
+ "name": "tuber-f",
+ "note": "Tuber (girl)",
+ "source": "community: battle_fronts_2026-11-07/Tuber_Girl.png by ASalman",
+ "layout": "drawn on the parts of Black 2 front sprite 15 (its cells and animations)",
+ "colours": 14,
+ "cleared_near_background": [
+  [
+   45,
+   147,
+   51
+  ]
+ ],
+ "made_by": "b2tools/sprite_community.py",
+ "mcss_from": 15,
+ "static_intro": true
+}

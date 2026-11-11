@@ -256,6 +256,17 @@ def door_alias(map_, warp, version_=None):
         if (r['map'], r['warp']) == (map_, warp): return tuple(r['door'])
     return map_, warp
 
+def alt_rooms(cfg, version_=None):
+    """A zone json's other layouts ("alt_rooms", b2tools/patches/interiors.py) as the version's build installs them: an
+    entry's "<key>_<version>" keys replace "<key>" (Seafloor Cavern Room 9: "room_ruby", the Sapphire layout Ruby swaps to
+    after the Champion) and "skip_<version>": true leaves the entry out (postgame_dex 2026-11-10)."""
+    sfx = '_' + (version_ or VERSION)
+    out = []
+    for a in cfg.get('alt_rooms', []):
+        a = dict(a, **{k[:-len(sfx)]: v for k, v in a.items() if k.endswith(sfx) and len(k) > len(sfx)})
+        if not a.get('skip'): out.append(a)
+    return out
+
 def room_variant(room, version_=None):
     """The built room that plays `room` in the version (data/versions.json "room_variants": a cave built from Ruby's
     other layout, e.g. SeafloorCavern_Room9 -> SeafloorCavern_Room9_Ruby), else room."""

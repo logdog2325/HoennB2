@@ -31,14 +31,14 @@ def house(width, door_dx, windows, name):
     rect(m, BEAM, (-hw, eave - 4, F + 1.0), E, UP, 2 * hw, 4, rep=(UW, 4))
     for x in (-hw + 1.5, door_dx - 10, door_dx + 10, hw - 1.5):
         rect(m, POST, (x - 1.5, 0, F + 2.0), E, UP, 3, eave, rep=(3, 32))
-    for x in windows:
-        window(m, x, 18, F, 16, 10)
+    for x in windows:                  # (town_look 2026-11-09: Black 2's house windows, 20x13; were 16x10)
+        window(m, x, 19, F, 20, 13)
     # gable ends: plaster triangles with a dark beam across
     zc = (F + B) / 2
     for x, d, z0 in ((hw, (0, 0, -1), F), (-hw, (0, 0, 1), B)):
         face(m, PLASTER, (x, eave, z0), d, UP, [(0, 0), (F - B, 0), ((F - B) / 2, rise)], rep=(UW, 26))
     k = rise / (F - zc)
-    ox, oz = hw + 5, 5                 # deep eaves
+    ox, oz = hw + 3, 3                 # eaves (town_look 2026-11-09: 3, were 5: the roof filled the view from the north)
     wgable(m, 'nsyane', -ox, ox, B - oz, F + oz, eave - oz * k, eave + rise, rep=(16, 32))
     # ridge beam (dark wood) along the top
     yr = eave + rise
@@ -46,7 +46,7 @@ def house(width, door_dx, windows, name):
     face(m, BEAM, (0, yr + 2.5, 0), E, (0, 0, -1), [(-ox - 1, -(zc + 2)), (ox + 1, -(zc + 2)), (ox + 1, -(zc - 2)), (-ox - 1, -(zc - 2))], rep=(UW, 4))
     return m
 
-MODELS = {'hall': lambda: house(5, 0, (21,), 'dew_hall'), 'house': lambda: house(4, -8, (13,), 'dew_house')}
+MODELS = {'hall': lambda: house(5, 0, (-21, 21), 'dew_hall'), 'house': lambda: house(4, -8, (13,), 'dew_house')}   # (hall: a window either side of the door, town_look)
 
 def main(out):
     write(out, {k: f() for k, f in MODELS.items()}, SOURCES)

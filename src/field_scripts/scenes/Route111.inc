@@ -84,6 +84,9 @@ R111_Init:                                  // Route111_OnTransition
     VMCall Test_Ch4Start
 #endif
     VMCall Sub_GabbyTyUpdate                // call Route111_EventScript_1AE313
+#ifndef HOENN_EMERALD
+    VMCall R111_PostgameFossil              // post-game (postgame_dex): the fossil not taken is back (below)
+#endif
     h_goto_if_not_defeated TRAINER_VICKY, L_R111_ResetWinstrates
     VMHalt
 L_R111_ResetWinstrates:                     // Route111_EventScript_15000D: a lost gauntlet starts again
@@ -132,6 +135,10 @@ R111_RootFossil:                            // Route111_EventScript_150023
     h_setflag FLAG_HIDE_ROOT_FOSSIL
     h_setflag FLAG_HIDE_CLAW_FOSSIL
     ActorDelete 134                         // removeobject 34
+#ifndef HOENN_EMERALD
+    h_setflag FLAG_CHOSE_ROOT_FOSSIL        // (postgame_dex) which one was taken: the other comes back after the Champion
+    h_goto_if_set FLAG_CHOSE_CLAW_FOSSIL, L_R111_SecondFossil   // this was the post-game one: the Claw Fossil is long gone
+#endif
     h_delay 30
     h_applymovement 135, Mv_R111_FossilSinks
     h_waitmovement
@@ -152,6 +159,10 @@ R111_ClawFossil:                            // Route111_EventScript_150069
     h_setflag FLAG_HIDE_CLAW_FOSSIL
     h_setflag FLAG_HIDE_ROOT_FOSSIL
     ActorDelete 135
+#ifndef HOENN_EMERALD
+    h_setflag FLAG_CHOSE_CLAW_FOSSIL
+    h_goto_if_set FLAG_CHOSE_ROOT_FOSSIL, L_R111_SecondFossil
+#endif
     h_delay 30
     h_applymovement 134, Mv_R111_FossilSinks
     h_waitmovement
@@ -161,6 +172,44 @@ L_R111_LeaveClaw:
     WordSetPlayerName 0
     h_msgbox_info T_LeftClaw
     h_release
+
+#ifndef HOENN_EMERALD
+// POST-GAME (postgame_dex 2026-11-09, user decision: Sapphire / Ruby NDS): after the Champion the fossil the player did not
+// take is back at its own spot, so both Lileep and Anorith can be revived (Devon Corp. 2F revives any fossil in the Bag).
+// Gen 3 has no such rule here (Emerald's is the Desert Underpass, an Emerald-only map); taking it is the same scene minus
+// the other one sinking (it is not there). FLAG_CHOSE_ROOT_FOSSIL / _CLAW_FOSSIL (pokeemerald's names, unused by Sapphire and
+// Ruby until now) record which one was taken; a save from before them is read once from the Bag or the revived one.
+L_R111_SecondFossil:
+    h_release
+
+R111_PostgameFossil:                        // (zone init) FLAG_SYS_GAME_CLEAR, one fossil taken: show the other
+    h_goto_if_unset FLAG_SYS_GAME_CLEAR, L_R111_PgfDone
+    h_goto_if_unset FLAG_HIDE_ROOT_FOSSIL, L_R111_PgfDone   // (both hidden = one was taken)
+    h_goto_if_unset FLAG_HIDE_CLAW_FOSSIL, L_R111_PgfDone
+    h_goto_if_set FLAG_CHOSE_ROOT_FOSSIL, L_R111_PgfKnown
+    h_goto_if_set FLAG_CHOSE_CLAW_FOSSIL, L_R111_PgfKnown
+    h_checkitem ITEM_ROOT_FOSSIL, 1, C4_TMP                 // a save from before the flags: the Bag, else the one revived
+    h_goto_if_eq C4_TMP, 1, L_R111_PgfRoot
+    h_checkitem ITEM_CLAW_FOSSIL, 1, C4_TMP
+    h_goto_if_eq C4_TMP, 1, L_R111_PgfClaw
+    h_goto_if_eq VAR_WHICH_FOSSIL_REVIVED, 1, L_R111_PgfRoot
+    h_goto_if_eq VAR_WHICH_FOSSIL_REVIVED, 2, L_R111_PgfClaw
+    VMReturn                                // (neither in the Bag nor revived: unknown, nothing shown)
+L_R111_PgfRoot:
+    h_setflag FLAG_CHOSE_ROOT_FOSSIL
+    VMJump L_R111_PgfKnown
+L_R111_PgfClaw:
+    h_setflag FLAG_CHOSE_CLAW_FOSSIL
+L_R111_PgfKnown:
+    h_goto_if_set FLAG_CHOSE_CLAW_FOSSIL, L_R111_PgfClawTaken
+    h_clearflag FLAG_HIDE_CLAW_FOSSIL       // the Root Fossil was taken: the Claw Fossil is back
+    VMReturn
+L_R111_PgfClawTaken:
+    h_goto_if_set FLAG_CHOSE_ROOT_FOSSIL, L_R111_PgfDone   // both taken
+    h_clearflag FLAG_HIDE_ROOT_FOSSIL
+L_R111_PgfDone:
+    VMReturn
+#endif
 
 // ---- the berry girl (daily Razz Berry) ------------------------------------------------------------------------------
 R111_BerryGirl:                             // Route111_EventScript_1500C5 (dotimebasedevents: Black 2 resets the

@@ -7,6 +7,9 @@
 #include "asm/field_script.inc"
 #include "hoenn.h"
 #include "hoenn_story.inc"
+#ifdef HOENN_DEXNAV
+#include "common/dexnav_defs.inc"                 // (DN_W_GAVE for Script_7; scenes/BirchLab_DexNav.inc has the rest)
+#endif
 
     ScriptEntry Script_1    // sign: PC
     ScriptEntry Script_2    // sign: book
@@ -97,13 +100,22 @@ Script_7:
     ActorsPauseAll
     SEPlay SEQ_SE_MESSAGE
     ActorSetEyeToEye
+#ifdef HOENN_DEXNAV
+    VMCall DN_LabOwed                             // the DexNav first whenever it's owed: the Lab scene done, none yet (a
+                                                  //   save from before the DexNav), even with starters or an offer due
+#endif
 #if __has_include("scenes/BirchLab_Postgame.inc")
+    VMCall PG_LabStartersDue                      // post-game (postgame_dex): the two starters the player didn't choose
+    h_goto_if_eq HLIB_TMP, 1, PG_LabStarters      //   (scenes/BirchLab_Postgame.inc)
     h_goto_if_eq VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 2, PG_LabBirch   // post-game: Emerald's line after the National Dex
 #ifdef HOENN_EMERALD
     h_goto_if_eq VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 5, EM_LabBirchRare   // Emerald: "You can have any one of these three Pokémon!"
 #endif
 #endif
     h_goto_if_ne VAR_BIRCH_LAB_STATE, 5, L_BirchRoute103    // Sapphire 152D9A: state 5 = after the Pokédex
+#ifdef HOENN_DEXNAV
+    h_goto_if_eq DN_W_GAVE, 1, L_BirchDone        // just given (nothing else due): no more lines, as before
+#endif
     h_msgbox 28                                   // Prof. Birch: Countless Pokémon await you!
     VMJump L_BirchDone
 L_BirchRoute103:
@@ -224,6 +236,9 @@ L_LabBrendanGave:
     h_msgbox_actor 25, LAB_RIVAL                  // Brendan: You know it's more fun to have a whole bunch...
 L_LabPokedexDone:
     h_closemessage
+#ifdef HOENN_DEXNAV
+    VMCall DN_LabGive                             // the DexNav, after the Poké Balls (scenes/BirchLab_DexNav.inc)
+#endif
     h_setvar VAR_BIRCH_LAB_STATE, 5
     h_setflag FLAG_ADVENTURE_STARTED
     h_setvar VAR_ROUTE102_ACCESSIBLE, 1
@@ -327,6 +342,10 @@ L_DontBeThatWay:
     ActorMsg MSGFILE_SCRIPT, 13, 0, 1, 0          // "Oh, don't be that way. You should go meet my kid."
     VMJump L_SeeRivalAsk
     .balign 4, 0
+#ifdef HOENN_DEXNAV
+#include "scenes/BirchLab_DexNav.inc"
+    .balign 4, 0
+#endif
 #if __has_include("scenes/BirchLab_Postgame.inc")
 #include "scenes/BirchLab_Postgame.inc"           // post-game: Emerald's National Dex scene (script 14, PG_LabInit, PG_LabBirch)
 #include "common/movement.inc"

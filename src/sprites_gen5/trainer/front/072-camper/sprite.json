@@ -1,0 +1,19 @@
+{
+ "kind": "trainer",
+ "side": "front",
+ "sprite": 72,
+ "archive": 71,
+ "files": {
+  "static": 576,
+  "parts": 577,
+  "palette": 583
+ },
+ "name": "camper",
+ "note": "Camper",
+ "source": "community: battle_fronts_2026-11-07/Camper_2.png by ASalman",
+ "layout": "drawn on the parts of Black 2 front sprite 4 (its cells and animations)",
+ "colours": 14,
+ "cleared_near_background": [],
+ "made_by": "b2tools/sprite_community.py",
+ "mcss_from": 4
+}

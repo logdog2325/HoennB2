@@ -1,0 +1,25 @@
+{
+ "kind": "trainer",
+ "side": "front",
+ "sprite": 51,
+ "archive": 71,
+ "files": {
+  "static": 408,
+  "parts": 409,
+  "palette": 415
+ },
+ "name": "bug-maniac",
+ "note": "Bug Maniac",
+ "source": "community: battle_fronts_2026-11-07/Bug_Manic.png by ASalman",
+ "layout": "drawn on the parts of Black 2 front sprite 110 (its cells and animations)",
+ "colours": 14,
+ "cleared_near_background": [
+  [
+   221,
+   150,
+   254
+  ]
+ ],
+ "made_by": "b2tools/sprite_community.py",
+ "mcss_from": 110
+}

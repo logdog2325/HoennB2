@@ -1,0 +1,30 @@
+{
+ "kind": "trainer",
+ "side": "front",
+ "sprite": 68,
+ "archive": 71,
+ "files": {
+  "static": 544,
+  "parts": 545,
+  "palette": 551
+ },
+ "name": "young-couple",
+ "note": "Young Couple",
+ "source": "community: battle_fronts_2026-11-07/Young_Couple.png by ASalman",
+ "layout": "drawn on the parts of Black 2 front sprite 20 (its cells and animations)",
+ "colours": 12,
+ "cleared_near_background": [
+  [
+   112,
+   191,
+   160
+  ],
+  [
+   112,
+   192,
+   159
+  ]
+ ],
+ "made_by": "b2tools/sprite_community.py",
+ "mcss_from": 20
+}

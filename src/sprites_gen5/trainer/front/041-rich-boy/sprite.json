@@ -1,0 +1,18 @@
+{
+ "kind": "trainer",
+ "side": "front",
+ "sprite": 41,
+ "archive": 71,
+ "files": {
+  "static": 328,
+  "parts": 329,
+  "palette": 335
+ },
+ "name": "rich-boy",
+ "note": "Rich Boy",
+ "source": "community: battle_fronts_2026-11-07/rich_boy.png by ASalman",
+ "layout": "drawn on the parts of Black 2 front sprite 41 (its cells and animations)",
+ "colours": 14,
+ "cleared_near_background": [],
+ "made_by": "b2tools/sprite_community.py"
+}

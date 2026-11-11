@@ -279,7 +279,7 @@ def check_rom_textures(rom, rooms_dir, names):
         rd = os.path.join(rooms_dir, name)
         if not os.path.exists(os.path.join(rd, 'room.json')): continue
         metas = [json.load(open(os.path.join(rd, 'room.json')))]
-        for alt in cfg.get('alt_rooms', []):
+        for alt in version.alt_rooms(cfg):
             p = os.path.join(rooms_dir, alt['room'], 'room.json')
             if os.path.exists(p): metas.append(json.load(open(p)))
         hd = hdrs[cfg['zone']]

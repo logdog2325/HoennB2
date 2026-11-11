@@ -1,0 +1,26 @@
+{
+ "kind": "trainer",
+ "side": "front",
+ "sprite": 21,
+ "archive": 71,
+ "files": {
+  "static": 168,
+  "parts": 169,
+  "palette": 175
+ },
+ "name": "ninja-boy",
+ "note": "Ninja Boy",
+ "source": "community: battle_fronts_2026-11-07/Ninja_boy.png by ASalman",
+ "layout": "drawn on the parts of Black 2 front sprite 15 (its cells and animations)",
+ "colours": 14,
+ "cleared_near_background": [
+  [
+   41,
+   150,
+   48
+  ]
+ ],
+ "made_by": "b2tools/sprite_community.py",
+ "mcss_from": 15,
+ "static_intro": true
+}

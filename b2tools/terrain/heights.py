@@ -377,6 +377,22 @@ class Field:
         mx = sum(v[0] for v in t) / 3; mz = sum(v[2] for v in t) / 3
         hc = self.y(X + int((mx + 256) // 16), Z + int((mz + 256) // 16))
         xs = [v[0] for v in t]; zs = [v[2] for v in t]
+        tt = getattr(self, 'town_tiles', None)
+        if tt and (max(xs) - min(xs) < 1e-6 or max(zs) - min(zs) < 1e-6):
+            # (town_look heights pass) a wall face standing on a tile edge (ground.py's quay walls and kerbs beside a
+            # terrace) belongs to the tile behind it, as heights' own styles count it: by the tile in front, Slateport's
+            # quay walls stood a second 16 units over the raised pier's edge
+            (ax_, ay_, az_), (bx_, by_, bz_), (qx_, qy_, qz_) = [v[:3] for v in t]
+            nx_ = (by_ - ay_) * (qz_ - az_) - (bz_ - az_) * (qy_ - ay_); nz_ = (bx_ - ax_) * (qy_ - ay_) - (by_ - ay_) * (qx_ - ax_)
+            ln = (nx_ ** 2 + nz_ ** 2) ** 0.5
+            on_edge = lambda c: abs(((c + 256) / 16) - round((c + 256) / 16)) < 1e-6
+            if ln > 1e-6 and ((max(xs) - min(xs) < 1e-6 and on_edge(xs[0])) or (max(zs) - min(zs) < 1e-6 and on_edge(zs[0]))):
+                bx0 = int((min(xs) - 0.5 * nx_ / ln + 256) // 16); bx1 = int((max(xs) - 0.5 * nx_ / ln + 256 - 1e-6) // 16)
+                bz0 = int((min(zs) - 0.5 * nz_ / ln + 256) // 16); bz1 = int((max(zs) - 0.5 * nz_ / ln + 256 - 1e-6) // 16)
+                behind = {(X + a, Z + b) for a in range(bx0, max(bx0, bx1) + 1) for b in range(bz0, max(bz0, bz1) + 1)}
+                hb = {self.y(*k) for k in behind}
+                if len(hb) == 1 and (any(k in tt for k in behind) or (X + int((mx + 256) // 16), Z + int((mz + 256) // 16)) in tt):
+                    return [(hb.pop(), t)]
         tx0, tx1 = int((min(xs) + 256) // 16), int((max(xs) + 256 - 1e-6) // 16)
         tz0, tz1 = int((min(zs) + 256) // 16), int((max(zs) + 256 - 1e-6) // 16)
         tx1, tz1 = max(tx0, tx1), max(tz0, tz1)
@@ -384,10 +400,23 @@ class Field:
         hs = {(a, b): self.y(X + a, Z + b) for a in range(tx0, tx1 + 1) for b in range(tz0, tz1 + 1)}
         if len(set(hs.values())) == 1: return [(hc, t)]
         out = []
-        for (a, b), h in hs.items():
+        boxes = [((a, b, a, b), h) for (a, b), h in hs.items()]
+        tt = getattr(self, 'town_tiles', None)
+        if tt and any((X + a, Z + b) in tt for a, b in hs):
+            # (town_look heights pass: a long run another module merged - paving, kerbs, fences - crossing a terrace's
+            # edge is cut once per level where each level's tiles under it form a rectangle, not once per tile)
+            groups = {}
+            for k, h in hs.items(): groups.setdefault(h, []).append(k)
+            rects = []
+            for h, ks in groups.items():
+                a0, a1 = min(k[0] for k in ks), max(k[0] for k in ks); b0, b1 = min(k[1] for k in ks), max(k[1] for k in ks)
+                if len(ks) != (a1 - a0 + 1) * (b1 - b0 + 1): rects = None; break
+                rects.append(((a0, b0, a1, b1), h))
+            if rects: boxes = rects
+        for (a, b, a1_, b1_), h in boxes:
             poly = [tuple(v[:5]) + tuple(v[5]) for v in t]
-            for axis, value, keep in ((0, a * 16 - 256, True), (0, a * 16 - 240, False),
-                                      (2, b * 16 - 256, True), (2, b * 16 - 240, False)):
+            for axis, value, keep in ((0, a * 16 - 256, True), (0, a1_ * 16 - 240, False),
+                                      (2, b * 16 - 256, True), (2, b1_ * 16 - 240, False)):
                 if min(p[axis] for p in poly) >= value - 1e-6 if keep else max(p[axis] for p in poly) <= value + 1e-6:
                     continue
                 poly = _clip_axis(poly, axis, value, keep)
@@ -1134,6 +1163,12 @@ def height_field(world, maps, cfg, trees=()):
         for k, name in F.style.items():
             if F.mat.get(k) == 'gake_michi': F.mat[k] = STYLES[name]['tex']['gake_michi']
 
+    # 10c. (town_look 2026-11-09) Black 2-style terraces in some towns (terrain/town_heights.py: Rustboro's Devon
+    #     terrace, Slateport's museum pier), after the ground textures (a terrace's own region must not retexture the
+    #     rock beside it); HOENN_TOWN_HEIGHTS=0 leaves the towns flat
+    from terrain import town_heights
+    town_heights.apply(F, world, maps)
+
     # 11. tiles outside the maps (world.py's forest and the water module's sea around them) stand at the height of
     #     the nearest map tile, found by the same multi-source search as water.py's filler (so the outside sea takes
     #     its water's level): at 0 they put a cliff up to 96 units high and its tree-high skirts along every raised
@@ -1643,6 +1678,8 @@ def draw(m, cell):
     cave_mouth.draw(m, cell, F)
     # 6. rock styles: the rock textures of styled tiles (whatever drew them so far: world.py's ground, this module)
     _restyle(m, cell, F)
+    from terrain import town_heights
+    if town_heights.ON: town_heights.restyle(m, cell, F)   # (town_look: the terraces' stone walls)
 
 def _style_pieces(t, style, X, Z):
     """[(style or None, triangle)] of triangle t (model units of the cell at world tile X, Z): t whole when the tiles

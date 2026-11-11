@@ -348,8 +348,15 @@ waits for that.
   Lanette's house, Mt. Pyre 1F) were fixed with `--fix`. gyms_league_rooms.py now reads HOENN_WORLD_DIR and prefers a
   door's copy in its cell's zone, like the others.
 - **Dynamic warps** (Sapphire MAP_DYNAMIC: the Dept. Store elevator): `"to": [zone, 256]`. Black 2's warp with dest id
-  0x100 goes to GameData's next zone (ov035 EventMapChangeWarp_CreateFromEntity), which arriving on such a warp sets to
-  where you came from (ov012 SetupZoneWarpArrival) and scripts set with FieldSetNextZone. gen_interiors.py writes it.
+  0x100 goes to GameData's next zone (ov035 EventMapChangeWarp_CreateFromEntity), which only scripts set
+  (FieldSetNextZone / FieldSetNextZoneHere). gen_interiors.py writes it. **Arriving on such a warp does NOT set it**
+  (discord_fixes 2026-11-10 [code][test]): ov012 SetupZoneWarpArrival marks the arrival as change type 3 (ov035
+  FieldMapControl_InitSpawn would copy the remembered departure into the next zone), but SetupZoneWarpArrivalGrid (arm9
+  0x02018fd4) then writes change type 0 over it. A new game's next zone is all zero = zone 0, Unova's Black City (the
+  Lilycove elevator led there until a ride, Emerald v2.1 and Sapphire v19.1 in DeSmuME). So every room or cave with a
+  0x100 exit sets the next zone itself in its zone init or right before the way in: the elevator (its zone init 0363,
+  from VAR_DEPT_STORE_FLOOR), Secret Bases (FieldSetNextZoneHere at the spot), Route 103's Altering Cave door and
+  Emerald's Terra/Marine Cave (zone inits).
 - **story_merge.py** also keeps a story agent's lines in the file's leading comment block, and a room text whose
   generator has no line of its own ('…') keeps the story's lines (a rerun of the houses generator had dropped both;
   checked over all 67 rooms with story parts: story parts, entries, includes, comments and story text lines unchanged).

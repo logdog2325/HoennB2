@@ -1,5 +1,8 @@
 // Global trainer scripts 3000-6999 (a/0/5/6 entry 1239): Black 2's data/field_scripts/1239.s, unchanged except for one
-// call in Script_816 (talking to an eye-contact trainer NPC, script 3000 + id or 5000 + id) and its subroutine at the end.
+// call in Script_816 (talking to an eye-contact trainer NPC, script 3000 + id or 5000 + id) and its subroutine at the end,
+// and an `EmRematch ..., RM_BEATEN` after each TrainerFlagSet (2026-11-10): a trainer just beaten for the first time
+// offers no rematch before tomorrow and says Black 2's after line meanwhile (Discord report: with 5 badges or more,
+// Anna & Meg could be battled again at once by talking to the other twin).
 // Pokémon Emerald NDS only (src/field_scripts/emerald/: Sapphire and Ruby keep Black 2's file): Emerald's rematches
 // (emerald_rematch, 2026-10-18; notes/EMERALD_REMATCH.md). A beaten trainer of Emerald's rematch table
 // (data/emerald/hoenn_rematch.json) with 5 badges or more, once a day: Emerald's rematch line (message type 100, or 104
@@ -957,6 +960,7 @@ L_0E97:
 
 L_0E99:
     TrainerFlagSet 0x8020
+    EmRematch 0x8010, RM_BEATEN, 0x8020       // (beaten for the first time today: no rematch until tomorrow)
     VMReturn
 
 L_0E9F:
@@ -1189,6 +1193,7 @@ L_11A9:
 
 L_11AB:
     TrainerFlagSet 0x8027
+    EmRematch 0x8010, RM_BEATEN, 0x8027       // (beaten for the first time today: no rematch until tomorrow)
     VMReturn
     WorkSetConst 0x8028, 0
     WorkSetConst 0x8027, 0
@@ -1223,7 +1228,9 @@ L_1230:
 
 L_1232:
     TrainerFlagSet 0x8029
+    EmRematch 0x8010, RM_BEATEN, 0x8029       // (beaten for the first time today: no rematch until tomorrow)
     TrainerFlagSet 0x802a
+    EmRematch 0x8010, RM_BEATEN, 0x802a       // (beaten for the first time today: no rematch until tomorrow)
     VMReturn
     WorkSetConst 0x802b, 0
     WorkSetConst 0x802a, 0
@@ -1261,7 +1268,9 @@ L_12C7:
 
 L_12C9:
     TrainerFlagSet 0x802c
+    EmRematch 0x8010, RM_BEATEN, 0x802c       // (beaten for the first time today: no rematch until tomorrow)
     TrainerFlagSet 0x802d
+    EmRematch 0x8010, RM_BEATEN, 0x802d       // (beaten for the first time today: no rematch until tomorrow)
     VMReturn
     WorkSetConst 0x802e, 0
     WorkSetConst 0x802d, 0
@@ -1309,7 +1318,9 @@ L_1385:
 
 L_1387:
     TrainerFlagSet 0x8030
+    EmRematch 0x8010, RM_BEATEN, 0x8030       // (beaten for the first time today: no rematch until tomorrow)
     TrainerFlagSet 0x8031
+    EmRematch 0x8010, RM_BEATEN, 0x8031       // (beaten for the first time today: no rematch until tomorrow)
     VMReturn
     .byte 0x28
     .byte 0x00

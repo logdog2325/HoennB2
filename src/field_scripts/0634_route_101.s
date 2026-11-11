@@ -3,12 +3,15 @@
 #include "asm/field_script.inc"
 #include "hoenn.h"
 #include "hoenn_music.inc"
+#ifdef HOENN_DEXNAV
+#include "hoenn_story.inc"                             // the DexNav's tutorial (scenes/Route101_DexNav.inc)
+#endif
 
     ScriptEntry Script_1    // sign: Route 101 / Oldale Town
     ScriptEntry Script_2    // NPC: youngster (Sapphire Route101_EventScript_14EA64)
     ScriptEntry Script_3    // NPC: boy (Route101_EventScript_14EA6D)
-    ScriptEntry Script_4    // unused
-    ScriptEntry Script_5    // unused
+    ScriptEntry Script_4    // the DexNav's tutorial, started by the decomp's dexnav.c (scenes/Route101_DexNav.inc; else unused)
+    ScriptEntry Script_5    // the DexNav's tutorial after its battle (the same; else unused)
     ScriptEntry Script_6    // unused
     ScriptEntry Script_7    // unused
     ScriptEntry Script_8    // map script (0635)
@@ -52,8 +55,12 @@ Script_3:
     ActorsUnpauseAll
     VMHalt
 
+#ifdef HOENN_DEXNAV
+#include "scenes/Route101_DexNav.inc"
+#else
 Script_4:
 Script_5:
+#endif
 Script_6:
 Script_7:
 Script_8:

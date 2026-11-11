@@ -1,0 +1,167 @@
+{
+ "_doc": "Post-game wild tables (postgame_dex, 2026-11-09; user decision 2026-11-09, notes/DECISIONS.md; notes/POSTGAME.md 'Post-game dex completion'). After the Champion (FLAG_SYS_GAME_CLEAR) a zone whose encounter file is a key of a version's 'maps' reads that map's post-game twin instead: the same table with the slot edits below (the other version's exclusive in some of this version's slots). converter/gen_postgame_encounters.py writes the twins (src/encounters[/ruby|/emerald]/NNNN_pg_<Map>.s); b2tools/patches/postgame_encounters.py gives the decomp's resident C (src/hoennb2/resident/postgame_enc.c) the {file -> twin} pairs and the Pokedex area page's post-game cells. 'files': every map's twin id in a/1/2/7, FIXED once given, shared by all versions (Unova ids no zone of any version uses: their sizes stay, so the archive's layout does not change; maps whose twins are the same table share an id). 'maps' (this file: Sapphire; data/ruby/ and data/emerald/ hold Ruby's and Emerald's, each REPLACING the whole 'maps', never merged): per section (grass, surf, fishing, rippling_fishing) slot index -> species, the slot's levels kept (they are the other version's levels for that slot, already on data/level_scaling.json's curve: the generator checks them against 'from', the version whose table has that species in that slot), or [species, Gen 3 min, Gen 3 max] for levels of its own (scaled by the curve). Slot odds are fixed per slot, so every table still sums to 100 %. Splits give the other version's exclusive every slot that keeps the two closest, the version's own species first (largest slots first).",
+ "files": {
+  "Route102": 70,
+  "Route111": 71,
+  "Route114": 72,
+  "Route117": 73,
+  "Route120": 74,
+  "MtPyre_Exterior": 75,
+  "GraniteCave_B1F": 76,
+  "GraniteCave_B2F": 80,
+  "CaveOfOrigin_1F": 81,
+  "CaveOfOrigin_B1F": 81,
+  "CaveOfOrigin_B2F": 81,
+  "CaveOfOrigin_B3F": 81,
+  "VictoryRoad_B1F": 83,
+  "VictoryRoad_B2F": 102,
+  "SkyPillar_1F": 103,
+  "SkyPillar_3F": 108,
+  "SkyPillar_5F": 109,
+  "MeteorFalls_1F_1R": 110,
+  "MeteorFalls_1F_2R": 112,
+  "MeteorFalls_B1F_1R": 112,
+  "MeteorFalls_B1F_2R": 113
+ },
+ "maps": {
+  "Route102": {
+   "from": "ruby",
+   "note": "Lotad 4 (10 %) stays, 5 (10 %) is Seedot",
+   "grass": {
+    "5": "SPECIES_SEEDOT"
+   }
+  },
+  "Route114": {
+   "from": "ruby",
+   "note": "Lotad 1 (20 %) / Seedot 4 (10 %); Lombre 6 / Nuzleaf 7 (5 % each); Seviper 5 (10 %) / Zangoose 8-10 (9 %)",
+   "grass": {
+    "4": "SPECIES_SEEDOT",
+    "7": "SPECIES_NUZLEAF",
+    "8": "SPECIES_ZANGOOSE",
+    "9": "SPECIES_ZANGOOSE",
+    "10": "SPECIES_ZANGOOSE"
+   }
+  },
+  "GraniteCave_B1F": {
+   "from": "ruby",
+   "note": "Sableye 8, 10 (5 %) / Mawile 9, 11 (5 %)",
+   "grass": {
+    "9": "SPECIES_MAWILE",
+    "11": "SPECIES_MAWILE"
+   }
+  },
+  "GraniteCave_B2F": {
+   "from": "ruby",
+   "note": "Sableye 6, 8, 10 (10 %) / Mawile 7, 9, 11 (10 %)",
+   "grass": {
+    "7": "SPECIES_MAWILE",
+    "9": "SPECIES_MAWILE",
+    "11": "SPECIES_MAWILE"
+   }
+  },
+  "CaveOfOrigin_1F": {
+   "from": "ruby",
+   "note": "Sableye 3, 5 (20 %) / Mawile 4 (10 %)",
+   "grass": {
+    "4": "SPECIES_MAWILE"
+   }
+  },
+  "CaveOfOrigin_B1F": {
+   "from": "ruby",
+   "note": "Sableye 3, 5 (20 %) / Mawile 4 (10 %)",
+   "grass": {
+    "4": "SPECIES_MAWILE"
+   }
+  },
+  "CaveOfOrigin_B2F": {
+   "from": "ruby",
+   "note": "Sableye 3, 5 (20 %) / Mawile 4 (10 %)",
+   "grass": {
+    "4": "SPECIES_MAWILE"
+   }
+  },
+  "CaveOfOrigin_B3F": {
+   "from": "ruby",
+   "note": "Sableye 3, 5 (20 %) / Mawile 4 (10 %)",
+   "grass": {
+    "4": "SPECIES_MAWILE"
+   }
+  },
+  "VictoryRoad_B2F": {
+   "from": "ruby",
+   "note": "Sableye 1 (20 %) / Mawile 5, 7 (15 %)",
+   "grass": {
+    "5": "SPECIES_MAWILE",
+    "7": "SPECIES_MAWILE"
+   }
+  },
+  "SkyPillar_1F": {
+   "from": "ruby",
+   "note": "Sableye 0 (20 %) / Mawile 3 (10 %)",
+   "grass": {
+    "3": "SPECIES_MAWILE"
+   }
+  },
+  "SkyPillar_3F": {
+   "from": "ruby",
+   "note": "Sableye 0 (20 %) / Mawile 3 (10 %)",
+   "grass": {
+    "3": "SPECIES_MAWILE"
+   }
+  },
+  "SkyPillar_5F": {
+   "from": "ruby",
+   "note": "Sableye 0 (20 %) / Mawile 3 (10 %)",
+   "grass": {
+    "3": "SPECIES_MAWILE"
+   }
+  },
+  "MeteorFalls_1F_1R": {
+   "from": "ruby",
+   "note": "grass Lunatone 5 (10 %) / Solrock 6, 7 (10 %); surf Lunatone 2 (5 %) / Solrock 3, 4 (5 %)",
+   "grass": {
+    "6": "SPECIES_SOLROCK",
+    "7": "SPECIES_SOLROCK"
+   },
+   "surf": {
+    "3": "SPECIES_SOLROCK",
+    "4": "SPECIES_SOLROCK"
+   }
+  },
+  "MeteorFalls_1F_2R": {
+   "from": "ruby",
+   "note": "grass Lunatone 3, 5 (20 %) / Solrock 4, 7 (15 %); surf Lunatone 2 (5 %) / Solrock 3, 4 (5 %)",
+   "grass": {
+    "4": "SPECIES_SOLROCK",
+    "7": "SPECIES_SOLROCK"
+   },
+   "surf": {
+    "3": "SPECIES_SOLROCK",
+    "4": "SPECIES_SOLROCK"
+   }
+  },
+  "MeteorFalls_B1F_1R": {
+   "from": "ruby",
+   "note": "grass Lunatone 3, 5 (20 %) / Solrock 4, 7 (15 %); surf Lunatone 2 (5 %) / Solrock 3, 4 (5 %)",
+   "grass": {
+    "4": "SPECIES_SOLROCK",
+    "7": "SPECIES_SOLROCK"
+   },
+   "surf": {
+    "3": "SPECIES_SOLROCK",
+    "4": "SPECIES_SOLROCK"
+   }
+  },
+  "MeteorFalls_B1F_2R": {
+   "from": "ruby",
+   "note": "grass Lunatone 3, 7 (15 %) / Solrock 5 (10 %); surf Lunatone 2 (5 %) / Solrock 3, 4 (5 %)",
+   "grass": {
+    "5": "SPECIES_SOLROCK"
+   },
+   "surf": {
+    "3": "SPECIES_SOLROCK",
+    "4": "SPECIES_SOLROCK"
+   }
+  }
+ }
+}

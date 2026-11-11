@@ -28,6 +28,8 @@ TEXTURES = {
     'sabaku01': 22,                              # Route 4 summer (chunks 29-37): desert sand, for Route 111
     'sea_jimen': 3, 'iwa01': 3, 'hashi01a': 3, 'hashi02a': 3, 'plant01': 3, 'saku01a': 3, 't2_saku01': 3,
     't02_kabe01': 3, 't02michi_b': 3, 't02michi_c': 3, 't02_ki_sita': 3, 'nagaisu': 3, 'ki03ax': 3, 'ki03bx': 3, 'ki03dx': 3,
+    'michi02b': 3, 't02michi_b2': 3, 't02michi_a2': 3, 't02_kiwa': 3,     # (town_look: roads, slab borders, kerbs,
+    'michi01b': 3, 'dansa01a': 3,                                          #  market goods)
     'ki02c': 3, 'kusa_ec1': 3, 'kusa_ec2': 3, 'kusa_ec3': 3, 'kusa_ec1s': 3, 'kusa_ec2s': 3,
     # Black 2's rocks (overworld_polish 2026-10-08): the images of its rock models rock_01/02 and searock_01/02, which
     # are in every exterior building texture set (a/1/7/4; 32x32, 16 colours, colour 0 clear): 'ext46' as terrain/ship.py
@@ -685,23 +687,38 @@ def draw_fences(m, k):
                 if n: vs.setdefault(xc, set()).add(2 * tz)
                 if s: vs.setdefault(xc, set()).add(2 * tz + 1)
         hlines = [(zc, a * 8 - HALF, (b + 1) * 8 - HALF) for zc, halves in hs.items() for a, b in runs(halves)]
+        kerb = lambda x, z: want_metal and _look_kerb_at(k, x, z)
         for zc, xa, xb in hlines:
-            _fence_line(m, mat, (xa, zc), (xb, zc))
+            lift = KERB_H if kerb((xa + xb) / 2, zc) else 0
+            if lift: look_kerb(m, xa - KERB_W / 2, zc - KERB_W / 2, xb + KERB_W / 2, zc + KERB_W / 2)
+            _fence_line(m, mat, (xa, zc), (xb, zc), lift=lift)
         for xc, halves in vs.items():
             for a, b in runs(halves):
                 za, zb = a * 8 - HALF, (b + 1) * 8 - HALF
                 # where an east-west fence meets or crosses this one, its strips already cover the 10x10 square:
                 # the north-south strips leave it out (the two coplanar strips z-fought there)
                 cuts = [(zc - 5, zc + 5) for zc, xa, xb in hlines if xa - 5 <= xc <= xb + 5 and za - 5 <= zc <= zb + 5]
-                _fence_line(m, mat, (xc, za), (xc, zb), cuts)
+                lift = KERB_H if kerb(xc, (za + zb) / 2) else 0
+                if lift:                  # (an east-west kerb owns the corner square: no two kerbs in one place)
+                    hk = [zc for zc, xa, xb in hlines if xa - KERB_W / 2 <= xc <= xb + KERB_W / 2 and kerb((xa + xb) / 2, zc)]
+                    segs = [(za - KERB_W / 2, zb + KERB_W / 2)]
+                    for zc in hk:
+                        segs = [q for a_, b_ in segs for q in ((a_, min(b_, zc - KERB_W / 2)), (max(a_, zc + KERB_W / 2), b_)) if q[1] - q[0] > 0.01]
+                    for k0, k1 in segs: look_kerb(m, xc - KERB_W / 2, k0, xc + KERB_W / 2, k1)
+                _fence_line(m, mat, (xc, za), (xc, zb), cuts, lift=lift)
 
 def _fence_walkable(k, tx, tz):
     return k.walk(tx, tz) and k.map(tx, tz) != 'Route110'
 
-def _fence_line(m, mat, p0, p1, cuts=()):
+def _look_kerb_at(k, x, z):
+    """(town_look) A fence line point (cell model units) on a solid fence tile of a LOOK_MAPS map: kerb under it."""
+    tx, tz = int((x + HALF) // T), int((z + HALF) // T)
+    return k.map(tx, tz) in LOOK_MAPS and k.cls(tx, tz) == 'fence' and not k.walk(tx, tz)
+
+def _fence_line(m, mat, p0, p1, cuts=(), lift=0):
     (xa, za), (xb, zb) = p0, p1
     L = math.hypot(xb - xa, zb - za) / T
-    plane = [(xa, 2, za, 0, 0), (xb, 2, zb, 0, -2 * L), (xb, 20, zb, 0.5, -2 * L), (xa, 20, za, 0.5, 0)]
+    plane = [(xa, 2 + lift, za, 0, 0), (xb, 2 + lift, zb, 0, -2 * L), (xb, 20 + lift, zb, 0.5, -2 * L), (xa, 20 + lift, za, 0.5, 0)]
     if za == zb: face(m, mat, plane, SOUTH)          # an east-west fence is only ever seen from the south
     else: both(m, mat, plane)
     px, pz = (0, 5) if za == zb else (5, 0)            # strips 10 units wide across the line
@@ -709,7 +726,8 @@ def _fence_line(m, mat, p0, p1, cuts=()):
     pieces = [(za, zb)]
     for c0, c1 in sorted(cuts):
         pieces = [q for a, b in pieces for q in ((a, min(b, c0)), (max(a, c1), b)) if q[1] - q[0] > 0.01]
-    for y, u0, u1 in ((3, 0.5, 0.75), (14.5, 0.75, 1.0)):
+    for y, u0, u1 in ((3 + lift, 0.5, 0.75), (14.5 + lift, 0.75, 1.0)):
+        if lift and y < 4 + lift: continue                 # (on a kerb: the kerb's top is the bottom strip)
         for z0, z1 in (pieces if xa == xb else [(za, zb)]):
             if xa == xb: q0, q1, v0, v1 = (xa, z0), (xb, z1), -2 * (z0 - za) / T, -2 * (z1 - za) / T
             else: q0, q1, v0, v1 = (xa, za), (xb, zb), 0, -2 * L
@@ -783,8 +801,80 @@ def paved_tiles(world):
         if e[0] in PAVED_MAPS and e[1] in ('prop', 'sign', 'fence', 'other:market_awning') and (wx, wz) not in out and \
                 sum(n in out for n in ((wx + 1, wz), (wx - 1, wz), (wx, wz + 1), (wx, wz - 1))) >= 3:
             out[(wx, wz)] = 't02michi_b'
+    if LOOK_MAPS:                     # (town_look: roads in Black 2's asphalt; fence tiles beside paving on the slabs)
+        road = {k for k, t in out.items() if t == 't02michi_c' and world[k][0] in ROAD_MAPS}
+        seen = set()
+        for k0 in sorted(road):            # (a road is a run of 4+ such tiles; a lone pale tile, e.g. under the upper
+            if k0 in seen: continue        #  half of Sapphire's lamps, joins the slabs)
+            comp, todo = set(), [k0]
+            while todo:
+                p = todo.pop()
+                if p in comp or p not in road: continue
+                comp.add(p); todo += [(p[0] + 1, p[1]), (p[0] - 1, p[1]), (p[0], p[1] + 1), (p[0], p[1] - 1)]
+            seen |= comp
+            for p in comp: out[p] = 'michi02b' if len(comp) >= 4 else 't02michi_b'
+        for (wx, wz), e in world.items():
+            if e[0] in LOOK_MAPS and e[1] == 'fence' and not e[2] and (wx, wz) not in out and \
+                    any(out.get(n) == 't02michi_b' for n in ((wx + 1, wz), (wx - 1, wz), (wx, wz + 1), (wx, wz - 1))):
+                out[(wx, wz)] = 't02michi_b'
+        wares = {k for k, e in world.items() if e[0] in GOODS_MAPS and e[1] in ('prop', 'other:market_awning') and not e[2] and k not in out}
+        while True:                   # (Slateport's wares and counters stand on the paving, not on squares of grass)
+            add = {k for k in wares if any(out.get(n) in ('t02michi_b', 't02michi_c') for n in ((k[0] + 1, k[1]), (k[0] - 1, k[1]), (k[0], k[1] + 1), (k[0], k[1] - 1)))}
+            if not add: break
+            for k in add: out[k] = 't02michi_b'
+            wares -= add
+    Fh = getattr(sys.modules.get('terrain.heights'), 'FIELD', None)     # (town_look heights pass: the steps are the
+    for k in getattr(Fh, 'town_stairs', ()): out.pop(k, None)          #  surface on a terrace's flight, no paving)
     _PAVED.clear(); _PAVED[id(world)] = out
     return out
+
+# Town look pass (town_look 2026-11-09; tools in work/agents/town_look/tools): Black 2's paved towns frame every paved area and part
+# road from walk (Accumula chunk 5: t02michi_b slabs edged with t02michi_b2 bands at every lawn, wall and step;
+# Black 2's city roads michi02a/b, 120 chunks): in these maps the Sapphire road tiles (pale blue-grey, t02michi_c above)
+# are Black 2's grey asphalt (michi02b, a texel a unit), slab tiles get a 5-unit border band where they meet anything
+# but slabs (t02michi_b2 at lawns, buildings' sides, fences; t02michi_a2, the kerb stone, along a road), and solid
+# fence tiles stand on a low stone kerb (t02_kabe01 sides, t02_kiwa top, KERB_H high) under the railing. Drawing only:
+# collision, heights and placements are unchanged (b2tools/walk_diff.py, the cells' collision files).
+LOOK_MAPS = {'RustboroCity', 'SlateportCity', 'MauvilleCity'}
+ROAD_MAPS = {'RustboroCity', 'MauvilleCity'}   # (asphalt roads; Slateport keeps Sapphire's white stone roads)
+ROAD_KERB_MAPS = {'MauvilleCity'}  # (its roads run between lawns: a kerb band on the road where it meets one)
+BAND, KERB_W, KERB_H = 5.0, 8.0, 6.0
+
+LAWN_EDGE = {'grass', 'flowers', 'tall_grass', 'building', 'building_roof', 'tree_bot', 'bush', 'fence', 'sign'}
+
+def _look_edges(pt, wx, wz, roads=True, world=None):
+    """Border bands of a slab tile: where it meets anything but slabs. roads=False (Slateport): its white stone roads
+    count as paving too, and only lawns, buildings, trees and fences get a band (its harbour walls, piers, stalls and
+    wares have edges of their own; the chunks stay well under Black 2's 110,600-byte buffer)."""
+    out = {}
+    for d, (dx, dz) in (('n', (0, -1)), ('s', (0, 1)), ('w', (-1, 0)), ('e', (1, 0))):
+        t = pt.get((wx + dx, wz + dz))
+        if t == 't02michi_b' or (not roads and t == 't02michi_c'): continue
+        if not roads and world is not None and (world.get((wx + dx, wz + dz)) or (None, None))[1] not in LAWN_EDGE: continue
+        out[d] = 't02michi_a2' if t == 'michi02b' else 't02michi_b2'
+    return out
+
+def _look_tile(m, tx, tz, edges, tx1=None, inner='t02michi_b', inner_n=32):
+    """Slab (or road: inner) tiles tx..tx1 of a row with border bands along `edges` (dir -> band texture): no layer
+    over another (melonDS flicker)."""
+    x0, x1, z0, z1 = X(tx), X((tx if tx1 is None else tx1) + 1), Z(tz), Z(tz + 1)
+    ix0, ix1 = x0 + (BAND if 'w' in edges else 0), x1 - (BAND if 'e' in edges else 0)
+    iz0, iz1 = z0 + (BAND if 'n' in edges else 0), z1 - (BAND if 's' in edges else 0)
+    flat(m, inner, ix0, iz0, ix1, iz1, 0, lambda x, z: ((x + HALF) / inner_n, -(z + HALF) / inner_n))
+    if 'n' in edges: flat(m, edges['n'], x0, z0, x1, iz0, 0, lambda x, z: ((x + HALF) / 32, (z - z0) / BAND))
+    if 's' in edges: flat(m, edges['s'], x0, iz1, x1, z1, 0, lambda x, z: ((x + HALF) / 32, (z1 - z) / BAND))
+    if 'w' in edges: flat(m, edges['w'], x0, iz0, ix0, iz1, 0, lambda x, z: ((z + HALF) / 32, (x - x0) / BAND))
+    if 'e' in edges: flat(m, edges['e'], ix1, iz0, x1, iz1, 0, lambda x, z: ((z + HALF) / 32, (x1 - x) / BAND))
+
+def look_kerb(m, x0, z0, x1, z1):
+    """A low stone kerb box (fence base): t02_kiwa top at KERB_H, t02_kabe01 south/east/west faces."""
+    H = KERB_H; v0 = 1 - H / 64
+    flat(m, 't02_kiwa', x0, z0, x1, z1, H, lambda x, z: ((x + HALF) / 8, -(z + HALF) / 8))
+    ua, ub = (x0 + HALF) / 32, (x1 + HALF) / 32      # (world-based u: overlapping kerbs at corners show the same texels)
+    face(m, 't02_kabe01', [(x0, 0, z1, ua, v0), (x1, 0, z1, ub, v0), (x1, H, z1, ub, 1), (x0, H, z1, ua, 1)], SOUTH)
+    wa, wb = (z0 + HALF) / 32, (z1 + HALF) / 32
+    for x, n in ((x0, WEST), (x1, EAST)):
+        face(m, 't02_kabe01', [(x, 0, z0, wa, v0), (x, 0, z1, wb, v0), (x, H, z1, wb, 1), (x, H, z0, wa, 1)], n)
 
 def paved_tile(world, wx, wz):
     """A path tile world.py leaves to this module: a ferry pier or a paved town's paving."""
@@ -801,6 +891,33 @@ def draw_paving(m, k):
     for (tz, t), xs in rows.items():
         for a, b in runs(xs):
             n = 32 if t == 't02michi_b' else 16                     # (t02michi_b 32x32, t02michi_c 16x16: a texel a unit)
+            if t == 'michi02b' and k.map(a, tz) in ROAD_KERB_MAPS:   # (town_look: kerbs where a road meets a lawn)
+                eds = [{d: 't02michi_a2' for d, (dx, dz) in (('n', (0, -1)), ('s', (0, 1)), ('w', (-1, 0)), ('e', (1, 0)))
+                        if not pt.get((k.cell.X + tx + dx, k.cell.Z + tz + dz))} for tx in range(a, b + 1)]
+                p = a
+                while p <= b:
+                    q = p
+                    key = lambda tx: (eds[tx - a].get('n'), eds[tx - a].get('s'))
+                    while q + 1 <= b and key(q + 1) == key(p): q += 1
+                    ed = {d: v for d, v in zip('ns', key(p)) if v}
+                    if p == a and 'w' in eds[0]: ed['w'] = eds[0]['w']
+                    if q == b and 'e' in eds[-1]: ed['e'] = eds[-1]['e']
+                    _look_tile(m, p, tz, ed, q, inner='michi02b', inner_n=16)
+                    p = q + 1
+                continue
+            if t == 't02michi_b' and k.map(a, tz) in LOOK_MAPS:      # (town_look: border bands; a run of slabs is cut
+                eds = [_look_edges(pt, k.cell.X + tx, k.cell.Z + tz, k.map(tx, tz) in ROAD_MAPS, k.cell.world) for tx in range(a, b + 1)]
+                p = a                                                 #  where its north/south bands change)
+                while p <= b:
+                    q = p
+                    key = lambda tx: (eds[tx - a].get('n'), eds[tx - a].get('s'))
+                    while q + 1 <= b and key(q + 1) == key(p): q += 1
+                    ed = {d: v for d, v in zip('ns', key(p)) if v}
+                    if p == a and 'w' in eds[0]: ed['w'] = eds[0]['w']
+                    if q == b and 'e' in eds[-1]: ed['e'] = eds[-1]['e']
+                    _look_tile(m, p, tz, ed, q)
+                    p = q + 1
+                continue
             flat(m, t, X(a), Z(tz), X(b + 1), Z(tz + 1), 0, lambda x, z: ((x + HALF) / n, -(z + HALF) / n))
 
 def draw_pier(m, k):
@@ -856,6 +973,75 @@ def draw_walls(m, k):
                 x = X(tx) if dx < 0 else X(tx + 1)
                 face(m, 't02_kabe01', [(x, 0, Z(a), 0, v0), (x, 0, Z(b + 1), b + 1 - a, v0),
                                        (x, H, Z(b + 1), b + 1 - a, 1), (x, H, Z(a), 0, 1)], n)
+    draw_harbour(m, k, tiles, H)
+
+# Harbour walls (town_look 2026-11-09, user): Slateport's quay walls (16-unit wall blocks beside the sea) get a stone
+# coping along their water side (a lip 2 units high and 3 wide on the wall top: t02_kiwa top, t02_kabe01 sides, as
+# the fence kerbs; one box per straight run, only the faces Black 2's camera sees) and a stone bollard every 4th
+# water-side tile (the market's bollards, smaller). Drawing only: the wall tiles stay solid.
+HARBOUR_MAPS = {'SlateportCity'}
+COPING_H, COPING_W, BOLLARD_EVERY = 2.0, 3.0, 4
+
+def _coping(m, x0, z0, x1, z1, y0, y1, faces):
+    flat(m, 't02_kiwa', x0, z0, x1, z1, y1, lambda x, z: ((x + HALF) / 8, -(z + HALF) / 8))
+    v0 = 1 - (y1 - y0) / 64
+    if 's' in faces:
+        face(m, 't02_kabe01', [(x0, y0, z1, (x0 + HALF) / 32, v0), (x1, y0, z1, (x1 + HALF) / 32, v0),
+                               (x1, y1, z1, (x1 + HALF) / 32, 1), (x0, y1, z1, (x0 + HALF) / 32, 1)], SOUTH)
+    for x, n, d in ((x0, WEST, 'w'), (x1, EAST, 'e')):
+        if d in faces:
+            face(m, 't02_kabe01', [(x, y0, z0, (z0 + HALF) / 32, v0), (x, y0, z1, (z1 + HALF) / 32, v0),
+                                   (x, y1, z1, (z1 + HALF) / 32, 1), (x, y1, z0, (z0 + HALF) / 32, 1)], n)
+
+def draw_harbour(m, k, wall_tiles, H):
+    seaside = lambda tx, tz: k.cls(tx, tz) in SURFACE or k.cls(tx, tz) == 'water_edge'
+    wall = set(wall_tiles)
+    sea = {d: set() for d in 'nswe'}
+    for tx, tz in wall_tiles:
+        if k.map(tx, tz) not in HARBOUR_MAPS: continue
+        for d, (dx, dz) in (('n', (0, -1)), ('s', (0, 1)), ('w', (-1, 0)), ('e', (1, 0))):
+            if seaside(tx + dx, tz + dz): sea[d].add((tx, tz))
+    y0, y1, W_ = H, H + COPING_H, COPING_W
+    # (town_look heights pass, S/R test 2026-11-10) a quay wall with no sea beside it whose top is level with a raised
+    # deck it borders (terrain/town_heights.py: Slateport's museum pier, its north-east corner by the rock) read as more
+    # deck (walk_diff OPEN): a kerb block over its top (KERB_H, the fence kerbs' stone), faces towards the deck
+    Fh = getattr(sys.modules.get('terrain.heights'), 'FIELD', None)
+    if Fh is not None and getattr(Fh, 'town_tiles', None):
+        y_ = lambda tx, tz: Fh.y(k.cell.X + tx, k.cell.Z + tz)
+        for tx, tz in wall_tiles:
+            if k.map(tx, tz) not in HARBOUR_MAPS or any((tx, tz) in sea[d] for d in 'nswe'): continue
+            nb = {d: (tx + dx, tz + dz) for d, (dx, dz) in (('n', (0, -1)), ('s', (0, 1)), ('w', (-1, 0)), ('e', (1, 0)))}
+            if not any(k.walk(*p) and (k.cell.X + p[0], k.cell.Z + p[1]) in Fh.town_tiles and y_(*p) >= y_(tx, tz) + H - 1
+                       for p in nb.values()): continue
+            _coping(m, X(tx), Z(tz), X(tx + 1), Z(tz + 1), y0, H + KERB_H, {d for d in 'swe' if nb[d] not in wall})
+    # rows along north / south edges (merged runs; a run's end face only where no coping goes on round the corner)
+    for d in 'ns':
+        rows = {}
+        for tx, tz in sea[d]: rows.setdefault(tz, []).append(tx)
+        for tz, xs in rows.items():
+            for a, b in runs(xs):
+                za, zb = (Z(tz), Z(tz) + W_) if d == 'n' else (Z(tz + 1) - W_, Z(tz + 1))
+                ends = {'w'} if (a - 1, tz) not in wall else set()
+                if (b + 1, tz) not in wall: ends.add('e')
+                _coping(m, X(a), za, X(b + 1), zb, y0, y1, ends | ({'s'} if d == 'n' or (a, tz + 1) not in wall else {'s'}))
+    # columns along west / east edges, between the row copings
+    for d in 'we':
+        cols = {}
+        for tx, tz in sea[d]: cols.setdefault(tx, []).append(tz)
+        for tx, zs in cols.items():
+            for a, b in runs(zs):
+                za = Z(a) + (W_ if (tx, a) in sea['n'] else 0); zb = Z(b + 1) - (W_ if (tx, b) in sea['s'] else 0)
+                if zb <= za: continue
+                xa, xb = (X(tx), X(tx) + W_) if d == 'w' else (X(tx + 1) - W_, X(tx + 1))
+                _coping(m, xa, za, xb, zb, y0, y1, {'w', 'e', 's'} if (tx, b + 1) not in wall else {'w', 'e'})
+    # bollards: every BOLLARD_EVERY-th water-side tile (world tile parity, so neighbouring cells agree)
+    for tx, tz in sorted(set().union(*sea.values())):
+        if (k.cell.X + tx + 3 * (k.cell.Z + tz)) % BOLLARD_EVERY: continue
+        d = next(d for d in 'swen' if (tx, tz) in sea[d])
+        cx = (X(tx) + X(tx + 1)) / 2 + {'w': -1.5, 'e': 1.5}.get(d, 0); cz = (Z(tz) + Z(tz + 1)) / 2 + {'n': -1.5, 's': 1.5}.get(d, 0)
+        tmp = type(m)(m.name)
+        _pot(tmp, cx, cz, 2.5, 6, 't02_kabe01', 't02_kiwa', 2.0 / 32, 1 - 6 / 64)
+        m.extend(tmp, dy=H)
 
 def hedge(m, x0, x1, z0, z1, mat='plant01', ends=(True, True)):
     """Striaton's hedge (plant01, chunk 11): a leafy box 3 units inside the tile (y 2..12, sides u 0.66..1 from top to
@@ -1124,16 +1310,87 @@ def _as_one(m, tmp, cell, tiles):
             for lift, piece in F.pieces(t, cell.X, cell.Z):      # (the pieces world.py's lift will raise)
                 m.tris.setdefault(mat, []).append([(x, y + base - lift, z, u, v, c) for x, y, z, u, v, c in piece])
 
+# Market goods (town_look 2026-11-09): Slateport's solid prop tiles are Sapphire's market wares, crates, pots and
+# the harbour's bollards, and its solid awning tiles the stalls' counters; they were white stone plinths. Each is
+# drawn as what Sapphire's tile shows, picked by its metatile's colour, from Hoenn's set-3 images (0 bytes): wooden
+# crates and counters (hashi01a's planks), produce (a crate under plant01's leaves), sacks (michi01b), clay pots (iwa01),
+# stone bollards (t02_kabe01 / t02_kiwa). At most 11 units high (the sellers behind stay in view: notes/NPC_LIMIT.md).
+GOODS_MAPS = {'SlateportCity', 'MauvilleCity'}   # (Mauville: the bike shop's bicycle stands, 'rack')
+
+def _goods_kind(world, wx, wz):
+    e = world.get((wx, wz))
+    if e and e[0] == 'MauvilleCity': return 'rack'
+    if e and e[1] == 'other:market_awning': return 'counter'
+    px = sapphire_pixels(e[0], wx, wz) if e else None
+    if px is None: return 'crate'
+    r, g, b = np.median(px, 0)
+    if b > 200 and r > 190: return 'bollard'
+    if r > 190 and g > 190: return 'sack'
+    if r > 185: return 'pot'
+    if g > r + 8: return 'produce'
+    if abs(r - g) < 12 and abs(g - b) < 12: return 'stone'
+    return 'crate'
+
+def _box(m, top, side, x0, z0, x1, z1, y0, y1, top_uv=None, side_v=(0, 1), sides=(True, True)):
+    """An axis box (south, east, west faces and top; Gen 5's camera never sees the north face). sides: (west, east)
+    faces drawn."""
+    v0, v1 = side_v
+    flat(m, top, x0, z0, x1, z1, y1, top_uv or (lambda x, z: ((x - x0) / 16, (z1 - z) / 16)))
+    face(m, side, [(x0, y0, z1, 0, v0), (x1, y0, z1, (x1 - x0) / 16, v0), (x1, y1, z1, (x1 - x0) / 16, v1), (x0, y1, z1, 0, v1)], SOUTH)
+    for x, n in [p for p, on in zip(((x0, WEST), (x1, EAST)), sides) if on]:
+        face(m, side, [(x, y0, z0, 0, v0), (x, y0, z1, (z1 - z0) / 16, v0), (x, y1, z1, (z1 - z0) / 16, v1), (x, y1, z0, 0, v1)], n)
+
+def _pot(m, cx, cz, r, h, side, top, u_side=1.0, v0=0.0):
+    """An octagonal pot / bollard: the five sides that face the camera and a flat top. u_side: the share of the
+    image across one side (iwa01's 16 texels once a side: its usual ~3.5 texels a unit; a wall image at 1 a unit)."""
+    pts = [(cx + r * math.cos(math.radians(a)), cz + r * math.sin(math.radians(a))) for a in range(0, 360, 45)]
+    for i in range(8):
+        (xa, za), (xb, zb) = pts[i], pts[(i + 1) % 8]
+        nx, nz = (xa + xb) / 2 - cx, (za + zb) / 2 - cz     # (outward)
+        if nz < -0.3 * r: continue                         # (north-facing: never seen)
+        face(m, side, [(xa, 0, za, 0, v0), (xb, 0, zb, u_side, v0), (xb, h, zb, u_side, 1), (xa, h, za, 0, 1)], (nx, 0, nz))
+    for i in range(1, 7):
+        face(m, top, [(pts[0][0], h, pts[0][1], 0.5, 0.5), (pts[i][0], h, pts[i][1], 0.2, 0.8), (pts[i + 1][0], h, pts[i + 1][1], 0.8, 0.8)], UP)
+
+def draw_goods(m, k, tx, tz):
+    kind = _goods_kind(k.cell.world, k.cell.X + tx, k.cell.Z + tz)
+    x0, x1, z0, z1 = X(tx), X(tx + 1), Z(tz), Z(tz + 1)
+    ware = lambda dx: k.cls(tx + dx, tz) in ('prop', 'other:market_awning') and not k.walk(tx + dx, tz)
+    sd = (not ware(-1), not ware(1))                     # (a ware beside: that side is out of the camera's sight)
+    plank = lambda x, z: (0.40 + 0.55 * ((x - x0) / 16), (z1 - z) / 16)
+    if kind == 'rack':                                    # (two bicycle hoops: Accumula's railing plane, u 0..0.5,
+        for x in (x0 + 4, x1 - 4):                        #  without its rail strips, which overlapped side by side)
+            L = (z1 - 3 - (z0 + 3)) / T
+            both(m, 't2_saku01', [(x, 2, z0 + 3, 0, 0), (x, 2, z1 - 3, 0, -2 * L), (x, 13, z1 - 3, 0.5, -2 * L), (x, 13, z0 + 3, 0.5, 0)])
+    elif kind == 'counter':
+        _box(m, 'hashi01a', 'hashi01a', x0 + 1, z0 + 3, x1 - 1, z1 - 3, 0, 11, plank, (0, 0.95), sd)
+    elif kind == 'produce':
+        _box(m, 'hashi01a', 'hashi01a', x0 + 2.5, z0 + 3, x1 - 2.5, z1 - 2, 0, 6, plank, (0, 1), sd)
+        _box(m, 'plant01', 'plant01', x0 + 3, z0 + 3.5, x1 - 3, z1 - 2.5, 6, 9, lambda x, z: (0.5 * (x - x0) / 16, (z1 - z) / 16), (0, 0.4), sd)
+    elif kind == 'sack':
+        _box(m, 'michi01b', 'michi01b', x0 + 3, z0 + 4, x1 - 3, z1 - 3, 0, 8, None, (0, 1), sd)
+    elif kind == 'pot':
+        _pot(m, (x0 + x1) / 2, (z0 + z1) / 2 + 1, 5, 9, 'iwa01', 'dansa01a')
+    elif kind == 'bollard':
+        _pot(m, (x0 + x1) / 2, (z0 + z1) / 2, 3.5, 8, 't02_kabe01', 't02_kiwa', 2.7 / 32, 1 - 8 / 64)   # (1 texel a unit: the wall's top rows)
+    elif kind == 'stone':
+        _box(m, 't02michi_b', 't02_kabe01', x0 + 2, z0 + 2, x1 - 2, z1 - 2, 0, 8, None, (0.85, 1), sd)
+    else:
+        _box(m, 'hashi01a', 'hashi01a', x0 + 2.5, z0 + 3, x1 - 2.5, z1 - 2, 0, 10, plank, (0, 1), sd)
+
 def draw_props(m, k):
     """prop: Sapphire's town objects (lamps, fountains, statues, stall counters, boat hulls, gravestones...) have no
     single Black 2 equivalent; each east-west run of solid prop tiles gets a low stone plinth (Accumula wall stone
     t02_kabe01 sides, paving t02michi_b top, 12 units high, 2 units inside the tiles) so it reads as an obstacle;
-    walk-behind prop tops get nothing. Town agents can replace them with models (data/towns props)."""
+    walk-behind prop tops get nothing. Town agents can replace them with models (data/towns props).
+    GOODS_MAPS: market goods instead (draw_goods)."""
     rows = {}
     # (+ Slateport's stall posts, the solid awning tiles in front of a stall: the stall's counter beside its seller;
     # walkability 2026-10-11: bare paving you could not walk on)
     for tx, tz in list(k.tiles('prop')) + list(k.tiles('other:market_awning')):   # (not on a tile that holds a
-        if not k.walk(tx, tz) and not face_tile(k, tx, tz): rows.setdefault(tz, []).append(tx)   # cliff face: draw_walls)
+        if not k.walk(tx, tz) and not face_tile(k, tx, tz):                       # cliff face: draw_walls)
+            if k.map(tx, tz) in GOODS_MAPS: draw_goods(m, k, tx, tz)
+            else: rows.setdefault(tz, []).append(tx)
     rows = {tz: sorted(set(xs)) for tz, xs in rows.items()}
     for tz, xs in rows.items():
         for a, b in runs(xs):

@@ -36,6 +36,12 @@ Brendan: I went out all over Hoenn\nand checked out Pokémon.{be01}\nYou can tha
 Prof. Birch: Okay, all done!
 {0100:0}’s Pokédex was upgraded\nto the National Mode!
 Prof. Birch: But listen.\nYou’ve become the Champion,{be00}\nbut your Pokémon journey isn’t over.{be01}\nThere is no end to the road\nthat is Pokémon.{be01}\nSomewhere, there is a grassy patch\nthat’s waiting for you!
+…
+…
+…
+…
+…
+…
 Prof. Birch: Oh, {0100:0}!\nLet’s have a look at your Pokédex.{be01}\n… … … … … …\n… … … … … …{be01}\nYes, there’s no doubt about it.{be01}\nYou really have completed the Hoenn\nregion’s Pokédex.{be01}\nThat’s more than just impressive.{be01}\nI have a gift for you.{be01}\nConsider it my show of appreciation\nfor the fantastic work you’ve done.{be01}\nMy gift is a rare Pokémon only found\nin another region!{be01}\nYou can have any one of these\nthree Pokémon!
 Prof. Birch: The Fire Pokémon\nCyndaquil caught your eye!{be01}\nYou’re as sharp as ever!{be01}\nSo the Cyndaquil is your choice?
 Prof. Birch: The Water Pokémon\nTotodile is your choice!{be01}\nYou know how to pick a good one.{be01}\nSo, you’ll take the Totodile?
@@ -47,3 +53,11 @@ Prof. Birch: Listen, {0100:0}.\nYou’ve completed the Hoenn Pokédex,{be00}\nbu
 Prof. Birch: These are rare Pokémon\nonly found in another region!{be01}\nYou can have any one of these\nthree Pokémon!
 Want to give a nickname to the\n{0100:1} you received?
 There is no space for another Pokémon.
+Prof. Birch: Oh, {0100:0}!\nIf it isn’t our new Champion!{be01}\nSay, do you remember the Pokémon\nin my Bag that day on Route 101?{be01}\nThe two you didn’t choose have been\nliving here at the Lab ever since.{be01}\nThey’re itching to get out and see\nthe world, just like you were!{be01}\nA Champion like you would bring\nout the best in them.{be01}\nI’d like you to take them both!
+Prof. Birch: Oh, {0100:0}!\nI’ve still got the other one for you.{be01}\nHere you go!
+{0100:0} received the {0100:1}\nfrom Prof. Birch!
+Want to give a nickname to the\n{0100:1} you received?
+{0100:1} was transferred to\nsomeone’s PC.
+There’s no more room for Pokémon!{be01}\nThe Pokémon Boxes are full and\ncan’t accept any more!
+Prof. Birch: Oh, no room at all?{be01}\nMake some space in your Boxes, then\ncome and see me. They’ll be waiting!
+Prof. Birch: Take good care of them!{be01}\nHow about that... All three of the\nPokémon from my Bag, raised by you!{be01}\nCome back and show me how much\nthey’ve grown, all right?

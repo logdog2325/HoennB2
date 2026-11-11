@@ -22,6 +22,26 @@
 #define PGB_RIVAL 3
 #define PGB_RIVAL_INDEX 2               // the rival's place in the zone's NPC list (Birch 0, the aide 1, then ch1's rival)
 #define PGB_AIDE_INDEX 1
+// The two starters the player didn't choose (postgame_dex 2026-11-09): rows of 0625 after Gen 3's (0-37), the follower
+// aide's (38-43 in every version: placeholders the followers' text fills with our C on, 0792 Script_9) and, in Emerald, the
+// Johto starters' (44-54, scenes/emerald/BirchLab_JohtoStarters.inc EMJ_T)
+#ifdef HOENN_EMERALD
+#define PGS_T 55
+#else
+#define PGS_T 44
+#endif
+#define PGS_T_OFFER (PGS_T + 0)          // NEW, approved 2026-11-09: Prof. Birch: Oh, <player>! If it isn't our new Champion! ... I'd like you to take them both!
+#define PGS_T_SECOND (PGS_T + 1)         // NEW, approved 2026-11-09: Prof. Birch: Oh, <player>! I've still got the other one for you. Here you go!
+#define PGS_T_RECEIVED (PGS_T + 2)       // <player> received the <species> from Prof. Birch! (pokeemerald's Johto starter line)
+#define PGS_T_NICKNAME (PGS_T + 3)       // Want to give a nickname to the <species> you received? (pokeemerald's)
+#define PGS_T_TRANSFERRED (PGS_T + 4)    // <species> was transferred to someone's PC. (gText_PkmnTransferredSomeonesPC)
+#define PGS_T_FULL (PGS_T + 5)           // There's no more room for Pokémon! ... (gText_NoMoreRoomForPokemon)
+#define PGS_T_FULL_BIRCH (PGS_T + 6)     // NEW, approved 2026-11-09: Prof. Birch: Oh, no room at all? Make some space in your Boxes, then come and see me. ...
+#define PGS_T_AFTER (PGS_T + 7)          // NEW, approved 2026-11-09: Prof. Birch: Take good care of them! How about that... All three of the Pokémon ...
+#define PGS_SPECIES 0x8038              // script works of this file (0x8030 HLIB_TMP .. 0x8037 are the libraries')
+#define PGS_SIZE 0x8039
+#define PGS_TMP 0x803A
+#define PGS_SLOT 0x803B
 
 PG_LabInit:                             // OnWarp states 1-2: LittlerootTown_ProfessorBirchsLab_EventScript_SetObjectPosForDexUpgrade
 #ifdef HOENN_EMERALD
@@ -99,6 +119,90 @@ PG_LabBirch:                            // Birch's talk in state 2 (..._EventScr
     h_msgbox PGB_T_GRASSY_PATCH
     ActorMsgClose
     h_release
+
+// ---- the two Hoenn starters the player didn't choose (postgame_dex 2026-11-09; user decision 2026-11-09, every version) --
+// After the Champion, Birch gives the two Pokémon of his Bag the player did not pick on Route 101 (VAR_STARTER_MON: 0 Treecko,
+// 1 Torchic, 2 Mudkip), Lv 5, one after the other in the Bag's order, as Gen 3's starter gift (fanfare, "received",
+// nickname). A full party sends one to the PC (Black 2's BoxAdd, the PC's next free place; Gen 3's transfer line, no
+// nickname: Black 2 has no command to name a boxed Pokémon); with the PC full too he keeps it for later
+// (VAR_BIRCH_OTHER_STARTERS counts what he gave: 0, 1, 2). No Gen 3 game has this: the lines marked NEW (approved by the user
+// 2026-11-09) are new. Before the National Dex scene (VAR_DEX_UPGRADE_JOHTO_STARTER_STATE 1, the Lab set for it) he waits. Emerald's
+// Johto starters (states 3-6) are untouched: this comes first in Birch's talk, their lines after it.
+PG_LabStartersDue:                      // HLIB_TMP = 1 when Birch's talk is the starters' (0792 Script_7)
+    WorkSetConst HLIB_TMP, 0
+    h_goto_if_unset FLAG_SYS_GAME_CLEAR, L_PGS_DueDone
+    h_goto_if_ge VAR_BIRCH_OTHER_STARTERS, 2, L_PGS_DueDone
+    h_goto_if_eq VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 1, L_PGS_DueDone
+    WorkSetConst HLIB_TMP, 1
+L_PGS_DueDone:
+    VMReturn
+
+PG_LabStarters:                         // (from 0792 Script_7: ActorsPauseAll, the talk sound, facing the player)
+    h_buffer_player
+    h_goto_if_ne VAR_BIRCH_OTHER_STARTERS, 0, L_PGS_Second
+    h_msgbox PGS_T_OFFER
+    VMJump L_PGS_Give
+L_PGS_Second:
+    h_msgbox PGS_T_SECOND
+L_PGS_Give:
+    VMCall Sub_PGS_Species              // PGS_SPECIES = the next one
+    h_closemessage
+    h_getpartysize PGS_SIZE
+    h_goto_if_lt PGS_SIZE, 6, L_PGS_Party
+    BoxGetCount PGS_TMP, 5              // free places in the PC's Boxes (scrcmd_pokemon.c s0121_BoxGetCount, kind 5)
+    h_goto_if_eq PGS_TMP, 0, L_PGS_Full
+    VMCall Sub_PGS_Fanfare
+    BoxAdd PGS_TMP, PGS_SPECIES, 0, 5   // Black 2's give into the PC (s0122_BoxAdd: a Poké Ball, as PokePartyAdd)
+    WordSetPokeSpecies 1, PGS_SPECIES
+    h_msgbox_info PGS_T_TRANSFERRED     // <species> was transferred to someone's PC.
+    h_closemessage
+    VMJump L_PGS_Given
+L_PGS_Party:
+    VMCall Sub_PGS_Fanfare
+    PokePartyAdd PGS_SLOT, PGS_SPECIES, 0, 5                       // givemon <species>, 5
+    WordSetPokeSpecies 1, PGS_SPECIES
+    h_yesno PGS_T_NICKNAME, PGS_TMP                                // Want to give a nickname to the <species> you received?
+    h_goto_if_no PGS_TMP, L_PGS_Given
+    h_name_received_mon PGS_SIZE                                   // (the party size before = the new one's slot)
+L_PGS_Given:
+    h_closemessage
+    h_addvar VAR_BIRCH_OTHER_STARTERS, 1
+    h_goto_if_lt VAR_BIRCH_OTHER_STARTERS, 2, L_PGS_Give          // and the other one
+    h_buffer_player
+    h_msgbox PGS_T_AFTER
+    ActorMsgClose
+    h_release
+L_PGS_Full:
+    h_msgbox_info PGS_T_FULL            // There's no more room for Pokémon! The Pokémon Boxes are full ...
+    h_closemessage
+    h_msgbox PGS_T_FULL_BIRCH
+    ActorMsgClose
+    h_release
+
+Sub_PGS_Fanfare:                        // the fanfare and "<player> received the <species> from Prof. Birch!"
+    h_playfanfare MUS_OBTAIN_ITEM
+    h_buffer_player
+    WordSetPokeSpecies 1, PGS_SPECIES
+    h_msgbox_info PGS_T_RECEIVED
+    h_waitfanfare
+    h_closemessage
+    VMReturn
+
+Sub_PGS_Species:                        // PGS_SPECIES = the first (count 0) or second (count 1) starter not chosen, in the
+    WorkSetConst PGS_SPECIES, SPECIES_TREECKO                      //   Bag's order Treecko, Torchic, Mudkip
+    h_goto_if_eq VAR_STARTER_MON, 0, L_PGS_NotTreecko
+    h_goto_if_eq VAR_BIRCH_OTHER_STARTERS, 0, L_PGS_SpeciesDone   // (Treecko is the first unless it was chosen)
+    h_goto_if_eq VAR_STARTER_MON, 2, L_PGS_Torchic                 // Torchic chosen: Mudkip second; Mudkip chosen: Torchic
+    VMJump L_PGS_Mudkip
+L_PGS_NotTreecko:                       // Treecko chosen: Torchic, then Mudkip
+    h_goto_if_ne VAR_BIRCH_OTHER_STARTERS, 0, L_PGS_Mudkip
+L_PGS_Torchic:
+    WorkSetConst PGS_SPECIES, SPECIES_TORCHIC
+    VMReturn
+L_PGS_Mudkip:
+    WorkSetConst PGS_SPECIES, SPECIES_MUDKIP
+L_PGS_SpeciesDone:
+    VMReturn
 
 Sub_PG_StartBeastsAndBirds:             // Raikou, Entei, Suicune, Articuno, Zapdos, Moltres start roaming (once)
     h_goto_if_set FLAG_ROAMING_BEASTS_BIRDS_STARTED, L_PGB_Started

@@ -11,7 +11,8 @@
 
     ScriptEntry Script_None
     ScriptEntry R9_Scene  // 2: trigger (17,42) VAR_SEAFLOOR_CAVERN_STATE 0 (SeafloorCavern_Room9_EventScript_15DAFA)  // story:
-    ScriptEntry R9_Init  // 3: zone init: the test start only (Sapphire's ON_TRANSITION sets up gfx ids and a map layout)  // story:
+    ScriptEntry R9_Init  // 3: zone init: the test start; the post-game legend (Sapphire's ON_TRANSITION sets up gfx ids and a map layout)  // story:
+    ScriptEntry PG_R9_OtherLegend  // 4: trigger (17,42) VAR_TEMP_1 1: the other version's legend after the Champion (scenes/SeafloorCavern_Room9_Postgame.inc)  // story:
     ScriptEntriesEnd
 
 Script_None:
@@ -238,7 +239,10 @@ R9_Init:                                // SeafloorCavern_Room9_MapScript1_15DAE
 #ifdef HOENN_TEST_CH10
     VMCall Test_Ch10Start               // test builds only (scenes/ch10_test.inc)
 #endif
+    VMCall PG_R9_Init                   // post-game (postgame_dex): Sapphire's Groudon / Ruby's Kyogre asleep at (17,38)
     VMHalt
+
+#include "scenes/SeafloorCavern_Room9_Postgame.inc"
 
 #include "common/movement.inc"
 #ifdef HOENN_TEST_CH10

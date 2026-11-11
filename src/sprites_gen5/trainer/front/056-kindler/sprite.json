@@ -1,0 +1,19 @@
+{
+ "kind": "trainer",
+ "side": "front",
+ "sprite": 56,
+ "archive": 71,
+ "files": {
+  "static": 448,
+  "parts": 449,
+  "palette": 455
+ },
+ "name": "kindler",
+ "note": "Kindler",
+ "source": "community: battle_fronts_2026-11-07/Kindler.png by ASalman",
+ "layout": "drawn on the parts of Black 2 front sprite 73 (its cells and animations)",
+ "colours": 15,
+ "cleared_near_background": [],
+ "made_by": "b2tools/sprite_community.py",
+ "mcss_from": 73
+}

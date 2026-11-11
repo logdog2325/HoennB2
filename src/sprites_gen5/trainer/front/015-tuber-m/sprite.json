@@ -1,0 +1,25 @@
+{
+ "kind": "trainer",
+ "side": "front",
+ "sprite": 15,
+ "archive": 71,
+ "files": {
+  "static": 120,
+  "parts": 121,
+  "palette": 127
+ },
+ "name": "tuber-m",
+ "note": "Tuber (boy)",
+ "source": "community: battle_fronts_2026-11-07/Tuber_boy_2.png by ASalman",
+ "layout": "drawn on the parts of Black 2 front sprite 15 (its cells and animations)",
+ "colours": 14,
+ "cleared_near_background": [
+  [
+   45,
+   147,
+   50
+  ]
+ ],
+ "made_by": "b2tools/sprite_community.py",
+ "static_intro": true
+}

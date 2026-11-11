@@ -1,0 +1,32 @@
+{
+  "_doc": "The DexNav's area snapshots (b2tools/dexnav_snapshots.py, notes/DEXNAV.md): crops = a map's panel window: [x, y], its top-left metatile in the map (it may reach past the map's edges, into its border blocks: Route 115's sea column), or two bands [[x, y, rows], [x, y, rows]] (9 rows in all) shown as two views with a frame bar between them, for a map whose groups live too far apart for one window (Route 111: the desert's rocks above, the pond by Mauville below; no window of Route 111 holds both its deep sand and its water). stand_ins = groups whose map has no tile of their kind at all (their icons stand on walkable tiles): Mirage Island's land on Route 130, Shoal Cave's high-tide water in its low-tide rooms. Version overlays (data/emerald/dexnav_snapshots.json) add or replace entries.",
+  "crops": {
+    "Route111": [
+      [
+        12,
+        40,
+        6
+      ],
+      [
+        4,
+        107,
+        3
+      ]
+    ],
+    "Route115": [
+      -1,
+      7
+    ]
+  },
+  "stand_ins": {
+    "Route130": [
+      "land"
+    ],
+    "ShoalCave_LowTideInnerRoom": [
+      "water"
+    ],
+    "ShoalCave_LowTideEntranceRoom": [
+      "water"
+    ]
+  }
+}

@@ -1136,10 +1136,13 @@ ACCEPT = [
     ('.*', 'cull', r'^nagakusa01b ',
      "Black 2's own long grass (Route 7 chunk 60, the recipe ground.py copies) has single-sided fringe blades facing "
      "away from the camera too (89 of its 312 nagakusa01b triangles)"),
+    ('.*', 'ent', r'script (10735|8299)\) .*cannot stand on',
+     "Secret Base spots and berry trees: objects standing on their solid tiles by design (v2.1 identical; glitch check "
+     "2026-11-10)"),
     ('.*', 'ent', r'on a tile you cannot stand on .*\(a Sapphire warp tile\)',
      "story actors on a door or cave-mouth tile: the Regi caves' sealing rocks (sprite 206) on their mouths, people who "
      "step out of a door in a scene (the Winstrates, the rival at Lavaridge's Gym)"),
-    ('main|SouthernIsland_Interior', 'ent', r'zone 317 person uid 1[01] |zone 112 person uid 102 ',
+    ('main|SouthernIsland_Interior', 'ent', r'zone 317 person uid 1[01] |zone 112 person uid 10[23] ',
      "Route 101's rescue-scene actors on the ledge row (they run there in the opening, tested); Southern Island's "
      "Lati@s on its Sapphire spot (talked to, never walked past)"),
     ('main', 'door', r'SlateportCity warp 9|Route131 warp 0 |MAP_MAGMA_HIDEOUT_1F|LittlerootTown Sapphire warp [012] ',

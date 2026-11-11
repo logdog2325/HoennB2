@@ -1,0 +1,24 @@
+{
+ "kind": "trainer",
+ "side": "front",
+ "sprite": 42,
+ "archive": 71,
+ "files": {
+  "static": 336,
+  "parts": 337,
+  "palette": 343
+ },
+ "name": "lady",
+ "note": "Lady",
+ "source": "community: battle_fronts_2026-11-07/lady.png by ASalman",
+ "layout": "drawn on the parts of Black 2 front sprite 42 (its cells and animations)",
+ "colours": 14,
+ "cleared_near_background": [
+  [
+   125,
+   165,
+   248
+  ]
+ ],
+ "made_by": "b2tools/sprite_community.py"
+}

@@ -37,11 +37,16 @@ Script_2:                                      // sign (15,1), Sapphire Route121
 
 // ---- story (chapter Ch8 part 8b, ch8b agent 2026-10-07: Sapphire data/maps/Route121_SafariZoneEntrance/scripts.inc;
 // generators keep everything from this line on)
-// Black 2 has no Safari Game (no Safari battle screen with Pokeblocks, bait and rocks; no step or ball limit that a
-// script can count), so the Safari Zone is a normal outdoor area. Closest way: the entrance runs Sapphire's flow, the $500
-// fee (checks: Pokeblock Case = Black 2's Poffin Case, a free PC Box slot with a full party, the money), the 30 Safari Balls
-// are given as items (Black 2's Safari Ball is a Poke Ball with a 1.5x catch rate), the camper inside takes back the
-// remaining ones when the player leaves; wild Pokemon are fought and caught in Black 2's normal battles.
+// Black 2 has no Safari Game (no Safari battle screen with Pokeblocks, bait and rocks). Closest way (user decision
+// 2026-11-10, notes/DECISIONS.md: "closer to the original"): the entrance runs Sapphire's flow, the $500 fee (checks:
+// Pokeblock Case = Black 2's Poffin Case, a free PC Box slot with a full party, the money), the 30 Safari Balls are given
+// as items (Black 2's Safari Ball is a Poke Ball with a 1.5x catch rate), and Sapphire's game runs in Black 2's normal
+// battles: 500 steps (Black 2's step counter, restarted here), the game over when they run out or when the balls do (the
+// "Ding-dong!" announcements, global scripts 10383/10384), only Safari Balls in the Safari Zone and none outside it, and
+// wild Pokemon that may run away each turn. The rules are our C (decomp include/hoennb2/safari.h, src/hoennb2/resident/
+// safari.c), which watches VAR_SAFARI_ZONE_STATE: 2 arriving, 3 a game (SafariZone_Southeast.inc's arrival sets it),
+// 1 back at the gate (the camper, the announcements), 0 none; a game left another way (Fly, Teleport, a whiteout) ends
+// on arriving outside, its balls taken. The camper inside takes back the remaining balls when the player leaves.
 // People: data/story/ch8b.json (attendant uid 3 at (8,2), camper uid 2 at (10,2)). Text lines 2-13.
 #include "scenes/ch8b_lib.inc"
 #define T_FirstTime 2
@@ -86,8 +91,9 @@ L_SZE_Pay:                              // ..._EventScript_15C3B3
     h_goto_if_eq C8B_SEL, 0, L_SZE_NoCase
     PokePartyGetCount C8B_A, 0          // ..._EventScript_15C425: a full party needs a free PC Box slot
     h_goto_if_ne C8B_A, 6, L_SZE_PartyOk
-    BoxGetCount C8B_A, 4                // free slots
-    h_goto_if_ne C8B_A, 0, L_SZE_PartyOk
+    BoxGetCount C8B_A, 5                // free places in all the Boxes (ov012 s0121_BoxGetCount kind 5 = 720 - boxed; Sapphire
+    h_goto_if_ne C8B_A, 0, L_SZE_PartyOk    // CheckFreePokemonStorageSpace). Kind 4 has no case there and always gave 0: every
+                                        // full party heard "Your PC Box is full" (Discord report, Emerald v2.1; fixed 2026-11-10)
     h_msgbox_actor T_PCFull, SZE_ATTENDANT              // Excuse me! Your PC Box is full.
     VMJump L_SZE_StepAside
 L_SZE_PartyOk:
@@ -101,7 +107,9 @@ L_SZE_PartyOk:
     h_msgbox_actor T_HereAreBalls, SZE_ATTENDANT        // Here are your Safari Balls.
     h_closemessage
     h_buffer_player
-    ItemAdd ITEM_SAFARI_BALL, SZE_BALLS, C8B_B
+    c8b_take_safari_balls               // (discord_fixes 2026-11-10) every game starts with exactly 30, as Sapphire's ball
+    ItemAdd ITEM_SAFARI_BALL, SZE_BALLS, C8B_B          // counter: balls kept by leaving another way than the camper (Fly,
+                                                        // Teleport, a whiteout, Emerald's open door) do not add up to 60
     MEPlay SEQ_ME_ITEM                  // playfanfare MUS_OBTAIN_ITEM; message ...; waitfanfare; waitmessage
     SystemMsg T_Received, 2             // <player> received 30 Safari Balls.
     MEWait
@@ -112,6 +120,8 @@ L_SZE_PartyOk:
     MoneyWinClose
     h_applymovement 255, Mv_SZE_ToDoor
     h_waitmovement
+    PedometerEnd                        // special EnterSafariMode: the game's 500 steps (sSafariZoneStepCounter); Black 2's
+    PedometerStart                      // PedometerStart only starts a stopped counter (Birth Island's lesson), so stop it first
     h_setvar VAR_SAFARI_ZONE_STATE, 2   // special EnterSafariMode
     MapChangeWarp SZE_SAFARI_SE_ZONE, 96, 98, 1     // warp MAP_SAFARI_ZONE_SOUTHEAST, 255, 32, 33 (Black 2's own warp: it fades in by itself; FadeOutBlack + MapChangeCore stay black without an arrival script)
                                                     // (32,33) is the building's door: Sapphire's door exit steps the player out to (32,34)
@@ -135,6 +145,7 @@ Story_SZE_Exit:                         // Route121_SafariZoneEntrance_EventScri
     h_applymovement 255, Mv_SZE_Back
     h_waitmovement
     c8b_take_safari_balls               // special ExitSafariMode
+    PedometerEnd
     h_setvar VAR_SAFARI_ZONE_STATE, 0
     h_release
 

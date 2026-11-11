@@ -1,0 +1,11 @@
+{
+ "_doc": "The Safari Zone's lines (discord_fixes 2026-11-10; user decision 'closer to the original'): the two announcements of global scripts 10383 / 10384 (text 0434, src/field_scripts/1260_global_pokedex_rating.s; after the followers' lines 23-31, so b2tools/patches/text.py installs this file only when our C is on, as overrides_followers.json) = pokeemerald / pokeruby SafariZone_Text_TimesUp / _OutOfBalls in Gen 5's capitals; the battle bag's two refusals (system text 0001, decomp include/hoennb2/safari.h HOENNB2_MSG_SAFARI_BALLS_ONLY / _OUTSIDE): line 52 is Black 2's Ghetsis device line (ballError 5, battle flag 0x10000, which only the Kyurem script flag 0x800 sets: no Hoenn battle), line 53 is new. b2tools/patches/scripts.py checks the line numbers against the decomp's header.",
+ "script/0434.txt": {
+  "32": "Ding-dong! Time’s up!\\nYour Safari Game is over.",
+  "33": "You’ve run out of Safari Balls.\\nYour Safari Game is over."
+ },
+ "system/0001.txt": {
+  "52": "Only Safari Balls can be used\\nin the Safari Zone!",
+  "53": "Safari Balls can only be used\\nin the Safari Zone!"
+ }
+}

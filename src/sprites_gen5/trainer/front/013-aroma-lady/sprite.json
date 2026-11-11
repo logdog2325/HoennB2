@@ -1,0 +1,19 @@
+{
+ "kind": "trainer",
+ "side": "front",
+ "sprite": 13,
+ "archive": 71,
+ "files": {
+  "static": 104,
+  "parts": 105,
+  "palette": 111
+ },
+ "name": "aroma-lady",
+ "note": "Aroma Lady",
+ "source": "community: battle_fronts_2026-11-07/Aroama_.png by ASalman",
+ "layout": "drawn on the parts of Black 2 front sprite 114 (its cells and animations)",
+ "colours": 14,
+ "cleared_near_background": [],
+ "made_by": "b2tools/sprite_community.py",
+ "mcss_from": 114
+}

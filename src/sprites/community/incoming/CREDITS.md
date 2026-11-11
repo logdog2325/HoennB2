@@ -49,3 +49,16 @@ Ask the user who made these (credit pending):
   NPC_083 Parasol Lady, NPC_084 Poké Maniac, NPC_205 / NPC_208 athletes (PurpleZaffre), Leader_Courtney (izzyvicious),
   trRichBoy (DiegoWT): used; Leader_Tabitha (izzyvicious, 29 colours) and trGuitarist_2 (DiegoWT, 24 colours): not
   used (over Black 2's 15 colours; a 15-colour version from the artist would fit).
+
+## battle_fronts_2026-11-07/ (the user, 2026-11-07: "more sprites for us to use"; NEW set only)
+
+29 Gen 5-style trainer battle fronts, each a 256x128 sheet in Black 2's own parts format, drawn on the layouts of Black 2
+front sprites. Installed by `python3 b2tools/sprite_community.py build parts` (PARTS_FRONTS: each sheet's slot and the
+Black 2 layout it was drawn on, found with `partsmatch`), pixels as drawn. Changes: the background colour and colours
+within 8 of it (erased-template leftovers) are clear; Tuber (both), Ninja Boy and Expert (both) stand still in the intro
+(their parts don't sit in the layout's cells; the standing figure is clean); Ninja Boy and the Collector get their own
+picture slots (21, 37) so they no longer share Tuber boy's and the Pokéfan's.
+
+| Sheets | Classes | Artist (credit) |
+|---|---|---|
+| all 29 | Youngster, Aroma Lady, Tubers, Ninja Boy, Gabby & Ty, Ruin Maniac, Picnicker, Fisherman, Pokémaniac, Collector, Rich Boy, Lady, Ace Trainers, Bug Maniac, Kindler, Battle Girl, Parasol Lady, Young Couple, Experts, Camper, Sailor, Dragon Tamer, Bird Keeper, Bug Catcher, Guitarist, Hex Maniac | ASalman, a member of the HoennB2 community, who made them for the project (the user, 2026-11-09) |

@@ -206,8 +206,8 @@ class Data:
             sp = self._room_space(('room', z), built, z, uw)
             if sp is None: continue
             self.zone_spaces[z] = [sp.key]
-            self.room_alts[z] = [a['event'] for a in cfg.get('alt_rooms', [])]
-            for alt in cfg.get('alt_rooms', []):
+            self.room_alts[z] = [a['event'] for a in version.alt_rooms(cfg)]
+            for alt in version.alt_rooms(cfg):
                 a = self._room_space(('room', z, alt['event']), alt['room'], z, uw, base=('room', z), event=alt['event'])
                 if a is not None: self.zone_spaces[z].append(a.key)
 

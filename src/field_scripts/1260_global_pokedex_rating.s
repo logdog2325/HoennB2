@@ -1,4 +1,5 @@
-// Global scripts 10380-10382 (a/0/5/6 entry 1260, text file 434 = src/text/script/0434.txt): Black 2's data/field_scripts/1260.s is
+// Global scripts 10380-10384 (a/0/5/6 entry 1260, text file 434 = src/text/script/0434.txt; 10383/10384 = the Safari Zone's
+// announcements, at the end of this file): Black 2's data/field_scripts/1260.s is
 // Professor Juniper's Pokédex rating (Script_1 10380 her lab, Script_2 10381 her father, Script_3 10382 her PC, which the
 // Pokémon Center PC's "Professor's PC" calls: global 10090 = file 1244 L_05B2). Rewritten for Hoenn (room_pc, 2026-10-09).
 //   Black 2's rating counts the species of its own regional dex (PML_PersonalLoadRegionalDexTable, personal file 709: the 300
@@ -29,10 +30,15 @@
 #define T_Rating10 1                      /* lines 1-20: the rating for the caught count / 10 (0-19) */
 #define T_DexCompleted 21
 #define T_OnANationwideBasis 22
+#define T_SafariTimesUp 32                /* src/text/overrides_safari.json (after the followers' lines 23-31; both need our C) */
+#define T_SafariOutOfBalls 33
+#define RP_SE_DING_DONG SEQ_SE_FLD_87     /* [guess] Sapphire SE_DING_DONG: Black 2's arrival chime (the Dept. Store elevator's) */
 
     ScriptEntry Script_1
     ScriptEntry Script_2
     ScriptEntry Script_3
+    ScriptEntry Script_SafariTimesUp     // 10383 (decomp include/hoennb2/safari.h; b2tools/patches/scripts.py checks the numbers)
+    ScriptEntry Script_SafariOutOfBalls  // 10384
     ScriptEntriesEnd
 
 #ifdef HOENN_FOLLOWERS
@@ -118,6 +124,33 @@ L_RP_National:
     MsgWaitAdvance
 L_RP_Done:
     RTEndGlobal
+
+// ---- The Safari Zone's announcements (discord_fixes 2026-11-10; user decision "closer to the original"): our C starts them
+// (decomp src/hoennb2/resident/safari.c HoennB2_Safari_FieldCheck: in a Safari game, at 500 steps or with no Safari Ball
+// left, after the battle that used the last one; it has set VAR_SAFARI_ZONE_STATE 1 and put the player on foot).
+// pokeemerald / pokeruby data/scripts/safari_zone.inc SafariZone_EventScript_TimesUp / _OutOfBalls, then _Exit: warp
+// MAP_ROUTE121_SAFARI_ZONE_ENTRANCE, 2, 5, where the gate's scene (VAR_SAFARI_ZONE_STATE 1) takes the balls back.
+#ifdef HOENN_SAFARI
+Script_SafariTimesUp:                            // 10383: SafariZone_EventScript_TimesUp
+    h_lock
+    SEPlay RP_SE_DING_DONG                       // playse SE_DING_DONG
+    SystemMsg T_SafariTimesUp, 2                 // Ding-dong! Time's up! Your Safari Game is over.
+    VMJump L_RP_SafariExit
+Script_SafariOutOfBalls:                         // 10384: SafariZone_EventScript_OutOfBalls
+    h_lock
+    SEPlay RP_SE_DING_DONG
+    SystemMsg T_SafariOutOfBalls, 2              // You've run out of Safari Balls. Your Safari Game is over.
+L_RP_SafariExit:                                 // ..._EventScript_Exit
+    LastKeyWait
+    InfoMsgClose
+    h_setvar VAR_SAFARI_ZONE_STATE, 1
+    MapChangeWarp 569, 3, 6, 1                   // as the camper's (scenes/SafariZone_Southeast.inc L_SZSE_Warp): the gate's
+    h_release                                    // (2,5) + its origin, facing down
+#else
+Script_SafariTimesUp:                            // (no C: nothing starts them)
+Script_SafariOutOfBalls:
+    VMHalt
+#endif
 
 #if __has_include("scenes/ch11_dexcount.inc")
 #include "scenes/ch11_dexcount.inc"              // Sub_C11_CountDex: C11_DEXKIND (0 seen, 1 caught) -> C11_DEXCOUNT

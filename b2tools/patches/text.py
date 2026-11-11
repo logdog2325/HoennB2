@@ -26,7 +26,8 @@ def apply(files):
         extras.append(os.path.join(OURS, 'berries', 'overrides_berry_planting.json'))   # default; BERRY_PLANTING.md)
     extras += [p for p in os.environ.get('HOENN_EXTRA_TEXT', '').split(':') if p]   # converter/gen_key_items.py
     if not b2decomp.c_on():                                                   # the followers' question and lines need
-        extras = [p for p in extras if os.path.basename(p) != 'overrides_followers.json']   # our C (notes/FOLLOWERS.md)
+        extras = [p for p in extras if os.path.basename(p) not in   # our C (notes/FOLLOWERS.md, notes/DEXNAV.md; the
+                  ('overrides_followers.json', 'overrides_dexnav.json', 'overrides_safari.json')]   # Safari Zone's: 1138's header)
     for extra in extras:                                                      # --install); HOENN_EXTRA_TEXT=a.json:b.json
         for name, lines in json.load(open(extra, encoding='utf-8')).items():  # adds files for a test build
             if name != '_doc': overrides.setdefault(name, {}).update(lines)
@@ -64,6 +65,7 @@ def apply(files):
                 end = next((k for k in range(len(text) - 1, -1, -1) if text[k].startswith('\\pad{')), None)
                 if end is None: end = len(text) - 1 if text and text[-1] == '' else len(text)
                 for i in sorted(lines, key=int):
+                    assert '\n' not in lines[i], f'{name} line {i}: a real line break (write the two characters \\n)'
                     if int(i) >= end:
                         assert int(i) == end, f'{name}: line {i} would leave a gap after line {end - 1}'
                         text.insert(end, lines[i]); end += 1

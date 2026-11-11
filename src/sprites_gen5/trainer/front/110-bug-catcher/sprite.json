@@ -1,0 +1,18 @@
+{
+ "kind": "trainer",
+ "side": "front",
+ "sprite": 110,
+ "archive": 71,
+ "files": {
+  "static": 880,
+  "parts": 881,
+  "palette": 887
+ },
+ "name": "bug-catcher",
+ "note": "Bug Catcher",
+ "source": "community: battle_fronts_2026-11-07/Bug_Catcher.png by ASalman",
+ "layout": "drawn on the parts of Black 2 front sprite 110 (its cells and animations)",
+ "colours": 15,
+ "cleared_near_background": [],
+ "made_by": "b2tools/sprite_community.py"
+}

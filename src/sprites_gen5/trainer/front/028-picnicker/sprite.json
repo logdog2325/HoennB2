@@ -1,0 +1,19 @@
+{
+ "kind": "trainer",
+ "side": "front",
+ "sprite": 28,
+ "archive": 71,
+ "files": {
+  "static": 224,
+  "parts": 225,
+  "palette": 231
+ },
+ "name": "picnicker",
+ "note": "Picnicker",
+ "source": "community: battle_fronts_2026-11-07/Picnicker_ 3.png by ASalman",
+ "layout": "drawn on the parts of Black 2 front sprite 5 (its cells and animations)",
+ "colours": 15,
+ "cleared_near_background": [],
+ "made_by": "b2tools/sprite_community.py",
+ "mcss_from": 5
+}

@@ -120,10 +120,6 @@
    "sand_tex001"
   ],
   [
-   "ext01",
-   "c1sch001"
-  ],
-  [
    "ext09",
    "bill_kabe"
   ],
@@ -138,6 +134,21 @@
   [
    "ext54",
    "nsyane"
+  ],
+  [
+   "townlook",
+   "rus_stone",
+   "rus_stone_pl"
+  ],
+  [
+   "townlook",
+   "rus_greywin",
+   "rus_greywin_pl"
+  ],
+  [
+   "townlook",
+   "tl_redtile",
+   "tl_redtile_pl"
   ]
  ]
 }

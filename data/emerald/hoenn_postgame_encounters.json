@@ -1,0 +1,119 @@
+{
+ "_doc": "Emerald's post-game slot edits (data/hoenn_postgame_encounters.json has the rules): the species Emerald lacks (Surskit/Masquerain, Meditite/Medicham, Roselia, Zangoose, Lunatone) in their Sapphire/Ruby slots, without taking anything Emerald needs (a Seviper slot and grass slot 11 on Route 114, Emerald's only wild Nuzleaf, stay; Seedot keeps two routes). Replaces the whole 'maps'.",
+ "maps": {
+  "Route102": {
+   "from": "sapphire",
+   "note": "surf 4 (1 %) Goldeen -> Surskit (Goldeen is fished here)",
+   "surf": {
+    "4": "SPECIES_SURSKIT"
+   }
+  },
+  "Route111": {
+   "from": "sapphire",
+   "note": "surf 4 (1 %) Goldeen -> Surskit",
+   "surf": {
+    "4": "SPECIES_SURSKIT"
+   }
+  },
+  "Route114": {
+   "from": "ruby",
+   "note": "grass 5 (10 %) Lombre -> Zangoose (Lombre keeps 6, 7; Seviper keeps 8-10, 9 %; slot 11 Nuzleaf untouched); surf 4 (1 %) Goldeen -> Surskit",
+   "grass": {
+    "5": "SPECIES_ZANGOOSE"
+   },
+   "surf": {
+    "4": "SPECIES_SURSKIT"
+   }
+  },
+  "Route117": {
+   "from": "sapphire",
+   "note": "grass 1, 3 (30 %) Oddish -> Roselia (Oddish keeps 5, 10 %, and its other routes); surf 4 (1 %) Goldeen -> Surskit",
+   "grass": {
+    "1": "SPECIES_ROSELIA",
+    "3": "SPECIES_ROSELIA"
+   },
+   "surf": {
+    "4": "SPECIES_SURSKIT"
+   }
+  },
+  "Route120": {
+   "from": "sapphire",
+   "note": "grass 11 (1 %) Seedot -> Surskit (Seedot keeps Routes 102 and 117, 1 % each, and the Rustboro trade); surf 4 (1 %) Goldeen -> Surskit",
+   "grass": {
+    "11": "SPECIES_SURSKIT"
+   },
+   "surf": {
+    "4": "SPECIES_SURSKIT"
+   }
+  },
+  "MtPyre_Exterior": {
+   "from": "sapphire",
+   "note": "grass 1, 3 (30 %) Shuppet -> Meditite (Shuppet keeps 0, 2, 30 %, and Mt. Pyre 1F-6F)",
+   "grass": {
+    "1": "SPECIES_MEDITITE",
+    "3": "SPECIES_MEDITITE"
+   }
+  },
+  "VictoryRoad_B1F": {
+   "from": "sapphire",
+   "note": "grass 3 (10 %) Lairon -> Medicham (Lairon keeps 2, 8, 10; Mawile 9, 11 untouched)",
+   "grass": {
+    "3": "SPECIES_MEDICHAM"
+   }
+  },
+  "VictoryRoad_B2F": {
+   "from": "sapphire",
+   "note": "grass 3 (10 %) Lairon -> Medicham (Lairon keeps 2, 8, 10; Mawile 9, 11 untouched)",
+   "grass": {
+    "3": "SPECIES_MEDICHAM"
+   }
+  },
+  "MeteorFalls_1F_1R": {
+   "from": "sapphire",
+   "note": "grass Solrock 5 (10 %) / Lunatone 6, 7 (10 %); surf Solrock 2 (5 %) / Lunatone 3, 4 (5 %) (Steven's Cave keeps its Solrock)",
+   "grass": {
+    "6": "SPECIES_LUNATONE",
+    "7": "SPECIES_LUNATONE"
+   },
+   "surf": {
+    "3": "SPECIES_LUNATONE",
+    "4": "SPECIES_LUNATONE"
+   }
+  },
+  "MeteorFalls_1F_2R": {
+   "from": "sapphire",
+   "note": "grass Solrock 3, 5 (20 %) / Lunatone 4, 7 (15 %); surf Solrock 2 (5 %) / Lunatone 3, 4 (5 %) (Steven's Cave keeps its Solrock)",
+   "grass": {
+    "4": "SPECIES_LUNATONE",
+    "7": "SPECIES_LUNATONE"
+   },
+   "surf": {
+    "3": "SPECIES_LUNATONE",
+    "4": "SPECIES_LUNATONE"
+   }
+  },
+  "MeteorFalls_B1F_1R": {
+   "from": "sapphire",
+   "note": "grass Solrock 3, 5 (20 %) / Lunatone 4, 7 (15 %); surf Solrock 2 (5 %) / Lunatone 3, 4 (5 %) (Steven's Cave keeps its Solrock)",
+   "grass": {
+    "4": "SPECIES_LUNATONE",
+    "7": "SPECIES_LUNATONE"
+   },
+   "surf": {
+    "3": "SPECIES_LUNATONE",
+    "4": "SPECIES_LUNATONE"
+   }
+  },
+  "MeteorFalls_B1F_2R": {
+   "from": "sapphire",
+   "note": "grass Solrock 3, 7 (15 %) / Lunatone 5 (10 %); surf Solrock 2 (5 %) / Lunatone 3, 4 (5 %) (Steven's Cave keeps its Solrock)",
+   "grass": {
+    "5": "SPECIES_LUNATONE"
+   },
+   "surf": {
+    "3": "SPECIES_LUNATONE",
+    "4": "SPECIES_LUNATONE"
+   }
+  }
+ }
+}

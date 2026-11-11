@@ -21,7 +21,9 @@ How a Ruby line is found (every string is pokeruby's own, word for word):
   wrote into src/text; Ruby line = the same call on the Ruby twin with Ruby's placeholders (gen3text.convert(version_='ruby')).
 - Every line of src/text/script/NNNN_*.txt (all our rooms, scenes and zone files) that equals a Sapphire line is replaced by
   its Ruby line, in a copy src/text/script/ruby/NNNN_<same name>.txt (the whole file, as patches/text.py's overlay replaces by
-  file number).
+  file number). The other way round too (postgame_dex 2026-11-09): a line of ours that is the RUBY wording of a pair and no
+  Sapphire line (Sapphire's text showing the other version's Gen 3 line on purpose: Seafloor Cavern Room 9's post-game
+  legend, "Groudon appears to have settled into sleep again...", text 0248 line 14) gets its Sapphire wording in Ruby.
 - Every team/legend/orb line of ours matched (--report lists the ones that would not, and the hand-written lines near a
   pokeruby string): there is no hand-made Ruby text in this tool. The 13 trainer messages that differ are in 0381 (gen_trainers).
 - The Aqua Hideout rooms (data/versions.json "rooms": Sapphire only) get their Ruby text too: the Ruby ROM carries their
@@ -152,6 +154,10 @@ def main():
     print(f'{len(texts)} pokeruby labels, {len(pairs)} Sapphire/Ruby label pairs, {len(tw)} Sapphire lines worded differently in Ruby')
 
     ambiguous = {s: r for s, r in tw.items() if len(r) > 1}
+    other = collections.defaultdict(set)         # Ruby wording -> its Sapphire wordings (a line of ours that shows the other
+    for s_line, rs in tw.items():                 #  version's line: Ruby gets Sapphire's; never a Sapphire line itself)
+        for r_line in rs:
+            if r_line not in tw: other[r_line].add(s_line)
     want, hits = {}, []
     used = set()
     for path in our_files('script'):
@@ -166,6 +172,11 @@ def main():
                 (r, labels), = tw[l].items()
                 used.add(l)
                 new[i] = r; hits.append((name, i, l, r, labels[0]))
+            elif l in other:
+                if len(other[l]) > 1:
+                    raise SystemExit(f'{name} line {i}: the Ruby wording of {len(other[l])} Sapphire lines: {sorted(other[l])}')
+                (r,) = other[l]
+                new[i] = r; hits.append((name, i, l, r, '(the other version\'s line)'))
         if new != lines: want[os.path.join(SCRIPT, OVERLAY, name)] = '\n'.join(new)
     scene_lines = sum(1 for p in our_files('scenes') for l in read_lines(p) if l in tw)
     # system text other than gen_trainers.py's

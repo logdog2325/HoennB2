@@ -21,7 +21,9 @@
 // Beldum ball: "There is no space for another Pokémon.").
 #define EMJ_JOHTO_ON 1
 #define EMJ_EVENT_TABLE 4                         // map replace event 4 (work 0x4035): the Lab's table layout (shared with Mauville Gym's MG_EVENT_OFF)
-#define EMJ_T 38                                 // rows of src/text/script/emerald/0625_birch_lab.txt (tools: work/agents/emerald_ch11_gameclear/tools/mk_text.py)
+#define EMJ_T 44                                 // rows of src/text/script/emerald/0625_birch_lab.txt (tools: work/agents/emerald_ch11_gameclear/tools/mk_text.py);
+                                                 // 44, not 38, since postgame_dex 2026-11-09: rows 38-43 are the follower aide's in every
+                                                 // version (src/text/overrides_followers.json, 0792 Script_9), which replaced these with our C on
 #define EMJ_T_CHOOSE (EMJ_T + 0)                 // Birch: Oh, <player>! Let's have a look at your Pokédex. ... any one of these three Pokémon!
 #define EMJ_T_CYNDAQUIL (EMJ_T + 1)              // Birch: The Fire Pokémon Cyndaquil caught your eye! ... So the Cyndaquil is your choice?
 #define EMJ_T_TOTODILE (EMJ_T + 2)

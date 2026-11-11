@@ -27,7 +27,11 @@
  *       Wattson (Emerald's FLAG_WATTSON_REMATCH_AVAILABLE, set after his Thunderbolt TM: F_WATTSON);
  *   post-game rows (gym 9 + n; 9 = Wally at Victory Road's exit, whose first battle is post-game too): after the Hall of
  *       Fame, tiers in turn as a Leader's (2 bits a row in W_POSTGAME), no Wattson rule;
- *   each trainer once a day: a bit per row in kDoneWork[], cleared when Black 2's midnight reset has cleared F_DAILY. */
+ *   each trainer once a day: a bit per row in kDoneWork[], cleared when Black 2's midnight reset has cleared F_DAILY;
+ *   and not on the day of the first battle: RM_BEATEN (the global trainer script 1239, after each TrainerFlagSet) sets
+ *       the row's bit in kFirstWork[] (cleared with kDoneWork[]), and until then the trainer has no rematch and says
+ *       Black 2's after line, as Emerald's PostBattle (Discord report 2026-11-10: with 5 badges, Anna & Meg could be
+ *       battled again at once by talking to the other twin). */
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef unsigned int u32;
@@ -57,13 +61,15 @@ typedef unsigned int u32;
 #define RM_DISARM  2
 #define RM_WON     3
 #define RM_MSGBASE 4
+#define RM_BEATEN  5
 #define RM_NONE    0
 #define RM_SINGLE  1
 #define RM_DOUBLE  2
 #define RM_POST    3
 
 /* emerald_rematch_data.h (written by emerald_rematch.py): N_ROWS, RM_PARTY_BASE, RM_TRDATA_FILE, F_DAILY, F_GAME_CLEAR,
- * F_WATTSON, GYM_WATTSON, W_LEADERS, W_POSTGAME, MSG_DEFEAT, MSG_INTRO, MSG_INTRO2, NEXT_MSGLD, kDoneWork[], kRows[] (RmRow) */
+ * F_WATTSON, GYM_WATTSON, W_LEADERS, W_POSTGAME, MSG_DEFEAT, MSG_INTRO, MSG_INTRO2, NEXT_MSGLD, kDoneWork[], kFirstWork[],
+ * kRows[] (RmRow) */
 typedef struct { u16 trainer, partner; u8 gym, dbl; u16 slot[4]; } RmRow;   /* slot 0xFFFF: no such tier */
 #include "emerald_rematch_data.h"
 
@@ -107,6 +113,7 @@ static u32 badges(void) {
 }
 
 static u16 *done_word(void *ew, int r) { return EventWork_GetWkPtr(ew, kDoneWork[r >> 4]); }
+static u16 *first_word(void *ew, int r) { return EventWork_GetWkPtr(ew, kFirstWork[r >> 4]); }
 
 /* the tiers row r's trainer has beaten (0-3): 2 bits a Gym in W_LEADERS (gym 1-8), a post-game row in W_POSTGAME (gym 9 + n) */
 static u16 *progress_word(void *ew, u32 gym, u32 *shift) {
@@ -123,8 +130,10 @@ static int tier_now(void *ew, int r, u32 *state) {
     *state = RM_NONE;
     if (!EventWork_FlagGet(ew, F_DAILY)) {                      /* a new day: nobody has been fought today */
         for (k = 0; k < sizeof(kDoneWork) / sizeof(kDoneWork[0]); k++) *EventWork_GetWkPtr(ew, kDoneWork[k]) = 0;
+        for (k = 0; k < sizeof(kFirstWork) / sizeof(kFirstWork[0]); k++) *EventWork_GetWkPtr(ew, kFirstWork[k]) = 0;
         EventWork_FlagSet(ew, F_DAILY);
     }
+    if (*first_word(ew, r) >> (r & 15) & 1) return -1;           /* beaten for the first time today: RM_NONE */
     if (*done_word(ew, r) >> (r & 15) & 1) { *state = RM_POST; return -1; }
     if (w->gym == 0) {
         u32 b = badges();
@@ -176,6 +185,12 @@ u32 EM_RmCmd(void *vm, void *env) {
             u16 *w = progress_word(ew, kRows[r].gym, &sh);
             if (p < 3) *w = (*w & ~(3 << sh)) | (p + 1) << sh;
         }
+        *var = 1;
+        break;
+    case RM_BEATEN:           /* a first battle won (the day's reset first): no rematch before tomorrow */
+        if (r < 0) break;
+        tier_now(ew, r, &state);
+        *first_word(ew, r) |= 1 << (r & 15);
         *var = 1;
         break;
     case RM_MSGBASE:

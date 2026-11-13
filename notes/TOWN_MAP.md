@@ -86,7 +86,18 @@ cursor grid `region_map_layout.h`), in hit order: 25 landmarks, 16 towns, 34 rou
   shown and flyable with FLAG_LANDMARK_BATTLE_TOWER), **Southern Island** (FLAG_LANDMARK_SOUTHERN_ISLAND), **Sky Pillar**
   and **Altering Cave** (FLAG_SYS_GAME_CLEAR: their islet / mouth appear after the game in this build). Not on the map,
   as Emerald (`sMapSecIdsOffMap`): Faraway Island, Birth Island, Navel Rock (no marker there). Mirage Island is Route 130.
-- Ever Grande's second Fly point (Pokémon League with FLAG_SYS_POKEMON_LEAGUE_FLY) is not made: one zone, one fly point.
+- **Ever Grande's second Fly point** (2026-11-13, Discord: Fly landed at the lower Center, before Victory Road): a record
+  `POKEMON_LEAGUE` before Ever Grande's (Black 2 takes the first record hit) on the section's upper cell (Gen 3's
+  everGrandeCityArea / posWithinMapSec 0), route type (no icon), hit / snap radius 3 (Ever Grande's own snap point 4 px
+  below stays the town's), shown and flyable with FLAG_SYS_POKEMON_LEAGUE_FLY (set entering the League building, 0154;
+  Emerald's FLAG_LANDMARK_POKEMON_LEAGUE is the same flag here), zone 77 (the League building: same place name) as its
+  marker, mapsec '' (not a main record: the zone table and the Pokédex's area page skip it). Without the flag the upper
+  cell is Ever Grande's, as in Gen 3. The Fly hook turns zone 77 into Ever Grande (the Fly work's zone too) landing on
+  HEAL_LOCATION_EVER_GRANDE_CITY_POKEMON_LEAGUE (18,6) = world (826,246), in front of the League's door. 85 records now (no
+  filler).
+- **Littleroot on the Fly map** (2026-11-13, Discord: grey, not selectable): FLAG_VISITED_LITTLEROOT_TOWN was never set;
+  Littleroot's zone init (0778 Script_9) sets it now, as Gen 3's LittlerootTown_OnTransition. Older saves get it the
+  next time they walk into Littleroot.
 
 **File 21 layout** (hoenn_pokedex reads it; `town_map.read_file21(files)`): records at 0 (85 x 54 B) | zone table at ZT
 | refine table at REF (u16 count, u16 0, 20-B entries: zone, ox, oz, flags, section x, x thresholds[4], y thresholds[5],
@@ -125,7 +136,8 @@ Rope's fallback use the same point (ov035), as Sapphire's Teleport. Littleroot k
 **Fly to Littleroot by sex** (littleroot2, 2026-10-19; `LITTLEROOT_FLY`): Gen 3 lands in front of your own house
 (pokeruby/pokeemerald region_map.c: HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE (5,9) for a boy, _MAYS_HOUSE (14,9) for a
 girl = world (173,361) / (182,361)). ov033 EventFly's creation (func_ov033_02178908, `bl LoadZoneSpawnInfoCheckRail` at
-0x02178956) calls a 52-byte hook in the zero tail of dive.py's spawn-hook block (0x02179ED0): the spawn as before, then in
+0x02178956) calls a hook (in ITCM since 2026-11-13, with the League landing; before, 52 bytes in the zero tail of dive.py's
+spawn-hook block, 0x02179ED0): the spawn as before, then in
 zone 389 x/z = the tile of the player's sex (the Fly work's take-off effect, 11 = boy, set just before the call). The
 Escape Rope's fallback keeps the header point between the houses (Gen 3's Escape Rope never lands in Littleroot). Code only.
 **Teleport home** (littleroot2 follow-up, `HOME_TELEPORT`): Gen 3's Teleport goes to the last heal location, the player's

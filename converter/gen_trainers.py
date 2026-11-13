@@ -16,6 +16,9 @@ Black 2's trainer format, read from the decomp (external/pokebw2):
   (src/ov012/trainer_script.c), set by that global script.
 - Prize money = trdata money * 4 * level of the last Pokémon (ov167 btl_calc.c:565) = Sapphire's base money
   (x2 for a double battle, as Sapphire doubles it: battle_script_commands.c:5505).
+- AI flags: the Gen 3 script bits (AI_BITS; Emerald's bits 1 and 2 swapped, AI_BITS_EMERALD) + AI_FLAG_TAG_STRATEGY on
+  every trainer (DOUBLE_AI: the double-battle AI that keeps a Pokémon from attacking its partner; it does nothing in a
+  single battle).
 - Class -> battle sprite / sex / encounter BGM: arm9 TRAINER_CLASS_RESOURCES (0x02092394, 4 bytes per class);
   battle BGM group + pedestal: SPECIAL_TRAINER_CLASSES (0x020922bc, 29 x 3 bytes). b2tools/patches/trainers.py
   edits both (data/hoenn_trainer_classes.json).
@@ -216,6 +219,41 @@ FEMALE_MUSIC = {'FEMALE', 'GIRL', 'TWINS'}
 # Gen 3 AI script bits (pokeruby data/battle_ai_scripts.s BattleAIs) -> Black 2 AI_FLAG_* (include/constants/tr_ai.h)
 AI_BITS = {0: 'AI_FLAG_BASIC', 1: 'AI_FLAG_EXPERT', 2: 'AI_FLAG_EVAL_ATTACK', 3: 'AI_FLAG_SETUP_FIRST_TURN',
            4: 'AI_FLAG_TARGET_HP', 5: 'AI_FLAG_FUSION_MOVES', 6: 'AI_FLAG_BATON_PASS', 8: 'AI_FLAG_CHECK_HP'}
+# Emerald (double_ai, 2026-11-13): pokeemerald's script table has bits 1 and 2 the other way round from pokeruby's.
+# pokeruby BattleAIs: bit 1 AI_CheckViability, bit 2 AI_TryToFaint; pokeemerald gBattleAI_ScriptsTable: bit 1
+# AI_TryToFaint (AI_SCRIPT_TRY_TO_FAINT), bit 2 AI_CheckViability (AI_SCRIPT_CHECK_VIABILITY). Black 2's
+# AI_FLAG_EVAL_ATTACK is the try-to-faint script (a knock-out gains 4, a move that is not the strongest loses 1) and
+# AI_FLAG_EXPERT the viability one (every move effect scored by the situation), so an Emerald trainer with only one of
+# the two (Keigo, Riley, Jody, Wendy, Jenna, May in Rustboro ...: CHECK_BAD_MOVE | TRY_TO_FAINT [| SETUP_FIRST_TURN])
+# gets EVAL_ATTACK as in pokeemerald. Trainers with both keep the same two flags.
+AI_BITS_EMERALD = {**AI_BITS, 1: 'AI_FLAG_EVAL_ATTACK', 2: 'AI_FLAG_EXPERT'}
+# Double battles (double_ai, 2026-11-13; Discord: Flint & Edwardo in Fortree Gym attacked each other): EVERY trainer also
+# gets Black 2's AI_FLAG_TAG_STRATEGY. In a double Black 2's AI scores its moves against each other Pokémon in turn and
+# picks the best target (ov170 TrAI_ChooseMoveAndTarget, the same as pokeemerald's ChooseMoveOrAction_Doubles); its other
+# scripts stop at once for a target on its own side (IfTargetIsPartner), so without this flag every move at the partner
+# keeps the 100 points it starts with, ties with the moves at the player's Pokémon and is picked about a third of the
+# time. TAG_STRATEGY (res/trainers/ai/tag_strategy.s) is Black 2's version of Emerald's AI_SCRIPT_DOUBLE_BATTLE
+# (AI_DoubleBattle / AI_TryOnAlly): 30 points off any move at the partner unless it helps it (Helping Hand, Skill Swap
+# for Truant, a Fire move into Flash Fire ...), which drops it below 100 so the partner is never the target; Earthquake
+# and Magnitude weighed against the partner exactly as Gen 3 (+2 if it is Flying or levitates, -10 if Fire, Electric,
+# Poison or Rock, else -3); Surf, Discharge and Lava Plume, which also hit the partner in Black 2, the same way; nothing
+# for Explosion (Gen 3's AI has nothing either). Emerald adds the double-battle script in every double battle
+# (BattleAI_SetupAIData: "act smart in doubles and don't attack your partner"); Black 2 reads each trainer's own record
+# (ov167 GetClientAIFlags), so the flag goes on every trainer who can fight in a double: the double-style trainers (as
+# Black 2's own), any two single trainers who see the player at once (Black 2's EventTrainerEye_CheckAll, all three
+# versions), the Space Center tag battle (Steven as the partner, Maxie and Tabitha). Its script ends at once in a
+# single battle (TagStrategy_Main: only BTL_STYLE_DOUBLE / TRIPLE), so single battles are unchanged. (pokeruby's AI
+# never aims at the partner at all: it scores its moves against a random foe; here the partner is only ever the target
+# of a move that helps it.)
+DOUBLE_AI = 'AI_FLAG_TAG_STRATEGY'
+
+def ai_flags(tr):
+    """The Black 2 AI_FLAG_* list of a Gen 3 trainer: its script bits (AI_BITS; Emerald: AI_BITS_EMERALD), then DOUBLE_AI.
+    The flags are listed in AI_BITS's order in every version (a source's text then changes only with its flags)."""
+    bits = AI_BITS_EMERALD if version.is_emerald() else AI_BITS
+    have = {bits[b] for b in bits if tr.get('ai', 0) >> b & 1}
+    return [f for f in AI_BITS.values() if f in have] + [DOUBLE_AI]
+
 ITEM_ALIAS = {'ITEM_PARALYZE_HEAL': 'ITEM_PARLYZ_HEAL', 'ITEM_THUNDER_STONE': 'ITEM_THUNDERSTONE'}
 MOVE_ALIAS = {'MOVE_SELF_DESTRUCT': 'MOVE_SELFDESTRUCT', 'MOVE_SMOKESCREEN': 'MOVE_SMOKE_SCREEN'}
 
@@ -787,8 +825,7 @@ def main():
             mons.append(dict(level=lv, sapphire_level=m['level'], species=sp, difficulty=m['iv'],
                              item=b2c(b2_items, m['item'], 'item') or 'ITEM_NONE', moves=mv[:4]))
         items = [b2c(b2_items, i, 'item') or 'ITEM_NONE' for i in tr.get('items', [])] + ['ITEM_NONE'] * 4
-        ai = [AI_BITS[b] for b in range(16) if tr.get('ai', 0) >> b & 1 and b in AI_BITS]
-        if tr.get('double'): ai.append('AI_FLAG_TAG_STRATEGY')        # Black 2's double-battle trainers all have it
+        ai = ai_flags(tr)                                              # (+ DOUBLE_AI for every trainer)
         # texts: the first battle command (not a rematch) gives intro/defeat/after; a rematch tier its own
         bs = [b for b in by_trainer.get(t, []) if 'rematch' not in b['kind']] or by_trainer.get(t, [])
         if not bs:     # a rematch tier: the rematch command of its first tier
@@ -927,8 +964,7 @@ def main():
                 mons.append(dict(level=lv, sapphire_level=m['level'], species=b2c(b2_species, m['species'], 'species'),
                                  difficulty=m['iv'], item=b2c(b2_items, m['item'], 'item') or 'ITEM_NONE', moves=mv[:4]))
             items = [b2c(b2_items, i, 'item') or 'ITEM_NONE' for i in tr.get('items', [])] + ['ITEM_NONE'] * 4
-            ai = [AI_BITS[b] for b in range(16) if tr.get('ai', 0) >> b & 1 and b in AI_BITS]
-            if tr.get('double'): ai.append('AI_FLAG_TAG_STRATEGY')
+            ai = ai_flags(tr)
             if tr['pic'] != trainers[r_first]['pic']: report[f'rematch tier with another picture: {t}'] += 1
             return dict(sapphire_class=tr['class'], name=d0['name'], b2_class=d0['b2_class'], double=bool(tr.get('double')),
                         items=items[:4], ai=ai, money=money.get(tr['class'], 5) * (2 if tr.get('double') else 1),

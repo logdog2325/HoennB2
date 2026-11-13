@@ -38,6 +38,28 @@ def _own_files():
     rooms = version.load_json(p)['rooms'].values() if os.path.exists(p) else []
     return {r['zone']: (r['own_scripts'], r['own_init'], r['own_text']) for r in rooms if 'own_scripts' in r}
 OWN = _own_files()
+
+# Escape Rope and Dig (Discord 2026-11-13: "Escape Rope doesn't work in New Mauville"): zone header flags bit 12
+# (pokebw2 zonedata.c enableEscapeRope, read by the Bag's check and Dig's) on in every room zone whose Gen 3 map allows
+# them: pokeruby when its map type is MAP_TYPE_UNDERGROUND (item_use.c CanUseEscapeRopeOnCurrMap, rom6.c for Dig),
+# pokeemerald when its header has allow_escaping (CanUseDigOrEscapeRopeOnCurMap). A room's other header bits come from
+# a Black 2 header (a cave look's, an interior recipe's "cave_zone", a template room), which says nothing about Gen 3:
+# New Mauville's (both maps) and Sky Pillar's (1F-5F) said no in every version. Only switched on here: no zone loses
+# the rope it has. The exit is Black 2's (patches/escape_rope.py: the last door from Hoenn's outdoors).
+ROPE = 1 << 12
+
+def _rope_zones():
+    """{zone} of the version's room maps (data/hoenn_interiors.json) whose Gen 3 map allows the Escape Rope"""
+    p = os.path.join(ROOT, 'data', 'hoenn_interiors.json')
+    if not os.path.exists(p): return set()
+    out = set()
+    for name, r in version.load_json(p)['rooms'].items():
+        mp = os.path.join(version.DECOMP, 'data', 'maps', name, 'map.json')
+        if not isinstance(r, dict) or 'zone' not in r or not os.path.exists(mp): continue
+        mj = json.load(open(mp))
+        if (mj.get('allow_escaping') is True) if version.is_emerald() else mj.get('map_type') == 'MAP_TYPE_UNDERGROUND':
+            out.add(r['zone'])
+    return out
 def _hoenn_zones():
     z = {m['zone'] for m in json.load(open(os.path.join(ROOT, 'data', 'hoenn_zones.json')))['maps'].values()}
     return z | {int(os.path.basename(f)[:-5]) for f in version.overlay(os.path.join(ROOT, 'data', 'interiors'), '*.json')}
@@ -161,6 +183,7 @@ def apply(files):
         # wrote names that entry instead (same bytes: nothing else rewrites it), so the free entries go further.
         # Sapphire/Ruby: unchanged (no shared entries; their builds don't run out).
         written = {}                                       # box bytes -> the a/1/0/9 entry that holds them (Emerald)
+        rope_zones = _rope_zones()
         for cfg in rooms:
             zone = cfg['zone']; hd = headers[zone]
             d = os.path.join(ROOMS, cfg['room'])
@@ -216,6 +239,8 @@ def apply(files):
                 hd['flags'] = (hd['flags'] & ~(1 << 10)) | (int(bool(cfg['cycling'])) << 10)   # for the map, where the
                 # Black 2 header the room copies says otherwise: Sky Pillar's cracked floors need the Mach Bike, the Cycling
                 # Road gates let you ride onto the road; frontier_sp 2026-10-20, notes/CAVES.md)
+            if zone in rope_zones:                         # header flags bit 12: Gen 3's Escape Rope / Dig rule (ROPE)
+                hd['flags'] |= ROPE
             pack, sets, ext = _area_record(files, hd['area'])
             assert ext == 0, f'zone {zone}: area {hd["area"]} is an exterior area'
             for ts in sets:

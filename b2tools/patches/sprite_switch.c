@@ -13,6 +13,10 @@
  *   - the player's icons (a/0/3/0: Continue panel, GTS, Spin Trade, Battle Video, Wi-Fi 2D room) and the trainer card
  *     pictures (a/0/4/0): those archives have no room, so their Gen 5 copies are entries of a/0/4/8 (kIcons: archive,
  *     file, copy); each hooked load reads the copy from a/0/4/8 instead (a handle opened and freed around the call).
+ *   - Fly's take-off and landing scenes (a/1/1/6 models: the player on their textures, patches/sprites.py fly_scenes):
+ *     their Gen 5 copies are entries of a/0/4/8 too (kFly: model, copy); ov036 EventFieldEffect_LoadGraphics' one call
+ *     of Fld3DCi_LoadG3DSceneTemplate comes here, which builds the scene's resource list and points its model entries
+ *     at the copies (archive and file), so the scene loads them in place of Black 2's.
  * With CLASSIC nothing changes but the table lookups' absence (the original call with the original number). */
 typedef unsigned char u8;
 typedef unsigned short u16;
@@ -30,12 +34,14 @@ typedef unsigned int u32;
 #define GFL_G2DIOReadBGNCGR            FN(void *(*)(u32, u32, u32, void *, u32), 0x0204b264)
 #define GFL_BGSysLoadNCLRDefault       FN(void (*)(u32, u32, u32, u32, u32, u32), 0x0204b0b8)
 #define HEAPID_TAIL(h)                 (((h) & 0x7fffu) | 0x8000u)
+#define Fld3DCi_LoadG3DSceneTemplate   FN(void (*)(void *, u32, u32), 0x021bc13c)                    /* ov036, static */
 #define CFG_GEN5_SPRITES               (1u << 14)
 #define TRAINER_SPRITE_BACK            1u
 #define NONE                           0xffffu
 
 #include "sprite_switch_data.h"   /* ARC_OW, N_OW, kOw, N_FRONT, kFront, N_BACK, kBack: {classic, Gen 5} pairs;
-                                     ARC_ICONS, N_ICONS, kIcons: {archive, file, copy in ARC_OW} */
+                                     ARC_ICONS, N_ICONS, kIcons: {archive, file, copy in ARC_OW};
+                                     ARC_FLD3D, N_FLY, kFly: {model of ARC_FLD3D, copy in ARC_OW} */
 
 u32 Sprite_IsGen5(void) {
 #ifdef SPRITE_FORCE
@@ -131,4 +137,28 @@ void Sprite_CardPal(u32 arc, u32 file, u32 type, u32 offset, u32 size, u32 heap)
     u32 f = icon_copy(arc, file);
     if (f == NONE) GFL_BGSysLoadNCLRDefault(arc, file, type, offset, size, heap);
     else GFL_BGSysLoadNCLRDefault(ARC_OW, f, type, offset, size, heap);
+}
+
+/* ov036 fld3d_ci.c: gfl g3d.h G3DSceneResourceSetup, and the start of Fld3DCiScene (its models are its first resources) */
+typedef struct { u32 arcId; u16 fileId; u16 unk6; u32 type; } SceneRes;
+typedef struct {
+    SceneRes *resources;
+    void *actors, *animations1, *animations2;
+    u8 setup[16];
+    u16 particleDelay[2], actorDelay[2];
+    u32 particle;
+    u8 resourceCount, actorCount;
+} FlyScene;
+
+/* EventFieldEffect_LoadGraphics: bl Fld3DCi_LoadG3DSceneTemplate(scene, effect, heap) -> here */
+void Sprite_FlyScene(FlyScene *scene, u32 effect, u32 heap) {
+    u32 i, f;
+    Fld3DCi_LoadG3DSceneTemplate(scene, effect, heap);
+    if (!N_FLY || !Sprite_IsGen5()) return;
+    for (i = 0; i < scene->actorCount && i < scene->resourceCount; i++) {
+        SceneRes *r = &scene->resources[i];
+        if (r->arcId != ARC_FLD3D) continue;
+        f = lookup(kFly, N_FLY, r->fileId);
+        if (f != r->fileId) { r->arcId = ARC_OW; r->fileId = (u16)f; }
+    }
 }

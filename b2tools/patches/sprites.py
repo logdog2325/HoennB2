@@ -122,6 +122,99 @@ def apply_code(code):
     open(path, 'wb').write(data)
     return f'{name}: the trainer card shows the avatar picture (Brendan / May)'
 
+# Fly's take-off and landing (Discord 2026-11-13: "after flying the player shows Black 2's own hero"): ov036 fld3d_ci plays
+# field effects 11/12 (boy) and 31/32 (girl) as 3D scenes (a/1/1/8 files of those numbers), whose first model (a/1/1/6
+# 58 / 66, 138 / 142) draws the hero on 32x32 4bpp textures fly_hero.N / fly_heroine.N with one palette fly_hero /
+# fly_heroine: Black 2's own Nate and Rosa, the frames of their walk sheet (object code 231 / 240) and throw sheet
+# (237 / 246), checked pixel for pixel against Black 2's sheets below. Those textures now take the same frames of the
+# installed sheets (our Brendan / May, the version's art), in one palette made of both sheets' colours. Two textures
+# are poses only these scenes have (.3 a crouch facing down, .4 one facing up); they take the nearest frame of the walk
+# sheet (17 and 0, the fewest pixels apart in Black 2). The NEW sprite style gets its own frames: patches/sprite_switch.py
+# installs both sets, appends the NEW models to a/0/4/8 and points the scene at them (Sprite_FlyScene).
+FLY_MODELS = {'boy': (58, 66), 'girl': (138, 142)}           # a/1/1/6: take-off (scene 11 / 31), landing (12 / 32)
+FLY_CODES = {'boy': (231, 237), 'girl': (240, 246)}          # walk sheet, throw sheet
+FLY_FRAMES = {1: (0, 3), 2: (0, 0), 3: (0, 17), 4: (0, 0), 5: (0, 15), 6: (0, 12), 7: (1, 1), 8: (1, 2), 9: (1, 3)}
+FLY_NEAREST = {3, 4}                                         # (sheet 0 walk / 1 throw, frame); 3, 4: nearest frames
+ARC_FLD3D_MODELS = 116
+
+def _tex_layout(bmd):
+    """({texture: (absolute pixel offset, w, h)}, {palette: absolute offset}) of a BMD0's TEX0 (4bpp textures only)"""
+    import struct
+    nb = struct.unpack_from('<H', bmd, 0xE)[0]
+    t0 = next(o for o in (struct.unpack_from('<I', bmd, 0x10 + 4 * k)[0] for k in range(nb)) if bmd[o:o + 4] == b'TEX0')
+    t = bmd[t0:]
+    texdict = struct.unpack_from('<H', t, 0xE)[0]; texdata = struct.unpack_from('<I', t, 0x14)[0]
+    pltdict, pltdata = struct.unpack_from('<II', t, 0x34)
+    tex = {}
+    for name, ent in sprites._dict(t, texdict):
+        p = struct.unpack_from('<I', ent, 0)[0]
+        tex[name] = (t0 + texdata + ((p & 0xffff) << 3), 8 << (p >> 20 & 7), 8 << (p >> 23 & 7), p >> 26 & 7)
+    pals = {name: t0 + pltdata + (struct.unpack_from('<H', ent, 0)[0] << 3) for name, ent in sprites._dict(t, pltdict)}
+    return tex, pals
+
+def _fly_check_vanilla():
+    """FLY_FRAMES against Black 2's own files: every texture but FLY_NEAREST is its frame, colour for colour"""
+    import struct
+    F = sprites.SRC_FILES
+    models = narcio.load(F, ARC_FLD3D_MODELS); sheets = narcio.load(F, sprites.ARC_OW_SHEETS); table = sprites.ow_table(F)
+    for sex, ms in FLY_MODELS.items():
+        src = []
+        for c in FLY_CODES[sex]:
+            fr, _, pal = sprites.btx_decode(sheets[sprites.ow_sheet_of(F, c, table)[0]])
+            src.append((fr, pal))
+        for m in ms:
+            tex, pals = _tex_layout(models[m])
+            pname = 'fly_hero' if sex == 'boy' else 'fly_heroine'
+            mpal = list(struct.unpack_from('<16H', models[m], pals[pname]))
+            for name, (off, w, h, fmt) in tex.items():
+                if not name.startswith(pname + '.'): continue
+                k = int(name.split('.')[1])
+                assert (w, h, fmt) == (32, 32, 3) and k in FLY_FRAMES, (m, name, w, h, fmt)
+                if k in FLY_NEAREST: continue
+                si, fi = FLY_FRAMES[k]
+                fr, spal = src[si]
+                mine = sprites.unpack4(models[m][off:off + 512], 1024)
+                want = fr[fi][3]
+                assert [None if v == 0 else mpal[v] & 0x7fff for v in mine] == \
+                       [None if v == 0 else spal[v] & 0x7fff for v in want], (m, name, 'is not', FLY_CODES[sex][si], fi)
+
+def fly_scenes(files, table, sheets):
+    """The Fly scenes' hero textures from the installed walk / throw sheets (FLY_FRAMES), same sizes."""
+    import struct
+    _fly_check_vanilla()
+    models = narcio.load(files, ARC_FLD3D_MODELS)
+    path = sprites.arc_path(files, ARC_FLD3D_MODELS); before = os.path.getsize(path)
+    out = []
+    for sex, ms in FLY_MODELS.items():
+        src = [sprites.btx_decode(sheets[sprites.ow_sheet_of(files, c, table)[0]]) for c in FLY_CODES[sex]]
+        pname = 'fly_hero' if sex == 'boy' else 'fly_heroine'
+        for m in ms:
+            bmd = bytearray(models[m])
+            tex, pals = _tex_layout(bmd)
+            colours, frames = [0], {}                          # one 16-colour palette: index 0 clear, then both sheets'
+            for name in tex:
+                if not name.startswith(pname + '.'): continue
+                si, fi = FLY_FRAMES[int(name.split('.')[1])]
+                fr, _, spal = src[si]
+                pix = fr[fi][3]
+                idx = []
+                for v in pix:
+                    if v == 0: idx.append(0); continue
+                    c = spal[v] & 0x7fff
+                    if c not in colours[1:]: colours.append(c)
+                    idx.append(colours.index(c, 1))
+                frames[name] = idx
+            assert len(colours) <= 16, f'Fly scene {m}: the walk and throw art use {len(colours) - 1} colours (15 fit)'
+            for name, idx in frames.items():
+                off = tex[name][0]
+                bmd[off:off + 512] = sprites.pack4(bytes(idx))
+            struct.pack_into('<16H', bmd, pals[pname], *(colours + [0] * (16 - len(colours))))
+            models[m] = bytes(bmd)
+            out.append(f'{m} ({len(frames)} frames, {len(colours) - 1} colours)')
+    narcio.save(files, ARC_FLD3D_MODELS, models)
+    assert os.path.getsize(path) == before, 'a/1/1/6 changed size'
+    return 'fly scenes a/1/1/6 ' + ', '.join(out)
+
 def apply(files):
     done = []
     ow = folders('overworld')
@@ -139,6 +232,8 @@ def apply(files):
             sheets[sheet] = new
             done.append(f'ow {code}' + ('' if folder == ow[code] else f'<-{meta["code"]}'))
         narcio.save(files, sprites.ARC_OW_SHEETS, sheets)
+        if all(c in ow for codes in FLY_CODES.values() for c in codes):   # the player's walk / throw art: the Fly scenes
+            done.append(fly_scenes(files, table, sheets))
     for side, arc in sprites.ARC_TR.items():
         tr = folders(os.path.join('trainer', side))
         if not tr:

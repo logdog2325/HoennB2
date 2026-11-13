@@ -436,3 +436,14 @@ B4F; always in the Route 110 Cycling Road gates), pokeemerald map.json allow_cyc
   Left as they are (no player needs the Bike there): Gen 3 allows, we forbid - Abandoned Ship (11 zones), New Mauville
   (2), Emerald's AbandonedShip_Underwater1/2; we allow, Gen 3 forbids - Cave of Origin B4F, Seafloor Cavern Room 9, the
   underwater maps (S/R), Black 2's link rooms, Emerald's Sky Pillar top, Birth Island, Navel Rock, Terra / Marine Cave.
+
+## Escape Rope and Dig (2026-11-13)
+Discord: "Escape Rope doesn't work in New Mauville". The zone header bit (flags bit 12, pokebw2 zonedata.c
+enableEscapeRope) came from the Black 2 header a cave copies (the look's, or an interior recipe's `cave_zone`), which says
+nothing about Gen 3. b2tools/patches/interiors.py now switches it on in every room zone whose Gen 3 map allows the rope
+(pokeruby: MAP_TYPE_UNDERGROUND; pokeemerald: allow_escaping): New Mauville (both maps) and Sky Pillar 1F-5F were the
+only ones without it, in every version (work/agents/discord_fixes/field2/rope_check.py lists Gen 3's rule against a ROM).
+Only switched on: zones that allow the rope where Gen 3 does not (the Aqua / Magma hideouts, the Abandoned Ship's
+underwater rooms, Emerald's Navel Rock, the Single Battle Colosseum) keep it, on purpose (lead, 2026-11-13: being
+stuck is worse than being more lenient, and none of them is an event). The exit is the last door from Hoenn's outdoors (patches/escape_rope.py),
+as Gen 3's escape warp (outdoors -> not outdoors): Route 110 for New Mauville, Sky Pillar's outside for Sky Pillar.

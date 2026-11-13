@@ -338,6 +338,10 @@ L_TestTruckDone:
 #endif
 L_TestPartyDone:
 #endif
+    // Sapphire / Emerald LittlerootTown_OnTransition: setflag FLAG_VISITED_LITTLEROOT_TOWN, the town map's Fly flag
+    // (b2tools/patches/town_map.py): without it Littleroot stayed grey on the Fly map (Discord 2026-11-13). A save from
+    // before this sets it the next time the player walks into Littleroot, as Gen 3 does.
+    FlagSet FLAG_VISITED_LITTLEROOT_TOWN
     // Sapphire LittlerootTown_EventScript_SetTwinPos: until Birch is rescued the twin (uid 1) stands at the north
     // exit, guarding it (Sapphire (7,2), facing down) before the player has met the rival, beside it (10,1) after.
     // She stands still (data/hoenn_world.json move 0; Sapphire's wandering after the rescue is not done yet).

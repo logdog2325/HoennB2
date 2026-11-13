@@ -389,6 +389,8 @@ def locations():
         c = centre(s)
         lines = [0xFFFF, LINE_POKEMON_CENTER] if town in centers else []
         vis, unvis = ICON_ANIMS[(s['width'], s['height'])]
+        if key == 'EVER_GRANDE_CITY' and LEAGUE_FLY:
+            out.append(league_record(s, flags, rooms))   # (before the town: Black 2 takes the first record hit)
         out.append(dict(key=key, mapsec=sec, type=TYPE_TOWN_ICON, anims=vis | unvis << 5,
                         zone=zones[town]['zone'], icon=c, snap=c,
                         cap=(a[0], a[1], b[0], b[1], 5), snap_r=6, fly_flag=flags['FLAG_VISITED_' + key], can_fly=1,
@@ -405,6 +407,45 @@ def locations():
                             sec=(s['x'], s['y'], s['width'], s['height'])))
     assert not any(l['zone'] in (0, 424, 490) for l in out), 'zones 0/424/490 have Black 2 special cases in ov144'
     return out
+
+# Ever Grande's upper half flies to the Pokémon League (Discord 2026-11-13: Fly landed at the lower Pokémon Center, so
+# Victory Road had to be walked every time): pokeruby region_map.c (Fly, MAPSEC_EVER_GRANDE_CITY:
+# sub_8053538(FlagGet(FLAG_SYS_POKEMON_LEAGUE_FLY) && everGrandeCityArea == 0 ? HEAL_LOCATION_EVER_GRANDE_CITY_POKEMON_LEAGUE :
+# HEAL_LOCATION_EVER_GRANDE_CITY)), pokeemerald the same with FLAG_LANDMARK_POKEMON_LEAGUE (posWithinMapSec 0 = the upper
+# cell); both flags are FLAG_SYS_POKEMON_LEAGUE_FLY here, set when the League building is entered (0154 zone init). A record
+# of its own on the upper cell, before the town's (Black 2 takes the first record hit): no icon (route type), shown and hit
+# only with the flag (its show flag), so without it the upper cell is Ever Grande's as before; its zone is the League
+# building's (77, the same place name), which the Fly hook below turns into Ever Grande landing on the League's heal tile.
+# Not a main record: the zone table and the Pokédex's area page skip it (mapsec '').
+LEAGUE_FLY = True
+LEAGUE_ROOM = 'EverGrandeCity_PokemonLeague'
+
+def league_record(s, flags, rooms):
+    cx, cy = cell_px(s['x'], s['y'])                    # the section's upper cell (Gen 3: posWithinMapSec 0)
+    f = flags['FLAG_SYS_POKEMON_LEAGUE_FLY']
+    return dict(key='POKEMON_LEAGUE', mapsec='', type=TYPE_ROUTE, zone=rooms[LEAGUE_ROOM]['zone'], icon=(cx, cy),
+                snap=(cx, cy), cap=(cx, cy, cx, cy, 3), snap_r=3, fly_flag=f, can_fly=1, show=f, lines=[],
+                sec=(s['x'], s['y'], 1, 1))     # (radius 3: the town's own snap point, 4 px below, stays the town's)
+
+def league_landing(world_dir=None):
+    """(league zone, Ever Grande's zone, (x, z)): the League record's zone and HEAL_LOCATION_EVER_GRANDE_CITY_POKEMON_LEAGUE
+    (the version's decomp) in world tiles, checked walkable and in Ever Grande's zone."""
+    import version
+    world_dir = world_dir or os.environ.get('HOENN_WORLD_DIR') or version.world_dir()
+    w = json.load(open(os.path.join(world_dir, 'world.json')))
+    zone = json.load(open(os.path.join(ROOT, 'data', 'hoenn_zones.json')))['maps']['EverGrandeCity']['zone']
+    league = json.load(open(os.path.join(ROOT, 'data', 'hoenn_interiors.json')))['rooms'][LEAGUE_ROOM]['zone']
+    heal = {h['id']: h for h in json.load(open(os.path.join(version.DECOMP, 'src', 'data', 'heal_locations.json')))['heal_locations']}
+    h = heal['HEAL_LOCATION_EVER_GRANDE_CITY_POKEMON_LEAGUE']
+    assert h['map'] == 'MAP_EVER_GRANDE_CITY', h
+    ox, oz = origins()['EverGrandeCity'][:2]
+    x, z = ox + h['x'], oz + h['y']
+    cell = next(c for c in w['cells'] if c['cx'] == x // 32 and c['cz'] == z // 32)
+    d = cell.get('dir') or f"{cell['cx']:02d}_{cell['cz']:02d}"
+    ch = json.load(open(os.path.join(world_dir, 'cells', d, 'chunk.json')))['collision'][z % 32][x % 32]
+    rect = [r for r in w.get('zone_rects', []) if r[0] <= x <= r[2] and r[1] <= z <= r[3]]
+    assert cell['zone'] == zone and not rect and ch not in '#v', ('League landing', x, z, ch, cell['zone'], rect)
+    return league, zone, (x, z)
 
 def dex_highlights(locs):
     """The Pokédex area page's highlight of each location (record fields 24-26: anim, x, y; ov298/ov303 draw a sprite
@@ -541,7 +582,7 @@ def data_file(headers):
     icon anims at ANIM (u16 per record: visited | not visited << 5, 0 = Black 2's) | 16-B trailer 'TMAP', u16 NREC,
     ZT, zone count, REF, ANIM, 0.  -> (bytes, layout, locations, zone table)"""
     locs = locations()
-    assert len(locs) < NREC, len(locs)
+    assert len(locs) <= NREC, len(locs)
     locs = locs + [dummy_record(locs)] * (NREC - len(locs))
     hls, _ = dex_highlights(locs)
     recs = b''.join(record(l, hl) for l, hl in zip(locs, hls))
@@ -639,9 +680,11 @@ def fly_points(world_dir=None):
 # (ov033 func_ov033_02178908) calls a hook instead of LoadZoneSpawnInfoCheckRail: it loads the spawn as before, then in
 # Littleroot puts the player on the tile of their sex (the event's take-off effect, set just before the call from the
 # player's sex: 11 boy, 31 girl). The header point between the houses stays for the Escape Rope's fallback (Teleport
-# home: the bedroom, apply_home_teleport below). The hook sits in the
-# zero tail of dive.py's spawn-hook block (ov033's dead CheckAbyssalRuinsStepEvent; dive runs first in the patch list).
-# Code only: saves are unchanged.
+# home: the bedroom, apply_home_teleport below). The same hook flies the League record (LEAGUE_FLY, its zone the League
+# building's) to Ever Grande: the Fly work's zone (work + 8, 4 bytes before the spawn) and the spawn become Ever Grande's,
+# x/z the League's heal tile (pokeruby/pokeemerald HEAL_LOCATION_EVER_GRANDE_CITY_POKEMON_LEAGUE, (18,6): in front of the
+# League's door). Since 2026-11-13 the hook sits in ITCM (the arena-literal protocol, as apply_home_teleport): with the
+# League it outgrew the zero tail of dive.py's spawn-hook block in ov033 where it was. Code only: saves are unchanged.
 LITTLEROOT_FLY = True
 OV033 = 0x02176B00
 FLY_SPAWN_CALL = 0x02178956             # func_ov033_02178908: bl LoadZoneSpawnInfoCheckRail (r0 = &work->spawn, r1 = zone)
@@ -670,41 +713,70 @@ def littleroot_landings(world_dir=None):
         out[sex] = (x, z)
     return zone, out
 
-def littleroot_fly_hook(at, zone, pts):
-    """hook(spawn, zone): LoadZoneSpawnInfoCheckRail(spawn, zone); in `zone`, spawn.pos.x/z = the boy's or the girl's
-    tile centre (fx32: tile * 16 + 8 units)."""
+def littleroot_fly_hook(at, zone, pts, league=None):
+    """hook(spawn, zone): the League record's zone (league = (league zone, Ever Grande, (x, z))) -> Ever Grande's, also in
+    the Fly work (spawn - 4); LoadZoneSpawnInfoCheckRail(spawn, zone); then x/z: the League's heal tile, or in `zone`
+    (Littleroot) the boy's or the girl's tile centre (fx32: tile * 16 + 8 units; y: the header's)."""
     fx = lambda t: t << 16 | 0x8000
     assert pts['boy'][1] == pts['girl'][1], pts
     t = T(at)
-    t.push([3, 4, 5]); t.mov(4, 0); t.mov(5, 1)
+    t.push([4, 5, 6]); t.mov(4, 0); t.mov(5, 1); t.movs(6, 0)
+    if league:
+        lz, eg, (lx, lzz) = league
+        assert lz < 256, lz
+        t.cmp(5, lz); t.bne('load')
+        t.ldr_lit(5, 'eg'); t.mov(0, 4); t.subi(0, 4); t.str_off(5, 0, 0)    # work->zoneId = Ever Grande
+        t.movs(6, 1)
+        t.label('load')
+    t.mov(0, 4); t.mov(1, 5)
     t.bl(LoadZoneSpawnInfoCheckRail)
+    if league:
+        t.cmp(6, 0); t.beq('town')
+        t.ldr_lit(1, 'xl'); t.ldr_lit(2, 'zl'); t.b('set')
+        t.label('town')
     t.ldr_lit(0, 'zone'); t.cmpr(5, 0); t.bne('done')
-    t.ldr_lit(1, 'xb'); t.ldr_off(0, 4, FLY_EFFECT_OUT); t.cmp(0, 11); t.beq('set')   # 11: a boy's take-off
+    t.ldr_lit(1, 'xb'); t.ldr_off(0, 4, FLY_EFFECT_OUT); t.cmp(0, 11); t.beq('girl_z')   # 11: a boy's take-off
     t.ldr_lit(1, 'xg')
-    t.label('set'); t.str_off(1, 4, 16)                          # spawn.pos.x (pos at +16: dive.py's hook)
-    t.ldr_lit(1, 'z'); t.str_off(1, 4, 24)                       # spawn.pos.z (y: the header's)
-    t.label('done'); t.pop([3, 4, 5])
+    t.label('girl_z'); t.ldr_lit(2, 'z')
+    t.label('set'); t.str_off(1, 4, 16); t.str_off(2, 4, 24)       # spawn.pos.x, .z (pos at +16: dive.py's hook)
+    t.label('done'); t.pop([4, 5, 6])
     t.word('zone', zone); t.word('xb', fx(pts['boy'][0])); t.word('xg', fx(pts['girl'][0])); t.word('z', fx(pts['boy'][1]))
+    if league:
+        t.word('eg', eg); t.word('xl', fx(lx)); t.word('zl', fx(lzz))
     return t.assemble()
 
 def apply_littleroot_fly(code):
     zone, pts = littleroot_landings()
+    league = league_landing() if LEAGUE_FLY else None
+    yml = os.path.join(code, 'itcm.yaml')
+    text = open(yml).read()
+    size = int(re.search(r'^code_size: (\d+)$', text, re.M).group(1))
+    assert re.search(r'^base_address: (\d+)$', text, re.M).group(1) == str(ITCM_BASE)
+    base = ITCM_BASE + size
+    p9 = os.path.join(code, 'arm9.bin'); arm9 = bytearray(open(p9, 'rb').read())
+    lit = ARENA_ITCM_LIT - ARM9
+    assert struct.unpack_from('<I', arm9, lit)[0] == base, 'Fly hook: the ITCM arena literal is not the end of ITCM'
+    hook = littleroot_fly_hook(base, zone, pts, league)
+    end = (base + len(hook) + 31) & ~31
+    struct.pack_into('<I', arm9, lit, end)
+    pi = os.path.join(code, 'itcm.bin'); itcm = open(pi, 'rb').read()
+    assert len(itcm) == size
     path = os.path.join(code, 'arm9_ov033.bin')
     ov = bytearray(open(path, 'rb').read())
-    n = len(littleroot_fly_hook(FLY_HOOK_SPACE[0], zone, pts))
-    at = (FLY_HOOK_SPACE[1] - n) & ~3
-    assert not any(ov[at - OV033:FLY_HOOK_SPACE[1] - OV033]), 'Littleroot Fly hook: dive.py\'s spawn hook block has no room (dive patch first?)'
-    hook = littleroot_fly_hook(at, zone, pts)
-    ov[at - OV033:at - OV033 + len(hook)] = hook
     def bl(src, dst):
         off = dst - (src + 4)
+        assert -(1 << 22) <= off < (1 << 22)
         return struct.pack('<HH', 0xF000 | (off >> 12) & 0x7FF, 0xF800 | (off >> 1) & 0x7FF)
     c = FLY_SPAWN_CALL - OV033
     assert bytes(ov[c:c + 4]) == bl(FLY_SPAWN_CALL, LoadZoneSpawnInfoCheckRail), f'EventFly spawn call: {bytes(ov[c:c + 4]).hex()}'
-    ov[c:c + 4] = bl(FLY_SPAWN_CALL, at)
-    if os.path.islink(path): os.unlink(path)
-    open(path + '.tmp', 'wb').write(ov); os.replace(path + '.tmp', path)
-    return f"; Fly to Littleroot lands by the player's sex: boy {pts['boy']}, girl {pts['girl']} (ov033 hook {len(hook)} B at {at:#x})"
+    ov[c:c + 4] = bl(FLY_SPAWN_CALL, base)
+    for p_, data in ((p9, arm9), (pi, bytes(itcm) + hook + bytes(end - base - len(hook))), (path, ov)):
+        if os.path.islink(p_): os.unlink(p_)
+        open(p_ + '.tmp', 'wb').write(data); os.replace(p_ + '.tmp', p_)
+    open(yml, 'w').write(re.sub(r'^code_size: \d+$', f'code_size: {end - ITCM_BASE}', text, flags=re.M))
+    lg = f"; Fly to the League (zone {league[0]} record) lands at Ever Grande {league[2]}" if league else ''
+    return (f"; Fly to Littleroot lands by the player's sex: boy {pts['boy']}, girl {pts['girl']}" + lg +
+            f" (ITCM hook {len(hook)} B at {base:#x}, arena from {end:#x})")
 
 # Teleport home (littleroot2 follow-up, 2026-10-19): Gen 3's Teleport goes to the last heal location (pokeruby
 # field_effect.c Overworld_SetWarpDestToLastHealLoc, pokeemerald TeleportWarpOutFieldEffect_End

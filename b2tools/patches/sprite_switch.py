@@ -12,6 +12,8 @@ compares them, and appends every entry that differs to this build's archive as a
   a/0/3/0 the player's icons (Continue panel, GTS, Spin Trade, Battle Video, Wi-Fi 2D room) and a/0/4/0 the trainer
           card pictures (sprites.py objframes / cardpic, made from the overworld and battle art): these two archives
           have no reserve, so their Gen 5 copies go into a/0/4/8 too (identical copies stored once)
+  a/1/1/6 Fly's take-off / landing models (the player on their textures, patches/sprites.py fly_scenes): no reserve
+          either, so their Gen 5 copies are entries of a/0/4/8 as well (2026-11-13)
 Every remapped classic entry must equal this build's (no later patch changed it: checked). The archives keep their
 fixed sizes (build_rom.py RESERVE 48 / 71 / 72), so the ROM layout does not change.
 
@@ -31,6 +33,8 @@ the tables, and the hooks; each site is checked against Black 2's bytes:
     ov216 0x021bc3a4/c4                 Spin Trade (guru2: 20 / 23, 4 / 6)
     ov271 0x021f4382/a0                 Battle Video profiles (br_util.c: 20 / 23, 4 / 6)
     ov203 0x021a7d8a/ae                 the Wi-Fi 2D room's own player (wifi_2dchar.c: 5 / 7, 4 / 6)
+  ov036 0x021bbf6a  EventFieldEffect_LoadGraphics: bl Fld3DCi_LoadG3DSceneTemplate -> Sprite_FlyScene (the template as
+                    before; with NEW its model entries in a/1/1/6 that have a Gen 5 copy point at the copy in a/0/4/8)
   the trainer card picture, by archive id (ov186 func_ov186_021a7ec0 / _021a7d40): GFL_G2DIOReadBGNCGR(40, 16 + v)
   at 0x021a7f32 and GFL_BGSysLoadNCLRDefault(40, v) at 0x021a7d58 -> the Gen 5 copy in a/0/4/8 with NEW
 Trainer classes with a code of their own (data/npc_class_sprites.json, b2tools/sprite_community_npcs.py; every build,
@@ -61,6 +65,8 @@ ITCM_BASE, ARENA_ITCM_LIT, ARM9 = 0x01FF8000, 0x0207B400, 0x02004000
 OV036 = 0x0217F600
 ARC_OW, ARC_FRONT, ARC_BACK = 48, 71, 72
 ARC_ICONS, ARC_CARDS = 30, 40    # a/0/3/0 the player's icons, a/0/4/0 the trainer card pictures (no reserve: copies in 48)
+ARC_FLD3D = 116                  # a/1/1/6 the field effects' 3D models: Fly's scenes draw the player (patches/sprites.py
+                                 # fly_scenes; no reserve: copies in 48, as the icons)
 CFG_BIT = 14                     # options u16 bit: 1 = NEW (Gen 5) sprites; fairy.py CFG_SPRITES_BIT
 TABLES = 'sprite_switch.json'    # in the build dir (next to files/ and code/): the remap tables apply -> apply_code
 
@@ -98,7 +104,7 @@ def install_both(scratch):
             else: os.environ.pop('HOENN_SPRITES_GEN5', None)
             sp.apply(t)
             trees[style] = t
-        for arc in (ARC_OW, ARC_FRONT, ARC_BACK, ARC_ICONS, ARC_CARDS):
+        for arc in (ARC_OW, ARC_FRONT, ARC_BACK, ARC_ICONS, ARC_CARDS, ARC_FLD3D):
             out[arc] = (narcio.load(trees['classic'], arc), narcio.load(trees['gen5'], arc))
     finally:
         os.environ.pop('HOENN_SPRITES_GEN5', None)
@@ -216,10 +222,21 @@ def apply(files):
             if gen5[n] not in stored:
                 stored[gen5[n]] = len(ents); ents.append(gen5[n]); extra += len(gen5[n])
             icons.append([arc, n, stored[gen5[n]]])
-    if len(ents) > first:
-        narcio.save(files, ARC_OW, ents)
     tables['icons'] = icons
     notes.append(f'icons/cards {len(icons)} as {len(ents) - first} entries of a/{ARC_OW:03d} (+{extra} B)')
+    # Fly's scene models (a/1/1/6: the player on their take-off / landing textures): Gen 5 copies in a/0/4/8 too
+    classic, gen5 = both[ARC_FLD3D]
+    here = narcio.load(files, ARC_FLD3D)
+    fly, f0, fextra = [], len(ents), 0
+    for n in differing(classic, gen5, 1):
+        assert here[n] == classic[n], f'a/{ARC_FLD3D:03d} {n}: this build\'s entry is not the classic install (a later patch changed it)'
+        if gen5[n] not in stored:
+            stored[gen5[n]] = len(ents); ents.append(gen5[n]); fextra += len(gen5[n])
+        fly.append([n, stored[gen5[n]]])
+    if len(ents) > first:
+        narcio.save(files, ARC_OW, ents)
+    tables['fly'] = fly
+    notes.append(f'Fly scene models {len(fly)} as {len(ents) - f0} entries of a/{ARC_OW:03d} (+{fextra} B)')
     _tables = tables
     json.dump(tables, open(os.path.join(os.path.dirname(os.path.abspath(files)), TABLES), 'w'), indent=1)
     return moved + '; Gen 5 entries appended: ' + ', '.join(notes) + ' ' + json.dumps(tables)
@@ -232,6 +249,7 @@ TR_SITES = (0x02033cf2, 0x02033cfe, 0x02033d0a, 0x02033d16, 0x02033d22, 0x02033d
 BILLBOARD = (0x0201651c, '141c1e1c')                                        # func_02016510: adds r4, r2; adds r6, r3
 CHARS, PAL, PAL_EX = 0x0204b81c, 0x0204bba0, 0x0204bbb8                   # clact.h: handle-based characters / palettes
 READ_BG_NCGR, LOAD_NCLR = 0x0204b264, 0x0204b0b8                          # arc_util.h: GFL_G2DIOReadBGNCGR, ..LoadNCLRDefault
+FLY_SITE, FLY_LOAD = 0x021bbf6a, 0x021bc13c     # ov036 EventFieldEffect_LoadGraphics: bl Fld3DCi_LoadG3DSceneTemplate (its only call)
 OVERLAYS = {'ov162': 0x0219CE80, 'ov186': 0x021A75A0, 'ov203': 0x021A78C0, 'ov214': 0x021D3380, 'ov216': 0x021BB700,
             'ov271': 0x021EFE40}
 ICON_SITES = [   # (overlay, call site, Black 2's callee, shim): every load of a/0/3/0 files 4-7, 14, 17, 20, 23 and the card
@@ -277,7 +295,9 @@ def header(t):
     def arr(name, pairs): return f'static const u16 {name}[] = {{{", ".join(str(x) for p in pairs for x in p) or "0"}}};\n'
     return (f'#define ARC_OW {ARC_OW}\n#define N_OW {len(t["ow"])}\n#define N_FRONT {len(t["front"])}\n'
             f'#define N_BACK {len(t["back"])}\n#define N_ICONS {len(t.get("icons", []))}\n#define ARC_ICONS {ARC_ICONS}\n'
-            + arr('kOw', t['ow']) + arr('kFront', t['front']) + arr('kBack', t['back']) + arr('kIcons', t.get('icons', [])))
+            f'#define N_FLY {len(t.get("fly", []))}\n#define ARC_FLD3D {ARC_FLD3D}\n'
+            + arr('kOw', t['ow']) + arr('kFront', t['front']) + arr('kBack', t['back']) + arr('kIcons', t.get('icons', []))
+            + arr('kFly', t.get('fly', [])))
 
 
 def build(base, workdir, t, force=None):
@@ -324,6 +344,9 @@ def apply_code(code):
     p036, ov036 = _load(code, 'arm9_ov036.bin')
     for at in OW_SITES:
         _put(ov036, OV036, at, _bl(at, G3D_READ), _bl(at, sym['Sprite_OwRead'] & ~1), 'bl GFL_G3DSysReadArcToolResource')
+    if t.get('fly'):
+        _put(ov036, OV036, FLY_SITE, _bl(FLY_SITE, FLY_LOAD), _bl(FLY_SITE, sym['Sprite_FlyScene'] & ~1),
+             'bl Fld3DCi_LoadG3DSceneTemplate')
     _save(p9, arm9); _save(p036, ov036)
     if t.get('icons'):
         for name in sorted({ov for ov, *_ in ICON_SITES}):
@@ -337,5 +360,5 @@ def apply_code(code):
         indent=1))
     return (f'sprite_switch: {len(blob)} B of ITCM at {base:#x} (ends {end:#x}); options bit {CFG_BIT}; '
             f'{len(t["ow"])} sheets, {len(t["front"])} fronts, {len(t["back"])} backs, {len(t.get("icons", []))} icon/card '
-            f'files ({len(ICON_SITES)} load sites)'
+            f'files ({len(ICON_SITES)} load sites), {len(t.get("fly", []))} Fly scene models'
             + (f'; HOENN_TEST_SPRITES forces {force}' if force is not None else ''))
